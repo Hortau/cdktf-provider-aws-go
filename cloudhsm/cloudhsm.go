@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/cloudhsm/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html aws_cloudhsm_v2_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster aws_cloudhsm_v2_cluster}.
 type CloudhsmV2Cluster interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ClusterId() *string
 	ClusterState() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -39,12 +39,12 @@ type CloudhsmV2Cluster interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -53,10 +53,15 @@ type CloudhsmV2Cluster interface {
 	VpcId() *string
 	AddOverride(path *string, value interface{})
 	ClusterCertificates(index *string) CloudhsmV2ClusterClusterCertificates
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *CloudhsmV2ClusterTimeouts)
@@ -116,8 +121,8 @@ func (j *jsiiProxy_CloudhsmV2Cluster) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudhsmV2Cluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -276,8 +281,8 @@ func (j *jsiiProxy_CloudhsmV2Cluster) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudhsmV2Cluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -286,8 +291,8 @@ func (j *jsiiProxy_CloudhsmV2Cluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudhsmV2Cluster) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -296,8 +301,8 @@ func (j *jsiiProxy_CloudhsmV2Cluster) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudhsmV2Cluster) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -306,8 +311,8 @@ func (j *jsiiProxy_CloudhsmV2Cluster) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudhsmV2Cluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -376,7 +381,7 @@ func (j *jsiiProxy_CloudhsmV2Cluster) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html aws_cloudhsm_v2_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster aws_cloudhsm_v2_cluster} Resource.
 func NewCloudhsmV2Cluster(scope constructs.Construct, id *string, config *CloudhsmV2ClusterConfig) CloudhsmV2Cluster {
 	_init_.Initialize()
 
@@ -391,7 +396,7 @@ func NewCloudhsmV2Cluster(scope constructs.Construct, id *string, config *Cloudh
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html aws_cloudhsm_v2_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster aws_cloudhsm_v2_cluster} Resource.
 func NewCloudhsmV2Cluster_Override(c CloudhsmV2Cluster, scope constructs.Construct, id *string, config *CloudhsmV2ClusterConfig) {
 	_init_.Initialize()
 
@@ -402,7 +407,7 @@ func NewCloudhsmV2Cluster_Override(c CloudhsmV2Cluster, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudhsmV2Cluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -458,7 +463,7 @@ func (j *jsiiProxy_CloudhsmV2Cluster) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudhsmV2Cluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -466,7 +471,7 @@ func (j *jsiiProxy_CloudhsmV2Cluster) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudhsmV2Cluster) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudhsmV2Cluster) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -527,12 +532,40 @@ func (c *jsiiProxy_CloudhsmV2Cluster) ClusterCertificates(index *string) Cloudhs
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudhsmV2Cluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudhsmV2Cluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2Cluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -569,12 +602,54 @@ func (c *jsiiProxy_CloudhsmV2Cluster) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudhsmV2Cluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2Cluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudhsmV2Cluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2Cluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -723,12 +798,19 @@ type CloudhsmV2ClusterClusterCertificates interface {
 	ManufacturerHardwareCertificate() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -807,8 +889,8 @@ func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -817,15 +899,25 @@ func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) TerraformResource() cdk
 	return returns
 }
 
+func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) CloudhsmV2ClusterClusterCertificates {
+func NewCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) CloudhsmV2ClusterClusterCertificates {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudhsmV2ClusterClusterCertificates{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterClusterCertificates",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -833,12 +925,12 @@ func NewCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.ITerraformR
 }
 
 // Experimental.
-func NewCloudhsmV2ClusterClusterCertificates_Override(c CloudhsmV2ClusterClusterCertificates, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewCloudhsmV2ClusterClusterCertificates_Override(c CloudhsmV2ClusterClusterCertificates, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudhsm.CloudhsmV2ClusterClusterCertificates",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		c,
 	)
 }
@@ -859,7 +951,7 @@ func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -867,13 +959,49 @@ func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) SetTerraformResource(va
 	)
 }
 
+func (j *jsiiProxy_CloudhsmV2ClusterClusterCertificates) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -910,12 +1038,54 @@ func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -940,36 +1110,36 @@ func (c *jsiiProxy_CloudhsmV2ClusterClusterCertificates) InterpolationForAttribu
 // AWS CloudHSM.
 type CloudhsmV2ClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#hsm_type CloudhsmV2Cluster#hsm_type}.
-	HsmType *string `json:"hsmType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#subnet_ids CloudhsmV2Cluster#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#source_backup_identifier CloudhsmV2Cluster#source_backup_identifier}.
-	SourceBackupIdentifier *string `json:"sourceBackupIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#tags CloudhsmV2Cluster#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#tags_all CloudhsmV2Cluster#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#hsm_type CloudhsmV2Cluster#hsm_type}.
+	HsmType *string `json:"hsmType" yaml:"hsmType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#subnet_ids CloudhsmV2Cluster#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#source_backup_identifier CloudhsmV2Cluster#source_backup_identifier}.
+	SourceBackupIdentifier *string `json:"sourceBackupIdentifier" yaml:"sourceBackupIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#tags CloudhsmV2Cluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#tags_all CloudhsmV2Cluster#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#timeouts CloudhsmV2Cluster#timeouts}
-	Timeouts *CloudhsmV2ClusterTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#timeouts CloudhsmV2Cluster#timeouts}
+	Timeouts *CloudhsmV2ClusterTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type CloudhsmV2ClusterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#create CloudhsmV2Cluster#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#delete CloudhsmV2Cluster#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster.html#update CloudhsmV2Cluster#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#create CloudhsmV2Cluster#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#delete CloudhsmV2Cluster#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_cluster#update CloudhsmV2Cluster#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type CloudhsmV2ClusterTimeoutsOutputReference interface {
@@ -986,15 +1156,20 @@ type CloudhsmV2ClusterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -1077,8 +1252,8 @@ func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1107,7 +1282,7 @@ func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) UpdateInput() *stri
 	return returns
 }
 
-func NewCloudhsmV2ClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudhsmV2ClusterTimeoutsOutputReference {
+func NewCloudhsmV2ClusterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudhsmV2ClusterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference{}
@@ -1121,7 +1296,7 @@ func NewCloudhsmV2ClusterTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewCloudhsmV2ClusterTimeoutsOutputReference_Override(c CloudhsmV2ClusterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudhsmV2ClusterTimeoutsOutputReference_Override(c CloudhsmV2ClusterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1171,7 +1346,7 @@ func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1188,12 +1363,40 @@ func (j *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) SetUpdate(val *stri
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1230,12 +1433,54 @@ func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1295,7 +1540,7 @@ func (c *jsiiProxy_CloudhsmV2ClusterTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html aws_cloudhsm_v2_hsm}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm aws_cloudhsm_v2_hsm}.
 type CloudhsmV2Hsm interface {
 	cdktf.TerraformResource
 	AvailabilityZone() *string
@@ -1306,8 +1551,8 @@ type CloudhsmV2Hsm interface {
 	SetClusterId(val *string)
 	ClusterIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1334,10 +1579,15 @@ type CloudhsmV2Hsm interface {
 	Timeouts() CloudhsmV2HsmTimeoutsOutputReference
 	TimeoutsInput() *CloudhsmV2HsmTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *CloudhsmV2HsmTimeouts)
@@ -1417,8 +1667,8 @@ func (j *jsiiProxy_CloudhsmV2Hsm) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2Hsm) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudhsmV2Hsm) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1627,7 +1877,7 @@ func (j *jsiiProxy_CloudhsmV2Hsm) TimeoutsInput() *CloudhsmV2HsmTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html aws_cloudhsm_v2_hsm} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm aws_cloudhsm_v2_hsm} Resource.
 func NewCloudhsmV2Hsm(scope constructs.Construct, id *string, config *CloudhsmV2HsmConfig) CloudhsmV2Hsm {
 	_init_.Initialize()
 
@@ -1642,7 +1892,7 @@ func NewCloudhsmV2Hsm(scope constructs.Construct, id *string, config *CloudhsmV2
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html aws_cloudhsm_v2_hsm} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm aws_cloudhsm_v2_hsm} Resource.
 func NewCloudhsmV2Hsm_Override(c CloudhsmV2Hsm, scope constructs.Construct, id *string, config *CloudhsmV2HsmConfig) {
 	_init_.Initialize()
 
@@ -1669,7 +1919,7 @@ func (j *jsiiProxy_CloudhsmV2Hsm) SetClusterId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudhsmV2Hsm) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudhsmV2Hsm) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1757,12 +2007,40 @@ func (c *jsiiProxy_CloudhsmV2Hsm) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudhsmV2Hsm) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudhsmV2Hsm) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2Hsm) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1799,12 +2077,54 @@ func (c *jsiiProxy_CloudhsmV2Hsm) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudhsmV2Hsm) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2Hsm) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudhsmV2Hsm) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2Hsm) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1945,32 +2265,32 @@ func (c *jsiiProxy_CloudhsmV2Hsm) ToTerraform() interface{} {
 // AWS CloudHSM.
 type CloudhsmV2HsmConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html#cluster_id CloudhsmV2Hsm#cluster_id}.
-	ClusterId *string `json:"clusterId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html#availability_zone CloudhsmV2Hsm#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html#ip_address CloudhsmV2Hsm#ip_address}.
-	IpAddress *string `json:"ipAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html#subnet_id CloudhsmV2Hsm#subnet_id}.
-	SubnetId *string `json:"subnetId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm#cluster_id CloudhsmV2Hsm#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm#availability_zone CloudhsmV2Hsm#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm#ip_address CloudhsmV2Hsm#ip_address}.
+	IpAddress *string `json:"ipAddress" yaml:"ipAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm#subnet_id CloudhsmV2Hsm#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html#timeouts CloudhsmV2Hsm#timeouts}
-	Timeouts *CloudhsmV2HsmTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm#timeouts CloudhsmV2Hsm#timeouts}
+	Timeouts *CloudhsmV2HsmTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type CloudhsmV2HsmTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html#create CloudhsmV2Hsm#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm.html#delete CloudhsmV2Hsm#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm#create CloudhsmV2Hsm#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudhsm_v2_hsm#delete CloudhsmV2Hsm#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type CloudhsmV2HsmTimeoutsOutputReference interface {
@@ -1987,12 +2307,17 @@ type CloudhsmV2HsmTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2074,8 +2399,8 @@ func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2084,7 +2409,7 @@ func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) TerraformResource() cdk
 	return returns
 }
 
-func NewCloudhsmV2HsmTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudhsmV2HsmTimeoutsOutputReference {
+func NewCloudhsmV2HsmTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudhsmV2HsmTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference{}
@@ -2098,7 +2423,7 @@ func NewCloudhsmV2HsmTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewCloudhsmV2HsmTimeoutsOutputReference_Override(c CloudhsmV2HsmTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudhsmV2HsmTimeoutsOutputReference_Override(c CloudhsmV2HsmTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2148,7 +2473,7 @@ func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2157,12 +2482,40 @@ func (j *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) SetTerraformResource(va
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2199,12 +2552,54 @@ func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2256,7 +2651,7 @@ func (c *jsiiProxy_CloudhsmV2HsmTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster.html aws_cloudhsm_v2_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster aws_cloudhsm_v2_cluster}.
 type DataAwsCloudhsmV2Cluster interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
@@ -2267,8 +2662,8 @@ type DataAwsCloudhsmV2Cluster interface {
 	SetClusterState(val *string)
 	ClusterStateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2288,10 +2683,15 @@ type DataAwsCloudhsmV2Cluster interface {
 	VpcId() *string
 	AddOverride(path *string, value interface{})
 	ClusterCertificates(index *string) DataAwsCloudhsmV2ClusterClusterCertificates
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetClusterState()
@@ -2367,8 +2767,8 @@ func (j *jsiiProxy_DataAwsCloudhsmV2Cluster) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudhsmV2Cluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudhsmV2Cluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2517,7 +2917,7 @@ func (j *jsiiProxy_DataAwsCloudhsmV2Cluster) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster.html aws_cloudhsm_v2_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster aws_cloudhsm_v2_cluster} Data Source.
 func NewDataAwsCloudhsmV2Cluster(scope constructs.Construct, id *string, config *DataAwsCloudhsmV2ClusterConfig) DataAwsCloudhsmV2Cluster {
 	_init_.Initialize()
 
@@ -2532,7 +2932,7 @@ func NewDataAwsCloudhsmV2Cluster(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster.html aws_cloudhsm_v2_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster aws_cloudhsm_v2_cluster} Data Source.
 func NewDataAwsCloudhsmV2Cluster_Override(d DataAwsCloudhsmV2Cluster, scope constructs.Construct, id *string, config *DataAwsCloudhsmV2ClusterConfig) {
 	_init_.Initialize()
 
@@ -2559,7 +2959,7 @@ func (j *jsiiProxy_DataAwsCloudhsmV2Cluster) SetClusterState(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudhsmV2Cluster) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudhsmV2Cluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2644,12 +3044,40 @@ func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) ClusterCertificates(index *string) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2686,12 +3114,54 @@ func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2Cluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2808,12 +3278,19 @@ type DataAwsCloudhsmV2ClusterClusterCertificates interface {
 	ManufacturerHardwareCertificate() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2892,8 +3369,8 @@ func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2902,15 +3379,25 @@ func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudhsmV2ClusterClusterCertificates {
+func NewDataAwsCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudhsmV2ClusterClusterCertificates {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2ClusterClusterCertificates",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2918,12 +3405,12 @@ func NewDataAwsCloudhsmV2ClusterClusterCertificates(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewDataAwsCloudhsmV2ClusterClusterCertificates_Override(d DataAwsCloudhsmV2ClusterClusterCertificates, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudhsmV2ClusterClusterCertificates_Override(d DataAwsCloudhsmV2ClusterClusterCertificates, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudhsm.DataAwsCloudhsmV2ClusterClusterCertificates",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2944,7 +3431,7 @@ func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2952,13 +3439,49 @@ func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2995,12 +3518,54 @@ func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3025,15 +3590,15 @@ func (d *jsiiProxy_DataAwsCloudhsmV2ClusterClusterCertificates) InterpolationFor
 // AWS CloudHSM.
 type DataAwsCloudhsmV2ClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster.html#cluster_id DataAwsCloudhsmV2Cluster#cluster_id}.
-	ClusterId *string `json:"clusterId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster.html#cluster_state DataAwsCloudhsmV2Cluster#cluster_state}.
-	ClusterState *string `json:"clusterState"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster#cluster_id DataAwsCloudhsmV2Cluster#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudhsm_v2_cluster#cluster_state DataAwsCloudhsmV2Cluster#cluster_state}.
+	ClusterState *string `json:"clusterState" yaml:"clusterState"`
 }

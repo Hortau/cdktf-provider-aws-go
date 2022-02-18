@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/qldb/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger.html aws_qldb_ledger}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger aws_qldb_ledger}.
 type DataAwsQldbLedger interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DeletionProtection() interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DeletionProtection() cdktf.IResolvable
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37,10 +37,15 @@ type DataAwsQldbLedger interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -85,8 +90,8 @@ func (j *jsiiProxy_DataAwsQldbLedger) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsQldbLedger) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsQldbLedger) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -95,8 +100,8 @@ func (j *jsiiProxy_DataAwsQldbLedger) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsQldbLedger) DeletionProtection() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsQldbLedger) DeletionProtection() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"deletionProtection",
@@ -245,7 +250,7 @@ func (j *jsiiProxy_DataAwsQldbLedger) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger.html aws_qldb_ledger} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger aws_qldb_ledger} Data Source.
 func NewDataAwsQldbLedger(scope constructs.Construct, id *string, config *DataAwsQldbLedgerConfig) DataAwsQldbLedger {
 	_init_.Initialize()
 
@@ -260,7 +265,7 @@ func NewDataAwsQldbLedger(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger.html aws_qldb_ledger} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger aws_qldb_ledger} Data Source.
 func NewDataAwsQldbLedger_Override(d DataAwsQldbLedger, scope constructs.Construct, id *string, config *DataAwsQldbLedgerConfig) {
 	_init_.Initialize()
 
@@ -271,7 +276,7 @@ func NewDataAwsQldbLedger_Override(d DataAwsQldbLedger, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DataAwsQldbLedger) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsQldbLedger) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -351,12 +356,40 @@ func (d *jsiiProxy_DataAwsQldbLedger) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsQldbLedger) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsQldbLedger) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsQldbLedger) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -393,12 +426,54 @@ func (d *jsiiProxy_DataAwsQldbLedger) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsQldbLedger) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsQldbLedger) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsQldbLedger) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsQldbLedger) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -499,25 +574,25 @@ func (d *jsiiProxy_DataAwsQldbLedger) ToTerraform() interface{} {
 // AWS Quantum Ledger Database.
 type DataAwsQldbLedgerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger.html#name DataAwsQldbLedger#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/qldb_ledger#name DataAwsQldbLedger#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html aws_qldb_ledger}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger aws_qldb_ledger}.
 type QldbLedger interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeletionProtection() interface{}
 	SetDeletionProtection(val interface{})
 	DeletionProtectionInput() interface{}
@@ -538,20 +613,25 @@ type QldbLedger interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDeletionProtection()
@@ -600,8 +680,8 @@ func (j *jsiiProxy_QldbLedger) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QldbLedger) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QldbLedger) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -750,8 +830,8 @@ func (j *jsiiProxy_QldbLedger) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QldbLedger) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QldbLedger) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -760,8 +840,8 @@ func (j *jsiiProxy_QldbLedger) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QldbLedger) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QldbLedger) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -770,8 +850,8 @@ func (j *jsiiProxy_QldbLedger) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QldbLedger) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QldbLedger) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -780,8 +860,8 @@ func (j *jsiiProxy_QldbLedger) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QldbLedger) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QldbLedger) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -820,7 +900,7 @@ func (j *jsiiProxy_QldbLedger) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html aws_qldb_ledger} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger aws_qldb_ledger} Resource.
 func NewQldbLedger(scope constructs.Construct, id *string, config *QldbLedgerConfig) QldbLedger {
 	_init_.Initialize()
 
@@ -835,7 +915,7 @@ func NewQldbLedger(scope constructs.Construct, id *string, config *QldbLedgerCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html aws_qldb_ledger} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger aws_qldb_ledger} Resource.
 func NewQldbLedger_Override(q QldbLedger, scope constructs.Construct, id *string, config *QldbLedgerConfig) {
 	_init_.Initialize()
 
@@ -846,7 +926,7 @@ func NewQldbLedger_Override(q QldbLedger, scope constructs.Construct, id *string
 	)
 }
 
-func (j *jsiiProxy_QldbLedger) SetCount(val interface{}) {
+func (j *jsiiProxy_QldbLedger) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -902,7 +982,7 @@ func (j *jsiiProxy_QldbLedger) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_QldbLedger) SetTags(val interface{}) {
+func (j *jsiiProxy_QldbLedger) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -910,7 +990,7 @@ func (j *jsiiProxy_QldbLedger) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_QldbLedger) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_QldbLedger) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -958,12 +1038,40 @@ func (q *jsiiProxy_QldbLedger) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (q *jsiiProxy_QldbLedger) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QldbLedger) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QldbLedger) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1000,12 +1108,54 @@ func (q *jsiiProxy_QldbLedger) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (q *jsiiProxy_QldbLedger) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QldbLedger) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QldbLedger) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QldbLedger) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1138,21 +1288,21 @@ func (q *jsiiProxy_QldbLedger) ToTerraform() interface{} {
 // AWS Quantum Ledger Database.
 type QldbLedgerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html#permissions_mode QldbLedger#permissions_mode}.
-	PermissionsMode *string `json:"permissionsMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html#deletion_protection QldbLedger#deletion_protection}.
-	DeletionProtection interface{} `json:"deletionProtection"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html#name QldbLedger#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html#tags QldbLedger#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger.html#tags_all QldbLedger#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger#permissions_mode QldbLedger#permissions_mode}.
+	PermissionsMode *string `json:"permissionsMode" yaml:"permissionsMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger#deletion_protection QldbLedger#deletion_protection}.
+	DeletionProtection interface{} `json:"deletionProtection" yaml:"deletionProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger#name QldbLedger#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger#tags QldbLedger#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/qldb_ledger#tags_all QldbLedger#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

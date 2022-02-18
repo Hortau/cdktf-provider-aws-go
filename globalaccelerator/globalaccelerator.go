@@ -9,18 +9,18 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/globalaccelerator/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator.html aws_globalaccelerator_accelerator}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator aws_globalaccelerator_accelerator}.
 type DataAwsGlobalacceleratorAccelerator interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsName() *string
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	HostedZoneId() *string
@@ -35,18 +35,23 @@ type DataAwsGlobalacceleratorAccelerator interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	Attributes(index *string) DataAwsGlobalacceleratorAcceleratorAttributes
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	IpSets(index *string) DataAwsGlobalacceleratorAcceleratorIpSets
 	OverrideLogicalId(newLogicalId *string)
@@ -94,8 +99,8 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -124,8 +129,8 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) DnsName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -244,8 +249,8 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) RawOverrides() interface
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -254,8 +259,8 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -294,7 +299,7 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator.html aws_globalaccelerator_accelerator} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator aws_globalaccelerator_accelerator} Data Source.
 func NewDataAwsGlobalacceleratorAccelerator(scope constructs.Construct, id *string, config *DataAwsGlobalacceleratorAcceleratorConfig) DataAwsGlobalacceleratorAccelerator {
 	_init_.Initialize()
 
@@ -309,7 +314,7 @@ func NewDataAwsGlobalacceleratorAccelerator(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator.html aws_globalaccelerator_accelerator} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator aws_globalaccelerator_accelerator} Data Source.
 func NewDataAwsGlobalacceleratorAccelerator_Override(d DataAwsGlobalacceleratorAccelerator, scope constructs.Construct, id *string, config *DataAwsGlobalacceleratorAcceleratorConfig) {
 	_init_.Initialize()
 
@@ -320,7 +325,7 @@ func NewDataAwsGlobalacceleratorAccelerator_Override(d DataAwsGlobalacceleratorA
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -360,7 +365,7 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) SetProvider(val cdktf.Te
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsGlobalacceleratorAccelerator) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -421,12 +426,40 @@ func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) Attributes(index *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -463,12 +496,54 @@ func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAccelerator) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -599,17 +674,24 @@ type DataAwsGlobalacceleratorAcceleratorAttributes interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	FlowLogsEnabled() interface{}
+	FlowLogsEnabled() cdktf.IResolvable
 	FlowLogsS3Bucket() *string
 	FlowLogsS3Prefix() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -628,8 +710,8 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) ComplexCompute
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) FlowLogsEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) FlowLogsEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"flowLogsEnabled",
@@ -668,8 +750,8 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -678,15 +760,25 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) TerraformResou
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsGlobalacceleratorAcceleratorAttributes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsGlobalacceleratorAcceleratorAttributes {
+func NewDataAwsGlobalacceleratorAcceleratorAttributes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsGlobalacceleratorAcceleratorAttributes {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -694,12 +786,12 @@ func NewDataAwsGlobalacceleratorAcceleratorAttributes(terraformResource cdktf.IT
 }
 
 // Experimental.
-func NewDataAwsGlobalacceleratorAcceleratorAttributes_Override(d DataAwsGlobalacceleratorAcceleratorAttributes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsGlobalacceleratorAcceleratorAttributes_Override(d DataAwsGlobalacceleratorAcceleratorAttributes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorAttributes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -720,7 +812,7 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -728,13 +820,49 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) SetTerraformRe
 	)
 }
 
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -771,12 +899,54 @@ func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetNumberAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -801,17 +971,17 @@ func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorAttributes) InterpolationF
 // AWS Global Accelerator.
 type DataAwsGlobalacceleratorAcceleratorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator.html#name DataAwsGlobalacceleratorAccelerator#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator.html#tags DataAwsGlobalacceleratorAccelerator#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator#name DataAwsGlobalacceleratorAccelerator#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/globalaccelerator_accelerator#tags DataAwsGlobalacceleratorAccelerator#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsGlobalacceleratorAcceleratorIpSets interface {
@@ -822,12 +992,19 @@ type DataAwsGlobalacceleratorAcceleratorIpSets interface {
 	IpFamily() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -876,8 +1053,8 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -886,15 +1063,25 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) TerraformResource(
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsGlobalacceleratorAcceleratorIpSets {
+func NewDataAwsGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsGlobalacceleratorAcceleratorIpSets {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets{}
 
 	_jsii_.Create(
 		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -902,12 +1089,12 @@ func NewDataAwsGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewDataAwsGlobalacceleratorAcceleratorIpSets_Override(d DataAwsGlobalacceleratorAcceleratorIpSets, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsGlobalacceleratorAcceleratorIpSets_Override(d DataAwsGlobalacceleratorAcceleratorIpSets, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.globalaccelerator.DataAwsGlobalacceleratorAcceleratorIpSets",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -928,7 +1115,7 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -936,13 +1123,49 @@ func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -979,12 +1202,54 @@ func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1006,15 +1271,15 @@ func (d *jsiiProxy_DataAwsGlobalacceleratorAcceleratorIpSets) InterpolationForAt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html aws_globalaccelerator_accelerator}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator aws_globalaccelerator_accelerator}.
 type GlobalacceleratorAccelerator interface {
 	cdktf.TerraformResource
 	Attributes() GlobalacceleratorAcceleratorAttributesOutputReference
 	AttributesInput() *GlobalacceleratorAcceleratorAttributes
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsName() *string
@@ -1037,22 +1302,27 @@ type GlobalacceleratorAccelerator interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() GlobalacceleratorAcceleratorTimeoutsOutputReference
 	TimeoutsInput() *GlobalacceleratorAcceleratorTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	IpSets(index *string) GlobalacceleratorAcceleratorIpSets
 	OverrideLogicalId(newLogicalId *string)
@@ -1116,8 +1386,8 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlobalacceleratorAccelerator) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1286,8 +1556,8 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlobalacceleratorAccelerator) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1296,8 +1566,8 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1306,8 +1576,8 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1316,8 +1586,8 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlobalacceleratorAccelerator) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1376,7 +1646,7 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) TimeoutsInput() *Globalaccelera
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html aws_globalaccelerator_accelerator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator aws_globalaccelerator_accelerator} Resource.
 func NewGlobalacceleratorAccelerator(scope constructs.Construct, id *string, config *GlobalacceleratorAcceleratorConfig) GlobalacceleratorAccelerator {
 	_init_.Initialize()
 
@@ -1391,7 +1661,7 @@ func NewGlobalacceleratorAccelerator(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html aws_globalaccelerator_accelerator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator aws_globalaccelerator_accelerator} Resource.
 func NewGlobalacceleratorAccelerator_Override(g GlobalacceleratorAccelerator, scope constructs.Construct, id *string, config *GlobalacceleratorAcceleratorConfig) {
 	_init_.Initialize()
 
@@ -1402,7 +1672,7 @@ func NewGlobalacceleratorAccelerator_Override(g GlobalacceleratorAccelerator, sc
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) SetCount(val interface{}) {
+func (j *jsiiProxy_GlobalacceleratorAccelerator) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1458,7 +1728,7 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) SetProvider(val cdktf.Terraform
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) SetTags(val interface{}) {
+func (j *jsiiProxy_GlobalacceleratorAccelerator) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1466,7 +1736,7 @@ func (j *jsiiProxy_GlobalacceleratorAccelerator) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorAccelerator) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlobalacceleratorAccelerator) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1514,12 +1784,40 @@ func (g *jsiiProxy_GlobalacceleratorAccelerator) AddOverride(path *string, value
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorAccelerator) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorAccelerator) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAccelerator) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1556,12 +1854,54 @@ func (g *jsiiProxy_GlobalacceleratorAccelerator) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorAccelerator) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAccelerator) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorAccelerator) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAccelerator) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1737,12 +2077,12 @@ func (g *jsiiProxy_GlobalacceleratorAccelerator) ToTerraform() interface{} {
 }
 
 type GlobalacceleratorAcceleratorAttributes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#flow_logs_enabled GlobalacceleratorAccelerator#flow_logs_enabled}.
-	FlowLogsEnabled interface{} `json:"flowLogsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#flow_logs_s3_bucket GlobalacceleratorAccelerator#flow_logs_s3_bucket}.
-	FlowLogsS3Bucket *string `json:"flowLogsS3Bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#flow_logs_s3_prefix GlobalacceleratorAccelerator#flow_logs_s3_prefix}.
-	FlowLogsS3Prefix *string `json:"flowLogsS3Prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#flow_logs_enabled GlobalacceleratorAccelerator#flow_logs_enabled}.
+	FlowLogsEnabled interface{} `json:"flowLogsEnabled" yaml:"flowLogsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#flow_logs_s3_bucket GlobalacceleratorAccelerator#flow_logs_s3_bucket}.
+	FlowLogsS3Bucket *string `json:"flowLogsS3Bucket" yaml:"flowLogsS3Bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#flow_logs_s3_prefix GlobalacceleratorAccelerator#flow_logs_s3_prefix}.
+	FlowLogsS3Prefix *string `json:"flowLogsS3Prefix" yaml:"flowLogsS3Prefix"`
 }
 
 type GlobalacceleratorAcceleratorAttributesOutputReference interface {
@@ -1762,12 +2102,17 @@ type GlobalacceleratorAcceleratorAttributesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFlowLogsEnabled()
@@ -1870,8 +2215,8 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1880,7 +2225,7 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) Terraf
 	return returns
 }
 
-func NewGlobalacceleratorAcceleratorAttributesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorAcceleratorAttributesOutputReference {
+func NewGlobalacceleratorAcceleratorAttributesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorAcceleratorAttributesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference{}
@@ -1894,7 +2239,7 @@ func NewGlobalacceleratorAcceleratorAttributesOutputReference(terraformResource 
 	return &j
 }
 
-func NewGlobalacceleratorAcceleratorAttributesOutputReference_Override(g GlobalacceleratorAcceleratorAttributesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlobalacceleratorAcceleratorAttributesOutputReference_Override(g GlobalacceleratorAcceleratorAttributesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1952,7 +2297,7 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1961,12 +2306,40 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) SetTer
 }
 
 // Experimental.
-func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2003,12 +2376,54 @@ func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetNum
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2071,31 +2486,31 @@ func (g *jsiiProxy_GlobalacceleratorAcceleratorAttributesOutputReference) ResetF
 // AWS Global Accelerator.
 type GlobalacceleratorAcceleratorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#name GlobalacceleratorAccelerator#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#name GlobalacceleratorAccelerator#name}.
+	Name *string `json:"name" yaml:"name"`
 	// attributes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#attributes GlobalacceleratorAccelerator#attributes}
-	Attributes *GlobalacceleratorAcceleratorAttributes `json:"attributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#enabled GlobalacceleratorAccelerator#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#ip_address_type GlobalacceleratorAccelerator#ip_address_type}.
-	IpAddressType *string `json:"ipAddressType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#tags GlobalacceleratorAccelerator#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#tags_all GlobalacceleratorAccelerator#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#attributes GlobalacceleratorAccelerator#attributes}
+	Attributes *GlobalacceleratorAcceleratorAttributes `json:"attributes" yaml:"attributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#enabled GlobalacceleratorAccelerator#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#ip_address_type GlobalacceleratorAccelerator#ip_address_type}.
+	IpAddressType *string `json:"ipAddressType" yaml:"ipAddressType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#tags GlobalacceleratorAccelerator#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#tags_all GlobalacceleratorAccelerator#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#timeouts GlobalacceleratorAccelerator#timeouts}
-	Timeouts *GlobalacceleratorAcceleratorTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#timeouts GlobalacceleratorAccelerator#timeouts}
+	Timeouts *GlobalacceleratorAcceleratorTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type GlobalacceleratorAcceleratorIpSets interface {
@@ -2106,12 +2521,19 @@ type GlobalacceleratorAcceleratorIpSets interface {
 	IpFamily() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2160,8 +2582,8 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2170,15 +2592,25 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) TerraformResource() cdktf
 	return returns
 }
 
+func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) GlobalacceleratorAcceleratorIpSets {
+func NewGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) GlobalacceleratorAcceleratorIpSets {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlobalacceleratorAcceleratorIpSets{}
 
 	_jsii_.Create(
 		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorIpSets",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2186,12 +2618,12 @@ func NewGlobalacceleratorAcceleratorIpSets(terraformResource cdktf.ITerraformRes
 }
 
 // Experimental.
-func NewGlobalacceleratorAcceleratorIpSets_Override(g GlobalacceleratorAcceleratorIpSets, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewGlobalacceleratorAcceleratorIpSets_Override(g GlobalacceleratorAcceleratorIpSets, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.globalaccelerator.GlobalacceleratorAcceleratorIpSets",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		g,
 	)
 }
@@ -2212,7 +2644,7 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2220,13 +2652,49 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) SetTerraformResource(val 
 	)
 }
 
+func (j *jsiiProxy_GlobalacceleratorAcceleratorIpSets) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2263,12 +2731,54 @@ func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2291,10 +2801,10 @@ func (g *jsiiProxy_GlobalacceleratorAcceleratorIpSets) InterpolationForAttribute
 }
 
 type GlobalacceleratorAcceleratorTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#create GlobalacceleratorAccelerator#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator.html#update GlobalacceleratorAccelerator#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#create GlobalacceleratorAccelerator#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_accelerator#update GlobalacceleratorAccelerator#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type GlobalacceleratorAcceleratorTimeoutsOutputReference interface {
@@ -2308,15 +2818,20 @@ type GlobalacceleratorAcceleratorTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2378,8 +2893,8 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2408,7 +2923,7 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) UpdateIn
 	return returns
 }
 
-func NewGlobalacceleratorAcceleratorTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorAcceleratorTimeoutsOutputReference {
+func NewGlobalacceleratorAcceleratorTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorAcceleratorTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference{}
@@ -2422,7 +2937,7 @@ func NewGlobalacceleratorAcceleratorTimeoutsOutputReference(terraformResource cd
 	return &j
 }
 
-func NewGlobalacceleratorAcceleratorTimeoutsOutputReference_Override(g GlobalacceleratorAcceleratorTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlobalacceleratorAcceleratorTimeoutsOutputReference_Override(g GlobalacceleratorAcceleratorTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2464,7 +2979,7 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2481,12 +2996,40 @@ func (j *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) SetUpdat
 }
 
 // Experimental.
-func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2523,12 +3066,54 @@ func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetNumbe
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2580,19 +3165,19 @@ func (g *jsiiProxy_GlobalacceleratorAcceleratorTimeoutsOutputReference) ResetUpd
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html aws_globalaccelerator_endpoint_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group aws_globalaccelerator_endpoint_group}.
 type GlobalacceleratorEndpointGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	EndpointConfiguration() *[]*GlobalacceleratorEndpointGroupEndpointConfiguration
-	SetEndpointConfiguration(val *[]*GlobalacceleratorEndpointGroupEndpointConfiguration)
-	EndpointConfigurationInput() *[]*GlobalacceleratorEndpointGroupEndpointConfiguration
+	EndpointConfiguration() interface{}
+	SetEndpointConfiguration(val interface{})
+	EndpointConfigurationInput() interface{}
 	EndpointGroupRegion() *string
 	SetEndpointGroupRegion(val *string)
 	EndpointGroupRegionInput() *string
@@ -2617,9 +3202,9 @@ type GlobalacceleratorEndpointGroup interface {
 	SetListenerArn(val *string)
 	ListenerArnInput() *string
 	Node() constructs.Node
-	PortOverride() *[]*GlobalacceleratorEndpointGroupPortOverride
-	SetPortOverride(val *[]*GlobalacceleratorEndpointGroupPortOverride)
-	PortOverrideInput() *[]*GlobalacceleratorEndpointGroupPortOverride
+	PortOverride() interface{}
+	SetPortOverride(val interface{})
+	PortOverrideInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
@@ -2635,10 +3220,15 @@ type GlobalacceleratorEndpointGroup interface {
 	SetTrafficDialPercentage(val *float64)
 	TrafficDialPercentageInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *GlobalacceleratorEndpointGroupTimeouts)
@@ -2694,8 +3284,8 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2714,8 +3304,8 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) EndpointConfiguration() *[]*GlobalacceleratorEndpointGroupEndpointConfiguration {
-	var returns *[]*GlobalacceleratorEndpointGroupEndpointConfiguration
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) EndpointConfiguration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"endpointConfiguration",
@@ -2724,8 +3314,8 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) EndpointConfiguration() *[]*G
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) EndpointConfigurationInput() *[]*GlobalacceleratorEndpointGroupEndpointConfiguration {
-	var returns *[]*GlobalacceleratorEndpointGroupEndpointConfiguration
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) EndpointConfigurationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"endpointConfigurationInput",
@@ -2904,8 +3494,8 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) PortOverride() *[]*GlobalacceleratorEndpointGroupPortOverride {
-	var returns *[]*GlobalacceleratorEndpointGroupPortOverride
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) PortOverride() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"portOverride",
@@ -2914,8 +3504,8 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) PortOverride() *[]*Globalacce
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) PortOverrideInput() *[]*GlobalacceleratorEndpointGroupPortOverride {
-	var returns *[]*GlobalacceleratorEndpointGroupPortOverride
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) PortOverrideInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"portOverrideInput",
@@ -3034,7 +3624,7 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) TrafficDialPercentageInput() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html aws_globalaccelerator_endpoint_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group aws_globalaccelerator_endpoint_group} Resource.
 func NewGlobalacceleratorEndpointGroup(scope constructs.Construct, id *string, config *GlobalacceleratorEndpointGroupConfig) GlobalacceleratorEndpointGroup {
 	_init_.Initialize()
 
@@ -3049,7 +3639,7 @@ func NewGlobalacceleratorEndpointGroup(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html aws_globalaccelerator_endpoint_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group aws_globalaccelerator_endpoint_group} Resource.
 func NewGlobalacceleratorEndpointGroup_Override(g GlobalacceleratorEndpointGroup, scope constructs.Construct, id *string, config *GlobalacceleratorEndpointGroupConfig) {
 	_init_.Initialize()
 
@@ -3060,7 +3650,7 @@ func NewGlobalacceleratorEndpointGroup_Override(g GlobalacceleratorEndpointGroup
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3076,7 +3666,7 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetDependsOn(val *[]*string) 
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetEndpointConfiguration(val *[]*GlobalacceleratorEndpointGroupEndpointConfiguration) {
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetEndpointConfiguration(val interface{}) {
 	_jsii_.Set(
 		j,
 		"endpointConfiguration",
@@ -3140,7 +3730,7 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetListenerArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetPortOverride(val *[]*GlobalacceleratorEndpointGroupPortOverride) {
+func (j *jsiiProxy_GlobalacceleratorEndpointGroup) SetPortOverride(val interface{}) {
 	_jsii_.Set(
 		j,
 		"portOverride",
@@ -3212,12 +3802,40 @@ func (g *jsiiProxy_GlobalacceleratorEndpointGroup) AddOverride(path *string, val
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3254,12 +3872,54 @@ func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3448,66 +4108,66 @@ func (g *jsiiProxy_GlobalacceleratorEndpointGroup) ToTerraform() interface{} {
 // AWS Global Accelerator.
 type GlobalacceleratorEndpointGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#listener_arn GlobalacceleratorEndpointGroup#listener_arn}.
-	ListenerArn *string `json:"listenerArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#listener_arn GlobalacceleratorEndpointGroup#listener_arn}.
+	ListenerArn *string `json:"listenerArn" yaml:"listenerArn"`
 	// endpoint_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#endpoint_configuration GlobalacceleratorEndpointGroup#endpoint_configuration}
-	EndpointConfiguration *[]*GlobalacceleratorEndpointGroupEndpointConfiguration `json:"endpointConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#endpoint_group_region GlobalacceleratorEndpointGroup#endpoint_group_region}.
-	EndpointGroupRegion *string `json:"endpointGroupRegion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#health_check_interval_seconds GlobalacceleratorEndpointGroup#health_check_interval_seconds}.
-	HealthCheckIntervalSeconds *float64 `json:"healthCheckIntervalSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#health_check_path GlobalacceleratorEndpointGroup#health_check_path}.
-	HealthCheckPath *string `json:"healthCheckPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#health_check_port GlobalacceleratorEndpointGroup#health_check_port}.
-	HealthCheckPort *float64 `json:"healthCheckPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#health_check_protocol GlobalacceleratorEndpointGroup#health_check_protocol}.
-	HealthCheckProtocol *string `json:"healthCheckProtocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#endpoint_configuration GlobalacceleratorEndpointGroup#endpoint_configuration}
+	EndpointConfiguration interface{} `json:"endpointConfiguration" yaml:"endpointConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#endpoint_group_region GlobalacceleratorEndpointGroup#endpoint_group_region}.
+	EndpointGroupRegion *string `json:"endpointGroupRegion" yaml:"endpointGroupRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#health_check_interval_seconds GlobalacceleratorEndpointGroup#health_check_interval_seconds}.
+	HealthCheckIntervalSeconds *float64 `json:"healthCheckIntervalSeconds" yaml:"healthCheckIntervalSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#health_check_path GlobalacceleratorEndpointGroup#health_check_path}.
+	HealthCheckPath *string `json:"healthCheckPath" yaml:"healthCheckPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#health_check_port GlobalacceleratorEndpointGroup#health_check_port}.
+	HealthCheckPort *float64 `json:"healthCheckPort" yaml:"healthCheckPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#health_check_protocol GlobalacceleratorEndpointGroup#health_check_protocol}.
+	HealthCheckProtocol *string `json:"healthCheckProtocol" yaml:"healthCheckProtocol"`
 	// port_override block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#port_override GlobalacceleratorEndpointGroup#port_override}
-	PortOverride *[]*GlobalacceleratorEndpointGroupPortOverride `json:"portOverride"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#threshold_count GlobalacceleratorEndpointGroup#threshold_count}.
-	ThresholdCount *float64 `json:"thresholdCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#port_override GlobalacceleratorEndpointGroup#port_override}
+	PortOverride interface{} `json:"portOverride" yaml:"portOverride"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#threshold_count GlobalacceleratorEndpointGroup#threshold_count}.
+	ThresholdCount *float64 `json:"thresholdCount" yaml:"thresholdCount"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#timeouts GlobalacceleratorEndpointGroup#timeouts}
-	Timeouts *GlobalacceleratorEndpointGroupTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#traffic_dial_percentage GlobalacceleratorEndpointGroup#traffic_dial_percentage}.
-	TrafficDialPercentage *float64 `json:"trafficDialPercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#timeouts GlobalacceleratorEndpointGroup#timeouts}
+	Timeouts *GlobalacceleratorEndpointGroupTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#traffic_dial_percentage GlobalacceleratorEndpointGroup#traffic_dial_percentage}.
+	TrafficDialPercentage *float64 `json:"trafficDialPercentage" yaml:"trafficDialPercentage"`
 }
 
 type GlobalacceleratorEndpointGroupEndpointConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#client_ip_preservation_enabled GlobalacceleratorEndpointGroup#client_ip_preservation_enabled}.
-	ClientIpPreservationEnabled interface{} `json:"clientIpPreservationEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#endpoint_id GlobalacceleratorEndpointGroup#endpoint_id}.
-	EndpointId *string `json:"endpointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#weight GlobalacceleratorEndpointGroup#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#client_ip_preservation_enabled GlobalacceleratorEndpointGroup#client_ip_preservation_enabled}.
+	ClientIpPreservationEnabled interface{} `json:"clientIpPreservationEnabled" yaml:"clientIpPreservationEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#endpoint_id GlobalacceleratorEndpointGroup#endpoint_id}.
+	EndpointId *string `json:"endpointId" yaml:"endpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#weight GlobalacceleratorEndpointGroup#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
 type GlobalacceleratorEndpointGroupPortOverride struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#endpoint_port GlobalacceleratorEndpointGroup#endpoint_port}.
-	EndpointPort *float64 `json:"endpointPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#listener_port GlobalacceleratorEndpointGroup#listener_port}.
-	ListenerPort *float64 `json:"listenerPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#endpoint_port GlobalacceleratorEndpointGroup#endpoint_port}.
+	EndpointPort *float64 `json:"endpointPort" yaml:"endpointPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#listener_port GlobalacceleratorEndpointGroup#listener_port}.
+	ListenerPort *float64 `json:"listenerPort" yaml:"listenerPort"`
 }
 
 type GlobalacceleratorEndpointGroupTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#create GlobalacceleratorEndpointGroup#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#delete GlobalacceleratorEndpointGroup#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group.html#update GlobalacceleratorEndpointGroup#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#create GlobalacceleratorEndpointGroup#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#delete GlobalacceleratorEndpointGroup#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_endpoint_group#update GlobalacceleratorEndpointGroup#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type GlobalacceleratorEndpointGroupTimeoutsOutputReference interface {
@@ -3524,15 +4184,20 @@ type GlobalacceleratorEndpointGroupTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -3615,8 +4280,8 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3645,7 +4310,7 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) Update
 	return returns
 }
 
-func NewGlobalacceleratorEndpointGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorEndpointGroupTimeoutsOutputReference {
+func NewGlobalacceleratorEndpointGroupTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorEndpointGroupTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference{}
@@ -3659,7 +4324,7 @@ func NewGlobalacceleratorEndpointGroupTimeoutsOutputReference(terraformResource 
 	return &j
 }
 
-func NewGlobalacceleratorEndpointGroupTimeoutsOutputReference_Override(g GlobalacceleratorEndpointGroupTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlobalacceleratorEndpointGroupTimeoutsOutputReference_Override(g GlobalacceleratorEndpointGroupTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3709,7 +4374,7 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3726,12 +4391,40 @@ func (j *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) SetUpd
 }
 
 // Experimental.
-func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3768,12 +4461,54 @@ func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetNum
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3833,7 +4568,7 @@ func (g *jsiiProxy_GlobalacceleratorEndpointGroupTimeoutsOutputReference) ResetU
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html aws_globalaccelerator_listener}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener aws_globalaccelerator_listener}.
 type GlobalacceleratorListener interface {
 	cdktf.TerraformResource
 	AcceleratorArn() *string
@@ -3844,8 +4579,8 @@ type GlobalacceleratorListener interface {
 	SetClientAffinity(val *string)
 	ClientAffinityInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3854,9 +4589,9 @@ type GlobalacceleratorListener interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
-	PortRange() *[]*GlobalacceleratorListenerPortRange
-	SetPortRange(val *[]*GlobalacceleratorListenerPortRange)
-	PortRangeInput() *[]*GlobalacceleratorListenerPortRange
+	PortRange() interface{}
+	SetPortRange(val interface{})
+	PortRangeInput() interface{}
 	Protocol() *string
 	SetProtocol(val *string)
 	ProtocolInput() *string
@@ -3869,10 +4604,15 @@ type GlobalacceleratorListener interface {
 	Timeouts() GlobalacceleratorListenerTimeoutsOutputReference
 	TimeoutsInput() *GlobalacceleratorListenerTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *GlobalacceleratorListenerTimeouts)
@@ -3950,8 +4690,8 @@ func (j *jsiiProxy_GlobalacceleratorListener) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorListener) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlobalacceleratorListener) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4020,8 +4760,8 @@ func (j *jsiiProxy_GlobalacceleratorListener) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorListener) PortRange() *[]*GlobalacceleratorListenerPortRange {
-	var returns *[]*GlobalacceleratorListenerPortRange
+func (j *jsiiProxy_GlobalacceleratorListener) PortRange() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"portRange",
@@ -4030,8 +4770,8 @@ func (j *jsiiProxy_GlobalacceleratorListener) PortRange() *[]*GlobalacceleratorL
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorListener) PortRangeInput() *[]*GlobalacceleratorListenerPortRange {
-	var returns *[]*GlobalacceleratorListenerPortRange
+func (j *jsiiProxy_GlobalacceleratorListener) PortRangeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"portRangeInput",
@@ -4130,7 +4870,7 @@ func (j *jsiiProxy_GlobalacceleratorListener) TimeoutsInput() *Globalaccelerator
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html aws_globalaccelerator_listener} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener aws_globalaccelerator_listener} Resource.
 func NewGlobalacceleratorListener(scope constructs.Construct, id *string, config *GlobalacceleratorListenerConfig) GlobalacceleratorListener {
 	_init_.Initialize()
 
@@ -4145,7 +4885,7 @@ func NewGlobalacceleratorListener(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html aws_globalaccelerator_listener} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener aws_globalaccelerator_listener} Resource.
 func NewGlobalacceleratorListener_Override(g GlobalacceleratorListener, scope constructs.Construct, id *string, config *GlobalacceleratorListenerConfig) {
 	_init_.Initialize()
 
@@ -4172,7 +4912,7 @@ func (j *jsiiProxy_GlobalacceleratorListener) SetClientAffinity(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorListener) SetCount(val interface{}) {
+func (j *jsiiProxy_GlobalacceleratorListener) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4196,7 +4936,7 @@ func (j *jsiiProxy_GlobalacceleratorListener) SetLifecycle(val *cdktf.TerraformR
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorListener) SetPortRange(val *[]*GlobalacceleratorListenerPortRange) {
+func (j *jsiiProxy_GlobalacceleratorListener) SetPortRange(val interface{}) {
 	_jsii_.Set(
 		j,
 		"portRange",
@@ -4260,12 +5000,40 @@ func (g *jsiiProxy_GlobalacceleratorListener) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorListener) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorListener) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorListener) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4302,12 +5070,54 @@ func (g *jsiiProxy_GlobalacceleratorListener) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorListener) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorListener) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorListener) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorListener) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4432,43 +5242,43 @@ func (g *jsiiProxy_GlobalacceleratorListener) ToTerraform() interface{} {
 // AWS Global Accelerator.
 type GlobalacceleratorListenerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#accelerator_arn GlobalacceleratorListener#accelerator_arn}.
-	AcceleratorArn *string `json:"acceleratorArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#accelerator_arn GlobalacceleratorListener#accelerator_arn}.
+	AcceleratorArn *string `json:"acceleratorArn" yaml:"acceleratorArn"`
 	// port_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#port_range GlobalacceleratorListener#port_range}
-	PortRange *[]*GlobalacceleratorListenerPortRange `json:"portRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#protocol GlobalacceleratorListener#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#client_affinity GlobalacceleratorListener#client_affinity}.
-	ClientAffinity *string `json:"clientAffinity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#port_range GlobalacceleratorListener#port_range}
+	PortRange interface{} `json:"portRange" yaml:"portRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#protocol GlobalacceleratorListener#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#client_affinity GlobalacceleratorListener#client_affinity}.
+	ClientAffinity *string `json:"clientAffinity" yaml:"clientAffinity"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#timeouts GlobalacceleratorListener#timeouts}
-	Timeouts *GlobalacceleratorListenerTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#timeouts GlobalacceleratorListener#timeouts}
+	Timeouts *GlobalacceleratorListenerTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type GlobalacceleratorListenerPortRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#from_port GlobalacceleratorListener#from_port}.
-	FromPort *float64 `json:"fromPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#to_port GlobalacceleratorListener#to_port}.
-	ToPort *float64 `json:"toPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#from_port GlobalacceleratorListener#from_port}.
+	FromPort *float64 `json:"fromPort" yaml:"fromPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#to_port GlobalacceleratorListener#to_port}.
+	ToPort *float64 `json:"toPort" yaml:"toPort"`
 }
 
 type GlobalacceleratorListenerTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#create GlobalacceleratorListener#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#delete GlobalacceleratorListener#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener.html#update GlobalacceleratorListener#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#create GlobalacceleratorListener#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#delete GlobalacceleratorListener#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/globalaccelerator_listener#update GlobalacceleratorListener#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type GlobalacceleratorListenerTimeoutsOutputReference interface {
@@ -4485,15 +5295,20 @@ type GlobalacceleratorListenerTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -4576,8 +5391,8 @@ func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4606,7 +5421,7 @@ func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) UpdateInput
 	return returns
 }
 
-func NewGlobalacceleratorListenerTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorListenerTimeoutsOutputReference {
+func NewGlobalacceleratorListenerTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlobalacceleratorListenerTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference{}
@@ -4620,7 +5435,7 @@ func NewGlobalacceleratorListenerTimeoutsOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewGlobalacceleratorListenerTimeoutsOutputReference_Override(g GlobalacceleratorListenerTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlobalacceleratorListenerTimeoutsOutputReference_Override(g GlobalacceleratorListenerTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4670,7 +5485,7 @@ func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4687,12 +5502,40 @@ func (j *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) SetUpdate(v
 }
 
 // Experimental.
-func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4729,12 +5572,54 @@ func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlobalacceleratorListenerTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

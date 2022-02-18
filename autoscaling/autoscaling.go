@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/autoscaling/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html aws_autoscaling_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment aws_autoscaling_attachment}.
 type AutoscalingAttachment interface {
 	cdktf.TerraformResource
 	AlbTargetGroupArn() *string
@@ -20,8 +20,8 @@ type AutoscalingAttachment interface {
 	AutoscalingGroupNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Elb() *string
@@ -40,10 +40,15 @@ type AutoscalingAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAlbTargetGroupArn()
@@ -120,8 +125,8 @@ func (j *jsiiProxy_AutoscalingAttachment) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -260,7 +265,7 @@ func (j *jsiiProxy_AutoscalingAttachment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html aws_autoscaling_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment aws_autoscaling_attachment} Resource.
 func NewAutoscalingAttachment(scope constructs.Construct, id *string, config *AutoscalingAttachmentConfig) AutoscalingAttachment {
 	_init_.Initialize()
 
@@ -275,7 +280,7 @@ func NewAutoscalingAttachment(scope constructs.Construct, id *string, config *Au
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html aws_autoscaling_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment aws_autoscaling_attachment} Resource.
 func NewAutoscalingAttachment_Override(a AutoscalingAttachment, scope constructs.Construct, id *string, config *AutoscalingAttachmentConfig) {
 	_init_.Initialize()
 
@@ -302,7 +307,7 @@ func (j *jsiiProxy_AutoscalingAttachment) SetAutoscalingGroupName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_AutoscalingAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -382,12 +387,40 @@ func (a *jsiiProxy_AutoscalingAttachment) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -424,12 +457,54 @@ func (a *jsiiProxy_AutoscalingAttachment) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -546,22 +621,22 @@ func (a *jsiiProxy_AutoscalingAttachment) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type AutoscalingAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html#autoscaling_group_name AutoscalingAttachment#autoscaling_group_name}.
-	AutoscalingGroupName *string `json:"autoscalingGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html#alb_target_group_arn AutoscalingAttachment#alb_target_group_arn}.
-	AlbTargetGroupArn *string `json:"albTargetGroupArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment.html#elb AutoscalingAttachment#elb}.
-	Elb *string `json:"elb"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment#autoscaling_group_name AutoscalingAttachment#autoscaling_group_name}.
+	AutoscalingGroupName *string `json:"autoscalingGroupName" yaml:"autoscalingGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment#alb_target_group_arn AutoscalingAttachment#alb_target_group_arn}.
+	AlbTargetGroupArn *string `json:"albTargetGroupArn" yaml:"albTargetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_attachment#elb AutoscalingAttachment#elb}.
+	Elb *string `json:"elb" yaml:"elb"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html aws_autoscaling_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group aws_autoscaling_group}.
 type AutoscalingGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -573,8 +648,8 @@ type AutoscalingGroup interface {
 	CapacityRebalanceInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultCooldown() *float64
 	SetDefaultCooldown(val *float64)
 	DefaultCooldownInput() *float64
@@ -601,9 +676,9 @@ type AutoscalingGroup interface {
 	SetHealthCheckType(val *string)
 	HealthCheckTypeInput() *string
 	Id() *string
-	InitialLifecycleHook() *[]*AutoscalingGroupInitialLifecycleHook
-	SetInitialLifecycleHook(val *[]*AutoscalingGroupInitialLifecycleHook)
-	InitialLifecycleHookInput() *[]*AutoscalingGroupInitialLifecycleHook
+	InitialLifecycleHook() interface{}
+	SetInitialLifecycleHook(val interface{})
+	InitialLifecycleHookInput() interface{}
 	InstanceRefresh() AutoscalingGroupInstanceRefreshOutputReference
 	InstanceRefreshInput() *AutoscalingGroupInstanceRefresh
 	LaunchConfiguration() *string
@@ -655,12 +730,12 @@ type AutoscalingGroup interface {
 	SuspendedProcesses() *[]*string
 	SetSuspendedProcesses(val *[]*string)
 	SuspendedProcessesInput() *[]*string
-	Tag() *[]*AutoscalingGroupTag
-	SetTag(val *[]*AutoscalingGroupTag)
-	TagInput() *[]*AutoscalingGroupTag
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tag() interface{}
+	SetTag(val interface{})
+	TagInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TargetGroupArns() *[]*string
 	SetTargetGroupArns(val *[]*string)
 	TargetGroupArnsInput() *[]*string
@@ -684,10 +759,15 @@ type AutoscalingGroup interface {
 	WarmPool() AutoscalingGroupWarmPoolOutputReference
 	WarmPoolInput() *AutoscalingGroupWarmPool
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutInstanceRefresh(value *AutoscalingGroupInstanceRefresh)
@@ -810,8 +890,8 @@ func (j *jsiiProxy_AutoscalingGroup) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1000,8 +1080,8 @@ func (j *jsiiProxy_AutoscalingGroup) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroup) InitialLifecycleHook() *[]*AutoscalingGroupInitialLifecycleHook {
-	var returns *[]*AutoscalingGroupInitialLifecycleHook
+func (j *jsiiProxy_AutoscalingGroup) InitialLifecycleHook() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"initialLifecycleHook",
@@ -1010,8 +1090,8 @@ func (j *jsiiProxy_AutoscalingGroup) InitialLifecycleHook() *[]*AutoscalingGroup
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroup) InitialLifecycleHookInput() *[]*AutoscalingGroupInitialLifecycleHook {
-	var returns *[]*AutoscalingGroupInitialLifecycleHook
+func (j *jsiiProxy_AutoscalingGroup) InitialLifecycleHookInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"initialLifecycleHookInput",
@@ -1380,8 +1460,8 @@ func (j *jsiiProxy_AutoscalingGroup) SuspendedProcessesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroup) Tag() *[]*AutoscalingGroupTag {
-	var returns *[]*AutoscalingGroupTag
+func (j *jsiiProxy_AutoscalingGroup) Tag() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tag",
@@ -1390,8 +1470,8 @@ func (j *jsiiProxy_AutoscalingGroup) Tag() *[]*AutoscalingGroupTag {
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroup) TagInput() *[]*AutoscalingGroupTag {
-	var returns *[]*AutoscalingGroupTag
+func (j *jsiiProxy_AutoscalingGroup) TagInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tagInput",
@@ -1400,8 +1480,8 @@ func (j *jsiiProxy_AutoscalingGroup) TagInput() *[]*AutoscalingGroupTag {
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1410,8 +1490,8 @@ func (j *jsiiProxy_AutoscalingGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1590,7 +1670,7 @@ func (j *jsiiProxy_AutoscalingGroup) WarmPoolInput() *AutoscalingGroupWarmPool {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html aws_autoscaling_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group aws_autoscaling_group} Resource.
 func NewAutoscalingGroup(scope constructs.Construct, id *string, config *AutoscalingGroupConfig) AutoscalingGroup {
 	_init_.Initialize()
 
@@ -1605,7 +1685,7 @@ func NewAutoscalingGroup(scope constructs.Construct, id *string, config *Autosca
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html aws_autoscaling_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group aws_autoscaling_group} Resource.
 func NewAutoscalingGroup_Override(a AutoscalingGroup, scope constructs.Construct, id *string, config *AutoscalingGroupConfig) {
 	_init_.Initialize()
 
@@ -1632,7 +1712,7 @@ func (j *jsiiProxy_AutoscalingGroup) SetCapacityRebalance(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_AutoscalingGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1704,7 +1784,7 @@ func (j *jsiiProxy_AutoscalingGroup) SetHealthCheckType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroup) SetInitialLifecycleHook(val *[]*AutoscalingGroupInitialLifecycleHook) {
+func (j *jsiiProxy_AutoscalingGroup) SetInitialLifecycleHook(val interface{}) {
 	_jsii_.Set(
 		j,
 		"initialLifecycleHook",
@@ -1832,7 +1912,7 @@ func (j *jsiiProxy_AutoscalingGroup) SetSuspendedProcesses(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroup) SetTag(val *[]*AutoscalingGroupTag) {
+func (j *jsiiProxy_AutoscalingGroup) SetTag(val interface{}) {
 	_jsii_.Set(
 		j,
 		"tag",
@@ -1840,7 +1920,7 @@ func (j *jsiiProxy_AutoscalingGroup) SetTag(val *[]*AutoscalingGroupTag) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_AutoscalingGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1928,12 +2008,40 @@ func (a *jsiiProxy_AutoscalingGroup) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1970,12 +2078,54 @@ func (a *jsiiProxy_AutoscalingGroup) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2380,125 +2530,125 @@ func (a *jsiiProxy_AutoscalingGroup) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type AutoscalingGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#max_size AutoscalingGroup#max_size}.
-	MaxSize *float64 `json:"maxSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#min_size AutoscalingGroup#min_size}.
-	MinSize *float64 `json:"minSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#availability_zones AutoscalingGroup#availability_zones}.
-	AvailabilityZones *[]*string `json:"availabilityZones"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#capacity_rebalance AutoscalingGroup#capacity_rebalance}.
-	CapacityRebalance interface{} `json:"capacityRebalance"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#default_cooldown AutoscalingGroup#default_cooldown}.
-	DefaultCooldown *float64 `json:"defaultCooldown"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#desired_capacity AutoscalingGroup#desired_capacity}.
-	DesiredCapacity *float64 `json:"desiredCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#enabled_metrics AutoscalingGroup#enabled_metrics}.
-	EnabledMetrics *[]*string `json:"enabledMetrics"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#force_delete AutoscalingGroup#force_delete}.
-	ForceDelete interface{} `json:"forceDelete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#force_delete_warm_pool AutoscalingGroup#force_delete_warm_pool}.
-	ForceDeleteWarmPool interface{} `json:"forceDeleteWarmPool"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#health_check_grace_period AutoscalingGroup#health_check_grace_period}.
-	HealthCheckGracePeriod *float64 `json:"healthCheckGracePeriod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#health_check_type AutoscalingGroup#health_check_type}.
-	HealthCheckType *string `json:"healthCheckType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#max_size AutoscalingGroup#max_size}.
+	MaxSize *float64 `json:"maxSize" yaml:"maxSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#min_size AutoscalingGroup#min_size}.
+	MinSize *float64 `json:"minSize" yaml:"minSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#availability_zones AutoscalingGroup#availability_zones}.
+	AvailabilityZones *[]*string `json:"availabilityZones" yaml:"availabilityZones"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#capacity_rebalance AutoscalingGroup#capacity_rebalance}.
+	CapacityRebalance interface{} `json:"capacityRebalance" yaml:"capacityRebalance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#default_cooldown AutoscalingGroup#default_cooldown}.
+	DefaultCooldown *float64 `json:"defaultCooldown" yaml:"defaultCooldown"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#desired_capacity AutoscalingGroup#desired_capacity}.
+	DesiredCapacity *float64 `json:"desiredCapacity" yaml:"desiredCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#enabled_metrics AutoscalingGroup#enabled_metrics}.
+	EnabledMetrics *[]*string `json:"enabledMetrics" yaml:"enabledMetrics"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#force_delete AutoscalingGroup#force_delete}.
+	ForceDelete interface{} `json:"forceDelete" yaml:"forceDelete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#force_delete_warm_pool AutoscalingGroup#force_delete_warm_pool}.
+	ForceDeleteWarmPool interface{} `json:"forceDeleteWarmPool" yaml:"forceDeleteWarmPool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#health_check_grace_period AutoscalingGroup#health_check_grace_period}.
+	HealthCheckGracePeriod *float64 `json:"healthCheckGracePeriod" yaml:"healthCheckGracePeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#health_check_type AutoscalingGroup#health_check_type}.
+	HealthCheckType *string `json:"healthCheckType" yaml:"healthCheckType"`
 	// initial_lifecycle_hook block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#initial_lifecycle_hook AutoscalingGroup#initial_lifecycle_hook}
-	InitialLifecycleHook *[]*AutoscalingGroupInitialLifecycleHook `json:"initialLifecycleHook"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#initial_lifecycle_hook AutoscalingGroup#initial_lifecycle_hook}
+	InitialLifecycleHook interface{} `json:"initialLifecycleHook" yaml:"initialLifecycleHook"`
 	// instance_refresh block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#instance_refresh AutoscalingGroup#instance_refresh}
-	InstanceRefresh *AutoscalingGroupInstanceRefresh `json:"instanceRefresh"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_configuration AutoscalingGroup#launch_configuration}.
-	LaunchConfiguration *string `json:"launchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#instance_refresh AutoscalingGroup#instance_refresh}
+	InstanceRefresh *AutoscalingGroupInstanceRefresh `json:"instanceRefresh" yaml:"instanceRefresh"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_configuration AutoscalingGroup#launch_configuration}.
+	LaunchConfiguration *string `json:"launchConfiguration" yaml:"launchConfiguration"`
 	// launch_template block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template AutoscalingGroup#launch_template}
-	LaunchTemplate *AutoscalingGroupLaunchTemplate `json:"launchTemplate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#load_balancers AutoscalingGroup#load_balancers}.
-	LoadBalancers *[]*string `json:"loadBalancers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#max_instance_lifetime AutoscalingGroup#max_instance_lifetime}.
-	MaxInstanceLifetime *float64 `json:"maxInstanceLifetime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#metrics_granularity AutoscalingGroup#metrics_granularity}.
-	MetricsGranularity *string `json:"metricsGranularity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#min_elb_capacity AutoscalingGroup#min_elb_capacity}.
-	MinElbCapacity *float64 `json:"minElbCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template AutoscalingGroup#launch_template}
+	LaunchTemplate *AutoscalingGroupLaunchTemplate `json:"launchTemplate" yaml:"launchTemplate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#load_balancers AutoscalingGroup#load_balancers}.
+	LoadBalancers *[]*string `json:"loadBalancers" yaml:"loadBalancers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#max_instance_lifetime AutoscalingGroup#max_instance_lifetime}.
+	MaxInstanceLifetime *float64 `json:"maxInstanceLifetime" yaml:"maxInstanceLifetime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#metrics_granularity AutoscalingGroup#metrics_granularity}.
+	MetricsGranularity *string `json:"metricsGranularity" yaml:"metricsGranularity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#min_elb_capacity AutoscalingGroup#min_elb_capacity}.
+	MinElbCapacity *float64 `json:"minElbCapacity" yaml:"minElbCapacity"`
 	// mixed_instances_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#mixed_instances_policy AutoscalingGroup#mixed_instances_policy}
-	MixedInstancesPolicy *AutoscalingGroupMixedInstancesPolicy `json:"mixedInstancesPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#name AutoscalingGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#name_prefix AutoscalingGroup#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#placement_group AutoscalingGroup#placement_group}.
-	PlacementGroup *string `json:"placementGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#protect_from_scale_in AutoscalingGroup#protect_from_scale_in}.
-	ProtectFromScaleIn interface{} `json:"protectFromScaleIn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#service_linked_role_arn AutoscalingGroup#service_linked_role_arn}.
-	ServiceLinkedRoleArn *string `json:"serviceLinkedRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#suspended_processes AutoscalingGroup#suspended_processes}.
-	SuspendedProcesses *[]*string `json:"suspendedProcesses"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#mixed_instances_policy AutoscalingGroup#mixed_instances_policy}
+	MixedInstancesPolicy *AutoscalingGroupMixedInstancesPolicy `json:"mixedInstancesPolicy" yaml:"mixedInstancesPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#name AutoscalingGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#name_prefix AutoscalingGroup#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#placement_group AutoscalingGroup#placement_group}.
+	PlacementGroup *string `json:"placementGroup" yaml:"placementGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#protect_from_scale_in AutoscalingGroup#protect_from_scale_in}.
+	ProtectFromScaleIn interface{} `json:"protectFromScaleIn" yaml:"protectFromScaleIn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#service_linked_role_arn AutoscalingGroup#service_linked_role_arn}.
+	ServiceLinkedRoleArn *string `json:"serviceLinkedRoleArn" yaml:"serviceLinkedRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#suspended_processes AutoscalingGroup#suspended_processes}.
+	SuspendedProcesses *[]*string `json:"suspendedProcesses" yaml:"suspendedProcesses"`
 	// tag block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#tag AutoscalingGroup#tag}
-	Tag *[]*AutoscalingGroupTag `json:"tag"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#tags AutoscalingGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#target_group_arns AutoscalingGroup#target_group_arns}.
-	TargetGroupArns *[]*string `json:"targetGroupArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#termination_policies AutoscalingGroup#termination_policies}.
-	TerminationPolicies *[]*string `json:"terminationPolicies"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#tag AutoscalingGroup#tag}
+	Tag interface{} `json:"tag" yaml:"tag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#tags AutoscalingGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#target_group_arns AutoscalingGroup#target_group_arns}.
+	TargetGroupArns *[]*string `json:"targetGroupArns" yaml:"targetGroupArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#termination_policies AutoscalingGroup#termination_policies}.
+	TerminationPolicies *[]*string `json:"terminationPolicies" yaml:"terminationPolicies"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#timeouts AutoscalingGroup#timeouts}
-	Timeouts *AutoscalingGroupTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#vpc_zone_identifier AutoscalingGroup#vpc_zone_identifier}.
-	VpcZoneIdentifier *[]*string `json:"vpcZoneIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#wait_for_capacity_timeout AutoscalingGroup#wait_for_capacity_timeout}.
-	WaitForCapacityTimeout *string `json:"waitForCapacityTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#wait_for_elb_capacity AutoscalingGroup#wait_for_elb_capacity}.
-	WaitForElbCapacity *float64 `json:"waitForElbCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#timeouts AutoscalingGroup#timeouts}
+	Timeouts *AutoscalingGroupTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#vpc_zone_identifier AutoscalingGroup#vpc_zone_identifier}.
+	VpcZoneIdentifier *[]*string `json:"vpcZoneIdentifier" yaml:"vpcZoneIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#wait_for_capacity_timeout AutoscalingGroup#wait_for_capacity_timeout}.
+	WaitForCapacityTimeout *string `json:"waitForCapacityTimeout" yaml:"waitForCapacityTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#wait_for_elb_capacity AutoscalingGroup#wait_for_elb_capacity}.
+	WaitForElbCapacity *float64 `json:"waitForElbCapacity" yaml:"waitForElbCapacity"`
 	// warm_pool block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#warm_pool AutoscalingGroup#warm_pool}
-	WarmPool *AutoscalingGroupWarmPool `json:"warmPool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#warm_pool AutoscalingGroup#warm_pool}
+	WarmPool *AutoscalingGroupWarmPool `json:"warmPool" yaml:"warmPool"`
 }
 
 type AutoscalingGroupInitialLifecycleHook struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#lifecycle_transition AutoscalingGroup#lifecycle_transition}.
-	LifecycleTransition *string `json:"lifecycleTransition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#name AutoscalingGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#default_result AutoscalingGroup#default_result}.
-	DefaultResult *string `json:"defaultResult"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#heartbeat_timeout AutoscalingGroup#heartbeat_timeout}.
-	HeartbeatTimeout *float64 `json:"heartbeatTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#notification_metadata AutoscalingGroup#notification_metadata}.
-	NotificationMetadata *string `json:"notificationMetadata"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#notification_target_arn AutoscalingGroup#notification_target_arn}.
-	NotificationTargetArn *string `json:"notificationTargetArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#role_arn AutoscalingGroup#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#lifecycle_transition AutoscalingGroup#lifecycle_transition}.
+	LifecycleTransition *string `json:"lifecycleTransition" yaml:"lifecycleTransition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#name AutoscalingGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#default_result AutoscalingGroup#default_result}.
+	DefaultResult *string `json:"defaultResult" yaml:"defaultResult"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#heartbeat_timeout AutoscalingGroup#heartbeat_timeout}.
+	HeartbeatTimeout *float64 `json:"heartbeatTimeout" yaml:"heartbeatTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#notification_metadata AutoscalingGroup#notification_metadata}.
+	NotificationMetadata *string `json:"notificationMetadata" yaml:"notificationMetadata"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#notification_target_arn AutoscalingGroup#notification_target_arn}.
+	NotificationTargetArn *string `json:"notificationTargetArn" yaml:"notificationTargetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#role_arn AutoscalingGroup#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }
 
 type AutoscalingGroupInstanceRefresh struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#strategy AutoscalingGroup#strategy}.
-	Strategy *string `json:"strategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#strategy AutoscalingGroup#strategy}.
+	Strategy *string `json:"strategy" yaml:"strategy"`
 	// preferences block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#preferences AutoscalingGroup#preferences}
-	Preferences *AutoscalingGroupInstanceRefreshPreferences `json:"preferences"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#triggers AutoscalingGroup#triggers}.
-	Triggers *[]*string `json:"triggers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#preferences AutoscalingGroup#preferences}
+	Preferences *AutoscalingGroupInstanceRefreshPreferences `json:"preferences" yaml:"preferences"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#triggers AutoscalingGroup#triggers}.
+	Triggers *[]*string `json:"triggers" yaml:"triggers"`
 }
 
 type AutoscalingGroupInstanceRefreshOutputReference interface {
@@ -2514,15 +2664,20 @@ type AutoscalingGroupInstanceRefreshOutputReference interface {
 	StrategyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Triggers() *[]*string
 	SetTriggers(val *[]*string)
 	TriggersInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutPreferences(value *AutoscalingGroupInstanceRefreshPreferences)
@@ -2605,8 +2760,8 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2635,7 +2790,7 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) TriggersInput
 	return returns
 }
 
-func NewAutoscalingGroupInstanceRefreshOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupInstanceRefreshOutputReference {
+func NewAutoscalingGroupInstanceRefreshOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupInstanceRefreshOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference{}
@@ -2649,7 +2804,7 @@ func NewAutoscalingGroupInstanceRefreshOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewAutoscalingGroupInstanceRefreshOutputReference_Override(a AutoscalingGroupInstanceRefreshOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupInstanceRefreshOutputReference_Override(a AutoscalingGroupInstanceRefreshOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2691,7 +2846,7 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2708,12 +2863,40 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) SetTriggers(v
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2750,12 +2933,54 @@ func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2816,14 +3041,14 @@ func (a *jsiiProxy_AutoscalingGroupInstanceRefreshOutputReference) ResetTriggers
 }
 
 type AutoscalingGroupInstanceRefreshPreferences struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#checkpoint_delay AutoscalingGroup#checkpoint_delay}.
-	CheckpointDelay *string `json:"checkpointDelay"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#checkpoint_percentages AutoscalingGroup#checkpoint_percentages}.
-	CheckpointPercentages *[]*float64 `json:"checkpointPercentages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#instance_warmup AutoscalingGroup#instance_warmup}.
-	InstanceWarmup *string `json:"instanceWarmup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#min_healthy_percentage AutoscalingGroup#min_healthy_percentage}.
-	MinHealthyPercentage *float64 `json:"minHealthyPercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#checkpoint_delay AutoscalingGroup#checkpoint_delay}.
+	CheckpointDelay *string `json:"checkpointDelay" yaml:"checkpointDelay"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#checkpoint_percentages AutoscalingGroup#checkpoint_percentages}.
+	CheckpointPercentages *[]*float64 `json:"checkpointPercentages" yaml:"checkpointPercentages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#instance_warmup AutoscalingGroup#instance_warmup}.
+	InstanceWarmup *string `json:"instanceWarmup" yaml:"instanceWarmup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#min_healthy_percentage AutoscalingGroup#min_healthy_percentage}.
+	MinHealthyPercentage *float64 `json:"minHealthyPercentage" yaml:"minHealthyPercentage"`
 }
 
 type AutoscalingGroupInstanceRefreshPreferencesOutputReference interface {
@@ -2846,12 +3071,17 @@ type AutoscalingGroupInstanceRefreshPreferencesOutputReference interface {
 	MinHealthyPercentageInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCheckpointDelay()
@@ -2975,8 +3205,8 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2985,7 +3215,7 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Te
 	return returns
 }
 
-func NewAutoscalingGroupInstanceRefreshPreferencesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupInstanceRefreshPreferencesOutputReference {
+func NewAutoscalingGroupInstanceRefreshPreferencesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupInstanceRefreshPreferencesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference{}
@@ -2999,7 +3229,7 @@ func NewAutoscalingGroupInstanceRefreshPreferencesOutputReference(terraformResou
 	return &j
 }
 
-func NewAutoscalingGroupInstanceRefreshPreferencesOutputReference_Override(a AutoscalingGroupInstanceRefreshPreferencesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupInstanceRefreshPreferencesOutputReference_Override(a AutoscalingGroupInstanceRefreshPreferencesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3065,7 +3295,7 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3074,12 +3304,40 @@ func (j *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Se
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3116,12 +3374,54 @@ func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Ge
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3190,12 +3490,12 @@ func (a *jsiiProxy_AutoscalingGroupInstanceRefreshPreferencesOutputReference) Re
 }
 
 type AutoscalingGroupLaunchTemplate struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#id AutoscalingGroup#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#name AutoscalingGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#version AutoscalingGroup#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#id AutoscalingGroup#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#name AutoscalingGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#version AutoscalingGroup#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type AutoscalingGroupLaunchTemplateOutputReference interface {
@@ -3210,15 +3510,20 @@ type AutoscalingGroupLaunchTemplateOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetName()
@@ -3290,8 +3595,8 @@ func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3320,7 +3625,7 @@ func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) VersionInput()
 	return returns
 }
 
-func NewAutoscalingGroupLaunchTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupLaunchTemplateOutputReference {
+func NewAutoscalingGroupLaunchTemplateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupLaunchTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference{}
@@ -3334,7 +3639,7 @@ func NewAutoscalingGroupLaunchTemplateOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewAutoscalingGroupLaunchTemplateOutputReference_Override(a AutoscalingGroupLaunchTemplateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupLaunchTemplateOutputReference_Override(a AutoscalingGroupLaunchTemplateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3376,7 +3681,7 @@ func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3393,12 +3698,40 @@ func (j *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) SetVersion(val
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3435,12 +3768,54 @@ func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3495,27 +3870,27 @@ func (a *jsiiProxy_AutoscalingGroupLaunchTemplateOutputReference) ResetVersion()
 type AutoscalingGroupMixedInstancesPolicy struct {
 	// launch_template block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template AutoscalingGroup#launch_template}
-	LaunchTemplate *AutoscalingGroupMixedInstancesPolicyLaunchTemplate `json:"launchTemplate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template AutoscalingGroup#launch_template}
+	LaunchTemplate *AutoscalingGroupMixedInstancesPolicyLaunchTemplate `json:"launchTemplate" yaml:"launchTemplate"`
 	// instances_distribution block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#instances_distribution AutoscalingGroup#instances_distribution}
-	InstancesDistribution *AutoscalingGroupMixedInstancesPolicyInstancesDistribution `json:"instancesDistribution"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#instances_distribution AutoscalingGroup#instances_distribution}
+	InstancesDistribution *AutoscalingGroupMixedInstancesPolicyInstancesDistribution `json:"instancesDistribution" yaml:"instancesDistribution"`
 }
 
 type AutoscalingGroupMixedInstancesPolicyInstancesDistribution struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#on_demand_allocation_strategy AutoscalingGroup#on_demand_allocation_strategy}.
-	OnDemandAllocationStrategy *string `json:"onDemandAllocationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#on_demand_base_capacity AutoscalingGroup#on_demand_base_capacity}.
-	OnDemandBaseCapacity *float64 `json:"onDemandBaseCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#on_demand_percentage_above_base_capacity AutoscalingGroup#on_demand_percentage_above_base_capacity}.
-	OnDemandPercentageAboveBaseCapacity *float64 `json:"onDemandPercentageAboveBaseCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#spot_allocation_strategy AutoscalingGroup#spot_allocation_strategy}.
-	SpotAllocationStrategy *string `json:"spotAllocationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#spot_instance_pools AutoscalingGroup#spot_instance_pools}.
-	SpotInstancePools *float64 `json:"spotInstancePools"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#spot_max_price AutoscalingGroup#spot_max_price}.
-	SpotMaxPrice *string `json:"spotMaxPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#on_demand_allocation_strategy AutoscalingGroup#on_demand_allocation_strategy}.
+	OnDemandAllocationStrategy *string `json:"onDemandAllocationStrategy" yaml:"onDemandAllocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#on_demand_base_capacity AutoscalingGroup#on_demand_base_capacity}.
+	OnDemandBaseCapacity *float64 `json:"onDemandBaseCapacity" yaml:"onDemandBaseCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#on_demand_percentage_above_base_capacity AutoscalingGroup#on_demand_percentage_above_base_capacity}.
+	OnDemandPercentageAboveBaseCapacity *float64 `json:"onDemandPercentageAboveBaseCapacity" yaml:"onDemandPercentageAboveBaseCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#spot_allocation_strategy AutoscalingGroup#spot_allocation_strategy}.
+	SpotAllocationStrategy *string `json:"spotAllocationStrategy" yaml:"spotAllocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#spot_instance_pools AutoscalingGroup#spot_instance_pools}.
+	SpotInstancePools *float64 `json:"spotInstancePools" yaml:"spotInstancePools"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#spot_max_price AutoscalingGroup#spot_max_price}.
+	SpotMaxPrice *string `json:"spotMaxPrice" yaml:"spotMaxPrice"`
 }
 
 type AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference interface {
@@ -3544,12 +3919,17 @@ type AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference in
 	SpotMaxPriceInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetOnDemandAllocationStrategy()
@@ -3715,8 +4095,8 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutp
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3725,7 +4105,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutp
 	return returns
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference {
+func NewAutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference{}
@@ -3739,7 +4119,7 @@ func NewAutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference
 	return &j
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3821,7 +4201,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutp
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3830,12 +4210,40 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutp
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3872,12 +4280,54 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutp
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3964,21 +4414,21 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyInstancesDistributionOutp
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplate struct {
 	// launch_template_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template_specification AutoscalingGroup#launch_template_specification}
-	LaunchTemplateSpecification *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification `json:"launchTemplateSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template_specification AutoscalingGroup#launch_template_specification}
+	LaunchTemplateSpecification *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification `json:"launchTemplateSpecification" yaml:"launchTemplateSpecification"`
 	// override block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#override AutoscalingGroup#override}
-	Override *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride `json:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#override AutoscalingGroup#override}
+	Override interface{} `json:"override" yaml:"override"`
 }
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template_id AutoscalingGroup#launch_template_id}.
-	LaunchTemplateId *string `json:"launchTemplateId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template_name AutoscalingGroup#launch_template_name}.
-	LaunchTemplateName *string `json:"launchTemplateName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#version AutoscalingGroup#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template_id AutoscalingGroup#launch_template_id}.
+	LaunchTemplateId *string `json:"launchTemplateId" yaml:"launchTemplateId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template_name AutoscalingGroup#launch_template_name}.
+	LaunchTemplateName *string `json:"launchTemplateName" yaml:"launchTemplateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#version AutoscalingGroup#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference interface {
@@ -3995,15 +4445,20 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificati
 	LaunchTemplateNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLaunchTemplateId()
@@ -4086,8 +4541,8 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4116,7 +4571,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 	return returns
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference {
+func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference{}
@@ -4130,7 +4585,7 @@ func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecific
 	return &j
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4180,7 +4635,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4197,12 +4652,40 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4239,12 +4722,54 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4312,17 +4837,22 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference interface
 	SetIsSingleItem(val *bool)
 	LaunchTemplateSpecification() AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationOutputReference
 	LaunchTemplateSpecificationInput() *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification
-	Override() *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride
-	SetOverride(val *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride)
-	OverrideInput() *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride
+	Override() interface{}
+	SetOverride(val interface{})
+	OverrideInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutLaunchTemplateSpecification(value *AutoscalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification)
@@ -4374,8 +4904,8 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) Override() *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride {
-	var returns *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) Override() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"override",
@@ -4384,8 +4914,8 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) OverrideInput() *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride {
-	var returns *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) OverrideInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"overrideInput",
@@ -4404,8 +4934,8 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4414,7 +4944,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 	return returns
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference {
+func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference{}
@@ -4428,7 +4958,7 @@ func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference(terraf
 	return &j
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4454,7 +4984,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) SetOverride(val *[]*AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride) {
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) SetOverride(val interface{}) {
 	_jsii_.Set(
 		j,
 		"override",
@@ -4470,7 +5000,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4479,12 +5009,40 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4521,12 +5079,54 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4579,23 +5179,23 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOutputRefer
 }
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverride struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#instance_type AutoscalingGroup#instance_type}.
-	InstanceType *string `json:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#instance_type AutoscalingGroup#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
 	// launch_template_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template_specification AutoscalingGroup#launch_template_specification}
-	LaunchTemplateSpecification *AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification `json:"launchTemplateSpecification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#weighted_capacity AutoscalingGroup#weighted_capacity}.
-	WeightedCapacity *string `json:"weightedCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template_specification AutoscalingGroup#launch_template_specification}
+	LaunchTemplateSpecification *AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification `json:"launchTemplateSpecification" yaml:"launchTemplateSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#weighted_capacity AutoscalingGroup#weighted_capacity}.
+	WeightedCapacity *string `json:"weightedCapacity" yaml:"weightedCapacity"`
 }
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template_id AutoscalingGroup#launch_template_id}.
-	LaunchTemplateId *string `json:"launchTemplateId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#launch_template_name AutoscalingGroup#launch_template_name}.
-	LaunchTemplateName *string `json:"launchTemplateName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#version AutoscalingGroup#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template_id AutoscalingGroup#launch_template_id}.
+	LaunchTemplateId *string `json:"launchTemplateId" yaml:"launchTemplateId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#launch_template_name AutoscalingGroup#launch_template_name}.
+	LaunchTemplateName *string `json:"launchTemplateName" yaml:"launchTemplateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#version AutoscalingGroup#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference interface {
@@ -4612,15 +5212,20 @@ type AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpe
 	LaunchTemplateNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLaunchTemplateId()
@@ -4703,8 +5308,8 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLau
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4733,7 +5338,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLau
 	return returns
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference {
+func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference{}
@@ -4747,7 +5352,7 @@ func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplate
 	return &j
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4797,7 +5402,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLau
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4814,12 +5419,40 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLau
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4856,12 +5489,54 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLau
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4933,12 +5608,17 @@ type AutoscalingGroupMixedInstancesPolicyOutputReference interface {
 	LaunchTemplateInput() *AutoscalingGroupMixedInstancesPolicyLaunchTemplate
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutInstancesDistribution(value *AutoscalingGroupMixedInstancesPolicyInstancesDistribution)
@@ -5021,8 +5701,8 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5031,7 +5711,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) Terrafor
 	return returns
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyOutputReference {
+func NewAutoscalingGroupMixedInstancesPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupMixedInstancesPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference{}
@@ -5045,7 +5725,7 @@ func NewAutoscalingGroupMixedInstancesPolicyOutputReference(terraformResource cd
 	return &j
 }
 
-func NewAutoscalingGroupMixedInstancesPolicyOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupMixedInstancesPolicyOutputReference_Override(a AutoscalingGroupMixedInstancesPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5079,7 +5759,7 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5088,12 +5768,40 @@ func (j *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) SetTerra
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5130,12 +5838,54 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetNumbe
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5196,15 +5946,15 @@ func (a *jsiiProxy_AutoscalingGroupMixedInstancesPolicyOutputReference) ResetIns
 }
 
 type AutoscalingGroupTag struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#key AutoscalingGroup#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#propagate_at_launch AutoscalingGroup#propagate_at_launch}.
-	PropagateAtLaunch interface{} `json:"propagateAtLaunch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#value AutoscalingGroup#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#key AutoscalingGroup#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#propagate_at_launch AutoscalingGroup#propagate_at_launch}.
+	PropagateAtLaunch interface{} `json:"propagateAtLaunch" yaml:"propagateAtLaunch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#value AutoscalingGroup#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html aws_autoscaling_group_tag}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag aws_autoscaling_group_tag}.
 type AutoscalingGroupTagA interface {
 	cdktf.TerraformResource
 	AutoscalingGroupName() *string
@@ -5212,8 +5962,8 @@ type AutoscalingGroupTagA interface {
 	AutoscalingGroupNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5231,10 +5981,15 @@ type AutoscalingGroupTagA interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTag(value *AutoscalingGroupTagTag)
@@ -5290,8 +6045,8 @@ func (j *jsiiProxy_AutoscalingGroupTagA) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupTagA) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingGroupTagA) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5430,7 +6185,7 @@ func (j *jsiiProxy_AutoscalingGroupTagA) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html aws_autoscaling_group_tag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag aws_autoscaling_group_tag} Resource.
 func NewAutoscalingGroupTagA(scope constructs.Construct, id *string, config *AutoscalingGroupTagAConfig) AutoscalingGroupTagA {
 	_init_.Initialize()
 
@@ -5445,7 +6200,7 @@ func NewAutoscalingGroupTagA(scope constructs.Construct, id *string, config *Aut
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html aws_autoscaling_group_tag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag aws_autoscaling_group_tag} Resource.
 func NewAutoscalingGroupTagA_Override(a AutoscalingGroupTagA, scope constructs.Construct, id *string, config *AutoscalingGroupTagAConfig) {
 	_init_.Initialize()
 
@@ -5464,7 +6219,7 @@ func (j *jsiiProxy_AutoscalingGroupTagA) SetAutoscalingGroupName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupTagA) SetCount(val interface{}) {
+func (j *jsiiProxy_AutoscalingGroupTagA) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5536,12 +6291,40 @@ func (a *jsiiProxy_AutoscalingGroupTagA) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagA) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupTagA) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagA) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5578,12 +6361,54 @@ func (a *jsiiProxy_AutoscalingGroupTagA) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagA) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagA) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupTagA) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagA) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5692,28 +6517,28 @@ func (a *jsiiProxy_AutoscalingGroupTagA) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type AutoscalingGroupTagAConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html#autoscaling_group_name AutoscalingGroupTagA#autoscaling_group_name}.
-	AutoscalingGroupName *string `json:"autoscalingGroupName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag#autoscaling_group_name AutoscalingGroupTagA#autoscaling_group_name}.
+	AutoscalingGroupName *string `json:"autoscalingGroupName" yaml:"autoscalingGroupName"`
 	// tag block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html#tag AutoscalingGroupTagA#tag}
-	Tag *AutoscalingGroupTagTag `json:"tag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag#tag AutoscalingGroupTagA#tag}
+	Tag *AutoscalingGroupTagTag `json:"tag" yaml:"tag"`
 }
 
 type AutoscalingGroupTagTag struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html#key AutoscalingGroupTagA#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html#propagate_at_launch AutoscalingGroupTagA#propagate_at_launch}.
-	PropagateAtLaunch interface{} `json:"propagateAtLaunch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag.html#value AutoscalingGroupTagA#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag#key AutoscalingGroupTagA#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag#propagate_at_launch AutoscalingGroupTagA#propagate_at_launch}.
+	PropagateAtLaunch interface{} `json:"propagateAtLaunch" yaml:"propagateAtLaunch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group_tag#value AutoscalingGroupTagA#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type AutoscalingGroupTagTagOutputReference interface {
@@ -5730,15 +6555,20 @@ type AutoscalingGroupTagTagOutputReference interface {
 	PropagateAtLaunchInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5818,8 +6648,8 @@ func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5848,7 +6678,7 @@ func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) ValueInput() *string {
 	return returns
 }
 
-func NewAutoscalingGroupTagTagOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupTagTagOutputReference {
+func NewAutoscalingGroupTagTagOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupTagTagOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupTagTagOutputReference{}
@@ -5862,7 +6692,7 @@ func NewAutoscalingGroupTagTagOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewAutoscalingGroupTagTagOutputReference_Override(a AutoscalingGroupTagTagOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupTagTagOutputReference_Override(a AutoscalingGroupTagTagOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5912,7 +6742,7 @@ func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5929,12 +6759,40 @@ func (j *jsiiProxy_AutoscalingGroupTagTagOutputReference) SetValue(val *string) 
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5971,12 +6829,54 @@ func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6013,8 +6913,8 @@ func (a *jsiiProxy_AutoscalingGroupTagTagOutputReference) InterpolationForAttrib
 }
 
 type AutoscalingGroupTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#delete AutoscalingGroup#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#delete AutoscalingGroup#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type AutoscalingGroupTimeoutsOutputReference interface {
@@ -6028,12 +6928,17 @@ type AutoscalingGroupTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -6094,8 +6999,8 @@ func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6104,7 +7009,7 @@ func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewAutoscalingGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupTimeoutsOutputReference {
+func NewAutoscalingGroupTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupTimeoutsOutputReference{}
@@ -6118,7 +7023,7 @@ func NewAutoscalingGroupTimeoutsOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewAutoscalingGroupTimeoutsOutputReference_Override(a AutoscalingGroupTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupTimeoutsOutputReference_Override(a AutoscalingGroupTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6160,7 +7065,7 @@ func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6169,12 +7074,40 @@ func (j *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6211,12 +7144,54 @@ func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6261,12 +7236,12 @@ func (a *jsiiProxy_AutoscalingGroupTimeoutsOutputReference) ResetDelete() {
 }
 
 type AutoscalingGroupWarmPool struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#max_group_prepared_capacity AutoscalingGroup#max_group_prepared_capacity}.
-	MaxGroupPreparedCapacity *float64 `json:"maxGroupPreparedCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#min_size AutoscalingGroup#min_size}.
-	MinSize *float64 `json:"minSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group.html#pool_state AutoscalingGroup#pool_state}.
-	PoolState *string `json:"poolState"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#max_group_prepared_capacity AutoscalingGroup#max_group_prepared_capacity}.
+	MaxGroupPreparedCapacity *float64 `json:"maxGroupPreparedCapacity" yaml:"maxGroupPreparedCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#min_size AutoscalingGroup#min_size}.
+	MinSize *float64 `json:"minSize" yaml:"minSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_group#pool_state AutoscalingGroup#pool_state}.
+	PoolState *string `json:"poolState" yaml:"poolState"`
 }
 
 type AutoscalingGroupWarmPoolOutputReference interface {
@@ -6286,12 +7261,17 @@ type AutoscalingGroupWarmPoolOutputReference interface {
 	PoolStateInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMaxGroupPreparedCapacity()
@@ -6394,8 +7374,8 @@ func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6404,7 +7384,7 @@ func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewAutoscalingGroupWarmPoolOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupWarmPoolOutputReference {
+func NewAutoscalingGroupWarmPoolOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingGroupWarmPoolOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingGroupWarmPoolOutputReference{}
@@ -6418,7 +7398,7 @@ func NewAutoscalingGroupWarmPoolOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewAutoscalingGroupWarmPoolOutputReference_Override(a AutoscalingGroupWarmPoolOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingGroupWarmPoolOutputReference_Override(a AutoscalingGroupWarmPoolOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6476,7 +7456,7 @@ func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6485,12 +7465,40 @@ func (j *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6527,12 +7535,54 @@ func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6592,7 +7642,7 @@ func (a *jsiiProxy_AutoscalingGroupWarmPoolOutputReference) ResetPoolState() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html aws_autoscaling_lifecycle_hook}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook aws_autoscaling_lifecycle_hook}.
 type AutoscalingLifecycleHook interface {
 	cdktf.TerraformResource
 	AutoscalingGroupName() *string
@@ -6600,8 +7650,8 @@ type AutoscalingLifecycleHook interface {
 	AutoscalingGroupNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultResult() *string
 	SetDefaultResult(val *string)
 	DefaultResultInput() *string
@@ -6638,10 +7688,15 @@ type AutoscalingLifecycleHook interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDefaultResult()
@@ -6701,8 +7756,8 @@ func (j *jsiiProxy_AutoscalingLifecycleHook) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingLifecycleHook) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingLifecycleHook) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6961,7 +8016,7 @@ func (j *jsiiProxy_AutoscalingLifecycleHook) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html aws_autoscaling_lifecycle_hook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook aws_autoscaling_lifecycle_hook} Resource.
 func NewAutoscalingLifecycleHook(scope constructs.Construct, id *string, config *AutoscalingLifecycleHookConfig) AutoscalingLifecycleHook {
 	_init_.Initialize()
 
@@ -6976,7 +8031,7 @@ func NewAutoscalingLifecycleHook(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html aws_autoscaling_lifecycle_hook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook aws_autoscaling_lifecycle_hook} Resource.
 func NewAutoscalingLifecycleHook_Override(a AutoscalingLifecycleHook, scope constructs.Construct, id *string, config *AutoscalingLifecycleHookConfig) {
 	_init_.Initialize()
 
@@ -6995,7 +8050,7 @@ func (j *jsiiProxy_AutoscalingLifecycleHook) SetAutoscalingGroupName(val *string
 	)
 }
 
-func (j *jsiiProxy_AutoscalingLifecycleHook) SetCount(val interface{}) {
+func (j *jsiiProxy_AutoscalingLifecycleHook) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7123,12 +8178,40 @@ func (a *jsiiProxy_AutoscalingLifecycleHook) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingLifecycleHook) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingLifecycleHook) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingLifecycleHook) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7165,12 +8248,54 @@ func (a *jsiiProxy_AutoscalingLifecycleHook) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingLifecycleHook) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingLifecycleHook) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingLifecycleHook) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingLifecycleHook) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7311,38 +8436,38 @@ func (a *jsiiProxy_AutoscalingLifecycleHook) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type AutoscalingLifecycleHookConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#autoscaling_group_name AutoscalingLifecycleHook#autoscaling_group_name}.
-	AutoscalingGroupName *string `json:"autoscalingGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#lifecycle_transition AutoscalingLifecycleHook#lifecycle_transition}.
-	LifecycleTransition *string `json:"lifecycleTransition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#name AutoscalingLifecycleHook#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#default_result AutoscalingLifecycleHook#default_result}.
-	DefaultResult *string `json:"defaultResult"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#heartbeat_timeout AutoscalingLifecycleHook#heartbeat_timeout}.
-	HeartbeatTimeout *float64 `json:"heartbeatTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#notification_metadata AutoscalingLifecycleHook#notification_metadata}.
-	NotificationMetadata *string `json:"notificationMetadata"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#notification_target_arn AutoscalingLifecycleHook#notification_target_arn}.
-	NotificationTargetArn *string `json:"notificationTargetArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook.html#role_arn AutoscalingLifecycleHook#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#autoscaling_group_name AutoscalingLifecycleHook#autoscaling_group_name}.
+	AutoscalingGroupName *string `json:"autoscalingGroupName" yaml:"autoscalingGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#lifecycle_transition AutoscalingLifecycleHook#lifecycle_transition}.
+	LifecycleTransition *string `json:"lifecycleTransition" yaml:"lifecycleTransition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#name AutoscalingLifecycleHook#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#default_result AutoscalingLifecycleHook#default_result}.
+	DefaultResult *string `json:"defaultResult" yaml:"defaultResult"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#heartbeat_timeout AutoscalingLifecycleHook#heartbeat_timeout}.
+	HeartbeatTimeout *float64 `json:"heartbeatTimeout" yaml:"heartbeatTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#notification_metadata AutoscalingLifecycleHook#notification_metadata}.
+	NotificationMetadata *string `json:"notificationMetadata" yaml:"notificationMetadata"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#notification_target_arn AutoscalingLifecycleHook#notification_target_arn}.
+	NotificationTargetArn *string `json:"notificationTargetArn" yaml:"notificationTargetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_lifecycle_hook#role_arn AutoscalingLifecycleHook#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification.html aws_autoscaling_notification}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification aws_autoscaling_notification}.
 type AutoscalingNotification interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7367,10 +8492,15 @@ type AutoscalingNotification interface {
 	SetTopicArn(val *string)
 	TopicArnInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7405,8 +8535,8 @@ func (j *jsiiProxy_AutoscalingNotification) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingNotification) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingNotification) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7585,7 +8715,7 @@ func (j *jsiiProxy_AutoscalingNotification) TopicArnInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification.html aws_autoscaling_notification} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification aws_autoscaling_notification} Resource.
 func NewAutoscalingNotification(scope constructs.Construct, id *string, config *AutoscalingNotificationConfig) AutoscalingNotification {
 	_init_.Initialize()
 
@@ -7600,7 +8730,7 @@ func NewAutoscalingNotification(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification.html aws_autoscaling_notification} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification aws_autoscaling_notification} Resource.
 func NewAutoscalingNotification_Override(a AutoscalingNotification, scope constructs.Construct, id *string, config *AutoscalingNotificationConfig) {
 	_init_.Initialize()
 
@@ -7611,7 +8741,7 @@ func NewAutoscalingNotification_Override(a AutoscalingNotification, scope constr
 	)
 }
 
-func (j *jsiiProxy_AutoscalingNotification) SetCount(val interface{}) {
+func (j *jsiiProxy_AutoscalingNotification) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7707,12 +8837,40 @@ func (a *jsiiProxy_AutoscalingNotification) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingNotification) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingNotification) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingNotification) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7749,12 +8907,54 @@ func (a *jsiiProxy_AutoscalingNotification) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingNotification) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingNotification) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingNotification) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingNotification) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7855,22 +9055,22 @@ func (a *jsiiProxy_AutoscalingNotification) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type AutoscalingNotificationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification.html#group_names AutoscalingNotification#group_names}.
-	GroupNames *[]*string `json:"groupNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification.html#notifications AutoscalingNotification#notifications}.
-	Notifications *[]*string `json:"notifications"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification.html#topic_arn AutoscalingNotification#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification#group_names AutoscalingNotification#group_names}.
+	GroupNames *[]*string `json:"groupNames" yaml:"groupNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification#notifications AutoscalingNotification#notifications}.
+	Notifications *[]*string `json:"notifications" yaml:"notifications"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_notification#topic_arn AutoscalingNotification#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html aws_autoscaling_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy aws_autoscaling_policy}.
 type AutoscalingPolicy interface {
 	cdktf.TerraformResource
 	AdjustmentType() *string
@@ -7885,8 +9085,8 @@ type AutoscalingPolicy interface {
 	Cooldown() *float64
 	SetCooldown(val *float64)
 	CooldownInput() *float64
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EstimatedInstanceWarmup() *float64
@@ -7918,19 +9118,24 @@ type AutoscalingPolicy interface {
 	ScalingAdjustment() *float64
 	SetScalingAdjustment(val *float64)
 	ScalingAdjustmentInput() *float64
-	StepAdjustment() *[]*AutoscalingPolicyStepAdjustment
-	SetStepAdjustment(val *[]*AutoscalingPolicyStepAdjustment)
-	StepAdjustmentInput() *[]*AutoscalingPolicyStepAdjustment
+	StepAdjustment() interface{}
+	SetStepAdjustment(val interface{})
+	StepAdjustmentInput() interface{}
 	TargetTrackingConfiguration() AutoscalingPolicyTargetTrackingConfigurationOutputReference
 	TargetTrackingConfigurationInput() *AutoscalingPolicyTargetTrackingConfiguration
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPredictiveScalingConfiguration(value *AutoscalingPolicyPredictiveScalingConfiguration)
@@ -8047,8 +9252,8 @@ func (j *jsiiProxy_AutoscalingPolicy) CooldownInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8277,8 +9482,8 @@ func (j *jsiiProxy_AutoscalingPolicy) ScalingAdjustmentInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicy) StepAdjustment() *[]*AutoscalingPolicyStepAdjustment {
-	var returns *[]*AutoscalingPolicyStepAdjustment
+func (j *jsiiProxy_AutoscalingPolicy) StepAdjustment() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"stepAdjustment",
@@ -8287,8 +9492,8 @@ func (j *jsiiProxy_AutoscalingPolicy) StepAdjustment() *[]*AutoscalingPolicyStep
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicy) StepAdjustmentInput() *[]*AutoscalingPolicyStepAdjustment {
-	var returns *[]*AutoscalingPolicyStepAdjustment
+func (j *jsiiProxy_AutoscalingPolicy) StepAdjustmentInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"stepAdjustmentInput",
@@ -8347,7 +9552,7 @@ func (j *jsiiProxy_AutoscalingPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html aws_autoscaling_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy aws_autoscaling_policy} Resource.
 func NewAutoscalingPolicy(scope constructs.Construct, id *string, config *AutoscalingPolicyConfig) AutoscalingPolicy {
 	_init_.Initialize()
 
@@ -8362,7 +9567,7 @@ func NewAutoscalingPolicy(scope constructs.Construct, id *string, config *Autosc
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html aws_autoscaling_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy aws_autoscaling_policy} Resource.
 func NewAutoscalingPolicy_Override(a AutoscalingPolicy, scope constructs.Construct, id *string, config *AutoscalingPolicyConfig) {
 	_init_.Initialize()
 
@@ -8397,7 +9602,7 @@ func (j *jsiiProxy_AutoscalingPolicy) SetCooldown(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_AutoscalingPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8477,7 +9682,7 @@ func (j *jsiiProxy_AutoscalingPolicy) SetScalingAdjustment(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicy) SetStepAdjustment(val *[]*AutoscalingPolicyStepAdjustment) {
+func (j *jsiiProxy_AutoscalingPolicy) SetStepAdjustment(val interface{}) {
 	_jsii_.Set(
 		j,
 		"stepAdjustment",
@@ -8525,12 +9730,40 @@ func (a *jsiiProxy_AutoscalingPolicy) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8567,12 +9800,54 @@ func (a *jsiiProxy_AutoscalingPolicy) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8769,75 +10044,75 @@ func (a *jsiiProxy_AutoscalingPolicy) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type AutoscalingPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#autoscaling_group_name AutoscalingPolicy#autoscaling_group_name}.
-	AutoscalingGroupName *string `json:"autoscalingGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#name AutoscalingPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#adjustment_type AutoscalingPolicy#adjustment_type}.
-	AdjustmentType *string `json:"adjustmentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#cooldown AutoscalingPolicy#cooldown}.
-	Cooldown *float64 `json:"cooldown"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#estimated_instance_warmup AutoscalingPolicy#estimated_instance_warmup}.
-	EstimatedInstanceWarmup *float64 `json:"estimatedInstanceWarmup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#metric_aggregation_type AutoscalingPolicy#metric_aggregation_type}.
-	MetricAggregationType *string `json:"metricAggregationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#min_adjustment_magnitude AutoscalingPolicy#min_adjustment_magnitude}.
-	MinAdjustmentMagnitude *float64 `json:"minAdjustmentMagnitude"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#policy_type AutoscalingPolicy#policy_type}.
-	PolicyType *string `json:"policyType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#autoscaling_group_name AutoscalingPolicy#autoscaling_group_name}.
+	AutoscalingGroupName *string `json:"autoscalingGroupName" yaml:"autoscalingGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#name AutoscalingPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#adjustment_type AutoscalingPolicy#adjustment_type}.
+	AdjustmentType *string `json:"adjustmentType" yaml:"adjustmentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#cooldown AutoscalingPolicy#cooldown}.
+	Cooldown *float64 `json:"cooldown" yaml:"cooldown"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#estimated_instance_warmup AutoscalingPolicy#estimated_instance_warmup}.
+	EstimatedInstanceWarmup *float64 `json:"estimatedInstanceWarmup" yaml:"estimatedInstanceWarmup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#metric_aggregation_type AutoscalingPolicy#metric_aggregation_type}.
+	MetricAggregationType *string `json:"metricAggregationType" yaml:"metricAggregationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#min_adjustment_magnitude AutoscalingPolicy#min_adjustment_magnitude}.
+	MinAdjustmentMagnitude *float64 `json:"minAdjustmentMagnitude" yaml:"minAdjustmentMagnitude"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#policy_type AutoscalingPolicy#policy_type}.
+	PolicyType *string `json:"policyType" yaml:"policyType"`
 	// predictive_scaling_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predictive_scaling_configuration AutoscalingPolicy#predictive_scaling_configuration}
-	PredictiveScalingConfiguration *AutoscalingPolicyPredictiveScalingConfiguration `json:"predictiveScalingConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#scaling_adjustment AutoscalingPolicy#scaling_adjustment}.
-	ScalingAdjustment *float64 `json:"scalingAdjustment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predictive_scaling_configuration AutoscalingPolicy#predictive_scaling_configuration}
+	PredictiveScalingConfiguration *AutoscalingPolicyPredictiveScalingConfiguration `json:"predictiveScalingConfiguration" yaml:"predictiveScalingConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#scaling_adjustment AutoscalingPolicy#scaling_adjustment}.
+	ScalingAdjustment *float64 `json:"scalingAdjustment" yaml:"scalingAdjustment"`
 	// step_adjustment block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#step_adjustment AutoscalingPolicy#step_adjustment}
-	StepAdjustment *[]*AutoscalingPolicyStepAdjustment `json:"stepAdjustment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#step_adjustment AutoscalingPolicy#step_adjustment}
+	StepAdjustment interface{} `json:"stepAdjustment" yaml:"stepAdjustment"`
 	// target_tracking_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#target_tracking_configuration AutoscalingPolicy#target_tracking_configuration}
-	TargetTrackingConfiguration *AutoscalingPolicyTargetTrackingConfiguration `json:"targetTrackingConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#target_tracking_configuration AutoscalingPolicy#target_tracking_configuration}
+	TargetTrackingConfiguration *AutoscalingPolicyTargetTrackingConfiguration `json:"targetTrackingConfiguration" yaml:"targetTrackingConfiguration"`
 }
 
 type AutoscalingPolicyPredictiveScalingConfiguration struct {
 	// metric_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#metric_specification AutoscalingPolicy#metric_specification}
-	MetricSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification `json:"metricSpecification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#max_capacity_breach_behavior AutoscalingPolicy#max_capacity_breach_behavior}.
-	MaxCapacityBreachBehavior *string `json:"maxCapacityBreachBehavior"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#max_capacity_buffer AutoscalingPolicy#max_capacity_buffer}.
-	MaxCapacityBuffer *string `json:"maxCapacityBuffer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#mode AutoscalingPolicy#mode}.
-	Mode *string `json:"mode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#scheduling_buffer_time AutoscalingPolicy#scheduling_buffer_time}.
-	SchedulingBufferTime *string `json:"schedulingBufferTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#metric_specification AutoscalingPolicy#metric_specification}
+	MetricSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification `json:"metricSpecification" yaml:"metricSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#max_capacity_breach_behavior AutoscalingPolicy#max_capacity_breach_behavior}.
+	MaxCapacityBreachBehavior *string `json:"maxCapacityBreachBehavior" yaml:"maxCapacityBreachBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#max_capacity_buffer AutoscalingPolicy#max_capacity_buffer}.
+	MaxCapacityBuffer *string `json:"maxCapacityBuffer" yaml:"maxCapacityBuffer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#mode AutoscalingPolicy#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#scheduling_buffer_time AutoscalingPolicy#scheduling_buffer_time}.
+	SchedulingBufferTime *string `json:"schedulingBufferTime" yaml:"schedulingBufferTime"`
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#target_value AutoscalingPolicy#target_value}.
-	TargetValue *float64 `json:"targetValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#target_value AutoscalingPolicy#target_value}.
+	TargetValue *float64 `json:"targetValue" yaml:"targetValue"`
 	// predefined_load_metric_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_load_metric_specification AutoscalingPolicy#predefined_load_metric_specification}
-	PredefinedLoadMetricSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification `json:"predefinedLoadMetricSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_load_metric_specification AutoscalingPolicy#predefined_load_metric_specification}
+	PredefinedLoadMetricSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification `json:"predefinedLoadMetricSpecification" yaml:"predefinedLoadMetricSpecification"`
 	// predefined_metric_pair_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_metric_pair_specification AutoscalingPolicy#predefined_metric_pair_specification}
-	PredefinedMetricPairSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification `json:"predefinedMetricPairSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_metric_pair_specification AutoscalingPolicy#predefined_metric_pair_specification}
+	PredefinedMetricPairSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification `json:"predefinedMetricPairSpecification" yaml:"predefinedMetricPairSpecification"`
 	// predefined_scaling_metric_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_scaling_metric_specification AutoscalingPolicy#predefined_scaling_metric_specification}
-	PredefinedScalingMetricSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification `json:"predefinedScalingMetricSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_scaling_metric_specification AutoscalingPolicy#predefined_scaling_metric_specification}
+	PredefinedScalingMetricSpecification *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification `json:"predefinedScalingMetricSpecification" yaml:"predefinedScalingMetricSpecification"`
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference interface {
@@ -8857,12 +10132,17 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputRef
 	TargetValueInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutPredefinedLoadMetricSpecification(value *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification)
@@ -8988,8 +10268,8 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8998,7 +10278,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference{}
@@ -9012,7 +10292,7 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutput
 	return &j
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9054,7 +10334,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9063,12 +10343,40 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9105,12 +10413,54 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9195,10 +10545,10 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
-	PredefinedMetricType *string `json:"predefinedMetricType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#resource_label AutoscalingPolicy#resource_label}.
-	ResourceLabel *string `json:"resourceLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
+	PredefinedMetricType *string `json:"predefinedMetricType" yaml:"predefinedMetricType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#resource_label AutoscalingPolicy#resource_label}.
+	ResourceLabel *string `json:"resourceLabel" yaml:"resourceLabel"`
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference interface {
@@ -9215,12 +10565,17 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 	ResourceLabelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9300,8 +10655,8 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9310,7 +10665,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference{}
@@ -9324,7 +10679,7 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredef
 	return &j
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9374,7 +10729,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9383,12 +10738,40 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9425,12 +10808,54 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9467,10 +10892,10 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
-	PredefinedMetricType *string `json:"predefinedMetricType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#resource_label AutoscalingPolicy#resource_label}.
-	ResourceLabel *string `json:"resourceLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
+	PredefinedMetricType *string `json:"predefinedMetricType" yaml:"predefinedMetricType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#resource_label AutoscalingPolicy#resource_label}.
+	ResourceLabel *string `json:"resourceLabel" yaml:"resourceLabel"`
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference interface {
@@ -9487,12 +10912,17 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 	ResourceLabelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9572,8 +11002,8 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9582,7 +11012,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference{}
@@ -9596,7 +11026,7 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredef
 	return &j
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9646,7 +11076,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9655,12 +11085,40 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9697,12 +11155,54 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9739,10 +11239,10 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
-	PredefinedMetricType *string `json:"predefinedMetricType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#resource_label AutoscalingPolicy#resource_label}.
-	ResourceLabel *string `json:"resourceLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
+	PredefinedMetricType *string `json:"predefinedMetricType" yaml:"predefinedMetricType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#resource_label AutoscalingPolicy#resource_label}.
+	ResourceLabel *string `json:"resourceLabel" yaml:"resourceLabel"`
 }
 
 type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference interface {
@@ -9759,12 +11259,17 @@ type AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefine
 	ResourceLabelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9844,8 +11349,8 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9854,7 +11359,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	return returns
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference{}
@@ -9868,7 +11373,7 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredef
 	return &j
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9918,7 +11423,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9927,12 +11432,40 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9969,12 +11502,54 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecific
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10032,12 +11607,17 @@ type AutoscalingPolicyPredictiveScalingConfigurationOutputReference interface {
 	SchedulingBufferTimeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutMetricSpecification(value *AutoscalingPolicyPredictiveScalingConfigurationMetricSpecification)
@@ -10182,8 +11762,8 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10192,7 +11772,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReferenc
 	return returns
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationOutputReference {
+func NewAutoscalingPolicyPredictiveScalingConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyPredictiveScalingConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference{}
@@ -10206,7 +11786,7 @@ func NewAutoscalingPolicyPredictiveScalingConfigurationOutputReference(terraform
 	return &j
 }
 
-func NewAutoscalingPolicyPredictiveScalingConfigurationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyPredictiveScalingConfigurationOutputReference_Override(a AutoscalingPolicyPredictiveScalingConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10272,7 +11852,7 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10281,12 +11861,40 @@ func (j *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReferenc
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10323,12 +11931,54 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReferenc
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10405,49 +12055,49 @@ func (a *jsiiProxy_AutoscalingPolicyPredictiveScalingConfigurationOutputReferenc
 }
 
 type AutoscalingPolicyStepAdjustment struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#scaling_adjustment AutoscalingPolicy#scaling_adjustment}.
-	ScalingAdjustment *float64 `json:"scalingAdjustment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#metric_interval_lower_bound AutoscalingPolicy#metric_interval_lower_bound}.
-	MetricIntervalLowerBound *string `json:"metricIntervalLowerBound"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#metric_interval_upper_bound AutoscalingPolicy#metric_interval_upper_bound}.
-	MetricIntervalUpperBound *string `json:"metricIntervalUpperBound"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#scaling_adjustment AutoscalingPolicy#scaling_adjustment}.
+	ScalingAdjustment *float64 `json:"scalingAdjustment" yaml:"scalingAdjustment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#metric_interval_lower_bound AutoscalingPolicy#metric_interval_lower_bound}.
+	MetricIntervalLowerBound *string `json:"metricIntervalLowerBound" yaml:"metricIntervalLowerBound"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#metric_interval_upper_bound AutoscalingPolicy#metric_interval_upper_bound}.
+	MetricIntervalUpperBound *string `json:"metricIntervalUpperBound" yaml:"metricIntervalUpperBound"`
 }
 
 type AutoscalingPolicyTargetTrackingConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#target_value AutoscalingPolicy#target_value}.
-	TargetValue *float64 `json:"targetValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#target_value AutoscalingPolicy#target_value}.
+	TargetValue *float64 `json:"targetValue" yaml:"targetValue"`
 	// customized_metric_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#customized_metric_specification AutoscalingPolicy#customized_metric_specification}
-	CustomizedMetricSpecification *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification `json:"customizedMetricSpecification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#disable_scale_in AutoscalingPolicy#disable_scale_in}.
-	DisableScaleIn interface{} `json:"disableScaleIn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#customized_metric_specification AutoscalingPolicy#customized_metric_specification}
+	CustomizedMetricSpecification *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification `json:"customizedMetricSpecification" yaml:"customizedMetricSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#disable_scale_in AutoscalingPolicy#disable_scale_in}.
+	DisableScaleIn interface{} `json:"disableScaleIn" yaml:"disableScaleIn"`
 	// predefined_metric_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_metric_specification AutoscalingPolicy#predefined_metric_specification}
-	PredefinedMetricSpecification *AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification `json:"predefinedMetricSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_metric_specification AutoscalingPolicy#predefined_metric_specification}
+	PredefinedMetricSpecification *AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification `json:"predefinedMetricSpecification" yaml:"predefinedMetricSpecification"`
 }
 
 type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#metric_name AutoscalingPolicy#metric_name}.
-	MetricName *string `json:"metricName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#namespace AutoscalingPolicy#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#statistic AutoscalingPolicy#statistic}.
-	Statistic *string `json:"statistic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#metric_name AutoscalingPolicy#metric_name}.
+	MetricName *string `json:"metricName" yaml:"metricName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#namespace AutoscalingPolicy#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#statistic AutoscalingPolicy#statistic}.
+	Statistic *string `json:"statistic" yaml:"statistic"`
 	// metric_dimension block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#metric_dimension AutoscalingPolicy#metric_dimension}
-	MetricDimension *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension `json:"metricDimension"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#unit AutoscalingPolicy#unit}.
-	Unit *string `json:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#metric_dimension AutoscalingPolicy#metric_dimension}
+	MetricDimension interface{} `json:"metricDimension" yaml:"metricDimension"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#unit AutoscalingPolicy#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
 }
 
 type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#name AutoscalingPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#value AutoscalingPolicy#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#name AutoscalingPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#value AutoscalingPolicy#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference interface {
@@ -10456,9 +12106,9 @@ type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOu
 	SetInternalValue(val *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	MetricDimension() *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension
-	SetMetricDimension(val *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension)
-	MetricDimensionInput() *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension
+	MetricDimension() interface{}
+	SetMetricDimension(val interface{})
+	MetricDimensionInput() interface{}
 	MetricName() *string
 	SetMetricName(val *string)
 	MetricNameInput() *string
@@ -10470,15 +12120,20 @@ type AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOu
 	StatisticInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMetricDimension()
@@ -10510,8 +12165,8 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) MetricDimension() *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension {
-	var returns *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) MetricDimension() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"metricDimension",
@@ -10520,8 +12175,8 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) MetricDimensionInput() *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension {
-	var returns *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) MetricDimensionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"metricDimensionInput",
@@ -10600,8 +12255,8 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10630,7 +12285,7 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 	return returns
 }
 
-func NewAutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference {
+func NewAutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference{}
@@ -10644,7 +12299,7 @@ func NewAutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificatio
 	return &j
 }
 
-func NewAutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference_Override(a AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference_Override(a AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10670,7 +12325,7 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) SetMetricDimension(val *[]*AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension) {
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) SetMetricDimension(val interface{}) {
 	_jsii_.Set(
 		j,
 		"metricDimension",
@@ -10710,7 +12365,7 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10727,12 +12382,40 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10769,12 +12452,54 @@ func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricS
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10844,12 +12569,17 @@ type AutoscalingPolicyTargetTrackingConfigurationOutputReference interface {
 	TargetValueInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCustomizedMetricSpecification(value *AutoscalingPolicyTargetTrackingConfigurationCustomizedMetricSpecification)
@@ -10974,8 +12704,8 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10984,7 +12714,7 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 	return returns
 }
 
-func NewAutoscalingPolicyTargetTrackingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationOutputReference {
+func NewAutoscalingPolicyTargetTrackingConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference{}
@@ -10998,7 +12728,7 @@ func NewAutoscalingPolicyTargetTrackingConfigurationOutputReference(terraformRes
 	return &j
 }
 
-func NewAutoscalingPolicyTargetTrackingConfigurationOutputReference_Override(a AutoscalingPolicyTargetTrackingConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyTargetTrackingConfigurationOutputReference_Override(a AutoscalingPolicyTargetTrackingConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11048,7 +12778,7 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11057,12 +12787,40 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11099,12 +12857,54 @@ func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11181,10 +12981,10 @@ func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationOutputReference) 
 }
 
 type AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
-	PredefinedMetricType *string `json:"predefinedMetricType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy.html#resource_label AutoscalingPolicy#resource_label}.
-	ResourceLabel *string `json:"resourceLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#predefined_metric_type AutoscalingPolicy#predefined_metric_type}.
+	PredefinedMetricType *string `json:"predefinedMetricType" yaml:"predefinedMetricType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_policy#resource_label AutoscalingPolicy#resource_label}.
+	ResourceLabel *string `json:"resourceLabel" yaml:"resourceLabel"`
 }
 
 type AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference interface {
@@ -11201,12 +13001,17 @@ type AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOu
 	ResourceLabelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResourceLabel()
@@ -11287,8 +13092,8 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricS
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11297,7 +13102,7 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricS
 	return returns
 }
 
-func NewAutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference {
+func NewAutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference{}
@@ -11311,7 +13116,7 @@ func NewAutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificatio
 	return &j
 }
 
-func NewAutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference_Override(a AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference_Override(a AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11361,7 +13166,7 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricS
 	)
 }
 
-func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11370,12 +13175,40 @@ func (j *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricS
 }
 
 // Experimental.
-func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11412,12 +13245,54 @@ func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricS
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricSpecificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11461,7 +13336,7 @@ func (a *jsiiProxy_AutoscalingPolicyTargetTrackingConfigurationPredefinedMetricS
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html aws_autoscaling_schedule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule aws_autoscaling_schedule}.
 type AutoscalingSchedule interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -11470,8 +13345,8 @@ type AutoscalingSchedule interface {
 	AutoscalingGroupNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DesiredCapacity() *float64
@@ -11511,10 +13386,15 @@ type AutoscalingSchedule interface {
 	SetTimeZone(val *string)
 	TimeZoneInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDesiredCapacity()
@@ -11586,8 +13466,8 @@ func (j *jsiiProxy_AutoscalingSchedule) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_AutoscalingSchedule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AutoscalingSchedule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11866,7 +13746,7 @@ func (j *jsiiProxy_AutoscalingSchedule) TimeZoneInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html aws_autoscaling_schedule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule aws_autoscaling_schedule} Resource.
 func NewAutoscalingSchedule(scope constructs.Construct, id *string, config *AutoscalingScheduleConfig) AutoscalingSchedule {
 	_init_.Initialize()
 
@@ -11881,7 +13761,7 @@ func NewAutoscalingSchedule(scope constructs.Construct, id *string, config *Auto
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html aws_autoscaling_schedule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule aws_autoscaling_schedule} Resource.
 func NewAutoscalingSchedule_Override(a AutoscalingSchedule, scope constructs.Construct, id *string, config *AutoscalingScheduleConfig) {
 	_init_.Initialize()
 
@@ -11900,7 +13780,7 @@ func (j *jsiiProxy_AutoscalingSchedule) SetAutoscalingGroupName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AutoscalingSchedule) SetCount(val interface{}) {
+func (j *jsiiProxy_AutoscalingSchedule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12036,12 +13916,40 @@ func (a *jsiiProxy_AutoscalingSchedule) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingSchedule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingSchedule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingSchedule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12078,12 +13986,54 @@ func (a *jsiiProxy_AutoscalingSchedule) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (a *jsiiProxy_AutoscalingSchedule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingSchedule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AutoscalingSchedule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AutoscalingSchedule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12240,42 +14190,42 @@ func (a *jsiiProxy_AutoscalingSchedule) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type AutoscalingScheduleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#autoscaling_group_name AutoscalingSchedule#autoscaling_group_name}.
-	AutoscalingGroupName *string `json:"autoscalingGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#scheduled_action_name AutoscalingSchedule#scheduled_action_name}.
-	ScheduledActionName *string `json:"scheduledActionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#desired_capacity AutoscalingSchedule#desired_capacity}.
-	DesiredCapacity *float64 `json:"desiredCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#end_time AutoscalingSchedule#end_time}.
-	EndTime *string `json:"endTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#max_size AutoscalingSchedule#max_size}.
-	MaxSize *float64 `json:"maxSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#min_size AutoscalingSchedule#min_size}.
-	MinSize *float64 `json:"minSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#recurrence AutoscalingSchedule#recurrence}.
-	Recurrence *string `json:"recurrence"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#start_time AutoscalingSchedule#start_time}.
-	StartTime *string `json:"startTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule.html#time_zone AutoscalingSchedule#time_zone}.
-	TimeZone *string `json:"timeZone"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#autoscaling_group_name AutoscalingSchedule#autoscaling_group_name}.
+	AutoscalingGroupName *string `json:"autoscalingGroupName" yaml:"autoscalingGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#scheduled_action_name AutoscalingSchedule#scheduled_action_name}.
+	ScheduledActionName *string `json:"scheduledActionName" yaml:"scheduledActionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#desired_capacity AutoscalingSchedule#desired_capacity}.
+	DesiredCapacity *float64 `json:"desiredCapacity" yaml:"desiredCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#end_time AutoscalingSchedule#end_time}.
+	EndTime *string `json:"endTime" yaml:"endTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#max_size AutoscalingSchedule#max_size}.
+	MaxSize *float64 `json:"maxSize" yaml:"maxSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#min_size AutoscalingSchedule#min_size}.
+	MinSize *float64 `json:"minSize" yaml:"minSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#recurrence AutoscalingSchedule#recurrence}.
+	Recurrence *string `json:"recurrence" yaml:"recurrence"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#start_time AutoscalingSchedule#start_time}.
+	StartTime *string `json:"startTime" yaml:"startTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/autoscaling_schedule#time_zone AutoscalingSchedule#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group.html aws_autoscaling_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group aws_autoscaling_group}.
 type DataAwsAutoscalingGroup interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	AvailabilityZones() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultCooldown() *float64
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -12294,7 +14244,7 @@ type DataAwsAutoscalingGroup interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
-	NewInstancesProtectedFromScaleIn() interface{}
+	NewInstancesProtectedFromScaleIn() cdktf.IResolvable
 	Node() constructs.Node
 	PlacementGroup() *string
 	Provider() cdktf.TerraformProvider
@@ -12309,10 +14259,15 @@ type DataAwsAutoscalingGroup interface {
 	TerraformResourceType() *string
 	VpcZoneIdentifier() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	LaunchTemplate(index *string) DataAwsAutoscalingGroupLaunchTemplate
 	OverrideLogicalId(newLogicalId *string)
@@ -12368,8 +14323,8 @@ func (j *jsiiProxy_DataAwsAutoscalingGroup) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAutoscalingGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12528,8 +14483,8 @@ func (j *jsiiProxy_DataAwsAutoscalingGroup) NameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroup) NewInstancesProtectedFromScaleIn() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAutoscalingGroup) NewInstancesProtectedFromScaleIn() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"newInstancesProtectedFromScaleIn",
@@ -12658,7 +14613,7 @@ func (j *jsiiProxy_DataAwsAutoscalingGroup) VpcZoneIdentifier() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group.html aws_autoscaling_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group aws_autoscaling_group} Data Source.
 func NewDataAwsAutoscalingGroup(scope constructs.Construct, id *string, config *DataAwsAutoscalingGroupConfig) DataAwsAutoscalingGroup {
 	_init_.Initialize()
 
@@ -12673,7 +14628,7 @@ func NewDataAwsAutoscalingGroup(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group.html aws_autoscaling_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group aws_autoscaling_group} Data Source.
 func NewDataAwsAutoscalingGroup_Override(d DataAwsAutoscalingGroup, scope constructs.Construct, id *string, config *DataAwsAutoscalingGroupConfig) {
 	_init_.Initialize()
 
@@ -12684,7 +14639,7 @@ func NewDataAwsAutoscalingGroup_Override(d DataAwsAutoscalingGroup, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAutoscalingGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12764,12 +14719,40 @@ func (d *jsiiProxy_DataAwsAutoscalingGroup) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAutoscalingGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12806,12 +14789,54 @@ func (d *jsiiProxy_DataAwsAutoscalingGroup) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAutoscalingGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12925,15 +14950,15 @@ func (d *jsiiProxy_DataAwsAutoscalingGroup) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type DataAwsAutoscalingGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group.html#name DataAwsAutoscalingGroup#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_group#name DataAwsAutoscalingGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type DataAwsAutoscalingGroupLaunchTemplate interface {
@@ -12944,13 +14969,20 @@ type DataAwsAutoscalingGroupLaunchTemplate interface {
 	Name() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -12999,8 +15031,8 @@ func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13019,15 +15051,25 @@ func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) Version() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAutoscalingGroupLaunchTemplate(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAutoscalingGroupLaunchTemplate {
+func NewDataAwsAutoscalingGroupLaunchTemplate(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAutoscalingGroupLaunchTemplate {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate{}
 
 	_jsii_.Create(
 		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroupLaunchTemplate",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -13035,12 +15077,12 @@ func NewDataAwsAutoscalingGroupLaunchTemplate(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewDataAwsAutoscalingGroupLaunchTemplate_Override(d DataAwsAutoscalingGroupLaunchTemplate, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAutoscalingGroupLaunchTemplate_Override(d DataAwsAutoscalingGroupLaunchTemplate, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.autoscaling.DataAwsAutoscalingGroupLaunchTemplate",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -13061,7 +15103,7 @@ func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13069,13 +15111,49 @@ func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13112,12 +15190,54 @@ func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13139,19 +15259,19 @@ func (d *jsiiProxy_DataAwsAutoscalingGroupLaunchTemplate) InterpolationForAttrib
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html aws_autoscaling_groups}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups aws_autoscaling_groups}.
 type DataAwsAutoscalingGroups interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filter() *[]*DataAwsAutoscalingGroupsFilter
-	SetFilter(val *[]*DataAwsAutoscalingGroupsFilter)
-	FilterInput() *[]*DataAwsAutoscalingGroupsFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -13166,10 +15286,15 @@ type DataAwsAutoscalingGroups interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetFilter()
@@ -13215,8 +15340,8 @@ func (j *jsiiProxy_DataAwsAutoscalingGroups) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroups) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAutoscalingGroups) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13235,8 +15360,8 @@ func (j *jsiiProxy_DataAwsAutoscalingGroups) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroups) Filter() *[]*DataAwsAutoscalingGroupsFilter {
-	var returns *[]*DataAwsAutoscalingGroupsFilter
+func (j *jsiiProxy_DataAwsAutoscalingGroups) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -13245,8 +15370,8 @@ func (j *jsiiProxy_DataAwsAutoscalingGroups) Filter() *[]*DataAwsAutoscalingGrou
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroups) FilterInput() *[]*DataAwsAutoscalingGroupsFilter {
-	var returns *[]*DataAwsAutoscalingGroupsFilter
+func (j *jsiiProxy_DataAwsAutoscalingGroups) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -13365,7 +15490,7 @@ func (j *jsiiProxy_DataAwsAutoscalingGroups) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html aws_autoscaling_groups} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups aws_autoscaling_groups} Data Source.
 func NewDataAwsAutoscalingGroups(scope constructs.Construct, id *string, config *DataAwsAutoscalingGroupsConfig) DataAwsAutoscalingGroups {
 	_init_.Initialize()
 
@@ -13380,7 +15505,7 @@ func NewDataAwsAutoscalingGroups(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html aws_autoscaling_groups} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups aws_autoscaling_groups} Data Source.
 func NewDataAwsAutoscalingGroups_Override(d DataAwsAutoscalingGroups, scope constructs.Construct, id *string, config *DataAwsAutoscalingGroupsConfig) {
 	_init_.Initialize()
 
@@ -13391,7 +15516,7 @@ func NewDataAwsAutoscalingGroups_Override(d DataAwsAutoscalingGroups, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroups) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAutoscalingGroups) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13407,7 +15532,7 @@ func (j *jsiiProxy_DataAwsAutoscalingGroups) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAutoscalingGroups) SetFilter(val *[]*DataAwsAutoscalingGroupsFilter) {
+func (j *jsiiProxy_DataAwsAutoscalingGroups) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -13471,12 +15596,40 @@ func (d *jsiiProxy_DataAwsAutoscalingGroups) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroups) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAutoscalingGroups) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroups) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13513,12 +15666,54 @@ func (d *jsiiProxy_DataAwsAutoscalingGroups) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroups) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroups) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAutoscalingGroups) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAutoscalingGroups) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13627,22 +15822,22 @@ func (d *jsiiProxy_DataAwsAutoscalingGroups) ToTerraform() interface{} {
 // AWS Auto Scaling.
 type DataAwsAutoscalingGroupsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html#filter DataAwsAutoscalingGroups#filter}
-	Filter *[]*DataAwsAutoscalingGroupsFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups#filter DataAwsAutoscalingGroups#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
 }
 
 type DataAwsAutoscalingGroupsFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html#name DataAwsAutoscalingGroups#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups.html#values DataAwsAutoscalingGroups#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups#name DataAwsAutoscalingGroups#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/autoscaling_groups#values DataAwsAutoscalingGroups#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }

@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/sqs/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue.html aws_sqs_queue}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue aws_sqs_queue}.
 type DataAwsSqsQueue interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -31,18 +31,23 @@ type DataAwsSqsQueue interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Url() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -88,8 +93,8 @@ func (j *jsiiProxy_DataAwsSqsQueue) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSqsQueue) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSqsQueue) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -198,8 +203,8 @@ func (j *jsiiProxy_DataAwsSqsQueue) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSqsQueue) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSqsQueue) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -208,8 +213,8 @@ func (j *jsiiProxy_DataAwsSqsQueue) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSqsQueue) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSqsQueue) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -258,7 +263,7 @@ func (j *jsiiProxy_DataAwsSqsQueue) Url() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue.html aws_sqs_queue} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue aws_sqs_queue} Data Source.
 func NewDataAwsSqsQueue(scope constructs.Construct, id *string, config *DataAwsSqsQueueConfig) DataAwsSqsQueue {
 	_init_.Initialize()
 
@@ -273,7 +278,7 @@ func NewDataAwsSqsQueue(scope constructs.Construct, id *string, config *DataAwsS
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue.html aws_sqs_queue} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue aws_sqs_queue} Data Source.
 func NewDataAwsSqsQueue_Override(d DataAwsSqsQueue, scope constructs.Construct, id *string, config *DataAwsSqsQueueConfig) {
 	_init_.Initialize()
 
@@ -284,7 +289,7 @@ func NewDataAwsSqsQueue_Override(d DataAwsSqsQueue, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsSqsQueue) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsSqsQueue) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -324,7 +329,7 @@ func (j *jsiiProxy_DataAwsSqsQueue) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsSqsQueue) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsSqsQueue) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -372,12 +377,40 @@ func (d *jsiiProxy_DataAwsSqsQueue) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSqsQueue) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSqsQueue) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSqsQueue) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -414,12 +447,54 @@ func (d *jsiiProxy_DataAwsSqsQueue) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSqsQueue) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSqsQueue) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSqsQueue) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSqsQueue) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -528,20 +603,20 @@ func (d *jsiiProxy_DataAwsSqsQueue) ToTerraform() interface{} {
 // AWS Simple Queue Service.
 type DataAwsSqsQueueConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue.html#name DataAwsSqsQueue#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue.html#tags DataAwsSqsQueue#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue#name DataAwsSqsQueue#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sqs_queue#tags DataAwsSqsQueue#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html aws_sqs_queue}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue aws_sqs_queue}.
 type SqsQueue interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -550,8 +625,8 @@ type SqsQueue interface {
 	ContentBasedDeduplication() interface{}
 	SetContentBasedDeduplication(val interface{})
 	ContentBasedDeduplicationInput() interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeduplicationScope() *string
 	SetDeduplicationScope(val *string)
 	DeduplicationScopeInput() *string
@@ -599,18 +674,21 @@ type SqsQueue interface {
 	ReceiveWaitTimeSeconds() *float64
 	SetReceiveWaitTimeSeconds(val *float64)
 	ReceiveWaitTimeSecondsInput() *float64
+	RedriveAllowPolicy() *string
+	SetRedriveAllowPolicy(val *string)
+	RedriveAllowPolicyInput() *string
 	RedrivePolicy() *string
 	SetRedrivePolicy(val *string)
 	RedrivePolicyInput() *string
 	SqsManagedSseEnabled() interface{}
 	SetSqsManagedSseEnabled(val interface{})
 	SqsManagedSseEnabledInput() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -619,10 +697,15 @@ type SqsQueue interface {
 	SetVisibilityTimeoutSeconds(val *float64)
 	VisibilityTimeoutSecondsInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetContentBasedDeduplication()
@@ -639,6 +722,7 @@ type SqsQueue interface {
 	ResetOverrideLogicalId()
 	ResetPolicy()
 	ResetReceiveWaitTimeSeconds()
+	ResetRedriveAllowPolicy()
 	ResetRedrivePolicy()
 	ResetSqsManagedSseEnabled()
 	ResetTags()
@@ -705,8 +789,8 @@ func (j *jsiiProxy_SqsQueue) ContentBasedDeduplicationInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SqsQueue) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SqsQueue) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1035,6 +1119,26 @@ func (j *jsiiProxy_SqsQueue) ReceiveWaitTimeSecondsInput() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_SqsQueue) RedriveAllowPolicy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"redriveAllowPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SqsQueue) RedriveAllowPolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"redriveAllowPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SqsQueue) RedrivePolicy() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1075,8 +1179,8 @@ func (j *jsiiProxy_SqsQueue) SqsManagedSseEnabledInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SqsQueue) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SqsQueue) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1085,8 +1189,8 @@ func (j *jsiiProxy_SqsQueue) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SqsQueue) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SqsQueue) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1095,8 +1199,8 @@ func (j *jsiiProxy_SqsQueue) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SqsQueue) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SqsQueue) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1105,8 +1209,8 @@ func (j *jsiiProxy_SqsQueue) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SqsQueue) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SqsQueue) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1175,7 +1279,7 @@ func (j *jsiiProxy_SqsQueue) VisibilityTimeoutSecondsInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html aws_sqs_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue aws_sqs_queue} Resource.
 func NewSqsQueue(scope constructs.Construct, id *string, config *SqsQueueConfig) SqsQueue {
 	_init_.Initialize()
 
@@ -1190,7 +1294,7 @@ func NewSqsQueue(scope constructs.Construct, id *string, config *SqsQueueConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html aws_sqs_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue aws_sqs_queue} Resource.
 func NewSqsQueue_Override(s SqsQueue, scope constructs.Construct, id *string, config *SqsQueueConfig) {
 	_init_.Initialize()
 
@@ -1209,7 +1313,7 @@ func (j *jsiiProxy_SqsQueue) SetContentBasedDeduplication(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SqsQueue) SetCount(val interface{}) {
+func (j *jsiiProxy_SqsQueue) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1337,6 +1441,14 @@ func (j *jsiiProxy_SqsQueue) SetReceiveWaitTimeSeconds(val *float64) {
 	)
 }
 
+func (j *jsiiProxy_SqsQueue) SetRedriveAllowPolicy(val *string) {
+	_jsii_.Set(
+		j,
+		"redriveAllowPolicy",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SqsQueue) SetRedrivePolicy(val *string) {
 	_jsii_.Set(
 		j,
@@ -1353,7 +1465,7 @@ func (j *jsiiProxy_SqsQueue) SetSqsManagedSseEnabled(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SqsQueue) SetTags(val interface{}) {
+func (j *jsiiProxy_SqsQueue) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1361,7 +1473,7 @@ func (j *jsiiProxy_SqsQueue) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SqsQueue) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SqsQueue) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1417,12 +1529,40 @@ func (s *jsiiProxy_SqsQueue) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_SqsQueue) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SqsQueue) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SqsQueue) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1459,12 +1599,54 @@ func (s *jsiiProxy_SqsQueue) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (s *jsiiProxy_SqsQueue) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SqsQueue) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SqsQueue) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SqsQueue) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1610,6 +1792,14 @@ func (s *jsiiProxy_SqsQueue) ResetReceiveWaitTimeSeconds() {
 	)
 }
 
+func (s *jsiiProxy_SqsQueue) ResetRedriveAllowPolicy() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetRedriveAllowPolicy",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SqsQueue) ResetRedrivePolicy() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1709,58 +1899,60 @@ func (s *jsiiProxy_SqsQueue) ToTerraform() interface{} {
 // AWS Simple Queue Service.
 type SqsQueueConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#content_based_deduplication SqsQueue#content_based_deduplication}.
-	ContentBasedDeduplication interface{} `json:"contentBasedDeduplication"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#deduplication_scope SqsQueue#deduplication_scope}.
-	DeduplicationScope *string `json:"deduplicationScope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#delay_seconds SqsQueue#delay_seconds}.
-	DelaySeconds *float64 `json:"delaySeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#fifo_queue SqsQueue#fifo_queue}.
-	FifoQueue interface{} `json:"fifoQueue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#fifo_throughput_limit SqsQueue#fifo_throughput_limit}.
-	FifoThroughputLimit *string `json:"fifoThroughputLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#kms_data_key_reuse_period_seconds SqsQueue#kms_data_key_reuse_period_seconds}.
-	KmsDataKeyReusePeriodSeconds *float64 `json:"kmsDataKeyReusePeriodSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#kms_master_key_id SqsQueue#kms_master_key_id}.
-	KmsMasterKeyId *string `json:"kmsMasterKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#max_message_size SqsQueue#max_message_size}.
-	MaxMessageSize *float64 `json:"maxMessageSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#message_retention_seconds SqsQueue#message_retention_seconds}.
-	MessageRetentionSeconds *float64 `json:"messageRetentionSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#name SqsQueue#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#name_prefix SqsQueue#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#policy SqsQueue#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#receive_wait_time_seconds SqsQueue#receive_wait_time_seconds}.
-	ReceiveWaitTimeSeconds *float64 `json:"receiveWaitTimeSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#redrive_policy SqsQueue#redrive_policy}.
-	RedrivePolicy *string `json:"redrivePolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#sqs_managed_sse_enabled SqsQueue#sqs_managed_sse_enabled}.
-	SqsManagedSseEnabled interface{} `json:"sqsManagedSseEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#tags SqsQueue#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#tags_all SqsQueue#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue.html#visibility_timeout_seconds SqsQueue#visibility_timeout_seconds}.
-	VisibilityTimeoutSeconds *float64 `json:"visibilityTimeoutSeconds"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#content_based_deduplication SqsQueue#content_based_deduplication}.
+	ContentBasedDeduplication interface{} `json:"contentBasedDeduplication" yaml:"contentBasedDeduplication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#deduplication_scope SqsQueue#deduplication_scope}.
+	DeduplicationScope *string `json:"deduplicationScope" yaml:"deduplicationScope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#delay_seconds SqsQueue#delay_seconds}.
+	DelaySeconds *float64 `json:"delaySeconds" yaml:"delaySeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#fifo_queue SqsQueue#fifo_queue}.
+	FifoQueue interface{} `json:"fifoQueue" yaml:"fifoQueue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#fifo_throughput_limit SqsQueue#fifo_throughput_limit}.
+	FifoThroughputLimit *string `json:"fifoThroughputLimit" yaml:"fifoThroughputLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#kms_data_key_reuse_period_seconds SqsQueue#kms_data_key_reuse_period_seconds}.
+	KmsDataKeyReusePeriodSeconds *float64 `json:"kmsDataKeyReusePeriodSeconds" yaml:"kmsDataKeyReusePeriodSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#kms_master_key_id SqsQueue#kms_master_key_id}.
+	KmsMasterKeyId *string `json:"kmsMasterKeyId" yaml:"kmsMasterKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#max_message_size SqsQueue#max_message_size}.
+	MaxMessageSize *float64 `json:"maxMessageSize" yaml:"maxMessageSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#message_retention_seconds SqsQueue#message_retention_seconds}.
+	MessageRetentionSeconds *float64 `json:"messageRetentionSeconds" yaml:"messageRetentionSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#name SqsQueue#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#name_prefix SqsQueue#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#policy SqsQueue#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#receive_wait_time_seconds SqsQueue#receive_wait_time_seconds}.
+	ReceiveWaitTimeSeconds *float64 `json:"receiveWaitTimeSeconds" yaml:"receiveWaitTimeSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#redrive_allow_policy SqsQueue#redrive_allow_policy}.
+	RedriveAllowPolicy *string `json:"redriveAllowPolicy" yaml:"redriveAllowPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#redrive_policy SqsQueue#redrive_policy}.
+	RedrivePolicy *string `json:"redrivePolicy" yaml:"redrivePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#sqs_managed_sse_enabled SqsQueue#sqs_managed_sse_enabled}.
+	SqsManagedSseEnabled interface{} `json:"sqsManagedSseEnabled" yaml:"sqsManagedSseEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#tags SqsQueue#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#tags_all SqsQueue#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue#visibility_timeout_seconds SqsQueue#visibility_timeout_seconds}.
+	VisibilityTimeoutSeconds *float64 `json:"visibilityTimeoutSeconds" yaml:"visibilityTimeoutSeconds"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy.html aws_sqs_queue_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy aws_sqs_queue_policy}.
 type SqsQueuePolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1782,10 +1974,15 @@ type SqsQueuePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1820,8 +2017,8 @@ func (j *jsiiProxy_SqsQueuePolicy) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_SqsQueuePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SqsQueuePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1980,7 +2177,7 @@ func (j *jsiiProxy_SqsQueuePolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy.html aws_sqs_queue_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy aws_sqs_queue_policy} Resource.
 func NewSqsQueuePolicy(scope constructs.Construct, id *string, config *SqsQueuePolicyConfig) SqsQueuePolicy {
 	_init_.Initialize()
 
@@ -1995,7 +2192,7 @@ func NewSqsQueuePolicy(scope constructs.Construct, id *string, config *SqsQueueP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy.html aws_sqs_queue_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy aws_sqs_queue_policy} Resource.
 func NewSqsQueuePolicy_Override(s SqsQueuePolicy, scope constructs.Construct, id *string, config *SqsQueuePolicyConfig) {
 	_init_.Initialize()
 
@@ -2006,7 +2203,7 @@ func NewSqsQueuePolicy_Override(s SqsQueuePolicy, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_SqsQueuePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_SqsQueuePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2094,12 +2291,40 @@ func (s *jsiiProxy_SqsQueuePolicy) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_SqsQueuePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SqsQueuePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SqsQueuePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2136,12 +2361,54 @@ func (s *jsiiProxy_SqsQueuePolicy) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_SqsQueuePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SqsQueuePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SqsQueuePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SqsQueuePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2242,15 +2509,15 @@ func (s *jsiiProxy_SqsQueuePolicy) ToTerraform() interface{} {
 // AWS Simple Queue Service.
 type SqsQueuePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy.html#policy SqsQueuePolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy.html#queue_url SqsQueuePolicy#queue_url}.
-	QueueUrl *string `json:"queueUrl"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy#policy SqsQueuePolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sqs_queue_policy#queue_url SqsQueuePolicy#queue_url}.
+	QueueUrl *string `json:"queueUrl" yaml:"queueUrl"`
 }

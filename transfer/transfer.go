@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/transfer/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/transfer_server.html aws_transfer_server}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/transfer_server aws_transfer_server}.
 type DataAwsTransferServer interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	Certificate() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -45,10 +45,15 @@ type DataAwsTransferServer interface {
 	TerraformResourceType() *string
 	Url() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -103,8 +108,8 @@ func (j *jsiiProxy_DataAwsTransferServer) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsTransferServer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsTransferServer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -333,7 +338,7 @@ func (j *jsiiProxy_DataAwsTransferServer) Url() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/transfer_server.html aws_transfer_server} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/transfer_server aws_transfer_server} Data Source.
 func NewDataAwsTransferServer(scope constructs.Construct, id *string, config *DataAwsTransferServerConfig) DataAwsTransferServer {
 	_init_.Initialize()
 
@@ -348,7 +353,7 @@ func NewDataAwsTransferServer(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/transfer_server.html aws_transfer_server} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/transfer_server aws_transfer_server} Data Source.
 func NewDataAwsTransferServer_Override(d DataAwsTransferServer, scope constructs.Construct, id *string, config *DataAwsTransferServerConfig) {
 	_init_.Initialize()
 
@@ -359,7 +364,7 @@ func NewDataAwsTransferServer_Override(d DataAwsTransferServer, scope constructs
 	)
 }
 
-func (j *jsiiProxy_DataAwsTransferServer) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsTransferServer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -439,12 +444,40 @@ func (d *jsiiProxy_DataAwsTransferServer) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsTransferServer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsTransferServer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsTransferServer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -481,12 +514,54 @@ func (d *jsiiProxy_DataAwsTransferServer) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsTransferServer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsTransferServer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsTransferServer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsTransferServer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -587,24 +662,24 @@ func (d *jsiiProxy_DataAwsTransferServer) ToTerraform() interface{} {
 // AWS Transfer.
 type DataAwsTransferServerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/transfer_server.html#server_id DataAwsTransferServer#server_id}.
-	ServerId *string `json:"serverId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/transfer_server#server_id DataAwsTransferServer#server_id}.
+	ServerId *string `json:"serverId" yaml:"serverId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html aws_transfer_access}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_access aws_transfer_access}.
 type TransferAccess interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExternalId() *string
@@ -615,9 +690,9 @@ type TransferAccess interface {
 	HomeDirectory() *string
 	SetHomeDirectory(val *string)
 	HomeDirectoryInput() *string
-	HomeDirectoryMappings() *[]*TransferAccessHomeDirectoryMappings
-	SetHomeDirectoryMappings(val *[]*TransferAccessHomeDirectoryMappings)
-	HomeDirectoryMappingsInput() *[]*TransferAccessHomeDirectoryMappings
+	HomeDirectoryMappings() interface{}
+	SetHomeDirectoryMappings(val interface{})
+	HomeDirectoryMappingsInput() interface{}
 	HomeDirectoryType() *string
 	SetHomeDirectoryType(val *string)
 	HomeDirectoryTypeInput() *string
@@ -643,10 +718,15 @@ type TransferAccess interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPosixProfile(value *TransferAccessPosixProfile)
@@ -688,8 +768,8 @@ func (j *jsiiProxy_TransferAccess) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_TransferAccess) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferAccess) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -768,8 +848,8 @@ func (j *jsiiProxy_TransferAccess) HomeDirectoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_TransferAccess) HomeDirectoryMappings() *[]*TransferAccessHomeDirectoryMappings {
-	var returns *[]*TransferAccessHomeDirectoryMappings
+func (j *jsiiProxy_TransferAccess) HomeDirectoryMappings() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"homeDirectoryMappings",
@@ -778,8 +858,8 @@ func (j *jsiiProxy_TransferAccess) HomeDirectoryMappings() *[]*TransferAccessHom
 	return returns
 }
 
-func (j *jsiiProxy_TransferAccess) HomeDirectoryMappingsInput() *[]*TransferAccessHomeDirectoryMappings {
-	var returns *[]*TransferAccessHomeDirectoryMappings
+func (j *jsiiProxy_TransferAccess) HomeDirectoryMappingsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"homeDirectoryMappingsInput",
@@ -968,7 +1048,7 @@ func (j *jsiiProxy_TransferAccess) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html aws_transfer_access} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_access aws_transfer_access} Resource.
 func NewTransferAccess(scope constructs.Construct, id *string, config *TransferAccessConfig) TransferAccess {
 	_init_.Initialize()
 
@@ -983,7 +1063,7 @@ func NewTransferAccess(scope constructs.Construct, id *string, config *TransferA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html aws_transfer_access} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_access aws_transfer_access} Resource.
 func NewTransferAccess_Override(t TransferAccess, scope constructs.Construct, id *string, config *TransferAccessConfig) {
 	_init_.Initialize()
 
@@ -994,7 +1074,7 @@ func NewTransferAccess_Override(t TransferAccess, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_TransferAccess) SetCount(val interface{}) {
+func (j *jsiiProxy_TransferAccess) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1026,7 +1106,7 @@ func (j *jsiiProxy_TransferAccess) SetHomeDirectory(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TransferAccess) SetHomeDirectoryMappings(val *[]*TransferAccessHomeDirectoryMappings) {
+func (j *jsiiProxy_TransferAccess) SetHomeDirectoryMappings(val interface{}) {
 	_jsii_.Set(
 		j,
 		"homeDirectoryMappings",
@@ -1122,12 +1202,40 @@ func (t *jsiiProxy_TransferAccess) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferAccess) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		t,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferAccess) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		t,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferAccess) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		t,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1164,12 +1272,54 @@ func (t *jsiiProxy_TransferAccess) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferAccess) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferAccess) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferAccess) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		t,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferAccess) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		t,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1326,49 +1476,49 @@ func (t *jsiiProxy_TransferAccess) ToTerraform() interface{} {
 // AWS Transfer.
 type TransferAccessConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#external_id TransferAccess#external_id}.
-	ExternalId *string `json:"externalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#server_id TransferAccess#server_id}.
-	ServerId *string `json:"serverId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#home_directory TransferAccess#home_directory}.
-	HomeDirectory *string `json:"homeDirectory"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#external_id TransferAccess#external_id}.
+	ExternalId *string `json:"externalId" yaml:"externalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#server_id TransferAccess#server_id}.
+	ServerId *string `json:"serverId" yaml:"serverId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#home_directory TransferAccess#home_directory}.
+	HomeDirectory *string `json:"homeDirectory" yaml:"homeDirectory"`
 	// home_directory_mappings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#home_directory_mappings TransferAccess#home_directory_mappings}
-	HomeDirectoryMappings *[]*TransferAccessHomeDirectoryMappings `json:"homeDirectoryMappings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#home_directory_type TransferAccess#home_directory_type}.
-	HomeDirectoryType *string `json:"homeDirectoryType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#policy TransferAccess#policy}.
-	Policy *string `json:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#home_directory_mappings TransferAccess#home_directory_mappings}
+	HomeDirectoryMappings interface{} `json:"homeDirectoryMappings" yaml:"homeDirectoryMappings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#home_directory_type TransferAccess#home_directory_type}.
+	HomeDirectoryType *string `json:"homeDirectoryType" yaml:"homeDirectoryType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#policy TransferAccess#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 	// posix_profile block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#posix_profile TransferAccess#posix_profile}
-	PosixProfile *TransferAccessPosixProfile `json:"posixProfile"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#role TransferAccess#role}.
-	Role *string `json:"role"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#posix_profile TransferAccess#posix_profile}
+	PosixProfile *TransferAccessPosixProfile `json:"posixProfile" yaml:"posixProfile"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#role TransferAccess#role}.
+	Role *string `json:"role" yaml:"role"`
 }
 
 type TransferAccessHomeDirectoryMappings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#entry TransferAccess#entry}.
-	Entry *string `json:"entry"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#target TransferAccess#target}.
-	Target *string `json:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#entry TransferAccess#entry}.
+	Entry *string `json:"entry" yaml:"entry"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#target TransferAccess#target}.
+	Target *string `json:"target" yaml:"target"`
 }
 
 type TransferAccessPosixProfile struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#gid TransferAccess#gid}.
-	Gid *float64 `json:"gid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#uid TransferAccess#uid}.
-	Uid *float64 `json:"uid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access.html#secondary_gids TransferAccess#secondary_gids}.
-	SecondaryGids *[]*float64 `json:"secondaryGids"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#gid TransferAccess#gid}.
+	Gid *float64 `json:"gid" yaml:"gid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#uid TransferAccess#uid}.
+	Uid *float64 `json:"uid" yaml:"uid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_access#secondary_gids TransferAccess#secondary_gids}.
+	SecondaryGids *[]*float64 `json:"secondaryGids" yaml:"secondaryGids"`
 }
 
 type TransferAccessPosixProfileOutputReference interface {
@@ -1385,15 +1535,20 @@ type TransferAccessPosixProfileOutputReference interface {
 	SecondaryGidsInput() *[]*float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Uid() *float64
 	SetUid(val *float64)
 	UidInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSecondaryGids()
@@ -1474,8 +1629,8 @@ func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1504,7 +1659,7 @@ func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) UidInput() *float6
 	return returns
 }
 
-func NewTransferAccessPosixProfileOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) TransferAccessPosixProfileOutputReference {
+func NewTransferAccessPosixProfileOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) TransferAccessPosixProfileOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_TransferAccessPosixProfileOutputReference{}
@@ -1518,7 +1673,7 @@ func NewTransferAccessPosixProfileOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewTransferAccessPosixProfileOutputReference_Override(t TransferAccessPosixProfileOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewTransferAccessPosixProfileOutputReference_Override(t TransferAccessPosixProfileOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1568,7 +1723,7 @@ func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1585,12 +1740,40 @@ func (j *jsiiProxy_TransferAccessPosixProfileOutputReference) SetUid(val *float6
 }
 
 // Experimental.
-func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		t,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		t,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		t,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1627,12 +1810,54 @@ func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		t,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		t,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1676,7 +1901,7 @@ func (t *jsiiProxy_TransferAccessPosixProfileOutputReference) ResetSecondaryGids
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html aws_transfer_server}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_server aws_transfer_server}.
 type TransferServer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1685,8 +1910,8 @@ type TransferServer interface {
 	SetCertificate(val *string)
 	CertificateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DirectoryId() *string
@@ -1735,12 +1960,12 @@ type TransferServer interface {
 	SecurityPolicyName() *string
 	SetSecurityPolicyName(val *string)
 	SecurityPolicyNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1748,10 +1973,15 @@ type TransferServer interface {
 	SetUrl(val *string)
 	UrlInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEndpointDetails(value *TransferServerEndpointDetails)
@@ -1833,8 +2063,8 @@ func (j *jsiiProxy_TransferServer) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_TransferServer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferServer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2183,8 +2413,8 @@ func (j *jsiiProxy_TransferServer) SecurityPolicyNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_TransferServer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferServer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2193,8 +2423,8 @@ func (j *jsiiProxy_TransferServer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_TransferServer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferServer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2203,8 +2433,8 @@ func (j *jsiiProxy_TransferServer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_TransferServer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferServer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2213,8 +2443,8 @@ func (j *jsiiProxy_TransferServer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_TransferServer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferServer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2273,7 +2503,7 @@ func (j *jsiiProxy_TransferServer) UrlInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html aws_transfer_server} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_server aws_transfer_server} Resource.
 func NewTransferServer(scope constructs.Construct, id *string, config *TransferServerConfig) TransferServer {
 	_init_.Initialize()
 
@@ -2288,7 +2518,7 @@ func NewTransferServer(scope constructs.Construct, id *string, config *TransferS
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html aws_transfer_server} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_server aws_transfer_server} Resource.
 func NewTransferServer_Override(t TransferServer, scope constructs.Construct, id *string, config *TransferServerConfig) {
 	_init_.Initialize()
 
@@ -2307,7 +2537,7 @@ func (j *jsiiProxy_TransferServer) SetCertificate(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TransferServer) SetCount(val interface{}) {
+func (j *jsiiProxy_TransferServer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2427,7 +2657,7 @@ func (j *jsiiProxy_TransferServer) SetSecurityPolicyName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TransferServer) SetTags(val interface{}) {
+func (j *jsiiProxy_TransferServer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2435,7 +2665,7 @@ func (j *jsiiProxy_TransferServer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_TransferServer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_TransferServer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2491,12 +2721,40 @@ func (t *jsiiProxy_TransferServer) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferServer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		t,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferServer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		t,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferServer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		t,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2533,12 +2791,54 @@ func (t *jsiiProxy_TransferServer) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferServer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferServer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferServer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		t,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferServer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		t,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2775,60 +3075,60 @@ func (t *jsiiProxy_TransferServer) ToTerraform() interface{} {
 // AWS Transfer.
 type TransferServerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#certificate TransferServer#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#directory_id TransferServer#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#domain TransferServer#domain}.
-	Domain *string `json:"domain"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#certificate TransferServer#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#directory_id TransferServer#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#domain TransferServer#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
 	// endpoint_details block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#endpoint_details TransferServer#endpoint_details}
-	EndpointDetails *TransferServerEndpointDetails `json:"endpointDetails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#endpoint_type TransferServer#endpoint_type}.
-	EndpointType *string `json:"endpointType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#force_destroy TransferServer#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#function TransferServer#function}.
-	Function *string `json:"function"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#host_key TransferServer#host_key}.
-	HostKey *string `json:"hostKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#identity_provider_type TransferServer#identity_provider_type}.
-	IdentityProviderType *string `json:"identityProviderType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#invocation_role TransferServer#invocation_role}.
-	InvocationRole *string `json:"invocationRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#logging_role TransferServer#logging_role}.
-	LoggingRole *string `json:"loggingRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#protocols TransferServer#protocols}.
-	Protocols *[]*string `json:"protocols"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#security_policy_name TransferServer#security_policy_name}.
-	SecurityPolicyName *string `json:"securityPolicyName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#tags TransferServer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#tags_all TransferServer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#url TransferServer#url}.
-	Url *string `json:"url"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#endpoint_details TransferServer#endpoint_details}
+	EndpointDetails *TransferServerEndpointDetails `json:"endpointDetails" yaml:"endpointDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#endpoint_type TransferServer#endpoint_type}.
+	EndpointType *string `json:"endpointType" yaml:"endpointType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#force_destroy TransferServer#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#function TransferServer#function}.
+	Function *string `json:"function" yaml:"function"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#host_key TransferServer#host_key}.
+	HostKey *string `json:"hostKey" yaml:"hostKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#identity_provider_type TransferServer#identity_provider_type}.
+	IdentityProviderType *string `json:"identityProviderType" yaml:"identityProviderType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#invocation_role TransferServer#invocation_role}.
+	InvocationRole *string `json:"invocationRole" yaml:"invocationRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#logging_role TransferServer#logging_role}.
+	LoggingRole *string `json:"loggingRole" yaml:"loggingRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#protocols TransferServer#protocols}.
+	Protocols *[]*string `json:"protocols" yaml:"protocols"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#security_policy_name TransferServer#security_policy_name}.
+	SecurityPolicyName *string `json:"securityPolicyName" yaml:"securityPolicyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#tags TransferServer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#tags_all TransferServer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#url TransferServer#url}.
+	Url *string `json:"url" yaml:"url"`
 }
 
 type TransferServerEndpointDetails struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#address_allocation_ids TransferServer#address_allocation_ids}.
-	AddressAllocationIds *[]*string `json:"addressAllocationIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#security_group_ids TransferServer#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#subnet_ids TransferServer#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#vpc_endpoint_id TransferServer#vpc_endpoint_id}.
-	VpcEndpointId *string `json:"vpcEndpointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server.html#vpc_id TransferServer#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#address_allocation_ids TransferServer#address_allocation_ids}.
+	AddressAllocationIds *[]*string `json:"addressAllocationIds" yaml:"addressAllocationIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#security_group_ids TransferServer#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#subnet_ids TransferServer#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#vpc_endpoint_id TransferServer#vpc_endpoint_id}.
+	VpcEndpointId *string `json:"vpcEndpointId" yaml:"vpcEndpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_server#vpc_id TransferServer#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type TransferServerEndpointDetailsOutputReference interface {
@@ -2848,18 +3148,23 @@ type TransferServerEndpointDetailsOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcEndpointId() *string
 	SetVpcEndpointId(val *string)
 	VpcEndpointIdInput() *string
 	VpcId() *string
 	SetVpcId(val *string)
 	VpcIdInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAddressAllocationIds()
@@ -2964,8 +3269,8 @@ func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3014,7 +3319,7 @@ func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) VpcIdInput() *s
 	return returns
 }
 
-func NewTransferServerEndpointDetailsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) TransferServerEndpointDetailsOutputReference {
+func NewTransferServerEndpointDetailsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) TransferServerEndpointDetailsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_TransferServerEndpointDetailsOutputReference{}
@@ -3028,7 +3333,7 @@ func NewTransferServerEndpointDetailsOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewTransferServerEndpointDetailsOutputReference_Override(t TransferServerEndpointDetailsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewTransferServerEndpointDetailsOutputReference_Override(t TransferServerEndpointDetailsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3086,7 +3391,7 @@ func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3111,12 +3416,40 @@ func (j *jsiiProxy_TransferServerEndpointDetailsOutputReference) SetVpcId(val *s
 }
 
 // Experimental.
-func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		t,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		t,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		t,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3153,12 +3486,54 @@ func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		t,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		t,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3234,7 +3609,7 @@ func (t *jsiiProxy_TransferServerEndpointDetailsOutputReference) ResetVpcId() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key.html aws_transfer_ssh_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key aws_transfer_ssh_key}.
 type TransferSshKey interface {
 	cdktf.TerraformResource
 	Body() *string
@@ -3242,8 +3617,8 @@ type TransferSshKey interface {
 	BodyInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3265,10 +3640,15 @@ type TransferSshKey interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3323,8 +3703,8 @@ func (j *jsiiProxy_TransferSshKey) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_TransferSshKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferSshKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3483,7 +3863,7 @@ func (j *jsiiProxy_TransferSshKey) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key.html aws_transfer_ssh_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key aws_transfer_ssh_key} Resource.
 func NewTransferSshKey(scope constructs.Construct, id *string, config *TransferSshKeyConfig) TransferSshKey {
 	_init_.Initialize()
 
@@ -3498,7 +3878,7 @@ func NewTransferSshKey(scope constructs.Construct, id *string, config *TransferS
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key.html aws_transfer_ssh_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key aws_transfer_ssh_key} Resource.
 func NewTransferSshKey_Override(t TransferSshKey, scope constructs.Construct, id *string, config *TransferSshKeyConfig) {
 	_init_.Initialize()
 
@@ -3517,7 +3897,7 @@ func (j *jsiiProxy_TransferSshKey) SetBody(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TransferSshKey) SetCount(val interface{}) {
+func (j *jsiiProxy_TransferSshKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3605,12 +3985,40 @@ func (t *jsiiProxy_TransferSshKey) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferSshKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		t,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferSshKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		t,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferSshKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		t,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3647,12 +4055,54 @@ func (t *jsiiProxy_TransferSshKey) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferSshKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferSshKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferSshKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		t,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferSshKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		t,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3753,29 +4203,29 @@ func (t *jsiiProxy_TransferSshKey) ToTerraform() interface{} {
 // AWS Transfer.
 type TransferSshKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key.html#body TransferSshKey#body}.
-	Body *string `json:"body"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key.html#server_id TransferSshKey#server_id}.
-	ServerId *string `json:"serverId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key.html#user_name TransferSshKey#user_name}.
-	UserName *string `json:"userName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key#body TransferSshKey#body}.
+	Body *string `json:"body" yaml:"body"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key#server_id TransferSshKey#server_id}.
+	ServerId *string `json:"serverId" yaml:"serverId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_ssh_key#user_name TransferSshKey#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html aws_transfer_user}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/transfer_user aws_transfer_user}.
 type TransferUser interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3783,9 +4233,9 @@ type TransferUser interface {
 	HomeDirectory() *string
 	SetHomeDirectory(val *string)
 	HomeDirectoryInput() *string
-	HomeDirectoryMappings() *[]*TransferUserHomeDirectoryMappings
-	SetHomeDirectoryMappings(val *[]*TransferUserHomeDirectoryMappings)
-	HomeDirectoryMappingsInput() *[]*TransferUserHomeDirectoryMappings
+	HomeDirectoryMappings() interface{}
+	SetHomeDirectoryMappings(val interface{})
+	HomeDirectoryMappingsInput() interface{}
 	HomeDirectoryType() *string
 	SetHomeDirectoryType(val *string)
 	HomeDirectoryTypeInput() *string
@@ -3807,12 +4257,12 @@ type TransferUser interface {
 	ServerId() *string
 	SetServerId(val *string)
 	ServerIdInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -3820,10 +4270,15 @@ type TransferUser interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPosixProfile(value *TransferUserPosixProfile)
@@ -3876,8 +4331,8 @@ func (j *jsiiProxy_TransferUser) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_TransferUser) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferUser) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3936,8 +4391,8 @@ func (j *jsiiProxy_TransferUser) HomeDirectoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_TransferUser) HomeDirectoryMappings() *[]*TransferUserHomeDirectoryMappings {
-	var returns *[]*TransferUserHomeDirectoryMappings
+func (j *jsiiProxy_TransferUser) HomeDirectoryMappings() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"homeDirectoryMappings",
@@ -3946,8 +4401,8 @@ func (j *jsiiProxy_TransferUser) HomeDirectoryMappings() *[]*TransferUserHomeDir
 	return returns
 }
 
-func (j *jsiiProxy_TransferUser) HomeDirectoryMappingsInput() *[]*TransferUserHomeDirectoryMappings {
-	var returns *[]*TransferUserHomeDirectoryMappings
+func (j *jsiiProxy_TransferUser) HomeDirectoryMappingsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"homeDirectoryMappingsInput",
@@ -4106,8 +4561,8 @@ func (j *jsiiProxy_TransferUser) ServerIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_TransferUser) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferUser) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4116,8 +4571,8 @@ func (j *jsiiProxy_TransferUser) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_TransferUser) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferUser) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4126,8 +4581,8 @@ func (j *jsiiProxy_TransferUser) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_TransferUser) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferUser) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4136,8 +4591,8 @@ func (j *jsiiProxy_TransferUser) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_TransferUser) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_TransferUser) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4196,7 +4651,7 @@ func (j *jsiiProxy_TransferUser) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html aws_transfer_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_user aws_transfer_user} Resource.
 func NewTransferUser(scope constructs.Construct, id *string, config *TransferUserConfig) TransferUser {
 	_init_.Initialize()
 
@@ -4211,7 +4666,7 @@ func NewTransferUser(scope constructs.Construct, id *string, config *TransferUse
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html aws_transfer_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/transfer_user aws_transfer_user} Resource.
 func NewTransferUser_Override(t TransferUser, scope constructs.Construct, id *string, config *TransferUserConfig) {
 	_init_.Initialize()
 
@@ -4222,7 +4677,7 @@ func NewTransferUser_Override(t TransferUser, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_TransferUser) SetCount(val interface{}) {
+func (j *jsiiProxy_TransferUser) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4246,7 +4701,7 @@ func (j *jsiiProxy_TransferUser) SetHomeDirectory(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TransferUser) SetHomeDirectoryMappings(val *[]*TransferUserHomeDirectoryMappings) {
+func (j *jsiiProxy_TransferUser) SetHomeDirectoryMappings(val interface{}) {
 	_jsii_.Set(
 		j,
 		"homeDirectoryMappings",
@@ -4302,7 +4757,7 @@ func (j *jsiiProxy_TransferUser) SetServerId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TransferUser) SetTags(val interface{}) {
+func (j *jsiiProxy_TransferUser) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4310,7 +4765,7 @@ func (j *jsiiProxy_TransferUser) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_TransferUser) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_TransferUser) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4366,12 +4821,40 @@ func (t *jsiiProxy_TransferUser) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		t,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		t,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		t,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4408,12 +4891,54 @@ func (t *jsiiProxy_TransferUser) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		t,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		t,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4578,53 +5103,53 @@ func (t *jsiiProxy_TransferUser) ToTerraform() interface{} {
 // AWS Transfer.
 type TransferUserConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#role TransferUser#role}.
-	Role *string `json:"role"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#server_id TransferUser#server_id}.
-	ServerId *string `json:"serverId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#user_name TransferUser#user_name}.
-	UserName *string `json:"userName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#home_directory TransferUser#home_directory}.
-	HomeDirectory *string `json:"homeDirectory"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#role TransferUser#role}.
+	Role *string `json:"role" yaml:"role"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#server_id TransferUser#server_id}.
+	ServerId *string `json:"serverId" yaml:"serverId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#user_name TransferUser#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#home_directory TransferUser#home_directory}.
+	HomeDirectory *string `json:"homeDirectory" yaml:"homeDirectory"`
 	// home_directory_mappings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#home_directory_mappings TransferUser#home_directory_mappings}
-	HomeDirectoryMappings *[]*TransferUserHomeDirectoryMappings `json:"homeDirectoryMappings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#home_directory_type TransferUser#home_directory_type}.
-	HomeDirectoryType *string `json:"homeDirectoryType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#policy TransferUser#policy}.
-	Policy *string `json:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#home_directory_mappings TransferUser#home_directory_mappings}
+	HomeDirectoryMappings interface{} `json:"homeDirectoryMappings" yaml:"homeDirectoryMappings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#home_directory_type TransferUser#home_directory_type}.
+	HomeDirectoryType *string `json:"homeDirectoryType" yaml:"homeDirectoryType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#policy TransferUser#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 	// posix_profile block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#posix_profile TransferUser#posix_profile}
-	PosixProfile *TransferUserPosixProfile `json:"posixProfile"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#tags TransferUser#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#tags_all TransferUser#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#posix_profile TransferUser#posix_profile}
+	PosixProfile *TransferUserPosixProfile `json:"posixProfile" yaml:"posixProfile"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#tags TransferUser#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#tags_all TransferUser#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type TransferUserHomeDirectoryMappings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#entry TransferUser#entry}.
-	Entry *string `json:"entry"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#target TransferUser#target}.
-	Target *string `json:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#entry TransferUser#entry}.
+	Entry *string `json:"entry" yaml:"entry"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#target TransferUser#target}.
+	Target *string `json:"target" yaml:"target"`
 }
 
 type TransferUserPosixProfile struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#gid TransferUser#gid}.
-	Gid *float64 `json:"gid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#uid TransferUser#uid}.
-	Uid *float64 `json:"uid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user.html#secondary_gids TransferUser#secondary_gids}.
-	SecondaryGids *[]*float64 `json:"secondaryGids"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#gid TransferUser#gid}.
+	Gid *float64 `json:"gid" yaml:"gid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#uid TransferUser#uid}.
+	Uid *float64 `json:"uid" yaml:"uid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/transfer_user#secondary_gids TransferUser#secondary_gids}.
+	SecondaryGids *[]*float64 `json:"secondaryGids" yaml:"secondaryGids"`
 }
 
 type TransferUserPosixProfileOutputReference interface {
@@ -4641,15 +5166,20 @@ type TransferUserPosixProfileOutputReference interface {
 	SecondaryGidsInput() *[]*float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Uid() *float64
 	SetUid(val *float64)
 	UidInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSecondaryGids()
@@ -4730,8 +5260,8 @@ func (j *jsiiProxy_TransferUserPosixProfileOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_TransferUserPosixProfileOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_TransferUserPosixProfileOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4760,7 +5290,7 @@ func (j *jsiiProxy_TransferUserPosixProfileOutputReference) UidInput() *float64 
 	return returns
 }
 
-func NewTransferUserPosixProfileOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) TransferUserPosixProfileOutputReference {
+func NewTransferUserPosixProfileOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) TransferUserPosixProfileOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_TransferUserPosixProfileOutputReference{}
@@ -4774,7 +5304,7 @@ func NewTransferUserPosixProfileOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewTransferUserPosixProfileOutputReference_Override(t TransferUserPosixProfileOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewTransferUserPosixProfileOutputReference_Override(t TransferUserPosixProfileOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4824,7 +5354,7 @@ func (j *jsiiProxy_TransferUserPosixProfileOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_TransferUserPosixProfileOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_TransferUserPosixProfileOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4841,12 +5371,40 @@ func (j *jsiiProxy_TransferUserPosixProfileOutputReference) SetUid(val *float64)
 }
 
 // Experimental.
-func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		t,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		t,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		t,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4883,12 +5441,54 @@ func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		t,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		t,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (t *jsiiProxy_TransferUserPosixProfileOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		t,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

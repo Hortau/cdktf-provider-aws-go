@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/kms/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_alias.html aws_kms_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_alias aws_kms_alias}.
 type DataAwsKmsAlias interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37,10 +37,15 @@ type DataAwsKmsAlias interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -85,8 +90,8 @@ func (j *jsiiProxy_DataAwsKmsAlias) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -245,7 +250,7 @@ func (j *jsiiProxy_DataAwsKmsAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_alias.html aws_kms_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_alias aws_kms_alias} Data Source.
 func NewDataAwsKmsAlias(scope constructs.Construct, id *string, config *DataAwsKmsAliasConfig) DataAwsKmsAlias {
 	_init_.Initialize()
 
@@ -260,7 +265,7 @@ func NewDataAwsKmsAlias(scope constructs.Construct, id *string, config *DataAwsK
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_alias.html aws_kms_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_alias aws_kms_alias} Data Source.
 func NewDataAwsKmsAlias_Override(d DataAwsKmsAlias, scope constructs.Construct, id *string, config *DataAwsKmsAliasConfig) {
 	_init_.Initialize()
 
@@ -271,7 +276,7 @@ func NewDataAwsKmsAlias_Override(d DataAwsKmsAlias, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsKmsAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -351,12 +356,40 @@ func (d *jsiiProxy_DataAwsKmsAlias) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -393,12 +426,54 @@ func (d *jsiiProxy_DataAwsKmsAlias) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -499,28 +574,28 @@ func (d *jsiiProxy_DataAwsKmsAlias) ToTerraform() interface{} {
 // AWS Key Management Service.
 type DataAwsKmsAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_alias.html#name DataAwsKmsAlias#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_alias#name DataAwsKmsAlias#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext.html aws_kms_ciphertext}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext aws_kms_ciphertext}.
 type DataAwsKmsCiphertext interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	CiphertextBlob() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Context() interface{}
-	SetContext(val interface{})
-	ContextInput() interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Context() *map[string]*string
+	SetContext(val *map[string]*string)
+	ContextInput() *map[string]*string
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -542,10 +617,15 @@ type DataAwsKmsCiphertext interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetContext()
@@ -591,8 +671,8 @@ func (j *jsiiProxy_DataAwsKmsCiphertext) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsCiphertext) Context() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsCiphertext) Context() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"context",
@@ -601,8 +681,8 @@ func (j *jsiiProxy_DataAwsKmsCiphertext) Context() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsCiphertext) ContextInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsCiphertext) ContextInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"contextInput",
@@ -611,8 +691,8 @@ func (j *jsiiProxy_DataAwsKmsCiphertext) ContextInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsCiphertext) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsCiphertext) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -771,7 +851,7 @@ func (j *jsiiProxy_DataAwsKmsCiphertext) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext.html aws_kms_ciphertext} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext aws_kms_ciphertext} Data Source.
 func NewDataAwsKmsCiphertext(scope constructs.Construct, id *string, config *DataAwsKmsCiphertextConfig) DataAwsKmsCiphertext {
 	_init_.Initialize()
 
@@ -786,7 +866,7 @@ func NewDataAwsKmsCiphertext(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext.html aws_kms_ciphertext} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext aws_kms_ciphertext} Data Source.
 func NewDataAwsKmsCiphertext_Override(d DataAwsKmsCiphertext, scope constructs.Construct, id *string, config *DataAwsKmsCiphertextConfig) {
 	_init_.Initialize()
 
@@ -797,7 +877,7 @@ func NewDataAwsKmsCiphertext_Override(d DataAwsKmsCiphertext, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsCiphertext) SetContext(val interface{}) {
+func (j *jsiiProxy_DataAwsKmsCiphertext) SetContext(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"context",
@@ -805,7 +885,7 @@ func (j *jsiiProxy_DataAwsKmsCiphertext) SetContext(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsCiphertext) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsKmsCiphertext) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -893,12 +973,40 @@ func (d *jsiiProxy_DataAwsKmsCiphertext) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsCiphertext) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsCiphertext) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsCiphertext) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -935,12 +1043,54 @@ func (d *jsiiProxy_DataAwsKmsCiphertext) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsCiphertext) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsCiphertext) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsCiphertext) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsCiphertext) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1049,37 +1199,37 @@ func (d *jsiiProxy_DataAwsKmsCiphertext) ToTerraform() interface{} {
 // AWS Key Management Service.
 type DataAwsKmsCiphertextConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext.html#key_id DataAwsKmsCiphertext#key_id}.
-	KeyId *string `json:"keyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext.html#plaintext DataAwsKmsCiphertext#plaintext}.
-	Plaintext *string `json:"plaintext"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext.html#context DataAwsKmsCiphertext#context}.
-	Context interface{} `json:"context"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext#key_id DataAwsKmsCiphertext#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext#plaintext DataAwsKmsCiphertext#plaintext}.
+	Plaintext *string `json:"plaintext" yaml:"plaintext"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_ciphertext#context DataAwsKmsCiphertext#context}.
+	Context *map[string]*string `json:"context" yaml:"context"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_key.html aws_kms_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_key aws_kms_key}.
 type DataAwsKmsKey interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	AwsAccountId() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	CustomerMasterKeySpec() *string
 	DeletionDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	ExpirationModel() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
@@ -1095,7 +1245,7 @@ type DataAwsKmsKey interface {
 	KeyUsage() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	MultiRegion() interface{}
+	MultiRegion() cdktf.IResolvable
 	Node() constructs.Node
 	Origin() *string
 	Provider() cdktf.TerraformProvider
@@ -1106,10 +1256,15 @@ type DataAwsKmsKey interface {
 	TerraformResourceType() *string
 	ValidTo() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	MultiRegionConfiguration(index *string) DataAwsKmsKeyMultiRegionConfiguration
 	OverrideLogicalId(newLogicalId *string)
@@ -1166,8 +1321,8 @@ func (j *jsiiProxy_DataAwsKmsKey) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1226,8 +1381,8 @@ func (j *jsiiProxy_DataAwsKmsKey) Description() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKey) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsKey) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -1356,8 +1511,8 @@ func (j *jsiiProxy_DataAwsKmsKey) Lifecycle() *cdktf.TerraformResourceLifecycle 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKey) MultiRegion() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsKey) MultiRegion() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"multiRegion",
@@ -1446,7 +1601,7 @@ func (j *jsiiProxy_DataAwsKmsKey) ValidTo() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_key.html aws_kms_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_key aws_kms_key} Data Source.
 func NewDataAwsKmsKey(scope constructs.Construct, id *string, config *DataAwsKmsKeyConfig) DataAwsKmsKey {
 	_init_.Initialize()
 
@@ -1461,7 +1616,7 @@ func NewDataAwsKmsKey(scope constructs.Construct, id *string, config *DataAwsKms
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_key.html aws_kms_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_key aws_kms_key} Data Source.
 func NewDataAwsKmsKey_Override(d DataAwsKmsKey, scope constructs.Construct, id *string, config *DataAwsKmsKeyConfig) {
 	_init_.Initialize()
 
@@ -1472,7 +1627,7 @@ func NewDataAwsKmsKey_Override(d DataAwsKmsKey, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsKey) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsKmsKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1560,12 +1715,40 @@ func (d *jsiiProxy_DataAwsKmsKey) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1602,12 +1785,54 @@ func (d *jsiiProxy_DataAwsKmsKey) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1729,17 +1954,17 @@ func (d *jsiiProxy_DataAwsKmsKey) ToTerraform() interface{} {
 // AWS Key Management Service.
 type DataAwsKmsKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_key.html#key_id DataAwsKmsKey#key_id}.
-	KeyId *string `json:"keyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_key.html#grant_tokens DataAwsKmsKey#grant_tokens}.
-	GrantTokens *[]*string `json:"grantTokens"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_key#key_id DataAwsKmsKey#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_key#grant_tokens DataAwsKmsKey#grant_tokens}.
+	GrantTokens *[]*string `json:"grantTokens" yaml:"grantTokens"`
 }
 
 type DataAwsKmsKeyMultiRegionConfiguration interface {
@@ -1747,16 +1972,23 @@ type DataAwsKmsKeyMultiRegionConfiguration interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	MultiRegionKeyType() *string
-	PrimaryKey() interface{}
-	ReplicaKeys() interface{}
+	PrimaryKey() cdktf.IResolvable
+	ReplicaKeys() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1785,8 +2017,8 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) MultiRegionKeyType() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) PrimaryKey() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) PrimaryKey() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"primaryKey",
@@ -1795,8 +2027,8 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) PrimaryKey() interface
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) ReplicaKeys() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) ReplicaKeys() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"replicaKeys",
@@ -1815,8 +2047,8 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1825,15 +2057,25 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsKmsKeyMultiRegionConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsKmsKeyMultiRegionConfiguration {
+func NewDataAwsKmsKeyMultiRegionConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsKmsKeyMultiRegionConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1841,12 +2083,12 @@ func NewDataAwsKmsKeyMultiRegionConfiguration(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewDataAwsKmsKeyMultiRegionConfiguration_Override(d DataAwsKmsKeyMultiRegionConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsKmsKeyMultiRegionConfiguration_Override(d DataAwsKmsKeyMultiRegionConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1867,7 +2109,7 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1875,13 +2117,49 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1918,12 +2196,54 @@ func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1953,12 +2273,19 @@ type DataAwsKmsKeyMultiRegionConfigurationPrimaryKey interface {
 	Region() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2007,8 +2334,8 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2017,15 +2344,25 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) TerraformRes
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsKmsKeyMultiRegionConfigurationPrimaryKey(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsKmsKeyMultiRegionConfigurationPrimaryKey {
+func NewDataAwsKmsKeyMultiRegionConfigurationPrimaryKey(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsKmsKeyMultiRegionConfigurationPrimaryKey {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey{}
 
 	_jsii_.Create(
 		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2033,12 +2370,12 @@ func NewDataAwsKmsKeyMultiRegionConfigurationPrimaryKey(terraformResource cdktf.
 }
 
 // Experimental.
-func NewDataAwsKmsKeyMultiRegionConfigurationPrimaryKey_Override(d DataAwsKmsKeyMultiRegionConfigurationPrimaryKey, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsKmsKeyMultiRegionConfigurationPrimaryKey_Override(d DataAwsKmsKeyMultiRegionConfigurationPrimaryKey, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationPrimaryKey",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2059,7 +2396,7 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2067,13 +2404,49 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) SetTerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2110,12 +2483,54 @@ func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationPrimaryKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2145,12 +2560,19 @@ type DataAwsKmsKeyMultiRegionConfigurationReplicaKeys interface {
 	Region() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2199,8 +2621,8 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2209,15 +2631,25 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) TerraformRe
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsKmsKeyMultiRegionConfigurationReplicaKeys(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsKmsKeyMultiRegionConfigurationReplicaKeys {
+func NewDataAwsKmsKeyMultiRegionConfigurationReplicaKeys(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsKmsKeyMultiRegionConfigurationReplicaKeys {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys{}
 
 	_jsii_.Create(
 		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2225,12 +2657,12 @@ func NewDataAwsKmsKeyMultiRegionConfigurationReplicaKeys(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsKmsKeyMultiRegionConfigurationReplicaKeys_Override(d DataAwsKmsKeyMultiRegionConfigurationReplicaKeys, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsKmsKeyMultiRegionConfigurationReplicaKeys_Override(d DataAwsKmsKeyMultiRegionConfigurationReplicaKeys, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.kms.DataAwsKmsKeyMultiRegionConfigurationReplicaKeys",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2251,7 +2683,7 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2259,13 +2691,49 @@ func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2302,12 +2770,54 @@ func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2329,14 +2839,14 @@ func (d *jsiiProxy_DataAwsKmsKeyMultiRegionConfigurationReplicaKeys) Interpolati
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key.html aws_kms_public_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key aws_kms_public_key}.
 type DataAwsKmsPublicKey interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerMasterKeySpec() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2363,10 +2873,15 @@ type DataAwsKmsPublicKey interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetGrantTokens()
@@ -2412,8 +2927,8 @@ func (j *jsiiProxy_DataAwsKmsPublicKey) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsPublicKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsPublicKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2622,7 +3137,7 @@ func (j *jsiiProxy_DataAwsKmsPublicKey) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key.html aws_kms_public_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key aws_kms_public_key} Data Source.
 func NewDataAwsKmsPublicKey(scope constructs.Construct, id *string, config *DataAwsKmsPublicKeyConfig) DataAwsKmsPublicKey {
 	_init_.Initialize()
 
@@ -2637,7 +3152,7 @@ func NewDataAwsKmsPublicKey(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key.html aws_kms_public_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key aws_kms_public_key} Data Source.
 func NewDataAwsKmsPublicKey_Override(d DataAwsKmsPublicKey, scope constructs.Construct, id *string, config *DataAwsKmsPublicKeyConfig) {
 	_init_.Initialize()
 
@@ -2648,7 +3163,7 @@ func NewDataAwsKmsPublicKey_Override(d DataAwsKmsPublicKey, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsPublicKey) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsKmsPublicKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2736,12 +3251,40 @@ func (d *jsiiProxy_DataAwsKmsPublicKey) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsPublicKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsPublicKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsPublicKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2778,12 +3321,54 @@ func (d *jsiiProxy_DataAwsKmsPublicKey) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsPublicKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsPublicKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsPublicKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsPublicKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2892,26 +3477,26 @@ func (d *jsiiProxy_DataAwsKmsPublicKey) ToTerraform() interface{} {
 // AWS Key Management Service.
 type DataAwsKmsPublicKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key.html#key_id DataAwsKmsPublicKey#key_id}.
-	KeyId *string `json:"keyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key.html#grant_tokens DataAwsKmsPublicKey#grant_tokens}.
-	GrantTokens *[]*string `json:"grantTokens"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key#key_id DataAwsKmsPublicKey#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_public_key#grant_tokens DataAwsKmsPublicKey#grant_tokens}.
+	GrantTokens *[]*string `json:"grantTokens" yaml:"grantTokens"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html aws_kms_secret}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_secret aws_kms_secret}.
 type DataAwsKmsSecret interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2923,17 +3508,22 @@ type DataAwsKmsSecret interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Secret() *[]*DataAwsKmsSecretSecret
-	SetSecret(val *[]*DataAwsKmsSecretSecret)
-	SecretInput() *[]*DataAwsKmsSecretSecret
+	Secret() interface{}
+	SetSecret(val interface{})
+	SecretInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2968,8 +3558,8 @@ func (j *jsiiProxy_DataAwsKmsSecret) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsSecret) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsSecret) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3058,8 +3648,8 @@ func (j *jsiiProxy_DataAwsKmsSecret) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsSecret) Secret() *[]*DataAwsKmsSecretSecret {
-	var returns *[]*DataAwsKmsSecretSecret
+func (j *jsiiProxy_DataAwsKmsSecret) Secret() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secret",
@@ -3068,8 +3658,8 @@ func (j *jsiiProxy_DataAwsKmsSecret) Secret() *[]*DataAwsKmsSecretSecret {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsSecret) SecretInput() *[]*DataAwsKmsSecretSecret {
-	var returns *[]*DataAwsKmsSecretSecret
+func (j *jsiiProxy_DataAwsKmsSecret) SecretInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secretInput",
@@ -3108,7 +3698,7 @@ func (j *jsiiProxy_DataAwsKmsSecret) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html aws_kms_secret} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secret aws_kms_secret} Data Source.
 func NewDataAwsKmsSecret(scope constructs.Construct, id *string, config *DataAwsKmsSecretConfig) DataAwsKmsSecret {
 	_init_.Initialize()
 
@@ -3123,7 +3713,7 @@ func NewDataAwsKmsSecret(scope constructs.Construct, id *string, config *DataAws
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html aws_kms_secret} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secret aws_kms_secret} Data Source.
 func NewDataAwsKmsSecret_Override(d DataAwsKmsSecret, scope constructs.Construct, id *string, config *DataAwsKmsSecretConfig) {
 	_init_.Initialize()
 
@@ -3134,7 +3724,7 @@ func NewDataAwsKmsSecret_Override(d DataAwsKmsSecret, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsSecret) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsKmsSecret) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3166,7 +3756,7 @@ func (j *jsiiProxy_DataAwsKmsSecret) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsSecret) SetSecret(val *[]*DataAwsKmsSecretSecret) {
+func (j *jsiiProxy_DataAwsKmsSecret) SetSecret(val interface{}) {
 	_jsii_.Set(
 		j,
 		"secret",
@@ -3214,12 +3804,40 @@ func (d *jsiiProxy_DataAwsKmsSecret) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsSecret) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsSecret) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsSecret) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3256,12 +3874,54 @@ func (d *jsiiProxy_DataAwsKmsSecret) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsSecret) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsSecret) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsSecret) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsSecret) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3362,37 +4022,37 @@ func (d *jsiiProxy_DataAwsKmsSecret) ToTerraform() interface{} {
 // AWS Key Management Service.
 type DataAwsKmsSecretConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// secret block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html#secret DataAwsKmsSecret#secret}
-	Secret *[]*DataAwsKmsSecretSecret `json:"secret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret#secret DataAwsKmsSecret#secret}
+	Secret interface{} `json:"secret" yaml:"secret"`
 }
 
 type DataAwsKmsSecretSecret struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html#name DataAwsKmsSecret#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html#payload DataAwsKmsSecret#payload}.
-	Payload *string `json:"payload"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html#context DataAwsKmsSecret#context}.
-	Context interface{} `json:"context"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret.html#grant_tokens DataAwsKmsSecret#grant_tokens}.
-	GrantTokens *[]*string `json:"grantTokens"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret#name DataAwsKmsSecret#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret#payload DataAwsKmsSecret#payload}.
+	Payload *string `json:"payload" yaml:"payload"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret#context DataAwsKmsSecret#context}.
+	Context *map[string]*string `json:"context" yaml:"context"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secret#grant_tokens DataAwsKmsSecret#grant_tokens}.
+	GrantTokens *[]*string `json:"grantTokens" yaml:"grantTokens"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html aws_kms_secrets}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets aws_kms_secrets}.
 type DataAwsKmsSecrets interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3404,20 +4064,25 @@ type DataAwsKmsSecrets interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Secret() *[]*DataAwsKmsSecretsSecret
-	SetSecret(val *[]*DataAwsKmsSecretsSecret)
-	SecretInput() *[]*DataAwsKmsSecretsSecret
+	Secret() interface{}
+	SetSecret(val interface{})
+	SecretInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
-	Plaintext(key *string) *string
+	Plaintext(key *string) interface{}
 	ResetOverrideLogicalId()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
@@ -3450,8 +4115,8 @@ func (j *jsiiProxy_DataAwsKmsSecrets) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsSecrets) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsKmsSecrets) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3540,8 +4205,8 @@ func (j *jsiiProxy_DataAwsKmsSecrets) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsSecrets) Secret() *[]*DataAwsKmsSecretsSecret {
-	var returns *[]*DataAwsKmsSecretsSecret
+func (j *jsiiProxy_DataAwsKmsSecrets) Secret() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secret",
@@ -3550,8 +4215,8 @@ func (j *jsiiProxy_DataAwsKmsSecrets) Secret() *[]*DataAwsKmsSecretsSecret {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsKmsSecrets) SecretInput() *[]*DataAwsKmsSecretsSecret {
-	var returns *[]*DataAwsKmsSecretsSecret
+func (j *jsiiProxy_DataAwsKmsSecrets) SecretInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secretInput",
@@ -3590,7 +4255,7 @@ func (j *jsiiProxy_DataAwsKmsSecrets) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html aws_kms_secrets} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets aws_kms_secrets} Data Source.
 func NewDataAwsKmsSecrets(scope constructs.Construct, id *string, config *DataAwsKmsSecretsConfig) DataAwsKmsSecrets {
 	_init_.Initialize()
 
@@ -3605,7 +4270,7 @@ func NewDataAwsKmsSecrets(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html aws_kms_secrets} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets aws_kms_secrets} Data Source.
 func NewDataAwsKmsSecrets_Override(d DataAwsKmsSecrets, scope constructs.Construct, id *string, config *DataAwsKmsSecretsConfig) {
 	_init_.Initialize()
 
@@ -3616,7 +4281,7 @@ func NewDataAwsKmsSecrets_Override(d DataAwsKmsSecrets, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsSecrets) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsKmsSecrets) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3648,7 +4313,7 @@ func (j *jsiiProxy_DataAwsKmsSecrets) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsKmsSecrets) SetSecret(val *[]*DataAwsKmsSecretsSecret) {
+func (j *jsiiProxy_DataAwsKmsSecrets) SetSecret(val interface{}) {
 	_jsii_.Set(
 		j,
 		"secret",
@@ -3696,12 +4361,40 @@ func (d *jsiiProxy_DataAwsKmsSecrets) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsSecrets) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsSecrets) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsSecrets) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3738,12 +4431,54 @@ func (d *jsiiProxy_DataAwsKmsSecrets) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsKmsSecrets) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsSecrets) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsKmsSecrets) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsKmsSecrets) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3775,8 +4510,8 @@ func (d *jsiiProxy_DataAwsKmsSecrets) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
-func (d *jsiiProxy_DataAwsKmsSecrets) Plaintext(key *string) *string {
-	var returns *string
+func (d *jsiiProxy_DataAwsKmsSecrets) Plaintext(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		d,
@@ -3857,38 +4592,38 @@ func (d *jsiiProxy_DataAwsKmsSecrets) ToTerraform() interface{} {
 // AWS Key Management Service.
 type DataAwsKmsSecretsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// secret block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html#secret DataAwsKmsSecrets#secret}
-	Secret *[]*DataAwsKmsSecretsSecret `json:"secret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets#secret DataAwsKmsSecrets#secret}
+	Secret interface{} `json:"secret" yaml:"secret"`
 }
 
 type DataAwsKmsSecretsSecret struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html#name DataAwsKmsSecrets#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html#payload DataAwsKmsSecrets#payload}.
-	Payload *string `json:"payload"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html#context DataAwsKmsSecrets#context}.
-	Context interface{} `json:"context"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets.html#grant_tokens DataAwsKmsSecrets#grant_tokens}.
-	GrantTokens *[]*string `json:"grantTokens"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets#name DataAwsKmsSecrets#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets#payload DataAwsKmsSecrets#payload}.
+	Payload *string `json:"payload" yaml:"payload"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets#context DataAwsKmsSecrets#context}.
+	Context *map[string]*string `json:"context" yaml:"context"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/kms_secrets#grant_tokens DataAwsKmsSecrets#grant_tokens}.
+	GrantTokens *[]*string `json:"grantTokens" yaml:"grantTokens"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_alias.html aws_kms_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_alias aws_kms_alias}.
 type KmsAlias interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3914,10 +4649,15 @@ type KmsAlias interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -3964,8 +4704,8 @@ func (j *jsiiProxy_KmsAlias) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4154,7 +4894,7 @@ func (j *jsiiProxy_KmsAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_alias.html aws_kms_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_alias aws_kms_alias} Resource.
 func NewKmsAlias(scope constructs.Construct, id *string, config *KmsAliasConfig) KmsAlias {
 	_init_.Initialize()
 
@@ -4169,7 +4909,7 @@ func NewKmsAlias(scope constructs.Construct, id *string, config *KmsAliasConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_alias.html aws_kms_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_alias aws_kms_alias} Resource.
 func NewKmsAlias_Override(k KmsAlias, scope constructs.Construct, id *string, config *KmsAliasConfig) {
 	_init_.Initialize()
 
@@ -4180,7 +4920,7 @@ func NewKmsAlias_Override(k KmsAlias, scope constructs.Construct, id *string, co
 	)
 }
 
-func (j *jsiiProxy_KmsAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_KmsAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4276,12 +5016,40 @@ func (k *jsiiProxy_KmsAlias) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		k,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4318,12 +5086,54 @@ func (k *jsiiProxy_KmsAlias) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		k,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		k,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4440,32 +5250,32 @@ func (k *jsiiProxy_KmsAlias) ToTerraform() interface{} {
 // AWS Key Management Service.
 type KmsAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_alias.html#target_key_id KmsAlias#target_key_id}.
-	TargetKeyId *string `json:"targetKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_alias.html#name KmsAlias#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_alias.html#name_prefix KmsAlias#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_alias#target_key_id KmsAlias#target_key_id}.
+	TargetKeyId *string `json:"targetKeyId" yaml:"targetKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_alias#name KmsAlias#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_alias#name_prefix KmsAlias#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext.html aws_kms_ciphertext}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext aws_kms_ciphertext}.
 type KmsCiphertext interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	CiphertextBlob() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Context() interface{}
-	SetContext(val interface{})
-	ContextInput() interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Context() *map[string]*string
+	SetContext(val *map[string]*string)
+	ContextInput() *map[string]*string
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4487,10 +5297,15 @@ type KmsCiphertext interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetContext()
@@ -4536,8 +5351,8 @@ func (j *jsiiProxy_KmsCiphertext) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_KmsCiphertext) Context() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsCiphertext) Context() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"context",
@@ -4546,8 +5361,8 @@ func (j *jsiiProxy_KmsCiphertext) Context() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsCiphertext) ContextInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsCiphertext) ContextInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"contextInput",
@@ -4556,8 +5371,8 @@ func (j *jsiiProxy_KmsCiphertext) ContextInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsCiphertext) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsCiphertext) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4716,7 +5531,7 @@ func (j *jsiiProxy_KmsCiphertext) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext.html aws_kms_ciphertext} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext aws_kms_ciphertext} Resource.
 func NewKmsCiphertext(scope constructs.Construct, id *string, config *KmsCiphertextConfig) KmsCiphertext {
 	_init_.Initialize()
 
@@ -4731,7 +5546,7 @@ func NewKmsCiphertext(scope constructs.Construct, id *string, config *KmsCiphert
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext.html aws_kms_ciphertext} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext aws_kms_ciphertext} Resource.
 func NewKmsCiphertext_Override(k KmsCiphertext, scope constructs.Construct, id *string, config *KmsCiphertextConfig) {
 	_init_.Initialize()
 
@@ -4742,7 +5557,7 @@ func NewKmsCiphertext_Override(k KmsCiphertext, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_KmsCiphertext) SetContext(val interface{}) {
+func (j *jsiiProxy_KmsCiphertext) SetContext(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"context",
@@ -4750,7 +5565,7 @@ func (j *jsiiProxy_KmsCiphertext) SetContext(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_KmsCiphertext) SetCount(val interface{}) {
+func (j *jsiiProxy_KmsCiphertext) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4838,12 +5653,40 @@ func (k *jsiiProxy_KmsCiphertext) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsCiphertext) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsCiphertext) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		k,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsCiphertext) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4880,12 +5723,54 @@ func (k *jsiiProxy_KmsCiphertext) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsCiphertext) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsCiphertext) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsCiphertext) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		k,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsCiphertext) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		k,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4994,22 +5879,22 @@ func (k *jsiiProxy_KmsCiphertext) ToTerraform() interface{} {
 // AWS Key Management Service.
 type KmsCiphertextConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext.html#key_id KmsCiphertext#key_id}.
-	KeyId *string `json:"keyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext.html#plaintext KmsCiphertext#plaintext}.
-	Plaintext *string `json:"plaintext"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext.html#context KmsCiphertext#context}.
-	Context interface{} `json:"context"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext#key_id KmsCiphertext#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext#plaintext KmsCiphertext#plaintext}.
+	Plaintext *string `json:"plaintext" yaml:"plaintext"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_ciphertext#context KmsCiphertext#context}.
+	Context *map[string]*string `json:"context" yaml:"context"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html aws_kms_external_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key aws_kms_external_key}.
 type KmsExternalKey interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -5018,8 +5903,8 @@ type KmsExternalKey interface {
 	BypassPolicyLockoutSafetyCheckInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeletionWindowInDays() *float64
 	SetDeletionWindowInDays(val *float64)
 	DeletionWindowInDaysInput() *float64
@@ -5052,12 +5937,12 @@ type KmsExternalKey interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5065,10 +5950,15 @@ type KmsExternalKey interface {
 	SetValidTo(val *string)
 	ValidToInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBypassPolicyLockoutSafetyCheck()
@@ -5143,8 +6033,8 @@ func (j *jsiiProxy_KmsExternalKey) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_KmsExternalKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsExternalKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5383,8 +6273,8 @@ func (j *jsiiProxy_KmsExternalKey) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsExternalKey) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsExternalKey) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5393,8 +6283,8 @@ func (j *jsiiProxy_KmsExternalKey) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsExternalKey) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsExternalKey) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5403,8 +6293,8 @@ func (j *jsiiProxy_KmsExternalKey) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsExternalKey) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsExternalKey) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5413,8 +6303,8 @@ func (j *jsiiProxy_KmsExternalKey) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsExternalKey) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsExternalKey) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5473,7 +6363,7 @@ func (j *jsiiProxy_KmsExternalKey) ValidToInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html aws_kms_external_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key aws_kms_external_key} Resource.
 func NewKmsExternalKey(scope constructs.Construct, id *string, config *KmsExternalKeyConfig) KmsExternalKey {
 	_init_.Initialize()
 
@@ -5488,7 +6378,7 @@ func NewKmsExternalKey(scope constructs.Construct, id *string, config *KmsExtern
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html aws_kms_external_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key aws_kms_external_key} Resource.
 func NewKmsExternalKey_Override(k KmsExternalKey, scope constructs.Construct, id *string, config *KmsExternalKeyConfig) {
 	_init_.Initialize()
 
@@ -5507,7 +6397,7 @@ func (j *jsiiProxy_KmsExternalKey) SetBypassPolicyLockoutSafetyCheck(val interfa
 	)
 }
 
-func (j *jsiiProxy_KmsExternalKey) SetCount(val interface{}) {
+func (j *jsiiProxy_KmsExternalKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5587,7 +6477,7 @@ func (j *jsiiProxy_KmsExternalKey) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_KmsExternalKey) SetTags(val interface{}) {
+func (j *jsiiProxy_KmsExternalKey) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5595,7 +6485,7 @@ func (j *jsiiProxy_KmsExternalKey) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_KmsExternalKey) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_KmsExternalKey) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5651,12 +6541,40 @@ func (k *jsiiProxy_KmsExternalKey) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsExternalKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsExternalKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		k,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsExternalKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5693,12 +6611,54 @@ func (k *jsiiProxy_KmsExternalKey) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsExternalKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsExternalKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsExternalKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		k,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsExternalKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		k,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5879,45 +6839,45 @@ func (k *jsiiProxy_KmsExternalKey) ToTerraform() interface{} {
 // AWS Key Management Service.
 type KmsExternalKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#bypass_policy_lockout_safety_check KmsExternalKey#bypass_policy_lockout_safety_check}.
-	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#deletion_window_in_days KmsExternalKey#deletion_window_in_days}.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#description KmsExternalKey#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#enabled KmsExternalKey#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#key_material_base64 KmsExternalKey#key_material_base64}.
-	KeyMaterialBase64 *string `json:"keyMaterialBase64"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#multi_region KmsExternalKey#multi_region}.
-	MultiRegion interface{} `json:"multiRegion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#policy KmsExternalKey#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#tags KmsExternalKey#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#tags_all KmsExternalKey#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key.html#valid_to KmsExternalKey#valid_to}.
-	ValidTo *string `json:"validTo"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#bypass_policy_lockout_safety_check KmsExternalKey#bypass_policy_lockout_safety_check}.
+	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck" yaml:"bypassPolicyLockoutSafetyCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#deletion_window_in_days KmsExternalKey#deletion_window_in_days}.
+	DeletionWindowInDays *float64 `json:"deletionWindowInDays" yaml:"deletionWindowInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#description KmsExternalKey#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#enabled KmsExternalKey#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#key_material_base64 KmsExternalKey#key_material_base64}.
+	KeyMaterialBase64 *string `json:"keyMaterialBase64" yaml:"keyMaterialBase64"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#multi_region KmsExternalKey#multi_region}.
+	MultiRegion interface{} `json:"multiRegion" yaml:"multiRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#policy KmsExternalKey#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#tags KmsExternalKey#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#tags_all KmsExternalKey#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_external_key#valid_to KmsExternalKey#valid_to}.
+	ValidTo *string `json:"validTo" yaml:"validTo"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html aws_kms_grant}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_grant aws_kms_grant}.
 type KmsGrant interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
-	Constraints() *[]*KmsGrantConstraints
-	SetConstraints(val *[]*KmsGrantConstraints)
-	ConstraintsInput() *[]*KmsGrantConstraints
+	Constraints() interface{}
+	SetConstraints(val interface{})
+	ConstraintsInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5956,10 +6916,15 @@ type KmsGrant interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetConstraints()
@@ -5989,8 +6954,8 @@ func (j *jsiiProxy_KmsGrant) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_KmsGrant) Constraints() *[]*KmsGrantConstraints {
-	var returns *[]*KmsGrantConstraints
+func (j *jsiiProxy_KmsGrant) Constraints() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"constraints",
@@ -5999,8 +6964,8 @@ func (j *jsiiProxy_KmsGrant) Constraints() *[]*KmsGrantConstraints {
 	return returns
 }
 
-func (j *jsiiProxy_KmsGrant) ConstraintsInput() *[]*KmsGrantConstraints {
-	var returns *[]*KmsGrantConstraints
+func (j *jsiiProxy_KmsGrant) ConstraintsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"constraintsInput",
@@ -6019,8 +6984,8 @@ func (j *jsiiProxy_KmsGrant) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsGrant) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsGrant) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6299,7 +7264,7 @@ func (j *jsiiProxy_KmsGrant) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html aws_kms_grant} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_grant aws_kms_grant} Resource.
 func NewKmsGrant(scope constructs.Construct, id *string, config *KmsGrantConfig) KmsGrant {
 	_init_.Initialize()
 
@@ -6314,7 +7279,7 @@ func NewKmsGrant(scope constructs.Construct, id *string, config *KmsGrantConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html aws_kms_grant} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_grant aws_kms_grant} Resource.
 func NewKmsGrant_Override(k KmsGrant, scope constructs.Construct, id *string, config *KmsGrantConfig) {
 	_init_.Initialize()
 
@@ -6325,7 +7290,7 @@ func NewKmsGrant_Override(k KmsGrant, scope constructs.Construct, id *string, co
 	)
 }
 
-func (j *jsiiProxy_KmsGrant) SetConstraints(val *[]*KmsGrantConstraints) {
+func (j *jsiiProxy_KmsGrant) SetConstraints(val interface{}) {
 	_jsii_.Set(
 		j,
 		"constraints",
@@ -6333,7 +7298,7 @@ func (j *jsiiProxy_KmsGrant) SetConstraints(val *[]*KmsGrantConstraints) {
 	)
 }
 
-func (j *jsiiProxy_KmsGrant) SetCount(val interface{}) {
+func (j *jsiiProxy_KmsGrant) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6461,12 +7426,40 @@ func (k *jsiiProxy_KmsGrant) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsGrant) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsGrant) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		k,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsGrant) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6503,12 +7496,54 @@ func (k *jsiiProxy_KmsGrant) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsGrant) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsGrant) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsGrant) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		k,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsGrant) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		k,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6649,41 +7684,41 @@ func (k *jsiiProxy_KmsGrant) ToTerraform() interface{} {
 // AWS Key Management Service.
 type KmsGrantConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#grantee_principal KmsGrant#grantee_principal}.
-	GranteePrincipal *string `json:"granteePrincipal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#key_id KmsGrant#key_id}.
-	KeyId *string `json:"keyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#operations KmsGrant#operations}.
-	Operations *[]*string `json:"operations"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#grantee_principal KmsGrant#grantee_principal}.
+	GranteePrincipal *string `json:"granteePrincipal" yaml:"granteePrincipal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#key_id KmsGrant#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#operations KmsGrant#operations}.
+	Operations *[]*string `json:"operations" yaml:"operations"`
 	// constraints block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#constraints KmsGrant#constraints}
-	Constraints *[]*KmsGrantConstraints `json:"constraints"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#grant_creation_tokens KmsGrant#grant_creation_tokens}.
-	GrantCreationTokens *[]*string `json:"grantCreationTokens"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#name KmsGrant#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#retire_on_delete KmsGrant#retire_on_delete}.
-	RetireOnDelete interface{} `json:"retireOnDelete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#retiring_principal KmsGrant#retiring_principal}.
-	RetiringPrincipal *string `json:"retiringPrincipal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#constraints KmsGrant#constraints}
+	Constraints interface{} `json:"constraints" yaml:"constraints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#grant_creation_tokens KmsGrant#grant_creation_tokens}.
+	GrantCreationTokens *[]*string `json:"grantCreationTokens" yaml:"grantCreationTokens"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#name KmsGrant#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#retire_on_delete KmsGrant#retire_on_delete}.
+	RetireOnDelete interface{} `json:"retireOnDelete" yaml:"retireOnDelete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#retiring_principal KmsGrant#retiring_principal}.
+	RetiringPrincipal *string `json:"retiringPrincipal" yaml:"retiringPrincipal"`
 }
 
 type KmsGrantConstraints struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#encryption_context_equals KmsGrant#encryption_context_equals}.
-	EncryptionContextEquals interface{} `json:"encryptionContextEquals"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant.html#encryption_context_subset KmsGrant#encryption_context_subset}.
-	EncryptionContextSubset interface{} `json:"encryptionContextSubset"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#encryption_context_equals KmsGrant#encryption_context_equals}.
+	EncryptionContextEquals *map[string]*string `json:"encryptionContextEquals" yaml:"encryptionContextEquals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_grant#encryption_context_subset KmsGrant#encryption_context_subset}.
+	EncryptionContextSubset *map[string]*string `json:"encryptionContextSubset" yaml:"encryptionContextSubset"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html aws_kms_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_key aws_kms_key}.
 type KmsKey interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -6692,8 +7727,8 @@ type KmsKey interface {
 	BypassPolicyLockoutSafetyCheckInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerMasterKeySpec() *string
 	SetCustomerMasterKeySpec(val *string)
 	CustomerMasterKeySpecInput() *string
@@ -6730,20 +7765,25 @@ type KmsKey interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBypassPolicyLockoutSafetyCheck()
@@ -6819,8 +7859,8 @@ func (j *jsiiProxy_KmsKey) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7079,8 +8119,8 @@ func (j *jsiiProxy_KmsKey) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsKey) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsKey) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7089,8 +8129,8 @@ func (j *jsiiProxy_KmsKey) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsKey) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsKey) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7099,8 +8139,8 @@ func (j *jsiiProxy_KmsKey) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsKey) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsKey) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7109,8 +8149,8 @@ func (j *jsiiProxy_KmsKey) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsKey) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsKey) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7149,7 +8189,7 @@ func (j *jsiiProxy_KmsKey) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html aws_kms_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_key aws_kms_key} Resource.
 func NewKmsKey(scope constructs.Construct, id *string, config *KmsKeyConfig) KmsKey {
 	_init_.Initialize()
 
@@ -7164,7 +8204,7 @@ func NewKmsKey(scope constructs.Construct, id *string, config *KmsKeyConfig) Kms
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html aws_kms_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_key aws_kms_key} Resource.
 func NewKmsKey_Override(k KmsKey, scope constructs.Construct, id *string, config *KmsKeyConfig) {
 	_init_.Initialize()
 
@@ -7183,7 +8223,7 @@ func (j *jsiiProxy_KmsKey) SetBypassPolicyLockoutSafetyCheck(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_KmsKey) SetCount(val interface{}) {
+func (j *jsiiProxy_KmsKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7279,7 +8319,7 @@ func (j *jsiiProxy_KmsKey) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_KmsKey) SetTags(val interface{}) {
+func (j *jsiiProxy_KmsKey) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7287,7 +8327,7 @@ func (j *jsiiProxy_KmsKey) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_KmsKey) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_KmsKey) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7335,12 +8375,40 @@ func (k *jsiiProxy_KmsKey) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		k,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7377,12 +8445,54 @@ func (k *jsiiProxy_KmsKey) GetNumberAttribute(terraformAttribute *string) *float
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		k,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		k,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7571,38 +8681,38 @@ func (k *jsiiProxy_KmsKey) ToTerraform() interface{} {
 // AWS Key Management Service.
 type KmsKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#bypass_policy_lockout_safety_check KmsKey#bypass_policy_lockout_safety_check}.
-	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#customer_master_key_spec KmsKey#customer_master_key_spec}.
-	CustomerMasterKeySpec *string `json:"customerMasterKeySpec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#deletion_window_in_days KmsKey#deletion_window_in_days}.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#description KmsKey#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#enable_key_rotation KmsKey#enable_key_rotation}.
-	EnableKeyRotation interface{} `json:"enableKeyRotation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#is_enabled KmsKey#is_enabled}.
-	IsEnabled interface{} `json:"isEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#key_usage KmsKey#key_usage}.
-	KeyUsage *string `json:"keyUsage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#multi_region KmsKey#multi_region}.
-	MultiRegion interface{} `json:"multiRegion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#policy KmsKey#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#tags KmsKey#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key.html#tags_all KmsKey#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#bypass_policy_lockout_safety_check KmsKey#bypass_policy_lockout_safety_check}.
+	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck" yaml:"bypassPolicyLockoutSafetyCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#customer_master_key_spec KmsKey#customer_master_key_spec}.
+	CustomerMasterKeySpec *string `json:"customerMasterKeySpec" yaml:"customerMasterKeySpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#deletion_window_in_days KmsKey#deletion_window_in_days}.
+	DeletionWindowInDays *float64 `json:"deletionWindowInDays" yaml:"deletionWindowInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#description KmsKey#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#enable_key_rotation KmsKey#enable_key_rotation}.
+	EnableKeyRotation interface{} `json:"enableKeyRotation" yaml:"enableKeyRotation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#is_enabled KmsKey#is_enabled}.
+	IsEnabled interface{} `json:"isEnabled" yaml:"isEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#key_usage KmsKey#key_usage}.
+	KeyUsage *string `json:"keyUsage" yaml:"keyUsage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#multi_region KmsKey#multi_region}.
+	MultiRegion interface{} `json:"multiRegion" yaml:"multiRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#policy KmsKey#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#tags KmsKey#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_key#tags_all KmsKey#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html aws_kms_replica_external_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key aws_kms_replica_external_key}.
 type KmsReplicaExternalKey interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -7611,8 +8721,8 @@ type KmsReplicaExternalKey interface {
 	BypassPolicyLockoutSafetyCheckInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeletionWindowInDays() *float64
 	SetDeletionWindowInDays(val *float64)
 	DeletionWindowInDaysInput() *float64
@@ -7646,12 +8756,12 @@ type KmsReplicaExternalKey interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7659,10 +8769,15 @@ type KmsReplicaExternalKey interface {
 	SetValidTo(val *string)
 	ValidToInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBypassPolicyLockoutSafetyCheck()
@@ -7736,8 +8851,8 @@ func (j *jsiiProxy_KmsReplicaExternalKey) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaExternalKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7986,8 +9101,8 @@ func (j *jsiiProxy_KmsReplicaExternalKey) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaExternalKey) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7996,8 +9111,8 @@ func (j *jsiiProxy_KmsReplicaExternalKey) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaExternalKey) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8006,8 +9121,8 @@ func (j *jsiiProxy_KmsReplicaExternalKey) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaExternalKey) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8016,8 +9131,8 @@ func (j *jsiiProxy_KmsReplicaExternalKey) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaExternalKey) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8076,7 +9191,7 @@ func (j *jsiiProxy_KmsReplicaExternalKey) ValidToInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html aws_kms_replica_external_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key aws_kms_replica_external_key} Resource.
 func NewKmsReplicaExternalKey(scope constructs.Construct, id *string, config *KmsReplicaExternalKeyConfig) KmsReplicaExternalKey {
 	_init_.Initialize()
 
@@ -8091,7 +9206,7 @@ func NewKmsReplicaExternalKey(scope constructs.Construct, id *string, config *Km
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html aws_kms_replica_external_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key aws_kms_replica_external_key} Resource.
 func NewKmsReplicaExternalKey_Override(k KmsReplicaExternalKey, scope constructs.Construct, id *string, config *KmsReplicaExternalKeyConfig) {
 	_init_.Initialize()
 
@@ -8110,7 +9225,7 @@ func (j *jsiiProxy_KmsReplicaExternalKey) SetBypassPolicyLockoutSafetyCheck(val 
 	)
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) SetCount(val interface{}) {
+func (j *jsiiProxy_KmsReplicaExternalKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8190,7 +9305,7 @@ func (j *jsiiProxy_KmsReplicaExternalKey) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) SetTags(val interface{}) {
+func (j *jsiiProxy_KmsReplicaExternalKey) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8198,7 +9313,7 @@ func (j *jsiiProxy_KmsReplicaExternalKey) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_KmsReplicaExternalKey) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_KmsReplicaExternalKey) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8254,12 +9369,40 @@ func (k *jsiiProxy_KmsReplicaExternalKey) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsReplicaExternalKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsReplicaExternalKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		k,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsReplicaExternalKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8296,12 +9439,54 @@ func (k *jsiiProxy_KmsReplicaExternalKey) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsReplicaExternalKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsReplicaExternalKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsReplicaExternalKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		k,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsReplicaExternalKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		k,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8474,36 +9659,36 @@ func (k *jsiiProxy_KmsReplicaExternalKey) ToTerraform() interface{} {
 // AWS Key Management Service.
 type KmsReplicaExternalKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#primary_key_arn KmsReplicaExternalKey#primary_key_arn}.
-	PrimaryKeyArn *string `json:"primaryKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#bypass_policy_lockout_safety_check KmsReplicaExternalKey#bypass_policy_lockout_safety_check}.
-	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#deletion_window_in_days KmsReplicaExternalKey#deletion_window_in_days}.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#description KmsReplicaExternalKey#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#enabled KmsReplicaExternalKey#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#key_material_base64 KmsReplicaExternalKey#key_material_base64}.
-	KeyMaterialBase64 *string `json:"keyMaterialBase64"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#policy KmsReplicaExternalKey#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#tags KmsReplicaExternalKey#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#tags_all KmsReplicaExternalKey#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key.html#valid_to KmsReplicaExternalKey#valid_to}.
-	ValidTo *string `json:"validTo"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#primary_key_arn KmsReplicaExternalKey#primary_key_arn}.
+	PrimaryKeyArn *string `json:"primaryKeyArn" yaml:"primaryKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#bypass_policy_lockout_safety_check KmsReplicaExternalKey#bypass_policy_lockout_safety_check}.
+	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck" yaml:"bypassPolicyLockoutSafetyCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#deletion_window_in_days KmsReplicaExternalKey#deletion_window_in_days}.
+	DeletionWindowInDays *float64 `json:"deletionWindowInDays" yaml:"deletionWindowInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#description KmsReplicaExternalKey#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#enabled KmsReplicaExternalKey#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#key_material_base64 KmsReplicaExternalKey#key_material_base64}.
+	KeyMaterialBase64 *string `json:"keyMaterialBase64" yaml:"keyMaterialBase64"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#policy KmsReplicaExternalKey#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#tags KmsReplicaExternalKey#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#tags_all KmsReplicaExternalKey#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_external_key#valid_to KmsReplicaExternalKey#valid_to}.
+	ValidTo *string `json:"validTo" yaml:"validTo"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html aws_kms_replica_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key aws_kms_replica_key}.
 type KmsReplicaKey interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -8512,8 +9697,8 @@ type KmsReplicaKey interface {
 	BypassPolicyLockoutSafetyCheckInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeletionWindowInDays() *float64
 	SetDeletionWindowInDays(val *float64)
 	DeletionWindowInDaysInput() *float64
@@ -8529,7 +9714,7 @@ type KmsReplicaKey interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	KeyId() *string
-	KeyRotationEnabled() interface{}
+	KeyRotationEnabled() cdktf.IResolvable
 	KeySpec() *string
 	KeyUsage() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -8544,20 +9729,25 @@ type KmsReplicaKey interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBypassPolicyLockoutSafetyCheck()
@@ -8629,8 +9819,8 @@ func (j *jsiiProxy_KmsReplicaKey) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8749,8 +9939,8 @@ func (j *jsiiProxy_KmsReplicaKey) KeyId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaKey) KeyRotationEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaKey) KeyRotationEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"keyRotationEnabled",
@@ -8859,8 +10049,8 @@ func (j *jsiiProxy_KmsReplicaKey) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaKey) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaKey) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8869,8 +10059,8 @@ func (j *jsiiProxy_KmsReplicaKey) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaKey) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaKey) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8879,8 +10069,8 @@ func (j *jsiiProxy_KmsReplicaKey) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaKey) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaKey) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8889,8 +10079,8 @@ func (j *jsiiProxy_KmsReplicaKey) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_KmsReplicaKey) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_KmsReplicaKey) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8929,7 +10119,7 @@ func (j *jsiiProxy_KmsReplicaKey) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html aws_kms_replica_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key aws_kms_replica_key} Resource.
 func NewKmsReplicaKey(scope constructs.Construct, id *string, config *KmsReplicaKeyConfig) KmsReplicaKey {
 	_init_.Initialize()
 
@@ -8944,7 +10134,7 @@ func NewKmsReplicaKey(scope constructs.Construct, id *string, config *KmsReplica
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html aws_kms_replica_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key aws_kms_replica_key} Resource.
 func NewKmsReplicaKey_Override(k KmsReplicaKey, scope constructs.Construct, id *string, config *KmsReplicaKeyConfig) {
 	_init_.Initialize()
 
@@ -8963,7 +10153,7 @@ func (j *jsiiProxy_KmsReplicaKey) SetBypassPolicyLockoutSafetyCheck(val interfac
 	)
 }
 
-func (j *jsiiProxy_KmsReplicaKey) SetCount(val interface{}) {
+func (j *jsiiProxy_KmsReplicaKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9035,7 +10225,7 @@ func (j *jsiiProxy_KmsReplicaKey) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_KmsReplicaKey) SetTags(val interface{}) {
+func (j *jsiiProxy_KmsReplicaKey) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9043,7 +10233,7 @@ func (j *jsiiProxy_KmsReplicaKey) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_KmsReplicaKey) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_KmsReplicaKey) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9091,12 +10281,40 @@ func (k *jsiiProxy_KmsReplicaKey) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsReplicaKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		k,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsReplicaKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		k,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsReplicaKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		k,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9133,12 +10351,54 @@ func (k *jsiiProxy_KmsReplicaKey) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (k *jsiiProxy_KmsReplicaKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsReplicaKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		k,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (k *jsiiProxy_KmsReplicaKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		k,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (k *jsiiProxy_KmsReplicaKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		k,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9295,27 +10555,27 @@ func (k *jsiiProxy_KmsReplicaKey) ToTerraform() interface{} {
 // AWS Key Management Service.
 type KmsReplicaKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#primary_key_arn KmsReplicaKey#primary_key_arn}.
-	PrimaryKeyArn *string `json:"primaryKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#bypass_policy_lockout_safety_check KmsReplicaKey#bypass_policy_lockout_safety_check}.
-	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#deletion_window_in_days KmsReplicaKey#deletion_window_in_days}.
-	DeletionWindowInDays *float64 `json:"deletionWindowInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#description KmsReplicaKey#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#enabled KmsReplicaKey#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#policy KmsReplicaKey#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#tags KmsReplicaKey#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key.html#tags_all KmsReplicaKey#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#primary_key_arn KmsReplicaKey#primary_key_arn}.
+	PrimaryKeyArn *string `json:"primaryKeyArn" yaml:"primaryKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#bypass_policy_lockout_safety_check KmsReplicaKey#bypass_policy_lockout_safety_check}.
+	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck" yaml:"bypassPolicyLockoutSafetyCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#deletion_window_in_days KmsReplicaKey#deletion_window_in_days}.
+	DeletionWindowInDays *float64 `json:"deletionWindowInDays" yaml:"deletionWindowInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#description KmsReplicaKey#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#enabled KmsReplicaKey#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#policy KmsReplicaKey#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#tags KmsReplicaKey#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/kms_replica_key#tags_all KmsReplicaKey#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

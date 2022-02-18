@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/simpledb/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain.html aws_simpledb_domain}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain aws_simpledb_domain}.
 type SimpledbDomain interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -34,10 +34,15 @@ type SimpledbDomain interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -72,8 +77,8 @@ func (j *jsiiProxy_SimpledbDomain) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_SimpledbDomain) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SimpledbDomain) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -212,7 +217,7 @@ func (j *jsiiProxy_SimpledbDomain) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain.html aws_simpledb_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain aws_simpledb_domain} Resource.
 func NewSimpledbDomain(scope constructs.Construct, id *string, config *SimpledbDomainConfig) SimpledbDomain {
 	_init_.Initialize()
 
@@ -227,7 +232,7 @@ func NewSimpledbDomain(scope constructs.Construct, id *string, config *SimpledbD
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain.html aws_simpledb_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain aws_simpledb_domain} Resource.
 func NewSimpledbDomain_Override(s SimpledbDomain, scope constructs.Construct, id *string, config *SimpledbDomainConfig) {
 	_init_.Initialize()
 
@@ -238,7 +243,7 @@ func NewSimpledbDomain_Override(s SimpledbDomain, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_SimpledbDomain) SetCount(val interface{}) {
+func (j *jsiiProxy_SimpledbDomain) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -318,12 +323,40 @@ func (s *jsiiProxy_SimpledbDomain) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_SimpledbDomain) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SimpledbDomain) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SimpledbDomain) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -360,12 +393,54 @@ func (s *jsiiProxy_SimpledbDomain) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_SimpledbDomain) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SimpledbDomain) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SimpledbDomain) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SimpledbDomain) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -466,13 +541,13 @@ func (s *jsiiProxy_SimpledbDomain) ToTerraform() interface{} {
 // AWS SimpleDB.
 type SimpledbDomainConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain.html#name SimpledbDomain#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/simpledb_domain#name SimpledbDomain#name}.
+	Name *string `json:"name" yaml:"name"`
 }

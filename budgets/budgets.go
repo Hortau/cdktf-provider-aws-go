@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/budgets/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html aws_budgets_budget}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget aws_budgets_budget}.
 type BudgetsBudget interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -21,16 +21,16 @@ type BudgetsBudget interface {
 	BudgetTypeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	CostFilter() *[]*BudgetsBudgetCostFilter
-	SetCostFilter(val *[]*BudgetsBudgetCostFilter)
-	CostFilterInput() *[]*BudgetsBudgetCostFilter
-	CostFilters() interface{}
-	SetCostFilters(val interface{})
-	CostFiltersInput() interface{}
+	CostFilter() interface{}
+	SetCostFilter(val interface{})
+	CostFilterInput() interface{}
+	CostFilters() *map[string]*string
+	SetCostFilters(val *map[string]*string)
+	CostFiltersInput() *map[string]*string
 	CostTypes() BudgetsBudgetCostTypesOutputReference
 	CostTypesInput() *BudgetsBudgetCostTypes
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -51,9 +51,9 @@ type BudgetsBudget interface {
 	SetNamePrefix(val *string)
 	NamePrefixInput() *string
 	Node() constructs.Node
-	Notification() *[]*BudgetsBudgetNotification
-	SetNotification(val *[]*BudgetsBudgetNotification)
-	NotificationInput() *[]*BudgetsBudgetNotification
+	Notification() interface{}
+	SetNotification(val interface{})
+	NotificationInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
@@ -70,10 +70,15 @@ type BudgetsBudget interface {
 	SetTimeUnit(val *string)
 	TimeUnitInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCostTypes(value *BudgetsBudgetCostTypes)
@@ -168,8 +173,8 @@ func (j *jsiiProxy_BudgetsBudget) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudget) CostFilter() *[]*BudgetsBudgetCostFilter {
-	var returns *[]*BudgetsBudgetCostFilter
+func (j *jsiiProxy_BudgetsBudget) CostFilter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"costFilter",
@@ -178,8 +183,8 @@ func (j *jsiiProxy_BudgetsBudget) CostFilter() *[]*BudgetsBudgetCostFilter {
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudget) CostFilterInput() *[]*BudgetsBudgetCostFilter {
-	var returns *[]*BudgetsBudgetCostFilter
+func (j *jsiiProxy_BudgetsBudget) CostFilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"costFilterInput",
@@ -188,8 +193,8 @@ func (j *jsiiProxy_BudgetsBudget) CostFilterInput() *[]*BudgetsBudgetCostFilter 
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudget) CostFilters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BudgetsBudget) CostFilters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"costFilters",
@@ -198,8 +203,8 @@ func (j *jsiiProxy_BudgetsBudget) CostFilters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudget) CostFiltersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BudgetsBudget) CostFiltersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"costFiltersInput",
@@ -228,8 +233,8 @@ func (j *jsiiProxy_BudgetsBudget) CostTypesInput() *BudgetsBudgetCostTypes {
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudget) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BudgetsBudget) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -378,8 +383,8 @@ func (j *jsiiProxy_BudgetsBudget) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudget) Notification() *[]*BudgetsBudgetNotification {
-	var returns *[]*BudgetsBudgetNotification
+func (j *jsiiProxy_BudgetsBudget) Notification() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"notification",
@@ -388,8 +393,8 @@ func (j *jsiiProxy_BudgetsBudget) Notification() *[]*BudgetsBudgetNotification {
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudget) NotificationInput() *[]*BudgetsBudgetNotification {
-	var returns *[]*BudgetsBudgetNotification
+func (j *jsiiProxy_BudgetsBudget) NotificationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"notificationInput",
@@ -508,7 +513,7 @@ func (j *jsiiProxy_BudgetsBudget) TimeUnitInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html aws_budgets_budget} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget aws_budgets_budget} Resource.
 func NewBudgetsBudget(scope constructs.Construct, id *string, config *BudgetsBudgetConfig) BudgetsBudget {
 	_init_.Initialize()
 
@@ -523,7 +528,7 @@ func NewBudgetsBudget(scope constructs.Construct, id *string, config *BudgetsBud
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html aws_budgets_budget} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget aws_budgets_budget} Resource.
 func NewBudgetsBudget_Override(b BudgetsBudget, scope constructs.Construct, id *string, config *BudgetsBudgetConfig) {
 	_init_.Initialize()
 
@@ -550,7 +555,7 @@ func (j *jsiiProxy_BudgetsBudget) SetBudgetType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudget) SetCostFilter(val *[]*BudgetsBudgetCostFilter) {
+func (j *jsiiProxy_BudgetsBudget) SetCostFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"costFilter",
@@ -558,7 +563,7 @@ func (j *jsiiProxy_BudgetsBudget) SetCostFilter(val *[]*BudgetsBudgetCostFilter)
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudget) SetCostFilters(val interface{}) {
+func (j *jsiiProxy_BudgetsBudget) SetCostFilters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"costFilters",
@@ -566,7 +571,7 @@ func (j *jsiiProxy_BudgetsBudget) SetCostFilters(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudget) SetCount(val interface{}) {
+func (j *jsiiProxy_BudgetsBudget) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -622,7 +627,7 @@ func (j *jsiiProxy_BudgetsBudget) SetNamePrefix(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudget) SetNotification(val *[]*BudgetsBudgetNotification) {
+func (j *jsiiProxy_BudgetsBudget) SetNotification(val interface{}) {
 	_jsii_.Set(
 		j,
 		"notification",
@@ -702,12 +707,40 @@ func (b *jsiiProxy_BudgetsBudget) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudget) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudget) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudget) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -744,12 +777,54 @@ func (b *jsiiProxy_BudgetsBudget) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudget) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudget) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudget) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudget) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -927,7 +1002,7 @@ func (b *jsiiProxy_BudgetsBudget) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html aws_budgets_budget_action}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action aws_budgets_budget_action}.
 type BudgetsBudgetAction interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -948,8 +1023,8 @@ type BudgetsBudgetAction interface {
 	BudgetNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Definition() BudgetsBudgetActionDefinitionOutputReference
 	DefinitionInput() *BudgetsBudgetActionDefinition
 	DependsOn() *[]*string
@@ -970,17 +1045,22 @@ type BudgetsBudgetAction interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	Status() *string
-	Subscriber() *[]*BudgetsBudgetActionSubscriber
-	SetSubscriber(val *[]*BudgetsBudgetActionSubscriber)
-	SubscriberInput() *[]*BudgetsBudgetActionSubscriber
+	Subscriber() interface{}
+	SetSubscriber(val interface{})
+	SubscriberInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutActionThreshold(value *BudgetsBudgetActionActionThreshold)
@@ -1138,8 +1218,8 @@ func (j *jsiiProxy_BudgetsBudgetAction) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetAction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BudgetsBudgetAction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1298,8 +1378,8 @@ func (j *jsiiProxy_BudgetsBudgetAction) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetAction) Subscriber() *[]*BudgetsBudgetActionSubscriber {
-	var returns *[]*BudgetsBudgetActionSubscriber
+func (j *jsiiProxy_BudgetsBudgetAction) Subscriber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subscriber",
@@ -1308,8 +1388,8 @@ func (j *jsiiProxy_BudgetsBudgetAction) Subscriber() *[]*BudgetsBudgetActionSubs
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetAction) SubscriberInput() *[]*BudgetsBudgetActionSubscriber {
-	var returns *[]*BudgetsBudgetActionSubscriber
+func (j *jsiiProxy_BudgetsBudgetAction) SubscriberInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subscriberInput",
@@ -1348,7 +1428,7 @@ func (j *jsiiProxy_BudgetsBudgetAction) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html aws_budgets_budget_action} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action aws_budgets_budget_action} Resource.
 func NewBudgetsBudgetAction(scope constructs.Construct, id *string, config *BudgetsBudgetActionConfig) BudgetsBudgetAction {
 	_init_.Initialize()
 
@@ -1363,7 +1443,7 @@ func NewBudgetsBudgetAction(scope constructs.Construct, id *string, config *Budg
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html aws_budgets_budget_action} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action aws_budgets_budget_action} Resource.
 func NewBudgetsBudgetAction_Override(b BudgetsBudgetAction, scope constructs.Construct, id *string, config *BudgetsBudgetActionConfig) {
 	_init_.Initialize()
 
@@ -1406,7 +1486,7 @@ func (j *jsiiProxy_BudgetsBudgetAction) SetBudgetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetAction) SetCount(val interface{}) {
+func (j *jsiiProxy_BudgetsBudgetAction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1454,7 +1534,7 @@ func (j *jsiiProxy_BudgetsBudgetAction) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetAction) SetSubscriber(val *[]*BudgetsBudgetActionSubscriber) {
+func (j *jsiiProxy_BudgetsBudgetAction) SetSubscriber(val interface{}) {
 	_jsii_.Set(
 		j,
 		"subscriber",
@@ -1502,12 +1582,40 @@ func (b *jsiiProxy_BudgetsBudgetAction) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetAction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetAction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetAction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1544,12 +1652,54 @@ func (b *jsiiProxy_BudgetsBudgetAction) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetAction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetAction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetAction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetAction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1672,10 +1822,10 @@ func (b *jsiiProxy_BudgetsBudgetAction) ToTerraform() interface{} {
 }
 
 type BudgetsBudgetActionActionThreshold struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#action_threshold_type BudgetsBudgetAction#action_threshold_type}.
-	ActionThresholdType *string `json:"actionThresholdType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#action_threshold_value BudgetsBudgetAction#action_threshold_value}.
-	ActionThresholdValue *float64 `json:"actionThresholdValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#action_threshold_type BudgetsBudgetAction#action_threshold_type}.
+	ActionThresholdType *string `json:"actionThresholdType" yaml:"actionThresholdType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#action_threshold_value BudgetsBudgetAction#action_threshold_value}.
+	ActionThresholdValue *float64 `json:"actionThresholdValue" yaml:"actionThresholdValue"`
 }
 
 type BudgetsBudgetActionActionThresholdOutputReference interface {
@@ -1692,12 +1842,17 @@ type BudgetsBudgetActionActionThresholdOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1777,8 +1932,8 @@ func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1787,7 +1942,7 @@ func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) TerraformR
 	return returns
 }
 
-func NewBudgetsBudgetActionActionThresholdOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionActionThresholdOutputReference {
+func NewBudgetsBudgetActionActionThresholdOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionActionThresholdOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference{}
@@ -1801,7 +1956,7 @@ func NewBudgetsBudgetActionActionThresholdOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewBudgetsBudgetActionActionThresholdOutputReference_Override(b BudgetsBudgetActionActionThresholdOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBudgetsBudgetActionActionThresholdOutputReference_Override(b BudgetsBudgetActionActionThresholdOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1851,7 +2006,7 @@ func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1860,12 +2015,40 @@ func (j *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1902,12 +2085,54 @@ func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetNumberA
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1946,63 +2171,63 @@ func (b *jsiiProxy_BudgetsBudgetActionActionThresholdOutputReference) Interpolat
 // AWS Budgets.
 type BudgetsBudgetActionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// action_threshold block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#action_threshold BudgetsBudgetAction#action_threshold}
-	ActionThreshold *BudgetsBudgetActionActionThreshold `json:"actionThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#action_type BudgetsBudgetAction#action_type}.
-	ActionType *string `json:"actionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#approval_model BudgetsBudgetAction#approval_model}.
-	ApprovalModel *string `json:"approvalModel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#budget_name BudgetsBudgetAction#budget_name}.
-	BudgetName *string `json:"budgetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#action_threshold BudgetsBudgetAction#action_threshold}
+	ActionThreshold *BudgetsBudgetActionActionThreshold `json:"actionThreshold" yaml:"actionThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#action_type BudgetsBudgetAction#action_type}.
+	ActionType *string `json:"actionType" yaml:"actionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#approval_model BudgetsBudgetAction#approval_model}.
+	ApprovalModel *string `json:"approvalModel" yaml:"approvalModel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#budget_name BudgetsBudgetAction#budget_name}.
+	BudgetName *string `json:"budgetName" yaml:"budgetName"`
 	// definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#definition BudgetsBudgetAction#definition}
-	Definition *BudgetsBudgetActionDefinition `json:"definition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#execution_role_arn BudgetsBudgetAction#execution_role_arn}.
-	ExecutionRoleArn *string `json:"executionRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#notification_type BudgetsBudgetAction#notification_type}.
-	NotificationType *string `json:"notificationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#definition BudgetsBudgetAction#definition}
+	Definition *BudgetsBudgetActionDefinition `json:"definition" yaml:"definition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#execution_role_arn BudgetsBudgetAction#execution_role_arn}.
+	ExecutionRoleArn *string `json:"executionRoleArn" yaml:"executionRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#notification_type BudgetsBudgetAction#notification_type}.
+	NotificationType *string `json:"notificationType" yaml:"notificationType"`
 	// subscriber block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#subscriber BudgetsBudgetAction#subscriber}
-	Subscriber *[]*BudgetsBudgetActionSubscriber `json:"subscriber"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#account_id BudgetsBudgetAction#account_id}.
-	AccountId *string `json:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#subscriber BudgetsBudgetAction#subscriber}
+	Subscriber interface{} `json:"subscriber" yaml:"subscriber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#account_id BudgetsBudgetAction#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 }
 
 type BudgetsBudgetActionDefinition struct {
 	// iam_action_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#iam_action_definition BudgetsBudgetAction#iam_action_definition}
-	IamActionDefinition *BudgetsBudgetActionDefinitionIamActionDefinition `json:"iamActionDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#iam_action_definition BudgetsBudgetAction#iam_action_definition}
+	IamActionDefinition *BudgetsBudgetActionDefinitionIamActionDefinition `json:"iamActionDefinition" yaml:"iamActionDefinition"`
 	// scp_action_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#scp_action_definition BudgetsBudgetAction#scp_action_definition}
-	ScpActionDefinition *BudgetsBudgetActionDefinitionScpActionDefinition `json:"scpActionDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#scp_action_definition BudgetsBudgetAction#scp_action_definition}
+	ScpActionDefinition *BudgetsBudgetActionDefinitionScpActionDefinition `json:"scpActionDefinition" yaml:"scpActionDefinition"`
 	// ssm_action_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#ssm_action_definition BudgetsBudgetAction#ssm_action_definition}
-	SsmActionDefinition *BudgetsBudgetActionDefinitionSsmActionDefinition `json:"ssmActionDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#ssm_action_definition BudgetsBudgetAction#ssm_action_definition}
+	SsmActionDefinition *BudgetsBudgetActionDefinitionSsmActionDefinition `json:"ssmActionDefinition" yaml:"ssmActionDefinition"`
 }
 
 type BudgetsBudgetActionDefinitionIamActionDefinition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#policy_arn BudgetsBudgetAction#policy_arn}.
-	PolicyArn *string `json:"policyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#groups BudgetsBudgetAction#groups}.
-	Groups *[]*string `json:"groups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#roles BudgetsBudgetAction#roles}.
-	Roles *[]*string `json:"roles"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#users BudgetsBudgetAction#users}.
-	Users *[]*string `json:"users"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#policy_arn BudgetsBudgetAction#policy_arn}.
+	PolicyArn *string `json:"policyArn" yaml:"policyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#groups BudgetsBudgetAction#groups}.
+	Groups *[]*string `json:"groups" yaml:"groups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#roles BudgetsBudgetAction#roles}.
+	Roles *[]*string `json:"roles" yaml:"roles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#users BudgetsBudgetAction#users}.
+	Users *[]*string `json:"users" yaml:"users"`
 }
 
 type BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference interface {
@@ -2022,15 +2247,20 @@ type BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference interface {
 	RolesInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Users() *[]*string
 	SetUsers(val *[]*string)
 	UsersInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetGroups()
@@ -2133,8 +2363,8 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2163,7 +2393,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReferen
 	return returns
 }
 
-func NewBudgetsBudgetActionDefinitionIamActionDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference {
+func NewBudgetsBudgetActionDefinitionIamActionDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference{}
@@ -2177,7 +2407,7 @@ func NewBudgetsBudgetActionDefinitionIamActionDefinitionOutputReference(terrafor
 	return &j
 }
 
-func NewBudgetsBudgetActionDefinitionIamActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBudgetsBudgetActionDefinitionIamActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2235,7 +2465,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReferen
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2252,12 +2482,40 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReferen
 }
 
 // Experimental.
-func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2294,12 +2552,54 @@ func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReferen
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionIamActionDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2373,12 +2673,17 @@ type BudgetsBudgetActionDefinitionOutputReference interface {
 	SsmActionDefinitionInput() *BudgetsBudgetActionDefinitionSsmActionDefinition
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutIamActionDefinition(value *BudgetsBudgetActionDefinitionIamActionDefinition)
@@ -2484,8 +2789,8 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2494,7 +2799,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) TerraformResour
 	return returns
 }
 
-func NewBudgetsBudgetActionDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionOutputReference {
+func NewBudgetsBudgetActionDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BudgetsBudgetActionDefinitionOutputReference{}
@@ -2508,7 +2813,7 @@ func NewBudgetsBudgetActionDefinitionOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewBudgetsBudgetActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBudgetsBudgetActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2542,7 +2847,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2551,12 +2856,40 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2593,12 +2926,54 @@ func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2683,10 +3058,10 @@ func (b *jsiiProxy_BudgetsBudgetActionDefinitionOutputReference) ResetSsmActionD
 }
 
 type BudgetsBudgetActionDefinitionScpActionDefinition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#policy_id BudgetsBudgetAction#policy_id}.
-	PolicyId *string `json:"policyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#target_ids BudgetsBudgetAction#target_ids}.
-	TargetIds *[]*string `json:"targetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#policy_id BudgetsBudgetAction#policy_id}.
+	PolicyId *string `json:"policyId" yaml:"policyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#target_ids BudgetsBudgetAction#target_ids}.
+	TargetIds *[]*string `json:"targetIds" yaml:"targetIds"`
 }
 
 type BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference interface {
@@ -2703,12 +3078,17 @@ type BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference interface {
 	TargetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2788,8 +3168,8 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2798,7 +3178,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReferen
 	return returns
 }
 
-func NewBudgetsBudgetActionDefinitionScpActionDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference {
+func NewBudgetsBudgetActionDefinitionScpActionDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference{}
@@ -2812,7 +3192,7 @@ func NewBudgetsBudgetActionDefinitionScpActionDefinitionOutputReference(terrafor
 	return &j
 }
 
-func NewBudgetsBudgetActionDefinitionScpActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBudgetsBudgetActionDefinitionScpActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2862,7 +3242,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReferen
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2871,12 +3251,40 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReferen
 }
 
 // Experimental.
-func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2913,12 +3321,54 @@ func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReferen
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2955,12 +3405,12 @@ func (b *jsiiProxy_BudgetsBudgetActionDefinitionScpActionDefinitionOutputReferen
 }
 
 type BudgetsBudgetActionDefinitionSsmActionDefinition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#action_sub_type BudgetsBudgetAction#action_sub_type}.
-	ActionSubType *string `json:"actionSubType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#instance_ids BudgetsBudgetAction#instance_ids}.
-	InstanceIds *[]*string `json:"instanceIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#region BudgetsBudgetAction#region}.
-	Region *string `json:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#action_sub_type BudgetsBudgetAction#action_sub_type}.
+	ActionSubType *string `json:"actionSubType" yaml:"actionSubType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#instance_ids BudgetsBudgetAction#instance_ids}.
+	InstanceIds *[]*string `json:"instanceIds" yaml:"instanceIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#region BudgetsBudgetAction#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
 type BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference interface {
@@ -2980,12 +3430,17 @@ type BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference interface {
 	RegionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3085,8 +3540,8 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3095,7 +3550,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 	return returns
 }
 
-func NewBudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference {
+func NewBudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference{}
@@ -3109,7 +3564,7 @@ func NewBudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference(terrafor
 	return &j
 }
 
-func NewBudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference_Override(b BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3167,7 +3622,7 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3176,12 +3631,40 @@ func (j *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 }
 
 // Experimental.
-func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3218,12 +3701,54 @@ func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3260,86 +3785,86 @@ func (b *jsiiProxy_BudgetsBudgetActionDefinitionSsmActionDefinitionOutputReferen
 }
 
 type BudgetsBudgetActionSubscriber struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#address BudgetsBudgetAction#address}.
-	Address *string `json:"address"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action.html#subscription_type BudgetsBudgetAction#subscription_type}.
-	SubscriptionType *string `json:"subscriptionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#address BudgetsBudgetAction#address}.
+	Address *string `json:"address" yaml:"address"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget_action#subscription_type BudgetsBudgetAction#subscription_type}.
+	SubscriptionType *string `json:"subscriptionType" yaml:"subscriptionType"`
 }
 
 // AWS Budgets.
 type BudgetsBudgetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#budget_type BudgetsBudget#budget_type}.
-	BudgetType *string `json:"budgetType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#limit_amount BudgetsBudget#limit_amount}.
-	LimitAmount *string `json:"limitAmount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#limit_unit BudgetsBudget#limit_unit}.
-	LimitUnit *string `json:"limitUnit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#time_unit BudgetsBudget#time_unit}.
-	TimeUnit *string `json:"timeUnit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#account_id BudgetsBudget#account_id}.
-	AccountId *string `json:"accountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#budget_type BudgetsBudget#budget_type}.
+	BudgetType *string `json:"budgetType" yaml:"budgetType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#limit_amount BudgetsBudget#limit_amount}.
+	LimitAmount *string `json:"limitAmount" yaml:"limitAmount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#limit_unit BudgetsBudget#limit_unit}.
+	LimitUnit *string `json:"limitUnit" yaml:"limitUnit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#time_unit BudgetsBudget#time_unit}.
+	TimeUnit *string `json:"timeUnit" yaml:"timeUnit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#account_id BudgetsBudget#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 	// cost_filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#cost_filter BudgetsBudget#cost_filter}
-	CostFilter *[]*BudgetsBudgetCostFilter `json:"costFilter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#cost_filters BudgetsBudget#cost_filters}.
-	CostFilters interface{} `json:"costFilters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#cost_filter BudgetsBudget#cost_filter}
+	CostFilter interface{} `json:"costFilter" yaml:"costFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#cost_filters BudgetsBudget#cost_filters}.
+	CostFilters *map[string]*string `json:"costFilters" yaml:"costFilters"`
 	// cost_types block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#cost_types BudgetsBudget#cost_types}
-	CostTypes *BudgetsBudgetCostTypes `json:"costTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#name BudgetsBudget#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#name_prefix BudgetsBudget#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#cost_types BudgetsBudget#cost_types}
+	CostTypes *BudgetsBudgetCostTypes `json:"costTypes" yaml:"costTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#name BudgetsBudget#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#name_prefix BudgetsBudget#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 	// notification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#notification BudgetsBudget#notification}
-	Notification *[]*BudgetsBudgetNotification `json:"notification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#time_period_end BudgetsBudget#time_period_end}.
-	TimePeriodEnd *string `json:"timePeriodEnd"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#time_period_start BudgetsBudget#time_period_start}.
-	TimePeriodStart *string `json:"timePeriodStart"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#notification BudgetsBudget#notification}
+	Notification interface{} `json:"notification" yaml:"notification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#time_period_end BudgetsBudget#time_period_end}.
+	TimePeriodEnd *string `json:"timePeriodEnd" yaml:"timePeriodEnd"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#time_period_start BudgetsBudget#time_period_start}.
+	TimePeriodStart *string `json:"timePeriodStart" yaml:"timePeriodStart"`
 }
 
 type BudgetsBudgetCostFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#name BudgetsBudget#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#values BudgetsBudget#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#name BudgetsBudget#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#values BudgetsBudget#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type BudgetsBudgetCostTypes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_credit BudgetsBudget#include_credit}.
-	IncludeCredit interface{} `json:"includeCredit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_discount BudgetsBudget#include_discount}.
-	IncludeDiscount interface{} `json:"includeDiscount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_other_subscription BudgetsBudget#include_other_subscription}.
-	IncludeOtherSubscription interface{} `json:"includeOtherSubscription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_recurring BudgetsBudget#include_recurring}.
-	IncludeRecurring interface{} `json:"includeRecurring"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_refund BudgetsBudget#include_refund}.
-	IncludeRefund interface{} `json:"includeRefund"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_subscription BudgetsBudget#include_subscription}.
-	IncludeSubscription interface{} `json:"includeSubscription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_support BudgetsBudget#include_support}.
-	IncludeSupport interface{} `json:"includeSupport"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_tax BudgetsBudget#include_tax}.
-	IncludeTax interface{} `json:"includeTax"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#include_upfront BudgetsBudget#include_upfront}.
-	IncludeUpfront interface{} `json:"includeUpfront"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#use_amortized BudgetsBudget#use_amortized}.
-	UseAmortized interface{} `json:"useAmortized"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#use_blended BudgetsBudget#use_blended}.
-	UseBlended interface{} `json:"useBlended"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_credit BudgetsBudget#include_credit}.
+	IncludeCredit interface{} `json:"includeCredit" yaml:"includeCredit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_discount BudgetsBudget#include_discount}.
+	IncludeDiscount interface{} `json:"includeDiscount" yaml:"includeDiscount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_other_subscription BudgetsBudget#include_other_subscription}.
+	IncludeOtherSubscription interface{} `json:"includeOtherSubscription" yaml:"includeOtherSubscription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_recurring BudgetsBudget#include_recurring}.
+	IncludeRecurring interface{} `json:"includeRecurring" yaml:"includeRecurring"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_refund BudgetsBudget#include_refund}.
+	IncludeRefund interface{} `json:"includeRefund" yaml:"includeRefund"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_subscription BudgetsBudget#include_subscription}.
+	IncludeSubscription interface{} `json:"includeSubscription" yaml:"includeSubscription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_support BudgetsBudget#include_support}.
+	IncludeSupport interface{} `json:"includeSupport" yaml:"includeSupport"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_tax BudgetsBudget#include_tax}.
+	IncludeTax interface{} `json:"includeTax" yaml:"includeTax"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#include_upfront BudgetsBudget#include_upfront}.
+	IncludeUpfront interface{} `json:"includeUpfront" yaml:"includeUpfront"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#use_amortized BudgetsBudget#use_amortized}.
+	UseAmortized interface{} `json:"useAmortized" yaml:"useAmortized"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#use_blended BudgetsBudget#use_blended}.
+	UseBlended interface{} `json:"useBlended" yaml:"useBlended"`
 }
 
 type BudgetsBudgetCostTypesOutputReference interface {
@@ -3377,18 +3902,23 @@ type BudgetsBudgetCostTypesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UseAmortized() interface{}
 	SetUseAmortized(val interface{})
 	UseAmortizedInput() interface{}
 	UseBlended() interface{}
 	SetUseBlended(val interface{})
 	UseBlendedInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIncludeCredit()
@@ -3619,8 +4149,8 @@ func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3669,7 +4199,7 @@ func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) UseBlendedInput() inte
 	return returns
 }
 
-func NewBudgetsBudgetCostTypesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetCostTypesOutputReference {
+func NewBudgetsBudgetCostTypesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BudgetsBudgetCostTypesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BudgetsBudgetCostTypesOutputReference{}
@@ -3683,7 +4213,7 @@ func NewBudgetsBudgetCostTypesOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewBudgetsBudgetCostTypesOutputReference_Override(b BudgetsBudgetCostTypesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBudgetsBudgetCostTypesOutputReference_Override(b BudgetsBudgetCostTypesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3789,7 +4319,7 @@ func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3814,12 +4344,40 @@ func (j *jsiiProxy_BudgetsBudgetCostTypesOutputReference) SetUseBlended(val inte
 }
 
 // Experimental.
-func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3856,12 +4414,54 @@ func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3986,16 +4586,16 @@ func (b *jsiiProxy_BudgetsBudgetCostTypesOutputReference) ResetUseBlended() {
 }
 
 type BudgetsBudgetNotification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#comparison_operator BudgetsBudget#comparison_operator}.
-	ComparisonOperator *string `json:"comparisonOperator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#notification_type BudgetsBudget#notification_type}.
-	NotificationType *string `json:"notificationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#threshold BudgetsBudget#threshold}.
-	Threshold *float64 `json:"threshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#threshold_type BudgetsBudget#threshold_type}.
-	ThresholdType *string `json:"thresholdType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#subscriber_email_addresses BudgetsBudget#subscriber_email_addresses}.
-	SubscriberEmailAddresses *[]*string `json:"subscriberEmailAddresses"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget.html#subscriber_sns_topic_arns BudgetsBudget#subscriber_sns_topic_arns}.
-	SubscriberSnsTopicArns *[]*string `json:"subscriberSnsTopicArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#comparison_operator BudgetsBudget#comparison_operator}.
+	ComparisonOperator *string `json:"comparisonOperator" yaml:"comparisonOperator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#notification_type BudgetsBudget#notification_type}.
+	NotificationType *string `json:"notificationType" yaml:"notificationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#threshold BudgetsBudget#threshold}.
+	Threshold *float64 `json:"threshold" yaml:"threshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#threshold_type BudgetsBudget#threshold_type}.
+	ThresholdType *string `json:"thresholdType" yaml:"thresholdType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#subscriber_email_addresses BudgetsBudget#subscriber_email_addresses}.
+	SubscriberEmailAddresses *[]*string `json:"subscriberEmailAddresses" yaml:"subscriberEmailAddresses"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/budgets_budget#subscriber_sns_topic_arns BudgetsBudget#subscriber_sns_topic_arns}.
+	SubscriberSnsTopicArns *[]*string `json:"subscriberSnsTopicArns" yaml:"subscriberSnsTopicArns"`
 }

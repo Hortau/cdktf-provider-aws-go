@@ -1,22 +1,22 @@
 package appconfig
 
 import (
-	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
+	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 
+	"github.com/hortau/cdktf-provider-aws-go/appconfig/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
-	"github.com/hortau/cdktf-provider-aws-go/appconfig/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application.html aws_appconfig_application}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application aws_appconfig_application}.
 type AppconfigApplication interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -34,20 +34,25 @@ type AppconfigApplication interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -95,8 +100,8 @@ func (j *jsiiProxy_AppconfigApplication) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigApplication) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigApplication) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -225,8 +230,8 @@ func (j *jsiiProxy_AppconfigApplication) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigApplication) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigApplication) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -235,8 +240,8 @@ func (j *jsiiProxy_AppconfigApplication) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigApplication) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigApplication) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -245,8 +250,8 @@ func (j *jsiiProxy_AppconfigApplication) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigApplication) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigApplication) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -255,8 +260,8 @@ func (j *jsiiProxy_AppconfigApplication) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigApplication) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigApplication) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -295,7 +300,8 @@ func (j *jsiiProxy_AppconfigApplication) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application.html aws_appconfig_application} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application aws_appconfig_application} Resource.
 func NewAppconfigApplication(scope constructs.Construct, id *string, config *AppconfigApplicationConfig) AppconfigApplication {
 	_init_.Initialize()
 
@@ -310,7 +316,7 @@ func NewAppconfigApplication(scope constructs.Construct, id *string, config *App
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application.html aws_appconfig_application} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application aws_appconfig_application} Resource.
 func NewAppconfigApplication_Override(a AppconfigApplication, scope constructs.Construct, id *string, config *AppconfigApplicationConfig) {
 	_init_.Initialize()
 
@@ -321,7 +327,7 @@ func NewAppconfigApplication_Override(a AppconfigApplication, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_AppconfigApplication) SetCount(val interface{}) {
+func (j *jsiiProxy_AppconfigApplication) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -369,7 +375,7 @@ func (j *jsiiProxy_AppconfigApplication) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_AppconfigApplication) SetTags(val interface{}) {
+func (j *jsiiProxy_AppconfigApplication) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -377,7 +383,7 @@ func (j *jsiiProxy_AppconfigApplication) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigApplication) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppconfigApplication) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -425,12 +431,40 @@ func (a *jsiiProxy_AppconfigApplication) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigApplication) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigApplication) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigApplication) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -467,12 +501,54 @@ func (a *jsiiProxy_AppconfigApplication) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigApplication) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigApplication) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigApplication) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigApplication) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -597,24 +673,24 @@ func (a *jsiiProxy_AppconfigApplication) ToTerraform() interface{} {
 // AppConfig.
 type AppconfigApplicationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application.html#name AppconfigApplication#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application.html#description AppconfigApplication#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application.html#tags AppconfigApplication#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application.html#tags_all AppconfigApplication#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application#name AppconfigApplication#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application#description AppconfigApplication#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application#tags AppconfigApplication#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_application#tags_all AppconfigApplication#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html aws_appconfig_configuration_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile aws_appconfig_configuration_profile}.
 type AppconfigConfigurationProfile interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -624,8 +700,8 @@ type AppconfigConfigurationProfile interface {
 	CdktfStack() cdktf.TerraformStack
 	ConfigurationProfileId() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -649,23 +725,28 @@ type AppconfigConfigurationProfile interface {
 	RetrievalRoleArn() *string
 	SetRetrievalRoleArn(val *string)
 	RetrievalRoleArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Validator() *[]*AppconfigConfigurationProfileValidator
-	SetValidator(val *[]*AppconfigConfigurationProfileValidator)
-	ValidatorInput() *[]*AppconfigConfigurationProfileValidator
+	Validator() interface{}
+	SetValidator(val interface{})
+	ValidatorInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -745,8 +826,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigConfigurationProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -915,8 +996,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) RetrievalRoleArnInput() *strin
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigConfigurationProfile) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -925,8 +1006,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigConfigurationProfile) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -935,8 +1016,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigConfigurationProfile) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -945,8 +1026,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigConfigurationProfile) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -985,8 +1066,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) TerraformResourceType() *strin
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) Validator() *[]*AppconfigConfigurationProfileValidator {
-	var returns *[]*AppconfigConfigurationProfileValidator
+func (j *jsiiProxy_AppconfigConfigurationProfile) Validator() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"validator",
@@ -995,8 +1076,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) Validator() *[]*AppconfigConfi
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) ValidatorInput() *[]*AppconfigConfigurationProfileValidator {
-	var returns *[]*AppconfigConfigurationProfileValidator
+func (j *jsiiProxy_AppconfigConfigurationProfile) ValidatorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"validatorInput",
@@ -1005,7 +1086,8 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) ValidatorInput() *[]*Appconfig
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html aws_appconfig_configuration_profile} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile aws_appconfig_configuration_profile} Resource.
 func NewAppconfigConfigurationProfile(scope constructs.Construct, id *string, config *AppconfigConfigurationProfileConfig) AppconfigConfigurationProfile {
 	_init_.Initialize()
 
@@ -1020,7 +1102,7 @@ func NewAppconfigConfigurationProfile(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html aws_appconfig_configuration_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile aws_appconfig_configuration_profile} Resource.
 func NewAppconfigConfigurationProfile_Override(a AppconfigConfigurationProfile, scope constructs.Construct, id *string, config *AppconfigConfigurationProfileConfig) {
 	_init_.Initialize()
 
@@ -1039,7 +1121,7 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) SetApplicationId(val *string) 
 	)
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_AppconfigConfigurationProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1103,7 +1185,7 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) SetRetrievalRoleArn(val *strin
 	)
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) SetTags(val interface{}) {
+func (j *jsiiProxy_AppconfigConfigurationProfile) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1111,7 +1193,7 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppconfigConfigurationProfile) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1119,7 +1201,7 @@ func (j *jsiiProxy_AppconfigConfigurationProfile) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigConfigurationProfile) SetValidator(val *[]*AppconfigConfigurationProfileValidator) {
+func (j *jsiiProxy_AppconfigConfigurationProfile) SetValidator(val interface{}) {
 	_jsii_.Set(
 		j,
 		"validator",
@@ -1167,12 +1249,40 @@ func (a *jsiiProxy_AppconfigConfigurationProfile) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigConfigurationProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigConfigurationProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigConfigurationProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1209,12 +1319,54 @@ func (a *jsiiProxy_AppconfigConfigurationProfile) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigConfigurationProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigConfigurationProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigConfigurationProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigConfigurationProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1355,41 +1507,41 @@ func (a *jsiiProxy_AppconfigConfigurationProfile) ToTerraform() interface{} {
 // AppConfig.
 type AppconfigConfigurationProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#application_id AppconfigConfigurationProfile#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#location_uri AppconfigConfigurationProfile#location_uri}.
-	LocationUri *string `json:"locationUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#name AppconfigConfigurationProfile#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#description AppconfigConfigurationProfile#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#retrieval_role_arn AppconfigConfigurationProfile#retrieval_role_arn}.
-	RetrievalRoleArn *string `json:"retrievalRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#tags AppconfigConfigurationProfile#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#tags_all AppconfigConfigurationProfile#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#application_id AppconfigConfigurationProfile#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#location_uri AppconfigConfigurationProfile#location_uri}.
+	LocationUri *string `json:"locationUri" yaml:"locationUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#name AppconfigConfigurationProfile#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#description AppconfigConfigurationProfile#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#retrieval_role_arn AppconfigConfigurationProfile#retrieval_role_arn}.
+	RetrievalRoleArn *string `json:"retrievalRoleArn" yaml:"retrievalRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#tags AppconfigConfigurationProfile#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#tags_all AppconfigConfigurationProfile#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// validator block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#validator AppconfigConfigurationProfile#validator}
-	Validator *[]*AppconfigConfigurationProfileValidator `json:"validator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#validator AppconfigConfigurationProfile#validator}
+	Validator interface{} `json:"validator" yaml:"validator"`
 }
 
 type AppconfigConfigurationProfileValidator struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#type AppconfigConfigurationProfile#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile.html#content AppconfigConfigurationProfile#content}.
-	Content *string `json:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#type AppconfigConfigurationProfile#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_configuration_profile#content AppconfigConfigurationProfile#content}.
+	Content *string `json:"content" yaml:"content"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html aws_appconfig_deployment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment aws_appconfig_deployment}.
 type AppconfigDeployment interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -1404,8 +1556,8 @@ type AppconfigDeployment interface {
 	SetConfigurationVersion(val *string)
 	ConfigurationVersionInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentNumber() *float64
@@ -1428,20 +1580,25 @@ type AppconfigDeployment interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	State() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -1549,8 +1706,8 @@ func (j *jsiiProxy_AppconfigDeployment) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeployment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeployment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1719,8 +1876,8 @@ func (j *jsiiProxy_AppconfigDeployment) State() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeployment) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeployment) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1729,8 +1886,8 @@ func (j *jsiiProxy_AppconfigDeployment) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeployment) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeployment) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1739,8 +1896,8 @@ func (j *jsiiProxy_AppconfigDeployment) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeployment) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeployment) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1749,8 +1906,8 @@ func (j *jsiiProxy_AppconfigDeployment) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeployment) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeployment) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1789,7 +1946,8 @@ func (j *jsiiProxy_AppconfigDeployment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html aws_appconfig_deployment} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment aws_appconfig_deployment} Resource.
 func NewAppconfigDeployment(scope constructs.Construct, id *string, config *AppconfigDeploymentConfig) AppconfigDeployment {
 	_init_.Initialize()
 
@@ -1804,7 +1962,7 @@ func NewAppconfigDeployment(scope constructs.Construct, id *string, config *Appc
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html aws_appconfig_deployment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment aws_appconfig_deployment} Resource.
 func NewAppconfigDeployment_Override(a AppconfigDeployment, scope constructs.Construct, id *string, config *AppconfigDeploymentConfig) {
 	_init_.Initialize()
 
@@ -1839,7 +1997,7 @@ func (j *jsiiProxy_AppconfigDeployment) SetConfigurationVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigDeployment) SetCount(val interface{}) {
+func (j *jsiiProxy_AppconfigDeployment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1895,7 +2053,7 @@ func (j *jsiiProxy_AppconfigDeployment) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_AppconfigDeployment) SetTags(val interface{}) {
+func (j *jsiiProxy_AppconfigDeployment) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1903,7 +2061,7 @@ func (j *jsiiProxy_AppconfigDeployment) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigDeployment) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppconfigDeployment) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1951,12 +2109,40 @@ func (a *jsiiProxy_AppconfigDeployment) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigDeployment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigDeployment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigDeployment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1993,12 +2179,54 @@ func (a *jsiiProxy_AppconfigDeployment) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigDeployment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigDeployment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigDeployment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigDeployment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2123,39 +2351,39 @@ func (a *jsiiProxy_AppconfigDeployment) ToTerraform() interface{} {
 // AppConfig.
 type AppconfigDeploymentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#application_id AppconfigDeployment#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#configuration_profile_id AppconfigDeployment#configuration_profile_id}.
-	ConfigurationProfileId *string `json:"configurationProfileId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#configuration_version AppconfigDeployment#configuration_version}.
-	ConfigurationVersion *string `json:"configurationVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#deployment_strategy_id AppconfigDeployment#deployment_strategy_id}.
-	DeploymentStrategyId *string `json:"deploymentStrategyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#environment_id AppconfigDeployment#environment_id}.
-	EnvironmentId *string `json:"environmentId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#description AppconfigDeployment#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#tags AppconfigDeployment#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment.html#tags_all AppconfigDeployment#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#application_id AppconfigDeployment#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#configuration_profile_id AppconfigDeployment#configuration_profile_id}.
+	ConfigurationProfileId *string `json:"configurationProfileId" yaml:"configurationProfileId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#configuration_version AppconfigDeployment#configuration_version}.
+	ConfigurationVersion *string `json:"configurationVersion" yaml:"configurationVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#deployment_strategy_id AppconfigDeployment#deployment_strategy_id}.
+	DeploymentStrategyId *string `json:"deploymentStrategyId" yaml:"deploymentStrategyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#environment_id AppconfigDeployment#environment_id}.
+	EnvironmentId *string `json:"environmentId" yaml:"environmentId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#description AppconfigDeployment#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#tags AppconfigDeployment#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment#tags_all AppconfigDeployment#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html aws_appconfig_deployment_strategy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy aws_appconfig_deployment_strategy}.
 type AppconfigDeploymentStrategy interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentDurationInMinutes() *float64
@@ -2188,20 +2416,25 @@ type AppconfigDeploymentStrategy interface {
 	ReplicateTo() *string
 	SetReplicateTo(val *string)
 	ReplicateToInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -2251,8 +2484,8 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeploymentStrategy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2481,8 +2714,8 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) ReplicateToInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeploymentStrategy) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2491,8 +2724,8 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2501,8 +2734,8 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2511,8 +2744,8 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigDeploymentStrategy) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2551,7 +2784,8 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html aws_appconfig_deployment_strategy} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy aws_appconfig_deployment_strategy} Resource.
 func NewAppconfigDeploymentStrategy(scope constructs.Construct, id *string, config *AppconfigDeploymentStrategyConfig) AppconfigDeploymentStrategy {
 	_init_.Initialize()
 
@@ -2566,7 +2800,7 @@ func NewAppconfigDeploymentStrategy(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html aws_appconfig_deployment_strategy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy aws_appconfig_deployment_strategy} Resource.
 func NewAppconfigDeploymentStrategy_Override(a AppconfigDeploymentStrategy, scope constructs.Construct, id *string, config *AppconfigDeploymentStrategyConfig) {
 	_init_.Initialize()
 
@@ -2577,7 +2811,7 @@ func NewAppconfigDeploymentStrategy_Override(a AppconfigDeploymentStrategy, scop
 	)
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) SetCount(val interface{}) {
+func (j *jsiiProxy_AppconfigDeploymentStrategy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2665,7 +2899,7 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) SetReplicateTo(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) SetTags(val interface{}) {
+func (j *jsiiProxy_AppconfigDeploymentStrategy) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2673,7 +2907,7 @@ func (j *jsiiProxy_AppconfigDeploymentStrategy) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigDeploymentStrategy) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppconfigDeploymentStrategy) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2721,12 +2955,40 @@ func (a *jsiiProxy_AppconfigDeploymentStrategy) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigDeploymentStrategy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigDeploymentStrategy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigDeploymentStrategy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2763,12 +3025,54 @@ func (a *jsiiProxy_AppconfigDeploymentStrategy) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigDeploymentStrategy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigDeploymentStrategy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigDeploymentStrategy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigDeploymentStrategy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2909,34 +3213,34 @@ func (a *jsiiProxy_AppconfigDeploymentStrategy) ToTerraform() interface{} {
 // AppConfig.
 type AppconfigDeploymentStrategyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#deployment_duration_in_minutes AppconfigDeploymentStrategy#deployment_duration_in_minutes}.
-	DeploymentDurationInMinutes *float64 `json:"deploymentDurationInMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#growth_factor AppconfigDeploymentStrategy#growth_factor}.
-	GrowthFactor *float64 `json:"growthFactor"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#name AppconfigDeploymentStrategy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#replicate_to AppconfigDeploymentStrategy#replicate_to}.
-	ReplicateTo *string `json:"replicateTo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#description AppconfigDeploymentStrategy#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#final_bake_time_in_minutes AppconfigDeploymentStrategy#final_bake_time_in_minutes}.
-	FinalBakeTimeInMinutes *float64 `json:"finalBakeTimeInMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#growth_type AppconfigDeploymentStrategy#growth_type}.
-	GrowthType *string `json:"growthType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#tags AppconfigDeploymentStrategy#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy.html#tags_all AppconfigDeploymentStrategy#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#deployment_duration_in_minutes AppconfigDeploymentStrategy#deployment_duration_in_minutes}.
+	DeploymentDurationInMinutes *float64 `json:"deploymentDurationInMinutes" yaml:"deploymentDurationInMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#growth_factor AppconfigDeploymentStrategy#growth_factor}.
+	GrowthFactor *float64 `json:"growthFactor" yaml:"growthFactor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#name AppconfigDeploymentStrategy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#replicate_to AppconfigDeploymentStrategy#replicate_to}.
+	ReplicateTo *string `json:"replicateTo" yaml:"replicateTo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#description AppconfigDeploymentStrategy#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#final_bake_time_in_minutes AppconfigDeploymentStrategy#final_bake_time_in_minutes}.
+	FinalBakeTimeInMinutes *float64 `json:"finalBakeTimeInMinutes" yaml:"finalBakeTimeInMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#growth_type AppconfigDeploymentStrategy#growth_type}.
+	GrowthType *string `json:"growthType" yaml:"growthType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#tags AppconfigDeploymentStrategy#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_deployment_strategy#tags_all AppconfigDeploymentStrategy#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html aws_appconfig_environment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment aws_appconfig_environment}.
 type AppconfigEnvironment interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -2945,8 +3249,8 @@ type AppconfigEnvironment interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2958,9 +3262,9 @@ type AppconfigEnvironment interface {
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	Monitor() *[]*AppconfigEnvironmentMonitor
-	SetMonitor(val *[]*AppconfigEnvironmentMonitor)
-	MonitorInput() *[]*AppconfigEnvironmentMonitor
+	Monitor() interface{}
+	SetMonitor(val interface{})
+	MonitorInput() interface{}
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -2969,20 +3273,25 @@ type AppconfigEnvironment interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	State() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -3051,8 +3360,8 @@ func (j *jsiiProxy_AppconfigEnvironment) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigEnvironment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3141,8 +3450,8 @@ func (j *jsiiProxy_AppconfigEnvironment) Lifecycle() *cdktf.TerraformResourceLif
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) Monitor() *[]*AppconfigEnvironmentMonitor {
-	var returns *[]*AppconfigEnvironmentMonitor
+func (j *jsiiProxy_AppconfigEnvironment) Monitor() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"monitor",
@@ -3151,8 +3460,8 @@ func (j *jsiiProxy_AppconfigEnvironment) Monitor() *[]*AppconfigEnvironmentMonit
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) MonitorInput() *[]*AppconfigEnvironmentMonitor {
-	var returns *[]*AppconfigEnvironmentMonitor
+func (j *jsiiProxy_AppconfigEnvironment) MonitorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"monitorInput",
@@ -3221,8 +3530,8 @@ func (j *jsiiProxy_AppconfigEnvironment) State() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigEnvironment) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3231,8 +3540,8 @@ func (j *jsiiProxy_AppconfigEnvironment) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigEnvironment) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3241,8 +3550,8 @@ func (j *jsiiProxy_AppconfigEnvironment) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigEnvironment) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3251,8 +3560,8 @@ func (j *jsiiProxy_AppconfigEnvironment) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigEnvironment) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3291,7 +3600,8 @@ func (j *jsiiProxy_AppconfigEnvironment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html aws_appconfig_environment} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment aws_appconfig_environment} Resource.
 func NewAppconfigEnvironment(scope constructs.Construct, id *string, config *AppconfigEnvironmentConfig) AppconfigEnvironment {
 	_init_.Initialize()
 
@@ -3306,7 +3616,7 @@ func NewAppconfigEnvironment(scope constructs.Construct, id *string, config *App
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html aws_appconfig_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment aws_appconfig_environment} Resource.
 func NewAppconfigEnvironment_Override(a AppconfigEnvironment, scope constructs.Construct, id *string, config *AppconfigEnvironmentConfig) {
 	_init_.Initialize()
 
@@ -3325,7 +3635,7 @@ func (j *jsiiProxy_AppconfigEnvironment) SetApplicationId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) SetCount(val interface{}) {
+func (j *jsiiProxy_AppconfigEnvironment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3357,7 +3667,7 @@ func (j *jsiiProxy_AppconfigEnvironment) SetLifecycle(val *cdktf.TerraformResour
 	)
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) SetMonitor(val *[]*AppconfigEnvironmentMonitor) {
+func (j *jsiiProxy_AppconfigEnvironment) SetMonitor(val interface{}) {
 	_jsii_.Set(
 		j,
 		"monitor",
@@ -3381,7 +3691,7 @@ func (j *jsiiProxy_AppconfigEnvironment) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) SetTags(val interface{}) {
+func (j *jsiiProxy_AppconfigEnvironment) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3389,7 +3699,7 @@ func (j *jsiiProxy_AppconfigEnvironment) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppconfigEnvironment) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppconfigEnvironment) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3437,12 +3747,40 @@ func (a *jsiiProxy_AppconfigEnvironment) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigEnvironment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigEnvironment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigEnvironment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3479,12 +3817,54 @@ func (a *jsiiProxy_AppconfigEnvironment) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigEnvironment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigEnvironment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigEnvironment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigEnvironment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3617,37 +3997,37 @@ func (a *jsiiProxy_AppconfigEnvironment) ToTerraform() interface{} {
 // AppConfig.
 type AppconfigEnvironmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#application_id AppconfigEnvironment#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#name AppconfigEnvironment#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#description AppconfigEnvironment#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#application_id AppconfigEnvironment#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#name AppconfigEnvironment#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#description AppconfigEnvironment#description}.
+	Description *string `json:"description" yaml:"description"`
 	// monitor block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#monitor AppconfigEnvironment#monitor}
-	Monitor *[]*AppconfigEnvironmentMonitor `json:"monitor"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#tags AppconfigEnvironment#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#tags_all AppconfigEnvironment#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#monitor AppconfigEnvironment#monitor}
+	Monitor interface{} `json:"monitor" yaml:"monitor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#tags AppconfigEnvironment#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#tags_all AppconfigEnvironment#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type AppconfigEnvironmentMonitor struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#alarm_arn AppconfigEnvironment#alarm_arn}.
-	AlarmArn *string `json:"alarmArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment.html#alarm_role_arn AppconfigEnvironment#alarm_role_arn}.
-	AlarmRoleArn *string `json:"alarmRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#alarm_arn AppconfigEnvironment#alarm_arn}.
+	AlarmArn *string `json:"alarmArn" yaml:"alarmArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_environment#alarm_role_arn AppconfigEnvironment#alarm_role_arn}.
+	AlarmRoleArn *string `json:"alarmRoleArn" yaml:"alarmRoleArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html aws_appconfig_hosted_configuration_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version aws_appconfig_hosted_configuration_version}.
 type AppconfigHostedConfigurationVersion interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -3665,8 +4045,8 @@ type AppconfigHostedConfigurationVersion interface {
 	ContentType() *string
 	SetContentType(val *string)
 	ContentTypeInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -3686,10 +4066,15 @@ type AppconfigHostedConfigurationVersion interface {
 	TerraformResourceType() *string
 	VersionNumber() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -3815,8 +4200,8 @@ func (j *jsiiProxy_AppconfigHostedConfigurationVersion) ContentTypeInput() *stri
 	return returns
 }
 
-func (j *jsiiProxy_AppconfigHostedConfigurationVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppconfigHostedConfigurationVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3965,7 +4350,8 @@ func (j *jsiiProxy_AppconfigHostedConfigurationVersion) VersionNumber() *float64
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html aws_appconfig_hosted_configuration_version} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version aws_appconfig_hosted_configuration_version} Resource.
 func NewAppconfigHostedConfigurationVersion(scope constructs.Construct, id *string, config *AppconfigHostedConfigurationVersionConfig) AppconfigHostedConfigurationVersion {
 	_init_.Initialize()
 
@@ -3980,7 +4366,7 @@ func NewAppconfigHostedConfigurationVersion(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html aws_appconfig_hosted_configuration_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version aws_appconfig_hosted_configuration_version} Resource.
 func NewAppconfigHostedConfigurationVersion_Override(a AppconfigHostedConfigurationVersion, scope constructs.Construct, id *string, config *AppconfigHostedConfigurationVersionConfig) {
 	_init_.Initialize()
 
@@ -4023,7 +4409,7 @@ func (j *jsiiProxy_AppconfigHostedConfigurationVersion) SetContentType(val *stri
 	)
 }
 
-func (j *jsiiProxy_AppconfigHostedConfigurationVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_AppconfigHostedConfigurationVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4103,12 +4489,40 @@ func (a *jsiiProxy_AppconfigHostedConfigurationVersion) AddOverride(path *string
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4145,12 +4559,54 @@ func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppconfigHostedConfigurationVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4259,21 +4715,22 @@ func (a *jsiiProxy_AppconfigHostedConfigurationVersion) ToTerraform() interface{
 // AppConfig.
 type AppconfigHostedConfigurationVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html#application_id AppconfigHostedConfigurationVersion#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html#configuration_profile_id AppconfigHostedConfigurationVersion#configuration_profile_id}.
-	ConfigurationProfileId *string `json:"configurationProfileId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html#content AppconfigHostedConfigurationVersion#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html#content_type AppconfigHostedConfigurationVersion#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version.html#description AppconfigHostedConfigurationVersion#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version#application_id AppconfigHostedConfigurationVersion#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version#configuration_profile_id AppconfigHostedConfigurationVersion#configuration_profile_id}.
+	ConfigurationProfileId *string `json:"configurationProfileId" yaml:"configurationProfileId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version#content AppconfigHostedConfigurationVersion#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version#content_type AppconfigHostedConfigurationVersion#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appconfig_hosted_configuration_version#description AppconfigHostedConfigurationVersion#description}.
+	Description *string `json:"description" yaml:"description"`
 }
+

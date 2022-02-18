@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/elb/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb.html aws_alb}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb aws_alb}.
 type Alb interface {
 	cdktf.TerraformResource
 	AccessLogs() AlbAccessLogsOutputReference
@@ -18,8 +18,8 @@ type Alb interface {
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerOwnedIpv4Pool() *string
 	SetCustomerOwnedIpv4Pool(val *string)
 	CustomerOwnedIpv4PoolInput() *string
@@ -74,18 +74,18 @@ type Alb interface {
 	SecurityGroups() *[]*string
 	SetSecurityGroups(val *[]*string)
 	SecurityGroupsInput() *[]*string
-	SubnetMapping() *[]*AlbSubnetMapping
-	SetSubnetMapping(val *[]*AlbSubnetMapping)
-	SubnetMappingInput() *[]*AlbSubnetMapping
+	SubnetMapping() interface{}
+	SetSubnetMapping(val interface{})
+	SubnetMappingInput() interface{}
 	Subnets() *[]*string
 	SetSubnets(val *[]*string)
 	SubnetsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -94,10 +94,15 @@ type Alb interface {
 	VpcId() *string
 	ZoneId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAccessLogs(value *AlbAccessLogs)
@@ -194,8 +199,8 @@ func (j *jsiiProxy_Alb) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Alb) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Alb) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -574,8 +579,8 @@ func (j *jsiiProxy_Alb) SecurityGroupsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_Alb) SubnetMapping() *[]*AlbSubnetMapping {
-	var returns *[]*AlbSubnetMapping
+func (j *jsiiProxy_Alb) SubnetMapping() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subnetMapping",
@@ -584,8 +589,8 @@ func (j *jsiiProxy_Alb) SubnetMapping() *[]*AlbSubnetMapping {
 	return returns
 }
 
-func (j *jsiiProxy_Alb) SubnetMappingInput() *[]*AlbSubnetMapping {
-	var returns *[]*AlbSubnetMapping
+func (j *jsiiProxy_Alb) SubnetMappingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subnetMappingInput",
@@ -614,8 +619,8 @@ func (j *jsiiProxy_Alb) SubnetsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_Alb) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Alb) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -624,8 +629,8 @@ func (j *jsiiProxy_Alb) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Alb) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Alb) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -634,8 +639,8 @@ func (j *jsiiProxy_Alb) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Alb) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Alb) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -644,8 +649,8 @@ func (j *jsiiProxy_Alb) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Alb) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Alb) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -724,7 +729,7 @@ func (j *jsiiProxy_Alb) ZoneId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb.html aws_alb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb aws_alb} Resource.
 func NewAlb(scope constructs.Construct, id *string, config *AlbConfig) Alb {
 	_init_.Initialize()
 
@@ -739,7 +744,7 @@ func NewAlb(scope constructs.Construct, id *string, config *AlbConfig) Alb {
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb.html aws_alb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb aws_alb} Resource.
 func NewAlb_Override(a Alb, scope constructs.Construct, id *string, config *AlbConfig) {
 	_init_.Initialize()
 
@@ -750,7 +755,7 @@ func NewAlb_Override(a Alb, scope constructs.Construct, id *string, config *AlbC
 	)
 }
 
-func (j *jsiiProxy_Alb) SetCount(val interface{}) {
+func (j *jsiiProxy_Alb) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -894,7 +899,7 @@ func (j *jsiiProxy_Alb) SetSecurityGroups(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Alb) SetSubnetMapping(val *[]*AlbSubnetMapping) {
+func (j *jsiiProxy_Alb) SetSubnetMapping(val interface{}) {
 	_jsii_.Set(
 		j,
 		"subnetMapping",
@@ -910,7 +915,7 @@ func (j *jsiiProxy_Alb) SetSubnets(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Alb) SetTags(val interface{}) {
+func (j *jsiiProxy_Alb) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -918,7 +923,7 @@ func (j *jsiiProxy_Alb) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Alb) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Alb) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -966,12 +971,40 @@ func (a *jsiiProxy_Alb) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (a *jsiiProxy_Alb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_Alb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_Alb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1008,12 +1041,54 @@ func (a *jsiiProxy_Alb) GetNumberAttribute(terraformAttribute *string) *float64 
 }
 
 // Experimental.
+func (a *jsiiProxy_Alb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_Alb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_Alb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_Alb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1288,12 +1363,12 @@ func (a *jsiiProxy_Alb) ToTerraform() interface{} {
 }
 
 type AlbAccessLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#bucket Alb#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enabled Alb#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#prefix Alb#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#bucket Alb#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#enabled Alb#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#prefix Alb#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type AlbAccessLogsOutputReference interface {
@@ -1313,12 +1388,17 @@ type AlbAccessLogsOutputReference interface {
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -1420,8 +1500,8 @@ func (j *jsiiProxy_AlbAccessLogsOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AlbAccessLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbAccessLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1430,7 +1510,7 @@ func (j *jsiiProxy_AlbAccessLogsOutputReference) TerraformResource() cdktf.ITerr
 	return returns
 }
 
-func NewAlbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbAccessLogsOutputReference {
+func NewAlbAccessLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbAccessLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbAccessLogsOutputReference{}
@@ -1444,7 +1524,7 @@ func NewAlbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource,
 	return &j
 }
 
-func NewAlbAccessLogsOutputReference_Override(a AlbAccessLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbAccessLogsOutputReference_Override(a AlbAccessLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1502,7 +1582,7 @@ func (j *jsiiProxy_AlbAccessLogsOutputReference) SetTerraformAttribute(val *stri
 	)
 }
 
-func (j *jsiiProxy_AlbAccessLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbAccessLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1511,12 +1591,40 @@ func (j *jsiiProxy_AlbAccessLogsOutputReference) SetTerraformResource(val cdktf.
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbAccessLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbAccessLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbAccessLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbAccessLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1553,12 +1661,54 @@ func (a *jsiiProxy_AlbAccessLogsOutputReference) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbAccessLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbAccessLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbAccessLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbAccessLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1613,62 +1763,62 @@ func (a *jsiiProxy_AlbAccessLogsOutputReference) ResetPrefix() {
 // AWS Elastic Load Balancer.
 type AlbConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// access_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#access_logs Alb#access_logs}
-	AccessLogs *AlbAccessLogs `json:"accessLogs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#customer_owned_ipv4_pool Alb#customer_owned_ipv4_pool}.
-	CustomerOwnedIpv4Pool *string `json:"customerOwnedIpv4Pool"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#desync_mitigation_mode Alb#desync_mitigation_mode}.
-	DesyncMitigationMode *string `json:"desyncMitigationMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#drop_invalid_header_fields Alb#drop_invalid_header_fields}.
-	DropInvalidHeaderFields interface{} `json:"dropInvalidHeaderFields"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enable_cross_zone_load_balancing Alb#enable_cross_zone_load_balancing}.
-	EnableCrossZoneLoadBalancing interface{} `json:"enableCrossZoneLoadBalancing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enable_deletion_protection Alb#enable_deletion_protection}.
-	EnableDeletionProtection interface{} `json:"enableDeletionProtection"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enable_http2 Alb#enable_http2}.
-	EnableHttp2 interface{} `json:"enableHttp2"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#enable_waf_fail_open Alb#enable_waf_fail_open}.
-	EnableWafFailOpen interface{} `json:"enableWafFailOpen"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#idle_timeout Alb#idle_timeout}.
-	IdleTimeout *float64 `json:"idleTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#internal Alb#internal}.
-	Internal interface{} `json:"internal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#ip_address_type Alb#ip_address_type}.
-	IpAddressType *string `json:"ipAddressType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#load_balancer_type Alb#load_balancer_type}.
-	LoadBalancerType *string `json:"loadBalancerType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#name Alb#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#name_prefix Alb#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#security_groups Alb#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#access_logs Alb#access_logs}
+	AccessLogs *AlbAccessLogs `json:"accessLogs" yaml:"accessLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#customer_owned_ipv4_pool Alb#customer_owned_ipv4_pool}.
+	CustomerOwnedIpv4Pool *string `json:"customerOwnedIpv4Pool" yaml:"customerOwnedIpv4Pool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#desync_mitigation_mode Alb#desync_mitigation_mode}.
+	DesyncMitigationMode *string `json:"desyncMitigationMode" yaml:"desyncMitigationMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#drop_invalid_header_fields Alb#drop_invalid_header_fields}.
+	DropInvalidHeaderFields interface{} `json:"dropInvalidHeaderFields" yaml:"dropInvalidHeaderFields"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#enable_cross_zone_load_balancing Alb#enable_cross_zone_load_balancing}.
+	EnableCrossZoneLoadBalancing interface{} `json:"enableCrossZoneLoadBalancing" yaml:"enableCrossZoneLoadBalancing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#enable_deletion_protection Alb#enable_deletion_protection}.
+	EnableDeletionProtection interface{} `json:"enableDeletionProtection" yaml:"enableDeletionProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#enable_http2 Alb#enable_http2}.
+	EnableHttp2 interface{} `json:"enableHttp2" yaml:"enableHttp2"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#enable_waf_fail_open Alb#enable_waf_fail_open}.
+	EnableWafFailOpen interface{} `json:"enableWafFailOpen" yaml:"enableWafFailOpen"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#idle_timeout Alb#idle_timeout}.
+	IdleTimeout *float64 `json:"idleTimeout" yaml:"idleTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#internal Alb#internal}.
+	Internal interface{} `json:"internal" yaml:"internal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#ip_address_type Alb#ip_address_type}.
+	IpAddressType *string `json:"ipAddressType" yaml:"ipAddressType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#load_balancer_type Alb#load_balancer_type}.
+	LoadBalancerType *string `json:"loadBalancerType" yaml:"loadBalancerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#name Alb#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#name_prefix Alb#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#security_groups Alb#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 	// subnet_mapping block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#subnet_mapping Alb#subnet_mapping}
-	SubnetMapping *[]*AlbSubnetMapping `json:"subnetMapping"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#subnets Alb#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#tags Alb#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#tags_all Alb#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#subnet_mapping Alb#subnet_mapping}
+	SubnetMapping interface{} `json:"subnetMapping" yaml:"subnetMapping"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#subnets Alb#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#tags Alb#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#tags_all Alb#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#timeouts Alb#timeouts}
-	Timeouts *AlbTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#timeouts Alb#timeouts}
+	Timeouts *AlbTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html aws_alb_listener}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_listener aws_alb_listener}.
 type AlbListener interface {
 	cdktf.TerraformResource
 	AlpnPolicy() *string
@@ -1680,11 +1830,11 @@ type AlbListener interface {
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DefaultAction() *[]*AlbListenerDefaultAction
-	SetDefaultAction(val *[]*AlbListenerDefaultAction)
-	DefaultActionInput() *[]*AlbListenerDefaultAction
+	Count() *float64
+	SetCount(val *float64)
+	DefaultAction() interface{}
+	SetDefaultAction(val interface{})
+	DefaultActionInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1708,22 +1858,27 @@ type AlbListener interface {
 	SslPolicy() *string
 	SetSslPolicy(val *string)
 	SslPolicyInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() AlbListenerTimeoutsOutputReference
 	TimeoutsInput() *AlbListenerTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *AlbListenerTimeouts)
@@ -1817,8 +1972,8 @@ func (j *jsiiProxy_AlbListener) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_AlbListener) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListener) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1827,8 +1982,8 @@ func (j *jsiiProxy_AlbListener) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListener) DefaultAction() *[]*AlbListenerDefaultAction {
-	var returns *[]*AlbListenerDefaultAction
+func (j *jsiiProxy_AlbListener) DefaultAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"defaultAction",
@@ -1837,8 +1992,8 @@ func (j *jsiiProxy_AlbListener) DefaultAction() *[]*AlbListenerDefaultAction {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListener) DefaultActionInput() *[]*AlbListenerDefaultAction {
-	var returns *[]*AlbListenerDefaultAction
+func (j *jsiiProxy_AlbListener) DefaultActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"defaultActionInput",
@@ -2007,8 +2162,8 @@ func (j *jsiiProxy_AlbListener) SslPolicyInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListener) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListener) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2017,8 +2172,8 @@ func (j *jsiiProxy_AlbListener) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListener) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListener) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2027,8 +2182,8 @@ func (j *jsiiProxy_AlbListener) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListener) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListener) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2037,8 +2192,8 @@ func (j *jsiiProxy_AlbListener) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListener) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListener) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2097,7 +2252,7 @@ func (j *jsiiProxy_AlbListener) TimeoutsInput() *AlbListenerTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html aws_alb_listener} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener aws_alb_listener} Resource.
 func NewAlbListener(scope constructs.Construct, id *string, config *AlbListenerConfig) AlbListener {
 	_init_.Initialize()
 
@@ -2112,7 +2267,7 @@ func NewAlbListener(scope constructs.Construct, id *string, config *AlbListenerC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html aws_alb_listener} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener aws_alb_listener} Resource.
 func NewAlbListener_Override(a AlbListener, scope constructs.Construct, id *string, config *AlbListenerConfig) {
 	_init_.Initialize()
 
@@ -2139,7 +2294,7 @@ func (j *jsiiProxy_AlbListener) SetCertificateArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AlbListener) SetCount(val interface{}) {
+func (j *jsiiProxy_AlbListener) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2147,7 +2302,7 @@ func (j *jsiiProxy_AlbListener) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AlbListener) SetDefaultAction(val *[]*AlbListenerDefaultAction) {
+func (j *jsiiProxy_AlbListener) SetDefaultAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"defaultAction",
@@ -2211,7 +2366,7 @@ func (j *jsiiProxy_AlbListener) SetSslPolicy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AlbListener) SetTags(val interface{}) {
+func (j *jsiiProxy_AlbListener) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2219,7 +2374,7 @@ func (j *jsiiProxy_AlbListener) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AlbListener) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AlbListener) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2267,12 +2422,40 @@ func (a *jsiiProxy_AlbListener) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListener) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListener) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListener) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2309,12 +2492,54 @@ func (a *jsiiProxy_AlbListener) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListener) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListener) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListener) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListener) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2484,7 +2709,7 @@ func (a *jsiiProxy_AlbListener) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate.html aws_alb_listener_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate aws_alb_listener_certificate}.
 type AlbListenerCertificate interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -2492,8 +2717,8 @@ type AlbListenerCertificate interface {
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2512,10 +2737,15 @@ type AlbListenerCertificate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2570,8 +2800,8 @@ func (j *jsiiProxy_AlbListenerCertificate) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2710,7 +2940,7 @@ func (j *jsiiProxy_AlbListenerCertificate) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate.html aws_alb_listener_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate aws_alb_listener_certificate} Resource.
 func NewAlbListenerCertificate(scope constructs.Construct, id *string, config *AlbListenerCertificateConfig) AlbListenerCertificate {
 	_init_.Initialize()
 
@@ -2725,7 +2955,7 @@ func NewAlbListenerCertificate(scope constructs.Construct, id *string, config *A
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate.html aws_alb_listener_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate aws_alb_listener_certificate} Resource.
 func NewAlbListenerCertificate_Override(a AlbListenerCertificate, scope constructs.Construct, id *string, config *AlbListenerCertificateConfig) {
 	_init_.Initialize()
 
@@ -2744,7 +2974,7 @@ func (j *jsiiProxy_AlbListenerCertificate) SetCertificateArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AlbListenerCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_AlbListenerCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2824,12 +3054,40 @@ func (a *jsiiProxy_AlbListenerCertificate) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2866,12 +3124,54 @@ func (a *jsiiProxy_AlbListenerCertificate) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2972,108 +3272,108 @@ func (a *jsiiProxy_AlbListenerCertificate) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type AlbListenerCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate.html#certificate_arn AlbListenerCertificate#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate.html#listener_arn AlbListenerCertificate#listener_arn}.
-	ListenerArn *string `json:"listenerArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate#certificate_arn AlbListenerCertificate#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_certificate#listener_arn AlbListenerCertificate#listener_arn}.
+	ListenerArn *string `json:"listenerArn" yaml:"listenerArn"`
 }
 
 // AWS Elastic Load Balancer.
 type AlbListenerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// default_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#default_action AlbListener#default_action}
-	DefaultAction *[]*AlbListenerDefaultAction `json:"defaultAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#load_balancer_arn AlbListener#load_balancer_arn}.
-	LoadBalancerArn *string `json:"loadBalancerArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#alpn_policy AlbListener#alpn_policy}.
-	AlpnPolicy *string `json:"alpnPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#certificate_arn AlbListener#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#port AlbListener#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#protocol AlbListener#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#ssl_policy AlbListener#ssl_policy}.
-	SslPolicy *string `json:"sslPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#tags AlbListener#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#tags_all AlbListener#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#default_action AlbListener#default_action}
+	DefaultAction interface{} `json:"defaultAction" yaml:"defaultAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#load_balancer_arn AlbListener#load_balancer_arn}.
+	LoadBalancerArn *string `json:"loadBalancerArn" yaml:"loadBalancerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#alpn_policy AlbListener#alpn_policy}.
+	AlpnPolicy *string `json:"alpnPolicy" yaml:"alpnPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#certificate_arn AlbListener#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#port AlbListener#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#protocol AlbListener#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#ssl_policy AlbListener#ssl_policy}.
+	SslPolicy *string `json:"sslPolicy" yaml:"sslPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#tags AlbListener#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#tags_all AlbListener#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#timeouts AlbListener#timeouts}
-	Timeouts *AlbListenerTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#timeouts AlbListener#timeouts}
+	Timeouts *AlbListenerTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type AlbListenerDefaultAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#type AlbListener#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#type AlbListener#type}.
+	Type *string `json:"type" yaml:"type"`
 	// authenticate_cognito block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#authenticate_cognito AlbListener#authenticate_cognito}
-	AuthenticateCognito *AlbListenerDefaultActionAuthenticateCognito `json:"authenticateCognito"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#authenticate_cognito AlbListener#authenticate_cognito}
+	AuthenticateCognito *AlbListenerDefaultActionAuthenticateCognito `json:"authenticateCognito" yaml:"authenticateCognito"`
 	// authenticate_oidc block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#authenticate_oidc AlbListener#authenticate_oidc}
-	AuthenticateOidc *AlbListenerDefaultActionAuthenticateOidc `json:"authenticateOidc"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#authenticate_oidc AlbListener#authenticate_oidc}
+	AuthenticateOidc *AlbListenerDefaultActionAuthenticateOidc `json:"authenticateOidc" yaml:"authenticateOidc"`
 	// fixed_response block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#fixed_response AlbListener#fixed_response}
-	FixedResponse *AlbListenerDefaultActionFixedResponse `json:"fixedResponse"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#fixed_response AlbListener#fixed_response}
+	FixedResponse *AlbListenerDefaultActionFixedResponse `json:"fixedResponse" yaml:"fixedResponse"`
 	// forward block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#forward AlbListener#forward}
-	Forward *AlbListenerDefaultActionForward `json:"forward"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#order AlbListener#order}.
-	Order *float64 `json:"order"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#forward AlbListener#forward}
+	Forward *AlbListenerDefaultActionForward `json:"forward" yaml:"forward"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#order AlbListener#order}.
+	Order *float64 `json:"order" yaml:"order"`
 	// redirect block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#redirect AlbListener#redirect}
-	Redirect *AlbListenerDefaultActionRedirect `json:"redirect"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#target_group_arn AlbListener#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#redirect AlbListener#redirect}
+	Redirect *AlbListenerDefaultActionRedirect `json:"redirect" yaml:"redirect"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#target_group_arn AlbListener#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
 }
 
 type AlbListenerDefaultActionAuthenticateCognito struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#user_pool_arn AlbListener#user_pool_arn}.
-	UserPoolArn *string `json:"userPoolArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#user_pool_client_id AlbListener#user_pool_client_id}.
-	UserPoolClientId *string `json:"userPoolClientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#user_pool_domain AlbListener#user_pool_domain}.
-	UserPoolDomain *string `json:"userPoolDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#authentication_request_extra_params AlbListener#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#on_unauthenticated_request AlbListener#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#scope AlbListener#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#session_cookie_name AlbListener#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#session_timeout AlbListener#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#user_pool_arn AlbListener#user_pool_arn}.
+	UserPoolArn *string `json:"userPoolArn" yaml:"userPoolArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#user_pool_client_id AlbListener#user_pool_client_id}.
+	UserPoolClientId *string `json:"userPoolClientId" yaml:"userPoolClientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#user_pool_domain AlbListener#user_pool_domain}.
+	UserPoolDomain *string `json:"userPoolDomain" yaml:"userPoolDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#authentication_request_extra_params AlbListener#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#on_unauthenticated_request AlbListener#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#scope AlbListener#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#session_cookie_name AlbListener#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#session_timeout AlbListener#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type AlbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	InternalValue() *AlbListenerDefaultActionAuthenticateCognito
 	SetInternalValue(val *AlbListenerDefaultActionAuthenticateCognito)
 	IsSingleItem() *bool
@@ -3092,8 +3392,8 @@ type AlbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserPoolArn() *string
 	SetUserPoolArn(val *string)
 	UserPoolArnInput() *string
@@ -3103,10 +3403,15 @@ type AlbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	UserPoolDomain() *string
 	SetUserPoolDomain(val *string)
 	UserPoolDomainInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -3121,8 +3426,8 @@ type jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference struct
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -3131,8 +3436,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) A
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -3251,8 +3556,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3321,7 +3626,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) U
 	return returns
 }
 
-func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionAuthenticateCognitoOutputReference {
+func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionAuthenticateCognitoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference{}
@@ -3335,7 +3640,7 @@ func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference(terraformReso
 	return &j
 }
 
-func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference_Override(a AlbListenerDefaultActionAuthenticateCognitoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference_Override(a AlbListenerDefaultActionAuthenticateCognitoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3345,7 +3650,7 @@ func NewAlbListenerDefaultActionAuthenticateCognitoOutputReference_Override(a Al
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -3409,7 +3714,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3442,12 +3747,40 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) S
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3484,12 +3817,54 @@ func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) G
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3566,35 +3941,35 @@ func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateCognitoOutputReference) R
 }
 
 type AlbListenerDefaultActionAuthenticateOidc struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#authorization_endpoint AlbListener#authorization_endpoint}.
-	AuthorizationEndpoint *string `json:"authorizationEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#client_id AlbListener#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#client_secret AlbListener#client_secret}.
-	ClientSecret *string `json:"clientSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#issuer AlbListener#issuer}.
-	Issuer *string `json:"issuer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#token_endpoint AlbListener#token_endpoint}.
-	TokenEndpoint *string `json:"tokenEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#user_info_endpoint AlbListener#user_info_endpoint}.
-	UserInfoEndpoint *string `json:"userInfoEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#authentication_request_extra_params AlbListener#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#on_unauthenticated_request AlbListener#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#scope AlbListener#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#session_cookie_name AlbListener#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#session_timeout AlbListener#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#authorization_endpoint AlbListener#authorization_endpoint}.
+	AuthorizationEndpoint *string `json:"authorizationEndpoint" yaml:"authorizationEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#client_id AlbListener#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#client_secret AlbListener#client_secret}.
+	ClientSecret *string `json:"clientSecret" yaml:"clientSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#issuer AlbListener#issuer}.
+	Issuer *string `json:"issuer" yaml:"issuer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#token_endpoint AlbListener#token_endpoint}.
+	TokenEndpoint *string `json:"tokenEndpoint" yaml:"tokenEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#user_info_endpoint AlbListener#user_info_endpoint}.
+	UserInfoEndpoint *string `json:"userInfoEndpoint" yaml:"userInfoEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#authentication_request_extra_params AlbListener#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#on_unauthenticated_request AlbListener#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#scope AlbListener#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#session_cookie_name AlbListener#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#session_timeout AlbListener#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type AlbListenerDefaultActionAuthenticateOidcOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	AuthorizationEndpoint() *string
 	SetAuthorizationEndpoint(val *string)
 	AuthorizationEndpointInput() *string
@@ -3625,18 +4000,23 @@ type AlbListenerDefaultActionAuthenticateOidcOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TokenEndpoint() *string
 	SetTokenEndpoint(val *string)
 	TokenEndpointInput() *string
 	UserInfoEndpoint() *string
 	SetUserInfoEndpoint(val *string)
 	UserInfoEndpointInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -3651,8 +4031,8 @@ type jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -3661,8 +4041,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) Auth
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -3861,8 +4241,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3911,7 +4291,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) User
 	return returns
 }
 
-func NewAlbListenerDefaultActionAuthenticateOidcOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionAuthenticateOidcOutputReference {
+func NewAlbListenerDefaultActionAuthenticateOidcOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionAuthenticateOidcOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference{}
@@ -3925,7 +4305,7 @@ func NewAlbListenerDefaultActionAuthenticateOidcOutputReference(terraformResourc
 	return &j
 }
 
-func NewAlbListenerDefaultActionAuthenticateOidcOutputReference_Override(a AlbListenerDefaultActionAuthenticateOidcOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerDefaultActionAuthenticateOidcOutputReference_Override(a AlbListenerDefaultActionAuthenticateOidcOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3935,7 +4315,7 @@ func NewAlbListenerDefaultActionAuthenticateOidcOutputReference_Override(a AlbLi
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -4031,7 +4411,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4056,12 +4436,40 @@ func (j *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) SetU
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4098,12 +4506,54 @@ func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetN
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4180,12 +4630,12 @@ func (a *jsiiProxy_AlbListenerDefaultActionAuthenticateOidcOutputReference) Rese
 }
 
 type AlbListenerDefaultActionFixedResponse struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#content_type AlbListener#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#message_body AlbListener#message_body}.
-	MessageBody *string `json:"messageBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#status_code AlbListener#status_code}.
-	StatusCode *string `json:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#content_type AlbListener#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#message_body AlbListener#message_body}.
+	MessageBody *string `json:"messageBody" yaml:"messageBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#status_code AlbListener#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
 }
 
 type AlbListenerDefaultActionFixedResponseOutputReference interface {
@@ -4205,12 +4655,17 @@ type AlbListenerDefaultActionFixedResponseOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMessageBody()
@@ -4312,8 +4767,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4322,7 +4777,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) Terrafo
 	return returns
 }
 
-func NewAlbListenerDefaultActionFixedResponseOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionFixedResponseOutputReference {
+func NewAlbListenerDefaultActionFixedResponseOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionFixedResponseOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference{}
@@ -4336,7 +4791,7 @@ func NewAlbListenerDefaultActionFixedResponseOutputReference(terraformResource c
 	return &j
 }
 
-func NewAlbListenerDefaultActionFixedResponseOutputReference_Override(a AlbListenerDefaultActionFixedResponseOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerDefaultActionFixedResponseOutputReference_Override(a AlbListenerDefaultActionFixedResponseOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4394,7 +4849,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4403,12 +4858,40 @@ func (j *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) SetTerr
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4445,12 +4928,54 @@ func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetNumb
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4505,12 +5030,12 @@ func (a *jsiiProxy_AlbListenerDefaultActionFixedResponseOutputReference) ResetSt
 type AlbListenerDefaultActionForward struct {
 	// target_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#target_group AlbListener#target_group}
-	TargetGroup *[]*AlbListenerDefaultActionForwardTargetGroup `json:"targetGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#target_group AlbListener#target_group}
+	TargetGroup interface{} `json:"targetGroup" yaml:"targetGroup"`
 	// stickiness block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#stickiness AlbListener#stickiness}
-	Stickiness *AlbListenerDefaultActionForwardStickiness `json:"stickiness"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#stickiness AlbListener#stickiness}
+	Stickiness *AlbListenerDefaultActionForwardStickiness `json:"stickiness" yaml:"stickiness"`
 }
 
 type AlbListenerDefaultActionForwardOutputReference interface {
@@ -4521,17 +5046,22 @@ type AlbListenerDefaultActionForwardOutputReference interface {
 	SetIsSingleItem(val *bool)
 	Stickiness() AlbListenerDefaultActionForwardStickinessOutputReference
 	StickinessInput() *AlbListenerDefaultActionForwardStickiness
-	TargetGroup() *[]*AlbListenerDefaultActionForwardTargetGroup
-	SetTargetGroup(val *[]*AlbListenerDefaultActionForwardTargetGroup)
-	TargetGroupInput() *[]*AlbListenerDefaultActionForwardTargetGroup
+	TargetGroup() interface{}
+	SetTargetGroup(val interface{})
+	TargetGroupInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutStickiness(value *AlbListenerDefaultActionForwardStickiness)
@@ -4583,8 +5113,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) StickinessInp
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TargetGroup() *[]*AlbListenerDefaultActionForwardTargetGroup {
-	var returns *[]*AlbListenerDefaultActionForwardTargetGroup
+func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TargetGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroup",
@@ -4593,8 +5123,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TargetGroup()
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TargetGroupInput() *[]*AlbListenerDefaultActionForwardTargetGroup {
-	var returns *[]*AlbListenerDefaultActionForwardTargetGroup
+func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TargetGroupInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroupInput",
@@ -4613,8 +5143,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4623,7 +5153,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) TerraformReso
 	return returns
 }
 
-func NewAlbListenerDefaultActionForwardOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionForwardOutputReference {
+func NewAlbListenerDefaultActionForwardOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionForwardOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerDefaultActionForwardOutputReference{}
@@ -4637,7 +5167,7 @@ func NewAlbListenerDefaultActionForwardOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewAlbListenerDefaultActionForwardOutputReference_Override(a AlbListenerDefaultActionForwardOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerDefaultActionForwardOutputReference_Override(a AlbListenerDefaultActionForwardOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4663,7 +5193,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetIsSingleIt
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetTargetGroup(val *[]*AlbListenerDefaultActionForwardTargetGroup) {
+func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetTargetGroup(val interface{}) {
 	_jsii_.Set(
 		j,
 		"targetGroup",
@@ -4679,7 +5209,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4688,12 +5218,40 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4730,12 +5288,54 @@ func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4788,10 +5388,10 @@ func (a *jsiiProxy_AlbListenerDefaultActionForwardOutputReference) ResetStickine
 }
 
 type AlbListenerDefaultActionForwardStickiness struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#duration AlbListener#duration}.
-	Duration *float64 `json:"duration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#enabled AlbListener#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#duration AlbListener#duration}.
+	Duration *float64 `json:"duration" yaml:"duration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#enabled AlbListener#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type AlbListenerDefaultActionForwardStickinessOutputReference interface {
@@ -4808,12 +5408,17 @@ type AlbListenerDefaultActionForwardStickinessOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -4894,8 +5499,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4904,7 +5509,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Ter
 	return returns
 }
 
-func NewAlbListenerDefaultActionForwardStickinessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionForwardStickinessOutputReference {
+func NewAlbListenerDefaultActionForwardStickinessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionForwardStickinessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference{}
@@ -4918,7 +5523,7 @@ func NewAlbListenerDefaultActionForwardStickinessOutputReference(terraformResour
 	return &j
 }
 
-func NewAlbListenerDefaultActionForwardStickinessOutputReference_Override(a AlbListenerDefaultActionForwardStickinessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerDefaultActionForwardStickinessOutputReference_Override(a AlbListenerDefaultActionForwardStickinessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4968,7 +5573,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4977,12 +5582,40 @@ func (j *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Set
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5019,12 +5652,54 @@ func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Get
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5069,25 +5744,25 @@ func (a *jsiiProxy_AlbListenerDefaultActionForwardStickinessOutputReference) Res
 }
 
 type AlbListenerDefaultActionForwardTargetGroup struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#arn AlbListener#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#weight AlbListener#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#arn AlbListener#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#weight AlbListener#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
 type AlbListenerDefaultActionRedirect struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#status_code AlbListener#status_code}.
-	StatusCode *string `json:"statusCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#host AlbListener#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#path AlbListener#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#port AlbListener#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#protocol AlbListener#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#query AlbListener#query}.
-	Query *string `json:"query"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#status_code AlbListener#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#host AlbListener#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#path AlbListener#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#port AlbListener#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#protocol AlbListener#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#query AlbListener#query}.
+	Query *string `json:"query" yaml:"query"`
 }
 
 type AlbListenerDefaultActionRedirectOutputReference interface {
@@ -5116,12 +5791,17 @@ type AlbListenerDefaultActionRedirectOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHost()
@@ -5286,8 +5966,8 @@ func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5296,7 +5976,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) TerraformRes
 	return returns
 }
 
-func NewAlbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionRedirectOutputReference {
+func NewAlbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerDefaultActionRedirectOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerDefaultActionRedirectOutputReference{}
@@ -5310,7 +5990,7 @@ func NewAlbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewAlbListenerDefaultActionRedirectOutputReference_Override(a AlbListenerDefaultActionRedirectOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerDefaultActionRedirectOutputReference_Override(a AlbListenerDefaultActionRedirectOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5392,7 +6072,7 @@ func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5401,12 +6081,40 @@ func (j *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) SetTerraform
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5443,12 +6151,54 @@ func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5524,20 +6274,20 @@ func (a *jsiiProxy_AlbListenerDefaultActionRedirectOutputReference) ResetQuery()
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html aws_alb_listener_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule aws_alb_listener_rule}.
 type AlbListenerRule interface {
 	cdktf.TerraformResource
-	Action() *[]*AlbListenerRuleAction
-	SetAction(val *[]*AlbListenerRuleAction)
-	ActionInput() *[]*AlbListenerRuleAction
+	Action() interface{}
+	SetAction(val interface{})
+	ActionInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
-	Condition() *[]*AlbListenerRuleCondition
-	SetCondition(val *[]*AlbListenerRuleCondition)
-	ConditionInput() *[]*AlbListenerRuleCondition
+	Condition() interface{}
+	SetCondition(val interface{})
+	ConditionInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5555,20 +6305,25 @@ type AlbListenerRule interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5586,8 +6341,8 @@ type jsiiProxy_AlbListenerRule struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_AlbListenerRule) Action() *[]*AlbListenerRuleAction {
-	var returns *[]*AlbListenerRuleAction
+func (j *jsiiProxy_AlbListenerRule) Action() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"action",
@@ -5596,8 +6351,8 @@ func (j *jsiiProxy_AlbListenerRule) Action() *[]*AlbListenerRuleAction {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) ActionInput() *[]*AlbListenerRuleAction {
-	var returns *[]*AlbListenerRuleAction
+func (j *jsiiProxy_AlbListenerRule) ActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"actionInput",
@@ -5626,8 +6381,8 @@ func (j *jsiiProxy_AlbListenerRule) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) Condition() *[]*AlbListenerRuleCondition {
-	var returns *[]*AlbListenerRuleCondition
+func (j *jsiiProxy_AlbListenerRule) Condition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"condition",
@@ -5636,8 +6391,8 @@ func (j *jsiiProxy_AlbListenerRule) Condition() *[]*AlbListenerRuleCondition {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) ConditionInput() *[]*AlbListenerRuleCondition {
-	var returns *[]*AlbListenerRuleCondition
+func (j *jsiiProxy_AlbListenerRule) ConditionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"conditionInput",
@@ -5656,8 +6411,8 @@ func (j *jsiiProxy_AlbListenerRule) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5786,8 +6541,8 @@ func (j *jsiiProxy_AlbListenerRule) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5796,8 +6551,8 @@ func (j *jsiiProxy_AlbListenerRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5806,8 +6561,8 @@ func (j *jsiiProxy_AlbListenerRule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5816,8 +6571,8 @@ func (j *jsiiProxy_AlbListenerRule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5856,7 +6611,7 @@ func (j *jsiiProxy_AlbListenerRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html aws_alb_listener_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule aws_alb_listener_rule} Resource.
 func NewAlbListenerRule(scope constructs.Construct, id *string, config *AlbListenerRuleConfig) AlbListenerRule {
 	_init_.Initialize()
 
@@ -5871,7 +6626,7 @@ func NewAlbListenerRule(scope constructs.Construct, id *string, config *AlbListe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html aws_alb_listener_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule aws_alb_listener_rule} Resource.
 func NewAlbListenerRule_Override(a AlbListenerRule, scope constructs.Construct, id *string, config *AlbListenerRuleConfig) {
 	_init_.Initialize()
 
@@ -5882,7 +6637,7 @@ func NewAlbListenerRule_Override(a AlbListenerRule, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRule) SetAction(val *[]*AlbListenerRuleAction) {
+func (j *jsiiProxy_AlbListenerRule) SetAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"action",
@@ -5890,7 +6645,7 @@ func (j *jsiiProxy_AlbListenerRule) SetAction(val *[]*AlbListenerRuleAction) {
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRule) SetCondition(val *[]*AlbListenerRuleCondition) {
+func (j *jsiiProxy_AlbListenerRule) SetCondition(val interface{}) {
 	_jsii_.Set(
 		j,
 		"condition",
@@ -5898,7 +6653,7 @@ func (j *jsiiProxy_AlbListenerRule) SetCondition(val *[]*AlbListenerRuleConditio
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRule) SetCount(val interface{}) {
+func (j *jsiiProxy_AlbListenerRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5946,7 +6701,7 @@ func (j *jsiiProxy_AlbListenerRule) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRule) SetTags(val interface{}) {
+func (j *jsiiProxy_AlbListenerRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5954,7 +6709,7 @@ func (j *jsiiProxy_AlbListenerRule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AlbListenerRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6002,12 +6757,40 @@ func (a *jsiiProxy_AlbListenerRule) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6044,12 +6827,54 @@ func (a *jsiiProxy_AlbListenerRule) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6172,58 +6997,58 @@ func (a *jsiiProxy_AlbListenerRule) ToTerraform() interface{} {
 }
 
 type AlbListenerRuleAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#type AlbListenerRule#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#type AlbListenerRule#type}.
+	Type *string `json:"type" yaml:"type"`
 	// authenticate_cognito block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#authenticate_cognito AlbListenerRule#authenticate_cognito}
-	AuthenticateCognito *AlbListenerRuleActionAuthenticateCognito `json:"authenticateCognito"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#authenticate_cognito AlbListenerRule#authenticate_cognito}
+	AuthenticateCognito *AlbListenerRuleActionAuthenticateCognito `json:"authenticateCognito" yaml:"authenticateCognito"`
 	// authenticate_oidc block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#authenticate_oidc AlbListenerRule#authenticate_oidc}
-	AuthenticateOidc *AlbListenerRuleActionAuthenticateOidc `json:"authenticateOidc"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#authenticate_oidc AlbListenerRule#authenticate_oidc}
+	AuthenticateOidc *AlbListenerRuleActionAuthenticateOidc `json:"authenticateOidc" yaml:"authenticateOidc"`
 	// fixed_response block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#fixed_response AlbListenerRule#fixed_response}
-	FixedResponse *AlbListenerRuleActionFixedResponse `json:"fixedResponse"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#fixed_response AlbListenerRule#fixed_response}
+	FixedResponse *AlbListenerRuleActionFixedResponse `json:"fixedResponse" yaml:"fixedResponse"`
 	// forward block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#forward AlbListenerRule#forward}
-	Forward *AlbListenerRuleActionForward `json:"forward"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#order AlbListenerRule#order}.
-	Order *float64 `json:"order"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#forward AlbListenerRule#forward}
+	Forward *AlbListenerRuleActionForward `json:"forward" yaml:"forward"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#order AlbListenerRule#order}.
+	Order *float64 `json:"order" yaml:"order"`
 	// redirect block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#redirect AlbListenerRule#redirect}
-	Redirect *AlbListenerRuleActionRedirect `json:"redirect"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#target_group_arn AlbListenerRule#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#redirect AlbListenerRule#redirect}
+	Redirect *AlbListenerRuleActionRedirect `json:"redirect" yaml:"redirect"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#target_group_arn AlbListenerRule#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
 }
 
 type AlbListenerRuleActionAuthenticateCognito struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#user_pool_arn AlbListenerRule#user_pool_arn}.
-	UserPoolArn *string `json:"userPoolArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#user_pool_client_id AlbListenerRule#user_pool_client_id}.
-	UserPoolClientId *string `json:"userPoolClientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#user_pool_domain AlbListenerRule#user_pool_domain}.
-	UserPoolDomain *string `json:"userPoolDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#authentication_request_extra_params AlbListenerRule#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#on_unauthenticated_request AlbListenerRule#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#scope AlbListenerRule#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#session_cookie_name AlbListenerRule#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#session_timeout AlbListenerRule#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#user_pool_arn AlbListenerRule#user_pool_arn}.
+	UserPoolArn *string `json:"userPoolArn" yaml:"userPoolArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#user_pool_client_id AlbListenerRule#user_pool_client_id}.
+	UserPoolClientId *string `json:"userPoolClientId" yaml:"userPoolClientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#user_pool_domain AlbListenerRule#user_pool_domain}.
+	UserPoolDomain *string `json:"userPoolDomain" yaml:"userPoolDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#authentication_request_extra_params AlbListenerRule#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#on_unauthenticated_request AlbListenerRule#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#scope AlbListenerRule#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#session_cookie_name AlbListenerRule#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#session_timeout AlbListenerRule#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type AlbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	InternalValue() *AlbListenerRuleActionAuthenticateCognito
 	SetInternalValue(val *AlbListenerRuleActionAuthenticateCognito)
 	IsSingleItem() *bool
@@ -6242,8 +7067,8 @@ type AlbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserPoolArn() *string
 	SetUserPoolArn(val *string)
 	UserPoolArnInput() *string
@@ -6253,10 +7078,15 @@ type AlbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	UserPoolDomain() *string
 	SetUserPoolDomain(val *string)
 	UserPoolDomainInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -6271,8 +7101,8 @@ type jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -6281,8 +7111,8 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) Auth
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -6401,8 +7231,8 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6471,7 +7301,7 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) User
 	return returns
 }
 
-func NewAlbListenerRuleActionAuthenticateCognitoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionAuthenticateCognitoOutputReference {
+func NewAlbListenerRuleActionAuthenticateCognitoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionAuthenticateCognitoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference{}
@@ -6485,7 +7315,7 @@ func NewAlbListenerRuleActionAuthenticateCognitoOutputReference(terraformResourc
 	return &j
 }
 
-func NewAlbListenerRuleActionAuthenticateCognitoOutputReference_Override(a AlbListenerRuleActionAuthenticateCognitoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleActionAuthenticateCognitoOutputReference_Override(a AlbListenerRuleActionAuthenticateCognitoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6495,7 +7325,7 @@ func NewAlbListenerRuleActionAuthenticateCognitoOutputReference_Override(a AlbLi
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -6559,7 +7389,7 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6592,12 +7422,40 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) SetU
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6634,12 +7492,54 @@ func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetN
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6716,35 +7616,35 @@ func (a *jsiiProxy_AlbListenerRuleActionAuthenticateCognitoOutputReference) Rese
 }
 
 type AlbListenerRuleActionAuthenticateOidc struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#authorization_endpoint AlbListenerRule#authorization_endpoint}.
-	AuthorizationEndpoint *string `json:"authorizationEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#client_id AlbListenerRule#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#client_secret AlbListenerRule#client_secret}.
-	ClientSecret *string `json:"clientSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#issuer AlbListenerRule#issuer}.
-	Issuer *string `json:"issuer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#token_endpoint AlbListenerRule#token_endpoint}.
-	TokenEndpoint *string `json:"tokenEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#user_info_endpoint AlbListenerRule#user_info_endpoint}.
-	UserInfoEndpoint *string `json:"userInfoEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#authentication_request_extra_params AlbListenerRule#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#on_unauthenticated_request AlbListenerRule#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#scope AlbListenerRule#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#session_cookie_name AlbListenerRule#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#session_timeout AlbListenerRule#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#authorization_endpoint AlbListenerRule#authorization_endpoint}.
+	AuthorizationEndpoint *string `json:"authorizationEndpoint" yaml:"authorizationEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#client_id AlbListenerRule#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#client_secret AlbListenerRule#client_secret}.
+	ClientSecret *string `json:"clientSecret" yaml:"clientSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#issuer AlbListenerRule#issuer}.
+	Issuer *string `json:"issuer" yaml:"issuer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#token_endpoint AlbListenerRule#token_endpoint}.
+	TokenEndpoint *string `json:"tokenEndpoint" yaml:"tokenEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#user_info_endpoint AlbListenerRule#user_info_endpoint}.
+	UserInfoEndpoint *string `json:"userInfoEndpoint" yaml:"userInfoEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#authentication_request_extra_params AlbListenerRule#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#on_unauthenticated_request AlbListenerRule#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#scope AlbListenerRule#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#session_cookie_name AlbListenerRule#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#session_timeout AlbListenerRule#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type AlbListenerRuleActionAuthenticateOidcOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	AuthorizationEndpoint() *string
 	SetAuthorizationEndpoint(val *string)
 	AuthorizationEndpointInput() *string
@@ -6775,18 +7675,23 @@ type AlbListenerRuleActionAuthenticateOidcOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TokenEndpoint() *string
 	SetTokenEndpoint(val *string)
 	TokenEndpointInput() *string
 	UserInfoEndpoint() *string
 	SetUserInfoEndpoint(val *string)
 	UserInfoEndpointInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -6801,8 +7706,8 @@ type jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -6811,8 +7716,8 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) Authent
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -7011,8 +7916,8 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7061,7 +7966,7 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) UserInf
 	return returns
 }
 
-func NewAlbListenerRuleActionAuthenticateOidcOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionAuthenticateOidcOutputReference {
+func NewAlbListenerRuleActionAuthenticateOidcOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionAuthenticateOidcOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference{}
@@ -7075,7 +7980,7 @@ func NewAlbListenerRuleActionAuthenticateOidcOutputReference(terraformResource c
 	return &j
 }
 
-func NewAlbListenerRuleActionAuthenticateOidcOutputReference_Override(a AlbListenerRuleActionAuthenticateOidcOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleActionAuthenticateOidcOutputReference_Override(a AlbListenerRuleActionAuthenticateOidcOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7085,7 +7990,7 @@ func NewAlbListenerRuleActionAuthenticateOidcOutputReference_Override(a AlbListe
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -7181,7 +8086,7 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7206,12 +8111,40 @@ func (j *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) SetUser
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7248,12 +8181,54 @@ func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetNumb
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7330,12 +8305,12 @@ func (a *jsiiProxy_AlbListenerRuleActionAuthenticateOidcOutputReference) ResetSe
 }
 
 type AlbListenerRuleActionFixedResponse struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#content_type AlbListenerRule#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#message_body AlbListenerRule#message_body}.
-	MessageBody *string `json:"messageBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#status_code AlbListenerRule#status_code}.
-	StatusCode *string `json:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#content_type AlbListenerRule#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#message_body AlbListenerRule#message_body}.
+	MessageBody *string `json:"messageBody" yaml:"messageBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#status_code AlbListenerRule#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
 }
 
 type AlbListenerRuleActionFixedResponseOutputReference interface {
@@ -7355,12 +8330,17 @@ type AlbListenerRuleActionFixedResponseOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMessageBody()
@@ -7462,8 +8442,8 @@ func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7472,7 +8452,7 @@ func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) TerraformR
 	return returns
 }
 
-func NewAlbListenerRuleActionFixedResponseOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionFixedResponseOutputReference {
+func NewAlbListenerRuleActionFixedResponseOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionFixedResponseOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference{}
@@ -7486,7 +8466,7 @@ func NewAlbListenerRuleActionFixedResponseOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewAlbListenerRuleActionFixedResponseOutputReference_Override(a AlbListenerRuleActionFixedResponseOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleActionFixedResponseOutputReference_Override(a AlbListenerRuleActionFixedResponseOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7544,7 +8524,7 @@ func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7553,12 +8533,40 @@ func (j *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7595,12 +8603,54 @@ func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetNumberA
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7655,12 +8705,12 @@ func (a *jsiiProxy_AlbListenerRuleActionFixedResponseOutputReference) ResetStatu
 type AlbListenerRuleActionForward struct {
 	// target_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#target_group AlbListenerRule#target_group}
-	TargetGroup *[]*AlbListenerRuleActionForwardTargetGroup `json:"targetGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#target_group AlbListenerRule#target_group}
+	TargetGroup interface{} `json:"targetGroup" yaml:"targetGroup"`
 	// stickiness block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#stickiness AlbListenerRule#stickiness}
-	Stickiness *AlbListenerRuleActionForwardStickiness `json:"stickiness"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#stickiness AlbListenerRule#stickiness}
+	Stickiness *AlbListenerRuleActionForwardStickiness `json:"stickiness" yaml:"stickiness"`
 }
 
 type AlbListenerRuleActionForwardOutputReference interface {
@@ -7671,17 +8721,22 @@ type AlbListenerRuleActionForwardOutputReference interface {
 	SetIsSingleItem(val *bool)
 	Stickiness() AlbListenerRuleActionForwardStickinessOutputReference
 	StickinessInput() *AlbListenerRuleActionForwardStickiness
-	TargetGroup() *[]*AlbListenerRuleActionForwardTargetGroup
-	SetTargetGroup(val *[]*AlbListenerRuleActionForwardTargetGroup)
-	TargetGroupInput() *[]*AlbListenerRuleActionForwardTargetGroup
+	TargetGroup() interface{}
+	SetTargetGroup(val interface{})
+	TargetGroupInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutStickiness(value *AlbListenerRuleActionForwardStickiness)
@@ -7733,8 +8788,8 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) StickinessInput(
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TargetGroup() *[]*AlbListenerRuleActionForwardTargetGroup {
-	var returns *[]*AlbListenerRuleActionForwardTargetGroup
+func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TargetGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroup",
@@ -7743,8 +8798,8 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TargetGroup() *[
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TargetGroupInput() *[]*AlbListenerRuleActionForwardTargetGroup {
-	var returns *[]*AlbListenerRuleActionForwardTargetGroup
+func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TargetGroupInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroupInput",
@@ -7763,8 +8818,8 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7773,7 +8828,7 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) TerraformResourc
 	return returns
 }
 
-func NewAlbListenerRuleActionForwardOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionForwardOutputReference {
+func NewAlbListenerRuleActionForwardOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionForwardOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleActionForwardOutputReference{}
@@ -7787,7 +8842,7 @@ func NewAlbListenerRuleActionForwardOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewAlbListenerRuleActionForwardOutputReference_Override(a AlbListenerRuleActionForwardOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleActionForwardOutputReference_Override(a AlbListenerRuleActionForwardOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7813,7 +8868,7 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetIsSingleItem(
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetTargetGroup(val *[]*AlbListenerRuleActionForwardTargetGroup) {
+func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetTargetGroup(val interface{}) {
 	_jsii_.Set(
 		j,
 		"targetGroup",
@@ -7829,7 +8884,7 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7838,12 +8893,40 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7880,12 +8963,54 @@ func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7938,10 +9063,10 @@ func (a *jsiiProxy_AlbListenerRuleActionForwardOutputReference) ResetStickiness(
 }
 
 type AlbListenerRuleActionForwardStickiness struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#duration AlbListenerRule#duration}.
-	Duration *float64 `json:"duration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#enabled AlbListenerRule#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#duration AlbListenerRule#duration}.
+	Duration *float64 `json:"duration" yaml:"duration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#enabled AlbListenerRule#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type AlbListenerRuleActionForwardStickinessOutputReference interface {
@@ -7958,12 +9083,17 @@ type AlbListenerRuleActionForwardStickinessOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -8044,8 +9174,8 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8054,7 +9184,7 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) Terraf
 	return returns
 }
 
-func NewAlbListenerRuleActionForwardStickinessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionForwardStickinessOutputReference {
+func NewAlbListenerRuleActionForwardStickinessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionForwardStickinessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference{}
@@ -8068,7 +9198,7 @@ func NewAlbListenerRuleActionForwardStickinessOutputReference(terraformResource 
 	return &j
 }
 
-func NewAlbListenerRuleActionForwardStickinessOutputReference_Override(a AlbListenerRuleActionForwardStickinessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleActionForwardStickinessOutputReference_Override(a AlbListenerRuleActionForwardStickinessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8118,7 +9248,7 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8127,12 +9257,40 @@ func (j *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) SetTer
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8169,12 +9327,54 @@ func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetNum
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8219,25 +9419,25 @@ func (a *jsiiProxy_AlbListenerRuleActionForwardStickinessOutputReference) ResetE
 }
 
 type AlbListenerRuleActionForwardTargetGroup struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#arn AlbListenerRule#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#weight AlbListenerRule#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#arn AlbListenerRule#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#weight AlbListenerRule#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
 type AlbListenerRuleActionRedirect struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#status_code AlbListenerRule#status_code}.
-	StatusCode *string `json:"statusCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#host AlbListenerRule#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#path AlbListenerRule#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#port AlbListenerRule#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#protocol AlbListenerRule#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#query AlbListenerRule#query}.
-	Query *string `json:"query"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#status_code AlbListenerRule#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#host AlbListenerRule#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#path AlbListenerRule#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#port AlbListenerRule#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#protocol AlbListenerRule#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#query AlbListenerRule#query}.
+	Query *string `json:"query" yaml:"query"`
 }
 
 type AlbListenerRuleActionRedirectOutputReference interface {
@@ -8266,12 +9466,17 @@ type AlbListenerRuleActionRedirectOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHost()
@@ -8436,8 +9641,8 @@ func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8446,7 +9651,7 @@ func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) TerraformResour
 	return returns
 }
 
-func NewAlbListenerRuleActionRedirectOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionRedirectOutputReference {
+func NewAlbListenerRuleActionRedirectOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleActionRedirectOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleActionRedirectOutputReference{}
@@ -8460,7 +9665,7 @@ func NewAlbListenerRuleActionRedirectOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewAlbListenerRuleActionRedirectOutputReference_Override(a AlbListenerRuleActionRedirectOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleActionRedirectOutputReference_Override(a AlbListenerRuleActionRedirectOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8542,7 +9747,7 @@ func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8551,12 +9756,40 @@ func (j *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8593,12 +9826,54 @@ func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8677,33 +9952,33 @@ func (a *jsiiProxy_AlbListenerRuleActionRedirectOutputReference) ResetQuery() {
 type AlbListenerRuleCondition struct {
 	// host_header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#host_header AlbListenerRule#host_header}
-	HostHeader *AlbListenerRuleConditionHostHeader `json:"hostHeader"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#host_header AlbListenerRule#host_header}
+	HostHeader *AlbListenerRuleConditionHostHeader `json:"hostHeader" yaml:"hostHeader"`
 	// http_header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#http_header AlbListenerRule#http_header}
-	HttpHeader *AlbListenerRuleConditionHttpHeader `json:"httpHeader"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#http_header AlbListenerRule#http_header}
+	HttpHeader *AlbListenerRuleConditionHttpHeader `json:"httpHeader" yaml:"httpHeader"`
 	// http_request_method block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#http_request_method AlbListenerRule#http_request_method}
-	HttpRequestMethod *AlbListenerRuleConditionHttpRequestMethod `json:"httpRequestMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#http_request_method AlbListenerRule#http_request_method}
+	HttpRequestMethod *AlbListenerRuleConditionHttpRequestMethod `json:"httpRequestMethod" yaml:"httpRequestMethod"`
 	// path_pattern block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#path_pattern AlbListenerRule#path_pattern}
-	PathPattern *AlbListenerRuleConditionPathPattern `json:"pathPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#path_pattern AlbListenerRule#path_pattern}
+	PathPattern *AlbListenerRuleConditionPathPattern `json:"pathPattern" yaml:"pathPattern"`
 	// query_string block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#query_string AlbListenerRule#query_string}
-	QueryString *[]*AlbListenerRuleConditionQueryString `json:"queryString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#query_string AlbListenerRule#query_string}
+	QueryString interface{} `json:"queryString" yaml:"queryString"`
 	// source_ip block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#source_ip AlbListenerRule#source_ip}
-	SourceIp *AlbListenerRuleConditionSourceIp `json:"sourceIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#source_ip AlbListenerRule#source_ip}
+	SourceIp *AlbListenerRuleConditionSourceIp `json:"sourceIp" yaml:"sourceIp"`
 }
 
 type AlbListenerRuleConditionHostHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#values AlbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#values AlbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type AlbListenerRuleConditionHostHeaderOutputReference interface {
@@ -8714,15 +9989,20 @@ type AlbListenerRuleConditionHostHeaderOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8762,8 +10042,8 @@ func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8792,7 +10072,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) ValuesInpu
 	return returns
 }
 
-func NewAlbListenerRuleConditionHostHeaderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionHostHeaderOutputReference {
+func NewAlbListenerRuleConditionHostHeaderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionHostHeaderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference{}
@@ -8806,7 +10086,7 @@ func NewAlbListenerRuleConditionHostHeaderOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewAlbListenerRuleConditionHostHeaderOutputReference_Override(a AlbListenerRuleConditionHostHeaderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleConditionHostHeaderOutputReference_Override(a AlbListenerRuleConditionHostHeaderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8840,7 +10120,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8857,12 +10137,40 @@ func (j *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) SetValues(
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8899,12 +10207,54 @@ func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetNumberA
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8941,10 +10291,10 @@ func (a *jsiiProxy_AlbListenerRuleConditionHostHeaderOutputReference) Interpolat
 }
 
 type AlbListenerRuleConditionHttpHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#http_header_name AlbListenerRule#http_header_name}.
-	HttpHeaderName *string `json:"httpHeaderName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#values AlbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#http_header_name AlbListenerRule#http_header_name}.
+	HttpHeaderName *string `json:"httpHeaderName" yaml:"httpHeaderName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#values AlbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type AlbListenerRuleConditionHttpHeaderOutputReference interface {
@@ -8958,15 +10308,20 @@ type AlbListenerRuleConditionHttpHeaderOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9026,8 +10381,8 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9056,7 +10411,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) ValuesInpu
 	return returns
 }
 
-func NewAlbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionHttpHeaderOutputReference {
+func NewAlbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionHttpHeaderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference{}
@@ -9070,7 +10425,7 @@ func NewAlbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewAlbListenerRuleConditionHttpHeaderOutputReference_Override(a AlbListenerRuleConditionHttpHeaderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleConditionHttpHeaderOutputReference_Override(a AlbListenerRuleConditionHttpHeaderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9112,7 +10467,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9129,12 +10484,40 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) SetValues(
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9171,12 +10554,54 @@ func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetNumberA
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9213,8 +10638,8 @@ func (a *jsiiProxy_AlbListenerRuleConditionHttpHeaderOutputReference) Interpolat
 }
 
 type AlbListenerRuleConditionHttpRequestMethod struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#values AlbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#values AlbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type AlbListenerRuleConditionHttpRequestMethodOutputReference interface {
@@ -9225,15 +10650,20 @@ type AlbListenerRuleConditionHttpRequestMethodOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9273,8 +10703,8 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9303,7 +10733,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) Val
 	return returns
 }
 
-func NewAlbListenerRuleConditionHttpRequestMethodOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionHttpRequestMethodOutputReference {
+func NewAlbListenerRuleConditionHttpRequestMethodOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionHttpRequestMethodOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference{}
@@ -9317,7 +10747,7 @@ func NewAlbListenerRuleConditionHttpRequestMethodOutputReference(terraformResour
 	return &j
 }
 
-func NewAlbListenerRuleConditionHttpRequestMethodOutputReference_Override(a AlbListenerRuleConditionHttpRequestMethodOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleConditionHttpRequestMethodOutputReference_Override(a AlbListenerRuleConditionHttpRequestMethodOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9351,7 +10781,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9368,12 +10798,40 @@ func (j *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) Set
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9410,12 +10868,54 @@ func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) Get
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9452,8 +10952,8 @@ func (a *jsiiProxy_AlbListenerRuleConditionHttpRequestMethodOutputReference) Int
 }
 
 type AlbListenerRuleConditionPathPattern struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#values AlbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#values AlbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type AlbListenerRuleConditionPathPatternOutputReference interface {
@@ -9464,15 +10964,20 @@ type AlbListenerRuleConditionPathPatternOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9512,8 +11017,8 @@ func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9542,7 +11047,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) ValuesInp
 	return returns
 }
 
-func NewAlbListenerRuleConditionPathPatternOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionPathPatternOutputReference {
+func NewAlbListenerRuleConditionPathPatternOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionPathPatternOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference{}
@@ -9556,7 +11061,7 @@ func NewAlbListenerRuleConditionPathPatternOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewAlbListenerRuleConditionPathPatternOutputReference_Override(a AlbListenerRuleConditionPathPatternOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleConditionPathPatternOutputReference_Override(a AlbListenerRuleConditionPathPatternOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9590,7 +11095,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9607,12 +11112,40 @@ func (j *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) SetValues
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9649,12 +11182,54 @@ func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetNumber
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9691,15 +11266,15 @@ func (a *jsiiProxy_AlbListenerRuleConditionPathPatternOutputReference) Interpola
 }
 
 type AlbListenerRuleConditionQueryString struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#value AlbListenerRule#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#key AlbListenerRule#key}.
-	Key *string `json:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#value AlbListenerRule#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#key AlbListenerRule#key}.
+	Key *string `json:"key" yaml:"key"`
 }
 
 type AlbListenerRuleConditionSourceIp struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#values AlbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#values AlbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type AlbListenerRuleConditionSourceIpOutputReference interface {
@@ -9710,15 +11285,20 @@ type AlbListenerRuleConditionSourceIpOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9758,8 +11338,8 @@ func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9788,7 +11368,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) ValuesInput(
 	return returns
 }
 
-func NewAlbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionSourceIpOutputReference {
+func NewAlbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerRuleConditionSourceIpOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference{}
@@ -9802,7 +11382,7 @@ func NewAlbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewAlbListenerRuleConditionSourceIpOutputReference_Override(a AlbListenerRuleConditionSourceIpOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerRuleConditionSourceIpOutputReference_Override(a AlbListenerRuleConditionSourceIpOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9836,7 +11416,7 @@ func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9853,12 +11433,40 @@ func (j *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) SetValues(va
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9895,12 +11503,54 @@ func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9939,34 +11589,34 @@ func (a *jsiiProxy_AlbListenerRuleConditionSourceIpOutputReference) Interpolatio
 // AWS Elastic Load Balancer.
 type AlbListenerRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#action AlbListenerRule#action}
-	Action *[]*AlbListenerRuleAction `json:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#action AlbListenerRule#action}
+	Action interface{} `json:"action" yaml:"action"`
 	// condition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#condition AlbListenerRule#condition}
-	Condition *[]*AlbListenerRuleCondition `json:"condition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#listener_arn AlbListenerRule#listener_arn}.
-	ListenerArn *string `json:"listenerArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#priority AlbListenerRule#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#tags AlbListenerRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule.html#tags_all AlbListenerRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#condition AlbListenerRule#condition}
+	Condition interface{} `json:"condition" yaml:"condition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#listener_arn AlbListenerRule#listener_arn}.
+	ListenerArn *string `json:"listenerArn" yaml:"listenerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#priority AlbListenerRule#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#tags AlbListenerRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener_rule#tags_all AlbListenerRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type AlbListenerTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener.html#read AlbListener#read}.
-	Read *string `json:"read"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_listener#read AlbListener#read}.
+	Read *string `json:"read" yaml:"read"`
 }
 
 type AlbListenerTimeoutsOutputReference interface {
@@ -9980,12 +11630,17 @@ type AlbListenerTimeoutsOutputReference interface {
 	ReadInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetRead()
@@ -10046,8 +11701,8 @@ func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10056,7 +11711,7 @@ func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) TerraformResource() cdktf
 	return returns
 }
 
-func NewAlbListenerTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbListenerTimeoutsOutputReference {
+func NewAlbListenerTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbListenerTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbListenerTimeoutsOutputReference{}
@@ -10070,7 +11725,7 @@ func NewAlbListenerTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	return &j
 }
 
-func NewAlbListenerTimeoutsOutputReference_Override(a AlbListenerTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbListenerTimeoutsOutputReference_Override(a AlbListenerTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10112,7 +11767,7 @@ func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10121,12 +11776,40 @@ func (j *jsiiProxy_AlbListenerTimeoutsOutputReference) SetTerraformResource(val 
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10163,12 +11846,54 @@ func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10213,17 +11938,17 @@ func (a *jsiiProxy_AlbListenerTimeoutsOutputReference) ResetRead() {
 }
 
 type AlbSubnetMapping struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#subnet_id Alb#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#allocation_id Alb#allocation_id}.
-	AllocationId *string `json:"allocationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#ipv6_address Alb#ipv6_address}.
-	Ipv6Address *string `json:"ipv6Address"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#private_ipv4_address Alb#private_ipv4_address}.
-	PrivateIpv4Address *string `json:"privateIpv4Address"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#subnet_id Alb#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#allocation_id Alb#allocation_id}.
+	AllocationId *string `json:"allocationId" yaml:"allocationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#ipv6_address Alb#ipv6_address}.
+	Ipv6Address *string `json:"ipv6Address" yaml:"ipv6Address"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#private_ipv4_address Alb#private_ipv4_address}.
+	PrivateIpv4Address *string `json:"privateIpv4Address" yaml:"privateIpv4Address"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html aws_alb_target_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group aws_alb_target_group}.
 type AlbTargetGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -10233,8 +11958,8 @@ type AlbTargetGroup interface {
 	SetConnectionTermination(val interface{})
 	ConnectionTerminationInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeregistrationDelay() *string
@@ -10283,12 +12008,12 @@ type AlbTargetGroup interface {
 	SlowStartInput() *float64
 	Stickiness() AlbTargetGroupStickinessOutputReference
 	StickinessInput() *AlbTargetGroupStickiness
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetType() *string
 	SetTargetType(val *string)
 	TargetTypeInput() *string
@@ -10299,10 +12024,15 @@ type AlbTargetGroup interface {
 	SetVpcId(val *string)
 	VpcIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutHealthCheck(value *AlbTargetGroupHealthCheck)
@@ -10397,8 +12127,8 @@ func (j *jsiiProxy_AlbTargetGroup) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbTargetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10747,8 +12477,8 @@ func (j *jsiiProxy_AlbTargetGroup) StickinessInput() *AlbTargetGroupStickiness {
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbTargetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10757,8 +12487,8 @@ func (j *jsiiProxy_AlbTargetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbTargetGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10767,8 +12497,8 @@ func (j *jsiiProxy_AlbTargetGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbTargetGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10777,8 +12507,8 @@ func (j *jsiiProxy_AlbTargetGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbTargetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10857,7 +12587,7 @@ func (j *jsiiProxy_AlbTargetGroup) VpcIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html aws_alb_target_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group aws_alb_target_group} Resource.
 func NewAlbTargetGroup(scope constructs.Construct, id *string, config *AlbTargetGroupConfig) AlbTargetGroup {
 	_init_.Initialize()
 
@@ -10872,7 +12602,7 @@ func NewAlbTargetGroup(scope constructs.Construct, id *string, config *AlbTarget
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html aws_alb_target_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group aws_alb_target_group} Resource.
 func NewAlbTargetGroup_Override(a AlbTargetGroup, scope constructs.Construct, id *string, config *AlbTargetGroupConfig) {
 	_init_.Initialize()
 
@@ -10891,7 +12621,7 @@ func (j *jsiiProxy_AlbTargetGroup) SetConnectionTermination(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AlbTargetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_AlbTargetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11011,7 +12741,7 @@ func (j *jsiiProxy_AlbTargetGroup) SetSlowStart(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_AlbTargetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_AlbTargetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -11019,7 +12749,7 @@ func (j *jsiiProxy_AlbTargetGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AlbTargetGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AlbTargetGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -11083,12 +12813,40 @@ func (a *jsiiProxy_AlbTargetGroup) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbTargetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbTargetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11125,12 +12883,54 @@ func (a *jsiiProxy_AlbTargetGroup) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbTargetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbTargetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11388,7 +13188,7 @@ func (a *jsiiProxy_AlbTargetGroup) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment.html aws_alb_target_group_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment aws_alb_target_group_attachment}.
 type AlbTargetGroupAttachment interface {
 	cdktf.TerraformResource
 	AvailabilityZone() *string
@@ -11396,8 +13196,8 @@ type AlbTargetGroupAttachment interface {
 	AvailabilityZoneInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -11422,10 +13222,15 @@ type AlbTargetGroupAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAvailabilityZone()
@@ -11482,8 +13287,8 @@ func (j *jsiiProxy_AlbTargetGroupAttachment) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroupAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AlbTargetGroupAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11662,7 +13467,7 @@ func (j *jsiiProxy_AlbTargetGroupAttachment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment.html aws_alb_target_group_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment aws_alb_target_group_attachment} Resource.
 func NewAlbTargetGroupAttachment(scope constructs.Construct, id *string, config *AlbTargetGroupAttachmentConfig) AlbTargetGroupAttachment {
 	_init_.Initialize()
 
@@ -11677,7 +13482,7 @@ func NewAlbTargetGroupAttachment(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment.html aws_alb_target_group_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment aws_alb_target_group_attachment} Resource.
 func NewAlbTargetGroupAttachment_Override(a AlbTargetGroupAttachment, scope constructs.Construct, id *string, config *AlbTargetGroupAttachmentConfig) {
 	_init_.Initialize()
 
@@ -11696,7 +13501,7 @@ func (j *jsiiProxy_AlbTargetGroupAttachment) SetAvailabilityZone(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AlbTargetGroupAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_AlbTargetGroupAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11792,12 +13597,40 @@ func (a *jsiiProxy_AlbTargetGroupAttachment) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbTargetGroupAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbTargetGroupAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11834,12 +13667,54 @@ func (a *jsiiProxy_AlbTargetGroupAttachment) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbTargetGroupAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbTargetGroupAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11956,94 +13831,94 @@ func (a *jsiiProxy_AlbTargetGroupAttachment) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type AlbTargetGroupAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment.html#target_group_arn AlbTargetGroupAttachment#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment.html#target_id AlbTargetGroupAttachment#target_id}.
-	TargetId *string `json:"targetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment.html#availability_zone AlbTargetGroupAttachment#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment.html#port AlbTargetGroupAttachment#port}.
-	Port *float64 `json:"port"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment#target_group_arn AlbTargetGroupAttachment#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment#target_id AlbTargetGroupAttachment#target_id}.
+	TargetId *string `json:"targetId" yaml:"targetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment#availability_zone AlbTargetGroupAttachment#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group_attachment#port AlbTargetGroupAttachment#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 // AWS Elastic Load Balancer.
 type AlbTargetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#connection_termination AlbTargetGroup#connection_termination}.
-	ConnectionTermination interface{} `json:"connectionTermination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#deregistration_delay AlbTargetGroup#deregistration_delay}.
-	DeregistrationDelay *string `json:"deregistrationDelay"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#connection_termination AlbTargetGroup#connection_termination}.
+	ConnectionTermination interface{} `json:"connectionTermination" yaml:"connectionTermination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#deregistration_delay AlbTargetGroup#deregistration_delay}.
+	DeregistrationDelay *string `json:"deregistrationDelay" yaml:"deregistrationDelay"`
 	// health_check block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#health_check AlbTargetGroup#health_check}
-	HealthCheck *AlbTargetGroupHealthCheck `json:"healthCheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#lambda_multi_value_headers_enabled AlbTargetGroup#lambda_multi_value_headers_enabled}.
-	LambdaMultiValueHeadersEnabled interface{} `json:"lambdaMultiValueHeadersEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#load_balancing_algorithm_type AlbTargetGroup#load_balancing_algorithm_type}.
-	LoadBalancingAlgorithmType *string `json:"loadBalancingAlgorithmType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#name AlbTargetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#name_prefix AlbTargetGroup#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#port AlbTargetGroup#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#preserve_client_ip AlbTargetGroup#preserve_client_ip}.
-	PreserveClientIp *string `json:"preserveClientIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#protocol AlbTargetGroup#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#protocol_version AlbTargetGroup#protocol_version}.
-	ProtocolVersion *string `json:"protocolVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#proxy_protocol_v2 AlbTargetGroup#proxy_protocol_v2}.
-	ProxyProtocolV2 interface{} `json:"proxyProtocolV2"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#slow_start AlbTargetGroup#slow_start}.
-	SlowStart *float64 `json:"slowStart"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#health_check AlbTargetGroup#health_check}
+	HealthCheck *AlbTargetGroupHealthCheck `json:"healthCheck" yaml:"healthCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#lambda_multi_value_headers_enabled AlbTargetGroup#lambda_multi_value_headers_enabled}.
+	LambdaMultiValueHeadersEnabled interface{} `json:"lambdaMultiValueHeadersEnabled" yaml:"lambdaMultiValueHeadersEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#load_balancing_algorithm_type AlbTargetGroup#load_balancing_algorithm_type}.
+	LoadBalancingAlgorithmType *string `json:"loadBalancingAlgorithmType" yaml:"loadBalancingAlgorithmType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#name AlbTargetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#name_prefix AlbTargetGroup#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#port AlbTargetGroup#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#preserve_client_ip AlbTargetGroup#preserve_client_ip}.
+	PreserveClientIp *string `json:"preserveClientIp" yaml:"preserveClientIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#protocol AlbTargetGroup#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#protocol_version AlbTargetGroup#protocol_version}.
+	ProtocolVersion *string `json:"protocolVersion" yaml:"protocolVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#proxy_protocol_v2 AlbTargetGroup#proxy_protocol_v2}.
+	ProxyProtocolV2 interface{} `json:"proxyProtocolV2" yaml:"proxyProtocolV2"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#slow_start AlbTargetGroup#slow_start}.
+	SlowStart *float64 `json:"slowStart" yaml:"slowStart"`
 	// stickiness block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#stickiness AlbTargetGroup#stickiness}
-	Stickiness *AlbTargetGroupStickiness `json:"stickiness"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#tags AlbTargetGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#tags_all AlbTargetGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#target_type AlbTargetGroup#target_type}.
-	TargetType *string `json:"targetType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#vpc_id AlbTargetGroup#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#stickiness AlbTargetGroup#stickiness}
+	Stickiness *AlbTargetGroupStickiness `json:"stickiness" yaml:"stickiness"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#tags AlbTargetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#tags_all AlbTargetGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#target_type AlbTargetGroup#target_type}.
+	TargetType *string `json:"targetType" yaml:"targetType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#vpc_id AlbTargetGroup#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type AlbTargetGroupHealthCheck struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#enabled AlbTargetGroup#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#healthy_threshold AlbTargetGroup#healthy_threshold}.
-	HealthyThreshold *float64 `json:"healthyThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#interval AlbTargetGroup#interval}.
-	Interval *float64 `json:"interval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#matcher AlbTargetGroup#matcher}.
-	Matcher *string `json:"matcher"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#path AlbTargetGroup#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#port AlbTargetGroup#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#protocol AlbTargetGroup#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#timeout AlbTargetGroup#timeout}.
-	Timeout *float64 `json:"timeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#unhealthy_threshold AlbTargetGroup#unhealthy_threshold}.
-	UnhealthyThreshold *float64 `json:"unhealthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#enabled AlbTargetGroup#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#healthy_threshold AlbTargetGroup#healthy_threshold}.
+	HealthyThreshold *float64 `json:"healthyThreshold" yaml:"healthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#interval AlbTargetGroup#interval}.
+	Interval *float64 `json:"interval" yaml:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#matcher AlbTargetGroup#matcher}.
+	Matcher *string `json:"matcher" yaml:"matcher"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#path AlbTargetGroup#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#port AlbTargetGroup#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#protocol AlbTargetGroup#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#timeout AlbTargetGroup#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#unhealthy_threshold AlbTargetGroup#unhealthy_threshold}.
+	UnhealthyThreshold *float64 `json:"unhealthyThreshold" yaml:"unhealthyThreshold"`
 }
 
 type AlbTargetGroupHealthCheckOutputReference interface {
@@ -12075,18 +13950,23 @@ type AlbTargetGroupHealthCheckOutputReference interface {
 	ProtocolInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Timeout() *float64
 	SetTimeout(val *float64)
 	TimeoutInput() *float64
 	UnhealthyThreshold() *float64
 	SetUnhealthyThreshold(val *float64)
 	UnhealthyThresholdInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -12275,8 +14155,8 @@ func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12325,7 +14205,7 @@ func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) UnhealthyThresholdI
 	return returns
 }
 
-func NewAlbTargetGroupHealthCheckOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbTargetGroupHealthCheckOutputReference {
+func NewAlbTargetGroupHealthCheckOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbTargetGroupHealthCheckOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbTargetGroupHealthCheckOutputReference{}
@@ -12339,7 +14219,7 @@ func NewAlbTargetGroupHealthCheckOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewAlbTargetGroupHealthCheckOutputReference_Override(a AlbTargetGroupHealthCheckOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbTargetGroupHealthCheckOutputReference_Override(a AlbTargetGroupHealthCheckOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12429,7 +14309,7 @@ func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12454,12 +14334,40 @@ func (j *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) SetUnhealthyThresho
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12496,12 +14404,54 @@ func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12610,14 +14560,14 @@ func (a *jsiiProxy_AlbTargetGroupHealthCheckOutputReference) ResetUnhealthyThres
 }
 
 type AlbTargetGroupStickiness struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#type AlbTargetGroup#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#cookie_duration AlbTargetGroup#cookie_duration}.
-	CookieDuration *float64 `json:"cookieDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#cookie_name AlbTargetGroup#cookie_name}.
-	CookieName *string `json:"cookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group.html#enabled AlbTargetGroup#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#type AlbTargetGroup#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#cookie_duration AlbTargetGroup#cookie_duration}.
+	CookieDuration *float64 `json:"cookieDuration" yaml:"cookieDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#cookie_name AlbTargetGroup#cookie_name}.
+	CookieName *string `json:"cookieName" yaml:"cookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb_target_group#enabled AlbTargetGroup#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type AlbTargetGroupStickinessOutputReference interface {
@@ -12637,15 +14587,20 @@ type AlbTargetGroupStickinessOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCookieDuration()
@@ -12748,8 +14703,8 @@ func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12778,7 +14733,7 @@ func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) TypeInput() *string 
 	return returns
 }
 
-func NewAlbTargetGroupStickinessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbTargetGroupStickinessOutputReference {
+func NewAlbTargetGroupStickinessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbTargetGroupStickinessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbTargetGroupStickinessOutputReference{}
@@ -12792,7 +14747,7 @@ func NewAlbTargetGroupStickinessOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewAlbTargetGroupStickinessOutputReference_Override(a AlbTargetGroupStickinessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbTargetGroupStickinessOutputReference_Override(a AlbTargetGroupStickinessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12850,7 +14805,7 @@ func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12867,12 +14822,40 @@ func (j *jsiiProxy_AlbTargetGroupStickinessOutputReference) SetType(val *string)
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12909,12 +14892,54 @@ func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12975,12 +15000,12 @@ func (a *jsiiProxy_AlbTargetGroupStickinessOutputReference) ResetEnabled() {
 }
 
 type AlbTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#create Alb#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#delete Alb#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb.html#update Alb#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#create Alb#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#delete Alb#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/alb#update Alb#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type AlbTimeoutsOutputReference interface {
@@ -12997,15 +15022,20 @@ type AlbTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -13088,8 +15118,8 @@ func (j *jsiiProxy_AlbTimeoutsOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AlbTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AlbTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13118,7 +15148,7 @@ func (j *jsiiProxy_AlbTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewAlbTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AlbTimeoutsOutputReference {
+func NewAlbTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AlbTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AlbTimeoutsOutputReference{}
@@ -13132,7 +15162,7 @@ func NewAlbTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, t
 	return &j
 }
 
-func NewAlbTimeoutsOutputReference_Override(a AlbTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAlbTimeoutsOutputReference_Override(a AlbTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13182,7 +15212,7 @@ func (j *jsiiProxy_AlbTimeoutsOutputReference) SetTerraformAttribute(val *string
 	)
 }
 
-func (j *jsiiProxy_AlbTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AlbTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13199,12 +15229,40 @@ func (j *jsiiProxy_AlbTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (a *jsiiProxy_AlbTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AlbTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13241,12 +15299,54 @@ func (a *jsiiProxy_AlbTimeoutsOutputReference) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (a *jsiiProxy_AlbTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AlbTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AlbTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13306,7 +15406,7 @@ func (a *jsiiProxy_AlbTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy.html aws_app_cookie_stickiness_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy aws_app_cookie_stickiness_policy}.
 type AppCookieStickinessPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -13314,8 +15414,8 @@ type AppCookieStickinessPolicy interface {
 	CookieName() *string
 	SetCookieName(val *string)
 	CookieNameInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13340,10 +15440,15 @@ type AppCookieStickinessPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -13398,8 +15503,8 @@ func (j *jsiiProxy_AppCookieStickinessPolicy) CookieNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppCookieStickinessPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppCookieStickinessPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13578,7 +15683,7 @@ func (j *jsiiProxy_AppCookieStickinessPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy.html aws_app_cookie_stickiness_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy aws_app_cookie_stickiness_policy} Resource.
 func NewAppCookieStickinessPolicy(scope constructs.Construct, id *string, config *AppCookieStickinessPolicyConfig) AppCookieStickinessPolicy {
 	_init_.Initialize()
 
@@ -13593,7 +15698,7 @@ func NewAppCookieStickinessPolicy(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy.html aws_app_cookie_stickiness_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy aws_app_cookie_stickiness_policy} Resource.
 func NewAppCookieStickinessPolicy_Override(a AppCookieStickinessPolicy, scope constructs.Construct, id *string, config *AppCookieStickinessPolicyConfig) {
 	_init_.Initialize()
 
@@ -13612,7 +15717,7 @@ func (j *jsiiProxy_AppCookieStickinessPolicy) SetCookieName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppCookieStickinessPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_AppCookieStickinessPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13708,12 +15813,40 @@ func (a *jsiiProxy_AppCookieStickinessPolicy) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (a *jsiiProxy_AppCookieStickinessPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppCookieStickinessPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppCookieStickinessPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13750,12 +15883,54 @@ func (a *jsiiProxy_AppCookieStickinessPolicy) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (a *jsiiProxy_AppCookieStickinessPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppCookieStickinessPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppCookieStickinessPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppCookieStickinessPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13856,46 +16031,46 @@ func (a *jsiiProxy_AppCookieStickinessPolicy) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type AppCookieStickinessPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy.html#cookie_name AppCookieStickinessPolicy#cookie_name}.
-	CookieName *string `json:"cookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy.html#lb_port AppCookieStickinessPolicy#lb_port}.
-	LbPort *float64 `json:"lbPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy.html#load_balancer AppCookieStickinessPolicy#load_balancer}.
-	LoadBalancer *string `json:"loadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy.html#name AppCookieStickinessPolicy#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy#cookie_name AppCookieStickinessPolicy#cookie_name}.
+	CookieName *string `json:"cookieName" yaml:"cookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy#lb_port AppCookieStickinessPolicy#lb_port}.
+	LbPort *float64 `json:"lbPort" yaml:"lbPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy#load_balancer AppCookieStickinessPolicy#load_balancer}.
+	LoadBalancer *string `json:"loadBalancer" yaml:"loadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/app_cookie_stickiness_policy#name AppCookieStickinessPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/alb.html aws_alb}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/alb aws_alb}.
 type DataAwsAlb interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerOwnedIpv4Pool() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DesyncMitigationMode() *string
 	DnsName() *string
-	DropInvalidHeaderFields() interface{}
-	EnableDeletionProtection() interface{}
-	EnableHttp2() interface{}
-	EnableWafFailOpen() interface{}
+	DropInvalidHeaderFields() cdktf.IResolvable
+	EnableDeletionProtection() cdktf.IResolvable
+	EnableHttp2() cdktf.IResolvable
+	EnableWafFailOpen() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
 	IdleTimeout() *float64
-	Internal() interface{}
+	Internal() cdktf.IResolvable
 	IpAddressType() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -13909,9 +16084,9 @@ type DataAwsAlb interface {
 	RawOverrides() interface{}
 	SecurityGroups() *[]*string
 	Subnets() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -13919,10 +16094,15 @@ type DataAwsAlb interface {
 	ZoneId() *string
 	AccessLogs(index *string) DataAwsAlbAccessLogs
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -13980,8 +16160,8 @@ func (j *jsiiProxy_DataAwsAlb) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14030,8 +16210,8 @@ func (j *jsiiProxy_DataAwsAlb) DnsName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) DropInvalidHeaderFields() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) DropInvalidHeaderFields() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"dropInvalidHeaderFields",
@@ -14040,8 +16220,8 @@ func (j *jsiiProxy_DataAwsAlb) DropInvalidHeaderFields() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) EnableDeletionProtection() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) EnableDeletionProtection() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableDeletionProtection",
@@ -14050,8 +16230,8 @@ func (j *jsiiProxy_DataAwsAlb) EnableDeletionProtection() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) EnableHttp2() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) EnableHttp2() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableHttp2",
@@ -14060,8 +16240,8 @@ func (j *jsiiProxy_DataAwsAlb) EnableHttp2() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) EnableWafFailOpen() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) EnableWafFailOpen() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableWafFailOpen",
@@ -14110,8 +16290,8 @@ func (j *jsiiProxy_DataAwsAlb) IdleTimeout() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) Internal() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) Internal() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"internal",
@@ -14220,8 +16400,8 @@ func (j *jsiiProxy_DataAwsAlb) Subnets() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -14230,8 +16410,8 @@ func (j *jsiiProxy_DataAwsAlb) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlb) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlb) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14290,7 +16470,7 @@ func (j *jsiiProxy_DataAwsAlb) ZoneId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb.html aws_alb} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb aws_alb} Data Source.
 func NewDataAwsAlb(scope constructs.Construct, id *string, config *DataAwsAlbConfig) DataAwsAlb {
 	_init_.Initialize()
 
@@ -14305,7 +16485,7 @@ func NewDataAwsAlb(scope constructs.Construct, id *string, config *DataAwsAlbCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb.html aws_alb} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb aws_alb} Data Source.
 func NewDataAwsAlb_Override(d DataAwsAlb, scope constructs.Construct, id *string, config *DataAwsAlbConfig) {
 	_init_.Initialize()
 
@@ -14316,7 +16496,7 @@ func NewDataAwsAlb_Override(d DataAwsAlb, scope constructs.Construct, id *string
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlb) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAlb) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14356,7 +16536,7 @@ func (j *jsiiProxy_DataAwsAlb) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlb) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsAlb) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14417,12 +16597,40 @@ func (d *jsiiProxy_DataAwsAlb) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14459,12 +16667,54 @@ func (d *jsiiProxy_DataAwsAlb) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14596,16 +16846,23 @@ type DataAwsAlbAccessLogs interface {
 	Bucket() *string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	Prefix() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -14634,8 +16891,8 @@ func (j *jsiiProxy_DataAwsAlbAccessLogs) ComplexComputedListIndex() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbAccessLogs) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbAccessLogs) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -14664,8 +16921,8 @@ func (j *jsiiProxy_DataAwsAlbAccessLogs) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbAccessLogs) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbAccessLogs) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14674,15 +16931,25 @@ func (j *jsiiProxy_DataAwsAlbAccessLogs) TerraformResource() cdktf.ITerraformRes
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbAccessLogs) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbAccessLogs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbAccessLogs {
+func NewDataAwsAlbAccessLogs(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbAccessLogs {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbAccessLogs{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbAccessLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -14690,12 +16957,12 @@ func NewDataAwsAlbAccessLogs(terraformResource cdktf.ITerraformResource, terrafo
 }
 
 // Experimental.
-func NewDataAwsAlbAccessLogs_Override(d DataAwsAlbAccessLogs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbAccessLogs_Override(d DataAwsAlbAccessLogs, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbAccessLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -14716,7 +16983,7 @@ func (j *jsiiProxy_DataAwsAlbAccessLogs) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbAccessLogs) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbAccessLogs) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14724,13 +16991,49 @@ func (j *jsiiProxy_DataAwsAlbAccessLogs) SetTerraformResource(val cdktf.ITerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbAccessLogs) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbAccessLogs) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbAccessLogs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbAccessLogs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbAccessLogs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14767,12 +17070,54 @@ func (d *jsiiProxy_DataAwsAlbAccessLogs) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbAccessLogs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbAccessLogs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbAccessLogs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbAccessLogs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14797,20 +17142,20 @@ func (d *jsiiProxy_DataAwsAlbAccessLogs) InterpolationForAttribute(property *str
 // AWS Elastic Load Balancer.
 type DataAwsAlbConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb.html#name DataAwsAlb#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb.html#tags DataAwsAlb#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb#name DataAwsAlb#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb#tags DataAwsAlb#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/alb_listener.html aws_alb_listener}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/alb_listener aws_alb_listener}.
 type DataAwsAlbListener interface {
 	cdktf.TerraformDataSource
 	AlpnPolicy() *string
@@ -14818,8 +17163,8 @@ type DataAwsAlbListener interface {
 	CdktfStack() cdktf.TerraformStack
 	CertificateArn() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -14839,18 +17184,23 @@ type DataAwsAlbListener interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	SslPolicy() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	DefaultAction(index *string) DataAwsAlbListenerDefaultAction
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetLoadBalancerArn()
@@ -14918,8 +17268,8 @@ func (j *jsiiProxy_DataAwsAlbListener) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListener) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListener) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15068,8 +17418,8 @@ func (j *jsiiProxy_DataAwsAlbListener) SslPolicy() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListener) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListener) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -15078,8 +17428,8 @@ func (j *jsiiProxy_DataAwsAlbListener) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListener) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListener) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -15118,7 +17468,7 @@ func (j *jsiiProxy_DataAwsAlbListener) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_listener.html aws_alb_listener} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_listener aws_alb_listener} Data Source.
 func NewDataAwsAlbListener(scope constructs.Construct, id *string, config *DataAwsAlbListenerConfig) DataAwsAlbListener {
 	_init_.Initialize()
 
@@ -15133,7 +17483,7 @@ func NewDataAwsAlbListener(scope constructs.Construct, id *string, config *DataA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_listener.html aws_alb_listener} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_listener aws_alb_listener} Data Source.
 func NewDataAwsAlbListener_Override(d DataAwsAlbListener, scope constructs.Construct, id *string, config *DataAwsAlbListenerConfig) {
 	_init_.Initialize()
 
@@ -15144,7 +17494,7 @@ func NewDataAwsAlbListener_Override(d DataAwsAlbListener, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListener) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAlbListener) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15192,7 +17542,7 @@ func (j *jsiiProxy_DataAwsAlbListener) SetProvider(val cdktf.TerraformProvider) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListener) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsAlbListener) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -15253,12 +17603,40 @@ func (d *jsiiProxy_DataAwsAlbListener) DefaultAction(index *string) DataAwsAlbLi
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListener) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListener) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListener) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15295,12 +17673,54 @@ func (d *jsiiProxy_DataAwsAlbListener) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListener) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListener) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListener) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListener) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15425,41 +17845,48 @@ func (d *jsiiProxy_DataAwsAlbListener) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type DataAwsAlbListenerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_listener.html#load_balancer_arn DataAwsAlbListener#load_balancer_arn}.
-	LoadBalancerArn *string `json:"loadBalancerArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_listener.html#port DataAwsAlbListener#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_listener.html#tags DataAwsAlbListener#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_listener#load_balancer_arn DataAwsAlbListener#load_balancer_arn}.
+	LoadBalancerArn *string `json:"loadBalancerArn" yaml:"loadBalancerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_listener#port DataAwsAlbListener#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_listener#tags DataAwsAlbListener#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsAlbListenerDefaultAction interface {
 	cdktf.ComplexComputedList
-	AuthenticateCognito() interface{}
-	AuthenticateOidc() interface{}
+	AuthenticateCognito() cdktf.IResolvable
+	AuthenticateOidc() cdktf.IResolvable
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	FixedResponse() interface{}
-	Forward() interface{}
+	FixedResponse() cdktf.IResolvable
+	Forward() cdktf.IResolvable
 	Order() *float64
-	Redirect() interface{}
+	Redirect() cdktf.IResolvable
 	TargetGroupArn() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -15468,8 +17895,8 @@ type jsiiProxy_DataAwsAlbListenerDefaultAction struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) AuthenticateCognito() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) AuthenticateCognito() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"authenticateCognito",
@@ -15478,8 +17905,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) AuthenticateCognito() interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) AuthenticateOidc() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) AuthenticateOidc() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"authenticateOidc",
@@ -15498,8 +17925,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) ComplexComputedListIndex() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) FixedResponse() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) FixedResponse() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"fixedResponse",
@@ -15508,8 +17935,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) FixedResponse() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) Forward() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) Forward() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"forward",
@@ -15528,8 +17955,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) Order() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) Redirect() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) Redirect() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"redirect",
@@ -15558,8 +17985,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) TerraformAttribute() *string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15578,15 +18005,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) Type() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultAction(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultAction {
+func NewDataAwsAlbListenerDefaultAction(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultAction {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultAction{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultAction",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -15594,12 +18031,12 @@ func NewDataAwsAlbListenerDefaultAction(terraformResource cdktf.ITerraformResour
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultAction_Override(d DataAwsAlbListenerDefaultAction, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultAction_Override(d DataAwsAlbListenerDefaultAction, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultAction",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -15620,7 +18057,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) SetTerraformAttribute(val *s
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15628,13 +18065,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) SetTerraformResource(val cdk
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultAction) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15671,12 +18144,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15700,7 +18215,7 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultAction) InterpolationForAttribute(pr
 
 type DataAwsAlbListenerDefaultActionAuthenticateCognito interface {
 	cdktf.ComplexComputedList
-	AuthenticationRequestExtraParams() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	OnUnauthenticatedRequest() *string
@@ -15709,15 +18224,22 @@ type DataAwsAlbListenerDefaultActionAuthenticateCognito interface {
 	SessionTimeout() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserPoolArn() *string
 	UserPoolClientId() *string
 	UserPoolDomain() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -15726,8 +18248,8 @@ type jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -15796,8 +18318,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15836,15 +18358,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) UserPoolD
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionAuthenticateCognito(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultActionAuthenticateCognito {
+func NewDataAwsAlbListenerDefaultActionAuthenticateCognito(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultActionAuthenticateCognito {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateCognito",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -15852,12 +18384,12 @@ func NewDataAwsAlbListenerDefaultActionAuthenticateCognito(terraformResource cdk
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionAuthenticateCognito_Override(d DataAwsAlbListenerDefaultActionAuthenticateCognito, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultActionAuthenticateCognito_Override(d DataAwsAlbListenerDefaultActionAuthenticateCognito, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateCognito",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -15878,7 +18410,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15886,13 +18418,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) SetTerraf
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15929,12 +18497,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetNumber
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15958,7 +18568,7 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateCognito) Interpola
 
 type DataAwsAlbListenerDefaultActionAuthenticateOidc interface {
 	cdktf.ComplexComputedList
-	AuthenticationRequestExtraParams() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
 	AuthorizationEndpoint() *string
 	ClientId() *string
 	ClientSecret() *string
@@ -15971,14 +18581,21 @@ type DataAwsAlbListenerDefaultActionAuthenticateOidc interface {
 	SessionTimeout() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TokenEndpoint() *string
 	UserInfoEndpoint() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -15987,8 +18604,8 @@ type jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -16097,8 +18714,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16127,15 +18744,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) UserInfoEndp
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultActionAuthenticateOidc {
+func NewDataAwsAlbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultActionAuthenticateOidc {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateOidc",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -16143,12 +18770,12 @@ func NewDataAwsAlbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionAuthenticateOidc_Override(d DataAwsAlbListenerDefaultActionAuthenticateOidc, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultActionAuthenticateOidc_Override(d DataAwsAlbListenerDefaultActionAuthenticateOidc, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionAuthenticateOidc",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -16169,7 +18796,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16177,13 +18804,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) SetTerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16220,12 +18883,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionAuthenticateOidc) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16256,12 +18961,19 @@ type DataAwsAlbListenerDefaultActionFixedResponse interface {
 	StatusCode() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -16320,8 +19032,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16330,15 +19042,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) TerraformResour
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionFixedResponse(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultActionFixedResponse {
+func NewDataAwsAlbListenerDefaultActionFixedResponse(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultActionFixedResponse {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionFixedResponse",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -16346,12 +19068,12 @@ func NewDataAwsAlbListenerDefaultActionFixedResponse(terraformResource cdktf.ITe
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionFixedResponse_Override(d DataAwsAlbListenerDefaultActionFixedResponse, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultActionFixedResponse_Override(d DataAwsAlbListenerDefaultActionFixedResponse, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionFixedResponse",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -16372,7 +19094,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16380,13 +19102,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) SetTerraformRes
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16423,12 +19181,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetNumberAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionFixedResponse) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16454,16 +19254,23 @@ type DataAwsAlbListenerDefaultActionForward interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Stickiness() interface{}
-	TargetGroup() interface{}
+	Stickiness() cdktf.IResolvable
+	TargetGroup() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -16482,8 +19289,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) ComplexComputedListIn
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) Stickiness() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) Stickiness() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"stickiness",
@@ -16492,8 +19299,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) Stickiness() interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) TargetGroup() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) TargetGroup() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"targetGroup",
@@ -16512,8 +19319,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16522,15 +19329,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) TerraformResource() c
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionForward(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultActionForward {
+func NewDataAwsAlbListenerDefaultActionForward(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultActionForward {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionForward{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForward",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -16538,12 +19355,12 @@ func NewDataAwsAlbListenerDefaultActionForward(terraformResource cdktf.ITerrafor
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionForward_Override(d DataAwsAlbListenerDefaultActionForward, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultActionForward_Override(d DataAwsAlbListenerDefaultActionForward, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForward",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -16564,7 +19381,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16572,13 +19389,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) SetTerraformResource(
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForward) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16615,12 +19468,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetNumberAttribute(te
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForward) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16647,15 +19542,22 @@ type DataAwsAlbListenerDefaultActionForwardStickiness interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	Duration() *float64
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -16684,8 +19586,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) Duration() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -16704,8 +19606,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16714,15 +19616,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) TerraformRe
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionForwardStickiness(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultActionForwardStickiness {
+func NewDataAwsAlbListenerDefaultActionForwardStickiness(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultActionForwardStickiness {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -16730,12 +19642,12 @@ func NewDataAwsAlbListenerDefaultActionForwardStickiness(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionForwardStickiness_Override(d DataAwsAlbListenerDefaultActionForwardStickiness, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultActionForwardStickiness_Override(d DataAwsAlbListenerDefaultActionForwardStickiness, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -16756,7 +19668,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16764,13 +19676,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16807,12 +19755,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardStickiness) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16841,13 +19831,20 @@ type DataAwsAlbListenerDefaultActionForwardTargetGroup interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Weight() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -16886,8 +19883,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16906,15 +19903,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) Weight() *
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionForwardTargetGroup(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultActionForwardTargetGroup {
+func NewDataAwsAlbListenerDefaultActionForwardTargetGroup(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultActionForwardTargetGroup {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardTargetGroup",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -16922,12 +19929,12 @@ func NewDataAwsAlbListenerDefaultActionForwardTargetGroup(terraformResource cdkt
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionForwardTargetGroup_Override(d DataAwsAlbListenerDefaultActionForwardTargetGroup, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultActionForwardTargetGroup_Override(d DataAwsAlbListenerDefaultActionForwardTargetGroup, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionForwardTargetGroup",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -16948,7 +19955,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16956,13 +19963,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) SetTerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16999,12 +20042,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetNumberA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionForwardTargetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17038,12 +20123,19 @@ type DataAwsAlbListenerDefaultActionRedirect interface {
 	StatusCode() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -17132,8 +20224,8 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17142,15 +20234,25 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionRedirect(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbListenerDefaultActionRedirect {
+func NewDataAwsAlbListenerDefaultActionRedirect(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbListenerDefaultActionRedirect {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbListenerDefaultActionRedirect{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionRedirect",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -17158,12 +20260,12 @@ func NewDataAwsAlbListenerDefaultActionRedirect(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewDataAwsAlbListenerDefaultActionRedirect_Override(d DataAwsAlbListenerDefaultActionRedirect, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbListenerDefaultActionRedirect_Override(d DataAwsAlbListenerDefaultActionRedirect, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbListenerDefaultActionRedirect",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -17184,7 +20286,7 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17192,13 +20294,49 @@ func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17235,12 +20373,54 @@ func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbListenerDefaultActionRedirect) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17273,12 +20453,19 @@ type DataAwsAlbSubnetMapping interface {
 	SubnetId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -17357,8 +20544,8 @@ func (j *jsiiProxy_DataAwsAlbSubnetMapping) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbSubnetMapping) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbSubnetMapping) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17367,15 +20554,25 @@ func (j *jsiiProxy_DataAwsAlbSubnetMapping) TerraformResource() cdktf.ITerraform
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbSubnetMapping) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbSubnetMapping(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbSubnetMapping {
+func NewDataAwsAlbSubnetMapping(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbSubnetMapping {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbSubnetMapping{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbSubnetMapping",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -17383,12 +20580,12 @@ func NewDataAwsAlbSubnetMapping(terraformResource cdktf.ITerraformResource, terr
 }
 
 // Experimental.
-func NewDataAwsAlbSubnetMapping_Override(d DataAwsAlbSubnetMapping, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbSubnetMapping_Override(d DataAwsAlbSubnetMapping, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbSubnetMapping",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -17409,7 +20606,7 @@ func (j *jsiiProxy_DataAwsAlbSubnetMapping) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbSubnetMapping) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbSubnetMapping) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17417,13 +20614,49 @@ func (j *jsiiProxy_DataAwsAlbSubnetMapping) SetTerraformResource(val cdktf.ITerr
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbSubnetMapping) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17460,12 +20693,54 @@ func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbSubnetMapping) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17487,23 +20762,23 @@ func (d *jsiiProxy_DataAwsAlbSubnetMapping) InterpolationForAttribute(property *
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group.html aws_alb_target_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group aws_alb_target_group}.
 type DataAwsAlbTargetGroup interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
-	ConnectionTermination() interface{}
+	ConnectionTermination() cdktf.IResolvable
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeregistrationDelay() *float64
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	LambdaMultiValueHeadersEnabled() interface{}
+	LambdaMultiValueHeadersEnabled() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	LoadBalancingAlgorithmType() *string
@@ -17517,22 +20792,27 @@ type DataAwsAlbTargetGroup interface {
 	ProtocolVersion() *string
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
-	ProxyProtocolV2() interface{}
+	ProxyProtocolV2() cdktf.IResolvable
 	RawOverrides() interface{}
 	SlowStart() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TargetType() *string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	HealthCheck(index *string) DataAwsAlbTargetGroupHealthCheck
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
@@ -17581,8 +20861,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) ConnectionTermination() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroup) ConnectionTermination() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"connectionTermination",
@@ -17601,8 +20881,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17661,8 +20941,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) LambdaMultiValueHeadersEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroup) LambdaMultiValueHeadersEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"lambdaMultiValueHeadersEnabled",
@@ -17771,8 +21051,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) ProxyProtocolV2() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroup) ProxyProtocolV2() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"proxyProtocolV2",
@@ -17801,8 +21081,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) SlowStart() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -17811,8 +21091,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -17871,7 +21151,7 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group.html aws_alb_target_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group aws_alb_target_group} Data Source.
 func NewDataAwsAlbTargetGroup(scope constructs.Construct, id *string, config *DataAwsAlbTargetGroupConfig) DataAwsAlbTargetGroup {
 	_init_.Initialize()
 
@@ -17886,7 +21166,7 @@ func NewDataAwsAlbTargetGroup(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group.html aws_alb_target_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group aws_alb_target_group} Data Source.
 func NewDataAwsAlbTargetGroup_Override(d DataAwsAlbTargetGroup, scope constructs.Construct, id *string, config *DataAwsAlbTargetGroupConfig) {
 	_init_.Initialize()
 
@@ -17897,7 +21177,7 @@ func NewDataAwsAlbTargetGroup_Override(d DataAwsAlbTargetGroup, scope constructs
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAlbTargetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17937,7 +21217,7 @@ func (j *jsiiProxy_DataAwsAlbTargetGroup) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsAlbTargetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -17985,12 +21265,40 @@ func (d *jsiiProxy_DataAwsAlbTargetGroup) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbTargetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18027,12 +21335,54 @@ func (d *jsiiProxy_DataAwsAlbTargetGroup) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbTargetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18175,24 +21525,24 @@ func (d *jsiiProxy_DataAwsAlbTargetGroup) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type DataAwsAlbTargetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group.html#name DataAwsAlbTargetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group.html#tags DataAwsAlbTargetGroup#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group#name DataAwsAlbTargetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/alb_target_group#tags DataAwsAlbTargetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsAlbTargetGroupHealthCheck interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	HealthyThreshold() *float64
 	Interval() *float64
 	Matcher() *string
@@ -18201,14 +21551,21 @@ type DataAwsAlbTargetGroupHealthCheck interface {
 	Protocol() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Timeout() *float64
 	UnhealthyThreshold() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -18227,8 +21584,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) ComplexComputedListIndex() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -18307,8 +21664,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18337,15 +21694,25 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) UnhealthyThreshold() *float
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbTargetGroupHealthCheck(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbTargetGroupHealthCheck {
+func NewDataAwsAlbTargetGroupHealthCheck(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbTargetGroupHealthCheck {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbTargetGroupHealthCheck{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbTargetGroupHealthCheck",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -18353,12 +21720,12 @@ func NewDataAwsAlbTargetGroupHealthCheck(terraformResource cdktf.ITerraformResou
 }
 
 // Experimental.
-func NewDataAwsAlbTargetGroupHealthCheck_Override(d DataAwsAlbTargetGroupHealthCheck, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbTargetGroupHealthCheck_Override(d DataAwsAlbTargetGroupHealthCheck, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbTargetGroupHealthCheck",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -18379,7 +21746,7 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18387,13 +21754,49 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) SetTerraformResource(val cd
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18430,12 +21833,54 @@ func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupHealthCheck) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18463,16 +21908,23 @@ type DataAwsAlbTargetGroupStickiness interface {
 	SetComplexComputedListIndex(val *string)
 	CookieDuration() *float64
 	CookieName() *string
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -18511,8 +21963,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) CookieName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -18531,8 +21983,8 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) TerraformAttribute() *string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18551,15 +22003,25 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) Type() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsAlbTargetGroupStickiness(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsAlbTargetGroupStickiness {
+func NewDataAwsAlbTargetGroupStickiness(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsAlbTargetGroupStickiness {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsAlbTargetGroupStickiness{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbTargetGroupStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -18567,12 +22029,12 @@ func NewDataAwsAlbTargetGroupStickiness(terraformResource cdktf.ITerraformResour
 }
 
 // Experimental.
-func NewDataAwsAlbTargetGroupStickiness_Override(d DataAwsAlbTargetGroupStickiness, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsAlbTargetGroupStickiness_Override(d DataAwsAlbTargetGroupStickiness, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsAlbTargetGroupStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -18593,7 +22055,7 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) SetTerraformAttribute(val *s
 	)
 }
 
-func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18601,13 +22063,49 @@ func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) SetTerraformResource(val cdk
 	)
 }
 
+func (j *jsiiProxy_DataAwsAlbTargetGroupStickiness) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18644,12 +22142,54 @@ func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18671,29 +22211,29 @@ func (d *jsiiProxy_DataAwsAlbTargetGroupStickiness) InterpolationForAttribute(pr
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lb.html aws_lb}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lb aws_lb}.
 type DataAwsLb interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerOwnedIpv4Pool() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DesyncMitigationMode() *string
 	DnsName() *string
-	DropInvalidHeaderFields() interface{}
-	EnableDeletionProtection() interface{}
-	EnableHttp2() interface{}
-	EnableWafFailOpen() interface{}
+	DropInvalidHeaderFields() cdktf.IResolvable
+	EnableDeletionProtection() cdktf.IResolvable
+	EnableHttp2() cdktf.IResolvable
+	EnableWafFailOpen() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
 	IdleTimeout() *float64
-	Internal() interface{}
+	Internal() cdktf.IResolvable
 	IpAddressType() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -18707,9 +22247,9 @@ type DataAwsLb interface {
 	RawOverrides() interface{}
 	SecurityGroups() *[]*string
 	Subnets() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -18717,10 +22257,15 @@ type DataAwsLb interface {
 	ZoneId() *string
 	AccessLogs(index *string) DataAwsLbAccessLogs
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -18778,8 +22323,8 @@ func (j *jsiiProxy_DataAwsLb) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18828,8 +22373,8 @@ func (j *jsiiProxy_DataAwsLb) DnsName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) DropInvalidHeaderFields() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) DropInvalidHeaderFields() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"dropInvalidHeaderFields",
@@ -18838,8 +22383,8 @@ func (j *jsiiProxy_DataAwsLb) DropInvalidHeaderFields() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) EnableDeletionProtection() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) EnableDeletionProtection() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableDeletionProtection",
@@ -18848,8 +22393,8 @@ func (j *jsiiProxy_DataAwsLb) EnableDeletionProtection() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) EnableHttp2() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) EnableHttp2() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableHttp2",
@@ -18858,8 +22403,8 @@ func (j *jsiiProxy_DataAwsLb) EnableHttp2() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) EnableWafFailOpen() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) EnableWafFailOpen() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableWafFailOpen",
@@ -18908,8 +22453,8 @@ func (j *jsiiProxy_DataAwsLb) IdleTimeout() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) Internal() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) Internal() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"internal",
@@ -19018,8 +22563,8 @@ func (j *jsiiProxy_DataAwsLb) Subnets() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -19028,8 +22573,8 @@ func (j *jsiiProxy_DataAwsLb) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLb) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLb) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -19088,7 +22633,7 @@ func (j *jsiiProxy_DataAwsLb) ZoneId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb.html aws_lb} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb aws_lb} Data Source.
 func NewDataAwsLb(scope constructs.Construct, id *string, config *DataAwsLbConfig) DataAwsLb {
 	_init_.Initialize()
 
@@ -19103,7 +22648,7 @@ func NewDataAwsLb(scope constructs.Construct, id *string, config *DataAwsLbConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb.html aws_lb} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb aws_lb} Data Source.
 func NewDataAwsLb_Override(d DataAwsLb, scope constructs.Construct, id *string, config *DataAwsLbConfig) {
 	_init_.Initialize()
 
@@ -19114,7 +22659,7 @@ func NewDataAwsLb_Override(d DataAwsLb, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsLb) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLb) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19154,7 +22699,7 @@ func (j *jsiiProxy_DataAwsLb) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLb) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsLb) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -19215,12 +22760,40 @@ func (d *jsiiProxy_DataAwsLb) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19257,12 +22830,54 @@ func (d *jsiiProxy_DataAwsLb) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19394,16 +23009,23 @@ type DataAwsLbAccessLogs interface {
 	Bucket() *string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	Prefix() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -19432,8 +23054,8 @@ func (j *jsiiProxy_DataAwsLbAccessLogs) ComplexComputedListIndex() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbAccessLogs) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbAccessLogs) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -19462,8 +23084,8 @@ func (j *jsiiProxy_DataAwsLbAccessLogs) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbAccessLogs) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbAccessLogs) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19472,15 +23094,25 @@ func (j *jsiiProxy_DataAwsLbAccessLogs) TerraformResource() cdktf.ITerraformReso
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbAccessLogs) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbAccessLogs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbAccessLogs {
+func NewDataAwsLbAccessLogs(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbAccessLogs {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbAccessLogs{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbAccessLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -19488,12 +23120,12 @@ func NewDataAwsLbAccessLogs(terraformResource cdktf.ITerraformResource, terrafor
 }
 
 // Experimental.
-func NewDataAwsLbAccessLogs_Override(d DataAwsLbAccessLogs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbAccessLogs_Override(d DataAwsLbAccessLogs, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbAccessLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -19514,7 +23146,7 @@ func (j *jsiiProxy_DataAwsLbAccessLogs) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbAccessLogs) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbAccessLogs) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19522,13 +23154,49 @@ func (j *jsiiProxy_DataAwsLbAccessLogs) SetTerraformResource(val cdktf.ITerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbAccessLogs) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbAccessLogs) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbAccessLogs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbAccessLogs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbAccessLogs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19565,12 +23233,54 @@ func (d *jsiiProxy_DataAwsLbAccessLogs) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbAccessLogs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbAccessLogs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbAccessLogs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbAccessLogs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19595,20 +23305,20 @@ func (d *jsiiProxy_DataAwsLbAccessLogs) InterpolationForAttribute(property *stri
 // AWS Elastic Load Balancer.
 type DataAwsLbConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb.html#name DataAwsLb#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb.html#tags DataAwsLb#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb#name DataAwsLb#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb#tags DataAwsLb#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lb_listener.html aws_lb_listener}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lb_listener aws_lb_listener}.
 type DataAwsLbListener interface {
 	cdktf.TerraformDataSource
 	AlpnPolicy() *string
@@ -19616,8 +23326,8 @@ type DataAwsLbListener interface {
 	CdktfStack() cdktf.TerraformStack
 	CertificateArn() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -19637,18 +23347,23 @@ type DataAwsLbListener interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	SslPolicy() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	DefaultAction(index *string) DataAwsLbListenerDefaultAction
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetLoadBalancerArn()
@@ -19716,8 +23431,8 @@ func (j *jsiiProxy_DataAwsLbListener) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListener) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListener) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19866,8 +23581,8 @@ func (j *jsiiProxy_DataAwsLbListener) SslPolicy() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListener) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListener) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -19876,8 +23591,8 @@ func (j *jsiiProxy_DataAwsLbListener) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListener) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListener) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -19916,7 +23631,7 @@ func (j *jsiiProxy_DataAwsLbListener) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_listener.html aws_lb_listener} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_listener aws_lb_listener} Data Source.
 func NewDataAwsLbListener(scope constructs.Construct, id *string, config *DataAwsLbListenerConfig) DataAwsLbListener {
 	_init_.Initialize()
 
@@ -19931,7 +23646,7 @@ func NewDataAwsLbListener(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_listener.html aws_lb_listener} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_listener aws_lb_listener} Data Source.
 func NewDataAwsLbListener_Override(d DataAwsLbListener, scope constructs.Construct, id *string, config *DataAwsLbListenerConfig) {
 	_init_.Initialize()
 
@@ -19942,7 +23657,7 @@ func NewDataAwsLbListener_Override(d DataAwsLbListener, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListener) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLbListener) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19990,7 +23705,7 @@ func (j *jsiiProxy_DataAwsLbListener) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListener) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsLbListener) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -20051,12 +23766,40 @@ func (d *jsiiProxy_DataAwsLbListener) DefaultAction(index *string) DataAwsLbList
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListener) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListener) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListener) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20093,12 +23836,54 @@ func (d *jsiiProxy_DataAwsLbListener) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListener) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListener) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListener) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListener) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20223,41 +24008,48 @@ func (d *jsiiProxy_DataAwsLbListener) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type DataAwsLbListenerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_listener.html#load_balancer_arn DataAwsLbListener#load_balancer_arn}.
-	LoadBalancerArn *string `json:"loadBalancerArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_listener.html#port DataAwsLbListener#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_listener.html#tags DataAwsLbListener#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_listener#load_balancer_arn DataAwsLbListener#load_balancer_arn}.
+	LoadBalancerArn *string `json:"loadBalancerArn" yaml:"loadBalancerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_listener#port DataAwsLbListener#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_listener#tags DataAwsLbListener#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsLbListenerDefaultAction interface {
 	cdktf.ComplexComputedList
-	AuthenticateCognito() interface{}
-	AuthenticateOidc() interface{}
+	AuthenticateCognito() cdktf.IResolvable
+	AuthenticateOidc() cdktf.IResolvable
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	FixedResponse() interface{}
-	Forward() interface{}
+	FixedResponse() cdktf.IResolvable
+	Forward() cdktf.IResolvable
 	Order() *float64
-	Redirect() interface{}
+	Redirect() cdktf.IResolvable
 	TargetGroupArn() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -20266,8 +24058,8 @@ type jsiiProxy_DataAwsLbListenerDefaultAction struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultAction) AuthenticateCognito() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) AuthenticateCognito() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"authenticateCognito",
@@ -20276,8 +24068,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) AuthenticateCognito() interfa
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultAction) AuthenticateOidc() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) AuthenticateOidc() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"authenticateOidc",
@@ -20296,8 +24088,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) ComplexComputedListIndex() *s
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultAction) FixedResponse() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) FixedResponse() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"fixedResponse",
@@ -20306,8 +24098,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) FixedResponse() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultAction) Forward() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) Forward() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"forward",
@@ -20326,8 +24118,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) Order() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultAction) Redirect() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) Redirect() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"redirect",
@@ -20356,8 +24148,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultAction) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20376,15 +24168,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) Type() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultAction(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultAction {
+func NewDataAwsLbListenerDefaultAction(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultAction {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultAction{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultAction",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -20392,12 +24194,12 @@ func NewDataAwsLbListenerDefaultAction(terraformResource cdktf.ITerraformResourc
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultAction_Override(d DataAwsLbListenerDefaultAction, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultAction_Override(d DataAwsLbListenerDefaultAction, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultAction",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -20418,7 +24220,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultAction) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20426,13 +24228,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultAction) SetTerraformResource(val cdkt
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultAction) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20469,12 +24307,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultAction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20498,7 +24378,7 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultAction) InterpolationForAttribute(pro
 
 type DataAwsLbListenerDefaultActionAuthenticateCognito interface {
 	cdktf.ComplexComputedList
-	AuthenticationRequestExtraParams() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	OnUnauthenticatedRequest() *string
@@ -20507,15 +24387,22 @@ type DataAwsLbListenerDefaultActionAuthenticateCognito interface {
 	SessionTimeout() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserPoolArn() *string
 	UserPoolClientId() *string
 	UserPoolDomain() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -20524,8 +24411,8 @@ type jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -20594,8 +24481,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20634,15 +24521,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) UserPoolDo
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultActionAuthenticateCognito(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultActionAuthenticateCognito {
+func NewDataAwsLbListenerDefaultActionAuthenticateCognito(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultActionAuthenticateCognito {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateCognito",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -20650,12 +24547,12 @@ func NewDataAwsLbListenerDefaultActionAuthenticateCognito(terraformResource cdkt
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultActionAuthenticateCognito_Override(d DataAwsLbListenerDefaultActionAuthenticateCognito, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultActionAuthenticateCognito_Override(d DataAwsLbListenerDefaultActionAuthenticateCognito, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateCognito",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -20676,7 +24573,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20684,13 +24581,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) SetTerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20727,12 +24660,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetNumberA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20756,7 +24731,7 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateCognito) Interpolat
 
 type DataAwsLbListenerDefaultActionAuthenticateOidc interface {
 	cdktf.ComplexComputedList
-	AuthenticationRequestExtraParams() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
 	AuthorizationEndpoint() *string
 	ClientId() *string
 	ClientSecret() *string
@@ -20769,14 +24744,21 @@ type DataAwsLbListenerDefaultActionAuthenticateOidc interface {
 	SessionTimeout() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TokenEndpoint() *string
 	UserInfoEndpoint() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -20785,8 +24767,8 @@ type jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -20895,8 +24877,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20925,15 +24907,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) UserInfoEndpo
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultActionAuthenticateOidc {
+func NewDataAwsLbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultActionAuthenticateOidc {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateOidc",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -20941,12 +24933,12 @@ func NewDataAwsLbListenerDefaultActionAuthenticateOidc(terraformResource cdktf.I
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultActionAuthenticateOidc_Override(d DataAwsLbListenerDefaultActionAuthenticateOidc, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultActionAuthenticateOidc_Override(d DataAwsLbListenerDefaultActionAuthenticateOidc, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionAuthenticateOidc",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -20967,7 +24959,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20975,13 +24967,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) SetTerraformR
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21018,12 +25046,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionAuthenticateOidc) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21054,12 +25124,19 @@ type DataAwsLbListenerDefaultActionFixedResponse interface {
 	StatusCode() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -21118,8 +25195,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21128,15 +25205,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultActionFixedResponse(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultActionFixedResponse {
+func NewDataAwsLbListenerDefaultActionFixedResponse(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultActionFixedResponse {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionFixedResponse",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -21144,12 +25231,12 @@ func NewDataAwsLbListenerDefaultActionFixedResponse(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultActionFixedResponse_Override(d DataAwsLbListenerDefaultActionFixedResponse, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultActionFixedResponse_Override(d DataAwsLbListenerDefaultActionFixedResponse, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionFixedResponse",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -21170,7 +25257,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21178,13 +25265,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21221,12 +25344,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionFixedResponse) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21252,16 +25417,23 @@ type DataAwsLbListenerDefaultActionForward interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Stickiness() interface{}
-	TargetGroup() interface{}
+	Stickiness() cdktf.IResolvable
+	TargetGroup() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -21280,8 +25452,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) ComplexComputedListInd
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) Stickiness() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) Stickiness() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"stickiness",
@@ -21290,8 +25462,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) Stickiness() interface
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) TargetGroup() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) TargetGroup() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"targetGroup",
@@ -21310,8 +25482,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21320,15 +25492,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultActionForward(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultActionForward {
+func NewDataAwsLbListenerDefaultActionForward(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultActionForward {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultActionForward{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForward",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -21336,12 +25518,12 @@ func NewDataAwsLbListenerDefaultActionForward(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultActionForward_Override(d DataAwsLbListenerDefaultActionForward, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultActionForward_Override(d DataAwsLbListenerDefaultActionForward, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForward",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -21362,7 +25544,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21370,13 +25552,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForward) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21413,12 +25631,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForward) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21445,15 +25705,22 @@ type DataAwsLbListenerDefaultActionForwardStickiness interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	Duration() *float64
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -21482,8 +25749,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) Duration() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -21502,8 +25769,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21512,15 +25779,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) TerraformRes
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultActionForwardStickiness(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultActionForwardStickiness {
+func NewDataAwsLbListenerDefaultActionForwardStickiness(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultActionForwardStickiness {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -21528,12 +25805,12 @@ func NewDataAwsLbListenerDefaultActionForwardStickiness(terraformResource cdktf.
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultActionForwardStickiness_Override(d DataAwsLbListenerDefaultActionForwardStickiness, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultActionForwardStickiness_Override(d DataAwsLbListenerDefaultActionForwardStickiness, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -21554,7 +25831,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21562,13 +25839,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) SetTerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21605,12 +25918,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardStickiness) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21639,13 +25994,20 @@ type DataAwsLbListenerDefaultActionForwardTargetGroup interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Weight() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -21684,8 +26046,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21704,15 +26066,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) Weight() *f
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultActionForwardTargetGroup(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultActionForwardTargetGroup {
+func NewDataAwsLbListenerDefaultActionForwardTargetGroup(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultActionForwardTargetGroup {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardTargetGroup",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -21720,12 +26092,12 @@ func NewDataAwsLbListenerDefaultActionForwardTargetGroup(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultActionForwardTargetGroup_Override(d DataAwsLbListenerDefaultActionForwardTargetGroup, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultActionForwardTargetGroup_Override(d DataAwsLbListenerDefaultActionForwardTargetGroup, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionForwardTargetGroup",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -21746,7 +26118,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21754,13 +26126,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21797,12 +26205,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionForwardTargetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21836,12 +26286,19 @@ type DataAwsLbListenerDefaultActionRedirect interface {
 	StatusCode() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -21930,8 +26387,8 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21940,15 +26397,25 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) TerraformResource() c
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbListenerDefaultActionRedirect(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbListenerDefaultActionRedirect {
+func NewDataAwsLbListenerDefaultActionRedirect(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbListenerDefaultActionRedirect {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbListenerDefaultActionRedirect{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionRedirect",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -21956,12 +26423,12 @@ func NewDataAwsLbListenerDefaultActionRedirect(terraformResource cdktf.ITerrafor
 }
 
 // Experimental.
-func NewDataAwsLbListenerDefaultActionRedirect_Override(d DataAwsLbListenerDefaultActionRedirect, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbListenerDefaultActionRedirect_Override(d DataAwsLbListenerDefaultActionRedirect, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbListenerDefaultActionRedirect",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -21982,7 +26449,7 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21990,13 +26457,49 @@ func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) SetTerraformResource(
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22033,12 +26536,54 @@ func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetNumberAttribute(te
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbListenerDefaultActionRedirect) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22071,12 +26616,19 @@ type DataAwsLbSubnetMapping interface {
 	SubnetId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -22155,8 +26707,8 @@ func (j *jsiiProxy_DataAwsLbSubnetMapping) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbSubnetMapping) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbSubnetMapping) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22165,15 +26717,25 @@ func (j *jsiiProxy_DataAwsLbSubnetMapping) TerraformResource() cdktf.ITerraformR
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbSubnetMapping) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbSubnetMapping(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbSubnetMapping {
+func NewDataAwsLbSubnetMapping(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbSubnetMapping {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbSubnetMapping{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbSubnetMapping",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -22181,12 +26743,12 @@ func NewDataAwsLbSubnetMapping(terraformResource cdktf.ITerraformResource, terra
 }
 
 // Experimental.
-func NewDataAwsLbSubnetMapping_Override(d DataAwsLbSubnetMapping, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbSubnetMapping_Override(d DataAwsLbSubnetMapping, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbSubnetMapping",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -22207,7 +26769,7 @@ func (j *jsiiProxy_DataAwsLbSubnetMapping) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbSubnetMapping) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbSubnetMapping) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22215,13 +26777,49 @@ func (j *jsiiProxy_DataAwsLbSubnetMapping) SetTerraformResource(val cdktf.ITerra
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbSubnetMapping) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbSubnetMapping) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbSubnetMapping) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbSubnetMapping) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbSubnetMapping) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22258,12 +26856,54 @@ func (d *jsiiProxy_DataAwsLbSubnetMapping) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbSubnetMapping) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbSubnetMapping) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbSubnetMapping) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbSubnetMapping) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22285,23 +26925,23 @@ func (d *jsiiProxy_DataAwsLbSubnetMapping) InterpolationForAttribute(property *s
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group.html aws_lb_target_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group aws_lb_target_group}.
 type DataAwsLbTargetGroup interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
-	ConnectionTermination() interface{}
+	ConnectionTermination() cdktf.IResolvable
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeregistrationDelay() *float64
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	LambdaMultiValueHeadersEnabled() interface{}
+	LambdaMultiValueHeadersEnabled() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	LoadBalancingAlgorithmType() *string
@@ -22315,22 +26955,27 @@ type DataAwsLbTargetGroup interface {
 	ProtocolVersion() *string
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
-	ProxyProtocolV2() interface{}
+	ProxyProtocolV2() cdktf.IResolvable
 	RawOverrides() interface{}
 	SlowStart() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TargetType() *string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	HealthCheck(index *string) DataAwsLbTargetGroupHealthCheck
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
@@ -22379,8 +27024,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) ConnectionTermination() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroup) ConnectionTermination() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"connectionTermination",
@@ -22399,8 +27044,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -22459,8 +27104,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) LambdaMultiValueHeadersEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroup) LambdaMultiValueHeadersEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"lambdaMultiValueHeadersEnabled",
@@ -22569,8 +27214,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) ProxyProtocolV2() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroup) ProxyProtocolV2() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"proxyProtocolV2",
@@ -22599,8 +27244,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) SlowStart() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -22609,8 +27254,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -22669,7 +27314,7 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group.html aws_lb_target_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group aws_lb_target_group} Data Source.
 func NewDataAwsLbTargetGroup(scope constructs.Construct, id *string, config *DataAwsLbTargetGroupConfig) DataAwsLbTargetGroup {
 	_init_.Initialize()
 
@@ -22684,7 +27329,7 @@ func NewDataAwsLbTargetGroup(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group.html aws_lb_target_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group aws_lb_target_group} Data Source.
 func NewDataAwsLbTargetGroup_Override(d DataAwsLbTargetGroup, scope constructs.Construct, id *string, config *DataAwsLbTargetGroupConfig) {
 	_init_.Initialize()
 
@@ -22695,7 +27340,7 @@ func NewDataAwsLbTargetGroup_Override(d DataAwsLbTargetGroup, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLbTargetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -22735,7 +27380,7 @@ func (j *jsiiProxy_DataAwsLbTargetGroup) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsLbTargetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -22783,12 +27428,40 @@ func (d *jsiiProxy_DataAwsLbTargetGroup) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbTargetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22825,12 +27498,54 @@ func (d *jsiiProxy_DataAwsLbTargetGroup) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbTargetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22973,24 +27688,24 @@ func (d *jsiiProxy_DataAwsLbTargetGroup) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type DataAwsLbTargetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group.html#name DataAwsLbTargetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group.html#tags DataAwsLbTargetGroup#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group#name DataAwsLbTargetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lb_target_group#tags DataAwsLbTargetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsLbTargetGroupHealthCheck interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	HealthyThreshold() *float64
 	Interval() *float64
 	Matcher() *string
@@ -22999,14 +27714,21 @@ type DataAwsLbTargetGroupHealthCheck interface {
 	Protocol() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Timeout() *float64
 	UnhealthyThreshold() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -23025,8 +27747,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) ComplexComputedListIndex() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -23105,8 +27827,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) TerraformAttribute() *string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23135,15 +27857,25 @@ func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) UnhealthyThreshold() *float6
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbTargetGroupHealthCheck(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbTargetGroupHealthCheck {
+func NewDataAwsLbTargetGroupHealthCheck(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbTargetGroupHealthCheck {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbTargetGroupHealthCheck{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbTargetGroupHealthCheck",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -23151,12 +27883,12 @@ func NewDataAwsLbTargetGroupHealthCheck(terraformResource cdktf.ITerraformResour
 }
 
 // Experimental.
-func NewDataAwsLbTargetGroupHealthCheck_Override(d DataAwsLbTargetGroupHealthCheck, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbTargetGroupHealthCheck_Override(d DataAwsLbTargetGroupHealthCheck, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbTargetGroupHealthCheck",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -23177,7 +27909,7 @@ func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) SetTerraformAttribute(val *s
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23185,13 +27917,49 @@ func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) SetTerraformResource(val cdk
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbTargetGroupHealthCheck) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23228,12 +27996,54 @@ func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupHealthCheck) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23261,16 +28071,23 @@ type DataAwsLbTargetGroupStickiness interface {
 	SetComplexComputedListIndex(val *string)
 	CookieDuration() *float64
 	CookieName() *string
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -23309,8 +28126,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) CookieName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -23329,8 +28146,8 @@ func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23349,15 +28166,25 @@ func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) Type() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLbTargetGroupStickiness(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLbTargetGroupStickiness {
+func NewDataAwsLbTargetGroupStickiness(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLbTargetGroupStickiness {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLbTargetGroupStickiness{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbTargetGroupStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -23365,12 +28192,12 @@ func NewDataAwsLbTargetGroupStickiness(terraformResource cdktf.ITerraformResourc
 }
 
 // Experimental.
-func NewDataAwsLbTargetGroupStickiness_Override(d DataAwsLbTargetGroupStickiness, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLbTargetGroupStickiness_Override(d DataAwsLbTargetGroupStickiness, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elb.DataAwsLbTargetGroupStickiness",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -23391,7 +28218,7 @@ func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23399,13 +28226,49 @@ func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) SetTerraformResource(val cdkt
 	)
 }
 
+func (j *jsiiProxy_DataAwsLbTargetGroupStickiness) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23442,12 +28305,54 @@ func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23469,7 +28374,7 @@ func (d *jsiiProxy_DataAwsLbTargetGroupStickiness) InterpolationForAttribute(pro
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb.html aws_lb}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb aws_lb}.
 type Lb interface {
 	cdktf.TerraformResource
 	AccessLogs() LbAccessLogsOutputReference
@@ -23478,8 +28383,8 @@ type Lb interface {
 	ArnSuffix() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerOwnedIpv4Pool() *string
 	SetCustomerOwnedIpv4Pool(val *string)
 	CustomerOwnedIpv4PoolInput() *string
@@ -23534,18 +28439,18 @@ type Lb interface {
 	SecurityGroups() *[]*string
 	SetSecurityGroups(val *[]*string)
 	SecurityGroupsInput() *[]*string
-	SubnetMapping() *[]*LbSubnetMapping
-	SetSubnetMapping(val *[]*LbSubnetMapping)
-	SubnetMappingInput() *[]*LbSubnetMapping
+	SubnetMapping() interface{}
+	SetSubnetMapping(val interface{})
+	SubnetMappingInput() interface{}
 	Subnets() *[]*string
 	SetSubnets(val *[]*string)
 	SubnetsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -23554,10 +28459,15 @@ type Lb interface {
 	VpcId() *string
 	ZoneId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAccessLogs(value *LbAccessLogs)
@@ -23654,8 +28564,8 @@ func (j *jsiiProxy_Lb) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Lb) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Lb) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -24034,8 +28944,8 @@ func (j *jsiiProxy_Lb) SecurityGroupsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_Lb) SubnetMapping() *[]*LbSubnetMapping {
-	var returns *[]*LbSubnetMapping
+func (j *jsiiProxy_Lb) SubnetMapping() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subnetMapping",
@@ -24044,8 +28954,8 @@ func (j *jsiiProxy_Lb) SubnetMapping() *[]*LbSubnetMapping {
 	return returns
 }
 
-func (j *jsiiProxy_Lb) SubnetMappingInput() *[]*LbSubnetMapping {
-	var returns *[]*LbSubnetMapping
+func (j *jsiiProxy_Lb) SubnetMappingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subnetMappingInput",
@@ -24074,8 +28984,8 @@ func (j *jsiiProxy_Lb) SubnetsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_Lb) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Lb) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -24084,8 +28994,8 @@ func (j *jsiiProxy_Lb) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Lb) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Lb) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -24094,8 +29004,8 @@ func (j *jsiiProxy_Lb) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Lb) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Lb) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -24104,8 +29014,8 @@ func (j *jsiiProxy_Lb) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Lb) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Lb) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -24184,7 +29094,7 @@ func (j *jsiiProxy_Lb) ZoneId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb.html aws_lb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb aws_lb} Resource.
 func NewLb(scope constructs.Construct, id *string, config *LbConfig) Lb {
 	_init_.Initialize()
 
@@ -24199,7 +29109,7 @@ func NewLb(scope constructs.Construct, id *string, config *LbConfig) Lb {
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb.html aws_lb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb aws_lb} Resource.
 func NewLb_Override(l Lb, scope constructs.Construct, id *string, config *LbConfig) {
 	_init_.Initialize()
 
@@ -24210,7 +29120,7 @@ func NewLb_Override(l Lb, scope constructs.Construct, id *string, config *LbConf
 	)
 }
 
-func (j *jsiiProxy_Lb) SetCount(val interface{}) {
+func (j *jsiiProxy_Lb) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -24354,7 +29264,7 @@ func (j *jsiiProxy_Lb) SetSecurityGroups(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Lb) SetSubnetMapping(val *[]*LbSubnetMapping) {
+func (j *jsiiProxy_Lb) SetSubnetMapping(val interface{}) {
 	_jsii_.Set(
 		j,
 		"subnetMapping",
@@ -24370,7 +29280,7 @@ func (j *jsiiProxy_Lb) SetSubnets(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Lb) SetTags(val interface{}) {
+func (j *jsiiProxy_Lb) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -24378,7 +29288,7 @@ func (j *jsiiProxy_Lb) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Lb) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Lb) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -24426,12 +29336,40 @@ func (l *jsiiProxy_Lb) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_Lb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_Lb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_Lb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24468,12 +29406,54 @@ func (l *jsiiProxy_Lb) GetNumberAttribute(terraformAttribute *string) *float64 {
 }
 
 // Experimental.
+func (l *jsiiProxy_Lb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_Lb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_Lb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_Lb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24748,12 +29728,12 @@ func (l *jsiiProxy_Lb) ToTerraform() interface{} {
 }
 
 type LbAccessLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#bucket Lb#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enabled Lb#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#prefix Lb#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#bucket Lb#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#enabled Lb#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#prefix Lb#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type LbAccessLogsOutputReference interface {
@@ -24773,12 +29753,17 @@ type LbAccessLogsOutputReference interface {
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -24880,8 +29865,8 @@ func (j *jsiiProxy_LbAccessLogsOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_LbAccessLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbAccessLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24890,7 +29875,7 @@ func (j *jsiiProxy_LbAccessLogsOutputReference) TerraformResource() cdktf.ITerra
 	return returns
 }
 
-func NewLbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbAccessLogsOutputReference {
+func NewLbAccessLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbAccessLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbAccessLogsOutputReference{}
@@ -24904,7 +29889,7 @@ func NewLbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource, 
 	return &j
 }
 
-func NewLbAccessLogsOutputReference_Override(l LbAccessLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbAccessLogsOutputReference_Override(l LbAccessLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24962,7 +29947,7 @@ func (j *jsiiProxy_LbAccessLogsOutputReference) SetTerraformAttribute(val *strin
 	)
 }
 
-func (j *jsiiProxy_LbAccessLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbAccessLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24971,12 +29956,40 @@ func (j *jsiiProxy_LbAccessLogsOutputReference) SetTerraformResource(val cdktf.I
 }
 
 // Experimental.
-func (l *jsiiProxy_LbAccessLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbAccessLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbAccessLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbAccessLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25013,12 +30026,54 @@ func (l *jsiiProxy_LbAccessLogsOutputReference) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (l *jsiiProxy_LbAccessLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbAccessLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbAccessLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbAccessLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25073,62 +30128,62 @@ func (l *jsiiProxy_LbAccessLogsOutputReference) ResetPrefix() {
 // AWS Elastic Load Balancer.
 type LbConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// access_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#access_logs Lb#access_logs}
-	AccessLogs *LbAccessLogs `json:"accessLogs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#customer_owned_ipv4_pool Lb#customer_owned_ipv4_pool}.
-	CustomerOwnedIpv4Pool *string `json:"customerOwnedIpv4Pool"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#desync_mitigation_mode Lb#desync_mitigation_mode}.
-	DesyncMitigationMode *string `json:"desyncMitigationMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#drop_invalid_header_fields Lb#drop_invalid_header_fields}.
-	DropInvalidHeaderFields interface{} `json:"dropInvalidHeaderFields"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enable_cross_zone_load_balancing Lb#enable_cross_zone_load_balancing}.
-	EnableCrossZoneLoadBalancing interface{} `json:"enableCrossZoneLoadBalancing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enable_deletion_protection Lb#enable_deletion_protection}.
-	EnableDeletionProtection interface{} `json:"enableDeletionProtection"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enable_http2 Lb#enable_http2}.
-	EnableHttp2 interface{} `json:"enableHttp2"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#enable_waf_fail_open Lb#enable_waf_fail_open}.
-	EnableWafFailOpen interface{} `json:"enableWafFailOpen"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#idle_timeout Lb#idle_timeout}.
-	IdleTimeout *float64 `json:"idleTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#internal Lb#internal}.
-	Internal interface{} `json:"internal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#ip_address_type Lb#ip_address_type}.
-	IpAddressType *string `json:"ipAddressType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#load_balancer_type Lb#load_balancer_type}.
-	LoadBalancerType *string `json:"loadBalancerType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#name Lb#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#name_prefix Lb#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#security_groups Lb#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#access_logs Lb#access_logs}
+	AccessLogs *LbAccessLogs `json:"accessLogs" yaml:"accessLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#customer_owned_ipv4_pool Lb#customer_owned_ipv4_pool}.
+	CustomerOwnedIpv4Pool *string `json:"customerOwnedIpv4Pool" yaml:"customerOwnedIpv4Pool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#desync_mitigation_mode Lb#desync_mitigation_mode}.
+	DesyncMitigationMode *string `json:"desyncMitigationMode" yaml:"desyncMitigationMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#drop_invalid_header_fields Lb#drop_invalid_header_fields}.
+	DropInvalidHeaderFields interface{} `json:"dropInvalidHeaderFields" yaml:"dropInvalidHeaderFields"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#enable_cross_zone_load_balancing Lb#enable_cross_zone_load_balancing}.
+	EnableCrossZoneLoadBalancing interface{} `json:"enableCrossZoneLoadBalancing" yaml:"enableCrossZoneLoadBalancing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#enable_deletion_protection Lb#enable_deletion_protection}.
+	EnableDeletionProtection interface{} `json:"enableDeletionProtection" yaml:"enableDeletionProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#enable_http2 Lb#enable_http2}.
+	EnableHttp2 interface{} `json:"enableHttp2" yaml:"enableHttp2"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#enable_waf_fail_open Lb#enable_waf_fail_open}.
+	EnableWafFailOpen interface{} `json:"enableWafFailOpen" yaml:"enableWafFailOpen"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#idle_timeout Lb#idle_timeout}.
+	IdleTimeout *float64 `json:"idleTimeout" yaml:"idleTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#internal Lb#internal}.
+	Internal interface{} `json:"internal" yaml:"internal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#ip_address_type Lb#ip_address_type}.
+	IpAddressType *string `json:"ipAddressType" yaml:"ipAddressType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#load_balancer_type Lb#load_balancer_type}.
+	LoadBalancerType *string `json:"loadBalancerType" yaml:"loadBalancerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#name Lb#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#name_prefix Lb#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#security_groups Lb#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 	// subnet_mapping block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#subnet_mapping Lb#subnet_mapping}
-	SubnetMapping *[]*LbSubnetMapping `json:"subnetMapping"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#subnets Lb#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#tags Lb#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#tags_all Lb#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#subnet_mapping Lb#subnet_mapping}
+	SubnetMapping interface{} `json:"subnetMapping" yaml:"subnetMapping"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#subnets Lb#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#tags Lb#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#tags_all Lb#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#timeouts Lb#timeouts}
-	Timeouts *LbTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#timeouts Lb#timeouts}
+	Timeouts *LbTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy.html aws_lb_cookie_stickiness_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy aws_lb_cookie_stickiness_policy}.
 type LbCookieStickinessPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -25136,8 +30191,8 @@ type LbCookieStickinessPolicy interface {
 	CookieExpirationPeriod() *float64
 	SetCookieExpirationPeriod(val *float64)
 	CookieExpirationPeriodInput() *float64
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -25162,10 +30217,15 @@ type LbCookieStickinessPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCookieExpirationPeriod()
@@ -25221,8 +30281,8 @@ func (j *jsiiProxy_LbCookieStickinessPolicy) CookieExpirationPeriodInput() *floa
 	return returns
 }
 
-func (j *jsiiProxy_LbCookieStickinessPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbCookieStickinessPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -25401,7 +30461,7 @@ func (j *jsiiProxy_LbCookieStickinessPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy.html aws_lb_cookie_stickiness_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy aws_lb_cookie_stickiness_policy} Resource.
 func NewLbCookieStickinessPolicy(scope constructs.Construct, id *string, config *LbCookieStickinessPolicyConfig) LbCookieStickinessPolicy {
 	_init_.Initialize()
 
@@ -25416,7 +30476,7 @@ func NewLbCookieStickinessPolicy(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy.html aws_lb_cookie_stickiness_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy aws_lb_cookie_stickiness_policy} Resource.
 func NewLbCookieStickinessPolicy_Override(l LbCookieStickinessPolicy, scope constructs.Construct, id *string, config *LbCookieStickinessPolicyConfig) {
 	_init_.Initialize()
 
@@ -25435,7 +30495,7 @@ func (j *jsiiProxy_LbCookieStickinessPolicy) SetCookieExpirationPeriod(val *floa
 	)
 }
 
-func (j *jsiiProxy_LbCookieStickinessPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_LbCookieStickinessPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -25531,12 +30591,40 @@ func (l *jsiiProxy_LbCookieStickinessPolicy) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (l *jsiiProxy_LbCookieStickinessPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbCookieStickinessPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbCookieStickinessPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25573,12 +30661,54 @@ func (l *jsiiProxy_LbCookieStickinessPolicy) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (l *jsiiProxy_LbCookieStickinessPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbCookieStickinessPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbCookieStickinessPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbCookieStickinessPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25687,24 +30817,24 @@ func (l *jsiiProxy_LbCookieStickinessPolicy) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type LbCookieStickinessPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy.html#lb_port LbCookieStickinessPolicy#lb_port}.
-	LbPort *float64 `json:"lbPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy.html#load_balancer LbCookieStickinessPolicy#load_balancer}.
-	LoadBalancer *string `json:"loadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy.html#name LbCookieStickinessPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy.html#cookie_expiration_period LbCookieStickinessPolicy#cookie_expiration_period}.
-	CookieExpirationPeriod *float64 `json:"cookieExpirationPeriod"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy#lb_port LbCookieStickinessPolicy#lb_port}.
+	LbPort *float64 `json:"lbPort" yaml:"lbPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy#load_balancer LbCookieStickinessPolicy#load_balancer}.
+	LoadBalancer *string `json:"loadBalancer" yaml:"loadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy#name LbCookieStickinessPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_cookie_stickiness_policy#cookie_expiration_period LbCookieStickinessPolicy#cookie_expiration_period}.
+	CookieExpirationPeriod *float64 `json:"cookieExpirationPeriod" yaml:"cookieExpirationPeriod"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html aws_lb_listener}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_listener aws_lb_listener}.
 type LbListener interface {
 	cdktf.TerraformResource
 	AlpnPolicy() *string
@@ -25716,11 +30846,11 @@ type LbListener interface {
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DefaultAction() *[]*LbListenerDefaultAction
-	SetDefaultAction(val *[]*LbListenerDefaultAction)
-	DefaultActionInput() *[]*LbListenerDefaultAction
+	Count() *float64
+	SetCount(val *float64)
+	DefaultAction() interface{}
+	SetDefaultAction(val interface{})
+	DefaultActionInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -25744,22 +30874,27 @@ type LbListener interface {
 	SslPolicy() *string
 	SetSslPolicy(val *string)
 	SslPolicyInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() LbListenerTimeoutsOutputReference
 	TimeoutsInput() *LbListenerTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *LbListenerTimeouts)
@@ -25853,8 +30988,8 @@ func (j *jsiiProxy_LbListener) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListener) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListener) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -25863,8 +30998,8 @@ func (j *jsiiProxy_LbListener) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListener) DefaultAction() *[]*LbListenerDefaultAction {
-	var returns *[]*LbListenerDefaultAction
+func (j *jsiiProxy_LbListener) DefaultAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"defaultAction",
@@ -25873,8 +31008,8 @@ func (j *jsiiProxy_LbListener) DefaultAction() *[]*LbListenerDefaultAction {
 	return returns
 }
 
-func (j *jsiiProxy_LbListener) DefaultActionInput() *[]*LbListenerDefaultAction {
-	var returns *[]*LbListenerDefaultAction
+func (j *jsiiProxy_LbListener) DefaultActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"defaultActionInput",
@@ -26043,8 +31178,8 @@ func (j *jsiiProxy_LbListener) SslPolicyInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_LbListener) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListener) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -26053,8 +31188,8 @@ func (j *jsiiProxy_LbListener) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListener) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListener) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -26063,8 +31198,8 @@ func (j *jsiiProxy_LbListener) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListener) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListener) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -26073,8 +31208,8 @@ func (j *jsiiProxy_LbListener) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListener) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListener) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -26133,7 +31268,7 @@ func (j *jsiiProxy_LbListener) TimeoutsInput() *LbListenerTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html aws_lb_listener} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener aws_lb_listener} Resource.
 func NewLbListener(scope constructs.Construct, id *string, config *LbListenerConfig) LbListener {
 	_init_.Initialize()
 
@@ -26148,7 +31283,7 @@ func NewLbListener(scope constructs.Construct, id *string, config *LbListenerCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html aws_lb_listener} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener aws_lb_listener} Resource.
 func NewLbListener_Override(l LbListener, scope constructs.Construct, id *string, config *LbListenerConfig) {
 	_init_.Initialize()
 
@@ -26175,7 +31310,7 @@ func (j *jsiiProxy_LbListener) SetCertificateArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LbListener) SetCount(val interface{}) {
+func (j *jsiiProxy_LbListener) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -26183,7 +31318,7 @@ func (j *jsiiProxy_LbListener) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LbListener) SetDefaultAction(val *[]*LbListenerDefaultAction) {
+func (j *jsiiProxy_LbListener) SetDefaultAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"defaultAction",
@@ -26247,7 +31382,7 @@ func (j *jsiiProxy_LbListener) SetSslPolicy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LbListener) SetTags(val interface{}) {
+func (j *jsiiProxy_LbListener) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -26255,7 +31390,7 @@ func (j *jsiiProxy_LbListener) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LbListener) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_LbListener) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -26303,12 +31438,40 @@ func (l *jsiiProxy_LbListener) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListener) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListener) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListener) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26345,12 +31508,54 @@ func (l *jsiiProxy_LbListener) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListener) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListener) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListener) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListener) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26520,7 +31725,7 @@ func (l *jsiiProxy_LbListener) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate.html aws_lb_listener_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate aws_lb_listener_certificate}.
 type LbListenerCertificate interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -26528,8 +31733,8 @@ type LbListenerCertificate interface {
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -26548,10 +31753,15 @@ type LbListenerCertificate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -26606,8 +31816,8 @@ func (j *jsiiProxy_LbListenerCertificate) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -26746,7 +31956,7 @@ func (j *jsiiProxy_LbListenerCertificate) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate.html aws_lb_listener_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate aws_lb_listener_certificate} Resource.
 func NewLbListenerCertificate(scope constructs.Construct, id *string, config *LbListenerCertificateConfig) LbListenerCertificate {
 	_init_.Initialize()
 
@@ -26761,7 +31971,7 @@ func NewLbListenerCertificate(scope constructs.Construct, id *string, config *Lb
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate.html aws_lb_listener_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate aws_lb_listener_certificate} Resource.
 func NewLbListenerCertificate_Override(l LbListenerCertificate, scope constructs.Construct, id *string, config *LbListenerCertificateConfig) {
 	_init_.Initialize()
 
@@ -26780,7 +31990,7 @@ func (j *jsiiProxy_LbListenerCertificate) SetCertificateArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LbListenerCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_LbListenerCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -26860,12 +32070,40 @@ func (l *jsiiProxy_LbListenerCertificate) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26902,12 +32140,54 @@ func (l *jsiiProxy_LbListenerCertificate) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27008,108 +32288,108 @@ func (l *jsiiProxy_LbListenerCertificate) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type LbListenerCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate.html#certificate_arn LbListenerCertificate#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate.html#listener_arn LbListenerCertificate#listener_arn}.
-	ListenerArn *string `json:"listenerArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate#certificate_arn LbListenerCertificate#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_certificate#listener_arn LbListenerCertificate#listener_arn}.
+	ListenerArn *string `json:"listenerArn" yaml:"listenerArn"`
 }
 
 // AWS Elastic Load Balancer.
 type LbListenerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// default_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#default_action LbListener#default_action}
-	DefaultAction *[]*LbListenerDefaultAction `json:"defaultAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#load_balancer_arn LbListener#load_balancer_arn}.
-	LoadBalancerArn *string `json:"loadBalancerArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#alpn_policy LbListener#alpn_policy}.
-	AlpnPolicy *string `json:"alpnPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#certificate_arn LbListener#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#port LbListener#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#protocol LbListener#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#ssl_policy LbListener#ssl_policy}.
-	SslPolicy *string `json:"sslPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#tags LbListener#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#tags_all LbListener#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#default_action LbListener#default_action}
+	DefaultAction interface{} `json:"defaultAction" yaml:"defaultAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#load_balancer_arn LbListener#load_balancer_arn}.
+	LoadBalancerArn *string `json:"loadBalancerArn" yaml:"loadBalancerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#alpn_policy LbListener#alpn_policy}.
+	AlpnPolicy *string `json:"alpnPolicy" yaml:"alpnPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#certificate_arn LbListener#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#port LbListener#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#protocol LbListener#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#ssl_policy LbListener#ssl_policy}.
+	SslPolicy *string `json:"sslPolicy" yaml:"sslPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#tags LbListener#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#tags_all LbListener#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#timeouts LbListener#timeouts}
-	Timeouts *LbListenerTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#timeouts LbListener#timeouts}
+	Timeouts *LbListenerTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type LbListenerDefaultAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#type LbListener#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#type LbListener#type}.
+	Type *string `json:"type" yaml:"type"`
 	// authenticate_cognito block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#authenticate_cognito LbListener#authenticate_cognito}
-	AuthenticateCognito *LbListenerDefaultActionAuthenticateCognito `json:"authenticateCognito"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#authenticate_cognito LbListener#authenticate_cognito}
+	AuthenticateCognito *LbListenerDefaultActionAuthenticateCognito `json:"authenticateCognito" yaml:"authenticateCognito"`
 	// authenticate_oidc block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#authenticate_oidc LbListener#authenticate_oidc}
-	AuthenticateOidc *LbListenerDefaultActionAuthenticateOidc `json:"authenticateOidc"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#authenticate_oidc LbListener#authenticate_oidc}
+	AuthenticateOidc *LbListenerDefaultActionAuthenticateOidc `json:"authenticateOidc" yaml:"authenticateOidc"`
 	// fixed_response block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#fixed_response LbListener#fixed_response}
-	FixedResponse *LbListenerDefaultActionFixedResponse `json:"fixedResponse"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#fixed_response LbListener#fixed_response}
+	FixedResponse *LbListenerDefaultActionFixedResponse `json:"fixedResponse" yaml:"fixedResponse"`
 	// forward block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#forward LbListener#forward}
-	Forward *LbListenerDefaultActionForward `json:"forward"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#order LbListener#order}.
-	Order *float64 `json:"order"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#forward LbListener#forward}
+	Forward *LbListenerDefaultActionForward `json:"forward" yaml:"forward"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#order LbListener#order}.
+	Order *float64 `json:"order" yaml:"order"`
 	// redirect block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#redirect LbListener#redirect}
-	Redirect *LbListenerDefaultActionRedirect `json:"redirect"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#target_group_arn LbListener#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#redirect LbListener#redirect}
+	Redirect *LbListenerDefaultActionRedirect `json:"redirect" yaml:"redirect"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#target_group_arn LbListener#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
 }
 
 type LbListenerDefaultActionAuthenticateCognito struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#user_pool_arn LbListener#user_pool_arn}.
-	UserPoolArn *string `json:"userPoolArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#user_pool_client_id LbListener#user_pool_client_id}.
-	UserPoolClientId *string `json:"userPoolClientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#user_pool_domain LbListener#user_pool_domain}.
-	UserPoolDomain *string `json:"userPoolDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#authentication_request_extra_params LbListener#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#on_unauthenticated_request LbListener#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#scope LbListener#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#session_cookie_name LbListener#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#session_timeout LbListener#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#user_pool_arn LbListener#user_pool_arn}.
+	UserPoolArn *string `json:"userPoolArn" yaml:"userPoolArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#user_pool_client_id LbListener#user_pool_client_id}.
+	UserPoolClientId *string `json:"userPoolClientId" yaml:"userPoolClientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#user_pool_domain LbListener#user_pool_domain}.
+	UserPoolDomain *string `json:"userPoolDomain" yaml:"userPoolDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#authentication_request_extra_params LbListener#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#on_unauthenticated_request LbListener#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#scope LbListener#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#session_cookie_name LbListener#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#session_timeout LbListener#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type LbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	InternalValue() *LbListenerDefaultActionAuthenticateCognito
 	SetInternalValue(val *LbListenerDefaultActionAuthenticateCognito)
 	IsSingleItem() *bool
@@ -27128,8 +32408,8 @@ type LbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserPoolArn() *string
 	SetUserPoolArn(val *string)
 	UserPoolArnInput() *string
@@ -27139,10 +32419,15 @@ type LbListenerDefaultActionAuthenticateCognitoOutputReference interface {
 	UserPoolDomain() *string
 	SetUserPoolDomain(val *string)
 	UserPoolDomainInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -27157,8 +32442,8 @@ type jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference struct 
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -27167,8 +32452,8 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Au
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -27287,8 +32572,8 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -27357,7 +32642,7 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Us
 	return returns
 }
 
-func NewLbListenerDefaultActionAuthenticateCognitoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionAuthenticateCognitoOutputReference {
+func NewLbListenerDefaultActionAuthenticateCognitoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionAuthenticateCognitoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference{}
@@ -27371,7 +32656,7 @@ func NewLbListenerDefaultActionAuthenticateCognitoOutputReference(terraformResou
 	return &j
 }
 
-func NewLbListenerDefaultActionAuthenticateCognitoOutputReference_Override(l LbListenerDefaultActionAuthenticateCognitoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerDefaultActionAuthenticateCognitoOutputReference_Override(l LbListenerDefaultActionAuthenticateCognitoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -27381,7 +32666,7 @@ func NewLbListenerDefaultActionAuthenticateCognitoOutputReference_Override(l LbL
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -27445,7 +32730,7 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -27478,12 +32763,40 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Se
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27520,12 +32833,54 @@ func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Ge
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27602,35 +32957,35 @@ func (l *jsiiProxy_LbListenerDefaultActionAuthenticateCognitoOutputReference) Re
 }
 
 type LbListenerDefaultActionAuthenticateOidc struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#authorization_endpoint LbListener#authorization_endpoint}.
-	AuthorizationEndpoint *string `json:"authorizationEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#client_id LbListener#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#client_secret LbListener#client_secret}.
-	ClientSecret *string `json:"clientSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#issuer LbListener#issuer}.
-	Issuer *string `json:"issuer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#token_endpoint LbListener#token_endpoint}.
-	TokenEndpoint *string `json:"tokenEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#user_info_endpoint LbListener#user_info_endpoint}.
-	UserInfoEndpoint *string `json:"userInfoEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#authentication_request_extra_params LbListener#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#on_unauthenticated_request LbListener#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#scope LbListener#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#session_cookie_name LbListener#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#session_timeout LbListener#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#authorization_endpoint LbListener#authorization_endpoint}.
+	AuthorizationEndpoint *string `json:"authorizationEndpoint" yaml:"authorizationEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#client_id LbListener#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#client_secret LbListener#client_secret}.
+	ClientSecret *string `json:"clientSecret" yaml:"clientSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#issuer LbListener#issuer}.
+	Issuer *string `json:"issuer" yaml:"issuer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#token_endpoint LbListener#token_endpoint}.
+	TokenEndpoint *string `json:"tokenEndpoint" yaml:"tokenEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#user_info_endpoint LbListener#user_info_endpoint}.
+	UserInfoEndpoint *string `json:"userInfoEndpoint" yaml:"userInfoEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#authentication_request_extra_params LbListener#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#on_unauthenticated_request LbListener#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#scope LbListener#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#session_cookie_name LbListener#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#session_timeout LbListener#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type LbListenerDefaultActionAuthenticateOidcOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	AuthorizationEndpoint() *string
 	SetAuthorizationEndpoint(val *string)
 	AuthorizationEndpointInput() *string
@@ -27661,18 +33016,23 @@ type LbListenerDefaultActionAuthenticateOidcOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TokenEndpoint() *string
 	SetTokenEndpoint(val *string)
 	TokenEndpointInput() *string
 	UserInfoEndpoint() *string
 	SetUserInfoEndpoint(val *string)
 	UserInfoEndpointInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -27687,8 +33047,8 @@ type jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -27697,8 +33057,8 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) Authe
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -27897,8 +33257,8 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -27947,7 +33307,7 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) UserI
 	return returns
 }
 
-func NewLbListenerDefaultActionAuthenticateOidcOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionAuthenticateOidcOutputReference {
+func NewLbListenerDefaultActionAuthenticateOidcOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionAuthenticateOidcOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference{}
@@ -27961,7 +33321,7 @@ func NewLbListenerDefaultActionAuthenticateOidcOutputReference(terraformResource
 	return &j
 }
 
-func NewLbListenerDefaultActionAuthenticateOidcOutputReference_Override(l LbListenerDefaultActionAuthenticateOidcOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerDefaultActionAuthenticateOidcOutputReference_Override(l LbListenerDefaultActionAuthenticateOidcOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -27971,7 +33331,7 @@ func NewLbListenerDefaultActionAuthenticateOidcOutputReference_Override(l LbList
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -28067,7 +33427,7 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28092,12 +33452,40 @@ func (j *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) SetUs
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28134,12 +33522,54 @@ func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetNu
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28216,12 +33646,12 @@ func (l *jsiiProxy_LbListenerDefaultActionAuthenticateOidcOutputReference) Reset
 }
 
 type LbListenerDefaultActionFixedResponse struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#content_type LbListener#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#message_body LbListener#message_body}.
-	MessageBody *string `json:"messageBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#status_code LbListener#status_code}.
-	StatusCode *string `json:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#content_type LbListener#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#message_body LbListener#message_body}.
+	MessageBody *string `json:"messageBody" yaml:"messageBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#status_code LbListener#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
 }
 
 type LbListenerDefaultActionFixedResponseOutputReference interface {
@@ -28241,12 +33671,17 @@ type LbListenerDefaultActionFixedResponseOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMessageBody()
@@ -28348,8 +33783,8 @@ func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28358,7 +33793,7 @@ func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) Terrafor
 	return returns
 }
 
-func NewLbListenerDefaultActionFixedResponseOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionFixedResponseOutputReference {
+func NewLbListenerDefaultActionFixedResponseOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionFixedResponseOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference{}
@@ -28372,7 +33807,7 @@ func NewLbListenerDefaultActionFixedResponseOutputReference(terraformResource cd
 	return &j
 }
 
-func NewLbListenerDefaultActionFixedResponseOutputReference_Override(l LbListenerDefaultActionFixedResponseOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerDefaultActionFixedResponseOutputReference_Override(l LbListenerDefaultActionFixedResponseOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -28430,7 +33865,7 @@ func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28439,12 +33874,40 @@ func (j *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) SetTerra
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28481,12 +33944,54 @@ func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetNumbe
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28541,12 +34046,12 @@ func (l *jsiiProxy_LbListenerDefaultActionFixedResponseOutputReference) ResetSta
 type LbListenerDefaultActionForward struct {
 	// target_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#target_group LbListener#target_group}
-	TargetGroup *[]*LbListenerDefaultActionForwardTargetGroup `json:"targetGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#target_group LbListener#target_group}
+	TargetGroup interface{} `json:"targetGroup" yaml:"targetGroup"`
 	// stickiness block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#stickiness LbListener#stickiness}
-	Stickiness *LbListenerDefaultActionForwardStickiness `json:"stickiness"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#stickiness LbListener#stickiness}
+	Stickiness *LbListenerDefaultActionForwardStickiness `json:"stickiness" yaml:"stickiness"`
 }
 
 type LbListenerDefaultActionForwardOutputReference interface {
@@ -28557,17 +34062,22 @@ type LbListenerDefaultActionForwardOutputReference interface {
 	SetIsSingleItem(val *bool)
 	Stickiness() LbListenerDefaultActionForwardStickinessOutputReference
 	StickinessInput() *LbListenerDefaultActionForwardStickiness
-	TargetGroup() *[]*LbListenerDefaultActionForwardTargetGroup
-	SetTargetGroup(val *[]*LbListenerDefaultActionForwardTargetGroup)
-	TargetGroupInput() *[]*LbListenerDefaultActionForwardTargetGroup
+	TargetGroup() interface{}
+	SetTargetGroup(val interface{})
+	TargetGroupInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutStickiness(value *LbListenerDefaultActionForwardStickiness)
@@ -28619,8 +34129,8 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) StickinessInpu
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TargetGroup() *[]*LbListenerDefaultActionForwardTargetGroup {
-	var returns *[]*LbListenerDefaultActionForwardTargetGroup
+func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TargetGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroup",
@@ -28629,8 +34139,8 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TargetGroup() 
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TargetGroupInput() *[]*LbListenerDefaultActionForwardTargetGroup {
-	var returns *[]*LbListenerDefaultActionForwardTargetGroup
+func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TargetGroupInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroupInput",
@@ -28649,8 +34159,8 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28659,7 +34169,7 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) TerraformResou
 	return returns
 }
 
-func NewLbListenerDefaultActionForwardOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionForwardOutputReference {
+func NewLbListenerDefaultActionForwardOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionForwardOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerDefaultActionForwardOutputReference{}
@@ -28673,7 +34183,7 @@ func NewLbListenerDefaultActionForwardOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewLbListenerDefaultActionForwardOutputReference_Override(l LbListenerDefaultActionForwardOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerDefaultActionForwardOutputReference_Override(l LbListenerDefaultActionForwardOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -28699,7 +34209,7 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetIsSingleIte
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetTargetGroup(val *[]*LbListenerDefaultActionForwardTargetGroup) {
+func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetTargetGroup(val interface{}) {
 	_jsii_.Set(
 		j,
 		"targetGroup",
@@ -28715,7 +34225,7 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28724,12 +34234,40 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28766,12 +34304,54 @@ func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28824,10 +34404,10 @@ func (l *jsiiProxy_LbListenerDefaultActionForwardOutputReference) ResetStickines
 }
 
 type LbListenerDefaultActionForwardStickiness struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#duration LbListener#duration}.
-	Duration *float64 `json:"duration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#enabled LbListener#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#duration LbListener#duration}.
+	Duration *float64 `json:"duration" yaml:"duration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#enabled LbListener#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type LbListenerDefaultActionForwardStickinessOutputReference interface {
@@ -28844,12 +34424,17 @@ type LbListenerDefaultActionForwardStickinessOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -28930,8 +34515,8 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28940,7 +34525,7 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) Terr
 	return returns
 }
 
-func NewLbListenerDefaultActionForwardStickinessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionForwardStickinessOutputReference {
+func NewLbListenerDefaultActionForwardStickinessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionForwardStickinessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference{}
@@ -28954,7 +34539,7 @@ func NewLbListenerDefaultActionForwardStickinessOutputReference(terraformResourc
 	return &j
 }
 
-func NewLbListenerDefaultActionForwardStickinessOutputReference_Override(l LbListenerDefaultActionForwardStickinessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerDefaultActionForwardStickinessOutputReference_Override(l LbListenerDefaultActionForwardStickinessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -29004,7 +34589,7 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29013,12 +34598,40 @@ func (j *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) SetT
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29055,12 +34668,54 @@ func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetN
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29105,25 +34760,25 @@ func (l *jsiiProxy_LbListenerDefaultActionForwardStickinessOutputReference) Rese
 }
 
 type LbListenerDefaultActionForwardTargetGroup struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#arn LbListener#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#weight LbListener#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#arn LbListener#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#weight LbListener#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
 type LbListenerDefaultActionRedirect struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#status_code LbListener#status_code}.
-	StatusCode *string `json:"statusCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#host LbListener#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#path LbListener#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#port LbListener#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#protocol LbListener#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#query LbListener#query}.
-	Query *string `json:"query"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#status_code LbListener#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#host LbListener#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#path LbListener#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#port LbListener#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#protocol LbListener#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#query LbListener#query}.
+	Query *string `json:"query" yaml:"query"`
 }
 
 type LbListenerDefaultActionRedirectOutputReference interface {
@@ -29152,12 +34807,17 @@ type LbListenerDefaultActionRedirectOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHost()
@@ -29322,8 +34982,8 @@ func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29332,7 +34992,7 @@ func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) TerraformReso
 	return returns
 }
 
-func NewLbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionRedirectOutputReference {
+func NewLbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerDefaultActionRedirectOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerDefaultActionRedirectOutputReference{}
@@ -29346,7 +35006,7 @@ func NewLbListenerDefaultActionRedirectOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewLbListenerDefaultActionRedirectOutputReference_Override(l LbListenerDefaultActionRedirectOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerDefaultActionRedirectOutputReference_Override(l LbListenerDefaultActionRedirectOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -29428,7 +35088,7 @@ func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29437,12 +35097,40 @@ func (j *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29479,12 +35167,54 @@ func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29560,20 +35290,20 @@ func (l *jsiiProxy_LbListenerDefaultActionRedirectOutputReference) ResetQuery() 
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html aws_lb_listener_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule aws_lb_listener_rule}.
 type LbListenerRule interface {
 	cdktf.TerraformResource
-	Action() *[]*LbListenerRuleAction
-	SetAction(val *[]*LbListenerRuleAction)
-	ActionInput() *[]*LbListenerRuleAction
+	Action() interface{}
+	SetAction(val interface{})
+	ActionInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
-	Condition() *[]*LbListenerRuleCondition
-	SetCondition(val *[]*LbListenerRuleCondition)
-	ConditionInput() *[]*LbListenerRuleCondition
+	Condition() interface{}
+	SetCondition(val interface{})
+	ConditionInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -29591,20 +35321,25 @@ type LbListenerRule interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -29622,8 +35357,8 @@ type jsiiProxy_LbListenerRule struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_LbListenerRule) Action() *[]*LbListenerRuleAction {
-	var returns *[]*LbListenerRuleAction
+func (j *jsiiProxy_LbListenerRule) Action() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"action",
@@ -29632,8 +35367,8 @@ func (j *jsiiProxy_LbListenerRule) Action() *[]*LbListenerRuleAction {
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) ActionInput() *[]*LbListenerRuleAction {
-	var returns *[]*LbListenerRuleAction
+func (j *jsiiProxy_LbListenerRule) ActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"actionInput",
@@ -29662,8 +35397,8 @@ func (j *jsiiProxy_LbListenerRule) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) Condition() *[]*LbListenerRuleCondition {
-	var returns *[]*LbListenerRuleCondition
+func (j *jsiiProxy_LbListenerRule) Condition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"condition",
@@ -29672,8 +35407,8 @@ func (j *jsiiProxy_LbListenerRule) Condition() *[]*LbListenerRuleCondition {
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) ConditionInput() *[]*LbListenerRuleCondition {
-	var returns *[]*LbListenerRuleCondition
+func (j *jsiiProxy_LbListenerRule) ConditionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"conditionInput",
@@ -29692,8 +35427,8 @@ func (j *jsiiProxy_LbListenerRule) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -29822,8 +35557,8 @@ func (j *jsiiProxy_LbListenerRule) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -29832,8 +35567,8 @@ func (j *jsiiProxy_LbListenerRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -29842,8 +35577,8 @@ func (j *jsiiProxy_LbListenerRule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -29852,8 +35587,8 @@ func (j *jsiiProxy_LbListenerRule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -29892,7 +35627,7 @@ func (j *jsiiProxy_LbListenerRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html aws_lb_listener_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule aws_lb_listener_rule} Resource.
 func NewLbListenerRule(scope constructs.Construct, id *string, config *LbListenerRuleConfig) LbListenerRule {
 	_init_.Initialize()
 
@@ -29907,7 +35642,7 @@ func NewLbListenerRule(scope constructs.Construct, id *string, config *LbListene
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html aws_lb_listener_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule aws_lb_listener_rule} Resource.
 func NewLbListenerRule_Override(l LbListenerRule, scope constructs.Construct, id *string, config *LbListenerRuleConfig) {
 	_init_.Initialize()
 
@@ -29918,7 +35653,7 @@ func NewLbListenerRule_Override(l LbListenerRule, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_LbListenerRule) SetAction(val *[]*LbListenerRuleAction) {
+func (j *jsiiProxy_LbListenerRule) SetAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"action",
@@ -29926,7 +35661,7 @@ func (j *jsiiProxy_LbListenerRule) SetAction(val *[]*LbListenerRuleAction) {
 	)
 }
 
-func (j *jsiiProxy_LbListenerRule) SetCondition(val *[]*LbListenerRuleCondition) {
+func (j *jsiiProxy_LbListenerRule) SetCondition(val interface{}) {
 	_jsii_.Set(
 		j,
 		"condition",
@@ -29934,7 +35669,7 @@ func (j *jsiiProxy_LbListenerRule) SetCondition(val *[]*LbListenerRuleCondition)
 	)
 }
 
-func (j *jsiiProxy_LbListenerRule) SetCount(val interface{}) {
+func (j *jsiiProxy_LbListenerRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -29982,7 +35717,7 @@ func (j *jsiiProxy_LbListenerRule) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_LbListenerRule) SetTags(val interface{}) {
+func (j *jsiiProxy_LbListenerRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -29990,7 +35725,7 @@ func (j *jsiiProxy_LbListenerRule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LbListenerRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_LbListenerRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -30038,12 +35773,40 @@ func (l *jsiiProxy_LbListenerRule) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30080,12 +35843,54 @@ func (l *jsiiProxy_LbListenerRule) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30208,58 +36013,58 @@ func (l *jsiiProxy_LbListenerRule) ToTerraform() interface{} {
 }
 
 type LbListenerRuleAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#type LbListenerRule#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#type LbListenerRule#type}.
+	Type *string `json:"type" yaml:"type"`
 	// authenticate_cognito block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#authenticate_cognito LbListenerRule#authenticate_cognito}
-	AuthenticateCognito *LbListenerRuleActionAuthenticateCognito `json:"authenticateCognito"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#authenticate_cognito LbListenerRule#authenticate_cognito}
+	AuthenticateCognito *LbListenerRuleActionAuthenticateCognito `json:"authenticateCognito" yaml:"authenticateCognito"`
 	// authenticate_oidc block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#authenticate_oidc LbListenerRule#authenticate_oidc}
-	AuthenticateOidc *LbListenerRuleActionAuthenticateOidc `json:"authenticateOidc"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#authenticate_oidc LbListenerRule#authenticate_oidc}
+	AuthenticateOidc *LbListenerRuleActionAuthenticateOidc `json:"authenticateOidc" yaml:"authenticateOidc"`
 	// fixed_response block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#fixed_response LbListenerRule#fixed_response}
-	FixedResponse *LbListenerRuleActionFixedResponse `json:"fixedResponse"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#fixed_response LbListenerRule#fixed_response}
+	FixedResponse *LbListenerRuleActionFixedResponse `json:"fixedResponse" yaml:"fixedResponse"`
 	// forward block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#forward LbListenerRule#forward}
-	Forward *LbListenerRuleActionForward `json:"forward"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#order LbListenerRule#order}.
-	Order *float64 `json:"order"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#forward LbListenerRule#forward}
+	Forward *LbListenerRuleActionForward `json:"forward" yaml:"forward"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#order LbListenerRule#order}.
+	Order *float64 `json:"order" yaml:"order"`
 	// redirect block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#redirect LbListenerRule#redirect}
-	Redirect *LbListenerRuleActionRedirect `json:"redirect"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#target_group_arn LbListenerRule#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#redirect LbListenerRule#redirect}
+	Redirect *LbListenerRuleActionRedirect `json:"redirect" yaml:"redirect"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#target_group_arn LbListenerRule#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
 }
 
 type LbListenerRuleActionAuthenticateCognito struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#user_pool_arn LbListenerRule#user_pool_arn}.
-	UserPoolArn *string `json:"userPoolArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#user_pool_client_id LbListenerRule#user_pool_client_id}.
-	UserPoolClientId *string `json:"userPoolClientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#user_pool_domain LbListenerRule#user_pool_domain}.
-	UserPoolDomain *string `json:"userPoolDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#authentication_request_extra_params LbListenerRule#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#on_unauthenticated_request LbListenerRule#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#scope LbListenerRule#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#session_cookie_name LbListenerRule#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#session_timeout LbListenerRule#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#user_pool_arn LbListenerRule#user_pool_arn}.
+	UserPoolArn *string `json:"userPoolArn" yaml:"userPoolArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#user_pool_client_id LbListenerRule#user_pool_client_id}.
+	UserPoolClientId *string `json:"userPoolClientId" yaml:"userPoolClientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#user_pool_domain LbListenerRule#user_pool_domain}.
+	UserPoolDomain *string `json:"userPoolDomain" yaml:"userPoolDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#authentication_request_extra_params LbListenerRule#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#on_unauthenticated_request LbListenerRule#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#scope LbListenerRule#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#session_cookie_name LbListenerRule#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#session_timeout LbListenerRule#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type LbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	InternalValue() *LbListenerRuleActionAuthenticateCognito
 	SetInternalValue(val *LbListenerRuleActionAuthenticateCognito)
 	IsSingleItem() *bool
@@ -30278,8 +36083,8 @@ type LbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserPoolArn() *string
 	SetUserPoolArn(val *string)
 	UserPoolArnInput() *string
@@ -30289,10 +36094,15 @@ type LbListenerRuleActionAuthenticateCognitoOutputReference interface {
 	UserPoolDomain() *string
 	SetUserPoolDomain(val *string)
 	UserPoolDomainInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -30307,8 +36117,8 @@ type jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -30317,8 +36127,8 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) Authe
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -30437,8 +36247,8 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30507,7 +36317,7 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) UserP
 	return returns
 }
 
-func NewLbListenerRuleActionAuthenticateCognitoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionAuthenticateCognitoOutputReference {
+func NewLbListenerRuleActionAuthenticateCognitoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionAuthenticateCognitoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference{}
@@ -30521,7 +36331,7 @@ func NewLbListenerRuleActionAuthenticateCognitoOutputReference(terraformResource
 	return &j
 }
 
-func NewLbListenerRuleActionAuthenticateCognitoOutputReference_Override(l LbListenerRuleActionAuthenticateCognitoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleActionAuthenticateCognitoOutputReference_Override(l LbListenerRuleActionAuthenticateCognitoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -30531,7 +36341,7 @@ func NewLbListenerRuleActionAuthenticateCognitoOutputReference_Override(l LbList
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -30595,7 +36405,7 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30628,12 +36438,40 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) SetUs
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30670,12 +36508,54 @@ func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetNu
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30752,35 +36632,35 @@ func (l *jsiiProxy_LbListenerRuleActionAuthenticateCognitoOutputReference) Reset
 }
 
 type LbListenerRuleActionAuthenticateOidc struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#authorization_endpoint LbListenerRule#authorization_endpoint}.
-	AuthorizationEndpoint *string `json:"authorizationEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#client_id LbListenerRule#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#client_secret LbListenerRule#client_secret}.
-	ClientSecret *string `json:"clientSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#issuer LbListenerRule#issuer}.
-	Issuer *string `json:"issuer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#token_endpoint LbListenerRule#token_endpoint}.
-	TokenEndpoint *string `json:"tokenEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#user_info_endpoint LbListenerRule#user_info_endpoint}.
-	UserInfoEndpoint *string `json:"userInfoEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#authentication_request_extra_params LbListenerRule#authentication_request_extra_params}.
-	AuthenticationRequestExtraParams interface{} `json:"authenticationRequestExtraParams"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#on_unauthenticated_request LbListenerRule#on_unauthenticated_request}.
-	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#scope LbListenerRule#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#session_cookie_name LbListenerRule#session_cookie_name}.
-	SessionCookieName *string `json:"sessionCookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#session_timeout LbListenerRule#session_timeout}.
-	SessionTimeout *float64 `json:"sessionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#authorization_endpoint LbListenerRule#authorization_endpoint}.
+	AuthorizationEndpoint *string `json:"authorizationEndpoint" yaml:"authorizationEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#client_id LbListenerRule#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#client_secret LbListenerRule#client_secret}.
+	ClientSecret *string `json:"clientSecret" yaml:"clientSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#issuer LbListenerRule#issuer}.
+	Issuer *string `json:"issuer" yaml:"issuer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#token_endpoint LbListenerRule#token_endpoint}.
+	TokenEndpoint *string `json:"tokenEndpoint" yaml:"tokenEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#user_info_endpoint LbListenerRule#user_info_endpoint}.
+	UserInfoEndpoint *string `json:"userInfoEndpoint" yaml:"userInfoEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#authentication_request_extra_params LbListenerRule#authentication_request_extra_params}.
+	AuthenticationRequestExtraParams *map[string]*string `json:"authenticationRequestExtraParams" yaml:"authenticationRequestExtraParams"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#on_unauthenticated_request LbListenerRule#on_unauthenticated_request}.
+	OnUnauthenticatedRequest *string `json:"onUnauthenticatedRequest" yaml:"onUnauthenticatedRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#scope LbListenerRule#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#session_cookie_name LbListenerRule#session_cookie_name}.
+	SessionCookieName *string `json:"sessionCookieName" yaml:"sessionCookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#session_timeout LbListenerRule#session_timeout}.
+	SessionTimeout *float64 `json:"sessionTimeout" yaml:"sessionTimeout"`
 }
 
 type LbListenerRuleActionAuthenticateOidcOutputReference interface {
 	cdktf.ComplexObject
-	AuthenticationRequestExtraParams() interface{}
-	SetAuthenticationRequestExtraParams(val interface{})
-	AuthenticationRequestExtraParamsInput() interface{}
+	AuthenticationRequestExtraParams() *map[string]*string
+	SetAuthenticationRequestExtraParams(val *map[string]*string)
+	AuthenticationRequestExtraParamsInput() *map[string]*string
 	AuthorizationEndpoint() *string
 	SetAuthorizationEndpoint(val *string)
 	AuthorizationEndpointInput() *string
@@ -30811,18 +36691,23 @@ type LbListenerRuleActionAuthenticateOidcOutputReference interface {
 	SessionTimeoutInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TokenEndpoint() *string
 	SetTokenEndpoint(val *string)
 	TokenEndpointInput() *string
 	UserInfoEndpoint() *string
 	SetUserInfoEndpoint(val *string)
 	UserInfoEndpointInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthenticationRequestExtraParams()
@@ -30837,8 +36722,8 @@ type jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParams() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParams",
@@ -30847,8 +36732,8 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) Authenti
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) AuthenticationRequestExtraParamsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"authenticationRequestExtraParamsInput",
@@ -31047,8 +36932,8 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31097,7 +36982,7 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) UserInfo
 	return returns
 }
 
-func NewLbListenerRuleActionAuthenticateOidcOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionAuthenticateOidcOutputReference {
+func NewLbListenerRuleActionAuthenticateOidcOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionAuthenticateOidcOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference{}
@@ -31111,7 +36996,7 @@ func NewLbListenerRuleActionAuthenticateOidcOutputReference(terraformResource cd
 	return &j
 }
 
-func NewLbListenerRuleActionAuthenticateOidcOutputReference_Override(l LbListenerRuleActionAuthenticateOidcOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleActionAuthenticateOidcOutputReference_Override(l LbListenerRuleActionAuthenticateOidcOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31121,7 +37006,7 @@ func NewLbListenerRuleActionAuthenticateOidcOutputReference_Override(l LbListene
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val interface{}) {
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetAuthenticationRequestExtraParams(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"authenticationRequestExtraParams",
@@ -31217,7 +37102,7 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31242,12 +37127,40 @@ func (j *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) SetUserI
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31284,12 +37197,54 @@ func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetNumbe
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31366,12 +37321,12 @@ func (l *jsiiProxy_LbListenerRuleActionAuthenticateOidcOutputReference) ResetSes
 }
 
 type LbListenerRuleActionFixedResponse struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#content_type LbListenerRule#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#message_body LbListenerRule#message_body}.
-	MessageBody *string `json:"messageBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#status_code LbListenerRule#status_code}.
-	StatusCode *string `json:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#content_type LbListenerRule#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#message_body LbListenerRule#message_body}.
+	MessageBody *string `json:"messageBody" yaml:"messageBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#status_code LbListenerRule#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
 }
 
 type LbListenerRuleActionFixedResponseOutputReference interface {
@@ -31391,12 +37346,17 @@ type LbListenerRuleActionFixedResponseOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMessageBody()
@@ -31498,8 +37458,8 @@ func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31508,7 +37468,7 @@ func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) TerraformRe
 	return returns
 }
 
-func NewLbListenerRuleActionFixedResponseOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionFixedResponseOutputReference {
+func NewLbListenerRuleActionFixedResponseOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionFixedResponseOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleActionFixedResponseOutputReference{}
@@ -31522,7 +37482,7 @@ func NewLbListenerRuleActionFixedResponseOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewLbListenerRuleActionFixedResponseOutputReference_Override(l LbListenerRuleActionFixedResponseOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleActionFixedResponseOutputReference_Override(l LbListenerRuleActionFixedResponseOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31580,7 +37540,7 @@ func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31589,12 +37549,40 @@ func (j *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31631,12 +37619,54 @@ func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31691,12 +37721,12 @@ func (l *jsiiProxy_LbListenerRuleActionFixedResponseOutputReference) ResetStatus
 type LbListenerRuleActionForward struct {
 	// target_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#target_group LbListenerRule#target_group}
-	TargetGroup *[]*LbListenerRuleActionForwardTargetGroup `json:"targetGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#target_group LbListenerRule#target_group}
+	TargetGroup interface{} `json:"targetGroup" yaml:"targetGroup"`
 	// stickiness block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#stickiness LbListenerRule#stickiness}
-	Stickiness *LbListenerRuleActionForwardStickiness `json:"stickiness"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#stickiness LbListenerRule#stickiness}
+	Stickiness *LbListenerRuleActionForwardStickiness `json:"stickiness" yaml:"stickiness"`
 }
 
 type LbListenerRuleActionForwardOutputReference interface {
@@ -31707,17 +37737,22 @@ type LbListenerRuleActionForwardOutputReference interface {
 	SetIsSingleItem(val *bool)
 	Stickiness() LbListenerRuleActionForwardStickinessOutputReference
 	StickinessInput() *LbListenerRuleActionForwardStickiness
-	TargetGroup() *[]*LbListenerRuleActionForwardTargetGroup
-	SetTargetGroup(val *[]*LbListenerRuleActionForwardTargetGroup)
-	TargetGroupInput() *[]*LbListenerRuleActionForwardTargetGroup
+	TargetGroup() interface{}
+	SetTargetGroup(val interface{})
+	TargetGroupInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutStickiness(value *LbListenerRuleActionForwardStickiness)
@@ -31769,8 +37804,8 @@ func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) StickinessInput()
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TargetGroup() *[]*LbListenerRuleActionForwardTargetGroup {
-	var returns *[]*LbListenerRuleActionForwardTargetGroup
+func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TargetGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroup",
@@ -31779,8 +37814,8 @@ func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TargetGroup() *[]
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TargetGroupInput() *[]*LbListenerRuleActionForwardTargetGroup {
-	var returns *[]*LbListenerRuleActionForwardTargetGroup
+func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TargetGroupInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroupInput",
@@ -31799,8 +37834,8 @@ func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31809,7 +37844,7 @@ func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) TerraformResource
 	return returns
 }
 
-func NewLbListenerRuleActionForwardOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionForwardOutputReference {
+func NewLbListenerRuleActionForwardOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionForwardOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleActionForwardOutputReference{}
@@ -31823,7 +37858,7 @@ func NewLbListenerRuleActionForwardOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewLbListenerRuleActionForwardOutputReference_Override(l LbListenerRuleActionForwardOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleActionForwardOutputReference_Override(l LbListenerRuleActionForwardOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31849,7 +37884,7 @@ func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetIsSingleItem(v
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetTargetGroup(val *[]*LbListenerRuleActionForwardTargetGroup) {
+func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetTargetGroup(val interface{}) {
 	_jsii_.Set(
 		j,
 		"targetGroup",
@@ -31865,7 +37900,7 @@ func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31874,12 +37909,40 @@ func (j *jsiiProxy_LbListenerRuleActionForwardOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31916,12 +37979,54 @@ func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31974,10 +38079,10 @@ func (l *jsiiProxy_LbListenerRuleActionForwardOutputReference) ResetStickiness()
 }
 
 type LbListenerRuleActionForwardStickiness struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#duration LbListenerRule#duration}.
-	Duration *float64 `json:"duration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#enabled LbListenerRule#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#duration LbListenerRule#duration}.
+	Duration *float64 `json:"duration" yaml:"duration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#enabled LbListenerRule#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type LbListenerRuleActionForwardStickinessOutputReference interface {
@@ -31994,12 +38099,17 @@ type LbListenerRuleActionForwardStickinessOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -32080,8 +38190,8 @@ func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32090,7 +38200,7 @@ func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) Terrafo
 	return returns
 }
 
-func NewLbListenerRuleActionForwardStickinessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionForwardStickinessOutputReference {
+func NewLbListenerRuleActionForwardStickinessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionForwardStickinessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference{}
@@ -32104,7 +38214,7 @@ func NewLbListenerRuleActionForwardStickinessOutputReference(terraformResource c
 	return &j
 }
 
-func NewLbListenerRuleActionForwardStickinessOutputReference_Override(l LbListenerRuleActionForwardStickinessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleActionForwardStickinessOutputReference_Override(l LbListenerRuleActionForwardStickinessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32154,7 +38264,7 @@ func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32163,12 +38273,40 @@ func (j *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) SetTerr
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32205,12 +38343,54 @@ func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetNumb
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32255,25 +38435,25 @@ func (l *jsiiProxy_LbListenerRuleActionForwardStickinessOutputReference) ResetEn
 }
 
 type LbListenerRuleActionForwardTargetGroup struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#arn LbListenerRule#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#weight LbListenerRule#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#arn LbListenerRule#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#weight LbListenerRule#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
 type LbListenerRuleActionRedirect struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#status_code LbListenerRule#status_code}.
-	StatusCode *string `json:"statusCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#host LbListenerRule#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#path LbListenerRule#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#port LbListenerRule#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#protocol LbListenerRule#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#query LbListenerRule#query}.
-	Query *string `json:"query"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#status_code LbListenerRule#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#host LbListenerRule#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#path LbListenerRule#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#port LbListenerRule#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#protocol LbListenerRule#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#query LbListenerRule#query}.
+	Query *string `json:"query" yaml:"query"`
 }
 
 type LbListenerRuleActionRedirectOutputReference interface {
@@ -32302,12 +38482,17 @@ type LbListenerRuleActionRedirectOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHost()
@@ -32472,8 +38657,8 @@ func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32482,7 +38667,7 @@ func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) TerraformResourc
 	return returns
 }
 
-func NewLbListenerRuleActionRedirectOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionRedirectOutputReference {
+func NewLbListenerRuleActionRedirectOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleActionRedirectOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleActionRedirectOutputReference{}
@@ -32496,7 +38681,7 @@ func NewLbListenerRuleActionRedirectOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewLbListenerRuleActionRedirectOutputReference_Override(l LbListenerRuleActionRedirectOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleActionRedirectOutputReference_Override(l LbListenerRuleActionRedirectOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32578,7 +38763,7 @@ func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32587,12 +38772,40 @@ func (j *jsiiProxy_LbListenerRuleActionRedirectOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32629,12 +38842,54 @@ func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32713,33 +38968,33 @@ func (l *jsiiProxy_LbListenerRuleActionRedirectOutputReference) ResetQuery() {
 type LbListenerRuleCondition struct {
 	// host_header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#host_header LbListenerRule#host_header}
-	HostHeader *LbListenerRuleConditionHostHeader `json:"hostHeader"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#host_header LbListenerRule#host_header}
+	HostHeader *LbListenerRuleConditionHostHeader `json:"hostHeader" yaml:"hostHeader"`
 	// http_header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#http_header LbListenerRule#http_header}
-	HttpHeader *LbListenerRuleConditionHttpHeader `json:"httpHeader"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#http_header LbListenerRule#http_header}
+	HttpHeader *LbListenerRuleConditionHttpHeader `json:"httpHeader" yaml:"httpHeader"`
 	// http_request_method block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#http_request_method LbListenerRule#http_request_method}
-	HttpRequestMethod *LbListenerRuleConditionHttpRequestMethod `json:"httpRequestMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#http_request_method LbListenerRule#http_request_method}
+	HttpRequestMethod *LbListenerRuleConditionHttpRequestMethod `json:"httpRequestMethod" yaml:"httpRequestMethod"`
 	// path_pattern block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#path_pattern LbListenerRule#path_pattern}
-	PathPattern *LbListenerRuleConditionPathPattern `json:"pathPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#path_pattern LbListenerRule#path_pattern}
+	PathPattern *LbListenerRuleConditionPathPattern `json:"pathPattern" yaml:"pathPattern"`
 	// query_string block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#query_string LbListenerRule#query_string}
-	QueryString *[]*LbListenerRuleConditionQueryString `json:"queryString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#query_string LbListenerRule#query_string}
+	QueryString interface{} `json:"queryString" yaml:"queryString"`
 	// source_ip block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#source_ip LbListenerRule#source_ip}
-	SourceIp *LbListenerRuleConditionSourceIp `json:"sourceIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#source_ip LbListenerRule#source_ip}
+	SourceIp *LbListenerRuleConditionSourceIp `json:"sourceIp" yaml:"sourceIp"`
 }
 
 type LbListenerRuleConditionHostHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#values LbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#values LbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type LbListenerRuleConditionHostHeaderOutputReference interface {
@@ -32750,15 +39005,20 @@ type LbListenerRuleConditionHostHeaderOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -32798,8 +39058,8 @@ func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32828,7 +39088,7 @@ func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) ValuesInput
 	return returns
 }
 
-func NewLbListenerRuleConditionHostHeaderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionHostHeaderOutputReference {
+func NewLbListenerRuleConditionHostHeaderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionHostHeaderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference{}
@@ -32842,7 +39102,7 @@ func NewLbListenerRuleConditionHostHeaderOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewLbListenerRuleConditionHostHeaderOutputReference_Override(l LbListenerRuleConditionHostHeaderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleConditionHostHeaderOutputReference_Override(l LbListenerRuleConditionHostHeaderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32876,7 +39136,7 @@ func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32893,12 +39153,40 @@ func (j *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) SetValues(v
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32935,12 +39223,54 @@ func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32977,10 +39307,10 @@ func (l *jsiiProxy_LbListenerRuleConditionHostHeaderOutputReference) Interpolati
 }
 
 type LbListenerRuleConditionHttpHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#http_header_name LbListenerRule#http_header_name}.
-	HttpHeaderName *string `json:"httpHeaderName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#values LbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#http_header_name LbListenerRule#http_header_name}.
+	HttpHeaderName *string `json:"httpHeaderName" yaml:"httpHeaderName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#values LbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type LbListenerRuleConditionHttpHeaderOutputReference interface {
@@ -32994,15 +39324,20 @@ type LbListenerRuleConditionHttpHeaderOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -33062,8 +39397,8 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -33092,7 +39427,7 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) ValuesInput
 	return returns
 }
 
-func NewLbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionHttpHeaderOutputReference {
+func NewLbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionHttpHeaderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference{}
@@ -33106,7 +39441,7 @@ func NewLbListenerRuleConditionHttpHeaderOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewLbListenerRuleConditionHttpHeaderOutputReference_Override(l LbListenerRuleConditionHttpHeaderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleConditionHttpHeaderOutputReference_Override(l LbListenerRuleConditionHttpHeaderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -33148,7 +39483,7 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -33165,12 +39500,40 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) SetValues(v
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33207,12 +39570,54 @@ func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33249,8 +39654,8 @@ func (l *jsiiProxy_LbListenerRuleConditionHttpHeaderOutputReference) Interpolati
 }
 
 type LbListenerRuleConditionHttpRequestMethod struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#values LbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#values LbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type LbListenerRuleConditionHttpRequestMethodOutputReference interface {
@@ -33261,15 +39666,20 @@ type LbListenerRuleConditionHttpRequestMethodOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -33309,8 +39719,8 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -33339,7 +39749,7 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) Valu
 	return returns
 }
 
-func NewLbListenerRuleConditionHttpRequestMethodOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionHttpRequestMethodOutputReference {
+func NewLbListenerRuleConditionHttpRequestMethodOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionHttpRequestMethodOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference{}
@@ -33353,7 +39763,7 @@ func NewLbListenerRuleConditionHttpRequestMethodOutputReference(terraformResourc
 	return &j
 }
 
-func NewLbListenerRuleConditionHttpRequestMethodOutputReference_Override(l LbListenerRuleConditionHttpRequestMethodOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleConditionHttpRequestMethodOutputReference_Override(l LbListenerRuleConditionHttpRequestMethodOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -33387,7 +39797,7 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -33404,12 +39814,40 @@ func (j *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) SetV
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33446,12 +39884,54 @@ func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetN
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33488,8 +39968,8 @@ func (l *jsiiProxy_LbListenerRuleConditionHttpRequestMethodOutputReference) Inte
 }
 
 type LbListenerRuleConditionPathPattern struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#values LbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#values LbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type LbListenerRuleConditionPathPatternOutputReference interface {
@@ -33500,15 +39980,20 @@ type LbListenerRuleConditionPathPatternOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -33548,8 +40033,8 @@ func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -33578,7 +40063,7 @@ func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) ValuesInpu
 	return returns
 }
 
-func NewLbListenerRuleConditionPathPatternOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionPathPatternOutputReference {
+func NewLbListenerRuleConditionPathPatternOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionPathPatternOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleConditionPathPatternOutputReference{}
@@ -33592,7 +40077,7 @@ func NewLbListenerRuleConditionPathPatternOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewLbListenerRuleConditionPathPatternOutputReference_Override(l LbListenerRuleConditionPathPatternOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleConditionPathPatternOutputReference_Override(l LbListenerRuleConditionPathPatternOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -33626,7 +40111,7 @@ func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -33643,12 +40128,40 @@ func (j *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) SetValues(
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33685,12 +40198,54 @@ func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetNumberA
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33727,15 +40282,15 @@ func (l *jsiiProxy_LbListenerRuleConditionPathPatternOutputReference) Interpolat
 }
 
 type LbListenerRuleConditionQueryString struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#value LbListenerRule#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#key LbListenerRule#key}.
-	Key *string `json:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#value LbListenerRule#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#key LbListenerRule#key}.
+	Key *string `json:"key" yaml:"key"`
 }
 
 type LbListenerRuleConditionSourceIp struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#values LbListenerRule#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#values LbListenerRule#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type LbListenerRuleConditionSourceIpOutputReference interface {
@@ -33746,15 +40301,20 @@ type LbListenerRuleConditionSourceIpOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -33794,8 +40354,8 @@ func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -33824,7 +40384,7 @@ func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) ValuesInput()
 	return returns
 }
 
-func NewLbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionSourceIpOutputReference {
+func NewLbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerRuleConditionSourceIpOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerRuleConditionSourceIpOutputReference{}
@@ -33838,7 +40398,7 @@ func NewLbListenerRuleConditionSourceIpOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewLbListenerRuleConditionSourceIpOutputReference_Override(l LbListenerRuleConditionSourceIpOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerRuleConditionSourceIpOutputReference_Override(l LbListenerRuleConditionSourceIpOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -33872,7 +40432,7 @@ func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -33889,12 +40449,40 @@ func (j *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) SetValues(val
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33931,12 +40519,54 @@ func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33975,34 +40605,34 @@ func (l *jsiiProxy_LbListenerRuleConditionSourceIpOutputReference) Interpolation
 // AWS Elastic Load Balancer.
 type LbListenerRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#action LbListenerRule#action}
-	Action *[]*LbListenerRuleAction `json:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#action LbListenerRule#action}
+	Action interface{} `json:"action" yaml:"action"`
 	// condition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#condition LbListenerRule#condition}
-	Condition *[]*LbListenerRuleCondition `json:"condition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#listener_arn LbListenerRule#listener_arn}.
-	ListenerArn *string `json:"listenerArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#priority LbListenerRule#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#tags LbListenerRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule.html#tags_all LbListenerRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#condition LbListenerRule#condition}
+	Condition interface{} `json:"condition" yaml:"condition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#listener_arn LbListenerRule#listener_arn}.
+	ListenerArn *string `json:"listenerArn" yaml:"listenerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#priority LbListenerRule#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#tags LbListenerRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener_rule#tags_all LbListenerRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type LbListenerTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener.html#read LbListener#read}.
-	Read *string `json:"read"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_listener#read LbListener#read}.
+	Read *string `json:"read" yaml:"read"`
 }
 
 type LbListenerTimeoutsOutputReference interface {
@@ -34016,12 +40646,17 @@ type LbListenerTimeoutsOutputReference interface {
 	ReadInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetRead()
@@ -34082,8 +40717,8 @@ func (j *jsiiProxy_LbListenerTimeoutsOutputReference) TerraformAttribute() *stri
 	return returns
 }
 
-func (j *jsiiProxy_LbListenerTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbListenerTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -34092,7 +40727,7 @@ func (j *jsiiProxy_LbListenerTimeoutsOutputReference) TerraformResource() cdktf.
 	return returns
 }
 
-func NewLbListenerTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbListenerTimeoutsOutputReference {
+func NewLbListenerTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbListenerTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbListenerTimeoutsOutputReference{}
@@ -34106,7 +40741,7 @@ func NewLbListenerTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	return &j
 }
 
-func NewLbListenerTimeoutsOutputReference_Override(l LbListenerTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbListenerTimeoutsOutputReference_Override(l LbListenerTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -34148,7 +40783,7 @@ func (j *jsiiProxy_LbListenerTimeoutsOutputReference) SetTerraformAttribute(val 
 	)
 }
 
-func (j *jsiiProxy_LbListenerTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbListenerTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -34157,12 +40792,40 @@ func (j *jsiiProxy_LbListenerTimeoutsOutputReference) SetTerraformResource(val c
 }
 
 // Experimental.
-func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -34199,12 +40862,54 @@ func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbListenerTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -34248,16 +40953,16 @@ func (l *jsiiProxy_LbListenerTimeoutsOutputReference) ResetRead() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html aws_lb_ssl_negotiation_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy aws_lb_ssl_negotiation_policy}.
 type LbSslNegotiationPolicy interface {
 	cdktf.TerraformResource
-	Attribute() *[]*LbSslNegotiationPolicyAttribute
-	SetAttribute(val *[]*LbSslNegotiationPolicyAttribute)
-	AttributeInput() *[]*LbSslNegotiationPolicyAttribute
+	Attribute() interface{}
+	SetAttribute(val interface{})
+	AttributeInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -34282,10 +40987,15 @@ type LbSslNegotiationPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAttribute()
@@ -34301,8 +41011,8 @@ type jsiiProxy_LbSslNegotiationPolicy struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_LbSslNegotiationPolicy) Attribute() *[]*LbSslNegotiationPolicyAttribute {
-	var returns *[]*LbSslNegotiationPolicyAttribute
+func (j *jsiiProxy_LbSslNegotiationPolicy) Attribute() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attribute",
@@ -34311,8 +41021,8 @@ func (j *jsiiProxy_LbSslNegotiationPolicy) Attribute() *[]*LbSslNegotiationPolic
 	return returns
 }
 
-func (j *jsiiProxy_LbSslNegotiationPolicy) AttributeInput() *[]*LbSslNegotiationPolicyAttribute {
-	var returns *[]*LbSslNegotiationPolicyAttribute
+func (j *jsiiProxy_LbSslNegotiationPolicy) AttributeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attributeInput",
@@ -34341,8 +41051,8 @@ func (j *jsiiProxy_LbSslNegotiationPolicy) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_LbSslNegotiationPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbSslNegotiationPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -34521,7 +41231,7 @@ func (j *jsiiProxy_LbSslNegotiationPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html aws_lb_ssl_negotiation_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy aws_lb_ssl_negotiation_policy} Resource.
 func NewLbSslNegotiationPolicy(scope constructs.Construct, id *string, config *LbSslNegotiationPolicyConfig) LbSslNegotiationPolicy {
 	_init_.Initialize()
 
@@ -34536,7 +41246,7 @@ func NewLbSslNegotiationPolicy(scope constructs.Construct, id *string, config *L
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html aws_lb_ssl_negotiation_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy aws_lb_ssl_negotiation_policy} Resource.
 func NewLbSslNegotiationPolicy_Override(l LbSslNegotiationPolicy, scope constructs.Construct, id *string, config *LbSslNegotiationPolicyConfig) {
 	_init_.Initialize()
 
@@ -34547,7 +41257,7 @@ func NewLbSslNegotiationPolicy_Override(l LbSslNegotiationPolicy, scope construc
 	)
 }
 
-func (j *jsiiProxy_LbSslNegotiationPolicy) SetAttribute(val *[]*LbSslNegotiationPolicyAttribute) {
+func (j *jsiiProxy_LbSslNegotiationPolicy) SetAttribute(val interface{}) {
 	_jsii_.Set(
 		j,
 		"attribute",
@@ -34555,7 +41265,7 @@ func (j *jsiiProxy_LbSslNegotiationPolicy) SetAttribute(val *[]*LbSslNegotiation
 	)
 }
 
-func (j *jsiiProxy_LbSslNegotiationPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_LbSslNegotiationPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -34651,12 +41361,40 @@ func (l *jsiiProxy_LbSslNegotiationPolicy) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (l *jsiiProxy_LbSslNegotiationPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbSslNegotiationPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbSslNegotiationPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -34693,12 +41431,54 @@ func (l *jsiiProxy_LbSslNegotiationPolicy) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (l *jsiiProxy_LbSslNegotiationPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbSslNegotiationPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbSslNegotiationPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbSslNegotiationPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -34805,46 +41585,46 @@ func (l *jsiiProxy_LbSslNegotiationPolicy) ToTerraform() interface{} {
 }
 
 type LbSslNegotiationPolicyAttribute struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html#name LbSslNegotiationPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html#value LbSslNegotiationPolicy#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy#name LbSslNegotiationPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy#value LbSslNegotiationPolicy#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 // AWS Elastic Load Balancer.
 type LbSslNegotiationPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html#lb_port LbSslNegotiationPolicy#lb_port}.
-	LbPort *float64 `json:"lbPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html#load_balancer LbSslNegotiationPolicy#load_balancer}.
-	LoadBalancer *string `json:"loadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html#name LbSslNegotiationPolicy#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy#lb_port LbSslNegotiationPolicy#lb_port}.
+	LbPort *float64 `json:"lbPort" yaml:"lbPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy#load_balancer LbSslNegotiationPolicy#load_balancer}.
+	LoadBalancer *string `json:"loadBalancer" yaml:"loadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy#name LbSslNegotiationPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 	// attribute block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy.html#attribute LbSslNegotiationPolicy#attribute}
-	Attribute *[]*LbSslNegotiationPolicyAttribute `json:"attribute"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_ssl_negotiation_policy#attribute LbSslNegotiationPolicy#attribute}
+	Attribute interface{} `json:"attribute" yaml:"attribute"`
 }
 
 type LbSubnetMapping struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#subnet_id Lb#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#allocation_id Lb#allocation_id}.
-	AllocationId *string `json:"allocationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#ipv6_address Lb#ipv6_address}.
-	Ipv6Address *string `json:"ipv6Address"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#private_ipv4_address Lb#private_ipv4_address}.
-	PrivateIpv4Address *string `json:"privateIpv4Address"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#subnet_id Lb#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#allocation_id Lb#allocation_id}.
+	AllocationId *string `json:"allocationId" yaml:"allocationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#ipv6_address Lb#ipv6_address}.
+	Ipv6Address *string `json:"ipv6Address" yaml:"ipv6Address"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#private_ipv4_address Lb#private_ipv4_address}.
+	PrivateIpv4Address *string `json:"privateIpv4Address" yaml:"privateIpv4Address"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html aws_lb_target_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group aws_lb_target_group}.
 type LbTargetGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -34854,8 +41634,8 @@ type LbTargetGroup interface {
 	SetConnectionTermination(val interface{})
 	ConnectionTerminationInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeregistrationDelay() *string
@@ -34904,12 +41684,12 @@ type LbTargetGroup interface {
 	SlowStartInput() *float64
 	Stickiness() LbTargetGroupStickinessOutputReference
 	StickinessInput() *LbTargetGroupStickiness
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetType() *string
 	SetTargetType(val *string)
 	TargetTypeInput() *string
@@ -34920,10 +41700,15 @@ type LbTargetGroup interface {
 	SetVpcId(val *string)
 	VpcIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutHealthCheck(value *LbTargetGroupHealthCheck)
@@ -35018,8 +41803,8 @@ func (j *jsiiProxy_LbTargetGroup) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbTargetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -35368,8 +42153,8 @@ func (j *jsiiProxy_LbTargetGroup) StickinessInput() *LbTargetGroupStickiness {
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbTargetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -35378,8 +42163,8 @@ func (j *jsiiProxy_LbTargetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbTargetGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -35388,8 +42173,8 @@ func (j *jsiiProxy_LbTargetGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbTargetGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -35398,8 +42183,8 @@ func (j *jsiiProxy_LbTargetGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbTargetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -35478,7 +42263,7 @@ func (j *jsiiProxy_LbTargetGroup) VpcIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html aws_lb_target_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group aws_lb_target_group} Resource.
 func NewLbTargetGroup(scope constructs.Construct, id *string, config *LbTargetGroupConfig) LbTargetGroup {
 	_init_.Initialize()
 
@@ -35493,7 +42278,7 @@ func NewLbTargetGroup(scope constructs.Construct, id *string, config *LbTargetGr
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html aws_lb_target_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group aws_lb_target_group} Resource.
 func NewLbTargetGroup_Override(l LbTargetGroup, scope constructs.Construct, id *string, config *LbTargetGroupConfig) {
 	_init_.Initialize()
 
@@ -35512,7 +42297,7 @@ func (j *jsiiProxy_LbTargetGroup) SetConnectionTermination(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LbTargetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_LbTargetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -35632,7 +42417,7 @@ func (j *jsiiProxy_LbTargetGroup) SetSlowStart(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_LbTargetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_LbTargetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -35640,7 +42425,7 @@ func (j *jsiiProxy_LbTargetGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LbTargetGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_LbTargetGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -35704,12 +42489,40 @@ func (l *jsiiProxy_LbTargetGroup) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_LbTargetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbTargetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -35746,12 +42559,54 @@ func (l *jsiiProxy_LbTargetGroup) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (l *jsiiProxy_LbTargetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbTargetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -36009,7 +42864,7 @@ func (l *jsiiProxy_LbTargetGroup) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment.html aws_lb_target_group_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment aws_lb_target_group_attachment}.
 type LbTargetGroupAttachment interface {
 	cdktf.TerraformResource
 	AvailabilityZone() *string
@@ -36017,8 +42872,8 @@ type LbTargetGroupAttachment interface {
 	AvailabilityZoneInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -36043,10 +42898,15 @@ type LbTargetGroupAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAvailabilityZone()
@@ -36103,8 +42963,8 @@ func (j *jsiiProxy_LbTargetGroupAttachment) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroupAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LbTargetGroupAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -36283,7 +43143,7 @@ func (j *jsiiProxy_LbTargetGroupAttachment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment.html aws_lb_target_group_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment aws_lb_target_group_attachment} Resource.
 func NewLbTargetGroupAttachment(scope constructs.Construct, id *string, config *LbTargetGroupAttachmentConfig) LbTargetGroupAttachment {
 	_init_.Initialize()
 
@@ -36298,7 +43158,7 @@ func NewLbTargetGroupAttachment(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment.html aws_lb_target_group_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment aws_lb_target_group_attachment} Resource.
 func NewLbTargetGroupAttachment_Override(l LbTargetGroupAttachment, scope constructs.Construct, id *string, config *LbTargetGroupAttachmentConfig) {
 	_init_.Initialize()
 
@@ -36317,7 +43177,7 @@ func (j *jsiiProxy_LbTargetGroupAttachment) SetAvailabilityZone(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LbTargetGroupAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_LbTargetGroupAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -36413,12 +43273,40 @@ func (l *jsiiProxy_LbTargetGroupAttachment) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (l *jsiiProxy_LbTargetGroupAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbTargetGroupAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -36455,12 +43343,54 @@ func (l *jsiiProxy_LbTargetGroupAttachment) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (l *jsiiProxy_LbTargetGroupAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbTargetGroupAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -36577,94 +43507,94 @@ func (l *jsiiProxy_LbTargetGroupAttachment) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type LbTargetGroupAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment.html#target_group_arn LbTargetGroupAttachment#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment.html#target_id LbTargetGroupAttachment#target_id}.
-	TargetId *string `json:"targetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment.html#availability_zone LbTargetGroupAttachment#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment.html#port LbTargetGroupAttachment#port}.
-	Port *float64 `json:"port"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment#target_group_arn LbTargetGroupAttachment#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment#target_id LbTargetGroupAttachment#target_id}.
+	TargetId *string `json:"targetId" yaml:"targetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment#availability_zone LbTargetGroupAttachment#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group_attachment#port LbTargetGroupAttachment#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 // AWS Elastic Load Balancer.
 type LbTargetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#connection_termination LbTargetGroup#connection_termination}.
-	ConnectionTermination interface{} `json:"connectionTermination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#deregistration_delay LbTargetGroup#deregistration_delay}.
-	DeregistrationDelay *string `json:"deregistrationDelay"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#connection_termination LbTargetGroup#connection_termination}.
+	ConnectionTermination interface{} `json:"connectionTermination" yaml:"connectionTermination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#deregistration_delay LbTargetGroup#deregistration_delay}.
+	DeregistrationDelay *string `json:"deregistrationDelay" yaml:"deregistrationDelay"`
 	// health_check block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#health_check LbTargetGroup#health_check}
-	HealthCheck *LbTargetGroupHealthCheck `json:"healthCheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#lambda_multi_value_headers_enabled LbTargetGroup#lambda_multi_value_headers_enabled}.
-	LambdaMultiValueHeadersEnabled interface{} `json:"lambdaMultiValueHeadersEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#load_balancing_algorithm_type LbTargetGroup#load_balancing_algorithm_type}.
-	LoadBalancingAlgorithmType *string `json:"loadBalancingAlgorithmType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#name LbTargetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#name_prefix LbTargetGroup#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#port LbTargetGroup#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#preserve_client_ip LbTargetGroup#preserve_client_ip}.
-	PreserveClientIp *string `json:"preserveClientIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#protocol LbTargetGroup#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#protocol_version LbTargetGroup#protocol_version}.
-	ProtocolVersion *string `json:"protocolVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#proxy_protocol_v2 LbTargetGroup#proxy_protocol_v2}.
-	ProxyProtocolV2 interface{} `json:"proxyProtocolV2"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#slow_start LbTargetGroup#slow_start}.
-	SlowStart *float64 `json:"slowStart"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#health_check LbTargetGroup#health_check}
+	HealthCheck *LbTargetGroupHealthCheck `json:"healthCheck" yaml:"healthCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#lambda_multi_value_headers_enabled LbTargetGroup#lambda_multi_value_headers_enabled}.
+	LambdaMultiValueHeadersEnabled interface{} `json:"lambdaMultiValueHeadersEnabled" yaml:"lambdaMultiValueHeadersEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#load_balancing_algorithm_type LbTargetGroup#load_balancing_algorithm_type}.
+	LoadBalancingAlgorithmType *string `json:"loadBalancingAlgorithmType" yaml:"loadBalancingAlgorithmType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#name LbTargetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#name_prefix LbTargetGroup#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#port LbTargetGroup#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#preserve_client_ip LbTargetGroup#preserve_client_ip}.
+	PreserveClientIp *string `json:"preserveClientIp" yaml:"preserveClientIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#protocol LbTargetGroup#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#protocol_version LbTargetGroup#protocol_version}.
+	ProtocolVersion *string `json:"protocolVersion" yaml:"protocolVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#proxy_protocol_v2 LbTargetGroup#proxy_protocol_v2}.
+	ProxyProtocolV2 interface{} `json:"proxyProtocolV2" yaml:"proxyProtocolV2"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#slow_start LbTargetGroup#slow_start}.
+	SlowStart *float64 `json:"slowStart" yaml:"slowStart"`
 	// stickiness block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#stickiness LbTargetGroup#stickiness}
-	Stickiness *LbTargetGroupStickiness `json:"stickiness"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#tags LbTargetGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#tags_all LbTargetGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#target_type LbTargetGroup#target_type}.
-	TargetType *string `json:"targetType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#vpc_id LbTargetGroup#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#stickiness LbTargetGroup#stickiness}
+	Stickiness *LbTargetGroupStickiness `json:"stickiness" yaml:"stickiness"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#tags LbTargetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#tags_all LbTargetGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#target_type LbTargetGroup#target_type}.
+	TargetType *string `json:"targetType" yaml:"targetType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#vpc_id LbTargetGroup#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type LbTargetGroupHealthCheck struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#enabled LbTargetGroup#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#healthy_threshold LbTargetGroup#healthy_threshold}.
-	HealthyThreshold *float64 `json:"healthyThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#interval LbTargetGroup#interval}.
-	Interval *float64 `json:"interval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#matcher LbTargetGroup#matcher}.
-	Matcher *string `json:"matcher"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#path LbTargetGroup#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#port LbTargetGroup#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#protocol LbTargetGroup#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#timeout LbTargetGroup#timeout}.
-	Timeout *float64 `json:"timeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#unhealthy_threshold LbTargetGroup#unhealthy_threshold}.
-	UnhealthyThreshold *float64 `json:"unhealthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#enabled LbTargetGroup#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#healthy_threshold LbTargetGroup#healthy_threshold}.
+	HealthyThreshold *float64 `json:"healthyThreshold" yaml:"healthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#interval LbTargetGroup#interval}.
+	Interval *float64 `json:"interval" yaml:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#matcher LbTargetGroup#matcher}.
+	Matcher *string `json:"matcher" yaml:"matcher"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#path LbTargetGroup#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#port LbTargetGroup#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#protocol LbTargetGroup#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#timeout LbTargetGroup#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#unhealthy_threshold LbTargetGroup#unhealthy_threshold}.
+	UnhealthyThreshold *float64 `json:"unhealthyThreshold" yaml:"unhealthyThreshold"`
 }
 
 type LbTargetGroupHealthCheckOutputReference interface {
@@ -36696,18 +43626,23 @@ type LbTargetGroupHealthCheckOutputReference interface {
 	ProtocolInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Timeout() *float64
 	SetTimeout(val *float64)
 	TimeoutInput() *float64
 	UnhealthyThreshold() *float64
 	SetUnhealthyThreshold(val *float64)
 	UnhealthyThresholdInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -36896,8 +43831,8 @@ func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -36946,7 +43881,7 @@ func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) UnhealthyThresholdIn
 	return returns
 }
 
-func NewLbTargetGroupHealthCheckOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbTargetGroupHealthCheckOutputReference {
+func NewLbTargetGroupHealthCheckOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbTargetGroupHealthCheckOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbTargetGroupHealthCheckOutputReference{}
@@ -36960,7 +43895,7 @@ func NewLbTargetGroupHealthCheckOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewLbTargetGroupHealthCheckOutputReference_Override(l LbTargetGroupHealthCheckOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbTargetGroupHealthCheckOutputReference_Override(l LbTargetGroupHealthCheckOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -37050,7 +43985,7 @@ func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -37075,12 +44010,40 @@ func (j *jsiiProxy_LbTargetGroupHealthCheckOutputReference) SetUnhealthyThreshol
 }
 
 // Experimental.
-func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -37117,12 +44080,54 @@ func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -37231,14 +44236,14 @@ func (l *jsiiProxy_LbTargetGroupHealthCheckOutputReference) ResetUnhealthyThresh
 }
 
 type LbTargetGroupStickiness struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#type LbTargetGroup#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#cookie_duration LbTargetGroup#cookie_duration}.
-	CookieDuration *float64 `json:"cookieDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#cookie_name LbTargetGroup#cookie_name}.
-	CookieName *string `json:"cookieName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group.html#enabled LbTargetGroup#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#type LbTargetGroup#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#cookie_duration LbTargetGroup#cookie_duration}.
+	CookieDuration *float64 `json:"cookieDuration" yaml:"cookieDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#cookie_name LbTargetGroup#cookie_name}.
+	CookieName *string `json:"cookieName" yaml:"cookieName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb_target_group#enabled LbTargetGroup#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type LbTargetGroupStickinessOutputReference interface {
@@ -37258,15 +44263,20 @@ type LbTargetGroupStickinessOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCookieDuration()
@@ -37369,8 +44379,8 @@ func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -37399,7 +44409,7 @@ func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) TypeInput() *string {
 	return returns
 }
 
-func NewLbTargetGroupStickinessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbTargetGroupStickinessOutputReference {
+func NewLbTargetGroupStickinessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbTargetGroupStickinessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbTargetGroupStickinessOutputReference{}
@@ -37413,7 +44423,7 @@ func NewLbTargetGroupStickinessOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewLbTargetGroupStickinessOutputReference_Override(l LbTargetGroupStickinessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbTargetGroupStickinessOutputReference_Override(l LbTargetGroupStickinessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -37471,7 +44481,7 @@ func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -37488,12 +44498,40 @@ func (j *jsiiProxy_LbTargetGroupStickinessOutputReference) SetType(val *string) 
 }
 
 // Experimental.
-func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -37530,12 +44568,54 @@ func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -37596,12 +44676,12 @@ func (l *jsiiProxy_LbTargetGroupStickinessOutputReference) ResetEnabled() {
 }
 
 type LbTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#create Lb#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#delete Lb#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb.html#update Lb#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#create Lb#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#delete Lb#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lb#update Lb#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type LbTimeoutsOutputReference interface {
@@ -37618,15 +44698,20 @@ type LbTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -37709,8 +44794,8 @@ func (j *jsiiProxy_LbTimeoutsOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_LbTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LbTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -37739,7 +44824,7 @@ func (j *jsiiProxy_LbTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewLbTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LbTimeoutsOutputReference {
+func NewLbTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LbTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LbTimeoutsOutputReference{}
@@ -37753,7 +44838,7 @@ func NewLbTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, te
 	return &j
 }
 
-func NewLbTimeoutsOutputReference_Override(l LbTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLbTimeoutsOutputReference_Override(l LbTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -37803,7 +44888,7 @@ func (j *jsiiProxy_LbTimeoutsOutputReference) SetTerraformAttribute(val *string)
 	)
 }
 
-func (j *jsiiProxy_LbTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LbTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -37820,12 +44905,40 @@ func (j *jsiiProxy_LbTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (l *jsiiProxy_LbTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LbTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -37862,12 +44975,54 @@ func (l *jsiiProxy_LbTimeoutsOutputReference) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (l *jsiiProxy_LbTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LbTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LbTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -37927,13 +45082,13 @@ func (l *jsiiProxy_LbTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy.html aws_load_balancer_backend_server_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy aws_load_balancer_backend_server_policy}.
 type LoadBalancerBackendServerPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37958,10 +45113,15 @@ type LoadBalancerBackendServerPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -37997,8 +45157,8 @@ func (j *jsiiProxy_LoadBalancerBackendServerPolicy) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerBackendServerPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LoadBalancerBackendServerPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -38177,7 +45337,7 @@ func (j *jsiiProxy_LoadBalancerBackendServerPolicy) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy.html aws_load_balancer_backend_server_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy aws_load_balancer_backend_server_policy} Resource.
 func NewLoadBalancerBackendServerPolicy(scope constructs.Construct, id *string, config *LoadBalancerBackendServerPolicyConfig) LoadBalancerBackendServerPolicy {
 	_init_.Initialize()
 
@@ -38192,7 +45352,7 @@ func NewLoadBalancerBackendServerPolicy(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy.html aws_load_balancer_backend_server_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy aws_load_balancer_backend_server_policy} Resource.
 func NewLoadBalancerBackendServerPolicy_Override(l LoadBalancerBackendServerPolicy, scope constructs.Construct, id *string, config *LoadBalancerBackendServerPolicyConfig) {
 	_init_.Initialize()
 
@@ -38203,7 +45363,7 @@ func NewLoadBalancerBackendServerPolicy_Override(l LoadBalancerBackendServerPoli
 	)
 }
 
-func (j *jsiiProxy_LoadBalancerBackendServerPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_LoadBalancerBackendServerPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -38299,12 +45459,40 @@ func (l *jsiiProxy_LoadBalancerBackendServerPolicy) AddOverride(path *string, va
 }
 
 // Experimental.
+func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -38341,12 +45529,54 @@ func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerBackendServerPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -38455,28 +45685,28 @@ func (l *jsiiProxy_LoadBalancerBackendServerPolicy) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type LoadBalancerBackendServerPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy.html#instance_port LoadBalancerBackendServerPolicy#instance_port}.
-	InstancePort *float64 `json:"instancePort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy.html#load_balancer_name LoadBalancerBackendServerPolicy#load_balancer_name}.
-	LoadBalancerName *string `json:"loadBalancerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy.html#policy_names LoadBalancerBackendServerPolicy#policy_names}.
-	PolicyNames *[]*string `json:"policyNames"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy#instance_port LoadBalancerBackendServerPolicy#instance_port}.
+	InstancePort *float64 `json:"instancePort" yaml:"instancePort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy#load_balancer_name LoadBalancerBackendServerPolicy#load_balancer_name}.
+	LoadBalancerName *string `json:"loadBalancerName" yaml:"loadBalancerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_backend_server_policy#policy_names LoadBalancerBackendServerPolicy#policy_names}.
+	PolicyNames *[]*string `json:"policyNames" yaml:"policyNames"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy.html aws_load_balancer_listener_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy aws_load_balancer_listener_policy}.
 type LoadBalancerListenerPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -38501,10 +45731,15 @@ type LoadBalancerListenerPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -38540,8 +45775,8 @@ func (j *jsiiProxy_LoadBalancerListenerPolicy) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerListenerPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LoadBalancerListenerPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -38720,7 +45955,7 @@ func (j *jsiiProxy_LoadBalancerListenerPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy.html aws_load_balancer_listener_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy aws_load_balancer_listener_policy} Resource.
 func NewLoadBalancerListenerPolicy(scope constructs.Construct, id *string, config *LoadBalancerListenerPolicyConfig) LoadBalancerListenerPolicy {
 	_init_.Initialize()
 
@@ -38735,7 +45970,7 @@ func NewLoadBalancerListenerPolicy(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy.html aws_load_balancer_listener_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy aws_load_balancer_listener_policy} Resource.
 func NewLoadBalancerListenerPolicy_Override(l LoadBalancerListenerPolicy, scope constructs.Construct, id *string, config *LoadBalancerListenerPolicyConfig) {
 	_init_.Initialize()
 
@@ -38746,7 +45981,7 @@ func NewLoadBalancerListenerPolicy_Override(l LoadBalancerListenerPolicy, scope 
 	)
 }
 
-func (j *jsiiProxy_LoadBalancerListenerPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_LoadBalancerListenerPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -38842,12 +46077,40 @@ func (l *jsiiProxy_LoadBalancerListenerPolicy) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (l *jsiiProxy_LoadBalancerListenerPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LoadBalancerListenerPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerListenerPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -38884,12 +46147,54 @@ func (l *jsiiProxy_LoadBalancerListenerPolicy) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (l *jsiiProxy_LoadBalancerListenerPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerListenerPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LoadBalancerListenerPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerListenerPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -38998,28 +46303,28 @@ func (l *jsiiProxy_LoadBalancerListenerPolicy) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type LoadBalancerListenerPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy.html#load_balancer_name LoadBalancerListenerPolicy#load_balancer_name}.
-	LoadBalancerName *string `json:"loadBalancerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy.html#load_balancer_port LoadBalancerListenerPolicy#load_balancer_port}.
-	LoadBalancerPort *float64 `json:"loadBalancerPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy.html#policy_names LoadBalancerListenerPolicy#policy_names}.
-	PolicyNames *[]*string `json:"policyNames"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy#load_balancer_name LoadBalancerListenerPolicy#load_balancer_name}.
+	LoadBalancerName *string `json:"loadBalancerName" yaml:"loadBalancerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy#load_balancer_port LoadBalancerListenerPolicy#load_balancer_port}.
+	LoadBalancerPort *float64 `json:"loadBalancerPort" yaml:"loadBalancerPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_listener_policy#policy_names LoadBalancerListenerPolicy#policy_names}.
+	PolicyNames *[]*string `json:"policyNames" yaml:"policyNames"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html aws_load_balancer_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy aws_load_balancer_policy}.
 type LoadBalancerPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -39031,9 +46336,9 @@ type LoadBalancerPolicy interface {
 	SetLoadBalancerName(val *string)
 	LoadBalancerNameInput() *string
 	Node() constructs.Node
-	PolicyAttribute() *[]*LoadBalancerPolicyPolicyAttribute
-	SetPolicyAttribute(val *[]*LoadBalancerPolicyPolicyAttribute)
-	PolicyAttributeInput() *[]*LoadBalancerPolicyPolicyAttribute
+	PolicyAttribute() interface{}
+	SetPolicyAttribute(val interface{})
+	PolicyAttributeInput() interface{}
 	PolicyName() *string
 	SetPolicyName(val *string)
 	PolicyNameInput() *string
@@ -39047,10 +46352,15 @@ type LoadBalancerPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -39086,8 +46396,8 @@ func (j *jsiiProxy_LoadBalancerPolicy) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LoadBalancerPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -39176,8 +46486,8 @@ func (j *jsiiProxy_LoadBalancerPolicy) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerPolicy) PolicyAttribute() *[]*LoadBalancerPolicyPolicyAttribute {
-	var returns *[]*LoadBalancerPolicyPolicyAttribute
+func (j *jsiiProxy_LoadBalancerPolicy) PolicyAttribute() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"policyAttribute",
@@ -39186,8 +46496,8 @@ func (j *jsiiProxy_LoadBalancerPolicy) PolicyAttribute() *[]*LoadBalancerPolicyP
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerPolicy) PolicyAttributeInput() *[]*LoadBalancerPolicyPolicyAttribute {
-	var returns *[]*LoadBalancerPolicyPolicyAttribute
+func (j *jsiiProxy_LoadBalancerPolicy) PolicyAttributeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"policyAttributeInput",
@@ -39286,7 +46596,7 @@ func (j *jsiiProxy_LoadBalancerPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html aws_load_balancer_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy aws_load_balancer_policy} Resource.
 func NewLoadBalancerPolicy(scope constructs.Construct, id *string, config *LoadBalancerPolicyConfig) LoadBalancerPolicy {
 	_init_.Initialize()
 
@@ -39301,7 +46611,7 @@ func NewLoadBalancerPolicy(scope constructs.Construct, id *string, config *LoadB
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html aws_load_balancer_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy aws_load_balancer_policy} Resource.
 func NewLoadBalancerPolicy_Override(l LoadBalancerPolicy, scope constructs.Construct, id *string, config *LoadBalancerPolicyConfig) {
 	_init_.Initialize()
 
@@ -39312,7 +46622,7 @@ func NewLoadBalancerPolicy_Override(l LoadBalancerPolicy, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_LoadBalancerPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_LoadBalancerPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -39344,7 +46654,7 @@ func (j *jsiiProxy_LoadBalancerPolicy) SetLoadBalancerName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LoadBalancerPolicy) SetPolicyAttribute(val *[]*LoadBalancerPolicyPolicyAttribute) {
+func (j *jsiiProxy_LoadBalancerPolicy) SetPolicyAttribute(val interface{}) {
 	_jsii_.Set(
 		j,
 		"policyAttribute",
@@ -39416,12 +46726,40 @@ func (l *jsiiProxy_LoadBalancerPolicy) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (l *jsiiProxy_LoadBalancerPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LoadBalancerPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -39458,12 +46796,54 @@ func (l *jsiiProxy_LoadBalancerPolicy) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (l *jsiiProxy_LoadBalancerPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LoadBalancerPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LoadBalancerPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -39572,39 +46952,39 @@ func (l *jsiiProxy_LoadBalancerPolicy) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type LoadBalancerPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html#load_balancer_name LoadBalancerPolicy#load_balancer_name}.
-	LoadBalancerName *string `json:"loadBalancerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html#policy_name LoadBalancerPolicy#policy_name}.
-	PolicyName *string `json:"policyName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html#policy_type_name LoadBalancerPolicy#policy_type_name}.
-	PolicyTypeName *string `json:"policyTypeName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy#load_balancer_name LoadBalancerPolicy#load_balancer_name}.
+	LoadBalancerName *string `json:"loadBalancerName" yaml:"loadBalancerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy#policy_name LoadBalancerPolicy#policy_name}.
+	PolicyName *string `json:"policyName" yaml:"policyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy#policy_type_name LoadBalancerPolicy#policy_type_name}.
+	PolicyTypeName *string `json:"policyTypeName" yaml:"policyTypeName"`
 	// policy_attribute block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html#policy_attribute LoadBalancerPolicy#policy_attribute}
-	PolicyAttribute *[]*LoadBalancerPolicyPolicyAttribute `json:"policyAttribute"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy#policy_attribute LoadBalancerPolicy#policy_attribute}
+	PolicyAttribute interface{} `json:"policyAttribute" yaml:"policyAttribute"`
 }
 
 type LoadBalancerPolicyPolicyAttribute struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html#name LoadBalancerPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy.html#value LoadBalancerPolicy#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy#name LoadBalancerPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/load_balancer_policy#value LoadBalancerPolicy#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy.html aws_proxy_protocol_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy aws_proxy_protocol_policy}.
 type ProxyProtocolPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -39626,10 +47006,15 @@ type ProxyProtocolPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -39664,8 +47049,8 @@ func (j *jsiiProxy_ProxyProtocolPolicy) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_ProxyProtocolPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ProxyProtocolPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -39824,7 +47209,7 @@ func (j *jsiiProxy_ProxyProtocolPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy.html aws_proxy_protocol_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy aws_proxy_protocol_policy} Resource.
 func NewProxyProtocolPolicy(scope constructs.Construct, id *string, config *ProxyProtocolPolicyConfig) ProxyProtocolPolicy {
 	_init_.Initialize()
 
@@ -39839,7 +47224,7 @@ func NewProxyProtocolPolicy(scope constructs.Construct, id *string, config *Prox
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy.html aws_proxy_protocol_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy aws_proxy_protocol_policy} Resource.
 func NewProxyProtocolPolicy_Override(p ProxyProtocolPolicy, scope constructs.Construct, id *string, config *ProxyProtocolPolicyConfig) {
 	_init_.Initialize()
 
@@ -39850,7 +47235,7 @@ func NewProxyProtocolPolicy_Override(p ProxyProtocolPolicy, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_ProxyProtocolPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_ProxyProtocolPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -39938,12 +47323,40 @@ func (p *jsiiProxy_ProxyProtocolPolicy) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (p *jsiiProxy_ProxyProtocolPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_ProxyProtocolPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_ProxyProtocolPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -39980,12 +47393,54 @@ func (p *jsiiProxy_ProxyProtocolPolicy) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (p *jsiiProxy_ProxyProtocolPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_ProxyProtocolPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_ProxyProtocolPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_ProxyProtocolPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -40086,15 +47541,15 @@ func (p *jsiiProxy_ProxyProtocolPolicy) ToTerraform() interface{} {
 // AWS Elastic Load Balancer.
 type ProxyProtocolPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy.html#instance_ports ProxyProtocolPolicy#instance_ports}.
-	InstancePorts *[]*string `json:"instancePorts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy.html#load_balancer ProxyProtocolPolicy#load_balancer}.
-	LoadBalancer *string `json:"loadBalancer"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy#instance_ports ProxyProtocolPolicy#instance_ports}.
+	InstancePorts *[]*string `json:"instancePorts" yaml:"instancePorts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/proxy_protocol_policy#load_balancer ProxyProtocolPolicy#load_balancer}.
+	LoadBalancer *string `json:"loadBalancer" yaml:"loadBalancer"`
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/outposts/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost.html aws_outposts_outpost}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost aws_outposts_outpost}.
 type DataAwsOutpostsOutpost interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -17,8 +17,8 @@ type DataAwsOutpostsOutpost interface {
 	AvailabilityZoneId() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -42,10 +42,15 @@ type DataAwsOutpostsOutpost interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -112,8 +117,8 @@ func (j *jsiiProxy_DataAwsOutpostsOutpost) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutpost) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOutpostsOutpost) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -292,7 +297,7 @@ func (j *jsiiProxy_DataAwsOutpostsOutpost) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost.html aws_outposts_outpost} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost aws_outposts_outpost} Data Source.
 func NewDataAwsOutpostsOutpost(scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostConfig) DataAwsOutpostsOutpost {
 	_init_.Initialize()
 
@@ -307,7 +312,7 @@ func NewDataAwsOutpostsOutpost(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost.html aws_outposts_outpost} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost aws_outposts_outpost} Data Source.
 func NewDataAwsOutpostsOutpost_Override(d DataAwsOutpostsOutpost, scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostConfig) {
 	_init_.Initialize()
 
@@ -318,7 +323,7 @@ func NewDataAwsOutpostsOutpost_Override(d DataAwsOutpostsOutpost, scope construc
 	)
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutpost) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOutpostsOutpost) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -406,12 +411,40 @@ func (d *jsiiProxy_DataAwsOutpostsOutpost) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpost) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutpost) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpost) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -448,12 +481,54 @@ func (d *jsiiProxy_DataAwsOutpostsOutpost) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpost) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpost) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutpost) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpost) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -570,20 +645,20 @@ func (d *jsiiProxy_DataAwsOutpostsOutpost) ToTerraform() interface{} {
 // AWS Outposts.
 type DataAwsOutpostsOutpostConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost.html#name DataAwsOutpostsOutpost#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost.html#owner_id DataAwsOutpostsOutpost#owner_id}.
-	OwnerId *string `json:"ownerId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost#name DataAwsOutpostsOutpost#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost#owner_id DataAwsOutpostsOutpost#owner_id}.
+	OwnerId *string `json:"ownerId" yaml:"ownerId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type.html aws_outposts_outpost_instance_type}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type aws_outposts_outpost_instance_type}.
 type DataAwsOutpostsOutpostInstanceType interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -591,8 +666,8 @@ type DataAwsOutpostsOutpostInstanceType interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -614,10 +689,15 @@ type DataAwsOutpostsOutpostInstanceType interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetInstanceType()
@@ -674,8 +754,8 @@ func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceType) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceType) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceType) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -834,7 +914,7 @@ func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceType) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type.html aws_outposts_outpost_instance_type} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type aws_outposts_outpost_instance_type} Data Source.
 func NewDataAwsOutpostsOutpostInstanceType(scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostInstanceTypeConfig) DataAwsOutpostsOutpostInstanceType {
 	_init_.Initialize()
 
@@ -849,7 +929,7 @@ func NewDataAwsOutpostsOutpostInstanceType(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type.html aws_outposts_outpost_instance_type} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type aws_outposts_outpost_instance_type} Data Source.
 func NewDataAwsOutpostsOutpostInstanceType_Override(d DataAwsOutpostsOutpostInstanceType, scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostInstanceTypeConfig) {
 	_init_.Initialize()
 
@@ -868,7 +948,7 @@ func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceType) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceType) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceType) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -956,12 +1036,40 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) AddOverride(path *string,
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -998,12 +1106,54 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1120,22 +1270,22 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceType) ToTerraform() interface{}
 // AWS Outposts.
 type DataAwsOutpostsOutpostInstanceTypeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type.html#arn DataAwsOutpostsOutpostInstanceType#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type.html#instance_type DataAwsOutpostsOutpostInstanceType#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type.html#preferred_instance_types DataAwsOutpostsOutpostInstanceType#preferred_instance_types}.
-	PreferredInstanceTypes *[]*string `json:"preferredInstanceTypes"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type#arn DataAwsOutpostsOutpostInstanceType#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type#instance_type DataAwsOutpostsOutpostInstanceType#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_type#preferred_instance_types DataAwsOutpostsOutpostInstanceType#preferred_instance_types}.
+	PreferredInstanceTypes *[]*string `json:"preferredInstanceTypes" yaml:"preferredInstanceTypes"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types.html aws_outposts_outpost_instance_types}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types aws_outposts_outpost_instance_types}.
 type DataAwsOutpostsOutpostInstanceTypes interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -1143,8 +1293,8 @@ type DataAwsOutpostsOutpostInstanceTypes interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1161,10 +1311,15 @@ type DataAwsOutpostsOutpostInstanceTypes interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1219,8 +1374,8 @@ func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1349,7 +1504,7 @@ func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types.html aws_outposts_outpost_instance_types} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types aws_outposts_outpost_instance_types} Data Source.
 func NewDataAwsOutpostsOutpostInstanceTypes(scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostInstanceTypesConfig) DataAwsOutpostsOutpostInstanceTypes {
 	_init_.Initialize()
 
@@ -1364,7 +1519,7 @@ func NewDataAwsOutpostsOutpostInstanceTypes(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types.html aws_outposts_outpost_instance_types} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types aws_outposts_outpost_instance_types} Data Source.
 func NewDataAwsOutpostsOutpostInstanceTypes_Override(d DataAwsOutpostsOutpostInstanceTypes, scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostInstanceTypesConfig) {
 	_init_.Initialize()
 
@@ -1383,7 +1538,7 @@ func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1455,12 +1610,40 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) AddOverride(path *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1497,12 +1680,54 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1603,18 +1828,18 @@ func (d *jsiiProxy_DataAwsOutpostsOutpostInstanceTypes) ToTerraform() interface{
 // AWS Outposts.
 type DataAwsOutpostsOutpostInstanceTypesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types.html#arn DataAwsOutpostsOutpostInstanceTypes#arn}.
-	Arn *string `json:"arn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outpost_instance_types#arn DataAwsOutpostsOutpostInstanceTypes#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts.html aws_outposts_outposts}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts aws_outposts_outposts}.
 type DataAwsOutpostsOutposts interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
@@ -1626,8 +1851,8 @@ type DataAwsOutpostsOutposts interface {
 	AvailabilityZoneInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1650,10 +1875,15 @@ type DataAwsOutpostsOutposts interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAvailabilityZone()
@@ -1742,8 +1972,8 @@ func (j *jsiiProxy_DataAwsOutpostsOutposts) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutposts) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOutpostsOutposts) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1912,7 +2142,7 @@ func (j *jsiiProxy_DataAwsOutpostsOutposts) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts.html aws_outposts_outposts} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts aws_outposts_outposts} Data Source.
 func NewDataAwsOutpostsOutposts(scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostsConfig) DataAwsOutpostsOutposts {
 	_init_.Initialize()
 
@@ -1927,7 +2157,7 @@ func NewDataAwsOutpostsOutposts(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts.html aws_outposts_outposts} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts aws_outposts_outposts} Data Source.
 func NewDataAwsOutpostsOutposts_Override(d DataAwsOutpostsOutposts, scope constructs.Construct, id *string, config *DataAwsOutpostsOutpostsConfig) {
 	_init_.Initialize()
 
@@ -1954,7 +2184,7 @@ func (j *jsiiProxy_DataAwsOutpostsOutposts) SetAvailabilityZoneId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsOutpostsOutposts) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOutpostsOutposts) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2042,12 +2272,40 @@ func (d *jsiiProxy_DataAwsOutpostsOutposts) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutposts) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutposts) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutposts) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2084,12 +2342,54 @@ func (d *jsiiProxy_DataAwsOutpostsOutposts) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutposts) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutposts) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsOutposts) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsOutposts) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2222,31 +2522,31 @@ func (d *jsiiProxy_DataAwsOutpostsOutposts) ToTerraform() interface{} {
 // AWS Outposts.
 type DataAwsOutpostsOutpostsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts.html#availability_zone DataAwsOutpostsOutposts#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts.html#availability_zone_id DataAwsOutpostsOutposts#availability_zone_id}.
-	AvailabilityZoneId *string `json:"availabilityZoneId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts.html#owner_id DataAwsOutpostsOutposts#owner_id}.
-	OwnerId *string `json:"ownerId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts.html#site_id DataAwsOutpostsOutposts#site_id}.
-	SiteId *string `json:"siteId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts#availability_zone DataAwsOutpostsOutposts#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts#availability_zone_id DataAwsOutpostsOutposts#availability_zone_id}.
+	AvailabilityZoneId *string `json:"availabilityZoneId" yaml:"availabilityZoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts#owner_id DataAwsOutpostsOutposts#owner_id}.
+	OwnerId *string `json:"ownerId" yaml:"ownerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_outposts#site_id DataAwsOutpostsOutposts#site_id}.
+	SiteId *string `json:"siteId" yaml:"siteId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_site.html aws_outposts_site}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_site aws_outposts_site}.
 type DataAwsOutpostsSite interface {
 	cdktf.TerraformDataSource
 	AccountId() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2266,10 +2566,15 @@ type DataAwsOutpostsSite interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -2315,8 +2620,8 @@ func (j *jsiiProxy_DataAwsOutpostsSite) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOutpostsSite) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOutpostsSite) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2465,7 +2770,7 @@ func (j *jsiiProxy_DataAwsOutpostsSite) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_site.html aws_outposts_site} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_site aws_outposts_site} Data Source.
 func NewDataAwsOutpostsSite(scope constructs.Construct, id *string, config *DataAwsOutpostsSiteConfig) DataAwsOutpostsSite {
 	_init_.Initialize()
 
@@ -2480,7 +2785,7 @@ func NewDataAwsOutpostsSite(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_site.html aws_outposts_site} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_site aws_outposts_site} Data Source.
 func NewDataAwsOutpostsSite_Override(d DataAwsOutpostsSite, scope constructs.Construct, id *string, config *DataAwsOutpostsSiteConfig) {
 	_init_.Initialize()
 
@@ -2491,7 +2796,7 @@ func NewDataAwsOutpostsSite_Override(d DataAwsOutpostsSite, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_DataAwsOutpostsSite) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOutpostsSite) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2571,12 +2876,40 @@ func (d *jsiiProxy_DataAwsOutpostsSite) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSite) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsSite) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSite) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2613,12 +2946,54 @@ func (d *jsiiProxy_DataAwsOutpostsSite) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSite) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSite) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsSite) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSite) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2727,24 +3102,24 @@ func (d *jsiiProxy_DataAwsOutpostsSite) ToTerraform() interface{} {
 // AWS Outposts.
 type DataAwsOutpostsSiteConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_site.html#name DataAwsOutpostsSite#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/outposts_site#name DataAwsOutpostsSite#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_sites.html aws_outposts_sites}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/outposts_sites aws_outposts_sites}.
 type DataAwsOutpostsSites interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2761,10 +3136,15 @@ type DataAwsOutpostsSites interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2799,8 +3179,8 @@ func (j *jsiiProxy_DataAwsOutpostsSites) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOutpostsSites) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOutpostsSites) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2929,7 +3309,7 @@ func (j *jsiiProxy_DataAwsOutpostsSites) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_sites.html aws_outposts_sites} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_sites aws_outposts_sites} Data Source.
 func NewDataAwsOutpostsSites(scope constructs.Construct, id *string, config *DataAwsOutpostsSitesConfig) DataAwsOutpostsSites {
 	_init_.Initialize()
 
@@ -2944,7 +3324,7 @@ func NewDataAwsOutpostsSites(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_sites.html aws_outposts_sites} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/outposts_sites aws_outposts_sites} Data Source.
 func NewDataAwsOutpostsSites_Override(d DataAwsOutpostsSites, scope constructs.Construct, id *string, config *DataAwsOutpostsSitesConfig) {
 	_init_.Initialize()
 
@@ -2955,7 +3335,7 @@ func NewDataAwsOutpostsSites_Override(d DataAwsOutpostsSites, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsOutpostsSites) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOutpostsSites) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3027,12 +3407,40 @@ func (d *jsiiProxy_DataAwsOutpostsSites) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSites) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsSites) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSites) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3069,12 +3477,54 @@ func (d *jsiiProxy_DataAwsOutpostsSites) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSites) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSites) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOutpostsSites) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOutpostsSites) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3175,11 +3625,11 @@ func (d *jsiiProxy_DataAwsOutpostsSites) ToTerraform() interface{} {
 // AWS Outposts.
 type DataAwsOutpostsSitesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }

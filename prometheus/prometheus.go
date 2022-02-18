@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/prometheus/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition.html aws_prometheus_alert_manager_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition aws_prometheus_alert_manager_definition}.
 type PrometheusAlertManagerDefinition interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Definition() *string
 	SetDefinition(val *string)
 	DefinitionInput() *string
@@ -37,10 +37,15 @@ type PrometheusAlertManagerDefinition interface {
 	SetWorkspaceId(val *string)
 	WorkspaceIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -75,8 +80,8 @@ func (j *jsiiProxy_PrometheusAlertManagerDefinition) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusAlertManagerDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PrometheusAlertManagerDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -235,7 +240,7 @@ func (j *jsiiProxy_PrometheusAlertManagerDefinition) WorkspaceIdInput() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition.html aws_prometheus_alert_manager_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition aws_prometheus_alert_manager_definition} Resource.
 func NewPrometheusAlertManagerDefinition(scope constructs.Construct, id *string, config *PrometheusAlertManagerDefinitionConfig) PrometheusAlertManagerDefinition {
 	_init_.Initialize()
 
@@ -250,7 +255,7 @@ func NewPrometheusAlertManagerDefinition(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition.html aws_prometheus_alert_manager_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition aws_prometheus_alert_manager_definition} Resource.
 func NewPrometheusAlertManagerDefinition_Override(p PrometheusAlertManagerDefinition, scope constructs.Construct, id *string, config *PrometheusAlertManagerDefinitionConfig) {
 	_init_.Initialize()
 
@@ -261,7 +266,7 @@ func NewPrometheusAlertManagerDefinition_Override(p PrometheusAlertManagerDefini
 	)
 }
 
-func (j *jsiiProxy_PrometheusAlertManagerDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_PrometheusAlertManagerDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -349,12 +354,40 @@ func (p *jsiiProxy_PrometheusAlertManagerDefinition) AddOverride(path *string, v
 }
 
 // Experimental.
+func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -391,12 +424,54 @@ func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusAlertManagerDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -497,26 +572,26 @@ func (p *jsiiProxy_PrometheusAlertManagerDefinition) ToTerraform() interface{} {
 // Prometheus.
 type PrometheusAlertManagerDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition.html#definition PrometheusAlertManagerDefinition#definition}.
-	Definition *string `json:"definition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition.html#workspace_id PrometheusAlertManagerDefinition#workspace_id}.
-	WorkspaceId *string `json:"workspaceId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition#definition PrometheusAlertManagerDefinition#definition}.
+	Definition *string `json:"definition" yaml:"definition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_alert_manager_definition#workspace_id PrometheusAlertManagerDefinition#workspace_id}.
+	WorkspaceId *string `json:"workspaceId" yaml:"workspaceId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace.html aws_prometheus_rule_group_namespace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace aws_prometheus_rule_group_namespace}.
 type PrometheusRuleGroupNamespace interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
@@ -541,10 +616,15 @@ type PrometheusRuleGroupNamespace interface {
 	SetWorkspaceId(val *string)
 	WorkspaceIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -579,8 +659,8 @@ func (j *jsiiProxy_PrometheusRuleGroupNamespace) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusRuleGroupNamespace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PrometheusRuleGroupNamespace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -759,7 +839,7 @@ func (j *jsiiProxy_PrometheusRuleGroupNamespace) WorkspaceIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace.html aws_prometheus_rule_group_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace aws_prometheus_rule_group_namespace} Resource.
 func NewPrometheusRuleGroupNamespace(scope constructs.Construct, id *string, config *PrometheusRuleGroupNamespaceConfig) PrometheusRuleGroupNamespace {
 	_init_.Initialize()
 
@@ -774,7 +854,7 @@ func NewPrometheusRuleGroupNamespace(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace.html aws_prometheus_rule_group_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace aws_prometheus_rule_group_namespace} Resource.
 func NewPrometheusRuleGroupNamespace_Override(p PrometheusRuleGroupNamespace, scope constructs.Construct, id *string, config *PrometheusRuleGroupNamespaceConfig) {
 	_init_.Initialize()
 
@@ -785,7 +865,7 @@ func NewPrometheusRuleGroupNamespace_Override(p PrometheusRuleGroupNamespace, sc
 	)
 }
 
-func (j *jsiiProxy_PrometheusRuleGroupNamespace) SetCount(val interface{}) {
+func (j *jsiiProxy_PrometheusRuleGroupNamespace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -881,12 +961,40 @@ func (p *jsiiProxy_PrometheusRuleGroupNamespace) AddOverride(path *string, value
 }
 
 // Experimental.
+func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -923,12 +1031,54 @@ func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusRuleGroupNamespace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1029,22 +1179,22 @@ func (p *jsiiProxy_PrometheusRuleGroupNamespace) ToTerraform() interface{} {
 // Prometheus.
 type PrometheusRuleGroupNamespaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace.html#data PrometheusRuleGroupNamespace#data}.
-	Data *string `json:"data"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace.html#name PrometheusRuleGroupNamespace#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace.html#workspace_id PrometheusRuleGroupNamespace#workspace_id}.
-	WorkspaceId *string `json:"workspaceId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace#data PrometheusRuleGroupNamespace#data}.
+	Data *string `json:"data" yaml:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace#name PrometheusRuleGroupNamespace#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_rule_group_namespace#workspace_id PrometheusRuleGroupNamespace#workspace_id}.
+	WorkspaceId *string `json:"workspaceId" yaml:"workspaceId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace.html aws_prometheus_workspace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace aws_prometheus_workspace}.
 type PrometheusWorkspace interface {
 	cdktf.TerraformResource
 	Alias() *string
@@ -1053,8 +1203,8 @@ type PrometheusWorkspace interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1071,10 +1221,15 @@ type PrometheusWorkspace interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAlias()
@@ -1140,8 +1295,8 @@ func (j *jsiiProxy_PrometheusWorkspace) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusWorkspace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PrometheusWorkspace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1270,7 +1425,7 @@ func (j *jsiiProxy_PrometheusWorkspace) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace.html aws_prometheus_workspace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace aws_prometheus_workspace} Resource.
 func NewPrometheusWorkspace(scope constructs.Construct, id *string, config *PrometheusWorkspaceConfig) PrometheusWorkspace {
 	_init_.Initialize()
 
@@ -1285,7 +1440,7 @@ func NewPrometheusWorkspace(scope constructs.Construct, id *string, config *Prom
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace.html aws_prometheus_workspace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace aws_prometheus_workspace} Resource.
 func NewPrometheusWorkspace_Override(p PrometheusWorkspace, scope constructs.Construct, id *string, config *PrometheusWorkspaceConfig) {
 	_init_.Initialize()
 
@@ -1304,7 +1459,7 @@ func (j *jsiiProxy_PrometheusWorkspace) SetAlias(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PrometheusWorkspace) SetCount(val interface{}) {
+func (j *jsiiProxy_PrometheusWorkspace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1376,12 +1531,40 @@ func (p *jsiiProxy_PrometheusWorkspace) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (p *jsiiProxy_PrometheusWorkspace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PrometheusWorkspace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusWorkspace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1418,12 +1601,54 @@ func (p *jsiiProxy_PrometheusWorkspace) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (p *jsiiProxy_PrometheusWorkspace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusWorkspace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PrometheusWorkspace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PrometheusWorkspace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1532,13 +1757,13 @@ func (p *jsiiProxy_PrometheusWorkspace) ToTerraform() interface{} {
 // Prometheus.
 type PrometheusWorkspaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace.html#alias PrometheusWorkspace#alias}.
-	Alias *string `json:"alias"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/prometheus_workspace#alias PrometheusWorkspace#alias}.
+	Alias *string `json:"alias" yaml:"alias"`
 }

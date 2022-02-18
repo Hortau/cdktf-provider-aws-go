@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/codeartifact/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain.html aws_codeartifact_domain}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain aws_codeartifact_domain}.
 type CodeartifactDomain interface {
 	cdktf.TerraformResource
 	Arn() *string
 	AssetSizeBytes() *float64
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -38,20 +38,25 @@ type CodeartifactDomain interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	RepositoryCount() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEncryptionKey()
@@ -109,8 +114,8 @@ func (j *jsiiProxy_CodeartifactDomain) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactDomain) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactDomain) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -269,8 +274,8 @@ func (j *jsiiProxy_CodeartifactDomain) RepositoryCount() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactDomain) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactDomain) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -279,8 +284,8 @@ func (j *jsiiProxy_CodeartifactDomain) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactDomain) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactDomain) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -289,8 +294,8 @@ func (j *jsiiProxy_CodeartifactDomain) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactDomain) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactDomain) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -299,8 +304,8 @@ func (j *jsiiProxy_CodeartifactDomain) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactDomain) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactDomain) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -339,7 +344,7 @@ func (j *jsiiProxy_CodeartifactDomain) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain.html aws_codeartifact_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain aws_codeartifact_domain} Resource.
 func NewCodeartifactDomain(scope constructs.Construct, id *string, config *CodeartifactDomainConfig) CodeartifactDomain {
 	_init_.Initialize()
 
@@ -354,7 +359,7 @@ func NewCodeartifactDomain(scope constructs.Construct, id *string, config *Codea
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain.html aws_codeartifact_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain aws_codeartifact_domain} Resource.
 func NewCodeartifactDomain_Override(c CodeartifactDomain, scope constructs.Construct, id *string, config *CodeartifactDomainConfig) {
 	_init_.Initialize()
 
@@ -365,7 +370,7 @@ func NewCodeartifactDomain_Override(c CodeartifactDomain, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_CodeartifactDomain) SetCount(val interface{}) {
+func (j *jsiiProxy_CodeartifactDomain) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -413,7 +418,7 @@ func (j *jsiiProxy_CodeartifactDomain) SetProvider(val cdktf.TerraformProvider) 
 	)
 }
 
-func (j *jsiiProxy_CodeartifactDomain) SetTags(val interface{}) {
+func (j *jsiiProxy_CodeartifactDomain) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -421,7 +426,7 @@ func (j *jsiiProxy_CodeartifactDomain) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodeartifactDomain) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodeartifactDomain) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -469,12 +474,40 @@ func (c *jsiiProxy_CodeartifactDomain) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactDomain) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactDomain) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactDomain) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -511,12 +544,54 @@ func (c *jsiiProxy_CodeartifactDomain) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactDomain) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactDomain) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactDomain) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactDomain) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -641,30 +716,30 @@ func (c *jsiiProxy_CodeartifactDomain) ToTerraform() interface{} {
 // AWS CodeArtifact.
 type CodeartifactDomainConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain.html#domain CodeartifactDomain#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain.html#encryption_key CodeartifactDomain#encryption_key}.
-	EncryptionKey *string `json:"encryptionKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain.html#tags CodeartifactDomain#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain.html#tags_all CodeartifactDomain#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain#domain CodeartifactDomain#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain#encryption_key CodeartifactDomain#encryption_key}.
+	EncryptionKey *string `json:"encryptionKey" yaml:"encryptionKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain#tags CodeartifactDomain#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain#tags_all CodeartifactDomain#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy.html aws_codeartifact_domain_permissions_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy aws_codeartifact_domain_permissions_policy}.
 type CodeartifactDomainPermissionsPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -693,10 +768,15 @@ type CodeartifactDomainPermissionsPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDomainOwner()
@@ -733,8 +813,8 @@ func (j *jsiiProxy_CodeartifactDomainPermissionsPolicy) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactDomainPermissionsPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactDomainPermissionsPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -943,7 +1023,7 @@ func (j *jsiiProxy_CodeartifactDomainPermissionsPolicy) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy.html aws_codeartifact_domain_permissions_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy aws_codeartifact_domain_permissions_policy} Resource.
 func NewCodeartifactDomainPermissionsPolicy(scope constructs.Construct, id *string, config *CodeartifactDomainPermissionsPolicyConfig) CodeartifactDomainPermissionsPolicy {
 	_init_.Initialize()
 
@@ -958,7 +1038,7 @@ func NewCodeartifactDomainPermissionsPolicy(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy.html aws_codeartifact_domain_permissions_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy aws_codeartifact_domain_permissions_policy} Resource.
 func NewCodeartifactDomainPermissionsPolicy_Override(c CodeartifactDomainPermissionsPolicy, scope constructs.Construct, id *string, config *CodeartifactDomainPermissionsPolicyConfig) {
 	_init_.Initialize()
 
@@ -969,7 +1049,7 @@ func NewCodeartifactDomainPermissionsPolicy_Override(c CodeartifactDomainPermiss
 	)
 }
 
-func (j *jsiiProxy_CodeartifactDomainPermissionsPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CodeartifactDomainPermissionsPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1073,12 +1153,40 @@ func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) AddOverride(path *string
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1115,12 +1223,54 @@ func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1237,32 +1387,32 @@ func (c *jsiiProxy_CodeartifactDomainPermissionsPolicy) ToTerraform() interface{
 // AWS CodeArtifact.
 type CodeartifactDomainPermissionsPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy.html#domain CodeartifactDomainPermissionsPolicy#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy.html#policy_document CodeartifactDomainPermissionsPolicy#policy_document}.
-	PolicyDocument *string `json:"policyDocument"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy.html#domain_owner CodeartifactDomainPermissionsPolicy#domain_owner}.
-	DomainOwner *string `json:"domainOwner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy.html#policy_revision CodeartifactDomainPermissionsPolicy#policy_revision}.
-	PolicyRevision *string `json:"policyRevision"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy#domain CodeartifactDomainPermissionsPolicy#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy#policy_document CodeartifactDomainPermissionsPolicy#policy_document}.
+	PolicyDocument *string `json:"policyDocument" yaml:"policyDocument"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy#domain_owner CodeartifactDomainPermissionsPolicy#domain_owner}.
+	DomainOwner *string `json:"domainOwner" yaml:"domainOwner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_domain_permissions_policy#policy_revision CodeartifactDomainPermissionsPolicy#policy_revision}.
+	PolicyRevision *string `json:"policyRevision" yaml:"policyRevision"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html aws_codeartifact_repository}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository aws_codeartifact_repository}.
 type CodeartifactRepository interface {
 	cdktf.TerraformResource
 	AdministratorAccount() *string
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1288,23 +1438,28 @@ type CodeartifactRepository interface {
 	Repository() *string
 	SetRepository(val *string)
 	RepositoryInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Upstream() *[]*CodeartifactRepositoryUpstream
-	SetUpstream(val *[]*CodeartifactRepositoryUpstream)
-	UpstreamInput() *[]*CodeartifactRepositoryUpstream
+	Upstream() interface{}
+	SetUpstream(val interface{})
+	UpstreamInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutExternalConnections(value *CodeartifactRepositoryExternalConnections)
@@ -1366,8 +1521,8 @@ func (j *jsiiProxy_CodeartifactRepository) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepository) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactRepository) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1556,8 +1711,8 @@ func (j *jsiiProxy_CodeartifactRepository) RepositoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepository) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactRepository) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1566,8 +1721,8 @@ func (j *jsiiProxy_CodeartifactRepository) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepository) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactRepository) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1576,8 +1731,8 @@ func (j *jsiiProxy_CodeartifactRepository) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepository) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactRepository) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1586,8 +1741,8 @@ func (j *jsiiProxy_CodeartifactRepository) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepository) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactRepository) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1626,8 +1781,8 @@ func (j *jsiiProxy_CodeartifactRepository) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepository) Upstream() *[]*CodeartifactRepositoryUpstream {
-	var returns *[]*CodeartifactRepositoryUpstream
+func (j *jsiiProxy_CodeartifactRepository) Upstream() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"upstream",
@@ -1636,8 +1791,8 @@ func (j *jsiiProxy_CodeartifactRepository) Upstream() *[]*CodeartifactRepository
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepository) UpstreamInput() *[]*CodeartifactRepositoryUpstream {
-	var returns *[]*CodeartifactRepositoryUpstream
+func (j *jsiiProxy_CodeartifactRepository) UpstreamInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"upstreamInput",
@@ -1646,7 +1801,7 @@ func (j *jsiiProxy_CodeartifactRepository) UpstreamInput() *[]*CodeartifactRepos
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html aws_codeartifact_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository aws_codeartifact_repository} Resource.
 func NewCodeartifactRepository(scope constructs.Construct, id *string, config *CodeartifactRepositoryConfig) CodeartifactRepository {
 	_init_.Initialize()
 
@@ -1661,7 +1816,7 @@ func NewCodeartifactRepository(scope constructs.Construct, id *string, config *C
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html aws_codeartifact_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository aws_codeartifact_repository} Resource.
 func NewCodeartifactRepository_Override(c CodeartifactRepository, scope constructs.Construct, id *string, config *CodeartifactRepositoryConfig) {
 	_init_.Initialize()
 
@@ -1672,7 +1827,7 @@ func NewCodeartifactRepository_Override(c CodeartifactRepository, scope construc
 	)
 }
 
-func (j *jsiiProxy_CodeartifactRepository) SetCount(val interface{}) {
+func (j *jsiiProxy_CodeartifactRepository) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1736,7 +1891,7 @@ func (j *jsiiProxy_CodeartifactRepository) SetRepository(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodeartifactRepository) SetTags(val interface{}) {
+func (j *jsiiProxy_CodeartifactRepository) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1744,7 +1899,7 @@ func (j *jsiiProxy_CodeartifactRepository) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodeartifactRepository) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodeartifactRepository) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1752,7 +1907,7 @@ func (j *jsiiProxy_CodeartifactRepository) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodeartifactRepository) SetUpstream(val *[]*CodeartifactRepositoryUpstream) {
+func (j *jsiiProxy_CodeartifactRepository) SetUpstream(val interface{}) {
 	_jsii_.Set(
 		j,
 		"upstream",
@@ -1800,12 +1955,40 @@ func (c *jsiiProxy_CodeartifactRepository) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactRepository) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactRepository) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepository) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1842,12 +2025,54 @@ func (c *jsiiProxy_CodeartifactRepository) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactRepository) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepository) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactRepository) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepository) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2004,38 +2229,38 @@ func (c *jsiiProxy_CodeartifactRepository) ToTerraform() interface{} {
 // AWS CodeArtifact.
 type CodeartifactRepositoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#domain CodeartifactRepository#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#repository CodeartifactRepository#repository}.
-	Repository *string `json:"repository"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#description CodeartifactRepository#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#domain_owner CodeartifactRepository#domain_owner}.
-	DomainOwner *string `json:"domainOwner"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#domain CodeartifactRepository#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#repository CodeartifactRepository#repository}.
+	Repository *string `json:"repository" yaml:"repository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#description CodeartifactRepository#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#domain_owner CodeartifactRepository#domain_owner}.
+	DomainOwner *string `json:"domainOwner" yaml:"domainOwner"`
 	// external_connections block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#external_connections CodeartifactRepository#external_connections}
-	ExternalConnections *CodeartifactRepositoryExternalConnections `json:"externalConnections"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#tags CodeartifactRepository#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#tags_all CodeartifactRepository#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#external_connections CodeartifactRepository#external_connections}
+	ExternalConnections *CodeartifactRepositoryExternalConnections `json:"externalConnections" yaml:"externalConnections"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#tags CodeartifactRepository#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#tags_all CodeartifactRepository#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// upstream block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#upstream CodeartifactRepository#upstream}
-	Upstream *[]*CodeartifactRepositoryUpstream `json:"upstream"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#upstream CodeartifactRepository#upstream}
+	Upstream interface{} `json:"upstream" yaml:"upstream"`
 }
 
 type CodeartifactRepositoryExternalConnections struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#external_connection_name CodeartifactRepository#external_connection_name}.
-	ExternalConnectionName *string `json:"externalConnectionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#external_connection_name CodeartifactRepository#external_connection_name}.
+	ExternalConnectionName *string `json:"externalConnectionName" yaml:"externalConnectionName"`
 }
 
 type CodeartifactRepositoryExternalConnectionsOutputReference interface {
@@ -2047,14 +2272,21 @@ type CodeartifactRepositoryExternalConnectionsOutputReference interface {
 	SetInternalValue(val *CodeartifactRepositoryExternalConnections)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	PackageFormat() *string
+	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2104,6 +2336,26 @@ func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) IsS
 	return returns
 }
 
+func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) PackageFormat() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"packageFormat",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Status() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"status",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -2114,8 +2366,8 @@ func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2124,7 +2376,7 @@ func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Ter
 	return returns
 }
 
-func NewCodeartifactRepositoryExternalConnectionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodeartifactRepositoryExternalConnectionsOutputReference {
+func NewCodeartifactRepositoryExternalConnectionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodeartifactRepositoryExternalConnectionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference{}
@@ -2138,7 +2390,7 @@ func NewCodeartifactRepositoryExternalConnectionsOutputReference(terraformResour
 	return &j
 }
 
-func NewCodeartifactRepositoryExternalConnectionsOutputReference_Override(c CodeartifactRepositoryExternalConnectionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodeartifactRepositoryExternalConnectionsOutputReference_Override(c CodeartifactRepositoryExternalConnectionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2180,7 +2432,7 @@ func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2189,12 +2441,40 @@ func (j *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Set
 }
 
 // Experimental.
-func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2231,12 +2511,54 @@ func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Get
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2272,13 +2594,13 @@ func (c *jsiiProxy_CodeartifactRepositoryExternalConnectionsOutputReference) Int
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html aws_codeartifact_repository_permissions_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy aws_codeartifact_repository_permissions_policy}.
 type CodeartifactRepositoryPermissionsPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -2310,10 +2632,15 @@ type CodeartifactRepositoryPermissionsPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDomainOwner()
@@ -2350,8 +2677,8 @@ func (j *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) ConstructNodeMetadat
 	return returns
 }
 
-func (j *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2580,7 +2907,7 @@ func (j *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) TerraformResourceTyp
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html aws_codeartifact_repository_permissions_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy aws_codeartifact_repository_permissions_policy} Resource.
 func NewCodeartifactRepositoryPermissionsPolicy(scope constructs.Construct, id *string, config *CodeartifactRepositoryPermissionsPolicyConfig) CodeartifactRepositoryPermissionsPolicy {
 	_init_.Initialize()
 
@@ -2595,7 +2922,7 @@ func NewCodeartifactRepositoryPermissionsPolicy(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html aws_codeartifact_repository_permissions_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy aws_codeartifact_repository_permissions_policy} Resource.
 func NewCodeartifactRepositoryPermissionsPolicy_Override(c CodeartifactRepositoryPermissionsPolicy, scope constructs.Construct, id *string, config *CodeartifactRepositoryPermissionsPolicyConfig) {
 	_init_.Initialize()
 
@@ -2606,7 +2933,7 @@ func NewCodeartifactRepositoryPermissionsPolicy_Override(c CodeartifactRepositor
 	)
 }
 
-func (j *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2718,12 +3045,40 @@ func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) AddOverride(path *st
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2760,12 +3115,54 @@ func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetNumberAttribute(t
 }
 
 // Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2882,38 +3279,38 @@ func (c *jsiiProxy_CodeartifactRepositoryPermissionsPolicy) ToTerraform() interf
 // AWS CodeArtifact.
 type CodeartifactRepositoryPermissionsPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html#domain CodeartifactRepositoryPermissionsPolicy#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html#policy_document CodeartifactRepositoryPermissionsPolicy#policy_document}.
-	PolicyDocument *string `json:"policyDocument"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html#repository CodeartifactRepositoryPermissionsPolicy#repository}.
-	Repository *string `json:"repository"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html#domain_owner CodeartifactRepositoryPermissionsPolicy#domain_owner}.
-	DomainOwner *string `json:"domainOwner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy.html#policy_revision CodeartifactRepositoryPermissionsPolicy#policy_revision}.
-	PolicyRevision *string `json:"policyRevision"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy#domain CodeartifactRepositoryPermissionsPolicy#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy#policy_document CodeartifactRepositoryPermissionsPolicy#policy_document}.
+	PolicyDocument *string `json:"policyDocument" yaml:"policyDocument"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy#repository CodeartifactRepositoryPermissionsPolicy#repository}.
+	Repository *string `json:"repository" yaml:"repository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy#domain_owner CodeartifactRepositoryPermissionsPolicy#domain_owner}.
+	DomainOwner *string `json:"domainOwner" yaml:"domainOwner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository_permissions_policy#policy_revision CodeartifactRepositoryPermissionsPolicy#policy_revision}.
+	PolicyRevision *string `json:"policyRevision" yaml:"policyRevision"`
 }
 
 type CodeartifactRepositoryUpstream struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository.html#repository_name CodeartifactRepository#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codeartifact_repository#repository_name CodeartifactRepository#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token.html aws_codeartifact_authorization_token}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token aws_codeartifact_authorization_token}.
 type DataAwsCodeartifactAuthorizationToken interface {
 	cdktf.TerraformDataSource
 	AuthorizationToken() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -2939,10 +3336,15 @@ type DataAwsCodeartifactAuthorizationToken interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDomainOwner()
@@ -2989,8 +3391,8 @@ func (j *jsiiProxy_DataAwsCodeartifactAuthorizationToken) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCodeartifactAuthorizationToken) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCodeartifactAuthorizationToken) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3179,7 +3581,7 @@ func (j *jsiiProxy_DataAwsCodeartifactAuthorizationToken) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token.html aws_codeartifact_authorization_token} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token aws_codeartifact_authorization_token} Data Source.
 func NewDataAwsCodeartifactAuthorizationToken(scope constructs.Construct, id *string, config *DataAwsCodeartifactAuthorizationTokenConfig) DataAwsCodeartifactAuthorizationToken {
 	_init_.Initialize()
 
@@ -3194,7 +3596,7 @@ func NewDataAwsCodeartifactAuthorizationToken(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token.html aws_codeartifact_authorization_token} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token aws_codeartifact_authorization_token} Data Source.
 func NewDataAwsCodeartifactAuthorizationToken_Override(d DataAwsCodeartifactAuthorizationToken, scope constructs.Construct, id *string, config *DataAwsCodeartifactAuthorizationTokenConfig) {
 	_init_.Initialize()
 
@@ -3205,7 +3607,7 @@ func NewDataAwsCodeartifactAuthorizationToken_Override(d DataAwsCodeartifactAuth
 	)
 }
 
-func (j *jsiiProxy_DataAwsCodeartifactAuthorizationToken) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCodeartifactAuthorizationToken) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3301,12 +3703,40 @@ func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) AddOverride(path *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3343,12 +3773,54 @@ func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3465,28 +3937,28 @@ func (d *jsiiProxy_DataAwsCodeartifactAuthorizationToken) ToTerraform() interfac
 // AWS CodeArtifact.
 type DataAwsCodeartifactAuthorizationTokenConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token.html#domain DataAwsCodeartifactAuthorizationToken#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token.html#domain_owner DataAwsCodeartifactAuthorizationToken#domain_owner}.
-	DomainOwner *string `json:"domainOwner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token.html#duration_seconds DataAwsCodeartifactAuthorizationToken#duration_seconds}.
-	DurationSeconds *float64 `json:"durationSeconds"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token#domain DataAwsCodeartifactAuthorizationToken#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token#domain_owner DataAwsCodeartifactAuthorizationToken#domain_owner}.
+	DomainOwner *string `json:"domainOwner" yaml:"domainOwner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_authorization_token#duration_seconds DataAwsCodeartifactAuthorizationToken#duration_seconds}.
+	DurationSeconds *float64 `json:"durationSeconds" yaml:"durationSeconds"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint.html aws_codeartifact_repository_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint aws_codeartifact_repository_endpoint}.
 type DataAwsCodeartifactRepositoryEndpoint interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -3515,10 +3987,15 @@ type DataAwsCodeartifactRepositoryEndpoint interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDomainOwner()
@@ -3554,8 +4031,8 @@ func (j *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3764,7 +4241,7 @@ func (j *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint.html aws_codeartifact_repository_endpoint} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint aws_codeartifact_repository_endpoint} Data Source.
 func NewDataAwsCodeartifactRepositoryEndpoint(scope constructs.Construct, id *string, config *DataAwsCodeartifactRepositoryEndpointConfig) DataAwsCodeartifactRepositoryEndpoint {
 	_init_.Initialize()
 
@@ -3779,7 +4256,7 @@ func NewDataAwsCodeartifactRepositoryEndpoint(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint.html aws_codeartifact_repository_endpoint} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint aws_codeartifact_repository_endpoint} Data Source.
 func NewDataAwsCodeartifactRepositoryEndpoint_Override(d DataAwsCodeartifactRepositoryEndpoint, scope constructs.Construct, id *string, config *DataAwsCodeartifactRepositoryEndpointConfig) {
 	_init_.Initialize()
 
@@ -3790,7 +4267,7 @@ func NewDataAwsCodeartifactRepositoryEndpoint_Override(d DataAwsCodeartifactRepo
 	)
 }
 
-func (j *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3894,12 +4371,40 @@ func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) AddOverride(path *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3936,12 +4441,54 @@ func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4050,19 +4597,19 @@ func (d *jsiiProxy_DataAwsCodeartifactRepositoryEndpoint) ToTerraform() interfac
 // AWS CodeArtifact.
 type DataAwsCodeartifactRepositoryEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint.html#domain DataAwsCodeartifactRepositoryEndpoint#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint.html#format DataAwsCodeartifactRepositoryEndpoint#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint.html#repository DataAwsCodeartifactRepositoryEndpoint#repository}.
-	Repository *string `json:"repository"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint.html#domain_owner DataAwsCodeartifactRepositoryEndpoint#domain_owner}.
-	DomainOwner *string `json:"domainOwner"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint#domain DataAwsCodeartifactRepositoryEndpoint#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint#format DataAwsCodeartifactRepositoryEndpoint#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint#repository DataAwsCodeartifactRepositoryEndpoint#repository}.
+	Repository *string `json:"repository" yaml:"repository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codeartifact_repository_endpoint#domain_owner DataAwsCodeartifactRepositoryEndpoint#domain_owner}.
+	DomainOwner *string `json:"domainOwner" yaml:"domainOwner"`
 }

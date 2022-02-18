@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/eventbridgeschemas/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer.html aws_schemas_discoverer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer aws_schemas_discoverer}.
 type SchemasDiscoverer interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -34,20 +34,25 @@ type SchemasDiscoverer interface {
 	SourceArn() *string
 	SetSourceArn(val *string)
 	SourceArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -95,8 +100,8 @@ func (j *jsiiProxy_SchemasDiscoverer) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasDiscoverer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -225,8 +230,8 @@ func (j *jsiiProxy_SchemasDiscoverer) SourceArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasDiscoverer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -235,8 +240,8 @@ func (j *jsiiProxy_SchemasDiscoverer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasDiscoverer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -245,8 +250,8 @@ func (j *jsiiProxy_SchemasDiscoverer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasDiscoverer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -255,8 +260,8 @@ func (j *jsiiProxy_SchemasDiscoverer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasDiscoverer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -295,7 +300,7 @@ func (j *jsiiProxy_SchemasDiscoverer) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer.html aws_schemas_discoverer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer aws_schemas_discoverer} Resource.
 func NewSchemasDiscoverer(scope constructs.Construct, id *string, config *SchemasDiscovererConfig) SchemasDiscoverer {
 	_init_.Initialize()
 
@@ -310,7 +315,7 @@ func NewSchemasDiscoverer(scope constructs.Construct, id *string, config *Schema
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer.html aws_schemas_discoverer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer aws_schemas_discoverer} Resource.
 func NewSchemasDiscoverer_Override(s SchemasDiscoverer, scope constructs.Construct, id *string, config *SchemasDiscovererConfig) {
 	_init_.Initialize()
 
@@ -321,7 +326,7 @@ func NewSchemasDiscoverer_Override(s SchemasDiscoverer, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) SetCount(val interface{}) {
+func (j *jsiiProxy_SchemasDiscoverer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -369,7 +374,7 @@ func (j *jsiiProxy_SchemasDiscoverer) SetSourceArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) SetTags(val interface{}) {
+func (j *jsiiProxy_SchemasDiscoverer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -377,7 +382,7 @@ func (j *jsiiProxy_SchemasDiscoverer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SchemasDiscoverer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SchemasDiscoverer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -425,12 +430,40 @@ func (s *jsiiProxy_SchemasDiscoverer) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SchemasDiscoverer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SchemasDiscoverer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasDiscoverer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -467,12 +500,54 @@ func (s *jsiiProxy_SchemasDiscoverer) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SchemasDiscoverer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasDiscoverer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SchemasDiscoverer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasDiscoverer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -597,31 +672,31 @@ func (s *jsiiProxy_SchemasDiscoverer) ToTerraform() interface{} {
 // AWS EventBridge Schemas.
 type SchemasDiscovererConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer.html#source_arn SchemasDiscoverer#source_arn}.
-	SourceArn *string `json:"sourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer.html#description SchemasDiscoverer#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer.html#tags SchemasDiscoverer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer.html#tags_all SchemasDiscoverer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer#source_arn SchemasDiscoverer#source_arn}.
+	SourceArn *string `json:"sourceArn" yaml:"sourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer#description SchemasDiscoverer#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer#tags SchemasDiscoverer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_discoverer#tags_all SchemasDiscoverer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry.html aws_schemas_registry}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry aws_schemas_registry}.
 type SchemasRegistry interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -639,20 +714,25 @@ type SchemasRegistry interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -700,8 +780,8 @@ func (j *jsiiProxy_SchemasRegistry) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_SchemasRegistry) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasRegistry) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -830,8 +910,8 @@ func (j *jsiiProxy_SchemasRegistry) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasRegistry) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasRegistry) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -840,8 +920,8 @@ func (j *jsiiProxy_SchemasRegistry) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasRegistry) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasRegistry) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -850,8 +930,8 @@ func (j *jsiiProxy_SchemasRegistry) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasRegistry) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasRegistry) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -860,8 +940,8 @@ func (j *jsiiProxy_SchemasRegistry) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasRegistry) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasRegistry) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -900,7 +980,7 @@ func (j *jsiiProxy_SchemasRegistry) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry.html aws_schemas_registry} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry aws_schemas_registry} Resource.
 func NewSchemasRegistry(scope constructs.Construct, id *string, config *SchemasRegistryConfig) SchemasRegistry {
 	_init_.Initialize()
 
@@ -915,7 +995,7 @@ func NewSchemasRegistry(scope constructs.Construct, id *string, config *SchemasR
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry.html aws_schemas_registry} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry aws_schemas_registry} Resource.
 func NewSchemasRegistry_Override(s SchemasRegistry, scope constructs.Construct, id *string, config *SchemasRegistryConfig) {
 	_init_.Initialize()
 
@@ -926,7 +1006,7 @@ func NewSchemasRegistry_Override(s SchemasRegistry, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_SchemasRegistry) SetCount(val interface{}) {
+func (j *jsiiProxy_SchemasRegistry) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -974,7 +1054,7 @@ func (j *jsiiProxy_SchemasRegistry) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_SchemasRegistry) SetTags(val interface{}) {
+func (j *jsiiProxy_SchemasRegistry) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -982,7 +1062,7 @@ func (j *jsiiProxy_SchemasRegistry) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SchemasRegistry) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SchemasRegistry) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1030,12 +1110,40 @@ func (s *jsiiProxy_SchemasRegistry) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (s *jsiiProxy_SchemasRegistry) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SchemasRegistry) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasRegistry) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1072,12 +1180,54 @@ func (s *jsiiProxy_SchemasRegistry) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (s *jsiiProxy_SchemasRegistry) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasRegistry) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SchemasRegistry) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasRegistry) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1202,24 +1352,24 @@ func (s *jsiiProxy_SchemasRegistry) ToTerraform() interface{} {
 // AWS EventBridge Schemas.
 type SchemasRegistryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry.html#name SchemasRegistry#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry.html#description SchemasRegistry#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry.html#tags SchemasRegistry#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry.html#tags_all SchemasRegistry#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry#name SchemasRegistry#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry#description SchemasRegistry#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry#tags SchemasRegistry#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_registry#tags_all SchemasRegistry#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html aws_schemas_schema}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema aws_schemas_schema}.
 type SchemasSchema interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1228,8 +1378,8 @@ type SchemasSchema interface {
 	Content() *string
 	SetContent(val *string)
 	ContentInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1251,12 +1401,12 @@ type SchemasSchema interface {
 	RegistryName() *string
 	SetRegistryName(val *string)
 	RegistryNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1266,10 +1416,15 @@ type SchemasSchema interface {
 	Version() *string
 	VersionCreatedDate() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -1337,8 +1492,8 @@ func (j *jsiiProxy_SchemasSchema) ContentInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasSchema) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasSchema) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1497,8 +1652,8 @@ func (j *jsiiProxy_SchemasSchema) RegistryNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasSchema) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasSchema) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1507,8 +1662,8 @@ func (j *jsiiProxy_SchemasSchema) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasSchema) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasSchema) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1517,8 +1672,8 @@ func (j *jsiiProxy_SchemasSchema) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasSchema) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasSchema) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1527,8 +1682,8 @@ func (j *jsiiProxy_SchemasSchema) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SchemasSchema) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SchemasSchema) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1607,7 +1762,7 @@ func (j *jsiiProxy_SchemasSchema) VersionCreatedDate() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html aws_schemas_schema} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema aws_schemas_schema} Resource.
 func NewSchemasSchema(scope constructs.Construct, id *string, config *SchemasSchemaConfig) SchemasSchema {
 	_init_.Initialize()
 
@@ -1622,7 +1777,7 @@ func NewSchemasSchema(scope constructs.Construct, id *string, config *SchemasSch
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html aws_schemas_schema} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema aws_schemas_schema} Resource.
 func NewSchemasSchema_Override(s SchemasSchema, scope constructs.Construct, id *string, config *SchemasSchemaConfig) {
 	_init_.Initialize()
 
@@ -1641,7 +1796,7 @@ func (j *jsiiProxy_SchemasSchema) SetContent(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SchemasSchema) SetCount(val interface{}) {
+func (j *jsiiProxy_SchemasSchema) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1697,7 +1852,7 @@ func (j *jsiiProxy_SchemasSchema) SetRegistryName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SchemasSchema) SetTags(val interface{}) {
+func (j *jsiiProxy_SchemasSchema) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1705,7 +1860,7 @@ func (j *jsiiProxy_SchemasSchema) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SchemasSchema) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SchemasSchema) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1761,12 +1916,40 @@ func (s *jsiiProxy_SchemasSchema) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_SchemasSchema) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SchemasSchema) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasSchema) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1803,12 +1986,54 @@ func (s *jsiiProxy_SchemasSchema) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (s *jsiiProxy_SchemasSchema) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasSchema) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SchemasSchema) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SchemasSchema) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1933,25 +2158,25 @@ func (s *jsiiProxy_SchemasSchema) ToTerraform() interface{} {
 // AWS EventBridge Schemas.
 type SchemasSchemaConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html#content SchemasSchema#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html#name SchemasSchema#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html#registry_name SchemasSchema#registry_name}.
-	RegistryName *string `json:"registryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html#type SchemasSchema#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html#description SchemasSchema#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html#tags SchemasSchema#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema.html#tags_all SchemasSchema#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema#content SchemasSchema#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema#name SchemasSchema#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema#registry_name SchemasSchema#registry_name}.
+	RegistryName *string `json:"registryName" yaml:"registryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema#type SchemasSchema#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema#description SchemasSchema#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema#tags SchemasSchema#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/schemas_schema#tags_all SchemasSchema#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/emr/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html aws_emr_release_labels}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels aws_emr_release_labels}.
 type DataAwsEmrReleaseLabels interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Filters() DataAwsEmrReleaseLabelsFiltersOutputReference
@@ -34,10 +34,15 @@ type DataAwsEmrReleaseLabels interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutFilters(value *DataAwsEmrReleaseLabelsFilters)
@@ -74,8 +79,8 @@ func (j *jsiiProxy_DataAwsEmrReleaseLabels) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEmrReleaseLabels) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -224,7 +229,7 @@ func (j *jsiiProxy_DataAwsEmrReleaseLabels) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html aws_emr_release_labels} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels aws_emr_release_labels} Data Source.
 func NewDataAwsEmrReleaseLabels(scope constructs.Construct, id *string, config *DataAwsEmrReleaseLabelsConfig) DataAwsEmrReleaseLabels {
 	_init_.Initialize()
 
@@ -239,7 +244,7 @@ func NewDataAwsEmrReleaseLabels(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html aws_emr_release_labels} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels aws_emr_release_labels} Data Source.
 func NewDataAwsEmrReleaseLabels_Override(d DataAwsEmrReleaseLabels, scope constructs.Construct, id *string, config *DataAwsEmrReleaseLabelsConfig) {
 	_init_.Initialize()
 
@@ -250,7 +255,7 @@ func NewDataAwsEmrReleaseLabels_Override(d DataAwsEmrReleaseLabels, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsEmrReleaseLabels) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEmrReleaseLabels) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -322,12 +327,40 @@ func (d *jsiiProxy_DataAwsEmrReleaseLabels) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -364,12 +397,54 @@ func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabels) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -486,24 +561,24 @@ func (d *jsiiProxy_DataAwsEmrReleaseLabels) ToTerraform() interface{} {
 // AWS Elastic MapReduce.
 type DataAwsEmrReleaseLabelsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// filters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html#filters DataAwsEmrReleaseLabels#filters}
-	Filters *DataAwsEmrReleaseLabelsFilters `json:"filters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels#filters DataAwsEmrReleaseLabels#filters}
+	Filters *DataAwsEmrReleaseLabelsFilters `json:"filters" yaml:"filters"`
 }
 
 type DataAwsEmrReleaseLabelsFilters struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html#application DataAwsEmrReleaseLabels#application}.
-	Application *string `json:"application"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels.html#prefix DataAwsEmrReleaseLabels#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels#application DataAwsEmrReleaseLabels#application}.
+	Application *string `json:"application" yaml:"application"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/emr_release_labels#prefix DataAwsEmrReleaseLabels#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type DataAwsEmrReleaseLabelsFiltersOutputReference interface {
@@ -520,12 +595,17 @@ type DataAwsEmrReleaseLabelsFiltersOutputReference interface {
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetApplication()
@@ -607,8 +687,8 @@ func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -617,7 +697,7 @@ func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) TerraformResou
 	return returns
 }
 
-func NewDataAwsEmrReleaseLabelsFiltersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DataAwsEmrReleaseLabelsFiltersOutputReference {
+func NewDataAwsEmrReleaseLabelsFiltersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DataAwsEmrReleaseLabelsFiltersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference{}
@@ -631,7 +711,7 @@ func NewDataAwsEmrReleaseLabelsFiltersOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewDataAwsEmrReleaseLabelsFiltersOutputReference_Override(d DataAwsEmrReleaseLabelsFiltersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDataAwsEmrReleaseLabelsFiltersOutputReference_Override(d DataAwsEmrReleaseLabelsFiltersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -681,7 +761,7 @@ func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -690,12 +770,40 @@ func (j *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -732,12 +840,54 @@ func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -789,7 +939,7 @@ func (d *jsiiProxy_DataAwsEmrReleaseLabelsFiltersOutputReference) ResetPrefix() 
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html aws_emr_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster aws_emr_cluster}.
 type EmrCluster interface {
 	cdktf.TerraformResource
 	AdditionalInfo() *string
@@ -804,9 +954,9 @@ type EmrCluster interface {
 	AutoscalingRoleInput() *string
 	AutoTerminationPolicy() EmrClusterAutoTerminationPolicyOutputReference
 	AutoTerminationPolicyInput() *EmrClusterAutoTerminationPolicy
-	BootstrapAction() *[]*EmrClusterBootstrapAction
-	SetBootstrapAction(val *[]*EmrClusterBootstrapAction)
-	BootstrapActionInput() *[]*EmrClusterBootstrapAction
+	BootstrapAction() interface{}
+	SetBootstrapAction(val interface{})
+	BootstrapActionInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ClusterState() *string
 	Configurations() *string
@@ -820,8 +970,8 @@ type EmrCluster interface {
 	CoreInstanceFleetInput() *EmrClusterCoreInstanceFleet
 	CoreInstanceGroup() EmrClusterCoreInstanceGroupOutputReference
 	CoreInstanceGroupInput() *EmrClusterCoreInstanceGroup
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomAmiId() *string
 	SetCustomAmiId(val *string)
 	CustomAmiIdInput() *string
@@ -872,18 +1022,18 @@ type EmrCluster interface {
 	ServiceRole() *string
 	SetServiceRole(val *string)
 	ServiceRoleInput() *string
-	Step() *[]*EmrClusterStep
-	SetStep(val *[]*EmrClusterStep)
+	Step() interface{}
+	SetStep(val interface{})
 	StepConcurrencyLevel() *float64
 	SetStepConcurrencyLevel(val *float64)
 	StepConcurrencyLevelInput() *float64
-	StepInput() *[]*EmrClusterStep
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	StepInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerminationProtection() interface{}
 	SetTerminationProtection(val interface{})
 	TerminationProtectionInput() interface{}
@@ -894,10 +1044,15 @@ type EmrCluster interface {
 	SetVisibleToAllUsers(val interface{})
 	VisibleToAllUsersInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAutoTerminationPolicy(value *EmrClusterAutoTerminationPolicy)
@@ -1035,8 +1190,8 @@ func (j *jsiiProxy_EmrCluster) AutoTerminationPolicyInput() *EmrClusterAutoTermi
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) BootstrapAction() *[]*EmrClusterBootstrapAction {
-	var returns *[]*EmrClusterBootstrapAction
+func (j *jsiiProxy_EmrCluster) BootstrapAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bootstrapAction",
@@ -1045,8 +1200,8 @@ func (j *jsiiProxy_EmrCluster) BootstrapAction() *[]*EmrClusterBootstrapAction {
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) BootstrapActionInput() *[]*EmrClusterBootstrapAction {
-	var returns *[]*EmrClusterBootstrapAction
+func (j *jsiiProxy_EmrCluster) BootstrapActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bootstrapActionInput",
@@ -1165,8 +1320,8 @@ func (j *jsiiProxy_EmrCluster) CoreInstanceGroupInput() *EmrClusterCoreInstanceG
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1545,8 +1700,8 @@ func (j *jsiiProxy_EmrCluster) ServiceRoleInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) Step() *[]*EmrClusterStep {
-	var returns *[]*EmrClusterStep
+func (j *jsiiProxy_EmrCluster) Step() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"step",
@@ -1575,8 +1730,8 @@ func (j *jsiiProxy_EmrCluster) StepConcurrencyLevelInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) StepInput() *[]*EmrClusterStep {
-	var returns *[]*EmrClusterStep
+func (j *jsiiProxy_EmrCluster) StepInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"stepInput",
@@ -1585,8 +1740,8 @@ func (j *jsiiProxy_EmrCluster) StepInput() *[]*EmrClusterStep {
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1595,8 +1750,8 @@ func (j *jsiiProxy_EmrCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrCluster) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1605,8 +1760,8 @@ func (j *jsiiProxy_EmrCluster) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrCluster) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1615,8 +1770,8 @@ func (j *jsiiProxy_EmrCluster) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EmrCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1695,7 +1850,7 @@ func (j *jsiiProxy_EmrCluster) VisibleToAllUsersInput() interface{} {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html aws_emr_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster aws_emr_cluster} Resource.
 func NewEmrCluster(scope constructs.Construct, id *string, config *EmrClusterConfig) EmrCluster {
 	_init_.Initialize()
 
@@ -1710,7 +1865,7 @@ func NewEmrCluster(scope constructs.Construct, id *string, config *EmrClusterCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html aws_emr_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster aws_emr_cluster} Resource.
 func NewEmrCluster_Override(e EmrCluster, scope constructs.Construct, id *string, config *EmrClusterConfig) {
 	_init_.Initialize()
 
@@ -1745,7 +1900,7 @@ func (j *jsiiProxy_EmrCluster) SetAutoscalingRole(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrCluster) SetBootstrapAction(val *[]*EmrClusterBootstrapAction) {
+func (j *jsiiProxy_EmrCluster) SetBootstrapAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"bootstrapAction",
@@ -1769,7 +1924,7 @@ func (j *jsiiProxy_EmrCluster) SetConfigurationsJson(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_EmrCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1881,7 +2036,7 @@ func (j *jsiiProxy_EmrCluster) SetServiceRole(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrCluster) SetStep(val *[]*EmrClusterStep) {
+func (j *jsiiProxy_EmrCluster) SetStep(val interface{}) {
 	_jsii_.Set(
 		j,
 		"step",
@@ -1897,7 +2052,7 @@ func (j *jsiiProxy_EmrCluster) SetStepConcurrencyLevel(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_EmrCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_EmrCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1905,7 +2060,7 @@ func (j *jsiiProxy_EmrCluster) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EmrCluster) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EmrCluster) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1969,12 +2124,40 @@ func (e *jsiiProxy_EmrCluster) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2011,12 +2194,54 @@ func (e *jsiiProxy_EmrCluster) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2379,8 +2604,8 @@ func (e *jsiiProxy_EmrCluster) ToTerraform() interface{} {
 }
 
 type EmrClusterAutoTerminationPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#idle_timeout EmrCluster#idle_timeout}.
-	IdleTimeout *float64 `json:"idleTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#idle_timeout EmrCluster#idle_timeout}.
+	IdleTimeout *float64 `json:"idleTimeout" yaml:"idleTimeout"`
 }
 
 type EmrClusterAutoTerminationPolicyOutputReference interface {
@@ -2394,12 +2619,17 @@ type EmrClusterAutoTerminationPolicyOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIdleTimeout()
@@ -2460,8 +2690,8 @@ func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2470,7 +2700,7 @@ func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) TerraformReso
 	return returns
 }
 
-func NewEmrClusterAutoTerminationPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterAutoTerminationPolicyOutputReference {
+func NewEmrClusterAutoTerminationPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterAutoTerminationPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference{}
@@ -2484,7 +2714,7 @@ func NewEmrClusterAutoTerminationPolicyOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewEmrClusterAutoTerminationPolicyOutputReference_Override(e EmrClusterAutoTerminationPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterAutoTerminationPolicyOutputReference_Override(e EmrClusterAutoTerminationPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2526,7 +2756,7 @@ func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2535,12 +2765,40 @@ func (j *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2577,12 +2835,54 @@ func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2627,168 +2927,168 @@ func (e *jsiiProxy_EmrClusterAutoTerminationPolicyOutputReference) ResetIdleTime
 }
 
 type EmrClusterBootstrapAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#path EmrCluster#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#args EmrCluster#args}.
-	Args *[]*string `json:"args"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#name EmrCluster#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#path EmrCluster#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#args EmrCluster#args}.
+	Args *[]*string `json:"args" yaml:"args"`
 }
 
 // AWS Elastic MapReduce.
 type EmrClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#release_label EmrCluster#release_label}.
-	ReleaseLabel *string `json:"releaseLabel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#service_role EmrCluster#service_role}.
-	ServiceRole *string `json:"serviceRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#additional_info EmrCluster#additional_info}.
-	AdditionalInfo *string `json:"additionalInfo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#applications EmrCluster#applications}.
-	Applications *[]*string `json:"applications"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#autoscaling_role EmrCluster#autoscaling_role}.
-	AutoscalingRole *string `json:"autoscalingRole"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#name EmrCluster#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#release_label EmrCluster#release_label}.
+	ReleaseLabel *string `json:"releaseLabel" yaml:"releaseLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#service_role EmrCluster#service_role}.
+	ServiceRole *string `json:"serviceRole" yaml:"serviceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#additional_info EmrCluster#additional_info}.
+	AdditionalInfo *string `json:"additionalInfo" yaml:"additionalInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#applications EmrCluster#applications}.
+	Applications *[]*string `json:"applications" yaml:"applications"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#autoscaling_role EmrCluster#autoscaling_role}.
+	AutoscalingRole *string `json:"autoscalingRole" yaml:"autoscalingRole"`
 	// auto_termination_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#auto_termination_policy EmrCluster#auto_termination_policy}
-	AutoTerminationPolicy *EmrClusterAutoTerminationPolicy `json:"autoTerminationPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#auto_termination_policy EmrCluster#auto_termination_policy}
+	AutoTerminationPolicy *EmrClusterAutoTerminationPolicy `json:"autoTerminationPolicy" yaml:"autoTerminationPolicy"`
 	// bootstrap_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bootstrap_action EmrCluster#bootstrap_action}
-	BootstrapAction *[]*EmrClusterBootstrapAction `json:"bootstrapAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#configurations EmrCluster#configurations}.
-	Configurations *string `json:"configurations"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#configurations_json EmrCluster#configurations_json}.
-	ConfigurationsJson *string `json:"configurationsJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#bootstrap_action EmrCluster#bootstrap_action}
+	BootstrapAction interface{} `json:"bootstrapAction" yaml:"bootstrapAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#configurations EmrCluster#configurations}.
+	Configurations *string `json:"configurations" yaml:"configurations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#configurations_json EmrCluster#configurations_json}.
+	ConfigurationsJson *string `json:"configurationsJson" yaml:"configurationsJson"`
 	// core_instance_fleet block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#core_instance_fleet EmrCluster#core_instance_fleet}
-	CoreInstanceFleet *EmrClusterCoreInstanceFleet `json:"coreInstanceFleet"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#core_instance_fleet EmrCluster#core_instance_fleet}
+	CoreInstanceFleet *EmrClusterCoreInstanceFleet `json:"coreInstanceFleet" yaml:"coreInstanceFleet"`
 	// core_instance_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#core_instance_group EmrCluster#core_instance_group}
-	CoreInstanceGroup *EmrClusterCoreInstanceGroup `json:"coreInstanceGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#custom_ami_id EmrCluster#custom_ami_id}.
-	CustomAmiId *string `json:"customAmiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ebs_root_volume_size EmrCluster#ebs_root_volume_size}.
-	EbsRootVolumeSize *float64 `json:"ebsRootVolumeSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#core_instance_group EmrCluster#core_instance_group}
+	CoreInstanceGroup *EmrClusterCoreInstanceGroup `json:"coreInstanceGroup" yaml:"coreInstanceGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#custom_ami_id EmrCluster#custom_ami_id}.
+	CustomAmiId *string `json:"customAmiId" yaml:"customAmiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ebs_root_volume_size EmrCluster#ebs_root_volume_size}.
+	EbsRootVolumeSize *float64 `json:"ebsRootVolumeSize" yaml:"ebsRootVolumeSize"`
 	// ec2_attributes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ec2_attributes EmrCluster#ec2_attributes}
-	Ec2Attributes *EmrClusterEc2Attributes `json:"ec2Attributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#keep_job_flow_alive_when_no_steps EmrCluster#keep_job_flow_alive_when_no_steps}.
-	KeepJobFlowAliveWhenNoSteps interface{} `json:"keepJobFlowAliveWhenNoSteps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ec2_attributes EmrCluster#ec2_attributes}
+	Ec2Attributes *EmrClusterEc2Attributes `json:"ec2Attributes" yaml:"ec2Attributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#keep_job_flow_alive_when_no_steps EmrCluster#keep_job_flow_alive_when_no_steps}.
+	KeepJobFlowAliveWhenNoSteps interface{} `json:"keepJobFlowAliveWhenNoSteps" yaml:"keepJobFlowAliveWhenNoSteps"`
 	// kerberos_attributes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#kerberos_attributes EmrCluster#kerberos_attributes}
-	KerberosAttributes *EmrClusterKerberosAttributes `json:"kerberosAttributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#log_encryption_kms_key_id EmrCluster#log_encryption_kms_key_id}.
-	LogEncryptionKmsKeyId *string `json:"logEncryptionKmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#log_uri EmrCluster#log_uri}.
-	LogUri *string `json:"logUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#kerberos_attributes EmrCluster#kerberos_attributes}
+	KerberosAttributes *EmrClusterKerberosAttributes `json:"kerberosAttributes" yaml:"kerberosAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#log_encryption_kms_key_id EmrCluster#log_encryption_kms_key_id}.
+	LogEncryptionKmsKeyId *string `json:"logEncryptionKmsKeyId" yaml:"logEncryptionKmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#log_uri EmrCluster#log_uri}.
+	LogUri *string `json:"logUri" yaml:"logUri"`
 	// master_instance_fleet block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#master_instance_fleet EmrCluster#master_instance_fleet}
-	MasterInstanceFleet *EmrClusterMasterInstanceFleet `json:"masterInstanceFleet"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#master_instance_fleet EmrCluster#master_instance_fleet}
+	MasterInstanceFleet *EmrClusterMasterInstanceFleet `json:"masterInstanceFleet" yaml:"masterInstanceFleet"`
 	// master_instance_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#master_instance_group EmrCluster#master_instance_group}
-	MasterInstanceGroup *EmrClusterMasterInstanceGroup `json:"masterInstanceGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#scale_down_behavior EmrCluster#scale_down_behavior}.
-	ScaleDownBehavior *string `json:"scaleDownBehavior"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#security_configuration EmrCluster#security_configuration}.
-	SecurityConfiguration *string `json:"securityConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#step EmrCluster#step}.
-	Step *[]*EmrClusterStep `json:"step"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#step_concurrency_level EmrCluster#step_concurrency_level}.
-	StepConcurrencyLevel *float64 `json:"stepConcurrencyLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#tags EmrCluster#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#tags_all EmrCluster#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#termination_protection EmrCluster#termination_protection}.
-	TerminationProtection interface{} `json:"terminationProtection"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#visible_to_all_users EmrCluster#visible_to_all_users}.
-	VisibleToAllUsers interface{} `json:"visibleToAllUsers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#master_instance_group EmrCluster#master_instance_group}
+	MasterInstanceGroup *EmrClusterMasterInstanceGroup `json:"masterInstanceGroup" yaml:"masterInstanceGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#scale_down_behavior EmrCluster#scale_down_behavior}.
+	ScaleDownBehavior *string `json:"scaleDownBehavior" yaml:"scaleDownBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#security_configuration EmrCluster#security_configuration}.
+	SecurityConfiguration *string `json:"securityConfiguration" yaml:"securityConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#step EmrCluster#step}.
+	Step interface{} `json:"step" yaml:"step"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#step_concurrency_level EmrCluster#step_concurrency_level}.
+	StepConcurrencyLevel *float64 `json:"stepConcurrencyLevel" yaml:"stepConcurrencyLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#tags EmrCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#tags_all EmrCluster#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#termination_protection EmrCluster#termination_protection}.
+	TerminationProtection interface{} `json:"terminationProtection" yaml:"terminationProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#visible_to_all_users EmrCluster#visible_to_all_users}.
+	VisibleToAllUsers interface{} `json:"visibleToAllUsers" yaml:"visibleToAllUsers"`
 }
 
 type EmrClusterCoreInstanceFleet struct {
 	// instance_type_configs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_type_configs EmrCluster#instance_type_configs}
-	InstanceTypeConfigs *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs `json:"instanceTypeConfigs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_type_configs EmrCluster#instance_type_configs}
+	InstanceTypeConfigs interface{} `json:"instanceTypeConfigs" yaml:"instanceTypeConfigs"`
 	// launch_specifications block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#launch_specifications EmrCluster#launch_specifications}
-	LaunchSpecifications *EmrClusterCoreInstanceFleetLaunchSpecifications `json:"launchSpecifications"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#target_on_demand_capacity EmrCluster#target_on_demand_capacity}.
-	TargetOnDemandCapacity *float64 `json:"targetOnDemandCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#target_spot_capacity EmrCluster#target_spot_capacity}.
-	TargetSpotCapacity *float64 `json:"targetSpotCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#launch_specifications EmrCluster#launch_specifications}
+	LaunchSpecifications *EmrClusterCoreInstanceFleetLaunchSpecifications `json:"launchSpecifications" yaml:"launchSpecifications"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#name EmrCluster#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#target_on_demand_capacity EmrCluster#target_on_demand_capacity}.
+	TargetOnDemandCapacity *float64 `json:"targetOnDemandCapacity" yaml:"targetOnDemandCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#target_spot_capacity EmrCluster#target_spot_capacity}.
+	TargetSpotCapacity *float64 `json:"targetSpotCapacity" yaml:"targetSpotCapacity"`
 }
 
 type EmrClusterCoreInstanceFleetInstanceTypeConfigs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_type EmrCluster#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bid_price EmrCluster#bid_price}.
-	BidPrice *string `json:"bidPrice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bid_price_as_percentage_of_on_demand_price EmrCluster#bid_price_as_percentage_of_on_demand_price}.
-	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"bidPriceAsPercentageOfOnDemandPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_type EmrCluster#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#bid_price EmrCluster#bid_price}.
+	BidPrice *string `json:"bidPrice" yaml:"bidPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#bid_price_as_percentage_of_on_demand_price EmrCluster#bid_price_as_percentage_of_on_demand_price}.
+	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"bidPriceAsPercentageOfOnDemandPrice" yaml:"bidPriceAsPercentageOfOnDemandPrice"`
 	// configurations block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#configurations EmrCluster#configurations}
-	Configurations *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigsConfigurations `json:"configurations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#configurations EmrCluster#configurations}
+	Configurations interface{} `json:"configurations" yaml:"configurations"`
 	// ebs_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ebs_config EmrCluster#ebs_config}
-	EbsConfig *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigsEbsConfig `json:"ebsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#weighted_capacity EmrCluster#weighted_capacity}.
-	WeightedCapacity *float64 `json:"weightedCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ebs_config EmrCluster#ebs_config}
+	EbsConfig interface{} `json:"ebsConfig" yaml:"ebsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#weighted_capacity EmrCluster#weighted_capacity}.
+	WeightedCapacity *float64 `json:"weightedCapacity" yaml:"weightedCapacity"`
 }
 
 type EmrClusterCoreInstanceFleetInstanceTypeConfigsConfigurations struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#classification EmrCluster#classification}.
-	Classification *string `json:"classification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#properties EmrCluster#properties}.
-	Properties interface{} `json:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#classification EmrCluster#classification}.
+	Classification *string `json:"classification" yaml:"classification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#properties EmrCluster#properties}.
+	Properties *map[string]*string `json:"properties" yaml:"properties"`
 }
 
 type EmrClusterCoreInstanceFleetInstanceTypeConfigsEbsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#size EmrCluster#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#type EmrCluster#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#iops EmrCluster#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#volumes_per_instance EmrCluster#volumes_per_instance}.
-	VolumesPerInstance *float64 `json:"volumesPerInstance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#size EmrCluster#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#type EmrCluster#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#iops EmrCluster#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#volumes_per_instance EmrCluster#volumes_per_instance}.
+	VolumesPerInstance *float64 `json:"volumesPerInstance" yaml:"volumesPerInstance"`
 }
 
 type EmrClusterCoreInstanceFleetLaunchSpecifications struct {
 	// on_demand_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#on_demand_specification EmrCluster#on_demand_specification}
-	OnDemandSpecification *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification `json:"onDemandSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#on_demand_specification EmrCluster#on_demand_specification}
+	OnDemandSpecification interface{} `json:"onDemandSpecification" yaml:"onDemandSpecification"`
 	// spot_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#spot_specification EmrCluster#spot_specification}
-	SpotSpecification *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification `json:"spotSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#spot_specification EmrCluster#spot_specification}
+	SpotSpecification interface{} `json:"spotSpecification" yaml:"spotSpecification"`
 }
 
 type EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#allocation_strategy EmrCluster#allocation_strategy}.
-	AllocationStrategy *string `json:"allocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#allocation_strategy EmrCluster#allocation_strategy}.
+	AllocationStrategy *string `json:"allocationStrategy" yaml:"allocationStrategy"`
 }
 
 type EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference interface {
@@ -2797,20 +3097,25 @@ type EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference interface {
 	SetInternalValue(val *EmrClusterCoreInstanceFleetLaunchSpecifications)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	OnDemandSpecification() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification
-	SetOnDemandSpecification(val *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification)
-	OnDemandSpecificationInput() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification
-	SpotSpecification() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification
-	SetSpotSpecification(val *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification)
-	SpotSpecificationInput() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification
+	OnDemandSpecification() interface{}
+	SetOnDemandSpecification(val interface{})
+	OnDemandSpecificationInput() interface{}
+	SpotSpecification() interface{}
+	SetSpotSpecification(val interface{})
+	SpotSpecificationInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetOnDemandSpecification()
@@ -2842,8 +3147,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecification() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification {
-	var returns *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecification() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onDemandSpecification",
@@ -2852,8 +3157,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecificationInput() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification {
-	var returns *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecificationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onDemandSpecificationInput",
@@ -2862,8 +3167,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SpotSpecification() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification {
-	var returns *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SpotSpecification() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"spotSpecification",
@@ -2872,8 +3177,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SpotSpecificationInput() *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification {
-	var returns *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SpotSpecificationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"spotSpecificationInput",
@@ -2892,8 +3197,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2902,7 +3207,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	return returns
 }
 
-func NewEmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference {
+func NewEmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference{}
@@ -2916,7 +3221,7 @@ func NewEmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference(terraform
 	return &j
 }
 
-func NewEmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference_Override(e EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference_Override(e EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2942,7 +3247,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SetOnDemandSpecification(val *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsOnDemandSpecification) {
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SetOnDemandSpecification(val interface{}) {
 	_jsii_.Set(
 		j,
 		"onDemandSpecification",
@@ -2950,7 +3255,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SetSpotSpecification(val *[]*EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification) {
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SetSpotSpecification(val interface{}) {
 	_jsii_.Set(
 		j,
 		"spotSpecification",
@@ -2966,7 +3271,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2975,12 +3280,40 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3017,12 +3350,54 @@ func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3075,21 +3450,22 @@ func (e *jsiiProxy_EmrClusterCoreInstanceFleetLaunchSpecificationsOutputReferenc
 }
 
 type EmrClusterCoreInstanceFleetLaunchSpecificationsSpotSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#allocation_strategy EmrCluster#allocation_strategy}.
-	AllocationStrategy *string `json:"allocationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#timeout_action EmrCluster#timeout_action}.
-	TimeoutAction *string `json:"timeoutAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#timeout_duration_minutes EmrCluster#timeout_duration_minutes}.
-	TimeoutDurationMinutes *float64 `json:"timeoutDurationMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#block_duration_minutes EmrCluster#block_duration_minutes}.
-	BlockDurationMinutes *float64 `json:"blockDurationMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#allocation_strategy EmrCluster#allocation_strategy}.
+	AllocationStrategy *string `json:"allocationStrategy" yaml:"allocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#timeout_action EmrCluster#timeout_action}.
+	TimeoutAction *string `json:"timeoutAction" yaml:"timeoutAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#timeout_duration_minutes EmrCluster#timeout_duration_minutes}.
+	TimeoutDurationMinutes *float64 `json:"timeoutDurationMinutes" yaml:"timeoutDurationMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#block_duration_minutes EmrCluster#block_duration_minutes}.
+	BlockDurationMinutes *float64 `json:"blockDurationMinutes" yaml:"blockDurationMinutes"`
 }
 
 type EmrClusterCoreInstanceFleetOutputReference interface {
 	cdktf.ComplexObject
-	InstanceTypeConfigs() *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs
-	SetInstanceTypeConfigs(val *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs)
-	InstanceTypeConfigsInput() *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs
+	Id() *string
+	InstanceTypeConfigs() interface{}
+	SetInstanceTypeConfigs(val interface{})
+	InstanceTypeConfigsInput() interface{}
 	InternalValue() *EmrClusterCoreInstanceFleet
 	SetInternalValue(val *EmrClusterCoreInstanceFleet)
 	IsSingleItem() *bool
@@ -3099,6 +3475,8 @@ type EmrClusterCoreInstanceFleetOutputReference interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	ProvisionedOnDemandCapacity() *float64
+	ProvisionedSpotCapacity() *float64
 	TargetOnDemandCapacity() *float64
 	SetTargetOnDemandCapacity(val *float64)
 	TargetOnDemandCapacityInput() *float64
@@ -3107,12 +3485,17 @@ type EmrClusterCoreInstanceFleetOutputReference interface {
 	TargetSpotCapacityInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutLaunchSpecifications(value *EmrClusterCoreInstanceFleetLaunchSpecifications)
@@ -3128,8 +3511,18 @@ type jsiiProxy_EmrClusterCoreInstanceFleetOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) InstanceTypeConfigs() *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs {
-	var returns *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) InstanceTypeConfigs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigs",
@@ -3138,8 +3531,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) InstanceTypeConfi
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) InstanceTypeConfigsInput() *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs {
-	var returns *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) InstanceTypeConfigsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigsInput",
@@ -3208,6 +3601,26 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) NameInput() *stri
 	return returns
 }
 
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) ProvisionedOnDemandCapacity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"provisionedOnDemandCapacity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) ProvisionedSpotCapacity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"provisionedSpotCapacity",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) TargetOnDemandCapacity() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -3258,8 +3671,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3268,7 +3681,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) TerraformResource
 	return returns
 }
 
-func NewEmrClusterCoreInstanceFleetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterCoreInstanceFleetOutputReference {
+func NewEmrClusterCoreInstanceFleetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterCoreInstanceFleetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterCoreInstanceFleetOutputReference{}
@@ -3282,7 +3695,7 @@ func NewEmrClusterCoreInstanceFleetOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewEmrClusterCoreInstanceFleetOutputReference_Override(e EmrClusterCoreInstanceFleetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterCoreInstanceFleetOutputReference_Override(e EmrClusterCoreInstanceFleetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3292,7 +3705,7 @@ func NewEmrClusterCoreInstanceFleetOutputReference_Override(e EmrClusterCoreInst
 	)
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetInstanceTypeConfigs(val *[]*EmrClusterCoreInstanceFleetInstanceTypeConfigs) {
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetInstanceTypeConfigs(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceTypeConfigs",
@@ -3348,7 +3761,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3357,12 +3770,40 @@ func (j *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3399,12 +3840,54 @@ func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3489,31 +3972,31 @@ func (e *jsiiProxy_EmrClusterCoreInstanceFleetOutputReference) ResetTargetSpotCa
 }
 
 type EmrClusterCoreInstanceGroup struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_type EmrCluster#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#autoscaling_policy EmrCluster#autoscaling_policy}.
-	AutoscalingPolicy *string `json:"autoscalingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bid_price EmrCluster#bid_price}.
-	BidPrice *string `json:"bidPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_type EmrCluster#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#autoscaling_policy EmrCluster#autoscaling_policy}.
+	AutoscalingPolicy *string `json:"autoscalingPolicy" yaml:"autoscalingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#bid_price EmrCluster#bid_price}.
+	BidPrice *string `json:"bidPrice" yaml:"bidPrice"`
 	// ebs_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ebs_config EmrCluster#ebs_config}
-	EbsConfig *[]*EmrClusterCoreInstanceGroupEbsConfig `json:"ebsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_count EmrCluster#instance_count}.
-	InstanceCount *float64 `json:"instanceCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ebs_config EmrCluster#ebs_config}
+	EbsConfig interface{} `json:"ebsConfig" yaml:"ebsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_count EmrCluster#instance_count}.
+	InstanceCount *float64 `json:"instanceCount" yaml:"instanceCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#name EmrCluster#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type EmrClusterCoreInstanceGroupEbsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#size EmrCluster#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#type EmrCluster#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#iops EmrCluster#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#volumes_per_instance EmrCluster#volumes_per_instance}.
-	VolumesPerInstance *float64 `json:"volumesPerInstance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#size EmrCluster#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#type EmrCluster#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#iops EmrCluster#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#volumes_per_instance EmrCluster#volumes_per_instance}.
+	VolumesPerInstance *float64 `json:"volumesPerInstance" yaml:"volumesPerInstance"`
 }
 
 type EmrClusterCoreInstanceGroupOutputReference interface {
@@ -3524,9 +4007,10 @@ type EmrClusterCoreInstanceGroupOutputReference interface {
 	BidPrice() *string
 	SetBidPrice(val *string)
 	BidPriceInput() *string
-	EbsConfig() *[]*EmrClusterCoreInstanceGroupEbsConfig
-	SetEbsConfig(val *[]*EmrClusterCoreInstanceGroupEbsConfig)
-	EbsConfigInput() *[]*EmrClusterCoreInstanceGroupEbsConfig
+	EbsConfig() interface{}
+	SetEbsConfig(val interface{})
+	EbsConfigInput() interface{}
+	Id() *string
 	InstanceCount() *float64
 	SetInstanceCount(val *float64)
 	InstanceCountInput() *float64
@@ -3542,12 +4026,17 @@ type EmrClusterCoreInstanceGroupOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAutoscalingPolicy()
@@ -3602,8 +4091,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) BidPriceInput() *
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) EbsConfig() *[]*EmrClusterCoreInstanceGroupEbsConfig {
-	var returns *[]*EmrClusterCoreInstanceGroupEbsConfig
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) EbsConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsConfig",
@@ -3612,11 +4101,21 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) EbsConfig() *[]*E
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) EbsConfigInput() *[]*EmrClusterCoreInstanceGroupEbsConfig {
-	var returns *[]*EmrClusterCoreInstanceGroupEbsConfig
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) EbsConfigInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsConfigInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
 		&returns,
 	)
 	return returns
@@ -3712,8 +4211,8 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3722,7 +4221,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) TerraformResource
 	return returns
 }
 
-func NewEmrClusterCoreInstanceGroupOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterCoreInstanceGroupOutputReference {
+func NewEmrClusterCoreInstanceGroupOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterCoreInstanceGroupOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterCoreInstanceGroupOutputReference{}
@@ -3736,7 +4235,7 @@ func NewEmrClusterCoreInstanceGroupOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewEmrClusterCoreInstanceGroupOutputReference_Override(e EmrClusterCoreInstanceGroupOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterCoreInstanceGroupOutputReference_Override(e EmrClusterCoreInstanceGroupOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3762,7 +4261,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetBidPrice(val *
 	)
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetEbsConfig(val *[]*EmrClusterCoreInstanceGroupEbsConfig) {
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetEbsConfig(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsConfig",
@@ -3818,7 +4317,7 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3827,12 +4326,40 @@ func (j *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3869,12 +4396,54 @@ func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3951,24 +4520,24 @@ func (e *jsiiProxy_EmrClusterCoreInstanceGroupOutputReference) ResetName() {
 }
 
 type EmrClusterEc2Attributes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_profile EmrCluster#instance_profile}.
-	InstanceProfile *string `json:"instanceProfile"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#additional_master_security_groups EmrCluster#additional_master_security_groups}.
-	AdditionalMasterSecurityGroups *string `json:"additionalMasterSecurityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#additional_slave_security_groups EmrCluster#additional_slave_security_groups}.
-	AdditionalSlaveSecurityGroups *string `json:"additionalSlaveSecurityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#emr_managed_master_security_group EmrCluster#emr_managed_master_security_group}.
-	EmrManagedMasterSecurityGroup *string `json:"emrManagedMasterSecurityGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#emr_managed_slave_security_group EmrCluster#emr_managed_slave_security_group}.
-	EmrManagedSlaveSecurityGroup *string `json:"emrManagedSlaveSecurityGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#key_name EmrCluster#key_name}.
-	KeyName *string `json:"keyName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#service_access_security_group EmrCluster#service_access_security_group}.
-	ServiceAccessSecurityGroup *string `json:"serviceAccessSecurityGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#subnet_id EmrCluster#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#subnet_ids EmrCluster#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_profile EmrCluster#instance_profile}.
+	InstanceProfile *string `json:"instanceProfile" yaml:"instanceProfile"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#additional_master_security_groups EmrCluster#additional_master_security_groups}.
+	AdditionalMasterSecurityGroups *string `json:"additionalMasterSecurityGroups" yaml:"additionalMasterSecurityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#additional_slave_security_groups EmrCluster#additional_slave_security_groups}.
+	AdditionalSlaveSecurityGroups *string `json:"additionalSlaveSecurityGroups" yaml:"additionalSlaveSecurityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#emr_managed_master_security_group EmrCluster#emr_managed_master_security_group}.
+	EmrManagedMasterSecurityGroup *string `json:"emrManagedMasterSecurityGroup" yaml:"emrManagedMasterSecurityGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#emr_managed_slave_security_group EmrCluster#emr_managed_slave_security_group}.
+	EmrManagedSlaveSecurityGroup *string `json:"emrManagedSlaveSecurityGroup" yaml:"emrManagedSlaveSecurityGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#key_name EmrCluster#key_name}.
+	KeyName *string `json:"keyName" yaml:"keyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#service_access_security_group EmrCluster#service_access_security_group}.
+	ServiceAccessSecurityGroup *string `json:"serviceAccessSecurityGroup" yaml:"serviceAccessSecurityGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#subnet_id EmrCluster#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#subnet_ids EmrCluster#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
 }
 
 type EmrClusterEc2AttributesOutputReference interface {
@@ -4006,12 +4575,17 @@ type EmrClusterEc2AttributesOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAdditionalMasterSecurityGroups()
@@ -4239,8 +4813,8 @@ func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4249,7 +4823,7 @@ func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewEmrClusterEc2AttributesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterEc2AttributesOutputReference {
+func NewEmrClusterEc2AttributesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterEc2AttributesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterEc2AttributesOutputReference{}
@@ -4263,7 +4837,7 @@ func NewEmrClusterEc2AttributesOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewEmrClusterEc2AttributesOutputReference_Override(e EmrClusterEc2AttributesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterEc2AttributesOutputReference_Override(e EmrClusterEc2AttributesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4369,7 +4943,7 @@ func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4378,12 +4952,40 @@ func (j *jsiiProxy_EmrClusterEc2AttributesOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4420,12 +5022,54 @@ func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4526,16 +5170,16 @@ func (e *jsiiProxy_EmrClusterEc2AttributesOutputReference) ResetSubnetIds() {
 }
 
 type EmrClusterKerberosAttributes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#kdc_admin_password EmrCluster#kdc_admin_password}.
-	KdcAdminPassword *string `json:"kdcAdminPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#realm EmrCluster#realm}.
-	Realm *string `json:"realm"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ad_domain_join_password EmrCluster#ad_domain_join_password}.
-	AdDomainJoinPassword *string `json:"adDomainJoinPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ad_domain_join_user EmrCluster#ad_domain_join_user}.
-	AdDomainJoinUser *string `json:"adDomainJoinUser"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#cross_realm_trust_principal_password EmrCluster#cross_realm_trust_principal_password}.
-	CrossRealmTrustPrincipalPassword *string `json:"crossRealmTrustPrincipalPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#kdc_admin_password EmrCluster#kdc_admin_password}.
+	KdcAdminPassword *string `json:"kdcAdminPassword" yaml:"kdcAdminPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#realm EmrCluster#realm}.
+	Realm *string `json:"realm" yaml:"realm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ad_domain_join_password EmrCluster#ad_domain_join_password}.
+	AdDomainJoinPassword *string `json:"adDomainJoinPassword" yaml:"adDomainJoinPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ad_domain_join_user EmrCluster#ad_domain_join_user}.
+	AdDomainJoinUser *string `json:"adDomainJoinUser" yaml:"adDomainJoinUser"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#cross_realm_trust_principal_password EmrCluster#cross_realm_trust_principal_password}.
+	CrossRealmTrustPrincipalPassword *string `json:"crossRealmTrustPrincipalPassword" yaml:"crossRealmTrustPrincipalPassword"`
 }
 
 type EmrClusterKerberosAttributesOutputReference interface {
@@ -4561,12 +5205,17 @@ type EmrClusterKerberosAttributesOutputReference interface {
 	RealmInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAdDomainJoinPassword()
@@ -4709,8 +5358,8 @@ func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4719,7 +5368,7 @@ func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) TerraformResourc
 	return returns
 }
 
-func NewEmrClusterKerberosAttributesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterKerberosAttributesOutputReference {
+func NewEmrClusterKerberosAttributesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterKerberosAttributesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterKerberosAttributesOutputReference{}
@@ -4733,7 +5382,7 @@ func NewEmrClusterKerberosAttributesOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewEmrClusterKerberosAttributesOutputReference_Override(e EmrClusterKerberosAttributesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterKerberosAttributesOutputReference_Override(e EmrClusterKerberosAttributesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4807,7 +5456,7 @@ func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4816,12 +5465,40 @@ func (j *jsiiProxy_EmrClusterKerberosAttributesOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4858,12 +5535,54 @@ func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4926,71 +5645,71 @@ func (e *jsiiProxy_EmrClusterKerberosAttributesOutputReference) ResetCrossRealmT
 type EmrClusterMasterInstanceFleet struct {
 	// instance_type_configs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_type_configs EmrCluster#instance_type_configs}
-	InstanceTypeConfigs *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs `json:"instanceTypeConfigs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_type_configs EmrCluster#instance_type_configs}
+	InstanceTypeConfigs interface{} `json:"instanceTypeConfigs" yaml:"instanceTypeConfigs"`
 	// launch_specifications block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#launch_specifications EmrCluster#launch_specifications}
-	LaunchSpecifications *EmrClusterMasterInstanceFleetLaunchSpecifications `json:"launchSpecifications"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#target_on_demand_capacity EmrCluster#target_on_demand_capacity}.
-	TargetOnDemandCapacity *float64 `json:"targetOnDemandCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#target_spot_capacity EmrCluster#target_spot_capacity}.
-	TargetSpotCapacity *float64 `json:"targetSpotCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#launch_specifications EmrCluster#launch_specifications}
+	LaunchSpecifications *EmrClusterMasterInstanceFleetLaunchSpecifications `json:"launchSpecifications" yaml:"launchSpecifications"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#name EmrCluster#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#target_on_demand_capacity EmrCluster#target_on_demand_capacity}.
+	TargetOnDemandCapacity *float64 `json:"targetOnDemandCapacity" yaml:"targetOnDemandCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#target_spot_capacity EmrCluster#target_spot_capacity}.
+	TargetSpotCapacity *float64 `json:"targetSpotCapacity" yaml:"targetSpotCapacity"`
 }
 
 type EmrClusterMasterInstanceFleetInstanceTypeConfigs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_type EmrCluster#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bid_price EmrCluster#bid_price}.
-	BidPrice *string `json:"bidPrice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bid_price_as_percentage_of_on_demand_price EmrCluster#bid_price_as_percentage_of_on_demand_price}.
-	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"bidPriceAsPercentageOfOnDemandPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_type EmrCluster#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#bid_price EmrCluster#bid_price}.
+	BidPrice *string `json:"bidPrice" yaml:"bidPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#bid_price_as_percentage_of_on_demand_price EmrCluster#bid_price_as_percentage_of_on_demand_price}.
+	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"bidPriceAsPercentageOfOnDemandPrice" yaml:"bidPriceAsPercentageOfOnDemandPrice"`
 	// configurations block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#configurations EmrCluster#configurations}
-	Configurations *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigsConfigurations `json:"configurations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#configurations EmrCluster#configurations}
+	Configurations interface{} `json:"configurations" yaml:"configurations"`
 	// ebs_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ebs_config EmrCluster#ebs_config}
-	EbsConfig *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigsEbsConfig `json:"ebsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#weighted_capacity EmrCluster#weighted_capacity}.
-	WeightedCapacity *float64 `json:"weightedCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ebs_config EmrCluster#ebs_config}
+	EbsConfig interface{} `json:"ebsConfig" yaml:"ebsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#weighted_capacity EmrCluster#weighted_capacity}.
+	WeightedCapacity *float64 `json:"weightedCapacity" yaml:"weightedCapacity"`
 }
 
 type EmrClusterMasterInstanceFleetInstanceTypeConfigsConfigurations struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#classification EmrCluster#classification}.
-	Classification *string `json:"classification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#properties EmrCluster#properties}.
-	Properties interface{} `json:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#classification EmrCluster#classification}.
+	Classification *string `json:"classification" yaml:"classification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#properties EmrCluster#properties}.
+	Properties *map[string]*string `json:"properties" yaml:"properties"`
 }
 
 type EmrClusterMasterInstanceFleetInstanceTypeConfigsEbsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#size EmrCluster#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#type EmrCluster#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#iops EmrCluster#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#volumes_per_instance EmrCluster#volumes_per_instance}.
-	VolumesPerInstance *float64 `json:"volumesPerInstance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#size EmrCluster#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#type EmrCluster#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#iops EmrCluster#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#volumes_per_instance EmrCluster#volumes_per_instance}.
+	VolumesPerInstance *float64 `json:"volumesPerInstance" yaml:"volumesPerInstance"`
 }
 
 type EmrClusterMasterInstanceFleetLaunchSpecifications struct {
 	// on_demand_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#on_demand_specification EmrCluster#on_demand_specification}
-	OnDemandSpecification *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification `json:"onDemandSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#on_demand_specification EmrCluster#on_demand_specification}
+	OnDemandSpecification interface{} `json:"onDemandSpecification" yaml:"onDemandSpecification"`
 	// spot_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#spot_specification EmrCluster#spot_specification}
-	SpotSpecification *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification `json:"spotSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#spot_specification EmrCluster#spot_specification}
+	SpotSpecification interface{} `json:"spotSpecification" yaml:"spotSpecification"`
 }
 
 type EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#allocation_strategy EmrCluster#allocation_strategy}.
-	AllocationStrategy *string `json:"allocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#allocation_strategy EmrCluster#allocation_strategy}.
+	AllocationStrategy *string `json:"allocationStrategy" yaml:"allocationStrategy"`
 }
 
 type EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference interface {
@@ -4999,20 +5718,25 @@ type EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference interface 
 	SetInternalValue(val *EmrClusterMasterInstanceFleetLaunchSpecifications)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	OnDemandSpecification() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification
-	SetOnDemandSpecification(val *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification)
-	OnDemandSpecificationInput() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification
-	SpotSpecification() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification
-	SetSpotSpecification(val *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification)
-	SpotSpecificationInput() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification
+	OnDemandSpecification() interface{}
+	SetOnDemandSpecification(val interface{})
+	OnDemandSpecificationInput() interface{}
+	SpotSpecification() interface{}
+	SetSpotSpecification(val interface{})
+	SpotSpecificationInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetOnDemandSpecification()
@@ -5044,8 +5768,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecification() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification {
-	var returns *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecification() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onDemandSpecification",
@@ -5054,8 +5778,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecificationInput() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification {
-	var returns *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecificationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onDemandSpecificationInput",
@@ -5064,8 +5788,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SpotSpecification() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification {
-	var returns *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SpotSpecification() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"spotSpecification",
@@ -5074,8 +5798,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SpotSpecificationInput() *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification {
-	var returns *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SpotSpecificationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"spotSpecificationInput",
@@ -5094,8 +5818,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5104,7 +5828,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	return returns
 }
 
-func NewEmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference {
+func NewEmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference{}
@@ -5118,7 +5842,7 @@ func NewEmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference(terrafo
 	return &j
 }
 
-func NewEmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference_Override(e EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference_Override(e EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5144,7 +5868,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	)
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SetOnDemandSpecification(val *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsOnDemandSpecification) {
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SetOnDemandSpecification(val interface{}) {
 	_jsii_.Set(
 		j,
 		"onDemandSpecification",
@@ -5152,7 +5876,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	)
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SetSpotSpecification(val *[]*EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification) {
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SetSpotSpecification(val interface{}) {
 	_jsii_.Set(
 		j,
 		"spotSpecification",
@@ -5168,7 +5892,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 	)
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5177,12 +5901,40 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5219,12 +5971,54 @@ func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5277,21 +6071,22 @@ func (e *jsiiProxy_EmrClusterMasterInstanceFleetLaunchSpecificationsOutputRefere
 }
 
 type EmrClusterMasterInstanceFleetLaunchSpecificationsSpotSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#allocation_strategy EmrCluster#allocation_strategy}.
-	AllocationStrategy *string `json:"allocationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#timeout_action EmrCluster#timeout_action}.
-	TimeoutAction *string `json:"timeoutAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#timeout_duration_minutes EmrCluster#timeout_duration_minutes}.
-	TimeoutDurationMinutes *float64 `json:"timeoutDurationMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#block_duration_minutes EmrCluster#block_duration_minutes}.
-	BlockDurationMinutes *float64 `json:"blockDurationMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#allocation_strategy EmrCluster#allocation_strategy}.
+	AllocationStrategy *string `json:"allocationStrategy" yaml:"allocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#timeout_action EmrCluster#timeout_action}.
+	TimeoutAction *string `json:"timeoutAction" yaml:"timeoutAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#timeout_duration_minutes EmrCluster#timeout_duration_minutes}.
+	TimeoutDurationMinutes *float64 `json:"timeoutDurationMinutes" yaml:"timeoutDurationMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#block_duration_minutes EmrCluster#block_duration_minutes}.
+	BlockDurationMinutes *float64 `json:"blockDurationMinutes" yaml:"blockDurationMinutes"`
 }
 
 type EmrClusterMasterInstanceFleetOutputReference interface {
 	cdktf.ComplexObject
-	InstanceTypeConfigs() *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs
-	SetInstanceTypeConfigs(val *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs)
-	InstanceTypeConfigsInput() *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs
+	Id() *string
+	InstanceTypeConfigs() interface{}
+	SetInstanceTypeConfigs(val interface{})
+	InstanceTypeConfigsInput() interface{}
 	InternalValue() *EmrClusterMasterInstanceFleet
 	SetInternalValue(val *EmrClusterMasterInstanceFleet)
 	IsSingleItem() *bool
@@ -5301,6 +6096,8 @@ type EmrClusterMasterInstanceFleetOutputReference interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	ProvisionedOnDemandCapacity() *float64
+	ProvisionedSpotCapacity() *float64
 	TargetOnDemandCapacity() *float64
 	SetTargetOnDemandCapacity(val *float64)
 	TargetOnDemandCapacityInput() *float64
@@ -5309,12 +6106,17 @@ type EmrClusterMasterInstanceFleetOutputReference interface {
 	TargetSpotCapacityInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutLaunchSpecifications(value *EmrClusterMasterInstanceFleetLaunchSpecifications)
@@ -5330,8 +6132,18 @@ type jsiiProxy_EmrClusterMasterInstanceFleetOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) InstanceTypeConfigs() *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs {
-	var returns *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) InstanceTypeConfigs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigs",
@@ -5340,8 +6152,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) InstanceTypeCon
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) InstanceTypeConfigsInput() *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs {
-	var returns *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) InstanceTypeConfigsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigsInput",
@@ -5410,6 +6222,26 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) NameInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) ProvisionedOnDemandCapacity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"provisionedOnDemandCapacity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) ProvisionedSpotCapacity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"provisionedSpotCapacity",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) TargetOnDemandCapacity() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -5460,8 +6292,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5470,7 +6302,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) TerraformResour
 	return returns
 }
 
-func NewEmrClusterMasterInstanceFleetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterMasterInstanceFleetOutputReference {
+func NewEmrClusterMasterInstanceFleetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterMasterInstanceFleetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterMasterInstanceFleetOutputReference{}
@@ -5484,7 +6316,7 @@ func NewEmrClusterMasterInstanceFleetOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewEmrClusterMasterInstanceFleetOutputReference_Override(e EmrClusterMasterInstanceFleetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterMasterInstanceFleetOutputReference_Override(e EmrClusterMasterInstanceFleetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5494,7 +6326,7 @@ func NewEmrClusterMasterInstanceFleetOutputReference_Override(e EmrClusterMaster
 	)
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetInstanceTypeConfigs(val *[]*EmrClusterMasterInstanceFleetInstanceTypeConfigs) {
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetInstanceTypeConfigs(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceTypeConfigs",
@@ -5550,7 +6382,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5559,12 +6391,40 @@ func (j *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5601,12 +6461,54 @@ func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5691,29 +6593,29 @@ func (e *jsiiProxy_EmrClusterMasterInstanceFleetOutputReference) ResetTargetSpot
 }
 
 type EmrClusterMasterInstanceGroup struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_type EmrCluster#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#bid_price EmrCluster#bid_price}.
-	BidPrice *string `json:"bidPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_type EmrCluster#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#bid_price EmrCluster#bid_price}.
+	BidPrice *string `json:"bidPrice" yaml:"bidPrice"`
 	// ebs_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#ebs_config EmrCluster#ebs_config}
-	EbsConfig *[]*EmrClusterMasterInstanceGroupEbsConfig `json:"ebsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#instance_count EmrCluster#instance_count}.
-	InstanceCount *float64 `json:"instanceCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#ebs_config EmrCluster#ebs_config}
+	EbsConfig interface{} `json:"ebsConfig" yaml:"ebsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#instance_count EmrCluster#instance_count}.
+	InstanceCount *float64 `json:"instanceCount" yaml:"instanceCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#name EmrCluster#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type EmrClusterMasterInstanceGroupEbsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#size EmrCluster#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#type EmrCluster#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#iops EmrCluster#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#volumes_per_instance EmrCluster#volumes_per_instance}.
-	VolumesPerInstance *float64 `json:"volumesPerInstance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#size EmrCluster#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#type EmrCluster#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#iops EmrCluster#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#volumes_per_instance EmrCluster#volumes_per_instance}.
+	VolumesPerInstance *float64 `json:"volumesPerInstance" yaml:"volumesPerInstance"`
 }
 
 type EmrClusterMasterInstanceGroupOutputReference interface {
@@ -5721,9 +6623,10 @@ type EmrClusterMasterInstanceGroupOutputReference interface {
 	BidPrice() *string
 	SetBidPrice(val *string)
 	BidPriceInput() *string
-	EbsConfig() *[]*EmrClusterMasterInstanceGroupEbsConfig
-	SetEbsConfig(val *[]*EmrClusterMasterInstanceGroupEbsConfig)
-	EbsConfigInput() *[]*EmrClusterMasterInstanceGroupEbsConfig
+	EbsConfig() interface{}
+	SetEbsConfig(val interface{})
+	EbsConfigInput() interface{}
+	Id() *string
 	InstanceCount() *float64
 	SetInstanceCount(val *float64)
 	InstanceCountInput() *float64
@@ -5739,12 +6642,17 @@ type EmrClusterMasterInstanceGroupOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBidPrice()
@@ -5778,8 +6686,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) BidPriceInput()
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) EbsConfig() *[]*EmrClusterMasterInstanceGroupEbsConfig {
-	var returns *[]*EmrClusterMasterInstanceGroupEbsConfig
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) EbsConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsConfig",
@@ -5788,11 +6696,21 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) EbsConfig() *[]
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) EbsConfigInput() *[]*EmrClusterMasterInstanceGroupEbsConfig {
-	var returns *[]*EmrClusterMasterInstanceGroupEbsConfig
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) EbsConfigInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsConfigInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
 		&returns,
 	)
 	return returns
@@ -5888,8 +6806,8 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5898,7 +6816,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) TerraformResour
 	return returns
 }
 
-func NewEmrClusterMasterInstanceGroupOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrClusterMasterInstanceGroupOutputReference {
+func NewEmrClusterMasterInstanceGroupOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrClusterMasterInstanceGroupOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrClusterMasterInstanceGroupOutputReference{}
@@ -5912,7 +6830,7 @@ func NewEmrClusterMasterInstanceGroupOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewEmrClusterMasterInstanceGroupOutputReference_Override(e EmrClusterMasterInstanceGroupOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrClusterMasterInstanceGroupOutputReference_Override(e EmrClusterMasterInstanceGroupOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5930,7 +6848,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetBidPrice(val
 	)
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetEbsConfig(val *[]*EmrClusterMasterInstanceGroupEbsConfig) {
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetEbsConfig(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsConfig",
@@ -5986,7 +6904,7 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5995,12 +6913,40 @@ func (j *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6037,12 +6983,54 @@ func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6111,26 +7099,26 @@ func (e *jsiiProxy_EmrClusterMasterInstanceGroupOutputReference) ResetName() {
 }
 
 type EmrClusterStep struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#action_on_failure EmrCluster#action_on_failure}.
-	ActionOnFailure *string `json:"actionOnFailure"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#hadoop_jar_step EmrCluster#hadoop_jar_step}.
-	HadoopJarStep *[]*EmrClusterStepHadoopJarStep `json:"hadoopJarStep"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#name EmrCluster#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#action_on_failure EmrCluster#action_on_failure}.
+	ActionOnFailure *string `json:"actionOnFailure" yaml:"actionOnFailure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#hadoop_jar_step EmrCluster#hadoop_jar_step}.
+	HadoopJarStep interface{} `json:"hadoopJarStep" yaml:"hadoopJarStep"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#name EmrCluster#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type EmrClusterStepHadoopJarStep struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#args EmrCluster#args}.
-	Args *[]*string `json:"args"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#jar EmrCluster#jar}.
-	Jar *string `json:"jar"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#main_class EmrCluster#main_class}.
-	MainClass *string `json:"mainClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster.html#properties EmrCluster#properties}.
-	Properties interface{} `json:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#args EmrCluster#args}.
+	Args *[]*string `json:"args" yaml:"args"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#jar EmrCluster#jar}.
+	Jar *string `json:"jar" yaml:"jar"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#main_class EmrCluster#main_class}.
+	MainClass *string `json:"mainClass" yaml:"mainClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_cluster#properties EmrCluster#properties}.
+	Properties *map[string]*string `json:"properties" yaml:"properties"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html aws_emr_instance_fleet}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet aws_emr_instance_fleet}.
 type EmrInstanceFleet interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -6138,16 +7126,16 @@ type EmrInstanceFleet interface {
 	SetClusterId(val *string)
 	ClusterIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	InstanceTypeConfigs() *[]*EmrInstanceFleetInstanceTypeConfigs
-	SetInstanceTypeConfigs(val *[]*EmrInstanceFleetInstanceTypeConfigs)
-	InstanceTypeConfigsInput() *[]*EmrInstanceFleetInstanceTypeConfigs
+	InstanceTypeConfigs() interface{}
+	SetInstanceTypeConfigs(val interface{})
+	InstanceTypeConfigsInput() interface{}
 	LaunchSpecifications() EmrInstanceFleetLaunchSpecificationsOutputReference
 	LaunchSpecificationsInput() *EmrInstanceFleetLaunchSpecifications
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -6171,10 +7159,15 @@ type EmrInstanceFleet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutLaunchSpecifications(value *EmrInstanceFleetLaunchSpecifications)
@@ -6235,8 +7228,8 @@ func (j *jsiiProxy_EmrInstanceFleet) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrInstanceFleet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6285,8 +7278,8 @@ func (j *jsiiProxy_EmrInstanceFleet) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleet) InstanceTypeConfigs() *[]*EmrInstanceFleetInstanceTypeConfigs {
-	var returns *[]*EmrInstanceFleetInstanceTypeConfigs
+func (j *jsiiProxy_EmrInstanceFleet) InstanceTypeConfigs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigs",
@@ -6295,8 +7288,8 @@ func (j *jsiiProxy_EmrInstanceFleet) InstanceTypeConfigs() *[]*EmrInstanceFleetI
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleet) InstanceTypeConfigsInput() *[]*EmrInstanceFleetInstanceTypeConfigs {
-	var returns *[]*EmrInstanceFleetInstanceTypeConfigs
+func (j *jsiiProxy_EmrInstanceFleet) InstanceTypeConfigsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"instanceTypeConfigsInput",
@@ -6475,7 +7468,7 @@ func (j *jsiiProxy_EmrInstanceFleet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html aws_emr_instance_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet aws_emr_instance_fleet} Resource.
 func NewEmrInstanceFleet(scope constructs.Construct, id *string, config *EmrInstanceFleetConfig) EmrInstanceFleet {
 	_init_.Initialize()
 
@@ -6490,7 +7483,7 @@ func NewEmrInstanceFleet(scope constructs.Construct, id *string, config *EmrInst
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html aws_emr_instance_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet aws_emr_instance_fleet} Resource.
 func NewEmrInstanceFleet_Override(e EmrInstanceFleet, scope constructs.Construct, id *string, config *EmrInstanceFleetConfig) {
 	_init_.Initialize()
 
@@ -6509,7 +7502,7 @@ func (j *jsiiProxy_EmrInstanceFleet) SetClusterId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrInstanceFleet) SetCount(val interface{}) {
+func (j *jsiiProxy_EmrInstanceFleet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6525,7 +7518,7 @@ func (j *jsiiProxy_EmrInstanceFleet) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_EmrInstanceFleet) SetInstanceTypeConfigs(val *[]*EmrInstanceFleetInstanceTypeConfigs) {
+func (j *jsiiProxy_EmrInstanceFleet) SetInstanceTypeConfigs(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceTypeConfigs",
@@ -6613,12 +7606,40 @@ func (e *jsiiProxy_EmrInstanceFleet) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrInstanceFleet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrInstanceFleet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceFleet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6655,12 +7676,54 @@ func (e *jsiiProxy_EmrInstanceFleet) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrInstanceFleet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceFleet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrInstanceFleet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceFleet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6809,82 +7872,82 @@ func (e *jsiiProxy_EmrInstanceFleet) ToTerraform() interface{} {
 // AWS Elastic MapReduce.
 type EmrInstanceFleetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#cluster_id EmrInstanceFleet#cluster_id}.
-	ClusterId *string `json:"clusterId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#cluster_id EmrInstanceFleet#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
 	// instance_type_configs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#instance_type_configs EmrInstanceFleet#instance_type_configs}
-	InstanceTypeConfigs *[]*EmrInstanceFleetInstanceTypeConfigs `json:"instanceTypeConfigs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#instance_type_configs EmrInstanceFleet#instance_type_configs}
+	InstanceTypeConfigs interface{} `json:"instanceTypeConfigs" yaml:"instanceTypeConfigs"`
 	// launch_specifications block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#launch_specifications EmrInstanceFleet#launch_specifications}
-	LaunchSpecifications *EmrInstanceFleetLaunchSpecifications `json:"launchSpecifications"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#name EmrInstanceFleet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#target_on_demand_capacity EmrInstanceFleet#target_on_demand_capacity}.
-	TargetOnDemandCapacity *float64 `json:"targetOnDemandCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#target_spot_capacity EmrInstanceFleet#target_spot_capacity}.
-	TargetSpotCapacity *float64 `json:"targetSpotCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#launch_specifications EmrInstanceFleet#launch_specifications}
+	LaunchSpecifications *EmrInstanceFleetLaunchSpecifications `json:"launchSpecifications" yaml:"launchSpecifications"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#name EmrInstanceFleet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#target_on_demand_capacity EmrInstanceFleet#target_on_demand_capacity}.
+	TargetOnDemandCapacity *float64 `json:"targetOnDemandCapacity" yaml:"targetOnDemandCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#target_spot_capacity EmrInstanceFleet#target_spot_capacity}.
+	TargetSpotCapacity *float64 `json:"targetSpotCapacity" yaml:"targetSpotCapacity"`
 }
 
 type EmrInstanceFleetInstanceTypeConfigs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#instance_type EmrInstanceFleet#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#bid_price EmrInstanceFleet#bid_price}.
-	BidPrice *string `json:"bidPrice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#bid_price_as_percentage_of_on_demand_price EmrInstanceFleet#bid_price_as_percentage_of_on_demand_price}.
-	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"bidPriceAsPercentageOfOnDemandPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#instance_type EmrInstanceFleet#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#bid_price EmrInstanceFleet#bid_price}.
+	BidPrice *string `json:"bidPrice" yaml:"bidPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#bid_price_as_percentage_of_on_demand_price EmrInstanceFleet#bid_price_as_percentage_of_on_demand_price}.
+	BidPriceAsPercentageOfOnDemandPrice *float64 `json:"bidPriceAsPercentageOfOnDemandPrice" yaml:"bidPriceAsPercentageOfOnDemandPrice"`
 	// configurations block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#configurations EmrInstanceFleet#configurations}
-	Configurations *[]*EmrInstanceFleetInstanceTypeConfigsConfigurations `json:"configurations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#configurations EmrInstanceFleet#configurations}
+	Configurations interface{} `json:"configurations" yaml:"configurations"`
 	// ebs_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#ebs_config EmrInstanceFleet#ebs_config}
-	EbsConfig *[]*EmrInstanceFleetInstanceTypeConfigsEbsConfig `json:"ebsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#weighted_capacity EmrInstanceFleet#weighted_capacity}.
-	WeightedCapacity *float64 `json:"weightedCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#ebs_config EmrInstanceFleet#ebs_config}
+	EbsConfig interface{} `json:"ebsConfig" yaml:"ebsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#weighted_capacity EmrInstanceFleet#weighted_capacity}.
+	WeightedCapacity *float64 `json:"weightedCapacity" yaml:"weightedCapacity"`
 }
 
 type EmrInstanceFleetInstanceTypeConfigsConfigurations struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#classification EmrInstanceFleet#classification}.
-	Classification *string `json:"classification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#properties EmrInstanceFleet#properties}.
-	Properties interface{} `json:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#classification EmrInstanceFleet#classification}.
+	Classification *string `json:"classification" yaml:"classification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#properties EmrInstanceFleet#properties}.
+	Properties *map[string]*string `json:"properties" yaml:"properties"`
 }
 
 type EmrInstanceFleetInstanceTypeConfigsEbsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#size EmrInstanceFleet#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#type EmrInstanceFleet#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#iops EmrInstanceFleet#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#volumes_per_instance EmrInstanceFleet#volumes_per_instance}.
-	VolumesPerInstance *float64 `json:"volumesPerInstance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#size EmrInstanceFleet#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#type EmrInstanceFleet#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#iops EmrInstanceFleet#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#volumes_per_instance EmrInstanceFleet#volumes_per_instance}.
+	VolumesPerInstance *float64 `json:"volumesPerInstance" yaml:"volumesPerInstance"`
 }
 
 type EmrInstanceFleetLaunchSpecifications struct {
 	// on_demand_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#on_demand_specification EmrInstanceFleet#on_demand_specification}
-	OnDemandSpecification *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification `json:"onDemandSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#on_demand_specification EmrInstanceFleet#on_demand_specification}
+	OnDemandSpecification interface{} `json:"onDemandSpecification" yaml:"onDemandSpecification"`
 	// spot_specification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#spot_specification EmrInstanceFleet#spot_specification}
-	SpotSpecification *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification `json:"spotSpecification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#spot_specification EmrInstanceFleet#spot_specification}
+	SpotSpecification interface{} `json:"spotSpecification" yaml:"spotSpecification"`
 }
 
 type EmrInstanceFleetLaunchSpecificationsOnDemandSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#allocation_strategy EmrInstanceFleet#allocation_strategy}.
-	AllocationStrategy *string `json:"allocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#allocation_strategy EmrInstanceFleet#allocation_strategy}.
+	AllocationStrategy *string `json:"allocationStrategy" yaml:"allocationStrategy"`
 }
 
 type EmrInstanceFleetLaunchSpecificationsOutputReference interface {
@@ -6893,20 +7956,25 @@ type EmrInstanceFleetLaunchSpecificationsOutputReference interface {
 	SetInternalValue(val *EmrInstanceFleetLaunchSpecifications)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	OnDemandSpecification() *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification
-	SetOnDemandSpecification(val *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification)
-	OnDemandSpecificationInput() *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification
-	SpotSpecification() *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification
-	SetSpotSpecification(val *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification)
-	SpotSpecificationInput() *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification
+	OnDemandSpecification() interface{}
+	SetOnDemandSpecification(val interface{})
+	OnDemandSpecificationInput() interface{}
+	SpotSpecification() interface{}
+	SetSpotSpecification(val interface{})
+	SpotSpecificationInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetOnDemandSpecification()
@@ -6938,8 +8006,8 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) IsSingle
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecification() *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification {
-	var returns *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecification() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onDemandSpecification",
@@ -6948,8 +8016,8 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) OnDemand
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecificationInput() *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification {
-	var returns *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) OnDemandSpecificationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onDemandSpecificationInput",
@@ -6958,8 +8026,8 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) OnDemand
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SpotSpecification() *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification {
-	var returns *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SpotSpecification() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"spotSpecification",
@@ -6968,8 +8036,8 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SpotSpec
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SpotSpecificationInput() *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification {
-	var returns *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SpotSpecificationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"spotSpecificationInput",
@@ -6988,8 +8056,8 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6998,7 +8066,7 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) Terrafor
 	return returns
 }
 
-func NewEmrInstanceFleetLaunchSpecificationsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EmrInstanceFleetLaunchSpecificationsOutputReference {
+func NewEmrInstanceFleetLaunchSpecificationsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EmrInstanceFleetLaunchSpecificationsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference{}
@@ -7012,7 +8080,7 @@ func NewEmrInstanceFleetLaunchSpecificationsOutputReference(terraformResource cd
 	return &j
 }
 
-func NewEmrInstanceFleetLaunchSpecificationsOutputReference_Override(e EmrInstanceFleetLaunchSpecificationsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEmrInstanceFleetLaunchSpecificationsOutputReference_Override(e EmrInstanceFleetLaunchSpecificationsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7038,7 +8106,7 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetIsSin
 	)
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetOnDemandSpecification(val *[]*EmrInstanceFleetLaunchSpecificationsOnDemandSpecification) {
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetOnDemandSpecification(val interface{}) {
 	_jsii_.Set(
 		j,
 		"onDemandSpecification",
@@ -7046,7 +8114,7 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetOnDem
 	)
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetSpotSpecification(val *[]*EmrInstanceFleetLaunchSpecificationsSpotSpecification) {
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetSpotSpecification(val interface{}) {
 	_jsii_.Set(
 		j,
 		"spotSpecification",
@@ -7062,7 +8130,7 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7071,12 +8139,40 @@ func (j *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) SetTerra
 }
 
 // Experimental.
-func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7113,12 +8209,54 @@ func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetNumbe
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7171,17 +8309,17 @@ func (e *jsiiProxy_EmrInstanceFleetLaunchSpecificationsOutputReference) ResetSpo
 }
 
 type EmrInstanceFleetLaunchSpecificationsSpotSpecification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#allocation_strategy EmrInstanceFleet#allocation_strategy}.
-	AllocationStrategy *string `json:"allocationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#timeout_action EmrInstanceFleet#timeout_action}.
-	TimeoutAction *string `json:"timeoutAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#timeout_duration_minutes EmrInstanceFleet#timeout_duration_minutes}.
-	TimeoutDurationMinutes *float64 `json:"timeoutDurationMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet.html#block_duration_minutes EmrInstanceFleet#block_duration_minutes}.
-	BlockDurationMinutes *float64 `json:"blockDurationMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#allocation_strategy EmrInstanceFleet#allocation_strategy}.
+	AllocationStrategy *string `json:"allocationStrategy" yaml:"allocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#timeout_action EmrInstanceFleet#timeout_action}.
+	TimeoutAction *string `json:"timeoutAction" yaml:"timeoutAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#timeout_duration_minutes EmrInstanceFleet#timeout_duration_minutes}.
+	TimeoutDurationMinutes *float64 `json:"timeoutDurationMinutes" yaml:"timeoutDurationMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_fleet#block_duration_minutes EmrInstanceFleet#block_duration_minutes}.
+	BlockDurationMinutes *float64 `json:"blockDurationMinutes" yaml:"blockDurationMinutes"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html aws_emr_instance_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group aws_emr_instance_group}.
 type EmrInstanceGroup interface {
 	cdktf.TerraformResource
 	AutoscalingPolicy() *string
@@ -7198,13 +8336,13 @@ type EmrInstanceGroup interface {
 	SetConfigurationsJson(val *string)
 	ConfigurationsJsonInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	EbsConfig() *[]*EmrInstanceGroupEbsConfig
-	SetEbsConfig(val *[]*EmrInstanceGroupEbsConfig)
-	EbsConfigInput() *[]*EmrInstanceGroupEbsConfig
+	EbsConfig() interface{}
+	SetEbsConfig(val interface{})
+	EbsConfigInput() interface{}
 	EbsOptimized() interface{}
 	SetEbsOptimized(val interface{})
 	EbsOptimizedInput() interface{}
@@ -7232,10 +8370,15 @@ type EmrInstanceGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAutoscalingPolicy()
@@ -7357,8 +8500,8 @@ func (j *jsiiProxy_EmrInstanceGroup) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrInstanceGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7377,8 +8520,8 @@ func (j *jsiiProxy_EmrInstanceGroup) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceGroup) EbsConfig() *[]*EmrInstanceGroupEbsConfig {
-	var returns *[]*EmrInstanceGroupEbsConfig
+func (j *jsiiProxy_EmrInstanceGroup) EbsConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsConfig",
@@ -7387,8 +8530,8 @@ func (j *jsiiProxy_EmrInstanceGroup) EbsConfig() *[]*EmrInstanceGroupEbsConfig {
 	return returns
 }
 
-func (j *jsiiProxy_EmrInstanceGroup) EbsConfigInput() *[]*EmrInstanceGroupEbsConfig {
-	var returns *[]*EmrInstanceGroupEbsConfig
+func (j *jsiiProxy_EmrInstanceGroup) EbsConfigInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsConfigInput",
@@ -7597,7 +8740,7 @@ func (j *jsiiProxy_EmrInstanceGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html aws_emr_instance_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group aws_emr_instance_group} Resource.
 func NewEmrInstanceGroup(scope constructs.Construct, id *string, config *EmrInstanceGroupConfig) EmrInstanceGroup {
 	_init_.Initialize()
 
@@ -7612,7 +8755,7 @@ func NewEmrInstanceGroup(scope constructs.Construct, id *string, config *EmrInst
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html aws_emr_instance_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group aws_emr_instance_group} Resource.
 func NewEmrInstanceGroup_Override(e EmrInstanceGroup, scope constructs.Construct, id *string, config *EmrInstanceGroupConfig) {
 	_init_.Initialize()
 
@@ -7655,7 +8798,7 @@ func (j *jsiiProxy_EmrInstanceGroup) SetConfigurationsJson(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrInstanceGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_EmrInstanceGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7671,7 +8814,7 @@ func (j *jsiiProxy_EmrInstanceGroup) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_EmrInstanceGroup) SetEbsConfig(val *[]*EmrInstanceGroupEbsConfig) {
+func (j *jsiiProxy_EmrInstanceGroup) SetEbsConfig(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsConfig",
@@ -7767,12 +8910,40 @@ func (e *jsiiProxy_EmrInstanceGroup) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrInstanceGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrInstanceGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7809,12 +8980,54 @@ func (e *jsiiProxy_EmrInstanceGroup) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrInstanceGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrInstanceGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrInstanceGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7971,59 +9184,59 @@ func (e *jsiiProxy_EmrInstanceGroup) ToTerraform() interface{} {
 // AWS Elastic MapReduce.
 type EmrInstanceGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#cluster_id EmrInstanceGroup#cluster_id}.
-	ClusterId *string `json:"clusterId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#instance_type EmrInstanceGroup#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#autoscaling_policy EmrInstanceGroup#autoscaling_policy}.
-	AutoscalingPolicy *string `json:"autoscalingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#bid_price EmrInstanceGroup#bid_price}.
-	BidPrice *string `json:"bidPrice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#configurations_json EmrInstanceGroup#configurations_json}.
-	ConfigurationsJson *string `json:"configurationsJson"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#cluster_id EmrInstanceGroup#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#instance_type EmrInstanceGroup#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#autoscaling_policy EmrInstanceGroup#autoscaling_policy}.
+	AutoscalingPolicy *string `json:"autoscalingPolicy" yaml:"autoscalingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#bid_price EmrInstanceGroup#bid_price}.
+	BidPrice *string `json:"bidPrice" yaml:"bidPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#configurations_json EmrInstanceGroup#configurations_json}.
+	ConfigurationsJson *string `json:"configurationsJson" yaml:"configurationsJson"`
 	// ebs_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#ebs_config EmrInstanceGroup#ebs_config}
-	EbsConfig *[]*EmrInstanceGroupEbsConfig `json:"ebsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#ebs_optimized EmrInstanceGroup#ebs_optimized}.
-	EbsOptimized interface{} `json:"ebsOptimized"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#instance_count EmrInstanceGroup#instance_count}.
-	InstanceCount *float64 `json:"instanceCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#name EmrInstanceGroup#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#ebs_config EmrInstanceGroup#ebs_config}
+	EbsConfig interface{} `json:"ebsConfig" yaml:"ebsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#ebs_optimized EmrInstanceGroup#ebs_optimized}.
+	EbsOptimized interface{} `json:"ebsOptimized" yaml:"ebsOptimized"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#instance_count EmrInstanceGroup#instance_count}.
+	InstanceCount *float64 `json:"instanceCount" yaml:"instanceCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#name EmrInstanceGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type EmrInstanceGroupEbsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#size EmrInstanceGroup#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#type EmrInstanceGroup#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#iops EmrInstanceGroup#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group.html#volumes_per_instance EmrInstanceGroup#volumes_per_instance}.
-	VolumesPerInstance *float64 `json:"volumesPerInstance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#size EmrInstanceGroup#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#type EmrInstanceGroup#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#iops EmrInstanceGroup#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_instance_group#volumes_per_instance EmrInstanceGroup#volumes_per_instance}.
+	VolumesPerInstance *float64 `json:"volumesPerInstance" yaml:"volumesPerInstance"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html aws_emr_managed_scaling_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy aws_emr_managed_scaling_policy}.
 type EmrManagedScalingPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ClusterId() *string
 	SetClusterId(val *string)
 	ClusterIdInput() *string
-	ComputeLimits() *[]*EmrManagedScalingPolicyComputeLimits
-	SetComputeLimits(val *[]*EmrManagedScalingPolicyComputeLimits)
-	ComputeLimitsInput() *[]*EmrManagedScalingPolicyComputeLimits
+	ComputeLimits() interface{}
+	SetComputeLimits(val interface{})
+	ComputeLimitsInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8039,10 +9252,15 @@ type EmrManagedScalingPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -8087,8 +9305,8 @@ func (j *jsiiProxy_EmrManagedScalingPolicy) ClusterIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EmrManagedScalingPolicy) ComputeLimits() *[]*EmrManagedScalingPolicyComputeLimits {
-	var returns *[]*EmrManagedScalingPolicyComputeLimits
+func (j *jsiiProxy_EmrManagedScalingPolicy) ComputeLimits() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"computeLimits",
@@ -8097,8 +9315,8 @@ func (j *jsiiProxy_EmrManagedScalingPolicy) ComputeLimits() *[]*EmrManagedScalin
 	return returns
 }
 
-func (j *jsiiProxy_EmrManagedScalingPolicy) ComputeLimitsInput() *[]*EmrManagedScalingPolicyComputeLimits {
-	var returns *[]*EmrManagedScalingPolicyComputeLimits
+func (j *jsiiProxy_EmrManagedScalingPolicy) ComputeLimitsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"computeLimitsInput",
@@ -8117,8 +9335,8 @@ func (j *jsiiProxy_EmrManagedScalingPolicy) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_EmrManagedScalingPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrManagedScalingPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8237,7 +9455,7 @@ func (j *jsiiProxy_EmrManagedScalingPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html aws_emr_managed_scaling_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy aws_emr_managed_scaling_policy} Resource.
 func NewEmrManagedScalingPolicy(scope constructs.Construct, id *string, config *EmrManagedScalingPolicyConfig) EmrManagedScalingPolicy {
 	_init_.Initialize()
 
@@ -8252,7 +9470,7 @@ func NewEmrManagedScalingPolicy(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html aws_emr_managed_scaling_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy aws_emr_managed_scaling_policy} Resource.
 func NewEmrManagedScalingPolicy_Override(e EmrManagedScalingPolicy, scope constructs.Construct, id *string, config *EmrManagedScalingPolicyConfig) {
 	_init_.Initialize()
 
@@ -8271,7 +9489,7 @@ func (j *jsiiProxy_EmrManagedScalingPolicy) SetClusterId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrManagedScalingPolicy) SetComputeLimits(val *[]*EmrManagedScalingPolicyComputeLimits) {
+func (j *jsiiProxy_EmrManagedScalingPolicy) SetComputeLimits(val interface{}) {
 	_jsii_.Set(
 		j,
 		"computeLimits",
@@ -8279,7 +9497,7 @@ func (j *jsiiProxy_EmrManagedScalingPolicy) SetComputeLimits(val *[]*EmrManagedS
 	)
 }
 
-func (j *jsiiProxy_EmrManagedScalingPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_EmrManagedScalingPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8351,12 +9569,40 @@ func (e *jsiiProxy_EmrManagedScalingPolicy) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrManagedScalingPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrManagedScalingPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrManagedScalingPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8393,12 +9639,54 @@ func (e *jsiiProxy_EmrManagedScalingPolicy) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrManagedScalingPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrManagedScalingPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrManagedScalingPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrManagedScalingPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8497,37 +9785,37 @@ func (e *jsiiProxy_EmrManagedScalingPolicy) ToTerraform() interface{} {
 }
 
 type EmrManagedScalingPolicyComputeLimits struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html#maximum_capacity_units EmrManagedScalingPolicy#maximum_capacity_units}.
-	MaximumCapacityUnits *float64 `json:"maximumCapacityUnits"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html#minimum_capacity_units EmrManagedScalingPolicy#minimum_capacity_units}.
-	MinimumCapacityUnits *float64 `json:"minimumCapacityUnits"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html#unit_type EmrManagedScalingPolicy#unit_type}.
-	UnitType *string `json:"unitType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html#maximum_core_capacity_units EmrManagedScalingPolicy#maximum_core_capacity_units}.
-	MaximumCoreCapacityUnits *float64 `json:"maximumCoreCapacityUnits"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html#maximum_ondemand_capacity_units EmrManagedScalingPolicy#maximum_ondemand_capacity_units}.
-	MaximumOndemandCapacityUnits *float64 `json:"maximumOndemandCapacityUnits"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy#maximum_capacity_units EmrManagedScalingPolicy#maximum_capacity_units}.
+	MaximumCapacityUnits *float64 `json:"maximumCapacityUnits" yaml:"maximumCapacityUnits"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy#minimum_capacity_units EmrManagedScalingPolicy#minimum_capacity_units}.
+	MinimumCapacityUnits *float64 `json:"minimumCapacityUnits" yaml:"minimumCapacityUnits"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy#unit_type EmrManagedScalingPolicy#unit_type}.
+	UnitType *string `json:"unitType" yaml:"unitType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy#maximum_core_capacity_units EmrManagedScalingPolicy#maximum_core_capacity_units}.
+	MaximumCoreCapacityUnits *float64 `json:"maximumCoreCapacityUnits" yaml:"maximumCoreCapacityUnits"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy#maximum_ondemand_capacity_units EmrManagedScalingPolicy#maximum_ondemand_capacity_units}.
+	MaximumOndemandCapacityUnits *float64 `json:"maximumOndemandCapacityUnits" yaml:"maximumOndemandCapacityUnits"`
 }
 
 // AWS Elastic MapReduce.
 type EmrManagedScalingPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html#cluster_id EmrManagedScalingPolicy#cluster_id}.
-	ClusterId *string `json:"clusterId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy#cluster_id EmrManagedScalingPolicy#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
 	// compute_limits block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy.html#compute_limits EmrManagedScalingPolicy#compute_limits}
-	ComputeLimits *[]*EmrManagedScalingPolicyComputeLimits `json:"computeLimits"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_managed_scaling_policy#compute_limits EmrManagedScalingPolicy#compute_limits}
+	ComputeLimits interface{} `json:"computeLimits" yaml:"computeLimits"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration.html aws_emr_security_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration aws_emr_security_configuration}.
 type EmrSecurityConfiguration interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -8535,8 +9823,8 @@ type EmrSecurityConfiguration interface {
 	SetConfiguration(val *string)
 	ConfigurationInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -8559,10 +9847,15 @@ type EmrSecurityConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -8619,8 +9912,8 @@ func (j *jsiiProxy_EmrSecurityConfiguration) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_EmrSecurityConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrSecurityConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8789,7 +10082,7 @@ func (j *jsiiProxy_EmrSecurityConfiguration) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration.html aws_emr_security_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration aws_emr_security_configuration} Resource.
 func NewEmrSecurityConfiguration(scope constructs.Construct, id *string, config *EmrSecurityConfigurationConfig) EmrSecurityConfiguration {
 	_init_.Initialize()
 
@@ -8804,7 +10097,7 @@ func NewEmrSecurityConfiguration(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration.html aws_emr_security_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration aws_emr_security_configuration} Resource.
 func NewEmrSecurityConfiguration_Override(e EmrSecurityConfiguration, scope constructs.Construct, id *string, config *EmrSecurityConfigurationConfig) {
 	_init_.Initialize()
 
@@ -8823,7 +10116,7 @@ func (j *jsiiProxy_EmrSecurityConfiguration) SetConfiguration(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrSecurityConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_EmrSecurityConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8911,12 +10204,40 @@ func (e *jsiiProxy_EmrSecurityConfiguration) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrSecurityConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrSecurityConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrSecurityConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8953,12 +10274,54 @@ func (e *jsiiProxy_EmrSecurityConfiguration) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrSecurityConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrSecurityConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrSecurityConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrSecurityConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9075,22 +10438,22 @@ func (e *jsiiProxy_EmrSecurityConfiguration) ToTerraform() interface{} {
 // AWS Elastic MapReduce.
 type EmrSecurityConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration.html#configuration EmrSecurityConfiguration#configuration}.
-	Configuration *string `json:"configuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration.html#name EmrSecurityConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration.html#name_prefix EmrSecurityConfiguration#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration#configuration EmrSecurityConfiguration#configuration}.
+	Configuration *string `json:"configuration" yaml:"configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration#name EmrSecurityConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_security_configuration#name_prefix EmrSecurityConfiguration#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html aws_emr_studio}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_studio aws_emr_studio}.
 type EmrStudio interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -9099,8 +10462,8 @@ type EmrStudio interface {
 	AuthModeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultS3Location() *string
 	SetDefaultS3Location(val *string)
 	DefaultS3LocationInput() *string
@@ -9136,12 +10499,12 @@ type EmrStudio interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -9156,10 +10519,15 @@ type EmrStudio interface {
 	SetWorkspaceSecurityGroupId(val *string)
 	WorkspaceSecurityGroupIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -9230,8 +10598,8 @@ func (j *jsiiProxy_EmrStudio) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EmrStudio) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrStudio) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9480,8 +10848,8 @@ func (j *jsiiProxy_EmrStudio) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_EmrStudio) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrStudio) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9490,8 +10858,8 @@ func (j *jsiiProxy_EmrStudio) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EmrStudio) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrStudio) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9500,8 +10868,8 @@ func (j *jsiiProxy_EmrStudio) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EmrStudio) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrStudio) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9510,8 +10878,8 @@ func (j *jsiiProxy_EmrStudio) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EmrStudio) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrStudio) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9620,7 +10988,7 @@ func (j *jsiiProxy_EmrStudio) WorkspaceSecurityGroupIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html aws_emr_studio} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio aws_emr_studio} Resource.
 func NewEmrStudio(scope constructs.Construct, id *string, config *EmrStudioConfig) EmrStudio {
 	_init_.Initialize()
 
@@ -9635,7 +11003,7 @@ func NewEmrStudio(scope constructs.Construct, id *string, config *EmrStudioConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html aws_emr_studio} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio aws_emr_studio} Resource.
 func NewEmrStudio_Override(e EmrStudio, scope constructs.Construct, id *string, config *EmrStudioConfig) {
 	_init_.Initialize()
 
@@ -9654,7 +11022,7 @@ func (j *jsiiProxy_EmrStudio) SetAuthMode(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EmrStudio) SetCount(val interface{}) {
+func (j *jsiiProxy_EmrStudio) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9750,7 +11118,7 @@ func (j *jsiiProxy_EmrStudio) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_EmrStudio) SetTags(val interface{}) {
+func (j *jsiiProxy_EmrStudio) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9758,7 +11126,7 @@ func (j *jsiiProxy_EmrStudio) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EmrStudio) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EmrStudio) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9830,12 +11198,40 @@ func (e *jsiiProxy_EmrStudio) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrStudio) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrStudio) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9872,12 +11268,54 @@ func (e *jsiiProxy_EmrStudio) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrStudio) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrStudio) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudio) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10026,50 +11464,50 @@ func (e *jsiiProxy_EmrStudio) ToTerraform() interface{} {
 // AWS Elastic MapReduce.
 type EmrStudioConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#auth_mode EmrStudio#auth_mode}.
-	AuthMode *string `json:"authMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#default_s3_location EmrStudio#default_s3_location}.
-	DefaultS3Location *string `json:"defaultS3Location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#engine_security_group_id EmrStudio#engine_security_group_id}.
-	EngineSecurityGroupId *string `json:"engineSecurityGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#name EmrStudio#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#service_role EmrStudio#service_role}.
-	ServiceRole *string `json:"serviceRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#subnet_ids EmrStudio#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#vpc_id EmrStudio#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#workspace_security_group_id EmrStudio#workspace_security_group_id}.
-	WorkspaceSecurityGroupId *string `json:"workspaceSecurityGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#description EmrStudio#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#idp_auth_url EmrStudio#idp_auth_url}.
-	IdpAuthUrl *string `json:"idpAuthUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#idp_relay_state_parameter_name EmrStudio#idp_relay_state_parameter_name}.
-	IdpRelayStateParameterName *string `json:"idpRelayStateParameterName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#tags EmrStudio#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#tags_all EmrStudio#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio.html#user_role EmrStudio#user_role}.
-	UserRole *string `json:"userRole"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#auth_mode EmrStudio#auth_mode}.
+	AuthMode *string `json:"authMode" yaml:"authMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#default_s3_location EmrStudio#default_s3_location}.
+	DefaultS3Location *string `json:"defaultS3Location" yaml:"defaultS3Location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#engine_security_group_id EmrStudio#engine_security_group_id}.
+	EngineSecurityGroupId *string `json:"engineSecurityGroupId" yaml:"engineSecurityGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#name EmrStudio#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#service_role EmrStudio#service_role}.
+	ServiceRole *string `json:"serviceRole" yaml:"serviceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#subnet_ids EmrStudio#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#vpc_id EmrStudio#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#workspace_security_group_id EmrStudio#workspace_security_group_id}.
+	WorkspaceSecurityGroupId *string `json:"workspaceSecurityGroupId" yaml:"workspaceSecurityGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#description EmrStudio#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#idp_auth_url EmrStudio#idp_auth_url}.
+	IdpAuthUrl *string `json:"idpAuthUrl" yaml:"idpAuthUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#idp_relay_state_parameter_name EmrStudio#idp_relay_state_parameter_name}.
+	IdpRelayStateParameterName *string `json:"idpRelayStateParameterName" yaml:"idpRelayStateParameterName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#tags EmrStudio#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#tags_all EmrStudio#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio#user_role EmrStudio#user_role}.
+	UserRole *string `json:"userRole" yaml:"userRole"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html aws_emr_studio_session_mapping}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping aws_emr_studio_session_mapping}.
 type EmrStudioSessionMapping interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10100,10 +11538,15 @@ type EmrStudioSessionMapping interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetIdentityId()
@@ -10140,8 +11583,8 @@ func (j *jsiiProxy_EmrStudioSessionMapping) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_EmrStudioSessionMapping) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EmrStudioSessionMapping) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10360,7 +11803,7 @@ func (j *jsiiProxy_EmrStudioSessionMapping) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html aws_emr_studio_session_mapping} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping aws_emr_studio_session_mapping} Resource.
 func NewEmrStudioSessionMapping(scope constructs.Construct, id *string, config *EmrStudioSessionMappingConfig) EmrStudioSessionMapping {
 	_init_.Initialize()
 
@@ -10375,7 +11818,7 @@ func NewEmrStudioSessionMapping(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html aws_emr_studio_session_mapping} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping aws_emr_studio_session_mapping} Resource.
 func NewEmrStudioSessionMapping_Override(e EmrStudioSessionMapping, scope constructs.Construct, id *string, config *EmrStudioSessionMappingConfig) {
 	_init_.Initialize()
 
@@ -10386,7 +11829,7 @@ func NewEmrStudioSessionMapping_Override(e EmrStudioSessionMapping, scope constr
 	)
 }
 
-func (j *jsiiProxy_EmrStudioSessionMapping) SetCount(val interface{}) {
+func (j *jsiiProxy_EmrStudioSessionMapping) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10498,12 +11941,40 @@ func (e *jsiiProxy_EmrStudioSessionMapping) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrStudioSessionMapping) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10540,12 +12011,54 @@ func (e *jsiiProxy_EmrStudioSessionMapping) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EmrStudioSessionMapping) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EmrStudioSessionMapping) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10662,21 +12175,21 @@ func (e *jsiiProxy_EmrStudioSessionMapping) ToTerraform() interface{} {
 // AWS Elastic MapReduce.
 type EmrStudioSessionMappingConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#identity_type EmrStudioSessionMapping#identity_type}.
-	IdentityType *string `json:"identityType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#session_policy_arn EmrStudioSessionMapping#session_policy_arn}.
-	SessionPolicyArn *string `json:"sessionPolicyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#studio_id EmrStudioSessionMapping#studio_id}.
-	StudioId *string `json:"studioId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#identity_id EmrStudioSessionMapping#identity_id}.
-	IdentityId *string `json:"identityId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping.html#identity_name EmrStudioSessionMapping#identity_name}.
-	IdentityName *string `json:"identityName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping#identity_type EmrStudioSessionMapping#identity_type}.
+	IdentityType *string `json:"identityType" yaml:"identityType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping#session_policy_arn EmrStudioSessionMapping#session_policy_arn}.
+	SessionPolicyArn *string `json:"sessionPolicyArn" yaml:"sessionPolicyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping#studio_id EmrStudioSessionMapping#studio_id}.
+	StudioId *string `json:"studioId" yaml:"studioId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping#identity_id EmrStudioSessionMapping#identity_id}.
+	IdentityId *string `json:"identityId" yaml:"identityId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/emr_studio_session_mapping#identity_name EmrStudioSessionMapping#identity_name}.
+	IdentityName *string `json:"identityName" yaml:"identityName"`
 }

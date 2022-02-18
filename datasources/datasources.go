@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/datasources/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/arn.html aws_arn}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/arn aws_arn}.
 type DataAwsArn interface {
 	cdktf.TerraformDataSource
 	Account() *string
@@ -18,8 +18,8 @@ type DataAwsArn interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -39,10 +39,15 @@ type DataAwsArn interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -107,8 +112,8 @@ func (j *jsiiProxy_DataAwsArn) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsArn) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsArn) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -267,7 +272,7 @@ func (j *jsiiProxy_DataAwsArn) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/arn.html aws_arn} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/arn aws_arn} Data Source.
 func NewDataAwsArn(scope constructs.Construct, id *string, config *DataAwsArnConfig) DataAwsArn {
 	_init_.Initialize()
 
@@ -282,7 +287,7 @@ func NewDataAwsArn(scope constructs.Construct, id *string, config *DataAwsArnCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/arn.html aws_arn} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/arn aws_arn} Data Source.
 func NewDataAwsArn_Override(d DataAwsArn, scope constructs.Construct, id *string, config *DataAwsArnConfig) {
 	_init_.Initialize()
 
@@ -301,7 +306,7 @@ func (j *jsiiProxy_DataAwsArn) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsArn) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsArn) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -373,12 +378,40 @@ func (d *jsiiProxy_DataAwsArn) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsArn) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsArn) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsArn) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -415,12 +448,54 @@ func (d *jsiiProxy_DataAwsArn) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsArn) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsArn) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsArn) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsArn) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -521,18 +596,18 @@ func (d *jsiiProxy_DataAwsArn) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsArnConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/arn.html#arn DataAwsArn#arn}.
-	Arn *string `json:"arn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/arn#arn DataAwsArn#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html aws_availability_zone}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/availability_zone aws_availability_zone}.
 type DataAwsAvailabilityZone interface {
 	cdktf.TerraformDataSource
 	AllAvailabilityZones() interface{}
@@ -540,13 +615,13 @@ type DataAwsAvailabilityZone interface {
 	AllAvailabilityZonesInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filter() *[]*DataAwsAvailabilityZoneFilter
-	SetFilter(val *[]*DataAwsAvailabilityZoneFilter)
-	FilterInput() *[]*DataAwsAvailabilityZoneFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	GroupName() *string
@@ -577,10 +652,15 @@ type DataAwsAvailabilityZone interface {
 	ZoneIdInput() *string
 	ZoneType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllAvailabilityZones()
@@ -640,8 +720,8 @@ func (j *jsiiProxy_DataAwsAvailabilityZone) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZone) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAvailabilityZone) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -660,8 +740,8 @@ func (j *jsiiProxy_DataAwsAvailabilityZone) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZone) Filter() *[]*DataAwsAvailabilityZoneFilter {
-	var returns *[]*DataAwsAvailabilityZoneFilter
+func (j *jsiiProxy_DataAwsAvailabilityZone) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -670,8 +750,8 @@ func (j *jsiiProxy_DataAwsAvailabilityZone) Filter() *[]*DataAwsAvailabilityZone
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZone) FilterInput() *[]*DataAwsAvailabilityZoneFilter {
-	var returns *[]*DataAwsAvailabilityZoneFilter
+func (j *jsiiProxy_DataAwsAvailabilityZone) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -920,7 +1000,7 @@ func (j *jsiiProxy_DataAwsAvailabilityZone) ZoneType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html aws_availability_zone} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zone aws_availability_zone} Data Source.
 func NewDataAwsAvailabilityZone(scope constructs.Construct, id *string, config *DataAwsAvailabilityZoneConfig) DataAwsAvailabilityZone {
 	_init_.Initialize()
 
@@ -935,7 +1015,7 @@ func NewDataAwsAvailabilityZone(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html aws_availability_zone} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zone aws_availability_zone} Data Source.
 func NewDataAwsAvailabilityZone_Override(d DataAwsAvailabilityZone, scope constructs.Construct, id *string, config *DataAwsAvailabilityZoneConfig) {
 	_init_.Initialize()
 
@@ -954,7 +1034,7 @@ func (j *jsiiProxy_DataAwsAvailabilityZone) SetAllAvailabilityZones(val interfac
 	)
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZone) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAvailabilityZone) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -970,7 +1050,7 @@ func (j *jsiiProxy_DataAwsAvailabilityZone) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZone) SetFilter(val *[]*DataAwsAvailabilityZoneFilter) {
+func (j *jsiiProxy_DataAwsAvailabilityZone) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -1058,12 +1138,40 @@ func (d *jsiiProxy_DataAwsAvailabilityZone) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZone) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAvailabilityZone) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZone) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1100,12 +1208,54 @@ func (d *jsiiProxy_DataAwsAvailabilityZone) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZone) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZone) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAvailabilityZone) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZone) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1246,35 +1396,35 @@ func (d *jsiiProxy_DataAwsAvailabilityZone) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsAvailabilityZoneConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html#all_availability_zones DataAwsAvailabilityZone#all_availability_zones}.
-	AllAvailabilityZones interface{} `json:"allAvailabilityZones"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone#all_availability_zones DataAwsAvailabilityZone#all_availability_zones}.
+	AllAvailabilityZones interface{} `json:"allAvailabilityZones" yaml:"allAvailabilityZones"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html#filter DataAwsAvailabilityZone#filter}
-	Filter *[]*DataAwsAvailabilityZoneFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html#name DataAwsAvailabilityZone#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html#state DataAwsAvailabilityZone#state}.
-	State *string `json:"state"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html#zone_id DataAwsAvailabilityZone#zone_id}.
-	ZoneId *string `json:"zoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone#filter DataAwsAvailabilityZone#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone#name DataAwsAvailabilityZone#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone#state DataAwsAvailabilityZone#state}.
+	State *string `json:"state" yaml:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone#zone_id DataAwsAvailabilityZone#zone_id}.
+	ZoneId *string `json:"zoneId" yaml:"zoneId"`
 }
 
 type DataAwsAvailabilityZoneFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html#name DataAwsAvailabilityZone#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone.html#values DataAwsAvailabilityZone#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone#name DataAwsAvailabilityZone#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zone#values DataAwsAvailabilityZone#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html aws_availability_zones}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/availability_zones aws_availability_zones}.
 type DataAwsAvailabilityZones interface {
 	cdktf.TerraformDataSource
 	AllAvailabilityZones() interface{}
@@ -1282,8 +1432,8 @@ type DataAwsAvailabilityZones interface {
 	AllAvailabilityZonesInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExcludeNames() *[]*string
@@ -1292,9 +1442,9 @@ type DataAwsAvailabilityZones interface {
 	ExcludeZoneIds() *[]*string
 	SetExcludeZoneIds(val *[]*string)
 	ExcludeZoneIdsInput() *[]*string
-	Filter() *[]*DataAwsAvailabilityZonesFilter
-	SetFilter(val *[]*DataAwsAvailabilityZonesFilter)
-	FilterInput() *[]*DataAwsAvailabilityZonesFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	GroupNames() *[]*string
@@ -1314,10 +1464,15 @@ type DataAwsAvailabilityZones interface {
 	TerraformResourceType() *string
 	ZoneIds() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllAvailabilityZones()
@@ -1377,8 +1532,8 @@ func (j *jsiiProxy_DataAwsAvailabilityZones) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZones) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAvailabilityZones) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1437,8 +1592,8 @@ func (j *jsiiProxy_DataAwsAvailabilityZones) ExcludeZoneIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZones) Filter() *[]*DataAwsAvailabilityZonesFilter {
-	var returns *[]*DataAwsAvailabilityZonesFilter
+func (j *jsiiProxy_DataAwsAvailabilityZones) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -1447,8 +1602,8 @@ func (j *jsiiProxy_DataAwsAvailabilityZones) Filter() *[]*DataAwsAvailabilityZon
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZones) FilterInput() *[]*DataAwsAvailabilityZonesFilter {
-	var returns *[]*DataAwsAvailabilityZonesFilter
+func (j *jsiiProxy_DataAwsAvailabilityZones) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -1607,7 +1762,7 @@ func (j *jsiiProxy_DataAwsAvailabilityZones) ZoneIds() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html aws_availability_zones} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zones aws_availability_zones} Data Source.
 func NewDataAwsAvailabilityZones(scope constructs.Construct, id *string, config *DataAwsAvailabilityZonesConfig) DataAwsAvailabilityZones {
 	_init_.Initialize()
 
@@ -1622,7 +1777,7 @@ func NewDataAwsAvailabilityZones(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html aws_availability_zones} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/availability_zones aws_availability_zones} Data Source.
 func NewDataAwsAvailabilityZones_Override(d DataAwsAvailabilityZones, scope constructs.Construct, id *string, config *DataAwsAvailabilityZonesConfig) {
 	_init_.Initialize()
 
@@ -1641,7 +1796,7 @@ func (j *jsiiProxy_DataAwsAvailabilityZones) SetAllAvailabilityZones(val interfa
 	)
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZones) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAvailabilityZones) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1673,7 +1828,7 @@ func (j *jsiiProxy_DataAwsAvailabilityZones) SetExcludeZoneIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAvailabilityZones) SetFilter(val *[]*DataAwsAvailabilityZonesFilter) {
+func (j *jsiiProxy_DataAwsAvailabilityZones) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -1745,12 +1900,40 @@ func (d *jsiiProxy_DataAwsAvailabilityZones) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZones) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAvailabilityZones) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZones) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1787,12 +1970,54 @@ func (d *jsiiProxy_DataAwsAvailabilityZones) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZones) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZones) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAvailabilityZones) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAvailabilityZones) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1933,42 +2158,42 @@ func (d *jsiiProxy_DataAwsAvailabilityZones) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsAvailabilityZonesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html#all_availability_zones DataAwsAvailabilityZones#all_availability_zones}.
-	AllAvailabilityZones interface{} `json:"allAvailabilityZones"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html#exclude_names DataAwsAvailabilityZones#exclude_names}.
-	ExcludeNames *[]*string `json:"excludeNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html#exclude_zone_ids DataAwsAvailabilityZones#exclude_zone_ids}.
-	ExcludeZoneIds *[]*string `json:"excludeZoneIds"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones#all_availability_zones DataAwsAvailabilityZones#all_availability_zones}.
+	AllAvailabilityZones interface{} `json:"allAvailabilityZones" yaml:"allAvailabilityZones"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones#exclude_names DataAwsAvailabilityZones#exclude_names}.
+	ExcludeNames *[]*string `json:"excludeNames" yaml:"excludeNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones#exclude_zone_ids DataAwsAvailabilityZones#exclude_zone_ids}.
+	ExcludeZoneIds *[]*string `json:"excludeZoneIds" yaml:"excludeZoneIds"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html#filter DataAwsAvailabilityZones#filter}
-	Filter *[]*DataAwsAvailabilityZonesFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html#state DataAwsAvailabilityZones#state}.
-	State *string `json:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones#filter DataAwsAvailabilityZones#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones#state DataAwsAvailabilityZones#state}.
+	State *string `json:"state" yaml:"state"`
 }
 
 type DataAwsAvailabilityZonesFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html#name DataAwsAvailabilityZones#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones.html#values DataAwsAvailabilityZones#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones#name DataAwsAvailabilityZones#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/availability_zones#values DataAwsAvailabilityZones#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/billing_service_account.html aws_billing_service_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/billing_service_account aws_billing_service_account}.
 type DataAwsBillingServiceAccount interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1984,10 +2209,15 @@ type DataAwsBillingServiceAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2032,8 +2262,8 @@ func (j *jsiiProxy_DataAwsBillingServiceAccount) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBillingServiceAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBillingServiceAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2152,7 +2382,7 @@ func (j *jsiiProxy_DataAwsBillingServiceAccount) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/billing_service_account.html aws_billing_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/billing_service_account aws_billing_service_account} Data Source.
 func NewDataAwsBillingServiceAccount(scope constructs.Construct, id *string, config *DataAwsBillingServiceAccountConfig) DataAwsBillingServiceAccount {
 	_init_.Initialize()
 
@@ -2167,7 +2397,7 @@ func NewDataAwsBillingServiceAccount(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/billing_service_account.html aws_billing_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/billing_service_account aws_billing_service_account} Data Source.
 func NewDataAwsBillingServiceAccount_Override(d DataAwsBillingServiceAccount, scope constructs.Construct, id *string, config *DataAwsBillingServiceAccountConfig) {
 	_init_.Initialize()
 
@@ -2178,7 +2408,7 @@ func NewDataAwsBillingServiceAccount_Override(d DataAwsBillingServiceAccount, sc
 	)
 }
 
-func (j *jsiiProxy_DataAwsBillingServiceAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsBillingServiceAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2250,12 +2480,40 @@ func (d *jsiiProxy_DataAwsBillingServiceAccount) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBillingServiceAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBillingServiceAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBillingServiceAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2292,12 +2550,54 @@ func (d *jsiiProxy_DataAwsBillingServiceAccount) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBillingServiceAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBillingServiceAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBillingServiceAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBillingServiceAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2398,24 +2698,24 @@ func (d *jsiiProxy_DataAwsBillingServiceAccount) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsBillingServiceAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/caller_identity.html aws_caller_identity}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/caller_identity aws_caller_identity}.
 type DataAwsCallerIdentity interface {
 	cdktf.TerraformDataSource
 	AccountId() *string
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2432,10 +2732,15 @@ type DataAwsCallerIdentity interface {
 	TerraformResourceType() *string
 	UserId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2490,8 +2795,8 @@ func (j *jsiiProxy_DataAwsCallerIdentity) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCallerIdentity) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCallerIdentity) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2620,7 +2925,7 @@ func (j *jsiiProxy_DataAwsCallerIdentity) UserId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/caller_identity.html aws_caller_identity} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/caller_identity aws_caller_identity} Data Source.
 func NewDataAwsCallerIdentity(scope constructs.Construct, id *string, config *DataAwsCallerIdentityConfig) DataAwsCallerIdentity {
 	_init_.Initialize()
 
@@ -2635,7 +2940,7 @@ func NewDataAwsCallerIdentity(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/caller_identity.html aws_caller_identity} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/caller_identity aws_caller_identity} Data Source.
 func NewDataAwsCallerIdentity_Override(d DataAwsCallerIdentity, scope constructs.Construct, id *string, config *DataAwsCallerIdentityConfig) {
 	_init_.Initialize()
 
@@ -2646,7 +2951,7 @@ func NewDataAwsCallerIdentity_Override(d DataAwsCallerIdentity, scope constructs
 	)
 }
 
-func (j *jsiiProxy_DataAwsCallerIdentity) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCallerIdentity) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2718,12 +3023,40 @@ func (d *jsiiProxy_DataAwsCallerIdentity) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCallerIdentity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCallerIdentity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCallerIdentity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2760,12 +3093,54 @@ func (d *jsiiProxy_DataAwsCallerIdentity) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCallerIdentity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCallerIdentity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCallerIdentity) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCallerIdentity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2866,22 +3241,22 @@ func (d *jsiiProxy_DataAwsCallerIdentity) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsCallerIdentityConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/canonical_user_id.html aws_canonical_user_id}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/canonical_user_id aws_canonical_user_id}.
 type DataAwsCanonicalUserId interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DisplayName() *string
@@ -2898,10 +3273,15 @@ type DataAwsCanonicalUserId interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2936,8 +3316,8 @@ func (j *jsiiProxy_DataAwsCanonicalUserId) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCanonicalUserId) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCanonicalUserId) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3066,7 +3446,7 @@ func (j *jsiiProxy_DataAwsCanonicalUserId) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/canonical_user_id.html aws_canonical_user_id} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/canonical_user_id aws_canonical_user_id} Data Source.
 func NewDataAwsCanonicalUserId(scope constructs.Construct, id *string, config *DataAwsCanonicalUserIdConfig) DataAwsCanonicalUserId {
 	_init_.Initialize()
 
@@ -3081,7 +3461,7 @@ func NewDataAwsCanonicalUserId(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/canonical_user_id.html aws_canonical_user_id} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/canonical_user_id aws_canonical_user_id} Data Source.
 func NewDataAwsCanonicalUserId_Override(d DataAwsCanonicalUserId, scope constructs.Construct, id *string, config *DataAwsCanonicalUserIdConfig) {
 	_init_.Initialize()
 
@@ -3092,7 +3472,7 @@ func NewDataAwsCanonicalUserId_Override(d DataAwsCanonicalUserId, scope construc
 	)
 }
 
-func (j *jsiiProxy_DataAwsCanonicalUserId) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCanonicalUserId) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3164,12 +3544,40 @@ func (d *jsiiProxy_DataAwsCanonicalUserId) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCanonicalUserId) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCanonicalUserId) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCanonicalUserId) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3206,12 +3614,54 @@ func (d *jsiiProxy_DataAwsCanonicalUserId) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCanonicalUserId) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCanonicalUserId) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCanonicalUserId) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCanonicalUserId) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3312,27 +3762,27 @@ func (d *jsiiProxy_DataAwsCanonicalUserId) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsCanonicalUserIdConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elb.html aws_elb}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elb aws_elb}.
 type DataAwsElb interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	AvailabilityZones() *[]*string
 	CdktfStack() cdktf.TerraformStack
-	ConnectionDraining() interface{}
+	ConnectionDraining() cdktf.IResolvable
 	ConnectionDrainingTimeout() *float64
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	CrossZoneLoadBalancing() interface{}
+	Count() *float64
+	SetCount(val *float64)
+	CrossZoneLoadBalancing() cdktf.IResolvable
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DesyncMitigationMode() *string
@@ -3342,7 +3792,7 @@ type DataAwsElb interface {
 	Id() *string
 	IdleTimeout() *float64
 	Instances() *[]*string
-	Internal() interface{}
+	Internal() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Name() *string
@@ -3356,19 +3806,24 @@ type DataAwsElb interface {
 	SourceSecurityGroup() *string
 	SourceSecurityGroupId() *string
 	Subnets() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	ZoneId() *string
 	AccessLogs(index *string) DataAwsElbAccessLogs
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	HealthCheck(index *string) DataAwsElbHealthCheck
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	Listener(index *string) DataAwsElbListener
@@ -3416,8 +3871,8 @@ func (j *jsiiProxy_DataAwsElb) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElb) ConnectionDraining() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElb) ConnectionDraining() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"connectionDraining",
@@ -3446,8 +3901,8 @@ func (j *jsiiProxy_DataAwsElb) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElb) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElb) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3456,8 +3911,8 @@ func (j *jsiiProxy_DataAwsElb) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElb) CrossZoneLoadBalancing() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElb) CrossZoneLoadBalancing() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"crossZoneLoadBalancing",
@@ -3546,8 +4001,8 @@ func (j *jsiiProxy_DataAwsElb) Instances() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElb) Internal() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElb) Internal() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"internal",
@@ -3656,8 +4111,8 @@ func (j *jsiiProxy_DataAwsElb) Subnets() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElb) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElb) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3666,8 +4121,8 @@ func (j *jsiiProxy_DataAwsElb) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElb) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElb) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3716,7 +4171,7 @@ func (j *jsiiProxy_DataAwsElb) ZoneId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb.html aws_elb} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb aws_elb} Data Source.
 func NewDataAwsElb(scope constructs.Construct, id *string, config *DataAwsElbConfig) DataAwsElb {
 	_init_.Initialize()
 
@@ -3731,7 +4186,7 @@ func NewDataAwsElb(scope constructs.Construct, id *string, config *DataAwsElbCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb.html aws_elb} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb aws_elb} Data Source.
 func NewDataAwsElb_Override(d DataAwsElb, scope constructs.Construct, id *string, config *DataAwsElbConfig) {
 	_init_.Initialize()
 
@@ -3742,7 +4197,7 @@ func NewDataAwsElb_Override(d DataAwsElb, scope constructs.Construct, id *string
 	)
 }
 
-func (j *jsiiProxy_DataAwsElb) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElb) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3782,7 +4237,7 @@ func (j *jsiiProxy_DataAwsElb) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsElb) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsElb) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3843,12 +4298,40 @@ func (d *jsiiProxy_DataAwsElb) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3885,12 +4368,54 @@ func (d *jsiiProxy_DataAwsElb) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4028,16 +4553,23 @@ type DataAwsElbAccessLogs interface {
 	BucketPrefix() *string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	Interval() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4076,8 +4608,8 @@ func (j *jsiiProxy_DataAwsElbAccessLogs) ComplexComputedListIndex() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElbAccessLogs) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElbAccessLogs) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -4106,8 +4638,8 @@ func (j *jsiiProxy_DataAwsElbAccessLogs) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElbAccessLogs) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsElbAccessLogs) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4116,15 +4648,25 @@ func (j *jsiiProxy_DataAwsElbAccessLogs) TerraformResource() cdktf.ITerraformRes
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsElbAccessLogs) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsElbAccessLogs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElbAccessLogs {
+func NewDataAwsElbAccessLogs(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsElbAccessLogs {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsElbAccessLogs{}
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsElbAccessLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4132,12 +4674,12 @@ func NewDataAwsElbAccessLogs(terraformResource cdktf.ITerraformResource, terrafo
 }
 
 // Experimental.
-func NewDataAwsElbAccessLogs_Override(d DataAwsElbAccessLogs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsElbAccessLogs_Override(d DataAwsElbAccessLogs, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsElbAccessLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -4158,7 +4700,7 @@ func (j *jsiiProxy_DataAwsElbAccessLogs) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsElbAccessLogs) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsElbAccessLogs) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4166,13 +4708,49 @@ func (j *jsiiProxy_DataAwsElbAccessLogs) SetTerraformResource(val cdktf.ITerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsElbAccessLogs) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsElbAccessLogs) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsElbAccessLogs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbAccessLogs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbAccessLogs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4209,12 +4787,54 @@ func (d *jsiiProxy_DataAwsElbAccessLogs) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElbAccessLogs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbAccessLogs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElbAccessLogs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbAccessLogs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4239,17 +4859,17 @@ func (d *jsiiProxy_DataAwsElbAccessLogs) InterpolationForAttribute(property *str
 // AWS Data Sources.
 type DataAwsElbConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb.html#name DataAwsElb#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb.html#tags DataAwsElb#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb#name DataAwsElb#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb#tags DataAwsElb#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsElbHealthCheck interface {
@@ -4261,14 +4881,21 @@ type DataAwsElbHealthCheck interface {
 	Target() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Timeout() *float64
 	UnhealthyThreshold() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4327,8 +4954,8 @@ func (j *jsiiProxy_DataAwsElbHealthCheck) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElbHealthCheck) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsElbHealthCheck) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4357,15 +4984,25 @@ func (j *jsiiProxy_DataAwsElbHealthCheck) UnhealthyThreshold() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsElbHealthCheck) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsElbHealthCheck(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElbHealthCheck {
+func NewDataAwsElbHealthCheck(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsElbHealthCheck {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsElbHealthCheck{}
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsElbHealthCheck",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4373,12 +5010,12 @@ func NewDataAwsElbHealthCheck(terraformResource cdktf.ITerraformResource, terraf
 }
 
 // Experimental.
-func NewDataAwsElbHealthCheck_Override(d DataAwsElbHealthCheck, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsElbHealthCheck_Override(d DataAwsElbHealthCheck, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsElbHealthCheck",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -4399,7 +5036,7 @@ func (j *jsiiProxy_DataAwsElbHealthCheck) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsElbHealthCheck) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsElbHealthCheck) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4407,13 +5044,49 @@ func (j *jsiiProxy_DataAwsElbHealthCheck) SetTerraformResource(val cdktf.ITerraf
 	)
 }
 
+func (j *jsiiProxy_DataAwsElbHealthCheck) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsElbHealthCheck) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsElbHealthCheck) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbHealthCheck) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbHealthCheck) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4450,12 +5123,54 @@ func (d *jsiiProxy_DataAwsElbHealthCheck) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElbHealthCheck) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbHealthCheck) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElbHealthCheck) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbHealthCheck) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4477,13 +5192,13 @@ func (d *jsiiProxy_DataAwsElbHealthCheck) InterpolationForAttribute(property *st
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id.html aws_elb_hosted_zone_id}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id aws_elb_hosted_zone_id}.
 type DataAwsElbHostedZoneId interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4502,10 +5217,15 @@ type DataAwsElbHostedZoneId interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4541,8 +5261,8 @@ func (j *jsiiProxy_DataAwsElbHostedZoneId) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElbHostedZoneId) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElbHostedZoneId) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4681,7 +5401,7 @@ func (j *jsiiProxy_DataAwsElbHostedZoneId) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id.html aws_elb_hosted_zone_id} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id aws_elb_hosted_zone_id} Data Source.
 func NewDataAwsElbHostedZoneId(scope constructs.Construct, id *string, config *DataAwsElbHostedZoneIdConfig) DataAwsElbHostedZoneId {
 	_init_.Initialize()
 
@@ -4696,7 +5416,7 @@ func NewDataAwsElbHostedZoneId(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id.html aws_elb_hosted_zone_id} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id aws_elb_hosted_zone_id} Data Source.
 func NewDataAwsElbHostedZoneId_Override(d DataAwsElbHostedZoneId, scope constructs.Construct, id *string, config *DataAwsElbHostedZoneIdConfig) {
 	_init_.Initialize()
 
@@ -4707,7 +5427,7 @@ func NewDataAwsElbHostedZoneId_Override(d DataAwsElbHostedZoneId, scope construc
 	)
 }
 
-func (j *jsiiProxy_DataAwsElbHostedZoneId) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElbHostedZoneId) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4787,12 +5507,40 @@ func (d *jsiiProxy_DataAwsElbHostedZoneId) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElbHostedZoneId) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElbHostedZoneId) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbHostedZoneId) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4829,12 +5577,54 @@ func (d *jsiiProxy_DataAwsElbHostedZoneId) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElbHostedZoneId) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbHostedZoneId) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElbHostedZoneId) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbHostedZoneId) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4943,15 +5733,15 @@ func (d *jsiiProxy_DataAwsElbHostedZoneId) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsElbHostedZoneIdConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id.html#region DataAwsElbHostedZoneId#region}.
-	Region *string `json:"region"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb_hosted_zone_id#region DataAwsElbHostedZoneId#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
 type DataAwsElbListener interface {
@@ -4965,12 +5755,19 @@ type DataAwsElbListener interface {
 	SslCertificateId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -5049,8 +5846,8 @@ func (j *jsiiProxy_DataAwsElbListener) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElbListener) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsElbListener) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5059,15 +5856,25 @@ func (j *jsiiProxy_DataAwsElbListener) TerraformResource() cdktf.ITerraformResou
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsElbListener) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsElbListener(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElbListener {
+func NewDataAwsElbListener(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsElbListener {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsElbListener{}
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsElbListener",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -5075,12 +5882,12 @@ func NewDataAwsElbListener(terraformResource cdktf.ITerraformResource, terraform
 }
 
 // Experimental.
-func NewDataAwsElbListener_Override(d DataAwsElbListener, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsElbListener_Override(d DataAwsElbListener, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsElbListener",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -5101,7 +5908,7 @@ func (j *jsiiProxy_DataAwsElbListener) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsElbListener) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsElbListener) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5109,13 +5916,49 @@ func (j *jsiiProxy_DataAwsElbListener) SetTerraformResource(val cdktf.ITerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsElbListener) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsElbListener) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsElbListener) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbListener) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbListener) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5152,12 +5995,54 @@ func (d *jsiiProxy_DataAwsElbListener) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElbListener) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbListener) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElbListener) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbListener) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5179,14 +6064,14 @@ func (d *jsiiProxy_DataAwsElbListener) InterpolationForAttribute(property *strin
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account.html aws_elb_service_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account aws_elb_service_account}.
 type DataAwsElbServiceAccount interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5205,10 +6090,15 @@ type DataAwsElbServiceAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5254,8 +6144,8 @@ func (j *jsiiProxy_DataAwsElbServiceAccount) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElbServiceAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElbServiceAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5394,7 +6284,7 @@ func (j *jsiiProxy_DataAwsElbServiceAccount) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account.html aws_elb_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account aws_elb_service_account} Data Source.
 func NewDataAwsElbServiceAccount(scope constructs.Construct, id *string, config *DataAwsElbServiceAccountConfig) DataAwsElbServiceAccount {
 	_init_.Initialize()
 
@@ -5409,7 +6299,7 @@ func NewDataAwsElbServiceAccount(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account.html aws_elb_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account aws_elb_service_account} Data Source.
 func NewDataAwsElbServiceAccount_Override(d DataAwsElbServiceAccount, scope constructs.Construct, id *string, config *DataAwsElbServiceAccountConfig) {
 	_init_.Initialize()
 
@@ -5420,7 +6310,7 @@ func NewDataAwsElbServiceAccount_Override(d DataAwsElbServiceAccount, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsElbServiceAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElbServiceAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5500,12 +6390,40 @@ func (d *jsiiProxy_DataAwsElbServiceAccount) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElbServiceAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElbServiceAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbServiceAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5542,12 +6460,54 @@ func (d *jsiiProxy_DataAwsElbServiceAccount) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElbServiceAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbServiceAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElbServiceAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElbServiceAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5656,25 +6616,25 @@ func (d *jsiiProxy_DataAwsElbServiceAccount) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsElbServiceAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account.html#region DataAwsElbServiceAccount#region}.
-	Region *string `json:"region"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elb_service_account#region DataAwsElbServiceAccount#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges.html aws_ip_ranges}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges aws_ip_ranges}.
 type DataAwsIpRanges interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	CidrBlocks() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -5702,10 +6662,15 @@ type DataAwsIpRanges interface {
 	SetUrl(val *string)
 	UrlInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5752,8 +6717,8 @@ func (j *jsiiProxy_DataAwsIpRanges) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIpRanges) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIpRanges) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5962,7 +6927,7 @@ func (j *jsiiProxy_DataAwsIpRanges) UrlInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges.html aws_ip_ranges} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges aws_ip_ranges} Data Source.
 func NewDataAwsIpRanges(scope constructs.Construct, id *string, config *DataAwsIpRangesConfig) DataAwsIpRanges {
 	_init_.Initialize()
 
@@ -5977,7 +6942,7 @@ func NewDataAwsIpRanges(scope constructs.Construct, id *string, config *DataAwsI
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges.html aws_ip_ranges} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges aws_ip_ranges} Data Source.
 func NewDataAwsIpRanges_Override(d DataAwsIpRanges, scope constructs.Construct, id *string, config *DataAwsIpRangesConfig) {
 	_init_.Initialize()
 
@@ -5988,7 +6953,7 @@ func NewDataAwsIpRanges_Override(d DataAwsIpRanges, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsIpRanges) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIpRanges) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6084,12 +7049,40 @@ func (d *jsiiProxy_DataAwsIpRanges) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIpRanges) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIpRanges) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIpRanges) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6126,12 +7119,54 @@ func (d *jsiiProxy_DataAwsIpRanges) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIpRanges) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIpRanges) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIpRanges) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIpRanges) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6248,34 +7283,34 @@ func (d *jsiiProxy_DataAwsIpRanges) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsIpRangesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges.html#services DataAwsIpRanges#services}.
-	Services *[]*string `json:"services"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges.html#regions DataAwsIpRanges#regions}.
-	Regions *[]*string `json:"regions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges.html#url DataAwsIpRanges#url}.
-	Url *string `json:"url"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges#services DataAwsIpRanges#services}.
+	Services *[]*string `json:"services" yaml:"services"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges#regions DataAwsIpRanges#regions}.
+	Regions *[]*string `json:"regions" yaml:"regions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ip_ranges#url DataAwsIpRanges#url}.
+	Url *string `json:"url" yaml:"url"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration.html aws_launch_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration aws_launch_configuration}.
 type DataAwsLaunchConfiguration interface {
 	cdktf.TerraformDataSource
 	Arn() *string
-	AssociatePublicIpAddress() interface{}
+	AssociatePublicIpAddress() cdktf.IResolvable
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	EbsOptimized() interface{}
-	EnableMonitoring() interface{}
+	EbsOptimized() cdktf.IResolvable
+	EnableMonitoring() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	IamInstanceProfile() *string
@@ -6304,10 +7339,15 @@ type DataAwsLaunchConfiguration interface {
 	AddOverride(path *string, value interface{})
 	EbsBlockDevice(index *string) DataAwsLaunchConfigurationEbsBlockDevice
 	EphemeralBlockDevice(index *string) DataAwsLaunchConfigurationEphemeralBlockDevice
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	MetadataOptions(index *string) DataAwsLaunchConfigurationMetadataOptions
 	OverrideLogicalId(newLogicalId *string)
@@ -6334,8 +7374,8 @@ func (j *jsiiProxy_DataAwsLaunchConfiguration) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfiguration) AssociatePublicIpAddress() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfiguration) AssociatePublicIpAddress() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"associatePublicIpAddress",
@@ -6364,8 +7404,8 @@ func (j *jsiiProxy_DataAwsLaunchConfiguration) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6384,8 +7424,8 @@ func (j *jsiiProxy_DataAwsLaunchConfiguration) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfiguration) EbsOptimized() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfiguration) EbsOptimized() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"ebsOptimized",
@@ -6394,8 +7434,8 @@ func (j *jsiiProxy_DataAwsLaunchConfiguration) EbsOptimized() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfiguration) EnableMonitoring() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfiguration) EnableMonitoring() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableMonitoring",
@@ -6624,7 +7664,7 @@ func (j *jsiiProxy_DataAwsLaunchConfiguration) VpcClassicLinkSecurityGroups() *[
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration.html aws_launch_configuration} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration aws_launch_configuration} Data Source.
 func NewDataAwsLaunchConfiguration(scope constructs.Construct, id *string, config *DataAwsLaunchConfigurationConfig) DataAwsLaunchConfiguration {
 	_init_.Initialize()
 
@@ -6639,7 +7679,7 @@ func NewDataAwsLaunchConfiguration(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration.html aws_launch_configuration} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration aws_launch_configuration} Data Source.
 func NewDataAwsLaunchConfiguration_Override(d DataAwsLaunchConfiguration, scope constructs.Construct, id *string, config *DataAwsLaunchConfigurationConfig) {
 	_init_.Initialize()
 
@@ -6650,7 +7690,7 @@ func NewDataAwsLaunchConfiguration_Override(d DataAwsLaunchConfiguration, scope 
 	)
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLaunchConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6756,12 +7796,40 @@ func (d *jsiiProxy_DataAwsLaunchConfiguration) EphemeralBlockDevice(index *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLaunchConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6798,12 +7866,54 @@ func (d *jsiiProxy_DataAwsLaunchConfiguration) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLaunchConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6930,38 +8040,45 @@ func (d *jsiiProxy_DataAwsLaunchConfiguration) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsLaunchConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration.html#name DataAwsLaunchConfiguration#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/launch_configuration#name DataAwsLaunchConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type DataAwsLaunchConfigurationEbsBlockDevice interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	DeleteOnTermination() interface{}
+	DeleteOnTermination() cdktf.IResolvable
 	DeviceName() *string
-	Encrypted() interface{}
+	Encrypted() cdktf.IResolvable
 	Iops() *float64
-	NoDevice() interface{}
+	NoDevice() cdktf.IResolvable
 	SnapshotId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	Throughput() interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Throughput() cdktf.IResolvable
 	VolumeSize() *float64
 	VolumeType() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6980,8 +8097,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) ComplexComputedList
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) DeleteOnTermination() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) DeleteOnTermination() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"deleteOnTermination",
@@ -7000,8 +8117,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) DeviceName() *strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) Encrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) Encrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encrypted",
@@ -7020,8 +8137,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) Iops() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) NoDevice() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) NoDevice() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"noDevice",
@@ -7050,8 +8167,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7060,8 +8177,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) TerraformResource()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) Throughput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) Throughput() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"throughput",
@@ -7090,15 +8207,25 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) VolumeType() *strin
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLaunchConfigurationEbsBlockDevice(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLaunchConfigurationEbsBlockDevice {
+func NewDataAwsLaunchConfigurationEbsBlockDevice(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLaunchConfigurationEbsBlockDevice {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice{}
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEbsBlockDevice",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7106,12 +8233,12 @@ func NewDataAwsLaunchConfigurationEbsBlockDevice(terraformResource cdktf.ITerraf
 }
 
 // Experimental.
-func NewDataAwsLaunchConfigurationEbsBlockDevice_Override(d DataAwsLaunchConfigurationEbsBlockDevice, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLaunchConfigurationEbsBlockDevice_Override(d DataAwsLaunchConfigurationEbsBlockDevice, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEbsBlockDevice",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -7132,7 +8259,7 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7140,13 +8267,49 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) SetTerraformResourc
 	)
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7183,12 +8346,54 @@ func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetNumberAttribute(
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEbsBlockDevice) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7217,13 +8422,20 @@ type DataAwsLaunchConfigurationEphemeralBlockDevice interface {
 	DeviceName() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VirtualName() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7262,8 +8474,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7282,15 +8494,25 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) VirtualName()
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLaunchConfigurationEphemeralBlockDevice(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLaunchConfigurationEphemeralBlockDevice {
+func NewDataAwsLaunchConfigurationEphemeralBlockDevice(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLaunchConfigurationEphemeralBlockDevice {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice{}
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEphemeralBlockDevice",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7298,12 +8520,12 @@ func NewDataAwsLaunchConfigurationEphemeralBlockDevice(terraformResource cdktf.I
 }
 
 // Experimental.
-func NewDataAwsLaunchConfigurationEphemeralBlockDevice_Override(d DataAwsLaunchConfigurationEphemeralBlockDevice, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLaunchConfigurationEphemeralBlockDevice_Override(d DataAwsLaunchConfigurationEphemeralBlockDevice, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationEphemeralBlockDevice",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -7324,7 +8546,7 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7332,13 +8554,49 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) SetTerraformR
 	)
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7375,12 +8633,54 @@ func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationEphemeralBlockDevice) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7411,12 +8711,19 @@ type DataAwsLaunchConfigurationMetadataOptions interface {
 	HttpTokens() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7475,8 +8782,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7485,15 +8792,25 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) TerraformResource(
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLaunchConfigurationMetadataOptions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLaunchConfigurationMetadataOptions {
+func NewDataAwsLaunchConfigurationMetadataOptions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLaunchConfigurationMetadataOptions {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLaunchConfigurationMetadataOptions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationMetadataOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7501,12 +8818,12 @@ func NewDataAwsLaunchConfigurationMetadataOptions(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewDataAwsLaunchConfigurationMetadataOptions_Override(d DataAwsLaunchConfigurationMetadataOptions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLaunchConfigurationMetadataOptions_Override(d DataAwsLaunchConfigurationMetadataOptions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationMetadataOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -7527,7 +8844,7 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7535,13 +8852,49 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7578,12 +8931,54 @@ func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationMetadataOptions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7609,20 +9004,27 @@ type DataAwsLaunchConfigurationRootBlockDevice interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	DeleteOnTermination() interface{}
-	Encrypted() interface{}
+	DeleteOnTermination() cdktf.IResolvable
+	Encrypted() cdktf.IResolvable
 	Iops() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	Throughput() interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Throughput() cdktf.IResolvable
 	VolumeSize() *float64
 	VolumeType() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7641,8 +9043,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) ComplexComputedLis
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) DeleteOnTermination() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) DeleteOnTermination() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"deleteOnTermination",
@@ -7651,8 +9053,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) DeleteOnTerminatio
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) Encrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) Encrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encrypted",
@@ -7681,8 +9083,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7691,8 +9093,8 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) TerraformResource(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) Throughput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) Throughput() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"throughput",
@@ -7721,15 +9123,25 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) VolumeType() *stri
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLaunchConfigurationRootBlockDevice(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLaunchConfigurationRootBlockDevice {
+func NewDataAwsLaunchConfigurationRootBlockDevice(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLaunchConfigurationRootBlockDevice {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice{}
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationRootBlockDevice",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7737,12 +9149,12 @@ func NewDataAwsLaunchConfigurationRootBlockDevice(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewDataAwsLaunchConfigurationRootBlockDevice_Override(d DataAwsLaunchConfigurationRootBlockDevice, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLaunchConfigurationRootBlockDevice_Override(d DataAwsLaunchConfigurationRootBlockDevice, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.datasources.DataAwsLaunchConfigurationRootBlockDevice",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -7763,7 +9175,7 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7771,13 +9183,49 @@ func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7814,12 +9262,54 @@ func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7841,13 +9331,13 @@ func (d *jsiiProxy_DataAwsLaunchConfigurationRootBlockDevice) InterpolationForAt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/partition.html aws_partition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/partition aws_partition}.
 type DataAwsPartition interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsSuffix() *string
@@ -7866,10 +9356,15 @@ type DataAwsPartition interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7904,8 +9399,8 @@ func (j *jsiiProxy_DataAwsPartition) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsPartition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsPartition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8054,7 +9549,7 @@ func (j *jsiiProxy_DataAwsPartition) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/partition.html aws_partition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/partition aws_partition} Data Source.
 func NewDataAwsPartition(scope constructs.Construct, id *string, config *DataAwsPartitionConfig) DataAwsPartition {
 	_init_.Initialize()
 
@@ -8069,7 +9564,7 @@ func NewDataAwsPartition(scope constructs.Construct, id *string, config *DataAws
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/partition.html aws_partition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/partition aws_partition} Data Source.
 func NewDataAwsPartition_Override(d DataAwsPartition, scope constructs.Construct, id *string, config *DataAwsPartitionConfig) {
 	_init_.Initialize()
 
@@ -8080,7 +9575,7 @@ func NewDataAwsPartition_Override(d DataAwsPartition, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_DataAwsPartition) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsPartition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8152,12 +9647,40 @@ func (d *jsiiProxy_DataAwsPartition) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsPartition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsPartition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPartition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8194,12 +9717,54 @@ func (d *jsiiProxy_DataAwsPartition) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsPartition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPartition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsPartition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPartition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8300,28 +9865,28 @@ func (d *jsiiProxy_DataAwsPartition) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsPartitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html aws_prefix_list}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/prefix_list aws_prefix_list}.
 type DataAwsPrefixList interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	CidrBlocks() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filter() *[]*DataAwsPrefixListFilter
-	SetFilter(val *[]*DataAwsPrefixListFilter)
-	FilterInput() *[]*DataAwsPrefixListFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -8341,10 +9906,15 @@ type DataAwsPrefixList interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetFilter()
@@ -8392,8 +9962,8 @@ func (j *jsiiProxy_DataAwsPrefixList) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsPrefixList) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsPrefixList) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8412,8 +9982,8 @@ func (j *jsiiProxy_DataAwsPrefixList) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsPrefixList) Filter() *[]*DataAwsPrefixListFilter {
-	var returns *[]*DataAwsPrefixListFilter
+func (j *jsiiProxy_DataAwsPrefixList) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -8422,8 +9992,8 @@ func (j *jsiiProxy_DataAwsPrefixList) Filter() *[]*DataAwsPrefixListFilter {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsPrefixList) FilterInput() *[]*DataAwsPrefixListFilter {
-	var returns *[]*DataAwsPrefixListFilter
+func (j *jsiiProxy_DataAwsPrefixList) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -8572,7 +10142,7 @@ func (j *jsiiProxy_DataAwsPrefixList) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html aws_prefix_list} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/prefix_list aws_prefix_list} Data Source.
 func NewDataAwsPrefixList(scope constructs.Construct, id *string, config *DataAwsPrefixListConfig) DataAwsPrefixList {
 	_init_.Initialize()
 
@@ -8587,7 +10157,7 @@ func NewDataAwsPrefixList(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html aws_prefix_list} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/prefix_list aws_prefix_list} Data Source.
 func NewDataAwsPrefixList_Override(d DataAwsPrefixList, scope constructs.Construct, id *string, config *DataAwsPrefixListConfig) {
 	_init_.Initialize()
 
@@ -8598,7 +10168,7 @@ func NewDataAwsPrefixList_Override(d DataAwsPrefixList, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DataAwsPrefixList) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsPrefixList) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8614,7 +10184,7 @@ func (j *jsiiProxy_DataAwsPrefixList) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsPrefixList) SetFilter(val *[]*DataAwsPrefixListFilter) {
+func (j *jsiiProxy_DataAwsPrefixList) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -8694,12 +10264,40 @@ func (d *jsiiProxy_DataAwsPrefixList) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsPrefixList) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsPrefixList) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPrefixList) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8736,12 +10334,54 @@ func (d *jsiiProxy_DataAwsPrefixList) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsPrefixList) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPrefixList) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsPrefixList) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPrefixList) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8866,37 +10506,37 @@ func (d *jsiiProxy_DataAwsPrefixList) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsPrefixListConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html#filter DataAwsPrefixList#filter}
-	Filter *[]*DataAwsPrefixListFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html#name DataAwsPrefixList#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html#prefix_list_id DataAwsPrefixList#prefix_list_id}.
-	PrefixListId *string `json:"prefixListId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list#filter DataAwsPrefixList#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list#name DataAwsPrefixList#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list#prefix_list_id DataAwsPrefixList#prefix_list_id}.
+	PrefixListId *string `json:"prefixListId" yaml:"prefixListId"`
 }
 
 type DataAwsPrefixListFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html#name DataAwsPrefixList#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list.html#values DataAwsPrefixList#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list#name DataAwsPrefixList#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/prefix_list#values DataAwsPrefixList#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/region.html aws_region}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/region aws_region}.
 type DataAwsRegion interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -8919,10 +10559,15 @@ type DataAwsRegion interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEndpoint()
@@ -8959,8 +10604,8 @@ func (j *jsiiProxy_DataAwsRegion) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRegion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRegion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9129,7 +10774,7 @@ func (j *jsiiProxy_DataAwsRegion) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/region.html aws_region} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/region aws_region} Data Source.
 func NewDataAwsRegion(scope constructs.Construct, id *string, config *DataAwsRegionConfig) DataAwsRegion {
 	_init_.Initialize()
 
@@ -9144,7 +10789,7 @@ func NewDataAwsRegion(scope constructs.Construct, id *string, config *DataAwsReg
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/region.html aws_region} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/region aws_region} Data Source.
 func NewDataAwsRegion_Override(d DataAwsRegion, scope constructs.Construct, id *string, config *DataAwsRegionConfig) {
 	_init_.Initialize()
 
@@ -9155,7 +10800,7 @@ func NewDataAwsRegion_Override(d DataAwsRegion, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_DataAwsRegion) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRegion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9243,12 +10888,40 @@ func (d *jsiiProxy_DataAwsRegion) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRegion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRegion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRegion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9285,12 +10958,54 @@ func (d *jsiiProxy_DataAwsRegion) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRegion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRegion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRegion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRegion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9407,20 +11122,20 @@ func (d *jsiiProxy_DataAwsRegion) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsRegionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/region.html#endpoint DataAwsRegion#endpoint}.
-	Endpoint *string `json:"endpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/region.html#name DataAwsRegion#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/region#endpoint DataAwsRegion#endpoint}.
+	Endpoint *string `json:"endpoint" yaml:"endpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/region#name DataAwsRegion#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/regions.html aws_regions}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/regions aws_regions}.
 type DataAwsRegions interface {
 	cdktf.TerraformDataSource
 	AllRegions() interface{}
@@ -9428,13 +11143,13 @@ type DataAwsRegions interface {
 	AllRegionsInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filter() *[]*DataAwsRegionsFilter
-	SetFilter(val *[]*DataAwsRegionsFilter)
-	FilterInput() *[]*DataAwsRegionsFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -9449,10 +11164,15 @@ type DataAwsRegions interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllRegions()
@@ -9509,8 +11229,8 @@ func (j *jsiiProxy_DataAwsRegions) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRegions) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRegions) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9529,8 +11249,8 @@ func (j *jsiiProxy_DataAwsRegions) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRegions) Filter() *[]*DataAwsRegionsFilter {
-	var returns *[]*DataAwsRegionsFilter
+func (j *jsiiProxy_DataAwsRegions) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -9539,8 +11259,8 @@ func (j *jsiiProxy_DataAwsRegions) Filter() *[]*DataAwsRegionsFilter {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRegions) FilterInput() *[]*DataAwsRegionsFilter {
-	var returns *[]*DataAwsRegionsFilter
+func (j *jsiiProxy_DataAwsRegions) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -9659,7 +11379,7 @@ func (j *jsiiProxy_DataAwsRegions) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/regions.html aws_regions} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/regions aws_regions} Data Source.
 func NewDataAwsRegions(scope constructs.Construct, id *string, config *DataAwsRegionsConfig) DataAwsRegions {
 	_init_.Initialize()
 
@@ -9674,7 +11394,7 @@ func NewDataAwsRegions(scope constructs.Construct, id *string, config *DataAwsRe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/regions.html aws_regions} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/regions aws_regions} Data Source.
 func NewDataAwsRegions_Override(d DataAwsRegions, scope constructs.Construct, id *string, config *DataAwsRegionsConfig) {
 	_init_.Initialize()
 
@@ -9693,7 +11413,7 @@ func (j *jsiiProxy_DataAwsRegions) SetAllRegions(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsRegions) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRegions) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9709,7 +11429,7 @@ func (j *jsiiProxy_DataAwsRegions) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsRegions) SetFilter(val *[]*DataAwsRegionsFilter) {
+func (j *jsiiProxy_DataAwsRegions) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -9773,12 +11493,40 @@ func (d *jsiiProxy_DataAwsRegions) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRegions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRegions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRegions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9815,12 +11563,54 @@ func (d *jsiiProxy_DataAwsRegions) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRegions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRegions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRegions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRegions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9937,29 +11727,29 @@ func (d *jsiiProxy_DataAwsRegions) ToTerraform() interface{} {
 // AWS Data Sources.
 type DataAwsRegionsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions.html#all_regions DataAwsRegions#all_regions}.
-	AllRegions interface{} `json:"allRegions"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions#all_regions DataAwsRegions#all_regions}.
+	AllRegions interface{} `json:"allRegions" yaml:"allRegions"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions.html#filter DataAwsRegions#filter}
-	Filter *[]*DataAwsRegionsFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions#filter DataAwsRegions#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
 }
 
 type DataAwsRegionsFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions.html#name DataAwsRegions#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions.html#values DataAwsRegions#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions#name DataAwsRegions#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/regions#values DataAwsRegions#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elb.html aws_elb}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elb aws_elb}.
 type Elb interface {
 	cdktf.TerraformResource
 	AccessLogs() ElbAccessLogsOutputReference
@@ -9976,8 +11766,8 @@ type Elb interface {
 	SetConnectionDrainingTimeout(val *float64)
 	ConnectionDrainingTimeoutInput() *float64
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CrossZoneLoadBalancing() interface{}
 	SetCrossZoneLoadBalancing(val interface{})
 	CrossZoneLoadBalancingInput() interface{}
@@ -10003,9 +11793,9 @@ type Elb interface {
 	InternalInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	Listener() *[]*ElbListener
-	SetListener(val *[]*ElbListener)
-	ListenerInput() *[]*ElbListener
+	Listener() interface{}
+	SetListener(val interface{})
+	ListenerInput() interface{}
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -10026,21 +11816,26 @@ type Elb interface {
 	Subnets() *[]*string
 	SetSubnets(val *[]*string)
 	SubnetsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	ZoneId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAccessLogs(value *ElbAccessLogs)
@@ -10184,8 +11979,8 @@ func (j *jsiiProxy_Elb) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Elb) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Elb) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10374,8 +12169,8 @@ func (j *jsiiProxy_Elb) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	return returns
 }
 
-func (j *jsiiProxy_Elb) Listener() *[]*ElbListener {
-	var returns *[]*ElbListener
+func (j *jsiiProxy_Elb) Listener() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"listener",
@@ -10384,8 +12179,8 @@ func (j *jsiiProxy_Elb) Listener() *[]*ElbListener {
 	return returns
 }
 
-func (j *jsiiProxy_Elb) ListenerInput() *[]*ElbListener {
-	var returns *[]*ElbListener
+func (j *jsiiProxy_Elb) ListenerInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"listenerInput",
@@ -10534,8 +12329,8 @@ func (j *jsiiProxy_Elb) SubnetsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_Elb) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Elb) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10544,8 +12339,8 @@ func (j *jsiiProxy_Elb) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Elb) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Elb) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10554,8 +12349,8 @@ func (j *jsiiProxy_Elb) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Elb) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Elb) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10564,8 +12359,8 @@ func (j *jsiiProxy_Elb) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Elb) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Elb) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10614,7 +12409,7 @@ func (j *jsiiProxy_Elb) ZoneId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb.html aws_elb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb aws_elb} Resource.
 func NewElb(scope constructs.Construct, id *string, config *ElbConfig) Elb {
 	_init_.Initialize()
 
@@ -10629,7 +12424,7 @@ func NewElb(scope constructs.Construct, id *string, config *ElbConfig) Elb {
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb.html aws_elb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb aws_elb} Resource.
 func NewElb_Override(e Elb, scope constructs.Construct, id *string, config *ElbConfig) {
 	_init_.Initialize()
 
@@ -10664,7 +12459,7 @@ func (j *jsiiProxy_Elb) SetConnectionDrainingTimeout(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_Elb) SetCount(val interface{}) {
+func (j *jsiiProxy_Elb) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10728,7 +12523,7 @@ func (j *jsiiProxy_Elb) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	)
 }
 
-func (j *jsiiProxy_Elb) SetListener(val *[]*ElbListener) {
+func (j *jsiiProxy_Elb) SetListener(val interface{}) {
 	_jsii_.Set(
 		j,
 		"listener",
@@ -10784,7 +12579,7 @@ func (j *jsiiProxy_Elb) SetSubnets(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Elb) SetTags(val interface{}) {
+func (j *jsiiProxy_Elb) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10792,7 +12587,7 @@ func (j *jsiiProxy_Elb) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Elb) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Elb) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10840,12 +12635,40 @@ func (e *jsiiProxy_Elb) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_Elb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_Elb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Elb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10882,12 +12705,54 @@ func (e *jsiiProxy_Elb) GetNumberAttribute(terraformAttribute *string) *float64 
 }
 
 // Experimental.
+func (e *jsiiProxy_Elb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Elb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_Elb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_Elb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11138,14 +13003,14 @@ func (e *jsiiProxy_Elb) ToTerraform() interface{} {
 }
 
 type ElbAccessLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#bucket Elb#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#bucket_prefix Elb#bucket_prefix}.
-	BucketPrefix *string `json:"bucketPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#enabled Elb#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#interval Elb#interval}.
-	Interval *float64 `json:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#bucket Elb#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#bucket_prefix Elb#bucket_prefix}.
+	BucketPrefix *string `json:"bucketPrefix" yaml:"bucketPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#enabled Elb#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#interval Elb#interval}.
+	Interval *float64 `json:"interval" yaml:"interval"`
 }
 
 type ElbAccessLogsOutputReference interface {
@@ -11168,12 +13033,17 @@ type ElbAccessLogsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBucketPrefix()
@@ -11296,8 +13166,8 @@ func (j *jsiiProxy_ElbAccessLogsOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ElbAccessLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElbAccessLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11306,7 +13176,7 @@ func (j *jsiiProxy_ElbAccessLogsOutputReference) TerraformResource() cdktf.ITerr
 	return returns
 }
 
-func NewElbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElbAccessLogsOutputReference {
+func NewElbAccessLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElbAccessLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElbAccessLogsOutputReference{}
@@ -11320,7 +13190,7 @@ func NewElbAccessLogsOutputReference(terraformResource cdktf.ITerraformResource,
 	return &j
 }
 
-func NewElbAccessLogsOutputReference_Override(e ElbAccessLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElbAccessLogsOutputReference_Override(e ElbAccessLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11386,7 +13256,7 @@ func (j *jsiiProxy_ElbAccessLogsOutputReference) SetTerraformAttribute(val *stri
 	)
 }
 
-func (j *jsiiProxy_ElbAccessLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElbAccessLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11395,12 +13265,40 @@ func (j *jsiiProxy_ElbAccessLogsOutputReference) SetTerraformResource(val cdktf.
 }
 
 // Experimental.
-func (e *jsiiProxy_ElbAccessLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElbAccessLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbAccessLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbAccessLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11437,12 +13335,54 @@ func (e *jsiiProxy_ElbAccessLogsOutputReference) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (e *jsiiProxy_ElbAccessLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbAccessLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElbAccessLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbAccessLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11502,13 +13442,13 @@ func (e *jsiiProxy_ElbAccessLogsOutputReference) ResetInterval() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment.html aws_elb_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment aws_elb_attachment}.
 type ElbAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Elb() *string
@@ -11530,10 +13470,15 @@ type ElbAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -11568,8 +13513,8 @@ func (j *jsiiProxy_ElbAttachment) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_ElbAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElbAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11728,7 +13673,7 @@ func (j *jsiiProxy_ElbAttachment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment.html aws_elb_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment aws_elb_attachment} Resource.
 func NewElbAttachment(scope constructs.Construct, id *string, config *ElbAttachmentConfig) ElbAttachment {
 	_init_.Initialize()
 
@@ -11743,7 +13688,7 @@ func NewElbAttachment(scope constructs.Construct, id *string, config *ElbAttachm
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment.html aws_elb_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment aws_elb_attachment} Resource.
 func NewElbAttachment_Override(e ElbAttachment, scope constructs.Construct, id *string, config *ElbAttachmentConfig) {
 	_init_.Initialize()
 
@@ -11754,7 +13699,7 @@ func NewElbAttachment_Override(e ElbAttachment, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_ElbAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_ElbAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11842,12 +13787,40 @@ func (e *jsiiProxy_ElbAttachment) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_ElbAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElbAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11884,12 +13857,54 @@ func (e *jsiiProxy_ElbAttachment) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (e *jsiiProxy_ElbAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElbAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11990,84 +14005,84 @@ func (e *jsiiProxy_ElbAttachment) ToTerraform() interface{} {
 // AWS Data Sources.
 type ElbAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment.html#elb ElbAttachment#elb}.
-	Elb *string `json:"elb"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment.html#instance ElbAttachment#instance}.
-	Instance *string `json:"instance"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment#elb ElbAttachment#elb}.
+	Elb *string `json:"elb" yaml:"elb"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb_attachment#instance ElbAttachment#instance}.
+	Instance *string `json:"instance" yaml:"instance"`
 }
 
 // AWS Data Sources.
 type ElbConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// listener block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#listener Elb#listener}
-	Listener *[]*ElbListener `json:"listener"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#listener Elb#listener}
+	Listener interface{} `json:"listener" yaml:"listener"`
 	// access_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#access_logs Elb#access_logs}
-	AccessLogs *ElbAccessLogs `json:"accessLogs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#availability_zones Elb#availability_zones}.
-	AvailabilityZones *[]*string `json:"availabilityZones"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#connection_draining Elb#connection_draining}.
-	ConnectionDraining interface{} `json:"connectionDraining"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#connection_draining_timeout Elb#connection_draining_timeout}.
-	ConnectionDrainingTimeout *float64 `json:"connectionDrainingTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#cross_zone_load_balancing Elb#cross_zone_load_balancing}.
-	CrossZoneLoadBalancing interface{} `json:"crossZoneLoadBalancing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#desync_mitigation_mode Elb#desync_mitigation_mode}.
-	DesyncMitigationMode *string `json:"desyncMitigationMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#access_logs Elb#access_logs}
+	AccessLogs *ElbAccessLogs `json:"accessLogs" yaml:"accessLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#availability_zones Elb#availability_zones}.
+	AvailabilityZones *[]*string `json:"availabilityZones" yaml:"availabilityZones"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#connection_draining Elb#connection_draining}.
+	ConnectionDraining interface{} `json:"connectionDraining" yaml:"connectionDraining"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#connection_draining_timeout Elb#connection_draining_timeout}.
+	ConnectionDrainingTimeout *float64 `json:"connectionDrainingTimeout" yaml:"connectionDrainingTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#cross_zone_load_balancing Elb#cross_zone_load_balancing}.
+	CrossZoneLoadBalancing interface{} `json:"crossZoneLoadBalancing" yaml:"crossZoneLoadBalancing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#desync_mitigation_mode Elb#desync_mitigation_mode}.
+	DesyncMitigationMode *string `json:"desyncMitigationMode" yaml:"desyncMitigationMode"`
 	// health_check block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#health_check Elb#health_check}
-	HealthCheck *ElbHealthCheck `json:"healthCheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#idle_timeout Elb#idle_timeout}.
-	IdleTimeout *float64 `json:"idleTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#instances Elb#instances}.
-	Instances *[]*string `json:"instances"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#internal Elb#internal}.
-	Internal interface{} `json:"internal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#name Elb#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#name_prefix Elb#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#security_groups Elb#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#source_security_group Elb#source_security_group}.
-	SourceSecurityGroup *string `json:"sourceSecurityGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#subnets Elb#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#tags Elb#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#tags_all Elb#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#health_check Elb#health_check}
+	HealthCheck *ElbHealthCheck `json:"healthCheck" yaml:"healthCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#idle_timeout Elb#idle_timeout}.
+	IdleTimeout *float64 `json:"idleTimeout" yaml:"idleTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#instances Elb#instances}.
+	Instances *[]*string `json:"instances" yaml:"instances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#internal Elb#internal}.
+	Internal interface{} `json:"internal" yaml:"internal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#name Elb#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#name_prefix Elb#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#security_groups Elb#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#source_security_group Elb#source_security_group}.
+	SourceSecurityGroup *string `json:"sourceSecurityGroup" yaml:"sourceSecurityGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#subnets Elb#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#tags Elb#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#tags_all Elb#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ElbHealthCheck struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#healthy_threshold Elb#healthy_threshold}.
-	HealthyThreshold *float64 `json:"healthyThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#interval Elb#interval}.
-	Interval *float64 `json:"interval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#target Elb#target}.
-	Target *string `json:"target"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#timeout Elb#timeout}.
-	Timeout *float64 `json:"timeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#unhealthy_threshold Elb#unhealthy_threshold}.
-	UnhealthyThreshold *float64 `json:"unhealthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#healthy_threshold Elb#healthy_threshold}.
+	HealthyThreshold *float64 `json:"healthyThreshold" yaml:"healthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#interval Elb#interval}.
+	Interval *float64 `json:"interval" yaml:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#target Elb#target}.
+	Target *string `json:"target" yaml:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#timeout Elb#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#unhealthy_threshold Elb#unhealthy_threshold}.
+	UnhealthyThreshold *float64 `json:"unhealthyThreshold" yaml:"unhealthyThreshold"`
 }
 
 type ElbHealthCheckOutputReference interface {
@@ -12087,18 +14102,23 @@ type ElbHealthCheckOutputReference interface {
 	TargetInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Timeout() *float64
 	SetTimeout(val *float64)
 	TimeoutInput() *float64
 	UnhealthyThreshold() *float64
 	SetUnhealthyThreshold(val *float64)
 	UnhealthyThresholdInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -12198,8 +14218,8 @@ func (j *jsiiProxy_ElbHealthCheckOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ElbHealthCheckOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElbHealthCheckOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12248,7 +14268,7 @@ func (j *jsiiProxy_ElbHealthCheckOutputReference) UnhealthyThresholdInput() *flo
 	return returns
 }
 
-func NewElbHealthCheckOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElbHealthCheckOutputReference {
+func NewElbHealthCheckOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElbHealthCheckOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElbHealthCheckOutputReference{}
@@ -12262,7 +14282,7 @@ func NewElbHealthCheckOutputReference(terraformResource cdktf.ITerraformResource
 	return &j
 }
 
-func NewElbHealthCheckOutputReference_Override(e ElbHealthCheckOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElbHealthCheckOutputReference_Override(e ElbHealthCheckOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12320,7 +14340,7 @@ func (j *jsiiProxy_ElbHealthCheckOutputReference) SetTerraformAttribute(val *str
 	)
 }
 
-func (j *jsiiProxy_ElbHealthCheckOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElbHealthCheckOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12345,12 +14365,40 @@ func (j *jsiiProxy_ElbHealthCheckOutputReference) SetUnhealthyThreshold(val *flo
 }
 
 // Experimental.
-func (e *jsiiProxy_ElbHealthCheckOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElbHealthCheckOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbHealthCheckOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbHealthCheckOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12387,12 +14435,54 @@ func (e *jsiiProxy_ElbHealthCheckOutputReference) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (e *jsiiProxy_ElbHealthCheckOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbHealthCheckOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElbHealthCheckOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElbHealthCheckOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12429,19 +14519,19 @@ func (e *jsiiProxy_ElbHealthCheckOutputReference) InterpolationForAttribute(prop
 }
 
 type ElbListener struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#instance_port Elb#instance_port}.
-	InstancePort *float64 `json:"instancePort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#instance_protocol Elb#instance_protocol}.
-	InstanceProtocol *string `json:"instanceProtocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#lb_port Elb#lb_port}.
-	LbPort *float64 `json:"lbPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#lb_protocol Elb#lb_protocol}.
-	LbProtocol *string `json:"lbProtocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb.html#ssl_certificate_id Elb#ssl_certificate_id}.
-	SslCertificateId *string `json:"sslCertificateId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#instance_port Elb#instance_port}.
+	InstancePort *float64 `json:"instancePort" yaml:"instancePort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#instance_protocol Elb#instance_protocol}.
+	InstanceProtocol *string `json:"instanceProtocol" yaml:"instanceProtocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#lb_port Elb#lb_port}.
+	LbPort *float64 `json:"lbPort" yaml:"lbPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#lb_protocol Elb#lb_protocol}.
+	LbProtocol *string `json:"lbProtocol" yaml:"lbProtocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elb#ssl_certificate_id Elb#ssl_certificate_id}.
+	SslCertificateId *string `json:"sslCertificateId" yaml:"sslCertificateId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html aws_launch_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration aws_launch_configuration}.
 type LaunchConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -12450,22 +14540,22 @@ type LaunchConfiguration interface {
 	AssociatePublicIpAddressInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	EbsBlockDevice() *[]*LaunchConfigurationEbsBlockDevice
-	SetEbsBlockDevice(val *[]*LaunchConfigurationEbsBlockDevice)
-	EbsBlockDeviceInput() *[]*LaunchConfigurationEbsBlockDevice
+	EbsBlockDevice() interface{}
+	SetEbsBlockDevice(val interface{})
+	EbsBlockDeviceInput() interface{}
 	EbsOptimized() interface{}
 	SetEbsOptimized(val interface{})
 	EbsOptimizedInput() interface{}
 	EnableMonitoring() interface{}
 	SetEnableMonitoring(val interface{})
 	EnableMonitoringInput() interface{}
-	EphemeralBlockDevice() *[]*LaunchConfigurationEphemeralBlockDevice
-	SetEphemeralBlockDevice(val *[]*LaunchConfigurationEphemeralBlockDevice)
-	EphemeralBlockDeviceInput() *[]*LaunchConfigurationEphemeralBlockDevice
+	EphemeralBlockDevice() interface{}
+	SetEphemeralBlockDevice(val interface{})
+	EphemeralBlockDeviceInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	IamInstanceProfile() *string
@@ -12522,10 +14612,15 @@ type LaunchConfiguration interface {
 	SetVpcClassicLinkSecurityGroups(val *[]*string)
 	VpcClassicLinkSecurityGroupsInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutMetadataOptions(value *LaunchConfigurationMetadataOptions)
@@ -12610,8 +14705,8 @@ func (j *jsiiProxy_LaunchConfiguration) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_LaunchConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LaunchConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12630,8 +14725,8 @@ func (j *jsiiProxy_LaunchConfiguration) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_LaunchConfiguration) EbsBlockDevice() *[]*LaunchConfigurationEbsBlockDevice {
-	var returns *[]*LaunchConfigurationEbsBlockDevice
+func (j *jsiiProxy_LaunchConfiguration) EbsBlockDevice() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsBlockDevice",
@@ -12640,8 +14735,8 @@ func (j *jsiiProxy_LaunchConfiguration) EbsBlockDevice() *[]*LaunchConfiguration
 	return returns
 }
 
-func (j *jsiiProxy_LaunchConfiguration) EbsBlockDeviceInput() *[]*LaunchConfigurationEbsBlockDevice {
-	var returns *[]*LaunchConfigurationEbsBlockDevice
+func (j *jsiiProxy_LaunchConfiguration) EbsBlockDeviceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsBlockDeviceInput",
@@ -12690,8 +14785,8 @@ func (j *jsiiProxy_LaunchConfiguration) EnableMonitoringInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LaunchConfiguration) EphemeralBlockDevice() *[]*LaunchConfigurationEphemeralBlockDevice {
-	var returns *[]*LaunchConfigurationEphemeralBlockDevice
+func (j *jsiiProxy_LaunchConfiguration) EphemeralBlockDevice() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ephemeralBlockDevice",
@@ -12700,8 +14795,8 @@ func (j *jsiiProxy_LaunchConfiguration) EphemeralBlockDevice() *[]*LaunchConfigu
 	return returns
 }
 
-func (j *jsiiProxy_LaunchConfiguration) EphemeralBlockDeviceInput() *[]*LaunchConfigurationEphemeralBlockDevice {
-	var returns *[]*LaunchConfigurationEphemeralBlockDevice
+func (j *jsiiProxy_LaunchConfiguration) EphemeralBlockDeviceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ephemeralBlockDeviceInput",
@@ -13110,7 +15205,7 @@ func (j *jsiiProxy_LaunchConfiguration) VpcClassicLinkSecurityGroupsInput() *[]*
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html aws_launch_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration aws_launch_configuration} Resource.
 func NewLaunchConfiguration(scope constructs.Construct, id *string, config *LaunchConfigurationConfig) LaunchConfiguration {
 	_init_.Initialize()
 
@@ -13125,7 +15220,7 @@ func NewLaunchConfiguration(scope constructs.Construct, id *string, config *Laun
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html aws_launch_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration aws_launch_configuration} Resource.
 func NewLaunchConfiguration_Override(l LaunchConfiguration, scope constructs.Construct, id *string, config *LaunchConfigurationConfig) {
 	_init_.Initialize()
 
@@ -13144,7 +15239,7 @@ func (j *jsiiProxy_LaunchConfiguration) SetAssociatePublicIpAddress(val interfac
 	)
 }
 
-func (j *jsiiProxy_LaunchConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_LaunchConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13160,7 +15255,7 @@ func (j *jsiiProxy_LaunchConfiguration) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_LaunchConfiguration) SetEbsBlockDevice(val *[]*LaunchConfigurationEbsBlockDevice) {
+func (j *jsiiProxy_LaunchConfiguration) SetEbsBlockDevice(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsBlockDevice",
@@ -13184,7 +15279,7 @@ func (j *jsiiProxy_LaunchConfiguration) SetEnableMonitoring(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LaunchConfiguration) SetEphemeralBlockDevice(val *[]*LaunchConfigurationEphemeralBlockDevice) {
+func (j *jsiiProxy_LaunchConfiguration) SetEphemeralBlockDevice(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ephemeralBlockDevice",
@@ -13352,12 +15447,40 @@ func (l *jsiiProxy_LaunchConfiguration) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (l *jsiiProxy_LaunchConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LaunchConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13394,12 +15517,54 @@ func (l *jsiiProxy_LaunchConfiguration) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (l *jsiiProxy_LaunchConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LaunchConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13660,98 +15825,98 @@ func (l *jsiiProxy_LaunchConfiguration) ToTerraform() interface{} {
 // AWS Data Sources.
 type LaunchConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#image_id LaunchConfiguration#image_id}.
-	ImageId *string `json:"imageId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#instance_type LaunchConfiguration#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#associate_public_ip_address LaunchConfiguration#associate_public_ip_address}.
-	AssociatePublicIpAddress interface{} `json:"associatePublicIpAddress"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#image_id LaunchConfiguration#image_id}.
+	ImageId *string `json:"imageId" yaml:"imageId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#instance_type LaunchConfiguration#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#associate_public_ip_address LaunchConfiguration#associate_public_ip_address}.
+	AssociatePublicIpAddress interface{} `json:"associatePublicIpAddress" yaml:"associatePublicIpAddress"`
 	// ebs_block_device block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#ebs_block_device LaunchConfiguration#ebs_block_device}
-	EbsBlockDevice *[]*LaunchConfigurationEbsBlockDevice `json:"ebsBlockDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#ebs_optimized LaunchConfiguration#ebs_optimized}.
-	EbsOptimized interface{} `json:"ebsOptimized"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#enable_monitoring LaunchConfiguration#enable_monitoring}.
-	EnableMonitoring interface{} `json:"enableMonitoring"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#ebs_block_device LaunchConfiguration#ebs_block_device}
+	EbsBlockDevice interface{} `json:"ebsBlockDevice" yaml:"ebsBlockDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#ebs_optimized LaunchConfiguration#ebs_optimized}.
+	EbsOptimized interface{} `json:"ebsOptimized" yaml:"ebsOptimized"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#enable_monitoring LaunchConfiguration#enable_monitoring}.
+	EnableMonitoring interface{} `json:"enableMonitoring" yaml:"enableMonitoring"`
 	// ephemeral_block_device block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#ephemeral_block_device LaunchConfiguration#ephemeral_block_device}
-	EphemeralBlockDevice *[]*LaunchConfigurationEphemeralBlockDevice `json:"ephemeralBlockDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#iam_instance_profile LaunchConfiguration#iam_instance_profile}.
-	IamInstanceProfile *string `json:"iamInstanceProfile"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#key_name LaunchConfiguration#key_name}.
-	KeyName *string `json:"keyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#ephemeral_block_device LaunchConfiguration#ephemeral_block_device}
+	EphemeralBlockDevice interface{} `json:"ephemeralBlockDevice" yaml:"ephemeralBlockDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#iam_instance_profile LaunchConfiguration#iam_instance_profile}.
+	IamInstanceProfile *string `json:"iamInstanceProfile" yaml:"iamInstanceProfile"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#key_name LaunchConfiguration#key_name}.
+	KeyName *string `json:"keyName" yaml:"keyName"`
 	// metadata_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#metadata_options LaunchConfiguration#metadata_options}
-	MetadataOptions *LaunchConfigurationMetadataOptions `json:"metadataOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#name LaunchConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#name_prefix LaunchConfiguration#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#placement_tenancy LaunchConfiguration#placement_tenancy}.
-	PlacementTenancy *string `json:"placementTenancy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#metadata_options LaunchConfiguration#metadata_options}
+	MetadataOptions *LaunchConfigurationMetadataOptions `json:"metadataOptions" yaml:"metadataOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#name LaunchConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#name_prefix LaunchConfiguration#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#placement_tenancy LaunchConfiguration#placement_tenancy}.
+	PlacementTenancy *string `json:"placementTenancy" yaml:"placementTenancy"`
 	// root_block_device block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#root_block_device LaunchConfiguration#root_block_device}
-	RootBlockDevice *LaunchConfigurationRootBlockDevice `json:"rootBlockDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#security_groups LaunchConfiguration#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#spot_price LaunchConfiguration#spot_price}.
-	SpotPrice *string `json:"spotPrice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#user_data LaunchConfiguration#user_data}.
-	UserData *string `json:"userData"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#user_data_base64 LaunchConfiguration#user_data_base64}.
-	UserDataBase64 *string `json:"userDataBase64"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#vpc_classic_link_id LaunchConfiguration#vpc_classic_link_id}.
-	VpcClassicLinkId *string `json:"vpcClassicLinkId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#vpc_classic_link_security_groups LaunchConfiguration#vpc_classic_link_security_groups}.
-	VpcClassicLinkSecurityGroups *[]*string `json:"vpcClassicLinkSecurityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#root_block_device LaunchConfiguration#root_block_device}
+	RootBlockDevice *LaunchConfigurationRootBlockDevice `json:"rootBlockDevice" yaml:"rootBlockDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#security_groups LaunchConfiguration#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#spot_price LaunchConfiguration#spot_price}.
+	SpotPrice *string `json:"spotPrice" yaml:"spotPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#user_data LaunchConfiguration#user_data}.
+	UserData *string `json:"userData" yaml:"userData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#user_data_base64 LaunchConfiguration#user_data_base64}.
+	UserDataBase64 *string `json:"userDataBase64" yaml:"userDataBase64"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#vpc_classic_link_id LaunchConfiguration#vpc_classic_link_id}.
+	VpcClassicLinkId *string `json:"vpcClassicLinkId" yaml:"vpcClassicLinkId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#vpc_classic_link_security_groups LaunchConfiguration#vpc_classic_link_security_groups}.
+	VpcClassicLinkSecurityGroups *[]*string `json:"vpcClassicLinkSecurityGroups" yaml:"vpcClassicLinkSecurityGroups"`
 }
 
 type LaunchConfigurationEbsBlockDevice struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#device_name LaunchConfiguration#device_name}.
-	DeviceName *string `json:"deviceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#delete_on_termination LaunchConfiguration#delete_on_termination}.
-	DeleteOnTermination interface{} `json:"deleteOnTermination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#encrypted LaunchConfiguration#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#iops LaunchConfiguration#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#no_device LaunchConfiguration#no_device}.
-	NoDevice interface{} `json:"noDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#snapshot_id LaunchConfiguration#snapshot_id}.
-	SnapshotId *string `json:"snapshotId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#throughput LaunchConfiguration#throughput}.
-	Throughput *float64 `json:"throughput"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#volume_size LaunchConfiguration#volume_size}.
-	VolumeSize *float64 `json:"volumeSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#volume_type LaunchConfiguration#volume_type}.
-	VolumeType *string `json:"volumeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#device_name LaunchConfiguration#device_name}.
+	DeviceName *string `json:"deviceName" yaml:"deviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#delete_on_termination LaunchConfiguration#delete_on_termination}.
+	DeleteOnTermination interface{} `json:"deleteOnTermination" yaml:"deleteOnTermination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#encrypted LaunchConfiguration#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#iops LaunchConfiguration#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#no_device LaunchConfiguration#no_device}.
+	NoDevice interface{} `json:"noDevice" yaml:"noDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#snapshot_id LaunchConfiguration#snapshot_id}.
+	SnapshotId *string `json:"snapshotId" yaml:"snapshotId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#throughput LaunchConfiguration#throughput}.
+	Throughput *float64 `json:"throughput" yaml:"throughput"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#volume_size LaunchConfiguration#volume_size}.
+	VolumeSize *float64 `json:"volumeSize" yaml:"volumeSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#volume_type LaunchConfiguration#volume_type}.
+	VolumeType *string `json:"volumeType" yaml:"volumeType"`
 }
 
 type LaunchConfigurationEphemeralBlockDevice struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#device_name LaunchConfiguration#device_name}.
-	DeviceName *string `json:"deviceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#virtual_name LaunchConfiguration#virtual_name}.
-	VirtualName *string `json:"virtualName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#device_name LaunchConfiguration#device_name}.
+	DeviceName *string `json:"deviceName" yaml:"deviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#virtual_name LaunchConfiguration#virtual_name}.
+	VirtualName *string `json:"virtualName" yaml:"virtualName"`
 }
 
 type LaunchConfigurationMetadataOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#http_endpoint LaunchConfiguration#http_endpoint}.
-	HttpEndpoint *string `json:"httpEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#http_put_response_hop_limit LaunchConfiguration#http_put_response_hop_limit}.
-	HttpPutResponseHopLimit *float64 `json:"httpPutResponseHopLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#http_tokens LaunchConfiguration#http_tokens}.
-	HttpTokens *string `json:"httpTokens"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#http_endpoint LaunchConfiguration#http_endpoint}.
+	HttpEndpoint *string `json:"httpEndpoint" yaml:"httpEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#http_put_response_hop_limit LaunchConfiguration#http_put_response_hop_limit}.
+	HttpPutResponseHopLimit *float64 `json:"httpPutResponseHopLimit" yaml:"httpPutResponseHopLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#http_tokens LaunchConfiguration#http_tokens}.
+	HttpTokens *string `json:"httpTokens" yaml:"httpTokens"`
 }
 
 type LaunchConfigurationMetadataOptionsOutputReference interface {
@@ -13771,12 +15936,17 @@ type LaunchConfigurationMetadataOptionsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHttpEndpoint()
@@ -13879,8 +16049,8 @@ func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13889,7 +16059,7 @@ func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) TerraformR
 	return returns
 }
 
-func NewLaunchConfigurationMetadataOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LaunchConfigurationMetadataOptionsOutputReference {
+func NewLaunchConfigurationMetadataOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LaunchConfigurationMetadataOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference{}
@@ -13903,7 +16073,7 @@ func NewLaunchConfigurationMetadataOptionsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewLaunchConfigurationMetadataOptionsOutputReference_Override(l LaunchConfigurationMetadataOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLaunchConfigurationMetadataOptionsOutputReference_Override(l LaunchConfigurationMetadataOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13961,7 +16131,7 @@ func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13970,12 +16140,40 @@ func (j *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14012,12 +16210,54 @@ func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14078,18 +16318,18 @@ func (l *jsiiProxy_LaunchConfigurationMetadataOptionsOutputReference) ResetHttpT
 }
 
 type LaunchConfigurationRootBlockDevice struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#delete_on_termination LaunchConfiguration#delete_on_termination}.
-	DeleteOnTermination interface{} `json:"deleteOnTermination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#encrypted LaunchConfiguration#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#iops LaunchConfiguration#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#throughput LaunchConfiguration#throughput}.
-	Throughput *float64 `json:"throughput"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#volume_size LaunchConfiguration#volume_size}.
-	VolumeSize *float64 `json:"volumeSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration.html#volume_type LaunchConfiguration#volume_type}.
-	VolumeType *string `json:"volumeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#delete_on_termination LaunchConfiguration#delete_on_termination}.
+	DeleteOnTermination interface{} `json:"deleteOnTermination" yaml:"deleteOnTermination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#encrypted LaunchConfiguration#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#iops LaunchConfiguration#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#throughput LaunchConfiguration#throughput}.
+	Throughput *float64 `json:"throughput" yaml:"throughput"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#volume_size LaunchConfiguration#volume_size}.
+	VolumeSize *float64 `json:"volumeSize" yaml:"volumeSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/launch_configuration#volume_type LaunchConfiguration#volume_type}.
+	VolumeType *string `json:"volumeType" yaml:"volumeType"`
 }
 
 type LaunchConfigurationRootBlockDeviceOutputReference interface {
@@ -14109,8 +16349,8 @@ type LaunchConfigurationRootBlockDeviceOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Throughput() *float64
 	SetThroughput(val *float64)
 	ThroughputInput() *float64
@@ -14120,10 +16360,15 @@ type LaunchConfigurationRootBlockDeviceOutputReference interface {
 	VolumeType() *string
 	SetVolumeType(val *string)
 	VolumeTypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDeleteOnTermination()
@@ -14229,8 +16474,8 @@ func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14299,7 +16544,7 @@ func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) VolumeType
 	return returns
 }
 
-func NewLaunchConfigurationRootBlockDeviceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LaunchConfigurationRootBlockDeviceOutputReference {
+func NewLaunchConfigurationRootBlockDeviceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LaunchConfigurationRootBlockDeviceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference{}
@@ -14313,7 +16558,7 @@ func NewLaunchConfigurationRootBlockDeviceOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewLaunchConfigurationRootBlockDeviceOutputReference_Override(l LaunchConfigurationRootBlockDeviceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLaunchConfigurationRootBlockDeviceOutputReference_Override(l LaunchConfigurationRootBlockDeviceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14371,7 +16616,7 @@ func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14404,12 +16649,40 @@ func (j *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) SetVolumeT
 }
 
 // Experimental.
-func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14446,12 +16719,54 @@ func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetNumberA
 }
 
 // Experimental.
+func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LaunchConfigurationRootBlockDeviceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

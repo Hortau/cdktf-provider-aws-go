@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/quicksight/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html aws_quicksight_data_source}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source aws_quicksight_data_source}.
 type QuicksightDataSource interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -18,8 +18,8 @@ type QuicksightDataSource interface {
 	AwsAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Credentials() QuicksightDataSourceCredentialsOutputReference
 	CredentialsInput() *QuicksightDataSourceCredentials
 	DataSourceId() *string
@@ -38,20 +38,20 @@ type QuicksightDataSource interface {
 	Node() constructs.Node
 	Parameters() QuicksightDataSourceParametersOutputReference
 	ParametersInput() *QuicksightDataSourceParameters
-	Permission() *[]*QuicksightDataSourcePermission
-	SetPermission(val *[]*QuicksightDataSourcePermission)
-	PermissionInput() *[]*QuicksightDataSourcePermission
+	Permission() interface{}
+	SetPermission(val interface{})
+	PermissionInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	SslProperties() QuicksightDataSourceSslPropertiesOutputReference
 	SslPropertiesInput() *QuicksightDataSourceSslProperties
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -61,10 +61,15 @@ type QuicksightDataSource interface {
 	VpcConnectionProperties() QuicksightDataSourceVpcConnectionPropertiesOutputReference
 	VpcConnectionPropertiesInput() *QuicksightDataSourceVpcConnectionProperties
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCredentials(value *QuicksightDataSourceCredentials)
@@ -140,8 +145,8 @@ func (j *jsiiProxy_QuicksightDataSource) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSource) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightDataSource) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -290,8 +295,8 @@ func (j *jsiiProxy_QuicksightDataSource) ParametersInput() *QuicksightDataSource
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSource) Permission() *[]*QuicksightDataSourcePermission {
-	var returns *[]*QuicksightDataSourcePermission
+func (j *jsiiProxy_QuicksightDataSource) Permission() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"permission",
@@ -300,8 +305,8 @@ func (j *jsiiProxy_QuicksightDataSource) Permission() *[]*QuicksightDataSourcePe
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSource) PermissionInput() *[]*QuicksightDataSourcePermission {
-	var returns *[]*QuicksightDataSourcePermission
+func (j *jsiiProxy_QuicksightDataSource) PermissionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"permissionInput",
@@ -350,8 +355,8 @@ func (j *jsiiProxy_QuicksightDataSource) SslPropertiesInput() *QuicksightDataSou
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSource) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightDataSource) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -360,8 +365,8 @@ func (j *jsiiProxy_QuicksightDataSource) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSource) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightDataSource) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -370,8 +375,8 @@ func (j *jsiiProxy_QuicksightDataSource) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSource) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightDataSource) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -380,8 +385,8 @@ func (j *jsiiProxy_QuicksightDataSource) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSource) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightDataSource) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -460,7 +465,7 @@ func (j *jsiiProxy_QuicksightDataSource) VpcConnectionPropertiesInput() *Quicksi
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html aws_quicksight_data_source} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source aws_quicksight_data_source} Resource.
 func NewQuicksightDataSource(scope constructs.Construct, id *string, config *QuicksightDataSourceConfig) QuicksightDataSource {
 	_init_.Initialize()
 
@@ -475,7 +480,7 @@ func NewQuicksightDataSource(scope constructs.Construct, id *string, config *Qui
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html aws_quicksight_data_source} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source aws_quicksight_data_source} Resource.
 func NewQuicksightDataSource_Override(q QuicksightDataSource, scope constructs.Construct, id *string, config *QuicksightDataSourceConfig) {
 	_init_.Initialize()
 
@@ -494,7 +499,7 @@ func (j *jsiiProxy_QuicksightDataSource) SetAwsAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSource) SetCount(val interface{}) {
+func (j *jsiiProxy_QuicksightDataSource) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -534,7 +539,7 @@ func (j *jsiiProxy_QuicksightDataSource) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSource) SetPermission(val *[]*QuicksightDataSourcePermission) {
+func (j *jsiiProxy_QuicksightDataSource) SetPermission(val interface{}) {
 	_jsii_.Set(
 		j,
 		"permission",
@@ -550,7 +555,7 @@ func (j *jsiiProxy_QuicksightDataSource) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSource) SetTags(val interface{}) {
+func (j *jsiiProxy_QuicksightDataSource) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -558,7 +563,7 @@ func (j *jsiiProxy_QuicksightDataSource) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSource) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_QuicksightDataSource) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -614,12 +619,40 @@ func (q *jsiiProxy_QuicksightDataSource) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSource) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSource) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSource) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -656,12 +689,54 @@ func (q *jsiiProxy_QuicksightDataSource) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSource) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSource) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSource) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSource) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -850,61 +925,61 @@ func (q *jsiiProxy_QuicksightDataSource) ToTerraform() interface{} {
 // AWS QuickSight.
 type QuicksightDataSourceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#data_source_id QuicksightDataSource#data_source_id}.
-	DataSourceId *string `json:"dataSourceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#name QuicksightDataSource#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#data_source_id QuicksightDataSource#data_source_id}.
+	DataSourceId *string `json:"dataSourceId" yaml:"dataSourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#name QuicksightDataSource#name}.
+	Name *string `json:"name" yaml:"name"`
 	// parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#parameters QuicksightDataSource#parameters}
-	Parameters *QuicksightDataSourceParameters `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#type QuicksightDataSource#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#aws_account_id QuicksightDataSource#aws_account_id}.
-	AwsAccountId *string `json:"awsAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#parameters QuicksightDataSource#parameters}
+	Parameters *QuicksightDataSourceParameters `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#type QuicksightDataSource#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#aws_account_id QuicksightDataSource#aws_account_id}.
+	AwsAccountId *string `json:"awsAccountId" yaml:"awsAccountId"`
 	// credentials block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#credentials QuicksightDataSource#credentials}
-	Credentials *QuicksightDataSourceCredentials `json:"credentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#credentials QuicksightDataSource#credentials}
+	Credentials *QuicksightDataSourceCredentials `json:"credentials" yaml:"credentials"`
 	// permission block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#permission QuicksightDataSource#permission}
-	Permission *[]*QuicksightDataSourcePermission `json:"permission"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#permission QuicksightDataSource#permission}
+	Permission interface{} `json:"permission" yaml:"permission"`
 	// ssl_properties block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#ssl_properties QuicksightDataSource#ssl_properties}
-	SslProperties *QuicksightDataSourceSslProperties `json:"sslProperties"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#tags QuicksightDataSource#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#tags_all QuicksightDataSource#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#ssl_properties QuicksightDataSource#ssl_properties}
+	SslProperties *QuicksightDataSourceSslProperties `json:"sslProperties" yaml:"sslProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#tags QuicksightDataSource#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#tags_all QuicksightDataSource#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// vpc_connection_properties block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#vpc_connection_properties QuicksightDataSource#vpc_connection_properties}
-	VpcConnectionProperties *QuicksightDataSourceVpcConnectionProperties `json:"vpcConnectionProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#vpc_connection_properties QuicksightDataSource#vpc_connection_properties}
+	VpcConnectionProperties *QuicksightDataSourceVpcConnectionProperties `json:"vpcConnectionProperties" yaml:"vpcConnectionProperties"`
 }
 
 type QuicksightDataSourceCredentials struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#copy_source_arn QuicksightDataSource#copy_source_arn}.
-	CopySourceArn *string `json:"copySourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#copy_source_arn QuicksightDataSource#copy_source_arn}.
+	CopySourceArn *string `json:"copySourceArn" yaml:"copySourceArn"`
 	// credential_pair block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#credential_pair QuicksightDataSource#credential_pair}
-	CredentialPair *QuicksightDataSourceCredentialsCredentialPair `json:"credentialPair"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#credential_pair QuicksightDataSource#credential_pair}
+	CredentialPair *QuicksightDataSourceCredentialsCredentialPair `json:"credentialPair" yaml:"credentialPair"`
 }
 
 type QuicksightDataSourceCredentialsCredentialPair struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#password QuicksightDataSource#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#username QuicksightDataSource#username}.
-	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#password QuicksightDataSource#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#username QuicksightDataSource#username}.
+	Username *string `json:"username" yaml:"username"`
 }
 
 type QuicksightDataSourceCredentialsCredentialPairOutputReference interface {
@@ -918,15 +993,20 @@ type QuicksightDataSourceCredentialsCredentialPairOutputReference interface {
 	PasswordInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Username() *string
 	SetUsername(val *string)
 	UsernameInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -986,8 +1066,8 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1016,7 +1096,7 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference)
 	return returns
 }
 
-func NewQuicksightDataSourceCredentialsCredentialPairOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceCredentialsCredentialPairOutputReference {
+func NewQuicksightDataSourceCredentialsCredentialPairOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceCredentialsCredentialPairOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference{}
@@ -1030,7 +1110,7 @@ func NewQuicksightDataSourceCredentialsCredentialPairOutputReference(terraformRe
 	return &j
 }
 
-func NewQuicksightDataSourceCredentialsCredentialPairOutputReference_Override(q QuicksightDataSourceCredentialsCredentialPairOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceCredentialsCredentialPairOutputReference_Override(q QuicksightDataSourceCredentialsCredentialPairOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1072,7 +1152,7 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference)
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1089,12 +1169,40 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference)
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1131,12 +1239,54 @@ func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference)
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsCredentialPairOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1185,12 +1335,17 @@ type QuicksightDataSourceCredentialsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCredentialPair(value *QuicksightDataSourceCredentialsCredentialPair)
@@ -1273,8 +1428,8 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1283,7 +1438,7 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) TerraformReso
 	return returns
 }
 
-func NewQuicksightDataSourceCredentialsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceCredentialsOutputReference {
+func NewQuicksightDataSourceCredentialsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceCredentialsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceCredentialsOutputReference{}
@@ -1297,7 +1452,7 @@ func NewQuicksightDataSourceCredentialsOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewQuicksightDataSourceCredentialsOutputReference_Override(q QuicksightDataSourceCredentialsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceCredentialsOutputReference_Override(q QuicksightDataSourceCredentialsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1339,7 +1494,7 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1348,12 +1503,40 @@ func (j *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1390,12 +1573,54 @@ func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1458,89 +1683,89 @@ func (q *jsiiProxy_QuicksightDataSourceCredentialsOutputReference) ResetCredenti
 type QuicksightDataSourceParameters struct {
 	// amazon_elasticsearch block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#amazon_elasticsearch QuicksightDataSource#amazon_elasticsearch}
-	AmazonElasticsearch *QuicksightDataSourceParametersAmazonElasticsearch `json:"amazonElasticsearch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#amazon_elasticsearch QuicksightDataSource#amazon_elasticsearch}
+	AmazonElasticsearch *QuicksightDataSourceParametersAmazonElasticsearch `json:"amazonElasticsearch" yaml:"amazonElasticsearch"`
 	// athena block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#athena QuicksightDataSource#athena}
-	Athena *QuicksightDataSourceParametersAthena `json:"athena"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#athena QuicksightDataSource#athena}
+	Athena *QuicksightDataSourceParametersAthena `json:"athena" yaml:"athena"`
 	// aurora block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#aurora QuicksightDataSource#aurora}
-	Aurora *QuicksightDataSourceParametersAurora `json:"aurora"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#aurora QuicksightDataSource#aurora}
+	Aurora *QuicksightDataSourceParametersAurora `json:"aurora" yaml:"aurora"`
 	// aurora_postgresql block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#aurora_postgresql QuicksightDataSource#aurora_postgresql}
-	AuroraPostgresql *QuicksightDataSourceParametersAuroraPostgresql `json:"auroraPostgresql"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#aurora_postgresql QuicksightDataSource#aurora_postgresql}
+	AuroraPostgresql *QuicksightDataSourceParametersAuroraPostgresql `json:"auroraPostgresql" yaml:"auroraPostgresql"`
 	// aws_iot_analytics block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#aws_iot_analytics QuicksightDataSource#aws_iot_analytics}
-	AwsIotAnalytics *QuicksightDataSourceParametersAwsIotAnalytics `json:"awsIotAnalytics"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#aws_iot_analytics QuicksightDataSource#aws_iot_analytics}
+	AwsIotAnalytics *QuicksightDataSourceParametersAwsIotAnalytics `json:"awsIotAnalytics" yaml:"awsIotAnalytics"`
 	// jira block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#jira QuicksightDataSource#jira}
-	Jira *QuicksightDataSourceParametersJira `json:"jira"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#jira QuicksightDataSource#jira}
+	Jira *QuicksightDataSourceParametersJira `json:"jira" yaml:"jira"`
 	// maria_db block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#maria_db QuicksightDataSource#maria_db}
-	MariaDb *QuicksightDataSourceParametersMariaDb `json:"mariaDb"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#maria_db QuicksightDataSource#maria_db}
+	MariaDb *QuicksightDataSourceParametersMariaDb `json:"mariaDb" yaml:"mariaDb"`
 	// mysql block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#mysql QuicksightDataSource#mysql}
-	Mysql *QuicksightDataSourceParametersMysql `json:"mysql"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#mysql QuicksightDataSource#mysql}
+	Mysql *QuicksightDataSourceParametersMysql `json:"mysql" yaml:"mysql"`
 	// oracle block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#oracle QuicksightDataSource#oracle}
-	Oracle *QuicksightDataSourceParametersOracle `json:"oracle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#oracle QuicksightDataSource#oracle}
+	Oracle *QuicksightDataSourceParametersOracle `json:"oracle" yaml:"oracle"`
 	// postgresql block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#postgresql QuicksightDataSource#postgresql}
-	Postgresql *QuicksightDataSourceParametersPostgresql `json:"postgresql"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#postgresql QuicksightDataSource#postgresql}
+	Postgresql *QuicksightDataSourceParametersPostgresql `json:"postgresql" yaml:"postgresql"`
 	// presto block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#presto QuicksightDataSource#presto}
-	Presto *QuicksightDataSourceParametersPresto `json:"presto"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#presto QuicksightDataSource#presto}
+	Presto *QuicksightDataSourceParametersPresto `json:"presto" yaml:"presto"`
 	// rds block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#rds QuicksightDataSource#rds}
-	Rds *QuicksightDataSourceParametersRds `json:"rds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#rds QuicksightDataSource#rds}
+	Rds *QuicksightDataSourceParametersRds `json:"rds" yaml:"rds"`
 	// redshift block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#redshift QuicksightDataSource#redshift}
-	Redshift *QuicksightDataSourceParametersRedshift `json:"redshift"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#redshift QuicksightDataSource#redshift}
+	Redshift *QuicksightDataSourceParametersRedshift `json:"redshift" yaml:"redshift"`
 	// s3 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#s3 QuicksightDataSource#s3}
-	S3 *QuicksightDataSourceParametersS3 `json:"s3"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#s3 QuicksightDataSource#s3}
+	S3 *QuicksightDataSourceParametersS3 `json:"s3" yaml:"s3"`
 	// service_now block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#service_now QuicksightDataSource#service_now}
-	ServiceNow *QuicksightDataSourceParametersServiceNow `json:"serviceNow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#service_now QuicksightDataSource#service_now}
+	ServiceNow *QuicksightDataSourceParametersServiceNow `json:"serviceNow" yaml:"serviceNow"`
 	// snowflake block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#snowflake QuicksightDataSource#snowflake}
-	Snowflake *QuicksightDataSourceParametersSnowflake `json:"snowflake"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#snowflake QuicksightDataSource#snowflake}
+	Snowflake *QuicksightDataSourceParametersSnowflake `json:"snowflake" yaml:"snowflake"`
 	// spark block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#spark QuicksightDataSource#spark}
-	Spark *QuicksightDataSourceParametersSpark `json:"spark"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#spark QuicksightDataSource#spark}
+	Spark *QuicksightDataSourceParametersSpark `json:"spark" yaml:"spark"`
 	// sql_server block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#sql_server QuicksightDataSource#sql_server}
-	SqlServer *QuicksightDataSourceParametersSqlServer `json:"sqlServer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#sql_server QuicksightDataSource#sql_server}
+	SqlServer *QuicksightDataSourceParametersSqlServer `json:"sqlServer" yaml:"sqlServer"`
 	// teradata block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#teradata QuicksightDataSource#teradata}
-	Teradata *QuicksightDataSourceParametersTeradata `json:"teradata"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#teradata QuicksightDataSource#teradata}
+	Teradata *QuicksightDataSourceParametersTeradata `json:"teradata" yaml:"teradata"`
 	// twitter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#twitter QuicksightDataSource#twitter}
-	Twitter *QuicksightDataSourceParametersTwitter `json:"twitter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#twitter QuicksightDataSource#twitter}
+	Twitter *QuicksightDataSourceParametersTwitter `json:"twitter" yaml:"twitter"`
 }
 
 type QuicksightDataSourceParametersAmazonElasticsearch struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#domain QuicksightDataSource#domain}.
-	Domain *string `json:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#domain QuicksightDataSource#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
 }
 
 type QuicksightDataSourceParametersAmazonElasticsearchOutputReference interface {
@@ -1554,12 +1779,17 @@ type QuicksightDataSourceParametersAmazonElasticsearchOutputReference interface 
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1619,8 +1849,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1629,7 +1859,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 	return returns
 }
 
-func NewQuicksightDataSourceParametersAmazonElasticsearchOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAmazonElasticsearchOutputReference {
+func NewQuicksightDataSourceParametersAmazonElasticsearchOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAmazonElasticsearchOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference{}
@@ -1643,7 +1873,7 @@ func NewQuicksightDataSourceParametersAmazonElasticsearchOutputReference(terrafo
 	return &j
 }
 
-func NewQuicksightDataSourceParametersAmazonElasticsearchOutputReference_Override(q QuicksightDataSourceParametersAmazonElasticsearchOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersAmazonElasticsearchOutputReference_Override(q QuicksightDataSourceParametersAmazonElasticsearchOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1685,7 +1915,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1694,12 +1924,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1736,12 +1994,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1778,8 +2078,8 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAmazonElasticsearchOutputRefere
 }
 
 type QuicksightDataSourceParametersAthena struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#work_group QuicksightDataSource#work_group}.
-	WorkGroup *string `json:"workGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#work_group QuicksightDataSource#work_group}.
+	WorkGroup *string `json:"workGroup" yaml:"workGroup"`
 }
 
 type QuicksightDataSourceParametersAthenaOutputReference interface {
@@ -1790,15 +2090,20 @@ type QuicksightDataSourceParametersAthenaOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WorkGroup() *string
 	SetWorkGroup(val *string)
 	WorkGroupInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetWorkGroup()
@@ -1839,8 +2144,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1869,7 +2174,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) WorkGrou
 	return returns
 }
 
-func NewQuicksightDataSourceParametersAthenaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAthenaOutputReference {
+func NewQuicksightDataSourceParametersAthenaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAthenaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference{}
@@ -1883,7 +2188,7 @@ func NewQuicksightDataSourceParametersAthenaOutputReference(terraformResource cd
 	return &j
 }
 
-func NewQuicksightDataSourceParametersAthenaOutputReference_Override(q QuicksightDataSourceParametersAthenaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersAthenaOutputReference_Override(q QuicksightDataSourceParametersAthenaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1917,7 +2222,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1934,12 +2239,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) SetWorkG
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1976,12 +2309,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetNumbe
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2026,12 +2401,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAthenaOutputReference) ResetWor
 }
 
 type QuicksightDataSourceParametersAurora struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersAuroraOutputReference interface {
@@ -2051,12 +2426,17 @@ type QuicksightDataSourceParametersAuroraOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2156,8 +2536,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2166,7 +2546,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) Terrafor
 	return returns
 }
 
-func NewQuicksightDataSourceParametersAuroraOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAuroraOutputReference {
+func NewQuicksightDataSourceParametersAuroraOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAuroraOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference{}
@@ -2180,7 +2560,7 @@ func NewQuicksightDataSourceParametersAuroraOutputReference(terraformResource cd
 	return &j
 }
 
-func NewQuicksightDataSourceParametersAuroraOutputReference_Override(q QuicksightDataSourceParametersAuroraOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersAuroraOutputReference_Override(q QuicksightDataSourceParametersAuroraOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2238,7 +2618,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2247,12 +2627,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) SetTerra
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2289,12 +2697,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetNumbe
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2331,12 +2781,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAuroraOutputReference) Interpol
 }
 
 type QuicksightDataSourceParametersAuroraPostgresql struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersAuroraPostgresqlOutputReference interface {
@@ -2356,12 +2806,17 @@ type QuicksightDataSourceParametersAuroraPostgresqlOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2461,8 +2916,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2471,7 +2926,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 	return returns
 }
 
-func NewQuicksightDataSourceParametersAuroraPostgresqlOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAuroraPostgresqlOutputReference {
+func NewQuicksightDataSourceParametersAuroraPostgresqlOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAuroraPostgresqlOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference{}
@@ -2485,7 +2940,7 @@ func NewQuicksightDataSourceParametersAuroraPostgresqlOutputReference(terraformR
 	return &j
 }
 
-func NewQuicksightDataSourceParametersAuroraPostgresqlOutputReference_Override(q QuicksightDataSourceParametersAuroraPostgresqlOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersAuroraPostgresqlOutputReference_Override(q QuicksightDataSourceParametersAuroraPostgresqlOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2543,7 +2998,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2552,12 +3007,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2594,12 +3077,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2636,8 +3161,8 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAuroraPostgresqlOutputReference
 }
 
 type QuicksightDataSourceParametersAwsIotAnalytics struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#data_set_name QuicksightDataSource#data_set_name}.
-	DataSetName *string `json:"dataSetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#data_set_name QuicksightDataSource#data_set_name}.
+	DataSetName *string `json:"dataSetName" yaml:"dataSetName"`
 }
 
 type QuicksightDataSourceParametersAwsIotAnalyticsOutputReference interface {
@@ -2651,12 +3176,17 @@ type QuicksightDataSourceParametersAwsIotAnalyticsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2716,8 +3246,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2726,7 +3256,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 	return returns
 }
 
-func NewQuicksightDataSourceParametersAwsIotAnalyticsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAwsIotAnalyticsOutputReference {
+func NewQuicksightDataSourceParametersAwsIotAnalyticsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersAwsIotAnalyticsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference{}
@@ -2740,7 +3270,7 @@ func NewQuicksightDataSourceParametersAwsIotAnalyticsOutputReference(terraformRe
 	return &j
 }
 
-func NewQuicksightDataSourceParametersAwsIotAnalyticsOutputReference_Override(q QuicksightDataSourceParametersAwsIotAnalyticsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersAwsIotAnalyticsOutputReference_Override(q QuicksightDataSourceParametersAwsIotAnalyticsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2782,7 +3312,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2791,12 +3321,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2833,12 +3391,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2875,8 +3475,8 @@ func (q *jsiiProxy_QuicksightDataSourceParametersAwsIotAnalyticsOutputReference)
 }
 
 type QuicksightDataSourceParametersJira struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#site_base_url QuicksightDataSource#site_base_url}.
-	SiteBaseUrl *string `json:"siteBaseUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#site_base_url QuicksightDataSource#site_base_url}.
+	SiteBaseUrl *string `json:"siteBaseUrl" yaml:"siteBaseUrl"`
 }
 
 type QuicksightDataSourceParametersJiraOutputReference interface {
@@ -2890,12 +3490,17 @@ type QuicksightDataSourceParametersJiraOutputReference interface {
 	SiteBaseUrlInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2955,8 +3560,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2965,7 +3570,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) TerraformR
 	return returns
 }
 
-func NewQuicksightDataSourceParametersJiraOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersJiraOutputReference {
+func NewQuicksightDataSourceParametersJiraOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersJiraOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersJiraOutputReference{}
@@ -2979,7 +3584,7 @@ func NewQuicksightDataSourceParametersJiraOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewQuicksightDataSourceParametersJiraOutputReference_Override(q QuicksightDataSourceParametersJiraOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersJiraOutputReference_Override(q QuicksightDataSourceParametersJiraOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3021,7 +3626,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3030,12 +3635,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3072,12 +3705,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetNumberA
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3114,12 +3789,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersJiraOutputReference) Interpolat
 }
 
 type QuicksightDataSourceParametersMariaDb struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersMariaDbOutputReference interface {
@@ -3139,12 +3814,17 @@ type QuicksightDataSourceParametersMariaDbOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3244,8 +3924,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3254,7 +3934,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) Terrafo
 	return returns
 }
 
-func NewQuicksightDataSourceParametersMariaDbOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersMariaDbOutputReference {
+func NewQuicksightDataSourceParametersMariaDbOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersMariaDbOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference{}
@@ -3268,7 +3948,7 @@ func NewQuicksightDataSourceParametersMariaDbOutputReference(terraformResource c
 	return &j
 }
 
-func NewQuicksightDataSourceParametersMariaDbOutputReference_Override(q QuicksightDataSourceParametersMariaDbOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersMariaDbOutputReference_Override(q QuicksightDataSourceParametersMariaDbOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3326,7 +4006,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3335,12 +4015,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) SetTerr
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3377,12 +4085,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetNumb
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3419,12 +4169,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersMariaDbOutputReference) Interpo
 }
 
 type QuicksightDataSourceParametersMysql struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersMysqlOutputReference interface {
@@ -3444,12 +4194,17 @@ type QuicksightDataSourceParametersMysqlOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3549,8 +4304,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3559,7 +4314,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) Terraform
 	return returns
 }
 
-func NewQuicksightDataSourceParametersMysqlOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersMysqlOutputReference {
+func NewQuicksightDataSourceParametersMysqlOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersMysqlOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference{}
@@ -3573,7 +4328,7 @@ func NewQuicksightDataSourceParametersMysqlOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewQuicksightDataSourceParametersMysqlOutputReference_Override(q QuicksightDataSourceParametersMysqlOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersMysqlOutputReference_Override(q QuicksightDataSourceParametersMysqlOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3631,7 +4386,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3640,12 +4395,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) SetTerraf
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3682,12 +4465,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetNumber
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3724,12 +4549,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersMysqlOutputReference) Interpola
 }
 
 type QuicksightDataSourceParametersOracle struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersOracleOutputReference interface {
@@ -3749,12 +4574,17 @@ type QuicksightDataSourceParametersOracleOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3854,8 +4684,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3864,7 +4694,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) Terrafor
 	return returns
 }
 
-func NewQuicksightDataSourceParametersOracleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersOracleOutputReference {
+func NewQuicksightDataSourceParametersOracleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersOracleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersOracleOutputReference{}
@@ -3878,7 +4708,7 @@ func NewQuicksightDataSourceParametersOracleOutputReference(terraformResource cd
 	return &j
 }
 
-func NewQuicksightDataSourceParametersOracleOutputReference_Override(q QuicksightDataSourceParametersOracleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersOracleOutputReference_Override(q QuicksightDataSourceParametersOracleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3936,7 +4766,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3945,12 +4775,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) SetTerra
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3987,12 +4845,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetNumbe
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOracleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4074,14 +4974,19 @@ type QuicksightDataSourceParametersOutputReference interface {
 	TeradataInput() *QuicksightDataSourceParametersTeradata
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Twitter() QuicksightDataSourceParametersTwitterOutputReference
 	TwitterInput() *QuicksightDataSourceParametersTwitter
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAmazonElasticsearch(value *QuicksightDataSourceParametersAmazonElasticsearch)
@@ -4541,8 +5446,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4571,7 +5476,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) TwitterInput()
 	return returns
 }
 
-func NewQuicksightDataSourceParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersOutputReference {
+func NewQuicksightDataSourceParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersOutputReference{}
@@ -4585,7 +5490,7 @@ func NewQuicksightDataSourceParametersOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewQuicksightDataSourceParametersOutputReference_Override(q QuicksightDataSourceParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersOutputReference_Override(q QuicksightDataSourceParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4619,7 +5524,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4628,12 +5533,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4670,12 +5603,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5032,12 +6007,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersOutputReference) ResetTwitter()
 }
 
 type QuicksightDataSourceParametersPostgresql struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersPostgresqlOutputReference interface {
@@ -5057,12 +6032,17 @@ type QuicksightDataSourceParametersPostgresqlOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5162,8 +6142,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5172,7 +6152,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) Terr
 	return returns
 }
 
-func NewQuicksightDataSourceParametersPostgresqlOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersPostgresqlOutputReference {
+func NewQuicksightDataSourceParametersPostgresqlOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersPostgresqlOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference{}
@@ -5186,7 +6166,7 @@ func NewQuicksightDataSourceParametersPostgresqlOutputReference(terraformResourc
 	return &j
 }
 
-func NewQuicksightDataSourceParametersPostgresqlOutputReference_Override(q QuicksightDataSourceParametersPostgresqlOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersPostgresqlOutputReference_Override(q QuicksightDataSourceParametersPostgresqlOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5244,7 +6224,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5253,12 +6233,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) SetT
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5295,12 +6303,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetN
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5337,12 +6387,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersPostgresqlOutputReference) Inte
 }
 
 type QuicksightDataSourceParametersPresto struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#catalog QuicksightDataSource#catalog}.
-	Catalog *string `json:"catalog"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#catalog QuicksightDataSource#catalog}.
+	Catalog *string `json:"catalog" yaml:"catalog"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersPrestoOutputReference interface {
@@ -5362,12 +6412,17 @@ type QuicksightDataSourceParametersPrestoOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5467,8 +6522,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5477,7 +6532,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) Terrafor
 	return returns
 }
 
-func NewQuicksightDataSourceParametersPrestoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersPrestoOutputReference {
+func NewQuicksightDataSourceParametersPrestoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersPrestoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference{}
@@ -5491,7 +6546,7 @@ func NewQuicksightDataSourceParametersPrestoOutputReference(terraformResource cd
 	return &j
 }
 
-func NewQuicksightDataSourceParametersPrestoOutputReference_Override(q QuicksightDataSourceParametersPrestoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersPrestoOutputReference_Override(q QuicksightDataSourceParametersPrestoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5549,7 +6604,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5558,12 +6613,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) SetTerra
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5600,12 +6683,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetNumbe
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5642,10 +6767,10 @@ func (q *jsiiProxy_QuicksightDataSourceParametersPrestoOutputReference) Interpol
 }
 
 type QuicksightDataSourceParametersRds struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#instance_id QuicksightDataSource#instance_id}.
-	InstanceId *string `json:"instanceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#instance_id QuicksightDataSource#instance_id}.
+	InstanceId *string `json:"instanceId" yaml:"instanceId"`
 }
 
 type QuicksightDataSourceParametersRdsOutputReference interface {
@@ -5662,12 +6787,17 @@ type QuicksightDataSourceParametersRdsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5747,8 +6877,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5757,7 +6887,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) TerraformRe
 	return returns
 }
 
-func NewQuicksightDataSourceParametersRdsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersRdsOutputReference {
+func NewQuicksightDataSourceParametersRdsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersRdsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersRdsOutputReference{}
@@ -5771,7 +6901,7 @@ func NewQuicksightDataSourceParametersRdsOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewQuicksightDataSourceParametersRdsOutputReference_Override(q QuicksightDataSourceParametersRdsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersRdsOutputReference_Override(q QuicksightDataSourceParametersRdsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5821,7 +6951,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5830,12 +6960,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5872,12 +7030,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5914,14 +7114,14 @@ func (q *jsiiProxy_QuicksightDataSourceParametersRdsOutputReference) Interpolati
 }
 
 type QuicksightDataSourceParametersRedshift struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#cluster_id QuicksightDataSource#cluster_id}.
-	ClusterId *string `json:"clusterId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#cluster_id QuicksightDataSource#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersRedshiftOutputReference interface {
@@ -5944,12 +7144,17 @@ type QuicksightDataSourceParametersRedshiftOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetClusterId()
@@ -6072,8 +7277,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6082,7 +7287,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) Terraf
 	return returns
 }
 
-func NewQuicksightDataSourceParametersRedshiftOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersRedshiftOutputReference {
+func NewQuicksightDataSourceParametersRedshiftOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersRedshiftOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference{}
@@ -6096,7 +7301,7 @@ func NewQuicksightDataSourceParametersRedshiftOutputReference(terraformResource 
 	return &j
 }
 
-func NewQuicksightDataSourceParametersRedshiftOutputReference_Override(q QuicksightDataSourceParametersRedshiftOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersRedshiftOutputReference_Override(q QuicksightDataSourceParametersRedshiftOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6162,7 +7367,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6171,12 +7376,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) SetTer
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6213,12 +7446,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetNum
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6281,15 +7556,15 @@ func (q *jsiiProxy_QuicksightDataSourceParametersRedshiftOutputReference) ResetP
 type QuicksightDataSourceParametersS3 struct {
 	// manifest_file_location block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#manifest_file_location QuicksightDataSource#manifest_file_location}
-	ManifestFileLocation *QuicksightDataSourceParametersS3ManifestFileLocation `json:"manifestFileLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#manifest_file_location QuicksightDataSource#manifest_file_location}
+	ManifestFileLocation *QuicksightDataSourceParametersS3ManifestFileLocation `json:"manifestFileLocation" yaml:"manifestFileLocation"`
 }
 
 type QuicksightDataSourceParametersS3ManifestFileLocation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#bucket QuicksightDataSource#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#key QuicksightDataSource#key}.
-	Key *string `json:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#bucket QuicksightDataSource#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#key QuicksightDataSource#key}.
+	Key *string `json:"key" yaml:"key"`
 }
 
 type QuicksightDataSourceParametersS3ManifestFileLocationOutputReference interface {
@@ -6306,12 +7581,17 @@ type QuicksightDataSourceParametersS3ManifestFileLocationOutputReference interfa
 	KeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6391,8 +7671,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6401,7 +7681,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 	return returns
 }
 
-func NewQuicksightDataSourceParametersS3ManifestFileLocationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersS3ManifestFileLocationOutputReference {
+func NewQuicksightDataSourceParametersS3ManifestFileLocationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersS3ManifestFileLocationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference{}
@@ -6415,7 +7695,7 @@ func NewQuicksightDataSourceParametersS3ManifestFileLocationOutputReference(terr
 	return &j
 }
 
-func NewQuicksightDataSourceParametersS3ManifestFileLocationOutputReference_Override(q QuicksightDataSourceParametersS3ManifestFileLocationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersS3ManifestFileLocationOutputReference_Override(q QuicksightDataSourceParametersS3ManifestFileLocationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6465,7 +7745,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6474,12 +7754,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6516,12 +7824,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputRef
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3ManifestFileLocationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6567,12 +7917,17 @@ type QuicksightDataSourceParametersS3OutputReference interface {
 	ManifestFileLocationInput() *QuicksightDataSourceParametersS3ManifestFileLocation
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutManifestFileLocation(value *QuicksightDataSourceParametersS3ManifestFileLocation)
@@ -6633,8 +7988,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6643,7 +7998,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) TerraformRes
 	return returns
 }
 
-func NewQuicksightDataSourceParametersS3OutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersS3OutputReference {
+func NewQuicksightDataSourceParametersS3OutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersS3OutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersS3OutputReference{}
@@ -6657,7 +8012,7 @@ func NewQuicksightDataSourceParametersS3OutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewQuicksightDataSourceParametersS3OutputReference_Override(q QuicksightDataSourceParametersS3OutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersS3OutputReference_Override(q QuicksightDataSourceParametersS3OutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6691,7 +8046,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6700,12 +8055,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) SetTerraform
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6742,12 +8125,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6792,8 +8217,8 @@ func (q *jsiiProxy_QuicksightDataSourceParametersS3OutputReference) PutManifestF
 }
 
 type QuicksightDataSourceParametersServiceNow struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#site_base_url QuicksightDataSource#site_base_url}.
-	SiteBaseUrl *string `json:"siteBaseUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#site_base_url QuicksightDataSource#site_base_url}.
+	SiteBaseUrl *string `json:"siteBaseUrl" yaml:"siteBaseUrl"`
 }
 
 type QuicksightDataSourceParametersServiceNowOutputReference interface {
@@ -6807,12 +8232,17 @@ type QuicksightDataSourceParametersServiceNowOutputReference interface {
 	SiteBaseUrlInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6872,8 +8302,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6882,7 +8312,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) Terr
 	return returns
 }
 
-func NewQuicksightDataSourceParametersServiceNowOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersServiceNowOutputReference {
+func NewQuicksightDataSourceParametersServiceNowOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersServiceNowOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference{}
@@ -6896,7 +8326,7 @@ func NewQuicksightDataSourceParametersServiceNowOutputReference(terraformResourc
 	return &j
 }
 
-func NewQuicksightDataSourceParametersServiceNowOutputReference_Override(q QuicksightDataSourceParametersServiceNowOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersServiceNowOutputReference_Override(q QuicksightDataSourceParametersServiceNowOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6938,7 +8368,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6947,12 +8377,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) SetT
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6989,12 +8447,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetN
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7031,12 +8531,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersServiceNowOutputReference) Inte
 }
 
 type QuicksightDataSourceParametersSnowflake struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#warehouse QuicksightDataSource#warehouse}.
-	Warehouse *string `json:"warehouse"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#warehouse QuicksightDataSource#warehouse}.
+	Warehouse *string `json:"warehouse" yaml:"warehouse"`
 }
 
 type QuicksightDataSourceParametersSnowflakeOutputReference interface {
@@ -7053,15 +8553,20 @@ type QuicksightDataSourceParametersSnowflakeOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Warehouse() *string
 	SetWarehouse(val *string)
 	WarehouseInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7141,8 +8646,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7171,7 +8676,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) Wareh
 	return returns
 }
 
-func NewQuicksightDataSourceParametersSnowflakeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersSnowflakeOutputReference {
+func NewQuicksightDataSourceParametersSnowflakeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersSnowflakeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference{}
@@ -7185,7 +8690,7 @@ func NewQuicksightDataSourceParametersSnowflakeOutputReference(terraformResource
 	return &j
 }
 
-func NewQuicksightDataSourceParametersSnowflakeOutputReference_Override(q QuicksightDataSourceParametersSnowflakeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersSnowflakeOutputReference_Override(q QuicksightDataSourceParametersSnowflakeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7235,7 +8740,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7252,12 +8757,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) SetWa
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7294,12 +8827,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetNu
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7336,10 +8911,10 @@ func (q *jsiiProxy_QuicksightDataSourceParametersSnowflakeOutputReference) Inter
 }
 
 type QuicksightDataSourceParametersSpark struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersSparkOutputReference interface {
@@ -7356,12 +8931,17 @@ type QuicksightDataSourceParametersSparkOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7441,8 +9021,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7451,7 +9031,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) Terraform
 	return returns
 }
 
-func NewQuicksightDataSourceParametersSparkOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersSparkOutputReference {
+func NewQuicksightDataSourceParametersSparkOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersSparkOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersSparkOutputReference{}
@@ -7465,7 +9045,7 @@ func NewQuicksightDataSourceParametersSparkOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewQuicksightDataSourceParametersSparkOutputReference_Override(q QuicksightDataSourceParametersSparkOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersSparkOutputReference_Override(q QuicksightDataSourceParametersSparkOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7515,7 +9095,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7524,12 +9104,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) SetTerraf
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7566,12 +9174,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetNumber
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7608,12 +9258,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersSparkOutputReference) Interpola
 }
 
 type QuicksightDataSourceParametersSqlServer struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersSqlServerOutputReference interface {
@@ -7633,12 +9283,17 @@ type QuicksightDataSourceParametersSqlServerOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7738,8 +9393,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7748,7 +9403,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) Terra
 	return returns
 }
 
-func NewQuicksightDataSourceParametersSqlServerOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersSqlServerOutputReference {
+func NewQuicksightDataSourceParametersSqlServerOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersSqlServerOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference{}
@@ -7762,7 +9417,7 @@ func NewQuicksightDataSourceParametersSqlServerOutputReference(terraformResource
 	return &j
 }
 
-func NewQuicksightDataSourceParametersSqlServerOutputReference_Override(q QuicksightDataSourceParametersSqlServerOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersSqlServerOutputReference_Override(q QuicksightDataSourceParametersSqlServerOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7820,7 +9475,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7829,12 +9484,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) SetTe
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7871,12 +9554,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetNu
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7913,12 +9638,12 @@ func (q *jsiiProxy_QuicksightDataSourceParametersSqlServerOutputReference) Inter
 }
 
 type QuicksightDataSourceParametersTeradata struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#database QuicksightDataSource#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#host QuicksightDataSource#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#port QuicksightDataSource#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#database QuicksightDataSource#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#host QuicksightDataSource#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#port QuicksightDataSource#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type QuicksightDataSourceParametersTeradataOutputReference interface {
@@ -7938,12 +9663,17 @@ type QuicksightDataSourceParametersTeradataOutputReference interface {
 	PortInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8043,8 +9773,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8053,7 +9783,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) Terraf
 	return returns
 }
 
-func NewQuicksightDataSourceParametersTeradataOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersTeradataOutputReference {
+func NewQuicksightDataSourceParametersTeradataOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersTeradataOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference{}
@@ -8067,7 +9797,7 @@ func NewQuicksightDataSourceParametersTeradataOutputReference(terraformResource 
 	return &j
 }
 
-func NewQuicksightDataSourceParametersTeradataOutputReference_Override(q QuicksightDataSourceParametersTeradataOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersTeradataOutputReference_Override(q QuicksightDataSourceParametersTeradataOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8125,7 +9855,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8134,12 +9864,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) SetTer
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8176,12 +9934,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetNum
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8218,10 +10018,10 @@ func (q *jsiiProxy_QuicksightDataSourceParametersTeradataOutputReference) Interp
 }
 
 type QuicksightDataSourceParametersTwitter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#max_rows QuicksightDataSource#max_rows}.
-	MaxRows *float64 `json:"maxRows"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#query QuicksightDataSource#query}.
-	Query *string `json:"query"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#max_rows QuicksightDataSource#max_rows}.
+	MaxRows *float64 `json:"maxRows" yaml:"maxRows"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#query QuicksightDataSource#query}.
+	Query *string `json:"query" yaml:"query"`
 }
 
 type QuicksightDataSourceParametersTwitterOutputReference interface {
@@ -8238,12 +10038,17 @@ type QuicksightDataSourceParametersTwitterOutputReference interface {
 	QueryInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8323,8 +10128,8 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8333,7 +10138,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) Terrafo
 	return returns
 }
 
-func NewQuicksightDataSourceParametersTwitterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersTwitterOutputReference {
+func NewQuicksightDataSourceParametersTwitterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceParametersTwitterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference{}
@@ -8347,7 +10152,7 @@ func NewQuicksightDataSourceParametersTwitterOutputReference(terraformResource c
 	return &j
 }
 
-func NewQuicksightDataSourceParametersTwitterOutputReference_Override(q QuicksightDataSourceParametersTwitterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceParametersTwitterOutputReference_Override(q QuicksightDataSourceParametersTwitterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8397,7 +10202,7 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8406,12 +10211,40 @@ func (j *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) SetTerr
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8448,12 +10281,54 @@ func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetNumb
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8490,15 +10365,15 @@ func (q *jsiiProxy_QuicksightDataSourceParametersTwitterOutputReference) Interpo
 }
 
 type QuicksightDataSourcePermission struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#actions QuicksightDataSource#actions}.
-	Actions *[]*string `json:"actions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#principal QuicksightDataSource#principal}.
-	Principal *string `json:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#actions QuicksightDataSource#actions}.
+	Actions *[]*string `json:"actions" yaml:"actions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#principal QuicksightDataSource#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
 }
 
 type QuicksightDataSourceSslProperties struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#disable_ssl QuicksightDataSource#disable_ssl}.
-	DisableSsl interface{} `json:"disableSsl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#disable_ssl QuicksightDataSource#disable_ssl}.
+	DisableSsl interface{} `json:"disableSsl" yaml:"disableSsl"`
 }
 
 type QuicksightDataSourceSslPropertiesOutputReference interface {
@@ -8512,12 +10387,17 @@ type QuicksightDataSourceSslPropertiesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8577,8 +10457,8 @@ func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8587,7 +10467,7 @@ func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) TerraformRe
 	return returns
 }
 
-func NewQuicksightDataSourceSslPropertiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceSslPropertiesOutputReference {
+func NewQuicksightDataSourceSslPropertiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceSslPropertiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference{}
@@ -8601,7 +10481,7 @@ func NewQuicksightDataSourceSslPropertiesOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewQuicksightDataSourceSslPropertiesOutputReference_Override(q QuicksightDataSourceSslPropertiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceSslPropertiesOutputReference_Override(q QuicksightDataSourceSslPropertiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8643,7 +10523,7 @@ func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8652,12 +10532,40 @@ func (j *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8694,12 +10602,54 @@ func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8736,8 +10686,8 @@ func (q *jsiiProxy_QuicksightDataSourceSslPropertiesOutputReference) Interpolati
 }
 
 type QuicksightDataSourceVpcConnectionProperties struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source.html#vpc_connection_arn QuicksightDataSource#vpc_connection_arn}.
-	VpcConnectionArn *string `json:"vpcConnectionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_data_source#vpc_connection_arn QuicksightDataSource#vpc_connection_arn}.
+	VpcConnectionArn *string `json:"vpcConnectionArn" yaml:"vpcConnectionArn"`
 }
 
 type QuicksightDataSourceVpcConnectionPropertiesOutputReference interface {
@@ -8748,15 +10698,20 @@ type QuicksightDataSourceVpcConnectionPropertiesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcConnectionArn() *string
 	SetVpcConnectionArn(val *string)
 	VpcConnectionArnInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8796,8 +10751,8 @@ func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8826,7 +10781,7 @@ func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) V
 	return returns
 }
 
-func NewQuicksightDataSourceVpcConnectionPropertiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceVpcConnectionPropertiesOutputReference {
+func NewQuicksightDataSourceVpcConnectionPropertiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) QuicksightDataSourceVpcConnectionPropertiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference{}
@@ -8840,7 +10795,7 @@ func NewQuicksightDataSourceVpcConnectionPropertiesOutputReference(terraformReso
 	return &j
 }
 
-func NewQuicksightDataSourceVpcConnectionPropertiesOutputReference_Override(q QuicksightDataSourceVpcConnectionPropertiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewQuicksightDataSourceVpcConnectionPropertiesOutputReference_Override(q QuicksightDataSourceVpcConnectionPropertiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8874,7 +10829,7 @@ func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8891,12 +10846,40 @@ func (j *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) S
 }
 
 // Experimental.
-func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8933,12 +10916,54 @@ func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) G
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8974,7 +10999,7 @@ func (q *jsiiProxy_QuicksightDataSourceVpcConnectionPropertiesOutputReference) I
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group.html aws_quicksight_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group aws_quicksight_group}.
 type QuicksightGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -8983,8 +11008,8 @@ type QuicksightGroup interface {
 	AwsAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -9009,10 +11034,15 @@ type QuicksightGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAwsAccountId()
@@ -9080,8 +11110,8 @@ func (j *jsiiProxy_QuicksightGroup) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9260,7 +11290,7 @@ func (j *jsiiProxy_QuicksightGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group.html aws_quicksight_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group aws_quicksight_group} Resource.
 func NewQuicksightGroup(scope constructs.Construct, id *string, config *QuicksightGroupConfig) QuicksightGroup {
 	_init_.Initialize()
 
@@ -9275,7 +11305,7 @@ func NewQuicksightGroup(scope constructs.Construct, id *string, config *Quicksig
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group.html aws_quicksight_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group aws_quicksight_group} Resource.
 func NewQuicksightGroup_Override(q QuicksightGroup, scope constructs.Construct, id *string, config *QuicksightGroupConfig) {
 	_init_.Initialize()
 
@@ -9294,7 +11324,7 @@ func (j *jsiiProxy_QuicksightGroup) SetAwsAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_QuicksightGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_QuicksightGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9390,12 +11420,40 @@ func (q *jsiiProxy_QuicksightGroup) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9432,12 +11490,54 @@ func (q *jsiiProxy_QuicksightGroup) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9562,24 +11662,24 @@ func (q *jsiiProxy_QuicksightGroup) ToTerraform() interface{} {
 // AWS QuickSight.
 type QuicksightGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group.html#group_name QuicksightGroup#group_name}.
-	GroupName *string `json:"groupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group.html#aws_account_id QuicksightGroup#aws_account_id}.
-	AwsAccountId *string `json:"awsAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group.html#description QuicksightGroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group.html#namespace QuicksightGroup#namespace}.
-	Namespace *string `json:"namespace"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group#group_name QuicksightGroup#group_name}.
+	GroupName *string `json:"groupName" yaml:"groupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group#aws_account_id QuicksightGroup#aws_account_id}.
+	AwsAccountId *string `json:"awsAccountId" yaml:"awsAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group#description QuicksightGroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group#namespace QuicksightGroup#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership.html aws_quicksight_group_membership}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership aws_quicksight_group_membership}.
 type QuicksightGroupMembership interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -9588,8 +11688,8 @@ type QuicksightGroupMembership interface {
 	AwsAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9614,10 +11714,15 @@ type QuicksightGroupMembership interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAwsAccountId()
@@ -9684,8 +11789,8 @@ func (j *jsiiProxy_QuicksightGroupMembership) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightGroupMembership) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightGroupMembership) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9864,7 +11969,7 @@ func (j *jsiiProxy_QuicksightGroupMembership) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership.html aws_quicksight_group_membership} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership aws_quicksight_group_membership} Resource.
 func NewQuicksightGroupMembership(scope constructs.Construct, id *string, config *QuicksightGroupMembershipConfig) QuicksightGroupMembership {
 	_init_.Initialize()
 
@@ -9879,7 +11984,7 @@ func NewQuicksightGroupMembership(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership.html aws_quicksight_group_membership} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership aws_quicksight_group_membership} Resource.
 func NewQuicksightGroupMembership_Override(q QuicksightGroupMembership, scope constructs.Construct, id *string, config *QuicksightGroupMembershipConfig) {
 	_init_.Initialize()
 
@@ -9898,7 +12003,7 @@ func (j *jsiiProxy_QuicksightGroupMembership) SetAwsAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_QuicksightGroupMembership) SetCount(val interface{}) {
+func (j *jsiiProxy_QuicksightGroupMembership) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9994,12 +12099,40 @@ func (q *jsiiProxy_QuicksightGroupMembership) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightGroupMembership) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightGroupMembership) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightGroupMembership) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10036,12 +12169,54 @@ func (q *jsiiProxy_QuicksightGroupMembership) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightGroupMembership) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightGroupMembership) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightGroupMembership) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightGroupMembership) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10158,24 +12333,24 @@ func (q *jsiiProxy_QuicksightGroupMembership) ToTerraform() interface{} {
 // AWS QuickSight.
 type QuicksightGroupMembershipConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership.html#group_name QuicksightGroupMembership#group_name}.
-	GroupName *string `json:"groupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership.html#member_name QuicksightGroupMembership#member_name}.
-	MemberName *string `json:"memberName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership.html#aws_account_id QuicksightGroupMembership#aws_account_id}.
-	AwsAccountId *string `json:"awsAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership.html#namespace QuicksightGroupMembership#namespace}.
-	Namespace *string `json:"namespace"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership#group_name QuicksightGroupMembership#group_name}.
+	GroupName *string `json:"groupName" yaml:"groupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership#member_name QuicksightGroupMembership#member_name}.
+	MemberName *string `json:"memberName" yaml:"memberName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership#aws_account_id QuicksightGroupMembership#aws_account_id}.
+	AwsAccountId *string `json:"awsAccountId" yaml:"awsAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_group_membership#namespace QuicksightGroupMembership#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html aws_quicksight_user}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user aws_quicksight_user}.
 type QuicksightUser interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -10184,8 +12359,8 @@ type QuicksightUser interface {
 	AwsAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Email() *string
@@ -10222,10 +12397,15 @@ type QuicksightUser interface {
 	SetUserRole(val *string)
 	UserRoleInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAwsAccountId()
@@ -10295,8 +12475,8 @@ func (j *jsiiProxy_QuicksightUser) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_QuicksightUser) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_QuicksightUser) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10555,7 +12735,7 @@ func (j *jsiiProxy_QuicksightUser) UserRoleInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html aws_quicksight_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user aws_quicksight_user} Resource.
 func NewQuicksightUser(scope constructs.Construct, id *string, config *QuicksightUserConfig) QuicksightUser {
 	_init_.Initialize()
 
@@ -10570,7 +12750,7 @@ func NewQuicksightUser(scope constructs.Construct, id *string, config *Quicksigh
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html aws_quicksight_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user aws_quicksight_user} Resource.
 func NewQuicksightUser_Override(q QuicksightUser, scope constructs.Construct, id *string, config *QuicksightUserConfig) {
 	_init_.Initialize()
 
@@ -10589,7 +12769,7 @@ func (j *jsiiProxy_QuicksightUser) SetAwsAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_QuicksightUser) SetCount(val interface{}) {
+func (j *jsiiProxy_QuicksightUser) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10717,12 +12897,40 @@ func (q *jsiiProxy_QuicksightUser) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		q,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		q,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		q,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10759,12 +12967,54 @@ func (q *jsiiProxy_QuicksightUser) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (q *jsiiProxy_QuicksightUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		q,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (q *jsiiProxy_QuicksightUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		q,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (q *jsiiProxy_QuicksightUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		q,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10905,27 +13155,27 @@ func (q *jsiiProxy_QuicksightUser) ToTerraform() interface{} {
 // AWS QuickSight.
 type QuicksightUserConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#email QuicksightUser#email}.
-	Email *string `json:"email"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#identity_type QuicksightUser#identity_type}.
-	IdentityType *string `json:"identityType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#user_role QuicksightUser#user_role}.
-	UserRole *string `json:"userRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#aws_account_id QuicksightUser#aws_account_id}.
-	AwsAccountId *string `json:"awsAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#iam_arn QuicksightUser#iam_arn}.
-	IamArn *string `json:"iamArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#namespace QuicksightUser#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#session_name QuicksightUser#session_name}.
-	SessionName *string `json:"sessionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user.html#user_name QuicksightUser#user_name}.
-	UserName *string `json:"userName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#email QuicksightUser#email}.
+	Email *string `json:"email" yaml:"email"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#identity_type QuicksightUser#identity_type}.
+	IdentityType *string `json:"identityType" yaml:"identityType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#user_role QuicksightUser#user_role}.
+	UserRole *string `json:"userRole" yaml:"userRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#aws_account_id QuicksightUser#aws_account_id}.
+	AwsAccountId *string `json:"awsAccountId" yaml:"awsAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#iam_arn QuicksightUser#iam_arn}.
+	IamArn *string `json:"iamArn" yaml:"iamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#namespace QuicksightUser#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#session_name QuicksightUser#session_name}.
+	SessionName *string `json:"sessionName" yaml:"sessionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/quicksight_user#user_name QuicksightUser#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
 }

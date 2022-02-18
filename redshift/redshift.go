@@ -9,10 +9,10 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/redshift/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster.html aws_redshift_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster aws_redshift_cluster}.
 type DataAwsRedshiftCluster interface {
 	cdktf.TerraformDataSource
-	AllowVersionUpgrade() interface{}
+	AllowVersionUpgrade() cdktf.IResolvable
 	AutomatedSnapshotRetentionPeriod() *float64
 	AvailabilityZone() *string
 	BucketName() *string
@@ -28,16 +28,16 @@ type DataAwsRedshiftCluster interface {
 	ClusterType() *string
 	ClusterVersion() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DatabaseName() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ElasticIp() *string
-	EnableLogging() interface{}
-	Encrypted() interface{}
+	EnableLogging() cdktf.IResolvable
+	Encrypted() cdktf.IResolvable
 	Endpoint() *string
-	EnhancedVpcRouting() interface{}
+	EnhancedVpcRouting() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	IamRoles() *[]*string
@@ -53,22 +53,27 @@ type DataAwsRedshiftCluster interface {
 	PreferredMaintenanceWindow() *string
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
-	PubliclyAccessible() interface{}
+	PubliclyAccessible() cdktf.IResolvable
 	RawOverrides() interface{}
 	S3KeyPrefix() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcId() *string
 	VpcSecurityGroupIds() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -84,8 +89,8 @@ type jsiiProxy_DataAwsRedshiftCluster struct {
 	internal.Type__cdktfTerraformDataSource
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) AllowVersionUpgrade() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) AllowVersionUpgrade() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"allowVersionUpgrade",
@@ -234,8 +239,8 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -274,8 +279,8 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) ElasticIp() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) EnableLogging() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) EnableLogging() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableLogging",
@@ -284,8 +289,8 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) EnableLogging() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) Encrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) Encrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encrypted",
@@ -304,8 +309,8 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) Endpoint() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) EnhancedVpcRouting() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) EnhancedVpcRouting() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enhancedVpcRouting",
@@ -444,8 +449,8 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) PubliclyAccessible() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) PubliclyAccessible() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"publiclyAccessible",
@@ -474,8 +479,8 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) S3KeyPrefix() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -484,8 +489,8 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -544,7 +549,7 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) VpcSecurityGroupIds() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster.html aws_redshift_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster aws_redshift_cluster} Data Source.
 func NewDataAwsRedshiftCluster(scope constructs.Construct, id *string, config *DataAwsRedshiftClusterConfig) DataAwsRedshiftCluster {
 	_init_.Initialize()
 
@@ -559,7 +564,7 @@ func NewDataAwsRedshiftCluster(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster.html aws_redshift_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster aws_redshift_cluster} Data Source.
 func NewDataAwsRedshiftCluster_Override(d DataAwsRedshiftCluster, scope constructs.Construct, id *string, config *DataAwsRedshiftClusterConfig) {
 	_init_.Initialize()
 
@@ -578,7 +583,7 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) SetClusterIdentifier(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRedshiftCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -610,7 +615,7 @@ func (j *jsiiProxy_DataAwsRedshiftCluster) SetProvider(val cdktf.TerraformProvid
 	)
 }
 
-func (j *jsiiProxy_DataAwsRedshiftCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsRedshiftCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -658,12 +663,40 @@ func (d *jsiiProxy_DataAwsRedshiftCluster) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRedshiftCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRedshiftCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -700,12 +733,54 @@ func (d *jsiiProxy_DataAwsRedshiftCluster) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRedshiftCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRedshiftCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -814,20 +889,20 @@ func (d *jsiiProxy_DataAwsRedshiftCluster) ToTerraform() interface{} {
 // AWS Redshift.
 type DataAwsRedshiftClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster.html#cluster_identifier DataAwsRedshiftCluster#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster.html#tags DataAwsRedshiftCluster#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster#cluster_identifier DataAwsRedshiftCluster#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_cluster#tags DataAwsRedshiftCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster.html aws_redshift_orderable_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster aws_redshift_orderable_cluster}.
 type DataAwsRedshiftOrderableCluster interface {
 	cdktf.TerraformDataSource
 	AvailabilityZones() *[]*string
@@ -839,8 +914,8 @@ type DataAwsRedshiftOrderableCluster interface {
 	SetClusterVersion(val *string)
 	ClusterVersionInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -862,10 +937,15 @@ type DataAwsRedshiftOrderableCluster interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetClusterType()
@@ -954,8 +1034,8 @@ func (j *jsiiProxy_DataAwsRedshiftOrderableCluster) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftOrderableCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftOrderableCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1114,7 +1194,7 @@ func (j *jsiiProxy_DataAwsRedshiftOrderableCluster) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster.html aws_redshift_orderable_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster aws_redshift_orderable_cluster} Data Source.
 func NewDataAwsRedshiftOrderableCluster(scope constructs.Construct, id *string, config *DataAwsRedshiftOrderableClusterConfig) DataAwsRedshiftOrderableCluster {
 	_init_.Initialize()
 
@@ -1129,7 +1209,7 @@ func NewDataAwsRedshiftOrderableCluster(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster.html aws_redshift_orderable_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster aws_redshift_orderable_cluster} Data Source.
 func NewDataAwsRedshiftOrderableCluster_Override(d DataAwsRedshiftOrderableCluster, scope constructs.Construct, id *string, config *DataAwsRedshiftOrderableClusterConfig) {
 	_init_.Initialize()
 
@@ -1156,7 +1236,7 @@ func (j *jsiiProxy_DataAwsRedshiftOrderableCluster) SetClusterVersion(val *strin
 	)
 }
 
-func (j *jsiiProxy_DataAwsRedshiftOrderableCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRedshiftOrderableCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1244,12 +1324,40 @@ func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1286,12 +1394,54 @@ func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1424,31 +1574,31 @@ func (d *jsiiProxy_DataAwsRedshiftOrderableCluster) ToTerraform() interface{} {
 // AWS Redshift.
 type DataAwsRedshiftOrderableClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster.html#cluster_type DataAwsRedshiftOrderableCluster#cluster_type}.
-	ClusterType *string `json:"clusterType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster.html#cluster_version DataAwsRedshiftOrderableCluster#cluster_version}.
-	ClusterVersion *string `json:"clusterVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster.html#node_type DataAwsRedshiftOrderableCluster#node_type}.
-	NodeType *string `json:"nodeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster.html#preferred_node_types DataAwsRedshiftOrderableCluster#preferred_node_types}.
-	PreferredNodeTypes *[]*string `json:"preferredNodeTypes"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster#cluster_type DataAwsRedshiftOrderableCluster#cluster_type}.
+	ClusterType *string `json:"clusterType" yaml:"clusterType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster#cluster_version DataAwsRedshiftOrderableCluster#cluster_version}.
+	ClusterVersion *string `json:"clusterVersion" yaml:"clusterVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster#node_type DataAwsRedshiftOrderableCluster#node_type}.
+	NodeType *string `json:"nodeType" yaml:"nodeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_orderable_cluster#preferred_node_types DataAwsRedshiftOrderableCluster#preferred_node_types}.
+	PreferredNodeTypes *[]*string `json:"preferredNodeTypes" yaml:"preferredNodeTypes"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account.html aws_redshift_service_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account aws_redshift_service_account}.
 type DataAwsRedshiftServiceAccount interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1467,10 +1617,15 @@ type DataAwsRedshiftServiceAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1516,8 +1671,8 @@ func (j *jsiiProxy_DataAwsRedshiftServiceAccount) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRedshiftServiceAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRedshiftServiceAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1656,7 +1811,7 @@ func (j *jsiiProxy_DataAwsRedshiftServiceAccount) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account.html aws_redshift_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account aws_redshift_service_account} Data Source.
 func NewDataAwsRedshiftServiceAccount(scope constructs.Construct, id *string, config *DataAwsRedshiftServiceAccountConfig) DataAwsRedshiftServiceAccount {
 	_init_.Initialize()
 
@@ -1671,7 +1826,7 @@ func NewDataAwsRedshiftServiceAccount(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account.html aws_redshift_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account aws_redshift_service_account} Data Source.
 func NewDataAwsRedshiftServiceAccount_Override(d DataAwsRedshiftServiceAccount, scope constructs.Construct, id *string, config *DataAwsRedshiftServiceAccountConfig) {
 	_init_.Initialize()
 
@@ -1682,7 +1837,7 @@ func NewDataAwsRedshiftServiceAccount_Override(d DataAwsRedshiftServiceAccount, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsRedshiftServiceAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRedshiftServiceAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1762,12 +1917,40 @@ func (d *jsiiProxy_DataAwsRedshiftServiceAccount) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1804,12 +1987,54 @@ func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRedshiftServiceAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1918,18 +2143,18 @@ func (d *jsiiProxy_DataAwsRedshiftServiceAccount) ToTerraform() interface{} {
 // AWS Redshift.
 type DataAwsRedshiftServiceAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account.html#region DataAwsRedshiftServiceAccount#region}.
-	Region *string `json:"region"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/redshift_service_account#region DataAwsRedshiftServiceAccount#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html aws_redshift_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster aws_redshift_cluster}.
 type RedshiftCluster interface {
 	cdktf.TerraformResource
 	AllowVersionUpgrade() interface{}
@@ -1968,8 +2193,8 @@ type RedshiftCluster interface {
 	SetClusterVersion(val *string)
 	ClusterVersionInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
@@ -2043,12 +2268,12 @@ type RedshiftCluster interface {
 	SnapshotIdentifier() *string
 	SetSnapshotIdentifier(val *string)
 	SnapshotIdentifierInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2059,10 +2284,15 @@ type RedshiftCluster interface {
 	VpcSecurityGroupIdsInput() *[]*string
 	AddOverride(path *string, value interface{})
 	ClusterNodes(index *string) RedshiftClusterClusterNodes
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutLogging(value *RedshiftClusterLogging)
@@ -2364,8 +2594,8 @@ func (j *jsiiProxy_RedshiftCluster) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2884,8 +3114,8 @@ func (j *jsiiProxy_RedshiftCluster) SnapshotIdentifierInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2894,8 +3124,8 @@ func (j *jsiiProxy_RedshiftCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftCluster) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftCluster) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2904,8 +3134,8 @@ func (j *jsiiProxy_RedshiftCluster) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftCluster) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftCluster) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2914,8 +3144,8 @@ func (j *jsiiProxy_RedshiftCluster) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2994,7 +3224,7 @@ func (j *jsiiProxy_RedshiftCluster) VpcSecurityGroupIdsInput() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html aws_redshift_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster aws_redshift_cluster} Resource.
 func NewRedshiftCluster(scope constructs.Construct, id *string, config *RedshiftClusterConfig) RedshiftCluster {
 	_init_.Initialize()
 
@@ -3009,7 +3239,7 @@ func NewRedshiftCluster(scope constructs.Construct, id *string, config *Redshift
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html aws_redshift_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster aws_redshift_cluster} Resource.
 func NewRedshiftCluster_Override(r RedshiftCluster, scope constructs.Construct, id *string, config *RedshiftClusterConfig) {
 	_init_.Initialize()
 
@@ -3108,7 +3338,7 @@ func (j *jsiiProxy_RedshiftCluster) SetClusterVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3292,7 +3522,7 @@ func (j *jsiiProxy_RedshiftCluster) SetSnapshotIdentifier(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_RedshiftCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3300,7 +3530,7 @@ func (j *jsiiProxy_RedshiftCluster) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftCluster) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_RedshiftCluster) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3369,12 +3599,40 @@ func (r *jsiiProxy_RedshiftCluster) ClusterNodes(index *string) RedshiftClusterC
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3411,12 +3669,54 @@ func (r *jsiiProxy_RedshiftCluster) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3819,12 +4119,19 @@ type RedshiftClusterClusterNodes interface {
 	PublicIpAddress() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -3883,8 +4190,8 @@ func (j *jsiiProxy_RedshiftClusterClusterNodes) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftClusterClusterNodes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftClusterClusterNodes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3893,15 +4200,25 @@ func (j *jsiiProxy_RedshiftClusterClusterNodes) TerraformResource() cdktf.ITerra
 	return returns
 }
 
+func (j *jsiiProxy_RedshiftClusterClusterNodes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewRedshiftClusterClusterNodes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) RedshiftClusterClusterNodes {
+func NewRedshiftClusterClusterNodes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) RedshiftClusterClusterNodes {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftClusterClusterNodes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.redshift.RedshiftClusterClusterNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -3909,12 +4226,12 @@ func NewRedshiftClusterClusterNodes(terraformResource cdktf.ITerraformResource, 
 }
 
 // Experimental.
-func NewRedshiftClusterClusterNodes_Override(r RedshiftClusterClusterNodes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewRedshiftClusterClusterNodes_Override(r RedshiftClusterClusterNodes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.redshift.RedshiftClusterClusterNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		r,
 	)
 }
@@ -3935,7 +4252,7 @@ func (j *jsiiProxy_RedshiftClusterClusterNodes) SetTerraformAttribute(val *strin
 	)
 }
 
-func (j *jsiiProxy_RedshiftClusterClusterNodes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftClusterClusterNodes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3943,13 +4260,49 @@ func (j *jsiiProxy_RedshiftClusterClusterNodes) SetTerraformResource(val cdktf.I
 	)
 }
 
+func (j *jsiiProxy_RedshiftClusterClusterNodes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (r *jsiiProxy_RedshiftClusterClusterNodes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftClusterClusterNodes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterClusterNodes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterClusterNodes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3986,12 +4339,54 @@ func (r *jsiiProxy_RedshiftClusterClusterNodes) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftClusterClusterNodes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterClusterNodes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftClusterClusterNodes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterClusterNodes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4016,100 +4411,100 @@ func (r *jsiiProxy_RedshiftClusterClusterNodes) InterpolationForAttribute(proper
 // AWS Redshift.
 type RedshiftClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_identifier RedshiftCluster#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#node_type RedshiftCluster#node_type}.
-	NodeType *string `json:"nodeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#allow_version_upgrade RedshiftCluster#allow_version_upgrade}.
-	AllowVersionUpgrade interface{} `json:"allowVersionUpgrade"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#automated_snapshot_retention_period RedshiftCluster#automated_snapshot_retention_period}.
-	AutomatedSnapshotRetentionPeriod *float64 `json:"automatedSnapshotRetentionPeriod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#availability_zone RedshiftCluster#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_parameter_group_name RedshiftCluster#cluster_parameter_group_name}.
-	ClusterParameterGroupName *string `json:"clusterParameterGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_public_key RedshiftCluster#cluster_public_key}.
-	ClusterPublicKey *string `json:"clusterPublicKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_revision_number RedshiftCluster#cluster_revision_number}.
-	ClusterRevisionNumber *string `json:"clusterRevisionNumber"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_security_groups RedshiftCluster#cluster_security_groups}.
-	ClusterSecurityGroups *[]*string `json:"clusterSecurityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_subnet_group_name RedshiftCluster#cluster_subnet_group_name}.
-	ClusterSubnetGroupName *string `json:"clusterSubnetGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_type RedshiftCluster#cluster_type}.
-	ClusterType *string `json:"clusterType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#cluster_version RedshiftCluster#cluster_version}.
-	ClusterVersion *string `json:"clusterVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#database_name RedshiftCluster#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#elastic_ip RedshiftCluster#elastic_ip}.
-	ElasticIp *string `json:"elasticIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#encrypted RedshiftCluster#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#endpoint RedshiftCluster#endpoint}.
-	Endpoint *string `json:"endpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#enhanced_vpc_routing RedshiftCluster#enhanced_vpc_routing}.
-	EnhancedVpcRouting interface{} `json:"enhancedVpcRouting"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#final_snapshot_identifier RedshiftCluster#final_snapshot_identifier}.
-	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#iam_roles RedshiftCluster#iam_roles}.
-	IamRoles *[]*string `json:"iamRoles"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#kms_key_id RedshiftCluster#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_identifier RedshiftCluster#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#node_type RedshiftCluster#node_type}.
+	NodeType *string `json:"nodeType" yaml:"nodeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#allow_version_upgrade RedshiftCluster#allow_version_upgrade}.
+	AllowVersionUpgrade interface{} `json:"allowVersionUpgrade" yaml:"allowVersionUpgrade"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#automated_snapshot_retention_period RedshiftCluster#automated_snapshot_retention_period}.
+	AutomatedSnapshotRetentionPeriod *float64 `json:"automatedSnapshotRetentionPeriod" yaml:"automatedSnapshotRetentionPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#availability_zone RedshiftCluster#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_parameter_group_name RedshiftCluster#cluster_parameter_group_name}.
+	ClusterParameterGroupName *string `json:"clusterParameterGroupName" yaml:"clusterParameterGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_public_key RedshiftCluster#cluster_public_key}.
+	ClusterPublicKey *string `json:"clusterPublicKey" yaml:"clusterPublicKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_revision_number RedshiftCluster#cluster_revision_number}.
+	ClusterRevisionNumber *string `json:"clusterRevisionNumber" yaml:"clusterRevisionNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_security_groups RedshiftCluster#cluster_security_groups}.
+	ClusterSecurityGroups *[]*string `json:"clusterSecurityGroups" yaml:"clusterSecurityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_subnet_group_name RedshiftCluster#cluster_subnet_group_name}.
+	ClusterSubnetGroupName *string `json:"clusterSubnetGroupName" yaml:"clusterSubnetGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_type RedshiftCluster#cluster_type}.
+	ClusterType *string `json:"clusterType" yaml:"clusterType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#cluster_version RedshiftCluster#cluster_version}.
+	ClusterVersion *string `json:"clusterVersion" yaml:"clusterVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#database_name RedshiftCluster#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#elastic_ip RedshiftCluster#elastic_ip}.
+	ElasticIp *string `json:"elasticIp" yaml:"elasticIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#encrypted RedshiftCluster#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#endpoint RedshiftCluster#endpoint}.
+	Endpoint *string `json:"endpoint" yaml:"endpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#enhanced_vpc_routing RedshiftCluster#enhanced_vpc_routing}.
+	EnhancedVpcRouting interface{} `json:"enhancedVpcRouting" yaml:"enhancedVpcRouting"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#final_snapshot_identifier RedshiftCluster#final_snapshot_identifier}.
+	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier" yaml:"finalSnapshotIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#iam_roles RedshiftCluster#iam_roles}.
+	IamRoles *[]*string `json:"iamRoles" yaml:"iamRoles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#kms_key_id RedshiftCluster#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 	// logging block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#logging RedshiftCluster#logging}
-	Logging *RedshiftClusterLogging `json:"logging"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#master_password RedshiftCluster#master_password}.
-	MasterPassword *string `json:"masterPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#master_username RedshiftCluster#master_username}.
-	MasterUsername *string `json:"masterUsername"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#number_of_nodes RedshiftCluster#number_of_nodes}.
-	NumberOfNodes *float64 `json:"numberOfNodes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#owner_account RedshiftCluster#owner_account}.
-	OwnerAccount *string `json:"ownerAccount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#port RedshiftCluster#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#preferred_maintenance_window RedshiftCluster#preferred_maintenance_window}.
-	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#publicly_accessible RedshiftCluster#publicly_accessible}.
-	PubliclyAccessible interface{} `json:"publiclyAccessible"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#skip_final_snapshot RedshiftCluster#skip_final_snapshot}.
-	SkipFinalSnapshot interface{} `json:"skipFinalSnapshot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#snapshot_cluster_identifier RedshiftCluster#snapshot_cluster_identifier}.
-	SnapshotClusterIdentifier *string `json:"snapshotClusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#logging RedshiftCluster#logging}
+	Logging *RedshiftClusterLogging `json:"logging" yaml:"logging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#master_password RedshiftCluster#master_password}.
+	MasterPassword *string `json:"masterPassword" yaml:"masterPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#master_username RedshiftCluster#master_username}.
+	MasterUsername *string `json:"masterUsername" yaml:"masterUsername"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#number_of_nodes RedshiftCluster#number_of_nodes}.
+	NumberOfNodes *float64 `json:"numberOfNodes" yaml:"numberOfNodes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#owner_account RedshiftCluster#owner_account}.
+	OwnerAccount *string `json:"ownerAccount" yaml:"ownerAccount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#port RedshiftCluster#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#preferred_maintenance_window RedshiftCluster#preferred_maintenance_window}.
+	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow" yaml:"preferredMaintenanceWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#publicly_accessible RedshiftCluster#publicly_accessible}.
+	PubliclyAccessible interface{} `json:"publiclyAccessible" yaml:"publiclyAccessible"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#skip_final_snapshot RedshiftCluster#skip_final_snapshot}.
+	SkipFinalSnapshot interface{} `json:"skipFinalSnapshot" yaml:"skipFinalSnapshot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#snapshot_cluster_identifier RedshiftCluster#snapshot_cluster_identifier}.
+	SnapshotClusterIdentifier *string `json:"snapshotClusterIdentifier" yaml:"snapshotClusterIdentifier"`
 	// snapshot_copy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#snapshot_copy RedshiftCluster#snapshot_copy}
-	SnapshotCopy *RedshiftClusterSnapshotCopy `json:"snapshotCopy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#snapshot_identifier RedshiftCluster#snapshot_identifier}.
-	SnapshotIdentifier *string `json:"snapshotIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#tags RedshiftCluster#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#tags_all RedshiftCluster#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#snapshot_copy RedshiftCluster#snapshot_copy}
+	SnapshotCopy *RedshiftClusterSnapshotCopy `json:"snapshotCopy" yaml:"snapshotCopy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#snapshot_identifier RedshiftCluster#snapshot_identifier}.
+	SnapshotIdentifier *string `json:"snapshotIdentifier" yaml:"snapshotIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#tags RedshiftCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#tags_all RedshiftCluster#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#timeouts RedshiftCluster#timeouts}
-	Timeouts *RedshiftClusterTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#vpc_security_group_ids RedshiftCluster#vpc_security_group_ids}.
-	VpcSecurityGroupIds *[]*string `json:"vpcSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#timeouts RedshiftCluster#timeouts}
+	Timeouts *RedshiftClusterTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#vpc_security_group_ids RedshiftCluster#vpc_security_group_ids}.
+	VpcSecurityGroupIds *[]*string `json:"vpcSecurityGroupIds" yaml:"vpcSecurityGroupIds"`
 }
 
 type RedshiftClusterLogging struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#enable RedshiftCluster#enable}.
-	Enable interface{} `json:"enable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#bucket_name RedshiftCluster#bucket_name}.
-	BucketName *string `json:"bucketName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#s3_key_prefix RedshiftCluster#s3_key_prefix}.
-	S3KeyPrefix *string `json:"s3KeyPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#enable RedshiftCluster#enable}.
+	Enable interface{} `json:"enable" yaml:"enable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#bucket_name RedshiftCluster#bucket_name}.
+	BucketName *string `json:"bucketName" yaml:"bucketName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#s3_key_prefix RedshiftCluster#s3_key_prefix}.
+	S3KeyPrefix *string `json:"s3KeyPrefix" yaml:"s3KeyPrefix"`
 }
 
 type RedshiftClusterLoggingOutputReference interface {
@@ -4129,12 +4524,17 @@ type RedshiftClusterLoggingOutputReference interface {
 	S3KeyPrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBucketName()
@@ -4236,8 +4636,8 @@ func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4246,7 +4646,7 @@ func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) TerraformResource() cd
 	return returns
 }
 
-func NewRedshiftClusterLoggingOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftClusterLoggingOutputReference {
+func NewRedshiftClusterLoggingOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftClusterLoggingOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftClusterLoggingOutputReference{}
@@ -4260,7 +4660,7 @@ func NewRedshiftClusterLoggingOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewRedshiftClusterLoggingOutputReference_Override(r RedshiftClusterLoggingOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftClusterLoggingOutputReference_Override(r RedshiftClusterLoggingOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4318,7 +4718,7 @@ func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4327,12 +4727,40 @@ func (j *jsiiProxy_RedshiftClusterLoggingOutputReference) SetTerraformResource(v
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4369,12 +4797,54 @@ func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4427,12 +4897,12 @@ func (r *jsiiProxy_RedshiftClusterLoggingOutputReference) ResetS3KeyPrefix() {
 }
 
 type RedshiftClusterSnapshotCopy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#destination_region RedshiftCluster#destination_region}.
-	DestinationRegion *string `json:"destinationRegion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#grant_name RedshiftCluster#grant_name}.
-	GrantName *string `json:"grantName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#retention_period RedshiftCluster#retention_period}.
-	RetentionPeriod *float64 `json:"retentionPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#destination_region RedshiftCluster#destination_region}.
+	DestinationRegion *string `json:"destinationRegion" yaml:"destinationRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#grant_name RedshiftCluster#grant_name}.
+	GrantName *string `json:"grantName" yaml:"grantName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#retention_period RedshiftCluster#retention_period}.
+	RetentionPeriod *float64 `json:"retentionPeriod" yaml:"retentionPeriod"`
 }
 
 type RedshiftClusterSnapshotCopyOutputReference interface {
@@ -4452,12 +4922,17 @@ type RedshiftClusterSnapshotCopyOutputReference interface {
 	RetentionPeriodInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetGrantName()
@@ -4559,8 +5034,8 @@ func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4569,7 +5044,7 @@ func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) TerraformResource
 	return returns
 }
 
-func NewRedshiftClusterSnapshotCopyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftClusterSnapshotCopyOutputReference {
+func NewRedshiftClusterSnapshotCopyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftClusterSnapshotCopyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftClusterSnapshotCopyOutputReference{}
@@ -4583,7 +5058,7 @@ func NewRedshiftClusterSnapshotCopyOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewRedshiftClusterSnapshotCopyOutputReference_Override(r RedshiftClusterSnapshotCopyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftClusterSnapshotCopyOutputReference_Override(r RedshiftClusterSnapshotCopyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4641,7 +5116,7 @@ func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4650,12 +5125,40 @@ func (j *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4692,12 +5195,54 @@ func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4750,12 +5295,12 @@ func (r *jsiiProxy_RedshiftClusterSnapshotCopyOutputReference) ResetRetentionPer
 }
 
 type RedshiftClusterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#create RedshiftCluster#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#delete RedshiftCluster#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster.html#update RedshiftCluster#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#create RedshiftCluster#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#delete RedshiftCluster#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_cluster#update RedshiftCluster#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type RedshiftClusterTimeoutsOutputReference interface {
@@ -4772,15 +5317,20 @@ type RedshiftClusterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -4863,8 +5413,8 @@ func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4893,7 +5443,7 @@ func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) UpdateInput() *string
 	return returns
 }
 
-func NewRedshiftClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftClusterTimeoutsOutputReference {
+func NewRedshiftClusterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftClusterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftClusterTimeoutsOutputReference{}
@@ -4907,7 +5457,7 @@ func NewRedshiftClusterTimeoutsOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewRedshiftClusterTimeoutsOutputReference_Override(r RedshiftClusterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftClusterTimeoutsOutputReference_Override(r RedshiftClusterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4957,7 +5507,7 @@ func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4974,12 +5524,40 @@ func (j *jsiiProxy_RedshiftClusterTimeoutsOutputReference) SetUpdate(val *string
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5016,12 +5594,54 @@ func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5081,14 +5701,14 @@ func (r *jsiiProxy_RedshiftClusterTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html aws_redshift_event_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription aws_redshift_event_subscription}.
 type RedshiftEventSubscription interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAwsId() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -5123,22 +5743,27 @@ type RedshiftEventSubscription interface {
 	SetSourceType(val *string)
 	SourceTypeInput() *string
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() RedshiftEventSubscriptionTimeoutsOutputReference
 	TimeoutsInput() *RedshiftEventSubscriptionTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *RedshiftEventSubscriptionTimeouts)
@@ -5192,8 +5817,8 @@ func (j *jsiiProxy_RedshiftEventSubscription) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftEventSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5442,8 +6067,8 @@ func (j *jsiiProxy_RedshiftEventSubscription) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftEventSubscription) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5452,8 +6077,8 @@ func (j *jsiiProxy_RedshiftEventSubscription) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftEventSubscription) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5462,8 +6087,8 @@ func (j *jsiiProxy_RedshiftEventSubscription) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftEventSubscription) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5472,8 +6097,8 @@ func (j *jsiiProxy_RedshiftEventSubscription) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftEventSubscription) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5532,7 +6157,7 @@ func (j *jsiiProxy_RedshiftEventSubscription) TimeoutsInput() *RedshiftEventSubs
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html aws_redshift_event_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription aws_redshift_event_subscription} Resource.
 func NewRedshiftEventSubscription(scope constructs.Construct, id *string, config *RedshiftEventSubscriptionConfig) RedshiftEventSubscription {
 	_init_.Initialize()
 
@@ -5547,7 +6172,7 @@ func NewRedshiftEventSubscription(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html aws_redshift_event_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription aws_redshift_event_subscription} Resource.
 func NewRedshiftEventSubscription_Override(r RedshiftEventSubscription, scope constructs.Construct, id *string, config *RedshiftEventSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -5558,7 +6183,7 @@ func NewRedshiftEventSubscription_Override(r RedshiftEventSubscription, scope co
 	)
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftEventSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5646,7 +6271,7 @@ func (j *jsiiProxy_RedshiftEventSubscription) SetSourceType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) SetTags(val interface{}) {
+func (j *jsiiProxy_RedshiftEventSubscription) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5654,7 +6279,7 @@ func (j *jsiiProxy_RedshiftEventSubscription) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftEventSubscription) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_RedshiftEventSubscription) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5702,12 +6327,40 @@ func (r *jsiiProxy_RedshiftEventSubscription) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftEventSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftEventSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftEventSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5744,12 +6397,54 @@ func (r *jsiiProxy_RedshiftEventSubscription) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftEventSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftEventSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftEventSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftEventSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5922,44 +6617,44 @@ func (r *jsiiProxy_RedshiftEventSubscription) ToTerraform() interface{} {
 // AWS Redshift.
 type RedshiftEventSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#name RedshiftEventSubscription#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#sns_topic_arn RedshiftEventSubscription#sns_topic_arn}.
-	SnsTopicArn *string `json:"snsTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#enabled RedshiftEventSubscription#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#event_categories RedshiftEventSubscription#event_categories}.
-	EventCategories *[]*string `json:"eventCategories"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#severity RedshiftEventSubscription#severity}.
-	Severity *string `json:"severity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#source_ids RedshiftEventSubscription#source_ids}.
-	SourceIds *[]*string `json:"sourceIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#source_type RedshiftEventSubscription#source_type}.
-	SourceType *string `json:"sourceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#tags RedshiftEventSubscription#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#tags_all RedshiftEventSubscription#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#name RedshiftEventSubscription#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#sns_topic_arn RedshiftEventSubscription#sns_topic_arn}.
+	SnsTopicArn *string `json:"snsTopicArn" yaml:"snsTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#enabled RedshiftEventSubscription#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#event_categories RedshiftEventSubscription#event_categories}.
+	EventCategories *[]*string `json:"eventCategories" yaml:"eventCategories"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#severity RedshiftEventSubscription#severity}.
+	Severity *string `json:"severity" yaml:"severity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#source_ids RedshiftEventSubscription#source_ids}.
+	SourceIds *[]*string `json:"sourceIds" yaml:"sourceIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#source_type RedshiftEventSubscription#source_type}.
+	SourceType *string `json:"sourceType" yaml:"sourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#tags RedshiftEventSubscription#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#tags_all RedshiftEventSubscription#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#timeouts RedshiftEventSubscription#timeouts}
-	Timeouts *RedshiftEventSubscriptionTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#timeouts RedshiftEventSubscription#timeouts}
+	Timeouts *RedshiftEventSubscriptionTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type RedshiftEventSubscriptionTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#create RedshiftEventSubscription#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#delete RedshiftEventSubscription#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription.html#update RedshiftEventSubscription#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#create RedshiftEventSubscription#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#delete RedshiftEventSubscription#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_event_subscription#update RedshiftEventSubscription#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type RedshiftEventSubscriptionTimeoutsOutputReference interface {
@@ -5976,15 +6671,20 @@ type RedshiftEventSubscriptionTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -6067,8 +6767,8 @@ func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6097,7 +6797,7 @@ func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) UpdateInput
 	return returns
 }
 
-func NewRedshiftEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftEventSubscriptionTimeoutsOutputReference {
+func NewRedshiftEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftEventSubscriptionTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference{}
@@ -6111,7 +6811,7 @@ func NewRedshiftEventSubscriptionTimeoutsOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewRedshiftEventSubscriptionTimeoutsOutputReference_Override(r RedshiftEventSubscriptionTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftEventSubscriptionTimeoutsOutputReference_Override(r RedshiftEventSubscriptionTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6161,7 +6861,7 @@ func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6178,12 +6878,40 @@ func (j *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) SetUpdate(v
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6220,12 +6948,54 @@ func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6285,14 +7055,14 @@ func (r *jsiiProxy_RedshiftEventSubscriptionTimeoutsOutputReference) ResetUpdate
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html aws_redshift_parameter_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group aws_redshift_parameter_group}.
 type RedshiftParameterGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -6310,26 +7080,31 @@ type RedshiftParameterGroup interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameter() *[]*RedshiftParameterGroupParameter
-	SetParameter(val *[]*RedshiftParameterGroupParameter)
-	ParameterInput() *[]*RedshiftParameterGroupParameter
+	Parameter() interface{}
+	SetParameter(val interface{})
+	ParameterInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -6378,8 +7153,8 @@ func (j *jsiiProxy_RedshiftParameterGroup) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftParameterGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6508,8 +7283,8 @@ func (j *jsiiProxy_RedshiftParameterGroup) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) Parameter() *[]*RedshiftParameterGroupParameter {
-	var returns *[]*RedshiftParameterGroupParameter
+func (j *jsiiProxy_RedshiftParameterGroup) Parameter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameter",
@@ -6518,8 +7293,8 @@ func (j *jsiiProxy_RedshiftParameterGroup) Parameter() *[]*RedshiftParameterGrou
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) ParameterInput() *[]*RedshiftParameterGroupParameter {
-	var returns *[]*RedshiftParameterGroupParameter
+func (j *jsiiProxy_RedshiftParameterGroup) ParameterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameterInput",
@@ -6548,8 +7323,8 @@ func (j *jsiiProxy_RedshiftParameterGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftParameterGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6558,8 +7333,8 @@ func (j *jsiiProxy_RedshiftParameterGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftParameterGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6568,8 +7343,8 @@ func (j *jsiiProxy_RedshiftParameterGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftParameterGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6578,8 +7353,8 @@ func (j *jsiiProxy_RedshiftParameterGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftParameterGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6618,7 +7393,7 @@ func (j *jsiiProxy_RedshiftParameterGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html aws_redshift_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group aws_redshift_parameter_group} Resource.
 func NewRedshiftParameterGroup(scope constructs.Construct, id *string, config *RedshiftParameterGroupConfig) RedshiftParameterGroup {
 	_init_.Initialize()
 
@@ -6633,7 +7408,7 @@ func NewRedshiftParameterGroup(scope constructs.Construct, id *string, config *R
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html aws_redshift_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group aws_redshift_parameter_group} Resource.
 func NewRedshiftParameterGroup_Override(r RedshiftParameterGroup, scope constructs.Construct, id *string, config *RedshiftParameterGroupConfig) {
 	_init_.Initialize()
 
@@ -6644,7 +7419,7 @@ func NewRedshiftParameterGroup_Override(r RedshiftParameterGroup, scope construc
 	)
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftParameterGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6692,7 +7467,7 @@ func (j *jsiiProxy_RedshiftParameterGroup) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) SetParameter(val *[]*RedshiftParameterGroupParameter) {
+func (j *jsiiProxy_RedshiftParameterGroup) SetParameter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"parameter",
@@ -6708,7 +7483,7 @@ func (j *jsiiProxy_RedshiftParameterGroup) SetProvider(val cdktf.TerraformProvid
 	)
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_RedshiftParameterGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6716,7 +7491,7 @@ func (j *jsiiProxy_RedshiftParameterGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftParameterGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_RedshiftParameterGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6764,12 +7539,40 @@ func (r *jsiiProxy_RedshiftParameterGroup) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftParameterGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftParameterGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftParameterGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6806,12 +7609,54 @@ func (r *jsiiProxy_RedshiftParameterGroup) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftParameterGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftParameterGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftParameterGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftParameterGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6944,43 +7789,43 @@ func (r *jsiiProxy_RedshiftParameterGroup) ToTerraform() interface{} {
 // AWS Redshift.
 type RedshiftParameterGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#family RedshiftParameterGroup#family}.
-	Family *string `json:"family"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#name RedshiftParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#description RedshiftParameterGroup#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#family RedshiftParameterGroup#family}.
+	Family *string `json:"family" yaml:"family"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#name RedshiftParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#description RedshiftParameterGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 	// parameter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#parameter RedshiftParameterGroup#parameter}
-	Parameter *[]*RedshiftParameterGroupParameter `json:"parameter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#tags RedshiftParameterGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#tags_all RedshiftParameterGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#parameter RedshiftParameterGroup#parameter}
+	Parameter interface{} `json:"parameter" yaml:"parameter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#tags RedshiftParameterGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#tags_all RedshiftParameterGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type RedshiftParameterGroupParameter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#name RedshiftParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group.html#value RedshiftParameterGroup#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#name RedshiftParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_parameter_group#value RedshiftParameterGroup#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html aws_redshift_scheduled_action}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action aws_redshift_scheduled_action}.
 type RedshiftScheduledAction interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -7019,10 +7864,15 @@ type RedshiftScheduledAction interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTargetAction(value *RedshiftScheduledActionTargetAction)
@@ -7062,8 +7912,8 @@ func (j *jsiiProxy_RedshiftScheduledAction) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftScheduledAction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftScheduledAction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7342,7 +8192,7 @@ func (j *jsiiProxy_RedshiftScheduledAction) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html aws_redshift_scheduled_action} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action aws_redshift_scheduled_action} Resource.
 func NewRedshiftScheduledAction(scope constructs.Construct, id *string, config *RedshiftScheduledActionConfig) RedshiftScheduledAction {
 	_init_.Initialize()
 
@@ -7357,7 +8207,7 @@ func NewRedshiftScheduledAction(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html aws_redshift_scheduled_action} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action aws_redshift_scheduled_action} Resource.
 func NewRedshiftScheduledAction_Override(r RedshiftScheduledAction, scope constructs.Construct, id *string, config *RedshiftScheduledActionConfig) {
 	_init_.Initialize()
 
@@ -7368,7 +8218,7 @@ func NewRedshiftScheduledAction_Override(r RedshiftScheduledAction, scope constr
 	)
 }
 
-func (j *jsiiProxy_RedshiftScheduledAction) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftScheduledAction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7496,12 +8346,40 @@ func (r *jsiiProxy_RedshiftScheduledAction) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftScheduledAction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftScheduledAction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledAction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7538,12 +8416,54 @@ func (r *jsiiProxy_RedshiftScheduledAction) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftScheduledAction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledAction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftScheduledAction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledAction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7684,46 +8604,46 @@ func (r *jsiiProxy_RedshiftScheduledAction) ToTerraform() interface{} {
 // AWS Redshift.
 type RedshiftScheduledActionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#iam_role RedshiftScheduledAction#iam_role}.
-	IamRole *string `json:"iamRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#name RedshiftScheduledAction#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#schedule RedshiftScheduledAction#schedule}.
-	Schedule *string `json:"schedule"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#iam_role RedshiftScheduledAction#iam_role}.
+	IamRole *string `json:"iamRole" yaml:"iamRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#name RedshiftScheduledAction#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#schedule RedshiftScheduledAction#schedule}.
+	Schedule *string `json:"schedule" yaml:"schedule"`
 	// target_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#target_action RedshiftScheduledAction#target_action}
-	TargetAction *RedshiftScheduledActionTargetAction `json:"targetAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#description RedshiftScheduledAction#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#enable RedshiftScheduledAction#enable}.
-	Enable interface{} `json:"enable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#end_time RedshiftScheduledAction#end_time}.
-	EndTime *string `json:"endTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#start_time RedshiftScheduledAction#start_time}.
-	StartTime *string `json:"startTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#target_action RedshiftScheduledAction#target_action}
+	TargetAction *RedshiftScheduledActionTargetAction `json:"targetAction" yaml:"targetAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#description RedshiftScheduledAction#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#enable RedshiftScheduledAction#enable}.
+	Enable interface{} `json:"enable" yaml:"enable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#end_time RedshiftScheduledAction#end_time}.
+	EndTime *string `json:"endTime" yaml:"endTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#start_time RedshiftScheduledAction#start_time}.
+	StartTime *string `json:"startTime" yaml:"startTime"`
 }
 
 type RedshiftScheduledActionTargetAction struct {
 	// pause_cluster block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#pause_cluster RedshiftScheduledAction#pause_cluster}
-	PauseCluster *RedshiftScheduledActionTargetActionPauseCluster `json:"pauseCluster"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#pause_cluster RedshiftScheduledAction#pause_cluster}
+	PauseCluster *RedshiftScheduledActionTargetActionPauseCluster `json:"pauseCluster" yaml:"pauseCluster"`
 	// resize_cluster block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#resize_cluster RedshiftScheduledAction#resize_cluster}
-	ResizeCluster *RedshiftScheduledActionTargetActionResizeCluster `json:"resizeCluster"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#resize_cluster RedshiftScheduledAction#resize_cluster}
+	ResizeCluster *RedshiftScheduledActionTargetActionResizeCluster `json:"resizeCluster" yaml:"resizeCluster"`
 	// resume_cluster block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#resume_cluster RedshiftScheduledAction#resume_cluster}
-	ResumeCluster *RedshiftScheduledActionTargetActionResumeCluster `json:"resumeCluster"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#resume_cluster RedshiftScheduledAction#resume_cluster}
+	ResumeCluster *RedshiftScheduledActionTargetActionResumeCluster `json:"resumeCluster" yaml:"resumeCluster"`
 }
 
 type RedshiftScheduledActionTargetActionOutputReference interface {
@@ -7740,12 +8660,17 @@ type RedshiftScheduledActionTargetActionOutputReference interface {
 	ResumeClusterInput() *RedshiftScheduledActionTargetActionResumeCluster
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutPauseCluster(value *RedshiftScheduledActionTargetActionPauseCluster)
@@ -7851,8 +8776,8 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7861,7 +8786,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) Terraform
 	return returns
 }
 
-func NewRedshiftScheduledActionTargetActionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionOutputReference {
+func NewRedshiftScheduledActionTargetActionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftScheduledActionTargetActionOutputReference{}
@@ -7875,7 +8800,7 @@ func NewRedshiftScheduledActionTargetActionOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewRedshiftScheduledActionTargetActionOutputReference_Override(r RedshiftScheduledActionTargetActionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftScheduledActionTargetActionOutputReference_Override(r RedshiftScheduledActionTargetActionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7909,7 +8834,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7918,12 +8843,40 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) SetTerraf
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7960,12 +8913,54 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetNumber
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8050,8 +9045,8 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionOutputReference) ResetResu
 }
 
 type RedshiftScheduledActionTargetActionPauseCluster struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#cluster_identifier RedshiftScheduledAction#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#cluster_identifier RedshiftScheduledAction#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
 }
 
 type RedshiftScheduledActionTargetActionPauseClusterOutputReference interface {
@@ -8065,12 +9060,17 @@ type RedshiftScheduledActionTargetActionPauseClusterOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8130,8 +9130,8 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8140,7 +9140,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 	return returns
 }
 
-func NewRedshiftScheduledActionTargetActionPauseClusterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionPauseClusterOutputReference {
+func NewRedshiftScheduledActionTargetActionPauseClusterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionPauseClusterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference{}
@@ -8154,7 +9154,7 @@ func NewRedshiftScheduledActionTargetActionPauseClusterOutputReference(terraform
 	return &j
 }
 
-func NewRedshiftScheduledActionTargetActionPauseClusterOutputReference_Override(r RedshiftScheduledActionTargetActionPauseClusterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftScheduledActionTargetActionPauseClusterOutputReference_Override(r RedshiftScheduledActionTargetActionPauseClusterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8196,7 +9196,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8205,12 +9205,40 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8247,12 +9275,54 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8289,16 +9359,16 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionPauseClusterOutputReferenc
 }
 
 type RedshiftScheduledActionTargetActionResizeCluster struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#cluster_identifier RedshiftScheduledAction#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#classic RedshiftScheduledAction#classic}.
-	Classic interface{} `json:"classic"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#cluster_type RedshiftScheduledAction#cluster_type}.
-	ClusterType *string `json:"clusterType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#node_type RedshiftScheduledAction#node_type}.
-	NodeType *string `json:"nodeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#number_of_nodes RedshiftScheduledAction#number_of_nodes}.
-	NumberOfNodes *float64 `json:"numberOfNodes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#cluster_identifier RedshiftScheduledAction#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#classic RedshiftScheduledAction#classic}.
+	Classic interface{} `json:"classic" yaml:"classic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#cluster_type RedshiftScheduledAction#cluster_type}.
+	ClusterType *string `json:"clusterType" yaml:"clusterType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#node_type RedshiftScheduledAction#node_type}.
+	NodeType *string `json:"nodeType" yaml:"nodeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#number_of_nodes RedshiftScheduledAction#number_of_nodes}.
+	NumberOfNodes *float64 `json:"numberOfNodes" yaml:"numberOfNodes"`
 }
 
 type RedshiftScheduledActionTargetActionResizeClusterOutputReference interface {
@@ -8324,12 +9394,17 @@ type RedshiftScheduledActionTargetActionResizeClusterOutputReference interface {
 	NumberOfNodesInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetClassic()
@@ -8473,8 +9548,8 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8483,7 +9558,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 	return returns
 }
 
-func NewRedshiftScheduledActionTargetActionResizeClusterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionResizeClusterOutputReference {
+func NewRedshiftScheduledActionTargetActionResizeClusterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionResizeClusterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference{}
@@ -8497,7 +9572,7 @@ func NewRedshiftScheduledActionTargetActionResizeClusterOutputReference(terrafor
 	return &j
 }
 
-func NewRedshiftScheduledActionTargetActionResizeClusterOutputReference_Override(r RedshiftScheduledActionTargetActionResizeClusterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftScheduledActionTargetActionResizeClusterOutputReference_Override(r RedshiftScheduledActionTargetActionResizeClusterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8571,7 +9646,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 	)
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8580,12 +9655,40 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8622,12 +9725,54 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8696,8 +9841,8 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionResizeClusterOutputReferen
 }
 
 type RedshiftScheduledActionTargetActionResumeCluster struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action.html#cluster_identifier RedshiftScheduledAction#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_scheduled_action#cluster_identifier RedshiftScheduledAction#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
 }
 
 type RedshiftScheduledActionTargetActionResumeClusterOutputReference interface {
@@ -8711,12 +9856,17 @@ type RedshiftScheduledActionTargetActionResumeClusterOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8776,8 +9926,8 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8786,7 +9936,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 	return returns
 }
 
-func NewRedshiftScheduledActionTargetActionResumeClusterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionResumeClusterOutputReference {
+func NewRedshiftScheduledActionTargetActionResumeClusterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RedshiftScheduledActionTargetActionResumeClusterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference{}
@@ -8800,7 +9950,7 @@ func NewRedshiftScheduledActionTargetActionResumeClusterOutputReference(terrafor
 	return &j
 }
 
-func NewRedshiftScheduledActionTargetActionResumeClusterOutputReference_Override(r RedshiftScheduledActionTargetActionResumeClusterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRedshiftScheduledActionTargetActionResumeClusterOutputReference_Override(r RedshiftScheduledActionTargetActionResumeClusterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8842,7 +9992,7 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 	)
 }
 
-func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8851,12 +10001,40 @@ func (j *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 }
 
 // Experimental.
-func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8893,12 +10071,54 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8934,13 +10154,13 @@ func (r *jsiiProxy_RedshiftScheduledActionTargetActionResumeClusterOutputReferen
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html aws_redshift_security_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group aws_redshift_security_group}.
 type RedshiftSecurityGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -8949,9 +10169,9 @@ type RedshiftSecurityGroup interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	Ingress() *[]*RedshiftSecurityGroupIngress
-	SetIngress(val *[]*RedshiftSecurityGroupIngress)
-	IngressInput() *[]*RedshiftSecurityGroupIngress
+	Ingress() interface{}
+	SetIngress(val interface{})
+	IngressInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Name() *string
@@ -8965,10 +10185,15 @@ type RedshiftSecurityGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -9004,8 +10229,8 @@ func (j *jsiiProxy_RedshiftSecurityGroup) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSecurityGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSecurityGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9074,8 +10299,8 @@ func (j *jsiiProxy_RedshiftSecurityGroup) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSecurityGroup) Ingress() *[]*RedshiftSecurityGroupIngress {
-	var returns *[]*RedshiftSecurityGroupIngress
+func (j *jsiiProxy_RedshiftSecurityGroup) Ingress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ingress",
@@ -9084,8 +10309,8 @@ func (j *jsiiProxy_RedshiftSecurityGroup) Ingress() *[]*RedshiftSecurityGroupIng
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSecurityGroup) IngressInput() *[]*RedshiftSecurityGroupIngress {
-	var returns *[]*RedshiftSecurityGroupIngress
+func (j *jsiiProxy_RedshiftSecurityGroup) IngressInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ingressInput",
@@ -9184,7 +10409,7 @@ func (j *jsiiProxy_RedshiftSecurityGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html aws_redshift_security_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group aws_redshift_security_group} Resource.
 func NewRedshiftSecurityGroup(scope constructs.Construct, id *string, config *RedshiftSecurityGroupConfig) RedshiftSecurityGroup {
 	_init_.Initialize()
 
@@ -9199,7 +10424,7 @@ func NewRedshiftSecurityGroup(scope constructs.Construct, id *string, config *Re
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html aws_redshift_security_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group aws_redshift_security_group} Resource.
 func NewRedshiftSecurityGroup_Override(r RedshiftSecurityGroup, scope constructs.Construct, id *string, config *RedshiftSecurityGroupConfig) {
 	_init_.Initialize()
 
@@ -9210,7 +10435,7 @@ func NewRedshiftSecurityGroup_Override(r RedshiftSecurityGroup, scope constructs
 	)
 }
 
-func (j *jsiiProxy_RedshiftSecurityGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftSecurityGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9234,7 +10459,7 @@ func (j *jsiiProxy_RedshiftSecurityGroup) SetDescription(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftSecurityGroup) SetIngress(val *[]*RedshiftSecurityGroupIngress) {
+func (j *jsiiProxy_RedshiftSecurityGroup) SetIngress(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ingress",
@@ -9306,12 +10531,40 @@ func (r *jsiiProxy_RedshiftSecurityGroup) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSecurityGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSecurityGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSecurityGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9348,12 +10601,54 @@ func (r *jsiiProxy_RedshiftSecurityGroup) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSecurityGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSecurityGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSecurityGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSecurityGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9462,40 +10757,40 @@ func (r *jsiiProxy_RedshiftSecurityGroup) ToTerraform() interface{} {
 // AWS Redshift.
 type RedshiftSecurityGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// ingress block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html#ingress RedshiftSecurityGroup#ingress}
-	Ingress *[]*RedshiftSecurityGroupIngress `json:"ingress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html#name RedshiftSecurityGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html#description RedshiftSecurityGroup#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group#ingress RedshiftSecurityGroup#ingress}
+	Ingress interface{} `json:"ingress" yaml:"ingress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group#name RedshiftSecurityGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group#description RedshiftSecurityGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
 type RedshiftSecurityGroupIngress struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html#cidr RedshiftSecurityGroup#cidr}.
-	Cidr *string `json:"cidr"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html#security_group_name RedshiftSecurityGroup#security_group_name}.
-	SecurityGroupName *string `json:"securityGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group.html#security_group_owner_id RedshiftSecurityGroup#security_group_owner_id}.
-	SecurityGroupOwnerId *string `json:"securityGroupOwnerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group#cidr RedshiftSecurityGroup#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group#security_group_name RedshiftSecurityGroup#security_group_name}.
+	SecurityGroupName *string `json:"securityGroupName" yaml:"securityGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_security_group#security_group_owner_id RedshiftSecurityGroup#security_group_owner_id}.
+	SecurityGroupOwnerId *string `json:"securityGroupOwnerId" yaml:"securityGroupOwnerId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant.html aws_redshift_snapshot_copy_grant}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant aws_redshift_snapshot_copy_grant}.
 type RedshiftSnapshotCopyGrant interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9513,20 +10808,25 @@ type RedshiftSnapshotCopyGrant interface {
 	SnapshotCopyGrantName() *string
 	SetSnapshotCopyGrantName(val *string)
 	SnapshotCopyGrantNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKmsKeyId()
@@ -9574,8 +10874,8 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9704,8 +11004,8 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SnapshotCopyGrantNameInput() *stri
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9714,8 +11014,8 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9724,8 +11024,8 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9734,8 +11034,8 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9774,7 +11074,7 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant.html aws_redshift_snapshot_copy_grant} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant aws_redshift_snapshot_copy_grant} Resource.
 func NewRedshiftSnapshotCopyGrant(scope constructs.Construct, id *string, config *RedshiftSnapshotCopyGrantConfig) RedshiftSnapshotCopyGrant {
 	_init_.Initialize()
 
@@ -9789,7 +11089,7 @@ func NewRedshiftSnapshotCopyGrant(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant.html aws_redshift_snapshot_copy_grant} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant aws_redshift_snapshot_copy_grant} Resource.
 func NewRedshiftSnapshotCopyGrant_Override(r RedshiftSnapshotCopyGrant, scope constructs.Construct, id *string, config *RedshiftSnapshotCopyGrantConfig) {
 	_init_.Initialize()
 
@@ -9800,7 +11100,7 @@ func NewRedshiftSnapshotCopyGrant_Override(r RedshiftSnapshotCopyGrant, scope co
 	)
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9848,7 +11148,7 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetSnapshotCopyGrantName(val *stri
 	)
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetTags(val interface{}) {
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9856,7 +11156,7 @@ func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_RedshiftSnapshotCopyGrant) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9904,12 +11204,40 @@ func (r *jsiiProxy_RedshiftSnapshotCopyGrant) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9946,12 +11274,54 @@ func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotCopyGrant) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10076,31 +11446,31 @@ func (r *jsiiProxy_RedshiftSnapshotCopyGrant) ToTerraform() interface{} {
 // AWS Redshift.
 type RedshiftSnapshotCopyGrantConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant.html#snapshot_copy_grant_name RedshiftSnapshotCopyGrant#snapshot_copy_grant_name}.
-	SnapshotCopyGrantName *string `json:"snapshotCopyGrantName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant.html#kms_key_id RedshiftSnapshotCopyGrant#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant.html#tags RedshiftSnapshotCopyGrant#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant.html#tags_all RedshiftSnapshotCopyGrant#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant#snapshot_copy_grant_name RedshiftSnapshotCopyGrant#snapshot_copy_grant_name}.
+	SnapshotCopyGrantName *string `json:"snapshotCopyGrantName" yaml:"snapshotCopyGrantName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant#kms_key_id RedshiftSnapshotCopyGrant#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant#tags RedshiftSnapshotCopyGrant#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_copy_grant#tags_all RedshiftSnapshotCopyGrant#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html aws_redshift_snapshot_schedule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule aws_redshift_snapshot_schedule}.
 type RedshiftSnapshotSchedule interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Definitions() *[]*string
 	SetDefinitions(val *[]*string)
 	DefinitionsInput() *[]*string
@@ -10127,20 +11497,25 @@ type RedshiftSnapshotSchedule interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -10191,8 +11566,8 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotSchedule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10381,8 +11756,8 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotSchedule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10391,8 +11766,8 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10401,8 +11776,8 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10411,8 +11786,8 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotSchedule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10451,7 +11826,7 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html aws_redshift_snapshot_schedule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule aws_redshift_snapshot_schedule} Resource.
 func NewRedshiftSnapshotSchedule(scope constructs.Construct, id *string, config *RedshiftSnapshotScheduleConfig) RedshiftSnapshotSchedule {
 	_init_.Initialize()
 
@@ -10466,7 +11841,7 @@ func NewRedshiftSnapshotSchedule(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html aws_redshift_snapshot_schedule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule aws_redshift_snapshot_schedule} Resource.
 func NewRedshiftSnapshotSchedule_Override(r RedshiftSnapshotSchedule, scope constructs.Construct, id *string, config *RedshiftSnapshotScheduleConfig) {
 	_init_.Initialize()
 
@@ -10477,7 +11852,7 @@ func NewRedshiftSnapshotSchedule_Override(r RedshiftSnapshotSchedule, scope cons
 	)
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftSnapshotSchedule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10549,7 +11924,7 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) SetTags(val interface{}) {
+func (j *jsiiProxy_RedshiftSnapshotSchedule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10557,7 +11932,7 @@ func (j *jsiiProxy_RedshiftSnapshotSchedule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftSnapshotSchedule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_RedshiftSnapshotSchedule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10605,12 +11980,40 @@ func (r *jsiiProxy_RedshiftSnapshotSchedule) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSnapshotSchedule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSnapshotSchedule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotSchedule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10647,12 +12050,54 @@ func (r *jsiiProxy_RedshiftSnapshotSchedule) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSnapshotSchedule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotSchedule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSnapshotSchedule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotSchedule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10798,7 +12243,7 @@ func (r *jsiiProxy_RedshiftSnapshotSchedule) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association.html aws_redshift_snapshot_schedule_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association aws_redshift_snapshot_schedule_association}.
 type RedshiftSnapshotScheduleAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -10806,8 +12251,8 @@ type RedshiftSnapshotScheduleAssociation interface {
 	SetClusterIdentifier(val *string)
 	ClusterIdentifierInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10826,10 +12271,15 @@ type RedshiftSnapshotScheduleAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -10884,8 +12334,8 @@ func (j *jsiiProxy_RedshiftSnapshotScheduleAssociation) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSnapshotScheduleAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSnapshotScheduleAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11024,7 +12474,7 @@ func (j *jsiiProxy_RedshiftSnapshotScheduleAssociation) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association.html aws_redshift_snapshot_schedule_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association aws_redshift_snapshot_schedule_association} Resource.
 func NewRedshiftSnapshotScheduleAssociation(scope constructs.Construct, id *string, config *RedshiftSnapshotScheduleAssociationConfig) RedshiftSnapshotScheduleAssociation {
 	_init_.Initialize()
 
@@ -11039,7 +12489,7 @@ func NewRedshiftSnapshotScheduleAssociation(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association.html aws_redshift_snapshot_schedule_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association aws_redshift_snapshot_schedule_association} Resource.
 func NewRedshiftSnapshotScheduleAssociation_Override(r RedshiftSnapshotScheduleAssociation, scope constructs.Construct, id *string, config *RedshiftSnapshotScheduleAssociationConfig) {
 	_init_.Initialize()
 
@@ -11058,7 +12508,7 @@ func (j *jsiiProxy_RedshiftSnapshotScheduleAssociation) SetClusterIdentifier(val
 	)
 }
 
-func (j *jsiiProxy_RedshiftSnapshotScheduleAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftSnapshotScheduleAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11138,12 +12588,40 @@ func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) AddOverride(path *string
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11180,12 +12658,54 @@ func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11286,53 +12806,53 @@ func (r *jsiiProxy_RedshiftSnapshotScheduleAssociation) ToTerraform() interface{
 // AWS Redshift.
 type RedshiftSnapshotScheduleAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association.html#cluster_identifier RedshiftSnapshotScheduleAssociation#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association.html#schedule_identifier RedshiftSnapshotScheduleAssociation#schedule_identifier}.
-	ScheduleIdentifier *string `json:"scheduleIdentifier"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association#cluster_identifier RedshiftSnapshotScheduleAssociation#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule_association#schedule_identifier RedshiftSnapshotScheduleAssociation#schedule_identifier}.
+	ScheduleIdentifier *string `json:"scheduleIdentifier" yaml:"scheduleIdentifier"`
 }
 
 // AWS Redshift.
 type RedshiftSnapshotScheduleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html#definitions RedshiftSnapshotSchedule#definitions}.
-	Definitions *[]*string `json:"definitions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html#description RedshiftSnapshotSchedule#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html#force_destroy RedshiftSnapshotSchedule#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html#identifier RedshiftSnapshotSchedule#identifier}.
-	Identifier *string `json:"identifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html#identifier_prefix RedshiftSnapshotSchedule#identifier_prefix}.
-	IdentifierPrefix *string `json:"identifierPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html#tags RedshiftSnapshotSchedule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule.html#tags_all RedshiftSnapshotSchedule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule#definitions RedshiftSnapshotSchedule#definitions}.
+	Definitions *[]*string `json:"definitions" yaml:"definitions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule#description RedshiftSnapshotSchedule#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule#force_destroy RedshiftSnapshotSchedule#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule#identifier RedshiftSnapshotSchedule#identifier}.
+	Identifier *string `json:"identifier" yaml:"identifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule#identifier_prefix RedshiftSnapshotSchedule#identifier_prefix}.
+	IdentifierPrefix *string `json:"identifierPrefix" yaml:"identifierPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule#tags RedshiftSnapshotSchedule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_snapshot_schedule#tags_all RedshiftSnapshotSchedule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html aws_redshift_subnet_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group aws_redshift_subnet_group}.
 type RedshiftSubnetGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -11353,20 +12873,25 @@ type RedshiftSubnetGroup interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -11414,8 +12939,8 @@ func (j *jsiiProxy_RedshiftSubnetGroup) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSubnetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11564,8 +13089,8 @@ func (j *jsiiProxy_RedshiftSubnetGroup) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSubnetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -11574,8 +13099,8 @@ func (j *jsiiProxy_RedshiftSubnetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSubnetGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -11584,8 +13109,8 @@ func (j *jsiiProxy_RedshiftSubnetGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSubnetGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -11594,8 +13119,8 @@ func (j *jsiiProxy_RedshiftSubnetGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RedshiftSubnetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -11634,7 +13159,7 @@ func (j *jsiiProxy_RedshiftSubnetGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html aws_redshift_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group aws_redshift_subnet_group} Resource.
 func NewRedshiftSubnetGroup(scope constructs.Construct, id *string, config *RedshiftSubnetGroupConfig) RedshiftSubnetGroup {
 	_init_.Initialize()
 
@@ -11649,7 +13174,7 @@ func NewRedshiftSubnetGroup(scope constructs.Construct, id *string, config *Reds
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html aws_redshift_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group aws_redshift_subnet_group} Resource.
 func NewRedshiftSubnetGroup_Override(r RedshiftSubnetGroup, scope constructs.Construct, id *string, config *RedshiftSubnetGroupConfig) {
 	_init_.Initialize()
 
@@ -11660,7 +13185,7 @@ func NewRedshiftSubnetGroup_Override(r RedshiftSubnetGroup, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_RedshiftSubnetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11716,7 +13241,7 @@ func (j *jsiiProxy_RedshiftSubnetGroup) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_RedshiftSubnetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -11724,7 +13249,7 @@ func (j *jsiiProxy_RedshiftSubnetGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RedshiftSubnetGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_RedshiftSubnetGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -11772,12 +13297,40 @@ func (r *jsiiProxy_RedshiftSubnetGroup) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSubnetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSubnetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSubnetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11814,12 +13367,54 @@ func (r *jsiiProxy_RedshiftSubnetGroup) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (r *jsiiProxy_RedshiftSubnetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSubnetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RedshiftSubnetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RedshiftSubnetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11944,21 +13539,21 @@ func (r *jsiiProxy_RedshiftSubnetGroup) ToTerraform() interface{} {
 // AWS Redshift.
 type RedshiftSubnetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html#name RedshiftSubnetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html#subnet_ids RedshiftSubnetGroup#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html#description RedshiftSubnetGroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html#tags RedshiftSubnetGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group.html#tags_all RedshiftSubnetGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group#name RedshiftSubnetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group#subnet_ids RedshiftSubnetGroup#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group#description RedshiftSubnetGroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group#tags RedshiftSubnetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/redshift_subnet_group#tags_all RedshiftSubnetGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/organizations/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators.html aws_organizations_delegated_administrators}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators aws_organizations_delegated_administrators}.
 type DataAwsOrganizationsDelegatedAdministrators interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -35,10 +35,15 @@ type DataAwsOrganizationsDelegatedAdministrators interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	DelegatedAdministrators(index *string) DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -74,8 +79,8 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) ConstructNodeMet
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -214,7 +219,7 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) TerraformResourc
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators.html aws_organizations_delegated_administrators} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators aws_organizations_delegated_administrators} Data Source.
 func NewDataAwsOrganizationsDelegatedAdministrators(scope constructs.Construct, id *string, config *DataAwsOrganizationsDelegatedAdministratorsConfig) DataAwsOrganizationsDelegatedAdministrators {
 	_init_.Initialize()
 
@@ -229,7 +234,7 @@ func NewDataAwsOrganizationsDelegatedAdministrators(scope constructs.Construct, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators.html aws_organizations_delegated_administrators} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators aws_organizations_delegated_administrators} Data Source.
 func NewDataAwsOrganizationsDelegatedAdministrators_Override(d DataAwsOrganizationsDelegatedAdministrators, scope constructs.Construct, id *string, config *DataAwsOrganizationsDelegatedAdministratorsConfig) {
 	_init_.Initialize()
 
@@ -240,7 +245,7 @@ func NewDataAwsOrganizationsDelegatedAdministrators_Override(d DataAwsOrganizati
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -333,12 +338,40 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) DelegatedAdminis
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -375,12 +408,54 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -489,15 +564,15 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministrators) ToTerraform() in
 // AWS Organizations.
 type DataAwsOrganizationsDelegatedAdministratorsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators.html#service_principal DataAwsOrganizationsDelegatedAdministrators#service_principal}.
-	ServicePrincipal *string `json:"servicePrincipal"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_administrators#service_principal DataAwsOrganizationsDelegatedAdministrators#service_principal}.
+	ServicePrincipal *string `json:"servicePrincipal" yaml:"servicePrincipal"`
 }
 
 type DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators interface {
@@ -514,12 +589,19 @@ type DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators interfac
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -628,8 +710,8 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -638,15 +720,25 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministr
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators {
+func NewDataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -654,12 +746,12 @@ func NewDataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators(terra
 }
 
 // Experimental.
-func NewDataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators_Override(d DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators_Override(d DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -680,7 +772,7 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministr
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -688,13 +780,49 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministr
 	)
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -731,12 +859,54 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministrators) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -758,7 +928,7 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedAdministratorsDelegatedAdministr
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services.html aws_organizations_delegated_services}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services aws_organizations_delegated_services}.
 type DataAwsOrganizationsDelegatedServices interface {
 	cdktf.TerraformDataSource
 	AccountId() *string
@@ -766,8 +936,8 @@ type DataAwsOrganizationsDelegatedServices interface {
 	AccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -784,10 +954,15 @@ type DataAwsOrganizationsDelegatedServices interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	DelegatedServices(index *string) DataAwsOrganizationsDelegatedServicesDelegatedServices
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -842,8 +1017,8 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedServices) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedServices) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedServices) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -962,7 +1137,7 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedServices) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services.html aws_organizations_delegated_services} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services aws_organizations_delegated_services} Data Source.
 func NewDataAwsOrganizationsDelegatedServices(scope constructs.Construct, id *string, config *DataAwsOrganizationsDelegatedServicesConfig) DataAwsOrganizationsDelegatedServices {
 	_init_.Initialize()
 
@@ -977,7 +1152,7 @@ func NewDataAwsOrganizationsDelegatedServices(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services.html aws_organizations_delegated_services} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services aws_organizations_delegated_services} Data Source.
 func NewDataAwsOrganizationsDelegatedServices_Override(d DataAwsOrganizationsDelegatedServices, scope constructs.Construct, id *string, config *DataAwsOrganizationsDelegatedServicesConfig) {
 	_init_.Initialize()
 
@@ -996,7 +1171,7 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedServices) SetAccountId(val *stri
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedServices) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedServices) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1081,12 +1256,40 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) DelegatedServices(inde
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1123,12 +1326,54 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1229,15 +1474,15 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedServices) ToTerraform() interfac
 // AWS Organizations.
 type DataAwsOrganizationsDelegatedServicesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services.html#account_id DataAwsOrganizationsDelegatedServices#account_id}.
-	AccountId *string `json:"accountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_delegated_services#account_id DataAwsOrganizationsDelegatedServices#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 }
 
 type DataAwsOrganizationsDelegatedServicesDelegatedServices interface {
@@ -1248,12 +1493,19 @@ type DataAwsOrganizationsDelegatedServicesDelegatedServices interface {
 	ServicePrincipal() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1302,8 +1554,8 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) Terra
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1312,15 +1564,25 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) Terra
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsOrganizationsDelegatedServicesDelegatedServices(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsOrganizationsDelegatedServicesDelegatedServices {
+func NewDataAwsOrganizationsDelegatedServicesDelegatedServices(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsOrganizationsDelegatedServicesDelegatedServices {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1328,12 +1590,12 @@ func NewDataAwsOrganizationsDelegatedServicesDelegatedServices(terraformResource
 }
 
 // Experimental.
-func NewDataAwsOrganizationsDelegatedServicesDelegatedServices_Override(d DataAwsOrganizationsDelegatedServicesDelegatedServices, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsOrganizationsDelegatedServicesDelegatedServices_Override(d DataAwsOrganizationsDelegatedServicesDelegatedServices, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsDelegatedServicesDelegatedServices",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1354,7 +1616,7 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) SetTe
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1362,13 +1624,49 @@ func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) SetTe
 	)
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1405,12 +1703,54 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetNu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1432,15 +1772,15 @@ func (d *jsiiProxy_DataAwsOrganizationsDelegatedServicesDelegatedServices) Inter
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_organization.html aws_organizations_organization}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_organization aws_organizations_organization}.
 type DataAwsOrganizationsOrganization interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	AwsServiceAccessPrincipals() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EnabledPolicyTypes() *[]*string
@@ -1462,10 +1802,15 @@ type DataAwsOrganizationsOrganization interface {
 	TerraformResourceType() *string
 	Accounts(index *string) DataAwsOrganizationsOrganizationAccounts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	NonMasterAccounts(index *string) DataAwsOrganizationsOrganizationNonMasterAccounts
 	OverrideLogicalId(newLogicalId *string)
@@ -1522,8 +1867,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganization) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganization) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOrganizationsOrganization) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1692,7 +2037,7 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganization) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organization.html aws_organizations_organization} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organization aws_organizations_organization} Data Source.
 func NewDataAwsOrganizationsOrganization(scope constructs.Construct, id *string, config *DataAwsOrganizationsOrganizationConfig) DataAwsOrganizationsOrganization {
 	_init_.Initialize()
 
@@ -1707,7 +2052,7 @@ func NewDataAwsOrganizationsOrganization(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organization.html aws_organizations_organization} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organization aws_organizations_organization} Data Source.
 func NewDataAwsOrganizationsOrganization_Override(d DataAwsOrganizationsOrganization, scope constructs.Construct, id *string, config *DataAwsOrganizationsOrganizationConfig) {
 	_init_.Initialize()
 
@@ -1718,7 +2063,7 @@ func NewDataAwsOrganizationsOrganization_Override(d DataAwsOrganizationsOrganiza
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganization) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOrganizationsOrganization) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1803,12 +2148,40 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganization) AddOverride(path *string, v
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1845,12 +2218,54 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganization) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1985,12 +2400,19 @@ type DataAwsOrganizationsOrganizationAccounts interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2069,8 +2491,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2079,15 +2501,25 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) TerraformResource()
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsOrganizationsOrganizationAccounts(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsOrganizationsOrganizationAccounts {
+func NewDataAwsOrganizationsOrganizationAccounts(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsOrganizationsOrganizationAccounts {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsOrganizationsOrganizationAccounts{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2095,12 +2527,12 @@ func NewDataAwsOrganizationsOrganizationAccounts(terraformResource cdktf.ITerraf
 }
 
 // Experimental.
-func NewDataAwsOrganizationsOrganizationAccounts_Override(d DataAwsOrganizationsOrganizationAccounts, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsOrganizationsOrganizationAccounts_Override(d DataAwsOrganizationsOrganizationAccounts, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2121,7 +2553,7 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2129,13 +2561,49 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) SetTerraformResourc
 	)
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2172,12 +2640,54 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetNumberAttribute(
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2202,13 +2712,13 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationAccounts) InterpolationForAtt
 // AWS Organizations.
 type DataAwsOrganizationsOrganizationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
 type DataAwsOrganizationsOrganizationNonMasterAccounts interface {
@@ -2222,12 +2732,19 @@ type DataAwsOrganizationsOrganizationNonMasterAccounts interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2306,8 +2823,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2316,15 +2833,25 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) TerraformR
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsOrganizationsOrganizationNonMasterAccounts(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsOrganizationsOrganizationNonMasterAccounts {
+func NewDataAwsOrganizationsOrganizationNonMasterAccounts(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsOrganizationsOrganizationNonMasterAccounts {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2332,12 +2859,12 @@ func NewDataAwsOrganizationsOrganizationNonMasterAccounts(terraformResource cdkt
 }
 
 // Experimental.
-func NewDataAwsOrganizationsOrganizationNonMasterAccounts_Override(d DataAwsOrganizationsOrganizationNonMasterAccounts, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsOrganizationsOrganizationNonMasterAccounts_Override(d DataAwsOrganizationsOrganizationNonMasterAccounts, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationNonMasterAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2358,7 +2885,7 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2366,13 +2893,49 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) SetTerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2409,12 +2972,54 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetNumberA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationNonMasterAccounts) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2443,15 +3048,22 @@ type DataAwsOrganizationsOrganizationRoots interface {
 	SetComplexComputedListIndex(val *string)
 	Id() *string
 	Name() *string
-	PolicyTypes() interface{}
+	PolicyTypes() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2500,8 +3112,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) Name() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) PolicyTypes() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) PolicyTypes() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"policyTypes",
@@ -2520,8 +3132,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2530,15 +3142,25 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsOrganizationsOrganizationRoots(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsOrganizationsOrganizationRoots {
+func NewDataAwsOrganizationsOrganizationRoots(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsOrganizationsOrganizationRoots {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsOrganizationsOrganizationRoots{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRoots",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2546,12 +3168,12 @@ func NewDataAwsOrganizationsOrganizationRoots(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewDataAwsOrganizationsOrganizationRoots_Override(d DataAwsOrganizationsOrganizationRoots, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsOrganizationsOrganizationRoots_Override(d DataAwsOrganizationsOrganizationRoots, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRoots",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2572,7 +3194,7 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2580,13 +3202,49 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRoots) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2623,12 +3281,54 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRoots) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2657,13 +3357,20 @@ type DataAwsOrganizationsOrganizationRootsPolicyTypes interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2702,8 +3409,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2722,15 +3429,25 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) Type() *str
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsOrganizationsOrganizationRootsPolicyTypes {
+func NewDataAwsOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsOrganizationsOrganizationRootsPolicyTypes {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2738,12 +3455,12 @@ func NewDataAwsOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsOrganizationsOrganizationRootsPolicyTypes_Override(d DataAwsOrganizationsOrganizationRootsPolicyTypes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsOrganizationsOrganizationRootsPolicyTypes_Override(d DataAwsOrganizationsOrganizationRootsPolicyTypes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationRootsPolicyTypes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2764,7 +3481,7 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2772,13 +3489,49 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2815,12 +3568,54 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2842,13 +3637,13 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationRootsPolicyTypes) Interpolati
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units.html aws_organizations_organizational_units}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units aws_organizations_organizational_units}.
 type DataAwsOrganizationsOrganizationalUnits interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2868,10 +3663,15 @@ type DataAwsOrganizationsOrganizationalUnits interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	Children(index *string) DataAwsOrganizationsOrganizationalUnitsChildren
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2906,8 +3706,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) ConstructNodeMetadat
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3046,7 +3846,7 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) TerraformResourceTyp
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units.html aws_organizations_organizational_units} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units aws_organizations_organizational_units} Data Source.
 func NewDataAwsOrganizationsOrganizationalUnits(scope constructs.Construct, id *string, config *DataAwsOrganizationsOrganizationalUnitsConfig) DataAwsOrganizationsOrganizationalUnits {
 	_init_.Initialize()
 
@@ -3061,7 +3861,7 @@ func NewDataAwsOrganizationsOrganizationalUnits(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units.html aws_organizations_organizational_units} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units aws_organizations_organizational_units} Data Source.
 func NewDataAwsOrganizationsOrganizationalUnits_Override(d DataAwsOrganizationsOrganizationalUnits, scope constructs.Construct, id *string, config *DataAwsOrganizationsOrganizationalUnitsConfig) {
 	_init_.Initialize()
 
@@ -3072,7 +3872,7 @@ func NewDataAwsOrganizationsOrganizationalUnits_Override(d DataAwsOrganizationsO
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3165,12 +3965,40 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) Children(index *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3207,12 +4035,54 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnits) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3319,12 +4189,19 @@ type DataAwsOrganizationsOrganizationalUnitsChildren interface {
 	Name() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -3383,8 +4260,8 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3393,15 +4270,25 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) TerraformRes
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsOrganizationsOrganizationalUnitsChildren(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsOrganizationsOrganizationalUnitsChildren {
+func NewDataAwsOrganizationsOrganizationalUnitsChildren(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsOrganizationsOrganizationalUnitsChildren {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -3409,12 +4296,12 @@ func NewDataAwsOrganizationsOrganizationalUnitsChildren(terraformResource cdktf.
 }
 
 // Experimental.
-func NewDataAwsOrganizationsOrganizationalUnitsChildren_Override(d DataAwsOrganizationsOrganizationalUnitsChildren, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsOrganizationsOrganizationalUnitsChildren_Override(d DataAwsOrganizationsOrganizationalUnitsChildren, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.DataAwsOrganizationsOrganizationalUnitsChildren",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -3435,7 +4322,7 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3443,13 +4330,49 @@ func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) SetTerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3486,12 +4409,54 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3516,25 +4481,610 @@ func (d *jsiiProxy_DataAwsOrganizationsOrganizationalUnitsChildren) Interpolatio
 // AWS Organizations.
 type DataAwsOrganizationsOrganizationalUnitsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units.html#parent_id DataAwsOrganizationsOrganizationalUnits#parent_id}.
-	ParentId *string `json:"parentId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_organizational_units#parent_id DataAwsOrganizationsOrganizationalUnits#parent_id}.
+	ParentId *string `json:"parentId" yaml:"parentId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html aws_organizations_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/organizations_resource_tags aws_organizations_resource_tags}.
+type DataAwsOrganizationsResourceTags interface {
+	cdktf.TerraformDataSource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ResourceId() *string
+	SetResourceId(val *string)
+	ResourceIdInput() *string
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetTags()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsOrganizationsResourceTags
+type jsiiProxy_DataAwsOrganizationsResourceTags struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) ResourceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) ResourceIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_resource_tags aws_organizations_resource_tags} Data Source.
+func NewDataAwsOrganizationsResourceTags(scope constructs.Construct, id *string, config *DataAwsOrganizationsResourceTagsConfig) DataAwsOrganizationsResourceTags {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsOrganizationsResourceTags{}
+
+	_jsii_.Create(
+		"hashicorp_aws.organizations.DataAwsOrganizationsResourceTags",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/organizations_resource_tags aws_organizations_resource_tags} Data Source.
+func NewDataAwsOrganizationsResourceTags_Override(d DataAwsOrganizationsResourceTags, scope constructs.Construct, id *string, config *DataAwsOrganizationsResourceTagsConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.organizations.DataAwsOrganizationsResourceTags",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) SetResourceId(val *string) {
+	_jsii_.Set(
+		j,
+		"resourceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsOrganizationsResourceTags) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsOrganizationsResourceTags_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.organizations.DataAwsOrganizationsResourceTags",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsOrganizationsResourceTags_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.organizations.DataAwsOrganizationsResourceTags",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsOrganizationsResourceTags) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Organizations.
+type DataAwsOrganizationsResourceTagsConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_resource_tags#resource_id DataAwsOrganizationsResourceTags#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/organizations_resource_tags#tags DataAwsOrganizationsResourceTags#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_account aws_organizations_account}.
 type OrganizationsAccount interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Email() *string
@@ -3564,20 +5114,25 @@ type OrganizationsAccount interface {
 	SetRoleName(val *string)
 	RoleNameInput() *string
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetIamUserAccessToBilling()
@@ -3627,8 +5182,8 @@ func (j *jsiiProxy_OrganizationsAccount) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3847,8 +5402,8 @@ func (j *jsiiProxy_OrganizationsAccount) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsAccount) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsAccount) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3857,8 +5412,8 @@ func (j *jsiiProxy_OrganizationsAccount) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsAccount) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsAccount) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3867,8 +5422,8 @@ func (j *jsiiProxy_OrganizationsAccount) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsAccount) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsAccount) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3877,8 +5432,8 @@ func (j *jsiiProxy_OrganizationsAccount) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsAccount) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsAccount) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3917,7 +5472,7 @@ func (j *jsiiProxy_OrganizationsAccount) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html aws_organizations_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_account aws_organizations_account} Resource.
 func NewOrganizationsAccount(scope constructs.Construct, id *string, config *OrganizationsAccountConfig) OrganizationsAccount {
 	_init_.Initialize()
 
@@ -3932,7 +5487,7 @@ func NewOrganizationsAccount(scope constructs.Construct, id *string, config *Org
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html aws_organizations_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_account aws_organizations_account} Resource.
 func NewOrganizationsAccount_Override(o OrganizationsAccount, scope constructs.Construct, id *string, config *OrganizationsAccountConfig) {
 	_init_.Initialize()
 
@@ -3943,7 +5498,7 @@ func NewOrganizationsAccount_Override(o OrganizationsAccount, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_OrganizationsAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_OrganizationsAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4015,7 +5570,7 @@ func (j *jsiiProxy_OrganizationsAccount) SetRoleName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OrganizationsAccount) SetTags(val interface{}) {
+func (j *jsiiProxy_OrganizationsAccount) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4023,7 +5578,7 @@ func (j *jsiiProxy_OrganizationsAccount) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OrganizationsAccount) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OrganizationsAccount) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4071,12 +5626,40 @@ func (o *jsiiProxy_OrganizationsAccount) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4113,12 +5696,54 @@ func (o *jsiiProxy_OrganizationsAccount) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4259,30 +5884,30 @@ func (o *jsiiProxy_OrganizationsAccount) ToTerraform() interface{} {
 // AWS Organizations.
 type OrganizationsAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html#email OrganizationsAccount#email}.
-	Email *string `json:"email"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html#name OrganizationsAccount#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html#iam_user_access_to_billing OrganizationsAccount#iam_user_access_to_billing}.
-	IamUserAccessToBilling *string `json:"iamUserAccessToBilling"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html#parent_id OrganizationsAccount#parent_id}.
-	ParentId *string `json:"parentId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html#role_name OrganizationsAccount#role_name}.
-	RoleName *string `json:"roleName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html#tags OrganizationsAccount#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account.html#tags_all OrganizationsAccount#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account#email OrganizationsAccount#email}.
+	Email *string `json:"email" yaml:"email"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account#name OrganizationsAccount#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account#iam_user_access_to_billing OrganizationsAccount#iam_user_access_to_billing}.
+	IamUserAccessToBilling *string `json:"iamUserAccessToBilling" yaml:"iamUserAccessToBilling"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account#parent_id OrganizationsAccount#parent_id}.
+	ParentId *string `json:"parentId" yaml:"parentId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account#role_name OrganizationsAccount#role_name}.
+	RoleName *string `json:"roleName" yaml:"roleName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account#tags OrganizationsAccount#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_account#tags_all OrganizationsAccount#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator.html aws_organizations_delegated_administrator}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator aws_organizations_delegated_administrator}.
 type OrganizationsDelegatedAdministrator interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -4291,8 +5916,8 @@ type OrganizationsDelegatedAdministrator interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DelegationEnabledDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -4317,10 +5942,15 @@ type OrganizationsDelegatedAdministrator interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4385,8 +6015,8 @@ func (j *jsiiProxy_OrganizationsDelegatedAdministrator) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsDelegatedAdministrator) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsDelegatedAdministrator) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4585,7 +6215,7 @@ func (j *jsiiProxy_OrganizationsDelegatedAdministrator) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator.html aws_organizations_delegated_administrator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator aws_organizations_delegated_administrator} Resource.
 func NewOrganizationsDelegatedAdministrator(scope constructs.Construct, id *string, config *OrganizationsDelegatedAdministratorConfig) OrganizationsDelegatedAdministrator {
 	_init_.Initialize()
 
@@ -4600,7 +6230,7 @@ func NewOrganizationsDelegatedAdministrator(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator.html aws_organizations_delegated_administrator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator aws_organizations_delegated_administrator} Resource.
 func NewOrganizationsDelegatedAdministrator_Override(o OrganizationsDelegatedAdministrator, scope constructs.Construct, id *string, config *OrganizationsDelegatedAdministratorConfig) {
 	_init_.Initialize()
 
@@ -4619,7 +6249,7 @@ func (j *jsiiProxy_OrganizationsDelegatedAdministrator) SetAccountId(val *string
 	)
 }
 
-func (j *jsiiProxy_OrganizationsDelegatedAdministrator) SetCount(val interface{}) {
+func (j *jsiiProxy_OrganizationsDelegatedAdministrator) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4699,12 +6329,40 @@ func (o *jsiiProxy_OrganizationsDelegatedAdministrator) AddOverride(path *string
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4741,12 +6399,54 @@ func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsDelegatedAdministrator) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4847,20 +6547,20 @@ func (o *jsiiProxy_OrganizationsDelegatedAdministrator) ToTerraform() interface{
 // AWS Organizations.
 type OrganizationsDelegatedAdministratorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator.html#account_id OrganizationsDelegatedAdministrator#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator.html#service_principal OrganizationsDelegatedAdministrator#service_principal}.
-	ServicePrincipal *string `json:"servicePrincipal"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator#account_id OrganizationsDelegatedAdministrator#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_delegated_administrator#service_principal OrganizationsDelegatedAdministrator#service_principal}.
+	ServicePrincipal *string `json:"servicePrincipal" yaml:"servicePrincipal"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization.html aws_organizations_organization}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization aws_organizations_organization}.
 type OrganizationsOrganization interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -4869,8 +6569,8 @@ type OrganizationsOrganization interface {
 	AwsServiceAccessPrincipalsInput() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EnabledPolicyTypes() *[]*string
@@ -4896,10 +6596,15 @@ type OrganizationsOrganization interface {
 	TerraformResourceType() *string
 	Accounts(index *string) OrganizationsOrganizationAccounts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	NonMasterAccounts(index *string) OrganizationsOrganizationNonMasterAccounts
 	OverrideLogicalId(newLogicalId *string)
@@ -4969,8 +6674,8 @@ func (j *jsiiProxy_OrganizationsOrganization) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganization) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsOrganization) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5159,7 +6864,7 @@ func (j *jsiiProxy_OrganizationsOrganization) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization.html aws_organizations_organization} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization aws_organizations_organization} Resource.
 func NewOrganizationsOrganization(scope constructs.Construct, id *string, config *OrganizationsOrganizationConfig) OrganizationsOrganization {
 	_init_.Initialize()
 
@@ -5174,7 +6879,7 @@ func NewOrganizationsOrganization(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization.html aws_organizations_organization} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization aws_organizations_organization} Resource.
 func NewOrganizationsOrganization_Override(o OrganizationsOrganization, scope constructs.Construct, id *string, config *OrganizationsOrganizationConfig) {
 	_init_.Initialize()
 
@@ -5193,7 +6898,7 @@ func (j *jsiiProxy_OrganizationsOrganization) SetAwsServiceAccessPrincipals(val 
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganization) SetCount(val interface{}) {
+func (j *jsiiProxy_OrganizationsOrganization) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5294,12 +6999,40 @@ func (o *jsiiProxy_OrganizationsOrganization) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganization) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganization) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganization) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5336,12 +7069,54 @@ func (o *jsiiProxy_OrganizationsOrganization) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganization) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganization) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganization) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganization) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5500,12 +7275,19 @@ type OrganizationsOrganizationAccounts interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -5584,8 +7366,8 @@ func (j *jsiiProxy_OrganizationsOrganizationAccounts) TerraformAttribute() *stri
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationAccounts) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_OrganizationsOrganizationAccounts) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5594,15 +7376,25 @@ func (j *jsiiProxy_OrganizationsOrganizationAccounts) TerraformResource() cdktf.
 	return returns
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationAccounts) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewOrganizationsOrganizationAccounts(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) OrganizationsOrganizationAccounts {
+func NewOrganizationsOrganizationAccounts(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) OrganizationsOrganizationAccounts {
 	_init_.Initialize()
 
 	j := jsiiProxy_OrganizationsOrganizationAccounts{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -5610,12 +7402,12 @@ func NewOrganizationsOrganizationAccounts(terraformResource cdktf.ITerraformReso
 }
 
 // Experimental.
-func NewOrganizationsOrganizationAccounts_Override(o OrganizationsOrganizationAccounts, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewOrganizationsOrganizationAccounts_Override(o OrganizationsOrganizationAccounts, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		o,
 	)
 }
@@ -5636,7 +7428,7 @@ func (j *jsiiProxy_OrganizationsOrganizationAccounts) SetTerraformAttribute(val 
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationAccounts) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_OrganizationsOrganizationAccounts) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5644,13 +7436,49 @@ func (j *jsiiProxy_OrganizationsOrganizationAccounts) SetTerraformResource(val c
 	)
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationAccounts) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5687,12 +7515,54 @@ func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationAccounts) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5717,19 +7587,19 @@ func (o *jsiiProxy_OrganizationsOrganizationAccounts) InterpolationForAttribute(
 // AWS Organizations.
 type OrganizationsOrganizationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization.html#aws_service_access_principals OrganizationsOrganization#aws_service_access_principals}.
-	AwsServiceAccessPrincipals *[]*string `json:"awsServiceAccessPrincipals"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization.html#enabled_policy_types OrganizationsOrganization#enabled_policy_types}.
-	EnabledPolicyTypes *[]*string `json:"enabledPolicyTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization.html#feature_set OrganizationsOrganization#feature_set}.
-	FeatureSet *string `json:"featureSet"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization#aws_service_access_principals OrganizationsOrganization#aws_service_access_principals}.
+	AwsServiceAccessPrincipals *[]*string `json:"awsServiceAccessPrincipals" yaml:"awsServiceAccessPrincipals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization#enabled_policy_types OrganizationsOrganization#enabled_policy_types}.
+	EnabledPolicyTypes *[]*string `json:"enabledPolicyTypes" yaml:"enabledPolicyTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organization#feature_set OrganizationsOrganization#feature_set}.
+	FeatureSet *string `json:"featureSet" yaml:"featureSet"`
 }
 
 type OrganizationsOrganizationNonMasterAccounts interface {
@@ -5743,12 +7613,19 @@ type OrganizationsOrganizationNonMasterAccounts interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -5827,8 +7704,8 @@ func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5837,15 +7714,25 @@ func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) TerraformResource
 	return returns
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewOrganizationsOrganizationNonMasterAccounts(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) OrganizationsOrganizationNonMasterAccounts {
+func NewOrganizationsOrganizationNonMasterAccounts(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) OrganizationsOrganizationNonMasterAccounts {
 	_init_.Initialize()
 
 	j := jsiiProxy_OrganizationsOrganizationNonMasterAccounts{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationNonMasterAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -5853,12 +7740,12 @@ func NewOrganizationsOrganizationNonMasterAccounts(terraformResource cdktf.ITerr
 }
 
 // Experimental.
-func NewOrganizationsOrganizationNonMasterAccounts_Override(o OrganizationsOrganizationNonMasterAccounts, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewOrganizationsOrganizationNonMasterAccounts_Override(o OrganizationsOrganizationNonMasterAccounts, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationNonMasterAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		o,
 	)
 }
@@ -5879,7 +7766,7 @@ func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5887,13 +7774,49 @@ func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) SetTerraformResou
 	)
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5930,12 +7853,54 @@ func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetNumberAttribut
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationNonMasterAccounts) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5964,15 +7929,22 @@ type OrganizationsOrganizationRoots interface {
 	SetComplexComputedListIndex(val *string)
 	Id() *string
 	Name() *string
-	PolicyTypes() interface{}
+	PolicyTypes() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6021,8 +7993,8 @@ func (j *jsiiProxy_OrganizationsOrganizationRoots) Name() *string {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationRoots) PolicyTypes() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsOrganizationRoots) PolicyTypes() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"policyTypes",
@@ -6041,8 +8013,8 @@ func (j *jsiiProxy_OrganizationsOrganizationRoots) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationRoots) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_OrganizationsOrganizationRoots) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6051,15 +8023,25 @@ func (j *jsiiProxy_OrganizationsOrganizationRoots) TerraformResource() cdktf.ITe
 	return returns
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationRoots) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewOrganizationsOrganizationRoots(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) OrganizationsOrganizationRoots {
+func NewOrganizationsOrganizationRoots(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) OrganizationsOrganizationRoots {
 	_init_.Initialize()
 
 	j := jsiiProxy_OrganizationsOrganizationRoots{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationRoots",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -6067,12 +8049,12 @@ func NewOrganizationsOrganizationRoots(terraformResource cdktf.ITerraformResourc
 }
 
 // Experimental.
-func NewOrganizationsOrganizationRoots_Override(o OrganizationsOrganizationRoots, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewOrganizationsOrganizationRoots_Override(o OrganizationsOrganizationRoots, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationRoots",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		o,
 	)
 }
@@ -6093,7 +8075,7 @@ func (j *jsiiProxy_OrganizationsOrganizationRoots) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationRoots) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_OrganizationsOrganizationRoots) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6101,13 +8083,49 @@ func (j *jsiiProxy_OrganizationsOrganizationRoots) SetTerraformResource(val cdkt
 	)
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationRoots) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (o *jsiiProxy_OrganizationsOrganizationRoots) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (o *jsiiProxy_OrganizationsOrganizationRoots) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRoots) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRoots) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6144,12 +8162,54 @@ func (o *jsiiProxy_OrganizationsOrganizationRoots) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRoots) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRoots) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganizationRoots) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRoots) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6178,13 +8238,20 @@ type OrganizationsOrganizationRootsPolicyTypes interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6223,8 +8290,8 @@ func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6243,15 +8310,25 @@ func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) Type() *string {
 	return returns
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) OrganizationsOrganizationRootsPolicyTypes {
+func NewOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) OrganizationsOrganizationRootsPolicyTypes {
 	_init_.Initialize()
 
 	j := jsiiProxy_OrganizationsOrganizationRootsPolicyTypes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationRootsPolicyTypes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -6259,12 +8336,12 @@ func NewOrganizationsOrganizationRootsPolicyTypes(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewOrganizationsOrganizationRootsPolicyTypes_Override(o OrganizationsOrganizationRootsPolicyTypes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewOrganizationsOrganizationRootsPolicyTypes_Override(o OrganizationsOrganizationRootsPolicyTypes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationRootsPolicyTypes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		o,
 	)
 }
@@ -6285,7 +8362,7 @@ func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6293,13 +8370,49 @@ func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6336,12 +8449,54 @@ func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetNumberAttribute
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6363,14 +8518,14 @@ func (o *jsiiProxy_OrganizationsOrganizationRootsPolicyTypes) InterpolationForAt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit.html aws_organizations_organizational_unit}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit aws_organizations_organizational_unit}.
 type OrganizationsOrganizationalUnit interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6388,21 +8543,26 @@ type OrganizationsOrganizationalUnit interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Accounts(index *string) OrganizationsOrganizationalUnitAccounts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6449,8 +8609,8 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6579,8 +8739,8 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6589,8 +8749,8 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6599,8 +8759,8 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6609,8 +8769,8 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6649,7 +8809,7 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit.html aws_organizations_organizational_unit} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit aws_organizations_organizational_unit} Resource.
 func NewOrganizationsOrganizationalUnit(scope constructs.Construct, id *string, config *OrganizationsOrganizationalUnitConfig) OrganizationsOrganizationalUnit {
 	_init_.Initialize()
 
@@ -6664,7 +8824,7 @@ func NewOrganizationsOrganizationalUnit(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit.html aws_organizations_organizational_unit} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit aws_organizations_organizational_unit} Resource.
 func NewOrganizationsOrganizationalUnit_Override(o OrganizationsOrganizationalUnit, scope constructs.Construct, id *string, config *OrganizationsOrganizationalUnitConfig) {
 	_init_.Initialize()
 
@@ -6675,7 +8835,7 @@ func NewOrganizationsOrganizationalUnit_Override(o OrganizationsOrganizationalUn
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetCount(val interface{}) {
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6723,7 +8883,7 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetProvider(val cdktf.Terraf
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetTags(val interface{}) {
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6731,7 +8891,7 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OrganizationsOrganizationalUnit) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6792,12 +8952,40 @@ func (o *jsiiProxy_OrganizationsOrganizationalUnit) AddOverride(path *string, va
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6834,12 +9022,54 @@ func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnit) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6963,12 +9193,19 @@ type OrganizationsOrganizationalUnitAccounts interface {
 	Name() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7037,8 +9274,8 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7047,15 +9284,25 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewOrganizationsOrganizationalUnitAccounts(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) OrganizationsOrganizationalUnitAccounts {
+func NewOrganizationsOrganizationalUnitAccounts(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) OrganizationsOrganizationalUnitAccounts {
 	_init_.Initialize()
 
 	j := jsiiProxy_OrganizationsOrganizationalUnitAccounts{}
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationalUnitAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7063,12 +9310,12 @@ func NewOrganizationsOrganizationalUnitAccounts(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewOrganizationsOrganizationalUnitAccounts_Override(o OrganizationsOrganizationalUnitAccounts, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewOrganizationsOrganizationalUnitAccounts_Override(o OrganizationsOrganizationalUnitAccounts, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.organizations.OrganizationsOrganizationalUnitAccounts",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		o,
 	)
 }
@@ -7089,7 +9336,7 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7097,13 +9344,49 @@ func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_OrganizationsOrganizationalUnitAccounts) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7140,12 +9423,54 @@ func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetNumberAttribute(t
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7170,24 +9495,24 @@ func (o *jsiiProxy_OrganizationsOrganizationalUnitAccounts) InterpolationForAttr
 // AWS Organizations.
 type OrganizationsOrganizationalUnitConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit.html#name OrganizationsOrganizationalUnit#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit.html#parent_id OrganizationsOrganizationalUnit#parent_id}.
-	ParentId *string `json:"parentId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit.html#tags OrganizationsOrganizationalUnit#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit.html#tags_all OrganizationsOrganizationalUnit#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit#name OrganizationsOrganizationalUnit#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit#parent_id OrganizationsOrganizationalUnit#parent_id}.
+	ParentId *string `json:"parentId" yaml:"parentId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit#tags OrganizationsOrganizationalUnit#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_organizational_unit#tags_all OrganizationsOrganizationalUnit#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html aws_organizations_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy aws_organizations_policy}.
 type OrganizationsPolicy interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -7196,8 +9521,8 @@ type OrganizationsPolicy interface {
 	Content() *string
 	SetContent(val *string)
 	ContentInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -7215,12 +9540,12 @@ type OrganizationsPolicy interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7228,10 +9553,15 @@ type OrganizationsPolicy interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -7300,8 +9630,8 @@ func (j *jsiiProxy_OrganizationsPolicy) ContentInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7430,8 +9760,8 @@ func (j *jsiiProxy_OrganizationsPolicy) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsPolicy) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7440,8 +9770,8 @@ func (j *jsiiProxy_OrganizationsPolicy) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsPolicy) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7450,8 +9780,8 @@ func (j *jsiiProxy_OrganizationsPolicy) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsPolicy) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7460,8 +9790,8 @@ func (j *jsiiProxy_OrganizationsPolicy) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsPolicy) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7520,7 +9850,7 @@ func (j *jsiiProxy_OrganizationsPolicy) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html aws_organizations_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy aws_organizations_policy} Resource.
 func NewOrganizationsPolicy(scope constructs.Construct, id *string, config *OrganizationsPolicyConfig) OrganizationsPolicy {
 	_init_.Initialize()
 
@@ -7535,7 +9865,7 @@ func NewOrganizationsPolicy(scope constructs.Construct, id *string, config *Orga
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html aws_organizations_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy aws_organizations_policy} Resource.
 func NewOrganizationsPolicy_Override(o OrganizationsPolicy, scope constructs.Construct, id *string, config *OrganizationsPolicyConfig) {
 	_init_.Initialize()
 
@@ -7554,7 +9884,7 @@ func (j *jsiiProxy_OrganizationsPolicy) SetContent(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_OrganizationsPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7602,7 +9932,7 @@ func (j *jsiiProxy_OrganizationsPolicy) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) SetTags(val interface{}) {
+func (j *jsiiProxy_OrganizationsPolicy) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7610,7 +9940,7 @@ func (j *jsiiProxy_OrganizationsPolicy) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OrganizationsPolicy) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OrganizationsPolicy) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7666,12 +9996,40 @@ func (o *jsiiProxy_OrganizationsPolicy) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7708,12 +10066,54 @@ func (o *jsiiProxy_OrganizationsPolicy) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7843,13 +10243,13 @@ func (o *jsiiProxy_OrganizationsPolicy) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment.html aws_organizations_policy_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment aws_organizations_policy_attachment}.
 type OrganizationsPolicyAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7871,10 +10271,15 @@ type OrganizationsPolicyAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7909,8 +10314,8 @@ func (j *jsiiProxy_OrganizationsPolicyAttachment) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_OrganizationsPolicyAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OrganizationsPolicyAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8069,7 +10474,7 @@ func (j *jsiiProxy_OrganizationsPolicyAttachment) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment.html aws_organizations_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment aws_organizations_policy_attachment} Resource.
 func NewOrganizationsPolicyAttachment(scope constructs.Construct, id *string, config *OrganizationsPolicyAttachmentConfig) OrganizationsPolicyAttachment {
 	_init_.Initialize()
 
@@ -8084,7 +10489,7 @@ func NewOrganizationsPolicyAttachment(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment.html aws_organizations_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment aws_organizations_policy_attachment} Resource.
 func NewOrganizationsPolicyAttachment_Override(o OrganizationsPolicyAttachment, scope constructs.Construct, id *string, config *OrganizationsPolicyAttachmentConfig) {
 	_init_.Initialize()
 
@@ -8095,7 +10500,7 @@ func NewOrganizationsPolicyAttachment_Override(o OrganizationsPolicyAttachment, 
 	)
 }
 
-func (j *jsiiProxy_OrganizationsPolicyAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_OrganizationsPolicyAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8183,12 +10588,40 @@ func (o *jsiiProxy_OrganizationsPolicyAttachment) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsPolicyAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsPolicyAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsPolicyAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8225,12 +10658,54 @@ func (o *jsiiProxy_OrganizationsPolicyAttachment) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (o *jsiiProxy_OrganizationsPolicyAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsPolicyAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OrganizationsPolicyAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OrganizationsPolicyAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8331,39 +10806,39 @@ func (o *jsiiProxy_OrganizationsPolicyAttachment) ToTerraform() interface{} {
 // AWS Organizations.
 type OrganizationsPolicyAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment.html#policy_id OrganizationsPolicyAttachment#policy_id}.
-	PolicyId *string `json:"policyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment.html#target_id OrganizationsPolicyAttachment#target_id}.
-	TargetId *string `json:"targetId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment#policy_id OrganizationsPolicyAttachment#policy_id}.
+	PolicyId *string `json:"policyId" yaml:"policyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy_attachment#target_id OrganizationsPolicyAttachment#target_id}.
+	TargetId *string `json:"targetId" yaml:"targetId"`
 }
 
 // AWS Organizations.
 type OrganizationsPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html#content OrganizationsPolicy#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html#name OrganizationsPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html#description OrganizationsPolicy#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html#tags OrganizationsPolicy#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html#tags_all OrganizationsPolicy#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy.html#type OrganizationsPolicy#type}.
-	Type *string `json:"type"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy#content OrganizationsPolicy#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy#name OrganizationsPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy#description OrganizationsPolicy#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy#tags OrganizationsPolicy#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy#tags_all OrganizationsPolicy#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/organizations_policy#type OrganizationsPolicy#type}.
+	Type *string `json:"type" yaml:"type"`
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/batch/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html aws_batch_compute_environment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment aws_batch_compute_environment}.
 type BatchComputeEnvironment interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -23,8 +23,8 @@ type BatchComputeEnvironment interface {
 	ComputeResources() BatchComputeEnvironmentComputeResourcesOutputReference
 	ComputeResourcesInput() *BatchComputeEnvironmentComputeResources
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EcsClusterArn() *string
@@ -45,12 +45,12 @@ type BatchComputeEnvironment interface {
 	StateInput() *string
 	Status() *string
 	StatusReason() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -58,10 +58,15 @@ type BatchComputeEnvironment interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutComputeResources(value *BatchComputeEnvironmentComputeResources)
@@ -174,8 +179,8 @@ func (j *jsiiProxy_BatchComputeEnvironment) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchComputeEnvironment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -334,8 +339,8 @@ func (j *jsiiProxy_BatchComputeEnvironment) StatusReason() *string {
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchComputeEnvironment) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -344,8 +349,8 @@ func (j *jsiiProxy_BatchComputeEnvironment) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchComputeEnvironment) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -354,8 +359,8 @@ func (j *jsiiProxy_BatchComputeEnvironment) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchComputeEnvironment) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -364,8 +369,8 @@ func (j *jsiiProxy_BatchComputeEnvironment) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchComputeEnvironment) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -424,7 +429,7 @@ func (j *jsiiProxy_BatchComputeEnvironment) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html aws_batch_compute_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment aws_batch_compute_environment} Resource.
 func NewBatchComputeEnvironment(scope constructs.Construct, id *string, config *BatchComputeEnvironmentConfig) BatchComputeEnvironment {
 	_init_.Initialize()
 
@@ -439,7 +444,7 @@ func NewBatchComputeEnvironment(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html aws_batch_compute_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment aws_batch_compute_environment} Resource.
 func NewBatchComputeEnvironment_Override(b BatchComputeEnvironment, scope constructs.Construct, id *string, config *BatchComputeEnvironmentConfig) {
 	_init_.Initialize()
 
@@ -466,7 +471,7 @@ func (j *jsiiProxy_BatchComputeEnvironment) SetComputeEnvironmentNamePrefix(val 
 	)
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) SetCount(val interface{}) {
+func (j *jsiiProxy_BatchComputeEnvironment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -514,7 +519,7 @@ func (j *jsiiProxy_BatchComputeEnvironment) SetState(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) SetTags(val interface{}) {
+func (j *jsiiProxy_BatchComputeEnvironment) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -522,7 +527,7 @@ func (j *jsiiProxy_BatchComputeEnvironment) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_BatchComputeEnvironment) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_BatchComputeEnvironment) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -578,12 +583,40 @@ func (b *jsiiProxy_BatchComputeEnvironment) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchComputeEnvironment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchComputeEnvironment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -620,12 +653,54 @@ func (b *jsiiProxy_BatchComputeEnvironment) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchComputeEnvironment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchComputeEnvironment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -788,49 +863,49 @@ func (b *jsiiProxy_BatchComputeEnvironment) ToTerraform() interface{} {
 }
 
 type BatchComputeEnvironmentComputeResources struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#max_vcpus BatchComputeEnvironment#max_vcpus}.
-	MaxVcpus *float64 `json:"maxVcpus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#security_group_ids BatchComputeEnvironment#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#subnets BatchComputeEnvironment#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#type BatchComputeEnvironment#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#allocation_strategy BatchComputeEnvironment#allocation_strategy}.
-	AllocationStrategy *string `json:"allocationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#bid_percentage BatchComputeEnvironment#bid_percentage}.
-	BidPercentage *float64 `json:"bidPercentage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#desired_vcpus BatchComputeEnvironment#desired_vcpus}.
-	DesiredVcpus *float64 `json:"desiredVcpus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#max_vcpus BatchComputeEnvironment#max_vcpus}.
+	MaxVcpus *float64 `json:"maxVcpus" yaml:"maxVcpus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#security_group_ids BatchComputeEnvironment#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#subnets BatchComputeEnvironment#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#type BatchComputeEnvironment#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#allocation_strategy BatchComputeEnvironment#allocation_strategy}.
+	AllocationStrategy *string `json:"allocationStrategy" yaml:"allocationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#bid_percentage BatchComputeEnvironment#bid_percentage}.
+	BidPercentage *float64 `json:"bidPercentage" yaml:"bidPercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#desired_vcpus BatchComputeEnvironment#desired_vcpus}.
+	DesiredVcpus *float64 `json:"desiredVcpus" yaml:"desiredVcpus"`
 	// ec2_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#ec2_configuration BatchComputeEnvironment#ec2_configuration}
-	Ec2Configuration *BatchComputeEnvironmentComputeResourcesEc2Configuration `json:"ec2Configuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#ec2_key_pair BatchComputeEnvironment#ec2_key_pair}.
-	Ec2KeyPair *string `json:"ec2KeyPair"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#image_id BatchComputeEnvironment#image_id}.
-	ImageId *string `json:"imageId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#instance_role BatchComputeEnvironment#instance_role}.
-	InstanceRole *string `json:"instanceRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#instance_type BatchComputeEnvironment#instance_type}.
-	InstanceType *[]*string `json:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#ec2_configuration BatchComputeEnvironment#ec2_configuration}
+	Ec2Configuration *BatchComputeEnvironmentComputeResourcesEc2Configuration `json:"ec2Configuration" yaml:"ec2Configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#ec2_key_pair BatchComputeEnvironment#ec2_key_pair}.
+	Ec2KeyPair *string `json:"ec2KeyPair" yaml:"ec2KeyPair"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#image_id BatchComputeEnvironment#image_id}.
+	ImageId *string `json:"imageId" yaml:"imageId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#instance_role BatchComputeEnvironment#instance_role}.
+	InstanceRole *string `json:"instanceRole" yaml:"instanceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#instance_type BatchComputeEnvironment#instance_type}.
+	InstanceType *[]*string `json:"instanceType" yaml:"instanceType"`
 	// launch_template block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#launch_template BatchComputeEnvironment#launch_template}
-	LaunchTemplate *BatchComputeEnvironmentComputeResourcesLaunchTemplate `json:"launchTemplate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#min_vcpus BatchComputeEnvironment#min_vcpus}.
-	MinVcpus *float64 `json:"minVcpus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#spot_iam_fleet_role BatchComputeEnvironment#spot_iam_fleet_role}.
-	SpotIamFleetRole *string `json:"spotIamFleetRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#tags BatchComputeEnvironment#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#launch_template BatchComputeEnvironment#launch_template}
+	LaunchTemplate *BatchComputeEnvironmentComputeResourcesLaunchTemplate `json:"launchTemplate" yaml:"launchTemplate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#min_vcpus BatchComputeEnvironment#min_vcpus}.
+	MinVcpus *float64 `json:"minVcpus" yaml:"minVcpus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#spot_iam_fleet_role BatchComputeEnvironment#spot_iam_fleet_role}.
+	SpotIamFleetRole *string `json:"spotIamFleetRole" yaml:"spotIamFleetRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#tags BatchComputeEnvironment#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type BatchComputeEnvironmentComputeResourcesEc2Configuration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#image_id_override BatchComputeEnvironment#image_id_override}.
-	ImageIdOverride *string `json:"imageIdOverride"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#image_type BatchComputeEnvironment#image_type}.
-	ImageType *string `json:"imageType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#image_id_override BatchComputeEnvironment#image_id_override}.
+	ImageIdOverride *string `json:"imageIdOverride" yaml:"imageIdOverride"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#image_type BatchComputeEnvironment#image_type}.
+	ImageType *string `json:"imageType" yaml:"imageType"`
 }
 
 type BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference interface {
@@ -847,12 +922,17 @@ type BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference inte
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetImageIdOverride()
@@ -934,8 +1014,8 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -944,7 +1024,7 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 	return returns
 }
 
-func NewBatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference {
+func NewBatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference{}
@@ -958,7 +1038,7 @@ func NewBatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference(t
 	return &j
 }
 
-func NewBatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference_Override(b BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference_Override(b BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1008,7 +1088,7 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 	)
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1017,12 +1097,40 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 }
 
 // Experimental.
-func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1059,12 +1167,54 @@ func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1117,12 +1267,12 @@ func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesEc2ConfigurationOutput
 }
 
 type BatchComputeEnvironmentComputeResourcesLaunchTemplate struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#launch_template_id BatchComputeEnvironment#launch_template_id}.
-	LaunchTemplateId *string `json:"launchTemplateId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#launch_template_name BatchComputeEnvironment#launch_template_name}.
-	LaunchTemplateName *string `json:"launchTemplateName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#version BatchComputeEnvironment#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#launch_template_id BatchComputeEnvironment#launch_template_id}.
+	LaunchTemplateId *string `json:"launchTemplateId" yaml:"launchTemplateId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#launch_template_name BatchComputeEnvironment#launch_template_name}.
+	LaunchTemplateName *string `json:"launchTemplateName" yaml:"launchTemplateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#version BatchComputeEnvironment#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference interface {
@@ -1139,15 +1289,20 @@ type BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference interf
 	LaunchTemplateNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLaunchTemplateId()
@@ -1230,8 +1385,8 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputRe
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1260,7 +1415,7 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputRe
 	return returns
 }
 
-func NewBatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference {
+func NewBatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference{}
@@ -1274,7 +1429,7 @@ func NewBatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference(ter
 	return &j
 }
 
-func NewBatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference_Override(b BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference_Override(b BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1324,7 +1479,7 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputRe
 	)
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1341,12 +1496,40 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputRe
 }
 
 // Experimental.
-func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1383,12 +1566,54 @@ func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputRe
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesLaunchTemplateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1494,20 +1719,25 @@ type BatchComputeEnvironmentComputeResourcesOutputReference interface {
 	Subnets() *[]*string
 	SetSubnets(val *[]*string)
 	SubnetsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutEc2Configuration(value *BatchComputeEnvironmentComputeResourcesEc2Configuration)
@@ -1831,8 +2061,8 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Subne
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1841,8 +2071,8 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Tags(
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1861,8 +2091,8 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1891,7 +2121,7 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) TypeI
 	return returns
 }
 
-func NewBatchComputeEnvironmentComputeResourcesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BatchComputeEnvironmentComputeResourcesOutputReference {
+func NewBatchComputeEnvironmentComputeResourcesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BatchComputeEnvironmentComputeResourcesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference{}
@@ -1905,7 +2135,7 @@ func NewBatchComputeEnvironmentComputeResourcesOutputReference(terraformResource
 	return &j
 }
 
-func NewBatchComputeEnvironmentComputeResourcesOutputReference_Override(b BatchComputeEnvironmentComputeResourcesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBatchComputeEnvironmentComputeResourcesOutputReference_Override(b BatchComputeEnvironmentComputeResourcesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2027,7 +2257,7 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetSu
 	)
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2043,7 +2273,7 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2060,12 +2290,40 @@ func (j *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) SetTy
 }
 
 // Experimental.
-func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2102,12 +2360,54 @@ func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetNu
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2258,34 +2558,34 @@ func (b *jsiiProxy_BatchComputeEnvironmentComputeResourcesOutputReference) Reset
 // AWS Batch.
 type BatchComputeEnvironmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#type BatchComputeEnvironment#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#compute_environment_name BatchComputeEnvironment#compute_environment_name}.
-	ComputeEnvironmentName *string `json:"computeEnvironmentName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#compute_environment_name_prefix BatchComputeEnvironment#compute_environment_name_prefix}.
-	ComputeEnvironmentNamePrefix *string `json:"computeEnvironmentNamePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#type BatchComputeEnvironment#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#compute_environment_name BatchComputeEnvironment#compute_environment_name}.
+	ComputeEnvironmentName *string `json:"computeEnvironmentName" yaml:"computeEnvironmentName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#compute_environment_name_prefix BatchComputeEnvironment#compute_environment_name_prefix}.
+	ComputeEnvironmentNamePrefix *string `json:"computeEnvironmentNamePrefix" yaml:"computeEnvironmentNamePrefix"`
 	// compute_resources block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#compute_resources BatchComputeEnvironment#compute_resources}
-	ComputeResources *BatchComputeEnvironmentComputeResources `json:"computeResources"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#service_role BatchComputeEnvironment#service_role}.
-	ServiceRole *string `json:"serviceRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#state BatchComputeEnvironment#state}.
-	State *string `json:"state"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#tags BatchComputeEnvironment#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment.html#tags_all BatchComputeEnvironment#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#compute_resources BatchComputeEnvironment#compute_resources}
+	ComputeResources *BatchComputeEnvironmentComputeResources `json:"computeResources" yaml:"computeResources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#service_role BatchComputeEnvironment#service_role}.
+	ServiceRole *string `json:"serviceRole" yaml:"serviceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#state BatchComputeEnvironment#state}.
+	State *string `json:"state" yaml:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#tags BatchComputeEnvironment#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_compute_environment#tags_all BatchComputeEnvironment#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html aws_batch_job_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition aws_batch_job_definition}.
 type BatchJobDefinition interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2294,8 +2594,8 @@ type BatchJobDefinition interface {
 	ContainerProperties() *string
 	SetContainerProperties(val *string)
 	ContainerPropertiesInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2307,9 +2607,9 @@ type BatchJobDefinition interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	PlatformCapabilities() *[]*string
 	SetPlatformCapabilities(val *[]*string)
 	PlatformCapabilitiesInput() *[]*string
@@ -2322,12 +2622,12 @@ type BatchJobDefinition interface {
 	RetryStrategy() BatchJobDefinitionRetryStrategyOutputReference
 	RetryStrategyInput() *BatchJobDefinitionRetryStrategy
 	Revision() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2337,10 +2637,15 @@ type BatchJobDefinition interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutRetryStrategy(value *BatchJobDefinitionRetryStrategy)
@@ -2415,8 +2720,8 @@ func (j *jsiiProxy_BatchJobDefinition) ContainerPropertiesInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2505,8 +2810,8 @@ func (j *jsiiProxy_BatchJobDefinition) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinition) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobDefinition) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -2515,8 +2820,8 @@ func (j *jsiiProxy_BatchJobDefinition) Parameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinition) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobDefinition) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -2615,8 +2920,8 @@ func (j *jsiiProxy_BatchJobDefinition) Revision() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinition) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobDefinition) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2625,8 +2930,8 @@ func (j *jsiiProxy_BatchJobDefinition) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinition) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobDefinition) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2635,8 +2940,8 @@ func (j *jsiiProxy_BatchJobDefinition) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinition) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobDefinition) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2645,8 +2950,8 @@ func (j *jsiiProxy_BatchJobDefinition) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinition) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobDefinition) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2725,7 +3030,7 @@ func (j *jsiiProxy_BatchJobDefinition) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html aws_batch_job_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition aws_batch_job_definition} Resource.
 func NewBatchJobDefinition(scope constructs.Construct, id *string, config *BatchJobDefinitionConfig) BatchJobDefinition {
 	_init_.Initialize()
 
@@ -2740,7 +3045,7 @@ func NewBatchJobDefinition(scope constructs.Construct, id *string, config *Batch
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html aws_batch_job_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition aws_batch_job_definition} Resource.
 func NewBatchJobDefinition_Override(b BatchJobDefinition, scope constructs.Construct, id *string, config *BatchJobDefinitionConfig) {
 	_init_.Initialize()
 
@@ -2759,7 +3064,7 @@ func (j *jsiiProxy_BatchJobDefinition) SetContainerProperties(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BatchJobDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_BatchJobDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2791,7 +3096,7 @@ func (j *jsiiProxy_BatchJobDefinition) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BatchJobDefinition) SetParameters(val interface{}) {
+func (j *jsiiProxy_BatchJobDefinition) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -2823,7 +3128,7 @@ func (j *jsiiProxy_BatchJobDefinition) SetProvider(val cdktf.TerraformProvider) 
 	)
 }
 
-func (j *jsiiProxy_BatchJobDefinition) SetTags(val interface{}) {
+func (j *jsiiProxy_BatchJobDefinition) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2831,7 +3136,7 @@ func (j *jsiiProxy_BatchJobDefinition) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_BatchJobDefinition) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_BatchJobDefinition) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2887,12 +3192,40 @@ func (b *jsiiProxy_BatchJobDefinition) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchJobDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchJobDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2929,12 +3262,54 @@ func (b *jsiiProxy_BatchJobDefinition) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchJobDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchJobDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3115,57 +3490,57 @@ func (b *jsiiProxy_BatchJobDefinition) ToTerraform() interface{} {
 // AWS Batch.
 type BatchJobDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#name BatchJobDefinition#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#type BatchJobDefinition#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#container_properties BatchJobDefinition#container_properties}.
-	ContainerProperties *string `json:"containerProperties"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#parameters BatchJobDefinition#parameters}.
-	Parameters interface{} `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#platform_capabilities BatchJobDefinition#platform_capabilities}.
-	PlatformCapabilities *[]*string `json:"platformCapabilities"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#propagate_tags BatchJobDefinition#propagate_tags}.
-	PropagateTags interface{} `json:"propagateTags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#name BatchJobDefinition#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#type BatchJobDefinition#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#container_properties BatchJobDefinition#container_properties}.
+	ContainerProperties *string `json:"containerProperties" yaml:"containerProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#parameters BatchJobDefinition#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#platform_capabilities BatchJobDefinition#platform_capabilities}.
+	PlatformCapabilities *[]*string `json:"platformCapabilities" yaml:"platformCapabilities"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#propagate_tags BatchJobDefinition#propagate_tags}.
+	PropagateTags interface{} `json:"propagateTags" yaml:"propagateTags"`
 	// retry_strategy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#retry_strategy BatchJobDefinition#retry_strategy}
-	RetryStrategy *BatchJobDefinitionRetryStrategy `json:"retryStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#tags BatchJobDefinition#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#tags_all BatchJobDefinition#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#retry_strategy BatchJobDefinition#retry_strategy}
+	RetryStrategy *BatchJobDefinitionRetryStrategy `json:"retryStrategy" yaml:"retryStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#tags BatchJobDefinition#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#tags_all BatchJobDefinition#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeout block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#timeout BatchJobDefinition#timeout}
-	Timeout *BatchJobDefinitionTimeout `json:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#timeout BatchJobDefinition#timeout}
+	Timeout *BatchJobDefinitionTimeout `json:"timeout" yaml:"timeout"`
 }
 
 type BatchJobDefinitionRetryStrategy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#attempts BatchJobDefinition#attempts}.
-	Attempts *float64 `json:"attempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#attempts BatchJobDefinition#attempts}.
+	Attempts *float64 `json:"attempts" yaml:"attempts"`
 	// evaluate_on_exit block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#evaluate_on_exit BatchJobDefinition#evaluate_on_exit}
-	EvaluateOnExit *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit `json:"evaluateOnExit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#evaluate_on_exit BatchJobDefinition#evaluate_on_exit}
+	EvaluateOnExit interface{} `json:"evaluateOnExit" yaml:"evaluateOnExit"`
 }
 
 type BatchJobDefinitionRetryStrategyEvaluateOnExit struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#action BatchJobDefinition#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#on_exit_code BatchJobDefinition#on_exit_code}.
-	OnExitCode *string `json:"onExitCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#on_reason BatchJobDefinition#on_reason}.
-	OnReason *string `json:"onReason"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#on_status_reason BatchJobDefinition#on_status_reason}.
-	OnStatusReason *string `json:"onStatusReason"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#action BatchJobDefinition#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#on_exit_code BatchJobDefinition#on_exit_code}.
+	OnExitCode *string `json:"onExitCode" yaml:"onExitCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#on_reason BatchJobDefinition#on_reason}.
+	OnReason *string `json:"onReason" yaml:"onReason"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#on_status_reason BatchJobDefinition#on_status_reason}.
+	OnStatusReason *string `json:"onStatusReason" yaml:"onStatusReason"`
 }
 
 type BatchJobDefinitionRetryStrategyOutputReference interface {
@@ -3173,21 +3548,26 @@ type BatchJobDefinitionRetryStrategyOutputReference interface {
 	Attempts() *float64
 	SetAttempts(val *float64)
 	AttemptsInput() *float64
-	EvaluateOnExit() *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit
-	SetEvaluateOnExit(val *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit)
-	EvaluateOnExitInput() *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit
+	EvaluateOnExit() interface{}
+	SetEvaluateOnExit(val interface{})
+	EvaluateOnExitInput() interface{}
 	InternalValue() *BatchJobDefinitionRetryStrategy
 	SetInternalValue(val *BatchJobDefinitionRetryStrategy)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAttempts()
@@ -3219,8 +3599,8 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) AttemptsInput
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) EvaluateOnExit() *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit {
-	var returns *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit
+func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) EvaluateOnExit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"evaluateOnExit",
@@ -3229,8 +3609,8 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) EvaluateOnExi
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) EvaluateOnExitInput() *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit {
-	var returns *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit
+func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) EvaluateOnExitInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"evaluateOnExitInput",
@@ -3269,8 +3649,8 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3279,7 +3659,7 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) TerraformReso
 	return returns
 }
 
-func NewBatchJobDefinitionRetryStrategyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BatchJobDefinitionRetryStrategyOutputReference {
+func NewBatchJobDefinitionRetryStrategyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BatchJobDefinitionRetryStrategyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference{}
@@ -3293,7 +3673,7 @@ func NewBatchJobDefinitionRetryStrategyOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewBatchJobDefinitionRetryStrategyOutputReference_Override(b BatchJobDefinitionRetryStrategyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBatchJobDefinitionRetryStrategyOutputReference_Override(b BatchJobDefinitionRetryStrategyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3311,7 +3691,7 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetAttempts(v
 	)
 }
 
-func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetEvaluateOnExit(val *[]*BatchJobDefinitionRetryStrategyEvaluateOnExit) {
+func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetEvaluateOnExit(val interface{}) {
 	_jsii_.Set(
 		j,
 		"evaluateOnExit",
@@ -3343,7 +3723,7 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3352,12 +3732,40 @@ func (j *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3394,12 +3802,54 @@ func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3452,8 +3902,8 @@ func (b *jsiiProxy_BatchJobDefinitionRetryStrategyOutputReference) ResetEvaluate
 }
 
 type BatchJobDefinitionTimeout struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition.html#attempt_duration_seconds BatchJobDefinition#attempt_duration_seconds}.
-	AttemptDurationSeconds *float64 `json:"attemptDurationSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_definition#attempt_duration_seconds BatchJobDefinition#attempt_duration_seconds}.
+	AttemptDurationSeconds *float64 `json:"attemptDurationSeconds" yaml:"attemptDurationSeconds"`
 }
 
 type BatchJobDefinitionTimeoutOutputReference interface {
@@ -3467,12 +3917,17 @@ type BatchJobDefinitionTimeoutOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAttemptDurationSeconds()
@@ -3533,8 +3988,8 @@ func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3543,7 +3998,7 @@ func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) TerraformResource()
 	return returns
 }
 
-func NewBatchJobDefinitionTimeoutOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BatchJobDefinitionTimeoutOutputReference {
+func NewBatchJobDefinitionTimeoutOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BatchJobDefinitionTimeoutOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BatchJobDefinitionTimeoutOutputReference{}
@@ -3557,7 +4012,7 @@ func NewBatchJobDefinitionTimeoutOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewBatchJobDefinitionTimeoutOutputReference_Override(b BatchJobDefinitionTimeoutOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBatchJobDefinitionTimeoutOutputReference_Override(b BatchJobDefinitionTimeoutOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3599,7 +4054,7 @@ func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3608,12 +4063,40 @@ func (j *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) SetTerraformResourc
 }
 
 // Experimental.
-func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3650,12 +4133,54 @@ func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3699,7 +4224,7 @@ func (b *jsiiProxy_BatchJobDefinitionTimeoutOutputReference) ResetAttemptDuratio
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html aws_batch_job_queue}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue aws_batch_job_queue}.
 type BatchJobQueue interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3708,8 +4233,8 @@ type BatchJobQueue interface {
 	SetComputeEnvironments(val *[]*string)
 	ComputeEnvironmentsInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3727,26 +4252,35 @@ type BatchJobQueue interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
+	SchedulingPolicyArn() *string
+	SetSchedulingPolicyArn(val *string)
+	SchedulingPolicyArnInput() *string
 	State() *string
 	SetState(val *string)
 	StateInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
+	ResetSchedulingPolicyArn()
 	ResetTags()
 	ResetTagsAll()
 	SynthesizeAttributes() *map[string]interface{}
@@ -3810,8 +4344,8 @@ func (j *jsiiProxy_BatchJobQueue) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobQueue) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobQueue) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3940,6 +4474,26 @@ func (j *jsiiProxy_BatchJobQueue) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_BatchJobQueue) SchedulingPolicyArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"schedulingPolicyArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchJobQueue) SchedulingPolicyArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"schedulingPolicyArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchJobQueue) State() *string {
 	var returns *string
 	_jsii_.Get(
@@ -3960,8 +4514,8 @@ func (j *jsiiProxy_BatchJobQueue) StateInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobQueue) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobQueue) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3970,8 +4524,8 @@ func (j *jsiiProxy_BatchJobQueue) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobQueue) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobQueue) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3980,8 +4534,8 @@ func (j *jsiiProxy_BatchJobQueue) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobQueue) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobQueue) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3990,8 +4544,8 @@ func (j *jsiiProxy_BatchJobQueue) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BatchJobQueue) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BatchJobQueue) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4030,7 +4584,7 @@ func (j *jsiiProxy_BatchJobQueue) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html aws_batch_job_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue aws_batch_job_queue} Resource.
 func NewBatchJobQueue(scope constructs.Construct, id *string, config *BatchJobQueueConfig) BatchJobQueue {
 	_init_.Initialize()
 
@@ -4045,7 +4599,7 @@ func NewBatchJobQueue(scope constructs.Construct, id *string, config *BatchJobQu
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html aws_batch_job_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue aws_batch_job_queue} Resource.
 func NewBatchJobQueue_Override(b BatchJobQueue, scope constructs.Construct, id *string, config *BatchJobQueueConfig) {
 	_init_.Initialize()
 
@@ -4064,7 +4618,7 @@ func (j *jsiiProxy_BatchJobQueue) SetComputeEnvironments(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_BatchJobQueue) SetCount(val interface{}) {
+func (j *jsiiProxy_BatchJobQueue) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4112,6 +4666,14 @@ func (j *jsiiProxy_BatchJobQueue) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
+func (j *jsiiProxy_BatchJobQueue) SetSchedulingPolicyArn(val *string) {
+	_jsii_.Set(
+		j,
+		"schedulingPolicyArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BatchJobQueue) SetState(val *string) {
 	_jsii_.Set(
 		j,
@@ -4120,7 +4682,7 @@ func (j *jsiiProxy_BatchJobQueue) SetState(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BatchJobQueue) SetTags(val interface{}) {
+func (j *jsiiProxy_BatchJobQueue) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4128,7 +4690,7 @@ func (j *jsiiProxy_BatchJobQueue) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_BatchJobQueue) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_BatchJobQueue) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4176,12 +4738,40 @@ func (b *jsiiProxy_BatchJobQueue) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchJobQueue) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchJobQueue) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobQueue) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4218,12 +4808,54 @@ func (b *jsiiProxy_BatchJobQueue) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (b *jsiiProxy_BatchJobQueue) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobQueue) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BatchJobQueue) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchJobQueue) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4261,6 +4893,14 @@ func (b *jsiiProxy_BatchJobQueue) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchJobQueue) ResetSchedulingPolicyArn() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetSchedulingPolicyArn",
 		nil, // no parameters
 	)
 }
@@ -4340,28 +4980,1128 @@ func (b *jsiiProxy_BatchJobQueue) ToTerraform() interface{} {
 // AWS Batch.
 type BatchJobQueueConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html#compute_environments BatchJobQueue#compute_environments}.
-	ComputeEnvironments *[]*string `json:"computeEnvironments"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html#name BatchJobQueue#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html#priority BatchJobQueue#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html#state BatchJobQueue#state}.
-	State *string `json:"state"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html#tags BatchJobQueue#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue.html#tags_all BatchJobQueue#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue#compute_environments BatchJobQueue#compute_environments}.
+	ComputeEnvironments *[]*string `json:"computeEnvironments" yaml:"computeEnvironments"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue#name BatchJobQueue#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue#priority BatchJobQueue#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue#state BatchJobQueue#state}.
+	State *string `json:"state" yaml:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue#scheduling_policy_arn BatchJobQueue#scheduling_policy_arn}.
+	SchedulingPolicyArn *string `json:"schedulingPolicyArn" yaml:"schedulingPolicyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue#tags BatchJobQueue#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_job_queue#tags_all BatchJobQueue#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment.html aws_batch_compute_environment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy aws_batch_scheduling_policy}.
+type BatchSchedulingPolicy interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	FairSharePolicy() BatchSchedulingPolicyFairSharePolicyOutputReference
+	FairSharePolicyInput() *BatchSchedulingPolicyFairSharePolicy
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutFairSharePolicy(value *BatchSchedulingPolicyFairSharePolicy)
+	ResetFairSharePolicy()
+	ResetOverrideLogicalId()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for BatchSchedulingPolicy
+type jsiiProxy_BatchSchedulingPolicy struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) FairSharePolicy() BatchSchedulingPolicyFairSharePolicyOutputReference {
+	var returns BatchSchedulingPolicyFairSharePolicyOutputReference
+	_jsii_.Get(
+		j,
+		"fairSharePolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) FairSharePolicyInput() *BatchSchedulingPolicyFairSharePolicy {
+	var returns *BatchSchedulingPolicyFairSharePolicy
+	_jsii_.Get(
+		j,
+		"fairSharePolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy aws_batch_scheduling_policy} Resource.
+func NewBatchSchedulingPolicy(scope constructs.Construct, id *string, config *BatchSchedulingPolicyConfig) BatchSchedulingPolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_BatchSchedulingPolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.BatchSchedulingPolicy",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy aws_batch_scheduling_policy} Resource.
+func NewBatchSchedulingPolicy_Override(b BatchSchedulingPolicy, scope constructs.Construct, id *string, config *BatchSchedulingPolicyConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.BatchSchedulingPolicy",
+		[]interface{}{scope, id, config},
+		b,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicy) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func BatchSchedulingPolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.batch.BatchSchedulingPolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func BatchSchedulingPolicy_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.batch.BatchSchedulingPolicy",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		b,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		b,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		b,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicy) PutFairSharePolicy(value *BatchSchedulingPolicyFairSharePolicy) {
+	_jsii_.InvokeVoid(
+		b,
+		"putFairSharePolicy",
+		[]interface{}{value},
+	)
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicy) ResetFairSharePolicy() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetFairSharePolicy",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicy) ResetTags() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicy) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicy) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		b,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (b *jsiiProxy_BatchSchedulingPolicy) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicy) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		b,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Batch.
+type BatchSchedulingPolicyConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#name BatchSchedulingPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// fair_share_policy block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#fair_share_policy BatchSchedulingPolicy#fair_share_policy}
+	FairSharePolicy *BatchSchedulingPolicyFairSharePolicy `json:"fairSharePolicy" yaml:"fairSharePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#tags BatchSchedulingPolicy#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#tags_all BatchSchedulingPolicy#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+}
+
+type BatchSchedulingPolicyFairSharePolicy struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#compute_reservation BatchSchedulingPolicy#compute_reservation}.
+	ComputeReservation *float64 `json:"computeReservation" yaml:"computeReservation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#share_decay_seconds BatchSchedulingPolicy#share_decay_seconds}.
+	ShareDecaySeconds *float64 `json:"shareDecaySeconds" yaml:"shareDecaySeconds"`
+	// share_distribution block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#share_distribution BatchSchedulingPolicy#share_distribution}
+	ShareDistribution interface{} `json:"shareDistribution" yaml:"shareDistribution"`
+}
+
+type BatchSchedulingPolicyFairSharePolicyOutputReference interface {
+	cdktf.ComplexObject
+	ComputeReservation() *float64
+	SetComputeReservation(val *float64)
+	ComputeReservationInput() *float64
+	InternalValue() *BatchSchedulingPolicyFairSharePolicy
+	SetInternalValue(val *BatchSchedulingPolicyFairSharePolicy)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	ShareDecaySeconds() *float64
+	SetShareDecaySeconds(val *float64)
+	ShareDecaySecondsInput() *float64
+	ShareDistribution() interface{}
+	SetShareDistribution(val interface{})
+	ShareDistributionInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetComputeReservation()
+	ResetShareDecaySeconds()
+	ResetShareDistribution()
+}
+
+// The jsii proxy struct for BatchSchedulingPolicyFairSharePolicyOutputReference
+type jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ComputeReservation() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"computeReservation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ComputeReservationInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"computeReservationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) InternalValue() *BatchSchedulingPolicyFairSharePolicy {
+	var returns *BatchSchedulingPolicyFairSharePolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ShareDecaySeconds() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"shareDecaySeconds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ShareDecaySecondsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"shareDecaySecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ShareDistribution() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"shareDistribution",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ShareDistributionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"shareDistributionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewBatchSchedulingPolicyFairSharePolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BatchSchedulingPolicyFairSharePolicyOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.BatchSchedulingPolicyFairSharePolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewBatchSchedulingPolicyFairSharePolicyOutputReference_Override(b BatchSchedulingPolicyFairSharePolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.BatchSchedulingPolicyFairSharePolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		b,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) SetComputeReservation(val *float64) {
+	_jsii_.Set(
+		j,
+		"computeReservation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) SetInternalValue(val *BatchSchedulingPolicyFairSharePolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) SetShareDecaySeconds(val *float64) {
+	_jsii_.Set(
+		j,
+		"shareDecaySeconds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) SetShareDistribution(val interface{}) {
+	_jsii_.Set(
+		j,
+		"shareDistribution",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		b,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		b,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ResetComputeReservation() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetComputeReservation",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ResetShareDecaySeconds() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetShareDecaySeconds",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchSchedulingPolicyFairSharePolicyOutputReference) ResetShareDistribution() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetShareDistribution",
+		nil, // no parameters
+	)
+}
+
+type BatchSchedulingPolicyFairSharePolicyShareDistribution struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#share_identifier BatchSchedulingPolicy#share_identifier}.
+	ShareIdentifier *string `json:"shareIdentifier" yaml:"shareIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/batch_scheduling_policy#weight_factor BatchSchedulingPolicy#weight_factor}.
+	WeightFactor *float64 `json:"weightFactor" yaml:"weightFactor"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment aws_batch_compute_environment}.
 type DataAwsBatchComputeEnvironment interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -4370,8 +6110,8 @@ type DataAwsBatchComputeEnvironment interface {
 	SetComputeEnvironmentName(val *string)
 	ComputeEnvironmentNameInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EcsClusterArn() *string
@@ -4388,18 +6128,23 @@ type DataAwsBatchComputeEnvironment interface {
 	State() *string
 	Status() *string
 	StatusReason() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Type() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4465,8 +6210,8 @@ func (j *jsiiProxy_DataAwsBatchComputeEnvironment) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBatchComputeEnvironment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBatchComputeEnvironment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4605,8 +6350,8 @@ func (j *jsiiProxy_DataAwsBatchComputeEnvironment) StatusReason() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBatchComputeEnvironment) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBatchComputeEnvironment) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4615,8 +6360,8 @@ func (j *jsiiProxy_DataAwsBatchComputeEnvironment) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBatchComputeEnvironment) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBatchComputeEnvironment) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4665,7 +6410,7 @@ func (j *jsiiProxy_DataAwsBatchComputeEnvironment) Type() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment.html aws_batch_compute_environment} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment aws_batch_compute_environment} Data Source.
 func NewDataAwsBatchComputeEnvironment(scope constructs.Construct, id *string, config *DataAwsBatchComputeEnvironmentConfig) DataAwsBatchComputeEnvironment {
 	_init_.Initialize()
 
@@ -4680,7 +6425,7 @@ func NewDataAwsBatchComputeEnvironment(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment.html aws_batch_compute_environment} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment aws_batch_compute_environment} Data Source.
 func NewDataAwsBatchComputeEnvironment_Override(d DataAwsBatchComputeEnvironment, scope constructs.Construct, id *string, config *DataAwsBatchComputeEnvironmentConfig) {
 	_init_.Initialize()
 
@@ -4699,7 +6444,7 @@ func (j *jsiiProxy_DataAwsBatchComputeEnvironment) SetComputeEnvironmentName(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsBatchComputeEnvironment) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsBatchComputeEnvironment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4731,7 +6476,7 @@ func (j *jsiiProxy_DataAwsBatchComputeEnvironment) SetProvider(val cdktf.Terrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsBatchComputeEnvironment) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsBatchComputeEnvironment) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4779,12 +6524,40 @@ func (d *jsiiProxy_DataAwsBatchComputeEnvironment) AddOverride(path *string, val
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4821,12 +6594,54 @@ func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchComputeEnvironment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4935,27 +6750,27 @@ func (d *jsiiProxy_DataAwsBatchComputeEnvironment) ToTerraform() interface{} {
 // AWS Batch.
 type DataAwsBatchComputeEnvironmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment.html#compute_environment_name DataAwsBatchComputeEnvironment#compute_environment_name}.
-	ComputeEnvironmentName *string `json:"computeEnvironmentName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment.html#tags DataAwsBatchComputeEnvironment#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment#compute_environment_name DataAwsBatchComputeEnvironment#compute_environment_name}.
+	ComputeEnvironmentName *string `json:"computeEnvironmentName" yaml:"computeEnvironmentName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_compute_environment#tags DataAwsBatchComputeEnvironment#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue.html aws_batch_job_queue}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue aws_batch_job_queue}.
 type DataAwsBatchJobQueue interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4971,21 +6786,27 @@ type DataAwsBatchJobQueue interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
+	SchedulingPolicyArn() *string
 	State() *string
 	Status() *string
 	StatusReason() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	ComputeEnvironmentOrder(index *string) DataAwsBatchJobQueueComputeEnvironmentOrder
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5031,8 +6852,8 @@ func (j *jsiiProxy_DataAwsBatchJobQueue) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBatchJobQueue) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBatchJobQueue) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5151,6 +6972,16 @@ func (j *jsiiProxy_DataAwsBatchJobQueue) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsBatchJobQueue) SchedulingPolicyArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"schedulingPolicyArn",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsBatchJobQueue) State() *string {
 	var returns *string
 	_jsii_.Get(
@@ -5181,8 +7012,8 @@ func (j *jsiiProxy_DataAwsBatchJobQueue) StatusReason() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBatchJobQueue) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBatchJobQueue) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5191,8 +7022,8 @@ func (j *jsiiProxy_DataAwsBatchJobQueue) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBatchJobQueue) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBatchJobQueue) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5231,7 +7062,7 @@ func (j *jsiiProxy_DataAwsBatchJobQueue) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue.html aws_batch_job_queue} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue aws_batch_job_queue} Data Source.
 func NewDataAwsBatchJobQueue(scope constructs.Construct, id *string, config *DataAwsBatchJobQueueConfig) DataAwsBatchJobQueue {
 	_init_.Initialize()
 
@@ -5246,7 +7077,7 @@ func NewDataAwsBatchJobQueue(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue.html aws_batch_job_queue} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue aws_batch_job_queue} Data Source.
 func NewDataAwsBatchJobQueue_Override(d DataAwsBatchJobQueue, scope constructs.Construct, id *string, config *DataAwsBatchJobQueueConfig) {
 	_init_.Initialize()
 
@@ -5257,7 +7088,7 @@ func NewDataAwsBatchJobQueue_Override(d DataAwsBatchJobQueue, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsBatchJobQueue) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsBatchJobQueue) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5297,7 +7128,7 @@ func (j *jsiiProxy_DataAwsBatchJobQueue) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_DataAwsBatchJobQueue) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsBatchJobQueue) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5358,12 +7189,40 @@ func (d *jsiiProxy_DataAwsBatchJobQueue) ComputeEnvironmentOrder(index *string) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueue) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBatchJobQueue) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueue) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5400,12 +7259,54 @@ func (d *jsiiProxy_DataAwsBatchJobQueue) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueue) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueue) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBatchJobQueue) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueue) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5519,12 +7420,19 @@ type DataAwsBatchJobQueueComputeEnvironmentOrder interface {
 	Order() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -5573,8 +7481,8 @@ func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5583,15 +7491,25 @@ func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsBatchJobQueueComputeEnvironmentOrder(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsBatchJobQueueComputeEnvironmentOrder {
+func NewDataAwsBatchJobQueueComputeEnvironmentOrder(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsBatchJobQueueComputeEnvironmentOrder {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder{}
 
 	_jsii_.Create(
 		"hashicorp_aws.batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -5599,12 +7517,12 @@ func NewDataAwsBatchJobQueueComputeEnvironmentOrder(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewDataAwsBatchJobQueueComputeEnvironmentOrder_Override(d DataAwsBatchJobQueueComputeEnvironmentOrder, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsBatchJobQueueComputeEnvironmentOrder_Override(d DataAwsBatchJobQueueComputeEnvironmentOrder, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.batch.DataAwsBatchJobQueueComputeEnvironmentOrder",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -5625,7 +7543,7 @@ func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5633,13 +7551,49 @@ func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5676,12 +7630,54 @@ func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5706,15 +7702,1210 @@ func (d *jsiiProxy_DataAwsBatchJobQueueComputeEnvironmentOrder) InterpolationFor
 // AWS Batch.
 type DataAwsBatchJobQueueConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue.html#name DataAwsBatchJobQueue#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue.html#tags DataAwsBatchJobQueue#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue#name DataAwsBatchJobQueue#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_job_queue#tags DataAwsBatchJobQueue#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/batch_scheduling_policy aws_batch_scheduling_policy}.
+type DataAwsBatchSchedulingPolicy interface {
+	cdktf.TerraformDataSource
+	Arn() *string
+	SetArn(val *string)
+	ArnInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	FairSharePolicy(index *string) DataAwsBatchSchedulingPolicyFairSharePolicy
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetTags()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsBatchSchedulingPolicy
+type jsiiProxy_DataAwsBatchSchedulingPolicy struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) ArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_scheduling_policy aws_batch_scheduling_policy} Data Source.
+func NewDataAwsBatchSchedulingPolicy(scope constructs.Construct, id *string, config *DataAwsBatchSchedulingPolicyConfig) DataAwsBatchSchedulingPolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsBatchSchedulingPolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicy",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/batch_scheduling_policy aws_batch_scheduling_policy} Data Source.
+func NewDataAwsBatchSchedulingPolicy_Override(d DataAwsBatchSchedulingPolicy, scope constructs.Construct, id *string, config *DataAwsBatchSchedulingPolicyConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicy",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) SetArn(val *string) {
+	_jsii_.Set(
+		j,
+		"arn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicy) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsBatchSchedulingPolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsBatchSchedulingPolicy_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicy",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) FairSharePolicy(index *string) DataAwsBatchSchedulingPolicyFairSharePolicy {
+	var returns DataAwsBatchSchedulingPolicyFairSharePolicy
+
+	_jsii_.Invoke(
+		d,
+		"fairSharePolicy",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicy) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Batch.
+type DataAwsBatchSchedulingPolicyConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_scheduling_policy#arn DataAwsBatchSchedulingPolicy#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/batch_scheduling_policy#tags DataAwsBatchSchedulingPolicy#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+}
+
+type DataAwsBatchSchedulingPolicyFairSharePolicy interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	ComputeReservation() *float64
+	ShareDecaySeconds() *float64
+	ShareDistribution() cdktf.IResolvable
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsBatchSchedulingPolicyFairSharePolicy
+type jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) ComputeReservation() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"computeReservation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) ShareDecaySeconds() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"shareDecaySeconds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) ShareDistribution() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"shareDistribution",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsBatchSchedulingPolicyFairSharePolicy(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsBatchSchedulingPolicyFairSharePolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicyFairSharePolicy",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsBatchSchedulingPolicyFairSharePolicy_Override(d DataAwsBatchSchedulingPolicyFairSharePolicy, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicyFairSharePolicy",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicy) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution interface {
+	cdktf.ComplexComputedList
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	ShareIdentifier() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WeightFactor() *float64
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution
+type jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) ShareIdentifier() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"shareIdentifier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) WeightFactor() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"weightFactor",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution{}
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution_Override(d DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.batch.DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBatchSchedulingPolicyFairSharePolicyShareDistribution) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
 }

@@ -9,12 +9,12 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/cloudtrail/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html aws_cloudtrail}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail aws_cloudtrail}.
 type Cloudtrail interface {
 	cdktf.TerraformResource
-	AdvancedEventSelector() *[]*CloudtrailAdvancedEventSelector
-	SetAdvancedEventSelector(val *[]*CloudtrailAdvancedEventSelector)
-	AdvancedEventSelectorInput() *[]*CloudtrailAdvancedEventSelector
+	AdvancedEventSelector() interface{}
+	SetAdvancedEventSelector(val interface{})
+	AdvancedEventSelectorInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	CloudWatchLogsGroupArn() *string
@@ -24,8 +24,8 @@ type Cloudtrail interface {
 	SetCloudWatchLogsRoleArn(val *string)
 	CloudWatchLogsRoleArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EnableLogFileValidation() interface{}
@@ -34,9 +34,9 @@ type Cloudtrail interface {
 	EnableLogging() interface{}
 	SetEnableLogging(val interface{})
 	EnableLoggingInput() interface{}
-	EventSelector() *[]*CloudtrailEventSelector
-	SetEventSelector(val *[]*CloudtrailEventSelector)
-	EventSelectorInput() *[]*CloudtrailEventSelector
+	EventSelector() interface{}
+	SetEventSelector(val interface{})
+	EventSelectorInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	HomeRegion() *string
@@ -44,9 +44,9 @@ type Cloudtrail interface {
 	IncludeGlobalServiceEvents() interface{}
 	SetIncludeGlobalServiceEvents(val interface{})
 	IncludeGlobalServiceEventsInput() interface{}
-	InsightSelector() *[]*CloudtrailInsightSelector
-	SetInsightSelector(val *[]*CloudtrailInsightSelector)
-	InsightSelectorInput() *[]*CloudtrailInsightSelector
+	InsightSelector() interface{}
+	SetInsightSelector(val interface{})
+	InsightSelectorInput() interface{}
 	IsMultiRegionTrail() interface{}
 	SetIsMultiRegionTrail(val interface{})
 	IsMultiRegionTrailInput() interface{}
@@ -74,20 +74,25 @@ type Cloudtrail interface {
 	SnsTopicName() *string
 	SetSnsTopicName(val *string)
 	SnsTopicNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAdvancedEventSelector()
@@ -117,8 +122,8 @@ type jsiiProxy_Cloudtrail struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_Cloudtrail) AdvancedEventSelector() *[]*CloudtrailAdvancedEventSelector {
-	var returns *[]*CloudtrailAdvancedEventSelector
+func (j *jsiiProxy_Cloudtrail) AdvancedEventSelector() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"advancedEventSelector",
@@ -127,8 +132,8 @@ func (j *jsiiProxy_Cloudtrail) AdvancedEventSelector() *[]*CloudtrailAdvancedEve
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) AdvancedEventSelectorInput() *[]*CloudtrailAdvancedEventSelector {
-	var returns *[]*CloudtrailAdvancedEventSelector
+func (j *jsiiProxy_Cloudtrail) AdvancedEventSelectorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"advancedEventSelectorInput",
@@ -207,8 +212,8 @@ func (j *jsiiProxy_Cloudtrail) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Cloudtrail) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -267,8 +272,8 @@ func (j *jsiiProxy_Cloudtrail) EnableLoggingInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) EventSelector() *[]*CloudtrailEventSelector {
-	var returns *[]*CloudtrailEventSelector
+func (j *jsiiProxy_Cloudtrail) EventSelector() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"eventSelector",
@@ -277,8 +282,8 @@ func (j *jsiiProxy_Cloudtrail) EventSelector() *[]*CloudtrailEventSelector {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) EventSelectorInput() *[]*CloudtrailEventSelector {
-	var returns *[]*CloudtrailEventSelector
+func (j *jsiiProxy_Cloudtrail) EventSelectorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"eventSelectorInput",
@@ -347,8 +352,8 @@ func (j *jsiiProxy_Cloudtrail) IncludeGlobalServiceEventsInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) InsightSelector() *[]*CloudtrailInsightSelector {
-	var returns *[]*CloudtrailInsightSelector
+func (j *jsiiProxy_Cloudtrail) InsightSelector() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"insightSelector",
@@ -357,8 +362,8 @@ func (j *jsiiProxy_Cloudtrail) InsightSelector() *[]*CloudtrailInsightSelector {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) InsightSelectorInput() *[]*CloudtrailInsightSelector {
-	var returns *[]*CloudtrailInsightSelector
+func (j *jsiiProxy_Cloudtrail) InsightSelectorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"insightSelectorInput",
@@ -547,8 +552,8 @@ func (j *jsiiProxy_Cloudtrail) SnsTopicNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Cloudtrail) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -557,8 +562,8 @@ func (j *jsiiProxy_Cloudtrail) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Cloudtrail) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -567,8 +572,8 @@ func (j *jsiiProxy_Cloudtrail) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Cloudtrail) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -577,8 +582,8 @@ func (j *jsiiProxy_Cloudtrail) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Cloudtrail) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Cloudtrail) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -617,7 +622,7 @@ func (j *jsiiProxy_Cloudtrail) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html aws_cloudtrail} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail aws_cloudtrail} Resource.
 func NewCloudtrail(scope constructs.Construct, id *string, config *CloudtrailConfig) Cloudtrail {
 	_init_.Initialize()
 
@@ -632,7 +637,7 @@ func NewCloudtrail(scope constructs.Construct, id *string, config *CloudtrailCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html aws_cloudtrail} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail aws_cloudtrail} Resource.
 func NewCloudtrail_Override(c Cloudtrail, scope constructs.Construct, id *string, config *CloudtrailConfig) {
 	_init_.Initialize()
 
@@ -643,7 +648,7 @@ func NewCloudtrail_Override(c Cloudtrail, scope constructs.Construct, id *string
 	)
 }
 
-func (j *jsiiProxy_Cloudtrail) SetAdvancedEventSelector(val *[]*CloudtrailAdvancedEventSelector) {
+func (j *jsiiProxy_Cloudtrail) SetAdvancedEventSelector(val interface{}) {
 	_jsii_.Set(
 		j,
 		"advancedEventSelector",
@@ -667,7 +672,7 @@ func (j *jsiiProxy_Cloudtrail) SetCloudWatchLogsRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Cloudtrail) SetCount(val interface{}) {
+func (j *jsiiProxy_Cloudtrail) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -699,7 +704,7 @@ func (j *jsiiProxy_Cloudtrail) SetEnableLogging(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Cloudtrail) SetEventSelector(val *[]*CloudtrailEventSelector) {
+func (j *jsiiProxy_Cloudtrail) SetEventSelector(val interface{}) {
 	_jsii_.Set(
 		j,
 		"eventSelector",
@@ -715,7 +720,7 @@ func (j *jsiiProxy_Cloudtrail) SetIncludeGlobalServiceEvents(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Cloudtrail) SetInsightSelector(val *[]*CloudtrailInsightSelector) {
+func (j *jsiiProxy_Cloudtrail) SetInsightSelector(val interface{}) {
 	_jsii_.Set(
 		j,
 		"insightSelector",
@@ -795,7 +800,7 @@ func (j *jsiiProxy_Cloudtrail) SetSnsTopicName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Cloudtrail) SetTags(val interface{}) {
+func (j *jsiiProxy_Cloudtrail) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -803,7 +808,7 @@ func (j *jsiiProxy_Cloudtrail) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Cloudtrail) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Cloudtrail) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -851,12 +856,40 @@ func (c *jsiiProxy_Cloudtrail) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (c *jsiiProxy_Cloudtrail) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_Cloudtrail) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_Cloudtrail) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -893,12 +926,54 @@ func (c *jsiiProxy_Cloudtrail) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (c *jsiiProxy_Cloudtrail) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_Cloudtrail) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_Cloudtrail) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_Cloudtrail) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1119,114 +1194,114 @@ func (c *jsiiProxy_Cloudtrail) ToTerraform() interface{} {
 type CloudtrailAdvancedEventSelector struct {
 	// field_selector block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#field_selector Cloudtrail#field_selector}
-	FieldSelector *[]*CloudtrailAdvancedEventSelectorFieldSelector `json:"fieldSelector"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#name Cloudtrail#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#field_selector Cloudtrail#field_selector}
+	FieldSelector interface{} `json:"fieldSelector" yaml:"fieldSelector"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#name Cloudtrail#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type CloudtrailAdvancedEventSelectorFieldSelector struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#field Cloudtrail#field}.
-	Field *string `json:"field"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#ends_with Cloudtrail#ends_with}.
-	EndsWith *[]*string `json:"endsWith"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#equals Cloudtrail#equals}.
-	EqualTo *[]*string `json:"equalTo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#not_ends_with Cloudtrail#not_ends_with}.
-	NotEndsWith *[]*string `json:"notEndsWith"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#not_equals Cloudtrail#not_equals}.
-	NotEquals *[]*string `json:"notEquals"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#not_starts_with Cloudtrail#not_starts_with}.
-	NotStartsWith *[]*string `json:"notStartsWith"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#starts_with Cloudtrail#starts_with}.
-	StartsWith *[]*string `json:"startsWith"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#field Cloudtrail#field}.
+	Field *string `json:"field" yaml:"field"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#ends_with Cloudtrail#ends_with}.
+	EndsWith *[]*string `json:"endsWith" yaml:"endsWith"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#equals Cloudtrail#equals}.
+	EqualTo *[]*string `json:"equalTo" yaml:"equalTo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#not_ends_with Cloudtrail#not_ends_with}.
+	NotEndsWith *[]*string `json:"notEndsWith" yaml:"notEndsWith"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#not_equals Cloudtrail#not_equals}.
+	NotEquals *[]*string `json:"notEquals" yaml:"notEquals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#not_starts_with Cloudtrail#not_starts_with}.
+	NotStartsWith *[]*string `json:"notStartsWith" yaml:"notStartsWith"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#starts_with Cloudtrail#starts_with}.
+	StartsWith *[]*string `json:"startsWith" yaml:"startsWith"`
 }
 
 // AWS CloudTrail.
 type CloudtrailConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#name Cloudtrail#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#s3_bucket_name Cloudtrail#s3_bucket_name}.
-	S3BucketName *string `json:"s3BucketName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#name Cloudtrail#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#s3_bucket_name Cloudtrail#s3_bucket_name}.
+	S3BucketName *string `json:"s3BucketName" yaml:"s3BucketName"`
 	// advanced_event_selector block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#advanced_event_selector Cloudtrail#advanced_event_selector}
-	AdvancedEventSelector *[]*CloudtrailAdvancedEventSelector `json:"advancedEventSelector"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#cloud_watch_logs_group_arn Cloudtrail#cloud_watch_logs_group_arn}.
-	CloudWatchLogsGroupArn *string `json:"cloudWatchLogsGroupArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#cloud_watch_logs_role_arn Cloudtrail#cloud_watch_logs_role_arn}.
-	CloudWatchLogsRoleArn *string `json:"cloudWatchLogsRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#enable_log_file_validation Cloudtrail#enable_log_file_validation}.
-	EnableLogFileValidation interface{} `json:"enableLogFileValidation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#enable_logging Cloudtrail#enable_logging}.
-	EnableLogging interface{} `json:"enableLogging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#advanced_event_selector Cloudtrail#advanced_event_selector}
+	AdvancedEventSelector interface{} `json:"advancedEventSelector" yaml:"advancedEventSelector"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#cloud_watch_logs_group_arn Cloudtrail#cloud_watch_logs_group_arn}.
+	CloudWatchLogsGroupArn *string `json:"cloudWatchLogsGroupArn" yaml:"cloudWatchLogsGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#cloud_watch_logs_role_arn Cloudtrail#cloud_watch_logs_role_arn}.
+	CloudWatchLogsRoleArn *string `json:"cloudWatchLogsRoleArn" yaml:"cloudWatchLogsRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#enable_log_file_validation Cloudtrail#enable_log_file_validation}.
+	EnableLogFileValidation interface{} `json:"enableLogFileValidation" yaml:"enableLogFileValidation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#enable_logging Cloudtrail#enable_logging}.
+	EnableLogging interface{} `json:"enableLogging" yaml:"enableLogging"`
 	// event_selector block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#event_selector Cloudtrail#event_selector}
-	EventSelector *[]*CloudtrailEventSelector `json:"eventSelector"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#include_global_service_events Cloudtrail#include_global_service_events}.
-	IncludeGlobalServiceEvents interface{} `json:"includeGlobalServiceEvents"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#event_selector Cloudtrail#event_selector}
+	EventSelector interface{} `json:"eventSelector" yaml:"eventSelector"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#include_global_service_events Cloudtrail#include_global_service_events}.
+	IncludeGlobalServiceEvents interface{} `json:"includeGlobalServiceEvents" yaml:"includeGlobalServiceEvents"`
 	// insight_selector block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#insight_selector Cloudtrail#insight_selector}
-	InsightSelector *[]*CloudtrailInsightSelector `json:"insightSelector"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#is_multi_region_trail Cloudtrail#is_multi_region_trail}.
-	IsMultiRegionTrail interface{} `json:"isMultiRegionTrail"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#is_organization_trail Cloudtrail#is_organization_trail}.
-	IsOrganizationTrail interface{} `json:"isOrganizationTrail"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#kms_key_id Cloudtrail#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#s3_key_prefix Cloudtrail#s3_key_prefix}.
-	S3KeyPrefix *string `json:"s3KeyPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#sns_topic_name Cloudtrail#sns_topic_name}.
-	SnsTopicName *string `json:"snsTopicName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#tags Cloudtrail#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#tags_all Cloudtrail#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#insight_selector Cloudtrail#insight_selector}
+	InsightSelector interface{} `json:"insightSelector" yaml:"insightSelector"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#is_multi_region_trail Cloudtrail#is_multi_region_trail}.
+	IsMultiRegionTrail interface{} `json:"isMultiRegionTrail" yaml:"isMultiRegionTrail"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#is_organization_trail Cloudtrail#is_organization_trail}.
+	IsOrganizationTrail interface{} `json:"isOrganizationTrail" yaml:"isOrganizationTrail"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#kms_key_id Cloudtrail#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#s3_key_prefix Cloudtrail#s3_key_prefix}.
+	S3KeyPrefix *string `json:"s3KeyPrefix" yaml:"s3KeyPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#sns_topic_name Cloudtrail#sns_topic_name}.
+	SnsTopicName *string `json:"snsTopicName" yaml:"snsTopicName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#tags Cloudtrail#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#tags_all Cloudtrail#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type CloudtrailEventSelector struct {
 	// data_resource block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#data_resource Cloudtrail#data_resource}
-	DataResource *[]*CloudtrailEventSelectorDataResource `json:"dataResource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#exclude_management_event_sources Cloudtrail#exclude_management_event_sources}.
-	ExcludeManagementEventSources *[]*string `json:"excludeManagementEventSources"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#include_management_events Cloudtrail#include_management_events}.
-	IncludeManagementEvents interface{} `json:"includeManagementEvents"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#read_write_type Cloudtrail#read_write_type}.
-	ReadWriteType *string `json:"readWriteType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#data_resource Cloudtrail#data_resource}
+	DataResource interface{} `json:"dataResource" yaml:"dataResource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#exclude_management_event_sources Cloudtrail#exclude_management_event_sources}.
+	ExcludeManagementEventSources *[]*string `json:"excludeManagementEventSources" yaml:"excludeManagementEventSources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#include_management_events Cloudtrail#include_management_events}.
+	IncludeManagementEvents interface{} `json:"includeManagementEvents" yaml:"includeManagementEvents"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#read_write_type Cloudtrail#read_write_type}.
+	ReadWriteType *string `json:"readWriteType" yaml:"readWriteType"`
 }
 
 type CloudtrailEventSelectorDataResource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#type Cloudtrail#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#values Cloudtrail#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#type Cloudtrail#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#values Cloudtrail#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type CloudtrailInsightSelector struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail.html#insight_type Cloudtrail#insight_type}.
-	InsightType *string `json:"insightType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudtrail#insight_type Cloudtrail#insight_type}.
+	InsightType *string `json:"insightType" yaml:"insightType"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account.html aws_cloudtrail_service_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account aws_cloudtrail_service_account}.
 type DataAwsCloudtrailServiceAccount interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1245,10 +1320,15 @@ type DataAwsCloudtrailServiceAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1294,8 +1374,8 @@ func (j *jsiiProxy_DataAwsCloudtrailServiceAccount) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudtrailServiceAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudtrailServiceAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1434,7 +1514,7 @@ func (j *jsiiProxy_DataAwsCloudtrailServiceAccount) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account.html aws_cloudtrail_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account aws_cloudtrail_service_account} Data Source.
 func NewDataAwsCloudtrailServiceAccount(scope constructs.Construct, id *string, config *DataAwsCloudtrailServiceAccountConfig) DataAwsCloudtrailServiceAccount {
 	_init_.Initialize()
 
@@ -1449,7 +1529,7 @@ func NewDataAwsCloudtrailServiceAccount(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account.html aws_cloudtrail_service_account} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account aws_cloudtrail_service_account} Data Source.
 func NewDataAwsCloudtrailServiceAccount_Override(d DataAwsCloudtrailServiceAccount, scope constructs.Construct, id *string, config *DataAwsCloudtrailServiceAccountConfig) {
 	_init_.Initialize()
 
@@ -1460,7 +1540,7 @@ func NewDataAwsCloudtrailServiceAccount_Override(d DataAwsCloudtrailServiceAccou
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudtrailServiceAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudtrailServiceAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1540,12 +1620,40 @@ func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1582,12 +1690,54 @@ func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1696,13 +1846,13 @@ func (d *jsiiProxy_DataAwsCloudtrailServiceAccount) ToTerraform() interface{} {
 // AWS CloudTrail.
 type DataAwsCloudtrailServiceAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account.html#region DataAwsCloudtrailServiceAccount#region}.
-	Region *string `json:"region"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudtrail_service_account#region DataAwsCloudtrailServiceAccount#region}.
+	Region *string `json:"region" yaml:"region"`
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/codedeploy/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app.html aws_codedeploy_app}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app aws_codedeploy_app}.
 type CodedeployApp interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -19,8 +19,8 @@ type CodedeployApp interface {
 	SetComputePlatform(val *string)
 	ComputePlatformInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -29,7 +29,7 @@ type CodedeployApp interface {
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	LinkedToGithub() interface{}
+	LinkedToGithub() cdktf.IResolvable
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -37,20 +37,25 @@ type CodedeployApp interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetComputePlatform()
@@ -128,8 +133,8 @@ func (j *jsiiProxy_CodedeployApp) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployApp) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployApp) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -198,8 +203,8 @@ func (j *jsiiProxy_CodedeployApp) Lifecycle() *cdktf.TerraformResourceLifecycle 
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployApp) LinkedToGithub() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployApp) LinkedToGithub() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"linkedToGithub",
@@ -258,8 +263,8 @@ func (j *jsiiProxy_CodedeployApp) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployApp) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployApp) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -268,8 +273,8 @@ func (j *jsiiProxy_CodedeployApp) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployApp) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployApp) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -278,8 +283,8 @@ func (j *jsiiProxy_CodedeployApp) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployApp) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployApp) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -288,8 +293,8 @@ func (j *jsiiProxy_CodedeployApp) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployApp) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployApp) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -328,7 +333,7 @@ func (j *jsiiProxy_CodedeployApp) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app.html aws_codedeploy_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app aws_codedeploy_app} Resource.
 func NewCodedeployApp(scope constructs.Construct, id *string, config *CodedeployAppConfig) CodedeployApp {
 	_init_.Initialize()
 
@@ -343,7 +348,7 @@ func NewCodedeployApp(scope constructs.Construct, id *string, config *Codedeploy
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app.html aws_codedeploy_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app aws_codedeploy_app} Resource.
 func NewCodedeployApp_Override(c CodedeployApp, scope constructs.Construct, id *string, config *CodedeployAppConfig) {
 	_init_.Initialize()
 
@@ -362,7 +367,7 @@ func (j *jsiiProxy_CodedeployApp) SetComputePlatform(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodedeployApp) SetCount(val interface{}) {
+func (j *jsiiProxy_CodedeployApp) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -402,7 +407,7 @@ func (j *jsiiProxy_CodedeployApp) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_CodedeployApp) SetTags(val interface{}) {
+func (j *jsiiProxy_CodedeployApp) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -410,7 +415,7 @@ func (j *jsiiProxy_CodedeployApp) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodedeployApp) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodedeployApp) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -458,12 +463,40 @@ func (c *jsiiProxy_CodedeployApp) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployApp) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployApp) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployApp) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -500,12 +533,54 @@ func (c *jsiiProxy_CodedeployApp) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployApp) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployApp) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployApp) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployApp) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -630,24 +705,24 @@ func (c *jsiiProxy_CodedeployApp) ToTerraform() interface{} {
 // AWS CodeDeploy.
 type CodedeployAppConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app.html#name CodedeployApp#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app.html#compute_platform CodedeployApp#compute_platform}.
-	ComputePlatform *string `json:"computePlatform"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app.html#tags CodedeployApp#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app.html#tags_all CodedeployApp#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app#name CodedeployApp#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app#compute_platform CodedeployApp#compute_platform}.
+	ComputePlatform *string `json:"computePlatform" yaml:"computePlatform"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app#tags CodedeployApp#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_app#tags_all CodedeployApp#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html aws_codedeploy_deployment_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config aws_codedeploy_deployment_config}.
 type CodedeployDeploymentConfig interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -655,8 +730,8 @@ type CodedeployDeploymentConfig interface {
 	SetComputePlatform(val *string)
 	ComputePlatformInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentConfigId() *string
@@ -680,10 +755,15 @@ type CodedeployDeploymentConfig interface {
 	TrafficRoutingConfig() CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 	TrafficRoutingConfigInput() *CodedeployDeploymentConfigTrafficRoutingConfig
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutMinimumHealthyHosts(value *CodedeployDeploymentConfigMinimumHealthyHosts)
@@ -743,8 +823,8 @@ func (j *jsiiProxy_CodedeployDeploymentConfig) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployDeploymentConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -933,7 +1013,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfig) TrafficRoutingConfigInput() *Code
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html aws_codedeploy_deployment_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config aws_codedeploy_deployment_config} Resource.
 func NewCodedeployDeploymentConfig(scope constructs.Construct, id *string, config *CodedeployDeploymentConfigConfig) CodedeployDeploymentConfig {
 	_init_.Initialize()
 
@@ -948,7 +1028,7 @@ func NewCodedeployDeploymentConfig(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html aws_codedeploy_deployment_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config aws_codedeploy_deployment_config} Resource.
 func NewCodedeployDeploymentConfig_Override(c CodedeployDeploymentConfig, scope constructs.Construct, id *string, config *CodedeployDeploymentConfigConfig) {
 	_init_.Initialize()
 
@@ -967,7 +1047,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfig) SetComputePlatform(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_CodedeployDeploymentConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1047,12 +1127,40 @@ func (c *jsiiProxy_CodedeployDeploymentConfig) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1089,12 +1197,54 @@ func (c *jsiiProxy_CodedeployDeploymentConfig) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1235,32 +1385,32 @@ func (c *jsiiProxy_CodedeployDeploymentConfig) ToTerraform() interface{} {
 // AWS CodeDeploy.
 type CodedeployDeploymentConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#deployment_config_name CodedeployDeploymentConfig#deployment_config_name}.
-	DeploymentConfigName *string `json:"deploymentConfigName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#compute_platform CodedeployDeploymentConfig#compute_platform}.
-	ComputePlatform *string `json:"computePlatform"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#deployment_config_name CodedeployDeploymentConfig#deployment_config_name}.
+	DeploymentConfigName *string `json:"deploymentConfigName" yaml:"deploymentConfigName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#compute_platform CodedeployDeploymentConfig#compute_platform}.
+	ComputePlatform *string `json:"computePlatform" yaml:"computePlatform"`
 	// minimum_healthy_hosts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#minimum_healthy_hosts CodedeployDeploymentConfig#minimum_healthy_hosts}
-	MinimumHealthyHosts *CodedeployDeploymentConfigMinimumHealthyHosts `json:"minimumHealthyHosts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#minimum_healthy_hosts CodedeployDeploymentConfig#minimum_healthy_hosts}
+	MinimumHealthyHosts *CodedeployDeploymentConfigMinimumHealthyHosts `json:"minimumHealthyHosts" yaml:"minimumHealthyHosts"`
 	// traffic_routing_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#traffic_routing_config CodedeployDeploymentConfig#traffic_routing_config}
-	TrafficRoutingConfig *CodedeployDeploymentConfigTrafficRoutingConfig `json:"trafficRoutingConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#traffic_routing_config CodedeployDeploymentConfig#traffic_routing_config}
+	TrafficRoutingConfig *CodedeployDeploymentConfigTrafficRoutingConfig `json:"trafficRoutingConfig" yaml:"trafficRoutingConfig"`
 }
 
 type CodedeployDeploymentConfigMinimumHealthyHosts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#type CodedeployDeploymentConfig#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#value CodedeployDeploymentConfig#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#type CodedeployDeploymentConfig#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#value CodedeployDeploymentConfig#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type CodedeployDeploymentConfigMinimumHealthyHostsOutputReference interface {
@@ -1271,18 +1421,23 @@ type CodedeployDeploymentConfigMinimumHealthyHostsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetType()
@@ -1324,8 +1479,8 @@ func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1374,7 +1529,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference)
 	return returns
 }
 
-func NewCodedeployDeploymentConfigMinimumHealthyHostsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigMinimumHealthyHostsOutputReference {
+func NewCodedeployDeploymentConfigMinimumHealthyHostsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigMinimumHealthyHostsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference{}
@@ -1388,7 +1543,7 @@ func NewCodedeployDeploymentConfigMinimumHealthyHostsOutputReference(terraformRe
 	return &j
 }
 
-func NewCodedeployDeploymentConfigMinimumHealthyHostsOutputReference_Override(c CodedeployDeploymentConfigMinimumHealthyHostsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentConfigMinimumHealthyHostsOutputReference_Override(c CodedeployDeploymentConfigMinimumHealthyHostsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1422,7 +1577,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference)
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1447,12 +1602,40 @@ func (j *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference)
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1489,12 +1672,54 @@ func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference)
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1549,14 +1774,14 @@ func (c *jsiiProxy_CodedeployDeploymentConfigMinimumHealthyHostsOutputReference)
 type CodedeployDeploymentConfigTrafficRoutingConfig struct {
 	// time_based_canary block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#time_based_canary CodedeployDeploymentConfig#time_based_canary}
-	TimeBasedCanary *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary `json:"timeBasedCanary"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#time_based_canary CodedeployDeploymentConfig#time_based_canary}
+	TimeBasedCanary *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary `json:"timeBasedCanary" yaml:"timeBasedCanary"`
 	// time_based_linear block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#time_based_linear CodedeployDeploymentConfig#time_based_linear}
-	TimeBasedLinear *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear `json:"timeBasedLinear"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#type CodedeployDeploymentConfig#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#time_based_linear CodedeployDeploymentConfig#time_based_linear}
+	TimeBasedLinear *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear `json:"timeBasedLinear" yaml:"timeBasedLinear"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#type CodedeployDeploymentConfig#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type CodedeployDeploymentConfigTrafficRoutingConfigOutputReference interface {
@@ -1567,8 +1792,8 @@ type CodedeployDeploymentConfigTrafficRoutingConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeBasedCanary() CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference
 	TimeBasedCanaryInput() *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
 	TimeBasedLinear() CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference
@@ -1576,10 +1801,15 @@ type CodedeployDeploymentConfigTrafficRoutingConfigOutputReference interface {
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutTimeBasedCanary(value *CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary)
@@ -1624,8 +1854,8 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1694,7 +1924,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 	return returns
 }
 
-func NewCodedeployDeploymentConfigTrafficRoutingConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigTrafficRoutingConfigOutputReference {
+func NewCodedeployDeploymentConfigTrafficRoutingConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigTrafficRoutingConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference{}
@@ -1708,7 +1938,7 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigOutputReference(terraformR
 	return &j
 }
 
-func NewCodedeployDeploymentConfigTrafficRoutingConfigOutputReference_Override(c CodedeployDeploymentConfigTrafficRoutingConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentConfigTrafficRoutingConfigOutputReference_Override(c CodedeployDeploymentConfigTrafficRoutingConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1742,7 +1972,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1759,12 +1989,40 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1801,12 +2059,54 @@ func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1883,10 +2183,10 @@ func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigOutputReference
 }
 
 type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#interval CodedeployDeploymentConfig#interval}.
-	Interval *float64 `json:"interval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#percentage CodedeployDeploymentConfig#percentage}.
-	Percentage *float64 `json:"percentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#interval CodedeployDeploymentConfig#interval}.
+	Interval *float64 `json:"interval" yaml:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#percentage CodedeployDeploymentConfig#percentage}.
+	Percentage *float64 `json:"percentage" yaml:"percentage"`
 }
 
 type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference interface {
@@ -1903,12 +2203,17 @@ type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReferenc
 	PercentageInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInterval()
@@ -1990,8 +2295,8 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2000,7 +2305,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
 	return returns
 }
 
-func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference {
+func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference{}
@@ -2014,7 +2319,7 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputRefer
 	return &j
 }
 
-func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference_Override(c CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference_Override(c CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2064,7 +2369,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2073,12 +2378,40 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2115,12 +2448,54 @@ func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanaryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2173,10 +2548,10 @@ func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedCanary
 }
 
 type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#interval CodedeployDeploymentConfig#interval}.
-	Interval *float64 `json:"interval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config.html#percentage CodedeployDeploymentConfig#percentage}.
-	Percentage *float64 `json:"percentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#interval CodedeployDeploymentConfig#interval}.
+	Interval *float64 `json:"interval" yaml:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_config#percentage CodedeployDeploymentConfig#percentage}.
+	Percentage *float64 `json:"percentage" yaml:"percentage"`
 }
 
 type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference interface {
@@ -2193,12 +2568,17 @@ type CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReferenc
 	PercentageInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInterval()
@@ -2280,8 +2660,8 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2290,7 +2670,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
 	return returns
 }
 
-func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference {
+func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference{}
@@ -2304,7 +2684,7 @@ func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputRefer
 	return &j
 }
 
-func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference_Override(c CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference_Override(c CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2354,7 +2734,7 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2363,12 +2743,40 @@ func (j *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2405,12 +2813,54 @@ func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinearOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2462,7 +2912,7 @@ func (c *jsiiProxy_CodedeployDeploymentConfigTrafficRoutingConfigTimeBasedLinear
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html aws_codedeploy_deployment_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group aws_codedeploy_deployment_group}.
 type CodedeployDeploymentGroup interface {
 	cdktf.TerraformResource
 	AlarmConfiguration() CodedeployDeploymentGroupAlarmConfigurationOutputReference
@@ -2481,8 +2931,8 @@ type CodedeployDeploymentGroup interface {
 	CdktfStack() cdktf.TerraformStack
 	ComputePlatform() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentConfigName() *string
@@ -2494,12 +2944,12 @@ type CodedeployDeploymentGroup interface {
 	DeploymentGroupNameInput() *string
 	DeploymentStyle() CodedeployDeploymentGroupDeploymentStyleOutputReference
 	DeploymentStyleInput() *CodedeployDeploymentGroupDeploymentStyle
-	Ec2TagFilter() *[]*CodedeployDeploymentGroupEc2TagFilter
-	SetEc2TagFilter(val *[]*CodedeployDeploymentGroupEc2TagFilter)
-	Ec2TagFilterInput() *[]*CodedeployDeploymentGroupEc2TagFilter
-	Ec2TagSet() *[]*CodedeployDeploymentGroupEc2TagSet
-	SetEc2TagSet(val *[]*CodedeployDeploymentGroupEc2TagSet)
-	Ec2TagSetInput() *[]*CodedeployDeploymentGroupEc2TagSet
+	Ec2TagFilter() interface{}
+	SetEc2TagFilter(val interface{})
+	Ec2TagFilterInput() interface{}
+	Ec2TagSet() interface{}
+	SetEc2TagSet(val interface{})
+	Ec2TagSetInput() interface{}
 	EcsService() CodedeployDeploymentGroupEcsServiceOutputReference
 	EcsServiceInput() *CodedeployDeploymentGroupEcsService
 	Fqn() *string
@@ -2510,32 +2960,37 @@ type CodedeployDeploymentGroup interface {
 	LoadBalancerInfo() CodedeployDeploymentGroupLoadBalancerInfoOutputReference
 	LoadBalancerInfoInput() *CodedeployDeploymentGroupLoadBalancerInfo
 	Node() constructs.Node
-	OnPremisesInstanceTagFilter() *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter
-	SetOnPremisesInstanceTagFilter(val *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter)
-	OnPremisesInstanceTagFilterInput() *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter
+	OnPremisesInstanceTagFilter() interface{}
+	SetOnPremisesInstanceTagFilter(val interface{})
+	OnPremisesInstanceTagFilterInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	ServiceRoleArn() *string
 	SetServiceRoleArn(val *string)
 	ServiceRoleArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	TriggerConfiguration() *[]*CodedeployDeploymentGroupTriggerConfiguration
-	SetTriggerConfiguration(val *[]*CodedeployDeploymentGroupTriggerConfiguration)
-	TriggerConfigurationInput() *[]*CodedeployDeploymentGroupTriggerConfiguration
+	TriggerConfiguration() interface{}
+	SetTriggerConfiguration(val interface{})
+	TriggerConfigurationInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAlarmConfiguration(value *CodedeployDeploymentGroupAlarmConfiguration)
@@ -2710,8 +3165,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployDeploymentGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2800,8 +3255,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) DeploymentStyleInput() *Codedeploy
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagFilter() *[]*CodedeployDeploymentGroupEc2TagFilter {
-	var returns *[]*CodedeployDeploymentGroupEc2TagFilter
+func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagFilter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ec2TagFilter",
@@ -2810,8 +3265,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagFilter() *[]*CodedeployDeplo
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagFilterInput() *[]*CodedeployDeploymentGroupEc2TagFilter {
-	var returns *[]*CodedeployDeploymentGroupEc2TagFilter
+func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagFilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ec2TagFilterInput",
@@ -2820,8 +3275,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagFilterInput() *[]*Codedeploy
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagSet() *[]*CodedeployDeploymentGroupEc2TagSet {
-	var returns *[]*CodedeployDeploymentGroupEc2TagSet
+func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagSet() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ec2TagSet",
@@ -2830,8 +3285,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagSet() *[]*CodedeployDeployme
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagSetInput() *[]*CodedeployDeploymentGroupEc2TagSet {
-	var returns *[]*CodedeployDeploymentGroupEc2TagSet
+func (j *jsiiProxy_CodedeployDeploymentGroup) Ec2TagSetInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ec2TagSetInput",
@@ -2930,8 +3385,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) OnPremisesInstanceTagFilter() *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter {
-	var returns *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter
+func (j *jsiiProxy_CodedeployDeploymentGroup) OnPremisesInstanceTagFilter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onPremisesInstanceTagFilter",
@@ -2940,8 +3395,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) OnPremisesInstanceTagFilter() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) OnPremisesInstanceTagFilterInput() *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter {
-	var returns *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter
+func (j *jsiiProxy_CodedeployDeploymentGroup) OnPremisesInstanceTagFilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"onPremisesInstanceTagFilterInput",
@@ -2990,8 +3445,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) ServiceRoleArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployDeploymentGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3000,8 +3455,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployDeploymentGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3010,8 +3465,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployDeploymentGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3020,8 +3475,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodedeployDeploymentGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3060,8 +3515,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) TriggerConfiguration() *[]*CodedeployDeploymentGroupTriggerConfiguration {
-	var returns *[]*CodedeployDeploymentGroupTriggerConfiguration
+func (j *jsiiProxy_CodedeployDeploymentGroup) TriggerConfiguration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"triggerConfiguration",
@@ -3070,8 +3525,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) TriggerConfiguration() *[]*Codedep
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) TriggerConfigurationInput() *[]*CodedeployDeploymentGroupTriggerConfiguration {
-	var returns *[]*CodedeployDeploymentGroupTriggerConfiguration
+func (j *jsiiProxy_CodedeployDeploymentGroup) TriggerConfigurationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"triggerConfigurationInput",
@@ -3080,7 +3535,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) TriggerConfigurationInput() *[]*Co
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html aws_codedeploy_deployment_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group aws_codedeploy_deployment_group} Resource.
 func NewCodedeployDeploymentGroup(scope constructs.Construct, id *string, config *CodedeployDeploymentGroupConfig) CodedeployDeploymentGroup {
 	_init_.Initialize()
 
@@ -3095,7 +3550,7 @@ func NewCodedeployDeploymentGroup(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html aws_codedeploy_deployment_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group aws_codedeploy_deployment_group} Resource.
 func NewCodedeployDeploymentGroup_Override(c CodedeployDeploymentGroup, scope constructs.Construct, id *string, config *CodedeployDeploymentGroupConfig) {
 	_init_.Initialize()
 
@@ -3122,7 +3577,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) SetAutoscalingGroups(val *[]*strin
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_CodedeployDeploymentGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3154,7 +3609,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) SetDeploymentGroupName(val *string
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) SetEc2TagFilter(val *[]*CodedeployDeploymentGroupEc2TagFilter) {
+func (j *jsiiProxy_CodedeployDeploymentGroup) SetEc2TagFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ec2TagFilter",
@@ -3162,7 +3617,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) SetEc2TagFilter(val *[]*Codedeploy
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) SetEc2TagSet(val *[]*CodedeployDeploymentGroupEc2TagSet) {
+func (j *jsiiProxy_CodedeployDeploymentGroup) SetEc2TagSet(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ec2TagSet",
@@ -3178,7 +3633,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) SetLifecycle(val *cdktf.TerraformR
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) SetOnPremisesInstanceTagFilter(val *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter) {
+func (j *jsiiProxy_CodedeployDeploymentGroup) SetOnPremisesInstanceTagFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"onPremisesInstanceTagFilter",
@@ -3202,7 +3657,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) SetServiceRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_CodedeployDeploymentGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3210,7 +3665,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodedeployDeploymentGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3218,7 +3673,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroup) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroup) SetTriggerConfiguration(val *[]*CodedeployDeploymentGroupTriggerConfiguration) {
+func (j *jsiiProxy_CodedeployDeploymentGroup) SetTriggerConfiguration(val interface{}) {
 	_jsii_.Set(
 		j,
 		"triggerConfiguration",
@@ -3266,12 +3721,40 @@ func (c *jsiiProxy_CodedeployDeploymentGroup) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3308,12 +3791,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroup) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3572,12 +4097,12 @@ func (c *jsiiProxy_CodedeployDeploymentGroup) ToTerraform() interface{} {
 }
 
 type CodedeployDeploymentGroupAlarmConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#alarms CodedeployDeploymentGroup#alarms}.
-	Alarms *[]*string `json:"alarms"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#enabled CodedeployDeploymentGroup#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#ignore_poll_alarm_failure CodedeployDeploymentGroup#ignore_poll_alarm_failure}.
-	IgnorePollAlarmFailure interface{} `json:"ignorePollAlarmFailure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#alarms CodedeployDeploymentGroup#alarms}.
+	Alarms *[]*string `json:"alarms" yaml:"alarms"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#enabled CodedeployDeploymentGroup#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#ignore_poll_alarm_failure CodedeployDeploymentGroup#ignore_poll_alarm_failure}.
+	IgnorePollAlarmFailure interface{} `json:"ignorePollAlarmFailure" yaml:"ignorePollAlarmFailure"`
 }
 
 type CodedeployDeploymentGroupAlarmConfigurationOutputReference interface {
@@ -3597,12 +4122,17 @@ type CodedeployDeploymentGroupAlarmConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAlarms()
@@ -3705,8 +4235,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3715,7 +4245,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) T
 	return returns
 }
 
-func NewCodedeployDeploymentGroupAlarmConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupAlarmConfigurationOutputReference {
+func NewCodedeployDeploymentGroupAlarmConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupAlarmConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference{}
@@ -3729,7 +4259,7 @@ func NewCodedeployDeploymentGroupAlarmConfigurationOutputReference(terraformReso
 	return &j
 }
 
-func NewCodedeployDeploymentGroupAlarmConfigurationOutputReference_Override(c CodedeployDeploymentGroupAlarmConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupAlarmConfigurationOutputReference_Override(c CodedeployDeploymentGroupAlarmConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3787,7 +4317,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3796,12 +4326,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) S
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3838,12 +4396,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) G
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3904,10 +4504,10 @@ func (c *jsiiProxy_CodedeployDeploymentGroupAlarmConfigurationOutputReference) R
 }
 
 type CodedeployDeploymentGroupAutoRollbackConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#enabled CodedeployDeploymentGroup#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#events CodedeployDeploymentGroup#events}.
-	Events *[]*string `json:"events"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#enabled CodedeployDeploymentGroup#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#events CodedeployDeploymentGroup#events}.
+	Events *[]*string `json:"events" yaml:"events"`
 }
 
 type CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference interface {
@@ -3924,12 +4524,17 @@ type CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference interface
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -4011,8 +4616,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4021,7 +4626,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 	return returns
 }
 
-func NewCodedeployDeploymentGroupAutoRollbackConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference {
+func NewCodedeployDeploymentGroupAutoRollbackConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference{}
@@ -4035,7 +4640,7 @@ func NewCodedeployDeploymentGroupAutoRollbackConfigurationOutputReference(terraf
 	return &j
 }
 
-func NewCodedeployDeploymentGroupAutoRollbackConfigurationOutputReference_Override(c CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupAutoRollbackConfigurationOutputReference_Override(c CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4085,7 +4690,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4094,12 +4699,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4136,12 +4769,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4196,23 +4871,23 @@ func (c *jsiiProxy_CodedeployDeploymentGroupAutoRollbackConfigurationOutputRefer
 type CodedeployDeploymentGroupBlueGreenDeploymentConfig struct {
 	// deployment_ready_option block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#deployment_ready_option CodedeployDeploymentGroup#deployment_ready_option}
-	DeploymentReadyOption *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption `json:"deploymentReadyOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#deployment_ready_option CodedeployDeploymentGroup#deployment_ready_option}
+	DeploymentReadyOption *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption `json:"deploymentReadyOption" yaml:"deploymentReadyOption"`
 	// green_fleet_provisioning_option block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#green_fleet_provisioning_option CodedeployDeploymentGroup#green_fleet_provisioning_option}
-	GreenFleetProvisioningOption *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption `json:"greenFleetProvisioningOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#green_fleet_provisioning_option CodedeployDeploymentGroup#green_fleet_provisioning_option}
+	GreenFleetProvisioningOption *CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption `json:"greenFleetProvisioningOption" yaml:"greenFleetProvisioningOption"`
 	// terminate_blue_instances_on_deployment_success block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#terminate_blue_instances_on_deployment_success CodedeployDeploymentGroup#terminate_blue_instances_on_deployment_success}
-	TerminateBlueInstancesOnDeploymentSuccess *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess `json:"terminateBlueInstancesOnDeploymentSuccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#terminate_blue_instances_on_deployment_success CodedeployDeploymentGroup#terminate_blue_instances_on_deployment_success}
+	TerminateBlueInstancesOnDeploymentSuccess *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess `json:"terminateBlueInstancesOnDeploymentSuccess" yaml:"terminateBlueInstancesOnDeploymentSuccess"`
 }
 
 type CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#action_on_timeout CodedeployDeploymentGroup#action_on_timeout}.
-	ActionOnTimeout *string `json:"actionOnTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#wait_time_in_minutes CodedeployDeploymentGroup#wait_time_in_minutes}.
-	WaitTimeInMinutes *float64 `json:"waitTimeInMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#action_on_timeout CodedeployDeploymentGroup#action_on_timeout}.
+	ActionOnTimeout *string `json:"actionOnTimeout" yaml:"actionOnTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#wait_time_in_minutes CodedeployDeploymentGroup#wait_time_in_minutes}.
+	WaitTimeInMinutes *float64 `json:"waitTimeInMinutes" yaml:"waitTimeInMinutes"`
 }
 
 type CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference interface {
@@ -4226,15 +4901,20 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutp
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WaitTimeInMinutes() *float64
 	SetWaitTimeInMinutes(val *float64)
 	WaitTimeInMinutesInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetActionOnTimeout()
@@ -4296,8 +4976,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4326,7 +5006,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 	return returns
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference{}
@@ -4340,7 +5020,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionO
 	return &j
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4382,7 +5062,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4399,12 +5079,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4441,12 +5149,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4499,8 +5249,8 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentR
 }
 
 type CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#action CodedeployDeploymentGroup#action}.
-	Action *string `json:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#action CodedeployDeploymentGroup#action}.
+	Action *string `json:"action" yaml:"action"`
 }
 
 type CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference interface {
@@ -4514,12 +5264,17 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOpt
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAction()
@@ -4580,8 +5335,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetP
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4590,7 +5345,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetP
 	return returns
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference{}
@@ -4604,7 +5359,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioning
 	return &j
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4646,7 +5401,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetP
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4655,12 +5410,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetP
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4697,12 +5480,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetP
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigGreenFleetProvisioningOptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4760,12 +5585,17 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference interface
 	TerminateBlueInstancesOnDeploymentSuccessInput() *CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDeploymentReadyOption(value *CodedeployDeploymentGroupBlueGreenDeploymentConfigDeploymentReadyOption)
@@ -4871,8 +5701,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4881,7 +5711,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputRefer
 	return returns
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference{}
@@ -4895,7 +5725,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference(terraf
 	return &j
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4929,7 +5759,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputRefer
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4938,12 +5768,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputRefer
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4980,12 +5838,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputRefer
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5070,10 +5970,10 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigOutputRefer
 }
 
 type CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccess struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#action CodedeployDeploymentGroup#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#termination_wait_time_in_minutes CodedeployDeploymentGroup#termination_wait_time_in_minutes}.
-	TerminationWaitTimeInMinutes *float64 `json:"terminationWaitTimeInMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#action CodedeployDeploymentGroup#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#termination_wait_time_in_minutes CodedeployDeploymentGroup#termination_wait_time_in_minutes}.
+	TerminationWaitTimeInMinutes *float64 `json:"terminationWaitTimeInMinutes" yaml:"terminationWaitTimeInMinutes"`
 }
 
 type CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference interface {
@@ -5090,12 +5990,17 @@ type CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnD
 	TerminationWaitTimeInMinutesInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAction()
@@ -5177,8 +6082,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5187,7 +6092,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 	return returns
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference{}
@@ -5201,7 +6106,7 @@ func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstances
 	return &j
 }
 
-func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference_Override(c CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5251,7 +6156,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5260,12 +6165,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5302,12 +6235,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5362,74 +6337,74 @@ func (c *jsiiProxy_CodedeployDeploymentGroupBlueGreenDeploymentConfigTerminateBl
 // AWS CodeDeploy.
 type CodedeployDeploymentGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#app_name CodedeployDeploymentGroup#app_name}.
-	AppName *string `json:"appName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#deployment_group_name CodedeployDeploymentGroup#deployment_group_name}.
-	DeploymentGroupName *string `json:"deploymentGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#service_role_arn CodedeployDeploymentGroup#service_role_arn}.
-	ServiceRoleArn *string `json:"serviceRoleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#app_name CodedeployDeploymentGroup#app_name}.
+	AppName *string `json:"appName" yaml:"appName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#deployment_group_name CodedeployDeploymentGroup#deployment_group_name}.
+	DeploymentGroupName *string `json:"deploymentGroupName" yaml:"deploymentGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#service_role_arn CodedeployDeploymentGroup#service_role_arn}.
+	ServiceRoleArn *string `json:"serviceRoleArn" yaml:"serviceRoleArn"`
 	// alarm_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#alarm_configuration CodedeployDeploymentGroup#alarm_configuration}
-	AlarmConfiguration *CodedeployDeploymentGroupAlarmConfiguration `json:"alarmConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#alarm_configuration CodedeployDeploymentGroup#alarm_configuration}
+	AlarmConfiguration *CodedeployDeploymentGroupAlarmConfiguration `json:"alarmConfiguration" yaml:"alarmConfiguration"`
 	// auto_rollback_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#auto_rollback_configuration CodedeployDeploymentGroup#auto_rollback_configuration}
-	AutoRollbackConfiguration *CodedeployDeploymentGroupAutoRollbackConfiguration `json:"autoRollbackConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#autoscaling_groups CodedeployDeploymentGroup#autoscaling_groups}.
-	AutoscalingGroups *[]*string `json:"autoscalingGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#auto_rollback_configuration CodedeployDeploymentGroup#auto_rollback_configuration}
+	AutoRollbackConfiguration *CodedeployDeploymentGroupAutoRollbackConfiguration `json:"autoRollbackConfiguration" yaml:"autoRollbackConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#autoscaling_groups CodedeployDeploymentGroup#autoscaling_groups}.
+	AutoscalingGroups *[]*string `json:"autoscalingGroups" yaml:"autoscalingGroups"`
 	// blue_green_deployment_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#blue_green_deployment_config CodedeployDeploymentGroup#blue_green_deployment_config}
-	BlueGreenDeploymentConfig *CodedeployDeploymentGroupBlueGreenDeploymentConfig `json:"blueGreenDeploymentConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#deployment_config_name CodedeployDeploymentGroup#deployment_config_name}.
-	DeploymentConfigName *string `json:"deploymentConfigName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#blue_green_deployment_config CodedeployDeploymentGroup#blue_green_deployment_config}
+	BlueGreenDeploymentConfig *CodedeployDeploymentGroupBlueGreenDeploymentConfig `json:"blueGreenDeploymentConfig" yaml:"blueGreenDeploymentConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#deployment_config_name CodedeployDeploymentGroup#deployment_config_name}.
+	DeploymentConfigName *string `json:"deploymentConfigName" yaml:"deploymentConfigName"`
 	// deployment_style block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#deployment_style CodedeployDeploymentGroup#deployment_style}
-	DeploymentStyle *CodedeployDeploymentGroupDeploymentStyle `json:"deploymentStyle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#deployment_style CodedeployDeploymentGroup#deployment_style}
+	DeploymentStyle *CodedeployDeploymentGroupDeploymentStyle `json:"deploymentStyle" yaml:"deploymentStyle"`
 	// ec2_tag_filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#ec2_tag_filter CodedeployDeploymentGroup#ec2_tag_filter}
-	Ec2TagFilter *[]*CodedeployDeploymentGroupEc2TagFilter `json:"ec2TagFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#ec2_tag_filter CodedeployDeploymentGroup#ec2_tag_filter}
+	Ec2TagFilter interface{} `json:"ec2TagFilter" yaml:"ec2TagFilter"`
 	// ec2_tag_set block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#ec2_tag_set CodedeployDeploymentGroup#ec2_tag_set}
-	Ec2TagSet *[]*CodedeployDeploymentGroupEc2TagSet `json:"ec2TagSet"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#ec2_tag_set CodedeployDeploymentGroup#ec2_tag_set}
+	Ec2TagSet interface{} `json:"ec2TagSet" yaml:"ec2TagSet"`
 	// ecs_service block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#ecs_service CodedeployDeploymentGroup#ecs_service}
-	EcsService *CodedeployDeploymentGroupEcsService `json:"ecsService"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#ecs_service CodedeployDeploymentGroup#ecs_service}
+	EcsService *CodedeployDeploymentGroupEcsService `json:"ecsService" yaml:"ecsService"`
 	// load_balancer_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#load_balancer_info CodedeployDeploymentGroup#load_balancer_info}
-	LoadBalancerInfo *CodedeployDeploymentGroupLoadBalancerInfo `json:"loadBalancerInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#load_balancer_info CodedeployDeploymentGroup#load_balancer_info}
+	LoadBalancerInfo *CodedeployDeploymentGroupLoadBalancerInfo `json:"loadBalancerInfo" yaml:"loadBalancerInfo"`
 	// on_premises_instance_tag_filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#on_premises_instance_tag_filter CodedeployDeploymentGroup#on_premises_instance_tag_filter}
-	OnPremisesInstanceTagFilter *[]*CodedeployDeploymentGroupOnPremisesInstanceTagFilter `json:"onPremisesInstanceTagFilter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#tags CodedeployDeploymentGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#tags_all CodedeployDeploymentGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#on_premises_instance_tag_filter CodedeployDeploymentGroup#on_premises_instance_tag_filter}
+	OnPremisesInstanceTagFilter interface{} `json:"onPremisesInstanceTagFilter" yaml:"onPremisesInstanceTagFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#tags CodedeployDeploymentGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#tags_all CodedeployDeploymentGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// trigger_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#trigger_configuration CodedeployDeploymentGroup#trigger_configuration}
-	TriggerConfiguration *[]*CodedeployDeploymentGroupTriggerConfiguration `json:"triggerConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#trigger_configuration CodedeployDeploymentGroup#trigger_configuration}
+	TriggerConfiguration interface{} `json:"triggerConfiguration" yaml:"triggerConfiguration"`
 }
 
 type CodedeployDeploymentGroupDeploymentStyle struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#deployment_option CodedeployDeploymentGroup#deployment_option}.
-	DeploymentOption *string `json:"deploymentOption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#deployment_type CodedeployDeploymentGroup#deployment_type}.
-	DeploymentType *string `json:"deploymentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#deployment_option CodedeployDeploymentGroup#deployment_option}.
+	DeploymentOption *string `json:"deploymentOption" yaml:"deploymentOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#deployment_type CodedeployDeploymentGroup#deployment_type}.
+	DeploymentType *string `json:"deploymentType" yaml:"deploymentType"`
 }
 
 type CodedeployDeploymentGroupDeploymentStyleOutputReference interface {
@@ -5446,12 +6421,17 @@ type CodedeployDeploymentGroupDeploymentStyleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDeploymentOption()
@@ -5533,8 +6513,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5543,7 +6523,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) Terr
 	return returns
 }
 
-func NewCodedeployDeploymentGroupDeploymentStyleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupDeploymentStyleOutputReference {
+func NewCodedeployDeploymentGroupDeploymentStyleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupDeploymentStyleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference{}
@@ -5557,7 +6537,7 @@ func NewCodedeployDeploymentGroupDeploymentStyleOutputReference(terraformResourc
 	return &j
 }
 
-func NewCodedeployDeploymentGroupDeploymentStyleOutputReference_Override(c CodedeployDeploymentGroupDeploymentStyleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupDeploymentStyleOutputReference_Override(c CodedeployDeploymentGroupDeploymentStyleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5607,7 +6587,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5616,12 +6596,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) SetT
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5658,12 +6666,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetN
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5716,35 +6766,35 @@ func (c *jsiiProxy_CodedeployDeploymentGroupDeploymentStyleOutputReference) Rese
 }
 
 type CodedeployDeploymentGroupEc2TagFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#key CodedeployDeploymentGroup#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#type CodedeployDeploymentGroup#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#value CodedeployDeploymentGroup#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#key CodedeployDeploymentGroup#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#type CodedeployDeploymentGroup#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#value CodedeployDeploymentGroup#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CodedeployDeploymentGroupEc2TagSet struct {
 	// ec2_tag_filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#ec2_tag_filter CodedeployDeploymentGroup#ec2_tag_filter}
-	Ec2TagFilter *[]*CodedeployDeploymentGroupEc2TagSetEc2TagFilter `json:"ec2TagFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#ec2_tag_filter CodedeployDeploymentGroup#ec2_tag_filter}
+	Ec2TagFilter interface{} `json:"ec2TagFilter" yaml:"ec2TagFilter"`
 }
 
 type CodedeployDeploymentGroupEc2TagSetEc2TagFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#key CodedeployDeploymentGroup#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#type CodedeployDeploymentGroup#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#value CodedeployDeploymentGroup#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#key CodedeployDeploymentGroup#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#type CodedeployDeploymentGroup#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#value CodedeployDeploymentGroup#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CodedeployDeploymentGroupEcsService struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#cluster_name CodedeployDeploymentGroup#cluster_name}.
-	ClusterName *string `json:"clusterName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#service_name CodedeployDeploymentGroup#service_name}.
-	ServiceName *string `json:"serviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#cluster_name CodedeployDeploymentGroup#cluster_name}.
+	ClusterName *string `json:"clusterName" yaml:"clusterName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#service_name CodedeployDeploymentGroup#service_name}.
+	ServiceName *string `json:"serviceName" yaml:"serviceName"`
 }
 
 type CodedeployDeploymentGroupEcsServiceOutputReference interface {
@@ -5761,12 +6811,17 @@ type CodedeployDeploymentGroupEcsServiceOutputReference interface {
 	ServiceNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5846,8 +6901,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5856,7 +6911,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) Terraform
 	return returns
 }
 
-func NewCodedeployDeploymentGroupEcsServiceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupEcsServiceOutputReference {
+func NewCodedeployDeploymentGroupEcsServiceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupEcsServiceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference{}
@@ -5870,7 +6925,7 @@ func NewCodedeployDeploymentGroupEcsServiceOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewCodedeployDeploymentGroupEcsServiceOutputReference_Override(c CodedeployDeploymentGroupEcsServiceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupEcsServiceOutputReference_Override(c CodedeployDeploymentGroupEcsServiceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5920,7 +6975,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5929,12 +6984,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) SetTerraf
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5971,12 +7054,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetNumber
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6015,45 +7140,50 @@ func (c *jsiiProxy_CodedeployDeploymentGroupEcsServiceOutputReference) Interpola
 type CodedeployDeploymentGroupLoadBalancerInfo struct {
 	// elb_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#elb_info CodedeployDeploymentGroup#elb_info}
-	ElbInfo *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo `json:"elbInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#elb_info CodedeployDeploymentGroup#elb_info}
+	ElbInfo interface{} `json:"elbInfo" yaml:"elbInfo"`
 	// target_group_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#target_group_info CodedeployDeploymentGroup#target_group_info}
-	TargetGroupInfo *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo `json:"targetGroupInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#target_group_info CodedeployDeploymentGroup#target_group_info}
+	TargetGroupInfo interface{} `json:"targetGroupInfo" yaml:"targetGroupInfo"`
 	// target_group_pair_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#target_group_pair_info CodedeployDeploymentGroup#target_group_pair_info}
-	TargetGroupPairInfo *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo `json:"targetGroupPairInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#target_group_pair_info CodedeployDeploymentGroup#target_group_pair_info}
+	TargetGroupPairInfo *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo `json:"targetGroupPairInfo" yaml:"targetGroupPairInfo"`
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoElbInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#name CodedeployDeploymentGroup#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#name CodedeployDeploymentGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoOutputReference interface {
 	cdktf.ComplexObject
-	ElbInfo() *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo
-	SetElbInfo(val *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo)
-	ElbInfoInput() *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo
+	ElbInfo() interface{}
+	SetElbInfo(val interface{})
+	ElbInfoInput() interface{}
 	InternalValue() *CodedeployDeploymentGroupLoadBalancerInfo
 	SetInternalValue(val *CodedeployDeploymentGroupLoadBalancerInfo)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	TargetGroupInfo() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo
-	SetTargetGroupInfo(val *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo)
-	TargetGroupInfoInput() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo
+	TargetGroupInfo() interface{}
+	SetTargetGroupInfo(val interface{})
+	TargetGroupInfoInput() interface{}
 	TargetGroupPairInfo() CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference
 	TargetGroupPairInfoInput() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutTargetGroupPairInfo(value *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo)
@@ -6067,8 +7197,8 @@ type jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) ElbInfo() *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo {
-	var returns *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) ElbInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"elbInfo",
@@ -6077,8 +7207,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Elb
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) ElbInfoInput() *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo {
-	var returns *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) ElbInfoInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"elbInfoInput",
@@ -6107,8 +7237,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) IsS
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) TargetGroupInfo() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo {
-	var returns *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) TargetGroupInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroupInfo",
@@ -6117,8 +7247,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Tar
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) TargetGroupInfoInput() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo {
-	var returns *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) TargetGroupInfoInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroupInfoInput",
@@ -6157,8 +7287,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6167,7 +7297,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Ter
 	return returns
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoOutputReference {
+func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference{}
@@ -6181,7 +7311,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference(terraformResour
 	return &j
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6191,7 +7321,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoOutputReference_Override(c Code
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) SetElbInfo(val *[]*CodedeployDeploymentGroupLoadBalancerInfoElbInfo) {
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) SetElbInfo(val interface{}) {
 	_jsii_.Set(
 		j,
 		"elbInfo",
@@ -6215,7 +7345,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) SetTargetGroupInfo(val *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo) {
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) SetTargetGroupInfo(val interface{}) {
 	_jsii_.Set(
 		j,
 		"targetGroupInfo",
@@ -6231,7 +7361,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6240,12 +7370,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Set
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6282,12 +7440,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Get
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6356,23 +7556,23 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoOutputReference) Res
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#name CodedeployDeploymentGroup#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#name CodedeployDeploymentGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfo struct {
 	// prod_traffic_route block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#prod_traffic_route CodedeployDeploymentGroup#prod_traffic_route}
-	ProdTrafficRoute *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute `json:"prodTrafficRoute"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#prod_traffic_route CodedeployDeploymentGroup#prod_traffic_route}
+	ProdTrafficRoute *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute `json:"prodTrafficRoute" yaml:"prodTrafficRoute"`
 	// target_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#target_group CodedeployDeploymentGroup#target_group}
-	TargetGroup *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup `json:"targetGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#target_group CodedeployDeploymentGroup#target_group}
+	TargetGroup interface{} `json:"targetGroup" yaml:"targetGroup"`
 	// test_traffic_route block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#test_traffic_route CodedeployDeploymentGroup#test_traffic_route}
-	TestTrafficRoute *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute `json:"testTrafficRoute"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#test_traffic_route CodedeployDeploymentGroup#test_traffic_route}
+	TestTrafficRoute *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute `json:"testTrafficRoute" yaml:"testTrafficRoute"`
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference interface {
@@ -6383,19 +7583,24 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference
 	SetIsSingleItem(val *bool)
 	ProdTrafficRoute() CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference
 	ProdTrafficRouteInput() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute
-	TargetGroup() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup
-	SetTargetGroup(val *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup)
-	TargetGroupInput() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup
+	TargetGroup() interface{}
+	SetTargetGroup(val interface{})
+	TargetGroupInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TestTrafficRoute() CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference
 	TestTrafficRouteInput() *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutProdTrafficRoute(value *CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute)
@@ -6448,8 +7653,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) TargetGroup() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup {
-	var returns *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) TargetGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroup",
@@ -6458,8 +7663,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) TargetGroupInput() *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup {
-	var returns *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) TargetGroupInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetGroupInput",
@@ -6478,8 +7683,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6508,7 +7713,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 	return returns
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference {
+func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference{}
@@ -6522,7 +7727,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputRefere
 	return &j
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6548,7 +7753,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) SetTargetGroup(val *[]*CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup) {
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) SetTargetGroup(val interface{}) {
 	_jsii_.Set(
 		j,
 		"targetGroup",
@@ -6564,7 +7769,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6573,12 +7778,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6615,12 +7848,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6681,8 +7956,8 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoO
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRoute struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#listener_arns CodedeployDeploymentGroup#listener_arns}.
-	ListenerArns *[]*string `json:"listenerArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#listener_arns CodedeployDeploymentGroup#listener_arns}.
+	ListenerArns *[]*string `json:"listenerArns" yaml:"listenerArns"`
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference interface {
@@ -6696,12 +7971,17 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRout
 	ListenerArnsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6761,8 +8041,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoP
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6771,7 +8051,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoP
 	return returns
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference {
+func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference{}
@@ -6785,7 +8065,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficR
 	return &j
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6827,7 +8107,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoP
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6836,12 +8116,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoP
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6878,12 +8186,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoP
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoProdTrafficRouteOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6920,13 +8270,13 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoP
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTargetGroup struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#name CodedeployDeploymentGroup#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#name CodedeployDeploymentGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRoute struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#listener_arns CodedeployDeploymentGroup#listener_arns}.
-	ListenerArns *[]*string `json:"listenerArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#listener_arns CodedeployDeploymentGroup#listener_arns}.
+	ListenerArns *[]*string `json:"listenerArns" yaml:"listenerArns"`
 }
 
 type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference interface {
@@ -6940,12 +8290,17 @@ type CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRout
 	ListenerArnsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7005,8 +8360,8 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoT
 	return returns
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7015,7 +8370,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoT
 	return returns
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference {
+func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference{}
@@ -7029,7 +8384,7 @@ func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficR
 	return &j
 }
 
-func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference_Override(c CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7071,7 +8426,7 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoT
 	)
 }
 
-func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7080,12 +8435,40 @@ func (j *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoT
 }
 
 // Experimental.
-func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7122,12 +8505,54 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoT
 }
 
 // Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7164,19 +8589,19 @@ func (c *jsiiProxy_CodedeployDeploymentGroupLoadBalancerInfoTargetGroupPairInfoT
 }
 
 type CodedeployDeploymentGroupOnPremisesInstanceTagFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#key CodedeployDeploymentGroup#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#type CodedeployDeploymentGroup#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#value CodedeployDeploymentGroup#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#key CodedeployDeploymentGroup#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#type CodedeployDeploymentGroup#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#value CodedeployDeploymentGroup#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CodedeployDeploymentGroupTriggerConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#trigger_events CodedeployDeploymentGroup#trigger_events}.
-	TriggerEvents *[]*string `json:"triggerEvents"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#trigger_name CodedeployDeploymentGroup#trigger_name}.
-	TriggerName *string `json:"triggerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group.html#trigger_target_arn CodedeployDeploymentGroup#trigger_target_arn}.
-	TriggerTargetArn *string `json:"triggerTargetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#trigger_events CodedeployDeploymentGroup#trigger_events}.
+	TriggerEvents *[]*string `json:"triggerEvents" yaml:"triggerEvents"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#trigger_name CodedeployDeploymentGroup#trigger_name}.
+	TriggerName *string `json:"triggerName" yaml:"triggerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codedeploy_deployment_group#trigger_target_arn CodedeployDeploymentGroup#trigger_target_arn}.
+	TriggerTargetArn *string `json:"triggerTargetArn" yaml:"triggerTargetArn"`
 }

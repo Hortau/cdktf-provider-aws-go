@@ -9,19 +9,19 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/ram/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html aws_ram_resource_share}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share aws_ram_resource_share}.
 type DataAwsRamResourceShare interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filter() *[]*DataAwsRamResourceShareFilter
-	SetFilter(val *[]*DataAwsRamResourceShareFilter)
-	FilterInput() *[]*DataAwsRamResourceShareFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -39,17 +39,22 @@ type DataAwsRamResourceShare interface {
 	SetResourceOwner(val *string)
 	ResourceOwnerInput() *string
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetFilter()
@@ -96,8 +101,8 @@ func (j *jsiiProxy_DataAwsRamResourceShare) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRamResourceShare) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -116,8 +121,8 @@ func (j *jsiiProxy_DataAwsRamResourceShare) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) Filter() *[]*DataAwsRamResourceShareFilter {
-	var returns *[]*DataAwsRamResourceShareFilter
+func (j *jsiiProxy_DataAwsRamResourceShare) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -126,8 +131,8 @@ func (j *jsiiProxy_DataAwsRamResourceShare) Filter() *[]*DataAwsRamResourceShare
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) FilterInput() *[]*DataAwsRamResourceShareFilter {
-	var returns *[]*DataAwsRamResourceShareFilter
+func (j *jsiiProxy_DataAwsRamResourceShare) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -266,8 +271,8 @@ func (j *jsiiProxy_DataAwsRamResourceShare) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRamResourceShare) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -276,8 +281,8 @@ func (j *jsiiProxy_DataAwsRamResourceShare) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRamResourceShare) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -316,7 +321,7 @@ func (j *jsiiProxy_DataAwsRamResourceShare) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html aws_ram_resource_share} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share aws_ram_resource_share} Data Source.
 func NewDataAwsRamResourceShare(scope constructs.Construct, id *string, config *DataAwsRamResourceShareConfig) DataAwsRamResourceShare {
 	_init_.Initialize()
 
@@ -331,7 +336,7 @@ func NewDataAwsRamResourceShare(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html aws_ram_resource_share} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share aws_ram_resource_share} Data Source.
 func NewDataAwsRamResourceShare_Override(d DataAwsRamResourceShare, scope constructs.Construct, id *string, config *DataAwsRamResourceShareConfig) {
 	_init_.Initialize()
 
@@ -342,7 +347,7 @@ func NewDataAwsRamResourceShare_Override(d DataAwsRamResourceShare, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRamResourceShare) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -358,7 +363,7 @@ func (j *jsiiProxy_DataAwsRamResourceShare) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) SetFilter(val *[]*DataAwsRamResourceShareFilter) {
+func (j *jsiiProxy_DataAwsRamResourceShare) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -398,7 +403,7 @@ func (j *jsiiProxy_DataAwsRamResourceShare) SetResourceOwner(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsRamResourceShare) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsRamResourceShare) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -446,12 +451,40 @@ func (d *jsiiProxy_DataAwsRamResourceShare) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRamResourceShare) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRamResourceShare) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRamResourceShare) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -488,12 +521,54 @@ func (d *jsiiProxy_DataAwsRamResourceShare) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRamResourceShare) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRamResourceShare) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRamResourceShare) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRamResourceShare) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -610,39 +685,39 @@ func (d *jsiiProxy_DataAwsRamResourceShare) ToTerraform() interface{} {
 // AWS Resource Access Manager.
 type DataAwsRamResourceShareConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html#name DataAwsRamResourceShare#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html#resource_owner DataAwsRamResourceShare#resource_owner}.
-	ResourceOwner *string `json:"resourceOwner"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share#name DataAwsRamResourceShare#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share#resource_owner DataAwsRamResourceShare#resource_owner}.
+	ResourceOwner *string `json:"resourceOwner" yaml:"resourceOwner"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html#filter DataAwsRamResourceShare#filter}
-	Filter *[]*DataAwsRamResourceShareFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html#tags DataAwsRamResourceShare#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share#filter DataAwsRamResourceShare#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share#tags DataAwsRamResourceShare#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsRamResourceShareFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html#name DataAwsRamResourceShare#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share.html#values DataAwsRamResourceShare#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share#name DataAwsRamResourceShare#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ram_resource_share#values DataAwsRamResourceShare#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association.html aws_ram_principal_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association aws_ram_principal_association}.
 type RamPrincipalAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -664,10 +739,15 @@ type RamPrincipalAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -702,8 +782,8 @@ func (j *jsiiProxy_RamPrincipalAssociation) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_RamPrincipalAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamPrincipalAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -862,7 +942,7 @@ func (j *jsiiProxy_RamPrincipalAssociation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association.html aws_ram_principal_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association aws_ram_principal_association} Resource.
 func NewRamPrincipalAssociation(scope constructs.Construct, id *string, config *RamPrincipalAssociationConfig) RamPrincipalAssociation {
 	_init_.Initialize()
 
@@ -877,7 +957,7 @@ func NewRamPrincipalAssociation(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association.html aws_ram_principal_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association aws_ram_principal_association} Resource.
 func NewRamPrincipalAssociation_Override(r RamPrincipalAssociation, scope constructs.Construct, id *string, config *RamPrincipalAssociationConfig) {
 	_init_.Initialize()
 
@@ -888,7 +968,7 @@ func NewRamPrincipalAssociation_Override(r RamPrincipalAssociation, scope constr
 	)
 }
 
-func (j *jsiiProxy_RamPrincipalAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_RamPrincipalAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -976,12 +1056,40 @@ func (r *jsiiProxy_RamPrincipalAssociation) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (r *jsiiProxy_RamPrincipalAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamPrincipalAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamPrincipalAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1018,12 +1126,54 @@ func (r *jsiiProxy_RamPrincipalAssociation) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (r *jsiiProxy_RamPrincipalAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamPrincipalAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamPrincipalAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamPrincipalAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1124,26 +1274,26 @@ func (r *jsiiProxy_RamPrincipalAssociation) ToTerraform() interface{} {
 // AWS Resource Access Manager.
 type RamPrincipalAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association.html#principal RamPrincipalAssociation#principal}.
-	Principal *string `json:"principal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association.html#resource_share_arn RamPrincipalAssociation#resource_share_arn}.
-	ResourceShareArn *string `json:"resourceShareArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association#principal RamPrincipalAssociation#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_principal_association#resource_share_arn RamPrincipalAssociation#resource_share_arn}.
+	ResourceShareArn *string `json:"resourceShareArn" yaml:"resourceShareArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association.html aws_ram_resource_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association aws_ram_resource_association}.
 type RamResourceAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1165,10 +1315,15 @@ type RamResourceAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1203,8 +1358,8 @@ func (j *jsiiProxy_RamResourceAssociation) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamResourceAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1363,7 +1518,7 @@ func (j *jsiiProxy_RamResourceAssociation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association.html aws_ram_resource_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association aws_ram_resource_association} Resource.
 func NewRamResourceAssociation(scope constructs.Construct, id *string, config *RamResourceAssociationConfig) RamResourceAssociation {
 	_init_.Initialize()
 
@@ -1378,7 +1533,7 @@ func NewRamResourceAssociation(scope constructs.Construct, id *string, config *R
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association.html aws_ram_resource_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association aws_ram_resource_association} Resource.
 func NewRamResourceAssociation_Override(r RamResourceAssociation, scope constructs.Construct, id *string, config *RamResourceAssociationConfig) {
 	_init_.Initialize()
 
@@ -1389,7 +1544,7 @@ func NewRamResourceAssociation_Override(r RamResourceAssociation, scope construc
 	)
 }
 
-func (j *jsiiProxy_RamResourceAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_RamResourceAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1477,12 +1632,40 @@ func (r *jsiiProxy_RamResourceAssociation) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1519,12 +1702,54 @@ func (r *jsiiProxy_RamResourceAssociation) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1625,20 +1850,20 @@ func (r *jsiiProxy_RamResourceAssociation) ToTerraform() interface{} {
 // AWS Resource Access Manager.
 type RamResourceAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association.html#resource_arn RamResourceAssociation#resource_arn}.
-	ResourceArn *string `json:"resourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association.html#resource_share_arn RamResourceAssociation#resource_share_arn}.
-	ResourceShareArn *string `json:"resourceShareArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association#resource_arn RamResourceAssociation#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_association#resource_share_arn RamResourceAssociation#resource_share_arn}.
+	ResourceShareArn *string `json:"resourceShareArn" yaml:"resourceShareArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html aws_ram_resource_share}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share aws_ram_resource_share}.
 type RamResourceShare interface {
 	cdktf.TerraformResource
 	AllowExternalPrincipals() interface{}
@@ -1647,8 +1872,8 @@ type RamResourceShare interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1663,22 +1888,27 @@ type RamResourceShare interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() RamResourceShareTimeoutsOutputReference
 	TimeoutsInput() *RamResourceShareTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *RamResourceShareTimeouts)
@@ -1748,8 +1978,8 @@ func (j *jsiiProxy_RamResourceShare) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShare) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamResourceShare) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1858,8 +2088,8 @@ func (j *jsiiProxy_RamResourceShare) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShare) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamResourceShare) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1868,8 +2098,8 @@ func (j *jsiiProxy_RamResourceShare) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShare) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamResourceShare) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1878,8 +2108,8 @@ func (j *jsiiProxy_RamResourceShare) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShare) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamResourceShare) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1888,8 +2118,8 @@ func (j *jsiiProxy_RamResourceShare) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShare) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamResourceShare) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1948,7 +2178,7 @@ func (j *jsiiProxy_RamResourceShare) TimeoutsInput() *RamResourceShareTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html aws_ram_resource_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share aws_ram_resource_share} Resource.
 func NewRamResourceShare(scope constructs.Construct, id *string, config *RamResourceShareConfig) RamResourceShare {
 	_init_.Initialize()
 
@@ -1963,7 +2193,7 @@ func NewRamResourceShare(scope constructs.Construct, id *string, config *RamReso
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html aws_ram_resource_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share aws_ram_resource_share} Resource.
 func NewRamResourceShare_Override(r RamResourceShare, scope constructs.Construct, id *string, config *RamResourceShareConfig) {
 	_init_.Initialize()
 
@@ -1982,7 +2212,7 @@ func (j *jsiiProxy_RamResourceShare) SetAllowExternalPrincipals(val interface{})
 	)
 }
 
-func (j *jsiiProxy_RamResourceShare) SetCount(val interface{}) {
+func (j *jsiiProxy_RamResourceShare) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2022,7 +2252,7 @@ func (j *jsiiProxy_RamResourceShare) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_RamResourceShare) SetTags(val interface{}) {
+func (j *jsiiProxy_RamResourceShare) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2030,7 +2260,7 @@ func (j *jsiiProxy_RamResourceShare) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RamResourceShare) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_RamResourceShare) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2078,12 +2308,40 @@ func (r *jsiiProxy_RamResourceShare) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceShare) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceShare) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShare) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2120,12 +2378,54 @@ func (r *jsiiProxy_RamResourceShare) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceShare) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShare) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceShare) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShare) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2263,13 +2563,13 @@ func (r *jsiiProxy_RamResourceShare) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html aws_ram_resource_share_accepter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter aws_ram_resource_share_accepter}.
 type RamResourceShareAccepter interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2297,10 +2597,15 @@ type RamResourceShareAccepter interface {
 	Timeouts() RamResourceShareAccepterTimeoutsOutputReference
 	TimeoutsInput() *RamResourceShareAccepterTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *RamResourceShareAccepterTimeouts)
@@ -2337,8 +2642,8 @@ func (j *jsiiProxy_RamResourceShareAccepter) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShareAccepter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_RamResourceShareAccepter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2567,7 +2872,7 @@ func (j *jsiiProxy_RamResourceShareAccepter) TimeoutsInput() *RamResourceShareAc
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html aws_ram_resource_share_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter aws_ram_resource_share_accepter} Resource.
 func NewRamResourceShareAccepter(scope constructs.Construct, id *string, config *RamResourceShareAccepterConfig) RamResourceShareAccepter {
 	_init_.Initialize()
 
@@ -2582,7 +2887,7 @@ func NewRamResourceShareAccepter(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html aws_ram_resource_share_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter aws_ram_resource_share_accepter} Resource.
 func NewRamResourceShareAccepter_Override(r RamResourceShareAccepter, scope constructs.Construct, id *string, config *RamResourceShareAccepterConfig) {
 	_init_.Initialize()
 
@@ -2593,7 +2898,7 @@ func NewRamResourceShareAccepter_Override(r RamResourceShareAccepter, scope cons
 	)
 }
 
-func (j *jsiiProxy_RamResourceShareAccepter) SetCount(val interface{}) {
+func (j *jsiiProxy_RamResourceShareAccepter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2673,12 +2978,40 @@ func (r *jsiiProxy_RamResourceShareAccepter) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceShareAccepter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceShareAccepter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareAccepter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2715,12 +3048,54 @@ func (r *jsiiProxy_RamResourceShareAccepter) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceShareAccepter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareAccepter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceShareAccepter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareAccepter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2837,26 +3212,26 @@ func (r *jsiiProxy_RamResourceShareAccepter) ToTerraform() interface{} {
 // AWS Resource Access Manager.
 type RamResourceShareAccepterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html#share_arn RamResourceShareAccepter#share_arn}.
-	ShareArn *string `json:"shareArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter#share_arn RamResourceShareAccepter#share_arn}.
+	ShareArn *string `json:"shareArn" yaml:"shareArn"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html#timeouts RamResourceShareAccepter#timeouts}
-	Timeouts *RamResourceShareAccepterTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter#timeouts RamResourceShareAccepter#timeouts}
+	Timeouts *RamResourceShareAccepterTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type RamResourceShareAccepterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html#create RamResourceShareAccepter#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter.html#delete RamResourceShareAccepter#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter#create RamResourceShareAccepter#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share_accepter#delete RamResourceShareAccepter#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type RamResourceShareAccepterTimeoutsOutputReference interface {
@@ -2873,12 +3248,17 @@ type RamResourceShareAccepterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2960,8 +3340,8 @@ func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2970,7 +3350,7 @@ func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) TerraformRes
 	return returns
 }
 
-func NewRamResourceShareAccepterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RamResourceShareAccepterTimeoutsOutputReference {
+func NewRamResourceShareAccepterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RamResourceShareAccepterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference{}
@@ -2984,7 +3364,7 @@ func NewRamResourceShareAccepterTimeoutsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewRamResourceShareAccepterTimeoutsOutputReference_Override(r RamResourceShareAccepterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRamResourceShareAccepterTimeoutsOutputReference_Override(r RamResourceShareAccepterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3034,7 +3414,7 @@ func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3043,12 +3423,40 @@ func (j *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3085,12 +3493,54 @@ func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3145,32 +3595,32 @@ func (r *jsiiProxy_RamResourceShareAccepterTimeoutsOutputReference) ResetDelete(
 // AWS Resource Access Manager.
 type RamResourceShareConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html#name RamResourceShare#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html#allow_external_principals RamResourceShare#allow_external_principals}.
-	AllowExternalPrincipals interface{} `json:"allowExternalPrincipals"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html#tags RamResourceShare#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html#tags_all RamResourceShare#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share#name RamResourceShare#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share#allow_external_principals RamResourceShare#allow_external_principals}.
+	AllowExternalPrincipals interface{} `json:"allowExternalPrincipals" yaml:"allowExternalPrincipals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share#tags RamResourceShare#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share#tags_all RamResourceShare#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html#timeouts RamResourceShare#timeouts}
-	Timeouts *RamResourceShareTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share#timeouts RamResourceShare#timeouts}
+	Timeouts *RamResourceShareTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type RamResourceShareTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html#create RamResourceShare#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share.html#delete RamResourceShare#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share#create RamResourceShare#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ram_resource_share#delete RamResourceShare#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type RamResourceShareTimeoutsOutputReference interface {
@@ -3187,12 +3637,17 @@ type RamResourceShareTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -3274,8 +3729,8 @@ func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3284,7 +3739,7 @@ func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewRamResourceShareTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) RamResourceShareTimeoutsOutputReference {
+func NewRamResourceShareTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) RamResourceShareTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_RamResourceShareTimeoutsOutputReference{}
@@ -3298,7 +3753,7 @@ func NewRamResourceShareTimeoutsOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewRamResourceShareTimeoutsOutputReference_Override(r RamResourceShareTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRamResourceShareTimeoutsOutputReference_Override(r RamResourceShareTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3348,7 +3803,7 @@ func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3357,12 +3812,40 @@ func (j *jsiiProxy_RamResourceShareTimeoutsOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3399,12 +3882,54 @@ func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_RamResourceShareTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

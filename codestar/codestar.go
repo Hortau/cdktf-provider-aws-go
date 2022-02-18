@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/codestar/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html aws_codestarconnections_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection aws_codestarconnections_connection}.
 type CodestarconnectionsConnection interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConnectionStatus() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -38,20 +38,25 @@ type CodestarconnectionsConnection interface {
 	SetProviderType(val *string)
 	ProviderTypeInput() *string
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetHostArn()
@@ -110,8 +115,8 @@ func (j *jsiiProxy_CodestarconnectionsConnection) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarconnectionsConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -260,8 +265,8 @@ func (j *jsiiProxy_CodestarconnectionsConnection) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarconnectionsConnection) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -270,8 +275,8 @@ func (j *jsiiProxy_CodestarconnectionsConnection) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarconnectionsConnection) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -280,8 +285,8 @@ func (j *jsiiProxy_CodestarconnectionsConnection) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarconnectionsConnection) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -290,8 +295,8 @@ func (j *jsiiProxy_CodestarconnectionsConnection) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarconnectionsConnection) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -330,7 +335,7 @@ func (j *jsiiProxy_CodestarconnectionsConnection) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html aws_codestarconnections_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection aws_codestarconnections_connection} Resource.
 func NewCodestarconnectionsConnection(scope constructs.Construct, id *string, config *CodestarconnectionsConnectionConfig) CodestarconnectionsConnection {
 	_init_.Initialize()
 
@@ -345,7 +350,7 @@ func NewCodestarconnectionsConnection(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html aws_codestarconnections_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection aws_codestarconnections_connection} Resource.
 func NewCodestarconnectionsConnection_Override(c CodestarconnectionsConnection, scope constructs.Construct, id *string, config *CodestarconnectionsConnectionConfig) {
 	_init_.Initialize()
 
@@ -356,7 +361,7 @@ func NewCodestarconnectionsConnection_Override(c CodestarconnectionsConnection, 
 	)
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_CodestarconnectionsConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -412,7 +417,7 @@ func (j *jsiiProxy_CodestarconnectionsConnection) SetProviderType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) SetTags(val interface{}) {
+func (j *jsiiProxy_CodestarconnectionsConnection) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -420,7 +425,7 @@ func (j *jsiiProxy_CodestarconnectionsConnection) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodestarconnectionsConnection) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodestarconnectionsConnection) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -468,12 +473,40 @@ func (c *jsiiProxy_CodestarconnectionsConnection) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (c *jsiiProxy_CodestarconnectionsConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodestarconnectionsConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -510,12 +543,54 @@ func (c *jsiiProxy_CodestarconnectionsConnection) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (c *jsiiProxy_CodestarconnectionsConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodestarconnectionsConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -648,33 +723,33 @@ func (c *jsiiProxy_CodestarconnectionsConnection) ToTerraform() interface{} {
 // AWS CodeStar.
 type CodestarconnectionsConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html#name CodestarconnectionsConnection#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html#host_arn CodestarconnectionsConnection#host_arn}.
-	HostArn *string `json:"hostArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html#provider_type CodestarconnectionsConnection#provider_type}.
-	ProviderType *string `json:"providerType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html#tags CodestarconnectionsConnection#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection.html#tags_all CodestarconnectionsConnection#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection#name CodestarconnectionsConnection#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection#host_arn CodestarconnectionsConnection#host_arn}.
+	HostArn *string `json:"hostArn" yaml:"hostArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection#provider_type CodestarconnectionsConnection#provider_type}.
+	ProviderType *string `json:"providerType" yaml:"providerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection#tags CodestarconnectionsConnection#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_connection#tags_all CodestarconnectionsConnection#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html aws_codestarconnections_host}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host aws_codestarconnections_host}.
 type CodestarconnectionsHost interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -702,10 +777,15 @@ type CodestarconnectionsHost interface {
 	VpcConfiguration() CodestarconnectionsHostVpcConfigurationOutputReference
 	VpcConfigurationInput() *CodestarconnectionsHostVpcConfiguration
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutVpcConfiguration(value *CodestarconnectionsHostVpcConfiguration)
@@ -752,8 +832,8 @@ func (j *jsiiProxy_CodestarconnectionsHost) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_CodestarconnectionsHost) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarconnectionsHost) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -962,7 +1042,7 @@ func (j *jsiiProxy_CodestarconnectionsHost) VpcConfigurationInput() *Codestarcon
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html aws_codestarconnections_host} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host aws_codestarconnections_host} Resource.
 func NewCodestarconnectionsHost(scope constructs.Construct, id *string, config *CodestarconnectionsHostConfig) CodestarconnectionsHost {
 	_init_.Initialize()
 
@@ -977,7 +1057,7 @@ func NewCodestarconnectionsHost(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html aws_codestarconnections_host} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host aws_codestarconnections_host} Resource.
 func NewCodestarconnectionsHost_Override(c CodestarconnectionsHost, scope constructs.Construct, id *string, config *CodestarconnectionsHostConfig) {
 	_init_.Initialize()
 
@@ -988,7 +1068,7 @@ func NewCodestarconnectionsHost_Override(c CodestarconnectionsHost, scope constr
 	)
 }
 
-func (j *jsiiProxy_CodestarconnectionsHost) SetCount(val interface{}) {
+func (j *jsiiProxy_CodestarconnectionsHost) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1084,12 +1164,40 @@ func (c *jsiiProxy_CodestarconnectionsHost) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (c *jsiiProxy_CodestarconnectionsHost) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodestarconnectionsHost) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsHost) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1126,12 +1234,54 @@ func (c *jsiiProxy_CodestarconnectionsHost) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (c *jsiiProxy_CodestarconnectionsHost) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsHost) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodestarconnectionsHost) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsHost) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1248,34 +1398,34 @@ func (c *jsiiProxy_CodestarconnectionsHost) ToTerraform() interface{} {
 // AWS CodeStar.
 type CodestarconnectionsHostConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#name CodestarconnectionsHost#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#provider_endpoint CodestarconnectionsHost#provider_endpoint}.
-	ProviderEndpoint *string `json:"providerEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#provider_type CodestarconnectionsHost#provider_type}.
-	ProviderType *string `json:"providerType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#name CodestarconnectionsHost#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#provider_endpoint CodestarconnectionsHost#provider_endpoint}.
+	ProviderEndpoint *string `json:"providerEndpoint" yaml:"providerEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#provider_type CodestarconnectionsHost#provider_type}.
+	ProviderType *string `json:"providerType" yaml:"providerType"`
 	// vpc_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#vpc_configuration CodestarconnectionsHost#vpc_configuration}
-	VpcConfiguration *CodestarconnectionsHostVpcConfiguration `json:"vpcConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#vpc_configuration CodestarconnectionsHost#vpc_configuration}
+	VpcConfiguration *CodestarconnectionsHostVpcConfiguration `json:"vpcConfiguration" yaml:"vpcConfiguration"`
 }
 
 type CodestarconnectionsHostVpcConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#security_group_ids CodestarconnectionsHost#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#subnet_ids CodestarconnectionsHost#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#vpc_id CodestarconnectionsHost#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host.html#tls_certificate CodestarconnectionsHost#tls_certificate}.
-	TlsCertificate *string `json:"tlsCertificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#security_group_ids CodestarconnectionsHost#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#subnet_ids CodestarconnectionsHost#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#vpc_id CodestarconnectionsHost#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarconnections_host#tls_certificate CodestarconnectionsHost#tls_certificate}.
+	TlsCertificate *string `json:"tlsCertificate" yaml:"tlsCertificate"`
 }
 
 type CodestarconnectionsHostVpcConfigurationOutputReference interface {
@@ -1292,18 +1442,23 @@ type CodestarconnectionsHostVpcConfigurationOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TlsCertificate() *string
 	SetTlsCertificate(val *string)
 	TlsCertificateInput() *string
 	VpcId() *string
 	SetVpcId(val *string)
 	VpcIdInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetTlsCertificate()
@@ -1384,8 +1539,8 @@ func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1434,7 +1589,7 @@ func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) VpcId
 	return returns
 }
 
-func NewCodestarconnectionsHostVpcConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodestarconnectionsHostVpcConfigurationOutputReference {
+func NewCodestarconnectionsHostVpcConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodestarconnectionsHostVpcConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference{}
@@ -1448,7 +1603,7 @@ func NewCodestarconnectionsHostVpcConfigurationOutputReference(terraformResource
 	return &j
 }
 
-func NewCodestarconnectionsHostVpcConfigurationOutputReference_Override(c CodestarconnectionsHostVpcConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodestarconnectionsHostVpcConfigurationOutputReference_Override(c CodestarconnectionsHostVpcConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1498,7 +1653,7 @@ func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1523,12 +1678,40 @@ func (j *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) SetVp
 }
 
 // Experimental.
-func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1565,12 +1748,54 @@ func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetNu
 }
 
 // Experimental.
+func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1614,14 +1839,14 @@ func (c *jsiiProxy_CodestarconnectionsHostVpcConfigurationOutputReference) Reset
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html aws_codestarnotifications_notification_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule aws_codestarnotifications_notification_rule}.
 type CodestarnotificationsNotificationRule interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DetailType() *string
@@ -1648,23 +1873,28 @@ type CodestarnotificationsNotificationRule interface {
 	Status() *string
 	SetStatus(val *string)
 	StatusInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
-	Target() *[]*CodestarnotificationsNotificationRuleTarget
-	SetTarget(val *[]*CodestarnotificationsNotificationRuleTarget)
-	TargetInput() *[]*CodestarnotificationsNotificationRuleTarget
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	Target() interface{}
+	SetTarget(val interface{})
+	TargetInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1713,8 +1943,8 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1903,8 +2133,8 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) StatusInput() *string 
 	return returns
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1913,8 +2143,8 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1923,8 +2153,8 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsAll() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1933,8 +2163,8 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsAllInput() interfa
 	return returns
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1943,8 +2173,8 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) TagsInput() interface{
 	return returns
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) Target() *[]*CodestarnotificationsNotificationRuleTarget {
-	var returns *[]*CodestarnotificationsNotificationRuleTarget
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) Target() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"target",
@@ -1953,8 +2183,8 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) Target() *[]*Codestarn
 	return returns
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) TargetInput() *[]*CodestarnotificationsNotificationRuleTarget {
-	var returns *[]*CodestarnotificationsNotificationRuleTarget
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) TargetInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetInput",
@@ -1993,7 +2223,7 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html aws_codestarnotifications_notification_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule aws_codestarnotifications_notification_rule} Resource.
 func NewCodestarnotificationsNotificationRule(scope constructs.Construct, id *string, config *CodestarnotificationsNotificationRuleConfig) CodestarnotificationsNotificationRule {
 	_init_.Initialize()
 
@@ -2008,7 +2238,7 @@ func NewCodestarnotificationsNotificationRule(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html aws_codestarnotifications_notification_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule aws_codestarnotifications_notification_rule} Resource.
 func NewCodestarnotificationsNotificationRule_Override(c CodestarnotificationsNotificationRule, scope constructs.Construct, id *string, config *CodestarnotificationsNotificationRuleConfig) {
 	_init_.Initialize()
 
@@ -2019,7 +2249,7 @@ func NewCodestarnotificationsNotificationRule_Override(c CodestarnotificationsNo
 	)
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetCount(val interface{}) {
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2091,7 +2321,7 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetStatus(val *string)
 	)
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTags(val interface{}) {
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2099,7 +2329,7 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTags(val interface{
 	)
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2107,7 +2337,7 @@ func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTagsAll(val interfa
 	)
 }
 
-func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTarget(val *[]*CodestarnotificationsNotificationRuleTarget) {
+func (j *jsiiProxy_CodestarnotificationsNotificationRule) SetTarget(val interface{}) {
 	_jsii_.Set(
 		j,
 		"target",
@@ -2155,12 +2385,40 @@ func (c *jsiiProxy_CodestarnotificationsNotificationRule) AddOverride(path *stri
 }
 
 // Experimental.
+func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2197,12 +2455,54 @@ func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodestarnotificationsNotificationRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2335,41 +2635,41 @@ func (c *jsiiProxy_CodestarnotificationsNotificationRule) ToTerraform() interfac
 // AWS CodeStar.
 type CodestarnotificationsNotificationRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#detail_type CodestarnotificationsNotificationRule#detail_type}.
-	DetailType *string `json:"detailType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#event_type_ids CodestarnotificationsNotificationRule#event_type_ids}.
-	EventTypeIds *[]*string `json:"eventTypeIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#name CodestarnotificationsNotificationRule#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#resource CodestarnotificationsNotificationRule#resource}.
-	Resource *string `json:"resource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#status CodestarnotificationsNotificationRule#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#tags CodestarnotificationsNotificationRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#tags_all CodestarnotificationsNotificationRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#detail_type CodestarnotificationsNotificationRule#detail_type}.
+	DetailType *string `json:"detailType" yaml:"detailType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#event_type_ids CodestarnotificationsNotificationRule#event_type_ids}.
+	EventTypeIds *[]*string `json:"eventTypeIds" yaml:"eventTypeIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#name CodestarnotificationsNotificationRule#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#resource CodestarnotificationsNotificationRule#resource}.
+	Resource *string `json:"resource" yaml:"resource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#status CodestarnotificationsNotificationRule#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#tags CodestarnotificationsNotificationRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#tags_all CodestarnotificationsNotificationRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#target CodestarnotificationsNotificationRule#target}
-	Target *[]*CodestarnotificationsNotificationRuleTarget `json:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#target CodestarnotificationsNotificationRule#target}
+	Target interface{} `json:"target" yaml:"target"`
 }
 
 type CodestarnotificationsNotificationRuleTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#address CodestarnotificationsNotificationRule#address}.
-	Address *string `json:"address"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule.html#type CodestarnotificationsNotificationRule#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#address CodestarnotificationsNotificationRule#address}.
+	Address *string `json:"address" yaml:"address"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codestarnotifications_notification_rule#type CodestarnotificationsNotificationRule#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection.html aws_codestarconnections_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection aws_codestarconnections_connection}.
 type DataAwsCodestarconnectionsConnection interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -2378,8 +2678,8 @@ type DataAwsCodestarconnectionsConnection interface {
 	CdktfStack() cdktf.TerraformStack
 	ConnectionStatus() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2394,17 +2694,22 @@ type DataAwsCodestarconnectionsConnection interface {
 	SetProvider(val cdktf.TerraformProvider)
 	ProviderType() *string
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2470,8 +2775,8 @@ func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) ConstructNodeMetadata()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2590,8 +2895,8 @@ func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) RawOverrides() interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2600,8 +2905,8 @@ func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2640,7 +2945,7 @@ func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) TerraformResourceType()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection.html aws_codestarconnections_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection aws_codestarconnections_connection} Data Source.
 func NewDataAwsCodestarconnectionsConnection(scope constructs.Construct, id *string, config *DataAwsCodestarconnectionsConnectionConfig) DataAwsCodestarconnectionsConnection {
 	_init_.Initialize()
 
@@ -2655,7 +2960,7 @@ func NewDataAwsCodestarconnectionsConnection(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection.html aws_codestarconnections_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection aws_codestarconnections_connection} Data Source.
 func NewDataAwsCodestarconnectionsConnection_Override(d DataAwsCodestarconnectionsConnection, scope constructs.Construct, id *string, config *DataAwsCodestarconnectionsConnectionConfig) {
 	_init_.Initialize()
 
@@ -2674,7 +2979,7 @@ func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2706,7 +3011,7 @@ func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) SetProvider(val cdktf.T
 	)
 }
 
-func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsCodestarconnectionsConnection) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2754,12 +3059,40 @@ func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) AddOverride(path *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2796,12 +3129,54 @@ func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2910,15 +3285,15 @@ func (d *jsiiProxy_DataAwsCodestarconnectionsConnection) ToTerraform() interface
 // AWS CodeStar.
 type DataAwsCodestarconnectionsConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection.html#arn DataAwsCodestarconnectionsConnection#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection.html#tags DataAwsCodestarconnectionsConnection#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection#arn DataAwsCodestarconnectionsConnection#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codestarconnections_connection#tags DataAwsCodestarconnectionsConnection#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }

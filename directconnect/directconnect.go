@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/directconnect/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_connection.html aws_dx_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_connection aws_dx_connection}.
 type DataAwsDxConnection interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -17,8 +17,8 @@ type DataAwsDxConnection interface {
 	Bandwidth() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -36,17 +36,22 @@ type DataAwsDxConnection interface {
 	SetProvider(val cdktf.TerraformProvider)
 	ProviderName() *string
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -112,8 +117,8 @@ func (j *jsiiProxy_DataAwsDxConnection) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDxConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDxConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -252,8 +257,8 @@ func (j *jsiiProxy_DataAwsDxConnection) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDxConnection) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDxConnection) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -262,8 +267,8 @@ func (j *jsiiProxy_DataAwsDxConnection) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDxConnection) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDxConnection) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -302,7 +307,7 @@ func (j *jsiiProxy_DataAwsDxConnection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_connection.html aws_dx_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_connection aws_dx_connection} Data Source.
 func NewDataAwsDxConnection(scope constructs.Construct, id *string, config *DataAwsDxConnectionConfig) DataAwsDxConnection {
 	_init_.Initialize()
 
@@ -317,7 +322,7 @@ func NewDataAwsDxConnection(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_connection.html aws_dx_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_connection aws_dx_connection} Data Source.
 func NewDataAwsDxConnection_Override(d DataAwsDxConnection, scope constructs.Construct, id *string, config *DataAwsDxConnectionConfig) {
 	_init_.Initialize()
 
@@ -328,7 +333,7 @@ func NewDataAwsDxConnection_Override(d DataAwsDxConnection, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_DataAwsDxConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsDxConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -368,7 +373,7 @@ func (j *jsiiProxy_DataAwsDxConnection) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_DataAwsDxConnection) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsDxConnection) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -416,12 +421,40 @@ func (d *jsiiProxy_DataAwsDxConnection) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -458,12 +491,54 @@ func (d *jsiiProxy_DataAwsDxConnection) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -572,27 +647,27 @@ func (d *jsiiProxy_DataAwsDxConnection) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DataAwsDxConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_connection.html#name DataAwsDxConnection#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_connection.html#tags DataAwsDxConnection#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_connection#name DataAwsDxConnection#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_connection#tags DataAwsDxConnection#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway.html aws_dx_gateway}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway aws_dx_gateway}.
 type DataAwsDxGateway interface {
 	cdktf.TerraformDataSource
 	AmazonSideAsn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -612,10 +687,15 @@ type DataAwsDxGateway interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -660,8 +740,8 @@ func (j *jsiiProxy_DataAwsDxGateway) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDxGateway) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDxGateway) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -810,7 +890,7 @@ func (j *jsiiProxy_DataAwsDxGateway) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway.html aws_dx_gateway} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway aws_dx_gateway} Data Source.
 func NewDataAwsDxGateway(scope constructs.Construct, id *string, config *DataAwsDxGatewayConfig) DataAwsDxGateway {
 	_init_.Initialize()
 
@@ -825,7 +905,7 @@ func NewDataAwsDxGateway(scope constructs.Construct, id *string, config *DataAws
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway.html aws_dx_gateway} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway aws_dx_gateway} Data Source.
 func NewDataAwsDxGateway_Override(d DataAwsDxGateway, scope constructs.Construct, id *string, config *DataAwsDxGatewayConfig) {
 	_init_.Initialize()
 
@@ -836,7 +916,7 @@ func NewDataAwsDxGateway_Override(d DataAwsDxGateway, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_DataAwsDxGateway) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsDxGateway) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -916,12 +996,40 @@ func (d *jsiiProxy_DataAwsDxGateway) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxGateway) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxGateway) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxGateway) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -958,12 +1066,54 @@ func (d *jsiiProxy_DataAwsDxGateway) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxGateway) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxGateway) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxGateway) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxGateway) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1064,26 +1214,26 @@ func (d *jsiiProxy_DataAwsDxGateway) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DataAwsDxGatewayConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway.html#name DataAwsDxGateway#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_gateway#name DataAwsDxGateway#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_location.html aws_dx_location}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_location aws_dx_location}.
 type DataAwsDxLocation interface {
 	cdktf.TerraformDataSource
 	AvailablePortSpeeds() *[]*string
 	AvailableProviders() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1103,10 +1253,15 @@ type DataAwsDxLocation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1161,8 +1316,8 @@ func (j *jsiiProxy_DataAwsDxLocation) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDxLocation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDxLocation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1311,7 +1466,7 @@ func (j *jsiiProxy_DataAwsDxLocation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_location.html aws_dx_location} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_location aws_dx_location} Data Source.
 func NewDataAwsDxLocation(scope constructs.Construct, id *string, config *DataAwsDxLocationConfig) DataAwsDxLocation {
 	_init_.Initialize()
 
@@ -1326,7 +1481,7 @@ func NewDataAwsDxLocation(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_location.html aws_dx_location} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_location aws_dx_location} Data Source.
 func NewDataAwsDxLocation_Override(d DataAwsDxLocation, scope constructs.Construct, id *string, config *DataAwsDxLocationConfig) {
 	_init_.Initialize()
 
@@ -1337,7 +1492,7 @@ func NewDataAwsDxLocation_Override(d DataAwsDxLocation, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DataAwsDxLocation) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsDxLocation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1417,12 +1572,40 @@ func (d *jsiiProxy_DataAwsDxLocation) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxLocation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxLocation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxLocation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1459,12 +1642,54 @@ func (d *jsiiProxy_DataAwsDxLocation) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxLocation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxLocation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxLocation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxLocation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1565,24 +1790,24 @@ func (d *jsiiProxy_DataAwsDxLocation) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DataAwsDxLocationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_location.html#location_code DataAwsDxLocation#location_code}.
-	LocationCode *string `json:"locationCode"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dx_location#location_code DataAwsDxLocation#location_code}.
+	LocationCode *string `json:"locationCode" yaml:"locationCode"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_locations.html aws_dx_locations}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dx_locations aws_dx_locations}.
 type DataAwsDxLocations interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1599,10 +1824,15 @@ type DataAwsDxLocations interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1637,8 +1867,8 @@ func (j *jsiiProxy_DataAwsDxLocations) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDxLocations) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDxLocations) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1767,7 +1997,7 @@ func (j *jsiiProxy_DataAwsDxLocations) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_locations.html aws_dx_locations} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_locations aws_dx_locations} Data Source.
 func NewDataAwsDxLocations(scope constructs.Construct, id *string, config *DataAwsDxLocationsConfig) DataAwsDxLocations {
 	_init_.Initialize()
 
@@ -1782,7 +2012,7 @@ func NewDataAwsDxLocations(scope constructs.Construct, id *string, config *DataA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_locations.html aws_dx_locations} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dx_locations aws_dx_locations} Data Source.
 func NewDataAwsDxLocations_Override(d DataAwsDxLocations, scope constructs.Construct, id *string, config *DataAwsDxLocationsConfig) {
 	_init_.Initialize()
 
@@ -1793,7 +2023,7 @@ func NewDataAwsDxLocations_Override(d DataAwsDxLocations, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_DataAwsDxLocations) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsDxLocations) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1865,12 +2095,40 @@ func (d *jsiiProxy_DataAwsDxLocations) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxLocations) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxLocations) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxLocations) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1907,12 +2165,54 @@ func (d *jsiiProxy_DataAwsDxLocations) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDxLocations) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxLocations) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDxLocations) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDxLocations) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2013,16 +2313,16 @@ func (d *jsiiProxy_DataAwsDxLocations) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DataAwsDxLocationsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html aws_dx_bgp_peer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer aws_dx_bgp_peer}.
 type DxBgpPeer interface {
 	cdktf.TerraformResource
 	AddressFamily() *string
@@ -2042,8 +2342,8 @@ type DxBgpPeer interface {
 	BgpStatus() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAddress() *string
 	SetCustomerAddress(val *string)
 	CustomerAddressInput() *string
@@ -2067,10 +2367,15 @@ type DxBgpPeer interface {
 	SetVirtualInterfaceId(val *string)
 	VirtualInterfaceIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxBgpPeerTimeouts)
@@ -2220,8 +2525,8 @@ func (j *jsiiProxy_DxBgpPeer) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxBgpPeer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxBgpPeer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2400,7 +2705,7 @@ func (j *jsiiProxy_DxBgpPeer) VirtualInterfaceIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html aws_dx_bgp_peer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer aws_dx_bgp_peer} Resource.
 func NewDxBgpPeer(scope constructs.Construct, id *string, config *DxBgpPeerConfig) DxBgpPeer {
 	_init_.Initialize()
 
@@ -2415,7 +2720,7 @@ func NewDxBgpPeer(scope constructs.Construct, id *string, config *DxBgpPeerConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html aws_dx_bgp_peer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer aws_dx_bgp_peer} Resource.
 func NewDxBgpPeer_Override(d DxBgpPeer, scope constructs.Construct, id *string, config *DxBgpPeerConfig) {
 	_init_.Initialize()
 
@@ -2458,7 +2763,7 @@ func (j *jsiiProxy_DxBgpPeer) SetBgpAuthKey(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxBgpPeer) SetCount(val interface{}) {
+func (j *jsiiProxy_DxBgpPeer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2546,12 +2851,40 @@ func (d *jsiiProxy_DxBgpPeer) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DxBgpPeer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxBgpPeer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxBgpPeer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2588,12 +2921,54 @@ func (d *jsiiProxy_DxBgpPeer) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (d *jsiiProxy_DxBgpPeer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxBgpPeer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxBgpPeer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxBgpPeer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2734,36 +3109,36 @@ func (d *jsiiProxy_DxBgpPeer) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxBgpPeerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#address_family DxBgpPeer#address_family}.
-	AddressFamily *string `json:"addressFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#bgp_asn DxBgpPeer#bgp_asn}.
-	BgpAsn *float64 `json:"bgpAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#virtual_interface_id DxBgpPeer#virtual_interface_id}.
-	VirtualInterfaceId *string `json:"virtualInterfaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#amazon_address DxBgpPeer#amazon_address}.
-	AmazonAddress *string `json:"amazonAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#bgp_auth_key DxBgpPeer#bgp_auth_key}.
-	BgpAuthKey *string `json:"bgpAuthKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#customer_address DxBgpPeer#customer_address}.
-	CustomerAddress *string `json:"customerAddress"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#address_family DxBgpPeer#address_family}.
+	AddressFamily *string `json:"addressFamily" yaml:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#bgp_asn DxBgpPeer#bgp_asn}.
+	BgpAsn *float64 `json:"bgpAsn" yaml:"bgpAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#virtual_interface_id DxBgpPeer#virtual_interface_id}.
+	VirtualInterfaceId *string `json:"virtualInterfaceId" yaml:"virtualInterfaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#amazon_address DxBgpPeer#amazon_address}.
+	AmazonAddress *string `json:"amazonAddress" yaml:"amazonAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#bgp_auth_key DxBgpPeer#bgp_auth_key}.
+	BgpAuthKey *string `json:"bgpAuthKey" yaml:"bgpAuthKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#customer_address DxBgpPeer#customer_address}.
+	CustomerAddress *string `json:"customerAddress" yaml:"customerAddress"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#timeouts DxBgpPeer#timeouts}
-	Timeouts *DxBgpPeerTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#timeouts DxBgpPeer#timeouts}
+	Timeouts *DxBgpPeerTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxBgpPeerTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#create DxBgpPeer#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer.html#delete DxBgpPeer#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#create DxBgpPeer#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_bgp_peer#delete DxBgpPeer#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxBgpPeerTimeoutsOutputReference interface {
@@ -2780,12 +3155,17 @@ type DxBgpPeerTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2867,8 +3247,8 @@ func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2877,7 +3257,7 @@ func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) TerraformResource() cdktf.I
 	return returns
 }
 
-func NewDxBgpPeerTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxBgpPeerTimeoutsOutputReference {
+func NewDxBgpPeerTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxBgpPeerTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxBgpPeerTimeoutsOutputReference{}
@@ -2891,7 +3271,7 @@ func NewDxBgpPeerTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	return &j
 }
 
-func NewDxBgpPeerTimeoutsOutputReference_Override(d DxBgpPeerTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxBgpPeerTimeoutsOutputReference_Override(d DxBgpPeerTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2941,7 +3321,7 @@ func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2950,12 +3330,40 @@ func (j *jsiiProxy_DxBgpPeerTimeoutsOutputReference) SetTerraformResource(val cd
 }
 
 // Experimental.
-func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2992,12 +3400,54 @@ func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3049,7 +3499,7 @@ func (d *jsiiProxy_DxBgpPeerTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html aws_dx_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_connection aws_dx_connection}.
 type DxConnection interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3059,15 +3509,15 @@ type DxConnection interface {
 	BandwidthInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
 	HasLogicalRedundancy() *string
 	Id() *string
-	JumboFrameCapable() interface{}
+	JumboFrameCapable() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Location() *string
@@ -3084,20 +3534,25 @@ type DxConnection interface {
 	SetProviderName(val *string)
 	ProviderNameInput() *string
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3175,8 +3630,8 @@ func (j *jsiiProxy_DxConnection) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_DxConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3235,8 +3690,8 @@ func (j *jsiiProxy_DxConnection) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DxConnection) JumboFrameCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnection) JumboFrameCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"jumboFrameCapable",
@@ -3355,8 +3810,8 @@ func (j *jsiiProxy_DxConnection) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxConnection) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnection) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3365,8 +3820,8 @@ func (j *jsiiProxy_DxConnection) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxConnection) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnection) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3375,8 +3830,8 @@ func (j *jsiiProxy_DxConnection) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxConnection) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnection) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3385,8 +3840,8 @@ func (j *jsiiProxy_DxConnection) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxConnection) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnection) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3425,7 +3880,7 @@ func (j *jsiiProxy_DxConnection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html aws_dx_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection aws_dx_connection} Resource.
 func NewDxConnection(scope constructs.Construct, id *string, config *DxConnectionConfig) DxConnection {
 	_init_.Initialize()
 
@@ -3440,7 +3895,7 @@ func NewDxConnection(scope constructs.Construct, id *string, config *DxConnectio
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html aws_dx_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection aws_dx_connection} Resource.
 func NewDxConnection_Override(d DxConnection, scope constructs.Construct, id *string, config *DxConnectionConfig) {
 	_init_.Initialize()
 
@@ -3459,7 +3914,7 @@ func (j *jsiiProxy_DxConnection) SetBandwidth(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_DxConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3515,7 +3970,7 @@ func (j *jsiiProxy_DxConnection) SetProviderName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxConnection) SetTags(val interface{}) {
+func (j *jsiiProxy_DxConnection) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3523,7 +3978,7 @@ func (j *jsiiProxy_DxConnection) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DxConnection) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxConnection) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3571,12 +4026,40 @@ func (d *jsiiProxy_DxConnection) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DxConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3613,12 +4096,54 @@ func (d *jsiiProxy_DxConnection) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DxConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3740,7 +4265,7 @@ func (d *jsiiProxy_DxConnection) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association.html aws_dx_connection_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association aws_dx_connection_association}.
 type DxConnectionAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -3748,8 +4273,8 @@ type DxConnectionAssociation interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3768,10 +4293,15 @@ type DxConnectionAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3826,8 +4356,8 @@ func (j *jsiiProxy_DxConnectionAssociation) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DxConnectionAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnectionAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3966,7 +4496,7 @@ func (j *jsiiProxy_DxConnectionAssociation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association.html aws_dx_connection_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association aws_dx_connection_association} Resource.
 func NewDxConnectionAssociation(scope constructs.Construct, id *string, config *DxConnectionAssociationConfig) DxConnectionAssociation {
 	_init_.Initialize()
 
@@ -3981,7 +4511,7 @@ func NewDxConnectionAssociation(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association.html aws_dx_connection_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association aws_dx_connection_association} Resource.
 func NewDxConnectionAssociation_Override(d DxConnectionAssociation, scope constructs.Construct, id *string, config *DxConnectionAssociationConfig) {
 	_init_.Initialize()
 
@@ -4000,7 +4530,7 @@ func (j *jsiiProxy_DxConnectionAssociation) SetConnectionId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxConnectionAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_DxConnectionAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4080,12 +4610,40 @@ func (d *jsiiProxy_DxConnectionAssociation) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DxConnectionAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxConnectionAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnectionAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4122,12 +4680,54 @@ func (d *jsiiProxy_DxConnectionAssociation) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DxConnectionAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnectionAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxConnectionAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnectionAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4228,44 +4828,44 @@ func (d *jsiiProxy_DxConnectionAssociation) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxConnectionAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association.html#connection_id DxConnectionAssociation#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association.html#lag_id DxConnectionAssociation#lag_id}.
-	LagId *string `json:"lagId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association#connection_id DxConnectionAssociation#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_association#lag_id DxConnectionAssociation#lag_id}.
+	LagId *string `json:"lagId" yaml:"lagId"`
 }
 
 // AWS Direct Connect.
 type DxConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html#bandwidth DxConnection#bandwidth}.
-	Bandwidth *string `json:"bandwidth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html#location DxConnection#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html#name DxConnection#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html#provider_name DxConnection#provider_name}.
-	ProviderName *string `json:"providerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html#tags DxConnection#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection.html#tags_all DxConnection#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection#bandwidth DxConnection#bandwidth}.
+	Bandwidth *string `json:"bandwidth" yaml:"bandwidth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection#location DxConnection#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection#name DxConnection#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection#provider_name DxConnection#provider_name}.
+	ProviderName *string `json:"providerName" yaml:"providerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection#tags DxConnection#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection#tags_all DxConnection#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation.html aws_dx_connection_confirmation}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation aws_dx_connection_confirmation}.
 type DxConnectionConfirmation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -4273,8 +4873,8 @@ type DxConnectionConfirmation interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4290,10 +4890,15 @@ type DxConnectionConfirmation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4348,8 +4953,8 @@ func (j *jsiiProxy_DxConnectionConfirmation) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DxConnectionConfirmation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxConnectionConfirmation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4468,7 +5073,7 @@ func (j *jsiiProxy_DxConnectionConfirmation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation.html aws_dx_connection_confirmation} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation aws_dx_connection_confirmation} Resource.
 func NewDxConnectionConfirmation(scope constructs.Construct, id *string, config *DxConnectionConfirmationConfig) DxConnectionConfirmation {
 	_init_.Initialize()
 
@@ -4483,7 +5088,7 @@ func NewDxConnectionConfirmation(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation.html aws_dx_connection_confirmation} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation aws_dx_connection_confirmation} Resource.
 func NewDxConnectionConfirmation_Override(d DxConnectionConfirmation, scope constructs.Construct, id *string, config *DxConnectionConfirmationConfig) {
 	_init_.Initialize()
 
@@ -4502,7 +5107,7 @@ func (j *jsiiProxy_DxConnectionConfirmation) SetConnectionId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxConnectionConfirmation) SetCount(val interface{}) {
+func (j *jsiiProxy_DxConnectionConfirmation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4574,12 +5179,40 @@ func (d *jsiiProxy_DxConnectionConfirmation) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DxConnectionConfirmation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxConnectionConfirmation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnectionConfirmation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4616,12 +5249,54 @@ func (d *jsiiProxy_DxConnectionConfirmation) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DxConnectionConfirmation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnectionConfirmation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxConnectionConfirmation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxConnectionConfirmation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4722,18 +5397,18 @@ func (d *jsiiProxy_DxConnectionConfirmation) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxConnectionConfirmationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation.html#connection_id DxConnectionConfirmation#connection_id}.
-	ConnectionId *string `json:"connectionId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_connection_confirmation#connection_id DxConnectionConfirmation#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html aws_dx_gateway}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway aws_dx_gateway}.
 type DxGateway interface {
 	cdktf.TerraformResource
 	AmazonSideAsn() *string
@@ -4741,8 +5416,8 @@ type DxGateway interface {
 	AmazonSideAsnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4764,10 +5439,15 @@ type DxGateway interface {
 	Timeouts() DxGatewayTimeoutsOutputReference
 	TimeoutsInput() *DxGatewayTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxGatewayTimeouts)
@@ -4824,8 +5504,8 @@ func (j *jsiiProxy_DxGateway) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxGateway) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxGateway) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4994,7 +5674,7 @@ func (j *jsiiProxy_DxGateway) TimeoutsInput() *DxGatewayTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html aws_dx_gateway} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway aws_dx_gateway} Resource.
 func NewDxGateway(scope constructs.Construct, id *string, config *DxGatewayConfig) DxGateway {
 	_init_.Initialize()
 
@@ -5009,7 +5689,7 @@ func NewDxGateway(scope constructs.Construct, id *string, config *DxGatewayConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html aws_dx_gateway} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway aws_dx_gateway} Resource.
 func NewDxGateway_Override(d DxGateway, scope constructs.Construct, id *string, config *DxGatewayConfig) {
 	_init_.Initialize()
 
@@ -5028,7 +5708,7 @@ func (j *jsiiProxy_DxGateway) SetAmazonSideAsn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxGateway) SetCount(val interface{}) {
+func (j *jsiiProxy_DxGateway) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5108,12 +5788,40 @@ func (d *jsiiProxy_DxGateway) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGateway) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGateway) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGateway) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5150,12 +5858,54 @@ func (d *jsiiProxy_DxGateway) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGateway) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGateway) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGateway) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGateway) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5269,7 +6019,7 @@ func (d *jsiiProxy_DxGateway) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html aws_dx_gateway_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association aws_dx_gateway_association}.
 type DxGatewayAssociation interface {
 	cdktf.TerraformResource
 	AllowedPrefixes() *[]*string
@@ -5284,8 +6034,8 @@ type DxGatewayAssociation interface {
 	AssociatedGatewayType() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DxGatewayAssociationId() *string
@@ -5314,10 +6064,15 @@ type DxGatewayAssociation interface {
 	SetVpnGatewayId(val *string)
 	VpnGatewayIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxGatewayAssociationTimeouts)
@@ -5429,8 +6184,8 @@ func (j *jsiiProxy_DxGatewayAssociation) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DxGatewayAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxGatewayAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5649,7 +6404,7 @@ func (j *jsiiProxy_DxGatewayAssociation) VpnGatewayIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html aws_dx_gateway_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association aws_dx_gateway_association} Resource.
 func NewDxGatewayAssociation(scope constructs.Construct, id *string, config *DxGatewayAssociationConfig) DxGatewayAssociation {
 	_init_.Initialize()
 
@@ -5664,7 +6419,7 @@ func NewDxGatewayAssociation(scope constructs.Construct, id *string, config *DxG
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html aws_dx_gateway_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association aws_dx_gateway_association} Resource.
 func NewDxGatewayAssociation_Override(d DxGatewayAssociation, scope constructs.Construct, id *string, config *DxGatewayAssociationConfig) {
 	_init_.Initialize()
 
@@ -5699,7 +6454,7 @@ func (j *jsiiProxy_DxGatewayAssociation) SetAssociatedGatewayOwnerAccountId(val 
 	)
 }
 
-func (j *jsiiProxy_DxGatewayAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_DxGatewayAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5795,12 +6550,40 @@ func (d *jsiiProxy_DxGatewayAssociation) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGatewayAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGatewayAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5837,12 +6620,54 @@ func (d *jsiiProxy_DxGatewayAssociation) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGatewayAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGatewayAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5999,32 +6824,32 @@ func (d *jsiiProxy_DxGatewayAssociation) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxGatewayAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#dx_gateway_id DxGatewayAssociation#dx_gateway_id}.
-	DxGatewayId *string `json:"dxGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#allowed_prefixes DxGatewayAssociation#allowed_prefixes}.
-	AllowedPrefixes *[]*string `json:"allowedPrefixes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#associated_gateway_id DxGatewayAssociation#associated_gateway_id}.
-	AssociatedGatewayId *string `json:"associatedGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#associated_gateway_owner_account_id DxGatewayAssociation#associated_gateway_owner_account_id}.
-	AssociatedGatewayOwnerAccountId *string `json:"associatedGatewayOwnerAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#proposal_id DxGatewayAssociation#proposal_id}.
-	ProposalId *string `json:"proposalId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#dx_gateway_id DxGatewayAssociation#dx_gateway_id}.
+	DxGatewayId *string `json:"dxGatewayId" yaml:"dxGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#allowed_prefixes DxGatewayAssociation#allowed_prefixes}.
+	AllowedPrefixes *[]*string `json:"allowedPrefixes" yaml:"allowedPrefixes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#associated_gateway_id DxGatewayAssociation#associated_gateway_id}.
+	AssociatedGatewayId *string `json:"associatedGatewayId" yaml:"associatedGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#associated_gateway_owner_account_id DxGatewayAssociation#associated_gateway_owner_account_id}.
+	AssociatedGatewayOwnerAccountId *string `json:"associatedGatewayOwnerAccountId" yaml:"associatedGatewayOwnerAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#proposal_id DxGatewayAssociation#proposal_id}.
+	ProposalId *string `json:"proposalId" yaml:"proposalId"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#timeouts DxGatewayAssociation#timeouts}
-	Timeouts *DxGatewayAssociationTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#vpn_gateway_id DxGatewayAssociation#vpn_gateway_id}.
-	VpnGatewayId *string `json:"vpnGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#timeouts DxGatewayAssociation#timeouts}
+	Timeouts *DxGatewayAssociationTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#vpn_gateway_id DxGatewayAssociation#vpn_gateway_id}.
+	VpnGatewayId *string `json:"vpnGatewayId" yaml:"vpnGatewayId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal.html aws_dx_gateway_association_proposal}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal aws_dx_gateway_association_proposal}.
 type DxGatewayAssociationProposal interface {
 	cdktf.TerraformResource
 	AllowedPrefixes() *[]*string
@@ -6037,8 +6862,8 @@ type DxGatewayAssociationProposal interface {
 	AssociatedGatewayType() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DxGatewayId() *string
@@ -6060,10 +6885,15 @@ type DxGatewayAssociationProposal interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllowedPrefixes()
@@ -6159,8 +6989,8 @@ func (j *jsiiProxy_DxGatewayAssociationProposal) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DxGatewayAssociationProposal) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxGatewayAssociationProposal) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6319,7 +7149,7 @@ func (j *jsiiProxy_DxGatewayAssociationProposal) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal.html aws_dx_gateway_association_proposal} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal aws_dx_gateway_association_proposal} Resource.
 func NewDxGatewayAssociationProposal(scope constructs.Construct, id *string, config *DxGatewayAssociationProposalConfig) DxGatewayAssociationProposal {
 	_init_.Initialize()
 
@@ -6334,7 +7164,7 @@ func NewDxGatewayAssociationProposal(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal.html aws_dx_gateway_association_proposal} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal aws_dx_gateway_association_proposal} Resource.
 func NewDxGatewayAssociationProposal_Override(d DxGatewayAssociationProposal, scope constructs.Construct, id *string, config *DxGatewayAssociationProposalConfig) {
 	_init_.Initialize()
 
@@ -6361,7 +7191,7 @@ func (j *jsiiProxy_DxGatewayAssociationProposal) SetAssociatedGatewayId(val *str
 	)
 }
 
-func (j *jsiiProxy_DxGatewayAssociationProposal) SetCount(val interface{}) {
+func (j *jsiiProxy_DxGatewayAssociationProposal) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6449,12 +7279,40 @@ func (d *jsiiProxy_DxGatewayAssociationProposal) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGatewayAssociationProposal) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGatewayAssociationProposal) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociationProposal) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6491,12 +7349,54 @@ func (d *jsiiProxy_DxGatewayAssociationProposal) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGatewayAssociationProposal) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociationProposal) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGatewayAssociationProposal) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociationProposal) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6605,30 +7505,30 @@ func (d *jsiiProxy_DxGatewayAssociationProposal) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxGatewayAssociationProposalConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal.html#associated_gateway_id DxGatewayAssociationProposal#associated_gateway_id}.
-	AssociatedGatewayId *string `json:"associatedGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal.html#dx_gateway_id DxGatewayAssociationProposal#dx_gateway_id}.
-	DxGatewayId *string `json:"dxGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal.html#dx_gateway_owner_account_id DxGatewayAssociationProposal#dx_gateway_owner_account_id}.
-	DxGatewayOwnerAccountId *string `json:"dxGatewayOwnerAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal.html#allowed_prefixes DxGatewayAssociationProposal#allowed_prefixes}.
-	AllowedPrefixes *[]*string `json:"allowedPrefixes"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal#associated_gateway_id DxGatewayAssociationProposal#associated_gateway_id}.
+	AssociatedGatewayId *string `json:"associatedGatewayId" yaml:"associatedGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal#dx_gateway_id DxGatewayAssociationProposal#dx_gateway_id}.
+	DxGatewayId *string `json:"dxGatewayId" yaml:"dxGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal#dx_gateway_owner_account_id DxGatewayAssociationProposal#dx_gateway_owner_account_id}.
+	DxGatewayOwnerAccountId *string `json:"dxGatewayOwnerAccountId" yaml:"dxGatewayOwnerAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association_proposal#allowed_prefixes DxGatewayAssociationProposal#allowed_prefixes}.
+	AllowedPrefixes *[]*string `json:"allowedPrefixes" yaml:"allowedPrefixes"`
 }
 
 type DxGatewayAssociationTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#create DxGatewayAssociation#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#delete DxGatewayAssociation#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association.html#update DxGatewayAssociation#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#create DxGatewayAssociation#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#delete DxGatewayAssociation#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway_association#update DxGatewayAssociation#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DxGatewayAssociationTimeoutsOutputReference interface {
@@ -6645,15 +7545,20 @@ type DxGatewayAssociationTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -6736,8 +7641,8 @@ func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6766,7 +7671,7 @@ func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) UpdateInput() *s
 	return returns
 }
 
-func NewDxGatewayAssociationTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxGatewayAssociationTimeoutsOutputReference {
+func NewDxGatewayAssociationTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxGatewayAssociationTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxGatewayAssociationTimeoutsOutputReference{}
@@ -6780,7 +7685,7 @@ func NewDxGatewayAssociationTimeoutsOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewDxGatewayAssociationTimeoutsOutputReference_Override(d DxGatewayAssociationTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxGatewayAssociationTimeoutsOutputReference_Override(d DxGatewayAssociationTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6830,7 +7735,7 @@ func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6847,12 +7752,40 @@ func (j *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) SetUpdate(val *s
 }
 
 // Experimental.
-func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6889,12 +7822,54 @@ func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6957,28 +7932,28 @@ func (d *jsiiProxy_DxGatewayAssociationTimeoutsOutputReference) ResetUpdate() {
 // AWS Direct Connect.
 type DxGatewayConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html#amazon_side_asn DxGateway#amazon_side_asn}.
-	AmazonSideAsn *string `json:"amazonSideAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html#name DxGateway#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway#amazon_side_asn DxGateway#amazon_side_asn}.
+	AmazonSideAsn *string `json:"amazonSideAsn" yaml:"amazonSideAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway#name DxGateway#name}.
+	Name *string `json:"name" yaml:"name"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html#timeouts DxGateway#timeouts}
-	Timeouts *DxGatewayTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway#timeouts DxGateway#timeouts}
+	Timeouts *DxGatewayTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxGatewayTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html#create DxGateway#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway.html#delete DxGateway#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway#create DxGateway#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_gateway#delete DxGateway#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxGatewayTimeoutsOutputReference interface {
@@ -6995,12 +7970,17 @@ type DxGatewayTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7082,8 +8062,8 @@ func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7092,7 +8072,7 @@ func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) TerraformResource() cdktf.I
 	return returns
 }
 
-func NewDxGatewayTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxGatewayTimeoutsOutputReference {
+func NewDxGatewayTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxGatewayTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxGatewayTimeoutsOutputReference{}
@@ -7106,7 +8086,7 @@ func NewDxGatewayTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	return &j
 }
 
-func NewDxGatewayTimeoutsOutputReference_Override(d DxGatewayTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxGatewayTimeoutsOutputReference_Override(d DxGatewayTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7156,7 +8136,7 @@ func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7165,12 +8145,40 @@ func (j *jsiiProxy_DxGatewayTimeoutsOutputReference) SetTerraformResource(val cd
 }
 
 // Experimental.
-func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7207,12 +8215,54 @@ func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7264,7 +8314,7 @@ func (d *jsiiProxy_DxGatewayTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html aws_dx_hosted_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection aws_dx_hosted_connection}.
 type DxHostedConnection interface {
 	cdktf.TerraformResource
 	AwsDevice() *string
@@ -7276,15 +8326,15 @@ type DxHostedConnection interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
 	HasLogicalRedundancy() *string
 	Id() *string
-	JumboFrameCapable() interface{}
+	JumboFrameCapable() cdktf.IResolvable
 	LagId() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -7311,10 +8361,15 @@ type DxHostedConnection interface {
 	SetVlan(val *float64)
 	VlanInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7399,8 +8454,8 @@ func (j *jsiiProxy_DxHostedConnection) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7459,8 +8514,8 @@ func (j *jsiiProxy_DxHostedConnection) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedConnection) JumboFrameCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedConnection) JumboFrameCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"jumboFrameCapable",
@@ -7669,7 +8724,7 @@ func (j *jsiiProxy_DxHostedConnection) VlanInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html aws_dx_hosted_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection aws_dx_hosted_connection} Resource.
 func NewDxHostedConnection(scope constructs.Construct, id *string, config *DxHostedConnectionConfig) DxHostedConnection {
 	_init_.Initialize()
 
@@ -7684,7 +8739,7 @@ func NewDxHostedConnection(scope constructs.Construct, id *string, config *DxHos
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html aws_dx_hosted_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection aws_dx_hosted_connection} Resource.
 func NewDxHostedConnection_Override(d DxHostedConnection, scope constructs.Construct, id *string, config *DxHostedConnectionConfig) {
 	_init_.Initialize()
 
@@ -7711,7 +8766,7 @@ func (j *jsiiProxy_DxHostedConnection) SetConnectionId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxHostedConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_DxHostedConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7807,12 +8862,40 @@ func (d *jsiiProxy_DxHostedConnection) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7849,12 +8932,54 @@ func (d *jsiiProxy_DxHostedConnection) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7955,26 +9080,26 @@ func (d *jsiiProxy_DxHostedConnection) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxHostedConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html#bandwidth DxHostedConnection#bandwidth}.
-	Bandwidth *string `json:"bandwidth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html#connection_id DxHostedConnection#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html#name DxHostedConnection#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html#owner_account_id DxHostedConnection#owner_account_id}.
-	OwnerAccountId *string `json:"ownerAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection.html#vlan DxHostedConnection#vlan}.
-	Vlan *float64 `json:"vlan"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection#bandwidth DxHostedConnection#bandwidth}.
+	Bandwidth *string `json:"bandwidth" yaml:"bandwidth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection#connection_id DxHostedConnection#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection#name DxHostedConnection#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection#owner_account_id DxHostedConnection#owner_account_id}.
+	OwnerAccountId *string `json:"ownerAccountId" yaml:"ownerAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_connection#vlan DxHostedConnection#vlan}.
+	Vlan *float64 `json:"vlan" yaml:"vlan"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html aws_dx_hosted_private_virtual_interface}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface aws_dx_hosted_private_virtual_interface}.
 type DxHostedPrivateVirtualInterface interface {
 	cdktf.TerraformResource
 	AddressFamily() *string
@@ -7997,8 +9122,8 @@ type DxHostedPrivateVirtualInterface interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAddress() *string
 	SetCustomerAddress(val *string)
 	CustomerAddressInput() *string
@@ -8007,7 +9132,7 @@ type DxHostedPrivateVirtualInterface interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	JumboFrameCapable() interface{}
+	JumboFrameCapable() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Mtu() *float64
@@ -8032,10 +9157,15 @@ type DxHostedPrivateVirtualInterface interface {
 	SetVlan(val *float64)
 	VlanInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxHostedPrivateVirtualInterfaceTimeouts)
@@ -8206,8 +9336,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterface) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterface) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPrivateVirtualInterface) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8276,8 +9406,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterface) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterface) JumboFrameCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPrivateVirtualInterface) JumboFrameCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"jumboFrameCapable",
@@ -8456,7 +9586,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterface) VlanInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html aws_dx_hosted_private_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface aws_dx_hosted_private_virtual_interface} Resource.
 func NewDxHostedPrivateVirtualInterface(scope constructs.Construct, id *string, config *DxHostedPrivateVirtualInterfaceConfig) DxHostedPrivateVirtualInterface {
 	_init_.Initialize()
 
@@ -8471,7 +9601,7 @@ func NewDxHostedPrivateVirtualInterface(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html aws_dx_hosted_private_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface aws_dx_hosted_private_virtual_interface} Resource.
 func NewDxHostedPrivateVirtualInterface_Override(d DxHostedPrivateVirtualInterface, scope constructs.Construct, id *string, config *DxHostedPrivateVirtualInterfaceConfig) {
 	_init_.Initialize()
 
@@ -8522,7 +9652,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterface) SetConnectionId(val *string)
 	)
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterface) SetCount(val interface{}) {
+func (j *jsiiProxy_DxHostedPrivateVirtualInterface) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8634,12 +9764,40 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterface) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8676,12 +9834,54 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterface) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8827,14 +10027,14 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterface) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html aws_dx_hosted_private_virtual_interface_accepter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter aws_dx_hosted_private_virtual_interface_accepter}.
 type DxHostedPrivateVirtualInterfaceAccepter interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DxGatewayId() *string
@@ -8849,12 +10049,12 @@ type DxHostedPrivateVirtualInterfaceAccepter interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -8867,10 +10067,15 @@ type DxHostedPrivateVirtualInterfaceAccepter interface {
 	SetVpnGatewayId(val *string)
 	VpnGatewayIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxHostedPrivateVirtualInterfaceAccepterTimeouts)
@@ -8921,8 +10126,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) ConstructNodeMetadat
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9031,8 +10236,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) RawOverrides() inter
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9041,8 +10246,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9051,8 +10256,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsAll() interface{
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9061,8 +10266,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsAllInput() inter
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9161,7 +10366,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) VpnGatewayIdInput() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html aws_dx_hosted_private_virtual_interface_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter aws_dx_hosted_private_virtual_interface_accepter} Resource.
 func NewDxHostedPrivateVirtualInterfaceAccepter(scope constructs.Construct, id *string, config *DxHostedPrivateVirtualInterfaceAccepterConfig) DxHostedPrivateVirtualInterfaceAccepter {
 	_init_.Initialize()
 
@@ -9176,7 +10381,7 @@ func NewDxHostedPrivateVirtualInterfaceAccepter(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html aws_dx_hosted_private_virtual_interface_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter aws_dx_hosted_private_virtual_interface_accepter} Resource.
 func NewDxHostedPrivateVirtualInterfaceAccepter_Override(d DxHostedPrivateVirtualInterfaceAccepter, scope constructs.Construct, id *string, config *DxHostedPrivateVirtualInterfaceAccepterConfig) {
 	_init_.Initialize()
 
@@ -9187,7 +10392,7 @@ func NewDxHostedPrivateVirtualInterfaceAccepter_Override(d DxHostedPrivateVirtua
 	)
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetCount(val interface{}) {
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9227,7 +10432,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetProvider(val cdkt
 	)
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetTags(val interface{}) {
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9235,7 +10440,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetTags(val interfac
 	)
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9299,12 +10504,40 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) AddOverride(path *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9341,12 +10574,54 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9495,34 +10770,34 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepter) ToTerraform() interf
 // AWS Direct Connect.
 type DxHostedPrivateVirtualInterfaceAccepterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#virtual_interface_id DxHostedPrivateVirtualInterfaceAccepter#virtual_interface_id}.
-	VirtualInterfaceId *string `json:"virtualInterfaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#dx_gateway_id DxHostedPrivateVirtualInterfaceAccepter#dx_gateway_id}.
-	DxGatewayId *string `json:"dxGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#tags DxHostedPrivateVirtualInterfaceAccepter#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#tags_all DxHostedPrivateVirtualInterfaceAccepter#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#virtual_interface_id DxHostedPrivateVirtualInterfaceAccepter#virtual_interface_id}.
+	VirtualInterfaceId *string `json:"virtualInterfaceId" yaml:"virtualInterfaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#dx_gateway_id DxHostedPrivateVirtualInterfaceAccepter#dx_gateway_id}.
+	DxGatewayId *string `json:"dxGatewayId" yaml:"dxGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#tags DxHostedPrivateVirtualInterfaceAccepter#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#tags_all DxHostedPrivateVirtualInterfaceAccepter#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#timeouts DxHostedPrivateVirtualInterfaceAccepter#timeouts}
-	Timeouts *DxHostedPrivateVirtualInterfaceAccepterTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#vpn_gateway_id DxHostedPrivateVirtualInterfaceAccepter#vpn_gateway_id}.
-	VpnGatewayId *string `json:"vpnGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#timeouts DxHostedPrivateVirtualInterfaceAccepter#timeouts}
+	Timeouts *DxHostedPrivateVirtualInterfaceAccepterTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#vpn_gateway_id DxHostedPrivateVirtualInterfaceAccepter#vpn_gateway_id}.
+	VpnGatewayId *string `json:"vpnGatewayId" yaml:"vpnGatewayId"`
 }
 
 type DxHostedPrivateVirtualInterfaceAccepterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#create DxHostedPrivateVirtualInterfaceAccepter#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter.html#delete DxHostedPrivateVirtualInterfaceAccepter#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#create DxHostedPrivateVirtualInterfaceAccepter#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface_accepter#delete DxHostedPrivateVirtualInterfaceAccepter#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference interface {
@@ -9539,12 +10814,17 @@ type DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -9626,8 +10906,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9636,7 +10916,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 	return returns
 }
 
-func NewDxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference {
+func NewDxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference{}
@@ -9650,7 +10930,7 @@ func NewDxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference(terraform
 	return &j
 }
 
-func NewDxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference_Override(d DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference_Override(d DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9700,7 +10980,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9709,12 +10989,40 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 }
 
 // Experimental.
-func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9751,12 +11059,54 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9811,44 +11161,44 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceAccepterTimeoutsOutputReferenc
 // AWS Direct Connect.
 type DxHostedPrivateVirtualInterfaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#address_family DxHostedPrivateVirtualInterface#address_family}.
-	AddressFamily *string `json:"addressFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#bgp_asn DxHostedPrivateVirtualInterface#bgp_asn}.
-	BgpAsn *float64 `json:"bgpAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#connection_id DxHostedPrivateVirtualInterface#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#name DxHostedPrivateVirtualInterface#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#owner_account_id DxHostedPrivateVirtualInterface#owner_account_id}.
-	OwnerAccountId *string `json:"ownerAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#vlan DxHostedPrivateVirtualInterface#vlan}.
-	Vlan *float64 `json:"vlan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#amazon_address DxHostedPrivateVirtualInterface#amazon_address}.
-	AmazonAddress *string `json:"amazonAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#bgp_auth_key DxHostedPrivateVirtualInterface#bgp_auth_key}.
-	BgpAuthKey *string `json:"bgpAuthKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#customer_address DxHostedPrivateVirtualInterface#customer_address}.
-	CustomerAddress *string `json:"customerAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#mtu DxHostedPrivateVirtualInterface#mtu}.
-	Mtu *float64 `json:"mtu"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#address_family DxHostedPrivateVirtualInterface#address_family}.
+	AddressFamily *string `json:"addressFamily" yaml:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#bgp_asn DxHostedPrivateVirtualInterface#bgp_asn}.
+	BgpAsn *float64 `json:"bgpAsn" yaml:"bgpAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#connection_id DxHostedPrivateVirtualInterface#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#name DxHostedPrivateVirtualInterface#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#owner_account_id DxHostedPrivateVirtualInterface#owner_account_id}.
+	OwnerAccountId *string `json:"ownerAccountId" yaml:"ownerAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#vlan DxHostedPrivateVirtualInterface#vlan}.
+	Vlan *float64 `json:"vlan" yaml:"vlan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#amazon_address DxHostedPrivateVirtualInterface#amazon_address}.
+	AmazonAddress *string `json:"amazonAddress" yaml:"amazonAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#bgp_auth_key DxHostedPrivateVirtualInterface#bgp_auth_key}.
+	BgpAuthKey *string `json:"bgpAuthKey" yaml:"bgpAuthKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#customer_address DxHostedPrivateVirtualInterface#customer_address}.
+	CustomerAddress *string `json:"customerAddress" yaml:"customerAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#mtu DxHostedPrivateVirtualInterface#mtu}.
+	Mtu *float64 `json:"mtu" yaml:"mtu"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#timeouts DxHostedPrivateVirtualInterface#timeouts}
-	Timeouts *DxHostedPrivateVirtualInterfaceTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#timeouts DxHostedPrivateVirtualInterface#timeouts}
+	Timeouts *DxHostedPrivateVirtualInterfaceTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxHostedPrivateVirtualInterfaceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#create DxHostedPrivateVirtualInterface#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface.html#delete DxHostedPrivateVirtualInterface#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#create DxHostedPrivateVirtualInterface#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_private_virtual_interface#delete DxHostedPrivateVirtualInterface#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxHostedPrivateVirtualInterfaceTimeoutsOutputReference interface {
@@ -9865,12 +11215,17 @@ type DxHostedPrivateVirtualInterfaceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -9952,8 +11307,8 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9962,7 +11317,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) Terra
 	return returns
 }
 
-func NewDxHostedPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxHostedPrivateVirtualInterfaceTimeoutsOutputReference {
+func NewDxHostedPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxHostedPrivateVirtualInterfaceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference{}
@@ -9976,7 +11331,7 @@ func NewDxHostedPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource
 	return &j
 }
 
-func NewDxHostedPrivateVirtualInterfaceTimeoutsOutputReference_Override(d DxHostedPrivateVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxHostedPrivateVirtualInterfaceTimeoutsOutputReference_Override(d DxHostedPrivateVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10026,7 +11381,7 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10035,12 +11390,40 @@ func (j *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) SetTe
 }
 
 // Experimental.
-func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10077,12 +11460,54 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetNu
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10134,7 +11559,7 @@ func (d *jsiiProxy_DxHostedPrivateVirtualInterfaceTimeoutsOutputReference) Reset
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html aws_dx_hosted_public_virtual_interface}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface aws_dx_hosted_public_virtual_interface}.
 type DxHostedPublicVirtualInterface interface {
 	cdktf.TerraformResource
 	AddressFamily() *string
@@ -10157,8 +11582,8 @@ type DxHostedPublicVirtualInterface interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAddress() *string
 	SetCustomerAddress(val *string)
 	CustomerAddressInput() *string
@@ -10191,10 +11616,15 @@ type DxHostedPublicVirtualInterface interface {
 	SetVlan(val *float64)
 	VlanInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxHostedPublicVirtualInterfaceTimeouts)
@@ -10364,8 +11794,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterface) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterface) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPublicVirtualInterface) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10604,7 +12034,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterface) VlanInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html aws_dx_hosted_public_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface aws_dx_hosted_public_virtual_interface} Resource.
 func NewDxHostedPublicVirtualInterface(scope constructs.Construct, id *string, config *DxHostedPublicVirtualInterfaceConfig) DxHostedPublicVirtualInterface {
 	_init_.Initialize()
 
@@ -10619,7 +12049,7 @@ func NewDxHostedPublicVirtualInterface(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html aws_dx_hosted_public_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface aws_dx_hosted_public_virtual_interface} Resource.
 func NewDxHostedPublicVirtualInterface_Override(d DxHostedPublicVirtualInterface, scope constructs.Construct, id *string, config *DxHostedPublicVirtualInterfaceConfig) {
 	_init_.Initialize()
 
@@ -10670,7 +12100,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterface) SetConnectionId(val *string) 
 	)
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterface) SetCount(val interface{}) {
+func (j *jsiiProxy_DxHostedPublicVirtualInterface) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10782,12 +12212,40 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterface) AddOverride(path *string, val
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10824,12 +12282,54 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterface) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10967,14 +12467,14 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterface) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html aws_dx_hosted_public_virtual_interface_accepter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter aws_dx_hosted_public_virtual_interface_accepter}.
 type DxHostedPublicVirtualInterfaceAccepter interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10986,12 +12486,12 @@ type DxHostedPublicVirtualInterfaceAccepter interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -11001,10 +12501,15 @@ type DxHostedPublicVirtualInterfaceAccepter interface {
 	SetVirtualInterfaceId(val *string)
 	VirtualInterfaceIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxHostedPublicVirtualInterfaceAccepterTimeouts)
@@ -11053,8 +12558,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) ConstructNodeMetadata
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11143,8 +12648,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) RawOverrides() interf
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -11153,8 +12658,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -11163,8 +12668,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsAll() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -11173,8 +12678,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsAllInput() interf
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -11253,7 +12758,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) VirtualInterfaceIdInp
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html aws_dx_hosted_public_virtual_interface_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter aws_dx_hosted_public_virtual_interface_accepter} Resource.
 func NewDxHostedPublicVirtualInterfaceAccepter(scope constructs.Construct, id *string, config *DxHostedPublicVirtualInterfaceAccepterConfig) DxHostedPublicVirtualInterfaceAccepter {
 	_init_.Initialize()
 
@@ -11268,7 +12773,7 @@ func NewDxHostedPublicVirtualInterfaceAccepter(scope constructs.Construct, id *s
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html aws_dx_hosted_public_virtual_interface_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter aws_dx_hosted_public_virtual_interface_accepter} Resource.
 func NewDxHostedPublicVirtualInterfaceAccepter_Override(d DxHostedPublicVirtualInterfaceAccepter, scope constructs.Construct, id *string, config *DxHostedPublicVirtualInterfaceAccepterConfig) {
 	_init_.Initialize()
 
@@ -11279,7 +12784,7 @@ func NewDxHostedPublicVirtualInterfaceAccepter_Override(d DxHostedPublicVirtualI
 	)
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetCount(val interface{}) {
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11311,7 +12816,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetProvider(val cdktf
 	)
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetTags(val interface{}) {
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -11319,7 +12824,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetTags(val interface
 	)
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -11375,12 +12880,40 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) AddOverride(path *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11417,12 +12950,54 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetNumberAttribute(te
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11555,30 +13130,30 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepter) ToTerraform() interfa
 // AWS Direct Connect.
 type DxHostedPublicVirtualInterfaceAccepterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html#virtual_interface_id DxHostedPublicVirtualInterfaceAccepter#virtual_interface_id}.
-	VirtualInterfaceId *string `json:"virtualInterfaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html#tags DxHostedPublicVirtualInterfaceAccepter#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html#tags_all DxHostedPublicVirtualInterfaceAccepter#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter#virtual_interface_id DxHostedPublicVirtualInterfaceAccepter#virtual_interface_id}.
+	VirtualInterfaceId *string `json:"virtualInterfaceId" yaml:"virtualInterfaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter#tags DxHostedPublicVirtualInterfaceAccepter#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter#tags_all DxHostedPublicVirtualInterfaceAccepter#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html#timeouts DxHostedPublicVirtualInterfaceAccepter#timeouts}
-	Timeouts *DxHostedPublicVirtualInterfaceAccepterTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter#timeouts DxHostedPublicVirtualInterfaceAccepter#timeouts}
+	Timeouts *DxHostedPublicVirtualInterfaceAccepterTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxHostedPublicVirtualInterfaceAccepterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html#create DxHostedPublicVirtualInterfaceAccepter#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter.html#delete DxHostedPublicVirtualInterfaceAccepter#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter#create DxHostedPublicVirtualInterfaceAccepter#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface_accepter#delete DxHostedPublicVirtualInterfaceAccepter#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference interface {
@@ -11595,12 +13170,17 @@ type DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -11682,8 +13262,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11692,7 +13272,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 	return returns
 }
 
-func NewDxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference {
+func NewDxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference{}
@@ -11706,7 +13286,7 @@ func NewDxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference(terraformR
 	return &j
 }
 
-func NewDxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference_Override(d DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference_Override(d DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11756,7 +13336,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 	)
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11765,12 +13345,40 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 }
 
 // Experimental.
-func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11807,12 +13415,54 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11867,44 +13517,44 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceAccepterTimeoutsOutputReference
 // AWS Direct Connect.
 type DxHostedPublicVirtualInterfaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#address_family DxHostedPublicVirtualInterface#address_family}.
-	AddressFamily *string `json:"addressFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#bgp_asn DxHostedPublicVirtualInterface#bgp_asn}.
-	BgpAsn *float64 `json:"bgpAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#connection_id DxHostedPublicVirtualInterface#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#name DxHostedPublicVirtualInterface#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#owner_account_id DxHostedPublicVirtualInterface#owner_account_id}.
-	OwnerAccountId *string `json:"ownerAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#route_filter_prefixes DxHostedPublicVirtualInterface#route_filter_prefixes}.
-	RouteFilterPrefixes *[]*string `json:"routeFilterPrefixes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#vlan DxHostedPublicVirtualInterface#vlan}.
-	Vlan *float64 `json:"vlan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#amazon_address DxHostedPublicVirtualInterface#amazon_address}.
-	AmazonAddress *string `json:"amazonAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#bgp_auth_key DxHostedPublicVirtualInterface#bgp_auth_key}.
-	BgpAuthKey *string `json:"bgpAuthKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#customer_address DxHostedPublicVirtualInterface#customer_address}.
-	CustomerAddress *string `json:"customerAddress"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#address_family DxHostedPublicVirtualInterface#address_family}.
+	AddressFamily *string `json:"addressFamily" yaml:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#bgp_asn DxHostedPublicVirtualInterface#bgp_asn}.
+	BgpAsn *float64 `json:"bgpAsn" yaml:"bgpAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#connection_id DxHostedPublicVirtualInterface#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#name DxHostedPublicVirtualInterface#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#owner_account_id DxHostedPublicVirtualInterface#owner_account_id}.
+	OwnerAccountId *string `json:"ownerAccountId" yaml:"ownerAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#route_filter_prefixes DxHostedPublicVirtualInterface#route_filter_prefixes}.
+	RouteFilterPrefixes *[]*string `json:"routeFilterPrefixes" yaml:"routeFilterPrefixes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#vlan DxHostedPublicVirtualInterface#vlan}.
+	Vlan *float64 `json:"vlan" yaml:"vlan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#amazon_address DxHostedPublicVirtualInterface#amazon_address}.
+	AmazonAddress *string `json:"amazonAddress" yaml:"amazonAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#bgp_auth_key DxHostedPublicVirtualInterface#bgp_auth_key}.
+	BgpAuthKey *string `json:"bgpAuthKey" yaml:"bgpAuthKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#customer_address DxHostedPublicVirtualInterface#customer_address}.
+	CustomerAddress *string `json:"customerAddress" yaml:"customerAddress"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#timeouts DxHostedPublicVirtualInterface#timeouts}
-	Timeouts *DxHostedPublicVirtualInterfaceTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#timeouts DxHostedPublicVirtualInterface#timeouts}
+	Timeouts *DxHostedPublicVirtualInterfaceTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxHostedPublicVirtualInterfaceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#create DxHostedPublicVirtualInterface#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface.html#delete DxHostedPublicVirtualInterface#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#create DxHostedPublicVirtualInterface#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_public_virtual_interface#delete DxHostedPublicVirtualInterface#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxHostedPublicVirtualInterfaceTimeoutsOutputReference interface {
@@ -11921,12 +13571,17 @@ type DxHostedPublicVirtualInterfaceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -12008,8 +13663,8 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12018,7 +13673,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) Terraf
 	return returns
 }
 
-func NewDxHostedPublicVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxHostedPublicVirtualInterfaceTimeoutsOutputReference {
+func NewDxHostedPublicVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxHostedPublicVirtualInterfaceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference{}
@@ -12032,7 +13687,7 @@ func NewDxHostedPublicVirtualInterfaceTimeoutsOutputReference(terraformResource 
 	return &j
 }
 
-func NewDxHostedPublicVirtualInterfaceTimeoutsOutputReference_Override(d DxHostedPublicVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxHostedPublicVirtualInterfaceTimeoutsOutputReference_Override(d DxHostedPublicVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12082,7 +13737,7 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12091,12 +13746,40 @@ func (j *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) SetTer
 }
 
 // Experimental.
-func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12133,12 +13816,54 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetNum
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12190,7 +13915,7 @@ func (d *jsiiProxy_DxHostedPublicVirtualInterfaceTimeoutsOutputReference) ResetD
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html aws_dx_hosted_transit_virtual_interface}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface aws_dx_hosted_transit_virtual_interface}.
 type DxHostedTransitVirtualInterface interface {
 	cdktf.TerraformResource
 	AddressFamily() *string
@@ -12213,8 +13938,8 @@ type DxHostedTransitVirtualInterface interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAddress() *string
 	SetCustomerAddress(val *string)
 	CustomerAddressInput() *string
@@ -12223,7 +13948,7 @@ type DxHostedTransitVirtualInterface interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	JumboFrameCapable() interface{}
+	JumboFrameCapable() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Mtu() *float64
@@ -12248,10 +13973,15 @@ type DxHostedTransitVirtualInterface interface {
 	SetVlan(val *float64)
 	VlanInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxHostedTransitVirtualInterfaceTimeouts)
@@ -12422,8 +14152,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterface) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterface) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedTransitVirtualInterface) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12492,8 +14222,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterface) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterface) JumboFrameCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedTransitVirtualInterface) JumboFrameCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"jumboFrameCapable",
@@ -12672,7 +14402,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterface) VlanInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html aws_dx_hosted_transit_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface aws_dx_hosted_transit_virtual_interface} Resource.
 func NewDxHostedTransitVirtualInterface(scope constructs.Construct, id *string, config *DxHostedTransitVirtualInterfaceConfig) DxHostedTransitVirtualInterface {
 	_init_.Initialize()
 
@@ -12687,7 +14417,7 @@ func NewDxHostedTransitVirtualInterface(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html aws_dx_hosted_transit_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface aws_dx_hosted_transit_virtual_interface} Resource.
 func NewDxHostedTransitVirtualInterface_Override(d DxHostedTransitVirtualInterface, scope constructs.Construct, id *string, config *DxHostedTransitVirtualInterfaceConfig) {
 	_init_.Initialize()
 
@@ -12738,7 +14468,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterface) SetConnectionId(val *string)
 	)
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterface) SetCount(val interface{}) {
+func (j *jsiiProxy_DxHostedTransitVirtualInterface) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12850,12 +14580,40 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterface) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12892,12 +14650,54 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterface) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13043,14 +14843,14 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterface) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html aws_dx_hosted_transit_virtual_interface_accepter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter aws_dx_hosted_transit_virtual_interface_accepter}.
 type DxHostedTransitVirtualInterfaceAccepter interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DxGatewayId() *string
@@ -13065,12 +14865,12 @@ type DxHostedTransitVirtualInterfaceAccepter interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -13080,10 +14880,15 @@ type DxHostedTransitVirtualInterfaceAccepter interface {
 	SetVirtualInterfaceId(val *string)
 	VirtualInterfaceIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxHostedTransitVirtualInterfaceAccepterTimeouts)
@@ -13132,8 +14937,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) ConstructNodeMetadat
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13242,8 +15047,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) RawOverrides() inter
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -13252,8 +15057,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -13262,8 +15067,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsAll() interface{
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -13272,8 +15077,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsAllInput() inter
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -13352,7 +15157,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) VirtualInterfaceIdIn
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html aws_dx_hosted_transit_virtual_interface_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter aws_dx_hosted_transit_virtual_interface_accepter} Resource.
 func NewDxHostedTransitVirtualInterfaceAccepter(scope constructs.Construct, id *string, config *DxHostedTransitVirtualInterfaceAccepterConfig) DxHostedTransitVirtualInterfaceAccepter {
 	_init_.Initialize()
 
@@ -13367,7 +15172,7 @@ func NewDxHostedTransitVirtualInterfaceAccepter(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html aws_dx_hosted_transit_virtual_interface_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter aws_dx_hosted_transit_virtual_interface_accepter} Resource.
 func NewDxHostedTransitVirtualInterfaceAccepter_Override(d DxHostedTransitVirtualInterfaceAccepter, scope constructs.Construct, id *string, config *DxHostedTransitVirtualInterfaceAccepterConfig) {
 	_init_.Initialize()
 
@@ -13378,7 +15183,7 @@ func NewDxHostedTransitVirtualInterfaceAccepter_Override(d DxHostedTransitVirtua
 	)
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetCount(val interface{}) {
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13418,7 +15223,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetProvider(val cdkt
 	)
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetTags(val interface{}) {
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -13426,7 +15231,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetTags(val interfac
 	)
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -13482,12 +15287,40 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) AddOverride(path *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13524,12 +15357,54 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13662,32 +15537,32 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepter) ToTerraform() interf
 // AWS Direct Connect.
 type DxHostedTransitVirtualInterfaceAccepterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html#dx_gateway_id DxHostedTransitVirtualInterfaceAccepter#dx_gateway_id}.
-	DxGatewayId *string `json:"dxGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html#virtual_interface_id DxHostedTransitVirtualInterfaceAccepter#virtual_interface_id}.
-	VirtualInterfaceId *string `json:"virtualInterfaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html#tags DxHostedTransitVirtualInterfaceAccepter#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html#tags_all DxHostedTransitVirtualInterfaceAccepter#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter#dx_gateway_id DxHostedTransitVirtualInterfaceAccepter#dx_gateway_id}.
+	DxGatewayId *string `json:"dxGatewayId" yaml:"dxGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter#virtual_interface_id DxHostedTransitVirtualInterfaceAccepter#virtual_interface_id}.
+	VirtualInterfaceId *string `json:"virtualInterfaceId" yaml:"virtualInterfaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter#tags DxHostedTransitVirtualInterfaceAccepter#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter#tags_all DxHostedTransitVirtualInterfaceAccepter#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html#timeouts DxHostedTransitVirtualInterfaceAccepter#timeouts}
-	Timeouts *DxHostedTransitVirtualInterfaceAccepterTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter#timeouts DxHostedTransitVirtualInterfaceAccepter#timeouts}
+	Timeouts *DxHostedTransitVirtualInterfaceAccepterTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxHostedTransitVirtualInterfaceAccepterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html#create DxHostedTransitVirtualInterfaceAccepter#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter.html#delete DxHostedTransitVirtualInterfaceAccepter#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter#create DxHostedTransitVirtualInterfaceAccepter#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface_accepter#delete DxHostedTransitVirtualInterfaceAccepter#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference interface {
@@ -13704,12 +15579,17 @@ type DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -13791,8 +15671,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13801,7 +15681,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 	return returns
 }
 
-func NewDxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference {
+func NewDxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference{}
@@ -13815,7 +15695,7 @@ func NewDxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference(terraform
 	return &j
 }
 
-func NewDxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference_Override(d DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference_Override(d DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13865,7 +15745,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13874,12 +15754,40 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 }
 
 // Experimental.
-func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13916,12 +15824,54 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13976,44 +15926,44 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceAccepterTimeoutsOutputReferenc
 // AWS Direct Connect.
 type DxHostedTransitVirtualInterfaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#address_family DxHostedTransitVirtualInterface#address_family}.
-	AddressFamily *string `json:"addressFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#bgp_asn DxHostedTransitVirtualInterface#bgp_asn}.
-	BgpAsn *float64 `json:"bgpAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#connection_id DxHostedTransitVirtualInterface#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#name DxHostedTransitVirtualInterface#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#owner_account_id DxHostedTransitVirtualInterface#owner_account_id}.
-	OwnerAccountId *string `json:"ownerAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#vlan DxHostedTransitVirtualInterface#vlan}.
-	Vlan *float64 `json:"vlan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#amazon_address DxHostedTransitVirtualInterface#amazon_address}.
-	AmazonAddress *string `json:"amazonAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#bgp_auth_key DxHostedTransitVirtualInterface#bgp_auth_key}.
-	BgpAuthKey *string `json:"bgpAuthKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#customer_address DxHostedTransitVirtualInterface#customer_address}.
-	CustomerAddress *string `json:"customerAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#mtu DxHostedTransitVirtualInterface#mtu}.
-	Mtu *float64 `json:"mtu"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#address_family DxHostedTransitVirtualInterface#address_family}.
+	AddressFamily *string `json:"addressFamily" yaml:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#bgp_asn DxHostedTransitVirtualInterface#bgp_asn}.
+	BgpAsn *float64 `json:"bgpAsn" yaml:"bgpAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#connection_id DxHostedTransitVirtualInterface#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#name DxHostedTransitVirtualInterface#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#owner_account_id DxHostedTransitVirtualInterface#owner_account_id}.
+	OwnerAccountId *string `json:"ownerAccountId" yaml:"ownerAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#vlan DxHostedTransitVirtualInterface#vlan}.
+	Vlan *float64 `json:"vlan" yaml:"vlan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#amazon_address DxHostedTransitVirtualInterface#amazon_address}.
+	AmazonAddress *string `json:"amazonAddress" yaml:"amazonAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#bgp_auth_key DxHostedTransitVirtualInterface#bgp_auth_key}.
+	BgpAuthKey *string `json:"bgpAuthKey" yaml:"bgpAuthKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#customer_address DxHostedTransitVirtualInterface#customer_address}.
+	CustomerAddress *string `json:"customerAddress" yaml:"customerAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#mtu DxHostedTransitVirtualInterface#mtu}.
+	Mtu *float64 `json:"mtu" yaml:"mtu"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#timeouts DxHostedTransitVirtualInterface#timeouts}
-	Timeouts *DxHostedTransitVirtualInterfaceTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#timeouts DxHostedTransitVirtualInterface#timeouts}
+	Timeouts *DxHostedTransitVirtualInterfaceTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxHostedTransitVirtualInterfaceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#create DxHostedTransitVirtualInterface#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface.html#delete DxHostedTransitVirtualInterface#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#create DxHostedTransitVirtualInterface#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_hosted_transit_virtual_interface#delete DxHostedTransitVirtualInterface#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxHostedTransitVirtualInterfaceTimeoutsOutputReference interface {
@@ -14030,12 +15980,17 @@ type DxHostedTransitVirtualInterfaceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -14117,8 +16072,8 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14127,7 +16082,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) Terra
 	return returns
 }
 
-func NewDxHostedTransitVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxHostedTransitVirtualInterfaceTimeoutsOutputReference {
+func NewDxHostedTransitVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxHostedTransitVirtualInterfaceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference{}
@@ -14141,7 +16096,7 @@ func NewDxHostedTransitVirtualInterfaceTimeoutsOutputReference(terraformResource
 	return &j
 }
 
-func NewDxHostedTransitVirtualInterfaceTimeoutsOutputReference_Override(d DxHostedTransitVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxHostedTransitVirtualInterfaceTimeoutsOutputReference_Override(d DxHostedTransitVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14191,7 +16146,7 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14200,12 +16155,40 @@ func (j *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) SetTe
 }
 
 // Experimental.
-func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14242,12 +16225,54 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetNu
 }
 
 // Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14299,7 +16324,7 @@ func (d *jsiiProxy_DxHostedTransitVirtualInterfaceTimeoutsOutputReference) Reset
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html aws_dx_lag}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_lag aws_dx_lag}.
 type DxLag interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -14311,8 +16336,8 @@ type DxLag interface {
 	SetConnectionsBandwidth(val *string)
 	ConnectionsBandwidthInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ForceDestroy() interface{}
@@ -14322,7 +16347,7 @@ type DxLag interface {
 	FriendlyUniqueId() *string
 	HasLogicalRedundancy() *string
 	Id() *string
-	JumboFrameCapable() interface{}
+	JumboFrameCapable() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Location() *string
@@ -14339,20 +16364,25 @@ type DxLag interface {
 	SetProviderName(val *string)
 	ProviderNameInput() *string
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetConnectionId()
@@ -14442,8 +16472,8 @@ func (j *jsiiProxy_DxLag) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxLag) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxLag) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14522,8 +16552,8 @@ func (j *jsiiProxy_DxLag) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DxLag) JumboFrameCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxLag) JumboFrameCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"jumboFrameCapable",
@@ -14642,8 +16672,8 @@ func (j *jsiiProxy_DxLag) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxLag) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxLag) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -14652,8 +16682,8 @@ func (j *jsiiProxy_DxLag) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxLag) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxLag) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -14662,8 +16692,8 @@ func (j *jsiiProxy_DxLag) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxLag) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxLag) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -14672,8 +16702,8 @@ func (j *jsiiProxy_DxLag) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxLag) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxLag) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14712,7 +16742,7 @@ func (j *jsiiProxy_DxLag) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html aws_dx_lag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_lag aws_dx_lag} Resource.
 func NewDxLag(scope constructs.Construct, id *string, config *DxLagConfig) DxLag {
 	_init_.Initialize()
 
@@ -14727,7 +16757,7 @@ func NewDxLag(scope constructs.Construct, id *string, config *DxLagConfig) DxLag
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html aws_dx_lag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_lag aws_dx_lag} Resource.
 func NewDxLag_Override(d DxLag, scope constructs.Construct, id *string, config *DxLagConfig) {
 	_init_.Initialize()
 
@@ -14754,7 +16784,7 @@ func (j *jsiiProxy_DxLag) SetConnectionsBandwidth(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxLag) SetCount(val interface{}) {
+func (j *jsiiProxy_DxLag) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14818,7 +16848,7 @@ func (j *jsiiProxy_DxLag) SetProviderName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxLag) SetTags(val interface{}) {
+func (j *jsiiProxy_DxLag) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14826,7 +16856,7 @@ func (j *jsiiProxy_DxLag) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DxLag) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxLag) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -14874,12 +16904,40 @@ func (d *jsiiProxy_DxLag) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DxLag) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxLag) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxLag) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14916,12 +16974,54 @@ func (d *jsiiProxy_DxLag) GetNumberAttribute(terraformAttribute *string) *float6
 }
 
 // Experimental.
+func (d *jsiiProxy_DxLag) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxLag) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxLag) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxLag) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15062,32 +17162,32 @@ func (d *jsiiProxy_DxLag) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxLagConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#connections_bandwidth DxLag#connections_bandwidth}.
-	ConnectionsBandwidth *string `json:"connectionsBandwidth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#location DxLag#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#name DxLag#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#connection_id DxLag#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#force_destroy DxLag#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#provider_name DxLag#provider_name}.
-	ProviderName *string `json:"providerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#tags DxLag#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag.html#tags_all DxLag#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#connections_bandwidth DxLag#connections_bandwidth}.
+	ConnectionsBandwidth *string `json:"connectionsBandwidth" yaml:"connectionsBandwidth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#location DxLag#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#name DxLag#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#connection_id DxLag#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#force_destroy DxLag#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#provider_name DxLag#provider_name}.
+	ProviderName *string `json:"providerName" yaml:"providerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#tags DxLag#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_lag#tags_all DxLag#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html aws_dx_private_virtual_interface}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface aws_dx_private_virtual_interface}.
 type DxPrivateVirtualInterface interface {
 	cdktf.TerraformResource
 	AddressFamily() *string
@@ -15110,8 +17210,8 @@ type DxPrivateVirtualInterface interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAddress() *string
 	SetCustomerAddress(val *string)
 	CustomerAddressInput() *string
@@ -15123,7 +17223,7 @@ type DxPrivateVirtualInterface interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	JumboFrameCapable() interface{}
+	JumboFrameCapable() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Mtu() *float64
@@ -15136,12 +17236,15 @@ type DxPrivateVirtualInterface interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	SitelinkEnabled() interface{}
+	SetSitelinkEnabled(val interface{})
+	SitelinkEnabledInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -15154,10 +17257,15 @@ type DxPrivateVirtualInterface interface {
 	SetVpnGatewayId(val *string)
 	VpnGatewayIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxPrivateVirtualInterfaceTimeouts)
@@ -15167,6 +17275,7 @@ type DxPrivateVirtualInterface interface {
 	ResetDxGatewayId()
 	ResetMtu()
 	ResetOverrideLogicalId()
+	ResetSitelinkEnabled()
 	ResetTags()
 	ResetTagsAll()
 	ResetTimeouts()
@@ -15332,8 +17441,8 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPrivateVirtualInterface) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15422,8 +17531,8 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) JumboFrameCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPrivateVirtualInterface) JumboFrameCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"jumboFrameCapable",
@@ -15512,8 +17621,28 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) Tags() interface{} {
+func (j *jsiiProxy_DxPrivateVirtualInterface) SitelinkEnabled() interface{} {
 	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sitelinkEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DxPrivateVirtualInterface) SitelinkEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sitelinkEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DxPrivateVirtualInterface) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -15522,8 +17651,8 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPrivateVirtualInterface) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -15532,8 +17661,8 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPrivateVirtualInterface) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -15542,8 +17671,8 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPrivateVirtualInterface) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -15642,7 +17771,7 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) VpnGatewayIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html aws_dx_private_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface aws_dx_private_virtual_interface} Resource.
 func NewDxPrivateVirtualInterface(scope constructs.Construct, id *string, config *DxPrivateVirtualInterfaceConfig) DxPrivateVirtualInterface {
 	_init_.Initialize()
 
@@ -15657,7 +17786,7 @@ func NewDxPrivateVirtualInterface(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html aws_dx_private_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface aws_dx_private_virtual_interface} Resource.
 func NewDxPrivateVirtualInterface_Override(d DxPrivateVirtualInterface, scope constructs.Construct, id *string, config *DxPrivateVirtualInterfaceConfig) {
 	_init_.Initialize()
 
@@ -15708,7 +17837,7 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) SetConnectionId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) SetCount(val interface{}) {
+func (j *jsiiProxy_DxPrivateVirtualInterface) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15772,7 +17901,15 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) SetProvider(val cdktf.TerraformPro
 	)
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) SetTags(val interface{}) {
+func (j *jsiiProxy_DxPrivateVirtualInterface) SetSitelinkEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"sitelinkEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxPrivateVirtualInterface) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -15780,7 +17917,7 @@ func (j *jsiiProxy_DxPrivateVirtualInterface) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterface) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxPrivateVirtualInterface) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -15844,12 +17981,40 @@ func (d *jsiiProxy_DxPrivateVirtualInterface) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterface) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxPrivateVirtualInterface) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterface) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15886,12 +18051,54 @@ func (d *jsiiProxy_DxPrivateVirtualInterface) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterface) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterface) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxPrivateVirtualInterface) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterface) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15977,6 +18184,14 @@ func (d *jsiiProxy_DxPrivateVirtualInterface) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DxPrivateVirtualInterface) ResetSitelinkEnabled() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSitelinkEnabled",
 		nil, // no parameters
 	)
 }
@@ -16072,52 +18287,54 @@ func (d *jsiiProxy_DxPrivateVirtualInterface) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxPrivateVirtualInterfaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#address_family DxPrivateVirtualInterface#address_family}.
-	AddressFamily *string `json:"addressFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#bgp_asn DxPrivateVirtualInterface#bgp_asn}.
-	BgpAsn *float64 `json:"bgpAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#connection_id DxPrivateVirtualInterface#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#name DxPrivateVirtualInterface#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#vlan DxPrivateVirtualInterface#vlan}.
-	Vlan *float64 `json:"vlan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#amazon_address DxPrivateVirtualInterface#amazon_address}.
-	AmazonAddress *string `json:"amazonAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#bgp_auth_key DxPrivateVirtualInterface#bgp_auth_key}.
-	BgpAuthKey *string `json:"bgpAuthKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#customer_address DxPrivateVirtualInterface#customer_address}.
-	CustomerAddress *string `json:"customerAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#dx_gateway_id DxPrivateVirtualInterface#dx_gateway_id}.
-	DxGatewayId *string `json:"dxGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#mtu DxPrivateVirtualInterface#mtu}.
-	Mtu *float64 `json:"mtu"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#tags DxPrivateVirtualInterface#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#tags_all DxPrivateVirtualInterface#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#address_family DxPrivateVirtualInterface#address_family}.
+	AddressFamily *string `json:"addressFamily" yaml:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#bgp_asn DxPrivateVirtualInterface#bgp_asn}.
+	BgpAsn *float64 `json:"bgpAsn" yaml:"bgpAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#connection_id DxPrivateVirtualInterface#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#name DxPrivateVirtualInterface#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#vlan DxPrivateVirtualInterface#vlan}.
+	Vlan *float64 `json:"vlan" yaml:"vlan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#amazon_address DxPrivateVirtualInterface#amazon_address}.
+	AmazonAddress *string `json:"amazonAddress" yaml:"amazonAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#bgp_auth_key DxPrivateVirtualInterface#bgp_auth_key}.
+	BgpAuthKey *string `json:"bgpAuthKey" yaml:"bgpAuthKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#customer_address DxPrivateVirtualInterface#customer_address}.
+	CustomerAddress *string `json:"customerAddress" yaml:"customerAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#dx_gateway_id DxPrivateVirtualInterface#dx_gateway_id}.
+	DxGatewayId *string `json:"dxGatewayId" yaml:"dxGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#mtu DxPrivateVirtualInterface#mtu}.
+	Mtu *float64 `json:"mtu" yaml:"mtu"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#sitelink_enabled DxPrivateVirtualInterface#sitelink_enabled}.
+	SitelinkEnabled interface{} `json:"sitelinkEnabled" yaml:"sitelinkEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#tags DxPrivateVirtualInterface#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#tags_all DxPrivateVirtualInterface#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#timeouts DxPrivateVirtualInterface#timeouts}
-	Timeouts *DxPrivateVirtualInterfaceTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#vpn_gateway_id DxPrivateVirtualInterface#vpn_gateway_id}.
-	VpnGatewayId *string `json:"vpnGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#timeouts DxPrivateVirtualInterface#timeouts}
+	Timeouts *DxPrivateVirtualInterfaceTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#vpn_gateway_id DxPrivateVirtualInterface#vpn_gateway_id}.
+	VpnGatewayId *string `json:"vpnGatewayId" yaml:"vpnGatewayId"`
 }
 
 type DxPrivateVirtualInterfaceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#create DxPrivateVirtualInterface#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#delete DxPrivateVirtualInterface#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface.html#update DxPrivateVirtualInterface#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#create DxPrivateVirtualInterface#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#delete DxPrivateVirtualInterface#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_private_virtual_interface#update DxPrivateVirtualInterface#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DxPrivateVirtualInterfaceTimeoutsOutputReference interface {
@@ -16134,15 +18351,20 @@ type DxPrivateVirtualInterfaceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -16225,8 +18447,8 @@ func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16255,7 +18477,7 @@ func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) UpdateInput
 	return returns
 }
 
-func NewDxPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxPrivateVirtualInterfaceTimeoutsOutputReference {
+func NewDxPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxPrivateVirtualInterfaceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference{}
@@ -16269,7 +18491,7 @@ func NewDxPrivateVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewDxPrivateVirtualInterfaceTimeoutsOutputReference_Override(d DxPrivateVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxPrivateVirtualInterfaceTimeoutsOutputReference_Override(d DxPrivateVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16319,7 +18541,7 @@ func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16336,12 +18558,40 @@ func (j *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) SetUpdate(v
 }
 
 // Experimental.
-func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16378,12 +18628,54 @@ func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16443,7 +18735,7 @@ func (d *jsiiProxy_DxPrivateVirtualInterfaceTimeoutsOutputReference) ResetUpdate
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html aws_dx_public_virtual_interface}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface aws_dx_public_virtual_interface}.
 type DxPublicVirtualInterface interface {
 	cdktf.TerraformResource
 	AddressFamily() *string
@@ -16466,8 +18758,8 @@ type DxPublicVirtualInterface interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAddress() *string
 	SetCustomerAddress(val *string)
 	CustomerAddressInput() *string
@@ -16488,12 +18780,12 @@ type DxPublicVirtualInterface interface {
 	RouteFilterPrefixes() *[]*string
 	SetRouteFilterPrefixes(val *[]*string)
 	RouteFilterPrefixesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -16503,10 +18795,15 @@ type DxPublicVirtualInterface interface {
 	SetVlan(val *float64)
 	VlanInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxPublicVirtualInterfaceTimeouts)
@@ -16678,8 +18975,8 @@ func (j *jsiiProxy_DxPublicVirtualInterface) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPublicVirtualInterface) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16828,8 +19125,8 @@ func (j *jsiiProxy_DxPublicVirtualInterface) RouteFilterPrefixesInput() *[]*stri
 	return returns
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPublicVirtualInterface) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -16838,8 +19135,8 @@ func (j *jsiiProxy_DxPublicVirtualInterface) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPublicVirtualInterface) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -16848,8 +19145,8 @@ func (j *jsiiProxy_DxPublicVirtualInterface) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPublicVirtualInterface) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -16858,8 +19155,8 @@ func (j *jsiiProxy_DxPublicVirtualInterface) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxPublicVirtualInterface) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -16938,7 +19235,7 @@ func (j *jsiiProxy_DxPublicVirtualInterface) VlanInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html aws_dx_public_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface aws_dx_public_virtual_interface} Resource.
 func NewDxPublicVirtualInterface(scope constructs.Construct, id *string, config *DxPublicVirtualInterfaceConfig) DxPublicVirtualInterface {
 	_init_.Initialize()
 
@@ -16953,7 +19250,7 @@ func NewDxPublicVirtualInterface(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html aws_dx_public_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface aws_dx_public_virtual_interface} Resource.
 func NewDxPublicVirtualInterface_Override(d DxPublicVirtualInterface, scope constructs.Construct, id *string, config *DxPublicVirtualInterfaceConfig) {
 	_init_.Initialize()
 
@@ -17004,7 +19301,7 @@ func (j *jsiiProxy_DxPublicVirtualInterface) SetConnectionId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) SetCount(val interface{}) {
+func (j *jsiiProxy_DxPublicVirtualInterface) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17060,7 +19357,7 @@ func (j *jsiiProxy_DxPublicVirtualInterface) SetRouteFilterPrefixes(val *[]*stri
 	)
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) SetTags(val interface{}) {
+func (j *jsiiProxy_DxPublicVirtualInterface) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -17068,7 +19365,7 @@ func (j *jsiiProxy_DxPublicVirtualInterface) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterface) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxPublicVirtualInterface) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -17124,12 +19421,40 @@ func (d *jsiiProxy_DxPublicVirtualInterface) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterface) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxPublicVirtualInterface) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterface) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17166,12 +19491,54 @@ func (d *jsiiProxy_DxPublicVirtualInterface) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterface) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterface) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxPublicVirtualInterface) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterface) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17328,46 +19695,46 @@ func (d *jsiiProxy_DxPublicVirtualInterface) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxPublicVirtualInterfaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#address_family DxPublicVirtualInterface#address_family}.
-	AddressFamily *string `json:"addressFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#bgp_asn DxPublicVirtualInterface#bgp_asn}.
-	BgpAsn *float64 `json:"bgpAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#connection_id DxPublicVirtualInterface#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#name DxPublicVirtualInterface#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#route_filter_prefixes DxPublicVirtualInterface#route_filter_prefixes}.
-	RouteFilterPrefixes *[]*string `json:"routeFilterPrefixes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#vlan DxPublicVirtualInterface#vlan}.
-	Vlan *float64 `json:"vlan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#amazon_address DxPublicVirtualInterface#amazon_address}.
-	AmazonAddress *string `json:"amazonAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#bgp_auth_key DxPublicVirtualInterface#bgp_auth_key}.
-	BgpAuthKey *string `json:"bgpAuthKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#customer_address DxPublicVirtualInterface#customer_address}.
-	CustomerAddress *string `json:"customerAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#tags DxPublicVirtualInterface#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#tags_all DxPublicVirtualInterface#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#address_family DxPublicVirtualInterface#address_family}.
+	AddressFamily *string `json:"addressFamily" yaml:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#bgp_asn DxPublicVirtualInterface#bgp_asn}.
+	BgpAsn *float64 `json:"bgpAsn" yaml:"bgpAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#connection_id DxPublicVirtualInterface#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#name DxPublicVirtualInterface#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#route_filter_prefixes DxPublicVirtualInterface#route_filter_prefixes}.
+	RouteFilterPrefixes *[]*string `json:"routeFilterPrefixes" yaml:"routeFilterPrefixes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#vlan DxPublicVirtualInterface#vlan}.
+	Vlan *float64 `json:"vlan" yaml:"vlan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#amazon_address DxPublicVirtualInterface#amazon_address}.
+	AmazonAddress *string `json:"amazonAddress" yaml:"amazonAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#bgp_auth_key DxPublicVirtualInterface#bgp_auth_key}.
+	BgpAuthKey *string `json:"bgpAuthKey" yaml:"bgpAuthKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#customer_address DxPublicVirtualInterface#customer_address}.
+	CustomerAddress *string `json:"customerAddress" yaml:"customerAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#tags DxPublicVirtualInterface#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#tags_all DxPublicVirtualInterface#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#timeouts DxPublicVirtualInterface#timeouts}
-	Timeouts *DxPublicVirtualInterfaceTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#timeouts DxPublicVirtualInterface#timeouts}
+	Timeouts *DxPublicVirtualInterfaceTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxPublicVirtualInterfaceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#create DxPublicVirtualInterface#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface.html#delete DxPublicVirtualInterface#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#create DxPublicVirtualInterface#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_public_virtual_interface#delete DxPublicVirtualInterface#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type DxPublicVirtualInterfaceTimeoutsOutputReference interface {
@@ -17384,12 +19751,17 @@ type DxPublicVirtualInterfaceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -17471,8 +19843,8 @@ func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17481,7 +19853,7 @@ func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) TerraformRes
 	return returns
 }
 
-func NewDxPublicVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxPublicVirtualInterfaceTimeoutsOutputReference {
+func NewDxPublicVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxPublicVirtualInterfaceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference{}
@@ -17495,7 +19867,7 @@ func NewDxPublicVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewDxPublicVirtualInterfaceTimeoutsOutputReference_Override(d DxPublicVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxPublicVirtualInterfaceTimeoutsOutputReference_Override(d DxPublicVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -17545,7 +19917,7 @@ func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17554,12 +19926,40 @@ func (j *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17596,12 +19996,54 @@ func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17653,7 +20095,7 @@ func (d *jsiiProxy_DxPublicVirtualInterfaceTimeoutsOutputReference) ResetDelete(
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html aws_dx_transit_virtual_interface}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface aws_dx_transit_virtual_interface}.
 type DxTransitVirtualInterface interface {
 	cdktf.TerraformResource
 	AddressFamily() *string
@@ -17676,8 +20118,8 @@ type DxTransitVirtualInterface interface {
 	SetConnectionId(val *string)
 	ConnectionIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAddress() *string
 	SetCustomerAddress(val *string)
 	CustomerAddressInput() *string
@@ -17689,7 +20131,7 @@ type DxTransitVirtualInterface interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	JumboFrameCapable() interface{}
+	JumboFrameCapable() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Mtu() *float64
@@ -17702,12 +20144,15 @@ type DxTransitVirtualInterface interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	SitelinkEnabled() interface{}
+	SetSitelinkEnabled(val interface{})
+	SitelinkEnabledInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -17717,10 +20162,15 @@ type DxTransitVirtualInterface interface {
 	SetVlan(val *float64)
 	VlanInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DxTransitVirtualInterfaceTimeouts)
@@ -17729,6 +20179,7 @@ type DxTransitVirtualInterface interface {
 	ResetCustomerAddress()
 	ResetMtu()
 	ResetOverrideLogicalId()
+	ResetSitelinkEnabled()
 	ResetTags()
 	ResetTagsAll()
 	ResetTimeouts()
@@ -17893,8 +20344,8 @@ func (j *jsiiProxy_DxTransitVirtualInterface) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxTransitVirtualInterface) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17983,8 +20434,8 @@ func (j *jsiiProxy_DxTransitVirtualInterface) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) JumboFrameCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxTransitVirtualInterface) JumboFrameCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"jumboFrameCapable",
@@ -18073,8 +20524,28 @@ func (j *jsiiProxy_DxTransitVirtualInterface) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) Tags() interface{} {
+func (j *jsiiProxy_DxTransitVirtualInterface) SitelinkEnabled() interface{} {
 	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sitelinkEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DxTransitVirtualInterface) SitelinkEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sitelinkEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DxTransitVirtualInterface) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -18083,8 +20554,8 @@ func (j *jsiiProxy_DxTransitVirtualInterface) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxTransitVirtualInterface) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -18093,8 +20564,8 @@ func (j *jsiiProxy_DxTransitVirtualInterface) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxTransitVirtualInterface) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -18103,8 +20574,8 @@ func (j *jsiiProxy_DxTransitVirtualInterface) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DxTransitVirtualInterface) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -18183,7 +20654,7 @@ func (j *jsiiProxy_DxTransitVirtualInterface) VlanInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html aws_dx_transit_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface aws_dx_transit_virtual_interface} Resource.
 func NewDxTransitVirtualInterface(scope constructs.Construct, id *string, config *DxTransitVirtualInterfaceConfig) DxTransitVirtualInterface {
 	_init_.Initialize()
 
@@ -18198,7 +20669,7 @@ func NewDxTransitVirtualInterface(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html aws_dx_transit_virtual_interface} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface aws_dx_transit_virtual_interface} Resource.
 func NewDxTransitVirtualInterface_Override(d DxTransitVirtualInterface, scope constructs.Construct, id *string, config *DxTransitVirtualInterfaceConfig) {
 	_init_.Initialize()
 
@@ -18249,7 +20720,7 @@ func (j *jsiiProxy_DxTransitVirtualInterface) SetConnectionId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) SetCount(val interface{}) {
+func (j *jsiiProxy_DxTransitVirtualInterface) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18313,7 +20784,15 @@ func (j *jsiiProxy_DxTransitVirtualInterface) SetProvider(val cdktf.TerraformPro
 	)
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) SetTags(val interface{}) {
+func (j *jsiiProxy_DxTransitVirtualInterface) SetSitelinkEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"sitelinkEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DxTransitVirtualInterface) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -18321,7 +20800,7 @@ func (j *jsiiProxy_DxTransitVirtualInterface) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterface) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DxTransitVirtualInterface) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -18377,12 +20856,40 @@ func (d *jsiiProxy_DxTransitVirtualInterface) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterface) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxTransitVirtualInterface) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterface) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18419,12 +20926,54 @@ func (d *jsiiProxy_DxTransitVirtualInterface) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterface) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterface) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxTransitVirtualInterface) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterface) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18502,6 +21051,14 @@ func (d *jsiiProxy_DxTransitVirtualInterface) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DxTransitVirtualInterface) ResetSitelinkEnabled() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSitelinkEnabled",
 		nil, // no parameters
 	)
 }
@@ -18589,50 +21146,52 @@ func (d *jsiiProxy_DxTransitVirtualInterface) ToTerraform() interface{} {
 // AWS Direct Connect.
 type DxTransitVirtualInterfaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#address_family DxTransitVirtualInterface#address_family}.
-	AddressFamily *string `json:"addressFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#bgp_asn DxTransitVirtualInterface#bgp_asn}.
-	BgpAsn *float64 `json:"bgpAsn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#connection_id DxTransitVirtualInterface#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#dx_gateway_id DxTransitVirtualInterface#dx_gateway_id}.
-	DxGatewayId *string `json:"dxGatewayId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#name DxTransitVirtualInterface#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#vlan DxTransitVirtualInterface#vlan}.
-	Vlan *float64 `json:"vlan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#amazon_address DxTransitVirtualInterface#amazon_address}.
-	AmazonAddress *string `json:"amazonAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#bgp_auth_key DxTransitVirtualInterface#bgp_auth_key}.
-	BgpAuthKey *string `json:"bgpAuthKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#customer_address DxTransitVirtualInterface#customer_address}.
-	CustomerAddress *string `json:"customerAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#mtu DxTransitVirtualInterface#mtu}.
-	Mtu *float64 `json:"mtu"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#tags DxTransitVirtualInterface#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#tags_all DxTransitVirtualInterface#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#address_family DxTransitVirtualInterface#address_family}.
+	AddressFamily *string `json:"addressFamily" yaml:"addressFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#bgp_asn DxTransitVirtualInterface#bgp_asn}.
+	BgpAsn *float64 `json:"bgpAsn" yaml:"bgpAsn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#connection_id DxTransitVirtualInterface#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#dx_gateway_id DxTransitVirtualInterface#dx_gateway_id}.
+	DxGatewayId *string `json:"dxGatewayId" yaml:"dxGatewayId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#name DxTransitVirtualInterface#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#vlan DxTransitVirtualInterface#vlan}.
+	Vlan *float64 `json:"vlan" yaml:"vlan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#amazon_address DxTransitVirtualInterface#amazon_address}.
+	AmazonAddress *string `json:"amazonAddress" yaml:"amazonAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#bgp_auth_key DxTransitVirtualInterface#bgp_auth_key}.
+	BgpAuthKey *string `json:"bgpAuthKey" yaml:"bgpAuthKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#customer_address DxTransitVirtualInterface#customer_address}.
+	CustomerAddress *string `json:"customerAddress" yaml:"customerAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#mtu DxTransitVirtualInterface#mtu}.
+	Mtu *float64 `json:"mtu" yaml:"mtu"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#sitelink_enabled DxTransitVirtualInterface#sitelink_enabled}.
+	SitelinkEnabled interface{} `json:"sitelinkEnabled" yaml:"sitelinkEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#tags DxTransitVirtualInterface#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#tags_all DxTransitVirtualInterface#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#timeouts DxTransitVirtualInterface#timeouts}
-	Timeouts *DxTransitVirtualInterfaceTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#timeouts DxTransitVirtualInterface#timeouts}
+	Timeouts *DxTransitVirtualInterfaceTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DxTransitVirtualInterfaceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#create DxTransitVirtualInterface#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#delete DxTransitVirtualInterface#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface.html#update DxTransitVirtualInterface#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#create DxTransitVirtualInterface#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#delete DxTransitVirtualInterface#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dx_transit_virtual_interface#update DxTransitVirtualInterface#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DxTransitVirtualInterfaceTimeoutsOutputReference interface {
@@ -18649,15 +21208,20 @@ type DxTransitVirtualInterfaceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -18740,8 +21304,8 @@ func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18770,7 +21334,7 @@ func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) UpdateInput
 	return returns
 }
 
-func NewDxTransitVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DxTransitVirtualInterfaceTimeoutsOutputReference {
+func NewDxTransitVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DxTransitVirtualInterfaceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference{}
@@ -18784,7 +21348,7 @@ func NewDxTransitVirtualInterfaceTimeoutsOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewDxTransitVirtualInterfaceTimeoutsOutputReference_Override(d DxTransitVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDxTransitVirtualInterfaceTimeoutsOutputReference_Override(d DxTransitVirtualInterfaceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18834,7 +21398,7 @@ func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18851,12 +21415,40 @@ func (j *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) SetUpdate(v
 }
 
 // Experimental.
-func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18893,12 +21485,54 @@ func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DxTransitVirtualInterfaceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

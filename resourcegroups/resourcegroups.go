@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/resourcegroups/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html aws_resourcegroupstaggingapi_resources}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources aws_resourcegroupstaggingapi_resources}.
 type DataAwsResourcegroupstaggingapiResources interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExcludeCompliantResources() interface{}
@@ -39,17 +39,22 @@ type DataAwsResourcegroupstaggingapiResources interface {
 	ResourceTypeFilters() *[]*string
 	SetResourceTypeFilters(val *[]*string)
 	ResourceTypeFiltersInput() *[]*string
-	TagFilter() *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter
-	SetTagFilter(val *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter)
-	TagFilterInput() *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter
+	TagFilter() interface{}
+	SetTagFilter(val interface{})
+	TagFilterInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetExcludeCompliantResources()
@@ -90,8 +95,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) ConstructNodeMetada
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -260,8 +265,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) ResourceTypeFilters
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) TagFilter() *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter {
-	var returns *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) TagFilter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tagFilter",
@@ -270,8 +275,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) TagFilter() *[]*Dat
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) TagFilterInput() *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter {
-	var returns *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) TagFilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tagFilterInput",
@@ -310,7 +315,7 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) TerraformResourceTy
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html aws_resourcegroupstaggingapi_resources} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources aws_resourcegroupstaggingapi_resources} Data Source.
 func NewDataAwsResourcegroupstaggingapiResources(scope constructs.Construct, id *string, config *DataAwsResourcegroupstaggingapiResourcesConfig) DataAwsResourcegroupstaggingapiResources {
 	_init_.Initialize()
 
@@ -325,7 +330,7 @@ func NewDataAwsResourcegroupstaggingapiResources(scope constructs.Construct, id 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html aws_resourcegroupstaggingapi_resources} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources aws_resourcegroupstaggingapi_resources} Data Source.
 func NewDataAwsResourcegroupstaggingapiResources_Override(d DataAwsResourcegroupstaggingapiResources, scope constructs.Construct, id *string, config *DataAwsResourcegroupstaggingapiResourcesConfig) {
 	_init_.Initialize()
 
@@ -336,7 +341,7 @@ func NewDataAwsResourcegroupstaggingapiResources_Override(d DataAwsResourcegroup
 	)
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -400,7 +405,7 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) SetResourceTypeFilt
 	)
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) SetTagFilter(val *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter) {
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResources) SetTagFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"tagFilter",
@@ -448,12 +453,40 @@ func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) AddOverride(path *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -490,12 +523,54 @@ func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetNumberAttribute(
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -649,42 +724,49 @@ func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResources) ToTerraform() inter
 // AWS Resource Groups.
 type DataAwsResourcegroupstaggingapiResourcesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html#exclude_compliant_resources DataAwsResourcegroupstaggingapiResources#exclude_compliant_resources}.
-	ExcludeCompliantResources interface{} `json:"excludeCompliantResources"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html#include_compliance_details DataAwsResourcegroupstaggingapiResources#include_compliance_details}.
-	IncludeComplianceDetails interface{} `json:"includeComplianceDetails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html#resource_arn_list DataAwsResourcegroupstaggingapiResources#resource_arn_list}.
-	ResourceArnList *[]*string `json:"resourceArnList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html#resource_type_filters DataAwsResourcegroupstaggingapiResources#resource_type_filters}.
-	ResourceTypeFilters *[]*string `json:"resourceTypeFilters"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources#exclude_compliant_resources DataAwsResourcegroupstaggingapiResources#exclude_compliant_resources}.
+	ExcludeCompliantResources interface{} `json:"excludeCompliantResources" yaml:"excludeCompliantResources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources#include_compliance_details DataAwsResourcegroupstaggingapiResources#include_compliance_details}.
+	IncludeComplianceDetails interface{} `json:"includeComplianceDetails" yaml:"includeComplianceDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources#resource_arn_list DataAwsResourcegroupstaggingapiResources#resource_arn_list}.
+	ResourceArnList *[]*string `json:"resourceArnList" yaml:"resourceArnList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources#resource_type_filters DataAwsResourcegroupstaggingapiResources#resource_type_filters}.
+	ResourceTypeFilters *[]*string `json:"resourceTypeFilters" yaml:"resourceTypeFilters"`
 	// tag_filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html#tag_filter DataAwsResourcegroupstaggingapiResources#tag_filter}
-	TagFilter *[]*DataAwsResourcegroupstaggingapiResourcesTagFilter `json:"tagFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources#tag_filter DataAwsResourcegroupstaggingapiResources#tag_filter}
+	TagFilter interface{} `json:"tagFilter" yaml:"tagFilter"`
 }
 
 type DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ComplianceDetails() interface{}
+	ComplianceDetails() cdktf.IResolvable
 	ResourceArn() *string
-	Tags() interface{}
+	Tags() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -703,8 +785,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) ComplianceDetails() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) ComplianceDetails() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"complianceDetails",
@@ -723,8 +805,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -743,8 +825,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -753,15 +835,25 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingList(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList {
+func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingList(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList{}
 
 	_jsii_.Create(
 		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -769,12 +861,12 @@ func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingList(terraform
 }
 
 // Experimental.
-func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingList_Override(d DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingList_Override(d DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -795,7 +887,7 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	)
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -803,13 +895,49 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	)
 }
 
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -846,12 +974,54 @@ func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingList) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -877,17 +1047,24 @@ type DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDet
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ComplianceStatus() interface{}
+	ComplianceStatus() cdktf.IResolvable
 	KeysWithNoncompliantValues() *[]*string
 	NonCompliantKeys() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -906,8 +1083,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) ComplianceStatus() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) ComplianceStatus() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"complianceStatus",
@@ -946,8 +1123,8 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -956,15 +1133,25 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails {
+func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails{}
 
 	_jsii_.Create(
 		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -972,12 +1159,12 @@ func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingListCompliance
 }
 
 // Experimental.
-func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails_Override(d DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails_Override(d DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.resourcegroups.DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -998,7 +1185,7 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	)
 }
 
-func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1006,13 +1193,49 @@ func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 	)
 }
 
+func (j *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1049,12 +1272,54 @@ func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingListComplianceDetails) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1077,20 +1342,20 @@ func (d *jsiiProxy_DataAwsResourcegroupstaggingapiResourcesResourceTagMappingLis
 }
 
 type DataAwsResourcegroupstaggingapiResourcesTagFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html#key DataAwsResourcegroupstaggingapiResources#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources.html#values DataAwsResourcegroupstaggingapiResources#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources#key DataAwsResourcegroupstaggingapiResources#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/resourcegroupstaggingapi_resources#values DataAwsResourcegroupstaggingapiResources#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html aws_resourcegroups_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group aws_resourcegroups_group}.
 type ResourcegroupsGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1110,20 +1375,25 @@ type ResourcegroupsGroup interface {
 	RawOverrides() interface{}
 	ResourceQuery() ResourcegroupsGroupResourceQueryOutputReference
 	ResourceQueryInput() *ResourcegroupsGroupResourceQuery
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutResourceQuery(value *ResourcegroupsGroupResourceQuery)
@@ -1172,8 +1442,8 @@ func (j *jsiiProxy_ResourcegroupsGroup) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ResourcegroupsGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1322,8 +1592,8 @@ func (j *jsiiProxy_ResourcegroupsGroup) ResourceQueryInput() *ResourcegroupsGrou
 	return returns
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ResourcegroupsGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1332,8 +1602,8 @@ func (j *jsiiProxy_ResourcegroupsGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ResourcegroupsGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1342,8 +1612,8 @@ func (j *jsiiProxy_ResourcegroupsGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ResourcegroupsGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1352,8 +1622,8 @@ func (j *jsiiProxy_ResourcegroupsGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ResourcegroupsGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1392,7 +1662,7 @@ func (j *jsiiProxy_ResourcegroupsGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html aws_resourcegroups_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group aws_resourcegroups_group} Resource.
 func NewResourcegroupsGroup(scope constructs.Construct, id *string, config *ResourcegroupsGroupConfig) ResourcegroupsGroup {
 	_init_.Initialize()
 
@@ -1407,7 +1677,7 @@ func NewResourcegroupsGroup(scope constructs.Construct, id *string, config *Reso
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html aws_resourcegroups_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group aws_resourcegroups_group} Resource.
 func NewResourcegroupsGroup_Override(r ResourcegroupsGroup, scope constructs.Construct, id *string, config *ResourcegroupsGroupConfig) {
 	_init_.Initialize()
 
@@ -1418,7 +1688,7 @@ func NewResourcegroupsGroup_Override(r ResourcegroupsGroup, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ResourcegroupsGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1466,7 +1736,7 @@ func (j *jsiiProxy_ResourcegroupsGroup) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_ResourcegroupsGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1474,7 +1744,7 @@ func (j *jsiiProxy_ResourcegroupsGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ResourcegroupsGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ResourcegroupsGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1522,12 +1792,40 @@ func (r *jsiiProxy_ResourcegroupsGroup) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (r *jsiiProxy_ResourcegroupsGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_ResourcegroupsGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_ResourcegroupsGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1564,12 +1862,54 @@ func (r *jsiiProxy_ResourcegroupsGroup) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (r *jsiiProxy_ResourcegroupsGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_ResourcegroupsGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_ResourcegroupsGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_ResourcegroupsGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1702,32 +2042,32 @@ func (r *jsiiProxy_ResourcegroupsGroup) ToTerraform() interface{} {
 // AWS Resource Groups.
 type ResourcegroupsGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html#name ResourcegroupsGroup#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group#name ResourcegroupsGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 	// resource_query block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html#resource_query ResourcegroupsGroup#resource_query}
-	ResourceQuery *ResourcegroupsGroupResourceQuery `json:"resourceQuery"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html#description ResourcegroupsGroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html#tags ResourcegroupsGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html#tags_all ResourcegroupsGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group#resource_query ResourcegroupsGroup#resource_query}
+	ResourceQuery *ResourcegroupsGroupResourceQuery `json:"resourceQuery" yaml:"resourceQuery"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group#description ResourcegroupsGroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group#tags ResourcegroupsGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group#tags_all ResourcegroupsGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ResourcegroupsGroupResourceQuery struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html#query ResourcegroupsGroup#query}.
-	Query *string `json:"query"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group.html#type ResourcegroupsGroup#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group#query ResourcegroupsGroup#query}.
+	Query *string `json:"query" yaml:"query"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/resourcegroups_group#type ResourcegroupsGroup#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type ResourcegroupsGroupResourceQueryOutputReference interface {
@@ -1741,15 +2081,20 @@ type ResourcegroupsGroupResourceQueryOutputReference interface {
 	QueryInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetType()
@@ -1810,8 +2155,8 @@ func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1840,7 +2185,7 @@ func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) TypeInput() 
 	return returns
 }
 
-func NewResourcegroupsGroupResourceQueryOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ResourcegroupsGroupResourceQueryOutputReference {
+func NewResourcegroupsGroupResourceQueryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ResourcegroupsGroupResourceQueryOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference{}
@@ -1854,7 +2199,7 @@ func NewResourcegroupsGroupResourceQueryOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewResourcegroupsGroupResourceQueryOutputReference_Override(r ResourcegroupsGroupResourceQueryOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewResourcegroupsGroupResourceQueryOutputReference_Override(r ResourcegroupsGroupResourceQueryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1896,7 +2241,7 @@ func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1913,12 +2258,40 @@ func (j *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) SetType(val 
 }
 
 // Experimental.
-func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1955,12 +2328,54 @@ func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_ResourcegroupsGroupResourceQueryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

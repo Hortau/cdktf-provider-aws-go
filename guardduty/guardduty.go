@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/guardduty/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/guardduty_detector.html aws_guardduty_detector}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/guardduty_detector aws_guardduty_detector}.
 type DataAwsGuarddutyDetector interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FindingPublishingFrequency() *string
@@ -34,10 +34,15 @@ type DataAwsGuarddutyDetector interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -72,8 +77,8 @@ func (j *jsiiProxy_DataAwsGuarddutyDetector) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGuarddutyDetector) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGuarddutyDetector) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -222,7 +227,7 @@ func (j *jsiiProxy_DataAwsGuarddutyDetector) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/guardduty_detector.html aws_guardduty_detector} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/guardduty_detector aws_guardduty_detector} Data Source.
 func NewDataAwsGuarddutyDetector(scope constructs.Construct, id *string, config *DataAwsGuarddutyDetectorConfig) DataAwsGuarddutyDetector {
 	_init_.Initialize()
 
@@ -237,7 +242,7 @@ func NewDataAwsGuarddutyDetector(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/guardduty_detector.html aws_guardduty_detector} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/guardduty_detector aws_guardduty_detector} Data Source.
 func NewDataAwsGuarddutyDetector_Override(d DataAwsGuarddutyDetector, scope constructs.Construct, id *string, config *DataAwsGuarddutyDetectorConfig) {
 	_init_.Initialize()
 
@@ -248,7 +253,7 @@ func NewDataAwsGuarddutyDetector_Override(d DataAwsGuarddutyDetector, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsGuarddutyDetector) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsGuarddutyDetector) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -320,12 +325,40 @@ func (d *jsiiProxy_DataAwsGuarddutyDetector) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGuarddutyDetector) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGuarddutyDetector) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGuarddutyDetector) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -362,12 +395,54 @@ func (d *jsiiProxy_DataAwsGuarddutyDetector) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGuarddutyDetector) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGuarddutyDetector) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGuarddutyDetector) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGuarddutyDetector) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -468,24 +543,24 @@ func (d *jsiiProxy_DataAwsGuarddutyDetector) ToTerraform() interface{} {
 // AWS GuardDuty.
 type DataAwsGuarddutyDetectorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html aws_guardduty_detector}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector aws_guardduty_detector}.
 type GuarddutyDetector interface {
 	cdktf.TerraformResource
 	AccountId() *string
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Datasources() GuarddutyDetectorDatasourcesOutputReference
 	DatasourcesInput() *GuarddutyDetectorDatasources
 	DependsOn() *[]*string
@@ -505,20 +580,25 @@ type GuarddutyDetector interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDatasources(value *GuarddutyDetectorDatasources)
@@ -579,8 +659,8 @@ func (j *jsiiProxy_GuarddutyDetector) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyDetector) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyDetector) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -729,8 +809,8 @@ func (j *jsiiProxy_GuarddutyDetector) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyDetector) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyDetector) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -739,8 +819,8 @@ func (j *jsiiProxy_GuarddutyDetector) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyDetector) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyDetector) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -749,8 +829,8 @@ func (j *jsiiProxy_GuarddutyDetector) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyDetector) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyDetector) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -759,8 +839,8 @@ func (j *jsiiProxy_GuarddutyDetector) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyDetector) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyDetector) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -799,7 +879,7 @@ func (j *jsiiProxy_GuarddutyDetector) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html aws_guardduty_detector} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector aws_guardduty_detector} Resource.
 func NewGuarddutyDetector(scope constructs.Construct, id *string, config *GuarddutyDetectorConfig) GuarddutyDetector {
 	_init_.Initialize()
 
@@ -814,7 +894,7 @@ func NewGuarddutyDetector(scope constructs.Construct, id *string, config *Guardd
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html aws_guardduty_detector} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector aws_guardduty_detector} Resource.
 func NewGuarddutyDetector_Override(g GuarddutyDetector, scope constructs.Construct, id *string, config *GuarddutyDetectorConfig) {
 	_init_.Initialize()
 
@@ -825,7 +905,7 @@ func NewGuarddutyDetector_Override(g GuarddutyDetector, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_GuarddutyDetector) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyDetector) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -873,7 +953,7 @@ func (j *jsiiProxy_GuarddutyDetector) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyDetector) SetTags(val interface{}) {
+func (j *jsiiProxy_GuarddutyDetector) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -881,7 +961,7 @@ func (j *jsiiProxy_GuarddutyDetector) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyDetector) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GuarddutyDetector) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -929,12 +1009,40 @@ func (g *jsiiProxy_GuarddutyDetector) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyDetector) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyDetector) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetector) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -971,12 +1079,54 @@ func (g *jsiiProxy_GuarddutyDetector) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyDetector) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetector) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyDetector) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetector) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1125,32 +1275,32 @@ func (g *jsiiProxy_GuarddutyDetector) ToTerraform() interface{} {
 // AWS GuardDuty.
 type GuarddutyDetectorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// datasources block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html#datasources GuarddutyDetector#datasources}
-	Datasources *GuarddutyDetectorDatasources `json:"datasources"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html#enable GuarddutyDetector#enable}.
-	Enable interface{} `json:"enable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html#finding_publishing_frequency GuarddutyDetector#finding_publishing_frequency}.
-	FindingPublishingFrequency *string `json:"findingPublishingFrequency"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html#tags GuarddutyDetector#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html#tags_all GuarddutyDetector#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector#datasources GuarddutyDetector#datasources}
+	Datasources *GuarddutyDetectorDatasources `json:"datasources" yaml:"datasources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector#enable GuarddutyDetector#enable}.
+	Enable interface{} `json:"enable" yaml:"enable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector#finding_publishing_frequency GuarddutyDetector#finding_publishing_frequency}.
+	FindingPublishingFrequency *string `json:"findingPublishingFrequency" yaml:"findingPublishingFrequency"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector#tags GuarddutyDetector#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector#tags_all GuarddutyDetector#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type GuarddutyDetectorDatasources struct {
 	// s3_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html#s3_logs GuarddutyDetector#s3_logs}
-	S3Logs *GuarddutyDetectorDatasourcesS3Logs `json:"s3Logs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector#s3_logs GuarddutyDetector#s3_logs}
+	S3Logs *GuarddutyDetectorDatasourcesS3Logs `json:"s3Logs" yaml:"s3Logs"`
 }
 
 type GuarddutyDetectorDatasourcesOutputReference interface {
@@ -1163,12 +1313,17 @@ type GuarddutyDetectorDatasourcesOutputReference interface {
 	S3LogsInput() *GuarddutyDetectorDatasourcesS3Logs
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3Logs(value *GuarddutyDetectorDatasourcesS3Logs)
@@ -1230,8 +1385,8 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1240,7 +1395,7 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) TerraformResourc
 	return returns
 }
 
-func NewGuarddutyDetectorDatasourcesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GuarddutyDetectorDatasourcesOutputReference {
+func NewGuarddutyDetectorDatasourcesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GuarddutyDetectorDatasourcesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GuarddutyDetectorDatasourcesOutputReference{}
@@ -1254,7 +1409,7 @@ func NewGuarddutyDetectorDatasourcesOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewGuarddutyDetectorDatasourcesOutputReference_Override(g GuarddutyDetectorDatasourcesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGuarddutyDetectorDatasourcesOutputReference_Override(g GuarddutyDetectorDatasourcesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1288,7 +1443,7 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1297,12 +1452,40 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1339,12 +1522,54 @@ func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1397,8 +1622,8 @@ func (g *jsiiProxy_GuarddutyDetectorDatasourcesOutputReference) ResetS3Logs() {
 }
 
 type GuarddutyDetectorDatasourcesS3Logs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector.html#enable GuarddutyDetector#enable}.
-	Enable interface{} `json:"enable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_detector#enable GuarddutyDetector#enable}.
+	Enable interface{} `json:"enable" yaml:"enable"`
 }
 
 type GuarddutyDetectorDatasourcesS3LogsOutputReference interface {
@@ -1412,12 +1637,17 @@ type GuarddutyDetectorDatasourcesS3LogsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1477,8 +1707,8 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1487,7 +1717,7 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) TerraformR
 	return returns
 }
 
-func NewGuarddutyDetectorDatasourcesS3LogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GuarddutyDetectorDatasourcesS3LogsOutputReference {
+func NewGuarddutyDetectorDatasourcesS3LogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GuarddutyDetectorDatasourcesS3LogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference{}
@@ -1501,7 +1731,7 @@ func NewGuarddutyDetectorDatasourcesS3LogsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewGuarddutyDetectorDatasourcesS3LogsOutputReference_Override(g GuarddutyDetectorDatasourcesS3LogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGuarddutyDetectorDatasourcesS3LogsOutputReference_Override(g GuarddutyDetectorDatasourcesS3LogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1543,7 +1773,7 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1552,12 +1782,40 @@ func (j *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1594,12 +1852,54 @@ func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1635,7 +1935,7 @@ func (g *jsiiProxy_GuarddutyDetectorDatasourcesS3LogsOutputReference) Interpolat
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html aws_guardduty_filter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter aws_guardduty_filter}.
 type GuarddutyFilter interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -1644,8 +1944,8 @@ type GuarddutyFilter interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1671,20 +1971,25 @@ type GuarddutyFilter interface {
 	SetRank(val *float64)
 	RankInput() *float64
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutFindingCriteria(value *GuarddutyFilterFindingCriteria)
@@ -1753,8 +2058,8 @@ func (j *jsiiProxy_GuarddutyFilter) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyFilter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyFilter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1943,8 +2248,8 @@ func (j *jsiiProxy_GuarddutyFilter) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyFilter) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyFilter) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1953,8 +2258,8 @@ func (j *jsiiProxy_GuarddutyFilter) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyFilter) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyFilter) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1963,8 +2268,8 @@ func (j *jsiiProxy_GuarddutyFilter) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyFilter) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyFilter) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1973,8 +2278,8 @@ func (j *jsiiProxy_GuarddutyFilter) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyFilter) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyFilter) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2013,7 +2318,7 @@ func (j *jsiiProxy_GuarddutyFilter) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html aws_guardduty_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter aws_guardduty_filter} Resource.
 func NewGuarddutyFilter(scope constructs.Construct, id *string, config *GuarddutyFilterConfig) GuarddutyFilter {
 	_init_.Initialize()
 
@@ -2028,7 +2333,7 @@ func NewGuarddutyFilter(scope constructs.Construct, id *string, config *Guarddut
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html aws_guardduty_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter aws_guardduty_filter} Resource.
 func NewGuarddutyFilter_Override(g GuarddutyFilter, scope constructs.Construct, id *string, config *GuarddutyFilterConfig) {
 	_init_.Initialize()
 
@@ -2047,7 +2352,7 @@ func (j *jsiiProxy_GuarddutyFilter) SetAction(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyFilter) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyFilter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2111,7 +2416,7 @@ func (j *jsiiProxy_GuarddutyFilter) SetRank(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyFilter) SetTags(val interface{}) {
+func (j *jsiiProxy_GuarddutyFilter) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2119,7 +2424,7 @@ func (j *jsiiProxy_GuarddutyFilter) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyFilter) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GuarddutyFilter) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2167,12 +2472,40 @@ func (g *jsiiProxy_GuarddutyFilter) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyFilter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyFilter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyFilter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2209,12 +2542,54 @@ func (g *jsiiProxy_GuarddutyFilter) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyFilter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyFilter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyFilter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyFilter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2347,74 +2722,79 @@ func (g *jsiiProxy_GuarddutyFilter) ToTerraform() interface{} {
 // AWS GuardDuty.
 type GuarddutyFilterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#action GuarddutyFilter#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#detector_id GuarddutyFilter#detector_id}.
-	DetectorId *string `json:"detectorId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#action GuarddutyFilter#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#detector_id GuarddutyFilter#detector_id}.
+	DetectorId *string `json:"detectorId" yaml:"detectorId"`
 	// finding_criteria block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#finding_criteria GuarddutyFilter#finding_criteria}
-	FindingCriteria *GuarddutyFilterFindingCriteria `json:"findingCriteria"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#name GuarddutyFilter#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#rank GuarddutyFilter#rank}.
-	Rank *float64 `json:"rank"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#description GuarddutyFilter#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#tags GuarddutyFilter#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#tags_all GuarddutyFilter#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#finding_criteria GuarddutyFilter#finding_criteria}
+	FindingCriteria *GuarddutyFilterFindingCriteria `json:"findingCriteria" yaml:"findingCriteria"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#name GuarddutyFilter#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#rank GuarddutyFilter#rank}.
+	Rank *float64 `json:"rank" yaml:"rank"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#description GuarddutyFilter#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#tags GuarddutyFilter#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#tags_all GuarddutyFilter#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type GuarddutyFilterFindingCriteria struct {
 	// criterion block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#criterion GuarddutyFilter#criterion}
-	Criterion *[]*GuarddutyFilterFindingCriteriaCriterion `json:"criterion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#criterion GuarddutyFilter#criterion}
+	Criterion interface{} `json:"criterion" yaml:"criterion"`
 }
 
 type GuarddutyFilterFindingCriteriaCriterion struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#field GuarddutyFilter#field}.
-	Field *string `json:"field"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#equals GuarddutyFilter#equals}.
-	EqualTo *[]*string `json:"equalTo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#greater_than GuarddutyFilter#greater_than}.
-	GreaterThan *string `json:"greaterThan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#greater_than_or_equal GuarddutyFilter#greater_than_or_equal}.
-	GreaterThanOrEqual *string `json:"greaterThanOrEqual"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#less_than GuarddutyFilter#less_than}.
-	LessThan *string `json:"lessThan"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#less_than_or_equal GuarddutyFilter#less_than_or_equal}.
-	LessThanOrEqual *string `json:"lessThanOrEqual"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter.html#not_equals GuarddutyFilter#not_equals}.
-	NotEquals *[]*string `json:"notEquals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#field GuarddutyFilter#field}.
+	Field *string `json:"field" yaml:"field"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#equals GuarddutyFilter#equals}.
+	EqualTo *[]*string `json:"equalTo" yaml:"equalTo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#greater_than GuarddutyFilter#greater_than}.
+	GreaterThan *string `json:"greaterThan" yaml:"greaterThan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#greater_than_or_equal GuarddutyFilter#greater_than_or_equal}.
+	GreaterThanOrEqual *string `json:"greaterThanOrEqual" yaml:"greaterThanOrEqual"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#less_than GuarddutyFilter#less_than}.
+	LessThan *string `json:"lessThan" yaml:"lessThan"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#less_than_or_equal GuarddutyFilter#less_than_or_equal}.
+	LessThanOrEqual *string `json:"lessThanOrEqual" yaml:"lessThanOrEqual"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_filter#not_equals GuarddutyFilter#not_equals}.
+	NotEquals *[]*string `json:"notEquals" yaml:"notEquals"`
 }
 
 type GuarddutyFilterFindingCriteriaOutputReference interface {
 	cdktf.ComplexObject
-	Criterion() *[]*GuarddutyFilterFindingCriteriaCriterion
-	SetCriterion(val *[]*GuarddutyFilterFindingCriteriaCriterion)
-	CriterionInput() *[]*GuarddutyFilterFindingCriteriaCriterion
+	Criterion() interface{}
+	SetCriterion(val interface{})
+	CriterionInput() interface{}
 	InternalValue() *GuarddutyFilterFindingCriteria
 	SetInternalValue(val *GuarddutyFilterFindingCriteria)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2424,8 +2804,8 @@ type jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) Criterion() *[]*GuarddutyFilterFindingCriteriaCriterion {
-	var returns *[]*GuarddutyFilterFindingCriteriaCriterion
+func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) Criterion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"criterion",
@@ -2434,8 +2814,8 @@ func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) Criterion() *[
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) CriterionInput() *[]*GuarddutyFilterFindingCriteriaCriterion {
-	var returns *[]*GuarddutyFilterFindingCriteriaCriterion
+func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) CriterionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"criterionInput",
@@ -2474,8 +2854,8 @@ func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2484,7 +2864,7 @@ func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) TerraformResou
 	return returns
 }
 
-func NewGuarddutyFilterFindingCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GuarddutyFilterFindingCriteriaOutputReference {
+func NewGuarddutyFilterFindingCriteriaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GuarddutyFilterFindingCriteriaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference{}
@@ -2498,7 +2878,7 @@ func NewGuarddutyFilterFindingCriteriaOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewGuarddutyFilterFindingCriteriaOutputReference_Override(g GuarddutyFilterFindingCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGuarddutyFilterFindingCriteriaOutputReference_Override(g GuarddutyFilterFindingCriteriaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2508,7 +2888,7 @@ func NewGuarddutyFilterFindingCriteriaOutputReference_Override(g GuarddutyFilter
 	)
 }
 
-func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetCriterion(val *[]*GuarddutyFilterFindingCriteriaCriterion) {
+func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetCriterion(val interface{}) {
 	_jsii_.Set(
 		j,
 		"criterion",
@@ -2540,7 +2920,7 @@ func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2549,12 +2929,40 @@ func (j *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2591,12 +2999,54 @@ func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2632,13 +3082,13 @@ func (g *jsiiProxy_GuarddutyFilterFindingCriteriaOutputReference) InterpolationF
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter.html aws_guardduty_invite_accepter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter aws_guardduty_invite_accepter}.
 type GuarddutyInviteAccepter interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DetectorId() *string
@@ -2662,10 +3112,15 @@ type GuarddutyInviteAccepter interface {
 	Timeouts() GuarddutyInviteAccepterTimeoutsOutputReference
 	TimeoutsInput() *GuarddutyInviteAccepterTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *GuarddutyInviteAccepterTimeouts)
@@ -2702,8 +3157,8 @@ func (j *jsiiProxy_GuarddutyInviteAccepter) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyInviteAccepter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyInviteAccepter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2882,7 +3337,7 @@ func (j *jsiiProxy_GuarddutyInviteAccepter) TimeoutsInput() *GuarddutyInviteAcce
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter.html aws_guardduty_invite_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter aws_guardduty_invite_accepter} Resource.
 func NewGuarddutyInviteAccepter(scope constructs.Construct, id *string, config *GuarddutyInviteAccepterConfig) GuarddutyInviteAccepter {
 	_init_.Initialize()
 
@@ -2897,7 +3352,7 @@ func NewGuarddutyInviteAccepter(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter.html aws_guardduty_invite_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter aws_guardduty_invite_accepter} Resource.
 func NewGuarddutyInviteAccepter_Override(g GuarddutyInviteAccepter, scope constructs.Construct, id *string, config *GuarddutyInviteAccepterConfig) {
 	_init_.Initialize()
 
@@ -2908,7 +3363,7 @@ func NewGuarddutyInviteAccepter_Override(g GuarddutyInviteAccepter, scope constr
 	)
 }
 
-func (j *jsiiProxy_GuarddutyInviteAccepter) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyInviteAccepter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2996,12 +3451,40 @@ func (g *jsiiProxy_GuarddutyInviteAccepter) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyInviteAccepter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3038,12 +3521,54 @@ func (g *jsiiProxy_GuarddutyInviteAccepter) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyInviteAccepter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3160,26 +3685,26 @@ func (g *jsiiProxy_GuarddutyInviteAccepter) ToTerraform() interface{} {
 // AWS GuardDuty.
 type GuarddutyInviteAccepterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter.html#detector_id GuarddutyInviteAccepter#detector_id}.
-	DetectorId *string `json:"detectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter.html#master_account_id GuarddutyInviteAccepter#master_account_id}.
-	MasterAccountId *string `json:"masterAccountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter#detector_id GuarddutyInviteAccepter#detector_id}.
+	DetectorId *string `json:"detectorId" yaml:"detectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter#master_account_id GuarddutyInviteAccepter#master_account_id}.
+	MasterAccountId *string `json:"masterAccountId" yaml:"masterAccountId"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter.html#timeouts GuarddutyInviteAccepter#timeouts}
-	Timeouts *GuarddutyInviteAccepterTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter#timeouts GuarddutyInviteAccepter#timeouts}
+	Timeouts *GuarddutyInviteAccepterTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type GuarddutyInviteAccepterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter.html#create GuarddutyInviteAccepter#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_invite_accepter#create GuarddutyInviteAccepter#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type GuarddutyInviteAccepterTimeoutsOutputReference interface {
@@ -3193,12 +3718,17 @@ type GuarddutyInviteAccepterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -3259,8 +3789,8 @@ func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3269,7 +3799,7 @@ func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) TerraformReso
 	return returns
 }
 
-func NewGuarddutyInviteAccepterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GuarddutyInviteAccepterTimeoutsOutputReference {
+func NewGuarddutyInviteAccepterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GuarddutyInviteAccepterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference{}
@@ -3283,7 +3813,7 @@ func NewGuarddutyInviteAccepterTimeoutsOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewGuarddutyInviteAccepterTimeoutsOutputReference_Override(g GuarddutyInviteAccepterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGuarddutyInviteAccepterTimeoutsOutputReference_Override(g GuarddutyInviteAccepterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3325,7 +3855,7 @@ func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3334,12 +3864,40 @@ func (j *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3376,12 +3934,54 @@ func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3425,7 +4025,7 @@ func (g *jsiiProxy_GuarddutyInviteAccepterTimeoutsOutputReference) ResetCreate()
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html aws_guardduty_ipset}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset aws_guardduty_ipset}.
 type GuarddutyIpset interface {
 	cdktf.TerraformResource
 	Activate() interface{}
@@ -3434,8 +4034,8 @@ type GuarddutyIpset interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DetectorId() *string
@@ -3459,20 +4059,25 @@ type GuarddutyIpset interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3539,8 +4144,8 @@ func (j *jsiiProxy_GuarddutyIpset) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyIpset) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyIpset) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3709,8 +4314,8 @@ func (j *jsiiProxy_GuarddutyIpset) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyIpset) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyIpset) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3719,8 +4324,8 @@ func (j *jsiiProxy_GuarddutyIpset) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyIpset) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyIpset) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3729,8 +4334,8 @@ func (j *jsiiProxy_GuarddutyIpset) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyIpset) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyIpset) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3739,8 +4344,8 @@ func (j *jsiiProxy_GuarddutyIpset) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyIpset) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyIpset) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3779,7 +4384,7 @@ func (j *jsiiProxy_GuarddutyIpset) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html aws_guardduty_ipset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset aws_guardduty_ipset} Resource.
 func NewGuarddutyIpset(scope constructs.Construct, id *string, config *GuarddutyIpsetConfig) GuarddutyIpset {
 	_init_.Initialize()
 
@@ -3794,7 +4399,7 @@ func NewGuarddutyIpset(scope constructs.Construct, id *string, config *Guardduty
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html aws_guardduty_ipset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset aws_guardduty_ipset} Resource.
 func NewGuarddutyIpset_Override(g GuarddutyIpset, scope constructs.Construct, id *string, config *GuarddutyIpsetConfig) {
 	_init_.Initialize()
 
@@ -3813,7 +4418,7 @@ func (j *jsiiProxy_GuarddutyIpset) SetActivate(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyIpset) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyIpset) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3877,7 +4482,7 @@ func (j *jsiiProxy_GuarddutyIpset) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyIpset) SetTags(val interface{}) {
+func (j *jsiiProxy_GuarddutyIpset) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3885,7 +4490,7 @@ func (j *jsiiProxy_GuarddutyIpset) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyIpset) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GuarddutyIpset) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3933,12 +4538,40 @@ func (g *jsiiProxy_GuarddutyIpset) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyIpset) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyIpset) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyIpset) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3975,12 +4608,54 @@ func (g *jsiiProxy_GuarddutyIpset) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyIpset) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyIpset) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyIpset) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyIpset) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4097,30 +4772,30 @@ func (g *jsiiProxy_GuarddutyIpset) ToTerraform() interface{} {
 // AWS GuardDuty.
 type GuarddutyIpsetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html#activate GuarddutyIpset#activate}.
-	Activate interface{} `json:"activate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html#detector_id GuarddutyIpset#detector_id}.
-	DetectorId *string `json:"detectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html#format GuarddutyIpset#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html#location GuarddutyIpset#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html#name GuarddutyIpset#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html#tags GuarddutyIpset#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset.html#tags_all GuarddutyIpset#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset#activate GuarddutyIpset#activate}.
+	Activate interface{} `json:"activate" yaml:"activate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset#detector_id GuarddutyIpset#detector_id}.
+	DetectorId *string `json:"detectorId" yaml:"detectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset#format GuarddutyIpset#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset#location GuarddutyIpset#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset#name GuarddutyIpset#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset#tags GuarddutyIpset#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_ipset#tags_all GuarddutyIpset#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html aws_guardduty_member}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member aws_guardduty_member}.
 type GuarddutyMember interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -4128,8 +4803,8 @@ type GuarddutyMember interface {
 	AccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DetectorId() *string
@@ -4163,10 +4838,15 @@ type GuarddutyMember interface {
 	Timeouts() GuarddutyMemberTimeoutsOutputReference
 	TimeoutsInput() *GuarddutyMemberTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *GuarddutyMemberTimeouts)
@@ -4226,8 +4906,8 @@ func (j *jsiiProxy_GuarddutyMember) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyMember) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyMember) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4476,7 +5156,7 @@ func (j *jsiiProxy_GuarddutyMember) TimeoutsInput() *GuarddutyMemberTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html aws_guardduty_member} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member aws_guardduty_member} Resource.
 func NewGuarddutyMember(scope constructs.Construct, id *string, config *GuarddutyMemberConfig) GuarddutyMember {
 	_init_.Initialize()
 
@@ -4491,7 +5171,7 @@ func NewGuarddutyMember(scope constructs.Construct, id *string, config *Guarddut
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html aws_guardduty_member} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member aws_guardduty_member} Resource.
 func NewGuarddutyMember_Override(g GuarddutyMember, scope constructs.Construct, id *string, config *GuarddutyMemberConfig) {
 	_init_.Initialize()
 
@@ -4510,7 +5190,7 @@ func (j *jsiiProxy_GuarddutyMember) SetAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyMember) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyMember) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4622,12 +5302,40 @@ func (g *jsiiProxy_GuarddutyMember) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyMember) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyMember) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyMember) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4664,12 +5372,54 @@ func (g *jsiiProxy_GuarddutyMember) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyMember) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyMember) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyMember) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyMember) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4810,36 +5560,36 @@ func (g *jsiiProxy_GuarddutyMember) ToTerraform() interface{} {
 // AWS GuardDuty.
 type GuarddutyMemberConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#account_id GuarddutyMember#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#detector_id GuarddutyMember#detector_id}.
-	DetectorId *string `json:"detectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#email GuarddutyMember#email}.
-	Email *string `json:"email"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#disable_email_notification GuarddutyMember#disable_email_notification}.
-	DisableEmailNotification interface{} `json:"disableEmailNotification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#invitation_message GuarddutyMember#invitation_message}.
-	InvitationMessage *string `json:"invitationMessage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#invite GuarddutyMember#invite}.
-	Invite interface{} `json:"invite"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#account_id GuarddutyMember#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#detector_id GuarddutyMember#detector_id}.
+	DetectorId *string `json:"detectorId" yaml:"detectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#email GuarddutyMember#email}.
+	Email *string `json:"email" yaml:"email"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#disable_email_notification GuarddutyMember#disable_email_notification}.
+	DisableEmailNotification interface{} `json:"disableEmailNotification" yaml:"disableEmailNotification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#invitation_message GuarddutyMember#invitation_message}.
+	InvitationMessage *string `json:"invitationMessage" yaml:"invitationMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#invite GuarddutyMember#invite}.
+	Invite interface{} `json:"invite" yaml:"invite"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#timeouts GuarddutyMember#timeouts}
-	Timeouts *GuarddutyMemberTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#timeouts GuarddutyMember#timeouts}
+	Timeouts *GuarddutyMemberTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type GuarddutyMemberTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#create GuarddutyMember#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member.html#update GuarddutyMember#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#create GuarddutyMember#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_member#update GuarddutyMember#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type GuarddutyMemberTimeoutsOutputReference interface {
@@ -4853,15 +5603,20 @@ type GuarddutyMemberTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -4923,8 +5678,8 @@ func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4953,7 +5708,7 @@ func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) UpdateInput() *string
 	return returns
 }
 
-func NewGuarddutyMemberTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GuarddutyMemberTimeoutsOutputReference {
+func NewGuarddutyMemberTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GuarddutyMemberTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GuarddutyMemberTimeoutsOutputReference{}
@@ -4967,7 +5722,7 @@ func NewGuarddutyMemberTimeoutsOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewGuarddutyMemberTimeoutsOutputReference_Override(g GuarddutyMemberTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGuarddutyMemberTimeoutsOutputReference_Override(g GuarddutyMemberTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5009,7 +5764,7 @@ func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5026,12 +5781,40 @@ func (j *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) SetUpdate(val *string
 }
 
 // Experimental.
-func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5068,12 +5851,54 @@ func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5125,7 +5950,7 @@ func (g *jsiiProxy_GuarddutyMemberTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account.html aws_guardduty_organization_admin_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account aws_guardduty_organization_admin_account}.
 type GuarddutyOrganizationAdminAccount interface {
 	cdktf.TerraformResource
 	AdminAccountId() *string
@@ -5133,8 +5958,8 @@ type GuarddutyOrganizationAdminAccount interface {
 	AdminAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5150,10 +5975,15 @@ type GuarddutyOrganizationAdminAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5208,8 +6038,8 @@ func (j *jsiiProxy_GuarddutyOrganizationAdminAccount) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationAdminAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyOrganizationAdminAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5328,7 +6158,7 @@ func (j *jsiiProxy_GuarddutyOrganizationAdminAccount) TerraformResourceType() *s
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account.html aws_guardduty_organization_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account aws_guardduty_organization_admin_account} Resource.
 func NewGuarddutyOrganizationAdminAccount(scope constructs.Construct, id *string, config *GuarddutyOrganizationAdminAccountConfig) GuarddutyOrganizationAdminAccount {
 	_init_.Initialize()
 
@@ -5343,7 +6173,7 @@ func NewGuarddutyOrganizationAdminAccount(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account.html aws_guardduty_organization_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account aws_guardduty_organization_admin_account} Resource.
 func NewGuarddutyOrganizationAdminAccount_Override(g GuarddutyOrganizationAdminAccount, scope constructs.Construct, id *string, config *GuarddutyOrganizationAdminAccountConfig) {
 	_init_.Initialize()
 
@@ -5362,7 +6192,7 @@ func (j *jsiiProxy_GuarddutyOrganizationAdminAccount) SetAdminAccountId(val *str
 	)
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationAdminAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyOrganizationAdminAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5434,12 +6264,40 @@ func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) AddOverride(path *string, 
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5476,12 +6334,54 @@ func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5582,18 +6482,18 @@ func (g *jsiiProxy_GuarddutyOrganizationAdminAccount) ToTerraform() interface{} 
 // AWS GuardDuty.
 type GuarddutyOrganizationAdminAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account.html#admin_account_id GuarddutyOrganizationAdminAccount#admin_account_id}.
-	AdminAccountId *string `json:"adminAccountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_admin_account#admin_account_id GuarddutyOrganizationAdminAccount#admin_account_id}.
+	AdminAccountId *string `json:"adminAccountId" yaml:"adminAccountId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html aws_guardduty_organization_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration aws_guardduty_organization_configuration}.
 type GuarddutyOrganizationConfiguration interface {
 	cdktf.TerraformResource
 	AutoEnable() interface{}
@@ -5601,8 +6501,8 @@ type GuarddutyOrganizationConfiguration interface {
 	AutoEnableInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Datasources() GuarddutyOrganizationConfigurationDatasourcesOutputReference
 	DatasourcesInput() *GuarddutyOrganizationConfigurationDatasources
 	DependsOn() *[]*string
@@ -5623,10 +6523,15 @@ type GuarddutyOrganizationConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDatasources(value *GuarddutyOrganizationConfigurationDatasources)
@@ -5683,8 +6588,8 @@ func (j *jsiiProxy_GuarddutyOrganizationConfiguration) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyOrganizationConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5843,7 +6748,7 @@ func (j *jsiiProxy_GuarddutyOrganizationConfiguration) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html aws_guardduty_organization_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration aws_guardduty_organization_configuration} Resource.
 func NewGuarddutyOrganizationConfiguration(scope constructs.Construct, id *string, config *GuarddutyOrganizationConfigurationConfig) GuarddutyOrganizationConfiguration {
 	_init_.Initialize()
 
@@ -5858,7 +6763,7 @@ func NewGuarddutyOrganizationConfiguration(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html aws_guardduty_organization_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration aws_guardduty_organization_configuration} Resource.
 func NewGuarddutyOrganizationConfiguration_Override(g GuarddutyOrganizationConfiguration, scope constructs.Construct, id *string, config *GuarddutyOrganizationConfigurationConfig) {
 	_init_.Initialize()
 
@@ -5877,7 +6782,7 @@ func (j *jsiiProxy_GuarddutyOrganizationConfiguration) SetAutoEnable(val interfa
 	)
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyOrganizationConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5957,12 +6862,40 @@ func (g *jsiiProxy_GuarddutyOrganizationConfiguration) AddOverride(path *string,
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5999,12 +6932,54 @@ func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6121,28 +7096,28 @@ func (g *jsiiProxy_GuarddutyOrganizationConfiguration) ToTerraform() interface{}
 // AWS GuardDuty.
 type GuarddutyOrganizationConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html#auto_enable GuarddutyOrganizationConfiguration#auto_enable}.
-	AutoEnable interface{} `json:"autoEnable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html#detector_id GuarddutyOrganizationConfiguration#detector_id}.
-	DetectorId *string `json:"detectorId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration#auto_enable GuarddutyOrganizationConfiguration#auto_enable}.
+	AutoEnable interface{} `json:"autoEnable" yaml:"autoEnable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration#detector_id GuarddutyOrganizationConfiguration#detector_id}.
+	DetectorId *string `json:"detectorId" yaml:"detectorId"`
 	// datasources block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html#datasources GuarddutyOrganizationConfiguration#datasources}
-	Datasources *GuarddutyOrganizationConfigurationDatasources `json:"datasources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration#datasources GuarddutyOrganizationConfiguration#datasources}
+	Datasources *GuarddutyOrganizationConfigurationDatasources `json:"datasources" yaml:"datasources"`
 }
 
 type GuarddutyOrganizationConfigurationDatasources struct {
 	// s3_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html#s3_logs GuarddutyOrganizationConfiguration#s3_logs}
-	S3Logs *GuarddutyOrganizationConfigurationDatasourcesS3Logs `json:"s3Logs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration#s3_logs GuarddutyOrganizationConfiguration#s3_logs}
+	S3Logs *GuarddutyOrganizationConfigurationDatasourcesS3Logs `json:"s3Logs" yaml:"s3Logs"`
 }
 
 type GuarddutyOrganizationConfigurationDatasourcesOutputReference interface {
@@ -6155,12 +7130,17 @@ type GuarddutyOrganizationConfigurationDatasourcesOutputReference interface {
 	S3LogsInput() *GuarddutyOrganizationConfigurationDatasourcesS3Logs
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3Logs(value *GuarddutyOrganizationConfigurationDatasourcesS3Logs)
@@ -6222,8 +7202,8 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6232,7 +7212,7 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference)
 	return returns
 }
 
-func NewGuarddutyOrganizationConfigurationDatasourcesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GuarddutyOrganizationConfigurationDatasourcesOutputReference {
+func NewGuarddutyOrganizationConfigurationDatasourcesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GuarddutyOrganizationConfigurationDatasourcesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference{}
@@ -6246,7 +7226,7 @@ func NewGuarddutyOrganizationConfigurationDatasourcesOutputReference(terraformRe
 	return &j
 }
 
-func NewGuarddutyOrganizationConfigurationDatasourcesOutputReference_Override(g GuarddutyOrganizationConfigurationDatasourcesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGuarddutyOrganizationConfigurationDatasourcesOutputReference_Override(g GuarddutyOrganizationConfigurationDatasourcesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6280,7 +7260,7 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference)
 	)
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6289,12 +7269,40 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference)
 }
 
 // Experimental.
-func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6331,12 +7339,54 @@ func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference)
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6389,8 +7439,8 @@ func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesOutputReference)
 }
 
 type GuarddutyOrganizationConfigurationDatasourcesS3Logs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration.html#auto_enable GuarddutyOrganizationConfiguration#auto_enable}.
-	AutoEnable interface{} `json:"autoEnable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_organization_configuration#auto_enable GuarddutyOrganizationConfiguration#auto_enable}.
+	AutoEnable interface{} `json:"autoEnable" yaml:"autoEnable"`
 }
 
 type GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference interface {
@@ -6404,12 +7454,17 @@ type GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference interfac
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6469,8 +7524,8 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6479,7 +7534,7 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 	return returns
 }
 
-func NewGuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference {
+func NewGuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference{}
@@ -6493,7 +7548,7 @@ func NewGuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference(terra
 	return &j
 }
 
-func NewGuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference_Override(g GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference_Override(g GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6535,7 +7590,7 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 	)
 }
 
-func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6544,12 +7599,40 @@ func (j *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 }
 
 // Experimental.
-func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6586,12 +7669,54 @@ func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6627,13 +7752,13 @@ func (g *jsiiProxy_GuarddutyOrganizationConfigurationDatasourcesS3LogsOutputRefe
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination.html aws_guardduty_publishing_destination}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination aws_guardduty_publishing_destination}.
 type GuarddutyPublishingDestination interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationArn() *string
@@ -6661,10 +7786,15 @@ type GuarddutyPublishingDestination interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDestinationType()
@@ -6700,8 +7830,8 @@ func (j *jsiiProxy_GuarddutyPublishingDestination) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyPublishingDestination) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyPublishingDestination) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6900,7 +8030,7 @@ func (j *jsiiProxy_GuarddutyPublishingDestination) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination.html aws_guardduty_publishing_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination aws_guardduty_publishing_destination} Resource.
 func NewGuarddutyPublishingDestination(scope constructs.Construct, id *string, config *GuarddutyPublishingDestinationConfig) GuarddutyPublishingDestination {
 	_init_.Initialize()
 
@@ -6915,7 +8045,7 @@ func NewGuarddutyPublishingDestination(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination.html aws_guardduty_publishing_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination aws_guardduty_publishing_destination} Resource.
 func NewGuarddutyPublishingDestination_Override(g GuarddutyPublishingDestination, scope constructs.Construct, id *string, config *GuarddutyPublishingDestinationConfig) {
 	_init_.Initialize()
 
@@ -6926,7 +8056,7 @@ func NewGuarddutyPublishingDestination_Override(g GuarddutyPublishingDestination
 	)
 }
 
-func (j *jsiiProxy_GuarddutyPublishingDestination) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyPublishingDestination) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7030,12 +8160,40 @@ func (g *jsiiProxy_GuarddutyPublishingDestination) AddOverride(path *string, val
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyPublishingDestination) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyPublishingDestination) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyPublishingDestination) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7072,12 +8230,54 @@ func (g *jsiiProxy_GuarddutyPublishingDestination) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyPublishingDestination) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyPublishingDestination) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyPublishingDestination) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyPublishingDestination) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7186,24 +8386,24 @@ func (g *jsiiProxy_GuarddutyPublishingDestination) ToTerraform() interface{} {
 // AWS GuardDuty.
 type GuarddutyPublishingDestinationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination.html#destination_arn GuarddutyPublishingDestination#destination_arn}.
-	DestinationArn *string `json:"destinationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination.html#detector_id GuarddutyPublishingDestination#detector_id}.
-	DetectorId *string `json:"detectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination.html#kms_key_arn GuarddutyPublishingDestination#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination.html#destination_type GuarddutyPublishingDestination#destination_type}.
-	DestinationType *string `json:"destinationType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination#destination_arn GuarddutyPublishingDestination#destination_arn}.
+	DestinationArn *string `json:"destinationArn" yaml:"destinationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination#detector_id GuarddutyPublishingDestination#detector_id}.
+	DetectorId *string `json:"detectorId" yaml:"detectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination#kms_key_arn GuarddutyPublishingDestination#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_publishing_destination#destination_type GuarddutyPublishingDestination#destination_type}.
+	DestinationType *string `json:"destinationType" yaml:"destinationType"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html aws_guardduty_threatintelset}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset aws_guardduty_threatintelset}.
 type GuarddutyThreatintelset interface {
 	cdktf.TerraformResource
 	Activate() interface{}
@@ -7212,8 +8412,8 @@ type GuarddutyThreatintelset interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DetectorId() *string
@@ -7237,20 +8437,25 @@ type GuarddutyThreatintelset interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7317,8 +8522,8 @@ func (j *jsiiProxy_GuarddutyThreatintelset) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyThreatintelset) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7487,8 +8692,8 @@ func (j *jsiiProxy_GuarddutyThreatintelset) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyThreatintelset) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7497,8 +8702,8 @@ func (j *jsiiProxy_GuarddutyThreatintelset) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyThreatintelset) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7507,8 +8712,8 @@ func (j *jsiiProxy_GuarddutyThreatintelset) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyThreatintelset) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7517,8 +8722,8 @@ func (j *jsiiProxy_GuarddutyThreatintelset) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GuarddutyThreatintelset) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7557,7 +8762,7 @@ func (j *jsiiProxy_GuarddutyThreatintelset) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html aws_guardduty_threatintelset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset aws_guardduty_threatintelset} Resource.
 func NewGuarddutyThreatintelset(scope constructs.Construct, id *string, config *GuarddutyThreatintelsetConfig) GuarddutyThreatintelset {
 	_init_.Initialize()
 
@@ -7572,7 +8777,7 @@ func NewGuarddutyThreatintelset(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html aws_guardduty_threatintelset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset aws_guardduty_threatintelset} Resource.
 func NewGuarddutyThreatintelset_Override(g GuarddutyThreatintelset, scope constructs.Construct, id *string, config *GuarddutyThreatintelsetConfig) {
 	_init_.Initialize()
 
@@ -7591,7 +8796,7 @@ func (j *jsiiProxy_GuarddutyThreatintelset) SetActivate(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) SetCount(val interface{}) {
+func (j *jsiiProxy_GuarddutyThreatintelset) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7655,7 +8860,7 @@ func (j *jsiiProxy_GuarddutyThreatintelset) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) SetTags(val interface{}) {
+func (j *jsiiProxy_GuarddutyThreatintelset) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7663,7 +8868,7 @@ func (j *jsiiProxy_GuarddutyThreatintelset) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GuarddutyThreatintelset) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GuarddutyThreatintelset) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7711,12 +8916,40 @@ func (g *jsiiProxy_GuarddutyThreatintelset) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyThreatintelset) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyThreatintelset) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyThreatintelset) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7753,12 +8986,54 @@ func (g *jsiiProxy_GuarddutyThreatintelset) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (g *jsiiProxy_GuarddutyThreatintelset) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyThreatintelset) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GuarddutyThreatintelset) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GuarddutyThreatintelset) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7875,25 +9150,25 @@ func (g *jsiiProxy_GuarddutyThreatintelset) ToTerraform() interface{} {
 // AWS GuardDuty.
 type GuarddutyThreatintelsetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html#activate GuarddutyThreatintelset#activate}.
-	Activate interface{} `json:"activate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html#detector_id GuarddutyThreatintelset#detector_id}.
-	DetectorId *string `json:"detectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html#format GuarddutyThreatintelset#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html#location GuarddutyThreatintelset#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html#name GuarddutyThreatintelset#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html#tags GuarddutyThreatintelset#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset.html#tags_all GuarddutyThreatintelset#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset#activate GuarddutyThreatintelset#activate}.
+	Activate interface{} `json:"activate" yaml:"activate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset#detector_id GuarddutyThreatintelset#detector_id}.
+	DetectorId *string `json:"detectorId" yaml:"detectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset#format GuarddutyThreatintelset#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset#location GuarddutyThreatintelset#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset#name GuarddutyThreatintelset#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset#tags GuarddutyThreatintelset#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/guardduty_threatintelset#tags_all GuarddutyThreatintelset#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

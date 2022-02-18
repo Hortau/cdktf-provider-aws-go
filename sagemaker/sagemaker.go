@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/sagemaker/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image.html aws_sagemaker_prebuilt_ecr_image}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image aws_sagemaker_prebuilt_ecr_image}.
 type DataAwsSagemakerPrebuiltEcrImage interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsSuffix() *string
@@ -45,10 +45,15 @@ type DataAwsSagemakerPrebuiltEcrImage interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDnsSuffix()
@@ -86,8 +91,8 @@ func (j *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -306,7 +311,7 @@ func (j *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image.html aws_sagemaker_prebuilt_ecr_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image aws_sagemaker_prebuilt_ecr_image} Data Source.
 func NewDataAwsSagemakerPrebuiltEcrImage(scope constructs.Construct, id *string, config *DataAwsSagemakerPrebuiltEcrImageConfig) DataAwsSagemakerPrebuiltEcrImage {
 	_init_.Initialize()
 
@@ -321,7 +326,7 @@ func NewDataAwsSagemakerPrebuiltEcrImage(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image.html aws_sagemaker_prebuilt_ecr_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image aws_sagemaker_prebuilt_ecr_image} Data Source.
 func NewDataAwsSagemakerPrebuiltEcrImage_Override(d DataAwsSagemakerPrebuiltEcrImage, scope constructs.Construct, id *string, config *DataAwsSagemakerPrebuiltEcrImageConfig) {
 	_init_.Initialize()
 
@@ -332,7 +337,7 @@ func NewDataAwsSagemakerPrebuiltEcrImage_Override(d DataAwsSagemakerPrebuiltEcrI
 	)
 }
 
-func (j *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -436,12 +441,40 @@ func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) AddOverride(path *string, v
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -478,12 +511,54 @@ func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -608,24 +683,24 @@ func (d *jsiiProxy_DataAwsSagemakerPrebuiltEcrImage) ToTerraform() interface{} {
 // AWS SageMaker.
 type DataAwsSagemakerPrebuiltEcrImageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image.html#repository_name DataAwsSagemakerPrebuiltEcrImage#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image.html#dns_suffix DataAwsSagemakerPrebuiltEcrImage#dns_suffix}.
-	DnsSuffix *string `json:"dnsSuffix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image.html#image_tag DataAwsSagemakerPrebuiltEcrImage#image_tag}.
-	ImageTag *string `json:"imageTag"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image.html#region DataAwsSagemakerPrebuiltEcrImage#region}.
-	Region *string `json:"region"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image#repository_name DataAwsSagemakerPrebuiltEcrImage#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image#dns_suffix DataAwsSagemakerPrebuiltEcrImage#dns_suffix}.
+	DnsSuffix *string `json:"dnsSuffix" yaml:"dnsSuffix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image#image_tag DataAwsSagemakerPrebuiltEcrImage#image_tag}.
+	ImageTag *string `json:"imageTag" yaml:"imageTag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sagemaker_prebuilt_ecr_image#region DataAwsSagemakerPrebuiltEcrImage#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html aws_sagemaker_app}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app aws_sagemaker_app}.
 type SagemakerApp interface {
 	cdktf.TerraformResource
 	AppName() *string
@@ -637,8 +712,8 @@ type SagemakerApp interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainId() *string
@@ -655,12 +730,12 @@ type SagemakerApp interface {
 	RawOverrides() interface{}
 	ResourceSpec() SagemakerAppResourceSpecOutputReference
 	ResourceSpecInput() *SagemakerAppResourceSpec
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -668,10 +743,15 @@ type SagemakerApp interface {
 	SetUserProfileName(val *string)
 	UserProfileNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutResourceSpec(value *SagemakerAppResourceSpec)
@@ -760,8 +840,8 @@ func (j *jsiiProxy_SagemakerApp) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerApp) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerApp) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -890,8 +970,8 @@ func (j *jsiiProxy_SagemakerApp) ResourceSpecInput() *SagemakerAppResourceSpec {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerApp) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerApp) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -900,8 +980,8 @@ func (j *jsiiProxy_SagemakerApp) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerApp) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerApp) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -910,8 +990,8 @@ func (j *jsiiProxy_SagemakerApp) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerApp) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerApp) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -920,8 +1000,8 @@ func (j *jsiiProxy_SagemakerApp) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerApp) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerApp) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -980,7 +1060,7 @@ func (j *jsiiProxy_SagemakerApp) UserProfileNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html aws_sagemaker_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app aws_sagemaker_app} Resource.
 func NewSagemakerApp(scope constructs.Construct, id *string, config *SagemakerAppConfig) SagemakerApp {
 	_init_.Initialize()
 
@@ -995,7 +1075,7 @@ func NewSagemakerApp(scope constructs.Construct, id *string, config *SagemakerAp
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html aws_sagemaker_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app aws_sagemaker_app} Resource.
 func NewSagemakerApp_Override(s SagemakerApp, scope constructs.Construct, id *string, config *SagemakerAppConfig) {
 	_init_.Initialize()
 
@@ -1022,7 +1102,7 @@ func (j *jsiiProxy_SagemakerApp) SetAppType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerApp) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerApp) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1062,7 +1142,7 @@ func (j *jsiiProxy_SagemakerApp) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerApp) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerApp) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1070,7 +1150,7 @@ func (j *jsiiProxy_SagemakerApp) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerApp) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerApp) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1126,12 +1206,40 @@ func (s *jsiiProxy_SagemakerApp) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerApp) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerApp) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerApp) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1168,12 +1276,54 @@ func (s *jsiiProxy_SagemakerApp) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerApp) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerApp) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerApp) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerApp) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1306,32 +1456,32 @@ func (s *jsiiProxy_SagemakerApp) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerAppConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#app_name SagemakerApp#app_name}.
-	AppName *string `json:"appName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#app_type SagemakerApp#app_type}.
-	AppType *string `json:"appType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#domain_id SagemakerApp#domain_id}.
-	DomainId *string `json:"domainId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#user_profile_name SagemakerApp#user_profile_name}.
-	UserProfileName *string `json:"userProfileName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#app_name SagemakerApp#app_name}.
+	AppName *string `json:"appName" yaml:"appName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#app_type SagemakerApp#app_type}.
+	AppType *string `json:"appType" yaml:"appType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#domain_id SagemakerApp#domain_id}.
+	DomainId *string `json:"domainId" yaml:"domainId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#user_profile_name SagemakerApp#user_profile_name}.
+	UserProfileName *string `json:"userProfileName" yaml:"userProfileName"`
 	// resource_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#resource_spec SagemakerApp#resource_spec}
-	ResourceSpec *SagemakerAppResourceSpec `json:"resourceSpec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#tags SagemakerApp#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#tags_all SagemakerApp#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#resource_spec SagemakerApp#resource_spec}
+	ResourceSpec *SagemakerAppResourceSpec `json:"resourceSpec" yaml:"resourceSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#tags SagemakerApp#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#tags_all SagemakerApp#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html aws_sagemaker_app_image_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config aws_sagemaker_app_image_config}.
 type SagemakerAppImageConfig interface {
 	cdktf.TerraformResource
 	AppImageConfigName() *string
@@ -1340,8 +1490,8 @@ type SagemakerAppImageConfig interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1355,20 +1505,25 @@ type SagemakerAppImageConfig interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutKernelGatewayImageConfig(value *SagemakerAppImageConfigKernelGatewayImageConfig)
@@ -1437,8 +1592,8 @@ func (j *jsiiProxy_SagemakerAppImageConfig) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerAppImageConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1547,8 +1702,8 @@ func (j *jsiiProxy_SagemakerAppImageConfig) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerAppImageConfig) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1557,8 +1712,8 @@ func (j *jsiiProxy_SagemakerAppImageConfig) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerAppImageConfig) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1567,8 +1722,8 @@ func (j *jsiiProxy_SagemakerAppImageConfig) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerAppImageConfig) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1577,8 +1732,8 @@ func (j *jsiiProxy_SagemakerAppImageConfig) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerAppImageConfig) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1617,7 +1772,7 @@ func (j *jsiiProxy_SagemakerAppImageConfig) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html aws_sagemaker_app_image_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config aws_sagemaker_app_image_config} Resource.
 func NewSagemakerAppImageConfig(scope constructs.Construct, id *string, config *SagemakerAppImageConfigConfig) SagemakerAppImageConfig {
 	_init_.Initialize()
 
@@ -1632,7 +1787,7 @@ func NewSagemakerAppImageConfig(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html aws_sagemaker_app_image_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config aws_sagemaker_app_image_config} Resource.
 func NewSagemakerAppImageConfig_Override(s SagemakerAppImageConfig, scope constructs.Construct, id *string, config *SagemakerAppImageConfigConfig) {
 	_init_.Initialize()
 
@@ -1651,7 +1806,7 @@ func (j *jsiiProxy_SagemakerAppImageConfig) SetAppImageConfigName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerAppImageConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1683,7 +1838,7 @@ func (j *jsiiProxy_SagemakerAppImageConfig) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerAppImageConfig) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1691,7 +1846,7 @@ func (j *jsiiProxy_SagemakerAppImageConfig) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfig) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerAppImageConfig) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1739,12 +1894,40 @@ func (s *jsiiProxy_SagemakerAppImageConfig) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerAppImageConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1781,12 +1964,54 @@ func (s *jsiiProxy_SagemakerAppImageConfig) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerAppImageConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1919,43 +2144,43 @@ func (s *jsiiProxy_SagemakerAppImageConfig) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerAppImageConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#app_image_config_name SagemakerAppImageConfig#app_image_config_name}.
-	AppImageConfigName *string `json:"appImageConfigName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#app_image_config_name SagemakerAppImageConfig#app_image_config_name}.
+	AppImageConfigName *string `json:"appImageConfigName" yaml:"appImageConfigName"`
 	// kernel_gateway_image_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#kernel_gateway_image_config SagemakerAppImageConfig#kernel_gateway_image_config}
-	KernelGatewayImageConfig *SagemakerAppImageConfigKernelGatewayImageConfig `json:"kernelGatewayImageConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#tags SagemakerAppImageConfig#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#tags_all SagemakerAppImageConfig#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#kernel_gateway_image_config SagemakerAppImageConfig#kernel_gateway_image_config}
+	KernelGatewayImageConfig *SagemakerAppImageConfigKernelGatewayImageConfig `json:"kernelGatewayImageConfig" yaml:"kernelGatewayImageConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#tags SagemakerAppImageConfig#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#tags_all SagemakerAppImageConfig#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerAppImageConfigKernelGatewayImageConfig struct {
 	// kernel_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#kernel_spec SagemakerAppImageConfig#kernel_spec}
-	KernelSpec *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec `json:"kernelSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#kernel_spec SagemakerAppImageConfig#kernel_spec}
+	KernelSpec *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec `json:"kernelSpec" yaml:"kernelSpec"`
 	// file_system_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#file_system_config SagemakerAppImageConfig#file_system_config}
-	FileSystemConfig *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig `json:"fileSystemConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#file_system_config SagemakerAppImageConfig#file_system_config}
+	FileSystemConfig *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig `json:"fileSystemConfig" yaml:"fileSystemConfig"`
 }
 
 type SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#default_gid SagemakerAppImageConfig#default_gid}.
-	DefaultGid *float64 `json:"defaultGid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#default_uid SagemakerAppImageConfig#default_uid}.
-	DefaultUid *float64 `json:"defaultUid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#mount_path SagemakerAppImageConfig#mount_path}.
-	MountPath *string `json:"mountPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#default_gid SagemakerAppImageConfig#default_gid}.
+	DefaultGid *float64 `json:"defaultGid" yaml:"defaultGid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#default_uid SagemakerAppImageConfig#default_uid}.
+	DefaultUid *float64 `json:"defaultUid" yaml:"defaultUid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#mount_path SagemakerAppImageConfig#mount_path}.
+	MountPath *string `json:"mountPath" yaml:"mountPath"`
 }
 
 type SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference interface {
@@ -1975,12 +2200,17 @@ type SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputRefere
 	MountPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDefaultGid()
@@ -2083,8 +2313,8 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2093,7 +2323,7 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 	return returns
 }
 
-func NewSagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference {
+func NewSagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference{}
@@ -2107,7 +2337,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputRef
 	return &j
 }
 
-func NewSagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference_Override(s SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference_Override(s SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2165,7 +2395,7 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 	)
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2174,12 +2404,40 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2216,12 +2474,54 @@ func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2282,10 +2582,10 @@ func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConf
 }
 
 type SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#name SagemakerAppImageConfig#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config.html#display_name SagemakerAppImageConfig#display_name}.
-	DisplayName *string `json:"displayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#name SagemakerAppImageConfig#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app_image_config#display_name SagemakerAppImageConfig#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
 }
 
 type SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference interface {
@@ -2302,12 +2602,17 @@ type SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference in
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDisplayName()
@@ -2388,8 +2693,8 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutp
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2398,7 +2703,7 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutp
 	return returns
 }
 
-func NewSagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference {
+func NewSagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference{}
@@ -2412,7 +2717,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference
 	return &j
 }
 
-func NewSagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference_Override(s SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference_Override(s SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2462,7 +2767,7 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutp
 	)
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2471,12 +2776,40 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutp
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2513,12 +2846,54 @@ func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutp
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigKernelSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2574,12 +2949,17 @@ type SagemakerAppImageConfigKernelGatewayImageConfigOutputReference interface {
 	KernelSpecInput() *SagemakerAppImageConfigKernelGatewayImageConfigKernelSpec
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutFileSystemConfig(value *SagemakerAppImageConfigKernelGatewayImageConfigFileSystemConfig)
@@ -2662,8 +3042,8 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2672,7 +3052,7 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReferenc
 	return returns
 }
 
-func NewSagemakerAppImageConfigKernelGatewayImageConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerAppImageConfigKernelGatewayImageConfigOutputReference {
+func NewSagemakerAppImageConfigKernelGatewayImageConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerAppImageConfigKernelGatewayImageConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference{}
@@ -2686,7 +3066,7 @@ func NewSagemakerAppImageConfigKernelGatewayImageConfigOutputReference(terraform
 	return &j
 }
 
-func NewSagemakerAppImageConfigKernelGatewayImageConfigOutputReference_Override(s SagemakerAppImageConfigKernelGatewayImageConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerAppImageConfigKernelGatewayImageConfigOutputReference_Override(s SagemakerAppImageConfigKernelGatewayImageConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2720,7 +3100,7 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2729,12 +3109,40 @@ func (j *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2771,12 +3179,54 @@ func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2837,10 +3287,14 @@ func (s *jsiiProxy_SagemakerAppImageConfigKernelGatewayImageConfigOutputReferenc
 }
 
 type SagemakerAppResourceSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#instance_type SagemakerApp#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app.html#sagemaker_image_arn SagemakerApp#sagemaker_image_arn}.
-	SagemakerImageArn *string `json:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#instance_type SagemakerApp#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#lifecycle_config_arn SagemakerApp#lifecycle_config_arn}.
+	LifecycleConfigArn *string `json:"lifecycleConfigArn" yaml:"lifecycleConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#sagemaker_image_arn SagemakerApp#sagemaker_image_arn}.
+	SagemakerImageArn *string `json:"sagemakerImageArn" yaml:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_app#sagemaker_image_version_arn SagemakerApp#sagemaker_image_version_arn}.
+	SagemakerImageVersionArn *string `json:"sagemakerImageVersionArn" yaml:"sagemakerImageVersionArn"`
 }
 
 type SagemakerAppResourceSpecOutputReference interface {
@@ -2852,21 +3306,34 @@ type SagemakerAppResourceSpecOutputReference interface {
 	SetInternalValue(val *SagemakerAppResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	LifecycleConfigArn() *string
+	SetLifecycleConfigArn(val *string)
+	LifecycleConfigArnInput() *string
 	SagemakerImageArn() *string
 	SetSagemakerImageArn(val *string)
 	SagemakerImageArnInput() *string
+	SagemakerImageVersionArn() *string
+	SetSagemakerImageVersionArn(val *string)
+	SagemakerImageVersionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceType()
+	ResetLifecycleConfigArn()
 	ResetSagemakerImageArn()
+	ResetSagemakerImageVersionArn()
 }
 
 // The jsii proxy struct for SagemakerAppResourceSpecOutputReference
@@ -2914,6 +3381,26 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) IsSingleItem() *bool
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) LifecycleConfigArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) LifecycleConfigArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SagemakerImageArn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -2934,6 +3421,26 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SagemakerImageArnInp
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SagemakerImageVersionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SagemakerImageVersionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -2944,8 +3451,8 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2954,7 +3461,7 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewSagemakerAppResourceSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerAppResourceSpecOutputReference {
+func NewSagemakerAppResourceSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerAppResourceSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerAppResourceSpecOutputReference{}
@@ -2968,7 +3475,7 @@ func NewSagemakerAppResourceSpecOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewSagemakerAppResourceSpecOutputReference_Override(s SagemakerAppResourceSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerAppResourceSpecOutputReference_Override(s SagemakerAppResourceSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3002,10 +3509,26 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetIsSingleItem(val 
 	)
 }
 
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetLifecycleConfigArn(val *string) {
+	_jsii_.Set(
+		j,
+		"lifecycleConfigArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetSagemakerImageArn(val *string) {
 	_jsii_.Set(
 		j,
 		"sagemakerImageArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetSagemakerImageVersionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sagemakerImageVersionArn",
 		val,
 	)
 }
@@ -3018,7 +3541,7 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3027,12 +3550,40 @@ func (j *jsiiProxy_SagemakerAppResourceSpecOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3069,12 +3620,54 @@ func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3118,6 +3711,14 @@ func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) ResetInstanceType() 
 	)
 }
 
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) ResetLifecycleConfigArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLifecycleConfigArn",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) ResetSagemakerImageArn() {
 	_jsii_.InvokeVoid(
 		s,
@@ -3126,7 +3727,15 @@ func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) ResetSagemakerImageA
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html aws_sagemaker_code_repository}.
+func (s *jsiiProxy_SagemakerAppResourceSpecOutputReference) ResetSagemakerImageVersionArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSagemakerImageVersionArn",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository aws_sagemaker_code_repository}.
 type SagemakerCodeRepository interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3135,8 +3744,8 @@ type SagemakerCodeRepository interface {
 	SetCodeRepositoryName(val *string)
 	CodeRepositoryNameInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3150,20 +3759,25 @@ type SagemakerCodeRepository interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutGitConfig(value *SagemakerCodeRepositoryGitConfig)
@@ -3231,8 +3845,8 @@ func (j *jsiiProxy_SagemakerCodeRepository) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerCodeRepository) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3341,8 +3955,8 @@ func (j *jsiiProxy_SagemakerCodeRepository) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerCodeRepository) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3351,8 +3965,8 @@ func (j *jsiiProxy_SagemakerCodeRepository) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerCodeRepository) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3361,8 +3975,8 @@ func (j *jsiiProxy_SagemakerCodeRepository) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerCodeRepository) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3371,8 +3985,8 @@ func (j *jsiiProxy_SagemakerCodeRepository) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerCodeRepository) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3411,7 +4025,7 @@ func (j *jsiiProxy_SagemakerCodeRepository) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html aws_sagemaker_code_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository aws_sagemaker_code_repository} Resource.
 func NewSagemakerCodeRepository(scope constructs.Construct, id *string, config *SagemakerCodeRepositoryConfig) SagemakerCodeRepository {
 	_init_.Initialize()
 
@@ -3426,7 +4040,7 @@ func NewSagemakerCodeRepository(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html aws_sagemaker_code_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository aws_sagemaker_code_repository} Resource.
 func NewSagemakerCodeRepository_Override(s SagemakerCodeRepository, scope constructs.Construct, id *string, config *SagemakerCodeRepositoryConfig) {
 	_init_.Initialize()
 
@@ -3445,7 +4059,7 @@ func (j *jsiiProxy_SagemakerCodeRepository) SetCodeRepositoryName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerCodeRepository) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3477,7 +4091,7 @@ func (j *jsiiProxy_SagemakerCodeRepository) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerCodeRepository) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3485,7 +4099,7 @@ func (j *jsiiProxy_SagemakerCodeRepository) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerCodeRepository) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerCodeRepository) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3533,12 +4147,40 @@ func (s *jsiiProxy_SagemakerCodeRepository) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerCodeRepository) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerCodeRepository) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerCodeRepository) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3575,12 +4217,54 @@ func (s *jsiiProxy_SagemakerCodeRepository) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerCodeRepository) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerCodeRepository) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerCodeRepository) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerCodeRepository) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3705,32 +4389,32 @@ func (s *jsiiProxy_SagemakerCodeRepository) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerCodeRepositoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html#code_repository_name SagemakerCodeRepository#code_repository_name}.
-	CodeRepositoryName *string `json:"codeRepositoryName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository#code_repository_name SagemakerCodeRepository#code_repository_name}.
+	CodeRepositoryName *string `json:"codeRepositoryName" yaml:"codeRepositoryName"`
 	// git_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html#git_config SagemakerCodeRepository#git_config}
-	GitConfig *SagemakerCodeRepositoryGitConfig `json:"gitConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html#tags SagemakerCodeRepository#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html#tags_all SagemakerCodeRepository#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository#git_config SagemakerCodeRepository#git_config}
+	GitConfig *SagemakerCodeRepositoryGitConfig `json:"gitConfig" yaml:"gitConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository#tags SagemakerCodeRepository#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository#tags_all SagemakerCodeRepository#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerCodeRepositoryGitConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html#repository_url SagemakerCodeRepository#repository_url}.
-	RepositoryUrl *string `json:"repositoryUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html#branch SagemakerCodeRepository#branch}.
-	Branch *string `json:"branch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository.html#secret_arn SagemakerCodeRepository#secret_arn}.
-	SecretArn *string `json:"secretArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository#repository_url SagemakerCodeRepository#repository_url}.
+	RepositoryUrl *string `json:"repositoryUrl" yaml:"repositoryUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository#branch SagemakerCodeRepository#branch}.
+	Branch *string `json:"branch" yaml:"branch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_code_repository#secret_arn SagemakerCodeRepository#secret_arn}.
+	SecretArn *string `json:"secretArn" yaml:"secretArn"`
 }
 
 type SagemakerCodeRepositoryGitConfigOutputReference interface {
@@ -3750,12 +4434,17 @@ type SagemakerCodeRepositoryGitConfigOutputReference interface {
 	SecretArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBranch()
@@ -3857,8 +4546,8 @@ func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3867,7 +4556,7 @@ func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) TerraformRes
 	return returns
 }
 
-func NewSagemakerCodeRepositoryGitConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerCodeRepositoryGitConfigOutputReference {
+func NewSagemakerCodeRepositoryGitConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerCodeRepositoryGitConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference{}
@@ -3881,7 +4570,7 @@ func NewSagemakerCodeRepositoryGitConfigOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewSagemakerCodeRepositoryGitConfigOutputReference_Override(s SagemakerCodeRepositoryGitConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerCodeRepositoryGitConfigOutputReference_Override(s SagemakerCodeRepositoryGitConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3939,7 +4628,7 @@ func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3948,12 +4637,40 @@ func (j *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) SetTerraform
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3990,12 +4707,54 @@ func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4047,14 +4806,1012 @@ func (s *jsiiProxy_SagemakerCodeRepositoryGitConfigOutputReference) ResetSecretA
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html aws_sagemaker_device_fleet}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device aws_sagemaker_device}.
+type SagemakerDevice interface {
+	cdktf.TerraformResource
+	AgentVersion() *string
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Device() SagemakerDeviceDeviceOutputReference
+	DeviceFleetName() *string
+	SetDeviceFleetName(val *string)
+	DeviceFleetNameInput() *string
+	DeviceInput() *SagemakerDeviceDevice
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutDevice(value *SagemakerDeviceDevice)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for SagemakerDevice
+type jsiiProxy_SagemakerDevice struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_SagemakerDevice) AgentVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"agentVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Device() SagemakerDeviceDeviceOutputReference {
+	var returns SagemakerDeviceDeviceOutputReference
+	_jsii_.Get(
+		j,
+		"device",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) DeviceFleetName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deviceFleetName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) DeviceFleetNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deviceFleetNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) DeviceInput() *SagemakerDeviceDevice {
+	var returns *SagemakerDeviceDevice
+	_jsii_.Get(
+		j,
+		"deviceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDevice) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device aws_sagemaker_device} Resource.
+func NewSagemakerDevice(scope constructs.Construct, id *string, config *SagemakerDeviceConfig) SagemakerDevice {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerDevice{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerDevice",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device aws_sagemaker_device} Resource.
+func NewSagemakerDevice_Override(s SagemakerDevice, scope constructs.Construct, id *string, config *SagemakerDeviceConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerDevice",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDevice) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDevice) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDevice) SetDeviceFleetName(val *string) {
+	_jsii_.Set(
+		j,
+		"deviceFleetName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDevice) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDevice) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func SagemakerDevice_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.sagemaker.SagemakerDevice",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func SagemakerDevice_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.sagemaker.SagemakerDevice",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_SagemakerDevice) PutDevice(value *SagemakerDeviceDevice) {
+	_jsii_.InvokeVoid(
+		s,
+		"putDevice",
+		[]interface{}{value},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerDevice) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_SagemakerDevice) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_SagemakerDevice) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS SageMaker.
+type SagemakerDeviceConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// device block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device#device SagemakerDevice#device}
+	Device *SagemakerDeviceDevice `json:"device" yaml:"device"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device#device_fleet_name SagemakerDevice#device_fleet_name}.
+	DeviceFleetName *string `json:"deviceFleetName" yaml:"deviceFleetName"`
+}
+
+type SagemakerDeviceDevice struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device#device_name SagemakerDevice#device_name}.
+	DeviceName *string `json:"deviceName" yaml:"deviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device#description SagemakerDevice#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device#iot_thing_name SagemakerDevice#iot_thing_name}.
+	IotThingName *string `json:"iotThingName" yaml:"iotThingName"`
+}
+
+type SagemakerDeviceDeviceOutputReference interface {
+	cdktf.ComplexObject
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	DeviceName() *string
+	SetDeviceName(val *string)
+	DeviceNameInput() *string
+	InternalValue() *SagemakerDeviceDevice
+	SetInternalValue(val *SagemakerDeviceDevice)
+	IotThingName() *string
+	SetIotThingName(val *string)
+	IotThingNameInput() *string
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetDescription()
+	ResetIotThingName()
+}
+
+// The jsii proxy struct for SagemakerDeviceDeviceOutputReference
+type jsiiProxy_SagemakerDeviceDeviceOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) DeviceName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deviceName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) DeviceNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deviceNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) InternalValue() *SagemakerDeviceDevice {
+	var returns *SagemakerDeviceDevice
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) IotThingName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"iotThingName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) IotThingNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"iotThingNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerDeviceDeviceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDeviceDeviceOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerDeviceDeviceOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerDeviceDeviceOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerDeviceDeviceOutputReference_Override(s SagemakerDeviceDeviceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerDeviceDeviceOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) SetDeviceName(val *string) {
+	_jsii_.Set(
+		j,
+		"deviceName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) SetInternalValue(val *SagemakerDeviceDevice) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) SetIotThingName(val *string) {
+	_jsii_.Set(
+		j,
+		"iotThingName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDeviceDeviceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) ResetDescription() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerDeviceDeviceOutputReference) ResetIotThingName() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIotThingName",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet aws_sagemaker_device_fleet}.
 type SagemakerDeviceFleet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -4081,20 +5838,25 @@ type SagemakerDeviceFleet interface {
 	RoleArn() *string
 	SetRoleArn(val *string)
 	RoleArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutOutputConfig(value *SagemakerDeviceFleetOutputConfig)
@@ -4144,8 +5906,8 @@ func (j *jsiiProxy_SagemakerDeviceFleet) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDeviceFleet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4344,8 +6106,8 @@ func (j *jsiiProxy_SagemakerDeviceFleet) RoleArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDeviceFleet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4354,8 +6116,8 @@ func (j *jsiiProxy_SagemakerDeviceFleet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDeviceFleet) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4364,8 +6126,8 @@ func (j *jsiiProxy_SagemakerDeviceFleet) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDeviceFleet) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4374,8 +6136,8 @@ func (j *jsiiProxy_SagemakerDeviceFleet) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDeviceFleet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4414,7 +6176,7 @@ func (j *jsiiProxy_SagemakerDeviceFleet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html aws_sagemaker_device_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet aws_sagemaker_device_fleet} Resource.
 func NewSagemakerDeviceFleet(scope constructs.Construct, id *string, config *SagemakerDeviceFleetConfig) SagemakerDeviceFleet {
 	_init_.Initialize()
 
@@ -4429,7 +6191,7 @@ func NewSagemakerDeviceFleet(scope constructs.Construct, id *string, config *Sag
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html aws_sagemaker_device_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet aws_sagemaker_device_fleet} Resource.
 func NewSagemakerDeviceFleet_Override(s SagemakerDeviceFleet, scope constructs.Construct, id *string, config *SagemakerDeviceFleetConfig) {
 	_init_.Initialize()
 
@@ -4440,7 +6202,7 @@ func NewSagemakerDeviceFleet_Override(s SagemakerDeviceFleet, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerDeviceFleet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4504,7 +6266,7 @@ func (j *jsiiProxy_SagemakerDeviceFleet) SetRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerDeviceFleet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4512,7 +6274,7 @@ func (j *jsiiProxy_SagemakerDeviceFleet) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleet) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerDeviceFleet) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4560,12 +6322,40 @@ func (s *jsiiProxy_SagemakerDeviceFleet) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDeviceFleet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4602,12 +6392,54 @@ func (s *jsiiProxy_SagemakerDeviceFleet) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDeviceFleet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4748,36 +6580,36 @@ func (s *jsiiProxy_SagemakerDeviceFleet) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerDeviceFleetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#device_fleet_name SagemakerDeviceFleet#device_fleet_name}.
-	DeviceFleetName *string `json:"deviceFleetName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#device_fleet_name SagemakerDeviceFleet#device_fleet_name}.
+	DeviceFleetName *string `json:"deviceFleetName" yaml:"deviceFleetName"`
 	// output_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#output_config SagemakerDeviceFleet#output_config}
-	OutputConfig *SagemakerDeviceFleetOutputConfig `json:"outputConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#role_arn SagemakerDeviceFleet#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#description SagemakerDeviceFleet#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#enable_iot_role_alias SagemakerDeviceFleet#enable_iot_role_alias}.
-	EnableIotRoleAlias interface{} `json:"enableIotRoleAlias"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#tags SagemakerDeviceFleet#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#tags_all SagemakerDeviceFleet#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#output_config SagemakerDeviceFleet#output_config}
+	OutputConfig *SagemakerDeviceFleetOutputConfig `json:"outputConfig" yaml:"outputConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#role_arn SagemakerDeviceFleet#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#description SagemakerDeviceFleet#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#enable_iot_role_alias SagemakerDeviceFleet#enable_iot_role_alias}.
+	EnableIotRoleAlias interface{} `json:"enableIotRoleAlias" yaml:"enableIotRoleAlias"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#tags SagemakerDeviceFleet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#tags_all SagemakerDeviceFleet#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerDeviceFleetOutputConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#s3_output_location SagemakerDeviceFleet#s3_output_location}.
-	S3OutputLocation *string `json:"s3OutputLocation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet.html#kms_key_id SagemakerDeviceFleet#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#s3_output_location SagemakerDeviceFleet#s3_output_location}.
+	S3OutputLocation *string `json:"s3OutputLocation" yaml:"s3OutputLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_device_fleet#kms_key_id SagemakerDeviceFleet#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 }
 
 type SagemakerDeviceFleetOutputConfigOutputReference interface {
@@ -4794,12 +6626,17 @@ type SagemakerDeviceFleetOutputConfigOutputReference interface {
 	S3OutputLocationInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKeyId()
@@ -4880,8 +6717,8 @@ func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4890,7 +6727,7 @@ func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) TerraformRes
 	return returns
 }
 
-func NewSagemakerDeviceFleetOutputConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDeviceFleetOutputConfigOutputReference {
+func NewSagemakerDeviceFleetOutputConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDeviceFleetOutputConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference{}
@@ -4904,7 +6741,7 @@ func NewSagemakerDeviceFleetOutputConfigOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewSagemakerDeviceFleetOutputConfigOutputReference_Override(s SagemakerDeviceFleetOutputConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDeviceFleetOutputConfigOutputReference_Override(s SagemakerDeviceFleetOutputConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4954,7 +6791,7 @@ func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4963,12 +6800,40 @@ func (j *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) SetTerraform
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5005,12 +6870,54 @@ func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5054,7 +6961,7 @@ func (s *jsiiProxy_SagemakerDeviceFleetOutputConfigOutputReference) ResetKmsKeyI
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html aws_sagemaker_domain}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain aws_sagemaker_domain}.
 type SagemakerDomain interface {
 	cdktf.TerraformResource
 	AppNetworkAccessType() *string
@@ -5066,8 +6973,8 @@ type SagemakerDomain interface {
 	AuthModeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultUserSettings() SagemakerDomainDefaultUserSettingsOutputReference
 	DefaultUserSettingsInput() *SagemakerDomainDefaultUserSettings
 	DependsOn() *[]*string
@@ -5094,12 +7001,12 @@ type SagemakerDomain interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5108,10 +7015,15 @@ type SagemakerDomain interface {
 	SetVpcId(val *string)
 	VpcIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDefaultUserSettings(value *SagemakerDomainDefaultUserSettings)
@@ -5203,8 +7115,8 @@ func (j *jsiiProxy_SagemakerDomain) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomain) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDomain) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5413,8 +7325,8 @@ func (j *jsiiProxy_SagemakerDomain) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomain) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDomain) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5423,8 +7335,8 @@ func (j *jsiiProxy_SagemakerDomain) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomain) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDomain) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5433,8 +7345,8 @@ func (j *jsiiProxy_SagemakerDomain) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomain) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDomain) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5443,8 +7355,8 @@ func (j *jsiiProxy_SagemakerDomain) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomain) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerDomain) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5513,7 +7425,7 @@ func (j *jsiiProxy_SagemakerDomain) VpcIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html aws_sagemaker_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain aws_sagemaker_domain} Resource.
 func NewSagemakerDomain(scope constructs.Construct, id *string, config *SagemakerDomainConfig) SagemakerDomain {
 	_init_.Initialize()
 
@@ -5528,7 +7440,7 @@ func NewSagemakerDomain(scope constructs.Construct, id *string, config *Sagemake
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html aws_sagemaker_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain aws_sagemaker_domain} Resource.
 func NewSagemakerDomain_Override(s SagemakerDomain, scope constructs.Construct, id *string, config *SagemakerDomainConfig) {
 	_init_.Initialize()
 
@@ -5555,7 +7467,7 @@ func (j *jsiiProxy_SagemakerDomain) SetAuthMode(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomain) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerDomain) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5611,7 +7523,7 @@ func (j *jsiiProxy_SagemakerDomain) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomain) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerDomain) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5619,7 +7531,7 @@ func (j *jsiiProxy_SagemakerDomain) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomain) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerDomain) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5675,12 +7587,40 @@ func (s *jsiiProxy_SagemakerDomain) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomain) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomain) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomain) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5717,12 +7657,54 @@ func (s *jsiiProxy_SagemakerDomain) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomain) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomain) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomain) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomain) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5879,76 +7861,80 @@ func (s *jsiiProxy_SagemakerDomain) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerDomainConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#auth_mode SagemakerDomain#auth_mode}.
-	AuthMode *string `json:"authMode"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#auth_mode SagemakerDomain#auth_mode}.
+	AuthMode *string `json:"authMode" yaml:"authMode"`
 	// default_user_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#default_user_settings SagemakerDomain#default_user_settings}
-	DefaultUserSettings *SagemakerDomainDefaultUserSettings `json:"defaultUserSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#domain_name SagemakerDomain#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#subnet_ids SagemakerDomain#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#vpc_id SagemakerDomain#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#app_network_access_type SagemakerDomain#app_network_access_type}.
-	AppNetworkAccessType *string `json:"appNetworkAccessType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#kms_key_id SagemakerDomain#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#default_user_settings SagemakerDomain#default_user_settings}
+	DefaultUserSettings *SagemakerDomainDefaultUserSettings `json:"defaultUserSettings" yaml:"defaultUserSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#domain_name SagemakerDomain#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#subnet_ids SagemakerDomain#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#vpc_id SagemakerDomain#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#app_network_access_type SagemakerDomain#app_network_access_type}.
+	AppNetworkAccessType *string `json:"appNetworkAccessType" yaml:"appNetworkAccessType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#kms_key_id SagemakerDomain#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 	// retention_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#retention_policy SagemakerDomain#retention_policy}
-	RetentionPolicy *SagemakerDomainRetentionPolicy `json:"retentionPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#tags SagemakerDomain#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#tags_all SagemakerDomain#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#retention_policy SagemakerDomain#retention_policy}
+	RetentionPolicy *SagemakerDomainRetentionPolicy `json:"retentionPolicy" yaml:"retentionPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#tags SagemakerDomain#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#tags_all SagemakerDomain#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerDomainDefaultUserSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#execution_role SagemakerDomain#execution_role}.
-	ExecutionRole *string `json:"executionRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#execution_role SagemakerDomain#execution_role}.
+	ExecutionRole *string `json:"executionRole" yaml:"executionRole"`
 	// jupyter_server_app_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#jupyter_server_app_settings SagemakerDomain#jupyter_server_app_settings}
-	JupyterServerAppSettings *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings `json:"jupyterServerAppSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#jupyter_server_app_settings SagemakerDomain#jupyter_server_app_settings}
+	JupyterServerAppSettings *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings `json:"jupyterServerAppSettings" yaml:"jupyterServerAppSettings"`
 	// kernel_gateway_app_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#kernel_gateway_app_settings SagemakerDomain#kernel_gateway_app_settings}
-	KernelGatewayAppSettings *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings `json:"kernelGatewayAppSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#security_groups SagemakerDomain#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#kernel_gateway_app_settings SagemakerDomain#kernel_gateway_app_settings}
+	KernelGatewayAppSettings *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings `json:"kernelGatewayAppSettings" yaml:"kernelGatewayAppSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#security_groups SagemakerDomain#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 	// sharing_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#sharing_settings SagemakerDomain#sharing_settings}
-	SharingSettings *SagemakerDomainDefaultUserSettingsSharingSettings `json:"sharingSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#sharing_settings SagemakerDomain#sharing_settings}
+	SharingSettings *SagemakerDomainDefaultUserSettingsSharingSettings `json:"sharingSettings" yaml:"sharingSettings"`
 	// tensor_board_app_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#tensor_board_app_settings SagemakerDomain#tensor_board_app_settings}
-	TensorBoardAppSettings *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings `json:"tensorBoardAppSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#tensor_board_app_settings SagemakerDomain#tensor_board_app_settings}
+	TensorBoardAppSettings *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings `json:"tensorBoardAppSettings" yaml:"tensorBoardAppSettings"`
 }
 
 type SagemakerDomainDefaultUserSettingsJupyterServerAppSettings struct {
 	// default_resource_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#default_resource_spec SagemakerDomain#default_resource_spec}
-	DefaultResourceSpec *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec `json:"defaultResourceSpec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#lifecycle_config_arns SagemakerDomain#lifecycle_config_arns}.
-	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#default_resource_spec SagemakerDomain#default_resource_spec}
+	DefaultResourceSpec *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec `json:"defaultResourceSpec" yaml:"defaultResourceSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#lifecycle_config_arns SagemakerDomain#lifecycle_config_arns}.
+	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns" yaml:"lifecycleConfigArns"`
 }
 
 type SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#instance_type SagemakerDomain#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#sagemaker_image_arn SagemakerDomain#sagemaker_image_arn}.
-	SagemakerImageArn *string `json:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#instance_type SagemakerDomain#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#lifecycle_config_arn SagemakerDomain#lifecycle_config_arn}.
+	LifecycleConfigArn *string `json:"lifecycleConfigArn" yaml:"lifecycleConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#sagemaker_image_arn SagemakerDomain#sagemaker_image_arn}.
+	SagemakerImageArn *string `json:"sagemakerImageArn" yaml:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#sagemaker_image_version_arn SagemakerDomain#sagemaker_image_version_arn}.
+	SagemakerImageVersionArn *string `json:"sagemakerImageVersionArn" yaml:"sagemakerImageVersionArn"`
 }
 
 type SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference interface {
@@ -5960,21 +7946,34 @@ type SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSp
 	SetInternalValue(val *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	LifecycleConfigArn() *string
+	SetLifecycleConfigArn(val *string)
+	LifecycleConfigArnInput() *string
 	SagemakerImageArn() *string
 	SetSagemakerImageArn(val *string)
 	SagemakerImageArnInput() *string
+	SagemakerImageVersionArn() *string
+	SetSagemakerImageVersionArn(val *string)
+	SagemakerImageVersionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceType()
+	ResetLifecycleConfigArn()
 	ResetSagemakerImageArn()
+	ResetSagemakerImageVersionArn()
 }
 
 // The jsii proxy struct for SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference
@@ -6022,6 +8021,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SagemakerImageArn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -6042,6 +8061,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -6052,8 +8091,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6062,7 +8101,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference {
+func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference{}
@@ -6076,7 +8115,7 @@ func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourc
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6110,10 +8149,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	)
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetLifecycleConfigArn(val *string) {
+	_jsii_.Set(
+		j,
+		"lifecycleConfigArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageArn(val *string) {
 	_jsii_.Set(
 		j,
 		"sagemakerImageArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageVersionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sagemakerImageVersionArn",
 		val,
 	)
 }
@@ -6126,7 +8181,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6135,12 +8190,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6177,12 +8260,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6226,10 +8351,26 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDef
 	)
 }
 
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) ResetLifecycleConfigArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLifecycleConfigArn",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageArn() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetSagemakerImageArn",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageVersionArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSagemakerImageVersionArn",
 		nil, // no parameters
 	)
 }
@@ -6247,12 +8388,17 @@ type SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference i
 	LifecycleConfigArnsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDefaultResourceSpec(value *SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpec)
@@ -6335,8 +8481,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOut
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6345,7 +8491,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOut
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference {
+func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference{}
@@ -6359,7 +8505,7 @@ func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReferenc
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6401,7 +8547,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOut
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6410,12 +8556,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOut
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6452,12 +8626,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOut
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6520,30 +8736,34 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsJupyterServerAppSettingsOut
 type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings struct {
 	// custom_image block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#custom_image SagemakerDomain#custom_image}
-	CustomImage *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage `json:"customImage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#custom_image SagemakerDomain#custom_image}
+	CustomImage interface{} `json:"customImage" yaml:"customImage"`
 	// default_resource_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#default_resource_spec SagemakerDomain#default_resource_spec}
-	DefaultResourceSpec *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec `json:"defaultResourceSpec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#lifecycle_config_arns SagemakerDomain#lifecycle_config_arns}.
-	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#default_resource_spec SagemakerDomain#default_resource_spec}
+	DefaultResourceSpec *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec `json:"defaultResourceSpec" yaml:"defaultResourceSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#lifecycle_config_arns SagemakerDomain#lifecycle_config_arns}.
+	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns" yaml:"lifecycleConfigArns"`
 }
 
 type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#app_image_config_name SagemakerDomain#app_image_config_name}.
-	AppImageConfigName *string `json:"appImageConfigName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#image_name SagemakerDomain#image_name}.
-	ImageName *string `json:"imageName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#image_version_number SagemakerDomain#image_version_number}.
-	ImageVersionNumber *float64 `json:"imageVersionNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#app_image_config_name SagemakerDomain#app_image_config_name}.
+	AppImageConfigName *string `json:"appImageConfigName" yaml:"appImageConfigName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#image_name SagemakerDomain#image_name}.
+	ImageName *string `json:"imageName" yaml:"imageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#image_version_number SagemakerDomain#image_version_number}.
+	ImageVersionNumber *float64 `json:"imageVersionNumber" yaml:"imageVersionNumber"`
 }
 
 type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#instance_type SagemakerDomain#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#sagemaker_image_arn SagemakerDomain#sagemaker_image_arn}.
-	SagemakerImageArn *string `json:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#instance_type SagemakerDomain#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#lifecycle_config_arn SagemakerDomain#lifecycle_config_arn}.
+	LifecycleConfigArn *string `json:"lifecycleConfigArn" yaml:"lifecycleConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#sagemaker_image_arn SagemakerDomain#sagemaker_image_arn}.
+	SagemakerImageArn *string `json:"sagemakerImageArn" yaml:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#sagemaker_image_version_arn SagemakerDomain#sagemaker_image_version_arn}.
+	SagemakerImageVersionArn *string `json:"sagemakerImageVersionArn" yaml:"sagemakerImageVersionArn"`
 }
 
 type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference interface {
@@ -6555,21 +8775,34 @@ type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSp
 	SetInternalValue(val *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	LifecycleConfigArn() *string
+	SetLifecycleConfigArn(val *string)
+	LifecycleConfigArnInput() *string
 	SagemakerImageArn() *string
 	SetSagemakerImageArn(val *string)
 	SagemakerImageArnInput() *string
+	SagemakerImageVersionArn() *string
+	SetSagemakerImageVersionArn(val *string)
+	SagemakerImageVersionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceType()
+	ResetLifecycleConfigArn()
 	ResetSagemakerImageArn()
+	ResetSagemakerImageVersionArn()
 }
 
 // The jsii proxy struct for SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference
@@ -6617,6 +8850,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SagemakerImageArn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -6637,6 +8890,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -6647,8 +8920,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6657,7 +8930,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference {
+func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference{}
@@ -6671,7 +8944,7 @@ func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourc
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6705,10 +8978,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	)
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetLifecycleConfigArn(val *string) {
+	_jsii_.Set(
+		j,
+		"lifecycleConfigArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageArn(val *string) {
 	_jsii_.Set(
 		j,
 		"sagemakerImageArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageVersionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sagemakerImageVersionArn",
 		val,
 	)
 }
@@ -6721,7 +9010,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6730,12 +9019,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6772,12 +9089,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6821,6 +9180,14 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	)
 }
 
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) ResetLifecycleConfigArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLifecycleConfigArn",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageArn() {
 	_jsii_.InvokeVoid(
 		s,
@@ -6829,11 +9196,19 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDef
 	)
 }
 
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageVersionArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSagemakerImageVersionArn",
+		nil, // no parameters
+	)
+}
+
 type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference interface {
 	cdktf.ComplexObject
-	CustomImage() *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage
-	SetCustomImage(val *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage)
-	CustomImageInput() *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage
+	CustomImage() interface{}
+	SetCustomImage(val interface{})
+	CustomImageInput() interface{}
 	DefaultResourceSpec() SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
 	InternalValue() *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettings
@@ -6845,12 +9220,17 @@ type SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference i
 	LifecycleConfigArnsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDefaultResourceSpec(value *SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)
@@ -6864,8 +9244,8 @@ type jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputR
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) CustomImage() *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage {
-	var returns *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) CustomImage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customImage",
@@ -6874,8 +9254,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) CustomImageInput() *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage {
-	var returns *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) CustomImageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customImageInput",
@@ -6954,8 +9334,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6964,7 +9344,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference {
+func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference{}
@@ -6978,7 +9358,7 @@ func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReferenc
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6988,7 +9368,7 @@ func NewSagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) SetCustomImage(val *[]*SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsCustomImage) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) SetCustomImage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"customImage",
@@ -7028,7 +9408,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7037,12 +9417,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7079,12 +9487,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOut
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsKernelGatewayAppSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7174,12 +9624,17 @@ type SagemakerDomainDefaultUserSettingsOutputReference interface {
 	TensorBoardAppSettingsInput() *SagemakerDomainDefaultUserSettingsTensorBoardAppSettings
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutJupyterServerAppSettings(value *SagemakerDomainDefaultUserSettingsJupyterServerAppSettings)
@@ -7348,8 +9803,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7358,7 +9813,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) TerraformR
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsOutputReference {
+func NewSagemakerDomainDefaultUserSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference{}
@@ -7372,7 +9827,7 @@ func NewSagemakerDomainDefaultUserSettingsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7422,7 +9877,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7431,12 +9886,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7473,12 +9956,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7587,12 +10112,12 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsOutputReference) ResetTenso
 }
 
 type SagemakerDomainDefaultUserSettingsSharingSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#notebook_output_option SagemakerDomain#notebook_output_option}.
-	NotebookOutputOption *string `json:"notebookOutputOption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#s3_kms_key_id SagemakerDomain#s3_kms_key_id}.
-	S3KmsKeyId *string `json:"s3KmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#s3_output_path SagemakerDomain#s3_output_path}.
-	S3OutputPath *string `json:"s3OutputPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#notebook_output_option SagemakerDomain#notebook_output_option}.
+	NotebookOutputOption *string `json:"notebookOutputOption" yaml:"notebookOutputOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#s3_kms_key_id SagemakerDomain#s3_kms_key_id}.
+	S3KmsKeyId *string `json:"s3KmsKeyId" yaml:"s3KmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#s3_output_path SagemakerDomain#s3_output_path}.
+	S3OutputPath *string `json:"s3OutputPath" yaml:"s3OutputPath"`
 }
 
 type SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference interface {
@@ -7612,12 +10137,17 @@ type SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference interface 
 	S3OutputPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetNotebookOutputOption()
@@ -7720,8 +10250,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7730,7 +10260,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputRefere
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsSharingSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference {
+func NewSagemakerDomainDefaultUserSettingsSharingSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference{}
@@ -7744,7 +10274,7 @@ func NewSagemakerDomainDefaultUserSettingsSharingSettingsOutputReference(terrafo
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsSharingSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsSharingSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7802,7 +10332,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputRefere
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7811,12 +10341,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputRefere
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7853,12 +10411,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputRefere
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7921,15 +10521,19 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsSharingSettingsOutputRefere
 type SagemakerDomainDefaultUserSettingsTensorBoardAppSettings struct {
 	// default_resource_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#default_resource_spec SagemakerDomain#default_resource_spec}
-	DefaultResourceSpec *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec `json:"defaultResourceSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#default_resource_spec SagemakerDomain#default_resource_spec}
+	DefaultResourceSpec *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec `json:"defaultResourceSpec" yaml:"defaultResourceSpec"`
 }
 
 type SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#instance_type SagemakerDomain#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#sagemaker_image_arn SagemakerDomain#sagemaker_image_arn}.
-	SagemakerImageArn *string `json:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#instance_type SagemakerDomain#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#lifecycle_config_arn SagemakerDomain#lifecycle_config_arn}.
+	LifecycleConfigArn *string `json:"lifecycleConfigArn" yaml:"lifecycleConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#sagemaker_image_arn SagemakerDomain#sagemaker_image_arn}.
+	SagemakerImageArn *string `json:"sagemakerImageArn" yaml:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#sagemaker_image_version_arn SagemakerDomain#sagemaker_image_version_arn}.
+	SagemakerImageVersionArn *string `json:"sagemakerImageVersionArn" yaml:"sagemakerImageVersionArn"`
 }
 
 type SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference interface {
@@ -7941,21 +10545,34 @@ type SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec
 	SetInternalValue(val *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	LifecycleConfigArn() *string
+	SetLifecycleConfigArn(val *string)
+	LifecycleConfigArnInput() *string
 	SagemakerImageArn() *string
 	SetSagemakerImageArn(val *string)
 	SagemakerImageArnInput() *string
+	SagemakerImageVersionArn() *string
+	SetSagemakerImageVersionArn(val *string)
+	SagemakerImageVersionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceType()
+	ResetLifecycleConfigArn()
 	ResetSagemakerImageArn()
+	ResetSagemakerImageVersionArn()
 }
 
 // The jsii proxy struct for SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference
@@ -8003,6 +10620,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SagemakerImageArn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -8023,6 +10660,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -8033,8 +10690,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8043,7 +10700,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference {
+func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference{}
@@ -8057,7 +10714,7 @@ func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceS
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8091,10 +10748,26 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	)
 }
 
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetLifecycleConfigArn(val *string) {
+	_jsii_.Set(
+		j,
+		"lifecycleConfigArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageArn(val *string) {
 	_jsii_.Set(
 		j,
 		"sagemakerImageArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageVersionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sagemakerImageVersionArn",
 		val,
 	)
 }
@@ -8107,7 +10780,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8116,12 +10789,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8158,12 +10859,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8207,10 +10950,26 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefau
 	)
 }
 
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) ResetLifecycleConfigArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLifecycleConfigArn",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageArn() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetSagemakerImageArn",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageVersionArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSagemakerImageVersionArn",
 		nil, // no parameters
 	)
 }
@@ -8225,12 +10984,17 @@ type SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference int
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDefaultResourceSpec(value *SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpec)
@@ -8292,8 +11056,8 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutpu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8302,7 +11066,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutpu
 	return returns
 }
 
-func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference {
+func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference{}
@@ -8316,7 +11080,7 @@ func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference(
 	return &j
 }
 
-func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference_Override(s SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8350,7 +11114,7 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutpu
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8359,12 +11123,40 @@ func (j *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutpu
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8401,12 +11193,54 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutpu
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8459,8 +11293,8 @@ func (s *jsiiProxy_SagemakerDomainDefaultUserSettingsTensorBoardAppSettingsOutpu
 }
 
 type SagemakerDomainRetentionPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain.html#home_efs_file_system SagemakerDomain#home_efs_file_system}.
-	HomeEfsFileSystem *string `json:"homeEfsFileSystem"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_domain#home_efs_file_system SagemakerDomain#home_efs_file_system}.
+	HomeEfsFileSystem *string `json:"homeEfsFileSystem" yaml:"homeEfsFileSystem"`
 }
 
 type SagemakerDomainRetentionPolicyOutputReference interface {
@@ -8474,12 +11308,17 @@ type SagemakerDomainRetentionPolicyOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHomeEfsFileSystem()
@@ -8540,8 +11379,8 @@ func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8550,7 +11389,7 @@ func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) TerraformResou
 	return returns
 }
 
-func NewSagemakerDomainRetentionPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerDomainRetentionPolicyOutputReference {
+func NewSagemakerDomainRetentionPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerDomainRetentionPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerDomainRetentionPolicyOutputReference{}
@@ -8564,7 +11403,7 @@ func NewSagemakerDomainRetentionPolicyOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewSagemakerDomainRetentionPolicyOutputReference_Override(s SagemakerDomainRetentionPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerDomainRetentionPolicyOutputReference_Override(s SagemakerDomainRetentionPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8606,7 +11445,7 @@ func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8615,12 +11454,40 @@ func (j *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8657,12 +11524,54 @@ func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8706,14 +11615,14 @@ func (s *jsiiProxy_SagemakerDomainRetentionPolicyOutputReference) ResetHomeEfsFi
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html aws_sagemaker_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint aws_sagemaker_endpoint}.
 type SagemakerEndpoint interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentConfig() SagemakerEndpointDeploymentConfigOutputReference
@@ -8733,20 +11642,25 @@ type SagemakerEndpoint interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDeploymentConfig(value *SagemakerEndpointDeploymentConfig)
@@ -8796,8 +11710,8 @@ func (j *jsiiProxy_SagemakerEndpoint) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8946,8 +11860,8 @@ func (j *jsiiProxy_SagemakerEndpoint) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpoint) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8956,8 +11870,8 @@ func (j *jsiiProxy_SagemakerEndpoint) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpoint) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8966,8 +11880,8 @@ func (j *jsiiProxy_SagemakerEndpoint) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpoint) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8976,8 +11890,8 @@ func (j *jsiiProxy_SagemakerEndpoint) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpoint) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9016,7 +11930,7 @@ func (j *jsiiProxy_SagemakerEndpoint) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html aws_sagemaker_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint aws_sagemaker_endpoint} Resource.
 func NewSagemakerEndpoint(scope constructs.Construct, id *string, config *SagemakerEndpointConfig) SagemakerEndpoint {
 	_init_.Initialize()
 
@@ -9031,7 +11945,7 @@ func NewSagemakerEndpoint(scope constructs.Construct, id *string, config *Sagema
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html aws_sagemaker_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint aws_sagemaker_endpoint} Resource.
 func NewSagemakerEndpoint_Override(s SagemakerEndpoint, scope constructs.Construct, id *string, config *SagemakerEndpointConfig) {
 	_init_.Initialize()
 
@@ -9042,7 +11956,7 @@ func NewSagemakerEndpoint_Override(s SagemakerEndpoint, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9090,7 +12004,7 @@ func (j *jsiiProxy_SagemakerEndpoint) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerEndpoint) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9098,7 +12012,7 @@ func (j *jsiiProxy_SagemakerEndpoint) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpoint) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerEndpoint) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9146,12 +12060,40 @@ func (s *jsiiProxy_SagemakerEndpoint) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9188,12 +12130,54 @@ func (s *jsiiProxy_SagemakerEndpoint) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9334,28 +12318,28 @@ func (s *jsiiProxy_SagemakerEndpoint) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#endpoint_config_name SagemakerEndpoint#endpoint_config_name}.
-	EndpointConfigName *string `json:"endpointConfigName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#endpoint_config_name SagemakerEndpoint#endpoint_config_name}.
+	EndpointConfigName *string `json:"endpointConfigName" yaml:"endpointConfigName"`
 	// deployment_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#deployment_config SagemakerEndpoint#deployment_config}
-	DeploymentConfig *SagemakerEndpointDeploymentConfig `json:"deploymentConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#name SagemakerEndpoint#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#tags SagemakerEndpoint#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#tags_all SagemakerEndpoint#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#deployment_config SagemakerEndpoint#deployment_config}
+	DeploymentConfig *SagemakerEndpointDeploymentConfig `json:"deploymentConfig" yaml:"deploymentConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#name SagemakerEndpoint#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#tags SagemakerEndpoint#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#tags_all SagemakerEndpoint#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html aws_sagemaker_endpoint_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration aws_sagemaker_endpoint_configuration}.
 type SagemakerEndpointConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -9363,8 +12347,8 @@ type SagemakerEndpointConfiguration interface {
 	AsyncInferenceConfigInput() *SagemakerEndpointConfigurationAsyncInferenceConfig
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DataCaptureConfig() SagemakerEndpointConfigurationDataCaptureConfigOutputReference
 	DataCaptureConfigInput() *SagemakerEndpointConfigurationDataCaptureConfig
 	DependsOn() *[]*string
@@ -9381,26 +12365,31 @@ type SagemakerEndpointConfiguration interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	ProductionVariants() *[]*SagemakerEndpointConfigurationProductionVariants
-	SetProductionVariants(val *[]*SagemakerEndpointConfigurationProductionVariants)
-	ProductionVariantsInput() *[]*SagemakerEndpointConfigurationProductionVariants
+	ProductionVariants() interface{}
+	SetProductionVariants(val interface{})
+	ProductionVariantsInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAsyncInferenceConfig(value *SagemakerEndpointConfigurationAsyncInferenceConfig)
@@ -9473,8 +12462,8 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpointConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9603,8 +12592,8 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) ProductionVariants() *[]*SagemakerEndpointConfigurationProductionVariants {
-	var returns *[]*SagemakerEndpointConfigurationProductionVariants
+func (j *jsiiProxy_SagemakerEndpointConfiguration) ProductionVariants() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productionVariants",
@@ -9613,8 +12602,8 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) ProductionVariants() *[]*Sage
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) ProductionVariantsInput() *[]*SagemakerEndpointConfigurationProductionVariants {
-	var returns *[]*SagemakerEndpointConfigurationProductionVariants
+func (j *jsiiProxy_SagemakerEndpointConfiguration) ProductionVariantsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productionVariantsInput",
@@ -9643,8 +12632,8 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpointConfiguration) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9653,8 +12642,8 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9663,8 +12652,8 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9673,8 +12662,8 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerEndpointConfiguration) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9713,7 +12702,7 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html aws_sagemaker_endpoint_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration aws_sagemaker_endpoint_configuration} Resource.
 func NewSagemakerEndpointConfiguration(scope constructs.Construct, id *string, config *SagemakerEndpointConfigurationConfig) SagemakerEndpointConfiguration {
 	_init_.Initialize()
 
@@ -9728,7 +12717,7 @@ func NewSagemakerEndpointConfiguration(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html aws_sagemaker_endpoint_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration aws_sagemaker_endpoint_configuration} Resource.
 func NewSagemakerEndpointConfiguration_Override(s SagemakerEndpointConfiguration, scope constructs.Construct, id *string, config *SagemakerEndpointConfigurationConfig) {
 	_init_.Initialize()
 
@@ -9739,7 +12728,7 @@ func NewSagemakerEndpointConfiguration_Override(s SagemakerEndpointConfiguration
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerEndpointConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9779,7 +12768,7 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) SetProductionVariants(val *[]*SagemakerEndpointConfigurationProductionVariants) {
+func (j *jsiiProxy_SagemakerEndpointConfiguration) SetProductionVariants(val interface{}) {
 	_jsii_.Set(
 		j,
 		"productionVariants",
@@ -9795,7 +12784,7 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) SetProvider(val cdktf.Terrafo
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerEndpointConfiguration) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9803,7 +12792,7 @@ func (j *jsiiProxy_SagemakerEndpointConfiguration) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfiguration) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerEndpointConfiguration) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9851,12 +12840,40 @@ func (s *jsiiProxy_SagemakerEndpointConfiguration) AddOverride(path *string, val
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9893,12 +12910,54 @@ func (s *jsiiProxy_SagemakerEndpointConfiguration) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10063,17 +13122,17 @@ func (s *jsiiProxy_SagemakerEndpointConfiguration) ToTerraform() interface{} {
 type SagemakerEndpointConfigurationAsyncInferenceConfig struct {
 	// output_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#output_config SagemakerEndpointConfiguration#output_config}
-	OutputConfig *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig `json:"outputConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#output_config SagemakerEndpointConfiguration#output_config}
+	OutputConfig *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig `json:"outputConfig" yaml:"outputConfig"`
 	// client_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#client_config SagemakerEndpointConfiguration#client_config}
-	ClientConfig *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig `json:"clientConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#client_config SagemakerEndpointConfiguration#client_config}
+	ClientConfig *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig `json:"clientConfig" yaml:"clientConfig"`
 }
 
 type SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#max_concurrent_invocations_per_instance SagemakerEndpointConfiguration#max_concurrent_invocations_per_instance}.
-	MaxConcurrentInvocationsPerInstance *float64 `json:"maxConcurrentInvocationsPerInstance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#max_concurrent_invocations_per_instance SagemakerEndpointConfiguration#max_concurrent_invocations_per_instance}.
+	MaxConcurrentInvocationsPerInstance *float64 `json:"maxConcurrentInvocationsPerInstance" yaml:"maxConcurrentInvocationsPerInstance"`
 }
 
 type SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference interface {
@@ -10087,12 +13146,17 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReferen
 	MaxConcurrentInvocationsPerInstanceInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMaxConcurrentInvocationsPerInstance()
@@ -10153,8 +13217,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfi
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10163,7 +13227,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfi
 	return returns
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference{}
@@ -10177,7 +13241,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputRefe
 	return &j
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10219,7 +13283,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfi
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10228,12 +13292,40 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfi
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10270,12 +13362,54 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfi
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10320,21 +13454,21 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigClientConfi
 }
 
 type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#s3_output_path SagemakerEndpointConfiguration#s3_output_path}.
-	S3OutputPath *string `json:"s3OutputPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#kms_key_id SagemakerEndpointConfiguration#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#s3_output_path SagemakerEndpointConfiguration#s3_output_path}.
+	S3OutputPath *string `json:"s3OutputPath" yaml:"s3OutputPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#kms_key_id SagemakerEndpointConfiguration#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 	// notification_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#notification_config SagemakerEndpointConfiguration#notification_config}
-	NotificationConfig *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig `json:"notificationConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#notification_config SagemakerEndpointConfiguration#notification_config}
+	NotificationConfig *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig `json:"notificationConfig" yaml:"notificationConfig"`
 }
 
 type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#error_topic SagemakerEndpointConfiguration#error_topic}.
-	ErrorTopic *string `json:"errorTopic"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#success_topic SagemakerEndpointConfiguration#success_topic}.
-	SuccessTopic *string `json:"successTopic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#error_topic SagemakerEndpointConfiguration#error_topic}.
+	ErrorTopic *string `json:"errorTopic" yaml:"errorTopic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#success_topic SagemakerEndpointConfiguration#success_topic}.
+	SuccessTopic *string `json:"successTopic" yaml:"successTopic"`
 }
 
 type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference interface {
@@ -10351,12 +13485,17 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationC
 	SuccessTopicInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetErrorTopic()
@@ -10438,8 +13577,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10448,7 +13587,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	return returns
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference{}
@@ -10462,7 +13601,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificati
 	return &j
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10512,7 +13651,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10521,12 +13660,40 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10563,12 +13730,54 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10636,12 +13845,17 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReferen
 	S3OutputPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutNotificationConfig(value *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfig)
@@ -10744,8 +13958,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10754,7 +13968,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	return returns
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference{}
@@ -10768,7 +13982,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputRefe
 	return &j
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10818,7 +14032,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10827,12 +14041,40 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10869,12 +14111,54 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfi
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10946,12 +14230,17 @@ type SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference interface
 	OutputConfigInput() *SagemakerEndpointConfigurationAsyncInferenceConfigOutputConfig
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutClientConfig(value *SagemakerEndpointConfigurationAsyncInferenceConfigClientConfig)
@@ -11034,8 +14323,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11044,7 +14333,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 	return returns
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference{}
@@ -11058,7 +14347,7 @@ func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputReference(terraf
 	return &j
 }
 
-func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointConfigurationAsyncInferenceConfigOutputReference_Override(s SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11092,7 +14381,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11101,12 +14390,40 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11143,12 +14460,54 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11211,59 +14570,59 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationAsyncInferenceConfigOutputRefer
 // AWS SageMaker.
 type SagemakerEndpointConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// production_variants block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#production_variants SagemakerEndpointConfiguration#production_variants}
-	ProductionVariants *[]*SagemakerEndpointConfigurationProductionVariants `json:"productionVariants"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#production_variants SagemakerEndpointConfiguration#production_variants}
+	ProductionVariants interface{} `json:"productionVariants" yaml:"productionVariants"`
 	// async_inference_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#async_inference_config SagemakerEndpointConfiguration#async_inference_config}
-	AsyncInferenceConfig *SagemakerEndpointConfigurationAsyncInferenceConfig `json:"asyncInferenceConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#async_inference_config SagemakerEndpointConfiguration#async_inference_config}
+	AsyncInferenceConfig *SagemakerEndpointConfigurationAsyncInferenceConfig `json:"asyncInferenceConfig" yaml:"asyncInferenceConfig"`
 	// data_capture_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#data_capture_config SagemakerEndpointConfiguration#data_capture_config}
-	DataCaptureConfig *SagemakerEndpointConfigurationDataCaptureConfig `json:"dataCaptureConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#kms_key_arn SagemakerEndpointConfiguration#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#name SagemakerEndpointConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#tags SagemakerEndpointConfiguration#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#tags_all SagemakerEndpointConfiguration#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#data_capture_config SagemakerEndpointConfiguration#data_capture_config}
+	DataCaptureConfig *SagemakerEndpointConfigurationDataCaptureConfig `json:"dataCaptureConfig" yaml:"dataCaptureConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#kms_key_arn SagemakerEndpointConfiguration#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#name SagemakerEndpointConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#tags SagemakerEndpointConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#tags_all SagemakerEndpointConfiguration#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerEndpointConfigurationDataCaptureConfig struct {
 	// capture_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#capture_options SagemakerEndpointConfiguration#capture_options}
-	CaptureOptions *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions `json:"captureOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#destination_s3_uri SagemakerEndpointConfiguration#destination_s3_uri}.
-	DestinationS3Uri *string `json:"destinationS3Uri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#initial_sampling_percentage SagemakerEndpointConfiguration#initial_sampling_percentage}.
-	InitialSamplingPercentage *float64 `json:"initialSamplingPercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#capture_options SagemakerEndpointConfiguration#capture_options}
+	CaptureOptions interface{} `json:"captureOptions" yaml:"captureOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#destination_s3_uri SagemakerEndpointConfiguration#destination_s3_uri}.
+	DestinationS3Uri *string `json:"destinationS3Uri" yaml:"destinationS3Uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#initial_sampling_percentage SagemakerEndpointConfiguration#initial_sampling_percentage}.
+	InitialSamplingPercentage *float64 `json:"initialSamplingPercentage" yaml:"initialSamplingPercentage"`
 	// capture_content_type_header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#capture_content_type_header SagemakerEndpointConfiguration#capture_content_type_header}
-	CaptureContentTypeHeader *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader `json:"captureContentTypeHeader"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#enable_capture SagemakerEndpointConfiguration#enable_capture}.
-	EnableCapture interface{} `json:"enableCapture"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#kms_key_id SagemakerEndpointConfiguration#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#capture_content_type_header SagemakerEndpointConfiguration#capture_content_type_header}
+	CaptureContentTypeHeader *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader `json:"captureContentTypeHeader" yaml:"captureContentTypeHeader"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#enable_capture SagemakerEndpointConfiguration#enable_capture}.
+	EnableCapture interface{} `json:"enableCapture" yaml:"enableCapture"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#kms_key_id SagemakerEndpointConfiguration#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 }
 
 type SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#csv_content_types SagemakerEndpointConfiguration#csv_content_types}.
-	CsvContentTypes *[]*string `json:"csvContentTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#json_content_types SagemakerEndpointConfiguration#json_content_types}.
-	JsonContentTypes *[]*string `json:"jsonContentTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#csv_content_types SagemakerEndpointConfiguration#csv_content_types}.
+	CsvContentTypes *[]*string `json:"csvContentTypes" yaml:"csvContentTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#json_content_types SagemakerEndpointConfiguration#json_content_types}.
+	JsonContentTypes *[]*string `json:"jsonContentTypes" yaml:"jsonContentTypes"`
 }
 
 type SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference interface {
@@ -11280,12 +14639,17 @@ type SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutp
 	JsonContentTypesInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCsvContentTypes()
@@ -11367,8 +14731,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11377,7 +14741,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 	return returns
 }
 
-func NewSagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference {
+func NewSagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference{}
@@ -11391,7 +14755,7 @@ func NewSagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderO
 	return &j
 }
 
-func NewSagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference_Override(s SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference_Override(s SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11441,7 +14805,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11450,12 +14814,40 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11492,12 +14884,54 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11550,17 +14984,17 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigCaptureContent
 }
 
 type SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#capture_mode SagemakerEndpointConfiguration#capture_mode}.
-	CaptureMode *string `json:"captureMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#capture_mode SagemakerEndpointConfiguration#capture_mode}.
+	CaptureMode *string `json:"captureMode" yaml:"captureMode"`
 }
 
 type SagemakerEndpointConfigurationDataCaptureConfigOutputReference interface {
 	cdktf.ComplexObject
 	CaptureContentTypeHeader() SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeaderOutputReference
 	CaptureContentTypeHeaderInput() *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader
-	CaptureOptions() *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions
-	SetCaptureOptions(val *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions)
-	CaptureOptionsInput() *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions
+	CaptureOptions() interface{}
+	SetCaptureOptions(val interface{})
+	CaptureOptionsInput() interface{}
 	DestinationS3Uri() *string
 	SetDestinationS3Uri(val *string)
 	DestinationS3UriInput() *string
@@ -11579,12 +15013,17 @@ type SagemakerEndpointConfigurationDataCaptureConfigOutputReference interface {
 	KmsKeyIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCaptureContentTypeHeader(value *SagemakerEndpointConfigurationDataCaptureConfigCaptureContentTypeHeader)
@@ -11618,8 +15057,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) CaptureOptions() *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions {
-	var returns *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) CaptureOptions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"captureOptions",
@@ -11628,8 +15067,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) CaptureOptionsInput() *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions {
-	var returns *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) CaptureOptionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"captureOptionsInput",
@@ -11748,8 +15187,8 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11758,7 +15197,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 	return returns
 }
 
-func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationDataCaptureConfigOutputReference {
+func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointConfigurationDataCaptureConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference{}
@@ -11772,7 +15211,7 @@ func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference(terraform
 	return &j
 }
 
-func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference_Override(s SagemakerEndpointConfigurationDataCaptureConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference_Override(s SagemakerEndpointConfigurationDataCaptureConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11782,7 +15221,7 @@ func NewSagemakerEndpointConfigurationDataCaptureConfigOutputReference_Override(
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) SetCaptureOptions(val *[]*SagemakerEndpointConfigurationDataCaptureConfigCaptureOptions) {
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) SetCaptureOptions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"captureOptions",
@@ -11846,7 +15285,7 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11855,12 +15294,40 @@ func (j *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11897,12 +15364,54 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11971,60 +15480,65 @@ func (s *jsiiProxy_SagemakerEndpointConfigurationDataCaptureConfigOutputReferenc
 }
 
 type SagemakerEndpointConfigurationProductionVariants struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#initial_instance_count SagemakerEndpointConfiguration#initial_instance_count}.
-	InitialInstanceCount *float64 `json:"initialInstanceCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#instance_type SagemakerEndpointConfiguration#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#model_name SagemakerEndpointConfiguration#model_name}.
-	ModelName *string `json:"modelName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#accelerator_type SagemakerEndpointConfiguration#accelerator_type}.
-	AcceleratorType *string `json:"acceleratorType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#initial_variant_weight SagemakerEndpointConfiguration#initial_variant_weight}.
-	InitialVariantWeight *float64 `json:"initialVariantWeight"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration.html#variant_name SagemakerEndpointConfiguration#variant_name}.
-	VariantName *string `json:"variantName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#initial_instance_count SagemakerEndpointConfiguration#initial_instance_count}.
+	InitialInstanceCount *float64 `json:"initialInstanceCount" yaml:"initialInstanceCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#instance_type SagemakerEndpointConfiguration#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#model_name SagemakerEndpointConfiguration#model_name}.
+	ModelName *string `json:"modelName" yaml:"modelName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#accelerator_type SagemakerEndpointConfiguration#accelerator_type}.
+	AcceleratorType *string `json:"acceleratorType" yaml:"acceleratorType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#initial_variant_weight SagemakerEndpointConfiguration#initial_variant_weight}.
+	InitialVariantWeight *float64 `json:"initialVariantWeight" yaml:"initialVariantWeight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint_configuration#variant_name SagemakerEndpointConfiguration#variant_name}.
+	VariantName *string `json:"variantName" yaml:"variantName"`
 }
 
 type SagemakerEndpointDeploymentConfig struct {
 	// blue_green_update_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#blue_green_update_policy SagemakerEndpoint#blue_green_update_policy}
-	BlueGreenUpdatePolicy *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy `json:"blueGreenUpdatePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#blue_green_update_policy SagemakerEndpoint#blue_green_update_policy}
+	BlueGreenUpdatePolicy *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy `json:"blueGreenUpdatePolicy" yaml:"blueGreenUpdatePolicy"`
 	// auto_rollback_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#auto_rollback_configuration SagemakerEndpoint#auto_rollback_configuration}
-	AutoRollbackConfiguration *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration `json:"autoRollbackConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#auto_rollback_configuration SagemakerEndpoint#auto_rollback_configuration}
+	AutoRollbackConfiguration *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration `json:"autoRollbackConfiguration" yaml:"autoRollbackConfiguration"`
 }
 
 type SagemakerEndpointDeploymentConfigAutoRollbackConfiguration struct {
 	// alarms block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#alarms SagemakerEndpoint#alarms}
-	Alarms *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms `json:"alarms"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#alarms SagemakerEndpoint#alarms}
+	Alarms interface{} `json:"alarms" yaml:"alarms"`
 }
 
 type SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#alarm_name SagemakerEndpoint#alarm_name}.
-	AlarmName *string `json:"alarmName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#alarm_name SagemakerEndpoint#alarm_name}.
+	AlarmName *string `json:"alarmName" yaml:"alarmName"`
 }
 
 type SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference interface {
 	cdktf.ComplexObject
-	Alarms() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
-	SetAlarms(val *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms)
-	AlarmsInput() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
+	Alarms() interface{}
+	SetAlarms(val interface{})
+	AlarmsInput() interface{}
 	InternalValue() *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration
 	SetInternalValue(val *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAlarms()
@@ -12035,8 +15549,8 @@ type jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputR
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) Alarms() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms {
-	var returns *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) Alarms() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"alarms",
@@ -12045,8 +15559,8 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOut
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) AlarmsInput() *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms {
-	var returns *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) AlarmsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"alarmsInput",
@@ -12085,8 +15599,8 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOut
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12095,7 +15609,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOut
 	return returns
 }
 
-func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference {
+func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference{}
@@ -12109,7 +15623,7 @@ func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReferenc
 	return &j
 }
 
-func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference_Override(s SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference_Override(s SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12119,7 +15633,7 @@ func NewSagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetAlarms(val *[]*SagemakerEndpointDeploymentConfigAutoRollbackConfigurationAlarms) {
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetAlarms(val interface{}) {
 	_jsii_.Set(
 		j,
 		"alarms",
@@ -12151,7 +15665,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOut
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12160,12 +15674,40 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOut
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12202,12 +15744,54 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOut
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12254,12 +15838,12 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigAutoRollbackConfigurationOut
 type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicy struct {
 	// traffic_routing_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#traffic_routing_configuration SagemakerEndpoint#traffic_routing_configuration}
-	TrafficRoutingConfiguration *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration `json:"trafficRoutingConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#maximum_execution_timeout_in_seconds SagemakerEndpoint#maximum_execution_timeout_in_seconds}.
-	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#termination_wait_in_seconds SagemakerEndpoint#termination_wait_in_seconds}.
-	TerminationWaitInSeconds *float64 `json:"terminationWaitInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#traffic_routing_configuration SagemakerEndpoint#traffic_routing_configuration}
+	TrafficRoutingConfiguration *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration `json:"trafficRoutingConfiguration" yaml:"trafficRoutingConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#maximum_execution_timeout_in_seconds SagemakerEndpoint#maximum_execution_timeout_in_seconds}.
+	MaximumExecutionTimeoutInSeconds *float64 `json:"maximumExecutionTimeoutInSeconds" yaml:"maximumExecutionTimeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#termination_wait_in_seconds SagemakerEndpoint#termination_wait_in_seconds}.
+	TerminationWaitInSeconds *float64 `json:"terminationWaitInSeconds" yaml:"terminationWaitInSeconds"`
 }
 
 type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference interface {
@@ -12276,14 +15860,19 @@ type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference inter
 	TerminationWaitInSecondsInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TrafficRoutingConfiguration() SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference
 	TrafficRoutingConfigurationInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutTrafficRoutingConfiguration(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration)
@@ -12366,8 +15955,8 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputR
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12396,7 +15985,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputR
 	return returns
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference{}
@@ -12410,7 +15999,7 @@ func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference(te
 	return &j
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12460,7 +16049,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputR
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12469,12 +16058,40 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputR
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12511,12 +16128,54 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputR
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12577,25 +16236,25 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyOutputR
 }
 
 type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#type SagemakerEndpoint#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#wait_interval_in_seconds SagemakerEndpoint#wait_interval_in_seconds}.
-	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#type SagemakerEndpoint#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#wait_interval_in_seconds SagemakerEndpoint#wait_interval_in_seconds}.
+	WaitIntervalInSeconds *float64 `json:"waitIntervalInSeconds" yaml:"waitIntervalInSeconds"`
 	// canary_size block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#canary_size SagemakerEndpoint#canary_size}
-	CanarySize *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize `json:"canarySize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#canary_size SagemakerEndpoint#canary_size}
+	CanarySize *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize `json:"canarySize" yaml:"canarySize"`
 	// linear_step_size block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#linear_step_size SagemakerEndpoint#linear_step_size}
-	LinearStepSize *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize `json:"linearStepSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#linear_step_size SagemakerEndpoint#linear_step_size}
+	LinearStepSize *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize `json:"linearStepSize" yaml:"linearStepSize"`
 }
 
 type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#type SagemakerEndpoint#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#value SagemakerEndpoint#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#type SagemakerEndpoint#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#value SagemakerEndpoint#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference interface {
@@ -12606,18 +16265,23 @@ type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigu
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -12657,8 +16321,8 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12707,7 +16371,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	return returns
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference{}
@@ -12721,7 +16385,7 @@ func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConf
 	return &j
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12755,7 +16419,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12780,12 +16444,40 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12822,12 +16514,54 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySizeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12864,10 +16598,10 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 }
 
 type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#type SagemakerEndpoint#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint.html#value SagemakerEndpoint#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#type SagemakerEndpoint#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_endpoint#value SagemakerEndpoint#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference interface {
@@ -12878,18 +16612,23 @@ type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigu
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -12929,8 +16668,8 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12979,7 +16718,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	return returns
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference{}
@@ -12993,7 +16732,7 @@ func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConf
 	return &j
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13027,7 +16766,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13052,12 +16791,40 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13094,12 +16861,54 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13147,18 +16956,23 @@ type SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigu
 	LinearStepSizeInput() *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSize
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	WaitIntervalInSeconds() *float64
 	SetWaitIntervalInSeconds(val *float64)
 	WaitIntervalInSecondsInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCanarySize(value *SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationCanarySize)
@@ -13242,8 +17056,8 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13292,7 +17106,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	return returns
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference{}
@@ -13306,7 +17120,7 @@ func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConf
 	return &j
 }
 
-func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference_Override(s SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13340,7 +17154,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13365,12 +17179,40 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13407,12 +17249,54 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTraffic
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13492,12 +17376,17 @@ type SagemakerEndpointDeploymentConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAutoRollbackConfiguration(value *SagemakerEndpointDeploymentConfigAutoRollbackConfiguration)
@@ -13580,8 +17469,8 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13590,7 +17479,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) TerraformRe
 	return returns
 }
 
-func NewSagemakerEndpointDeploymentConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigOutputReference {
+func NewSagemakerEndpointDeploymentConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerEndpointDeploymentConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference{}
@@ -13604,7 +17493,7 @@ func NewSagemakerEndpointDeploymentConfigOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewSagemakerEndpointDeploymentConfigOutputReference_Override(s SagemakerEndpointDeploymentConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerEndpointDeploymentConfigOutputReference_Override(s SagemakerEndpointDeploymentConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13638,7 +17527,7 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13647,12 +17536,40 @@ func (j *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13689,12 +17606,54 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13754,14 +17713,14 @@ func (s *jsiiProxy_SagemakerEndpointDeploymentConfigOutputReference) ResetAutoRo
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html aws_sagemaker_feature_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group aws_sagemaker_feature_group}.
 type SagemakerFeatureGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -13770,9 +17729,9 @@ type SagemakerFeatureGroup interface {
 	EventTimeFeatureName() *string
 	SetEventTimeFeatureName(val *string)
 	EventTimeFeatureNameInput() *string
-	FeatureDefinition() *[]*SagemakerFeatureGroupFeatureDefinition
-	SetFeatureDefinition(val *[]*SagemakerFeatureGroupFeatureDefinition)
-	FeatureDefinitionInput() *[]*SagemakerFeatureGroupFeatureDefinition
+	FeatureDefinition() interface{}
+	SetFeatureDefinition(val interface{})
+	FeatureDefinitionInput() interface{}
 	FeatureGroupName() *string
 	SetFeatureGroupName(val *string)
 	FeatureGroupNameInput() *string
@@ -13795,20 +17754,25 @@ type SagemakerFeatureGroup interface {
 	RoleArn() *string
 	SetRoleArn(val *string)
 	RoleArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutOfflineStoreConfig(value *SagemakerFeatureGroupOfflineStoreConfig)
@@ -13860,8 +17824,8 @@ func (j *jsiiProxy_SagemakerFeatureGroup) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFeatureGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13920,8 +17884,8 @@ func (j *jsiiProxy_SagemakerFeatureGroup) EventTimeFeatureNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) FeatureDefinition() *[]*SagemakerFeatureGroupFeatureDefinition {
-	var returns *[]*SagemakerFeatureGroupFeatureDefinition
+func (j *jsiiProxy_SagemakerFeatureGroup) FeatureDefinition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"featureDefinition",
@@ -13930,8 +17894,8 @@ func (j *jsiiProxy_SagemakerFeatureGroup) FeatureDefinition() *[]*SagemakerFeatu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) FeatureDefinitionInput() *[]*SagemakerFeatureGroupFeatureDefinition {
-	var returns *[]*SagemakerFeatureGroupFeatureDefinition
+func (j *jsiiProxy_SagemakerFeatureGroup) FeatureDefinitionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"featureDefinitionInput",
@@ -14110,8 +18074,8 @@ func (j *jsiiProxy_SagemakerFeatureGroup) RoleArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFeatureGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -14120,8 +18084,8 @@ func (j *jsiiProxy_SagemakerFeatureGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFeatureGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -14130,8 +18094,8 @@ func (j *jsiiProxy_SagemakerFeatureGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFeatureGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -14140,8 +18104,8 @@ func (j *jsiiProxy_SagemakerFeatureGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFeatureGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14180,7 +18144,7 @@ func (j *jsiiProxy_SagemakerFeatureGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html aws_sagemaker_feature_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group aws_sagemaker_feature_group} Resource.
 func NewSagemakerFeatureGroup(scope constructs.Construct, id *string, config *SagemakerFeatureGroupConfig) SagemakerFeatureGroup {
 	_init_.Initialize()
 
@@ -14195,7 +18159,7 @@ func NewSagemakerFeatureGroup(scope constructs.Construct, id *string, config *Sa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html aws_sagemaker_feature_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group aws_sagemaker_feature_group} Resource.
 func NewSagemakerFeatureGroup_Override(s SagemakerFeatureGroup, scope constructs.Construct, id *string, config *SagemakerFeatureGroupConfig) {
 	_init_.Initialize()
 
@@ -14206,7 +18170,7 @@ func NewSagemakerFeatureGroup_Override(s SagemakerFeatureGroup, scope constructs
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerFeatureGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14238,7 +18202,7 @@ func (j *jsiiProxy_SagemakerFeatureGroup) SetEventTimeFeatureName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) SetFeatureDefinition(val *[]*SagemakerFeatureGroupFeatureDefinition) {
+func (j *jsiiProxy_SagemakerFeatureGroup) SetFeatureDefinition(val interface{}) {
 	_jsii_.Set(
 		j,
 		"featureDefinition",
@@ -14286,7 +18250,7 @@ func (j *jsiiProxy_SagemakerFeatureGroup) SetRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerFeatureGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14294,7 +18258,7 @@ func (j *jsiiProxy_SagemakerFeatureGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerFeatureGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -14342,12 +18306,40 @@ func (s *jsiiProxy_SagemakerFeatureGroup) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFeatureGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14384,12 +18376,54 @@ func (s *jsiiProxy_SagemakerFeatureGroup) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFeatureGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14546,68 +18580,68 @@ func (s *jsiiProxy_SagemakerFeatureGroup) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerFeatureGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#event_time_feature_name SagemakerFeatureGroup#event_time_feature_name}.
-	EventTimeFeatureName *string `json:"eventTimeFeatureName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#event_time_feature_name SagemakerFeatureGroup#event_time_feature_name}.
+	EventTimeFeatureName *string `json:"eventTimeFeatureName" yaml:"eventTimeFeatureName"`
 	// feature_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#feature_definition SagemakerFeatureGroup#feature_definition}
-	FeatureDefinition *[]*SagemakerFeatureGroupFeatureDefinition `json:"featureDefinition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#feature_group_name SagemakerFeatureGroup#feature_group_name}.
-	FeatureGroupName *string `json:"featureGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#record_identifier_feature_name SagemakerFeatureGroup#record_identifier_feature_name}.
-	RecordIdentifierFeatureName *string `json:"recordIdentifierFeatureName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#role_arn SagemakerFeatureGroup#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#description SagemakerFeatureGroup#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#feature_definition SagemakerFeatureGroup#feature_definition}
+	FeatureDefinition interface{} `json:"featureDefinition" yaml:"featureDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#feature_group_name SagemakerFeatureGroup#feature_group_name}.
+	FeatureGroupName *string `json:"featureGroupName" yaml:"featureGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#record_identifier_feature_name SagemakerFeatureGroup#record_identifier_feature_name}.
+	RecordIdentifierFeatureName *string `json:"recordIdentifierFeatureName" yaml:"recordIdentifierFeatureName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#role_arn SagemakerFeatureGroup#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#description SagemakerFeatureGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 	// offline_store_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#offline_store_config SagemakerFeatureGroup#offline_store_config}
-	OfflineStoreConfig *SagemakerFeatureGroupOfflineStoreConfig `json:"offlineStoreConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#offline_store_config SagemakerFeatureGroup#offline_store_config}
+	OfflineStoreConfig *SagemakerFeatureGroupOfflineStoreConfig `json:"offlineStoreConfig" yaml:"offlineStoreConfig"`
 	// online_store_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#online_store_config SagemakerFeatureGroup#online_store_config}
-	OnlineStoreConfig *SagemakerFeatureGroupOnlineStoreConfig `json:"onlineStoreConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#tags SagemakerFeatureGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#tags_all SagemakerFeatureGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#online_store_config SagemakerFeatureGroup#online_store_config}
+	OnlineStoreConfig *SagemakerFeatureGroupOnlineStoreConfig `json:"onlineStoreConfig" yaml:"onlineStoreConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#tags SagemakerFeatureGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#tags_all SagemakerFeatureGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerFeatureGroupFeatureDefinition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#feature_name SagemakerFeatureGroup#feature_name}.
-	FeatureName *string `json:"featureName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#feature_type SagemakerFeatureGroup#feature_type}.
-	FeatureType *string `json:"featureType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#feature_name SagemakerFeatureGroup#feature_name}.
+	FeatureName *string `json:"featureName" yaml:"featureName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#feature_type SagemakerFeatureGroup#feature_type}.
+	FeatureType *string `json:"featureType" yaml:"featureType"`
 }
 
 type SagemakerFeatureGroupOfflineStoreConfig struct {
 	// s3_storage_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#s3_storage_config SagemakerFeatureGroup#s3_storage_config}
-	S3StorageConfig *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig `json:"s3StorageConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#s3_storage_config SagemakerFeatureGroup#s3_storage_config}
+	S3StorageConfig *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig `json:"s3StorageConfig" yaml:"s3StorageConfig"`
 	// data_catalog_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#data_catalog_config SagemakerFeatureGroup#data_catalog_config}
-	DataCatalogConfig *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig `json:"dataCatalogConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#disable_glue_table_creation SagemakerFeatureGroup#disable_glue_table_creation}.
-	DisableGlueTableCreation interface{} `json:"disableGlueTableCreation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#data_catalog_config SagemakerFeatureGroup#data_catalog_config}
+	DataCatalogConfig *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig `json:"dataCatalogConfig" yaml:"dataCatalogConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#disable_glue_table_creation SagemakerFeatureGroup#disable_glue_table_creation}.
+	DisableGlueTableCreation interface{} `json:"disableGlueTableCreation" yaml:"disableGlueTableCreation"`
 }
 
 type SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#catalog SagemakerFeatureGroup#catalog}.
-	Catalog *string `json:"catalog"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#database SagemakerFeatureGroup#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#table_name SagemakerFeatureGroup#table_name}.
-	TableName *string `json:"tableName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#catalog SagemakerFeatureGroup#catalog}.
+	Catalog *string `json:"catalog" yaml:"catalog"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#database SagemakerFeatureGroup#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#table_name SagemakerFeatureGroup#table_name}.
+	TableName *string `json:"tableName" yaml:"tableName"`
 }
 
 type SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference interface {
@@ -14627,12 +18661,17 @@ type SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference int
 	TableNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalog()
@@ -14735,8 +18774,8 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutpu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14745,7 +18784,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutpu
 	return returns
 }
 
-func NewSagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference {
+func NewSagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference{}
@@ -14759,7 +18798,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference(
 	return &j
 }
 
-func NewSagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference_Override(s SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference_Override(s SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14817,7 +18856,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutpu
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14826,12 +18865,40 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutpu
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14868,12 +18935,54 @@ func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutpu
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14948,12 +19057,17 @@ type SagemakerFeatureGroupOfflineStoreConfigOutputReference interface {
 	S3StorageConfigInput() *SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDataCatalogConfig(value *SagemakerFeatureGroupOfflineStoreConfigDataCatalogConfig)
@@ -15057,8 +19171,8 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15067,7 +19181,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) Terra
 	return returns
 }
 
-func NewSagemakerFeatureGroupOfflineStoreConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOfflineStoreConfigOutputReference {
+func NewSagemakerFeatureGroupOfflineStoreConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOfflineStoreConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference{}
@@ -15081,7 +19195,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigOutputReference(terraformResource
 	return &j
 }
 
-func NewSagemakerFeatureGroupOfflineStoreConfigOutputReference_Override(s SagemakerFeatureGroupOfflineStoreConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFeatureGroupOfflineStoreConfigOutputReference_Override(s SagemakerFeatureGroupOfflineStoreConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15123,7 +19237,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15132,12 +19246,40 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) SetTe
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15174,12 +19316,54 @@ func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetNu
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15248,10 +19432,10 @@ func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigOutputReference) Reset
 }
 
 type SagemakerFeatureGroupOfflineStoreConfigS3StorageConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#s3_uri SagemakerFeatureGroup#s3_uri}.
-	S3Uri *string `json:"s3Uri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#kms_key_id SagemakerFeatureGroup#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#s3_uri SagemakerFeatureGroup#s3_uri}.
+	S3Uri *string `json:"s3Uri" yaml:"s3Uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#kms_key_id SagemakerFeatureGroup#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 }
 
 type SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference interface {
@@ -15268,12 +19452,17 @@ type SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference inter
 	S3UriInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKeyId()
@@ -15354,8 +19543,8 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputR
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15364,7 +19553,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputR
 	return returns
 }
 
-func NewSagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference {
+func NewSagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference{}
@@ -15378,7 +19567,7 @@ func NewSagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference(te
 	return &j
 }
 
-func NewSagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference_Override(s SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference_Override(s SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15428,7 +19617,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputR
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15437,12 +19626,40 @@ func (j *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputR
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15479,12 +19696,54 @@ func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputR
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15529,12 +19788,12 @@ func (s *jsiiProxy_SagemakerFeatureGroupOfflineStoreConfigS3StorageConfigOutputR
 }
 
 type SagemakerFeatureGroupOnlineStoreConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#enable_online_store SagemakerFeatureGroup#enable_online_store}.
-	EnableOnlineStore interface{} `json:"enableOnlineStore"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#enable_online_store SagemakerFeatureGroup#enable_online_store}.
+	EnableOnlineStore interface{} `json:"enableOnlineStore" yaml:"enableOnlineStore"`
 	// security_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#security_config SagemakerFeatureGroup#security_config}
-	SecurityConfig *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig `json:"securityConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#security_config SagemakerFeatureGroup#security_config}
+	SecurityConfig *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig `json:"securityConfig" yaml:"securityConfig"`
 }
 
 type SagemakerFeatureGroupOnlineStoreConfigOutputReference interface {
@@ -15550,12 +19809,17 @@ type SagemakerFeatureGroupOnlineStoreConfigOutputReference interface {
 	SecurityConfigInput() *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSecurityConfig(value *SagemakerFeatureGroupOnlineStoreConfigSecurityConfig)
@@ -15638,8 +19902,8 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15648,7 +19912,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) Terraf
 	return returns
 }
 
-func NewSagemakerFeatureGroupOnlineStoreConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOnlineStoreConfigOutputReference {
+func NewSagemakerFeatureGroupOnlineStoreConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOnlineStoreConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference{}
@@ -15662,7 +19926,7 @@ func NewSagemakerFeatureGroupOnlineStoreConfigOutputReference(terraformResource 
 	return &j
 }
 
-func NewSagemakerFeatureGroupOnlineStoreConfigOutputReference_Override(s SagemakerFeatureGroupOnlineStoreConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFeatureGroupOnlineStoreConfigOutputReference_Override(s SagemakerFeatureGroupOnlineStoreConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15704,7 +19968,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15713,12 +19977,40 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) SetTer
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15755,12 +20047,54 @@ func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetNum
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15821,8 +20155,8 @@ func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigOutputReference) ResetS
 }
 
 type SagemakerFeatureGroupOnlineStoreConfigSecurityConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group.html#kms_key_id SagemakerFeatureGroup#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_feature_group#kms_key_id SagemakerFeatureGroup#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 }
 
 type SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference interface {
@@ -15836,12 +20170,17 @@ type SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference interfa
 	KmsKeyIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKeyId()
@@ -15902,8 +20241,8 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputRef
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15912,7 +20251,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputRef
 	return returns
 }
 
-func NewSagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference {
+func NewSagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference{}
@@ -15926,7 +20265,7 @@ func NewSagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference(terr
 	return &j
 }
 
-func NewSagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference_Override(s SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference_Override(s SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15968,7 +20307,7 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputRef
 	)
 }
 
-func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15977,12 +20316,40 @@ func (j *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputRef
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16019,12 +20386,54 @@ func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputRef
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16068,14 +20477,14 @@ func (s *jsiiProxy_SagemakerFeatureGroupOnlineStoreConfigSecurityConfigOutputRef
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html aws_sagemaker_flow_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition aws_sagemaker_flow_definition}.
 type SagemakerFlowDefinition interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FlowDefinitionName() *string
@@ -16101,20 +20510,25 @@ type SagemakerFlowDefinition interface {
 	RoleArn() *string
 	SetRoleArn(val *string)
 	RoleArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutHumanLoopActivationConfig(value *SagemakerFlowDefinitionHumanLoopActivationConfig)
@@ -16167,8 +20581,8 @@ func (j *jsiiProxy_SagemakerFlowDefinition) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFlowDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16377,8 +20791,8 @@ func (j *jsiiProxy_SagemakerFlowDefinition) RoleArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFlowDefinition) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -16387,8 +20801,8 @@ func (j *jsiiProxy_SagemakerFlowDefinition) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFlowDefinition) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -16397,8 +20811,8 @@ func (j *jsiiProxy_SagemakerFlowDefinition) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFlowDefinition) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -16407,8 +20821,8 @@ func (j *jsiiProxy_SagemakerFlowDefinition) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerFlowDefinition) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -16447,7 +20861,7 @@ func (j *jsiiProxy_SagemakerFlowDefinition) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html aws_sagemaker_flow_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition aws_sagemaker_flow_definition} Resource.
 func NewSagemakerFlowDefinition(scope constructs.Construct, id *string, config *SagemakerFlowDefinitionConfig) SagemakerFlowDefinition {
 	_init_.Initialize()
 
@@ -16462,7 +20876,7 @@ func NewSagemakerFlowDefinition(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html aws_sagemaker_flow_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition aws_sagemaker_flow_definition} Resource.
 func NewSagemakerFlowDefinition_Override(s SagemakerFlowDefinition, scope constructs.Construct, id *string, config *SagemakerFlowDefinitionConfig) {
 	_init_.Initialize()
 
@@ -16473,7 +20887,7 @@ func NewSagemakerFlowDefinition_Override(s SagemakerFlowDefinition, scope constr
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerFlowDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -16521,7 +20935,7 @@ func (j *jsiiProxy_SagemakerFlowDefinition) SetRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerFlowDefinition) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -16529,7 +20943,7 @@ func (j *jsiiProxy_SagemakerFlowDefinition) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinition) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerFlowDefinition) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -16577,12 +20991,40 @@ func (s *jsiiProxy_SagemakerFlowDefinition) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16619,12 +21061,54 @@ func (s *jsiiProxy_SagemakerFlowDefinition) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16789,49 +21273,49 @@ func (s *jsiiProxy_SagemakerFlowDefinition) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerFlowDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#flow_definition_name SagemakerFlowDefinition#flow_definition_name}.
-	FlowDefinitionName *string `json:"flowDefinitionName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#flow_definition_name SagemakerFlowDefinition#flow_definition_name}.
+	FlowDefinitionName *string `json:"flowDefinitionName" yaml:"flowDefinitionName"`
 	// human_loop_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#human_loop_config SagemakerFlowDefinition#human_loop_config}
-	HumanLoopConfig *SagemakerFlowDefinitionHumanLoopConfig `json:"humanLoopConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#human_loop_config SagemakerFlowDefinition#human_loop_config}
+	HumanLoopConfig *SagemakerFlowDefinitionHumanLoopConfig `json:"humanLoopConfig" yaml:"humanLoopConfig"`
 	// output_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#output_config SagemakerFlowDefinition#output_config}
-	OutputConfig *SagemakerFlowDefinitionOutputConfig `json:"outputConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#role_arn SagemakerFlowDefinition#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#output_config SagemakerFlowDefinition#output_config}
+	OutputConfig *SagemakerFlowDefinitionOutputConfig `json:"outputConfig" yaml:"outputConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#role_arn SagemakerFlowDefinition#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 	// human_loop_activation_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#human_loop_activation_config SagemakerFlowDefinition#human_loop_activation_config}
-	HumanLoopActivationConfig *SagemakerFlowDefinitionHumanLoopActivationConfig `json:"humanLoopActivationConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#human_loop_activation_config SagemakerFlowDefinition#human_loop_activation_config}
+	HumanLoopActivationConfig *SagemakerFlowDefinitionHumanLoopActivationConfig `json:"humanLoopActivationConfig" yaml:"humanLoopActivationConfig"`
 	// human_loop_request_source block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#human_loop_request_source SagemakerFlowDefinition#human_loop_request_source}
-	HumanLoopRequestSource *SagemakerFlowDefinitionHumanLoopRequestSource `json:"humanLoopRequestSource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#tags SagemakerFlowDefinition#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#tags_all SagemakerFlowDefinition#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#human_loop_request_source SagemakerFlowDefinition#human_loop_request_source}
+	HumanLoopRequestSource *SagemakerFlowDefinitionHumanLoopRequestSource `json:"humanLoopRequestSource" yaml:"humanLoopRequestSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#tags SagemakerFlowDefinition#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#tags_all SagemakerFlowDefinition#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerFlowDefinitionHumanLoopActivationConfig struct {
 	// human_loop_activation_conditions_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#human_loop_activation_conditions_config SagemakerFlowDefinition#human_loop_activation_conditions_config}
-	HumanLoopActivationConditionsConfig *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig `json:"humanLoopActivationConditionsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#human_loop_activation_conditions_config SagemakerFlowDefinition#human_loop_activation_conditions_config}
+	HumanLoopActivationConditionsConfig *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig `json:"humanLoopActivationConditionsConfig" yaml:"humanLoopActivationConditionsConfig"`
 }
 
 type SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#human_loop_activation_conditions SagemakerFlowDefinition#human_loop_activation_conditions}.
-	HumanLoopActivationConditions *string `json:"humanLoopActivationConditions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#human_loop_activation_conditions SagemakerFlowDefinition#human_loop_activation_conditions}.
+	HumanLoopActivationConditions *string `json:"humanLoopActivationConditions" yaml:"humanLoopActivationConditions"`
 }
 
 type SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference interface {
@@ -16845,12 +21329,17 @@ type SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditio
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -16910,8 +21399,8 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActi
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16920,7 +21409,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActi
 	return returns
 }
 
-func NewSagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference {
+func NewSagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference{}
@@ -16934,7 +21423,7 @@ func NewSagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationCondi
 	return &j
 }
 
-func NewSagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference_Override(s SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference_Override(s SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16976,7 +21465,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActi
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16985,12 +21474,40 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActi
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17027,12 +21544,54 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActi
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17078,12 +21637,17 @@ type SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutHumanLoopActivationConditionsConfig(value *SagemakerFlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfig)
@@ -17145,8 +21709,8 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17155,7 +21719,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReferen
 	return returns
 }
 
-func NewSagemakerFlowDefinitionHumanLoopActivationConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference {
+func NewSagemakerFlowDefinitionHumanLoopActivationConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference{}
@@ -17169,7 +21733,7 @@ func NewSagemakerFlowDefinitionHumanLoopActivationConfigOutputReference(terrafor
 	return &j
 }
 
-func NewSagemakerFlowDefinitionHumanLoopActivationConfigOutputReference_Override(s SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFlowDefinitionHumanLoopActivationConfigOutputReference_Override(s SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -17203,7 +21767,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReferen
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17212,12 +21776,40 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReferen
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17254,12 +21846,54 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReferen
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17312,26 +21946,26 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopActivationConfigOutputReferen
 }
 
 type SagemakerFlowDefinitionHumanLoopConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#human_task_ui_arn SagemakerFlowDefinition#human_task_ui_arn}.
-	HumanTaskUiArn *string `json:"humanTaskUiArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#task_count SagemakerFlowDefinition#task_count}.
-	TaskCount *float64 `json:"taskCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#task_description SagemakerFlowDefinition#task_description}.
-	TaskDescription *string `json:"taskDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#task_title SagemakerFlowDefinition#task_title}.
-	TaskTitle *string `json:"taskTitle"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#workteam_arn SagemakerFlowDefinition#workteam_arn}.
-	WorkteamArn *string `json:"workteamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#human_task_ui_arn SagemakerFlowDefinition#human_task_ui_arn}.
+	HumanTaskUiArn *string `json:"humanTaskUiArn" yaml:"humanTaskUiArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#task_count SagemakerFlowDefinition#task_count}.
+	TaskCount *float64 `json:"taskCount" yaml:"taskCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#task_description SagemakerFlowDefinition#task_description}.
+	TaskDescription *string `json:"taskDescription" yaml:"taskDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#task_title SagemakerFlowDefinition#task_title}.
+	TaskTitle *string `json:"taskTitle" yaml:"taskTitle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#workteam_arn SagemakerFlowDefinition#workteam_arn}.
+	WorkteamArn *string `json:"workteamArn" yaml:"workteamArn"`
 	// public_workforce_task_price block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#public_workforce_task_price SagemakerFlowDefinition#public_workforce_task_price}
-	PublicWorkforceTaskPrice *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice `json:"publicWorkforceTaskPrice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#task_availability_lifetime_in_seconds SagemakerFlowDefinition#task_availability_lifetime_in_seconds}.
-	TaskAvailabilityLifetimeInSeconds *float64 `json:"taskAvailabilityLifetimeInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#task_keywords SagemakerFlowDefinition#task_keywords}.
-	TaskKeywords *[]*string `json:"taskKeywords"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#task_time_limit_in_seconds SagemakerFlowDefinition#task_time_limit_in_seconds}.
-	TaskTimeLimitInSeconds *float64 `json:"taskTimeLimitInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#public_workforce_task_price SagemakerFlowDefinition#public_workforce_task_price}
+	PublicWorkforceTaskPrice *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice `json:"publicWorkforceTaskPrice" yaml:"publicWorkforceTaskPrice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#task_availability_lifetime_in_seconds SagemakerFlowDefinition#task_availability_lifetime_in_seconds}.
+	TaskAvailabilityLifetimeInSeconds *float64 `json:"taskAvailabilityLifetimeInSeconds" yaml:"taskAvailabilityLifetimeInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#task_keywords SagemakerFlowDefinition#task_keywords}.
+	TaskKeywords *[]*string `json:"taskKeywords" yaml:"taskKeywords"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#task_time_limit_in_seconds SagemakerFlowDefinition#task_time_limit_in_seconds}.
+	TaskTimeLimitInSeconds *float64 `json:"taskTimeLimitInSeconds" yaml:"taskTimeLimitInSeconds"`
 }
 
 type SagemakerFlowDefinitionHumanLoopConfigOutputReference interface {
@@ -17365,15 +21999,20 @@ type SagemakerFlowDefinitionHumanLoopConfigOutputReference interface {
 	TaskTitleInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WorkteamArn() *string
 	SetWorkteamArn(val *string)
 	WorkteamArnInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutPublicWorkforceTaskPrice(value *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice)
@@ -17578,8 +22217,8 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17608,7 +22247,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) Workte
 	return returns
 }
 
-func NewSagemakerFlowDefinitionHumanLoopConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopConfigOutputReference {
+func NewSagemakerFlowDefinitionHumanLoopConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference{}
@@ -17622,7 +22261,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigOutputReference(terraformResource 
 	return &j
 }
 
-func NewSagemakerFlowDefinitionHumanLoopConfigOutputReference_Override(s SagemakerFlowDefinitionHumanLoopConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFlowDefinitionHumanLoopConfigOutputReference_Override(s SagemakerFlowDefinitionHumanLoopConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -17712,7 +22351,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17729,12 +22368,40 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) SetWor
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17771,12 +22438,54 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetNum
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17855,17 +22564,17 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigOutputReference) ResetT
 type SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPrice struct {
 	// amount_in_usd block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#amount_in_usd SagemakerFlowDefinition#amount_in_usd}
-	AmountInUsd *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd `json:"amountInUsd"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#amount_in_usd SagemakerFlowDefinition#amount_in_usd}
+	AmountInUsd *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd `json:"amountInUsd" yaml:"amountInUsd"`
 }
 
 type SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#cents SagemakerFlowDefinition#cents}.
-	Cents *float64 `json:"cents"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#dollars SagemakerFlowDefinition#dollars}.
-	Dollars *float64 `json:"dollars"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#tenth_fractions_of_a_cent SagemakerFlowDefinition#tenth_fractions_of_a_cent}.
-	TenthFractionsOfACent *float64 `json:"tenthFractionsOfACent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#cents SagemakerFlowDefinition#cents}.
+	Cents *float64 `json:"cents" yaml:"cents"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#dollars SagemakerFlowDefinition#dollars}.
+	Dollars *float64 `json:"dollars" yaml:"dollars"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#tenth_fractions_of_a_cent SagemakerFlowDefinition#tenth_fractions_of_a_cent}.
+	TenthFractionsOfACent *float64 `json:"tenthFractionsOfACent" yaml:"tenthFractionsOfACent"`
 }
 
 type SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference interface {
@@ -17885,12 +22594,17 @@ type SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOu
 	TenthFractionsOfACentInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCents()
@@ -17993,8 +22707,8 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18003,7 +22717,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	return returns
 }
 
-func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference {
+func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference{}
@@ -18017,7 +22731,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUs
 	return &j
 }
 
-func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference_Override(s SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference_Override(s SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18075,7 +22789,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18084,12 +22798,40 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18126,12 +22868,54 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18201,12 +22985,17 @@ type SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReferen
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAmountInUsd(value *SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd)
@@ -18268,8 +23057,8 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18278,7 +23067,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	return returns
 }
 
-func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference {
+func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference{}
@@ -18292,7 +23081,7 @@ func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputRefe
 	return &j
 }
 
-func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference_Override(s SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference_Override(s SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18326,7 +23115,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18335,12 +23124,40 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18377,12 +23194,54 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18435,8 +23294,8 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopConfigPublicWorkforceTaskPric
 }
 
 type SagemakerFlowDefinitionHumanLoopRequestSource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#aws_managed_human_loop_request_source SagemakerFlowDefinition#aws_managed_human_loop_request_source}.
-	AwsManagedHumanLoopRequestSource *string `json:"awsManagedHumanLoopRequestSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#aws_managed_human_loop_request_source SagemakerFlowDefinition#aws_managed_human_loop_request_source}.
+	AwsManagedHumanLoopRequestSource *string `json:"awsManagedHumanLoopRequestSource" yaml:"awsManagedHumanLoopRequestSource"`
 }
 
 type SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference interface {
@@ -18450,12 +23309,17 @@ type SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -18515,8 +23379,8 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18525,7 +23389,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 	return returns
 }
 
-func NewSagemakerFlowDefinitionHumanLoopRequestSourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference {
+func NewSagemakerFlowDefinitionHumanLoopRequestSourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference{}
@@ -18539,7 +23403,7 @@ func NewSagemakerFlowDefinitionHumanLoopRequestSourceOutputReference(terraformRe
 	return &j
 }
 
-func NewSagemakerFlowDefinitionHumanLoopRequestSourceOutputReference_Override(s SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFlowDefinitionHumanLoopRequestSourceOutputReference_Override(s SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18581,7 +23445,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18590,12 +23454,40 @@ func (j *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18632,12 +23524,54 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18674,10 +23608,10 @@ func (s *jsiiProxy_SagemakerFlowDefinitionHumanLoopRequestSourceOutputReference)
 }
 
 type SagemakerFlowDefinitionOutputConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#s3_output_path SagemakerFlowDefinition#s3_output_path}.
-	S3OutputPath *string `json:"s3OutputPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition.html#kms_key_id SagemakerFlowDefinition#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#s3_output_path SagemakerFlowDefinition#s3_output_path}.
+	S3OutputPath *string `json:"s3OutputPath" yaml:"s3OutputPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_flow_definition#kms_key_id SagemakerFlowDefinition#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 }
 
 type SagemakerFlowDefinitionOutputConfigOutputReference interface {
@@ -18694,12 +23628,17 @@ type SagemakerFlowDefinitionOutputConfigOutputReference interface {
 	S3OutputPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKeyId()
@@ -18780,8 +23719,8 @@ func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18790,7 +23729,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) Terraform
 	return returns
 }
 
-func NewSagemakerFlowDefinitionOutputConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionOutputConfigOutputReference {
+func NewSagemakerFlowDefinitionOutputConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerFlowDefinitionOutputConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference{}
@@ -18804,7 +23743,7 @@ func NewSagemakerFlowDefinitionOutputConfigOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewSagemakerFlowDefinitionOutputConfigOutputReference_Override(s SagemakerFlowDefinitionOutputConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerFlowDefinitionOutputConfigOutputReference_Override(s SagemakerFlowDefinitionOutputConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18854,7 +23793,7 @@ func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18863,12 +23802,40 @@ func (j *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) SetTerraf
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18905,12 +23872,54 @@ func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetNumber
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18954,14 +23963,14 @@ func (s *jsiiProxy_SagemakerFlowDefinitionOutputConfigOutputReference) ResetKmsK
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html aws_sagemaker_human_task_ui}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui aws_sagemaker_human_task_ui}.
 type SagemakerHumanTaskUi interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -18976,22 +23985,27 @@ type SagemakerHumanTaskUi interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UiTemplate() SagemakerHumanTaskUiUiTemplateOutputReference
 	UiTemplateInput() *SagemakerHumanTaskUiUiTemplate
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutUiTemplate(value *SagemakerHumanTaskUiUiTemplate)
@@ -19039,8 +24053,8 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerHumanTaskUi) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19149,8 +24163,8 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerHumanTaskUi) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -19159,8 +24173,8 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerHumanTaskUi) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -19169,8 +24183,8 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerHumanTaskUi) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -19179,8 +24193,8 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerHumanTaskUi) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -19239,7 +24253,7 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) UiTemplateInput() *SagemakerHumanTaskUi
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html aws_sagemaker_human_task_ui} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui aws_sagemaker_human_task_ui} Resource.
 func NewSagemakerHumanTaskUi(scope constructs.Construct, id *string, config *SagemakerHumanTaskUiConfig) SagemakerHumanTaskUi {
 	_init_.Initialize()
 
@@ -19254,7 +24268,7 @@ func NewSagemakerHumanTaskUi(scope constructs.Construct, id *string, config *Sag
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html aws_sagemaker_human_task_ui} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui aws_sagemaker_human_task_ui} Resource.
 func NewSagemakerHumanTaskUi_Override(s SagemakerHumanTaskUi, scope constructs.Construct, id *string, config *SagemakerHumanTaskUiConfig) {
 	_init_.Initialize()
 
@@ -19265,7 +24279,7 @@ func NewSagemakerHumanTaskUi_Override(s SagemakerHumanTaskUi, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerHumanTaskUi) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19305,7 +24319,7 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerHumanTaskUi) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -19313,7 +24327,7 @@ func (j *jsiiProxy_SagemakerHumanTaskUi) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUi) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerHumanTaskUi) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -19361,12 +24375,40 @@ func (s *jsiiProxy_SagemakerHumanTaskUi) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUi) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerHumanTaskUi) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUi) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19403,12 +24445,54 @@ func (s *jsiiProxy_SagemakerHumanTaskUi) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUi) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUi) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerHumanTaskUi) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUi) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19533,28 +24617,28 @@ func (s *jsiiProxy_SagemakerHumanTaskUi) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerHumanTaskUiConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html#human_task_ui_name SagemakerHumanTaskUi#human_task_ui_name}.
-	HumanTaskUiName *string `json:"humanTaskUiName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui#human_task_ui_name SagemakerHumanTaskUi#human_task_ui_name}.
+	HumanTaskUiName *string `json:"humanTaskUiName" yaml:"humanTaskUiName"`
 	// ui_template block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html#ui_template SagemakerHumanTaskUi#ui_template}
-	UiTemplate *SagemakerHumanTaskUiUiTemplate `json:"uiTemplate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html#tags SagemakerHumanTaskUi#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html#tags_all SagemakerHumanTaskUi#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui#ui_template SagemakerHumanTaskUi#ui_template}
+	UiTemplate *SagemakerHumanTaskUiUiTemplate `json:"uiTemplate" yaml:"uiTemplate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui#tags SagemakerHumanTaskUi#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui#tags_all SagemakerHumanTaskUi#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerHumanTaskUiUiTemplate struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui.html#content SagemakerHumanTaskUi#content}.
-	Content *string `json:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_human_task_ui#content SagemakerHumanTaskUi#content}.
+	Content *string `json:"content" yaml:"content"`
 }
 
 type SagemakerHumanTaskUiUiTemplateOutputReference interface {
@@ -19562,18 +24646,25 @@ type SagemakerHumanTaskUiUiTemplateOutputReference interface {
 	Content() *string
 	SetContent(val *string)
 	ContentInput() *string
+	ContentSha256() *string
 	InternalValue() *SagemakerHumanTaskUiUiTemplate
 	SetInternalValue(val *SagemakerHumanTaskUiUiTemplate)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Url() *string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetContent()
@@ -19599,6 +24690,16 @@ func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) ContentInput()
 	_jsii_.Get(
 		j,
 		"contentInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) ContentSha256() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentSha256",
 		&returns,
 	)
 	return returns
@@ -19634,8 +24735,8 @@ func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19644,7 +24745,17 @@ func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) TerraformResou
 	return returns
 }
 
-func NewSagemakerHumanTaskUiUiTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerHumanTaskUiUiTemplateOutputReference {
+func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) Url() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"url",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerHumanTaskUiUiTemplateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerHumanTaskUiUiTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference{}
@@ -19658,7 +24769,7 @@ func NewSagemakerHumanTaskUiUiTemplateOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewSagemakerHumanTaskUiUiTemplateOutputReference_Override(s SagemakerHumanTaskUiUiTemplateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerHumanTaskUiUiTemplateOutputReference_Override(s SagemakerHumanTaskUiUiTemplateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -19700,7 +24811,7 @@ func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19709,12 +24820,40 @@ func (j *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19751,12 +24890,54 @@ func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19800,14 +24981,14 @@ func (s *jsiiProxy_SagemakerHumanTaskUiUiTemplateOutputReference) ResetContent()
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html aws_sagemaker_image}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image aws_sagemaker_image}.
 type SagemakerImage interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -19831,20 +25012,25 @@ type SagemakerImage interface {
 	RoleArn() *string
 	SetRoleArn(val *string)
 	RoleArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -19893,8 +25079,8 @@ func (j *jsiiProxy_SagemakerImage) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerImage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerImage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20063,8 +25249,8 @@ func (j *jsiiProxy_SagemakerImage) RoleArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerImage) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerImage) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -20073,8 +25259,8 @@ func (j *jsiiProxy_SagemakerImage) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerImage) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerImage) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -20083,8 +25269,8 @@ func (j *jsiiProxy_SagemakerImage) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerImage) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerImage) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -20093,8 +25279,8 @@ func (j *jsiiProxy_SagemakerImage) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerImage) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerImage) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -20133,7 +25319,7 @@ func (j *jsiiProxy_SagemakerImage) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html aws_sagemaker_image} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image aws_sagemaker_image} Resource.
 func NewSagemakerImage(scope constructs.Construct, id *string, config *SagemakerImageConfig) SagemakerImage {
 	_init_.Initialize()
 
@@ -20148,7 +25334,7 @@ func NewSagemakerImage(scope constructs.Construct, id *string, config *Sagemaker
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html aws_sagemaker_image} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image aws_sagemaker_image} Resource.
 func NewSagemakerImage_Override(s SagemakerImage, scope constructs.Construct, id *string, config *SagemakerImageConfig) {
 	_init_.Initialize()
 
@@ -20159,7 +25345,7 @@ func NewSagemakerImage_Override(s SagemakerImage, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_SagemakerImage) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerImage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20223,7 +25409,7 @@ func (j *jsiiProxy_SagemakerImage) SetRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerImage) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerImage) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -20231,7 +25417,7 @@ func (j *jsiiProxy_SagemakerImage) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerImage) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerImage) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -20279,12 +25465,40 @@ func (s *jsiiProxy_SagemakerImage) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerImage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerImage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerImage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20321,12 +25535,54 @@ func (s *jsiiProxy_SagemakerImage) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerImage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerImage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerImage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerImage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20459,28 +25715,28 @@ func (s *jsiiProxy_SagemakerImage) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerImageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html#image_name SagemakerImage#image_name}.
-	ImageName *string `json:"imageName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html#role_arn SagemakerImage#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html#description SagemakerImage#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html#display_name SagemakerImage#display_name}.
-	DisplayName *string `json:"displayName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html#tags SagemakerImage#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image.html#tags_all SagemakerImage#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image#image_name SagemakerImage#image_name}.
+	ImageName *string `json:"imageName" yaml:"imageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image#role_arn SagemakerImage#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image#description SagemakerImage#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image#display_name SagemakerImage#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image#tags SagemakerImage#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image#tags_all SagemakerImage#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version.html aws_sagemaker_image_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version aws_sagemaker_image_version}.
 type SagemakerImageVersion interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -20490,8 +25746,8 @@ type SagemakerImageVersion interface {
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
 	ContainerImage() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -20512,10 +25768,15 @@ type SagemakerImageVersion interface {
 	TerraformResourceType() *string
 	Version() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -20590,8 +25851,8 @@ func (j *jsiiProxy_SagemakerImageVersion) ContainerImage() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerImageVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerImageVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20750,7 +26011,7 @@ func (j *jsiiProxy_SagemakerImageVersion) Version() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version.html aws_sagemaker_image_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version aws_sagemaker_image_version} Resource.
 func NewSagemakerImageVersion(scope constructs.Construct, id *string, config *SagemakerImageVersionConfig) SagemakerImageVersion {
 	_init_.Initialize()
 
@@ -20765,7 +26026,7 @@ func NewSagemakerImageVersion(scope constructs.Construct, id *string, config *Sa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version.html aws_sagemaker_image_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version aws_sagemaker_image_version} Resource.
 func NewSagemakerImageVersion_Override(s SagemakerImageVersion, scope constructs.Construct, id *string, config *SagemakerImageVersionConfig) {
 	_init_.Initialize()
 
@@ -20784,7 +26045,7 @@ func (j *jsiiProxy_SagemakerImageVersion) SetBaseImage(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerImageVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerImageVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20864,12 +26125,40 @@ func (s *jsiiProxy_SagemakerImageVersion) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerImageVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerImageVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerImageVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20906,12 +26195,54 @@ func (s *jsiiProxy_SagemakerImageVersion) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerImageVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerImageVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerImageVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerImageVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21012,30 +26343,30 @@ func (s *jsiiProxy_SagemakerImageVersion) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerImageVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version.html#base_image SagemakerImageVersion#base_image}.
-	BaseImage *string `json:"baseImage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version.html#image_name SagemakerImageVersion#image_name}.
-	ImageName *string `json:"imageName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version#base_image SagemakerImageVersion#base_image}.
+	BaseImage *string `json:"baseImage" yaml:"baseImage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_image_version#image_name SagemakerImageVersion#image_name}.
+	ImageName *string `json:"imageName" yaml:"imageName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html aws_sagemaker_model}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model aws_sagemaker_model}.
 type SagemakerModel interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Container() *[]*SagemakerModelContainer
-	SetContainer(val *[]*SagemakerModelContainer)
-	ContainerInput() *[]*SagemakerModelContainer
-	Count() interface{}
-	SetCount(val interface{})
+	Container() interface{}
+	SetContainer(val interface{})
+	ContainerInput() interface{}
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EnableNetworkIsolation() interface{}
@@ -21060,22 +26391,27 @@ type SagemakerModel interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcConfig() SagemakerModelVpcConfigOutputReference
 	VpcConfigInput() *SagemakerModelVpcConfig
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutInferenceExecutionConfig(value *SagemakerModelInferenceExecutionConfig)
@@ -21131,8 +26467,8 @@ func (j *jsiiProxy_SagemakerModel) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModel) Container() *[]*SagemakerModelContainer {
-	var returns *[]*SagemakerModelContainer
+func (j *jsiiProxy_SagemakerModel) Container() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"container",
@@ -21141,8 +26477,8 @@ func (j *jsiiProxy_SagemakerModel) Container() *[]*SagemakerModelContainer {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModel) ContainerInput() *[]*SagemakerModelContainer {
-	var returns *[]*SagemakerModelContainer
+func (j *jsiiProxy_SagemakerModel) ContainerInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"containerInput",
@@ -21151,8 +26487,8 @@ func (j *jsiiProxy_SagemakerModel) ContainerInput() *[]*SagemakerModelContainer 
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -21341,8 +26677,8 @@ func (j *jsiiProxy_SagemakerModel) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModel) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModel) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -21351,8 +26687,8 @@ func (j *jsiiProxy_SagemakerModel) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModel) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModel) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -21361,8 +26697,8 @@ func (j *jsiiProxy_SagemakerModel) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModel) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModel) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -21371,8 +26707,8 @@ func (j *jsiiProxy_SagemakerModel) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModel) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModel) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -21431,7 +26767,7 @@ func (j *jsiiProxy_SagemakerModel) VpcConfigInput() *SagemakerModelVpcConfig {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html aws_sagemaker_model} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model aws_sagemaker_model} Resource.
 func NewSagemakerModel(scope constructs.Construct, id *string, config *SagemakerModelConfig) SagemakerModel {
 	_init_.Initialize()
 
@@ -21446,7 +26782,7 @@ func NewSagemakerModel(scope constructs.Construct, id *string, config *Sagemaker
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html aws_sagemaker_model} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model aws_sagemaker_model} Resource.
 func NewSagemakerModel_Override(s SagemakerModel, scope constructs.Construct, id *string, config *SagemakerModelConfig) {
 	_init_.Initialize()
 
@@ -21457,7 +26793,7 @@ func NewSagemakerModel_Override(s SagemakerModel, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_SagemakerModel) SetContainer(val *[]*SagemakerModelContainer) {
+func (j *jsiiProxy_SagemakerModel) SetContainer(val interface{}) {
 	_jsii_.Set(
 		j,
 		"container",
@@ -21465,7 +26801,7 @@ func (j *jsiiProxy_SagemakerModel) SetContainer(val *[]*SagemakerModelContainer)
 	)
 }
 
-func (j *jsiiProxy_SagemakerModel) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerModel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -21521,7 +26857,7 @@ func (j *jsiiProxy_SagemakerModel) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerModel) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerModel) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -21529,7 +26865,7 @@ func (j *jsiiProxy_SagemakerModel) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerModel) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerModel) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -21577,12 +26913,40 @@ func (s *jsiiProxy_SagemakerModel) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21619,12 +26983,54 @@ func (s *jsiiProxy_SagemakerModel) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21813,61 +27219,61 @@ func (s *jsiiProxy_SagemakerModel) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerModelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#execution_role_arn SagemakerModel#execution_role_arn}.
-	ExecutionRoleArn *string `json:"executionRoleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#execution_role_arn SagemakerModel#execution_role_arn}.
+	ExecutionRoleArn *string `json:"executionRoleArn" yaml:"executionRoleArn"`
 	// container block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#container SagemakerModel#container}
-	Container *[]*SagemakerModelContainer `json:"container"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#enable_network_isolation SagemakerModel#enable_network_isolation}.
-	EnableNetworkIsolation interface{} `json:"enableNetworkIsolation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#container SagemakerModel#container}
+	Container interface{} `json:"container" yaml:"container"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#enable_network_isolation SagemakerModel#enable_network_isolation}.
+	EnableNetworkIsolation interface{} `json:"enableNetworkIsolation" yaml:"enableNetworkIsolation"`
 	// inference_execution_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#inference_execution_config SagemakerModel#inference_execution_config}
-	InferenceExecutionConfig *SagemakerModelInferenceExecutionConfig `json:"inferenceExecutionConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#name SagemakerModel#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#inference_execution_config SagemakerModel#inference_execution_config}
+	InferenceExecutionConfig *SagemakerModelInferenceExecutionConfig `json:"inferenceExecutionConfig" yaml:"inferenceExecutionConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#name SagemakerModel#name}.
+	Name *string `json:"name" yaml:"name"`
 	// primary_container block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#primary_container SagemakerModel#primary_container}
-	PrimaryContainer *SagemakerModelPrimaryContainer `json:"primaryContainer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#tags SagemakerModel#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#tags_all SagemakerModel#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#primary_container SagemakerModel#primary_container}
+	PrimaryContainer *SagemakerModelPrimaryContainer `json:"primaryContainer" yaml:"primaryContainer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#tags SagemakerModel#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#tags_all SagemakerModel#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// vpc_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#vpc_config SagemakerModel#vpc_config}
-	VpcConfig *SagemakerModelVpcConfig `json:"vpcConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#vpc_config SagemakerModel#vpc_config}
+	VpcConfig *SagemakerModelVpcConfig `json:"vpcConfig" yaml:"vpcConfig"`
 }
 
 type SagemakerModelContainer struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#image SagemakerModel#image}.
-	Image *string `json:"image"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#container_hostname SagemakerModel#container_hostname}.
-	ContainerHostname *string `json:"containerHostname"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#environment SagemakerModel#environment}.
-	Environment interface{} `json:"environment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#image SagemakerModel#image}.
+	Image *string `json:"image" yaml:"image"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#container_hostname SagemakerModel#container_hostname}.
+	ContainerHostname *string `json:"containerHostname" yaml:"containerHostname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#environment SagemakerModel#environment}.
+	Environment *map[string]*string `json:"environment" yaml:"environment"`
 	// image_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#image_config SagemakerModel#image_config}
-	ImageConfig *SagemakerModelContainerImageConfig `json:"imageConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#mode SagemakerModel#mode}.
-	Mode *string `json:"mode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#model_data_url SagemakerModel#model_data_url}.
-	ModelDataUrl *string `json:"modelDataUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#image_config SagemakerModel#image_config}
+	ImageConfig *SagemakerModelContainerImageConfig `json:"imageConfig" yaml:"imageConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#mode SagemakerModel#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#model_data_url SagemakerModel#model_data_url}.
+	ModelDataUrl *string `json:"modelDataUrl" yaml:"modelDataUrl"`
 }
 
 type SagemakerModelContainerImageConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#repository_access_mode SagemakerModel#repository_access_mode}.
-	RepositoryAccessMode *string `json:"repositoryAccessMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#repository_access_mode SagemakerModel#repository_access_mode}.
+	RepositoryAccessMode *string `json:"repositoryAccessMode" yaml:"repositoryAccessMode"`
 }
 
 type SagemakerModelContainerImageConfigOutputReference interface {
@@ -21881,12 +27287,17 @@ type SagemakerModelContainerImageConfigOutputReference interface {
 	RepositoryAccessModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -21946,8 +27357,8 @@ func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21956,7 +27367,7 @@ func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) TerraformR
 	return returns
 }
 
-func NewSagemakerModelContainerImageConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerModelContainerImageConfigOutputReference {
+func NewSagemakerModelContainerImageConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerModelContainerImageConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerModelContainerImageConfigOutputReference{}
@@ -21970,7 +27381,7 @@ func NewSagemakerModelContainerImageConfigOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewSagemakerModelContainerImageConfigOutputReference_Override(s SagemakerModelContainerImageConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerModelContainerImageConfigOutputReference_Override(s SagemakerModelContainerImageConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22012,7 +27423,7 @@ func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22021,12 +27432,40 @@ func (j *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22063,12 +27502,54 @@ func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetNumberA
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22105,8 +27586,8 @@ func (s *jsiiProxy_SagemakerModelContainerImageConfigOutputReference) Interpolat
 }
 
 type SagemakerModelInferenceExecutionConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#mode SagemakerModel#mode}.
-	Mode *string `json:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#mode SagemakerModel#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
 }
 
 type SagemakerModelInferenceExecutionConfigOutputReference interface {
@@ -22120,12 +27601,17 @@ type SagemakerModelInferenceExecutionConfigOutputReference interface {
 	ModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -22185,8 +27671,8 @@ func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22195,7 +27681,7 @@ func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) Terraf
 	return returns
 }
 
-func NewSagemakerModelInferenceExecutionConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerModelInferenceExecutionConfigOutputReference {
+func NewSagemakerModelInferenceExecutionConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerModelInferenceExecutionConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference{}
@@ -22209,7 +27695,7 @@ func NewSagemakerModelInferenceExecutionConfigOutputReference(terraformResource 
 	return &j
 }
 
-func NewSagemakerModelInferenceExecutionConfigOutputReference_Override(s SagemakerModelInferenceExecutionConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerModelInferenceExecutionConfigOutputReference_Override(s SagemakerModelInferenceExecutionConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22251,7 +27737,7 @@ func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22260,12 +27746,40 @@ func (j *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) SetTer
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22302,12 +27816,54 @@ func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetNum
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22343,14 +27899,14 @@ func (s *jsiiProxy_SagemakerModelInferenceExecutionConfigOutputReference) Interp
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group.html aws_sagemaker_model_package_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group aws_sagemaker_model_package_group}.
 type SagemakerModelPackageGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -22368,20 +27924,25 @@ type SagemakerModelPackageGroup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetModelPackageGroupDescription()
@@ -22429,8 +27990,8 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPackageGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -22559,8 +28120,8 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPackageGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -22569,8 +28130,8 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPackageGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -22579,8 +28140,8 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPackageGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -22589,8 +28150,8 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPackageGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -22629,7 +28190,7 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group.html aws_sagemaker_model_package_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group aws_sagemaker_model_package_group} Resource.
 func NewSagemakerModelPackageGroup(scope constructs.Construct, id *string, config *SagemakerModelPackageGroupConfig) SagemakerModelPackageGroup {
 	_init_.Initialize()
 
@@ -22644,7 +28205,7 @@ func NewSagemakerModelPackageGroup(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group.html aws_sagemaker_model_package_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group aws_sagemaker_model_package_group} Resource.
 func NewSagemakerModelPackageGroup_Override(s SagemakerModelPackageGroup, scope constructs.Construct, id *string, config *SagemakerModelPackageGroupConfig) {
 	_init_.Initialize()
 
@@ -22655,7 +28216,7 @@ func NewSagemakerModelPackageGroup_Override(s SagemakerModelPackageGroup, scope 
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerModelPackageGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -22703,7 +28264,7 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) SetProvider(val cdktf.TerraformPr
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerModelPackageGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -22711,7 +28272,7 @@ func (j *jsiiProxy_SagemakerModelPackageGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerModelPackageGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -22759,12 +28320,40 @@ func (s *jsiiProxy_SagemakerModelPackageGroup) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelPackageGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22801,12 +28390,54 @@ func (s *jsiiProxy_SagemakerModelPackageGroup) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelPackageGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22931,30 +28562,30 @@ func (s *jsiiProxy_SagemakerModelPackageGroup) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerModelPackageGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group.html#model_package_group_name SagemakerModelPackageGroup#model_package_group_name}.
-	ModelPackageGroupName *string `json:"modelPackageGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group.html#model_package_group_description SagemakerModelPackageGroup#model_package_group_description}.
-	ModelPackageGroupDescription *string `json:"modelPackageGroupDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group.html#tags SagemakerModelPackageGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group.html#tags_all SagemakerModelPackageGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group#model_package_group_name SagemakerModelPackageGroup#model_package_group_name}.
+	ModelPackageGroupName *string `json:"modelPackageGroupName" yaml:"modelPackageGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group#model_package_group_description SagemakerModelPackageGroup#model_package_group_description}.
+	ModelPackageGroupDescription *string `json:"modelPackageGroupDescription" yaml:"modelPackageGroupDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group#tags SagemakerModelPackageGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group#tags_all SagemakerModelPackageGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy.html aws_sagemaker_model_package_group_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy aws_sagemaker_model_package_group_policy}.
 type SagemakerModelPackageGroupPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -22976,10 +28607,15 @@ type SagemakerModelPackageGroupPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -23014,8 +28650,8 @@ func (j *jsiiProxy_SagemakerModelPackageGroupPolicy) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroupPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPackageGroupPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -23174,7 +28810,7 @@ func (j *jsiiProxy_SagemakerModelPackageGroupPolicy) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy.html aws_sagemaker_model_package_group_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy aws_sagemaker_model_package_group_policy} Resource.
 func NewSagemakerModelPackageGroupPolicy(scope constructs.Construct, id *string, config *SagemakerModelPackageGroupPolicyConfig) SagemakerModelPackageGroupPolicy {
 	_init_.Initialize()
 
@@ -23189,7 +28825,7 @@ func NewSagemakerModelPackageGroupPolicy(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy.html aws_sagemaker_model_package_group_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy aws_sagemaker_model_package_group_policy} Resource.
 func NewSagemakerModelPackageGroupPolicy_Override(s SagemakerModelPackageGroupPolicy, scope constructs.Construct, id *string, config *SagemakerModelPackageGroupPolicyConfig) {
 	_init_.Initialize()
 
@@ -23200,7 +28836,7 @@ func NewSagemakerModelPackageGroupPolicy_Override(s SagemakerModelPackageGroupPo
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelPackageGroupPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerModelPackageGroupPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -23288,12 +28924,40 @@ func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) AddOverride(path *string, v
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23330,12 +28994,54 @@ func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23436,39 +29142,39 @@ func (s *jsiiProxy_SagemakerModelPackageGroupPolicy) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerModelPackageGroupPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy.html#model_package_group_name SagemakerModelPackageGroupPolicy#model_package_group_name}.
-	ModelPackageGroupName *string `json:"modelPackageGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy.html#resource_policy SagemakerModelPackageGroupPolicy#resource_policy}.
-	ResourcePolicy *string `json:"resourcePolicy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy#model_package_group_name SagemakerModelPackageGroupPolicy#model_package_group_name}.
+	ModelPackageGroupName *string `json:"modelPackageGroupName" yaml:"modelPackageGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model_package_group_policy#resource_policy SagemakerModelPackageGroupPolicy#resource_policy}.
+	ResourcePolicy *string `json:"resourcePolicy" yaml:"resourcePolicy"`
 }
 
 type SagemakerModelPrimaryContainer struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#image SagemakerModel#image}.
-	Image *string `json:"image"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#container_hostname SagemakerModel#container_hostname}.
-	ContainerHostname *string `json:"containerHostname"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#environment SagemakerModel#environment}.
-	Environment interface{} `json:"environment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#image SagemakerModel#image}.
+	Image *string `json:"image" yaml:"image"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#container_hostname SagemakerModel#container_hostname}.
+	ContainerHostname *string `json:"containerHostname" yaml:"containerHostname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#environment SagemakerModel#environment}.
+	Environment *map[string]*string `json:"environment" yaml:"environment"`
 	// image_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#image_config SagemakerModel#image_config}
-	ImageConfig *SagemakerModelPrimaryContainerImageConfig `json:"imageConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#mode SagemakerModel#mode}.
-	Mode *string `json:"mode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#model_data_url SagemakerModel#model_data_url}.
-	ModelDataUrl *string `json:"modelDataUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#image_config SagemakerModel#image_config}
+	ImageConfig *SagemakerModelPrimaryContainerImageConfig `json:"imageConfig" yaml:"imageConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#mode SagemakerModel#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#model_data_url SagemakerModel#model_data_url}.
+	ModelDataUrl *string `json:"modelDataUrl" yaml:"modelDataUrl"`
 }
 
 type SagemakerModelPrimaryContainerImageConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#repository_access_mode SagemakerModel#repository_access_mode}.
-	RepositoryAccessMode *string `json:"repositoryAccessMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#repository_access_mode SagemakerModel#repository_access_mode}.
+	RepositoryAccessMode *string `json:"repositoryAccessMode" yaml:"repositoryAccessMode"`
 }
 
 type SagemakerModelPrimaryContainerImageConfigOutputReference interface {
@@ -23482,12 +29188,17 @@ type SagemakerModelPrimaryContainerImageConfigOutputReference interface {
 	RepositoryAccessModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -23547,8 +29258,8 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23557,7 +29268,7 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) Ter
 	return returns
 }
 
-func NewSagemakerModelPrimaryContainerImageConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerModelPrimaryContainerImageConfigOutputReference {
+func NewSagemakerModelPrimaryContainerImageConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerModelPrimaryContainerImageConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference{}
@@ -23571,7 +29282,7 @@ func NewSagemakerModelPrimaryContainerImageConfigOutputReference(terraformResour
 	return &j
 }
 
-func NewSagemakerModelPrimaryContainerImageConfigOutputReference_Override(s SagemakerModelPrimaryContainerImageConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerModelPrimaryContainerImageConfigOutputReference_Override(s SagemakerModelPrimaryContainerImageConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23613,7 +29324,7 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23622,12 +29333,40 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) Set
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23664,12 +29403,54 @@ func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) Get
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerImageConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23710,9 +29491,9 @@ type SagemakerModelPrimaryContainerOutputReference interface {
 	ContainerHostname() *string
 	SetContainerHostname(val *string)
 	ContainerHostnameInput() *string
-	Environment() interface{}
-	SetEnvironment(val interface{})
-	EnvironmentInput() interface{}
+	Environment() *map[string]*string
+	SetEnvironment(val *map[string]*string)
+	EnvironmentInput() *map[string]*string
 	Image() *string
 	SetImage(val *string)
 	ImageConfig() SagemakerModelPrimaryContainerImageConfigOutputReference
@@ -23730,12 +29511,17 @@ type SagemakerModelPrimaryContainerOutputReference interface {
 	ModelDataUrlInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutImageConfig(value *SagemakerModelPrimaryContainerImageConfig)
@@ -23771,8 +29557,8 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) ContainerHostn
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) Environment() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) Environment() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environment",
@@ -23781,8 +29567,8 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) Environment() 
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) EnvironmentInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) EnvironmentInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environmentInput",
@@ -23901,8 +29687,8 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23911,7 +29697,7 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) TerraformResou
 	return returns
 }
 
-func NewSagemakerModelPrimaryContainerOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerModelPrimaryContainerOutputReference {
+func NewSagemakerModelPrimaryContainerOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerModelPrimaryContainerOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerModelPrimaryContainerOutputReference{}
@@ -23925,7 +29711,7 @@ func NewSagemakerModelPrimaryContainerOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewSagemakerModelPrimaryContainerOutputReference_Override(s SagemakerModelPrimaryContainerOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerModelPrimaryContainerOutputReference_Override(s SagemakerModelPrimaryContainerOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23943,7 +29729,7 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetContainerHo
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetEnvironment(val interface{}) {
+func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetEnvironment(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"environment",
@@ -23999,7 +29785,7 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24008,12 +29794,40 @@ func (j *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24050,12 +29864,54 @@ func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24140,10 +29996,10 @@ func (s *jsiiProxy_SagemakerModelPrimaryContainerOutputReference) ResetModelData
 }
 
 type SagemakerModelVpcConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#security_group_ids SagemakerModel#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model.html#subnets SagemakerModel#subnets}.
-	Subnets *[]*string `json:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#security_group_ids SagemakerModel#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_model#subnets SagemakerModel#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
 }
 
 type SagemakerModelVpcConfigOutputReference interface {
@@ -24160,12 +30016,17 @@ type SagemakerModelVpcConfigOutputReference interface {
 	SubnetsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -24245,8 +30106,8 @@ func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24255,7 +30116,7 @@ func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewSagemakerModelVpcConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerModelVpcConfigOutputReference {
+func NewSagemakerModelVpcConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerModelVpcConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerModelVpcConfigOutputReference{}
@@ -24269,7 +30130,7 @@ func NewSagemakerModelVpcConfigOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewSagemakerModelVpcConfigOutputReference_Override(s SagemakerModelVpcConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerModelVpcConfigOutputReference_Override(s SagemakerModelVpcConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24319,7 +30180,7 @@ func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24328,12 +30189,40 @@ func (j *jsiiProxy_SagemakerModelVpcConfigOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24370,12 +30259,54 @@ func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24411,7 +30342,7 @@ func (s *jsiiProxy_SagemakerModelVpcConfigOutputReference) InterpolationForAttri
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html aws_sagemaker_notebook_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance aws_sagemaker_notebook_instance}.
 type SagemakerNotebookInstance interface {
 	cdktf.TerraformResource
 	AdditionalCodeRepositories() *[]*string
@@ -24420,8 +30351,8 @@ type SagemakerNotebookInstance interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultCodeRepository() *string
 	SetDefaultCodeRepository(val *string)
 	DefaultCodeRepositoryInput() *string
@@ -24467,12 +30398,12 @@ type SagemakerNotebookInstance interface {
 	SubnetId() *string
 	SetSubnetId(val *string)
 	SubnetIdInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -24481,10 +30412,15 @@ type SagemakerNotebookInstance interface {
 	SetVolumeSize(val *float64)
 	VolumeSizeInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAdditionalCodeRepositories()
@@ -24561,8 +30497,8 @@ func (j *jsiiProxy_SagemakerNotebookInstance) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerNotebookInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -24881,8 +30817,8 @@ func (j *jsiiProxy_SagemakerNotebookInstance) SubnetIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerNotebookInstance) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -24891,8 +30827,8 @@ func (j *jsiiProxy_SagemakerNotebookInstance) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerNotebookInstance) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -24901,8 +30837,8 @@ func (j *jsiiProxy_SagemakerNotebookInstance) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerNotebookInstance) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -24911,8 +30847,8 @@ func (j *jsiiProxy_SagemakerNotebookInstance) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerNotebookInstance) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -24981,7 +30917,7 @@ func (j *jsiiProxy_SagemakerNotebookInstance) VolumeSizeInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html aws_sagemaker_notebook_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance aws_sagemaker_notebook_instance} Resource.
 func NewSagemakerNotebookInstance(scope constructs.Construct, id *string, config *SagemakerNotebookInstanceConfig) SagemakerNotebookInstance {
 	_init_.Initialize()
 
@@ -24996,7 +30932,7 @@ func NewSagemakerNotebookInstance(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html aws_sagemaker_notebook_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance aws_sagemaker_notebook_instance} Resource.
 func NewSagemakerNotebookInstance_Override(s SagemakerNotebookInstance, scope constructs.Construct, id *string, config *SagemakerNotebookInstanceConfig) {
 	_init_.Initialize()
 
@@ -25015,7 +30951,7 @@ func (j *jsiiProxy_SagemakerNotebookInstance) SetAdditionalCodeRepositories(val 
 	)
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerNotebookInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -25135,7 +31071,7 @@ func (j *jsiiProxy_SagemakerNotebookInstance) SetSubnetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerNotebookInstance) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -25143,7 +31079,7 @@ func (j *jsiiProxy_SagemakerNotebookInstance) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstance) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerNotebookInstance) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -25199,12 +31135,40 @@ func (s *jsiiProxy_SagemakerNotebookInstance) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerNotebookInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25241,12 +31205,54 @@ func (s *jsiiProxy_SagemakerNotebookInstance) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerNotebookInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25443,53 +31449,53 @@ func (s *jsiiProxy_SagemakerNotebookInstance) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerNotebookInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#instance_type SagemakerNotebookInstance#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#name SagemakerNotebookInstance#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#role_arn SagemakerNotebookInstance#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#additional_code_repositories SagemakerNotebookInstance#additional_code_repositories}.
-	AdditionalCodeRepositories *[]*string `json:"additionalCodeRepositories"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#default_code_repository SagemakerNotebookInstance#default_code_repository}.
-	DefaultCodeRepository *string `json:"defaultCodeRepository"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#direct_internet_access SagemakerNotebookInstance#direct_internet_access}.
-	DirectInternetAccess *string `json:"directInternetAccess"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#kms_key_id SagemakerNotebookInstance#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#lifecycle_config_name SagemakerNotebookInstance#lifecycle_config_name}.
-	LifecycleConfigName *string `json:"lifecycleConfigName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#platform_identifier SagemakerNotebookInstance#platform_identifier}.
-	PlatformIdentifier *string `json:"platformIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#root_access SagemakerNotebookInstance#root_access}.
-	RootAccess *string `json:"rootAccess"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#security_groups SagemakerNotebookInstance#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#subnet_id SagemakerNotebookInstance#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#tags SagemakerNotebookInstance#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#tags_all SagemakerNotebookInstance#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance.html#volume_size SagemakerNotebookInstance#volume_size}.
-	VolumeSize *float64 `json:"volumeSize"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#instance_type SagemakerNotebookInstance#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#name SagemakerNotebookInstance#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#role_arn SagemakerNotebookInstance#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#additional_code_repositories SagemakerNotebookInstance#additional_code_repositories}.
+	AdditionalCodeRepositories *[]*string `json:"additionalCodeRepositories" yaml:"additionalCodeRepositories"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#default_code_repository SagemakerNotebookInstance#default_code_repository}.
+	DefaultCodeRepository *string `json:"defaultCodeRepository" yaml:"defaultCodeRepository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#direct_internet_access SagemakerNotebookInstance#direct_internet_access}.
+	DirectInternetAccess *string `json:"directInternetAccess" yaml:"directInternetAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#kms_key_id SagemakerNotebookInstance#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#lifecycle_config_name SagemakerNotebookInstance#lifecycle_config_name}.
+	LifecycleConfigName *string `json:"lifecycleConfigName" yaml:"lifecycleConfigName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#platform_identifier SagemakerNotebookInstance#platform_identifier}.
+	PlatformIdentifier *string `json:"platformIdentifier" yaml:"platformIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#root_access SagemakerNotebookInstance#root_access}.
+	RootAccess *string `json:"rootAccess" yaml:"rootAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#security_groups SagemakerNotebookInstance#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#subnet_id SagemakerNotebookInstance#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#tags SagemakerNotebookInstance#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#tags_all SagemakerNotebookInstance#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance#volume_size SagemakerNotebookInstance#volume_size}.
+	VolumeSize *float64 `json:"volumeSize" yaml:"volumeSize"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration.html aws_sagemaker_notebook_instance_lifecycle_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration aws_sagemaker_notebook_instance_lifecycle_configuration}.
 type SagemakerNotebookInstanceLifecycleConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -25514,10 +31520,15 @@ type SagemakerNotebookInstanceLifecycleConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -25565,8 +31576,8 @@ func (j *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) ConstructNod
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -25745,7 +31756,7 @@ func (j *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) TerraformRes
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration.html aws_sagemaker_notebook_instance_lifecycle_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration aws_sagemaker_notebook_instance_lifecycle_configuration} Resource.
 func NewSagemakerNotebookInstanceLifecycleConfiguration(scope constructs.Construct, id *string, config *SagemakerNotebookInstanceLifecycleConfigurationConfig) SagemakerNotebookInstanceLifecycleConfiguration {
 	_init_.Initialize()
 
@@ -25760,7 +31771,7 @@ func NewSagemakerNotebookInstanceLifecycleConfiguration(scope constructs.Constru
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration.html aws_sagemaker_notebook_instance_lifecycle_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration aws_sagemaker_notebook_instance_lifecycle_configuration} Resource.
 func NewSagemakerNotebookInstanceLifecycleConfiguration_Override(s SagemakerNotebookInstanceLifecycleConfiguration, scope constructs.Construct, id *string, config *SagemakerNotebookInstanceLifecycleConfigurationConfig) {
 	_init_.Initialize()
 
@@ -25771,7 +31782,7 @@ func NewSagemakerNotebookInstanceLifecycleConfiguration_Override(s SagemakerNote
 	)
 }
 
-func (j *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -25867,12 +31878,40 @@ func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) AddOverride(
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25909,12 +31948,54 @@ func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetNumberAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26039,29 +32120,1204 @@ func (s *jsiiProxy_SagemakerNotebookInstanceLifecycleConfiguration) ToTerraform(
 // AWS SageMaker.
 type SagemakerNotebookInstanceLifecycleConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration.html#name SagemakerNotebookInstanceLifecycleConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration.html#on_create SagemakerNotebookInstanceLifecycleConfiguration#on_create}.
-	OnCreate *string `json:"onCreate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration.html#on_start SagemakerNotebookInstanceLifecycleConfiguration#on_start}.
-	OnStart *string `json:"onStart"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration#name SagemakerNotebookInstanceLifecycleConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration#on_create SagemakerNotebookInstanceLifecycleConfiguration#on_create}.
+	OnCreate *string `json:"onCreate" yaml:"onCreate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_notebook_instance_lifecycle_configuration#on_start SagemakerNotebookInstanceLifecycleConfiguration#on_start}.
+	OnStart *string `json:"onStart" yaml:"onStart"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html aws_sagemaker_studio_lifecycle_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project aws_sagemaker_project}.
+type SagemakerProject interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	ProjectDescription() *string
+	SetProjectDescription(val *string)
+	ProjectDescriptionInput() *string
+	ProjectId() *string
+	ProjectName() *string
+	SetProjectName(val *string)
+	ProjectNameInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ServiceCatalogProvisioningDetails() SagemakerProjectServiceCatalogProvisioningDetailsOutputReference
+	ServiceCatalogProvisioningDetailsInput() *SagemakerProjectServiceCatalogProvisioningDetails
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutServiceCatalogProvisioningDetails(value *SagemakerProjectServiceCatalogProvisioningDetails)
+	ResetOverrideLogicalId()
+	ResetProjectDescription()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for SagemakerProject
+type jsiiProxy_SagemakerProject struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_SagemakerProject) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ProjectDescription() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"projectDescription",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ProjectDescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"projectDescriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ProjectId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"projectId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ProjectName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"projectName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ProjectNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"projectNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ServiceCatalogProvisioningDetails() SagemakerProjectServiceCatalogProvisioningDetailsOutputReference {
+	var returns SagemakerProjectServiceCatalogProvisioningDetailsOutputReference
+	_jsii_.Get(
+		j,
+		"serviceCatalogProvisioningDetails",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) ServiceCatalogProvisioningDetailsInput() *SagemakerProjectServiceCatalogProvisioningDetails {
+	var returns *SagemakerProjectServiceCatalogProvisioningDetails
+	_jsii_.Get(
+		j,
+		"serviceCatalogProvisioningDetailsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProject) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project aws_sagemaker_project} Resource.
+func NewSagemakerProject(scope constructs.Construct, id *string, config *SagemakerProjectConfig) SagemakerProject {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerProject{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerProject",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project aws_sagemaker_project} Resource.
+func NewSagemakerProject_Override(s SagemakerProject, scope constructs.Construct, id *string, config *SagemakerProjectConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerProject",
+		[]interface{}{scope, id, config},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetProjectDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"projectDescription",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetProjectName(val *string) {
+	_jsii_.Set(
+		j,
+		"projectName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProject) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func SagemakerProject_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.sagemaker.SagemakerProject",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func SagemakerProject_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.sagemaker.SagemakerProject",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		s,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		s,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_SagemakerProject) PutServiceCatalogProvisioningDetails(value *SagemakerProjectServiceCatalogProvisioningDetails) {
+	_jsii_.InvokeVoid(
+		s,
+		"putServiceCatalogProvisioningDetails",
+		[]interface{}{value},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerProject) ResetProjectDescription() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetProjectDescription",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerProject) ResetTags() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerProject) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerProject) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (s *jsiiProxy_SagemakerProject) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (s *jsiiProxy_SagemakerProject) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		s,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS SageMaker.
+type SagemakerProjectConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#project_name SagemakerProject#project_name}.
+	ProjectName *string `json:"projectName" yaml:"projectName"`
+	// service_catalog_provisioning_details block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#service_catalog_provisioning_details SagemakerProject#service_catalog_provisioning_details}
+	ServiceCatalogProvisioningDetails *SagemakerProjectServiceCatalogProvisioningDetails `json:"serviceCatalogProvisioningDetails" yaml:"serviceCatalogProvisioningDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#project_description SagemakerProject#project_description}.
+	ProjectDescription *string `json:"projectDescription" yaml:"projectDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#tags SagemakerProject#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#tags_all SagemakerProject#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+}
+
+type SagemakerProjectServiceCatalogProvisioningDetails struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#product_id SagemakerProject#product_id}.
+	ProductId *string `json:"productId" yaml:"productId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#path_id SagemakerProject#path_id}.
+	PathId *string `json:"pathId" yaml:"pathId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#provisioning_artifact_id SagemakerProject#provisioning_artifact_id}.
+	ProvisioningArtifactId *string `json:"provisioningArtifactId" yaml:"provisioningArtifactId"`
+	// provisioning_parameter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#provisioning_parameter SagemakerProject#provisioning_parameter}
+	ProvisioningParameter interface{} `json:"provisioningParameter" yaml:"provisioningParameter"`
+}
+
+type SagemakerProjectServiceCatalogProvisioningDetailsOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *SagemakerProjectServiceCatalogProvisioningDetails
+	SetInternalValue(val *SagemakerProjectServiceCatalogProvisioningDetails)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	PathId() *string
+	SetPathId(val *string)
+	PathIdInput() *string
+	ProductId() *string
+	SetProductId(val *string)
+	ProductIdInput() *string
+	ProvisioningArtifactId() *string
+	SetProvisioningArtifactId(val *string)
+	ProvisioningArtifactIdInput() *string
+	ProvisioningParameter() interface{}
+	SetProvisioningParameter(val interface{})
+	ProvisioningParameterInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetPathId()
+	ResetProvisioningArtifactId()
+	ResetProvisioningParameter()
+}
+
+// The jsii proxy struct for SagemakerProjectServiceCatalogProvisioningDetailsOutputReference
+type jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) InternalValue() *SagemakerProjectServiceCatalogProvisioningDetails {
+	var returns *SagemakerProjectServiceCatalogProvisioningDetails
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) PathId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"pathId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) PathIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"pathIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ProductId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"productId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ProductIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"productIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ProvisioningArtifactId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"provisioningArtifactId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ProvisioningArtifactIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"provisioningArtifactIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ProvisioningParameter() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"provisioningParameter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ProvisioningParameterInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"provisioningParameterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewSagemakerProjectServiceCatalogProvisioningDetailsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerProjectServiceCatalogProvisioningDetailsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerProjectServiceCatalogProvisioningDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewSagemakerProjectServiceCatalogProvisioningDetailsOutputReference_Override(s SagemakerProjectServiceCatalogProvisioningDetailsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.sagemaker.SagemakerProjectServiceCatalogProvisioningDetailsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		s,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetInternalValue(val *SagemakerProjectServiceCatalogProvisioningDetails) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetPathId(val *string) {
+	_jsii_.Set(
+		j,
+		"pathId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetProductId(val *string) {
+	_jsii_.Set(
+		j,
+		"productId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetProvisioningArtifactId(val *string) {
+	_jsii_.Set(
+		j,
+		"provisioningArtifactId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetProvisioningParameter(val interface{}) {
+	_jsii_.Set(
+		j,
+		"provisioningParameter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		s,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ResetPathId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPathId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ResetProvisioningArtifactId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetProvisioningArtifactId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerProjectServiceCatalogProvisioningDetailsOutputReference) ResetProvisioningParameter() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetProvisioningParameter",
+		nil, // no parameters
+	)
+}
+
+type SagemakerProjectServiceCatalogProvisioningDetailsProvisioningParameter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#key SagemakerProject#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_project#value SagemakerProject#value}.
+	Value *string `json:"value" yaml:"value"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config aws_sagemaker_studio_lifecycle_config}.
 type SagemakerStudioLifecycleConfig interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -26082,20 +33338,25 @@ type SagemakerStudioLifecycleConfig interface {
 	StudioLifecycleConfigName() *string
 	SetStudioLifecycleConfigName(val *string)
 	StudioLifecycleConfigNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -26142,8 +33403,8 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -26292,8 +33553,8 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) StudioLifecycleConfigNameInpu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -26302,8 +33563,8 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -26312,8 +33573,8 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -26322,8 +33583,8 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -26362,7 +33623,7 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html aws_sagemaker_studio_lifecycle_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config aws_sagemaker_studio_lifecycle_config} Resource.
 func NewSagemakerStudioLifecycleConfig(scope constructs.Construct, id *string, config *SagemakerStudioLifecycleConfigConfig) SagemakerStudioLifecycleConfig {
 	_init_.Initialize()
 
@@ -26377,7 +33638,7 @@ func NewSagemakerStudioLifecycleConfig(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html aws_sagemaker_studio_lifecycle_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config aws_sagemaker_studio_lifecycle_config} Resource.
 func NewSagemakerStudioLifecycleConfig_Override(s SagemakerStudioLifecycleConfig, scope constructs.Construct, id *string, config *SagemakerStudioLifecycleConfigConfig) {
 	_init_.Initialize()
 
@@ -26388,7 +33649,7 @@ func NewSagemakerStudioLifecycleConfig_Override(s SagemakerStudioLifecycleConfig
 	)
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -26444,7 +33705,7 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetStudioLifecycleConfigName(
 	)
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -26452,7 +33713,7 @@ func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerStudioLifecycleConfig) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -26500,12 +33761,40 @@ func (s *jsiiProxy_SagemakerStudioLifecycleConfig) AddOverride(path *string, val
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26542,12 +33831,54 @@ func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerStudioLifecycleConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26664,33 +33995,33 @@ func (s *jsiiProxy_SagemakerStudioLifecycleConfig) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerStudioLifecycleConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html#studio_lifecycle_config_app_type SagemakerStudioLifecycleConfig#studio_lifecycle_config_app_type}.
-	StudioLifecycleConfigAppType *string `json:"studioLifecycleConfigAppType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html#studio_lifecycle_config_content SagemakerStudioLifecycleConfig#studio_lifecycle_config_content}.
-	StudioLifecycleConfigContent *string `json:"studioLifecycleConfigContent"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html#studio_lifecycle_config_name SagemakerStudioLifecycleConfig#studio_lifecycle_config_name}.
-	StudioLifecycleConfigName *string `json:"studioLifecycleConfigName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html#tags SagemakerStudioLifecycleConfig#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config.html#tags_all SagemakerStudioLifecycleConfig#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config#studio_lifecycle_config_app_type SagemakerStudioLifecycleConfig#studio_lifecycle_config_app_type}.
+	StudioLifecycleConfigAppType *string `json:"studioLifecycleConfigAppType" yaml:"studioLifecycleConfigAppType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config#studio_lifecycle_config_content SagemakerStudioLifecycleConfig#studio_lifecycle_config_content}.
+	StudioLifecycleConfigContent *string `json:"studioLifecycleConfigContent" yaml:"studioLifecycleConfigContent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config#studio_lifecycle_config_name SagemakerStudioLifecycleConfig#studio_lifecycle_config_name}.
+	StudioLifecycleConfigName *string `json:"studioLifecycleConfigName" yaml:"studioLifecycleConfigName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config#tags SagemakerStudioLifecycleConfig#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_studio_lifecycle_config#tags_all SagemakerStudioLifecycleConfig#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html aws_sagemaker_user_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile aws_sagemaker_user_profile}.
 type SagemakerUserProfile interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainId() *string
@@ -26712,12 +34043,12 @@ type SagemakerUserProfile interface {
 	SingleSignOnUserValue() *string
 	SetSingleSignOnUserValue(val *string)
 	SingleSignOnUserValueInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -26727,10 +34058,15 @@ type SagemakerUserProfile interface {
 	UserSettings() SagemakerUserProfileUserSettingsOutputReference
 	UserSettingsInput() *SagemakerUserProfileUserSettings
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutUserSettings(value *SagemakerUserProfileUserSettings)
@@ -26781,8 +34117,8 @@ func (j *jsiiProxy_SagemakerUserProfile) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerUserProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -26941,8 +34277,8 @@ func (j *jsiiProxy_SagemakerUserProfile) SingleSignOnUserValueInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerUserProfile) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -26951,8 +34287,8 @@ func (j *jsiiProxy_SagemakerUserProfile) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerUserProfile) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -26961,8 +34297,8 @@ func (j *jsiiProxy_SagemakerUserProfile) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerUserProfile) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -26971,8 +34307,8 @@ func (j *jsiiProxy_SagemakerUserProfile) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerUserProfile) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -27051,7 +34387,7 @@ func (j *jsiiProxy_SagemakerUserProfile) UserSettingsInput() *SagemakerUserProfi
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html aws_sagemaker_user_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile aws_sagemaker_user_profile} Resource.
 func NewSagemakerUserProfile(scope constructs.Construct, id *string, config *SagemakerUserProfileConfig) SagemakerUserProfile {
 	_init_.Initialize()
 
@@ -27066,7 +34402,7 @@ func NewSagemakerUserProfile(scope constructs.Construct, id *string, config *Sag
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html aws_sagemaker_user_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile aws_sagemaker_user_profile} Resource.
 func NewSagemakerUserProfile_Override(s SagemakerUserProfile, scope constructs.Construct, id *string, config *SagemakerUserProfileConfig) {
 	_init_.Initialize()
 
@@ -27077,7 +34413,7 @@ func NewSagemakerUserProfile_Override(s SagemakerUserProfile, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerUserProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -27133,7 +34469,7 @@ func (j *jsiiProxy_SagemakerUserProfile) SetSingleSignOnUserValue(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerUserProfile) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -27141,7 +34477,7 @@ func (j *jsiiProxy_SagemakerUserProfile) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfile) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerUserProfile) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -27197,12 +34533,40 @@ func (s *jsiiProxy_SagemakerUserProfile) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27239,12 +34603,54 @@ func (s *jsiiProxy_SagemakerUserProfile) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27393,68 +34799,72 @@ func (s *jsiiProxy_SagemakerUserProfile) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerUserProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#domain_id SagemakerUserProfile#domain_id}.
-	DomainId *string `json:"domainId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#user_profile_name SagemakerUserProfile#user_profile_name}.
-	UserProfileName *string `json:"userProfileName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#single_sign_on_user_identifier SagemakerUserProfile#single_sign_on_user_identifier}.
-	SingleSignOnUserIdentifier *string `json:"singleSignOnUserIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#single_sign_on_user_value SagemakerUserProfile#single_sign_on_user_value}.
-	SingleSignOnUserValue *string `json:"singleSignOnUserValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#tags SagemakerUserProfile#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#tags_all SagemakerUserProfile#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#domain_id SagemakerUserProfile#domain_id}.
+	DomainId *string `json:"domainId" yaml:"domainId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#user_profile_name SagemakerUserProfile#user_profile_name}.
+	UserProfileName *string `json:"userProfileName" yaml:"userProfileName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#single_sign_on_user_identifier SagemakerUserProfile#single_sign_on_user_identifier}.
+	SingleSignOnUserIdentifier *string `json:"singleSignOnUserIdentifier" yaml:"singleSignOnUserIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#single_sign_on_user_value SagemakerUserProfile#single_sign_on_user_value}.
+	SingleSignOnUserValue *string `json:"singleSignOnUserValue" yaml:"singleSignOnUserValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#tags SagemakerUserProfile#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#tags_all SagemakerUserProfile#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// user_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#user_settings SagemakerUserProfile#user_settings}
-	UserSettings *SagemakerUserProfileUserSettings `json:"userSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#user_settings SagemakerUserProfile#user_settings}
+	UserSettings *SagemakerUserProfileUserSettings `json:"userSettings" yaml:"userSettings"`
 }
 
 type SagemakerUserProfileUserSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#execution_role SagemakerUserProfile#execution_role}.
-	ExecutionRole *string `json:"executionRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#execution_role SagemakerUserProfile#execution_role}.
+	ExecutionRole *string `json:"executionRole" yaml:"executionRole"`
 	// jupyter_server_app_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#jupyter_server_app_settings SagemakerUserProfile#jupyter_server_app_settings}
-	JupyterServerAppSettings *SagemakerUserProfileUserSettingsJupyterServerAppSettings `json:"jupyterServerAppSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#jupyter_server_app_settings SagemakerUserProfile#jupyter_server_app_settings}
+	JupyterServerAppSettings *SagemakerUserProfileUserSettingsJupyterServerAppSettings `json:"jupyterServerAppSettings" yaml:"jupyterServerAppSettings"`
 	// kernel_gateway_app_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#kernel_gateway_app_settings SagemakerUserProfile#kernel_gateway_app_settings}
-	KernelGatewayAppSettings *SagemakerUserProfileUserSettingsKernelGatewayAppSettings `json:"kernelGatewayAppSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#security_groups SagemakerUserProfile#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#kernel_gateway_app_settings SagemakerUserProfile#kernel_gateway_app_settings}
+	KernelGatewayAppSettings *SagemakerUserProfileUserSettingsKernelGatewayAppSettings `json:"kernelGatewayAppSettings" yaml:"kernelGatewayAppSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#security_groups SagemakerUserProfile#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 	// sharing_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#sharing_settings SagemakerUserProfile#sharing_settings}
-	SharingSettings *SagemakerUserProfileUserSettingsSharingSettings `json:"sharingSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#sharing_settings SagemakerUserProfile#sharing_settings}
+	SharingSettings *SagemakerUserProfileUserSettingsSharingSettings `json:"sharingSettings" yaml:"sharingSettings"`
 	// tensor_board_app_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#tensor_board_app_settings SagemakerUserProfile#tensor_board_app_settings}
-	TensorBoardAppSettings *SagemakerUserProfileUserSettingsTensorBoardAppSettings `json:"tensorBoardAppSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#tensor_board_app_settings SagemakerUserProfile#tensor_board_app_settings}
+	TensorBoardAppSettings *SagemakerUserProfileUserSettingsTensorBoardAppSettings `json:"tensorBoardAppSettings" yaml:"tensorBoardAppSettings"`
 }
 
 type SagemakerUserProfileUserSettingsJupyterServerAppSettings struct {
 	// default_resource_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#default_resource_spec SagemakerUserProfile#default_resource_spec}
-	DefaultResourceSpec *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec `json:"defaultResourceSpec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#lifecycle_config_arns SagemakerUserProfile#lifecycle_config_arns}.
-	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#default_resource_spec SagemakerUserProfile#default_resource_spec}
+	DefaultResourceSpec *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec `json:"defaultResourceSpec" yaml:"defaultResourceSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#lifecycle_config_arns SagemakerUserProfile#lifecycle_config_arns}.
+	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns" yaml:"lifecycleConfigArns"`
 }
 
 type SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#instance_type SagemakerUserProfile#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#sagemaker_image_arn SagemakerUserProfile#sagemaker_image_arn}.
-	SagemakerImageArn *string `json:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#instance_type SagemakerUserProfile#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#lifecycle_config_arn SagemakerUserProfile#lifecycle_config_arn}.
+	LifecycleConfigArn *string `json:"lifecycleConfigArn" yaml:"lifecycleConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#sagemaker_image_arn SagemakerUserProfile#sagemaker_image_arn}.
+	SagemakerImageArn *string `json:"sagemakerImageArn" yaml:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#sagemaker_image_version_arn SagemakerUserProfile#sagemaker_image_version_arn}.
+	SagemakerImageVersionArn *string `json:"sagemakerImageVersionArn" yaml:"sagemakerImageVersionArn"`
 }
 
 type SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference interface {
@@ -27466,21 +34876,34 @@ type SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec
 	SetInternalValue(val *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	LifecycleConfigArn() *string
+	SetLifecycleConfigArn(val *string)
+	LifecycleConfigArnInput() *string
 	SagemakerImageArn() *string
 	SetSagemakerImageArn(val *string)
 	SagemakerImageArnInput() *string
+	SagemakerImageVersionArn() *string
+	SetSagemakerImageVersionArn(val *string)
+	SagemakerImageVersionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceType()
+	ResetLifecycleConfigArn()
 	ResetSagemakerImageArn()
+	ResetSagemakerImageVersionArn()
 }
 
 // The jsii proxy struct for SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference
@@ -27528,6 +34951,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SagemakerImageArn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -27548,6 +34991,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -27558,8 +35021,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -27568,7 +35031,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference {
+func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference{}
@@ -27582,7 +35045,7 @@ func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceS
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -27616,10 +35079,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	)
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetLifecycleConfigArn(val *string) {
+	_jsii_.Set(
+		j,
+		"lifecycleConfigArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageArn(val *string) {
 	_jsii_.Set(
 		j,
 		"sagemakerImageArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageVersionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sagemakerImageVersionArn",
 		val,
 	)
 }
@@ -27632,7 +35111,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -27641,12 +35120,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27683,12 +35190,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27732,10 +35281,26 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefau
 	)
 }
 
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) ResetLifecycleConfigArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLifecycleConfigArn",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageArn() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetSagemakerImageArn",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageVersionArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSagemakerImageVersionArn",
 		nil, // no parameters
 	)
 }
@@ -27753,12 +35318,17 @@ type SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference int
 	LifecycleConfigArnsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDefaultResourceSpec(value *SagemakerUserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpec)
@@ -27840,8 +35410,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutpu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -27850,7 +35420,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutpu
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference {
+func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference{}
@@ -27864,7 +35434,7 @@ func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference(
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -27906,7 +35476,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutpu
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -27915,12 +35485,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutpu
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27957,12 +35555,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutpu
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28017,30 +35657,34 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsJupyterServerAppSettingsOutpu
 type SagemakerUserProfileUserSettingsKernelGatewayAppSettings struct {
 	// default_resource_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#default_resource_spec SagemakerUserProfile#default_resource_spec}
-	DefaultResourceSpec *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec `json:"defaultResourceSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#default_resource_spec SagemakerUserProfile#default_resource_spec}
+	DefaultResourceSpec *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec `json:"defaultResourceSpec" yaml:"defaultResourceSpec"`
 	// custom_image block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#custom_image SagemakerUserProfile#custom_image}
-	CustomImage *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage `json:"customImage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#lifecycle_config_arns SagemakerUserProfile#lifecycle_config_arns}.
-	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#custom_image SagemakerUserProfile#custom_image}
+	CustomImage interface{} `json:"customImage" yaml:"customImage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#lifecycle_config_arns SagemakerUserProfile#lifecycle_config_arns}.
+	LifecycleConfigArns *[]*string `json:"lifecycleConfigArns" yaml:"lifecycleConfigArns"`
 }
 
 type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#app_image_config_name SagemakerUserProfile#app_image_config_name}.
-	AppImageConfigName *string `json:"appImageConfigName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#image_name SagemakerUserProfile#image_name}.
-	ImageName *string `json:"imageName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#image_version_number SagemakerUserProfile#image_version_number}.
-	ImageVersionNumber *float64 `json:"imageVersionNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#app_image_config_name SagemakerUserProfile#app_image_config_name}.
+	AppImageConfigName *string `json:"appImageConfigName" yaml:"appImageConfigName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#image_name SagemakerUserProfile#image_name}.
+	ImageName *string `json:"imageName" yaml:"imageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#image_version_number SagemakerUserProfile#image_version_number}.
+	ImageVersionNumber *float64 `json:"imageVersionNumber" yaml:"imageVersionNumber"`
 }
 
 type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#instance_type SagemakerUserProfile#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#sagemaker_image_arn SagemakerUserProfile#sagemaker_image_arn}.
-	SagemakerImageArn *string `json:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#instance_type SagemakerUserProfile#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#lifecycle_config_arn SagemakerUserProfile#lifecycle_config_arn}.
+	LifecycleConfigArn *string `json:"lifecycleConfigArn" yaml:"lifecycleConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#sagemaker_image_arn SagemakerUserProfile#sagemaker_image_arn}.
+	SagemakerImageArn *string `json:"sagemakerImageArn" yaml:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#sagemaker_image_version_arn SagemakerUserProfile#sagemaker_image_version_arn}.
+	SagemakerImageVersionArn *string `json:"sagemakerImageVersionArn" yaml:"sagemakerImageVersionArn"`
 }
 
 type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference interface {
@@ -28052,21 +35696,34 @@ type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
 	SetInternalValue(val *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	LifecycleConfigArn() *string
+	SetLifecycleConfigArn(val *string)
+	LifecycleConfigArnInput() *string
 	SagemakerImageArn() *string
 	SetSagemakerImageArn(val *string)
 	SagemakerImageArnInput() *string
+	SagemakerImageVersionArn() *string
+	SetSagemakerImageVersionArn(val *string)
+	SagemakerImageVersionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceType()
+	ResetLifecycleConfigArn()
 	ResetSagemakerImageArn()
+	ResetSagemakerImageVersionArn()
 }
 
 // The jsii proxy struct for SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference
@@ -28114,6 +35771,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SagemakerImageArn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -28134,6 +35811,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -28144,8 +35841,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28154,7 +35851,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference {
+func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference{}
@@ -28168,7 +35865,7 @@ func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceS
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -28202,10 +35899,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	)
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetLifecycleConfigArn(val *string) {
+	_jsii_.Set(
+		j,
+		"lifecycleConfigArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageArn(val *string) {
 	_jsii_.Set(
 		j,
 		"sagemakerImageArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageVersionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sagemakerImageVersionArn",
 		val,
 	)
 }
@@ -28218,7 +35931,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28227,12 +35940,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28269,12 +36010,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28318,6 +36101,14 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	)
 }
 
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) ResetLifecycleConfigArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLifecycleConfigArn",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageArn() {
 	_jsii_.InvokeVoid(
 		s,
@@ -28326,11 +36117,19 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefau
 	)
 }
 
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageVersionArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSagemakerImageVersionArn",
+		nil, // no parameters
+	)
+}
+
 type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference interface {
 	cdktf.ComplexObject
-	CustomImage() *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage
-	SetCustomImage(val *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage)
-	CustomImageInput() *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage
+	CustomImage() interface{}
+	SetCustomImage(val interface{})
+	CustomImageInput() interface{}
 	DefaultResourceSpec() SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecOutputReference
 	DefaultResourceSpecInput() *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec
 	InternalValue() *SagemakerUserProfileUserSettingsKernelGatewayAppSettings
@@ -28342,12 +36141,17 @@ type SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference int
 	LifecycleConfigArnsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDefaultResourceSpec(value *SagemakerUserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec)
@@ -28360,8 +36164,8 @@ type jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputRef
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) CustomImage() *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage {
-	var returns *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) CustomImage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customImage",
@@ -28370,8 +36174,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) CustomImageInput() *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage {
-	var returns *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) CustomImageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customImageInput",
@@ -28450,8 +36254,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28460,7 +36264,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference {
+func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference{}
@@ -28474,7 +36278,7 @@ func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference(
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -28484,7 +36288,7 @@ func NewSagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference_
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) SetCustomImage(val *[]*SagemakerUserProfileUserSettingsKernelGatewayAppSettingsCustomImage) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) SetCustomImage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"customImage",
@@ -28524,7 +36328,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28533,12 +36337,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28575,12 +36407,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutpu
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsKernelGatewayAppSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28662,12 +36536,17 @@ type SagemakerUserProfileUserSettingsOutputReference interface {
 	TensorBoardAppSettingsInput() *SagemakerUserProfileUserSettingsTensorBoardAppSettings
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutJupyterServerAppSettings(value *SagemakerUserProfileUserSettingsJupyterServerAppSettings)
@@ -28836,8 +36715,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28846,7 +36725,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) TerraformRes
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsOutputReference {
+func NewSagemakerUserProfileUserSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsOutputReference{}
@@ -28860,7 +36739,7 @@ func NewSagemakerUserProfileUserSettingsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -28910,7 +36789,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28919,12 +36798,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28961,12 +36868,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29075,12 +37024,12 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsOutputReference) ResetTensorB
 }
 
 type SagemakerUserProfileUserSettingsSharingSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#notebook_output_option SagemakerUserProfile#notebook_output_option}.
-	NotebookOutputOption *string `json:"notebookOutputOption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#s3_kms_key_id SagemakerUserProfile#s3_kms_key_id}.
-	S3KmsKeyId *string `json:"s3KmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#s3_output_path SagemakerUserProfile#s3_output_path}.
-	S3OutputPath *string `json:"s3OutputPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#notebook_output_option SagemakerUserProfile#notebook_output_option}.
+	NotebookOutputOption *string `json:"notebookOutputOption" yaml:"notebookOutputOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#s3_kms_key_id SagemakerUserProfile#s3_kms_key_id}.
+	S3KmsKeyId *string `json:"s3KmsKeyId" yaml:"s3KmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#s3_output_path SagemakerUserProfile#s3_output_path}.
+	S3OutputPath *string `json:"s3OutputPath" yaml:"s3OutputPath"`
 }
 
 type SagemakerUserProfileUserSettingsSharingSettingsOutputReference interface {
@@ -29100,12 +37049,17 @@ type SagemakerUserProfileUserSettingsSharingSettingsOutputReference interface {
 	S3OutputPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetNotebookOutputOption()
@@ -29208,8 +37162,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29218,7 +37172,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReferenc
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsSharingSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsSharingSettingsOutputReference {
+func NewSagemakerUserProfileUserSettingsSharingSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsSharingSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference{}
@@ -29232,7 +37186,7 @@ func NewSagemakerUserProfileUserSettingsSharingSettingsOutputReference(terraform
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsSharingSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsSharingSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsSharingSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsSharingSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -29290,7 +37244,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29299,12 +37253,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29341,12 +37323,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29409,15 +37433,19 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsSharingSettingsOutputReferenc
 type SagemakerUserProfileUserSettingsTensorBoardAppSettings struct {
 	// default_resource_spec block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#default_resource_spec SagemakerUserProfile#default_resource_spec}
-	DefaultResourceSpec *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec `json:"defaultResourceSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#default_resource_spec SagemakerUserProfile#default_resource_spec}
+	DefaultResourceSpec *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec `json:"defaultResourceSpec" yaml:"defaultResourceSpec"`
 }
 
 type SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#instance_type SagemakerUserProfile#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile.html#sagemaker_image_arn SagemakerUserProfile#sagemaker_image_arn}.
-	SagemakerImageArn *string `json:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#instance_type SagemakerUserProfile#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#lifecycle_config_arn SagemakerUserProfile#lifecycle_config_arn}.
+	LifecycleConfigArn *string `json:"lifecycleConfigArn" yaml:"lifecycleConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#sagemaker_image_arn SagemakerUserProfile#sagemaker_image_arn}.
+	SagemakerImageArn *string `json:"sagemakerImageArn" yaml:"sagemakerImageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_user_profile#sagemaker_image_version_arn SagemakerUserProfile#sagemaker_image_version_arn}.
+	SagemakerImageVersionArn *string `json:"sagemakerImageVersionArn" yaml:"sagemakerImageVersionArn"`
 }
 
 type SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference interface {
@@ -29429,21 +37457,34 @@ type SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOu
 	SetInternalValue(val *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	LifecycleConfigArn() *string
+	SetLifecycleConfigArn(val *string)
+	LifecycleConfigArnInput() *string
 	SagemakerImageArn() *string
 	SetSagemakerImageArn(val *string)
 	SagemakerImageArnInput() *string
+	SagemakerImageVersionArn() *string
+	SetSagemakerImageVersionArn(val *string)
+	SagemakerImageVersionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceType()
+	ResetLifecycleConfigArn()
 	ResetSagemakerImageArn()
+	ResetSagemakerImageVersionArn()
 }
 
 // The jsii proxy struct for SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference
@@ -29491,6 +37532,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) LifecycleConfigArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lifecycleConfigArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SagemakerImageArn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -29511,6 +37572,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	return returns
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SagemakerImageVersionArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sagemakerImageVersionArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -29521,8 +37602,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29531,7 +37612,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference {
+func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference{}
@@ -29545,7 +37626,7 @@ func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpe
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference_Override(s SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -29579,10 +37660,26 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	)
 }
 
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetLifecycleConfigArn(val *string) {
+	_jsii_.Set(
+		j,
+		"lifecycleConfigArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageArn(val *string) {
 	_jsii_.Set(
 		j,
 		"sagemakerImageArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetSagemakerImageVersionArn(val *string) {
+	_jsii_.Set(
+		j,
+		"sagemakerImageVersionArn",
 		val,
 	)
 }
@@ -29595,7 +37692,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29604,12 +37701,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29646,12 +37771,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29695,10 +37862,26 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefault
 	)
 }
 
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) ResetLifecycleConfigArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLifecycleConfigArn",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageArn() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetSagemakerImageArn",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecOutputReference) ResetSagemakerImageVersionArn() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSagemakerImageVersionArn",
 		nil, // no parameters
 	)
 }
@@ -29713,12 +37896,17 @@ type SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference inter
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDefaultResourceSpec(value *SagemakerUserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpec)
@@ -29779,8 +37967,8 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputR
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29789,7 +37977,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputR
 	return returns
 }
 
-func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference {
+func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference{}
@@ -29803,7 +37991,7 @@ func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference(te
 	return &j
 }
 
-func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference_Override(s SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -29837,7 +38025,7 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputR
 	)
 }
 
-func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29846,12 +38034,40 @@ func (j *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputR
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29888,12 +38104,54 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputR
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29937,7 +38195,7 @@ func (s *jsiiProxy_SagemakerUserProfileUserSettingsTensorBoardAppSettingsOutputR
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html aws_sagemaker_workforce}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce aws_sagemaker_workforce}.
 type SagemakerWorkforce interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -29945,8 +38203,8 @@ type SagemakerWorkforce interface {
 	CognitoConfig() SagemakerWorkforceCognitoConfigOutputReference
 	CognitoConfigInput() *SagemakerWorkforceCognitoConfig
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -29970,10 +38228,15 @@ type SagemakerWorkforce interface {
 	SetWorkforceName(val *string)
 	WorkforceNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCognitoConfig(value *SagemakerWorkforceCognitoConfig)
@@ -30044,8 +38307,8 @@ func (j *jsiiProxy_SagemakerWorkforce) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkforce) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerWorkforce) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -30234,7 +38497,7 @@ func (j *jsiiProxy_SagemakerWorkforce) WorkforceNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html aws_sagemaker_workforce} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce aws_sagemaker_workforce} Resource.
 func NewSagemakerWorkforce(scope constructs.Construct, id *string, config *SagemakerWorkforceConfig) SagemakerWorkforce {
 	_init_.Initialize()
 
@@ -30249,7 +38512,7 @@ func NewSagemakerWorkforce(scope constructs.Construct, id *string, config *Sagem
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html aws_sagemaker_workforce} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce aws_sagemaker_workforce} Resource.
 func NewSagemakerWorkforce_Override(s SagemakerWorkforce, scope constructs.Construct, id *string, config *SagemakerWorkforceConfig) {
 	_init_.Initialize()
 
@@ -30260,7 +38523,7 @@ func NewSagemakerWorkforce_Override(s SagemakerWorkforce, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkforce) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerWorkforce) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -30340,12 +38603,40 @@ func (s *jsiiProxy_SagemakerWorkforce) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkforce) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkforce) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforce) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30382,12 +38673,54 @@ func (s *jsiiProxy_SagemakerWorkforce) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkforce) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforce) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkforce) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforce) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30534,10 +38867,10 @@ func (s *jsiiProxy_SagemakerWorkforce) ToTerraform() interface{} {
 }
 
 type SagemakerWorkforceCognitoConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#client_id SagemakerWorkforce#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#user_pool SagemakerWorkforce#user_pool}.
-	UserPool *string `json:"userPool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#client_id SagemakerWorkforce#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#user_pool SagemakerWorkforce#user_pool}.
+	UserPool *string `json:"userPool" yaml:"userPool"`
 }
 
 type SagemakerWorkforceCognitoConfigOutputReference interface {
@@ -30551,15 +38884,20 @@ type SagemakerWorkforceCognitoConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserPool() *string
 	SetUserPool(val *string)
 	UserPoolInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -30619,8 +38957,8 @@ func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30649,7 +38987,7 @@ func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) UserPoolInput
 	return returns
 }
 
-func NewSagemakerWorkforceCognitoConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerWorkforceCognitoConfigOutputReference {
+func NewSagemakerWorkforceCognitoConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerWorkforceCognitoConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference{}
@@ -30663,7 +39001,7 @@ func NewSagemakerWorkforceCognitoConfigOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewSagemakerWorkforceCognitoConfigOutputReference_Override(s SagemakerWorkforceCognitoConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerWorkforceCognitoConfigOutputReference_Override(s SagemakerWorkforceCognitoConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -30705,7 +39043,7 @@ func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30722,12 +39060,40 @@ func (j *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) SetUserPool(v
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30764,12 +39130,54 @@ func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30808,46 +39216,46 @@ func (s *jsiiProxy_SagemakerWorkforceCognitoConfigOutputReference) Interpolation
 // AWS SageMaker.
 type SagemakerWorkforceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#workforce_name SagemakerWorkforce#workforce_name}.
-	WorkforceName *string `json:"workforceName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#workforce_name SagemakerWorkforce#workforce_name}.
+	WorkforceName *string `json:"workforceName" yaml:"workforceName"`
 	// cognito_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#cognito_config SagemakerWorkforce#cognito_config}
-	CognitoConfig *SagemakerWorkforceCognitoConfig `json:"cognitoConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#cognito_config SagemakerWorkforce#cognito_config}
+	CognitoConfig *SagemakerWorkforceCognitoConfig `json:"cognitoConfig" yaml:"cognitoConfig"`
 	// oidc_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#oidc_config SagemakerWorkforce#oidc_config}
-	OidcConfig *SagemakerWorkforceOidcConfig `json:"oidcConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#oidc_config SagemakerWorkforce#oidc_config}
+	OidcConfig *SagemakerWorkforceOidcConfig `json:"oidcConfig" yaml:"oidcConfig"`
 	// source_ip_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#source_ip_config SagemakerWorkforce#source_ip_config}
-	SourceIpConfig *SagemakerWorkforceSourceIpConfig `json:"sourceIpConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#source_ip_config SagemakerWorkforce#source_ip_config}
+	SourceIpConfig *SagemakerWorkforceSourceIpConfig `json:"sourceIpConfig" yaml:"sourceIpConfig"`
 }
 
 type SagemakerWorkforceOidcConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#authorization_endpoint SagemakerWorkforce#authorization_endpoint}.
-	AuthorizationEndpoint *string `json:"authorizationEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#client_id SagemakerWorkforce#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#client_secret SagemakerWorkforce#client_secret}.
-	ClientSecret *string `json:"clientSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#issuer SagemakerWorkforce#issuer}.
-	Issuer *string `json:"issuer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#jwks_uri SagemakerWorkforce#jwks_uri}.
-	JwksUri *string `json:"jwksUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#logout_endpoint SagemakerWorkforce#logout_endpoint}.
-	LogoutEndpoint *string `json:"logoutEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#token_endpoint SagemakerWorkforce#token_endpoint}.
-	TokenEndpoint *string `json:"tokenEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#user_info_endpoint SagemakerWorkforce#user_info_endpoint}.
-	UserInfoEndpoint *string `json:"userInfoEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#authorization_endpoint SagemakerWorkforce#authorization_endpoint}.
+	AuthorizationEndpoint *string `json:"authorizationEndpoint" yaml:"authorizationEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#client_id SagemakerWorkforce#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#client_secret SagemakerWorkforce#client_secret}.
+	ClientSecret *string `json:"clientSecret" yaml:"clientSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#issuer SagemakerWorkforce#issuer}.
+	Issuer *string `json:"issuer" yaml:"issuer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#jwks_uri SagemakerWorkforce#jwks_uri}.
+	JwksUri *string `json:"jwksUri" yaml:"jwksUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#logout_endpoint SagemakerWorkforce#logout_endpoint}.
+	LogoutEndpoint *string `json:"logoutEndpoint" yaml:"logoutEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#token_endpoint SagemakerWorkforce#token_endpoint}.
+	TokenEndpoint *string `json:"tokenEndpoint" yaml:"tokenEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#user_info_endpoint SagemakerWorkforce#user_info_endpoint}.
+	UserInfoEndpoint *string `json:"userInfoEndpoint" yaml:"userInfoEndpoint"`
 }
 
 type SagemakerWorkforceOidcConfigOutputReference interface {
@@ -30876,18 +39284,23 @@ type SagemakerWorkforceOidcConfigOutputReference interface {
 	LogoutEndpointInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TokenEndpoint() *string
 	SetTokenEndpoint(val *string)
 	TokenEndpointInput() *string
 	UserInfoEndpoint() *string
 	SetUserInfoEndpoint(val *string)
 	UserInfoEndpointInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -31047,8 +39460,8 @@ func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31097,7 +39510,7 @@ func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) UserInfoEndpoint
 	return returns
 }
 
-func NewSagemakerWorkforceOidcConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerWorkforceOidcConfigOutputReference {
+func NewSagemakerWorkforceOidcConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerWorkforceOidcConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerWorkforceOidcConfigOutputReference{}
@@ -31111,7 +39524,7 @@ func NewSagemakerWorkforceOidcConfigOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewSagemakerWorkforceOidcConfigOutputReference_Override(s SagemakerWorkforceOidcConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerWorkforceOidcConfigOutputReference_Override(s SagemakerWorkforceOidcConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31193,7 +39606,7 @@ func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31218,12 +39631,40 @@ func (j *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) SetUserInfoEndpo
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31260,12 +39701,54 @@ func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31302,8 +39785,8 @@ func (s *jsiiProxy_SagemakerWorkforceOidcConfigOutputReference) InterpolationFor
 }
 
 type SagemakerWorkforceSourceIpConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce.html#cidrs SagemakerWorkforce#cidrs}.
-	Cidrs *[]*string `json:"cidrs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workforce#cidrs SagemakerWorkforce#cidrs}.
+	Cidrs *[]*string `json:"cidrs" yaml:"cidrs"`
 }
 
 type SagemakerWorkforceSourceIpConfigOutputReference interface {
@@ -31317,12 +39800,17 @@ type SagemakerWorkforceSourceIpConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -31382,8 +39870,8 @@ func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31392,7 +39880,7 @@ func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) TerraformRes
 	return returns
 }
 
-func NewSagemakerWorkforceSourceIpConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerWorkforceSourceIpConfigOutputReference {
+func NewSagemakerWorkforceSourceIpConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerWorkforceSourceIpConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference{}
@@ -31406,7 +39894,7 @@ func NewSagemakerWorkforceSourceIpConfigOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewSagemakerWorkforceSourceIpConfigOutputReference_Override(s SagemakerWorkforceSourceIpConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerWorkforceSourceIpConfigOutputReference_Override(s SagemakerWorkforceSourceIpConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31448,7 +39936,7 @@ func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31457,12 +39945,40 @@ func (j *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) SetTerraform
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31499,12 +40015,54 @@ func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31540,14 +40098,14 @@ func (s *jsiiProxy_SagemakerWorkforceSourceIpConfigOutputReference) Interpolatio
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html aws_sagemaker_workteam}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam aws_sagemaker_workteam}.
 type SagemakerWorkteam interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -31558,9 +40116,9 @@ type SagemakerWorkteam interface {
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	MemberDefinition() *[]*SagemakerWorkteamMemberDefinition
-	SetMemberDefinition(val *[]*SagemakerWorkteamMemberDefinition)
-	MemberDefinitionInput() *[]*SagemakerWorkteamMemberDefinition
+	MemberDefinition() interface{}
+	SetMemberDefinition(val interface{})
+	MemberDefinitionInput() interface{}
 	Node() constructs.Node
 	NotificationConfiguration() SagemakerWorkteamNotificationConfigurationOutputReference
 	NotificationConfigurationInput() *SagemakerWorkteamNotificationConfiguration
@@ -31568,12 +40126,12 @@ type SagemakerWorkteam interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	Subdomain() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -31584,10 +40142,15 @@ type SagemakerWorkteam interface {
 	SetWorkteamName(val *string)
 	WorkteamNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutNotificationConfiguration(value *SagemakerWorkteamNotificationConfiguration)
@@ -31636,8 +40199,8 @@ func (j *jsiiProxy_SagemakerWorkteam) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerWorkteam) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -31716,8 +40279,8 @@ func (j *jsiiProxy_SagemakerWorkteam) Lifecycle() *cdktf.TerraformResourceLifecy
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) MemberDefinition() *[]*SagemakerWorkteamMemberDefinition {
-	var returns *[]*SagemakerWorkteamMemberDefinition
+func (j *jsiiProxy_SagemakerWorkteam) MemberDefinition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"memberDefinition",
@@ -31726,8 +40289,8 @@ func (j *jsiiProxy_SagemakerWorkteam) MemberDefinition() *[]*SagemakerWorkteamMe
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) MemberDefinitionInput() *[]*SagemakerWorkteamMemberDefinition {
-	var returns *[]*SagemakerWorkteamMemberDefinition
+func (j *jsiiProxy_SagemakerWorkteam) MemberDefinitionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"memberDefinitionInput",
@@ -31796,8 +40359,8 @@ func (j *jsiiProxy_SagemakerWorkteam) Subdomain() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerWorkteam) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -31806,8 +40369,8 @@ func (j *jsiiProxy_SagemakerWorkteam) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerWorkteam) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -31816,8 +40379,8 @@ func (j *jsiiProxy_SagemakerWorkteam) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerWorkteam) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -31826,8 +40389,8 @@ func (j *jsiiProxy_SagemakerWorkteam) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SagemakerWorkteam) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -31906,7 +40469,7 @@ func (j *jsiiProxy_SagemakerWorkteam) WorkteamNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html aws_sagemaker_workteam} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam aws_sagemaker_workteam} Resource.
 func NewSagemakerWorkteam(scope constructs.Construct, id *string, config *SagemakerWorkteamConfig) SagemakerWorkteam {
 	_init_.Initialize()
 
@@ -31921,7 +40484,7 @@ func NewSagemakerWorkteam(scope constructs.Construct, id *string, config *Sagema
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html aws_sagemaker_workteam} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam aws_sagemaker_workteam} Resource.
 func NewSagemakerWorkteam_Override(s SagemakerWorkteam, scope constructs.Construct, id *string, config *SagemakerWorkteamConfig) {
 	_init_.Initialize()
 
@@ -31932,7 +40495,7 @@ func NewSagemakerWorkteam_Override(s SagemakerWorkteam, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) SetCount(val interface{}) {
+func (j *jsiiProxy_SagemakerWorkteam) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -31964,7 +40527,7 @@ func (j *jsiiProxy_SagemakerWorkteam) SetLifecycle(val *cdktf.TerraformResourceL
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) SetMemberDefinition(val *[]*SagemakerWorkteamMemberDefinition) {
+func (j *jsiiProxy_SagemakerWorkteam) SetMemberDefinition(val interface{}) {
 	_jsii_.Set(
 		j,
 		"memberDefinition",
@@ -31980,7 +40543,7 @@ func (j *jsiiProxy_SagemakerWorkteam) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) SetTags(val interface{}) {
+func (j *jsiiProxy_SagemakerWorkteam) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -31988,7 +40551,7 @@ func (j *jsiiProxy_SagemakerWorkteam) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkteam) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SagemakerWorkteam) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -32052,12 +40615,40 @@ func (s *jsiiProxy_SagemakerWorkteam) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkteam) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkteam) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteam) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32094,12 +40685,54 @@ func (s *jsiiProxy_SagemakerWorkteam) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkteam) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteam) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkteam) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteam) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32232,51 +40865,51 @@ func (s *jsiiProxy_SagemakerWorkteam) ToTerraform() interface{} {
 // AWS SageMaker.
 type SagemakerWorkteamConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#description SagemakerWorkteam#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#description SagemakerWorkteam#description}.
+	Description *string `json:"description" yaml:"description"`
 	// member_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#member_definition SagemakerWorkteam#member_definition}
-	MemberDefinition *[]*SagemakerWorkteamMemberDefinition `json:"memberDefinition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#workforce_name SagemakerWorkteam#workforce_name}.
-	WorkforceName *string `json:"workforceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#workteam_name SagemakerWorkteam#workteam_name}.
-	WorkteamName *string `json:"workteamName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#member_definition SagemakerWorkteam#member_definition}
+	MemberDefinition interface{} `json:"memberDefinition" yaml:"memberDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#workforce_name SagemakerWorkteam#workforce_name}.
+	WorkforceName *string `json:"workforceName" yaml:"workforceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#workteam_name SagemakerWorkteam#workteam_name}.
+	WorkteamName *string `json:"workteamName" yaml:"workteamName"`
 	// notification_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#notification_configuration SagemakerWorkteam#notification_configuration}
-	NotificationConfiguration *SagemakerWorkteamNotificationConfiguration `json:"notificationConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#tags SagemakerWorkteam#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#tags_all SagemakerWorkteam#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#notification_configuration SagemakerWorkteam#notification_configuration}
+	NotificationConfiguration *SagemakerWorkteamNotificationConfiguration `json:"notificationConfiguration" yaml:"notificationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#tags SagemakerWorkteam#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#tags_all SagemakerWorkteam#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type SagemakerWorkteamMemberDefinition struct {
 	// cognito_member_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#cognito_member_definition SagemakerWorkteam#cognito_member_definition}
-	CognitoMemberDefinition *SagemakerWorkteamMemberDefinitionCognitoMemberDefinition `json:"cognitoMemberDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#cognito_member_definition SagemakerWorkteam#cognito_member_definition}
+	CognitoMemberDefinition *SagemakerWorkteamMemberDefinitionCognitoMemberDefinition `json:"cognitoMemberDefinition" yaml:"cognitoMemberDefinition"`
 	// oidc_member_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#oidc_member_definition SagemakerWorkteam#oidc_member_definition}
-	OidcMemberDefinition *SagemakerWorkteamMemberDefinitionOidcMemberDefinition `json:"oidcMemberDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#oidc_member_definition SagemakerWorkteam#oidc_member_definition}
+	OidcMemberDefinition *SagemakerWorkteamMemberDefinitionOidcMemberDefinition `json:"oidcMemberDefinition" yaml:"oidcMemberDefinition"`
 }
 
 type SagemakerWorkteamMemberDefinitionCognitoMemberDefinition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#client_id SagemakerWorkteam#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#user_group SagemakerWorkteam#user_group}.
-	UserGroup *string `json:"userGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#user_pool SagemakerWorkteam#user_pool}.
-	UserPool *string `json:"userPool"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#client_id SagemakerWorkteam#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#user_group SagemakerWorkteam#user_group}.
+	UserGroup *string `json:"userGroup" yaml:"userGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#user_pool SagemakerWorkteam#user_pool}.
+	UserPool *string `json:"userPool" yaml:"userPool"`
 }
 
 type SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference interface {
@@ -32290,18 +40923,23 @@ type SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference int
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserGroup() *string
 	SetUserGroup(val *string)
 	UserGroupInput() *string
 	UserPool() *string
 	SetUserPool(val *string)
 	UserPoolInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -32361,8 +40999,8 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32411,7 +41049,7 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 	return returns
 }
 
-func NewSagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference {
+func NewSagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference{}
@@ -32425,7 +41063,7 @@ func NewSagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference(
 	return &j
 }
 
-func NewSagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference_Override(s SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference_Override(s SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32467,7 +41105,7 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32492,12 +41130,40 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32534,12 +41200,54 @@ func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32576,8 +41284,8 @@ func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionCognitoMemberDefinitionOutpu
 }
 
 type SagemakerWorkteamMemberDefinitionOidcMemberDefinition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#groups SagemakerWorkteam#groups}.
-	Groups *[]*string `json:"groups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#groups SagemakerWorkteam#groups}.
+	Groups *[]*string `json:"groups" yaml:"groups"`
 }
 
 type SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference interface {
@@ -32591,12 +41299,17 @@ type SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference interf
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -32656,8 +41369,8 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32666,7 +41379,7 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 	return returns
 }
 
-func NewSagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference {
+func NewSagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference{}
@@ -32680,7 +41393,7 @@ func NewSagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference(ter
 	return &j
 }
 
-func NewSagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference_Override(s SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference_Override(s SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32722,7 +41435,7 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32731,12 +41444,40 @@ func (j *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32773,12 +41514,54 @@ func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32815,8 +41598,8 @@ func (s *jsiiProxy_SagemakerWorkteamMemberDefinitionOidcMemberDefinitionOutputRe
 }
 
 type SagemakerWorkteamNotificationConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam.html#notification_topic_arn SagemakerWorkteam#notification_topic_arn}.
-	NotificationTopicArn *string `json:"notificationTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sagemaker_workteam#notification_topic_arn SagemakerWorkteam#notification_topic_arn}.
+	NotificationTopicArn *string `json:"notificationTopicArn" yaml:"notificationTopicArn"`
 }
 
 type SagemakerWorkteamNotificationConfigurationOutputReference interface {
@@ -32830,12 +41613,17 @@ type SagemakerWorkteamNotificationConfigurationOutputReference interface {
 	NotificationTopicArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetNotificationTopicArn()
@@ -32896,8 +41684,8 @@ func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32906,7 +41694,7 @@ func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) Te
 	return returns
 }
 
-func NewSagemakerWorkteamNotificationConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SagemakerWorkteamNotificationConfigurationOutputReference {
+func NewSagemakerWorkteamNotificationConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SagemakerWorkteamNotificationConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference{}
@@ -32920,7 +41708,7 @@ func NewSagemakerWorkteamNotificationConfigurationOutputReference(terraformResou
 	return &j
 }
 
-func NewSagemakerWorkteamNotificationConfigurationOutputReference_Override(s SagemakerWorkteamNotificationConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSagemakerWorkteamNotificationConfigurationOutputReference_Override(s SagemakerWorkteamNotificationConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32962,7 +41750,7 @@ func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32971,12 +41759,40 @@ func (j *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) Se
 }
 
 // Experimental.
-func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33013,12 +41829,54 @@ func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) Ge
 }
 
 // Experimental.
+func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SagemakerWorkteamNotificationConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

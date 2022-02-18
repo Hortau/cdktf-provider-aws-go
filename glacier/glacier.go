@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/glacier/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html aws_glacier_vault}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault aws_glacier_vault}.
 type GlacierVault interface {
 	cdktf.TerraformResource
 	AccessPolicy() *string
@@ -18,8 +18,8 @@ type GlacierVault interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37,20 +37,25 @@ type GlacierVault interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutNotification(value *GlacierVaultNotification)
@@ -120,8 +125,8 @@ func (j *jsiiProxy_GlacierVault) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_GlacierVault) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlacierVault) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -260,8 +265,8 @@ func (j *jsiiProxy_GlacierVault) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlacierVault) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlacierVault) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -270,8 +275,8 @@ func (j *jsiiProxy_GlacierVault) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlacierVault) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlacierVault) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -280,8 +285,8 @@ func (j *jsiiProxy_GlacierVault) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlacierVault) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlacierVault) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -290,8 +295,8 @@ func (j *jsiiProxy_GlacierVault) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlacierVault) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlacierVault) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -330,7 +335,7 @@ func (j *jsiiProxy_GlacierVault) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html aws_glacier_vault} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault aws_glacier_vault} Resource.
 func NewGlacierVault(scope constructs.Construct, id *string, config *GlacierVaultConfig) GlacierVault {
 	_init_.Initialize()
 
@@ -345,7 +350,7 @@ func NewGlacierVault(scope constructs.Construct, id *string, config *GlacierVaul
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html aws_glacier_vault} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault aws_glacier_vault} Resource.
 func NewGlacierVault_Override(g GlacierVault, scope constructs.Construct, id *string, config *GlacierVaultConfig) {
 	_init_.Initialize()
 
@@ -364,7 +369,7 @@ func (j *jsiiProxy_GlacierVault) SetAccessPolicy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlacierVault) SetCount(val interface{}) {
+func (j *jsiiProxy_GlacierVault) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -404,7 +409,7 @@ func (j *jsiiProxy_GlacierVault) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GlacierVault) SetTags(val interface{}) {
+func (j *jsiiProxy_GlacierVault) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -412,7 +417,7 @@ func (j *jsiiProxy_GlacierVault) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlacierVault) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlacierVault) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -460,12 +465,40 @@ func (g *jsiiProxy_GlacierVault) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GlacierVault) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlacierVault) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVault) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -502,12 +535,54 @@ func (g *jsiiProxy_GlacierVault) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlacierVault) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVault) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlacierVault) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVault) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -648,28 +723,28 @@ func (g *jsiiProxy_GlacierVault) ToTerraform() interface{} {
 // AWS Glacier.
 type GlacierVaultConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html#name GlacierVault#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html#access_policy GlacierVault#access_policy}.
-	AccessPolicy *string `json:"accessPolicy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault#name GlacierVault#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault#access_policy GlacierVault#access_policy}.
+	AccessPolicy *string `json:"accessPolicy" yaml:"accessPolicy"`
 	// notification block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html#notification GlacierVault#notification}
-	Notification *GlacierVaultNotification `json:"notification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html#tags GlacierVault#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html#tags_all GlacierVault#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault#notification GlacierVault#notification}
+	Notification *GlacierVaultNotification `json:"notification" yaml:"notification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault#tags GlacierVault#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault#tags_all GlacierVault#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock.html aws_glacier_vault_lock}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock aws_glacier_vault_lock}.
 type GlacierVaultLock interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -677,8 +752,8 @@ type GlacierVaultLock interface {
 	SetCompleteLock(val interface{})
 	CompleteLockInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -703,10 +778,15 @@ type GlacierVaultLock interface {
 	SetVaultName(val *string)
 	VaultNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetIgnoreDeletionError()
@@ -762,8 +842,8 @@ func (j *jsiiProxy_GlacierVaultLock) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_GlacierVaultLock) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlacierVaultLock) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -942,7 +1022,7 @@ func (j *jsiiProxy_GlacierVaultLock) VaultNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock.html aws_glacier_vault_lock} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock aws_glacier_vault_lock} Resource.
 func NewGlacierVaultLock(scope constructs.Construct, id *string, config *GlacierVaultLockConfig) GlacierVaultLock {
 	_init_.Initialize()
 
@@ -957,7 +1037,7 @@ func NewGlacierVaultLock(scope constructs.Construct, id *string, config *Glacier
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock.html aws_glacier_vault_lock} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock aws_glacier_vault_lock} Resource.
 func NewGlacierVaultLock_Override(g GlacierVaultLock, scope constructs.Construct, id *string, config *GlacierVaultLockConfig) {
 	_init_.Initialize()
 
@@ -976,7 +1056,7 @@ func (j *jsiiProxy_GlacierVaultLock) SetCompleteLock(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlacierVaultLock) SetCount(val interface{}) {
+func (j *jsiiProxy_GlacierVaultLock) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1072,12 +1152,40 @@ func (g *jsiiProxy_GlacierVaultLock) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (g *jsiiProxy_GlacierVaultLock) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlacierVaultLock) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVaultLock) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1114,12 +1222,54 @@ func (g *jsiiProxy_GlacierVaultLock) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (g *jsiiProxy_GlacierVaultLock) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVaultLock) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlacierVaultLock) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVaultLock) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1228,28 +1378,28 @@ func (g *jsiiProxy_GlacierVaultLock) ToTerraform() interface{} {
 // AWS Glacier.
 type GlacierVaultLockConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock.html#complete_lock GlacierVaultLock#complete_lock}.
-	CompleteLock interface{} `json:"completeLock"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock.html#policy GlacierVaultLock#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock.html#vault_name GlacierVaultLock#vault_name}.
-	VaultName *string `json:"vaultName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock.html#ignore_deletion_error GlacierVaultLock#ignore_deletion_error}.
-	IgnoreDeletionError interface{} `json:"ignoreDeletionError"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock#complete_lock GlacierVaultLock#complete_lock}.
+	CompleteLock interface{} `json:"completeLock" yaml:"completeLock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock#policy GlacierVaultLock#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock#vault_name GlacierVaultLock#vault_name}.
+	VaultName *string `json:"vaultName" yaml:"vaultName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault_lock#ignore_deletion_error GlacierVaultLock#ignore_deletion_error}.
+	IgnoreDeletionError interface{} `json:"ignoreDeletionError" yaml:"ignoreDeletionError"`
 }
 
 type GlacierVaultNotification struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html#events GlacierVault#events}.
-	Events *[]*string `json:"events"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault.html#sns_topic GlacierVault#sns_topic}.
-	SnsTopic *string `json:"snsTopic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault#events GlacierVault#events}.
+	Events *[]*string `json:"events" yaml:"events"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glacier_vault#sns_topic GlacierVault#sns_topic}.
+	SnsTopic *string `json:"snsTopic" yaml:"snsTopic"`
 }
 
 type GlacierVaultNotificationOutputReference interface {
@@ -1266,12 +1416,17 @@ type GlacierVaultNotificationOutputReference interface {
 	SnsTopicInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1351,8 +1506,8 @@ func (j *jsiiProxy_GlacierVaultNotificationOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_GlacierVaultNotificationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlacierVaultNotificationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1361,7 +1516,7 @@ func (j *jsiiProxy_GlacierVaultNotificationOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewGlacierVaultNotificationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlacierVaultNotificationOutputReference {
+func NewGlacierVaultNotificationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlacierVaultNotificationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlacierVaultNotificationOutputReference{}
@@ -1375,7 +1530,7 @@ func NewGlacierVaultNotificationOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewGlacierVaultNotificationOutputReference_Override(g GlacierVaultNotificationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlacierVaultNotificationOutputReference_Override(g GlacierVaultNotificationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1425,7 +1580,7 @@ func (j *jsiiProxy_GlacierVaultNotificationOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_GlacierVaultNotificationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlacierVaultNotificationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1434,12 +1589,40 @@ func (j *jsiiProxy_GlacierVaultNotificationOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1476,12 +1659,54 @@ func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlacierVaultNotificationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

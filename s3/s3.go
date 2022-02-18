@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/s3/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket.html aws_s3_bucket}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket aws_s3_bucket}.
 type DataAwsS3Bucket interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -20,8 +20,8 @@ type DataAwsS3Bucket interface {
 	BucketRegionalDomainName() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -41,10 +41,15 @@ type DataAwsS3Bucket interface {
 	WebsiteDomain() *string
 	WebsiteEndpoint() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -129,8 +134,8 @@ func (j *jsiiProxy_DataAwsS3Bucket) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsS3Bucket) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsS3Bucket) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -289,7 +294,7 @@ func (j *jsiiProxy_DataAwsS3Bucket) WebsiteEndpoint() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket.html aws_s3_bucket} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket aws_s3_bucket} Data Source.
 func NewDataAwsS3Bucket(scope constructs.Construct, id *string, config *DataAwsS3BucketConfig) DataAwsS3Bucket {
 	_init_.Initialize()
 
@@ -304,7 +309,7 @@ func NewDataAwsS3Bucket(scope constructs.Construct, id *string, config *DataAwsS
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket.html aws_s3_bucket} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket aws_s3_bucket} Data Source.
 func NewDataAwsS3Bucket_Override(d DataAwsS3Bucket, scope constructs.Construct, id *string, config *DataAwsS3BucketConfig) {
 	_init_.Initialize()
 
@@ -323,7 +328,7 @@ func (j *jsiiProxy_DataAwsS3Bucket) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsS3Bucket) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsS3Bucket) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -395,12 +400,40 @@ func (d *jsiiProxy_DataAwsS3Bucket) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsS3Bucket) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsS3Bucket) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3Bucket) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -437,12 +470,54 @@ func (d *jsiiProxy_DataAwsS3Bucket) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsS3Bucket) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3Bucket) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsS3Bucket) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3Bucket) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -543,25 +618,25 @@ func (d *jsiiProxy_DataAwsS3Bucket) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type DataAwsS3BucketConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket.html#bucket DataAwsS3Bucket#bucket}.
-	Bucket *string `json:"bucket"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket#bucket DataAwsS3Bucket#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html aws_s3_bucket_object}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object aws_s3_bucket_object}.
 type DataAwsS3BucketObject interface {
 	cdktf.TerraformDataSource
 	Body() *string
 	Bucket() *string
 	SetBucket(val *string)
 	BucketInput() *string
-	BucketKeyEnabled() interface{}
+	BucketKeyEnabled() cdktf.IResolvable
 	CacheControl() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
@@ -570,8 +645,8 @@ type DataAwsS3BucketObject interface {
 	ContentLanguage() *string
 	ContentLength() *float64
 	ContentType() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -599,9 +674,9 @@ type DataAwsS3BucketObject interface {
 	ServerSideEncryption() *string
 	SseKmsKeyId() *string
 	StorageClass() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -610,12 +685,17 @@ type DataAwsS3BucketObject interface {
 	VersionIdInput() *string
 	WebsiteRedirectLocation() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
-	Metadata(key *string) *string
+	Metadata(key *string) interface{}
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
 	ResetRange()
@@ -662,8 +742,8 @@ func (j *jsiiProxy_DataAwsS3BucketObject) BucketInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObject) BucketKeyEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsS3BucketObject) BucketKeyEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"bucketKeyEnabled",
@@ -752,8 +832,8 @@ func (j *jsiiProxy_DataAwsS3BucketObject) ContentType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObject) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsS3BucketObject) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -982,8 +1062,8 @@ func (j *jsiiProxy_DataAwsS3BucketObject) StorageClass() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObject) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsS3BucketObject) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -992,8 +1072,8 @@ func (j *jsiiProxy_DataAwsS3BucketObject) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObject) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsS3BucketObject) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1062,7 +1142,7 @@ func (j *jsiiProxy_DataAwsS3BucketObject) WebsiteRedirectLocation() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html aws_s3_bucket_object} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object aws_s3_bucket_object} Data Source.
 func NewDataAwsS3BucketObject(scope constructs.Construct, id *string, config *DataAwsS3BucketObjectConfig) DataAwsS3BucketObject {
 	_init_.Initialize()
 
@@ -1077,7 +1157,7 @@ func NewDataAwsS3BucketObject(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html aws_s3_bucket_object} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object aws_s3_bucket_object} Data Source.
 func NewDataAwsS3BucketObject_Override(d DataAwsS3BucketObject, scope constructs.Construct, id *string, config *DataAwsS3BucketObjectConfig) {
 	_init_.Initialize()
 
@@ -1096,7 +1176,7 @@ func (j *jsiiProxy_DataAwsS3BucketObject) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObject) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsS3BucketObject) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1144,7 +1224,7 @@ func (j *jsiiProxy_DataAwsS3BucketObject) SetRange(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObject) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsS3BucketObject) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1200,12 +1280,40 @@ func (d *jsiiProxy_DataAwsS3BucketObject) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObject) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsS3BucketObject) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObject) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1242,12 +1350,54 @@ func (d *jsiiProxy_DataAwsS3BucketObject) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObject) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObject) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsS3BucketObject) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObject) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1269,8 +1419,8 @@ func (d *jsiiProxy_DataAwsS3BucketObject) InterpolationForAttribute(terraformAtt
 	return returns
 }
 
-func (d *jsiiProxy_DataAwsS3BucketObject) Metadata(key *string) *string {
-	var returns *string
+func (d *jsiiProxy_DataAwsS3BucketObject) Metadata(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		d,
@@ -1385,26 +1535,26 @@ func (d *jsiiProxy_DataAwsS3BucketObject) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type DataAwsS3BucketObjectConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html#bucket DataAwsS3BucketObject#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html#key DataAwsS3BucketObject#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html#range DataAwsS3BucketObject#range}.
-	Range *string `json:"range"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html#tags DataAwsS3BucketObject#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object.html#version_id DataAwsS3BucketObject#version_id}.
-	VersionId *string `json:"versionId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object#bucket DataAwsS3BucketObject#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object#key DataAwsS3BucketObject#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object#range DataAwsS3BucketObject#range}.
+	Range *string `json:"range" yaml:"range"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object#tags DataAwsS3BucketObject#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_object#version_id DataAwsS3BucketObject#version_id}.
+	VersionId *string `json:"versionId" yaml:"versionId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html aws_s3_bucket_objects}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects aws_s3_bucket_objects}.
 type DataAwsS3BucketObjects interface {
 	cdktf.TerraformDataSource
 	Bucket() *string
@@ -1413,8 +1563,8 @@ type DataAwsS3BucketObjects interface {
 	CdktfStack() cdktf.TerraformStack
 	CommonPrefixes() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Delimiter() *string
 	SetDelimiter(val *string)
 	DelimiterInput() *string
@@ -1450,10 +1600,15 @@ type DataAwsS3BucketObjects interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDelimiter()
@@ -1524,8 +1679,8 @@ func (j *jsiiProxy_DataAwsS3BucketObjects) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObjects) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsS3BucketObjects) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1784,7 +1939,7 @@ func (j *jsiiProxy_DataAwsS3BucketObjects) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html aws_s3_bucket_objects} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects aws_s3_bucket_objects} Data Source.
 func NewDataAwsS3BucketObjects(scope constructs.Construct, id *string, config *DataAwsS3BucketObjectsConfig) DataAwsS3BucketObjects {
 	_init_.Initialize()
 
@@ -1799,7 +1954,7 @@ func NewDataAwsS3BucketObjects(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html aws_s3_bucket_objects} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects aws_s3_bucket_objects} Data Source.
 func NewDataAwsS3BucketObjects_Override(d DataAwsS3BucketObjects, scope constructs.Construct, id *string, config *DataAwsS3BucketObjectsConfig) {
 	_init_.Initialize()
 
@@ -1818,7 +1973,7 @@ func (j *jsiiProxy_DataAwsS3BucketObjects) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsS3BucketObjects) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsS3BucketObjects) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1938,12 +2093,40 @@ func (d *jsiiProxy_DataAwsS3BucketObjects) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObjects) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsS3BucketObjects) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObjects) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1980,12 +2163,54 @@ func (d *jsiiProxy_DataAwsS3BucketObjects) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObjects) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObjects) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsS3BucketObjects) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsS3BucketObjects) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2134,30 +2359,30 @@ func (d *jsiiProxy_DataAwsS3BucketObjects) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type DataAwsS3BucketObjectsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html#bucket DataAwsS3BucketObjects#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html#delimiter DataAwsS3BucketObjects#delimiter}.
-	Delimiter *string `json:"delimiter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html#encoding_type DataAwsS3BucketObjects#encoding_type}.
-	EncodingType *string `json:"encodingType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html#fetch_owner DataAwsS3BucketObjects#fetch_owner}.
-	FetchOwner interface{} `json:"fetchOwner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html#max_keys DataAwsS3BucketObjects#max_keys}.
-	MaxKeys *float64 `json:"maxKeys"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html#prefix DataAwsS3BucketObjects#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects.html#start_after DataAwsS3BucketObjects#start_after}.
-	StartAfter *string `json:"startAfter"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects#bucket DataAwsS3BucketObjects#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects#delimiter DataAwsS3BucketObjects#delimiter}.
+	Delimiter *string `json:"delimiter" yaml:"delimiter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects#encoding_type DataAwsS3BucketObjects#encoding_type}.
+	EncodingType *string `json:"encodingType" yaml:"encodingType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects#fetch_owner DataAwsS3BucketObjects#fetch_owner}.
+	FetchOwner interface{} `json:"fetchOwner" yaml:"fetchOwner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects#max_keys DataAwsS3BucketObjects#max_keys}.
+	MaxKeys *float64 `json:"maxKeys" yaml:"maxKeys"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects#prefix DataAwsS3BucketObjects#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/s3_bucket_objects#start_after DataAwsS3BucketObjects#start_after}.
+	StartAfter *string `json:"startAfter" yaml:"startAfter"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html aws_s3_access_point}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point aws_s3_access_point}.
 type S3AccessPoint interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -2170,14 +2395,14 @@ type S3AccessPoint interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
-	HasPublicAccessPolicy() interface{}
+	HasPublicAccessPolicy() cdktf.IResolvable
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -2200,11 +2425,16 @@ type S3AccessPoint interface {
 	VpcConfiguration() S3AccessPointVpcConfigurationOutputReference
 	VpcConfigurationInput() *S3AccessPointVpcConfiguration
 	AddOverride(path *string, value interface{})
-	Endpoints(key *string) *string
+	Endpoints(key *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPublicAccessBlockConfiguration(value *S3AccessPointPublicAccessBlockConfiguration)
@@ -2305,8 +2535,8 @@ func (j *jsiiProxy_S3AccessPoint) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_S3AccessPoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3AccessPoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2355,8 +2585,8 @@ func (j *jsiiProxy_S3AccessPoint) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3AccessPoint) HasPublicAccessPolicy() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3AccessPoint) HasPublicAccessPolicy() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"hasPublicAccessPolicy",
@@ -2535,7 +2765,7 @@ func (j *jsiiProxy_S3AccessPoint) VpcConfigurationInput() *S3AccessPointVpcConfi
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html aws_s3_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point aws_s3_access_point} Resource.
 func NewS3AccessPoint(scope constructs.Construct, id *string, config *S3AccessPointConfig) S3AccessPoint {
 	_init_.Initialize()
 
@@ -2550,7 +2780,7 @@ func NewS3AccessPoint(scope constructs.Construct, id *string, config *S3AccessPo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html aws_s3_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point aws_s3_access_point} Resource.
 func NewS3AccessPoint_Override(s S3AccessPoint, scope constructs.Construct, id *string, config *S3AccessPointConfig) {
 	_init_.Initialize()
 
@@ -2577,7 +2807,7 @@ func (j *jsiiProxy_S3AccessPoint) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3AccessPoint) SetCount(val interface{}) {
+func (j *jsiiProxy_S3AccessPoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2664,13 +2894,27 @@ func (s *jsiiProxy_S3AccessPoint) AddOverride(path *string, value interface{}) {
 	)
 }
 
-func (s *jsiiProxy_S3AccessPoint) Endpoints(key *string) *string {
-	var returns *string
+func (s *jsiiProxy_S3AccessPoint) Endpoints(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		s,
 		"endpoints",
 		[]interface{}{key},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
 		&returns,
 	)
 
@@ -2684,6 +2928,20 @@ func (s *jsiiProxy_S3AccessPoint) GetBooleanAttribute(terraformAttribute *string
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2720,12 +2978,54 @@ func (s *jsiiProxy_S3AccessPoint) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (s *jsiiProxy_S3AccessPoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3AccessPoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2874,40 +3174,40 @@ func (s *jsiiProxy_S3AccessPoint) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3AccessPointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#bucket S3AccessPoint#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#name S3AccessPoint#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#account_id S3AccessPoint#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#policy S3AccessPoint#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#bucket S3AccessPoint#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#name S3AccessPoint#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#account_id S3AccessPoint#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#policy S3AccessPoint#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 	// public_access_block_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#public_access_block_configuration S3AccessPoint#public_access_block_configuration}
-	PublicAccessBlockConfiguration *S3AccessPointPublicAccessBlockConfiguration `json:"publicAccessBlockConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#public_access_block_configuration S3AccessPoint#public_access_block_configuration}
+	PublicAccessBlockConfiguration *S3AccessPointPublicAccessBlockConfiguration `json:"publicAccessBlockConfiguration" yaml:"publicAccessBlockConfiguration"`
 	// vpc_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#vpc_configuration S3AccessPoint#vpc_configuration}
-	VpcConfiguration *S3AccessPointVpcConfiguration `json:"vpcConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#vpc_configuration S3AccessPoint#vpc_configuration}
+	VpcConfiguration *S3AccessPointVpcConfiguration `json:"vpcConfiguration" yaml:"vpcConfiguration"`
 }
 
 type S3AccessPointPublicAccessBlockConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#block_public_acls S3AccessPoint#block_public_acls}.
-	BlockPublicAcls interface{} `json:"blockPublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#block_public_policy S3AccessPoint#block_public_policy}.
-	BlockPublicPolicy interface{} `json:"blockPublicPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#ignore_public_acls S3AccessPoint#ignore_public_acls}.
-	IgnorePublicAcls interface{} `json:"ignorePublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#restrict_public_buckets S3AccessPoint#restrict_public_buckets}.
-	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#block_public_acls S3AccessPoint#block_public_acls}.
+	BlockPublicAcls interface{} `json:"blockPublicAcls" yaml:"blockPublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#block_public_policy S3AccessPoint#block_public_policy}.
+	BlockPublicPolicy interface{} `json:"blockPublicPolicy" yaml:"blockPublicPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#ignore_public_acls S3AccessPoint#ignore_public_acls}.
+	IgnorePublicAcls interface{} `json:"ignorePublicAcls" yaml:"ignorePublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#restrict_public_buckets S3AccessPoint#restrict_public_buckets}.
+	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets" yaml:"restrictPublicBuckets"`
 }
 
 type S3AccessPointPublicAccessBlockConfigurationOutputReference interface {
@@ -2930,12 +3230,17 @@ type S3AccessPointPublicAccessBlockConfigurationOutputReference interface {
 	RestrictPublicBucketsInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBlockPublicAcls()
@@ -3059,8 +3364,8 @@ func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3069,7 +3374,7 @@ func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) T
 	return returns
 }
 
-func NewS3AccessPointPublicAccessBlockConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3AccessPointPublicAccessBlockConfigurationOutputReference {
+func NewS3AccessPointPublicAccessBlockConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3AccessPointPublicAccessBlockConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference{}
@@ -3083,7 +3388,7 @@ func NewS3AccessPointPublicAccessBlockConfigurationOutputReference(terraformReso
 	return &j
 }
 
-func NewS3AccessPointPublicAccessBlockConfigurationOutputReference_Override(s S3AccessPointPublicAccessBlockConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3AccessPointPublicAccessBlockConfigurationOutputReference_Override(s S3AccessPointPublicAccessBlockConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3149,7 +3454,7 @@ func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3158,12 +3463,40 @@ func (j *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) S
 }
 
 // Experimental.
-func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3200,12 +3533,54 @@ func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) G
 }
 
 // Experimental.
+func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3274,8 +3649,8 @@ func (s *jsiiProxy_S3AccessPointPublicAccessBlockConfigurationOutputReference) R
 }
 
 type S3AccessPointVpcConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point.html#vpc_id S3AccessPoint#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_access_point#vpc_id S3AccessPoint#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type S3AccessPointVpcConfigurationOutputReference interface {
@@ -3286,15 +3661,20 @@ type S3AccessPointVpcConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
 	SetVpcId(val *string)
 	VpcIdInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3334,8 +3714,8 @@ func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3364,7 +3744,7 @@ func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) VpcIdInput() *s
 	return returns
 }
 
-func NewS3AccessPointVpcConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3AccessPointVpcConfigurationOutputReference {
+func NewS3AccessPointVpcConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3AccessPointVpcConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3AccessPointVpcConfigurationOutputReference{}
@@ -3378,7 +3758,7 @@ func NewS3AccessPointVpcConfigurationOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewS3AccessPointVpcConfigurationOutputReference_Override(s S3AccessPointVpcConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3AccessPointVpcConfigurationOutputReference_Override(s S3AccessPointVpcConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3412,7 +3792,7 @@ func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3429,12 +3809,40 @@ func (j *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) SetVpcId(val *s
 }
 
 // Experimental.
-func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3471,12 +3879,54 @@ func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3512,7 +3962,7 @@ func (s *jsiiProxy_S3AccessPointVpcConfigurationOutputReference) InterpolationFo
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html aws_s3_account_public_access_block}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block aws_s3_account_public_access_block}.
 type S3AccountPublicAccessBlock interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -3526,8 +3976,8 @@ type S3AccountPublicAccessBlock interface {
 	BlockPublicPolicyInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3549,10 +3999,15 @@ type S3AccountPublicAccessBlock interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAccountId()
@@ -3652,8 +4107,8 @@ func (j *jsiiProxy_S3AccountPublicAccessBlock) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_S3AccountPublicAccessBlock) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3AccountPublicAccessBlock) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3812,7 +4267,7 @@ func (j *jsiiProxy_S3AccountPublicAccessBlock) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html aws_s3_account_public_access_block} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block aws_s3_account_public_access_block} Resource.
 func NewS3AccountPublicAccessBlock(scope constructs.Construct, id *string, config *S3AccountPublicAccessBlockConfig) S3AccountPublicAccessBlock {
 	_init_.Initialize()
 
@@ -3827,7 +4282,7 @@ func NewS3AccountPublicAccessBlock(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html aws_s3_account_public_access_block} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block aws_s3_account_public_access_block} Resource.
 func NewS3AccountPublicAccessBlock_Override(s S3AccountPublicAccessBlock, scope constructs.Construct, id *string, config *S3AccountPublicAccessBlockConfig) {
 	_init_.Initialize()
 
@@ -3862,7 +4317,7 @@ func (j *jsiiProxy_S3AccountPublicAccessBlock) SetBlockPublicPolicy(val interfac
 	)
 }
 
-func (j *jsiiProxy_S3AccountPublicAccessBlock) SetCount(val interface{}) {
+func (j *jsiiProxy_S3AccountPublicAccessBlock) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3950,12 +4405,40 @@ func (s *jsiiProxy_S3AccountPublicAccessBlock) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (s *jsiiProxy_S3AccountPublicAccessBlock) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3AccountPublicAccessBlock) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccountPublicAccessBlock) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3992,12 +4475,54 @@ func (s *jsiiProxy_S3AccountPublicAccessBlock) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_S3AccountPublicAccessBlock) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccountPublicAccessBlock) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3AccountPublicAccessBlock) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3AccountPublicAccessBlock) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4138,26 +4663,26 @@ func (s *jsiiProxy_S3AccountPublicAccessBlock) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3AccountPublicAccessBlockConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html#account_id S3AccountPublicAccessBlock#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html#block_public_acls S3AccountPublicAccessBlock#block_public_acls}.
-	BlockPublicAcls interface{} `json:"blockPublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html#block_public_policy S3AccountPublicAccessBlock#block_public_policy}.
-	BlockPublicPolicy interface{} `json:"blockPublicPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html#ignore_public_acls S3AccountPublicAccessBlock#ignore_public_acls}.
-	IgnorePublicAcls interface{} `json:"ignorePublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block.html#restrict_public_buckets S3AccountPublicAccessBlock#restrict_public_buckets}.
-	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block#account_id S3AccountPublicAccessBlock#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block#block_public_acls S3AccountPublicAccessBlock#block_public_acls}.
+	BlockPublicAcls interface{} `json:"blockPublicAcls" yaml:"blockPublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block#block_public_policy S3AccountPublicAccessBlock#block_public_policy}.
+	BlockPublicPolicy interface{} `json:"blockPublicPolicy" yaml:"blockPublicPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block#ignore_public_acls S3AccountPublicAccessBlock#ignore_public_acls}.
+	IgnorePublicAcls interface{} `json:"ignorePublicAcls" yaml:"ignorePublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_account_public_access_block#restrict_public_buckets S3AccountPublicAccessBlock#restrict_public_buckets}.
+	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets" yaml:"restrictPublicBuckets"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html aws_s3_bucket}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket aws_s3_bucket}.
 type S3Bucket interface {
 	cdktf.TerraformResource
 	AccelerationStatus() *string
@@ -4177,11 +4702,11 @@ type S3Bucket interface {
 	BucketRegionalDomainName() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	CorsRule() *[]*S3BucketCorsRule
-	SetCorsRule(val *[]*S3BucketCorsRule)
-	CorsRuleInput() *[]*S3BucketCorsRule
-	Count() interface{}
-	SetCount(val interface{})
+	CorsRule() interface{}
+	SetCorsRule(val interface{})
+	CorsRuleInput() interface{}
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ForceDestroy() interface{}
@@ -4189,21 +4714,21 @@ type S3Bucket interface {
 	ForceDestroyInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
-	Grant() *[]*S3BucketGrant
-	SetGrant(val *[]*S3BucketGrant)
-	GrantInput() *[]*S3BucketGrant
+	Grant() interface{}
+	SetGrant(val interface{})
+	GrantInput() interface{}
 	HostedZoneId() *string
 	SetHostedZoneId(val *string)
 	HostedZoneIdInput() *string
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	LifecycleRule() *[]*S3BucketLifecycleRule
-	SetLifecycleRule(val *[]*S3BucketLifecycleRule)
-	LifecycleRuleInput() *[]*S3BucketLifecycleRule
-	Logging() *[]*S3BucketLogging
-	SetLogging(val *[]*S3BucketLogging)
-	LoggingInput() *[]*S3BucketLogging
+	LifecycleRule() interface{}
+	SetLifecycleRule(val interface{})
+	LifecycleRuleInput() interface{}
+	Logging() interface{}
+	SetLogging(val interface{})
+	LoggingInput() interface{}
 	Node() constructs.Node
 	ObjectLockConfiguration() S3BucketObjectLockConfigurationOutputReference
 	ObjectLockConfigurationInput() *S3BucketObjectLockConfiguration
@@ -4221,12 +4746,12 @@ type S3Bucket interface {
 	RequestPayerInput() *string
 	ServerSideEncryptionConfiguration() S3BucketServerSideEncryptionConfigurationOutputReference
 	ServerSideEncryptionConfigurationInput() *S3BucketServerSideEncryptionConfiguration
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -4241,10 +4766,15 @@ type S3Bucket interface {
 	WebsiteEndpointInput() *string
 	WebsiteInput() *S3BucketWebsite
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutObjectLockConfiguration(value *S3BucketObjectLockConfiguration)
@@ -4415,8 +4945,8 @@ func (j *jsiiProxy_S3Bucket) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) CorsRule() *[]*S3BucketCorsRule {
-	var returns *[]*S3BucketCorsRule
+func (j *jsiiProxy_S3Bucket) CorsRule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"corsRule",
@@ -4425,8 +4955,8 @@ func (j *jsiiProxy_S3Bucket) CorsRule() *[]*S3BucketCorsRule {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) CorsRuleInput() *[]*S3BucketCorsRule {
-	var returns *[]*S3BucketCorsRule
+func (j *jsiiProxy_S3Bucket) CorsRuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"corsRuleInput",
@@ -4435,8 +4965,8 @@ func (j *jsiiProxy_S3Bucket) CorsRuleInput() *[]*S3BucketCorsRule {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3Bucket) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4495,8 +5025,8 @@ func (j *jsiiProxy_S3Bucket) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) Grant() *[]*S3BucketGrant {
-	var returns *[]*S3BucketGrant
+func (j *jsiiProxy_S3Bucket) Grant() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"grant",
@@ -4505,8 +5035,8 @@ func (j *jsiiProxy_S3Bucket) Grant() *[]*S3BucketGrant {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) GrantInput() *[]*S3BucketGrant {
-	var returns *[]*S3BucketGrant
+func (j *jsiiProxy_S3Bucket) GrantInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"grantInput",
@@ -4555,8 +5085,8 @@ func (j *jsiiProxy_S3Bucket) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) LifecycleRule() *[]*S3BucketLifecycleRule {
-	var returns *[]*S3BucketLifecycleRule
+func (j *jsiiProxy_S3Bucket) LifecycleRule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lifecycleRule",
@@ -4565,8 +5095,8 @@ func (j *jsiiProxy_S3Bucket) LifecycleRule() *[]*S3BucketLifecycleRule {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) LifecycleRuleInput() *[]*S3BucketLifecycleRule {
-	var returns *[]*S3BucketLifecycleRule
+func (j *jsiiProxy_S3Bucket) LifecycleRuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lifecycleRuleInput",
@@ -4575,8 +5105,8 @@ func (j *jsiiProxy_S3Bucket) LifecycleRuleInput() *[]*S3BucketLifecycleRule {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) Logging() *[]*S3BucketLogging {
-	var returns *[]*S3BucketLogging
+func (j *jsiiProxy_S3Bucket) Logging() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"logging",
@@ -4585,8 +5115,8 @@ func (j *jsiiProxy_S3Bucket) Logging() *[]*S3BucketLogging {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) LoggingInput() *[]*S3BucketLogging {
-	var returns *[]*S3BucketLogging
+func (j *jsiiProxy_S3Bucket) LoggingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"loggingInput",
@@ -4735,8 +5265,8 @@ func (j *jsiiProxy_S3Bucket) ServerSideEncryptionConfigurationInput() *S3BucketS
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3Bucket) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4745,8 +5275,8 @@ func (j *jsiiProxy_S3Bucket) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3Bucket) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4755,8 +5285,8 @@ func (j *jsiiProxy_S3Bucket) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3Bucket) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4765,8 +5295,8 @@ func (j *jsiiProxy_S3Bucket) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3Bucket) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3Bucket) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4885,7 +5415,7 @@ func (j *jsiiProxy_S3Bucket) WebsiteInput() *S3BucketWebsite {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html aws_s3_bucket} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket aws_s3_bucket} Resource.
 func NewS3Bucket(scope constructs.Construct, id *string, config *S3BucketConfig) S3Bucket {
 	_init_.Initialize()
 
@@ -4900,7 +5430,7 @@ func NewS3Bucket(scope constructs.Construct, id *string, config *S3BucketConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html aws_s3_bucket} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket aws_s3_bucket} Resource.
 func NewS3Bucket_Override(s S3Bucket, scope constructs.Construct, id *string, config *S3BucketConfig) {
 	_init_.Initialize()
 
@@ -4943,7 +5473,7 @@ func (j *jsiiProxy_S3Bucket) SetBucketPrefix(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3Bucket) SetCorsRule(val *[]*S3BucketCorsRule) {
+func (j *jsiiProxy_S3Bucket) SetCorsRule(val interface{}) {
 	_jsii_.Set(
 		j,
 		"corsRule",
@@ -4951,7 +5481,7 @@ func (j *jsiiProxy_S3Bucket) SetCorsRule(val *[]*S3BucketCorsRule) {
 	)
 }
 
-func (j *jsiiProxy_S3Bucket) SetCount(val interface{}) {
+func (j *jsiiProxy_S3Bucket) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4975,7 +5505,7 @@ func (j *jsiiProxy_S3Bucket) SetForceDestroy(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_S3Bucket) SetGrant(val *[]*S3BucketGrant) {
+func (j *jsiiProxy_S3Bucket) SetGrant(val interface{}) {
 	_jsii_.Set(
 		j,
 		"grant",
@@ -4999,7 +5529,7 @@ func (j *jsiiProxy_S3Bucket) SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	)
 }
 
-func (j *jsiiProxy_S3Bucket) SetLifecycleRule(val *[]*S3BucketLifecycleRule) {
+func (j *jsiiProxy_S3Bucket) SetLifecycleRule(val interface{}) {
 	_jsii_.Set(
 		j,
 		"lifecycleRule",
@@ -5007,7 +5537,7 @@ func (j *jsiiProxy_S3Bucket) SetLifecycleRule(val *[]*S3BucketLifecycleRule) {
 	)
 }
 
-func (j *jsiiProxy_S3Bucket) SetLogging(val *[]*S3BucketLogging) {
+func (j *jsiiProxy_S3Bucket) SetLogging(val interface{}) {
 	_jsii_.Set(
 		j,
 		"logging",
@@ -5039,7 +5569,7 @@ func (j *jsiiProxy_S3Bucket) SetRequestPayer(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3Bucket) SetTags(val interface{}) {
+func (j *jsiiProxy_S3Bucket) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5047,7 +5577,7 @@ func (j *jsiiProxy_S3Bucket) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_S3Bucket) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_S3Bucket) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5111,12 +5641,40 @@ func (s *jsiiProxy_S3Bucket) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_S3Bucket) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3Bucket) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3Bucket) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5153,12 +5711,54 @@ func (s *jsiiProxy_S3Bucket) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (s *jsiiProxy_S3Bucket) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3Bucket) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3Bucket) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3Bucket) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5464,7 +6064,7 @@ func (s *jsiiProxy_S3Bucket) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html aws_s3_bucket_analytics_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration aws_s3_bucket_analytics_configuration}.
 type S3BucketAnalyticsConfiguration interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -5472,8 +6072,8 @@ type S3BucketAnalyticsConfiguration interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Filter() S3BucketAnalyticsConfigurationFilterOutputReference
@@ -5496,10 +6096,15 @@ type S3BucketAnalyticsConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutFilter(value *S3BucketAnalyticsConfigurationFilter)
@@ -5558,8 +6163,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfiguration) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketAnalyticsConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5738,7 +6343,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfiguration) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html aws_s3_bucket_analytics_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration aws_s3_bucket_analytics_configuration} Resource.
 func NewS3BucketAnalyticsConfiguration(scope constructs.Construct, id *string, config *S3BucketAnalyticsConfigurationConfig) S3BucketAnalyticsConfiguration {
 	_init_.Initialize()
 
@@ -5753,7 +6358,7 @@ func NewS3BucketAnalyticsConfiguration(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html aws_s3_bucket_analytics_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration aws_s3_bucket_analytics_configuration} Resource.
 func NewS3BucketAnalyticsConfiguration_Override(s S3BucketAnalyticsConfiguration, scope constructs.Construct, id *string, config *S3BucketAnalyticsConfigurationConfig) {
 	_init_.Initialize()
 
@@ -5772,7 +6377,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfiguration) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketAnalyticsConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5852,12 +6457,40 @@ func (s *jsiiProxy_S3BucketAnalyticsConfiguration) AddOverride(path *string, val
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5894,12 +6527,54 @@ func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6032,32 +6707,32 @@ func (s *jsiiProxy_S3BucketAnalyticsConfiguration) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketAnalyticsConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#bucket S3BucketAnalyticsConfiguration#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#name S3BucketAnalyticsConfiguration#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#bucket S3BucketAnalyticsConfiguration#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#name S3BucketAnalyticsConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#filter S3BucketAnalyticsConfiguration#filter}
-	Filter *S3BucketAnalyticsConfigurationFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#filter S3BucketAnalyticsConfiguration#filter}
+	Filter *S3BucketAnalyticsConfigurationFilter `json:"filter" yaml:"filter"`
 	// storage_class_analysis block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#storage_class_analysis S3BucketAnalyticsConfiguration#storage_class_analysis}
-	StorageClassAnalysis *S3BucketAnalyticsConfigurationStorageClassAnalysis `json:"storageClassAnalysis"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#storage_class_analysis S3BucketAnalyticsConfiguration#storage_class_analysis}
+	StorageClassAnalysis *S3BucketAnalyticsConfigurationStorageClassAnalysis `json:"storageClassAnalysis" yaml:"storageClassAnalysis"`
 }
 
 type S3BucketAnalyticsConfigurationFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#prefix S3BucketAnalyticsConfiguration#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#tags S3BucketAnalyticsConfiguration#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#prefix S3BucketAnalyticsConfiguration#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#tags S3BucketAnalyticsConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type S3BucketAnalyticsConfigurationFilterOutputReference interface {
@@ -6069,17 +6744,22 @@ type S3BucketAnalyticsConfigurationFilterOutputReference interface {
 	Prefix() *string
 	SetPrefix(val *string)
 	PrefixInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -6131,8 +6811,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) PrefixIn
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6141,8 +6821,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) Tags() i
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6161,8 +6841,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6171,7 +6851,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) Terrafor
 	return returns
 }
 
-func NewS3BucketAnalyticsConfigurationFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationFilterOutputReference {
+func NewS3BucketAnalyticsConfigurationFilterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationFilterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference{}
@@ -6185,7 +6865,7 @@ func NewS3BucketAnalyticsConfigurationFilterOutputReference(terraformResource cd
 	return &j
 }
 
-func NewS3BucketAnalyticsConfigurationFilterOutputReference_Override(s S3BucketAnalyticsConfigurationFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketAnalyticsConfigurationFilterOutputReference_Override(s S3BucketAnalyticsConfigurationFilterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6219,7 +6899,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetPrefi
 	)
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6235,7 +6915,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6244,12 +6924,40 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) SetTerra
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6286,12 +6994,54 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetNumbe
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6346,24 +7096,24 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationFilterOutputReference) ResetTag
 type S3BucketAnalyticsConfigurationStorageClassAnalysis struct {
 	// data_export block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#data_export S3BucketAnalyticsConfiguration#data_export}
-	DataExport *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport `json:"dataExport"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#data_export S3BucketAnalyticsConfiguration#data_export}
+	DataExport *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport `json:"dataExport" yaml:"dataExport"`
 }
 
 type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport struct {
 	// destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#destination S3BucketAnalyticsConfiguration#destination}
-	Destination *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination `json:"destination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#output_schema_version S3BucketAnalyticsConfiguration#output_schema_version}.
-	OutputSchemaVersion *string `json:"outputSchemaVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#destination S3BucketAnalyticsConfiguration#destination}
+	Destination *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination `json:"destination" yaml:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#output_schema_version S3BucketAnalyticsConfiguration#output_schema_version}.
+	OutputSchemaVersion *string `json:"outputSchemaVersion" yaml:"outputSchemaVersion"`
 }
 
 type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination struct {
 	// s3_bucket_destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#s3_bucket_destination S3BucketAnalyticsConfiguration#s3_bucket_destination}
-	S3BucketDestination *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination `json:"s3BucketDestination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#s3_bucket_destination S3BucketAnalyticsConfiguration#s3_bucket_destination}
+	S3BucketDestination *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination `json:"s3BucketDestination" yaml:"s3BucketDestination"`
 }
 
 type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference interface {
@@ -6376,12 +7126,17 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutp
 	S3BucketDestinationInput() *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3BucketDestination(value *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination)
@@ -6442,8 +7197,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6452,7 +7207,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	return returns
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference{}
@@ -6466,7 +7221,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationO
 	return &j
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6500,7 +7255,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	)
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6509,12 +7264,40 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6551,12 +7334,54 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6601,14 +7426,14 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 }
 
 type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#bucket_arn S3BucketAnalyticsConfiguration#bucket_arn}.
-	BucketArn *string `json:"bucketArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#bucket_account_id S3BucketAnalyticsConfiguration#bucket_account_id}.
-	BucketAccountId *string `json:"bucketAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#format S3BucketAnalyticsConfiguration#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration.html#prefix S3BucketAnalyticsConfiguration#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#bucket_arn S3BucketAnalyticsConfiguration#bucket_arn}.
+	BucketArn *string `json:"bucketArn" yaml:"bucketArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#bucket_account_id S3BucketAnalyticsConfiguration#bucket_account_id}.
+	BucketAccountId *string `json:"bucketAccountId" yaml:"bucketAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#format S3BucketAnalyticsConfiguration#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_analytics_configuration#prefix S3BucketAnalyticsConfiguration#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference interface {
@@ -6631,12 +7456,17 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3Bu
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBucketAccountId()
@@ -6759,8 +7589,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6769,7 +7599,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	return returns
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference{}
@@ -6783,7 +7613,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS
 	return &j
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6849,7 +7679,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 	)
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6858,12 +7688,40 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6900,12 +7758,54 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportD
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6978,12 +7878,17 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference
 	OutputSchemaVersionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDestination(value *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportDestination)
@@ -7065,8 +7970,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportO
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7075,7 +7980,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportO
 	return returns
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference{}
@@ -7089,7 +7994,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputRefere
 	return &j
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7131,7 +8036,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportO
 	)
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7140,12 +8045,40 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportO
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7182,12 +8115,54 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportO
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisDataExportOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7249,12 +8224,17 @@ type S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference interface
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDataExport(value *S3BucketAnalyticsConfigurationStorageClassAnalysisDataExport)
@@ -7315,8 +8295,8 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7325,7 +8305,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 	return returns
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference{}
@@ -7339,7 +8319,7 @@ func NewS3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference(terraf
 	return &j
 }
 
-func NewS3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference_Override(s S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7373,7 +8353,7 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 	)
 }
 
-func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7382,12 +8362,40 @@ func (j *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7424,12 +8432,54 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7476,100 +8526,100 @@ func (s *jsiiProxy_S3BucketAnalyticsConfigurationStorageClassAnalysisOutputRefer
 // AWS Simple Storage Service.
 type S3BucketConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#acceleration_status S3Bucket#acceleration_status}.
-	AccelerationStatus *string `json:"accelerationStatus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#acl S3Bucket#acl}.
-	Acl *string `json:"acl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#bucket S3Bucket#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#bucket_prefix S3Bucket#bucket_prefix}.
-	BucketPrefix *string `json:"bucketPrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#acceleration_status S3Bucket#acceleration_status}.
+	AccelerationStatus *string `json:"accelerationStatus" yaml:"accelerationStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#acl S3Bucket#acl}.
+	Acl *string `json:"acl" yaml:"acl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#bucket S3Bucket#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#bucket_prefix S3Bucket#bucket_prefix}.
+	BucketPrefix *string `json:"bucketPrefix" yaml:"bucketPrefix"`
 	// cors_rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#cors_rule S3Bucket#cors_rule}
-	CorsRule *[]*S3BucketCorsRule `json:"corsRule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#force_destroy S3Bucket#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#cors_rule S3Bucket#cors_rule}
+	CorsRule interface{} `json:"corsRule" yaml:"corsRule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#force_destroy S3Bucket#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
 	// grant block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#grant S3Bucket#grant}
-	Grant *[]*S3BucketGrant `json:"grant"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#hosted_zone_id S3Bucket#hosted_zone_id}.
-	HostedZoneId *string `json:"hostedZoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#grant S3Bucket#grant}
+	Grant interface{} `json:"grant" yaml:"grant"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#hosted_zone_id S3Bucket#hosted_zone_id}.
+	HostedZoneId *string `json:"hostedZoneId" yaml:"hostedZoneId"`
 	// lifecycle_rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#lifecycle_rule S3Bucket#lifecycle_rule}
-	LifecycleRule *[]*S3BucketLifecycleRule `json:"lifecycleRule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#lifecycle_rule S3Bucket#lifecycle_rule}
+	LifecycleRule interface{} `json:"lifecycleRule" yaml:"lifecycleRule"`
 	// logging block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#logging S3Bucket#logging}
-	Logging *[]*S3BucketLogging `json:"logging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#logging S3Bucket#logging}
+	Logging interface{} `json:"logging" yaml:"logging"`
 	// object_lock_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#object_lock_configuration S3Bucket#object_lock_configuration}
-	ObjectLockConfiguration *S3BucketObjectLockConfiguration `json:"objectLockConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#policy S3Bucket#policy}.
-	Policy *string `json:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#object_lock_configuration S3Bucket#object_lock_configuration}
+	ObjectLockConfiguration *S3BucketObjectLockConfiguration `json:"objectLockConfiguration" yaml:"objectLockConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#policy S3Bucket#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 	// replication_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#replication_configuration S3Bucket#replication_configuration}
-	ReplicationConfiguration *S3BucketReplicationConfiguration `json:"replicationConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#request_payer S3Bucket#request_payer}.
-	RequestPayer *string `json:"requestPayer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#replication_configuration S3Bucket#replication_configuration}
+	ReplicationConfiguration *S3BucketReplicationConfiguration `json:"replicationConfiguration" yaml:"replicationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#request_payer S3Bucket#request_payer}.
+	RequestPayer *string `json:"requestPayer" yaml:"requestPayer"`
 	// server_side_encryption_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#server_side_encryption_configuration S3Bucket#server_side_encryption_configuration}
-	ServerSideEncryptionConfiguration *S3BucketServerSideEncryptionConfiguration `json:"serverSideEncryptionConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#tags S3Bucket#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#tags_all S3Bucket#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#server_side_encryption_configuration S3Bucket#server_side_encryption_configuration}
+	ServerSideEncryptionConfiguration *S3BucketServerSideEncryptionConfiguration `json:"serverSideEncryptionConfiguration" yaml:"serverSideEncryptionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#tags S3Bucket#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#tags_all S3Bucket#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// versioning block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#versioning S3Bucket#versioning}
-	Versioning *S3BucketVersioning `json:"versioning"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#versioning S3Bucket#versioning}
+	Versioning *S3BucketVersioning `json:"versioning" yaml:"versioning"`
 	// website block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#website S3Bucket#website}
-	Website *S3BucketWebsite `json:"website"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#website_domain S3Bucket#website_domain}.
-	WebsiteDomain *string `json:"websiteDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#website_endpoint S3Bucket#website_endpoint}.
-	WebsiteEndpoint *string `json:"websiteEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#website S3Bucket#website}
+	Website *S3BucketWebsite `json:"website" yaml:"website"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#website_domain S3Bucket#website_domain}.
+	WebsiteDomain *string `json:"websiteDomain" yaml:"websiteDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#website_endpoint S3Bucket#website_endpoint}.
+	WebsiteEndpoint *string `json:"websiteEndpoint" yaml:"websiteEndpoint"`
 }
 
 type S3BucketCorsRule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#allowed_methods S3Bucket#allowed_methods}.
-	AllowedMethods *[]*string `json:"allowedMethods"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#allowed_origins S3Bucket#allowed_origins}.
-	AllowedOrigins *[]*string `json:"allowedOrigins"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#allowed_headers S3Bucket#allowed_headers}.
-	AllowedHeaders *[]*string `json:"allowedHeaders"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#expose_headers S3Bucket#expose_headers}.
-	ExposeHeaders *[]*string `json:"exposeHeaders"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#max_age_seconds S3Bucket#max_age_seconds}.
-	MaxAgeSeconds *float64 `json:"maxAgeSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#allowed_methods S3Bucket#allowed_methods}.
+	AllowedMethods *[]*string `json:"allowedMethods" yaml:"allowedMethods"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#allowed_origins S3Bucket#allowed_origins}.
+	AllowedOrigins *[]*string `json:"allowedOrigins" yaml:"allowedOrigins"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#allowed_headers S3Bucket#allowed_headers}.
+	AllowedHeaders *[]*string `json:"allowedHeaders" yaml:"allowedHeaders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#expose_headers S3Bucket#expose_headers}.
+	ExposeHeaders *[]*string `json:"exposeHeaders" yaml:"exposeHeaders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#max_age_seconds S3Bucket#max_age_seconds}.
+	MaxAgeSeconds *float64 `json:"maxAgeSeconds" yaml:"maxAgeSeconds"`
 }
 
 type S3BucketGrant struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#permissions S3Bucket#permissions}.
-	Permissions *[]*string `json:"permissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#type S3Bucket#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#id S3Bucket#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#uri S3Bucket#uri}.
-	Uri *string `json:"uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#permissions S3Bucket#permissions}.
+	Permissions *[]*string `json:"permissions" yaml:"permissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#type S3Bucket#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#id S3Bucket#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#uri S3Bucket#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html aws_s3_bucket_intelligent_tiering_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration aws_s3_bucket_intelligent_tiering_configuration}.
 type S3BucketIntelligentTieringConfiguration interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -7577,8 +8627,8 @@ type S3BucketIntelligentTieringConfiguration interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Filter() S3BucketIntelligentTieringConfigurationFilterOutputReference
@@ -7601,14 +8651,19 @@ type S3BucketIntelligentTieringConfiguration interface {
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Tiering() *[]*S3BucketIntelligentTieringConfigurationTiering
-	SetTiering(val *[]*S3BucketIntelligentTieringConfigurationTiering)
-	TieringInput() *[]*S3BucketIntelligentTieringConfigurationTiering
+	Tiering() interface{}
+	SetTiering(val interface{})
+	TieringInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutFilter(value *S3BucketIntelligentTieringConfigurationFilter)
@@ -7666,8 +8721,8 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) ConstructNodeMetadat
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7846,8 +8901,8 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TerraformResourceTyp
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Tiering() *[]*S3BucketIntelligentTieringConfigurationTiering {
-	var returns *[]*S3BucketIntelligentTieringConfigurationTiering
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Tiering() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tiering",
@@ -7856,8 +8911,8 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) Tiering() *[]*S3Buck
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TieringInput() *[]*S3BucketIntelligentTieringConfigurationTiering {
-	var returns *[]*S3BucketIntelligentTieringConfigurationTiering
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TieringInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tieringInput",
@@ -7866,7 +8921,7 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) TieringInput() *[]*S
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html aws_s3_bucket_intelligent_tiering_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration aws_s3_bucket_intelligent_tiering_configuration} Resource.
 func NewS3BucketIntelligentTieringConfiguration(scope constructs.Construct, id *string, config *S3BucketIntelligentTieringConfigurationConfig) S3BucketIntelligentTieringConfiguration {
 	_init_.Initialize()
 
@@ -7881,7 +8936,7 @@ func NewS3BucketIntelligentTieringConfiguration(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html aws_s3_bucket_intelligent_tiering_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration aws_s3_bucket_intelligent_tiering_configuration} Resource.
 func NewS3BucketIntelligentTieringConfiguration_Override(s S3BucketIntelligentTieringConfiguration, scope constructs.Construct, id *string, config *S3BucketIntelligentTieringConfigurationConfig) {
 	_init_.Initialize()
 
@@ -7900,7 +8955,7 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetBucket(val *strin
 	)
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7948,7 +9003,7 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetStatus(val *strin
 	)
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetTiering(val *[]*S3BucketIntelligentTieringConfigurationTiering) {
+func (j *jsiiProxy_S3BucketIntelligentTieringConfiguration) SetTiering(val interface{}) {
 	_jsii_.Set(
 		j,
 		"tiering",
@@ -7996,12 +9051,40 @@ func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) AddOverride(path *st
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8038,12 +9121,54 @@ func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetNumberAttribute(t
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8168,34 +9293,34 @@ func (s *jsiiProxy_S3BucketIntelligentTieringConfiguration) ToTerraform() interf
 // AWS Simple Storage Service.
 type S3BucketIntelligentTieringConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#bucket S3BucketIntelligentTieringConfiguration#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#name S3BucketIntelligentTieringConfiguration#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#bucket S3BucketIntelligentTieringConfiguration#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#name S3BucketIntelligentTieringConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
 	// tiering block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#tiering S3BucketIntelligentTieringConfiguration#tiering}
-	Tiering *[]*S3BucketIntelligentTieringConfigurationTiering `json:"tiering"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#tiering S3BucketIntelligentTieringConfiguration#tiering}
+	Tiering interface{} `json:"tiering" yaml:"tiering"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#filter S3BucketIntelligentTieringConfiguration#filter}
-	Filter *S3BucketIntelligentTieringConfigurationFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#status S3BucketIntelligentTieringConfiguration#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#filter S3BucketIntelligentTieringConfiguration#filter}
+	Filter *S3BucketIntelligentTieringConfigurationFilter `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#status S3BucketIntelligentTieringConfiguration#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3BucketIntelligentTieringConfigurationFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#prefix S3BucketIntelligentTieringConfiguration#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#tags S3BucketIntelligentTieringConfiguration#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#prefix S3BucketIntelligentTieringConfiguration#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#tags S3BucketIntelligentTieringConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type S3BucketIntelligentTieringConfigurationFilterOutputReference interface {
@@ -8207,17 +9332,22 @@ type S3BucketIntelligentTieringConfigurationFilterOutputReference interface {
 	Prefix() *string
 	SetPrefix(val *string)
 	PrefixInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -8269,8 +9399,8 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8279,8 +9409,8 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8299,8 +9429,8 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8309,7 +9439,7 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 	return returns
 }
 
-func NewS3BucketIntelligentTieringConfigurationFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketIntelligentTieringConfigurationFilterOutputReference {
+func NewS3BucketIntelligentTieringConfigurationFilterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketIntelligentTieringConfigurationFilterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference{}
@@ -8323,7 +9453,7 @@ func NewS3BucketIntelligentTieringConfigurationFilterOutputReference(terraformRe
 	return &j
 }
 
-func NewS3BucketIntelligentTieringConfigurationFilterOutputReference_Override(s S3BucketIntelligentTieringConfigurationFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketIntelligentTieringConfigurationFilterOutputReference_Override(s S3BucketIntelligentTieringConfigurationFilterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8357,7 +9487,7 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8373,7 +9503,7 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8382,12 +9512,40 @@ func (j *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8424,12 +9582,54 @@ func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8482,13 +9682,13 @@ func (s *jsiiProxy_S3BucketIntelligentTieringConfigurationFilterOutputReference)
 }
 
 type S3BucketIntelligentTieringConfigurationTiering struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#access_tier S3BucketIntelligentTieringConfiguration#access_tier}.
-	AccessTier *string `json:"accessTier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration.html#days S3BucketIntelligentTieringConfiguration#days}.
-	Days *float64 `json:"days"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#access_tier S3BucketIntelligentTieringConfiguration#access_tier}.
+	AccessTier *string `json:"accessTier" yaml:"accessTier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_intelligent_tiering_configuration#days S3BucketIntelligentTieringConfiguration#days}.
+	Days *float64 `json:"days" yaml:"days"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html aws_s3_bucket_inventory}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory aws_s3_bucket_inventory}.
 type S3BucketInventory interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -8496,8 +9696,8 @@ type S3BucketInventory interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Destination() S3BucketInventoryDestinationOutputReference
@@ -8531,10 +9731,15 @@ type S3BucketInventory interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDestination(value *S3BucketInventoryDestination)
@@ -8595,8 +9800,8 @@ func (j *jsiiProxy_S3BucketInventory) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventory) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketInventory) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8855,7 +10060,7 @@ func (j *jsiiProxy_S3BucketInventory) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html aws_s3_bucket_inventory} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory aws_s3_bucket_inventory} Resource.
 func NewS3BucketInventory(scope constructs.Construct, id *string, config *S3BucketInventoryConfig) S3BucketInventory {
 	_init_.Initialize()
 
@@ -8870,7 +10075,7 @@ func NewS3BucketInventory(scope constructs.Construct, id *string, config *S3Buck
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html aws_s3_bucket_inventory} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory aws_s3_bucket_inventory} Resource.
 func NewS3BucketInventory_Override(s S3BucketInventory, scope constructs.Construct, id *string, config *S3BucketInventoryConfig) {
 	_init_.Initialize()
 
@@ -8889,7 +10094,7 @@ func (j *jsiiProxy_S3BucketInventory) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventory) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketInventory) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8993,12 +10198,40 @@ func (s *jsiiProxy_S3BucketInventory) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventory) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventory) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventory) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9035,12 +10268,54 @@ func (s *jsiiProxy_S3BucketInventory) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventory) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventory) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventory) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventory) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9189,68 +10464,68 @@ func (s *jsiiProxy_S3BucketInventory) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketInventoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#bucket S3BucketInventory#bucket}.
-	Bucket *string `json:"bucket"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#bucket S3BucketInventory#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
 	// destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#destination S3BucketInventory#destination}
-	Destination *S3BucketInventoryDestination `json:"destination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#included_object_versions S3BucketInventory#included_object_versions}.
-	IncludedObjectVersions *string `json:"includedObjectVersions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#name S3BucketInventory#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#destination S3BucketInventory#destination}
+	Destination *S3BucketInventoryDestination `json:"destination" yaml:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#included_object_versions S3BucketInventory#included_object_versions}.
+	IncludedObjectVersions *string `json:"includedObjectVersions" yaml:"includedObjectVersions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#name S3BucketInventory#name}.
+	Name *string `json:"name" yaml:"name"`
 	// schedule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#schedule S3BucketInventory#schedule}
-	Schedule *S3BucketInventorySchedule `json:"schedule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#enabled S3BucketInventory#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#schedule S3BucketInventory#schedule}
+	Schedule *S3BucketInventorySchedule `json:"schedule" yaml:"schedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#enabled S3BucketInventory#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#filter S3BucketInventory#filter}
-	Filter *S3BucketInventoryFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#optional_fields S3BucketInventory#optional_fields}.
-	OptionalFields *[]*string `json:"optionalFields"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#filter S3BucketInventory#filter}
+	Filter *S3BucketInventoryFilter `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#optional_fields S3BucketInventory#optional_fields}.
+	OptionalFields *[]*string `json:"optionalFields" yaml:"optionalFields"`
 }
 
 type S3BucketInventoryDestination struct {
 	// bucket block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#bucket S3BucketInventory#bucket}
-	Bucket *S3BucketInventoryDestinationBucket `json:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#bucket S3BucketInventory#bucket}
+	Bucket *S3BucketInventoryDestinationBucket `json:"bucket" yaml:"bucket"`
 }
 
 type S3BucketInventoryDestinationBucket struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#bucket_arn S3BucketInventory#bucket_arn}.
-	BucketArn *string `json:"bucketArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#format S3BucketInventory#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#account_id S3BucketInventory#account_id}.
-	AccountId *string `json:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#bucket_arn S3BucketInventory#bucket_arn}.
+	BucketArn *string `json:"bucketArn" yaml:"bucketArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#format S3BucketInventory#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#account_id S3BucketInventory#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 	// encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#encryption S3BucketInventory#encryption}
-	Encryption *S3BucketInventoryDestinationBucketEncryption `json:"encryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#prefix S3BucketInventory#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#encryption S3BucketInventory#encryption}
+	Encryption *S3BucketInventoryDestinationBucketEncryption `json:"encryption" yaml:"encryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#prefix S3BucketInventory#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type S3BucketInventoryDestinationBucketEncryption struct {
 	// sse_kms block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#sse_kms S3BucketInventory#sse_kms}
-	SseKms *S3BucketInventoryDestinationBucketEncryptionSseKms `json:"sseKms"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#sse_kms S3BucketInventory#sse_kms}
+	SseKms *S3BucketInventoryDestinationBucketEncryptionSseKms `json:"sseKms" yaml:"sseKms"`
 	// sse_s3 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#sse_s3 S3BucketInventory#sse_s3}
-	SseS3 *S3BucketInventoryDestinationBucketEncryptionSseS3 `json:"sseS3"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#sse_s3 S3BucketInventory#sse_s3}
+	SseS3 *S3BucketInventoryDestinationBucketEncryptionSseS3 `json:"sseS3" yaml:"sseS3"`
 }
 
 type S3BucketInventoryDestinationBucketEncryptionOutputReference interface {
@@ -9265,12 +10540,17 @@ type S3BucketInventoryDestinationBucketEncryptionOutputReference interface {
 	SseS3Input() *S3BucketInventoryDestinationBucketEncryptionSseS3
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSseKms(value *S3BucketInventoryDestinationBucketEncryptionSseKms)
@@ -9354,8 +10634,8 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9364,7 +10644,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) 
 	return returns
 }
 
-func NewS3BucketInventoryDestinationBucketEncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketEncryptionOutputReference {
+func NewS3BucketInventoryDestinationBucketEncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketEncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference{}
@@ -9378,7 +10658,7 @@ func NewS3BucketInventoryDestinationBucketEncryptionOutputReference(terraformRes
 	return &j
 }
 
-func NewS3BucketInventoryDestinationBucketEncryptionOutputReference_Override(s S3BucketInventoryDestinationBucketEncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketInventoryDestinationBucketEncryptionOutputReference_Override(s S3BucketInventoryDestinationBucketEncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9412,7 +10692,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9421,12 +10701,40 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) 
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9463,12 +10771,54 @@ func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9537,8 +10887,8 @@ func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionOutputReference) 
 }
 
 type S3BucketInventoryDestinationBucketEncryptionSseKms struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#key_id S3BucketInventory#key_id}.
-	KeyId *string `json:"keyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#key_id S3BucketInventory#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
 }
 
 type S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference interface {
@@ -9552,12 +10902,17 @@ type S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference interface
 	KeyIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9617,8 +10972,8 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9627,7 +10982,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputRefer
 	return returns
 }
 
-func NewS3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference {
+func NewS3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference{}
@@ -9641,7 +10996,7 @@ func NewS3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference(terraf
 	return &j
 }
 
-func NewS3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference_Override(s S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference_Override(s S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9683,7 +11038,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputRefer
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9692,12 +11047,40 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputRefer
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9734,12 +11117,54 @@ func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputRefer
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseKmsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9786,12 +11211,17 @@ type S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference interface 
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9831,8 +11261,8 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9841,7 +11271,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputRefere
 	return returns
 }
 
-func NewS3BucketInventoryDestinationBucketEncryptionSseS3OutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference {
+func NewS3BucketInventoryDestinationBucketEncryptionSseS3OutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference{}
@@ -9855,7 +11285,7 @@ func NewS3BucketInventoryDestinationBucketEncryptionSseS3OutputReference(terrafo
 	return &j
 }
 
-func NewS3BucketInventoryDestinationBucketEncryptionSseS3OutputReference_Override(s S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketInventoryDestinationBucketEncryptionSseS3OutputReference_Override(s S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9889,7 +11319,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputRefere
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9898,12 +11328,40 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputRefere
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9940,12 +11398,54 @@ func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputRefere
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketEncryptionSseS3OutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10003,12 +11503,17 @@ type S3BucketInventoryDestinationBucketOutputReference interface {
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutEncryption(value *S3BucketInventoryDestinationBucketEncryption)
@@ -10152,8 +11657,8 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10162,7 +11667,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) TerraformR
 	return returns
 }
 
-func NewS3BucketInventoryDestinationBucketOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketOutputReference {
+func NewS3BucketInventoryDestinationBucketOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationBucketOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketInventoryDestinationBucketOutputReference{}
@@ -10176,7 +11681,7 @@ func NewS3BucketInventoryDestinationBucketOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewS3BucketInventoryDestinationBucketOutputReference_Override(s S3BucketInventoryDestinationBucketOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketInventoryDestinationBucketOutputReference_Override(s S3BucketInventoryDestinationBucketOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10242,7 +11747,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10251,12 +11756,40 @@ func (j *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10293,12 +11826,54 @@ func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetNumberA
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationBucketOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10376,12 +11951,17 @@ type S3BucketInventoryDestinationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutBucket(value *S3BucketInventoryDestinationBucket)
@@ -10442,8 +12022,8 @@ func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10452,7 +12032,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) TerraformResourc
 	return returns
 }
 
-func NewS3BucketInventoryDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationOutputReference {
+func NewS3BucketInventoryDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketInventoryDestinationOutputReference{}
@@ -10466,7 +12046,7 @@ func NewS3BucketInventoryDestinationOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewS3BucketInventoryDestinationOutputReference_Override(s S3BucketInventoryDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketInventoryDestinationOutputReference_Override(s S3BucketInventoryDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10500,7 +12080,7 @@ func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10509,12 +12089,40 @@ func (j *jsiiProxy_S3BucketInventoryDestinationOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10551,12 +12159,54 @@ func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10601,8 +12251,8 @@ func (s *jsiiProxy_S3BucketInventoryDestinationOutputReference) PutBucket(value 
 }
 
 type S3BucketInventoryFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#prefix S3BucketInventory#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#prefix S3BucketInventory#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type S3BucketInventoryFilterOutputReference interface {
@@ -10616,12 +12266,17 @@ type S3BucketInventoryFilterOutputReference interface {
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -10682,8 +12337,8 @@ func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10692,7 +12347,7 @@ func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewS3BucketInventoryFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryFilterOutputReference {
+func NewS3BucketInventoryFilterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryFilterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketInventoryFilterOutputReference{}
@@ -10706,7 +12361,7 @@ func NewS3BucketInventoryFilterOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewS3BucketInventoryFilterOutputReference_Override(s S3BucketInventoryFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketInventoryFilterOutputReference_Override(s S3BucketInventoryFilterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10748,7 +12403,7 @@ func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10757,12 +12412,40 @@ func (j *jsiiProxy_S3BucketInventoryFilterOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10799,12 +12482,54 @@ func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10849,8 +12574,8 @@ func (s *jsiiProxy_S3BucketInventoryFilterOutputReference) ResetPrefix() {
 }
 
 type S3BucketInventorySchedule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory.html#frequency S3BucketInventory#frequency}.
-	Frequency *string `json:"frequency"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_inventory#frequency S3BucketInventory#frequency}.
+	Frequency *string `json:"frequency" yaml:"frequency"`
 }
 
 type S3BucketInventoryScheduleOutputReference interface {
@@ -10864,12 +12589,17 @@ type S3BucketInventoryScheduleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10929,8 +12659,8 @@ func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10939,7 +12669,7 @@ func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) TerraformResource()
 	return returns
 }
 
-func NewS3BucketInventoryScheduleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryScheduleOutputReference {
+func NewS3BucketInventoryScheduleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketInventoryScheduleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketInventoryScheduleOutputReference{}
@@ -10953,7 +12683,7 @@ func NewS3BucketInventoryScheduleOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewS3BucketInventoryScheduleOutputReference_Override(s S3BucketInventoryScheduleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketInventoryScheduleOutputReference_Override(s S3BucketInventoryScheduleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10995,7 +12725,7 @@ func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11004,12 +12734,40 @@ func (j *jsiiProxy_S3BucketInventoryScheduleOutputReference) SetTerraformResourc
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11046,12 +12804,54 @@ func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11088,41 +12888,41 @@ func (s *jsiiProxy_S3BucketInventoryScheduleOutputReference) InterpolationForAtt
 }
 
 type S3BucketLifecycleRule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#enabled S3Bucket#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#abort_incomplete_multipart_upload_days S3Bucket#abort_incomplete_multipart_upload_days}.
-	AbortIncompleteMultipartUploadDays *float64 `json:"abortIncompleteMultipartUploadDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#enabled S3Bucket#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#abort_incomplete_multipart_upload_days S3Bucket#abort_incomplete_multipart_upload_days}.
+	AbortIncompleteMultipartUploadDays *float64 `json:"abortIncompleteMultipartUploadDays" yaml:"abortIncompleteMultipartUploadDays"`
 	// expiration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#expiration S3Bucket#expiration}
-	Expiration *S3BucketLifecycleRuleExpiration `json:"expiration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#id S3Bucket#id}.
-	Id *string `json:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#expiration S3Bucket#expiration}
+	Expiration *S3BucketLifecycleRuleExpiration `json:"expiration" yaml:"expiration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#id S3Bucket#id}.
+	Id *string `json:"id" yaml:"id"`
 	// noncurrent_version_expiration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#noncurrent_version_expiration S3Bucket#noncurrent_version_expiration}
-	NoncurrentVersionExpiration *S3BucketLifecycleRuleNoncurrentVersionExpiration `json:"noncurrentVersionExpiration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#noncurrent_version_expiration S3Bucket#noncurrent_version_expiration}
+	NoncurrentVersionExpiration *S3BucketLifecycleRuleNoncurrentVersionExpiration `json:"noncurrentVersionExpiration" yaml:"noncurrentVersionExpiration"`
 	// noncurrent_version_transition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#noncurrent_version_transition S3Bucket#noncurrent_version_transition}
-	NoncurrentVersionTransition *[]*S3BucketLifecycleRuleNoncurrentVersionTransition `json:"noncurrentVersionTransition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#prefix S3Bucket#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#tags S3Bucket#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#noncurrent_version_transition S3Bucket#noncurrent_version_transition}
+	NoncurrentVersionTransition interface{} `json:"noncurrentVersionTransition" yaml:"noncurrentVersionTransition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#prefix S3Bucket#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#tags S3Bucket#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 	// transition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#transition S3Bucket#transition}
-	Transition *[]*S3BucketLifecycleRuleTransition `json:"transition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#transition S3Bucket#transition}
+	Transition interface{} `json:"transition" yaml:"transition"`
 }
 
 type S3BucketLifecycleRuleExpiration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#date S3Bucket#date}.
-	Date *string `json:"date"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#days S3Bucket#days}.
-	Days *float64 `json:"days"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#expired_object_delete_marker S3Bucket#expired_object_delete_marker}.
-	ExpiredObjectDeleteMarker interface{} `json:"expiredObjectDeleteMarker"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#date S3Bucket#date}.
+	Date *string `json:"date" yaml:"date"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#days S3Bucket#days}.
+	Days *float64 `json:"days" yaml:"days"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#expired_object_delete_marker S3Bucket#expired_object_delete_marker}.
+	ExpiredObjectDeleteMarker interface{} `json:"expiredObjectDeleteMarker" yaml:"expiredObjectDeleteMarker"`
 }
 
 type S3BucketLifecycleRuleExpirationOutputReference interface {
@@ -11142,12 +12942,17 @@ type S3BucketLifecycleRuleExpirationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDate()
@@ -11250,8 +13055,8 @@ func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11260,7 +13065,7 @@ func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) TerraformReso
 	return returns
 }
 
-func NewS3BucketLifecycleRuleExpirationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketLifecycleRuleExpirationOutputReference {
+func NewS3BucketLifecycleRuleExpirationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketLifecycleRuleExpirationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference{}
@@ -11274,7 +13079,7 @@ func NewS3BucketLifecycleRuleExpirationOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewS3BucketLifecycleRuleExpirationOutputReference_Override(s S3BucketLifecycleRuleExpirationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketLifecycleRuleExpirationOutputReference_Override(s S3BucketLifecycleRuleExpirationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11332,7 +13137,7 @@ func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11341,12 +13146,40 @@ func (j *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11383,12 +13216,54 @@ func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11449,8 +13324,8 @@ func (s *jsiiProxy_S3BucketLifecycleRuleExpirationOutputReference) ResetExpiredO
 }
 
 type S3BucketLifecycleRuleNoncurrentVersionExpiration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#days S3Bucket#days}.
-	Days *float64 `json:"days"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#days S3Bucket#days}.
+	Days *float64 `json:"days" yaml:"days"`
 }
 
 type S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference interface {
@@ -11464,12 +13339,17 @@ type S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDays()
@@ -11530,8 +13410,8 @@ func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11540,7 +13420,7 @@ func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 	return returns
 }
 
-func NewS3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference {
+func NewS3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference{}
@@ -11554,7 +13434,7 @@ func NewS3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference(terrafor
 	return &j
 }
 
-func NewS3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference_Override(s S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference_Override(s S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11596,7 +13476,7 @@ func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 	)
 }
 
-func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11605,12 +13485,40 @@ func (j *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11647,12 +13555,54 @@ func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11697,29 +13647,29 @@ func (s *jsiiProxy_S3BucketLifecycleRuleNoncurrentVersionExpirationOutputReferen
 }
 
 type S3BucketLifecycleRuleNoncurrentVersionTransition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#storage_class S3Bucket#storage_class}.
-	StorageClass *string `json:"storageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#days S3Bucket#days}.
-	Days *float64 `json:"days"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#storage_class S3Bucket#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#days S3Bucket#days}.
+	Days *float64 `json:"days" yaml:"days"`
 }
 
 type S3BucketLifecycleRuleTransition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#storage_class S3Bucket#storage_class}.
-	StorageClass *string `json:"storageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#date S3Bucket#date}.
-	Date *string `json:"date"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#days S3Bucket#days}.
-	Days *float64 `json:"days"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#storage_class S3Bucket#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#date S3Bucket#date}.
+	Date *string `json:"date" yaml:"date"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#days S3Bucket#days}.
+	Days *float64 `json:"days" yaml:"days"`
 }
 
 type S3BucketLogging struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#target_bucket S3Bucket#target_bucket}.
-	TargetBucket *string `json:"targetBucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#target_prefix S3Bucket#target_prefix}.
-	TargetPrefix *string `json:"targetPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#target_bucket S3Bucket#target_bucket}.
+	TargetBucket *string `json:"targetBucket" yaml:"targetBucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#target_prefix S3Bucket#target_prefix}.
+	TargetPrefix *string `json:"targetPrefix" yaml:"targetPrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html aws_s3_bucket_metric}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric aws_s3_bucket_metric}.
 type S3BucketMetric interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -11727,8 +13677,8 @@ type S3BucketMetric interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Filter() S3BucketMetricFilterOutputReference
@@ -11749,10 +13699,15 @@ type S3BucketMetric interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutFilter(value *S3BucketMetricFilter)
@@ -11809,8 +13764,8 @@ func (j *jsiiProxy_S3BucketMetric) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketMetric) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketMetric) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11969,7 +13924,7 @@ func (j *jsiiProxy_S3BucketMetric) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html aws_s3_bucket_metric} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric aws_s3_bucket_metric} Resource.
 func NewS3BucketMetric(scope constructs.Construct, id *string, config *S3BucketMetricConfig) S3BucketMetric {
 	_init_.Initialize()
 
@@ -11984,7 +13939,7 @@ func NewS3BucketMetric(scope constructs.Construct, id *string, config *S3BucketM
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html aws_s3_bucket_metric} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric aws_s3_bucket_metric} Resource.
 func NewS3BucketMetric_Override(s S3BucketMetric, scope constructs.Construct, id *string, config *S3BucketMetricConfig) {
 	_init_.Initialize()
 
@@ -12003,7 +13958,7 @@ func (j *jsiiProxy_S3BucketMetric) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketMetric) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketMetric) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12083,12 +14038,40 @@ func (s *jsiiProxy_S3BucketMetric) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketMetric) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketMetric) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketMetric) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12125,12 +14108,54 @@ func (s *jsiiProxy_S3BucketMetric) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketMetric) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketMetric) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketMetric) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketMetric) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12247,28 +14272,28 @@ func (s *jsiiProxy_S3BucketMetric) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketMetricConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html#bucket S3BucketMetric#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html#name S3BucketMetric#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric#bucket S3BucketMetric#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric#name S3BucketMetric#name}.
+	Name *string `json:"name" yaml:"name"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html#filter S3BucketMetric#filter}
-	Filter *S3BucketMetricFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric#filter S3BucketMetric#filter}
+	Filter *S3BucketMetricFilter `json:"filter" yaml:"filter"`
 }
 
 type S3BucketMetricFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html#prefix S3BucketMetric#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric.html#tags S3BucketMetric#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric#prefix S3BucketMetric#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_metric#tags S3BucketMetric#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type S3BucketMetricFilterOutputReference interface {
@@ -12280,17 +14305,22 @@ type S3BucketMetricFilterOutputReference interface {
 	Prefix() *string
 	SetPrefix(val *string)
 	PrefixInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -12342,8 +14372,8 @@ func (j *jsiiProxy_S3BucketMetricFilterOutputReference) PrefixInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketMetricFilterOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketMetricFilterOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -12352,8 +14382,8 @@ func (j *jsiiProxy_S3BucketMetricFilterOutputReference) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketMetricFilterOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketMetricFilterOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -12372,8 +14402,8 @@ func (j *jsiiProxy_S3BucketMetricFilterOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketMetricFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketMetricFilterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12382,7 +14412,7 @@ func (j *jsiiProxy_S3BucketMetricFilterOutputReference) TerraformResource() cdkt
 	return returns
 }
 
-func NewS3BucketMetricFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketMetricFilterOutputReference {
+func NewS3BucketMetricFilterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketMetricFilterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketMetricFilterOutputReference{}
@@ -12396,7 +14426,7 @@ func NewS3BucketMetricFilterOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewS3BucketMetricFilterOutputReference_Override(s S3BucketMetricFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketMetricFilterOutputReference_Override(s S3BucketMetricFilterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12430,7 +14460,7 @@ func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetPrefix(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -12446,7 +14476,7 @@ func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12455,12 +14485,40 @@ func (j *jsiiProxy_S3BucketMetricFilterOutputReference) SetTerraformResource(val
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12497,12 +14555,54 @@ func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketMetricFilterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12554,7 +14654,7 @@ func (s *jsiiProxy_S3BucketMetricFilterOutputReference) ResetTags() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html aws_s3_bucket_notification}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification aws_s3_bucket_notification}.
 type S3BucketNotification interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -12562,38 +14662,47 @@ type S3BucketNotification interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
+	Eventbridge() interface{}
+	SetEventbridge(val interface{})
+	EventbridgeInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	LambdaFunction() *[]*S3BucketNotificationLambdaFunction
-	SetLambdaFunction(val *[]*S3BucketNotificationLambdaFunction)
-	LambdaFunctionInput() *[]*S3BucketNotificationLambdaFunction
+	LambdaFunction() interface{}
+	SetLambdaFunction(val interface{})
+	LambdaFunctionInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
-	Queue() *[]*S3BucketNotificationQueue
-	SetQueue(val *[]*S3BucketNotificationQueue)
-	QueueInput() *[]*S3BucketNotificationQueue
+	Queue() interface{}
+	SetQueue(val interface{})
+	QueueInput() interface{}
 	RawOverrides() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Topic() *[]*S3BucketNotificationTopic
-	SetTopic(val *[]*S3BucketNotificationTopic)
-	TopicInput() *[]*S3BucketNotificationTopic
+	Topic() interface{}
+	SetTopic(val interface{})
+	TopicInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	ResetEventbridge()
 	ResetLambdaFunction()
 	ResetOverrideLogicalId()
 	ResetQueue()
@@ -12649,8 +14758,8 @@ func (j *jsiiProxy_S3BucketNotification) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketNotification) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketNotification) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12664,6 +14773,26 @@ func (j *jsiiProxy_S3BucketNotification) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketNotification) Eventbridge() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"eventbridge",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_S3BucketNotification) EventbridgeInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"eventbridgeInput",
 		&returns,
 	)
 	return returns
@@ -12699,8 +14828,8 @@ func (j *jsiiProxy_S3BucketNotification) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketNotification) LambdaFunction() *[]*S3BucketNotificationLambdaFunction {
-	var returns *[]*S3BucketNotificationLambdaFunction
+func (j *jsiiProxy_S3BucketNotification) LambdaFunction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lambdaFunction",
@@ -12709,8 +14838,8 @@ func (j *jsiiProxy_S3BucketNotification) LambdaFunction() *[]*S3BucketNotificati
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketNotification) LambdaFunctionInput() *[]*S3BucketNotificationLambdaFunction {
-	var returns *[]*S3BucketNotificationLambdaFunction
+func (j *jsiiProxy_S3BucketNotification) LambdaFunctionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lambdaFunctionInput",
@@ -12749,8 +14878,8 @@ func (j *jsiiProxy_S3BucketNotification) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketNotification) Queue() *[]*S3BucketNotificationQueue {
-	var returns *[]*S3BucketNotificationQueue
+func (j *jsiiProxy_S3BucketNotification) Queue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"queue",
@@ -12759,8 +14888,8 @@ func (j *jsiiProxy_S3BucketNotification) Queue() *[]*S3BucketNotificationQueue {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketNotification) QueueInput() *[]*S3BucketNotificationQueue {
-	var returns *[]*S3BucketNotificationQueue
+func (j *jsiiProxy_S3BucketNotification) QueueInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"queueInput",
@@ -12809,8 +14938,8 @@ func (j *jsiiProxy_S3BucketNotification) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketNotification) Topic() *[]*S3BucketNotificationTopic {
-	var returns *[]*S3BucketNotificationTopic
+func (j *jsiiProxy_S3BucketNotification) Topic() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"topic",
@@ -12819,8 +14948,8 @@ func (j *jsiiProxy_S3BucketNotification) Topic() *[]*S3BucketNotificationTopic {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketNotification) TopicInput() *[]*S3BucketNotificationTopic {
-	var returns *[]*S3BucketNotificationTopic
+func (j *jsiiProxy_S3BucketNotification) TopicInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"topicInput",
@@ -12829,7 +14958,7 @@ func (j *jsiiProxy_S3BucketNotification) TopicInput() *[]*S3BucketNotificationTo
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html aws_s3_bucket_notification} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification aws_s3_bucket_notification} Resource.
 func NewS3BucketNotification(scope constructs.Construct, id *string, config *S3BucketNotificationConfig) S3BucketNotification {
 	_init_.Initialize()
 
@@ -12844,7 +14973,7 @@ func NewS3BucketNotification(scope constructs.Construct, id *string, config *S3B
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html aws_s3_bucket_notification} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification aws_s3_bucket_notification} Resource.
 func NewS3BucketNotification_Override(s S3BucketNotification, scope constructs.Construct, id *string, config *S3BucketNotificationConfig) {
 	_init_.Initialize()
 
@@ -12863,7 +14992,7 @@ func (j *jsiiProxy_S3BucketNotification) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketNotification) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketNotification) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12879,7 +15008,15 @@ func (j *jsiiProxy_S3BucketNotification) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketNotification) SetLambdaFunction(val *[]*S3BucketNotificationLambdaFunction) {
+func (j *jsiiProxy_S3BucketNotification) SetEventbridge(val interface{}) {
+	_jsii_.Set(
+		j,
+		"eventbridge",
+		val,
+	)
+}
+
+func (j *jsiiProxy_S3BucketNotification) SetLambdaFunction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"lambdaFunction",
@@ -12903,7 +15040,7 @@ func (j *jsiiProxy_S3BucketNotification) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_S3BucketNotification) SetQueue(val *[]*S3BucketNotificationQueue) {
+func (j *jsiiProxy_S3BucketNotification) SetQueue(val interface{}) {
 	_jsii_.Set(
 		j,
 		"queue",
@@ -12911,7 +15048,7 @@ func (j *jsiiProxy_S3BucketNotification) SetQueue(val *[]*S3BucketNotificationQu
 	)
 }
 
-func (j *jsiiProxy_S3BucketNotification) SetTopic(val *[]*S3BucketNotificationTopic) {
+func (j *jsiiProxy_S3BucketNotification) SetTopic(val interface{}) {
 	_jsii_.Set(
 		j,
 		"topic",
@@ -12959,12 +15096,40 @@ func (s *jsiiProxy_S3BucketNotification) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketNotification) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketNotification) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketNotification) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13001,12 +15166,54 @@ func (s *jsiiProxy_S3BucketNotification) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketNotification) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketNotification) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketNotification) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketNotification) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13035,6 +15242,14 @@ func (s *jsiiProxy_S3BucketNotification) OverrideLogicalId(newLogicalId *string)
 		s,
 		"overrideLogicalId",
 		[]interface{}{newLogicalId},
+	)
+}
+
+func (s *jsiiProxy_S3BucketNotification) ResetEventbridge() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetEventbridge",
+		nil, // no parameters
 	)
 }
 
@@ -13131,69 +15346,71 @@ func (s *jsiiProxy_S3BucketNotification) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketNotificationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#bucket S3BucketNotification#bucket}.
-	Bucket *string `json:"bucket"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#bucket S3BucketNotification#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#eventbridge S3BucketNotification#eventbridge}.
+	Eventbridge interface{} `json:"eventbridge" yaml:"eventbridge"`
 	// lambda_function block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#lambda_function S3BucketNotification#lambda_function}
-	LambdaFunction *[]*S3BucketNotificationLambdaFunction `json:"lambdaFunction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#lambda_function S3BucketNotification#lambda_function}
+	LambdaFunction interface{} `json:"lambdaFunction" yaml:"lambdaFunction"`
 	// queue block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#queue S3BucketNotification#queue}
-	Queue *[]*S3BucketNotificationQueue `json:"queue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#queue S3BucketNotification#queue}
+	Queue interface{} `json:"queue" yaml:"queue"`
 	// topic block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#topic S3BucketNotification#topic}
-	Topic *[]*S3BucketNotificationTopic `json:"topic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#topic S3BucketNotification#topic}
+	Topic interface{} `json:"topic" yaml:"topic"`
 }
 
 type S3BucketNotificationLambdaFunction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#events S3BucketNotification#events}.
-	Events *[]*string `json:"events"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#filter_prefix S3BucketNotification#filter_prefix}.
-	FilterPrefix *string `json:"filterPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#filter_suffix S3BucketNotification#filter_suffix}.
-	FilterSuffix *string `json:"filterSuffix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#id S3BucketNotification#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#lambda_function_arn S3BucketNotification#lambda_function_arn}.
-	LambdaFunctionArn *string `json:"lambdaFunctionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#events S3BucketNotification#events}.
+	Events *[]*string `json:"events" yaml:"events"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#filter_prefix S3BucketNotification#filter_prefix}.
+	FilterPrefix *string `json:"filterPrefix" yaml:"filterPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#filter_suffix S3BucketNotification#filter_suffix}.
+	FilterSuffix *string `json:"filterSuffix" yaml:"filterSuffix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#id S3BucketNotification#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#lambda_function_arn S3BucketNotification#lambda_function_arn}.
+	LambdaFunctionArn *string `json:"lambdaFunctionArn" yaml:"lambdaFunctionArn"`
 }
 
 type S3BucketNotificationQueue struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#events S3BucketNotification#events}.
-	Events *[]*string `json:"events"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#queue_arn S3BucketNotification#queue_arn}.
-	QueueArn *string `json:"queueArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#filter_prefix S3BucketNotification#filter_prefix}.
-	FilterPrefix *string `json:"filterPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#filter_suffix S3BucketNotification#filter_suffix}.
-	FilterSuffix *string `json:"filterSuffix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#id S3BucketNotification#id}.
-	Id *string `json:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#events S3BucketNotification#events}.
+	Events *[]*string `json:"events" yaml:"events"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#queue_arn S3BucketNotification#queue_arn}.
+	QueueArn *string `json:"queueArn" yaml:"queueArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#filter_prefix S3BucketNotification#filter_prefix}.
+	FilterPrefix *string `json:"filterPrefix" yaml:"filterPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#filter_suffix S3BucketNotification#filter_suffix}.
+	FilterSuffix *string `json:"filterSuffix" yaml:"filterSuffix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#id S3BucketNotification#id}.
+	Id *string `json:"id" yaml:"id"`
 }
 
 type S3BucketNotificationTopic struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#events S3BucketNotification#events}.
-	Events *[]*string `json:"events"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#topic_arn S3BucketNotification#topic_arn}.
-	TopicArn *string `json:"topicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#filter_prefix S3BucketNotification#filter_prefix}.
-	FilterPrefix *string `json:"filterPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#filter_suffix S3BucketNotification#filter_suffix}.
-	FilterSuffix *string `json:"filterSuffix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification.html#id S3BucketNotification#id}.
-	Id *string `json:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#events S3BucketNotification#events}.
+	Events *[]*string `json:"events" yaml:"events"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#topic_arn S3BucketNotification#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#filter_prefix S3BucketNotification#filter_prefix}.
+	FilterPrefix *string `json:"filterPrefix" yaml:"filterPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#filter_suffix S3BucketNotification#filter_suffix}.
+	FilterSuffix *string `json:"filterSuffix" yaml:"filterSuffix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_notification#id S3BucketNotification#id}.
+	Id *string `json:"id" yaml:"id"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html aws_s3_bucket_object}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object aws_s3_bucket_object}.
 type S3BucketObject interface {
 	cdktf.TerraformResource
 	Acl() *string
@@ -13228,8 +15445,8 @@ type S3BucketObject interface {
 	ContentType() *string
 	SetContentType(val *string)
 	ContentTypeInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -13249,9 +15466,9 @@ type S3BucketObject interface {
 	KmsKeyIdInput() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	Metadata() interface{}
-	SetMetadata(val interface{})
-	MetadataInput() interface{}
+	Metadata() *map[string]*string
+	SetMetadata(val *map[string]*string)
+	MetadataInput() *map[string]*string
 	Node() constructs.Node
 	ObjectLockLegalHoldStatus() *string
 	SetObjectLockLegalHoldStatus(val *string)
@@ -13277,12 +15494,12 @@ type S3BucketObject interface {
 	StorageClass() *string
 	SetStorageClass(val *string)
 	StorageClassInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -13291,10 +15508,15 @@ type S3BucketObject interface {
 	SetWebsiteRedirect(val *string)
 	WebsiteRedirectInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcl()
@@ -13552,8 +15774,8 @@ func (j *jsiiProxy_S3BucketObject) ContentTypeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObject) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketObject) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13692,8 +15914,8 @@ func (j *jsiiProxy_S3BucketObject) Lifecycle() *cdktf.TerraformResourceLifecycle
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObject) Metadata() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketObject) Metadata() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"metadata",
@@ -13702,8 +15924,8 @@ func (j *jsiiProxy_S3BucketObject) Metadata() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObject) MetadataInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketObject) MetadataInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"metadataInput",
@@ -13882,8 +16104,8 @@ func (j *jsiiProxy_S3BucketObject) StorageClassInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObject) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketObject) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -13892,8 +16114,8 @@ func (j *jsiiProxy_S3BucketObject) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObject) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketObject) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -13902,8 +16124,8 @@ func (j *jsiiProxy_S3BucketObject) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObject) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketObject) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -13912,8 +16134,8 @@ func (j *jsiiProxy_S3BucketObject) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObject) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketObject) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -13982,7 +16204,7 @@ func (j *jsiiProxy_S3BucketObject) WebsiteRedirectInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html aws_s3_bucket_object} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object aws_s3_bucket_object} Resource.
 func NewS3BucketObject(scope constructs.Construct, id *string, config *S3BucketObjectConfig) S3BucketObject {
 	_init_.Initialize()
 
@@ -13997,7 +16219,7 @@ func NewS3BucketObject(scope constructs.Construct, id *string, config *S3BucketO
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html aws_s3_bucket_object} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object aws_s3_bucket_object} Resource.
 func NewS3BucketObject_Override(s S3BucketObject, scope constructs.Construct, id *string, config *S3BucketObjectConfig) {
 	_init_.Initialize()
 
@@ -14088,7 +16310,7 @@ func (j *jsiiProxy_S3BucketObject) SetContentType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketObject) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketObject) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14144,7 +16366,7 @@ func (j *jsiiProxy_S3BucketObject) SetLifecycle(val *cdktf.TerraformResourceLife
 	)
 }
 
-func (j *jsiiProxy_S3BucketObject) SetMetadata(val interface{}) {
+func (j *jsiiProxy_S3BucketObject) SetMetadata(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"metadata",
@@ -14216,7 +16438,7 @@ func (j *jsiiProxy_S3BucketObject) SetStorageClass(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketObject) SetTags(val interface{}) {
+func (j *jsiiProxy_S3BucketObject) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14224,7 +16446,7 @@ func (j *jsiiProxy_S3BucketObject) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketObject) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_S3BucketObject) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -14280,12 +16502,40 @@ func (s *jsiiProxy_S3BucketObject) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketObject) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketObject) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObject) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14322,12 +16572,54 @@ func (s *jsiiProxy_S3BucketObject) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketObject) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObject) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketObject) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObject) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14612,72 +16904,72 @@ func (s *jsiiProxy_S3BucketObject) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketObjectConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#bucket S3BucketObject#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#key S3BucketObject#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#acl S3BucketObject#acl}.
-	Acl *string `json:"acl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#bucket_key_enabled S3BucketObject#bucket_key_enabled}.
-	BucketKeyEnabled interface{} `json:"bucketKeyEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#cache_control S3BucketObject#cache_control}.
-	CacheControl *string `json:"cacheControl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#content S3BucketObject#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#content_base64 S3BucketObject#content_base64}.
-	ContentBase64 *string `json:"contentBase64"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#content_disposition S3BucketObject#content_disposition}.
-	ContentDisposition *string `json:"contentDisposition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#content_encoding S3BucketObject#content_encoding}.
-	ContentEncoding *string `json:"contentEncoding"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#content_language S3BucketObject#content_language}.
-	ContentLanguage *string `json:"contentLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#content_type S3BucketObject#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#etag S3BucketObject#etag}.
-	Etag *string `json:"etag"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#force_destroy S3BucketObject#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#kms_key_id S3BucketObject#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#metadata S3BucketObject#metadata}.
-	Metadata interface{} `json:"metadata"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#object_lock_legal_hold_status S3BucketObject#object_lock_legal_hold_status}.
-	ObjectLockLegalHoldStatus *string `json:"objectLockLegalHoldStatus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#object_lock_mode S3BucketObject#object_lock_mode}.
-	ObjectLockMode *string `json:"objectLockMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#object_lock_retain_until_date S3BucketObject#object_lock_retain_until_date}.
-	ObjectLockRetainUntilDate *string `json:"objectLockRetainUntilDate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#server_side_encryption S3BucketObject#server_side_encryption}.
-	ServerSideEncryption *string `json:"serverSideEncryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#source S3BucketObject#source}.
-	Source *string `json:"source"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#source_hash S3BucketObject#source_hash}.
-	SourceHash *string `json:"sourceHash"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#storage_class S3BucketObject#storage_class}.
-	StorageClass *string `json:"storageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#tags S3BucketObject#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#tags_all S3BucketObject#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object.html#website_redirect S3BucketObject#website_redirect}.
-	WebsiteRedirect *string `json:"websiteRedirect"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#bucket S3BucketObject#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#key S3BucketObject#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#acl S3BucketObject#acl}.
+	Acl *string `json:"acl" yaml:"acl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#bucket_key_enabled S3BucketObject#bucket_key_enabled}.
+	BucketKeyEnabled interface{} `json:"bucketKeyEnabled" yaml:"bucketKeyEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#cache_control S3BucketObject#cache_control}.
+	CacheControl *string `json:"cacheControl" yaml:"cacheControl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#content S3BucketObject#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#content_base64 S3BucketObject#content_base64}.
+	ContentBase64 *string `json:"contentBase64" yaml:"contentBase64"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#content_disposition S3BucketObject#content_disposition}.
+	ContentDisposition *string `json:"contentDisposition" yaml:"contentDisposition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#content_encoding S3BucketObject#content_encoding}.
+	ContentEncoding *string `json:"contentEncoding" yaml:"contentEncoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#content_language S3BucketObject#content_language}.
+	ContentLanguage *string `json:"contentLanguage" yaml:"contentLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#content_type S3BucketObject#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#etag S3BucketObject#etag}.
+	Etag *string `json:"etag" yaml:"etag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#force_destroy S3BucketObject#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#kms_key_id S3BucketObject#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#metadata S3BucketObject#metadata}.
+	Metadata *map[string]*string `json:"metadata" yaml:"metadata"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#object_lock_legal_hold_status S3BucketObject#object_lock_legal_hold_status}.
+	ObjectLockLegalHoldStatus *string `json:"objectLockLegalHoldStatus" yaml:"objectLockLegalHoldStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#object_lock_mode S3BucketObject#object_lock_mode}.
+	ObjectLockMode *string `json:"objectLockMode" yaml:"objectLockMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#object_lock_retain_until_date S3BucketObject#object_lock_retain_until_date}.
+	ObjectLockRetainUntilDate *string `json:"objectLockRetainUntilDate" yaml:"objectLockRetainUntilDate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#server_side_encryption S3BucketObject#server_side_encryption}.
+	ServerSideEncryption *string `json:"serverSideEncryption" yaml:"serverSideEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#source S3BucketObject#source}.
+	Source *string `json:"source" yaml:"source"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#source_hash S3BucketObject#source_hash}.
+	SourceHash *string `json:"sourceHash" yaml:"sourceHash"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#storage_class S3BucketObject#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#tags S3BucketObject#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#tags_all S3BucketObject#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_object#website_redirect S3BucketObject#website_redirect}.
+	WebsiteRedirect *string `json:"websiteRedirect" yaml:"websiteRedirect"`
 }
 
 type S3BucketObjectLockConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#object_lock_enabled S3Bucket#object_lock_enabled}.
-	ObjectLockEnabled *string `json:"objectLockEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#object_lock_enabled S3Bucket#object_lock_enabled}.
+	ObjectLockEnabled *string `json:"objectLockEnabled" yaml:"objectLockEnabled"`
 	// rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#rule S3Bucket#rule}
-	Rule *S3BucketObjectLockConfigurationRule `json:"rule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#rule S3Bucket#rule}
+	Rule *S3BucketObjectLockConfigurationRule `json:"rule" yaml:"rule"`
 }
 
 type S3BucketObjectLockConfigurationOutputReference interface {
@@ -14693,12 +16985,17 @@ type S3BucketObjectLockConfigurationOutputReference interface {
 	RuleInput() *S3BucketObjectLockConfigurationRule
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRule(value *S3BucketObjectLockConfigurationRule)
@@ -14780,8 +17077,8 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14790,7 +17087,7 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) TerraformReso
 	return returns
 }
 
-func NewS3BucketObjectLockConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketObjectLockConfigurationOutputReference {
+func NewS3BucketObjectLockConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketObjectLockConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketObjectLockConfigurationOutputReference{}
@@ -14804,7 +17101,7 @@ func NewS3BucketObjectLockConfigurationOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewS3BucketObjectLockConfigurationOutputReference_Override(s S3BucketObjectLockConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketObjectLockConfigurationOutputReference_Override(s S3BucketObjectLockConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14846,7 +17143,7 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14855,12 +17152,40 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14897,12 +17222,54 @@ func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14957,17 +17324,17 @@ func (s *jsiiProxy_S3BucketObjectLockConfigurationOutputReference) ResetRule() {
 type S3BucketObjectLockConfigurationRule struct {
 	// default_retention block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#default_retention S3Bucket#default_retention}
-	DefaultRetention *S3BucketObjectLockConfigurationRuleDefaultRetention `json:"defaultRetention"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#default_retention S3Bucket#default_retention}
+	DefaultRetention *S3BucketObjectLockConfigurationRuleDefaultRetention `json:"defaultRetention" yaml:"defaultRetention"`
 }
 
 type S3BucketObjectLockConfigurationRuleDefaultRetention struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#mode S3Bucket#mode}.
-	Mode *string `json:"mode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#days S3Bucket#days}.
-	Days *float64 `json:"days"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#years S3Bucket#years}.
-	Years *float64 `json:"years"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#mode S3Bucket#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#days S3Bucket#days}.
+	Days *float64 `json:"days" yaml:"days"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#years S3Bucket#years}.
+	Years *float64 `json:"years" yaml:"years"`
 }
 
 type S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference interface {
@@ -14984,15 +17351,20 @@ type S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference interfac
 	ModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Years() *float64
 	SetYears(val *float64)
 	YearsInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDays()
@@ -15074,8 +17446,8 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15104,7 +17476,7 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputRefe
 	return returns
 }
 
-func NewS3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference {
+func NewS3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference{}
@@ -15118,7 +17490,7 @@ func NewS3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference(terra
 	return &j
 }
 
-func NewS3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference_Override(s S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference_Override(s S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15168,7 +17540,7 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputRefe
 	)
 }
 
-func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15185,12 +17557,40 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputRefe
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15227,12 +17627,54 @@ func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputRefe
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleDefaultRetentionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15294,12 +17736,17 @@ type S3BucketObjectLockConfigurationRuleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDefaultRetention(value *S3BucketObjectLockConfigurationRuleDefaultRetention)
@@ -15360,8 +17807,8 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15370,7 +17817,7 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) Terraform
 	return returns
 }
 
-func NewS3BucketObjectLockConfigurationRuleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketObjectLockConfigurationRuleOutputReference {
+func NewS3BucketObjectLockConfigurationRuleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketObjectLockConfigurationRuleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference{}
@@ -15384,7 +17831,7 @@ func NewS3BucketObjectLockConfigurationRuleOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewS3BucketObjectLockConfigurationRuleOutputReference_Override(s S3BucketObjectLockConfigurationRuleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketObjectLockConfigurationRuleOutputReference_Override(s S3BucketObjectLockConfigurationRuleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15418,7 +17865,7 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15427,12 +17874,40 @@ func (j *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) SetTerraf
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15469,12 +17944,54 @@ func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetNumber
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15518,7 +18035,7 @@ func (s *jsiiProxy_S3BucketObjectLockConfigurationRuleOutputReference) PutDefaul
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls.html aws_s3_bucket_ownership_controls}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls aws_s3_bucket_ownership_controls}.
 type S3BucketOwnershipControls interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -15526,8 +18043,8 @@ type S3BucketOwnershipControls interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -15545,10 +18062,15 @@ type S3BucketOwnershipControls interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutRule(value *S3BucketOwnershipControlsRule)
@@ -15604,8 +18126,8 @@ func (j *jsiiProxy_S3BucketOwnershipControls) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketOwnershipControls) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketOwnershipControls) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15744,7 +18266,7 @@ func (j *jsiiProxy_S3BucketOwnershipControls) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls.html aws_s3_bucket_ownership_controls} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls aws_s3_bucket_ownership_controls} Resource.
 func NewS3BucketOwnershipControls(scope constructs.Construct, id *string, config *S3BucketOwnershipControlsConfig) S3BucketOwnershipControls {
 	_init_.Initialize()
 
@@ -15759,7 +18281,7 @@ func NewS3BucketOwnershipControls(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls.html aws_s3_bucket_ownership_controls} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls aws_s3_bucket_ownership_controls} Resource.
 func NewS3BucketOwnershipControls_Override(s S3BucketOwnershipControls, scope constructs.Construct, id *string, config *S3BucketOwnershipControlsConfig) {
 	_init_.Initialize()
 
@@ -15778,7 +18300,7 @@ func (j *jsiiProxy_S3BucketOwnershipControls) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketOwnershipControls) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketOwnershipControls) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15850,12 +18372,40 @@ func (s *jsiiProxy_S3BucketOwnershipControls) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControls) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketOwnershipControls) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControls) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15892,12 +18442,54 @@ func (s *jsiiProxy_S3BucketOwnershipControls) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControls) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControls) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketOwnershipControls) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControls) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16006,24 +18598,24 @@ func (s *jsiiProxy_S3BucketOwnershipControls) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketOwnershipControlsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls.html#bucket S3BucketOwnershipControls#bucket}.
-	Bucket *string `json:"bucket"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls#bucket S3BucketOwnershipControls#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
 	// rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls.html#rule S3BucketOwnershipControls#rule}
-	Rule *S3BucketOwnershipControlsRule `json:"rule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls#rule S3BucketOwnershipControls#rule}
+	Rule *S3BucketOwnershipControlsRule `json:"rule" yaml:"rule"`
 }
 
 type S3BucketOwnershipControlsRule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls.html#object_ownership S3BucketOwnershipControls#object_ownership}.
-	ObjectOwnership *string `json:"objectOwnership"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_ownership_controls#object_ownership S3BucketOwnershipControls#object_ownership}.
+	ObjectOwnership *string `json:"objectOwnership" yaml:"objectOwnership"`
 }
 
 type S3BucketOwnershipControlsRuleOutputReference interface {
@@ -16037,12 +18629,17 @@ type S3BucketOwnershipControlsRuleOutputReference interface {
 	ObjectOwnershipInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -16102,8 +18699,8 @@ func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16112,7 +18709,7 @@ func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) TerraformResour
 	return returns
 }
 
-func NewS3BucketOwnershipControlsRuleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketOwnershipControlsRuleOutputReference {
+func NewS3BucketOwnershipControlsRuleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketOwnershipControlsRuleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketOwnershipControlsRuleOutputReference{}
@@ -16126,7 +18723,7 @@ func NewS3BucketOwnershipControlsRuleOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewS3BucketOwnershipControlsRuleOutputReference_Override(s S3BucketOwnershipControlsRuleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketOwnershipControlsRuleOutputReference_Override(s S3BucketOwnershipControlsRuleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16168,7 +18765,7 @@ func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16177,12 +18774,40 @@ func (j *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16219,12 +18844,54 @@ func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16260,7 +18927,7 @@ func (s *jsiiProxy_S3BucketOwnershipControlsRuleOutputReference) InterpolationFo
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html aws_s3_bucket_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy aws_s3_bucket_policy}.
 type S3BucketPolicy interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -16268,8 +18935,8 @@ type S3BucketPolicy interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -16288,10 +18955,15 @@ type S3BucketPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -16346,8 +19018,8 @@ func (j *jsiiProxy_S3BucketPolicy) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16486,7 +19158,7 @@ func (j *jsiiProxy_S3BucketPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html aws_s3_bucket_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy aws_s3_bucket_policy} Resource.
 func NewS3BucketPolicy(scope constructs.Construct, id *string, config *S3BucketPolicyConfig) S3BucketPolicy {
 	_init_.Initialize()
 
@@ -16501,7 +19173,7 @@ func NewS3BucketPolicy(scope constructs.Construct, id *string, config *S3BucketP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html aws_s3_bucket_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy aws_s3_bucket_policy} Resource.
 func NewS3BucketPolicy_Override(s S3BucketPolicy, scope constructs.Construct, id *string, config *S3BucketPolicyConfig) {
 	_init_.Initialize()
 
@@ -16520,7 +19192,7 @@ func (j *jsiiProxy_S3BucketPolicy) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -16600,12 +19272,40 @@ func (s *jsiiProxy_S3BucketPolicy) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16642,12 +19342,54 @@ func (s *jsiiProxy_S3BucketPolicy) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16748,20 +19490,20 @@ func (s *jsiiProxy_S3BucketPolicy) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html#bucket S3BucketPolicy#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy.html#policy S3BucketPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy#bucket S3BucketPolicy#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_policy#policy S3BucketPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html aws_s3_bucket_public_access_block}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block aws_s3_bucket_public_access_block}.
 type S3BucketPublicAccessBlock interface {
 	cdktf.TerraformResource
 	BlockPublicAcls() interface{}
@@ -16775,8 +19517,8 @@ type S3BucketPublicAccessBlock interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -16798,10 +19540,15 @@ type S3BucketPublicAccessBlock interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBlockPublicAcls()
@@ -16900,8 +19647,8 @@ func (j *jsiiProxy_S3BucketPublicAccessBlock) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketPublicAccessBlock) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketPublicAccessBlock) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17060,7 +19807,7 @@ func (j *jsiiProxy_S3BucketPublicAccessBlock) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html aws_s3_bucket_public_access_block} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block aws_s3_bucket_public_access_block} Resource.
 func NewS3BucketPublicAccessBlock(scope constructs.Construct, id *string, config *S3BucketPublicAccessBlockConfig) S3BucketPublicAccessBlock {
 	_init_.Initialize()
 
@@ -17075,7 +19822,7 @@ func NewS3BucketPublicAccessBlock(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html aws_s3_bucket_public_access_block} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block aws_s3_bucket_public_access_block} Resource.
 func NewS3BucketPublicAccessBlock_Override(s S3BucketPublicAccessBlock, scope constructs.Construct, id *string, config *S3BucketPublicAccessBlockConfig) {
 	_init_.Initialize()
 
@@ -17110,7 +19857,7 @@ func (j *jsiiProxy_S3BucketPublicAccessBlock) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketPublicAccessBlock) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketPublicAccessBlock) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17198,12 +19945,40 @@ func (s *jsiiProxy_S3BucketPublicAccessBlock) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketPublicAccessBlock) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketPublicAccessBlock) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketPublicAccessBlock) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17240,12 +20015,54 @@ func (s *jsiiProxy_S3BucketPublicAccessBlock) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketPublicAccessBlock) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketPublicAccessBlock) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketPublicAccessBlock) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketPublicAccessBlock) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17378,35 +20195,35 @@ func (s *jsiiProxy_S3BucketPublicAccessBlock) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3BucketPublicAccessBlockConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html#bucket S3BucketPublicAccessBlock#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html#block_public_acls S3BucketPublicAccessBlock#block_public_acls}.
-	BlockPublicAcls interface{} `json:"blockPublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html#block_public_policy S3BucketPublicAccessBlock#block_public_policy}.
-	BlockPublicPolicy interface{} `json:"blockPublicPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html#ignore_public_acls S3BucketPublicAccessBlock#ignore_public_acls}.
-	IgnorePublicAcls interface{} `json:"ignorePublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block.html#restrict_public_buckets S3BucketPublicAccessBlock#restrict_public_buckets}.
-	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block#bucket S3BucketPublicAccessBlock#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block#block_public_acls S3BucketPublicAccessBlock#block_public_acls}.
+	BlockPublicAcls interface{} `json:"blockPublicAcls" yaml:"blockPublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block#block_public_policy S3BucketPublicAccessBlock#block_public_policy}.
+	BlockPublicPolicy interface{} `json:"blockPublicPolicy" yaml:"blockPublicPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block#ignore_public_acls S3BucketPublicAccessBlock#ignore_public_acls}.
+	IgnorePublicAcls interface{} `json:"ignorePublicAcls" yaml:"ignorePublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_public_access_block#restrict_public_buckets S3BucketPublicAccessBlock#restrict_public_buckets}.
+	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets" yaml:"restrictPublicBuckets"`
 }
 
 type S3BucketReplicationConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#role S3Bucket#role}.
-	Role *string `json:"role"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#role S3Bucket#role}.
+	Role *string `json:"role" yaml:"role"`
 	// rules block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#rules S3Bucket#rules}
-	Rules *[]*S3BucketReplicationConfigurationRules `json:"rules"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#rules S3Bucket#rules}
+	Rules interface{} `json:"rules" yaml:"rules"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html aws_s3_bucket_replication_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration aws_s3_bucket_replication_configuration}.
 type S3BucketReplicationConfigurationA interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -17414,8 +20231,8 @@ type S3BucketReplicationConfigurationA interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -17430,17 +20247,22 @@ type S3BucketReplicationConfigurationA interface {
 	Role() *string
 	SetRole(val *string)
 	RoleInput() *string
-	Rule() *[]*S3BucketReplicationConfigurationRule
-	SetRule(val *[]*S3BucketReplicationConfigurationRule)
-	RuleInput() *[]*S3BucketReplicationConfigurationRule
+	Rule() interface{}
+	SetRule(val interface{})
+	RuleInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -17495,8 +20317,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationA) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationA) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17605,8 +20427,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationA) RoleInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationA) Rule() *[]*S3BucketReplicationConfigurationRule {
-	var returns *[]*S3BucketReplicationConfigurationRule
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) Rule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rule",
@@ -17615,8 +20437,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationA) Rule() *[]*S3BucketReplica
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationA) RuleInput() *[]*S3BucketReplicationConfigurationRule {
-	var returns *[]*S3BucketReplicationConfigurationRule
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) RuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ruleInput",
@@ -17655,7 +20477,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationA) TerraformResourceType() *s
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html aws_s3_bucket_replication_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration aws_s3_bucket_replication_configuration} Resource.
 func NewS3BucketReplicationConfigurationA(scope constructs.Construct, id *string, config *S3BucketReplicationConfigurationAConfig) S3BucketReplicationConfigurationA {
 	_init_.Initialize()
 
@@ -17670,7 +20492,7 @@ func NewS3BucketReplicationConfigurationA(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html aws_s3_bucket_replication_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration aws_s3_bucket_replication_configuration} Resource.
 func NewS3BucketReplicationConfigurationA_Override(s S3BucketReplicationConfigurationA, scope constructs.Construct, id *string, config *S3BucketReplicationConfigurationAConfig) {
 	_init_.Initialize()
 
@@ -17689,7 +20511,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetCount(val interface{}) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17729,7 +20551,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetRole(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetRule(val *[]*S3BucketReplicationConfigurationRule) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationA) SetRule(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rule",
@@ -17777,12 +20599,40 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationA) AddOverride(path *string, 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17819,12 +20669,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationA) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17925,21 +20817,21 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationA) ToTerraform() interface{} 
 // AWS Simple Storage Service.
 type S3BucketReplicationConfigurationAConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#bucket S3BucketReplicationConfigurationA#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#role S3BucketReplicationConfigurationA#role}.
-	Role *string `json:"role"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#bucket S3BucketReplicationConfigurationA#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#role S3BucketReplicationConfigurationA#role}.
+	Role *string `json:"role" yaml:"role"`
 	// rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#rule S3BucketReplicationConfigurationA#rule}
-	Rule *[]*S3BucketReplicationConfigurationRule `json:"rule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#rule S3BucketReplicationConfigurationA#rule}
+	Rule interface{} `json:"rule" yaml:"rule"`
 }
 
 type S3BucketReplicationConfigurationOutputReference interface {
@@ -17951,17 +20843,22 @@ type S3BucketReplicationConfigurationOutputReference interface {
 	Role() *string
 	SetRole(val *string)
 	RoleInput() *string
-	Rules() *[]*S3BucketReplicationConfigurationRules
-	SetRules(val *[]*S3BucketReplicationConfigurationRules)
-	RulesInput() *[]*S3BucketReplicationConfigurationRules
+	Rules() interface{}
+	SetRules(val interface{})
+	RulesInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -18011,8 +20908,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) RoleInput() 
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) Rules() *[]*S3BucketReplicationConfigurationRules {
-	var returns *[]*S3BucketReplicationConfigurationRules
+func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) Rules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rules",
@@ -18021,8 +20918,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) Rules() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) RulesInput() *[]*S3BucketReplicationConfigurationRules {
-	var returns *[]*S3BucketReplicationConfigurationRules
+func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) RulesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rulesInput",
@@ -18041,8 +20938,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18051,7 +20948,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) TerraformRes
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationOutputReference {
+func NewS3BucketReplicationConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationOutputReference{}
@@ -18065,7 +20962,7 @@ func NewS3BucketReplicationConfigurationOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationOutputReference_Override(s S3BucketReplicationConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationOutputReference_Override(s S3BucketReplicationConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18099,7 +20996,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetRole(val 
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetRules(val *[]*S3BucketReplicationConfigurationRules) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetRules(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rules",
@@ -18115,7 +21012,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18124,12 +21021,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationOutputReference) SetTerraform
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18166,12 +21091,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18210,37 +21177,37 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationOutputReference) Interpolatio
 type S3BucketReplicationConfigurationRule struct {
 	// destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#destination S3BucketReplicationConfigurationA#destination}
-	Destination *S3BucketReplicationConfigurationRuleDestination `json:"destination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#destination S3BucketReplicationConfigurationA#destination}
+	Destination *S3BucketReplicationConfigurationRuleDestination `json:"destination" yaml:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status" yaml:"status"`
 	// delete_marker_replication block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#delete_marker_replication S3BucketReplicationConfigurationA#delete_marker_replication}
-	DeleteMarkerReplication *S3BucketReplicationConfigurationRuleDeleteMarkerReplication `json:"deleteMarkerReplication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#delete_marker_replication S3BucketReplicationConfigurationA#delete_marker_replication}
+	DeleteMarkerReplication *S3BucketReplicationConfigurationRuleDeleteMarkerReplication `json:"deleteMarkerReplication" yaml:"deleteMarkerReplication"`
 	// existing_object_replication block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#existing_object_replication S3BucketReplicationConfigurationA#existing_object_replication}
-	ExistingObjectReplication *S3BucketReplicationConfigurationRuleExistingObjectReplication `json:"existingObjectReplication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#existing_object_replication S3BucketReplicationConfigurationA#existing_object_replication}
+	ExistingObjectReplication *S3BucketReplicationConfigurationRuleExistingObjectReplication `json:"existingObjectReplication" yaml:"existingObjectReplication"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#filter S3BucketReplicationConfigurationA#filter}
-	Filter *S3BucketReplicationConfigurationRuleFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#id S3BucketReplicationConfigurationA#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#prefix S3BucketReplicationConfigurationA#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#priority S3BucketReplicationConfigurationA#priority}.
-	Priority *float64 `json:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#filter S3BucketReplicationConfigurationA#filter}
+	Filter *S3BucketReplicationConfigurationRuleFilter `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#id S3BucketReplicationConfigurationA#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#prefix S3BucketReplicationConfigurationA#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#priority S3BucketReplicationConfigurationA#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
 	// source_selection_criteria block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#source_selection_criteria S3BucketReplicationConfigurationA#source_selection_criteria}
-	SourceSelectionCriteria *S3BucketReplicationConfigurationRuleSourceSelectionCriteria `json:"sourceSelectionCriteria"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#source_selection_criteria S3BucketReplicationConfigurationA#source_selection_criteria}
+	SourceSelectionCriteria *S3BucketReplicationConfigurationRuleSourceSelectionCriteria `json:"sourceSelectionCriteria" yaml:"sourceSelectionCriteria"`
 }
 
 type S3BucketReplicationConfigurationRuleDeleteMarkerReplication struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference interface {
@@ -18254,12 +21221,17 @@ type S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference 
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -18319,8 +21291,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOu
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18329,7 +21301,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOu
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference {
+func NewS3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference{}
@@ -18343,7 +21315,7 @@ func NewS3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReferen
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference_Override(s S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference_Override(s S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18385,7 +21357,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOu
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18394,12 +21366,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOu
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18436,12 +21436,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOu
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18478,33 +21520,33 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDeleteMarkerReplicationOu
 }
 
 type S3BucketReplicationConfigurationRuleDestination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#bucket S3BucketReplicationConfigurationA#bucket}.
-	Bucket *string `json:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#bucket S3BucketReplicationConfigurationA#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
 	// access_control_translation block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#access_control_translation S3BucketReplicationConfigurationA#access_control_translation}
-	AccessControlTranslation *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation `json:"accessControlTranslation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#account S3BucketReplicationConfigurationA#account}.
-	Account *string `json:"account"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#access_control_translation S3BucketReplicationConfigurationA#access_control_translation}
+	AccessControlTranslation *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation `json:"accessControlTranslation" yaml:"accessControlTranslation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#account S3BucketReplicationConfigurationA#account}.
+	Account *string `json:"account" yaml:"account"`
 	// encryption_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#encryption_configuration S3BucketReplicationConfigurationA#encryption_configuration}
-	EncryptionConfiguration *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration `json:"encryptionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#encryption_configuration S3BucketReplicationConfigurationA#encryption_configuration}
+	EncryptionConfiguration *S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration `json:"encryptionConfiguration" yaml:"encryptionConfiguration"`
 	// metrics block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#metrics S3BucketReplicationConfigurationA#metrics}
-	Metrics *S3BucketReplicationConfigurationRuleDestinationMetrics `json:"metrics"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#metrics S3BucketReplicationConfigurationA#metrics}
+	Metrics *S3BucketReplicationConfigurationRuleDestinationMetrics `json:"metrics" yaml:"metrics"`
 	// replication_time block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#replication_time S3BucketReplicationConfigurationA#replication_time}
-	ReplicationTime *S3BucketReplicationConfigurationRuleDestinationReplicationTime `json:"replicationTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#storage_class S3BucketReplicationConfigurationA#storage_class}.
-	StorageClass *string `json:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#replication_time S3BucketReplicationConfigurationA#replication_time}
+	ReplicationTime *S3BucketReplicationConfigurationRuleDestinationReplicationTime `json:"replicationTime" yaml:"replicationTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#storage_class S3BucketReplicationConfigurationA#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
 }
 
 type S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#owner S3BucketReplicationConfigurationA#owner}.
-	Owner *string `json:"owner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#owner S3BucketReplicationConfigurationA#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
 }
 
 type S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference interface {
@@ -18518,12 +21560,17 @@ type S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutp
 	OwnerInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -18583,8 +21630,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlT
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18593,7 +21640,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlT
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference {
+func NewS3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference{}
@@ -18607,7 +21654,7 @@ func NewS3BucketReplicationConfigurationRuleDestinationAccessControlTranslationO
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18649,7 +21696,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlT
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18658,12 +21705,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlT
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18700,12 +21775,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlT
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlTranslationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18742,8 +21859,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationAccessControlT
 }
 
 type S3BucketReplicationConfigurationRuleDestinationEncryptionConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#replica_kms_key_id S3BucketReplicationConfigurationA#replica_kms_key_id}.
-	ReplicaKmsKeyId *string `json:"replicaKmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#replica_kms_key_id S3BucketReplicationConfigurationA#replica_kms_key_id}.
+	ReplicaKmsKeyId *string `json:"replicaKmsKeyId" yaml:"replicaKmsKeyId"`
 }
 
 type S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference interface {
@@ -18757,12 +21874,17 @@ type S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutpu
 	ReplicaKmsKeyIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -18822,8 +21944,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConf
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18832,7 +21954,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConf
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference {
+func NewS3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference{}
@@ -18846,7 +21968,7 @@ func NewS3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOu
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18888,7 +22010,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConf
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18897,12 +22019,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConf
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18939,12 +22089,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConf
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18981,17 +22173,17 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationEncryptionConf
 }
 
 type S3BucketReplicationConfigurationRuleDestinationMetrics struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status" yaml:"status"`
 	// event_threshold block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#event_threshold S3BucketReplicationConfigurationA#event_threshold}
-	EventThreshold *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold `json:"eventThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#event_threshold S3BucketReplicationConfigurationA#event_threshold}
+	EventThreshold *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold `json:"eventThreshold" yaml:"eventThreshold"`
 }
 
 type S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#minutes S3BucketReplicationConfigurationA#minutes}.
-	Minutes *float64 `json:"minutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#minutes S3BucketReplicationConfigurationA#minutes}.
+	Minutes *float64 `json:"minutes" yaml:"minutes"`
 }
 
 type S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference interface {
@@ -19005,12 +22197,17 @@ type S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputR
 	MinutesInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -19070,8 +22267,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventTh
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19080,7 +22277,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventTh
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference {
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference{}
@@ -19094,7 +22291,7 @@ func NewS3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutp
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -19136,7 +22333,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventTh
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19145,12 +22342,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventTh
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19187,12 +22412,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventTh
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsEventThresholdOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19241,12 +22508,17 @@ type S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference inter
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutEventThreshold(value *S3BucketReplicationConfigurationRuleDestinationMetricsEventThreshold)
@@ -19328,8 +22600,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputR
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19338,7 +22610,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputR
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationMetricsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference {
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference{}
@@ -19352,7 +22624,7 @@ func NewS3BucketReplicationConfigurationRuleDestinationMetricsOutputReference(te
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationMetricsOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDestinationMetricsOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -19394,7 +22666,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputR
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19403,12 +22675,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputR
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19445,12 +22745,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputR
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationMetricsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19527,12 +22869,17 @@ type S3BucketReplicationConfigurationRuleDestinationOutputReference interface {
 	StorageClassInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAccessControlTranslation(value *S3BucketReplicationConfigurationRuleDestinationAccessControlTranslation)
@@ -19722,8 +23069,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19732,7 +23079,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReferenc
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationOutputReference {
+func NewS3BucketReplicationConfigurationRuleDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference{}
@@ -19746,7 +23093,7 @@ func NewS3BucketReplicationConfigurationRuleDestinationOutputReference(terraform
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDestinationOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -19804,7 +23151,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19813,12 +23160,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19855,12 +23230,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19977,12 +23394,12 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationOutputReferenc
 }
 
 type S3BucketReplicationConfigurationRuleDestinationReplicationTime struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status" yaml:"status"`
 	// time block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#time S3BucketReplicationConfigurationA#time}
-	Time *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime `json:"time"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#time S3BucketReplicationConfigurationA#time}
+	Time *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime `json:"time" yaml:"time"`
 }
 
 type S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference interface {
@@ -19996,14 +23413,19 @@ type S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReferen
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Time() S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference
 	TimeInput() *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutTime(value *S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime)
@@ -20064,8 +23486,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20094,7 +23516,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference {
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference{}
@@ -20108,7 +23530,7 @@ func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputRefe
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20150,7 +23572,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20159,12 +23581,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20201,12 +23651,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20251,8 +23743,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 }
 
 type S3BucketReplicationConfigurationRuleDestinationReplicationTimeTime struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#minutes S3BucketReplicationConfigurationA#minutes}.
-	Minutes *float64 `json:"minutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#minutes S3BucketReplicationConfigurationA#minutes}.
+	Minutes *float64 `json:"minutes" yaml:"minutes"`
 }
 
 type S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference interface {
@@ -20266,12 +23758,17 @@ type S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputRef
 	MinutesInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -20331,8 +23828,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20341,7 +23838,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference {
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference{}
@@ -20355,7 +23852,7 @@ func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutput
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference_Override(s S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20397,7 +23894,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20406,12 +23903,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20448,12 +23973,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTimeTimeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20490,8 +24057,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleDestinationReplicationTim
 }
 
 type S3BucketReplicationConfigurationRuleExistingObjectReplication struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference interface {
@@ -20505,12 +24072,17 @@ type S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReferenc
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -20570,8 +24142,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplication
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20580,7 +24152,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplication
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference {
+func NewS3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference{}
@@ -20594,7 +24166,7 @@ func NewS3BucketReplicationConfigurationRuleExistingObjectReplicationOutputRefer
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference_Override(s S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference_Override(s S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20636,7 +24208,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplication
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20645,12 +24217,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplication
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20687,12 +24287,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplication
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplicationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20731,21 +24373,21 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleExistingObjectReplication
 type S3BucketReplicationConfigurationRuleFilter struct {
 	// and block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#and S3BucketReplicationConfigurationA#and}
-	And *S3BucketReplicationConfigurationRuleFilterAnd `json:"and"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#prefix S3BucketReplicationConfigurationA#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#and S3BucketReplicationConfigurationA#and}
+	And *S3BucketReplicationConfigurationRuleFilterAnd `json:"and" yaml:"and"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#prefix S3BucketReplicationConfigurationA#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 	// tag block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#tag S3BucketReplicationConfigurationA#tag}
-	Tag *S3BucketReplicationConfigurationRuleFilterTag `json:"tag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#tag S3BucketReplicationConfigurationA#tag}
+	Tag *S3BucketReplicationConfigurationRuleFilterTag `json:"tag" yaml:"tag"`
 }
 
 type S3BucketReplicationConfigurationRuleFilterAnd struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#prefix S3BucketReplicationConfigurationA#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#tags S3BucketReplicationConfigurationA#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#prefix S3BucketReplicationConfigurationA#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#tags S3BucketReplicationConfigurationA#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type S3BucketReplicationConfigurationRuleFilterAndOutputReference interface {
@@ -20757,17 +24399,22 @@ type S3BucketReplicationConfigurationRuleFilterAndOutputReference interface {
 	Prefix() *string
 	SetPrefix(val *string)
 	PrefixInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -20819,8 +24466,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -20829,8 +24476,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -20849,8 +24496,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20859,7 +24506,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleFilterAndOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterAndOutputReference {
+func NewS3BucketReplicationConfigurationRuleFilterAndOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterAndOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference{}
@@ -20873,7 +24520,7 @@ func NewS3BucketReplicationConfigurationRuleFilterAndOutputReference(terraformRe
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleFilterAndOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterAndOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleFilterAndOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterAndOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20907,7 +24554,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -20923,7 +24570,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20932,12 +24579,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20974,12 +24649,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference)
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterAndOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21046,12 +24763,17 @@ type S3BucketReplicationConfigurationRuleFilterOutputReference interface {
 	TagInput() *S3BucketReplicationConfigurationRuleFilterTag
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAnd(value *S3BucketReplicationConfigurationRuleFilterAnd)
@@ -21156,8 +24878,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21166,7 +24888,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Te
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterOutputReference {
+func NewS3BucketReplicationConfigurationRuleFilterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference{}
@@ -21180,7 +24902,7 @@ func NewS3BucketReplicationConfigurationRuleFilterOutputReference(terraformResou
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleFilterOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleFilterOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21222,7 +24944,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21231,12 +24953,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Se
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21273,12 +25023,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Ge
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21355,10 +25147,10 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterOutputReference) Re
 }
 
 type S3BucketReplicationConfigurationRuleFilterTag struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#key S3BucketReplicationConfigurationA#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#value S3BucketReplicationConfigurationA#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#key S3BucketReplicationConfigurationA#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#value S3BucketReplicationConfigurationA#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type S3BucketReplicationConfigurationRuleFilterTagOutputReference interface {
@@ -21372,15 +25164,20 @@ type S3BucketReplicationConfigurationRuleFilterTagOutputReference interface {
 	KeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -21440,8 +25237,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21470,7 +25267,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference)
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleFilterTagOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterTagOutputReference {
+func NewS3BucketReplicationConfigurationRuleFilterTagOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleFilterTagOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference{}
@@ -21484,7 +25281,7 @@ func NewS3BucketReplicationConfigurationRuleFilterTagOutputReference(terraformRe
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleFilterTagOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterTagOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleFilterTagOutputReference_Override(s S3BucketReplicationConfigurationRuleFilterTagOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21526,7 +25323,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21543,12 +25340,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference)
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21585,12 +25410,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference)
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21629,12 +25496,12 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleFilterTagOutputReference)
 type S3BucketReplicationConfigurationRuleSourceSelectionCriteria struct {
 	// replica_modifications block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#replica_modifications S3BucketReplicationConfigurationA#replica_modifications}
-	ReplicaModifications *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications `json:"replicaModifications"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#replica_modifications S3BucketReplicationConfigurationA#replica_modifications}
+	ReplicaModifications *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications `json:"replicaModifications" yaml:"replicaModifications"`
 	// sse_kms_encrypted_objects block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#sse_kms_encrypted_objects S3BucketReplicationConfigurationA#sse_kms_encrypted_objects}
-	SseKmsEncryptedObjects *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects `json:"sseKmsEncryptedObjects"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#sse_kms_encrypted_objects S3BucketReplicationConfigurationA#sse_kms_encrypted_objects}
+	SseKmsEncryptedObjects *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects `json:"sseKmsEncryptedObjects" yaml:"sseKmsEncryptedObjects"`
 }
 
 type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference interface {
@@ -21649,12 +25516,17 @@ type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference 
 	SseKmsEncryptedObjectsInput() *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutReplicaModifications(value *S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications)
@@ -21738,8 +25610,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOu
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21748,7 +25620,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOu
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference {
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference{}
@@ -21762,7 +25634,7 @@ func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReferen
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21796,7 +25668,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOu
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21805,12 +25677,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOu
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21847,12 +25747,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOu
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21921,8 +25863,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaOu
 }
 
 type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifications struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference interface {
@@ -21936,12 +25878,17 @@ type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificat
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -22001,8 +25948,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaRe
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22011,7 +25958,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaRe
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference {
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference{}
@@ -22025,7 +25972,7 @@ func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModifi
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22067,7 +26014,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaRe
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22076,12 +26023,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaRe
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22118,12 +26093,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaRe
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaReplicaModificationsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22160,8 +26177,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaRe
 }
 
 type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjects struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration.html#status S3BucketReplicationConfigurationA#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket_replication_configuration#status S3BucketReplicationConfigurationA#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference interface {
@@ -22175,12 +26192,17 @@ type S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedO
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -22240,8 +26262,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSs
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22250,7 +26272,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSs
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference {
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference{}
@@ -22264,7 +26286,7 @@ func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncrypt
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference_Override(s S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22306,7 +26328,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSs
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22315,12 +26337,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSs
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22357,12 +26407,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSs
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22401,54 +26493,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRuleSourceSelectionCriteriaSs
 type S3BucketReplicationConfigurationRules struct {
 	// destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#destination S3Bucket#destination}
-	Destination *S3BucketReplicationConfigurationRulesDestination `json:"destination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#status S3Bucket#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#delete_marker_replication_status S3Bucket#delete_marker_replication_status}.
-	DeleteMarkerReplicationStatus *string `json:"deleteMarkerReplicationStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#destination S3Bucket#destination}
+	Destination *S3BucketReplicationConfigurationRulesDestination `json:"destination" yaml:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#status S3Bucket#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#delete_marker_replication_status S3Bucket#delete_marker_replication_status}.
+	DeleteMarkerReplicationStatus *string `json:"deleteMarkerReplicationStatus" yaml:"deleteMarkerReplicationStatus"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#filter S3Bucket#filter}
-	Filter *S3BucketReplicationConfigurationRulesFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#id S3Bucket#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#prefix S3Bucket#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#priority S3Bucket#priority}.
-	Priority *float64 `json:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#filter S3Bucket#filter}
+	Filter *S3BucketReplicationConfigurationRulesFilter `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#id S3Bucket#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#prefix S3Bucket#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#priority S3Bucket#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
 	// source_selection_criteria block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#source_selection_criteria S3Bucket#source_selection_criteria}
-	SourceSelectionCriteria *S3BucketReplicationConfigurationRulesSourceSelectionCriteria `json:"sourceSelectionCriteria"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#source_selection_criteria S3Bucket#source_selection_criteria}
+	SourceSelectionCriteria *S3BucketReplicationConfigurationRulesSourceSelectionCriteria `json:"sourceSelectionCriteria" yaml:"sourceSelectionCriteria"`
 }
 
 type S3BucketReplicationConfigurationRulesDestination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#bucket S3Bucket#bucket}.
-	Bucket *string `json:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#bucket S3Bucket#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
 	// access_control_translation block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#access_control_translation S3Bucket#access_control_translation}
-	AccessControlTranslation *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation `json:"accessControlTranslation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#account_id S3Bucket#account_id}.
-	AccountId *string `json:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#access_control_translation S3Bucket#access_control_translation}
+	AccessControlTranslation *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation `json:"accessControlTranslation" yaml:"accessControlTranslation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#account_id S3Bucket#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 	// metrics block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#metrics S3Bucket#metrics}
-	Metrics *S3BucketReplicationConfigurationRulesDestinationMetrics `json:"metrics"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#replica_kms_key_id S3Bucket#replica_kms_key_id}.
-	ReplicaKmsKeyId *string `json:"replicaKmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#metrics S3Bucket#metrics}
+	Metrics *S3BucketReplicationConfigurationRulesDestinationMetrics `json:"metrics" yaml:"metrics"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#replica_kms_key_id S3Bucket#replica_kms_key_id}.
+	ReplicaKmsKeyId *string `json:"replicaKmsKeyId" yaml:"replicaKmsKeyId"`
 	// replication_time block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#replication_time S3Bucket#replication_time}
-	ReplicationTime *S3BucketReplicationConfigurationRulesDestinationReplicationTime `json:"replicationTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#storage_class S3Bucket#storage_class}.
-	StorageClass *string `json:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#replication_time S3Bucket#replication_time}
+	ReplicationTime *S3BucketReplicationConfigurationRulesDestinationReplicationTime `json:"replicationTime" yaml:"replicationTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#storage_class S3Bucket#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
 }
 
 type S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#owner S3Bucket#owner}.
-	Owner *string `json:"owner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#owner S3Bucket#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
 }
 
 type S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference interface {
@@ -22462,12 +26554,17 @@ type S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOut
 	OwnerInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -22527,8 +26624,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControl
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22537,7 +26634,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControl
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference {
+func NewS3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference{}
@@ -22551,7 +26648,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationAccessControlTranslation
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22593,7 +26690,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControl
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22602,12 +26699,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControl
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22644,12 +26769,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControl
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControlTranslationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22686,10 +26853,10 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationAccessControl
 }
 
 type S3BucketReplicationConfigurationRulesDestinationMetrics struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#minutes S3Bucket#minutes}.
-	Minutes *float64 `json:"minutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#status S3Bucket#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#minutes S3Bucket#minutes}.
+	Minutes *float64 `json:"minutes" yaml:"minutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#status S3Bucket#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference interface {
@@ -22706,12 +26873,17 @@ type S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference inte
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMinutes()
@@ -22793,8 +26965,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutput
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22803,7 +26975,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutput
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationMetricsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference {
+func NewS3BucketReplicationConfigurationRulesDestinationMetricsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference{}
@@ -22817,7 +26989,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationMetricsOutputReference(t
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationMetricsOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRulesDestinationMetricsOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22867,7 +27039,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutput
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22876,12 +27048,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutput
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22918,12 +27118,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutput
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationMetricsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23001,12 +27243,17 @@ type S3BucketReplicationConfigurationRulesDestinationOutputReference interface {
 	StorageClassInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAccessControlTranslation(value *S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation)
@@ -23195,8 +27442,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23205,7 +27452,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationOutputReference {
+func NewS3BucketReplicationConfigurationRulesDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference{}
@@ -23219,7 +27466,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationOutputReference(terrafor
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRulesDestinationOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23285,7 +27532,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23294,12 +27541,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23336,12 +27611,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23450,10 +27767,10 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationOutputReferen
 }
 
 type S3BucketReplicationConfigurationRulesDestinationReplicationTime struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#minutes S3Bucket#minutes}.
-	Minutes *float64 `json:"minutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#status S3Bucket#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#minutes S3Bucket#minutes}.
+	Minutes *float64 `json:"minutes" yaml:"minutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#status S3Bucket#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference interface {
@@ -23470,12 +27787,17 @@ type S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputRefere
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMinutes()
@@ -23557,8 +27879,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTi
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23567,7 +27889,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTi
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference {
+func NewS3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference{}
@@ -23581,7 +27903,7 @@ func NewS3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputRef
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference_Override(s S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23631,7 +27953,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTi
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23640,12 +27962,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTi
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23682,12 +28032,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTi
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTimeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23740,10 +28132,10 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesDestinationReplicationTi
 }
 
 type S3BucketReplicationConfigurationRulesFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#prefix S3Bucket#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#tags S3Bucket#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#prefix S3Bucket#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#tags S3Bucket#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type S3BucketReplicationConfigurationRulesFilterOutputReference interface {
@@ -23755,17 +28147,22 @@ type S3BucketReplicationConfigurationRulesFilterOutputReference interface {
 	Prefix() *string
 	SetPrefix(val *string)
 	PrefixInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -23817,8 +28214,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) P
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -23827,8 +28224,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -23847,8 +28244,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23857,7 +28254,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) T
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRulesFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesFilterOutputReference {
+func NewS3BucketReplicationConfigurationRulesFilterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesFilterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference{}
@@ -23871,7 +28268,7 @@ func NewS3BucketReplicationConfigurationRulesFilterOutputReference(terraformReso
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRulesFilterOutputReference_Override(s S3BucketReplicationConfigurationRulesFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRulesFilterOutputReference_Override(s S3BucketReplicationConfigurationRulesFilterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23905,7 +28302,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -23921,7 +28318,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23930,12 +28327,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) S
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23972,12 +28397,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) G
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24032,8 +28499,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesFilterOutputReference) R
 type S3BucketReplicationConfigurationRulesSourceSelectionCriteria struct {
 	// sse_kms_encrypted_objects block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#sse_kms_encrypted_objects S3Bucket#sse_kms_encrypted_objects}
-	SseKmsEncryptedObjects *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects `json:"sseKmsEncryptedObjects"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#sse_kms_encrypted_objects S3Bucket#sse_kms_encrypted_objects}
+	SseKmsEncryptedObjects *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects `json:"sseKmsEncryptedObjects" yaml:"sseKmsEncryptedObjects"`
 }
 
 type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference interface {
@@ -24046,12 +28513,17 @@ type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference
 	SseKmsEncryptedObjectsInput() *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSseKmsEncryptedObjects(value *S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects)
@@ -24113,8 +28585,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaO
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24123,7 +28595,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaO
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference {
+func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference{}
@@ -24137,7 +28609,7 @@ func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputRefere
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference_Override(s S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference_Override(s S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24171,7 +28643,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaO
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24180,12 +28652,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaO
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24222,12 +28722,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaO
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24280,8 +28822,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaO
 }
 
 type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#enabled S3Bucket#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#enabled S3Bucket#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference interface {
@@ -24295,12 +28837,17 @@ type S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncrypted
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -24360,8 +28907,8 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24370,7 +28917,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 	return returns
 }
 
-func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference {
+func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference{}
@@ -24384,7 +28931,7 @@ func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryp
 	return &j
 }
 
-func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference_Override(s S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference_Override(s S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24426,7 +28973,7 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 	)
 }
 
-func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24435,12 +28982,40 @@ func (j *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24477,12 +29052,54 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24521,8 +29138,8 @@ func (s *jsiiProxy_S3BucketReplicationConfigurationRulesSourceSelectionCriteriaS
 type S3BucketServerSideEncryptionConfiguration struct {
 	// rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#rule S3Bucket#rule}
-	Rule *S3BucketServerSideEncryptionConfigurationRule `json:"rule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#rule S3Bucket#rule}
+	Rule *S3BucketServerSideEncryptionConfigurationRule `json:"rule" yaml:"rule"`
 }
 
 type S3BucketServerSideEncryptionConfigurationOutputReference interface {
@@ -24535,12 +29152,17 @@ type S3BucketServerSideEncryptionConfigurationOutputReference interface {
 	RuleInput() *S3BucketServerSideEncryptionConfigurationRule
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRule(value *S3BucketServerSideEncryptionConfigurationRule)
@@ -24601,8 +29223,8 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24611,7 +29233,7 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) Ter
 	return returns
 }
 
-func NewS3BucketServerSideEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketServerSideEncryptionConfigurationOutputReference {
+func NewS3BucketServerSideEncryptionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketServerSideEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference{}
@@ -24625,7 +29247,7 @@ func NewS3BucketServerSideEncryptionConfigurationOutputReference(terraformResour
 	return &j
 }
 
-func NewS3BucketServerSideEncryptionConfigurationOutputReference_Override(s S3BucketServerSideEncryptionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketServerSideEncryptionConfigurationOutputReference_Override(s S3BucketServerSideEncryptionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24659,7 +29281,7 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24668,12 +29290,40 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) Set
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24710,12 +29360,54 @@ func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) Get
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24762,17 +29454,17 @@ func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationOutputReference) Put
 type S3BucketServerSideEncryptionConfigurationRule struct {
 	// apply_server_side_encryption_by_default block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#apply_server_side_encryption_by_default S3Bucket#apply_server_side_encryption_by_default}
-	ApplyServerSideEncryptionByDefault *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault `json:"applyServerSideEncryptionByDefault"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#bucket_key_enabled S3Bucket#bucket_key_enabled}.
-	BucketKeyEnabled interface{} `json:"bucketKeyEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#apply_server_side_encryption_by_default S3Bucket#apply_server_side_encryption_by_default}
+	ApplyServerSideEncryptionByDefault *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault `json:"applyServerSideEncryptionByDefault" yaml:"applyServerSideEncryptionByDefault"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#bucket_key_enabled S3Bucket#bucket_key_enabled}.
+	BucketKeyEnabled interface{} `json:"bucketKeyEnabled" yaml:"bucketKeyEnabled"`
 }
 
 type S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#sse_algorithm S3Bucket#sse_algorithm}.
-	SseAlgorithm *string `json:"sseAlgorithm"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#kms_master_key_id S3Bucket#kms_master_key_id}.
-	KmsMasterKeyId *string `json:"kmsMasterKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#sse_algorithm S3Bucket#sse_algorithm}.
+	SseAlgorithm *string `json:"sseAlgorithm" yaml:"sseAlgorithm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#kms_master_key_id S3Bucket#kms_master_key_id}.
+	KmsMasterKeyId *string `json:"kmsMasterKeyId" yaml:"kmsMasterKeyId"`
 }
 
 type S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference interface {
@@ -24789,12 +29481,17 @@ type S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDef
 	SseAlgorithmInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsMasterKeyId()
@@ -24875,8 +29572,8 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideE
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24885,7 +29582,7 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideE
 	return returns
 }
 
-func NewS3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference {
+func NewS3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference{}
@@ -24899,7 +29596,7 @@ func NewS3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionBy
 	return &j
 }
 
-func NewS3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference_Override(s S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference_Override(s S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24949,7 +29646,7 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideE
 	)
 }
 
-func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24958,12 +29655,40 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideE
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25000,12 +29725,54 @@ func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideE
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25062,12 +29829,17 @@ type S3BucketServerSideEncryptionConfigurationRuleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutApplyServerSideEncryptionByDefault(value *S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault)
@@ -25149,8 +29921,8 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -25159,7 +29931,7 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 	return returns
 }
 
-func NewS3BucketServerSideEncryptionConfigurationRuleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketServerSideEncryptionConfigurationRuleOutputReference {
+func NewS3BucketServerSideEncryptionConfigurationRuleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketServerSideEncryptionConfigurationRuleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference{}
@@ -25173,7 +29945,7 @@ func NewS3BucketServerSideEncryptionConfigurationRuleOutputReference(terraformRe
 	return &j
 }
 
-func NewS3BucketServerSideEncryptionConfigurationRuleOutputReference_Override(s S3BucketServerSideEncryptionConfigurationRuleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketServerSideEncryptionConfigurationRuleOutputReference_Override(s S3BucketServerSideEncryptionConfigurationRuleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -25215,7 +29987,7 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -25224,12 +29996,40 @@ func (j *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25266,12 +30066,54 @@ func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25324,10 +30166,10 @@ func (s *jsiiProxy_S3BucketServerSideEncryptionConfigurationRuleOutputReference)
 }
 
 type S3BucketVersioning struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#enabled S3Bucket#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#mfa_delete S3Bucket#mfa_delete}.
-	MfaDelete interface{} `json:"mfaDelete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#enabled S3Bucket#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#mfa_delete S3Bucket#mfa_delete}.
+	MfaDelete interface{} `json:"mfaDelete" yaml:"mfaDelete"`
 }
 
 type S3BucketVersioningOutputReference interface {
@@ -25344,12 +30186,17 @@ type S3BucketVersioningOutputReference interface {
 	MfaDeleteInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -25431,8 +30278,8 @@ func (j *jsiiProxy_S3BucketVersioningOutputReference) TerraformAttribute() *stri
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketVersioningOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketVersioningOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -25441,7 +30288,7 @@ func (j *jsiiProxy_S3BucketVersioningOutputReference) TerraformResource() cdktf.
 	return returns
 }
 
-func NewS3BucketVersioningOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketVersioningOutputReference {
+func NewS3BucketVersioningOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketVersioningOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketVersioningOutputReference{}
@@ -25455,7 +30302,7 @@ func NewS3BucketVersioningOutputReference(terraformResource cdktf.ITerraformReso
 	return &j
 }
 
-func NewS3BucketVersioningOutputReference_Override(s S3BucketVersioningOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketVersioningOutputReference_Override(s S3BucketVersioningOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -25505,7 +30352,7 @@ func (j *jsiiProxy_S3BucketVersioningOutputReference) SetTerraformAttribute(val 
 	)
 }
 
-func (j *jsiiProxy_S3BucketVersioningOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketVersioningOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -25514,12 +30361,40 @@ func (j *jsiiProxy_S3BucketVersioningOutputReference) SetTerraformResource(val c
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketVersioningOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketVersioningOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketVersioningOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketVersioningOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25556,12 +30431,54 @@ func (s *jsiiProxy_S3BucketVersioningOutputReference) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketVersioningOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketVersioningOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketVersioningOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketVersioningOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25614,14 +30531,14 @@ func (s *jsiiProxy_S3BucketVersioningOutputReference) ResetMfaDelete() {
 }
 
 type S3BucketWebsite struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#error_document S3Bucket#error_document}.
-	ErrorDocument *string `json:"errorDocument"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#index_document S3Bucket#index_document}.
-	IndexDocument *string `json:"indexDocument"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#redirect_all_requests_to S3Bucket#redirect_all_requests_to}.
-	RedirectAllRequestsTo *string `json:"redirectAllRequestsTo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket.html#routing_rules S3Bucket#routing_rules}.
-	RoutingRules *string `json:"routingRules"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#error_document S3Bucket#error_document}.
+	ErrorDocument *string `json:"errorDocument" yaml:"errorDocument"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#index_document S3Bucket#index_document}.
+	IndexDocument *string `json:"indexDocument" yaml:"indexDocument"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#redirect_all_requests_to S3Bucket#redirect_all_requests_to}.
+	RedirectAllRequestsTo *string `json:"redirectAllRequestsTo" yaml:"redirectAllRequestsTo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_bucket#routing_rules S3Bucket#routing_rules}.
+	RoutingRules *string `json:"routingRules" yaml:"routingRules"`
 }
 
 type S3BucketWebsiteOutputReference interface {
@@ -25644,12 +30561,17 @@ type S3BucketWebsiteOutputReference interface {
 	RoutingRulesInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetErrorDocument()
@@ -25773,8 +30695,8 @@ func (j *jsiiProxy_S3BucketWebsiteOutputReference) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_S3BucketWebsiteOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3BucketWebsiteOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -25783,7 +30705,7 @@ func (j *jsiiProxy_S3BucketWebsiteOutputReference) TerraformResource() cdktf.ITe
 	return returns
 }
 
-func NewS3BucketWebsiteOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3BucketWebsiteOutputReference {
+func NewS3BucketWebsiteOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3BucketWebsiteOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3BucketWebsiteOutputReference{}
@@ -25797,7 +30719,7 @@ func NewS3BucketWebsiteOutputReference(terraformResource cdktf.ITerraformResourc
 	return &j
 }
 
-func NewS3BucketWebsiteOutputReference_Override(s S3BucketWebsiteOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3BucketWebsiteOutputReference_Override(s S3BucketWebsiteOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -25863,7 +30785,7 @@ func (j *jsiiProxy_S3BucketWebsiteOutputReference) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_S3BucketWebsiteOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3BucketWebsiteOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -25872,12 +30794,40 @@ func (j *jsiiProxy_S3BucketWebsiteOutputReference) SetTerraformResource(val cdkt
 }
 
 // Experimental.
-func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25914,12 +30864,54 @@ func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3BucketWebsiteOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25987,7 +30979,7 @@ func (s *jsiiProxy_S3BucketWebsiteOutputReference) ResetRoutingRules() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html aws_s3control_access_point_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy aws_s3control_access_point_policy}.
 type S3ControlAccessPointPolicy interface {
 	cdktf.TerraformResource
 	AccessPointArn() *string
@@ -25995,13 +30987,13 @@ type S3ControlAccessPointPolicy interface {
 	AccessPointArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
-	HasPublicAccessPolicy() interface{}
+	HasPublicAccessPolicy() cdktf.IResolvable
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -26016,10 +31008,15 @@ type S3ControlAccessPointPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -26074,8 +31071,8 @@ func (j *jsiiProxy_S3ControlAccessPointPolicy) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlAccessPointPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlAccessPointPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -26114,8 +31111,8 @@ func (j *jsiiProxy_S3ControlAccessPointPolicy) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlAccessPointPolicy) HasPublicAccessPolicy() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlAccessPointPolicy) HasPublicAccessPolicy() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"hasPublicAccessPolicy",
@@ -26224,7 +31221,7 @@ func (j *jsiiProxy_S3ControlAccessPointPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html aws_s3control_access_point_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy aws_s3control_access_point_policy} Resource.
 func NewS3ControlAccessPointPolicy(scope constructs.Construct, id *string, config *S3ControlAccessPointPolicyConfig) S3ControlAccessPointPolicy {
 	_init_.Initialize()
 
@@ -26239,7 +31236,7 @@ func NewS3ControlAccessPointPolicy(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html aws_s3control_access_point_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy aws_s3control_access_point_policy} Resource.
 func NewS3ControlAccessPointPolicy_Override(s S3ControlAccessPointPolicy, scope constructs.Construct, id *string, config *S3ControlAccessPointPolicyConfig) {
 	_init_.Initialize()
 
@@ -26258,7 +31255,7 @@ func (j *jsiiProxy_S3ControlAccessPointPolicy) SetAccessPointArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3ControlAccessPointPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlAccessPointPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -26338,12 +31335,40 @@ func (s *jsiiProxy_S3ControlAccessPointPolicy) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlAccessPointPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26380,12 +31405,54 @@ func (s *jsiiProxy_S3ControlAccessPointPolicy) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlAccessPointPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlAccessPointPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26486,20 +31553,20 @@ func (s *jsiiProxy_S3ControlAccessPointPolicy) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3ControlAccessPointPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html#access_point_arn S3ControlAccessPointPolicy#access_point_arn}.
-	AccessPointArn *string `json:"accessPointArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy.html#policy S3ControlAccessPointPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy#access_point_arn S3ControlAccessPointPolicy#access_point_arn}.
+	AccessPointArn *string `json:"accessPointArn" yaml:"accessPointArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_access_point_policy#policy S3ControlAccessPointPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html aws_s3control_bucket}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket aws_s3control_bucket}.
 type S3ControlBucket interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -26508,8 +31575,8 @@ type S3ControlBucket interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -26524,22 +31591,27 @@ type S3ControlBucket interface {
 	OutpostIdInput() *string
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
-	PublicAccessBlockEnabled() interface{}
+	PublicAccessBlockEnabled() cdktf.IResolvable
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -26606,8 +31678,8 @@ func (j *jsiiProxy_S3ControlBucket) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucket) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucket) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -26716,8 +31788,8 @@ func (j *jsiiProxy_S3ControlBucket) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucket) PublicAccessBlockEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucket) PublicAccessBlockEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"publicAccessBlockEnabled",
@@ -26736,8 +31808,8 @@ func (j *jsiiProxy_S3ControlBucket) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucket) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucket) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -26746,8 +31818,8 @@ func (j *jsiiProxy_S3ControlBucket) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucket) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucket) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -26756,8 +31828,8 @@ func (j *jsiiProxy_S3ControlBucket) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucket) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucket) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -26766,8 +31838,8 @@ func (j *jsiiProxy_S3ControlBucket) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucket) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucket) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -26806,7 +31878,7 @@ func (j *jsiiProxy_S3ControlBucket) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html aws_s3control_bucket} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket aws_s3control_bucket} Resource.
 func NewS3ControlBucket(scope constructs.Construct, id *string, config *S3ControlBucketConfig) S3ControlBucket {
 	_init_.Initialize()
 
@@ -26821,7 +31893,7 @@ func NewS3ControlBucket(scope constructs.Construct, id *string, config *S3Contro
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html aws_s3control_bucket} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket aws_s3control_bucket} Resource.
 func NewS3ControlBucket_Override(s S3ControlBucket, scope constructs.Construct, id *string, config *S3ControlBucketConfig) {
 	_init_.Initialize()
 
@@ -26840,7 +31912,7 @@ func (j *jsiiProxy_S3ControlBucket) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucket) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlBucket) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -26880,7 +31952,7 @@ func (j *jsiiProxy_S3ControlBucket) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucket) SetTags(val interface{}) {
+func (j *jsiiProxy_S3ControlBucket) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -26888,7 +31960,7 @@ func (j *jsiiProxy_S3ControlBucket) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucket) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_S3ControlBucket) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -26936,12 +32008,40 @@ func (s *jsiiProxy_S3ControlBucket) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucket) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucket) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucket) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26978,12 +32078,54 @@ func (s *jsiiProxy_S3ControlBucket) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucket) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucket) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucket) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucket) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27100,24 +32242,24 @@ func (s *jsiiProxy_S3ControlBucket) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3ControlBucketConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html#bucket S3ControlBucket#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html#outpost_id S3ControlBucket#outpost_id}.
-	OutpostId *string `json:"outpostId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html#tags S3ControlBucket#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket.html#tags_all S3ControlBucket#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket#bucket S3ControlBucket#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket#outpost_id S3ControlBucket#outpost_id}.
+	OutpostId *string `json:"outpostId" yaml:"outpostId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket#tags S3ControlBucket#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket#tags_all S3ControlBucket#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html aws_s3control_bucket_lifecycle_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration aws_s3control_bucket_lifecycle_configuration}.
 type S3ControlBucketLifecycleConfiguration interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -27125,8 +32267,8 @@ type S3ControlBucketLifecycleConfiguration interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -27138,17 +32280,22 @@ type S3ControlBucketLifecycleConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Rule() *[]*S3ControlBucketLifecycleConfigurationRule
-	SetRule(val *[]*S3ControlBucketLifecycleConfigurationRule)
-	RuleInput() *[]*S3ControlBucketLifecycleConfigurationRule
+	Rule() interface{}
+	SetRule(val interface{})
+	RuleInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -27203,8 +32350,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -27293,8 +32440,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) RawOverrides() interfa
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) Rule() *[]*S3ControlBucketLifecycleConfigurationRule {
-	var returns *[]*S3ControlBucketLifecycleConfigurationRule
+func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) Rule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rule",
@@ -27303,8 +32450,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) Rule() *[]*S3ControlBu
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) RuleInput() *[]*S3ControlBucketLifecycleConfigurationRule {
-	var returns *[]*S3ControlBucketLifecycleConfigurationRule
+func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) RuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ruleInput",
@@ -27343,7 +32490,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html aws_s3control_bucket_lifecycle_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration aws_s3control_bucket_lifecycle_configuration} Resource.
 func NewS3ControlBucketLifecycleConfiguration(scope constructs.Construct, id *string, config *S3ControlBucketLifecycleConfigurationConfig) S3ControlBucketLifecycleConfiguration {
 	_init_.Initialize()
 
@@ -27358,7 +32505,7 @@ func NewS3ControlBucketLifecycleConfiguration(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html aws_s3control_bucket_lifecycle_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration aws_s3control_bucket_lifecycle_configuration} Resource.
 func NewS3ControlBucketLifecycleConfiguration_Override(s S3ControlBucketLifecycleConfiguration, scope constructs.Construct, id *string, config *S3ControlBucketLifecycleConfigurationConfig) {
 	_init_.Initialize()
 
@@ -27377,7 +32524,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) SetBucket(val *string)
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -27409,7 +32556,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) SetProvider(val cdktf.
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) SetRule(val *[]*S3ControlBucketLifecycleConfigurationRule) {
+func (j *jsiiProxy_S3ControlBucketLifecycleConfiguration) SetRule(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rule",
@@ -27457,12 +32604,40 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) AddOverride(path *stri
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27499,12 +32674,54 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27605,43 +32822,43 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfiguration) ToTerraform() interfac
 // AWS Simple Storage Service.
 type S3ControlBucketLifecycleConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#bucket S3ControlBucketLifecycleConfiguration#bucket}.
-	Bucket *string `json:"bucket"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#bucket S3ControlBucketLifecycleConfiguration#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
 	// rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#rule S3ControlBucketLifecycleConfiguration#rule}
-	Rule *[]*S3ControlBucketLifecycleConfigurationRule `json:"rule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#rule S3ControlBucketLifecycleConfiguration#rule}
+	Rule interface{} `json:"rule" yaml:"rule"`
 }
 
 type S3ControlBucketLifecycleConfigurationRule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#id S3ControlBucketLifecycleConfiguration#id}.
-	Id *string `json:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#id S3ControlBucketLifecycleConfiguration#id}.
+	Id *string `json:"id" yaml:"id"`
 	// abort_incomplete_multipart_upload block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#abort_incomplete_multipart_upload S3ControlBucketLifecycleConfiguration#abort_incomplete_multipart_upload}
-	AbortIncompleteMultipartUpload *S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload `json:"abortIncompleteMultipartUpload"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#abort_incomplete_multipart_upload S3ControlBucketLifecycleConfiguration#abort_incomplete_multipart_upload}
+	AbortIncompleteMultipartUpload *S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload `json:"abortIncompleteMultipartUpload" yaml:"abortIncompleteMultipartUpload"`
 	// expiration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#expiration S3ControlBucketLifecycleConfiguration#expiration}
-	Expiration *S3ControlBucketLifecycleConfigurationRuleExpiration `json:"expiration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#expiration S3ControlBucketLifecycleConfiguration#expiration}
+	Expiration *S3ControlBucketLifecycleConfigurationRuleExpiration `json:"expiration" yaml:"expiration"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#filter S3ControlBucketLifecycleConfiguration#filter}
-	Filter *S3ControlBucketLifecycleConfigurationRuleFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#status S3ControlBucketLifecycleConfiguration#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#filter S3ControlBucketLifecycleConfiguration#filter}
+	Filter *S3ControlBucketLifecycleConfigurationRuleFilter `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#status S3ControlBucketLifecycleConfiguration#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#days_after_initiation S3ControlBucketLifecycleConfiguration#days_after_initiation}.
-	DaysAfterInitiation *float64 `json:"daysAfterInitiation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#days_after_initiation S3ControlBucketLifecycleConfiguration#days_after_initiation}.
+	DaysAfterInitiation *float64 `json:"daysAfterInitiation" yaml:"daysAfterInitiation"`
 }
 
 type S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference interface {
@@ -27655,12 +32872,17 @@ type S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutp
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -27720,8 +32942,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -27730,7 +32952,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 	return returns
 }
 
-func NewS3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference {
+func NewS3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference{}
@@ -27744,7 +32966,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadO
 	return &j
 }
 
-func NewS3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference_Override(s S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference_Override(s S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -27786,7 +33008,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -27795,12 +33017,40 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27837,12 +33087,54 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27879,12 +33171,12 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleAbortIncompleteMulti
 }
 
 type S3ControlBucketLifecycleConfigurationRuleExpiration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#date S3ControlBucketLifecycleConfiguration#date}.
-	Date *string `json:"date"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#days S3ControlBucketLifecycleConfiguration#days}.
-	Days *float64 `json:"days"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#expired_object_delete_marker S3ControlBucketLifecycleConfiguration#expired_object_delete_marker}.
-	ExpiredObjectDeleteMarker interface{} `json:"expiredObjectDeleteMarker"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#date S3ControlBucketLifecycleConfiguration#date}.
+	Date *string `json:"date" yaml:"date"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#days S3ControlBucketLifecycleConfiguration#days}.
+	Days *float64 `json:"days" yaml:"days"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#expired_object_delete_marker S3ControlBucketLifecycleConfiguration#expired_object_delete_marker}.
+	ExpiredObjectDeleteMarker interface{} `json:"expiredObjectDeleteMarker" yaml:"expiredObjectDeleteMarker"`
 }
 
 type S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference interface {
@@ -27904,12 +33196,17 @@ type S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference interfac
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDate()
@@ -28012,8 +33309,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28022,7 +33319,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 	return returns
 }
 
-func NewS3ControlBucketLifecycleConfigurationRuleExpirationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference {
+func NewS3ControlBucketLifecycleConfigurationRuleExpirationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference{}
@@ -28036,7 +33333,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleExpirationOutputReference(terra
 	return &j
 }
 
-func NewS3ControlBucketLifecycleConfigurationRuleExpirationOutputReference_Override(s S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlBucketLifecycleConfigurationRuleExpirationOutputReference_Override(s S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -28094,7 +33391,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28103,12 +33400,40 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28145,12 +33470,54 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28211,10 +33578,10 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleExpirationOutputRefe
 }
 
 type S3ControlBucketLifecycleConfigurationRuleFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#prefix S3ControlBucketLifecycleConfiguration#prefix}.
-	Prefix *string `json:"prefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration.html#tags S3ControlBucketLifecycleConfiguration#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#prefix S3ControlBucketLifecycleConfiguration#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_lifecycle_configuration#tags S3ControlBucketLifecycleConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type S3ControlBucketLifecycleConfigurationRuleFilterOutputReference interface {
@@ -28226,17 +33593,22 @@ type S3ControlBucketLifecycleConfigurationRuleFilterOutputReference interface {
 	Prefix() *string
 	SetPrefix(val *string)
 	PrefixInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -28288,8 +33660,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -28298,8 +33670,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -28318,8 +33690,8 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28328,7 +33700,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 	return returns
 }
 
-func NewS3ControlBucketLifecycleConfigurationRuleFilterOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlBucketLifecycleConfigurationRuleFilterOutputReference {
+func NewS3ControlBucketLifecycleConfigurationRuleFilterOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlBucketLifecycleConfigurationRuleFilterOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference{}
@@ -28342,7 +33714,7 @@ func NewS3ControlBucketLifecycleConfigurationRuleFilterOutputReference(terraform
 	return &j
 }
 
-func NewS3ControlBucketLifecycleConfigurationRuleFilterOutputReference_Override(s S3ControlBucketLifecycleConfigurationRuleFilterOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlBucketLifecycleConfigurationRuleFilterOutputReference_Override(s S3ControlBucketLifecycleConfigurationRuleFilterOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -28376,7 +33748,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -28392,7 +33764,7 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28401,12 +33773,40 @@ func (j *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28443,12 +33843,54 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28500,7 +33942,7 @@ func (s *jsiiProxy_S3ControlBucketLifecycleConfigurationRuleFilterOutputReferenc
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy.html aws_s3control_bucket_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy aws_s3control_bucket_policy}.
 type S3ControlBucketPolicy interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -28508,8 +33950,8 @@ type S3ControlBucketPolicy interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -28528,10 +33970,15 @@ type S3ControlBucketPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -28586,8 +34033,8 @@ func (j *jsiiProxy_S3ControlBucketPolicy) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlBucketPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlBucketPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -28726,7 +34173,7 @@ func (j *jsiiProxy_S3ControlBucketPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy.html aws_s3control_bucket_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy aws_s3control_bucket_policy} Resource.
 func NewS3ControlBucketPolicy(scope constructs.Construct, id *string, config *S3ControlBucketPolicyConfig) S3ControlBucketPolicy {
 	_init_.Initialize()
 
@@ -28741,7 +34188,7 @@ func NewS3ControlBucketPolicy(scope constructs.Construct, id *string, config *S3
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy.html aws_s3control_bucket_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy aws_s3control_bucket_policy} Resource.
 func NewS3ControlBucketPolicy_Override(s S3ControlBucketPolicy, scope constructs.Construct, id *string, config *S3ControlBucketPolicyConfig) {
 	_init_.Initialize()
 
@@ -28760,7 +34207,7 @@ func (j *jsiiProxy_S3ControlBucketPolicy) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3ControlBucketPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlBucketPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -28840,12 +34287,40 @@ func (s *jsiiProxy_S3ControlBucketPolicy) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucketPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucketPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28882,12 +34357,54 @@ func (s *jsiiProxy_S3ControlBucketPolicy) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlBucketPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlBucketPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlBucketPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28988,20 +34505,20 @@ func (s *jsiiProxy_S3ControlBucketPolicy) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3ControlBucketPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy.html#bucket S3ControlBucketPolicy#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy.html#policy S3ControlBucketPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy#bucket S3ControlBucketPolicy#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_bucket_policy#policy S3ControlBucketPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html aws_s3control_multi_region_access_point}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point aws_s3control_multi_region_access_point}.
 type S3ControlMultiRegionAccessPoint interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -29011,8 +34528,8 @@ type S3ControlMultiRegionAccessPoint interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Details() S3ControlMultiRegionAccessPointDetailsOutputReference
@@ -29034,10 +34551,15 @@ type S3ControlMultiRegionAccessPoint interface {
 	Timeouts() S3ControlMultiRegionAccessPointTimeoutsOutputReference
 	TimeoutsInput() *S3ControlMultiRegionAccessPointTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDetails(value *S3ControlMultiRegionAccessPointDetails)
@@ -29116,8 +34638,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -29296,7 +34818,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) TimeoutsInput() *S3ControlMu
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html aws_s3control_multi_region_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point aws_s3control_multi_region_access_point} Resource.
 func NewS3ControlMultiRegionAccessPoint(scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointConfig) S3ControlMultiRegionAccessPoint {
 	_init_.Initialize()
 
@@ -29311,7 +34833,7 @@ func NewS3ControlMultiRegionAccessPoint(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html aws_s3control_multi_region_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point aws_s3control_multi_region_access_point} Resource.
 func NewS3ControlMultiRegionAccessPoint_Override(s S3ControlMultiRegionAccessPoint, scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointConfig) {
 	_init_.Initialize()
 
@@ -29330,7 +34852,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -29402,12 +34924,40 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) AddOverride(path *string, va
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29444,12 +34994,54 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29582,36 +35174,36 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPoint) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3ControlMultiRegionAccessPointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// details block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#details S3ControlMultiRegionAccessPoint#details}
-	Details *S3ControlMultiRegionAccessPointDetails `json:"details"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#account_id S3ControlMultiRegionAccessPoint#account_id}.
-	AccountId *string `json:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#details S3ControlMultiRegionAccessPoint#details}
+	Details *S3ControlMultiRegionAccessPointDetails `json:"details" yaml:"details"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#account_id S3ControlMultiRegionAccessPoint#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#timeouts S3ControlMultiRegionAccessPoint#timeouts}
-	Timeouts *S3ControlMultiRegionAccessPointTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#timeouts S3ControlMultiRegionAccessPoint#timeouts}
+	Timeouts *S3ControlMultiRegionAccessPointTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type S3ControlMultiRegionAccessPointDetails struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#name S3ControlMultiRegionAccessPoint#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#name S3ControlMultiRegionAccessPoint#name}.
+	Name *string `json:"name" yaml:"name"`
 	// region block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#region S3ControlMultiRegionAccessPoint#region}
-	Region *[]*S3ControlMultiRegionAccessPointDetailsRegion `json:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#region S3ControlMultiRegionAccessPoint#region}
+	Region interface{} `json:"region" yaml:"region"`
 	// public_access_block block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#public_access_block S3ControlMultiRegionAccessPoint#public_access_block}
-	PublicAccessBlock *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock `json:"publicAccessBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#public_access_block S3ControlMultiRegionAccessPoint#public_access_block}
+	PublicAccessBlock *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock `json:"publicAccessBlock" yaml:"publicAccessBlock"`
 }
 
 type S3ControlMultiRegionAccessPointDetailsOutputReference interface {
@@ -29625,17 +35217,22 @@ type S3ControlMultiRegionAccessPointDetailsOutputReference interface {
 	NameInput() *string
 	PublicAccessBlock() S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference
 	PublicAccessBlockInput() *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock
-	Region() *[]*S3ControlMultiRegionAccessPointDetailsRegion
-	SetRegion(val *[]*S3ControlMultiRegionAccessPointDetailsRegion)
-	RegionInput() *[]*S3ControlMultiRegionAccessPointDetailsRegion
+	Region() interface{}
+	SetRegion(val interface{})
+	RegionInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutPublicAccessBlock(value *S3ControlMultiRegionAccessPointDetailsPublicAccessBlock)
@@ -29707,8 +35304,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Public
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Region() *[]*S3ControlMultiRegionAccessPointDetailsRegion {
-	var returns *[]*S3ControlMultiRegionAccessPointDetailsRegion
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Region() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"region",
@@ -29717,8 +35314,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Region
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) RegionInput() *[]*S3ControlMultiRegionAccessPointDetailsRegion {
-	var returns *[]*S3ControlMultiRegionAccessPointDetailsRegion
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) RegionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"regionInput",
@@ -29737,8 +35334,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29747,7 +35344,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) Terraf
 	return returns
 }
 
-func NewS3ControlMultiRegionAccessPointDetailsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointDetailsOutputReference {
+func NewS3ControlMultiRegionAccessPointDetailsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointDetailsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference{}
@@ -29761,7 +35358,7 @@ func NewS3ControlMultiRegionAccessPointDetailsOutputReference(terraformResource 
 	return &j
 }
 
-func NewS3ControlMultiRegionAccessPointDetailsOutputReference_Override(s S3ControlMultiRegionAccessPointDetailsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlMultiRegionAccessPointDetailsOutputReference_Override(s S3ControlMultiRegionAccessPointDetailsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -29795,7 +35392,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetNam
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetRegion(val *[]*S3ControlMultiRegionAccessPointDetailsRegion) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetRegion(val interface{}) {
 	_jsii_.Set(
 		j,
 		"region",
@@ -29811,7 +35408,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29820,12 +35417,40 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) SetTer
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29862,12 +35487,54 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetNum
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29920,14 +35587,14 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsOutputReference) ResetP
 }
 
 type S3ControlMultiRegionAccessPointDetailsPublicAccessBlock struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#block_public_acls S3ControlMultiRegionAccessPoint#block_public_acls}.
-	BlockPublicAcls interface{} `json:"blockPublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#block_public_policy S3ControlMultiRegionAccessPoint#block_public_policy}.
-	BlockPublicPolicy interface{} `json:"blockPublicPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#ignore_public_acls S3ControlMultiRegionAccessPoint#ignore_public_acls}.
-	IgnorePublicAcls interface{} `json:"ignorePublicAcls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#restrict_public_buckets S3ControlMultiRegionAccessPoint#restrict_public_buckets}.
-	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#block_public_acls S3ControlMultiRegionAccessPoint#block_public_acls}.
+	BlockPublicAcls interface{} `json:"blockPublicAcls" yaml:"blockPublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#block_public_policy S3ControlMultiRegionAccessPoint#block_public_policy}.
+	BlockPublicPolicy interface{} `json:"blockPublicPolicy" yaml:"blockPublicPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#ignore_public_acls S3ControlMultiRegionAccessPoint#ignore_public_acls}.
+	IgnorePublicAcls interface{} `json:"ignorePublicAcls" yaml:"ignorePublicAcls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#restrict_public_buckets S3ControlMultiRegionAccessPoint#restrict_public_buckets}.
+	RestrictPublicBuckets interface{} `json:"restrictPublicBuckets" yaml:"restrictPublicBuckets"`
 }
 
 type S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference interface {
@@ -29950,12 +35617,17 @@ type S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference inte
 	RestrictPublicBucketsInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBlockPublicAcls()
@@ -30079,8 +35751,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutput
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30089,7 +35761,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutput
 	return returns
 }
 
-func NewS3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference {
+func NewS3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference{}
@@ -30103,7 +35775,7 @@ func NewS3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference(t
 	return &j
 }
 
-func NewS3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference_Override(s S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference_Override(s S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -30169,7 +35841,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutput
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30178,12 +35850,40 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutput
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30220,12 +35920,54 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutput
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30294,11 +36036,11 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointDetailsPublicAccessBlockOutput
 }
 
 type S3ControlMultiRegionAccessPointDetailsRegion struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#bucket S3ControlMultiRegionAccessPoint#bucket}.
-	Bucket *string `json:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#bucket S3ControlMultiRegionAccessPoint#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html aws_s3control_multi_region_access_point_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy aws_s3control_multi_region_access_point_policy}.
 type S3ControlMultiRegionAccessPointPolicy interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -30306,8 +36048,8 @@ type S3ControlMultiRegionAccessPointPolicy interface {
 	AccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Details() S3ControlMultiRegionAccessPointPolicyDetailsOutputReference
@@ -30329,10 +36071,15 @@ type S3ControlMultiRegionAccessPointPolicy interface {
 	Timeouts() S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference
 	TimeoutsInput() *S3ControlMultiRegionAccessPointPolicyTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDetails(value *S3ControlMultiRegionAccessPointPolicyDetails)
@@ -30391,8 +36138,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -30571,7 +36318,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) TimeoutsInput() *S3Con
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html aws_s3control_multi_region_access_point_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy aws_s3control_multi_region_access_point_policy} Resource.
 func NewS3ControlMultiRegionAccessPointPolicy(scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointPolicyConfig) S3ControlMultiRegionAccessPointPolicy {
 	_init_.Initialize()
 
@@ -30586,7 +36333,7 @@ func NewS3ControlMultiRegionAccessPointPolicy(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html aws_s3control_multi_region_access_point_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy aws_s3control_multi_region_access_point_policy} Resource.
 func NewS3ControlMultiRegionAccessPointPolicy_Override(s S3ControlMultiRegionAccessPointPolicy, scope constructs.Construct, id *string, config *S3ControlMultiRegionAccessPointPolicyConfig) {
 	_init_.Initialize()
 
@@ -30605,7 +36352,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetAccountId(val *stri
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -30677,12 +36424,40 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) AddOverride(path *stri
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30719,12 +36494,54 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30857,30 +36674,30 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicy) ToTerraform() interfac
 // AWS Simple Storage Service.
 type S3ControlMultiRegionAccessPointPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// details block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#details S3ControlMultiRegionAccessPointPolicy#details}
-	Details *S3ControlMultiRegionAccessPointPolicyDetails `json:"details"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#account_id S3ControlMultiRegionAccessPointPolicy#account_id}.
-	AccountId *string `json:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy#details S3ControlMultiRegionAccessPointPolicy#details}
+	Details *S3ControlMultiRegionAccessPointPolicyDetails `json:"details" yaml:"details"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy#account_id S3ControlMultiRegionAccessPointPolicy#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#timeouts S3ControlMultiRegionAccessPointPolicy#timeouts}
-	Timeouts *S3ControlMultiRegionAccessPointPolicyTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy#timeouts S3ControlMultiRegionAccessPointPolicy#timeouts}
+	Timeouts *S3ControlMultiRegionAccessPointPolicyTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type S3ControlMultiRegionAccessPointPolicyDetails struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#name S3ControlMultiRegionAccessPointPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#policy S3ControlMultiRegionAccessPointPolicy#policy}.
-	Policy *string `json:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy#name S3ControlMultiRegionAccessPointPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy#policy S3ControlMultiRegionAccessPointPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
 type S3ControlMultiRegionAccessPointPolicyDetailsOutputReference interface {
@@ -30897,12 +36714,17 @@ type S3ControlMultiRegionAccessPointPolicyDetailsOutputReference interface {
 	PolicyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -30982,8 +36804,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30992,7 +36814,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) 
 	return returns
 }
 
-func NewS3ControlMultiRegionAccessPointPolicyDetailsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointPolicyDetailsOutputReference {
+func NewS3ControlMultiRegionAccessPointPolicyDetailsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointPolicyDetailsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference{}
@@ -31006,7 +36828,7 @@ func NewS3ControlMultiRegionAccessPointPolicyDetailsOutputReference(terraformRes
 	return &j
 }
 
-func NewS3ControlMultiRegionAccessPointPolicyDetailsOutputReference_Override(s S3ControlMultiRegionAccessPointPolicyDetailsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlMultiRegionAccessPointPolicyDetailsOutputReference_Override(s S3ControlMultiRegionAccessPointPolicyDetailsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31056,7 +36878,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31065,12 +36887,40 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) 
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31107,12 +36957,54 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31149,10 +37041,10 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyDetailsOutputReference) 
 }
 
 type S3ControlMultiRegionAccessPointPolicyTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#create S3ControlMultiRegionAccessPointPolicy#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy.html#update S3ControlMultiRegionAccessPointPolicy#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy#create S3ControlMultiRegionAccessPointPolicy#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point_policy#update S3ControlMultiRegionAccessPointPolicy#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference interface {
@@ -31166,15 +37058,20 @@ type S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -31236,8 +37133,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31266,7 +37163,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference)
 	return returns
 }
 
-func NewS3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference {
+func NewS3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference{}
@@ -31280,7 +37177,7 @@ func NewS3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference(terraformRe
 	return &j
 }
 
-func NewS3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference_Override(s S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference_Override(s S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31322,7 +37219,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31339,12 +37236,40 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference)
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31381,12 +37306,54 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference)
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31439,10 +37406,10 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointPolicyTimeoutsOutputReference)
 }
 
 type S3ControlMultiRegionAccessPointTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#create S3ControlMultiRegionAccessPoint#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point.html#delete S3ControlMultiRegionAccessPoint#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#create S3ControlMultiRegionAccessPoint#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_multi_region_access_point#delete S3ControlMultiRegionAccessPoint#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type S3ControlMultiRegionAccessPointTimeoutsOutputReference interface {
@@ -31459,12 +37426,17 @@ type S3ControlMultiRegionAccessPointTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -31546,8 +37518,8 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31556,7 +37528,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) Terra
 	return returns
 }
 
-func NewS3ControlMultiRegionAccessPointTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointTimeoutsOutputReference {
+func NewS3ControlMultiRegionAccessPointTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlMultiRegionAccessPointTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference{}
@@ -31570,7 +37542,7 @@ func NewS3ControlMultiRegionAccessPointTimeoutsOutputReference(terraformResource
 	return &j
 }
 
-func NewS3ControlMultiRegionAccessPointTimeoutsOutputReference_Override(s S3ControlMultiRegionAccessPointTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlMultiRegionAccessPointTimeoutsOutputReference_Override(s S3ControlMultiRegionAccessPointTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -31620,7 +37592,7 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31629,12 +37601,40 @@ func (j *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) SetTe
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31671,12 +37671,54 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetNu
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31728,7 +37770,7 @@ func (s *jsiiProxy_S3ControlMultiRegionAccessPointTimeoutsOutputReference) Reset
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html aws_s3control_object_lambda_access_point}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point aws_s3control_object_lambda_access_point}.
 type S3ControlObjectLambdaAccessPoint interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -31739,8 +37781,8 @@ type S3ControlObjectLambdaAccessPoint interface {
 	Configuration() S3ControlObjectLambdaAccessPointConfigurationOutputReference
 	ConfigurationInput() *S3ControlObjectLambdaAccessPointConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -31759,10 +37801,15 @@ type S3ControlObjectLambdaAccessPoint interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutConfiguration(value *S3ControlObjectLambdaAccessPointConfiguration)
@@ -31849,8 +37896,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -31989,7 +38036,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html aws_s3control_object_lambda_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point aws_s3control_object_lambda_access_point} Resource.
 func NewS3ControlObjectLambdaAccessPoint(scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointConfig) S3ControlObjectLambdaAccessPoint {
 	_init_.Initialize()
 
@@ -32004,7 +38051,7 @@ func NewS3ControlObjectLambdaAccessPoint(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html aws_s3control_object_lambda_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point aws_s3control_object_lambda_access_point} Resource.
 func NewS3ControlObjectLambdaAccessPoint_Override(s S3ControlObjectLambdaAccessPoint, scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointConfig) {
 	_init_.Initialize()
 
@@ -32023,7 +38070,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -32103,12 +38150,40 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) AddOverride(path *string, v
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32145,12 +38220,54 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32267,34 +38384,34 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPoint) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3ControlObjectLambdaAccessPointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#configuration S3ControlObjectLambdaAccessPoint#configuration}
-	Configuration *S3ControlObjectLambdaAccessPointConfiguration `json:"configuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#name S3ControlObjectLambdaAccessPoint#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#account_id S3ControlObjectLambdaAccessPoint#account_id}.
-	AccountId *string `json:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#configuration S3ControlObjectLambdaAccessPoint#configuration}
+	Configuration *S3ControlObjectLambdaAccessPointConfiguration `json:"configuration" yaml:"configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#name S3ControlObjectLambdaAccessPoint#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#account_id S3ControlObjectLambdaAccessPoint#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 }
 
 type S3ControlObjectLambdaAccessPointConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#supporting_access_point S3ControlObjectLambdaAccessPoint#supporting_access_point}.
-	SupportingAccessPoint *string `json:"supportingAccessPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#supporting_access_point S3ControlObjectLambdaAccessPoint#supporting_access_point}.
+	SupportingAccessPoint *string `json:"supportingAccessPoint" yaml:"supportingAccessPoint"`
 	// transformation_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#transformation_configuration S3ControlObjectLambdaAccessPoint#transformation_configuration}
-	TransformationConfiguration *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration `json:"transformationConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#allowed_features S3ControlObjectLambdaAccessPoint#allowed_features}.
-	AllowedFeatures *[]*string `json:"allowedFeatures"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#cloud_watch_metrics_enabled S3ControlObjectLambdaAccessPoint#cloud_watch_metrics_enabled}.
-	CloudWatchMetricsEnabled interface{} `json:"cloudWatchMetricsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#transformation_configuration S3ControlObjectLambdaAccessPoint#transformation_configuration}
+	TransformationConfiguration interface{} `json:"transformationConfiguration" yaml:"transformationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#allowed_features S3ControlObjectLambdaAccessPoint#allowed_features}.
+	AllowedFeatures *[]*string `json:"allowedFeatures" yaml:"allowedFeatures"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#cloud_watch_metrics_enabled S3ControlObjectLambdaAccessPoint#cloud_watch_metrics_enabled}.
+	CloudWatchMetricsEnabled interface{} `json:"cloudWatchMetricsEnabled" yaml:"cloudWatchMetricsEnabled"`
 }
 
 type S3ControlObjectLambdaAccessPointConfigurationOutputReference interface {
@@ -32314,15 +38431,20 @@ type S3ControlObjectLambdaAccessPointConfigurationOutputReference interface {
 	SupportingAccessPointInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	TransformationConfiguration() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
-	SetTransformationConfiguration(val *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration)
-	TransformationConfigurationInput() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	TransformationConfiguration() interface{}
+	SetTransformationConfiguration(val interface{})
+	TransformationConfigurationInput() interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAllowedFeatures()
@@ -32424,8 +38546,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32434,8 +38556,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TransformationConfiguration() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration {
-	var returns *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TransformationConfiguration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"transformationConfiguration",
@@ -32444,8 +38566,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TransformationConfigurationInput() *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration {
-	var returns *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) TransformationConfigurationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"transformationConfigurationInput",
@@ -32454,7 +38576,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 	return returns
 }
 
-func NewS3ControlObjectLambdaAccessPointConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationOutputReference {
+func NewS3ControlObjectLambdaAccessPointConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference{}
@@ -32468,7 +38590,7 @@ func NewS3ControlObjectLambdaAccessPointConfigurationOutputReference(terraformRe
 	return &j
 }
 
-func NewS3ControlObjectLambdaAccessPointConfigurationOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlObjectLambdaAccessPointConfigurationOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32526,7 +38648,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32534,7 +38656,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 	)
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetTransformationConfiguration(val *[]*S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration) {
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) SetTransformationConfiguration(val interface{}) {
 	_jsii_.Set(
 		j,
 		"transformationConfiguration",
@@ -32543,12 +38665,40 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32585,12 +38735,54 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32643,26 +38835,26 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationOutputReference)
 }
 
 type S3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#actions S3ControlObjectLambdaAccessPoint#actions}.
-	Actions *[]*string `json:"actions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#actions S3ControlObjectLambdaAccessPoint#actions}.
+	Actions *[]*string `json:"actions" yaml:"actions"`
 	// content_transformation block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#content_transformation S3ControlObjectLambdaAccessPoint#content_transformation}
-	ContentTransformation *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation `json:"contentTransformation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#content_transformation S3ControlObjectLambdaAccessPoint#content_transformation}
+	ContentTransformation *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation `json:"contentTransformation" yaml:"contentTransformation"`
 }
 
 type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformation struct {
 	// aws_lambda block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#aws_lambda S3ControlObjectLambdaAccessPoint#aws_lambda}
-	AwsLambda *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda `json:"awsLambda"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#aws_lambda S3ControlObjectLambdaAccessPoint#aws_lambda}
+	AwsLambda *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda `json:"awsLambda" yaml:"awsLambda"`
 }
 
 type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#function_arn S3ControlObjectLambdaAccessPoint#function_arn}.
-	FunctionArn *string `json:"functionArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point.html#function_payload S3ControlObjectLambdaAccessPoint#function_payload}.
-	FunctionPayload *string `json:"functionPayload"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#function_arn S3ControlObjectLambdaAccessPoint#function_arn}.
+	FunctionArn *string `json:"functionArn" yaml:"functionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point#function_payload S3ControlObjectLambdaAccessPoint#function_payload}.
+	FunctionPayload *string `json:"functionPayload" yaml:"functionPayload"`
 }
 
 type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference interface {
@@ -32679,12 +38871,17 @@ type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationCon
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFunctionPayload()
@@ -32765,8 +38962,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32775,7 +38972,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 	return returns
 }
 
-func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference {
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference{}
@@ -32789,7 +38986,7 @@ func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
 	return &j
 }
 
-func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -32839,7 +39036,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 	)
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32848,12 +39045,40 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32890,12 +39115,54 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32949,12 +39216,17 @@ type S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationCon
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAwsLambda(value *S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambda)
@@ -33015,8 +39287,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -33025,7 +39297,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 	return returns
 }
 
-func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference {
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference{}
@@ -33039,7 +39311,7 @@ func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfiguration
 	return &j
 }
 
-func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewS3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference_Override(s S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -33073,7 +39345,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 	)
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -33082,12 +39354,40 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 }
 
 // Experimental.
-func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33124,12 +39424,54 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33173,7 +39515,7 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointConfigurationTransformationCo
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html aws_s3control_object_lambda_access_point_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy aws_s3control_object_lambda_access_point_policy}.
 type S3ControlObjectLambdaAccessPointPolicy interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -33181,13 +39523,13 @@ type S3ControlObjectLambdaAccessPointPolicy interface {
 	AccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
-	HasPublicAccessPolicy() interface{}
+	HasPublicAccessPolicy() cdktf.IResolvable
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -33205,10 +39547,15 @@ type S3ControlObjectLambdaAccessPointPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAccountId()
@@ -33264,8 +39611,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ConstructNodeMetadata
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -33304,8 +39651,8 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) FriendlyUniqueId() *s
 	return returns
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) HasPublicAccessPolicy() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) HasPublicAccessPolicy() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"hasPublicAccessPolicy",
@@ -33434,7 +39781,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) TerraformResourceType
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html aws_s3control_object_lambda_access_point_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy aws_s3control_object_lambda_access_point_policy} Resource.
 func NewS3ControlObjectLambdaAccessPointPolicy(scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointPolicyConfig) S3ControlObjectLambdaAccessPointPolicy {
 	_init_.Initialize()
 
@@ -33449,7 +39796,7 @@ func NewS3ControlObjectLambdaAccessPointPolicy(scope constructs.Construct, id *s
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html aws_s3control_object_lambda_access_point_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy aws_s3control_object_lambda_access_point_policy} Resource.
 func NewS3ControlObjectLambdaAccessPointPolicy_Override(s S3ControlObjectLambdaAccessPointPolicy, scope constructs.Construct, id *string, config *S3ControlObjectLambdaAccessPointPolicyConfig) {
 	_init_.Initialize()
 
@@ -33468,7 +39815,7 @@ func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetAccountId(val *str
 	)
 }
 
-func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -33556,12 +39903,40 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) AddOverride(path *str
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33598,12 +39973,54 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetNumberAttribute(te
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -33712,22 +40129,22 @@ func (s *jsiiProxy_S3ControlObjectLambdaAccessPointPolicy) ToTerraform() interfa
 // AWS Simple Storage Service.
 type S3ControlObjectLambdaAccessPointPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html#name S3ControlObjectLambdaAccessPointPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html#policy S3ControlObjectLambdaAccessPointPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy.html#account_id S3ControlObjectLambdaAccessPointPolicy#account_id}.
-	AccountId *string `json:"accountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy#name S3ControlObjectLambdaAccessPointPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy#policy S3ControlObjectLambdaAccessPointPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3control_object_lambda_access_point_policy#account_id S3ControlObjectLambdaAccessPointPolicy#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html aws_s3_object_copy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy aws_s3_object_copy}.
 type S3ObjectCopy interface {
 	cdktf.TerraformResource
 	Acl() *string
@@ -33768,8 +40185,8 @@ type S3ObjectCopy interface {
 	CopyIfUnmodifiedSince() *string
 	SetCopyIfUnmodifiedSince(val *string)
 	CopyIfUnmodifiedSinceInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAlgorithm() *string
 	SetCustomerAlgorithm(val *string)
 	CustomerAlgorithmInput() *string
@@ -33797,9 +40214,9 @@ type S3ObjectCopy interface {
 	ForceDestroyInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
-	Grant() *[]*S3ObjectCopyGrant
-	SetGrant(val *[]*S3ObjectCopyGrant)
-	GrantInput() *[]*S3ObjectCopyGrant
+	Grant() interface{}
+	SetGrant(val interface{})
+	GrantInput() interface{}
 	Id() *string
 	Key() *string
 	SetKey(val *string)
@@ -33813,12 +40230,12 @@ type S3ObjectCopy interface {
 	LastModified() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	Metadata() interface{}
-	SetMetadata(val interface{})
+	Metadata() *map[string]*string
+	SetMetadata(val *map[string]*string)
 	MetadataDirective() *string
 	SetMetadataDirective(val *string)
 	MetadataDirectiveInput() *string
-	MetadataInput() interface{}
+	MetadataInput() *map[string]*string
 	Node() constructs.Node
 	ObjectLockLegalHoldStatus() *string
 	SetObjectLockLegalHoldStatus(val *string)
@@ -33832,7 +40249,7 @@ type S3ObjectCopy interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RequestCharged() interface{}
+	RequestCharged() cdktf.IResolvable
 	RequestPayer() *string
 	SetRequestPayer(val *string)
 	RequestPayerInput() *string
@@ -33858,12 +40275,12 @@ type S3ObjectCopy interface {
 	TaggingDirective() *string
 	SetTaggingDirective(val *string)
 	TaggingDirectiveInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -33872,10 +40289,15 @@ type S3ObjectCopy interface {
 	SetWebsiteRedirect(val *string)
 	WebsiteRedirectInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcl()
@@ -34186,8 +40608,8 @@ func (j *jsiiProxy_S3ObjectCopy) CopyIfUnmodifiedSinceInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -34386,8 +40808,8 @@ func (j *jsiiProxy_S3ObjectCopy) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) Grant() *[]*S3ObjectCopyGrant {
-	var returns *[]*S3ObjectCopyGrant
+func (j *jsiiProxy_S3ObjectCopy) Grant() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"grant",
@@ -34396,8 +40818,8 @@ func (j *jsiiProxy_S3ObjectCopy) Grant() *[]*S3ObjectCopyGrant {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) GrantInput() *[]*S3ObjectCopyGrant {
-	var returns *[]*S3ObjectCopyGrant
+func (j *jsiiProxy_S3ObjectCopy) GrantInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"grantInput",
@@ -34496,8 +40918,8 @@ func (j *jsiiProxy_S3ObjectCopy) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) Metadata() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) Metadata() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"metadata",
@@ -34526,8 +40948,8 @@ func (j *jsiiProxy_S3ObjectCopy) MetadataDirectiveInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) MetadataInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) MetadataInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"metadataInput",
@@ -34626,8 +41048,8 @@ func (j *jsiiProxy_S3ObjectCopy) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) RequestCharged() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) RequestCharged() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"requestCharged",
@@ -34806,8 +41228,8 @@ func (j *jsiiProxy_S3ObjectCopy) TaggingDirectiveInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -34816,8 +41238,8 @@ func (j *jsiiProxy_S3ObjectCopy) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -34826,8 +41248,8 @@ func (j *jsiiProxy_S3ObjectCopy) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -34836,8 +41258,8 @@ func (j *jsiiProxy_S3ObjectCopy) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_S3ObjectCopy) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3ObjectCopy) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -34906,7 +41328,7 @@ func (j *jsiiProxy_S3ObjectCopy) WebsiteRedirectInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html aws_s3_object_copy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy aws_s3_object_copy} Resource.
 func NewS3ObjectCopy(scope constructs.Construct, id *string, config *S3ObjectCopyConfig) S3ObjectCopy {
 	_init_.Initialize()
 
@@ -34921,7 +41343,7 @@ func NewS3ObjectCopy(scope constructs.Construct, id *string, config *S3ObjectCop
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html aws_s3_object_copy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy aws_s3_object_copy} Resource.
 func NewS3ObjectCopy_Override(s S3ObjectCopy, scope constructs.Construct, id *string, config *S3ObjectCopyConfig) {
 	_init_.Initialize()
 
@@ -35028,7 +41450,7 @@ func (j *jsiiProxy_S3ObjectCopy) SetCopyIfUnmodifiedSince(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3ObjectCopy) SetCount(val interface{}) {
+func (j *jsiiProxy_S3ObjectCopy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -35100,7 +41522,7 @@ func (j *jsiiProxy_S3ObjectCopy) SetForceDestroy(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_S3ObjectCopy) SetGrant(val *[]*S3ObjectCopyGrant) {
+func (j *jsiiProxy_S3ObjectCopy) SetGrant(val interface{}) {
 	_jsii_.Set(
 		j,
 		"grant",
@@ -35140,7 +41562,7 @@ func (j *jsiiProxy_S3ObjectCopy) SetLifecycle(val *cdktf.TerraformResourceLifecy
 	)
 }
 
-func (j *jsiiProxy_S3ObjectCopy) SetMetadata(val interface{}) {
+func (j *jsiiProxy_S3ObjectCopy) SetMetadata(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"metadata",
@@ -35252,7 +41674,7 @@ func (j *jsiiProxy_S3ObjectCopy) SetTaggingDirective(val *string) {
 	)
 }
 
-func (j *jsiiProxy_S3ObjectCopy) SetTags(val interface{}) {
+func (j *jsiiProxy_S3ObjectCopy) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -35260,7 +41682,7 @@ func (j *jsiiProxy_S3ObjectCopy) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_S3ObjectCopy) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_S3ObjectCopy) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -35316,12 +41738,40 @@ func (s *jsiiProxy_S3ObjectCopy) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ObjectCopy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ObjectCopy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ObjectCopy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -35358,12 +41808,54 @@ func (s *jsiiProxy_S3ObjectCopy) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (s *jsiiProxy_S3ObjectCopy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ObjectCopy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3ObjectCopy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3ObjectCopy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -35752,117 +42244,117 @@ func (s *jsiiProxy_S3ObjectCopy) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3ObjectCopyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#bucket S3ObjectCopy#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#key S3ObjectCopy#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#source S3ObjectCopy#source}.
-	Source *string `json:"source"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#acl S3ObjectCopy#acl}.
-	Acl *string `json:"acl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#bucket_key_enabled S3ObjectCopy#bucket_key_enabled}.
-	BucketKeyEnabled interface{} `json:"bucketKeyEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#cache_control S3ObjectCopy#cache_control}.
-	CacheControl *string `json:"cacheControl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#content_disposition S3ObjectCopy#content_disposition}.
-	ContentDisposition *string `json:"contentDisposition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#content_encoding S3ObjectCopy#content_encoding}.
-	ContentEncoding *string `json:"contentEncoding"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#content_language S3ObjectCopy#content_language}.
-	ContentLanguage *string `json:"contentLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#content_type S3ObjectCopy#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#copy_if_match S3ObjectCopy#copy_if_match}.
-	CopyIfMatch *string `json:"copyIfMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#copy_if_modified_since S3ObjectCopy#copy_if_modified_since}.
-	CopyIfModifiedSince *string `json:"copyIfModifiedSince"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#copy_if_none_match S3ObjectCopy#copy_if_none_match}.
-	CopyIfNoneMatch *string `json:"copyIfNoneMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#copy_if_unmodified_since S3ObjectCopy#copy_if_unmodified_since}.
-	CopyIfUnmodifiedSince *string `json:"copyIfUnmodifiedSince"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#customer_algorithm S3ObjectCopy#customer_algorithm}.
-	CustomerAlgorithm *string `json:"customerAlgorithm"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#customer_key S3ObjectCopy#customer_key}.
-	CustomerKey *string `json:"customerKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#customer_key_md5 S3ObjectCopy#customer_key_md5}.
-	CustomerKeyMd5 *string `json:"customerKeyMd5"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#expected_bucket_owner S3ObjectCopy#expected_bucket_owner}.
-	ExpectedBucketOwner *string `json:"expectedBucketOwner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#expected_source_bucket_owner S3ObjectCopy#expected_source_bucket_owner}.
-	ExpectedSourceBucketOwner *string `json:"expectedSourceBucketOwner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#expires S3ObjectCopy#expires}.
-	Expires *string `json:"expires"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#force_destroy S3ObjectCopy#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#bucket S3ObjectCopy#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#key S3ObjectCopy#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#source S3ObjectCopy#source}.
+	Source *string `json:"source" yaml:"source"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#acl S3ObjectCopy#acl}.
+	Acl *string `json:"acl" yaml:"acl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#bucket_key_enabled S3ObjectCopy#bucket_key_enabled}.
+	BucketKeyEnabled interface{} `json:"bucketKeyEnabled" yaml:"bucketKeyEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#cache_control S3ObjectCopy#cache_control}.
+	CacheControl *string `json:"cacheControl" yaml:"cacheControl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#content_disposition S3ObjectCopy#content_disposition}.
+	ContentDisposition *string `json:"contentDisposition" yaml:"contentDisposition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#content_encoding S3ObjectCopy#content_encoding}.
+	ContentEncoding *string `json:"contentEncoding" yaml:"contentEncoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#content_language S3ObjectCopy#content_language}.
+	ContentLanguage *string `json:"contentLanguage" yaml:"contentLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#content_type S3ObjectCopy#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#copy_if_match S3ObjectCopy#copy_if_match}.
+	CopyIfMatch *string `json:"copyIfMatch" yaml:"copyIfMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#copy_if_modified_since S3ObjectCopy#copy_if_modified_since}.
+	CopyIfModifiedSince *string `json:"copyIfModifiedSince" yaml:"copyIfModifiedSince"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#copy_if_none_match S3ObjectCopy#copy_if_none_match}.
+	CopyIfNoneMatch *string `json:"copyIfNoneMatch" yaml:"copyIfNoneMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#copy_if_unmodified_since S3ObjectCopy#copy_if_unmodified_since}.
+	CopyIfUnmodifiedSince *string `json:"copyIfUnmodifiedSince" yaml:"copyIfUnmodifiedSince"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#customer_algorithm S3ObjectCopy#customer_algorithm}.
+	CustomerAlgorithm *string `json:"customerAlgorithm" yaml:"customerAlgorithm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#customer_key S3ObjectCopy#customer_key}.
+	CustomerKey *string `json:"customerKey" yaml:"customerKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#customer_key_md5 S3ObjectCopy#customer_key_md5}.
+	CustomerKeyMd5 *string `json:"customerKeyMd5" yaml:"customerKeyMd5"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#expected_bucket_owner S3ObjectCopy#expected_bucket_owner}.
+	ExpectedBucketOwner *string `json:"expectedBucketOwner" yaml:"expectedBucketOwner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#expected_source_bucket_owner S3ObjectCopy#expected_source_bucket_owner}.
+	ExpectedSourceBucketOwner *string `json:"expectedSourceBucketOwner" yaml:"expectedSourceBucketOwner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#expires S3ObjectCopy#expires}.
+	Expires *string `json:"expires" yaml:"expires"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#force_destroy S3ObjectCopy#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
 	// grant block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#grant S3ObjectCopy#grant}
-	Grant *[]*S3ObjectCopyGrant `json:"grant"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#kms_encryption_context S3ObjectCopy#kms_encryption_context}.
-	KmsEncryptionContext *string `json:"kmsEncryptionContext"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#kms_key_id S3ObjectCopy#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#metadata S3ObjectCopy#metadata}.
-	Metadata interface{} `json:"metadata"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#metadata_directive S3ObjectCopy#metadata_directive}.
-	MetadataDirective *string `json:"metadataDirective"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#object_lock_legal_hold_status S3ObjectCopy#object_lock_legal_hold_status}.
-	ObjectLockLegalHoldStatus *string `json:"objectLockLegalHoldStatus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#object_lock_mode S3ObjectCopy#object_lock_mode}.
-	ObjectLockMode *string `json:"objectLockMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#object_lock_retain_until_date S3ObjectCopy#object_lock_retain_until_date}.
-	ObjectLockRetainUntilDate *string `json:"objectLockRetainUntilDate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#request_payer S3ObjectCopy#request_payer}.
-	RequestPayer *string `json:"requestPayer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#server_side_encryption S3ObjectCopy#server_side_encryption}.
-	ServerSideEncryption *string `json:"serverSideEncryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#source_customer_algorithm S3ObjectCopy#source_customer_algorithm}.
-	SourceCustomerAlgorithm *string `json:"sourceCustomerAlgorithm"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#source_customer_key S3ObjectCopy#source_customer_key}.
-	SourceCustomerKey *string `json:"sourceCustomerKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#source_customer_key_md5 S3ObjectCopy#source_customer_key_md5}.
-	SourceCustomerKeyMd5 *string `json:"sourceCustomerKeyMd5"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#storage_class S3ObjectCopy#storage_class}.
-	StorageClass *string `json:"storageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#tagging_directive S3ObjectCopy#tagging_directive}.
-	TaggingDirective *string `json:"taggingDirective"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#tags S3ObjectCopy#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#tags_all S3ObjectCopy#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#website_redirect S3ObjectCopy#website_redirect}.
-	WebsiteRedirect *string `json:"websiteRedirect"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#grant S3ObjectCopy#grant}
+	Grant interface{} `json:"grant" yaml:"grant"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#kms_encryption_context S3ObjectCopy#kms_encryption_context}.
+	KmsEncryptionContext *string `json:"kmsEncryptionContext" yaml:"kmsEncryptionContext"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#kms_key_id S3ObjectCopy#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#metadata S3ObjectCopy#metadata}.
+	Metadata *map[string]*string `json:"metadata" yaml:"metadata"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#metadata_directive S3ObjectCopy#metadata_directive}.
+	MetadataDirective *string `json:"metadataDirective" yaml:"metadataDirective"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#object_lock_legal_hold_status S3ObjectCopy#object_lock_legal_hold_status}.
+	ObjectLockLegalHoldStatus *string `json:"objectLockLegalHoldStatus" yaml:"objectLockLegalHoldStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#object_lock_mode S3ObjectCopy#object_lock_mode}.
+	ObjectLockMode *string `json:"objectLockMode" yaml:"objectLockMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#object_lock_retain_until_date S3ObjectCopy#object_lock_retain_until_date}.
+	ObjectLockRetainUntilDate *string `json:"objectLockRetainUntilDate" yaml:"objectLockRetainUntilDate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#request_payer S3ObjectCopy#request_payer}.
+	RequestPayer *string `json:"requestPayer" yaml:"requestPayer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#server_side_encryption S3ObjectCopy#server_side_encryption}.
+	ServerSideEncryption *string `json:"serverSideEncryption" yaml:"serverSideEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#source_customer_algorithm S3ObjectCopy#source_customer_algorithm}.
+	SourceCustomerAlgorithm *string `json:"sourceCustomerAlgorithm" yaml:"sourceCustomerAlgorithm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#source_customer_key S3ObjectCopy#source_customer_key}.
+	SourceCustomerKey *string `json:"sourceCustomerKey" yaml:"sourceCustomerKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#source_customer_key_md5 S3ObjectCopy#source_customer_key_md5}.
+	SourceCustomerKeyMd5 *string `json:"sourceCustomerKeyMd5" yaml:"sourceCustomerKeyMd5"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#storage_class S3ObjectCopy#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#tagging_directive S3ObjectCopy#tagging_directive}.
+	TaggingDirective *string `json:"taggingDirective" yaml:"taggingDirective"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#tags S3ObjectCopy#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#tags_all S3ObjectCopy#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#website_redirect S3ObjectCopy#website_redirect}.
+	WebsiteRedirect *string `json:"websiteRedirect" yaml:"websiteRedirect"`
 }
 
 type S3ObjectCopyGrant struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#permissions S3ObjectCopy#permissions}.
-	Permissions *[]*string `json:"permissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#type S3ObjectCopy#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#email S3ObjectCopy#email}.
-	Email *string `json:"email"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#id S3ObjectCopy#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy.html#uri S3ObjectCopy#uri}.
-	Uri *string `json:"uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#permissions S3ObjectCopy#permissions}.
+	Permissions *[]*string `json:"permissions" yaml:"permissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#type S3ObjectCopy#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#email S3ObjectCopy#email}.
+	Email *string `json:"email" yaml:"email"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#id S3ObjectCopy#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3_object_copy#uri S3ObjectCopy#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint.html aws_s3outposts_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint aws_s3outposts_endpoint}.
 type S3OutpostsEndpoint interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	CidrBlock() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -35888,10 +42380,15 @@ type S3OutpostsEndpoint interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	NetworkInterfaces(index *string) S3OutpostsEndpointNetworkInterfaces
 	OverrideLogicalId(newLogicalId *string)
@@ -35947,8 +42444,8 @@ func (j *jsiiProxy_S3OutpostsEndpoint) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_S3OutpostsEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_S3OutpostsEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -36137,7 +42634,7 @@ func (j *jsiiProxy_S3OutpostsEndpoint) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint.html aws_s3outposts_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint aws_s3outposts_endpoint} Resource.
 func NewS3OutpostsEndpoint(scope constructs.Construct, id *string, config *S3OutpostsEndpointConfig) S3OutpostsEndpoint {
 	_init_.Initialize()
 
@@ -36152,7 +42649,7 @@ func NewS3OutpostsEndpoint(scope constructs.Construct, id *string, config *S3Out
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint.html aws_s3outposts_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint aws_s3outposts_endpoint} Resource.
 func NewS3OutpostsEndpoint_Override(s S3OutpostsEndpoint, scope constructs.Construct, id *string, config *S3OutpostsEndpointConfig) {
 	_init_.Initialize()
 
@@ -36163,7 +42660,7 @@ func NewS3OutpostsEndpoint_Override(s S3OutpostsEndpoint, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_S3OutpostsEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_S3OutpostsEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -36259,12 +42756,40 @@ func (s *jsiiProxy_S3OutpostsEndpoint) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (s *jsiiProxy_S3OutpostsEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3OutpostsEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3OutpostsEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -36301,12 +42826,54 @@ func (s *jsiiProxy_S3OutpostsEndpoint) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (s *jsiiProxy_S3OutpostsEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3OutpostsEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3OutpostsEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3OutpostsEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -36420,19 +42987,19 @@ func (s *jsiiProxy_S3OutpostsEndpoint) ToTerraform() interface{} {
 // AWS Simple Storage Service.
 type S3OutpostsEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint.html#outpost_id S3OutpostsEndpoint#outpost_id}.
-	OutpostId *string `json:"outpostId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint.html#security_group_id S3OutpostsEndpoint#security_group_id}.
-	SecurityGroupId *string `json:"securityGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint.html#subnet_id S3OutpostsEndpoint#subnet_id}.
-	SubnetId *string `json:"subnetId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint#outpost_id S3OutpostsEndpoint#outpost_id}.
+	OutpostId *string `json:"outpostId" yaml:"outpostId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint#security_group_id S3OutpostsEndpoint#security_group_id}.
+	SecurityGroupId *string `json:"securityGroupId" yaml:"securityGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/s3outposts_endpoint#subnet_id S3OutpostsEndpoint#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
 }
 
 type S3OutpostsEndpointNetworkInterfaces interface {
@@ -36442,12 +43009,19 @@ type S3OutpostsEndpointNetworkInterfaces interface {
 	NetworkInterfaceId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -36486,8 +43060,8 @@ func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -36496,15 +43070,25 @@ func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) TerraformResource() cdkt
 	return returns
 }
 
+func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewS3OutpostsEndpointNetworkInterfaces(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) S3OutpostsEndpointNetworkInterfaces {
+func NewS3OutpostsEndpointNetworkInterfaces(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) S3OutpostsEndpointNetworkInterfaces {
 	_init_.Initialize()
 
 	j := jsiiProxy_S3OutpostsEndpointNetworkInterfaces{}
 
 	_jsii_.Create(
 		"hashicorp_aws.s3.S3OutpostsEndpointNetworkInterfaces",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -36512,12 +43096,12 @@ func NewS3OutpostsEndpointNetworkInterfaces(terraformResource cdktf.ITerraformRe
 }
 
 // Experimental.
-func NewS3OutpostsEndpointNetworkInterfaces_Override(s S3OutpostsEndpointNetworkInterfaces, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewS3OutpostsEndpointNetworkInterfaces_Override(s S3OutpostsEndpointNetworkInterfaces, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.s3.S3OutpostsEndpointNetworkInterfaces",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		s,
 	)
 }
@@ -36538,7 +43122,7 @@ func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -36546,13 +43130,49 @@ func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) SetTerraformResource(val
 	)
 }
 
+func (j *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -36589,12 +43209,54 @@ func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_S3OutpostsEndpointNetworkInterfaces) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

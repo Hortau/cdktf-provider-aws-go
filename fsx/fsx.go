@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/fsx/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html aws_fsx_backup}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup aws_fsx_backup}.
 type FsxBackup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemId() *string
@@ -33,30 +33,40 @@ type FsxBackup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() FsxBackupTimeoutsOutputReference
 	TimeoutsInput() *FsxBackupTimeouts
 	Type() *string
+	VolumeId() *string
+	SetVolumeId(val *string)
+	VolumeIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *FsxBackupTimeouts)
+	ResetFileSystemId()
 	ResetOverrideLogicalId()
 	ResetTags()
 	ResetTagsAll()
 	ResetTimeouts()
+	ResetVolumeId()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
 	ToString() *string
@@ -98,8 +108,8 @@ func (j *jsiiProxy_FsxBackup) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxBackup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxBackup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -228,8 +238,8 @@ func (j *jsiiProxy_FsxBackup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxBackup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxBackup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -238,8 +248,8 @@ func (j *jsiiProxy_FsxBackup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxBackup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxBackup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -248,8 +258,8 @@ func (j *jsiiProxy_FsxBackup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxBackup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxBackup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -258,8 +268,8 @@ func (j *jsiiProxy_FsxBackup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxBackup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxBackup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -328,7 +338,27 @@ func (j *jsiiProxy_FsxBackup) Type() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html aws_fsx_backup} Resource.
+func (j *jsiiProxy_FsxBackup) VolumeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxBackup) VolumeIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeIdInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup aws_fsx_backup} Resource.
 func NewFsxBackup(scope constructs.Construct, id *string, config *FsxBackupConfig) FsxBackup {
 	_init_.Initialize()
 
@@ -343,7 +373,7 @@ func NewFsxBackup(scope constructs.Construct, id *string, config *FsxBackupConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html aws_fsx_backup} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup aws_fsx_backup} Resource.
 func NewFsxBackup_Override(f FsxBackup, scope constructs.Construct, id *string, config *FsxBackupConfig) {
 	_init_.Initialize()
 
@@ -354,7 +384,7 @@ func NewFsxBackup_Override(f FsxBackup, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_FsxBackup) SetCount(val interface{}) {
+func (j *jsiiProxy_FsxBackup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -394,7 +424,7 @@ func (j *jsiiProxy_FsxBackup) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_FsxBackup) SetTags(val interface{}) {
+func (j *jsiiProxy_FsxBackup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -402,10 +432,18 @@ func (j *jsiiProxy_FsxBackup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxBackup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_FsxBackup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxBackup) SetVolumeId(val *string) {
+	_jsii_.Set(
+		j,
+		"volumeId",
 		val,
 	)
 }
@@ -450,12 +488,40 @@ func (f *jsiiProxy_FsxBackup) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxBackup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxBackup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxBackup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -492,12 +558,54 @@ func (f *jsiiProxy_FsxBackup) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxBackup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxBackup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxBackup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxBackup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -537,6 +645,14 @@ func (f *jsiiProxy_FsxBackup) PutTimeouts(value *FsxBackupTimeouts) {
 	)
 }
 
+func (f *jsiiProxy_FsxBackup) ResetFileSystemId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetFileSystemId",
+		nil, // no parameters
+	)
+}
+
 // Resets a previously passed logical Id to use the auto-generated logical id again.
 // Experimental.
 func (f *jsiiProxy_FsxBackup) ResetOverrideLogicalId() {
@@ -567,6 +683,14 @@ func (f *jsiiProxy_FsxBackup) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		f,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxBackup) ResetVolumeId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetVolumeId",
 		nil, // no parameters
 	)
 }
@@ -630,30 +754,32 @@ func (f *jsiiProxy_FsxBackup) ToTerraform() interface{} {
 // AWS File System FSx.
 type FsxBackupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html#file_system_id FsxBackup#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html#tags FsxBackup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html#tags_all FsxBackup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup#file_system_id FsxBackup#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup#tags FsxBackup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup#tags_all FsxBackup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html#timeouts FsxBackup#timeouts}
-	Timeouts *FsxBackupTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup#timeouts FsxBackup#timeouts}
+	Timeouts *FsxBackupTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup#volume_id FsxBackup#volume_id}.
+	VolumeId *string `json:"volumeId" yaml:"volumeId"`
 }
 
 type FsxBackupTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html#create FsxBackup#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup.html#delete FsxBackup#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup#create FsxBackup#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_backup#delete FsxBackup#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type FsxBackupTimeoutsOutputReference interface {
@@ -670,12 +796,17 @@ type FsxBackupTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -757,8 +888,8 @@ func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -767,7 +898,7 @@ func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) TerraformResource() cdktf.I
 	return returns
 }
 
-func NewFsxBackupTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxBackupTimeoutsOutputReference {
+func NewFsxBackupTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxBackupTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxBackupTimeoutsOutputReference{}
@@ -781,7 +912,7 @@ func NewFsxBackupTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	return &j
 }
 
-func NewFsxBackupTimeoutsOutputReference_Override(f FsxBackupTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxBackupTimeoutsOutputReference_Override(f FsxBackupTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -831,7 +962,7 @@ func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -840,12 +971,40 @@ func (j *jsiiProxy_FsxBackupTimeoutsOutputReference) SetTerraformResource(val cd
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -882,12 +1041,54 @@ func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -939,7 +1140,2358 @@ func (f *jsiiProxy_FsxBackupTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html aws_fsx_lustre_file_system}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association aws_fsx_data_repository_association}.
+type FsxDataRepositoryAssociation interface {
+	cdktf.TerraformResource
+	Arn() *string
+	AssociationId() *string
+	BatchImportMetaDataOnCreate() interface{}
+	SetBatchImportMetaDataOnCreate(val interface{})
+	BatchImportMetaDataOnCreateInput() interface{}
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DataRepositoryPath() *string
+	SetDataRepositoryPath(val *string)
+	DataRepositoryPathInput() *string
+	DeleteDataInFilesystem() interface{}
+	SetDeleteDataInFilesystem(val interface{})
+	DeleteDataInFilesystemInput() interface{}
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	FileSystemId() *string
+	SetFileSystemId(val *string)
+	FileSystemIdInput() *string
+	FileSystemPath() *string
+	SetFileSystemPath(val *string)
+	FileSystemPathInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	ImportedFileChunkSize() *float64
+	SetImportedFileChunkSize(val *float64)
+	ImportedFileChunkSizeInput() *float64
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	S3() FsxDataRepositoryAssociationS3OutputReference
+	S3Input() *FsxDataRepositoryAssociationS3
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() FsxDataRepositoryAssociationTimeoutsOutputReference
+	TimeoutsInput() *FsxDataRepositoryAssociationTimeouts
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutS3(value *FsxDataRepositoryAssociationS3)
+	PutTimeouts(value *FsxDataRepositoryAssociationTimeouts)
+	ResetBatchImportMetaDataOnCreate()
+	ResetDeleteDataInFilesystem()
+	ResetImportedFileChunkSize()
+	ResetOverrideLogicalId()
+	ResetS3()
+	ResetTags()
+	ResetTagsAll()
+	ResetTimeouts()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for FsxDataRepositoryAssociation
+type jsiiProxy_FsxDataRepositoryAssociation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) AssociationId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"associationId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) BatchImportMetaDataOnCreate() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"batchImportMetaDataOnCreate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) BatchImportMetaDataOnCreateInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"batchImportMetaDataOnCreateInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) DataRepositoryPath() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataRepositoryPath",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) DataRepositoryPathInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataRepositoryPathInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) DeleteDataInFilesystem() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deleteDataInFilesystem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) DeleteDataInFilesystemInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deleteDataInFilesystemInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) FileSystemId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) FileSystemIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) FileSystemPath() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemPath",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) FileSystemPathInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemPathInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) ImportedFileChunkSize() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"importedFileChunkSize",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) ImportedFileChunkSizeInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"importedFileChunkSizeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) S3() FsxDataRepositoryAssociationS3OutputReference {
+	var returns FsxDataRepositoryAssociationS3OutputReference
+	_jsii_.Get(
+		j,
+		"s3",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) S3Input() *FsxDataRepositoryAssociationS3 {
+	var returns *FsxDataRepositoryAssociationS3
+	_jsii_.Get(
+		j,
+		"s3Input",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) Timeouts() FsxDataRepositoryAssociationTimeoutsOutputReference {
+	var returns FsxDataRepositoryAssociationTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) TimeoutsInput() *FsxDataRepositoryAssociationTimeouts {
+	var returns *FsxDataRepositoryAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association aws_fsx_data_repository_association} Resource.
+func NewFsxDataRepositoryAssociation(scope constructs.Construct, id *string, config *FsxDataRepositoryAssociationConfig) FsxDataRepositoryAssociation {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxDataRepositoryAssociation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association aws_fsx_data_repository_association} Resource.
+func NewFsxDataRepositoryAssociation_Override(f FsxDataRepositoryAssociation, scope constructs.Construct, id *string, config *FsxDataRepositoryAssociationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociation",
+		[]interface{}{scope, id, config},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetBatchImportMetaDataOnCreate(val interface{}) {
+	_jsii_.Set(
+		j,
+		"batchImportMetaDataOnCreate",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetDataRepositoryPath(val *string) {
+	_jsii_.Set(
+		j,
+		"dataRepositoryPath",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetDeleteDataInFilesystem(val interface{}) {
+	_jsii_.Set(
+		j,
+		"deleteDataInFilesystem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetFileSystemId(val *string) {
+	_jsii_.Set(
+		j,
+		"fileSystemId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetFileSystemPath(val *string) {
+	_jsii_.Set(
+		j,
+		"fileSystemPath",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetImportedFileChunkSize(val *float64) {
+	_jsii_.Set(
+		j,
+		"importedFileChunkSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociation) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func FsxDataRepositoryAssociation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func FsxDataRepositoryAssociation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		f,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		f,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) PutS3(value *FsxDataRepositoryAssociationS3) {
+	_jsii_.InvokeVoid(
+		f,
+		"putS3",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) PutTimeouts(value *FsxDataRepositoryAssociationTimeouts) {
+	_jsii_.InvokeVoid(
+		f,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetBatchImportMetaDataOnCreate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetBatchImportMetaDataOnCreate",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetDeleteDataInFilesystem() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDeleteDataInFilesystem",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetImportedFileChunkSize() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetImportedFileChunkSize",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetS3() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetS3",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetTags() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS File System FSx.
+type FsxDataRepositoryAssociationConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#data_repository_path FsxDataRepositoryAssociation#data_repository_path}.
+	DataRepositoryPath *string `json:"dataRepositoryPath" yaml:"dataRepositoryPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#file_system_id FsxDataRepositoryAssociation#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#file_system_path FsxDataRepositoryAssociation#file_system_path}.
+	FileSystemPath *string `json:"fileSystemPath" yaml:"fileSystemPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#batch_import_meta_data_on_create FsxDataRepositoryAssociation#batch_import_meta_data_on_create}.
+	BatchImportMetaDataOnCreate interface{} `json:"batchImportMetaDataOnCreate" yaml:"batchImportMetaDataOnCreate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#delete_data_in_filesystem FsxDataRepositoryAssociation#delete_data_in_filesystem}.
+	DeleteDataInFilesystem interface{} `json:"deleteDataInFilesystem" yaml:"deleteDataInFilesystem"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#imported_file_chunk_size FsxDataRepositoryAssociation#imported_file_chunk_size}.
+	ImportedFileChunkSize *float64 `json:"importedFileChunkSize" yaml:"importedFileChunkSize"`
+	// s3 block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#s3 FsxDataRepositoryAssociation#s3}
+	S3 *FsxDataRepositoryAssociationS3 `json:"s3" yaml:"s3"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#tags FsxDataRepositoryAssociation#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#tags_all FsxDataRepositoryAssociation#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#timeouts FsxDataRepositoryAssociation#timeouts}
+	Timeouts *FsxDataRepositoryAssociationTimeouts `json:"timeouts" yaml:"timeouts"`
+}
+
+type FsxDataRepositoryAssociationS3 struct {
+	// auto_export_policy block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#auto_export_policy FsxDataRepositoryAssociation#auto_export_policy}
+	AutoExportPolicy *FsxDataRepositoryAssociationS3AutoExportPolicy `json:"autoExportPolicy" yaml:"autoExportPolicy"`
+	// auto_import_policy block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#auto_import_policy FsxDataRepositoryAssociation#auto_import_policy}
+	AutoImportPolicy *FsxDataRepositoryAssociationS3AutoImportPolicy `json:"autoImportPolicy" yaml:"autoImportPolicy"`
+}
+
+type FsxDataRepositoryAssociationS3AutoExportPolicy struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#events FsxDataRepositoryAssociation#events}.
+	Events *[]*string `json:"events" yaml:"events"`
+}
+
+type FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference interface {
+	cdktf.ComplexObject
+	Events() *[]*string
+	SetEvents(val *[]*string)
+	EventsInput() *[]*string
+	InternalValue() *FsxDataRepositoryAssociationS3AutoExportPolicy
+	SetInternalValue(val *FsxDataRepositoryAssociationS3AutoExportPolicy)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEvents()
+}
+
+// The jsii proxy struct for FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference
+type jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) Events() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"events",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) EventsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"eventsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) InternalValue() *FsxDataRepositoryAssociationS3AutoExportPolicy {
+	var returns *FsxDataRepositoryAssociationS3AutoExportPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxDataRepositoryAssociationS3AutoExportPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxDataRepositoryAssociationS3AutoExportPolicyOutputReference_Override(f FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) SetEvents(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"events",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) SetInternalValue(val *FsxDataRepositoryAssociationS3AutoExportPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference) ResetEvents() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetEvents",
+		nil, // no parameters
+	)
+}
+
+type FsxDataRepositoryAssociationS3AutoImportPolicy struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#events FsxDataRepositoryAssociation#events}.
+	Events *[]*string `json:"events" yaml:"events"`
+}
+
+type FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference interface {
+	cdktf.ComplexObject
+	Events() *[]*string
+	SetEvents(val *[]*string)
+	EventsInput() *[]*string
+	InternalValue() *FsxDataRepositoryAssociationS3AutoImportPolicy
+	SetInternalValue(val *FsxDataRepositoryAssociationS3AutoImportPolicy)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEvents()
+}
+
+// The jsii proxy struct for FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference
+type jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) Events() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"events",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) EventsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"eventsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) InternalValue() *FsxDataRepositoryAssociationS3AutoImportPolicy {
+	var returns *FsxDataRepositoryAssociationS3AutoImportPolicy
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxDataRepositoryAssociationS3AutoImportPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxDataRepositoryAssociationS3AutoImportPolicyOutputReference_Override(f FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) SetEvents(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"events",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) SetInternalValue(val *FsxDataRepositoryAssociationS3AutoImportPolicy) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference) ResetEvents() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetEvents",
+		nil, // no parameters
+	)
+}
+
+type FsxDataRepositoryAssociationS3OutputReference interface {
+	cdktf.ComplexObject
+	AutoExportPolicy() FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference
+	AutoExportPolicyInput() *FsxDataRepositoryAssociationS3AutoExportPolicy
+	AutoImportPolicy() FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference
+	AutoImportPolicyInput() *FsxDataRepositoryAssociationS3AutoImportPolicy
+	InternalValue() *FsxDataRepositoryAssociationS3
+	SetInternalValue(val *FsxDataRepositoryAssociationS3)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutAutoExportPolicy(value *FsxDataRepositoryAssociationS3AutoExportPolicy)
+	PutAutoImportPolicy(value *FsxDataRepositoryAssociationS3AutoImportPolicy)
+	ResetAutoExportPolicy()
+	ResetAutoImportPolicy()
+}
+
+// The jsii proxy struct for FsxDataRepositoryAssociationS3OutputReference
+type jsiiProxy_FsxDataRepositoryAssociationS3OutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) AutoExportPolicy() FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference {
+	var returns FsxDataRepositoryAssociationS3AutoExportPolicyOutputReference
+	_jsii_.Get(
+		j,
+		"autoExportPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) AutoExportPolicyInput() *FsxDataRepositoryAssociationS3AutoExportPolicy {
+	var returns *FsxDataRepositoryAssociationS3AutoExportPolicy
+	_jsii_.Get(
+		j,
+		"autoExportPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) AutoImportPolicy() FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference {
+	var returns FsxDataRepositoryAssociationS3AutoImportPolicyOutputReference
+	_jsii_.Get(
+		j,
+		"autoImportPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) AutoImportPolicyInput() *FsxDataRepositoryAssociationS3AutoImportPolicy {
+	var returns *FsxDataRepositoryAssociationS3AutoImportPolicy
+	_jsii_.Get(
+		j,
+		"autoImportPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) InternalValue() *FsxDataRepositoryAssociationS3 {
+	var returns *FsxDataRepositoryAssociationS3
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxDataRepositoryAssociationS3OutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxDataRepositoryAssociationS3OutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxDataRepositoryAssociationS3OutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationS3OutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxDataRepositoryAssociationS3OutputReference_Override(f FsxDataRepositoryAssociationS3OutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationS3OutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) SetInternalValue(val *FsxDataRepositoryAssociationS3) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) PutAutoExportPolicy(value *FsxDataRepositoryAssociationS3AutoExportPolicy) {
+	_jsii_.InvokeVoid(
+		f,
+		"putAutoExportPolicy",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) PutAutoImportPolicy(value *FsxDataRepositoryAssociationS3AutoImportPolicy) {
+	_jsii_.InvokeVoid(
+		f,
+		"putAutoImportPolicy",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) ResetAutoExportPolicy() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetAutoExportPolicy",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationS3OutputReference) ResetAutoImportPolicy() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetAutoImportPolicy",
+		nil, // no parameters
+	)
+}
+
+type FsxDataRepositoryAssociationTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#create FsxDataRepositoryAssociation#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#delete FsxDataRepositoryAssociation#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_data_repository_association#update FsxDataRepositoryAssociation#update}.
+	Update *string `json:"update" yaml:"update"`
+}
+
+type FsxDataRepositoryAssociationTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *FsxDataRepositoryAssociationTimeouts
+	SetInternalValue(val *FsxDataRepositoryAssociationTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for FsxDataRepositoryAssociationTimeoutsOutputReference
+type jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) InternalValue() *FsxDataRepositoryAssociationTimeouts {
+	var returns *FsxDataRepositoryAssociationTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxDataRepositoryAssociationTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxDataRepositoryAssociationTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxDataRepositoryAssociationTimeoutsOutputReference_Override(f FsxDataRepositoryAssociationTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxDataRepositoryAssociationTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) SetInternalValue(val *FsxDataRepositoryAssociationTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxDataRepositoryAssociationTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system aws_fsx_lustre_file_system}.
 type FsxLustreFileSystem interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -957,8 +3509,8 @@ type FsxLustreFileSystem interface {
 	CopyTagsToBackups() interface{}
 	SetCopyTagsToBackups(val interface{})
 	CopyTagsToBackupsInput() interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DailyAutomaticBackupStartTime() *string
 	SetDailyAutomaticBackupStartTime(val *string)
 	DailyAutomaticBackupStartTimeInput() *string
@@ -977,6 +3529,9 @@ type FsxLustreFileSystem interface {
 	ExportPath() *string
 	SetExportPath(val *string)
 	ExportPathInput() *string
+	FileSystemTypeVersion() *string
+	SetFileSystemTypeVersion(val *string)
+	FileSystemTypeVersionInput() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -1013,12 +3568,12 @@ type FsxLustreFileSystem interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1029,10 +3584,15 @@ type FsxLustreFileSystem interface {
 	SetWeeklyMaintenanceStartTime(val *string)
 	WeeklyMaintenanceStartTimeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *FsxLustreFileSystemTimeouts)
@@ -1045,6 +3605,7 @@ type FsxLustreFileSystem interface {
 	ResetDeploymentType()
 	ResetDriveCacheType()
 	ResetExportPath()
+	ResetFileSystemTypeVersion()
 	ResetImportedFileChunkSize()
 	ResetImportPath()
 	ResetKmsKeyId()
@@ -1178,8 +3739,8 @@ func (j *jsiiProxy_FsxLustreFileSystem) CopyTagsToBackupsInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxLustreFileSystem) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1303,6 +3864,26 @@ func (j *jsiiProxy_FsxLustreFileSystem) ExportPathInput() *string {
 	_jsii_.Get(
 		j,
 		"exportPathInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxLustreFileSystem) FileSystemTypeVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemTypeVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxLustreFileSystem) FileSystemTypeVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fileSystemTypeVersionInput",
 		&returns,
 	)
 	return returns
@@ -1568,8 +4149,8 @@ func (j *jsiiProxy_FsxLustreFileSystem) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxLustreFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1578,8 +4159,8 @@ func (j *jsiiProxy_FsxLustreFileSystem) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxLustreFileSystem) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1588,8 +4169,8 @@ func (j *jsiiProxy_FsxLustreFileSystem) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxLustreFileSystem) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1598,8 +4179,8 @@ func (j *jsiiProxy_FsxLustreFileSystem) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxLustreFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1688,7 +4269,7 @@ func (j *jsiiProxy_FsxLustreFileSystem) WeeklyMaintenanceStartTimeInput() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html aws_fsx_lustre_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system aws_fsx_lustre_file_system} Resource.
 func NewFsxLustreFileSystem(scope constructs.Construct, id *string, config *FsxLustreFileSystemConfig) FsxLustreFileSystem {
 	_init_.Initialize()
 
@@ -1703,7 +4284,7 @@ func NewFsxLustreFileSystem(scope constructs.Construct, id *string, config *FsxL
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html aws_fsx_lustre_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system aws_fsx_lustre_file_system} Resource.
 func NewFsxLustreFileSystem_Override(f FsxLustreFileSystem, scope constructs.Construct, id *string, config *FsxLustreFileSystemConfig) {
 	_init_.Initialize()
 
@@ -1746,7 +4327,7 @@ func (j *jsiiProxy_FsxLustreFileSystem) SetCopyTagsToBackups(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) SetCount(val interface{}) {
+func (j *jsiiProxy_FsxLustreFileSystem) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1798,6 +4379,14 @@ func (j *jsiiProxy_FsxLustreFileSystem) SetExportPath(val *string) {
 	_jsii_.Set(
 		j,
 		"exportPath",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxLustreFileSystem) SetFileSystemTypeVersion(val *string) {
+	_jsii_.Set(
+		j,
+		"fileSystemTypeVersion",
 		val,
 	)
 }
@@ -1882,7 +4471,7 @@ func (j *jsiiProxy_FsxLustreFileSystem) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) SetTags(val interface{}) {
+func (j *jsiiProxy_FsxLustreFileSystem) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1890,7 +4479,7 @@ func (j *jsiiProxy_FsxLustreFileSystem) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxLustreFileSystem) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_FsxLustreFileSystem) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1946,12 +4535,40 @@ func (f *jsiiProxy_FsxLustreFileSystem) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxLustreFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxLustreFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxLustreFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1988,12 +4605,54 @@ func (f *jsiiProxy_FsxLustreFileSystem) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxLustreFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxLustreFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxLustreFileSystem) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxLustreFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2101,6 +4760,14 @@ func (f *jsiiProxy_FsxLustreFileSystem) ResetExportPath() {
 	_jsii_.InvokeVoid(
 		f,
 		"resetExportPath",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxLustreFileSystem) ResetFileSystemTypeVersion() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetFileSystemTypeVersion",
 		nil, // no parameters
 	)
 }
@@ -2262,66 +4929,68 @@ func (f *jsiiProxy_FsxLustreFileSystem) ToTerraform() interface{} {
 // AWS File System FSx.
 type FsxLustreFileSystemConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#subnet_ids FsxLustreFileSystem#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#auto_import_policy FsxLustreFileSystem#auto_import_policy}.
-	AutoImportPolicy *string `json:"autoImportPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#automatic_backup_retention_days FsxLustreFileSystem#automatic_backup_retention_days}.
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#backup_id FsxLustreFileSystem#backup_id}.
-	BackupId *string `json:"backupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#copy_tags_to_backups FsxLustreFileSystem#copy_tags_to_backups}.
-	CopyTagsToBackups interface{} `json:"copyTagsToBackups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#daily_automatic_backup_start_time FsxLustreFileSystem#daily_automatic_backup_start_time}.
-	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#data_compression_type FsxLustreFileSystem#data_compression_type}.
-	DataCompressionType *string `json:"dataCompressionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#deployment_type FsxLustreFileSystem#deployment_type}.
-	DeploymentType *string `json:"deploymentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#drive_cache_type FsxLustreFileSystem#drive_cache_type}.
-	DriveCacheType *string `json:"driveCacheType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#export_path FsxLustreFileSystem#export_path}.
-	ExportPath *string `json:"exportPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#imported_file_chunk_size FsxLustreFileSystem#imported_file_chunk_size}.
-	ImportedFileChunkSize *float64 `json:"importedFileChunkSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#import_path FsxLustreFileSystem#import_path}.
-	ImportPath *string `json:"importPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#kms_key_id FsxLustreFileSystem#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#per_unit_storage_throughput FsxLustreFileSystem#per_unit_storage_throughput}.
-	PerUnitStorageThroughput *float64 `json:"perUnitStorageThroughput"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#security_group_ids FsxLustreFileSystem#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#storage_capacity FsxLustreFileSystem#storage_capacity}.
-	StorageCapacity *float64 `json:"storageCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#storage_type FsxLustreFileSystem#storage_type}.
-	StorageType *string `json:"storageType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#tags FsxLustreFileSystem#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#tags_all FsxLustreFileSystem#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#subnet_ids FsxLustreFileSystem#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#auto_import_policy FsxLustreFileSystem#auto_import_policy}.
+	AutoImportPolicy *string `json:"autoImportPolicy" yaml:"autoImportPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#automatic_backup_retention_days FsxLustreFileSystem#automatic_backup_retention_days}.
+	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays" yaml:"automaticBackupRetentionDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#backup_id FsxLustreFileSystem#backup_id}.
+	BackupId *string `json:"backupId" yaml:"backupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#copy_tags_to_backups FsxLustreFileSystem#copy_tags_to_backups}.
+	CopyTagsToBackups interface{} `json:"copyTagsToBackups" yaml:"copyTagsToBackups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#daily_automatic_backup_start_time FsxLustreFileSystem#daily_automatic_backup_start_time}.
+	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime" yaml:"dailyAutomaticBackupStartTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#data_compression_type FsxLustreFileSystem#data_compression_type}.
+	DataCompressionType *string `json:"dataCompressionType" yaml:"dataCompressionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#deployment_type FsxLustreFileSystem#deployment_type}.
+	DeploymentType *string `json:"deploymentType" yaml:"deploymentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#drive_cache_type FsxLustreFileSystem#drive_cache_type}.
+	DriveCacheType *string `json:"driveCacheType" yaml:"driveCacheType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#export_path FsxLustreFileSystem#export_path}.
+	ExportPath *string `json:"exportPath" yaml:"exportPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#file_system_type_version FsxLustreFileSystem#file_system_type_version}.
+	FileSystemTypeVersion *string `json:"fileSystemTypeVersion" yaml:"fileSystemTypeVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#imported_file_chunk_size FsxLustreFileSystem#imported_file_chunk_size}.
+	ImportedFileChunkSize *float64 `json:"importedFileChunkSize" yaml:"importedFileChunkSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#import_path FsxLustreFileSystem#import_path}.
+	ImportPath *string `json:"importPath" yaml:"importPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#kms_key_id FsxLustreFileSystem#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#per_unit_storage_throughput FsxLustreFileSystem#per_unit_storage_throughput}.
+	PerUnitStorageThroughput *float64 `json:"perUnitStorageThroughput" yaml:"perUnitStorageThroughput"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#security_group_ids FsxLustreFileSystem#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#storage_capacity FsxLustreFileSystem#storage_capacity}.
+	StorageCapacity *float64 `json:"storageCapacity" yaml:"storageCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#storage_type FsxLustreFileSystem#storage_type}.
+	StorageType *string `json:"storageType" yaml:"storageType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#tags FsxLustreFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#tags_all FsxLustreFileSystem#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#timeouts FsxLustreFileSystem#timeouts}
-	Timeouts *FsxLustreFileSystemTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#weekly_maintenance_start_time FsxLustreFileSystem#weekly_maintenance_start_time}.
-	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#timeouts FsxLustreFileSystem#timeouts}
+	Timeouts *FsxLustreFileSystemTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#weekly_maintenance_start_time FsxLustreFileSystem#weekly_maintenance_start_time}.
+	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime" yaml:"weeklyMaintenanceStartTime"`
 }
 
 type FsxLustreFileSystemTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#create FsxLustreFileSystem#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#delete FsxLustreFileSystem#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system.html#update FsxLustreFileSystem#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#create FsxLustreFileSystem#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#delete FsxLustreFileSystem#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_lustre_file_system#update FsxLustreFileSystem#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type FsxLustreFileSystemTimeoutsOutputReference interface {
@@ -2338,15 +5007,20 @@ type FsxLustreFileSystemTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2429,8 +5103,8 @@ func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2459,7 +5133,7 @@ func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) UpdateInput() *st
 	return returns
 }
 
-func NewFsxLustreFileSystemTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxLustreFileSystemTimeoutsOutputReference {
+func NewFsxLustreFileSystemTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxLustreFileSystemTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference{}
@@ -2473,7 +5147,7 @@ func NewFsxLustreFileSystemTimeoutsOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewFsxLustreFileSystemTimeoutsOutputReference_Override(f FsxLustreFileSystemTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxLustreFileSystemTimeoutsOutputReference_Override(f FsxLustreFileSystemTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2523,7 +5197,7 @@ func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2540,12 +5214,40 @@ func (j *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) SetUpdate(val *st
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2582,12 +5284,54 @@ func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2647,7 +5391,7 @@ func (f *jsiiProxy_FsxLustreFileSystemTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html aws_fsx_ontap_file_system}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system aws_fsx_ontap_file_system}.
 type FsxOntapFileSystem interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2656,8 +5400,8 @@ type FsxOntapFileSystem interface {
 	AutomaticBackupRetentionDaysInput() *float64
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DailyAutomaticBackupStartTime() *string
 	SetDailyAutomaticBackupStartTime(val *string)
 	DailyAutomaticBackupStartTimeInput() *string
@@ -2707,12 +5451,12 @@ type FsxOntapFileSystem interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2727,10 +5471,15 @@ type FsxOntapFileSystem interface {
 	WeeklyMaintenanceStartTimeInput() *string
 	AddOverride(path *string, value interface{})
 	Endpoints(index *string) FsxOntapFileSystemEndpoints
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDiskIopsConfiguration(value *FsxOntapFileSystemDiskIopsConfiguration)
@@ -2811,8 +5560,8 @@ func (j *jsiiProxy_FsxOntapFileSystem) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapFileSystem) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3171,8 +5920,8 @@ func (j *jsiiProxy_FsxOntapFileSystem) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3181,8 +5930,8 @@ func (j *jsiiProxy_FsxOntapFileSystem) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapFileSystem) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3191,8 +5940,8 @@ func (j *jsiiProxy_FsxOntapFileSystem) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapFileSystem) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3201,8 +5950,8 @@ func (j *jsiiProxy_FsxOntapFileSystem) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3311,7 +6060,7 @@ func (j *jsiiProxy_FsxOntapFileSystem) WeeklyMaintenanceStartTimeInput() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html aws_fsx_ontap_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system aws_fsx_ontap_file_system} Resource.
 func NewFsxOntapFileSystem(scope constructs.Construct, id *string, config *FsxOntapFileSystemConfig) FsxOntapFileSystem {
 	_init_.Initialize()
 
@@ -3326,7 +6075,7 @@ func NewFsxOntapFileSystem(scope constructs.Construct, id *string, config *FsxOn
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html aws_fsx_ontap_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system aws_fsx_ontap_file_system} Resource.
 func NewFsxOntapFileSystem_Override(f FsxOntapFileSystem, scope constructs.Construct, id *string, config *FsxOntapFileSystemConfig) {
 	_init_.Initialize()
 
@@ -3345,7 +6094,7 @@ func (j *jsiiProxy_FsxOntapFileSystem) SetAutomaticBackupRetentionDays(val *floa
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) SetCount(val interface{}) {
+func (j *jsiiProxy_FsxOntapFileSystem) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3465,7 +6214,7 @@ func (j *jsiiProxy_FsxOntapFileSystem) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) SetTags(val interface{}) {
+func (j *jsiiProxy_FsxOntapFileSystem) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3473,7 +6222,7 @@ func (j *jsiiProxy_FsxOntapFileSystem) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystem) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_FsxOntapFileSystem) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3550,12 +6299,40 @@ func (f *jsiiProxy_FsxOntapFileSystem) Endpoints(index *string) FsxOntapFileSyst
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3592,12 +6369,54 @@ func (f *jsiiProxy_FsxOntapFileSystem) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapFileSystem) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3826,60 +6645,60 @@ func (f *jsiiProxy_FsxOntapFileSystem) ToTerraform() interface{} {
 // AWS File System FSx.
 type FsxOntapFileSystemConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#deployment_type FsxOntapFileSystem#deployment_type}.
-	DeploymentType *string `json:"deploymentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#preferred_subnet_id FsxOntapFileSystem#preferred_subnet_id}.
-	PreferredSubnetId *string `json:"preferredSubnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#subnet_ids FsxOntapFileSystem#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#throughput_capacity FsxOntapFileSystem#throughput_capacity}.
-	ThroughputCapacity *float64 `json:"throughputCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#automatic_backup_retention_days FsxOntapFileSystem#automatic_backup_retention_days}.
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#daily_automatic_backup_start_time FsxOntapFileSystem#daily_automatic_backup_start_time}.
-	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#deployment_type FsxOntapFileSystem#deployment_type}.
+	DeploymentType *string `json:"deploymentType" yaml:"deploymentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#preferred_subnet_id FsxOntapFileSystem#preferred_subnet_id}.
+	PreferredSubnetId *string `json:"preferredSubnetId" yaml:"preferredSubnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#subnet_ids FsxOntapFileSystem#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#throughput_capacity FsxOntapFileSystem#throughput_capacity}.
+	ThroughputCapacity *float64 `json:"throughputCapacity" yaml:"throughputCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#automatic_backup_retention_days FsxOntapFileSystem#automatic_backup_retention_days}.
+	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays" yaml:"automaticBackupRetentionDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#daily_automatic_backup_start_time FsxOntapFileSystem#daily_automatic_backup_start_time}.
+	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime" yaml:"dailyAutomaticBackupStartTime"`
 	// disk_iops_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#disk_iops_configuration FsxOntapFileSystem#disk_iops_configuration}
-	DiskIopsConfiguration *FsxOntapFileSystemDiskIopsConfiguration `json:"diskIopsConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#endpoint_ip_address_range FsxOntapFileSystem#endpoint_ip_address_range}.
-	EndpointIpAddressRange *string `json:"endpointIpAddressRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#fsx_admin_password FsxOntapFileSystem#fsx_admin_password}.
-	FsxAdminPassword *string `json:"fsxAdminPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#kms_key_id FsxOntapFileSystem#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#route_table_ids FsxOntapFileSystem#route_table_ids}.
-	RouteTableIds *[]*string `json:"routeTableIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#security_group_ids FsxOntapFileSystem#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#storage_capacity FsxOntapFileSystem#storage_capacity}.
-	StorageCapacity *float64 `json:"storageCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#storage_type FsxOntapFileSystem#storage_type}.
-	StorageType *string `json:"storageType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#tags FsxOntapFileSystem#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#tags_all FsxOntapFileSystem#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#disk_iops_configuration FsxOntapFileSystem#disk_iops_configuration}
+	DiskIopsConfiguration *FsxOntapFileSystemDiskIopsConfiguration `json:"diskIopsConfiguration" yaml:"diskIopsConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#endpoint_ip_address_range FsxOntapFileSystem#endpoint_ip_address_range}.
+	EndpointIpAddressRange *string `json:"endpointIpAddressRange" yaml:"endpointIpAddressRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#fsx_admin_password FsxOntapFileSystem#fsx_admin_password}.
+	FsxAdminPassword *string `json:"fsxAdminPassword" yaml:"fsxAdminPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#kms_key_id FsxOntapFileSystem#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#route_table_ids FsxOntapFileSystem#route_table_ids}.
+	RouteTableIds *[]*string `json:"routeTableIds" yaml:"routeTableIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#security_group_ids FsxOntapFileSystem#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#storage_capacity FsxOntapFileSystem#storage_capacity}.
+	StorageCapacity *float64 `json:"storageCapacity" yaml:"storageCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#storage_type FsxOntapFileSystem#storage_type}.
+	StorageType *string `json:"storageType" yaml:"storageType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#tags FsxOntapFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#tags_all FsxOntapFileSystem#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#timeouts FsxOntapFileSystem#timeouts}
-	Timeouts *FsxOntapFileSystemTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#weekly_maintenance_start_time FsxOntapFileSystem#weekly_maintenance_start_time}.
-	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#timeouts FsxOntapFileSystem#timeouts}
+	Timeouts *FsxOntapFileSystemTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#weekly_maintenance_start_time FsxOntapFileSystem#weekly_maintenance_start_time}.
+	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime" yaml:"weeklyMaintenanceStartTime"`
 }
 
 type FsxOntapFileSystemDiskIopsConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#iops FsxOntapFileSystem#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#mode FsxOntapFileSystem#mode}.
-	Mode *string `json:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#iops FsxOntapFileSystem#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#mode FsxOntapFileSystem#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
 }
 
 type FsxOntapFileSystemDiskIopsConfigurationOutputReference interface {
@@ -3896,12 +6715,17 @@ type FsxOntapFileSystemDiskIopsConfigurationOutputReference interface {
 	ModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIops()
@@ -3983,8 +6807,8 @@ func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3993,7 +6817,7 @@ func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) Terra
 	return returns
 }
 
-func NewFsxOntapFileSystemDiskIopsConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapFileSystemDiskIopsConfigurationOutputReference {
+func NewFsxOntapFileSystemDiskIopsConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOntapFileSystemDiskIopsConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference{}
@@ -4007,7 +6831,7 @@ func NewFsxOntapFileSystemDiskIopsConfigurationOutputReference(terraformResource
 	return &j
 }
 
-func NewFsxOntapFileSystemDiskIopsConfigurationOutputReference_Override(f FsxOntapFileSystemDiskIopsConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxOntapFileSystemDiskIopsConfigurationOutputReference_Override(f FsxOntapFileSystemDiskIopsConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4057,7 +6881,7 @@ func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4066,12 +6890,40 @@ func (j *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) SetTe
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4108,12 +6960,54 @@ func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetNu
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemDiskIopsConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4169,16 +7063,23 @@ type FsxOntapFileSystemEndpoints interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Intercluster() interface{}
-	Management() interface{}
+	Intercluster() cdktf.IResolvable
+	Management() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4197,8 +7098,8 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpoints) ComplexComputedListIndex() *stri
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpoints) Intercluster() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapFileSystemEndpoints) Intercluster() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"intercluster",
@@ -4207,8 +7108,8 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpoints) Intercluster() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpoints) Management() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapFileSystemEndpoints) Management() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"management",
@@ -4227,8 +7128,8 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpoints) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpoints) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapFileSystemEndpoints) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4237,15 +7138,25 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpoints) TerraformResource() cdktf.ITerra
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapFileSystemEndpoints) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapFileSystemEndpoints(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapFileSystemEndpoints {
+func NewFsxOntapFileSystemEndpoints(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapFileSystemEndpoints {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapFileSystemEndpoints{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapFileSystemEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4253,12 +7164,12 @@ func NewFsxOntapFileSystemEndpoints(terraformResource cdktf.ITerraformResource, 
 }
 
 // Experimental.
-func NewFsxOntapFileSystemEndpoints_Override(f FsxOntapFileSystemEndpoints, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapFileSystemEndpoints_Override(f FsxOntapFileSystemEndpoints, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapFileSystemEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -4279,7 +7190,7 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpoints) SetTerraformAttribute(val *strin
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpoints) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapFileSystemEndpoints) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4287,13 +7198,49 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpoints) SetTerraformResource(val cdktf.I
 	)
 }
 
+func (j *jsiiProxy_FsxOntapFileSystemEndpoints) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4330,12 +7277,54 @@ func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpoints) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4365,12 +7354,19 @@ type FsxOntapFileSystemEndpointsIntercluster interface {
 	IpAddresses() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4419,8 +7415,8 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4429,15 +7425,25 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapFileSystemEndpointsIntercluster(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapFileSystemEndpointsIntercluster {
+func NewFsxOntapFileSystemEndpointsIntercluster(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapFileSystemEndpointsIntercluster {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapFileSystemEndpointsIntercluster{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsIntercluster",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4445,12 +7451,12 @@ func NewFsxOntapFileSystemEndpointsIntercluster(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewFsxOntapFileSystemEndpointsIntercluster_Override(f FsxOntapFileSystemEndpointsIntercluster, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapFileSystemEndpointsIntercluster_Override(f FsxOntapFileSystemEndpointsIntercluster, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsIntercluster",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -4471,7 +7477,7 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4479,13 +7485,49 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4522,12 +7564,54 @@ func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetNumberAttribute(t
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsIntercluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4557,12 +7641,19 @@ type FsxOntapFileSystemEndpointsManagement interface {
 	IpAddresses() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4611,8 +7702,8 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4621,15 +7712,25 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapFileSystemEndpointsManagement(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapFileSystemEndpointsManagement {
+func NewFsxOntapFileSystemEndpointsManagement(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapFileSystemEndpointsManagement {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapFileSystemEndpointsManagement{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsManagement",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4637,12 +7738,12 @@ func NewFsxOntapFileSystemEndpointsManagement(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewFsxOntapFileSystemEndpointsManagement_Override(f FsxOntapFileSystemEndpointsManagement, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapFileSystemEndpointsManagement_Override(f FsxOntapFileSystemEndpointsManagement, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapFileSystemEndpointsManagement",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -4663,7 +7764,7 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4671,13 +7772,49 @@ func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_FsxOntapFileSystemEndpointsManagement) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4714,12 +7851,54 @@ func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4742,12 +7921,12 @@ func (f *jsiiProxy_FsxOntapFileSystemEndpointsManagement) InterpolationForAttrib
 }
 
 type FsxOntapFileSystemTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#create FsxOntapFileSystem#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#delete FsxOntapFileSystem#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system.html#update FsxOntapFileSystem#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#create FsxOntapFileSystem#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#delete FsxOntapFileSystem#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_file_system#update FsxOntapFileSystem#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type FsxOntapFileSystemTimeoutsOutputReference interface {
@@ -4764,15 +7943,20 @@ type FsxOntapFileSystemTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -4855,8 +8039,8 @@ func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4885,7 +8069,7 @@ func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) UpdateInput() *str
 	return returns
 }
 
-func NewFsxOntapFileSystemTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapFileSystemTimeoutsOutputReference {
+func NewFsxOntapFileSystemTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOntapFileSystemTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference{}
@@ -4899,7 +8083,7 @@ func NewFsxOntapFileSystemTimeoutsOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewFsxOntapFileSystemTimeoutsOutputReference_Override(f FsxOntapFileSystemTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxOntapFileSystemTimeoutsOutputReference_Override(f FsxOntapFileSystemTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4949,7 +8133,7 @@ func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4966,12 +8150,40 @@ func (j *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) SetUpdate(val *str
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5008,12 +8220,54 @@ func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5073,7 +8327,7 @@ func (f *jsiiProxy_FsxOntapFileSystemTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html aws_fsx_ontap_storage_virtual_machine}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine aws_fsx_ontap_storage_virtual_machine}.
 type FsxOntapStorageVirtualMachine interface {
 	cdktf.TerraformResource
 	ActiveDirectoryConfiguration() FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference
@@ -5081,8 +8335,8 @@ type FsxOntapStorageVirtualMachine interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemId() *string
@@ -5107,12 +8361,12 @@ type FsxOntapStorageVirtualMachine interface {
 	SvmAdminPassword() *string
 	SetSvmAdminPassword(val *string)
 	SvmAdminPasswordInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5121,10 +8375,15 @@ type FsxOntapStorageVirtualMachine interface {
 	Uuid() *string
 	AddOverride(path *string, value interface{})
 	Endpoints(index *string) FsxOntapStorageVirtualMachineEndpoints
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutActiveDirectoryConfiguration(value *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration)
@@ -5197,8 +8456,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5377,8 +8636,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SvmAdminPasswordInput() *strin
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5387,8 +8646,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5397,8 +8656,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5407,8 +8666,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5477,7 +8736,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) Uuid() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html aws_fsx_ontap_storage_virtual_machine} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine aws_fsx_ontap_storage_virtual_machine} Resource.
 func NewFsxOntapStorageVirtualMachine(scope constructs.Construct, id *string, config *FsxOntapStorageVirtualMachineConfig) FsxOntapStorageVirtualMachine {
 	_init_.Initialize()
 
@@ -5492,7 +8751,7 @@ func NewFsxOntapStorageVirtualMachine(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html aws_fsx_ontap_storage_virtual_machine} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine aws_fsx_ontap_storage_virtual_machine} Resource.
 func NewFsxOntapStorageVirtualMachine_Override(f FsxOntapStorageVirtualMachine, scope constructs.Construct, id *string, config *FsxOntapStorageVirtualMachineConfig) {
 	_init_.Initialize()
 
@@ -5503,7 +8762,7 @@ func NewFsxOntapStorageVirtualMachine_Override(f FsxOntapStorageVirtualMachine, 
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetCount(val interface{}) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5567,7 +8826,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetSvmAdminPassword(val *strin
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetTags(val interface{}) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5575,7 +8834,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachine) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5636,12 +8895,40 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachine) Endpoints(index *string) FsxOn
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5678,12 +8965,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachine) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5846,12 +9175,12 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachine) ToTerraform() interface{} {
 }
 
 type FsxOntapStorageVirtualMachineActiveDirectoryConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#netbios_name FsxOntapStorageVirtualMachine#netbios_name}.
-	NetbiosName *string `json:"netbiosName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#netbios_name FsxOntapStorageVirtualMachine#netbios_name}.
+	NetbiosName *string `json:"netbiosName" yaml:"netbiosName"`
 	// self_managed_active_directory_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#self_managed_active_directory_configuration FsxOntapStorageVirtualMachine#self_managed_active_directory_configuration}
-	SelfManagedActiveDirectoryConfiguration *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration `json:"selfManagedActiveDirectoryConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#self_managed_active_directory_configuration FsxOntapStorageVirtualMachine#self_managed_active_directory_configuration}
+	SelfManagedActiveDirectoryConfiguration *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration `json:"selfManagedActiveDirectoryConfiguration" yaml:"selfManagedActiveDirectoryConfiguration"`
 }
 
 type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference interface {
@@ -5867,12 +9196,17 @@ type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference in
 	SelfManagedActiveDirectoryConfigurationInput() *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSelfManagedActiveDirectoryConfiguration(value *FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration)
@@ -5955,8 +9289,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutp
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5965,7 +9299,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutp
 	return returns
 }
 
-func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference {
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference{}
@@ -5979,7 +9313,7 @@ func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference
 	return &j
 }
 
-func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference_Override(f FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference_Override(f FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6021,7 +9355,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutp
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6030,12 +9364,40 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutp
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6072,12 +9434,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutp
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6138,18 +9542,20 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationOutp
 }
 
 type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#dns_ips FsxOntapStorageVirtualMachine#dns_ips}.
-	DnsIps *[]*string `json:"dnsIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#domain_name FsxOntapStorageVirtualMachine#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#password FsxOntapStorageVirtualMachine#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#username FsxOntapStorageVirtualMachine#username}.
-	Username *string `json:"username"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#file_system_administrators_group FsxOntapStorageVirtualMachine#file_system_administrators_group}.
-	FileSystemAdministratorsGroup *string `json:"fileSystemAdministratorsGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#organizational_unit_distinguidshed_name FsxOntapStorageVirtualMachine#organizational_unit_distinguidshed_name}.
-	OrganizationalUnitDistinguidshedName *string `json:"organizationalUnitDistinguidshedName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#dns_ips FsxOntapStorageVirtualMachine#dns_ips}.
+	DnsIps *[]*string `json:"dnsIps" yaml:"dnsIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#domain_name FsxOntapStorageVirtualMachine#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#password FsxOntapStorageVirtualMachine#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#username FsxOntapStorageVirtualMachine#username}.
+	Username *string `json:"username" yaml:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#file_system_administrators_group FsxOntapStorageVirtualMachine#file_system_administrators_group}.
+	FileSystemAdministratorsGroup *string `json:"fileSystemAdministratorsGroup" yaml:"fileSystemAdministratorsGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#organizational_unit_distinguidshed_name FsxOntapStorageVirtualMachine#organizational_unit_distinguidshed_name}.
+	OrganizationalUnitDistinguidshedName *string `json:"organizationalUnitDistinguidshedName" yaml:"organizationalUnitDistinguidshedName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#organizational_unit_distinguished_name FsxOntapStorageVirtualMachine#organizational_unit_distinguished_name}.
+	OrganizationalUnitDistinguishedName *string `json:"organizationalUnitDistinguishedName" yaml:"organizationalUnitDistinguishedName"`
 }
 
 type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference interface {
@@ -6170,24 +9576,33 @@ type FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveD
 	OrganizationalUnitDistinguidshedName() *string
 	SetOrganizationalUnitDistinguidshedName(val *string)
 	OrganizationalUnitDistinguidshedNameInput() *string
+	OrganizationalUnitDistinguishedName() *string
+	SetOrganizationalUnitDistinguishedName(val *string)
+	OrganizationalUnitDistinguishedNameInput() *string
 	Password() *string
 	SetPassword(val *string)
 	PasswordInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Username() *string
 	SetUsername(val *string)
 	UsernameInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFileSystemAdministratorsGroup()
 	ResetOrganizationalUnitDistinguidshedName()
+	ResetOrganizationalUnitDistinguishedName()
 }
 
 // The jsii proxy struct for FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference
@@ -6295,6 +9710,26 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) OrganizationalUnitDistinguishedName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"organizationalUnitDistinguishedName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) OrganizationalUnitDistinguishedNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"organizationalUnitDistinguishedNameInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) Password() *string {
 	var returns *string
 	_jsii_.Get(
@@ -6325,8 +9760,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6355,7 +9790,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 	return returns
 }
 
-func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference {
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference{}
@@ -6369,7 +9804,7 @@ func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActi
 	return &j
 }
 
-func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference_Override(f FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference_Override(f FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6427,6 +9862,14 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 	)
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetOrganizationalUnitDistinguishedName(val *string) {
+	_jsii_.Set(
+		j,
+		"organizationalUnitDistinguishedName",
+		val,
+	)
+}
+
 func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetPassword(val *string) {
 	_jsii_.Set(
 		j,
@@ -6443,7 +9886,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6460,12 +9903,40 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6502,12 +9973,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6559,54 +10072,69 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelf
 	)
 }
 
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationOutputReference) ResetOrganizationalUnitDistinguishedName() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOrganizationalUnitDistinguishedName",
+		nil, // no parameters
+	)
+}
+
 // AWS File System FSx.
 type FsxOntapStorageVirtualMachineConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#file_system_id FsxOntapStorageVirtualMachine#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#name FsxOntapStorageVirtualMachine#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#file_system_id FsxOntapStorageVirtualMachine#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#name FsxOntapStorageVirtualMachine#name}.
+	Name *string `json:"name" yaml:"name"`
 	// active_directory_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#active_directory_configuration FsxOntapStorageVirtualMachine#active_directory_configuration}
-	ActiveDirectoryConfiguration *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration `json:"activeDirectoryConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#root_volume_security_style FsxOntapStorageVirtualMachine#root_volume_security_style}.
-	RootVolumeSecurityStyle *string `json:"rootVolumeSecurityStyle"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#svm_admin_password FsxOntapStorageVirtualMachine#svm_admin_password}.
-	SvmAdminPassword *string `json:"svmAdminPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#tags FsxOntapStorageVirtualMachine#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#tags_all FsxOntapStorageVirtualMachine#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#active_directory_configuration FsxOntapStorageVirtualMachine#active_directory_configuration}
+	ActiveDirectoryConfiguration *FsxOntapStorageVirtualMachineActiveDirectoryConfiguration `json:"activeDirectoryConfiguration" yaml:"activeDirectoryConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#root_volume_security_style FsxOntapStorageVirtualMachine#root_volume_security_style}.
+	RootVolumeSecurityStyle *string `json:"rootVolumeSecurityStyle" yaml:"rootVolumeSecurityStyle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#svm_admin_password FsxOntapStorageVirtualMachine#svm_admin_password}.
+	SvmAdminPassword *string `json:"svmAdminPassword" yaml:"svmAdminPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#tags FsxOntapStorageVirtualMachine#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#tags_all FsxOntapStorageVirtualMachine#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#timeouts FsxOntapStorageVirtualMachine#timeouts}
-	Timeouts *FsxOntapStorageVirtualMachineTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#timeouts FsxOntapStorageVirtualMachine#timeouts}
+	Timeouts *FsxOntapStorageVirtualMachineTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type FsxOntapStorageVirtualMachineEndpoints interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Iscsi() interface{}
-	Management() interface{}
-	Nfs() interface{}
-	Smb() interface{}
+	Iscsi() cdktf.IResolvable
+	Management() cdktf.IResolvable
+	Nfs() cdktf.IResolvable
+	Smb() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6625,8 +10153,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) ComplexComputedListIn
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Iscsi() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Iscsi() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"iscsi",
@@ -6635,8 +10163,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Iscsi() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Management() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Management() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"management",
@@ -6645,8 +10173,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Management() interfac
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Nfs() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Nfs() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"nfs",
@@ -6655,8 +10183,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Nfs() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Smb() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) Smb() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"smb",
@@ -6675,8 +10203,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6685,15 +10213,25 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) TerraformResource() c
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpoints(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpoints {
+func NewFsxOntapStorageVirtualMachineEndpoints(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapStorageVirtualMachineEndpoints {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpoints{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -6701,12 +10239,12 @@ func NewFsxOntapStorageVirtualMachineEndpoints(terraformResource cdktf.ITerrafor
 }
 
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpoints_Override(f FsxOntapStorageVirtualMachineEndpoints, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapStorageVirtualMachineEndpoints_Override(f FsxOntapStorageVirtualMachineEndpoints, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -6727,7 +10265,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6735,13 +10273,49 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetTerraformResource(
 	)
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6778,12 +10352,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetNumberAttribute(te
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpoints) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6813,12 +10429,19 @@ type FsxOntapStorageVirtualMachineEndpointsIscsi interface {
 	IpAddresses() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6867,8 +10490,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6877,15 +10500,25 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsIscsi(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsIscsi {
+func NewFsxOntapStorageVirtualMachineEndpointsIscsi(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapStorageVirtualMachineEndpointsIscsi {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsIscsi",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -6893,12 +10526,12 @@ func NewFsxOntapStorageVirtualMachineEndpointsIscsi(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsIscsi_Override(f FsxOntapStorageVirtualMachineEndpointsIscsi, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapStorageVirtualMachineEndpointsIscsi_Override(f FsxOntapStorageVirtualMachineEndpointsIscsi, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsIscsi",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -6919,7 +10552,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6927,13 +10560,49 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6970,12 +10639,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetNumberAttribu
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsIscsi) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7005,12 +10716,19 @@ type FsxOntapStorageVirtualMachineEndpointsManagement interface {
 	IpAddresses() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7059,8 +10777,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7069,15 +10787,25 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) TerraformRe
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsManagement(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsManagement {
+func NewFsxOntapStorageVirtualMachineEndpointsManagement(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapStorageVirtualMachineEndpointsManagement {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsManagement",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7085,12 +10813,12 @@ func NewFsxOntapStorageVirtualMachineEndpointsManagement(terraformResource cdktf
 }
 
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsManagement_Override(f FsxOntapStorageVirtualMachineEndpointsManagement, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapStorageVirtualMachineEndpointsManagement_Override(f FsxOntapStorageVirtualMachineEndpointsManagement, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsManagement",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -7111,7 +10839,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7119,13 +10847,49 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7162,12 +10926,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetNumberAt
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsManagement) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7197,12 +11003,19 @@ type FsxOntapStorageVirtualMachineEndpointsNfs interface {
 	IpAddresses() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7251,8 +11064,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7261,15 +11074,25 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) TerraformResource(
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsNfs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsNfs {
+func NewFsxOntapStorageVirtualMachineEndpointsNfs(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapStorageVirtualMachineEndpointsNfs {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsNfs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7277,12 +11100,12 @@ func NewFsxOntapStorageVirtualMachineEndpointsNfs(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsNfs_Override(f FsxOntapStorageVirtualMachineEndpointsNfs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapStorageVirtualMachineEndpointsNfs_Override(f FsxOntapStorageVirtualMachineEndpointsNfs, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsNfs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -7303,7 +11126,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7311,13 +11134,49 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7354,12 +11213,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetNumberAttribute
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsNfs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7389,12 +11290,19 @@ type FsxOntapStorageVirtualMachineEndpointsSmb interface {
 	IpAddresses() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7443,8 +11351,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7453,15 +11361,25 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) TerraformResource(
 	return returns
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsSmb(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) FsxOntapStorageVirtualMachineEndpointsSmb {
+func NewFsxOntapStorageVirtualMachineEndpointsSmb(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) FsxOntapStorageVirtualMachineEndpointsSmb {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb{}
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsSmb",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7469,12 +11387,12 @@ func NewFsxOntapStorageVirtualMachineEndpointsSmb(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewFsxOntapStorageVirtualMachineEndpointsSmb_Override(f FsxOntapStorageVirtualMachineEndpointsSmb, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewFsxOntapStorageVirtualMachineEndpointsSmb_Override(f FsxOntapStorageVirtualMachineEndpointsSmb, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.fsx.FsxOntapStorageVirtualMachineEndpointsSmb",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		f,
 	)
 }
@@ -7495,7 +11413,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7503,13 +11421,49 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7546,12 +11500,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetNumberAttribute
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7574,12 +11570,12 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineEndpointsSmb) InterpolationForAt
 }
 
 type FsxOntapStorageVirtualMachineTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#create FsxOntapStorageVirtualMachine#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#delete FsxOntapStorageVirtualMachine#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine.html#update FsxOntapStorageVirtualMachine#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#create FsxOntapStorageVirtualMachine#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#delete FsxOntapStorageVirtualMachine#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_storage_virtual_machine#update FsxOntapStorageVirtualMachine#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type FsxOntapStorageVirtualMachineTimeoutsOutputReference interface {
@@ -7596,15 +11592,20 @@ type FsxOntapStorageVirtualMachineTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7687,8 +11688,8 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7717,7 +11718,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) UpdateI
 	return returns
 }
 
-func NewFsxOntapStorageVirtualMachineTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineTimeoutsOutputReference {
+func NewFsxOntapStorageVirtualMachineTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOntapStorageVirtualMachineTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference{}
@@ -7731,7 +11732,7 @@ func NewFsxOntapStorageVirtualMachineTimeoutsOutputReference(terraformResource c
 	return &j
 }
 
-func NewFsxOntapStorageVirtualMachineTimeoutsOutputReference_Override(f FsxOntapStorageVirtualMachineTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxOntapStorageVirtualMachineTimeoutsOutputReference_Override(f FsxOntapStorageVirtualMachineTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7781,7 +11782,7 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7798,12 +11799,40 @@ func (j *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) SetUpda
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7840,12 +11869,54 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetNumb
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7905,14 +11976,14 @@ func (f *jsiiProxy_FsxOntapStorageVirtualMachineTimeoutsOutputReference) ResetUp
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html aws_fsx_ontap_volume}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume aws_fsx_ontap_volume}.
 type FsxOntapVolume interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemId() *string
@@ -7945,12 +12016,12 @@ type FsxOntapVolume interface {
 	StorageVirtualMachineId() *string
 	SetStorageVirtualMachineId(val *string)
 	StorageVirtualMachineIdInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7963,10 +12034,15 @@ type FsxOntapVolume interface {
 	SetVolumeType(val *string)
 	VolumeTypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTieringPolicy(value *FsxOntapVolumeTieringPolicy)
@@ -8019,8 +12095,8 @@ func (j *jsiiProxy_FsxOntapVolume) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapVolume) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapVolume) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8259,8 +12335,8 @@ func (j *jsiiProxy_FsxOntapVolume) StorageVirtualMachineIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapVolume) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapVolume) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8269,8 +12345,8 @@ func (j *jsiiProxy_FsxOntapVolume) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapVolume) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapVolume) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8279,8 +12355,8 @@ func (j *jsiiProxy_FsxOntapVolume) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapVolume) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapVolume) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8289,8 +12365,8 @@ func (j *jsiiProxy_FsxOntapVolume) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapVolume) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxOntapVolume) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8399,7 +12475,7 @@ func (j *jsiiProxy_FsxOntapVolume) VolumeTypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html aws_fsx_ontap_volume} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume aws_fsx_ontap_volume} Resource.
 func NewFsxOntapVolume(scope constructs.Construct, id *string, config *FsxOntapVolumeConfig) FsxOntapVolume {
 	_init_.Initialize()
 
@@ -8414,7 +12490,7 @@ func NewFsxOntapVolume(scope constructs.Construct, id *string, config *FsxOntapV
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html aws_fsx_ontap_volume} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume aws_fsx_ontap_volume} Resource.
 func NewFsxOntapVolume_Override(f FsxOntapVolume, scope constructs.Construct, id *string, config *FsxOntapVolumeConfig) {
 	_init_.Initialize()
 
@@ -8425,7 +12501,7 @@ func NewFsxOntapVolume_Override(f FsxOntapVolume, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_FsxOntapVolume) SetCount(val interface{}) {
+func (j *jsiiProxy_FsxOntapVolume) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8505,7 +12581,7 @@ func (j *jsiiProxy_FsxOntapVolume) SetStorageVirtualMachineId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_FsxOntapVolume) SetTags(val interface{}) {
+func (j *jsiiProxy_FsxOntapVolume) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8513,7 +12589,7 @@ func (j *jsiiProxy_FsxOntapVolume) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxOntapVolume) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_FsxOntapVolume) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8569,12 +12645,40 @@ func (f *jsiiProxy_FsxOntapVolume) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapVolume) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8611,12 +12715,54 @@ func (f *jsiiProxy_FsxOntapVolume) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapVolume) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolume) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8781,46 +12927,46 @@ func (f *jsiiProxy_FsxOntapVolume) ToTerraform() interface{} {
 // AWS File System FSx.
 type FsxOntapVolumeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#junction_path FsxOntapVolume#junction_path}.
-	JunctionPath *string `json:"junctionPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#name FsxOntapVolume#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#size_in_megabytes FsxOntapVolume#size_in_megabytes}.
-	SizeInMegabytes *float64 `json:"sizeInMegabytes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#storage_efficiency_enabled FsxOntapVolume#storage_efficiency_enabled}.
-	StorageEfficiencyEnabled interface{} `json:"storageEfficiencyEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#storage_virtual_machine_id FsxOntapVolume#storage_virtual_machine_id}.
-	StorageVirtualMachineId *string `json:"storageVirtualMachineId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#security_style FsxOntapVolume#security_style}.
-	SecurityStyle *string `json:"securityStyle"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#tags FsxOntapVolume#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#tags_all FsxOntapVolume#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#junction_path FsxOntapVolume#junction_path}.
+	JunctionPath *string `json:"junctionPath" yaml:"junctionPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#name FsxOntapVolume#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#size_in_megabytes FsxOntapVolume#size_in_megabytes}.
+	SizeInMegabytes *float64 `json:"sizeInMegabytes" yaml:"sizeInMegabytes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#storage_efficiency_enabled FsxOntapVolume#storage_efficiency_enabled}.
+	StorageEfficiencyEnabled interface{} `json:"storageEfficiencyEnabled" yaml:"storageEfficiencyEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#storage_virtual_machine_id FsxOntapVolume#storage_virtual_machine_id}.
+	StorageVirtualMachineId *string `json:"storageVirtualMachineId" yaml:"storageVirtualMachineId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#security_style FsxOntapVolume#security_style}.
+	SecurityStyle *string `json:"securityStyle" yaml:"securityStyle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#tags FsxOntapVolume#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#tags_all FsxOntapVolume#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// tiering_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#tiering_policy FsxOntapVolume#tiering_policy}
-	TieringPolicy *FsxOntapVolumeTieringPolicy `json:"tieringPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#tiering_policy FsxOntapVolume#tiering_policy}
+	TieringPolicy *FsxOntapVolumeTieringPolicy `json:"tieringPolicy" yaml:"tieringPolicy"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#timeouts FsxOntapVolume#timeouts}
-	Timeouts *FsxOntapVolumeTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#volume_type FsxOntapVolume#volume_type}.
-	VolumeType *string `json:"volumeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#timeouts FsxOntapVolume#timeouts}
+	Timeouts *FsxOntapVolumeTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#volume_type FsxOntapVolume#volume_type}.
+	VolumeType *string `json:"volumeType" yaml:"volumeType"`
 }
 
 type FsxOntapVolumeTieringPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#cooling_period FsxOntapVolume#cooling_period}.
-	CoolingPeriod *float64 `json:"coolingPeriod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#name FsxOntapVolume#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#cooling_period FsxOntapVolume#cooling_period}.
+	CoolingPeriod *float64 `json:"coolingPeriod" yaml:"coolingPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#name FsxOntapVolume#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type FsxOntapVolumeTieringPolicyOutputReference interface {
@@ -8837,12 +12983,17 @@ type FsxOntapVolumeTieringPolicyOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCoolingPeriod()
@@ -8924,8 +13075,8 @@ func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8934,7 +13085,7 @@ func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) TerraformResource
 	return returns
 }
 
-func NewFsxOntapVolumeTieringPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapVolumeTieringPolicyOutputReference {
+func NewFsxOntapVolumeTieringPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOntapVolumeTieringPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference{}
@@ -8948,7 +13099,7 @@ func NewFsxOntapVolumeTieringPolicyOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewFsxOntapVolumeTieringPolicyOutputReference_Override(f FsxOntapVolumeTieringPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxOntapVolumeTieringPolicyOutputReference_Override(f FsxOntapVolumeTieringPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8998,7 +13149,7 @@ func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9007,12 +13158,40 @@ func (j *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9049,12 +13228,54 @@ func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9107,12 +13328,12 @@ func (f *jsiiProxy_FsxOntapVolumeTieringPolicyOutputReference) ResetName() {
 }
 
 type FsxOntapVolumeTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#create FsxOntapVolume#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#delete FsxOntapVolume#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume.html#update FsxOntapVolume#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#create FsxOntapVolume#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#delete FsxOntapVolume#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_ontap_volume#update FsxOntapVolume#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type FsxOntapVolumeTimeoutsOutputReference interface {
@@ -9129,15 +13350,20 @@ type FsxOntapVolumeTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -9220,8 +13446,8 @@ func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9250,7 +13476,7 @@ func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) UpdateInput() *string 
 	return returns
 }
 
-func NewFsxOntapVolumeTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxOntapVolumeTimeoutsOutputReference {
+func NewFsxOntapVolumeTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOntapVolumeTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxOntapVolumeTimeoutsOutputReference{}
@@ -9264,7 +13490,7 @@ func NewFsxOntapVolumeTimeoutsOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewFsxOntapVolumeTimeoutsOutputReference_Override(f FsxOntapVolumeTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxOntapVolumeTimeoutsOutputReference_Override(f FsxOntapVolumeTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9314,7 +13540,7 @@ func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9331,12 +13557,40 @@ func (j *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) SetUpdate(val *string)
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9373,12 +13627,54 @@ func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9438,7 +13734,6277 @@ func (f *jsiiProxy_FsxOntapVolumeTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html aws_fsx_windows_file_system}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system aws_fsx_openzfs_file_system}.
+type FsxOpenzfsFileSystem interface {
+	cdktf.TerraformResource
+	Arn() *string
+	AutomaticBackupRetentionDays() *float64
+	SetAutomaticBackupRetentionDays(val *float64)
+	AutomaticBackupRetentionDaysInput() *float64
+	BackupId() *string
+	SetBackupId(val *string)
+	BackupIdInput() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	CopyTagsToBackups() interface{}
+	SetCopyTagsToBackups(val interface{})
+	CopyTagsToBackupsInput() interface{}
+	CopyTagsToVolumes() interface{}
+	SetCopyTagsToVolumes(val interface{})
+	CopyTagsToVolumesInput() interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DailyAutomaticBackupStartTime() *string
+	SetDailyAutomaticBackupStartTime(val *string)
+	DailyAutomaticBackupStartTimeInput() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	DeploymentType() *string
+	SetDeploymentType(val *string)
+	DeploymentTypeInput() *string
+	DiskIopsConfiguration() FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference
+	DiskIopsConfigurationInput() *FsxOpenzfsFileSystemDiskIopsConfiguration
+	DnsName() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	KmsKeyId() *string
+	SetKmsKeyId(val *string)
+	KmsKeyIdInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	NetworkInterfaceIds() *[]*string
+	Node() constructs.Node
+	OwnerId() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RootVolumeConfiguration() FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference
+	RootVolumeConfigurationInput() *FsxOpenzfsFileSystemRootVolumeConfiguration
+	RootVolumeId() *string
+	SecurityGroupIds() *[]*string
+	SetSecurityGroupIds(val *[]*string)
+	SecurityGroupIdsInput() *[]*string
+	StorageCapacity() *float64
+	SetStorageCapacity(val *float64)
+	StorageCapacityInput() *float64
+	StorageType() *string
+	SetStorageType(val *string)
+	StorageTypeInput() *string
+	SubnetIds() *[]*string
+	SetSubnetIds(val *[]*string)
+	SubnetIdsInput() *[]*string
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	ThroughputCapacity() *float64
+	SetThroughputCapacity(val *float64)
+	ThroughputCapacityInput() *float64
+	Timeouts() FsxOpenzfsFileSystemTimeoutsOutputReference
+	TimeoutsInput() *FsxOpenzfsFileSystemTimeouts
+	VpcId() *string
+	WeeklyMaintenanceStartTime() *string
+	SetWeeklyMaintenanceStartTime(val *string)
+	WeeklyMaintenanceStartTimeInput() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutDiskIopsConfiguration(value *FsxOpenzfsFileSystemDiskIopsConfiguration)
+	PutRootVolumeConfiguration(value *FsxOpenzfsFileSystemRootVolumeConfiguration)
+	PutTimeouts(value *FsxOpenzfsFileSystemTimeouts)
+	ResetAutomaticBackupRetentionDays()
+	ResetBackupId()
+	ResetCopyTagsToBackups()
+	ResetCopyTagsToVolumes()
+	ResetDailyAutomaticBackupStartTime()
+	ResetDiskIopsConfiguration()
+	ResetKmsKeyId()
+	ResetOverrideLogicalId()
+	ResetRootVolumeConfiguration()
+	ResetSecurityGroupIds()
+	ResetStorageCapacity()
+	ResetStorageType()
+	ResetTags()
+	ResetTagsAll()
+	ResetTimeouts()
+	ResetWeeklyMaintenanceStartTime()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for FsxOpenzfsFileSystem
+type jsiiProxy_FsxOpenzfsFileSystem struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) AutomaticBackupRetentionDays() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"automaticBackupRetentionDays",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) AutomaticBackupRetentionDaysInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"automaticBackupRetentionDaysInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) BackupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) BackupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backupIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) CopyTagsToBackups() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToBackups",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) CopyTagsToBackupsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToBackupsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) CopyTagsToVolumes() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToVolumes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) CopyTagsToVolumesInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToVolumesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DailyAutomaticBackupStartTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dailyAutomaticBackupStartTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DailyAutomaticBackupStartTimeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dailyAutomaticBackupStartTimeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DeploymentType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deploymentType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DeploymentTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deploymentTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DiskIopsConfiguration() FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference {
+	var returns FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"diskIopsConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DiskIopsConfigurationInput() *FsxOpenzfsFileSystemDiskIopsConfiguration {
+	var returns *FsxOpenzfsFileSystemDiskIopsConfiguration
+	_jsii_.Get(
+		j,
+		"diskIopsConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) DnsName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dnsName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) KmsKeyId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kmsKeyId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) KmsKeyIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kmsKeyIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) NetworkInterfaceIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"networkInterfaceIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) OwnerId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ownerId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) RootVolumeConfiguration() FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference {
+	var returns FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"rootVolumeConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) RootVolumeConfigurationInput() *FsxOpenzfsFileSystemRootVolumeConfiguration {
+	var returns *FsxOpenzfsFileSystemRootVolumeConfiguration
+	_jsii_.Get(
+		j,
+		"rootVolumeConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) RootVolumeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rootVolumeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SecurityGroupIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"securityGroupIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SecurityGroupIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"securityGroupIdsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) StorageCapacity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"storageCapacity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) StorageCapacityInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"storageCapacityInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) StorageType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) StorageTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SubnetIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subnetIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SubnetIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subnetIdsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) ThroughputCapacity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"throughputCapacity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) ThroughputCapacityInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"throughputCapacityInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) Timeouts() FsxOpenzfsFileSystemTimeoutsOutputReference {
+	var returns FsxOpenzfsFileSystemTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) TimeoutsInput() *FsxOpenzfsFileSystemTimeouts {
+	var returns *FsxOpenzfsFileSystemTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) VpcId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"vpcId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) WeeklyMaintenanceStartTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"weeklyMaintenanceStartTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) WeeklyMaintenanceStartTimeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"weeklyMaintenanceStartTimeInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system aws_fsx_openzfs_file_system} Resource.
+func NewFsxOpenzfsFileSystem(scope constructs.Construct, id *string, config *FsxOpenzfsFileSystemConfig) FsxOpenzfsFileSystem {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsFileSystem{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystem",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system aws_fsx_openzfs_file_system} Resource.
+func NewFsxOpenzfsFileSystem_Override(f FsxOpenzfsFileSystem, scope constructs.Construct, id *string, config *FsxOpenzfsFileSystemConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystem",
+		[]interface{}{scope, id, config},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetAutomaticBackupRetentionDays(val *float64) {
+	_jsii_.Set(
+		j,
+		"automaticBackupRetentionDays",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetBackupId(val *string) {
+	_jsii_.Set(
+		j,
+		"backupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetCopyTagsToBackups(val interface{}) {
+	_jsii_.Set(
+		j,
+		"copyTagsToBackups",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetCopyTagsToVolumes(val interface{}) {
+	_jsii_.Set(
+		j,
+		"copyTagsToVolumes",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetDailyAutomaticBackupStartTime(val *string) {
+	_jsii_.Set(
+		j,
+		"dailyAutomaticBackupStartTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetDeploymentType(val *string) {
+	_jsii_.Set(
+		j,
+		"deploymentType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetKmsKeyId(val *string) {
+	_jsii_.Set(
+		j,
+		"kmsKeyId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetSecurityGroupIds(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"securityGroupIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetStorageCapacity(val *float64) {
+	_jsii_.Set(
+		j,
+		"storageCapacity",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetStorageType(val *string) {
+	_jsii_.Set(
+		j,
+		"storageType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetSubnetIds(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"subnetIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetThroughputCapacity(val *float64) {
+	_jsii_.Set(
+		j,
+		"throughputCapacity",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystem) SetWeeklyMaintenanceStartTime(val *string) {
+	_jsii_.Set(
+		j,
+		"weeklyMaintenanceStartTime",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func FsxOpenzfsFileSystem_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystem",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func FsxOpenzfsFileSystem_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystem",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		f,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		f,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) PutDiskIopsConfiguration(value *FsxOpenzfsFileSystemDiskIopsConfiguration) {
+	_jsii_.InvokeVoid(
+		f,
+		"putDiskIopsConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) PutRootVolumeConfiguration(value *FsxOpenzfsFileSystemRootVolumeConfiguration) {
+	_jsii_.InvokeVoid(
+		f,
+		"putRootVolumeConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) PutTimeouts(value *FsxOpenzfsFileSystemTimeouts) {
+	_jsii_.InvokeVoid(
+		f,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetAutomaticBackupRetentionDays() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetAutomaticBackupRetentionDays",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetBackupId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetBackupId",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetCopyTagsToBackups() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCopyTagsToBackups",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetCopyTagsToVolumes() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCopyTagsToVolumes",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetDailyAutomaticBackupStartTime() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDailyAutomaticBackupStartTime",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetDiskIopsConfiguration() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDiskIopsConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetKmsKeyId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetKmsKeyId",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetRootVolumeConfiguration() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetRootVolumeConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetSecurityGroupIds() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetSecurityGroupIds",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetStorageCapacity() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetStorageCapacity",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetStorageType() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetStorageType",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetTags() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ResetWeeklyMaintenanceStartTime() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetWeeklyMaintenanceStartTime",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystem) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystem) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS File System FSx.
+type FsxOpenzfsFileSystemConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#deployment_type FsxOpenzfsFileSystem#deployment_type}.
+	DeploymentType *string `json:"deploymentType" yaml:"deploymentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#subnet_ids FsxOpenzfsFileSystem#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#throughput_capacity FsxOpenzfsFileSystem#throughput_capacity}.
+	ThroughputCapacity *float64 `json:"throughputCapacity" yaml:"throughputCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#automatic_backup_retention_days FsxOpenzfsFileSystem#automatic_backup_retention_days}.
+	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays" yaml:"automaticBackupRetentionDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#backup_id FsxOpenzfsFileSystem#backup_id}.
+	BackupId *string `json:"backupId" yaml:"backupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#copy_tags_to_backups FsxOpenzfsFileSystem#copy_tags_to_backups}.
+	CopyTagsToBackups interface{} `json:"copyTagsToBackups" yaml:"copyTagsToBackups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#copy_tags_to_volumes FsxOpenzfsFileSystem#copy_tags_to_volumes}.
+	CopyTagsToVolumes interface{} `json:"copyTagsToVolumes" yaml:"copyTagsToVolumes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#daily_automatic_backup_start_time FsxOpenzfsFileSystem#daily_automatic_backup_start_time}.
+	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime" yaml:"dailyAutomaticBackupStartTime"`
+	// disk_iops_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#disk_iops_configuration FsxOpenzfsFileSystem#disk_iops_configuration}
+	DiskIopsConfiguration *FsxOpenzfsFileSystemDiskIopsConfiguration `json:"diskIopsConfiguration" yaml:"diskIopsConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#kms_key_id FsxOpenzfsFileSystem#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// root_volume_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#root_volume_configuration FsxOpenzfsFileSystem#root_volume_configuration}
+	RootVolumeConfiguration *FsxOpenzfsFileSystemRootVolumeConfiguration `json:"rootVolumeConfiguration" yaml:"rootVolumeConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#security_group_ids FsxOpenzfsFileSystem#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#storage_capacity FsxOpenzfsFileSystem#storage_capacity}.
+	StorageCapacity *float64 `json:"storageCapacity" yaml:"storageCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#storage_type FsxOpenzfsFileSystem#storage_type}.
+	StorageType *string `json:"storageType" yaml:"storageType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#tags FsxOpenzfsFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#tags_all FsxOpenzfsFileSystem#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#timeouts FsxOpenzfsFileSystem#timeouts}
+	Timeouts *FsxOpenzfsFileSystemTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#weekly_maintenance_start_time FsxOpenzfsFileSystem#weekly_maintenance_start_time}.
+	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime" yaml:"weeklyMaintenanceStartTime"`
+}
+
+type FsxOpenzfsFileSystemDiskIopsConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#iops FsxOpenzfsFileSystem#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#mode FsxOpenzfsFileSystem#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
+}
+
+type FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *FsxOpenzfsFileSystemDiskIopsConfiguration
+	SetInternalValue(val *FsxOpenzfsFileSystemDiskIopsConfiguration)
+	Iops() *float64
+	SetIops(val *float64)
+	IopsInput() *float64
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Mode() *string
+	SetMode(val *string)
+	ModeInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetIops()
+	ResetMode()
+}
+
+// The jsii proxy struct for FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference
+type jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) InternalValue() *FsxOpenzfsFileSystemDiskIopsConfiguration {
+	var returns *FsxOpenzfsFileSystemDiskIopsConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) Iops() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"iops",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) IopsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"iopsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) Mode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"mode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) ModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"modeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsFileSystemDiskIopsConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsFileSystemDiskIopsConfigurationOutputReference_Override(f FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) SetInternalValue(val *FsxOpenzfsFileSystemDiskIopsConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) SetIops(val *float64) {
+	_jsii_.Set(
+		j,
+		"iops",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) SetMode(val *string) {
+	_jsii_.Set(
+		j,
+		"mode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) ResetIops() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetIops",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemDiskIopsConfigurationOutputReference) ResetMode() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetMode",
+		nil, // no parameters
+	)
+}
+
+type FsxOpenzfsFileSystemRootVolumeConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#copy_tags_to_snapshots FsxOpenzfsFileSystem#copy_tags_to_snapshots}.
+	CopyTagsToSnapshots interface{} `json:"copyTagsToSnapshots" yaml:"copyTagsToSnapshots"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#data_compression_type FsxOpenzfsFileSystem#data_compression_type}.
+	DataCompressionType *string `json:"dataCompressionType" yaml:"dataCompressionType"`
+	// nfs_exports block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#nfs_exports FsxOpenzfsFileSystem#nfs_exports}
+	NfsExports *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports `json:"nfsExports" yaml:"nfsExports"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#read_only FsxOpenzfsFileSystem#read_only}.
+	ReadOnly interface{} `json:"readOnly" yaml:"readOnly"`
+	// user_and_group_quotas block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#user_and_group_quotas FsxOpenzfsFileSystem#user_and_group_quotas}
+	UserAndGroupQuotas interface{} `json:"userAndGroupQuotas" yaml:"userAndGroupQuotas"`
+}
+
+type FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports struct {
+	// client_configurations block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#client_configurations FsxOpenzfsFileSystem#client_configurations}
+	ClientConfigurations interface{} `json:"clientConfigurations" yaml:"clientConfigurations"`
+}
+
+type FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsClientConfigurations struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#clients FsxOpenzfsFileSystem#clients}.
+	Clients *string `json:"clients" yaml:"clients"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#options FsxOpenzfsFileSystem#options}.
+	Options *[]*string `json:"options" yaml:"options"`
+}
+
+type FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference interface {
+	cdktf.ComplexObject
+	ClientConfigurations() interface{}
+	SetClientConfigurations(val interface{})
+	ClientConfigurationsInput() interface{}
+	InternalValue() *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports
+	SetInternalValue(val *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference
+type jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) ClientConfigurations() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"clientConfigurations",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) ClientConfigurationsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"clientConfigurationsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) InternalValue() *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports {
+	var returns *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference_Override(f FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) SetClientConfigurations(val interface{}) {
+	_jsii_.Set(
+		j,
+		"clientConfigurations",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) SetInternalValue(val *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	CopyTagsToSnapshots() interface{}
+	SetCopyTagsToSnapshots(val interface{})
+	CopyTagsToSnapshotsInput() interface{}
+	DataCompressionType() *string
+	SetDataCompressionType(val *string)
+	DataCompressionTypeInput() *string
+	InternalValue() *FsxOpenzfsFileSystemRootVolumeConfiguration
+	SetInternalValue(val *FsxOpenzfsFileSystemRootVolumeConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	NfsExports() FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference
+	NfsExportsInput() *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports
+	ReadOnly() interface{}
+	SetReadOnly(val interface{})
+	ReadOnlyInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UserAndGroupQuotas() interface{}
+	SetUserAndGroupQuotas(val interface{})
+	UserAndGroupQuotasInput() interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutNfsExports(value *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports)
+	ResetCopyTagsToSnapshots()
+	ResetDataCompressionType()
+	ResetNfsExports()
+	ResetReadOnly()
+	ResetUserAndGroupQuotas()
+}
+
+// The jsii proxy struct for FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference
+type jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) CopyTagsToSnapshots() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToSnapshots",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) CopyTagsToSnapshotsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToSnapshotsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) DataCompressionType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataCompressionType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) DataCompressionTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataCompressionTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) InternalValue() *FsxOpenzfsFileSystemRootVolumeConfiguration {
+	var returns *FsxOpenzfsFileSystemRootVolumeConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) NfsExports() FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference {
+	var returns FsxOpenzfsFileSystemRootVolumeConfigurationNfsExportsOutputReference
+	_jsii_.Get(
+		j,
+		"nfsExports",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) NfsExportsInput() *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports {
+	var returns *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports
+	_jsii_.Get(
+		j,
+		"nfsExportsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) ReadOnly() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"readOnly",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) ReadOnlyInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"readOnlyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) UserAndGroupQuotas() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"userAndGroupQuotas",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) UserAndGroupQuotasInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"userAndGroupQuotasInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsFileSystemRootVolumeConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsFileSystemRootVolumeConfigurationOutputReference_Override(f FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetCopyTagsToSnapshots(val interface{}) {
+	_jsii_.Set(
+		j,
+		"copyTagsToSnapshots",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetDataCompressionType(val *string) {
+	_jsii_.Set(
+		j,
+		"dataCompressionType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetInternalValue(val *FsxOpenzfsFileSystemRootVolumeConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetReadOnly(val interface{}) {
+	_jsii_.Set(
+		j,
+		"readOnly",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) SetUserAndGroupQuotas(val interface{}) {
+	_jsii_.Set(
+		j,
+		"userAndGroupQuotas",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) PutNfsExports(value *FsxOpenzfsFileSystemRootVolumeConfigurationNfsExports) {
+	_jsii_.InvokeVoid(
+		f,
+		"putNfsExports",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) ResetCopyTagsToSnapshots() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCopyTagsToSnapshots",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) ResetDataCompressionType() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDataCompressionType",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) ResetNfsExports() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetNfsExports",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) ResetReadOnly() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetReadOnly",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemRootVolumeConfigurationOutputReference) ResetUserAndGroupQuotas() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUserAndGroupQuotas",
+		nil, // no parameters
+	)
+}
+
+type FsxOpenzfsFileSystemRootVolumeConfigurationUserAndGroupQuotas struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#id FsxOpenzfsFileSystem#id}.
+	Id *float64 `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#storage_capacity_quota_gib FsxOpenzfsFileSystem#storage_capacity_quota_gib}.
+	StorageCapacityQuotaGib *float64 `json:"storageCapacityQuotaGib" yaml:"storageCapacityQuotaGib"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#type FsxOpenzfsFileSystem#type}.
+	Type *string `json:"type" yaml:"type"`
+}
+
+type FsxOpenzfsFileSystemTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#create FsxOpenzfsFileSystem#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#delete FsxOpenzfsFileSystem#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_file_system#update FsxOpenzfsFileSystem#update}.
+	Update *string `json:"update" yaml:"update"`
+}
+
+type FsxOpenzfsFileSystemTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *FsxOpenzfsFileSystemTimeouts
+	SetInternalValue(val *FsxOpenzfsFileSystemTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for FsxOpenzfsFileSystemTimeoutsOutputReference
+type jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) InternalValue() *FsxOpenzfsFileSystemTimeouts {
+	var returns *FsxOpenzfsFileSystemTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsFileSystemTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsFileSystemTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsFileSystemTimeoutsOutputReference_Override(f FsxOpenzfsFileSystemTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsFileSystemTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) SetInternalValue(val *FsxOpenzfsFileSystemTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsFileSystemTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot aws_fsx_openzfs_snapshot}.
+type FsxOpenzfsSnapshot interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	CreationTime() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() FsxOpenzfsSnapshotTimeoutsOutputReference
+	TimeoutsInput() *FsxOpenzfsSnapshotTimeouts
+	VolumeId() *string
+	SetVolumeId(val *string)
+	VolumeIdInput() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutTimeouts(value *FsxOpenzfsSnapshotTimeouts)
+	ResetOverrideLogicalId()
+	ResetTags()
+	ResetTagsAll()
+	ResetTimeouts()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for FsxOpenzfsSnapshot
+type jsiiProxy_FsxOpenzfsSnapshot struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) CreationTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"creationTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) Timeouts() FsxOpenzfsSnapshotTimeoutsOutputReference {
+	var returns FsxOpenzfsSnapshotTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) TimeoutsInput() *FsxOpenzfsSnapshotTimeouts {
+	var returns *FsxOpenzfsSnapshotTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) VolumeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) VolumeIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeIdInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot aws_fsx_openzfs_snapshot} Resource.
+func NewFsxOpenzfsSnapshot(scope constructs.Construct, id *string, config *FsxOpenzfsSnapshotConfig) FsxOpenzfsSnapshot {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsSnapshot{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsSnapshot",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot aws_fsx_openzfs_snapshot} Resource.
+func NewFsxOpenzfsSnapshot_Override(f FsxOpenzfsSnapshot, scope constructs.Construct, id *string, config *FsxOpenzfsSnapshotConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsSnapshot",
+		[]interface{}{scope, id, config},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshot) SetVolumeId(val *string) {
+	_jsii_.Set(
+		j,
+		"volumeId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func FsxOpenzfsSnapshot_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.fsx.FsxOpenzfsSnapshot",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func FsxOpenzfsSnapshot_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.fsx.FsxOpenzfsSnapshot",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		f,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		f,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshot) PutTimeouts(value *FsxOpenzfsSnapshotTimeouts) {
+	_jsii_.InvokeVoid(
+		f,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshot) ResetTags() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshot) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshot) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshot) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshot) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS File System FSx.
+type FsxOpenzfsSnapshotConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#name FsxOpenzfsSnapshot#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#volume_id FsxOpenzfsSnapshot#volume_id}.
+	VolumeId *string `json:"volumeId" yaml:"volumeId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#tags FsxOpenzfsSnapshot#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#tags_all FsxOpenzfsSnapshot#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#timeouts FsxOpenzfsSnapshot#timeouts}
+	Timeouts *FsxOpenzfsSnapshotTimeouts `json:"timeouts" yaml:"timeouts"`
+}
+
+type FsxOpenzfsSnapshotTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#create FsxOpenzfsSnapshot#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#delete FsxOpenzfsSnapshot#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#read FsxOpenzfsSnapshot#read}.
+	Read *string `json:"read" yaml:"read"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_snapshot#update FsxOpenzfsSnapshot#update}.
+	Update *string `json:"update" yaml:"update"`
+}
+
+type FsxOpenzfsSnapshotTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *FsxOpenzfsSnapshotTimeouts
+	SetInternalValue(val *FsxOpenzfsSnapshotTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	Read() *string
+	SetRead(val *string)
+	ReadInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+	ResetRead()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for FsxOpenzfsSnapshotTimeoutsOutputReference
+type jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) InternalValue() *FsxOpenzfsSnapshotTimeouts {
+	var returns *FsxOpenzfsSnapshotTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) Read() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"read",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) ReadInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"readInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsSnapshotTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsSnapshotTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsSnapshotTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsSnapshotTimeoutsOutputReference_Override(f FsxOpenzfsSnapshotTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsSnapshotTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetInternalValue(val *FsxOpenzfsSnapshotTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetRead(val *string) {
+	_jsii_.Set(
+		j,
+		"read",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) ResetRead() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetRead",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsSnapshotTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume aws_fsx_openzfs_volume}.
+type FsxOpenzfsVolume interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	CopyTagsToSnapshots() interface{}
+	SetCopyTagsToSnapshots(val interface{})
+	CopyTagsToSnapshotsInput() interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DataCompressionType() *string
+	SetDataCompressionType(val *string)
+	DataCompressionTypeInput() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
+	NfsExports() FsxOpenzfsVolumeNfsExportsOutputReference
+	NfsExportsInput() *FsxOpenzfsVolumeNfsExports
+	Node() constructs.Node
+	OriginSnapshot() FsxOpenzfsVolumeOriginSnapshotOutputReference
+	OriginSnapshotInput() *FsxOpenzfsVolumeOriginSnapshot
+	ParentVolumeId() *string
+	SetParentVolumeId(val *string)
+	ParentVolumeIdInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ReadOnly() interface{}
+	SetReadOnly(val interface{})
+	ReadOnlyInput() interface{}
+	StorageCapacityQuotaGib() *float64
+	SetStorageCapacityQuotaGib(val *float64)
+	StorageCapacityQuotaGibInput() *float64
+	StorageCapacityReservationGib() *float64
+	SetStorageCapacityReservationGib(val *float64)
+	StorageCapacityReservationGibInput() *float64
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Timeouts() FsxOpenzfsVolumeTimeoutsOutputReference
+	TimeoutsInput() *FsxOpenzfsVolumeTimeouts
+	UserAndGroupQuotas() interface{}
+	SetUserAndGroupQuotas(val interface{})
+	UserAndGroupQuotasInput() interface{}
+	VolumeType() *string
+	SetVolumeType(val *string)
+	VolumeTypeInput() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutNfsExports(value *FsxOpenzfsVolumeNfsExports)
+	PutOriginSnapshot(value *FsxOpenzfsVolumeOriginSnapshot)
+	PutTimeouts(value *FsxOpenzfsVolumeTimeouts)
+	ResetCopyTagsToSnapshots()
+	ResetDataCompressionType()
+	ResetNfsExports()
+	ResetOriginSnapshot()
+	ResetOverrideLogicalId()
+	ResetReadOnly()
+	ResetStorageCapacityQuotaGib()
+	ResetStorageCapacityReservationGib()
+	ResetTags()
+	ResetTagsAll()
+	ResetTimeouts()
+	ResetUserAndGroupQuotas()
+	ResetVolumeType()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for FsxOpenzfsVolume
+type jsiiProxy_FsxOpenzfsVolume struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) CopyTagsToSnapshots() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToSnapshots",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) CopyTagsToSnapshotsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyTagsToSnapshotsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) DataCompressionType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataCompressionType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) DataCompressionTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataCompressionTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) NfsExports() FsxOpenzfsVolumeNfsExportsOutputReference {
+	var returns FsxOpenzfsVolumeNfsExportsOutputReference
+	_jsii_.Get(
+		j,
+		"nfsExports",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) NfsExportsInput() *FsxOpenzfsVolumeNfsExports {
+	var returns *FsxOpenzfsVolumeNfsExports
+	_jsii_.Get(
+		j,
+		"nfsExportsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) OriginSnapshot() FsxOpenzfsVolumeOriginSnapshotOutputReference {
+	var returns FsxOpenzfsVolumeOriginSnapshotOutputReference
+	_jsii_.Get(
+		j,
+		"originSnapshot",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) OriginSnapshotInput() *FsxOpenzfsVolumeOriginSnapshot {
+	var returns *FsxOpenzfsVolumeOriginSnapshot
+	_jsii_.Get(
+		j,
+		"originSnapshotInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) ParentVolumeId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"parentVolumeId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) ParentVolumeIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"parentVolumeIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) ReadOnly() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"readOnly",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) ReadOnlyInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"readOnlyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) StorageCapacityQuotaGib() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"storageCapacityQuotaGib",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) StorageCapacityQuotaGibInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"storageCapacityQuotaGibInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) StorageCapacityReservationGib() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"storageCapacityReservationGib",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) StorageCapacityReservationGibInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"storageCapacityReservationGibInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) Timeouts() FsxOpenzfsVolumeTimeoutsOutputReference {
+	var returns FsxOpenzfsVolumeTimeoutsOutputReference
+	_jsii_.Get(
+		j,
+		"timeouts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) TimeoutsInput() *FsxOpenzfsVolumeTimeouts {
+	var returns *FsxOpenzfsVolumeTimeouts
+	_jsii_.Get(
+		j,
+		"timeoutsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) UserAndGroupQuotas() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"userAndGroupQuotas",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) UserAndGroupQuotasInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"userAndGroupQuotasInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) VolumeType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) VolumeTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"volumeTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume aws_fsx_openzfs_volume} Resource.
+func NewFsxOpenzfsVolume(scope constructs.Construct, id *string, config *FsxOpenzfsVolumeConfig) FsxOpenzfsVolume {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsVolume{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolume",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume aws_fsx_openzfs_volume} Resource.
+func NewFsxOpenzfsVolume_Override(f FsxOpenzfsVolume, scope constructs.Construct, id *string, config *FsxOpenzfsVolumeConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolume",
+		[]interface{}{scope, id, config},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetCopyTagsToSnapshots(val interface{}) {
+	_jsii_.Set(
+		j,
+		"copyTagsToSnapshots",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetDataCompressionType(val *string) {
+	_jsii_.Set(
+		j,
+		"dataCompressionType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetName(val *string) {
+	_jsii_.Set(
+		j,
+		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetParentVolumeId(val *string) {
+	_jsii_.Set(
+		j,
+		"parentVolumeId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetReadOnly(val interface{}) {
+	_jsii_.Set(
+		j,
+		"readOnly",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetStorageCapacityQuotaGib(val *float64) {
+	_jsii_.Set(
+		j,
+		"storageCapacityQuotaGib",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetStorageCapacityReservationGib(val *float64) {
+	_jsii_.Set(
+		j,
+		"storageCapacityReservationGib",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetUserAndGroupQuotas(val interface{}) {
+	_jsii_.Set(
+		j,
+		"userAndGroupQuotas",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolume) SetVolumeType(val *string) {
+	_jsii_.Set(
+		j,
+		"volumeType",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func FsxOpenzfsVolume_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.fsx.FsxOpenzfsVolume",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func FsxOpenzfsVolume_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.fsx.FsxOpenzfsVolume",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		f,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		f,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) PutNfsExports(value *FsxOpenzfsVolumeNfsExports) {
+	_jsii_.InvokeVoid(
+		f,
+		"putNfsExports",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) PutOriginSnapshot(value *FsxOpenzfsVolumeOriginSnapshot) {
+	_jsii_.InvokeVoid(
+		f,
+		"putOriginSnapshot",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) PutTimeouts(value *FsxOpenzfsVolumeTimeouts) {
+	_jsii_.InvokeVoid(
+		f,
+		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetCopyTagsToSnapshots() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCopyTagsToSnapshots",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetDataCompressionType() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDataCompressionType",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetNfsExports() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetNfsExports",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetOriginSnapshot() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOriginSnapshot",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetReadOnly() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetReadOnly",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetStorageCapacityQuotaGib() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetStorageCapacityQuotaGib",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetStorageCapacityReservationGib() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetStorageCapacityReservationGib",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetTags() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetTimeouts() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetUserAndGroupQuotas() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUserAndGroupQuotas",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) ResetVolumeType() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetVolumeType",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolume) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (f *jsiiProxy_FsxOpenzfsVolume) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolume) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		f,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS File System FSx.
+type FsxOpenzfsVolumeConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#name FsxOpenzfsVolume#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#parent_volume_id FsxOpenzfsVolume#parent_volume_id}.
+	ParentVolumeId *string `json:"parentVolumeId" yaml:"parentVolumeId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#copy_tags_to_snapshots FsxOpenzfsVolume#copy_tags_to_snapshots}.
+	CopyTagsToSnapshots interface{} `json:"copyTagsToSnapshots" yaml:"copyTagsToSnapshots"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#data_compression_type FsxOpenzfsVolume#data_compression_type}.
+	DataCompressionType *string `json:"dataCompressionType" yaml:"dataCompressionType"`
+	// nfs_exports block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#nfs_exports FsxOpenzfsVolume#nfs_exports}
+	NfsExports *FsxOpenzfsVolumeNfsExports `json:"nfsExports" yaml:"nfsExports"`
+	// origin_snapshot block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#origin_snapshot FsxOpenzfsVolume#origin_snapshot}
+	OriginSnapshot *FsxOpenzfsVolumeOriginSnapshot `json:"originSnapshot" yaml:"originSnapshot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#read_only FsxOpenzfsVolume#read_only}.
+	ReadOnly interface{} `json:"readOnly" yaml:"readOnly"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#storage_capacity_quota_gib FsxOpenzfsVolume#storage_capacity_quota_gib}.
+	StorageCapacityQuotaGib *float64 `json:"storageCapacityQuotaGib" yaml:"storageCapacityQuotaGib"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#storage_capacity_reservation_gib FsxOpenzfsVolume#storage_capacity_reservation_gib}.
+	StorageCapacityReservationGib *float64 `json:"storageCapacityReservationGib" yaml:"storageCapacityReservationGib"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#tags FsxOpenzfsVolume#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#tags_all FsxOpenzfsVolume#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// timeouts block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#timeouts FsxOpenzfsVolume#timeouts}
+	Timeouts *FsxOpenzfsVolumeTimeouts `json:"timeouts" yaml:"timeouts"`
+	// user_and_group_quotas block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#user_and_group_quotas FsxOpenzfsVolume#user_and_group_quotas}
+	UserAndGroupQuotas interface{} `json:"userAndGroupQuotas" yaml:"userAndGroupQuotas"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#volume_type FsxOpenzfsVolume#volume_type}.
+	VolumeType *string `json:"volumeType" yaml:"volumeType"`
+}
+
+type FsxOpenzfsVolumeNfsExports struct {
+	// client_configurations block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#client_configurations FsxOpenzfsVolume#client_configurations}
+	ClientConfigurations interface{} `json:"clientConfigurations" yaml:"clientConfigurations"`
+}
+
+type FsxOpenzfsVolumeNfsExportsClientConfigurations struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#clients FsxOpenzfsVolume#clients}.
+	Clients *string `json:"clients" yaml:"clients"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#options FsxOpenzfsVolume#options}.
+	Options *[]*string `json:"options" yaml:"options"`
+}
+
+type FsxOpenzfsVolumeNfsExportsOutputReference interface {
+	cdktf.ComplexObject
+	ClientConfigurations() interface{}
+	SetClientConfigurations(val interface{})
+	ClientConfigurationsInput() interface{}
+	InternalValue() *FsxOpenzfsVolumeNfsExports
+	SetInternalValue(val *FsxOpenzfsVolumeNfsExports)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOpenzfsVolumeNfsExportsOutputReference
+type jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) ClientConfigurations() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"clientConfigurations",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) ClientConfigurationsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"clientConfigurationsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) InternalValue() *FsxOpenzfsVolumeNfsExports {
+	var returns *FsxOpenzfsVolumeNfsExports
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsVolumeNfsExportsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsVolumeNfsExportsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolumeNfsExportsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsVolumeNfsExportsOutputReference_Override(f FsxOpenzfsVolumeNfsExportsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolumeNfsExportsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) SetClientConfigurations(val interface{}) {
+	_jsii_.Set(
+		j,
+		"clientConfigurations",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) SetInternalValue(val *FsxOpenzfsVolumeNfsExports) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeNfsExportsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOpenzfsVolumeOriginSnapshot struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#copy_strategy FsxOpenzfsVolume#copy_strategy}.
+	CopyStrategy *string `json:"copyStrategy" yaml:"copyStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#snapshot_arn FsxOpenzfsVolume#snapshot_arn}.
+	SnapshotArn *string `json:"snapshotArn" yaml:"snapshotArn"`
+}
+
+type FsxOpenzfsVolumeOriginSnapshotOutputReference interface {
+	cdktf.ComplexObject
+	CopyStrategy() *string
+	SetCopyStrategy(val *string)
+	CopyStrategyInput() *string
+	InternalValue() *FsxOpenzfsVolumeOriginSnapshot
+	SetInternalValue(val *FsxOpenzfsVolumeOriginSnapshot)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	SnapshotArn() *string
+	SetSnapshotArn(val *string)
+	SnapshotArnInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for FsxOpenzfsVolumeOriginSnapshotOutputReference
+type jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) CopyStrategy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"copyStrategy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) CopyStrategyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"copyStrategyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) InternalValue() *FsxOpenzfsVolumeOriginSnapshot {
+	var returns *FsxOpenzfsVolumeOriginSnapshot
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SnapshotArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"snapshotArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SnapshotArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"snapshotArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsVolumeOriginSnapshotOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsVolumeOriginSnapshotOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolumeOriginSnapshotOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsVolumeOriginSnapshotOutputReference_Override(f FsxOpenzfsVolumeOriginSnapshotOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolumeOriginSnapshotOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SetCopyStrategy(val *string) {
+	_jsii_.Set(
+		j,
+		"copyStrategy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SetInternalValue(val *FsxOpenzfsVolumeOriginSnapshot) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SetSnapshotArn(val *string) {
+	_jsii_.Set(
+		j,
+		"snapshotArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeOriginSnapshotOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+type FsxOpenzfsVolumeTimeouts struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#create FsxOpenzfsVolume#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#delete FsxOpenzfsVolume#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#update FsxOpenzfsVolume#update}.
+	Update *string `json:"update" yaml:"update"`
+}
+
+type FsxOpenzfsVolumeTimeoutsOutputReference interface {
+	cdktf.ComplexObject
+	Create() *string
+	SetCreate(val *string)
+	CreateInput() *string
+	Delete() *string
+	SetDelete(val *string)
+	DeleteInput() *string
+	InternalValue() *FsxOpenzfsVolumeTimeouts
+	SetInternalValue(val *FsxOpenzfsVolumeTimeouts)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCreate()
+	ResetDelete()
+	ResetUpdate()
+}
+
+// The jsii proxy struct for FsxOpenzfsVolumeTimeoutsOutputReference
+type jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) Create() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"create",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) CreateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"createInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) Delete() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"delete",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) DeleteInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"deleteInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) InternalValue() *FsxOpenzfsVolumeTimeouts {
+	var returns *FsxOpenzfsVolumeTimeouts
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
+func NewFsxOpenzfsVolumeTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxOpenzfsVolumeTimeoutsOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolumeTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewFsxOpenzfsVolumeTimeoutsOutputReference_Override(f FsxOpenzfsVolumeTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.fsx.FsxOpenzfsVolumeTimeoutsOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		f,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) SetCreate(val *string) {
+	_jsii_.Set(
+		j,
+		"create",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) SetDelete(val *string) {
+	_jsii_.Set(
+		j,
+		"delete",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) SetInternalValue(val *FsxOpenzfsVolumeTimeouts) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) SetUpdate(val *string) {
+	_jsii_.Set(
+		j,
+		"update",
+		val,
+	)
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		f,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) ResetCreate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetCreate",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) ResetDelete() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetDelete",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FsxOpenzfsVolumeTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetUpdate",
+		nil, // no parameters
+	)
+}
+
+type FsxOpenzfsVolumeUserAndGroupQuotas struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#id FsxOpenzfsVolume#id}.
+	Id *float64 `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#storage_capacity_quota_gib FsxOpenzfsVolume#storage_capacity_quota_gib}.
+	StorageCapacityQuotaGib *float64 `json:"storageCapacityQuotaGib" yaml:"storageCapacityQuotaGib"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_openzfs_volume#type FsxOpenzfsVolume#type}.
+	Type *string `json:"type" yaml:"type"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system aws_fsx_windows_file_system}.
 type FsxWindowsFileSystem interface {
 	cdktf.TerraformResource
 	ActiveDirectoryId() *string
@@ -9461,8 +20027,8 @@ type FsxWindowsFileSystem interface {
 	CopyTagsToBackups() interface{}
 	SetCopyTagsToBackups(val interface{})
 	CopyTagsToBackupsInput() interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DailyAutomaticBackupStartTime() *string
 	SetDailyAutomaticBackupStartTime(val *string)
 	DailyAutomaticBackupStartTimeInput() *string
@@ -9508,12 +20074,12 @@ type FsxWindowsFileSystem interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -9527,10 +20093,15 @@ type FsxWindowsFileSystem interface {
 	SetWeeklyMaintenanceStartTime(val *string)
 	WeeklyMaintenanceStartTimeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAuditLogConfiguration(value *FsxWindowsFileSystemAuditLogConfiguration)
@@ -9717,8 +20288,8 @@ func (j *jsiiProxy_FsxWindowsFileSystem) CopyTagsToBackupsInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxWindowsFileSystem) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10057,8 +20628,8 @@ func (j *jsiiProxy_FsxWindowsFileSystem) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxWindowsFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10067,8 +20638,8 @@ func (j *jsiiProxy_FsxWindowsFileSystem) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxWindowsFileSystem) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10077,8 +20648,8 @@ func (j *jsiiProxy_FsxWindowsFileSystem) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxWindowsFileSystem) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10087,8 +20658,8 @@ func (j *jsiiProxy_FsxWindowsFileSystem) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FsxWindowsFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10197,7 +20768,7 @@ func (j *jsiiProxy_FsxWindowsFileSystem) WeeklyMaintenanceStartTimeInput() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html aws_fsx_windows_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system aws_fsx_windows_file_system} Resource.
 func NewFsxWindowsFileSystem(scope constructs.Construct, id *string, config *FsxWindowsFileSystemConfig) FsxWindowsFileSystem {
 	_init_.Initialize()
 
@@ -10212,7 +20783,7 @@ func NewFsxWindowsFileSystem(scope constructs.Construct, id *string, config *Fsx
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html aws_fsx_windows_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system aws_fsx_windows_file_system} Resource.
 func NewFsxWindowsFileSystem_Override(f FsxWindowsFileSystem, scope constructs.Construct, id *string, config *FsxWindowsFileSystemConfig) {
 	_init_.Initialize()
 
@@ -10263,7 +20834,7 @@ func (j *jsiiProxy_FsxWindowsFileSystem) SetCopyTagsToBackups(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) SetCount(val interface{}) {
+func (j *jsiiProxy_FsxWindowsFileSystem) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10367,7 +20938,7 @@ func (j *jsiiProxy_FsxWindowsFileSystem) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) SetTags(val interface{}) {
+func (j *jsiiProxy_FsxWindowsFileSystem) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10375,7 +20946,7 @@ func (j *jsiiProxy_FsxWindowsFileSystem) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystem) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_FsxWindowsFileSystem) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10439,12 +21010,40 @@ func (f *jsiiProxy_FsxWindowsFileSystem) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxWindowsFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10481,12 +21080,54 @@ func (f *jsiiProxy_FsxWindowsFileSystem) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxWindowsFileSystem) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10761,12 +21402,12 @@ func (f *jsiiProxy_FsxWindowsFileSystem) ToTerraform() interface{} {
 }
 
 type FsxWindowsFileSystemAuditLogConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#audit_log_destination FsxWindowsFileSystem#audit_log_destination}.
-	AuditLogDestination *string `json:"auditLogDestination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#file_access_audit_log_level FsxWindowsFileSystem#file_access_audit_log_level}.
-	FileAccessAuditLogLevel *string `json:"fileAccessAuditLogLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#file_share_access_audit_log_level FsxWindowsFileSystem#file_share_access_audit_log_level}.
-	FileShareAccessAuditLogLevel *string `json:"fileShareAccessAuditLogLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#audit_log_destination FsxWindowsFileSystem#audit_log_destination}.
+	AuditLogDestination *string `json:"auditLogDestination" yaml:"auditLogDestination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#file_access_audit_log_level FsxWindowsFileSystem#file_access_audit_log_level}.
+	FileAccessAuditLogLevel *string `json:"fileAccessAuditLogLevel" yaml:"fileAccessAuditLogLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#file_share_access_audit_log_level FsxWindowsFileSystem#file_share_access_audit_log_level}.
+	FileShareAccessAuditLogLevel *string `json:"fileShareAccessAuditLogLevel" yaml:"fileShareAccessAuditLogLevel"`
 }
 
 type FsxWindowsFileSystemAuditLogConfigurationOutputReference interface {
@@ -10786,12 +21427,17 @@ type FsxWindowsFileSystemAuditLogConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuditLogDestination()
@@ -10894,8 +21540,8 @@ func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10904,7 +21550,7 @@ func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Ter
 	return returns
 }
 
-func NewFsxWindowsFileSystemAuditLogConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxWindowsFileSystemAuditLogConfigurationOutputReference {
+func NewFsxWindowsFileSystemAuditLogConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxWindowsFileSystemAuditLogConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference{}
@@ -10918,7 +21564,7 @@ func NewFsxWindowsFileSystemAuditLogConfigurationOutputReference(terraformResour
 	return &j
 }
 
-func NewFsxWindowsFileSystemAuditLogConfigurationOutputReference_Override(f FsxWindowsFileSystemAuditLogConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxWindowsFileSystemAuditLogConfigurationOutputReference_Override(f FsxWindowsFileSystemAuditLogConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10976,7 +21622,7 @@ func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10985,12 +21631,40 @@ func (j *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Set
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11027,12 +21701,54 @@ func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Get
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11095,76 +21811,76 @@ func (f *jsiiProxy_FsxWindowsFileSystemAuditLogConfigurationOutputReference) Res
 // AWS File System FSx.
 type FsxWindowsFileSystemConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#subnet_ids FsxWindowsFileSystem#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#throughput_capacity FsxWindowsFileSystem#throughput_capacity}.
-	ThroughputCapacity *float64 `json:"throughputCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#active_directory_id FsxWindowsFileSystem#active_directory_id}.
-	ActiveDirectoryId *string `json:"activeDirectoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#aliases FsxWindowsFileSystem#aliases}.
-	Aliases *[]*string `json:"aliases"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#subnet_ids FsxWindowsFileSystem#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#throughput_capacity FsxWindowsFileSystem#throughput_capacity}.
+	ThroughputCapacity *float64 `json:"throughputCapacity" yaml:"throughputCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#active_directory_id FsxWindowsFileSystem#active_directory_id}.
+	ActiveDirectoryId *string `json:"activeDirectoryId" yaml:"activeDirectoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#aliases FsxWindowsFileSystem#aliases}.
+	Aliases *[]*string `json:"aliases" yaml:"aliases"`
 	// audit_log_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#audit_log_configuration FsxWindowsFileSystem#audit_log_configuration}
-	AuditLogConfiguration *FsxWindowsFileSystemAuditLogConfiguration `json:"auditLogConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#automatic_backup_retention_days FsxWindowsFileSystem#automatic_backup_retention_days}.
-	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#backup_id FsxWindowsFileSystem#backup_id}.
-	BackupId *string `json:"backupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#copy_tags_to_backups FsxWindowsFileSystem#copy_tags_to_backups}.
-	CopyTagsToBackups interface{} `json:"copyTagsToBackups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#daily_automatic_backup_start_time FsxWindowsFileSystem#daily_automatic_backup_start_time}.
-	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#deployment_type FsxWindowsFileSystem#deployment_type}.
-	DeploymentType *string `json:"deploymentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#kms_key_id FsxWindowsFileSystem#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#preferred_subnet_id FsxWindowsFileSystem#preferred_subnet_id}.
-	PreferredSubnetId *string `json:"preferredSubnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#security_group_ids FsxWindowsFileSystem#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#audit_log_configuration FsxWindowsFileSystem#audit_log_configuration}
+	AuditLogConfiguration *FsxWindowsFileSystemAuditLogConfiguration `json:"auditLogConfiguration" yaml:"auditLogConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#automatic_backup_retention_days FsxWindowsFileSystem#automatic_backup_retention_days}.
+	AutomaticBackupRetentionDays *float64 `json:"automaticBackupRetentionDays" yaml:"automaticBackupRetentionDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#backup_id FsxWindowsFileSystem#backup_id}.
+	BackupId *string `json:"backupId" yaml:"backupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#copy_tags_to_backups FsxWindowsFileSystem#copy_tags_to_backups}.
+	CopyTagsToBackups interface{} `json:"copyTagsToBackups" yaml:"copyTagsToBackups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#daily_automatic_backup_start_time FsxWindowsFileSystem#daily_automatic_backup_start_time}.
+	DailyAutomaticBackupStartTime *string `json:"dailyAutomaticBackupStartTime" yaml:"dailyAutomaticBackupStartTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#deployment_type FsxWindowsFileSystem#deployment_type}.
+	DeploymentType *string `json:"deploymentType" yaml:"deploymentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#kms_key_id FsxWindowsFileSystem#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#preferred_subnet_id FsxWindowsFileSystem#preferred_subnet_id}.
+	PreferredSubnetId *string `json:"preferredSubnetId" yaml:"preferredSubnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#security_group_ids FsxWindowsFileSystem#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
 	// self_managed_active_directory block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#self_managed_active_directory FsxWindowsFileSystem#self_managed_active_directory}
-	SelfManagedActiveDirectory *FsxWindowsFileSystemSelfManagedActiveDirectory `json:"selfManagedActiveDirectory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#skip_final_backup FsxWindowsFileSystem#skip_final_backup}.
-	SkipFinalBackup interface{} `json:"skipFinalBackup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#storage_capacity FsxWindowsFileSystem#storage_capacity}.
-	StorageCapacity *float64 `json:"storageCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#storage_type FsxWindowsFileSystem#storage_type}.
-	StorageType *string `json:"storageType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#tags FsxWindowsFileSystem#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#tags_all FsxWindowsFileSystem#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#self_managed_active_directory FsxWindowsFileSystem#self_managed_active_directory}
+	SelfManagedActiveDirectory *FsxWindowsFileSystemSelfManagedActiveDirectory `json:"selfManagedActiveDirectory" yaml:"selfManagedActiveDirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#skip_final_backup FsxWindowsFileSystem#skip_final_backup}.
+	SkipFinalBackup interface{} `json:"skipFinalBackup" yaml:"skipFinalBackup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#storage_capacity FsxWindowsFileSystem#storage_capacity}.
+	StorageCapacity *float64 `json:"storageCapacity" yaml:"storageCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#storage_type FsxWindowsFileSystem#storage_type}.
+	StorageType *string `json:"storageType" yaml:"storageType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#tags FsxWindowsFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#tags_all FsxWindowsFileSystem#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#timeouts FsxWindowsFileSystem#timeouts}
-	Timeouts *FsxWindowsFileSystemTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#weekly_maintenance_start_time FsxWindowsFileSystem#weekly_maintenance_start_time}.
-	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#timeouts FsxWindowsFileSystem#timeouts}
+	Timeouts *FsxWindowsFileSystemTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#weekly_maintenance_start_time FsxWindowsFileSystem#weekly_maintenance_start_time}.
+	WeeklyMaintenanceStartTime *string `json:"weeklyMaintenanceStartTime" yaml:"weeklyMaintenanceStartTime"`
 }
 
 type FsxWindowsFileSystemSelfManagedActiveDirectory struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#dns_ips FsxWindowsFileSystem#dns_ips}.
-	DnsIps *[]*string `json:"dnsIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#domain_name FsxWindowsFileSystem#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#password FsxWindowsFileSystem#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#username FsxWindowsFileSystem#username}.
-	Username *string `json:"username"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#file_system_administrators_group FsxWindowsFileSystem#file_system_administrators_group}.
-	FileSystemAdministratorsGroup *string `json:"fileSystemAdministratorsGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#organizational_unit_distinguished_name FsxWindowsFileSystem#organizational_unit_distinguished_name}.
-	OrganizationalUnitDistinguishedName *string `json:"organizationalUnitDistinguishedName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#dns_ips FsxWindowsFileSystem#dns_ips}.
+	DnsIps *[]*string `json:"dnsIps" yaml:"dnsIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#domain_name FsxWindowsFileSystem#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#password FsxWindowsFileSystem#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#username FsxWindowsFileSystem#username}.
+	Username *string `json:"username" yaml:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#file_system_administrators_group FsxWindowsFileSystem#file_system_administrators_group}.
+	FileSystemAdministratorsGroup *string `json:"fileSystemAdministratorsGroup" yaml:"fileSystemAdministratorsGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#organizational_unit_distinguished_name FsxWindowsFileSystem#organizational_unit_distinguished_name}.
+	OrganizationalUnitDistinguishedName *string `json:"organizationalUnitDistinguishedName" yaml:"organizationalUnitDistinguishedName"`
 }
 
 type FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference interface {
@@ -11190,15 +21906,20 @@ type FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference interface {
 	PasswordInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Username() *string
 	SetUsername(val *string)
 	UsernameInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFileSystemAdministratorsGroup()
@@ -11340,8 +22061,8 @@ func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11370,7 +22091,7 @@ func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 	return returns
 }
 
-func NewFsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference {
+func NewFsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference{}
@@ -11384,7 +22105,7 @@ func NewFsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference(terraformR
 	return &j
 }
 
-func NewFsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference_Override(f FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference_Override(f FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11458,7 +22179,7 @@ func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 	)
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11475,12 +22196,40 @@ func (j *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11517,12 +22266,54 @@ func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11575,12 +22366,12 @@ func (f *jsiiProxy_FsxWindowsFileSystemSelfManagedActiveDirectoryOutputReference
 }
 
 type FsxWindowsFileSystemTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#create FsxWindowsFileSystem#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#delete FsxWindowsFileSystem#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system.html#update FsxWindowsFileSystem#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#create FsxWindowsFileSystem#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#delete FsxWindowsFileSystem#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fsx_windows_file_system#update FsxWindowsFileSystem#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type FsxWindowsFileSystemTimeoutsOutputReference interface {
@@ -11597,15 +22388,20 @@ type FsxWindowsFileSystemTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -11688,8 +22484,8 @@ func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11718,7 +22514,7 @@ func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) UpdateInput() *s
 	return returns
 }
 
-func NewFsxWindowsFileSystemTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FsxWindowsFileSystemTimeoutsOutputReference {
+func NewFsxWindowsFileSystemTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FsxWindowsFileSystemTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference{}
@@ -11732,7 +22528,7 @@ func NewFsxWindowsFileSystemTimeoutsOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewFsxWindowsFileSystemTimeoutsOutputReference_Override(f FsxWindowsFileSystemTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFsxWindowsFileSystemTimeoutsOutputReference_Override(f FsxWindowsFileSystemTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11782,7 +22578,7 @@ func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11799,12 +22595,40 @@ func (j *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) SetUpdate(val *s
 }
 
 // Experimental.
-func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11841,12 +22665,54 @@ func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FsxWindowsFileSystemTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

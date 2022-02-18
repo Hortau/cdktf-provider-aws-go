@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/servicediscovery/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace.html aws_service_discovery_dns_namespace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace aws_service_discovery_dns_namespace}.
 type DataAwsServiceDiscoveryDnsNamespace interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -40,10 +40,15 @@ type DataAwsServiceDiscoveryDnsNamespace interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -88,8 +93,8 @@ func (j *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -268,7 +273,7 @@ func (j *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace.html aws_service_discovery_dns_namespace} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace aws_service_discovery_dns_namespace} Data Source.
 func NewDataAwsServiceDiscoveryDnsNamespace(scope constructs.Construct, id *string, config *DataAwsServiceDiscoveryDnsNamespaceConfig) DataAwsServiceDiscoveryDnsNamespace {
 	_init_.Initialize()
 
@@ -283,7 +288,7 @@ func NewDataAwsServiceDiscoveryDnsNamespace(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace.html aws_service_discovery_dns_namespace} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace aws_service_discovery_dns_namespace} Data Source.
 func NewDataAwsServiceDiscoveryDnsNamespace_Override(d DataAwsServiceDiscoveryDnsNamespace, scope constructs.Construct, id *string, config *DataAwsServiceDiscoveryDnsNamespaceConfig) {
 	_init_.Initialize()
 
@@ -294,7 +299,7 @@ func NewDataAwsServiceDiscoveryDnsNamespace_Override(d DataAwsServiceDiscoveryDn
 	)
 }
 
-func (j *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -382,12 +387,40 @@ func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) AddOverride(path *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -424,12 +457,54 @@ func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -530,27 +605,27 @@ func (d *jsiiProxy_DataAwsServiceDiscoveryDnsNamespace) ToTerraform() interface{
 // AWS Service Discovery.
 type DataAwsServiceDiscoveryDnsNamespaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace.html#name DataAwsServiceDiscoveryDnsNamespace#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace.html#type DataAwsServiceDiscoveryDnsNamespace#type}.
-	Type *string `json:"type"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace#name DataAwsServiceDiscoveryDnsNamespace#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/service_discovery_dns_namespace#type DataAwsServiceDiscoveryDnsNamespace#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace.html aws_service_discovery_http_namespace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace aws_service_discovery_http_namespace}.
 type ServiceDiscoveryHttpNamespace interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -568,20 +643,25 @@ type ServiceDiscoveryHttpNamespace interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -629,8 +709,8 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -759,8 +839,8 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -769,8 +849,8 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -779,8 +859,8 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -789,8 +869,8 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -829,7 +909,7 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace.html aws_service_discovery_http_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace aws_service_discovery_http_namespace} Resource.
 func NewServiceDiscoveryHttpNamespace(scope constructs.Construct, id *string, config *ServiceDiscoveryHttpNamespaceConfig) ServiceDiscoveryHttpNamespace {
 	_init_.Initialize()
 
@@ -844,7 +924,7 @@ func NewServiceDiscoveryHttpNamespace(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace.html aws_service_discovery_http_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace aws_service_discovery_http_namespace} Resource.
 func NewServiceDiscoveryHttpNamespace_Override(s ServiceDiscoveryHttpNamespace, scope constructs.Construct, id *string, config *ServiceDiscoveryHttpNamespaceConfig) {
 	_init_.Initialize()
 
@@ -855,7 +935,7 @@ func NewServiceDiscoveryHttpNamespace_Override(s ServiceDiscoveryHttpNamespace, 
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetCount(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -903,7 +983,7 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetProvider(val cdktf.Terrafor
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetTags(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -911,7 +991,7 @@ func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryHttpNamespace) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -959,12 +1039,40 @@ func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1001,12 +1109,54 @@ func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1131,33 +1281,33 @@ func (s *jsiiProxy_ServiceDiscoveryHttpNamespace) ToTerraform() interface{} {
 // AWS Service Discovery.
 type ServiceDiscoveryHttpNamespaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace.html#name ServiceDiscoveryHttpNamespace#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace.html#description ServiceDiscoveryHttpNamespace#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace.html#tags ServiceDiscoveryHttpNamespace#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace.html#tags_all ServiceDiscoveryHttpNamespace#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace#name ServiceDiscoveryHttpNamespace#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace#description ServiceDiscoveryHttpNamespace#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace#tags ServiceDiscoveryHttpNamespace#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_http_namespace#tags_all ServiceDiscoveryHttpNamespace#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance.html aws_service_discovery_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance aws_service_discovery_instance}.
 type ServiceDiscoveryInstance interface {
 	cdktf.TerraformResource
-	Attributes() interface{}
-	SetAttributes(val interface{})
-	AttributesInput() interface{}
+	Attributes() *map[string]*string
+	SetAttributes(val *map[string]*string)
+	AttributesInput() *map[string]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1179,10 +1329,15 @@ type ServiceDiscoveryInstance interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1197,8 +1352,8 @@ type jsiiProxy_ServiceDiscoveryInstance struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_ServiceDiscoveryInstance) Attributes() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryInstance) Attributes() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"attributes",
@@ -1207,8 +1362,8 @@ func (j *jsiiProxy_ServiceDiscoveryInstance) Attributes() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryInstance) AttributesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryInstance) AttributesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"attributesInput",
@@ -1237,8 +1392,8 @@ func (j *jsiiProxy_ServiceDiscoveryInstance) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1397,7 +1552,7 @@ func (j *jsiiProxy_ServiceDiscoveryInstance) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance.html aws_service_discovery_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance aws_service_discovery_instance} Resource.
 func NewServiceDiscoveryInstance(scope constructs.Construct, id *string, config *ServiceDiscoveryInstanceConfig) ServiceDiscoveryInstance {
 	_init_.Initialize()
 
@@ -1412,7 +1567,7 @@ func NewServiceDiscoveryInstance(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance.html aws_service_discovery_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance aws_service_discovery_instance} Resource.
 func NewServiceDiscoveryInstance_Override(s ServiceDiscoveryInstance, scope constructs.Construct, id *string, config *ServiceDiscoveryInstanceConfig) {
 	_init_.Initialize()
 
@@ -1423,7 +1578,7 @@ func NewServiceDiscoveryInstance_Override(s ServiceDiscoveryInstance, scope cons
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryInstance) SetAttributes(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryInstance) SetAttributes(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"attributes",
@@ -1431,7 +1586,7 @@ func (j *jsiiProxy_ServiceDiscoveryInstance) SetAttributes(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1519,12 +1674,40 @@ func (s *jsiiProxy_ServiceDiscoveryInstance) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1561,12 +1744,54 @@ func (s *jsiiProxy_ServiceDiscoveryInstance) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1667,29 +1892,29 @@ func (s *jsiiProxy_ServiceDiscoveryInstance) ToTerraform() interface{} {
 // AWS Service Discovery.
 type ServiceDiscoveryInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance.html#attributes ServiceDiscoveryInstance#attributes}.
-	Attributes interface{} `json:"attributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance.html#instance_id ServiceDiscoveryInstance#instance_id}.
-	InstanceId *string `json:"instanceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance.html#service_id ServiceDiscoveryInstance#service_id}.
-	ServiceId *string `json:"serviceId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance#attributes ServiceDiscoveryInstance#attributes}.
+	Attributes *map[string]*string `json:"attributes" yaml:"attributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance#instance_id ServiceDiscoveryInstance#instance_id}.
+	InstanceId *string `json:"instanceId" yaml:"instanceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_instance#service_id ServiceDiscoveryInstance#service_id}.
+	ServiceId *string `json:"serviceId" yaml:"serviceId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html aws_service_discovery_private_dns_namespace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace aws_service_discovery_private_dns_namespace}.
 type ServiceDiscoveryPrivateDnsNamespace interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1708,12 +1933,12 @@ type ServiceDiscoveryPrivateDnsNamespace interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1721,10 +1946,15 @@ type ServiceDiscoveryPrivateDnsNamespace interface {
 	SetVpc(val *string)
 	VpcInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -1772,8 +2002,8 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1912,8 +2142,8 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) RawOverrides() interface
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1922,8 +2152,8 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1932,8 +2162,8 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1942,8 +2172,8 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsAllInput() interface
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2002,7 +2232,7 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) VpcInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html aws_service_discovery_private_dns_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace aws_service_discovery_private_dns_namespace} Resource.
 func NewServiceDiscoveryPrivateDnsNamespace(scope constructs.Construct, id *string, config *ServiceDiscoveryPrivateDnsNamespaceConfig) ServiceDiscoveryPrivateDnsNamespace {
 	_init_.Initialize()
 
@@ -2017,7 +2247,7 @@ func NewServiceDiscoveryPrivateDnsNamespace(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html aws_service_discovery_private_dns_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace aws_service_discovery_private_dns_namespace} Resource.
 func NewServiceDiscoveryPrivateDnsNamespace_Override(s ServiceDiscoveryPrivateDnsNamespace, scope constructs.Construct, id *string, config *ServiceDiscoveryPrivateDnsNamespaceConfig) {
 	_init_.Initialize()
 
@@ -2028,7 +2258,7 @@ func NewServiceDiscoveryPrivateDnsNamespace_Override(s ServiceDiscoveryPrivateDn
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetCount(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2076,7 +2306,7 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetProvider(val cdktf.Te
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetTags(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2084,7 +2314,7 @@ func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetTags(val interface{})
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2140,12 +2370,40 @@ func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) AddOverride(path *string
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2182,12 +2440,54 @@ func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2312,33 +2612,33 @@ func (s *jsiiProxy_ServiceDiscoveryPrivateDnsNamespace) ToTerraform() interface{
 // AWS Service Discovery.
 type ServiceDiscoveryPrivateDnsNamespaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html#name ServiceDiscoveryPrivateDnsNamespace#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html#vpc ServiceDiscoveryPrivateDnsNamespace#vpc}.
-	Vpc *string `json:"vpc"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html#description ServiceDiscoveryPrivateDnsNamespace#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html#tags ServiceDiscoveryPrivateDnsNamespace#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace.html#tags_all ServiceDiscoveryPrivateDnsNamespace#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace#name ServiceDiscoveryPrivateDnsNamespace#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace#vpc ServiceDiscoveryPrivateDnsNamespace#vpc}.
+	Vpc *string `json:"vpc" yaml:"vpc"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace#description ServiceDiscoveryPrivateDnsNamespace#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace#tags ServiceDiscoveryPrivateDnsNamespace#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_private_dns_namespace#tags_all ServiceDiscoveryPrivateDnsNamespace#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace.html aws_service_discovery_public_dns_namespace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace aws_service_discovery_public_dns_namespace}.
 type ServiceDiscoveryPublicDnsNamespace interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2357,20 +2657,25 @@ type ServiceDiscoveryPublicDnsNamespace interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -2418,8 +2723,8 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2558,8 +2863,8 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) RawOverrides() interface{
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2568,8 +2873,8 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2578,8 +2883,8 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2588,8 +2893,8 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsAllInput() interface{
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2628,7 +2933,7 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace.html aws_service_discovery_public_dns_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace aws_service_discovery_public_dns_namespace} Resource.
 func NewServiceDiscoveryPublicDnsNamespace(scope constructs.Construct, id *string, config *ServiceDiscoveryPublicDnsNamespaceConfig) ServiceDiscoveryPublicDnsNamespace {
 	_init_.Initialize()
 
@@ -2643,7 +2948,7 @@ func NewServiceDiscoveryPublicDnsNamespace(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace.html aws_service_discovery_public_dns_namespace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace aws_service_discovery_public_dns_namespace} Resource.
 func NewServiceDiscoveryPublicDnsNamespace_Override(s ServiceDiscoveryPublicDnsNamespace, scope constructs.Construct, id *string, config *ServiceDiscoveryPublicDnsNamespaceConfig) {
 	_init_.Initialize()
 
@@ -2654,7 +2959,7 @@ func NewServiceDiscoveryPublicDnsNamespace_Override(s ServiceDiscoveryPublicDnsN
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetCount(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2702,7 +3007,7 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetProvider(val cdktf.Ter
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetTags(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2710,7 +3015,7 @@ func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetTags(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2758,12 +3063,40 @@ func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) AddOverride(path *string,
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2800,12 +3133,54 @@ func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2930,31 +3305,31 @@ func (s *jsiiProxy_ServiceDiscoveryPublicDnsNamespace) ToTerraform() interface{}
 // AWS Service Discovery.
 type ServiceDiscoveryPublicDnsNamespaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace.html#name ServiceDiscoveryPublicDnsNamespace#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace.html#description ServiceDiscoveryPublicDnsNamespace#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace.html#tags ServiceDiscoveryPublicDnsNamespace#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace.html#tags_all ServiceDiscoveryPublicDnsNamespace#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace#name ServiceDiscoveryPublicDnsNamespace#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace#description ServiceDiscoveryPublicDnsNamespace#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace#tags ServiceDiscoveryPublicDnsNamespace#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_public_dns_namespace#tags_all ServiceDiscoveryPublicDnsNamespace#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html aws_service_discovery_service}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service aws_service_discovery_service}.
 type ServiceDiscoveryService interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2984,20 +3359,25 @@ type ServiceDiscoveryService interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDnsConfig(value *ServiceDiscoveryServiceDnsConfig)
@@ -3053,8 +3433,8 @@ func (j *jsiiProxy_ServiceDiscoveryService) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryService) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3283,8 +3663,8 @@ func (j *jsiiProxy_ServiceDiscoveryService) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryService) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3293,8 +3673,8 @@ func (j *jsiiProxy_ServiceDiscoveryService) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryService) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3303,8 +3683,8 @@ func (j *jsiiProxy_ServiceDiscoveryService) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryService) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3313,8 +3693,8 @@ func (j *jsiiProxy_ServiceDiscoveryService) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServiceDiscoveryService) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3353,7 +3733,7 @@ func (j *jsiiProxy_ServiceDiscoveryService) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html aws_service_discovery_service} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service aws_service_discovery_service} Resource.
 func NewServiceDiscoveryService(scope constructs.Construct, id *string, config *ServiceDiscoveryServiceConfig) ServiceDiscoveryService {
 	_init_.Initialize()
 
@@ -3368,7 +3748,7 @@ func NewServiceDiscoveryService(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html aws_service_discovery_service} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service aws_service_discovery_service} Resource.
 func NewServiceDiscoveryService_Override(s ServiceDiscoveryService, scope constructs.Construct, id *string, config *ServiceDiscoveryServiceConfig) {
 	_init_.Initialize()
 
@@ -3379,7 +3759,7 @@ func NewServiceDiscoveryService_Override(s ServiceDiscoveryService, scope constr
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) SetCount(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryService) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3443,7 +3823,7 @@ func (j *jsiiProxy_ServiceDiscoveryService) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) SetTags(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryService) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3451,7 +3831,7 @@ func (j *jsiiProxy_ServiceDiscoveryService) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryService) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ServiceDiscoveryService) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3499,12 +3879,40 @@ func (s *jsiiProxy_ServiceDiscoveryService) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryService) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryService) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryService) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3541,12 +3949,54 @@ func (s *jsiiProxy_ServiceDiscoveryService) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryService) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryService) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryService) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryService) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3735,62 +4185,62 @@ func (s *jsiiProxy_ServiceDiscoveryService) ToTerraform() interface{} {
 // AWS Service Discovery.
 type ServiceDiscoveryServiceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#name ServiceDiscoveryService#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#description ServiceDiscoveryService#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#name ServiceDiscoveryService#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#description ServiceDiscoveryService#description}.
+	Description *string `json:"description" yaml:"description"`
 	// dns_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#dns_config ServiceDiscoveryService#dns_config}
-	DnsConfig *ServiceDiscoveryServiceDnsConfig `json:"dnsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#force_destroy ServiceDiscoveryService#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#dns_config ServiceDiscoveryService#dns_config}
+	DnsConfig *ServiceDiscoveryServiceDnsConfig `json:"dnsConfig" yaml:"dnsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#force_destroy ServiceDiscoveryService#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
 	// health_check_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#health_check_config ServiceDiscoveryService#health_check_config}
-	HealthCheckConfig *ServiceDiscoveryServiceHealthCheckConfig `json:"healthCheckConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#health_check_config ServiceDiscoveryService#health_check_config}
+	HealthCheckConfig *ServiceDiscoveryServiceHealthCheckConfig `json:"healthCheckConfig" yaml:"healthCheckConfig"`
 	// health_check_custom_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#health_check_custom_config ServiceDiscoveryService#health_check_custom_config}
-	HealthCheckCustomConfig *ServiceDiscoveryServiceHealthCheckCustomConfig `json:"healthCheckCustomConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#namespace_id ServiceDiscoveryService#namespace_id}.
-	NamespaceId *string `json:"namespaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#tags ServiceDiscoveryService#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#tags_all ServiceDiscoveryService#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#health_check_custom_config ServiceDiscoveryService#health_check_custom_config}
+	HealthCheckCustomConfig *ServiceDiscoveryServiceHealthCheckCustomConfig `json:"healthCheckCustomConfig" yaml:"healthCheckCustomConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#namespace_id ServiceDiscoveryService#namespace_id}.
+	NamespaceId *string `json:"namespaceId" yaml:"namespaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#tags ServiceDiscoveryService#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#tags_all ServiceDiscoveryService#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ServiceDiscoveryServiceDnsConfig struct {
 	// dns_records block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#dns_records ServiceDiscoveryService#dns_records}
-	DnsRecords *[]*ServiceDiscoveryServiceDnsConfigDnsRecords `json:"dnsRecords"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#namespace_id ServiceDiscoveryService#namespace_id}.
-	NamespaceId *string `json:"namespaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#routing_policy ServiceDiscoveryService#routing_policy}.
-	RoutingPolicy *string `json:"routingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#dns_records ServiceDiscoveryService#dns_records}
+	DnsRecords interface{} `json:"dnsRecords" yaml:"dnsRecords"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#namespace_id ServiceDiscoveryService#namespace_id}.
+	NamespaceId *string `json:"namespaceId" yaml:"namespaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#routing_policy ServiceDiscoveryService#routing_policy}.
+	RoutingPolicy *string `json:"routingPolicy" yaml:"routingPolicy"`
 }
 
 type ServiceDiscoveryServiceDnsConfigDnsRecords struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#ttl ServiceDiscoveryService#ttl}.
-	Ttl *float64 `json:"ttl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#type ServiceDiscoveryService#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#ttl ServiceDiscoveryService#ttl}.
+	Ttl *float64 `json:"ttl" yaml:"ttl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#type ServiceDiscoveryService#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type ServiceDiscoveryServiceDnsConfigOutputReference interface {
 	cdktf.ComplexObject
-	DnsRecords() *[]*ServiceDiscoveryServiceDnsConfigDnsRecords
-	SetDnsRecords(val *[]*ServiceDiscoveryServiceDnsConfigDnsRecords)
-	DnsRecordsInput() *[]*ServiceDiscoveryServiceDnsConfigDnsRecords
+	DnsRecords() interface{}
+	SetDnsRecords(val interface{})
+	DnsRecordsInput() interface{}
 	InternalValue() *ServiceDiscoveryServiceDnsConfig
 	SetInternalValue(val *ServiceDiscoveryServiceDnsConfig)
 	IsSingleItem() *bool
@@ -3803,12 +4253,17 @@ type ServiceDiscoveryServiceDnsConfigOutputReference interface {
 	RoutingPolicyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetRoutingPolicy()
@@ -3819,8 +4274,8 @@ type jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) DnsRecords() *[]*ServiceDiscoveryServiceDnsConfigDnsRecords {
-	var returns *[]*ServiceDiscoveryServiceDnsConfigDnsRecords
+func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) DnsRecords() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dnsRecords",
@@ -3829,8 +4284,8 @@ func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) DnsRecords()
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) DnsRecordsInput() *[]*ServiceDiscoveryServiceDnsConfigDnsRecords {
-	var returns *[]*ServiceDiscoveryServiceDnsConfigDnsRecords
+func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) DnsRecordsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dnsRecordsInput",
@@ -3909,8 +4364,8 @@ func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3919,7 +4374,7 @@ func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) TerraformRes
 	return returns
 }
 
-func NewServiceDiscoveryServiceDnsConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServiceDiscoveryServiceDnsConfigOutputReference {
+func NewServiceDiscoveryServiceDnsConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServiceDiscoveryServiceDnsConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference{}
@@ -3933,7 +4388,7 @@ func NewServiceDiscoveryServiceDnsConfigOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewServiceDiscoveryServiceDnsConfigOutputReference_Override(s ServiceDiscoveryServiceDnsConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServiceDiscoveryServiceDnsConfigOutputReference_Override(s ServiceDiscoveryServiceDnsConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3943,7 +4398,7 @@ func NewServiceDiscoveryServiceDnsConfigOutputReference_Override(s ServiceDiscov
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetDnsRecords(val *[]*ServiceDiscoveryServiceDnsConfigDnsRecords) {
+func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetDnsRecords(val interface{}) {
 	_jsii_.Set(
 		j,
 		"dnsRecords",
@@ -3991,7 +4446,7 @@ func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4000,12 +4455,40 @@ func (j *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) SetTerraform
 }
 
 // Experimental.
-func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4042,12 +4525,54 @@ func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4092,12 +4617,12 @@ func (s *jsiiProxy_ServiceDiscoveryServiceDnsConfigOutputReference) ResetRouting
 }
 
 type ServiceDiscoveryServiceHealthCheckConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#failure_threshold ServiceDiscoveryService#failure_threshold}.
-	FailureThreshold *float64 `json:"failureThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#resource_path ServiceDiscoveryService#resource_path}.
-	ResourcePath *string `json:"resourcePath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#type ServiceDiscoveryService#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#failure_threshold ServiceDiscoveryService#failure_threshold}.
+	FailureThreshold *float64 `json:"failureThreshold" yaml:"failureThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#resource_path ServiceDiscoveryService#resource_path}.
+	ResourcePath *string `json:"resourcePath" yaml:"resourcePath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#type ServiceDiscoveryService#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type ServiceDiscoveryServiceHealthCheckConfigOutputReference interface {
@@ -4114,15 +4639,20 @@ type ServiceDiscoveryServiceHealthCheckConfigOutputReference interface {
 	ResourcePathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFailureThreshold()
@@ -4205,8 +4735,8 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4235,7 +4765,7 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) Type
 	return returns
 }
 
-func NewServiceDiscoveryServiceHealthCheckConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServiceDiscoveryServiceHealthCheckConfigOutputReference {
+func NewServiceDiscoveryServiceHealthCheckConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServiceDiscoveryServiceHealthCheckConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference{}
@@ -4249,7 +4779,7 @@ func NewServiceDiscoveryServiceHealthCheckConfigOutputReference(terraformResourc
 	return &j
 }
 
-func NewServiceDiscoveryServiceHealthCheckConfigOutputReference_Override(s ServiceDiscoveryServiceHealthCheckConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServiceDiscoveryServiceHealthCheckConfigOutputReference_Override(s ServiceDiscoveryServiceHealthCheckConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4299,7 +4829,7 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4316,12 +4846,40 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) SetT
 }
 
 // Experimental.
-func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4358,12 +4916,54 @@ func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetN
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4424,8 +5024,8 @@ func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckConfigOutputReference) Rese
 }
 
 type ServiceDiscoveryServiceHealthCheckCustomConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service.html#failure_threshold ServiceDiscoveryService#failure_threshold}.
-	FailureThreshold *float64 `json:"failureThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/service_discovery_service#failure_threshold ServiceDiscoveryService#failure_threshold}.
+	FailureThreshold *float64 `json:"failureThreshold" yaml:"failureThreshold"`
 }
 
 type ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference interface {
@@ -4439,12 +5039,17 @@ type ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFailureThreshold()
@@ -4505,8 +5110,8 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4515,7 +5120,7 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference
 	return returns
 }
 
-func NewServiceDiscoveryServiceHealthCheckCustomConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference {
+func NewServiceDiscoveryServiceHealthCheckCustomConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference{}
@@ -4529,7 +5134,7 @@ func NewServiceDiscoveryServiceHealthCheckCustomConfigOutputReference(terraformR
 	return &j
 }
 
-func NewServiceDiscoveryServiceHealthCheckCustomConfigOutputReference_Override(s ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServiceDiscoveryServiceHealthCheckCustomConfigOutputReference_Override(s ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4571,7 +5176,7 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference
 	)
 }
 
-func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4580,12 +5185,40 @@ func (j *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference
 }
 
 // Experimental.
-func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4622,12 +5255,54 @@ func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference
 }
 
 // Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServiceDiscoveryServiceHealthCheckCustomConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

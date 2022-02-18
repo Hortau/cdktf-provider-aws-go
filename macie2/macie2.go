@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/macie2/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_account.html aws_macie2_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_account aws_macie2_account}.
 type Macie2Account interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedAt() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -40,10 +40,15 @@ type Macie2Account interface {
 	TerraformResourceType() *string
 	UpdatedAt() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetFindingPublishingFrequency()
@@ -80,8 +85,8 @@ func (j *jsiiProxy_Macie2Account) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_Macie2Account) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2Account) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -270,7 +275,7 @@ func (j *jsiiProxy_Macie2Account) UpdatedAt() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_account.html aws_macie2_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_account aws_macie2_account} Resource.
 func NewMacie2Account(scope constructs.Construct, id *string, config *Macie2AccountConfig) Macie2Account {
 	_init_.Initialize()
 
@@ -285,7 +290,7 @@ func NewMacie2Account(scope constructs.Construct, id *string, config *Macie2Acco
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_account.html aws_macie2_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_account aws_macie2_account} Resource.
 func NewMacie2Account_Override(m Macie2Account, scope constructs.Construct, id *string, config *Macie2AccountConfig) {
 	_init_.Initialize()
 
@@ -296,7 +301,7 @@ func NewMacie2Account_Override(m Macie2Account, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_Macie2Account) SetCount(val interface{}) {
+func (j *jsiiProxy_Macie2Account) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -384,12 +389,40 @@ func (m *jsiiProxy_Macie2Account) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2Account) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2Account) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2Account) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -426,12 +459,54 @@ func (m *jsiiProxy_Macie2Account) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2Account) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2Account) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2Account) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2Account) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -548,26 +623,26 @@ func (m *jsiiProxy_Macie2Account) ToTerraform() interface{} {
 // AWS Macie 2.
 type Macie2AccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_account.html#finding_publishing_frequency Macie2Account#finding_publishing_frequency}.
-	FindingPublishingFrequency *string `json:"findingPublishingFrequency"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_account.html#status Macie2Account#status}.
-	Status *string `json:"status"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_account#finding_publishing_frequency Macie2Account#finding_publishing_frequency}.
+	FindingPublishingFrequency *string `json:"findingPublishingFrequency" yaml:"findingPublishingFrequency"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_account#status Macie2Account#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html aws_macie2_classification_job}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job aws_macie2_classification_job}.
 type Macie2ClassificationJob interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedAt() *string
 	CustomDataIdentifierIds() *[]*string
 	SetCustomDataIdentifierIds(val *[]*string)
@@ -610,20 +685,25 @@ type Macie2ClassificationJob interface {
 	SamplingPercentageInput() *float64
 	ScheduleFrequency() Macie2ClassificationJobScheduleFrequencyOutputReference
 	ScheduleFrequencyInput() *Macie2ClassificationJobScheduleFrequency
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutS3JobDefinition(value *Macie2ClassificationJobS3JobDefinition)
@@ -671,8 +751,8 @@ func (j *jsiiProxy_Macie2ClassificationJob) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2ClassificationJob) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -991,8 +1071,8 @@ func (j *jsiiProxy_Macie2ClassificationJob) ScheduleFrequencyInput() *Macie2Clas
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2ClassificationJob) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1001,8 +1081,8 @@ func (j *jsiiProxy_Macie2ClassificationJob) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2ClassificationJob) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1011,8 +1091,8 @@ func (j *jsiiProxy_Macie2ClassificationJob) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2ClassificationJob) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1021,8 +1101,8 @@ func (j *jsiiProxy_Macie2ClassificationJob) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2ClassificationJob) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1061,7 +1141,7 @@ func (j *jsiiProxy_Macie2ClassificationJob) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html aws_macie2_classification_job} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job aws_macie2_classification_job} Resource.
 func NewMacie2ClassificationJob(scope constructs.Construct, id *string, config *Macie2ClassificationJobConfig) Macie2ClassificationJob {
 	_init_.Initialize()
 
@@ -1076,7 +1156,7 @@ func NewMacie2ClassificationJob(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html aws_macie2_classification_job} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job aws_macie2_classification_job} Resource.
 func NewMacie2ClassificationJob_Override(m Macie2ClassificationJob, scope constructs.Construct, id *string, config *Macie2ClassificationJobConfig) {
 	_init_.Initialize()
 
@@ -1087,7 +1167,7 @@ func NewMacie2ClassificationJob_Override(m Macie2ClassificationJob, scope constr
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) SetCount(val interface{}) {
+func (j *jsiiProxy_Macie2ClassificationJob) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1183,7 +1263,7 @@ func (j *jsiiProxy_Macie2ClassificationJob) SetSamplingPercentage(val *float64) 
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) SetTags(val interface{}) {
+func (j *jsiiProxy_Macie2ClassificationJob) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1191,7 +1271,7 @@ func (j *jsiiProxy_Macie2ClassificationJob) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJob) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Macie2ClassificationJob) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1239,12 +1319,40 @@ func (m *jsiiProxy_Macie2ClassificationJob) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJob) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJob) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJob) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1281,12 +1389,54 @@ func (m *jsiiProxy_Macie2ClassificationJob) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJob) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJob) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJob) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJob) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1496,66 +1646,66 @@ func (m *jsiiProxy_Macie2ClassificationJob) UserPausedDetails(index *string) Mac
 // AWS Macie 2.
 type Macie2ClassificationJobConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#job_type Macie2ClassificationJob#job_type}.
-	JobType *string `json:"jobType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#job_type Macie2ClassificationJob#job_type}.
+	JobType *string `json:"jobType" yaml:"jobType"`
 	// s3_job_definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#s3_job_definition Macie2ClassificationJob#s3_job_definition}
-	S3JobDefinition *Macie2ClassificationJobS3JobDefinition `json:"s3JobDefinition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#custom_data_identifier_ids Macie2ClassificationJob#custom_data_identifier_ids}.
-	CustomDataIdentifierIds *[]*string `json:"customDataIdentifierIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#description Macie2ClassificationJob#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#initial_run Macie2ClassificationJob#initial_run}.
-	InitialRun interface{} `json:"initialRun"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#job_status Macie2ClassificationJob#job_status}.
-	JobStatus *string `json:"jobStatus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#name Macie2ClassificationJob#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#name_prefix Macie2ClassificationJob#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#sampling_percentage Macie2ClassificationJob#sampling_percentage}.
-	SamplingPercentage *float64 `json:"samplingPercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#s3_job_definition Macie2ClassificationJob#s3_job_definition}
+	S3JobDefinition *Macie2ClassificationJobS3JobDefinition `json:"s3JobDefinition" yaml:"s3JobDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#custom_data_identifier_ids Macie2ClassificationJob#custom_data_identifier_ids}.
+	CustomDataIdentifierIds *[]*string `json:"customDataIdentifierIds" yaml:"customDataIdentifierIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#description Macie2ClassificationJob#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#initial_run Macie2ClassificationJob#initial_run}.
+	InitialRun interface{} `json:"initialRun" yaml:"initialRun"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#job_status Macie2ClassificationJob#job_status}.
+	JobStatus *string `json:"jobStatus" yaml:"jobStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#name Macie2ClassificationJob#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#name_prefix Macie2ClassificationJob#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#sampling_percentage Macie2ClassificationJob#sampling_percentage}.
+	SamplingPercentage *float64 `json:"samplingPercentage" yaml:"samplingPercentage"`
 	// schedule_frequency block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#schedule_frequency Macie2ClassificationJob#schedule_frequency}
-	ScheduleFrequency *Macie2ClassificationJobScheduleFrequency `json:"scheduleFrequency"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#tags Macie2ClassificationJob#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#tags_all Macie2ClassificationJob#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#schedule_frequency Macie2ClassificationJob#schedule_frequency}
+	ScheduleFrequency *Macie2ClassificationJobScheduleFrequency `json:"scheduleFrequency" yaml:"scheduleFrequency"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#tags Macie2ClassificationJob#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#tags_all Macie2ClassificationJob#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type Macie2ClassificationJobS3JobDefinition struct {
 	// bucket_definitions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#bucket_definitions Macie2ClassificationJob#bucket_definitions}
-	BucketDefinitions *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions `json:"bucketDefinitions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#bucket_definitions Macie2ClassificationJob#bucket_definitions}
+	BucketDefinitions interface{} `json:"bucketDefinitions" yaml:"bucketDefinitions"`
 	// scoping block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#scoping Macie2ClassificationJob#scoping}
-	Scoping *Macie2ClassificationJobS3JobDefinitionScoping `json:"scoping"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#scoping Macie2ClassificationJob#scoping}
+	Scoping *Macie2ClassificationJobS3JobDefinitionScoping `json:"scoping" yaml:"scoping"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionBucketDefinitions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#account_id Macie2ClassificationJob#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#buckets Macie2ClassificationJob#buckets}.
-	Buckets *[]*string `json:"buckets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#account_id Macie2ClassificationJob#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#buckets Macie2ClassificationJob#buckets}.
+	Buckets *[]*string `json:"buckets" yaml:"buckets"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionOutputReference interface {
 	cdktf.ComplexObject
-	BucketDefinitions() *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions
-	SetBucketDefinitions(val *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions)
-	BucketDefinitionsInput() *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions
+	BucketDefinitions() interface{}
+	SetBucketDefinitions(val interface{})
+	BucketDefinitionsInput() interface{}
 	InternalValue() *Macie2ClassificationJobS3JobDefinition
 	SetInternalValue(val *Macie2ClassificationJobS3JobDefinition)
 	IsSingleItem() *bool
@@ -1564,12 +1714,17 @@ type Macie2ClassificationJobS3JobDefinitionOutputReference interface {
 	ScopingInput() *Macie2ClassificationJobS3JobDefinitionScoping
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutScoping(value *Macie2ClassificationJobS3JobDefinitionScoping)
@@ -1582,8 +1737,8 @@ type jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) BucketDefinitions() *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) BucketDefinitions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bucketDefinitions",
@@ -1592,8 +1747,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) Bucket
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) BucketDefinitionsInput() *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) BucketDefinitionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bucketDefinitionsInput",
@@ -1652,8 +1807,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1662,7 +1817,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) Terraf
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference{}
@@ -1676,7 +1831,7 @@ func NewMacie2ClassificationJobS3JobDefinitionOutputReference(terraformResource 
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1686,7 +1841,7 @@ func NewMacie2ClassificationJobS3JobDefinitionOutputReference_Override(m Macie2C
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetBucketDefinitions(val *[]*Macie2ClassificationJobS3JobDefinitionBucketDefinitions) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetBucketDefinitions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"bucketDefinitions",
@@ -1718,7 +1873,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1727,12 +1882,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) SetTer
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1769,12 +1952,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetNum
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1837,39 +2062,39 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionOutputReference) ResetS
 type Macie2ClassificationJobS3JobDefinitionScoping struct {
 	// excludes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#excludes Macie2ClassificationJob#excludes}
-	Excludes *Macie2ClassificationJobS3JobDefinitionScopingExcludes `json:"excludes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#excludes Macie2ClassificationJob#excludes}
+	Excludes *Macie2ClassificationJobS3JobDefinitionScopingExcludes `json:"excludes" yaml:"excludes"`
 	// includes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#includes Macie2ClassificationJob#includes}
-	Includes *Macie2ClassificationJobS3JobDefinitionScopingIncludes `json:"includes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#includes Macie2ClassificationJob#includes}
+	Includes *Macie2ClassificationJobS3JobDefinitionScopingIncludes `json:"includes" yaml:"includes"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludes struct {
 	// and block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#and Macie2ClassificationJob#and}
-	And *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd `json:"and"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#and Macie2ClassificationJob#and}
+	And interface{} `json:"and" yaml:"and"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd struct {
 	// simple_scope_term block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#simple_scope_term Macie2ClassificationJob#simple_scope_term}
-	SimpleScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm `json:"simpleScopeTerm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#simple_scope_term Macie2ClassificationJob#simple_scope_term}
+	SimpleScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm `json:"simpleScopeTerm" yaml:"simpleScopeTerm"`
 	// tag_scope_term block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#tag_scope_term Macie2ClassificationJob#tag_scope_term}
-	TagScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm `json:"tagScopeTerm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#tag_scope_term Macie2ClassificationJob#tag_scope_term}
+	TagScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm `json:"tagScopeTerm" yaml:"tagScopeTerm"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTerm struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#comparator Macie2ClassificationJob#comparator}.
-	Comparator *string `json:"comparator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#key Macie2ClassificationJob#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#values Macie2ClassificationJob#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#comparator Macie2ClassificationJob#comparator}.
+	Comparator *string `json:"comparator" yaml:"comparator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#key Macie2ClassificationJob#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#values Macie2ClassificationJob#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference interface {
@@ -1886,15 +2111,20 @@ type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutp
 	KeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetComparator()
@@ -1977,8 +2207,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2007,7 +2237,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference{}
@@ -2021,7 +2251,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermO
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2071,7 +2301,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2088,12 +2318,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2130,12 +2388,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpleScopeTermOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2196,16 +2496,16 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndSimpl
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTerm struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#comparator Macie2ClassificationJob#comparator}.
-	Comparator *string `json:"comparator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#key Macie2ClassificationJob#key}.
-	Key *string `json:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#comparator Macie2ClassificationJob#comparator}.
+	Comparator *string `json:"comparator" yaml:"comparator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#key Macie2ClassificationJob#key}.
+	Key *string `json:"key" yaml:"key"`
 	// tag_values block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#tag_values Macie2ClassificationJob#tag_values}
-	TagValues *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues `json:"tagValues"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#target Macie2ClassificationJob#target}.
-	Target *string `json:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#tag_values Macie2ClassificationJob#tag_values}
+	TagValues interface{} `json:"tagValues" yaml:"tagValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#target Macie2ClassificationJob#target}.
+	Target *string `json:"target" yaml:"target"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference interface {
@@ -2220,20 +2520,25 @@ type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputR
 	Key() *string
 	SetKey(val *string)
 	KeyInput() *string
-	TagValues() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues
-	SetTagValues(val *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues)
-	TagValuesInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues
+	TagValues() interface{}
+	SetTagValues(val interface{})
+	TagValuesInput() interface{}
 	Target() *string
 	SetTarget(val *string)
 	TargetInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetComparator()
@@ -2307,8 +2612,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) TagValues() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) TagValues() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tagValues",
@@ -2317,8 +2622,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) TagValuesInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) TagValuesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tagValuesInput",
@@ -2357,8 +2662,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2367,7 +2672,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference{}
@@ -2381,7 +2686,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutp
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2423,7 +2728,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) SetTagValues(val *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) SetTagValues(val interface{}) {
 	_jsii_.Set(
 		j,
 		"tagValues",
@@ -2447,7 +2752,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2456,12 +2761,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2498,12 +2831,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2572,29 +2947,34 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagSc
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValues struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#key Macie2ClassificationJob#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#value Macie2ClassificationJob#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#key Macie2ClassificationJob#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#value Macie2ClassificationJob#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference interface {
 	cdktf.ComplexObject
-	And() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd
-	SetAnd(val *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd)
-	AndInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd
+	And() interface{}
+	SetAnd(val interface{})
+	AndInput() interface{}
 	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingExcludes
 	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingExcludes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAnd()
@@ -2605,8 +2985,8 @@ type jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRefere
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) And() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) And() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"and",
@@ -2615,8 +2995,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) AndInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) AndInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"andInput",
@@ -2655,8 +3035,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2665,7 +3045,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference{}
@@ -2679,7 +3059,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference(ter
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2689,7 +3069,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference_Ove
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) SetAnd(val *[]*Macie2ClassificationJobS3JobDefinitionScopingExcludesAnd) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) SetAnd(val interface{}) {
 	_jsii_.Set(
 		j,
 		"and",
@@ -2721,7 +3101,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2730,12 +3110,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2772,12 +3180,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2824,28 +3274,28 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingExcludesOutputRe
 type Macie2ClassificationJobS3JobDefinitionScopingIncludes struct {
 	// and block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#and Macie2ClassificationJob#and}
-	And *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd `json:"and"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#and Macie2ClassificationJob#and}
+	And interface{} `json:"and" yaml:"and"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd struct {
 	// simple_scope_term block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#simple_scope_term Macie2ClassificationJob#simple_scope_term}
-	SimpleScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm `json:"simpleScopeTerm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#simple_scope_term Macie2ClassificationJob#simple_scope_term}
+	SimpleScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm `json:"simpleScopeTerm" yaml:"simpleScopeTerm"`
 	// tag_scope_term block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#tag_scope_term Macie2ClassificationJob#tag_scope_term}
-	TagScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm `json:"tagScopeTerm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#tag_scope_term Macie2ClassificationJob#tag_scope_term}
+	TagScopeTerm *Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm `json:"tagScopeTerm" yaml:"tagScopeTerm"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTerm struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#comparator Macie2ClassificationJob#comparator}.
-	Comparator *string `json:"comparator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#key Macie2ClassificationJob#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#values Macie2ClassificationJob#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#comparator Macie2ClassificationJob#comparator}.
+	Comparator *string `json:"comparator" yaml:"comparator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#key Macie2ClassificationJob#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#values Macie2ClassificationJob#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference interface {
@@ -2862,15 +3312,20 @@ type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutp
 	KeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetComparator()
@@ -2953,8 +3408,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2983,7 +3438,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference{}
@@ -2997,7 +3452,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermO
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3047,7 +3502,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3064,12 +3519,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3106,12 +3589,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpleScopeTermOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3172,16 +3697,16 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndSimpl
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTerm struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#comparator Macie2ClassificationJob#comparator}.
-	Comparator *string `json:"comparator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#key Macie2ClassificationJob#key}.
-	Key *string `json:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#comparator Macie2ClassificationJob#comparator}.
+	Comparator *string `json:"comparator" yaml:"comparator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#key Macie2ClassificationJob#key}.
+	Key *string `json:"key" yaml:"key"`
 	// tag_values block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#tag_values Macie2ClassificationJob#tag_values}
-	TagValues *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues `json:"tagValues"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#target Macie2ClassificationJob#target}.
-	Target *string `json:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#tag_values Macie2ClassificationJob#tag_values}
+	TagValues interface{} `json:"tagValues" yaml:"tagValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#target Macie2ClassificationJob#target}.
+	Target *string `json:"target" yaml:"target"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference interface {
@@ -3196,20 +3721,25 @@ type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputR
 	Key() *string
 	SetKey(val *string)
 	KeyInput() *string
-	TagValues() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues
-	SetTagValues(val *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues)
-	TagValuesInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues
+	TagValues() interface{}
+	SetTagValues(val interface{})
+	TagValuesInput() interface{}
 	Target() *string
 	SetTarget(val *string)
 	TargetInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetComparator()
@@ -3283,8 +3813,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) TagValues() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) TagValues() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tagValues",
@@ -3293,8 +3823,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) TagValuesInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) TagValuesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"tagValuesInput",
@@ -3333,8 +3863,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3343,7 +3873,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference{}
@@ -3357,7 +3887,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutp
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3399,7 +3929,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) SetTagValues(val *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) SetTagValues(val interface{}) {
 	_jsii_.Set(
 		j,
 		"tagValues",
@@ -3423,7 +3953,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3432,12 +3962,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3474,12 +4032,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3548,29 +4148,34 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagSc
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValues struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#key Macie2ClassificationJob#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#value Macie2ClassificationJob#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#key Macie2ClassificationJob#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#value Macie2ClassificationJob#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference interface {
 	cdktf.ComplexObject
-	And() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd
-	SetAnd(val *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd)
-	AndInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd
+	And() interface{}
+	SetAnd(val interface{})
+	AndInput() interface{}
 	InternalValue() *Macie2ClassificationJobS3JobDefinitionScopingIncludes
 	SetInternalValue(val *Macie2ClassificationJobS3JobDefinitionScopingIncludes)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAnd()
@@ -3581,8 +4186,8 @@ type jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRefere
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) And() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) And() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"and",
@@ -3591,8 +4196,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) AndInput() *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd {
-	var returns *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) AndInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"andInput",
@@ -3631,8 +4236,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3641,7 +4246,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference{}
@@ -3655,7 +4260,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference(ter
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3665,7 +4270,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference_Ove
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) SetAnd(val *[]*Macie2ClassificationJobS3JobDefinitionScopingIncludesAnd) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) SetAnd(val interface{}) {
 	_jsii_.Set(
 		j,
 		"and",
@@ -3697,7 +4302,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3706,12 +4311,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3748,12 +4381,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputRe
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingIncludesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3809,12 +4484,17 @@ type Macie2ClassificationJobS3JobDefinitionScopingOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutExcludes(value *Macie2ClassificationJobS3JobDefinitionScopingExcludes)
@@ -3898,8 +4578,8 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3908,7 +4588,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference)
 	return returns
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingOutputReference {
+func NewMacie2ClassificationJobS3JobDefinitionScopingOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobS3JobDefinitionScopingOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference{}
@@ -3922,7 +4602,7 @@ func NewMacie2ClassificationJobS3JobDefinitionScopingOutputReference(terraformRe
 	return &j
 }
 
-func NewMacie2ClassificationJobS3JobDefinitionScopingOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobS3JobDefinitionScopingOutputReference_Override(m Macie2ClassificationJobS3JobDefinitionScopingOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3956,7 +4636,7 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference)
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3965,12 +4645,40 @@ func (j *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference)
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4007,12 +4715,54 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference)
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4081,12 +4831,12 @@ func (m *jsiiProxy_Macie2ClassificationJobS3JobDefinitionScopingOutputReference)
 }
 
 type Macie2ClassificationJobScheduleFrequency struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#daily_schedule Macie2ClassificationJob#daily_schedule}.
-	DailySchedule interface{} `json:"dailySchedule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#monthly_schedule Macie2ClassificationJob#monthly_schedule}.
-	MonthlySchedule *float64 `json:"monthlySchedule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job.html#weekly_schedule Macie2ClassificationJob#weekly_schedule}.
-	WeeklySchedule *string `json:"weeklySchedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#daily_schedule Macie2ClassificationJob#daily_schedule}.
+	DailySchedule interface{} `json:"dailySchedule" yaml:"dailySchedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#monthly_schedule Macie2ClassificationJob#monthly_schedule}.
+	MonthlySchedule *float64 `json:"monthlySchedule" yaml:"monthlySchedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_classification_job#weekly_schedule Macie2ClassificationJob#weekly_schedule}.
+	WeeklySchedule *string `json:"weeklySchedule" yaml:"weeklySchedule"`
 }
 
 type Macie2ClassificationJobScheduleFrequencyOutputReference interface {
@@ -4103,15 +4853,20 @@ type Macie2ClassificationJobScheduleFrequencyOutputReference interface {
 	MonthlyScheduleInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WeeklySchedule() *string
 	SetWeeklySchedule(val *string)
 	WeeklyScheduleInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDailySchedule()
@@ -4194,8 +4949,8 @@ func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4224,7 +4979,7 @@ func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) Week
 	return returns
 }
 
-func NewMacie2ClassificationJobScheduleFrequencyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobScheduleFrequencyOutputReference {
+func NewMacie2ClassificationJobScheduleFrequencyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2ClassificationJobScheduleFrequencyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference{}
@@ -4238,7 +4993,7 @@ func NewMacie2ClassificationJobScheduleFrequencyOutputReference(terraformResourc
 	return &j
 }
 
-func NewMacie2ClassificationJobScheduleFrequencyOutputReference_Override(m Macie2ClassificationJobScheduleFrequencyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2ClassificationJobScheduleFrequencyOutputReference_Override(m Macie2ClassificationJobScheduleFrequencyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4288,7 +5043,7 @@ func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4305,12 +5060,40 @@ func (j *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) SetW
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4347,12 +5130,54 @@ func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetN
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobScheduleFrequencyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4421,12 +5246,19 @@ type Macie2ClassificationJobUserPausedDetails interface {
 	JobPausedAt() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4485,8 +5317,8 @@ func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4495,15 +5327,25 @@ func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) TerraformResource()
 	return returns
 }
 
+func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewMacie2ClassificationJobUserPausedDetails(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) Macie2ClassificationJobUserPausedDetails {
+func NewMacie2ClassificationJobUserPausedDetails(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) Macie2ClassificationJobUserPausedDetails {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2ClassificationJobUserPausedDetails{}
 
 	_jsii_.Create(
 		"hashicorp_aws.macie2.Macie2ClassificationJobUserPausedDetails",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4511,12 +5353,12 @@ func NewMacie2ClassificationJobUserPausedDetails(terraformResource cdktf.ITerraf
 }
 
 // Experimental.
-func NewMacie2ClassificationJobUserPausedDetails_Override(m Macie2ClassificationJobUserPausedDetails, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewMacie2ClassificationJobUserPausedDetails_Override(m Macie2ClassificationJobUserPausedDetails, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.macie2.Macie2ClassificationJobUserPausedDetails",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		m,
 	)
 }
@@ -4537,7 +5379,7 @@ func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4545,13 +5387,49 @@ func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) SetTerraformResourc
 	)
 }
 
+func (j *jsiiProxy_Macie2ClassificationJobUserPausedDetails) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4588,12 +5466,54 @@ func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetNumberAttribute(
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4615,14 +5535,14 @@ func (m *jsiiProxy_Macie2ClassificationJobUserPausedDetails) InterpolationForAtt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html aws_macie2_custom_data_identifier}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier aws_macie2_custom_data_identifier}.
 type Macie2CustomDataIdentifier interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedAt() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -4656,20 +5576,25 @@ type Macie2CustomDataIdentifier interface {
 	Regex() *string
 	SetRegex(val *string)
 	RegexInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -4723,8 +5648,8 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2CustomDataIdentifier) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4963,8 +5888,8 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) RegexInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2CustomDataIdentifier) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4973,8 +5898,8 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4983,8 +5908,8 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4993,8 +5918,8 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2CustomDataIdentifier) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5033,7 +5958,7 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html aws_macie2_custom_data_identifier} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier aws_macie2_custom_data_identifier} Resource.
 func NewMacie2CustomDataIdentifier(scope constructs.Construct, id *string, config *Macie2CustomDataIdentifierConfig) Macie2CustomDataIdentifier {
 	_init_.Initialize()
 
@@ -5048,7 +5973,7 @@ func NewMacie2CustomDataIdentifier(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html aws_macie2_custom_data_identifier} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier aws_macie2_custom_data_identifier} Resource.
 func NewMacie2CustomDataIdentifier_Override(m Macie2CustomDataIdentifier, scope constructs.Construct, id *string, config *Macie2CustomDataIdentifierConfig) {
 	_init_.Initialize()
 
@@ -5059,7 +5984,7 @@ func NewMacie2CustomDataIdentifier_Override(m Macie2CustomDataIdentifier, scope 
 	)
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) SetCount(val interface{}) {
+func (j *jsiiProxy_Macie2CustomDataIdentifier) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5147,7 +6072,7 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) SetRegex(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) SetTags(val interface{}) {
+func (j *jsiiProxy_Macie2CustomDataIdentifier) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5155,7 +6080,7 @@ func (j *jsiiProxy_Macie2CustomDataIdentifier) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Macie2CustomDataIdentifier) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Macie2CustomDataIdentifier) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5203,12 +6128,40 @@ func (m *jsiiProxy_Macie2CustomDataIdentifier) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2CustomDataIdentifier) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2CustomDataIdentifier) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2CustomDataIdentifier) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5245,12 +6198,54 @@ func (m *jsiiProxy_Macie2CustomDataIdentifier) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2CustomDataIdentifier) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2CustomDataIdentifier) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2CustomDataIdentifier) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2CustomDataIdentifier) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5423,34 +6418,34 @@ func (m *jsiiProxy_Macie2CustomDataIdentifier) ToTerraform() interface{} {
 // AWS Macie 2.
 type Macie2CustomDataIdentifierConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#description Macie2CustomDataIdentifier#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#ignore_words Macie2CustomDataIdentifier#ignore_words}.
-	IgnoreWords *[]*string `json:"ignoreWords"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#keywords Macie2CustomDataIdentifier#keywords}.
-	Keywords *[]*string `json:"keywords"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#maximum_match_distance Macie2CustomDataIdentifier#maximum_match_distance}.
-	MaximumMatchDistance *float64 `json:"maximumMatchDistance"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#name Macie2CustomDataIdentifier#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#name_prefix Macie2CustomDataIdentifier#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#regex Macie2CustomDataIdentifier#regex}.
-	Regex *string `json:"regex"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#tags Macie2CustomDataIdentifier#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier.html#tags_all Macie2CustomDataIdentifier#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#description Macie2CustomDataIdentifier#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#ignore_words Macie2CustomDataIdentifier#ignore_words}.
+	IgnoreWords *[]*string `json:"ignoreWords" yaml:"ignoreWords"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#keywords Macie2CustomDataIdentifier#keywords}.
+	Keywords *[]*string `json:"keywords" yaml:"keywords"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#maximum_match_distance Macie2CustomDataIdentifier#maximum_match_distance}.
+	MaximumMatchDistance *float64 `json:"maximumMatchDistance" yaml:"maximumMatchDistance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#name Macie2CustomDataIdentifier#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#name_prefix Macie2CustomDataIdentifier#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#regex Macie2CustomDataIdentifier#regex}.
+	Regex *string `json:"regex" yaml:"regex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#tags Macie2CustomDataIdentifier#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_custom_data_identifier#tags_all Macie2CustomDataIdentifier#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html aws_macie2_findings_filter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter aws_macie2_findings_filter}.
 type Macie2FindingsFilter interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -5459,8 +6454,8 @@ type Macie2FindingsFilter interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -5486,20 +6481,25 @@ type Macie2FindingsFilter interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutFindingCriteria(value *Macie2FindingsFilterFindingCriteria)
@@ -5571,8 +6571,8 @@ func (j *jsiiProxy_Macie2FindingsFilter) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2FindingsFilter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5761,8 +6761,8 @@ func (j *jsiiProxy_Macie2FindingsFilter) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2FindingsFilter) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5771,8 +6771,8 @@ func (j *jsiiProxy_Macie2FindingsFilter) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2FindingsFilter) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5781,8 +6781,8 @@ func (j *jsiiProxy_Macie2FindingsFilter) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2FindingsFilter) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5791,8 +6791,8 @@ func (j *jsiiProxy_Macie2FindingsFilter) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2FindingsFilter) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5831,7 +6831,7 @@ func (j *jsiiProxy_Macie2FindingsFilter) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html aws_macie2_findings_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter aws_macie2_findings_filter} Resource.
 func NewMacie2FindingsFilter(scope constructs.Construct, id *string, config *Macie2FindingsFilterConfig) Macie2FindingsFilter {
 	_init_.Initialize()
 
@@ -5846,7 +6846,7 @@ func NewMacie2FindingsFilter(scope constructs.Construct, id *string, config *Mac
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html aws_macie2_findings_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter aws_macie2_findings_filter} Resource.
 func NewMacie2FindingsFilter_Override(m Macie2FindingsFilter, scope constructs.Construct, id *string, config *Macie2FindingsFilterConfig) {
 	_init_.Initialize()
 
@@ -5865,7 +6865,7 @@ func (j *jsiiProxy_Macie2FindingsFilter) SetAction(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) SetCount(val interface{}) {
+func (j *jsiiProxy_Macie2FindingsFilter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5929,7 +6929,7 @@ func (j *jsiiProxy_Macie2FindingsFilter) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) SetTags(val interface{}) {
+func (j *jsiiProxy_Macie2FindingsFilter) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5937,7 +6937,7 @@ func (j *jsiiProxy_Macie2FindingsFilter) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Macie2FindingsFilter) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Macie2FindingsFilter) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5985,12 +6985,40 @@ func (m *jsiiProxy_Macie2FindingsFilter) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2FindingsFilter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2FindingsFilter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2FindingsFilter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6027,12 +7055,54 @@ func (m *jsiiProxy_Macie2FindingsFilter) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2FindingsFilter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2FindingsFilter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2FindingsFilter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2FindingsFilter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6189,76 +7259,81 @@ func (m *jsiiProxy_Macie2FindingsFilter) ToTerraform() interface{} {
 // AWS Macie 2.
 type Macie2FindingsFilterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#action Macie2FindingsFilter#action}.
-	Action *string `json:"action"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#action Macie2FindingsFilter#action}.
+	Action *string `json:"action" yaml:"action"`
 	// finding_criteria block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#finding_criteria Macie2FindingsFilter#finding_criteria}
-	FindingCriteria *Macie2FindingsFilterFindingCriteria `json:"findingCriteria"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#description Macie2FindingsFilter#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#name Macie2FindingsFilter#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#name_prefix Macie2FindingsFilter#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#position Macie2FindingsFilter#position}.
-	Position *float64 `json:"position"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#tags Macie2FindingsFilter#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#tags_all Macie2FindingsFilter#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#finding_criteria Macie2FindingsFilter#finding_criteria}
+	FindingCriteria *Macie2FindingsFilterFindingCriteria `json:"findingCriteria" yaml:"findingCriteria"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#description Macie2FindingsFilter#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#name Macie2FindingsFilter#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#name_prefix Macie2FindingsFilter#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#position Macie2FindingsFilter#position}.
+	Position *float64 `json:"position" yaml:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#tags Macie2FindingsFilter#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#tags_all Macie2FindingsFilter#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type Macie2FindingsFilterFindingCriteria struct {
 	// criterion block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#criterion Macie2FindingsFilter#criterion}
-	Criterion *[]*Macie2FindingsFilterFindingCriteriaCriterion `json:"criterion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#criterion Macie2FindingsFilter#criterion}
+	Criterion interface{} `json:"criterion" yaml:"criterion"`
 }
 
 type Macie2FindingsFilterFindingCriteriaCriterion struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#field Macie2FindingsFilter#field}.
-	Field *string `json:"field"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#eq Macie2FindingsFilter#eq}.
-	Eq *[]*string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#eq_exact_match Macie2FindingsFilter#eq_exact_match}.
-	EqExactMatch *[]*string `json:"eqExactMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#gt Macie2FindingsFilter#gt}.
-	Gt *string `json:"gt"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#gte Macie2FindingsFilter#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#lt Macie2FindingsFilter#lt}.
-	Lt *string `json:"lt"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#lte Macie2FindingsFilter#lte}.
-	Lte *string `json:"lte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter.html#neq Macie2FindingsFilter#neq}.
-	Neq *[]*string `json:"neq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#field Macie2FindingsFilter#field}.
+	Field *string `json:"field" yaml:"field"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#eq Macie2FindingsFilter#eq}.
+	Eq *[]*string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#eq_exact_match Macie2FindingsFilter#eq_exact_match}.
+	EqExactMatch *[]*string `json:"eqExactMatch" yaml:"eqExactMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#gt Macie2FindingsFilter#gt}.
+	Gt *string `json:"gt" yaml:"gt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#gte Macie2FindingsFilter#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#lt Macie2FindingsFilter#lt}.
+	Lt *string `json:"lt" yaml:"lt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#lte Macie2FindingsFilter#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_findings_filter#neq Macie2FindingsFilter#neq}.
+	Neq *[]*string `json:"neq" yaml:"neq"`
 }
 
 type Macie2FindingsFilterFindingCriteriaOutputReference interface {
 	cdktf.ComplexObject
-	Criterion() *[]*Macie2FindingsFilterFindingCriteriaCriterion
-	SetCriterion(val *[]*Macie2FindingsFilterFindingCriteriaCriterion)
-	CriterionInput() *[]*Macie2FindingsFilterFindingCriteriaCriterion
+	Criterion() interface{}
+	SetCriterion(val interface{})
+	CriterionInput() interface{}
 	InternalValue() *Macie2FindingsFilterFindingCriteria
 	SetInternalValue(val *Macie2FindingsFilterFindingCriteria)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCriterion()
@@ -6269,8 +7344,8 @@ type jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) Criterion() *[]*Macie2FindingsFilterFindingCriteriaCriterion {
-	var returns *[]*Macie2FindingsFilterFindingCriteriaCriterion
+func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) Criterion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"criterion",
@@ -6279,8 +7354,8 @@ func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) Criterion
 	return returns
 }
 
-func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) CriterionInput() *[]*Macie2FindingsFilterFindingCriteriaCriterion {
-	var returns *[]*Macie2FindingsFilterFindingCriteriaCriterion
+func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) CriterionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"criterionInput",
@@ -6319,8 +7394,8 @@ func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6329,7 +7404,7 @@ func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) Terraform
 	return returns
 }
 
-func NewMacie2FindingsFilterFindingCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2FindingsFilterFindingCriteriaOutputReference {
+func NewMacie2FindingsFilterFindingCriteriaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2FindingsFilterFindingCriteriaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference{}
@@ -6343,7 +7418,7 @@ func NewMacie2FindingsFilterFindingCriteriaOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewMacie2FindingsFilterFindingCriteriaOutputReference_Override(m Macie2FindingsFilterFindingCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2FindingsFilterFindingCriteriaOutputReference_Override(m Macie2FindingsFilterFindingCriteriaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6353,7 +7428,7 @@ func NewMacie2FindingsFilterFindingCriteriaOutputReference_Override(m Macie2Find
 	)
 }
 
-func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetCriterion(val *[]*Macie2FindingsFilterFindingCriteriaCriterion) {
+func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetCriterion(val interface{}) {
 	_jsii_.Set(
 		j,
 		"criterion",
@@ -6385,7 +7460,7 @@ func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6394,12 +7469,40 @@ func (j *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) SetTerraf
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6436,12 +7539,54 @@ func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetNumber
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6485,7 +7630,7 @@ func (m *jsiiProxy_Macie2FindingsFilterFindingCriteriaOutputReference) ResetCrit
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter.html aws_macie2_invitation_accepter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter aws_macie2_invitation_accepter}.
 type Macie2InvitationAccepter interface {
 	cdktf.TerraformResource
 	AdministratorAccountId() *string
@@ -6493,8 +7638,8 @@ type Macie2InvitationAccepter interface {
 	AdministratorAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6513,10 +7658,15 @@ type Macie2InvitationAccepter interface {
 	Timeouts() Macie2InvitationAccepterTimeoutsOutputReference
 	TimeoutsInput() *Macie2InvitationAccepterTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Macie2InvitationAccepterTimeouts)
@@ -6573,8 +7723,8 @@ func (j *jsiiProxy_Macie2InvitationAccepter) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_Macie2InvitationAccepter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2InvitationAccepter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6723,7 +7873,7 @@ func (j *jsiiProxy_Macie2InvitationAccepter) TimeoutsInput() *Macie2InvitationAc
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter.html aws_macie2_invitation_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter aws_macie2_invitation_accepter} Resource.
 func NewMacie2InvitationAccepter(scope constructs.Construct, id *string, config *Macie2InvitationAccepterConfig) Macie2InvitationAccepter {
 	_init_.Initialize()
 
@@ -6738,7 +7888,7 @@ func NewMacie2InvitationAccepter(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter.html aws_macie2_invitation_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter aws_macie2_invitation_accepter} Resource.
 func NewMacie2InvitationAccepter_Override(m Macie2InvitationAccepter, scope constructs.Construct, id *string, config *Macie2InvitationAccepterConfig) {
 	_init_.Initialize()
 
@@ -6757,7 +7907,7 @@ func (j *jsiiProxy_Macie2InvitationAccepter) SetAdministratorAccountId(val *stri
 	)
 }
 
-func (j *jsiiProxy_Macie2InvitationAccepter) SetCount(val interface{}) {
+func (j *jsiiProxy_Macie2InvitationAccepter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6829,12 +7979,40 @@ func (m *jsiiProxy_Macie2InvitationAccepter) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2InvitationAccepter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6871,12 +8049,54 @@ func (m *jsiiProxy_Macie2InvitationAccepter) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2InvitationAccepter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6993,24 +8213,24 @@ func (m *jsiiProxy_Macie2InvitationAccepter) ToTerraform() interface{} {
 // AWS Macie 2.
 type Macie2InvitationAccepterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter.html#administrator_account_id Macie2InvitationAccepter#administrator_account_id}.
-	AdministratorAccountId *string `json:"administratorAccountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter#administrator_account_id Macie2InvitationAccepter#administrator_account_id}.
+	AdministratorAccountId *string `json:"administratorAccountId" yaml:"administratorAccountId"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter.html#timeouts Macie2InvitationAccepter#timeouts}
-	Timeouts *Macie2InvitationAccepterTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter#timeouts Macie2InvitationAccepter#timeouts}
+	Timeouts *Macie2InvitationAccepterTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Macie2InvitationAccepterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter.html#create Macie2InvitationAccepter#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_invitation_accepter#create Macie2InvitationAccepter#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type Macie2InvitationAccepterTimeoutsOutputReference interface {
@@ -7024,12 +8244,17 @@ type Macie2InvitationAccepterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7090,8 +8315,8 @@ func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7100,7 +8325,7 @@ func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) TerraformRes
 	return returns
 }
 
-func NewMacie2InvitationAccepterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2InvitationAccepterTimeoutsOutputReference {
+func NewMacie2InvitationAccepterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2InvitationAccepterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference{}
@@ -7114,7 +8339,7 @@ func NewMacie2InvitationAccepterTimeoutsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewMacie2InvitationAccepterTimeoutsOutputReference_Override(m Macie2InvitationAccepterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2InvitationAccepterTimeoutsOutputReference_Override(m Macie2InvitationAccepterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7156,7 +8381,7 @@ func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7165,12 +8390,40 @@ func (j *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7207,12 +8460,54 @@ func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7256,7 +8551,7 @@ func (m *jsiiProxy_Macie2InvitationAccepterTimeoutsOutputReference) ResetCreate(
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html aws_macie2_member}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_member aws_macie2_member}.
 type Macie2Member interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -7266,8 +8561,8 @@ type Macie2Member interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Email() *string
@@ -7297,12 +8592,12 @@ type Macie2Member interface {
 	Status() *string
 	SetStatus(val *string)
 	StatusInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7310,10 +8605,15 @@ type Macie2Member interface {
 	TimeoutsInput() *Macie2MemberTimeouts
 	UpdatedAt() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Macie2MemberTimeouts)
@@ -7396,8 +8696,8 @@ func (j *jsiiProxy_Macie2Member) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_Macie2Member) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2Member) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7616,8 +8916,8 @@ func (j *jsiiProxy_Macie2Member) StatusInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2Member) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2Member) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7626,8 +8926,8 @@ func (j *jsiiProxy_Macie2Member) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2Member) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2Member) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7636,8 +8936,8 @@ func (j *jsiiProxy_Macie2Member) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2Member) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2Member) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7646,8 +8946,8 @@ func (j *jsiiProxy_Macie2Member) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Macie2Member) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2Member) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7716,7 +9016,7 @@ func (j *jsiiProxy_Macie2Member) UpdatedAt() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html aws_macie2_member} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_member aws_macie2_member} Resource.
 func NewMacie2Member(scope constructs.Construct, id *string, config *Macie2MemberConfig) Macie2Member {
 	_init_.Initialize()
 
@@ -7731,7 +9031,7 @@ func NewMacie2Member(scope constructs.Construct, id *string, config *Macie2Membe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html aws_macie2_member} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_member aws_macie2_member} Resource.
 func NewMacie2Member_Override(m Macie2Member, scope constructs.Construct, id *string, config *Macie2MemberConfig) {
 	_init_.Initialize()
 
@@ -7750,7 +9050,7 @@ func (j *jsiiProxy_Macie2Member) SetAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Macie2Member) SetCount(val interface{}) {
+func (j *jsiiProxy_Macie2Member) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7822,7 +9122,7 @@ func (j *jsiiProxy_Macie2Member) SetStatus(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Macie2Member) SetTags(val interface{}) {
+func (j *jsiiProxy_Macie2Member) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7830,7 +9130,7 @@ func (j *jsiiProxy_Macie2Member) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Macie2Member) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Macie2Member) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7878,12 +9178,40 @@ func (m *jsiiProxy_Macie2Member) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2Member) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2Member) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2Member) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7920,12 +9248,54 @@ func (m *jsiiProxy_Macie2Member) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2Member) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2Member) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2Member) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2Member) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8090,40 +9460,40 @@ func (m *jsiiProxy_Macie2Member) ToTerraform() interface{} {
 // AWS Macie 2.
 type Macie2MemberConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#account_id Macie2Member#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#email Macie2Member#email}.
-	Email *string `json:"email"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#invitation_disable_email_notification Macie2Member#invitation_disable_email_notification}.
-	InvitationDisableEmailNotification *string `json:"invitationDisableEmailNotification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#invitation_message Macie2Member#invitation_message}.
-	InvitationMessage *string `json:"invitationMessage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#invite Macie2Member#invite}.
-	Invite interface{} `json:"invite"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#status Macie2Member#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#tags Macie2Member#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#tags_all Macie2Member#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#account_id Macie2Member#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#email Macie2Member#email}.
+	Email *string `json:"email" yaml:"email"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#invitation_disable_email_notification Macie2Member#invitation_disable_email_notification}.
+	InvitationDisableEmailNotification *string `json:"invitationDisableEmailNotification" yaml:"invitationDisableEmailNotification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#invitation_message Macie2Member#invitation_message}.
+	InvitationMessage *string `json:"invitationMessage" yaml:"invitationMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#invite Macie2Member#invite}.
+	Invite interface{} `json:"invite" yaml:"invite"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#status Macie2Member#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#tags Macie2Member#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#tags_all Macie2Member#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#timeouts Macie2Member#timeouts}
-	Timeouts *Macie2MemberTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#timeouts Macie2Member#timeouts}
+	Timeouts *Macie2MemberTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Macie2MemberTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#create Macie2Member#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member.html#update Macie2Member#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#create Macie2Member#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_member#update Macie2Member#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type Macie2MemberTimeoutsOutputReference interface {
@@ -8137,15 +9507,20 @@ type Macie2MemberTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -8207,8 +9582,8 @@ func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8237,7 +9612,7 @@ func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewMacie2MemberTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Macie2MemberTimeoutsOutputReference {
+func NewMacie2MemberTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Macie2MemberTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Macie2MemberTimeoutsOutputReference{}
@@ -8251,7 +9626,7 @@ func NewMacie2MemberTimeoutsOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewMacie2MemberTimeoutsOutputReference_Override(m Macie2MemberTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacie2MemberTimeoutsOutputReference_Override(m Macie2MemberTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8293,7 +9668,7 @@ func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8310,12 +9685,40 @@ func (j *jsiiProxy_Macie2MemberTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8352,12 +9755,54 @@ func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8409,7 +9854,7 @@ func (m *jsiiProxy_Macie2MemberTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account.html aws_macie2_organization_admin_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account aws_macie2_organization_admin_account}.
 type Macie2OrganizationAdminAccount interface {
 	cdktf.TerraformResource
 	AdminAccountId() *string
@@ -8417,8 +9862,8 @@ type Macie2OrganizationAdminAccount interface {
 	AdminAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8434,10 +9879,15 @@ type Macie2OrganizationAdminAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -8492,8 +9942,8 @@ func (j *jsiiProxy_Macie2OrganizationAdminAccount) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_Macie2OrganizationAdminAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Macie2OrganizationAdminAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8612,7 +10062,7 @@ func (j *jsiiProxy_Macie2OrganizationAdminAccount) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account.html aws_macie2_organization_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account aws_macie2_organization_admin_account} Resource.
 func NewMacie2OrganizationAdminAccount(scope constructs.Construct, id *string, config *Macie2OrganizationAdminAccountConfig) Macie2OrganizationAdminAccount {
 	_init_.Initialize()
 
@@ -8627,7 +10077,7 @@ func NewMacie2OrganizationAdminAccount(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account.html aws_macie2_organization_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account aws_macie2_organization_admin_account} Resource.
 func NewMacie2OrganizationAdminAccount_Override(m Macie2OrganizationAdminAccount, scope constructs.Construct, id *string, config *Macie2OrganizationAdminAccountConfig) {
 	_init_.Initialize()
 
@@ -8646,7 +10096,7 @@ func (j *jsiiProxy_Macie2OrganizationAdminAccount) SetAdminAccountId(val *string
 	)
 }
 
-func (j *jsiiProxy_Macie2OrganizationAdminAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_Macie2OrganizationAdminAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8718,12 +10168,40 @@ func (m *jsiiProxy_Macie2OrganizationAdminAccount) AddOverride(path *string, val
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8760,12 +10238,54 @@ func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_Macie2OrganizationAdminAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8866,13 +10386,13 @@ func (m *jsiiProxy_Macie2OrganizationAdminAccount) ToTerraform() interface{} {
 // AWS Macie 2.
 type Macie2OrganizationAdminAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account.html#admin_account_id Macie2OrganizationAdminAccount#admin_account_id}.
-	AdminAccountId *string `json:"adminAccountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie2_organization_admin_account#admin_account_id Macie2OrganizationAdminAccount#admin_account_id}.
+	AdminAccountId *string `json:"adminAccountId" yaml:"adminAccountId"`
 }

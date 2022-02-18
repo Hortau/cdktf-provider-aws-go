@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/cognito/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html aws_cognito_identity_pool}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool aws_cognito_identity_pool}.
 type CognitoIdentityPool interface {
 	cdktf.TerraformResource
 	AllowClassicFlow() interface{}
@@ -20,12 +20,12 @@ type CognitoIdentityPool interface {
 	AllowUnauthenticatedIdentitiesInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
-	CognitoIdentityProviders() *[]*CognitoIdentityPoolCognitoIdentityProviders
-	SetCognitoIdentityProviders(val *[]*CognitoIdentityPoolCognitoIdentityProviders)
-	CognitoIdentityProvidersInput() *[]*CognitoIdentityPoolCognitoIdentityProviders
+	CognitoIdentityProviders() interface{}
+	SetCognitoIdentityProviders(val interface{})
+	CognitoIdentityProvidersInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeveloperProviderName() *string
@@ -49,23 +49,28 @@ type CognitoIdentityPool interface {
 	SamlProviderArns() *[]*string
 	SetSamlProviderArns(val *[]*string)
 	SamlProviderArnsInput() *[]*string
-	SupportedLoginProviders() interface{}
-	SetSupportedLoginProviders(val interface{})
-	SupportedLoginProvidersInput() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	SupportedLoginProviders() *map[string]*string
+	SetSupportedLoginProviders(val *map[string]*string)
+	SupportedLoginProvidersInput() *map[string]*string
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllowClassicFlow()
@@ -149,8 +154,8 @@ func (j *jsiiProxy_CognitoIdentityPool) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) CognitoIdentityProviders() *[]*CognitoIdentityPoolCognitoIdentityProviders {
-	var returns *[]*CognitoIdentityPoolCognitoIdentityProviders
+func (j *jsiiProxy_CognitoIdentityPool) CognitoIdentityProviders() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"cognitoIdentityProviders",
@@ -159,8 +164,8 @@ func (j *jsiiProxy_CognitoIdentityPool) CognitoIdentityProviders() *[]*CognitoId
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) CognitoIdentityProvidersInput() *[]*CognitoIdentityPoolCognitoIdentityProviders {
-	var returns *[]*CognitoIdentityPoolCognitoIdentityProviders
+func (j *jsiiProxy_CognitoIdentityPool) CognitoIdentityProvidersInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"cognitoIdentityProvidersInput",
@@ -179,8 +184,8 @@ func (j *jsiiProxy_CognitoIdentityPool) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPool) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -349,8 +354,8 @@ func (j *jsiiProxy_CognitoIdentityPool) SamlProviderArnsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) SupportedLoginProviders() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPool) SupportedLoginProviders() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"supportedLoginProviders",
@@ -359,8 +364,8 @@ func (j *jsiiProxy_CognitoIdentityPool) SupportedLoginProviders() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) SupportedLoginProvidersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPool) SupportedLoginProvidersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"supportedLoginProvidersInput",
@@ -369,8 +374,8 @@ func (j *jsiiProxy_CognitoIdentityPool) SupportedLoginProvidersInput() interface
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPool) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -379,8 +384,8 @@ func (j *jsiiProxy_CognitoIdentityPool) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPool) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -389,8 +394,8 @@ func (j *jsiiProxy_CognitoIdentityPool) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPool) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -399,8 +404,8 @@ func (j *jsiiProxy_CognitoIdentityPool) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPool) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -439,7 +444,7 @@ func (j *jsiiProxy_CognitoIdentityPool) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html aws_cognito_identity_pool} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool aws_cognito_identity_pool} Resource.
 func NewCognitoIdentityPool(scope constructs.Construct, id *string, config *CognitoIdentityPoolConfig) CognitoIdentityPool {
 	_init_.Initialize()
 
@@ -454,7 +459,7 @@ func NewCognitoIdentityPool(scope constructs.Construct, id *string, config *Cogn
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html aws_cognito_identity_pool} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool aws_cognito_identity_pool} Resource.
 func NewCognitoIdentityPool_Override(c CognitoIdentityPool, scope constructs.Construct, id *string, config *CognitoIdentityPoolConfig) {
 	_init_.Initialize()
 
@@ -481,7 +486,7 @@ func (j *jsiiProxy_CognitoIdentityPool) SetAllowUnauthenticatedIdentities(val in
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) SetCognitoIdentityProviders(val *[]*CognitoIdentityPoolCognitoIdentityProviders) {
+func (j *jsiiProxy_CognitoIdentityPool) SetCognitoIdentityProviders(val interface{}) {
 	_jsii_.Set(
 		j,
 		"cognitoIdentityProviders",
@@ -489,7 +494,7 @@ func (j *jsiiProxy_CognitoIdentityPool) SetCognitoIdentityProviders(val *[]*Cogn
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityPool) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -553,7 +558,7 @@ func (j *jsiiProxy_CognitoIdentityPool) SetSamlProviderArns(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) SetSupportedLoginProviders(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityPool) SetSupportedLoginProviders(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"supportedLoginProviders",
@@ -561,7 +566,7 @@ func (j *jsiiProxy_CognitoIdentityPool) SetSupportedLoginProviders(val interface
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) SetTags(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityPool) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -569,7 +574,7 @@ func (j *jsiiProxy_CognitoIdentityPool) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPool) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityPool) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -617,12 +622,40 @@ func (c *jsiiProxy_CognitoIdentityPool) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoIdentityPool) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoIdentityPool) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPool) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -659,12 +692,54 @@ func (c *jsiiProxy_CognitoIdentityPool) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoIdentityPool) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPool) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoIdentityPool) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPool) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -835,55 +910,715 @@ func (c *jsiiProxy_CognitoIdentityPool) ToTerraform() interface{} {
 }
 
 type CognitoIdentityPoolCognitoIdentityProviders struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#client_id CognitoIdentityPool#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#provider_name CognitoIdentityPool#provider_name}.
-	ProviderName *string `json:"providerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#server_side_token_check CognitoIdentityPool#server_side_token_check}.
-	ServerSideTokenCheck interface{} `json:"serverSideTokenCheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#client_id CognitoIdentityPool#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#provider_name CognitoIdentityPool#provider_name}.
+	ProviderName *string `json:"providerName" yaml:"providerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#server_side_token_check CognitoIdentityPool#server_side_token_check}.
+	ServerSideTokenCheck interface{} `json:"serverSideTokenCheck" yaml:"serverSideTokenCheck"`
 }
 
 // AWS Cognito.
 type CognitoIdentityPoolConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#identity_pool_name CognitoIdentityPool#identity_pool_name}.
-	IdentityPoolName *string `json:"identityPoolName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#allow_classic_flow CognitoIdentityPool#allow_classic_flow}.
-	AllowClassicFlow interface{} `json:"allowClassicFlow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#allow_unauthenticated_identities CognitoIdentityPool#allow_unauthenticated_identities}.
-	AllowUnauthenticatedIdentities interface{} `json:"allowUnauthenticatedIdentities"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#identity_pool_name CognitoIdentityPool#identity_pool_name}.
+	IdentityPoolName *string `json:"identityPoolName" yaml:"identityPoolName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#allow_classic_flow CognitoIdentityPool#allow_classic_flow}.
+	AllowClassicFlow interface{} `json:"allowClassicFlow" yaml:"allowClassicFlow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#allow_unauthenticated_identities CognitoIdentityPool#allow_unauthenticated_identities}.
+	AllowUnauthenticatedIdentities interface{} `json:"allowUnauthenticatedIdentities" yaml:"allowUnauthenticatedIdentities"`
 	// cognito_identity_providers block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#cognito_identity_providers CognitoIdentityPool#cognito_identity_providers}
-	CognitoIdentityProviders *[]*CognitoIdentityPoolCognitoIdentityProviders `json:"cognitoIdentityProviders"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#developer_provider_name CognitoIdentityPool#developer_provider_name}.
-	DeveloperProviderName *string `json:"developerProviderName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#openid_connect_provider_arns CognitoIdentityPool#openid_connect_provider_arns}.
-	OpenidConnectProviderArns *[]*string `json:"openidConnectProviderArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#saml_provider_arns CognitoIdentityPool#saml_provider_arns}.
-	SamlProviderArns *[]*string `json:"samlProviderArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#supported_login_providers CognitoIdentityPool#supported_login_providers}.
-	SupportedLoginProviders interface{} `json:"supportedLoginProviders"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#tags CognitoIdentityPool#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html#tags_all CognitoIdentityPool#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#cognito_identity_providers CognitoIdentityPool#cognito_identity_providers}
+	CognitoIdentityProviders interface{} `json:"cognitoIdentityProviders" yaml:"cognitoIdentityProviders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#developer_provider_name CognitoIdentityPool#developer_provider_name}.
+	DeveloperProviderName *string `json:"developerProviderName" yaml:"developerProviderName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#openid_connect_provider_arns CognitoIdentityPool#openid_connect_provider_arns}.
+	OpenidConnectProviderArns *[]*string `json:"openidConnectProviderArns" yaml:"openidConnectProviderArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#saml_provider_arns CognitoIdentityPool#saml_provider_arns}.
+	SamlProviderArns *[]*string `json:"samlProviderArns" yaml:"samlProviderArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#supported_login_providers CognitoIdentityPool#supported_login_providers}.
+	SupportedLoginProviders *map[string]*string `json:"supportedLoginProviders" yaml:"supportedLoginProviders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#tags CognitoIdentityPool#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool#tags_all CognitoIdentityPool#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html aws_cognito_identity_pool_roles_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_provider_principal_tag aws_cognito_identity_pool_provider_principal_tag}.
+type CognitoIdentityPoolProviderPrincipalTag interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	IdentityPoolId() *string
+	SetIdentityPoolId(val *string)
+	IdentityPoolIdInput() *string
+	IdentityProviderName() *string
+	SetIdentityProviderName(val *string)
+	IdentityProviderNameInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	PrincipalTags() *map[string]*string
+	SetPrincipalTags(val *map[string]*string)
+	PrincipalTagsInput() *map[string]*string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	UseDefaults() interface{}
+	SetUseDefaults(val interface{})
+	UseDefaultsInput() interface{}
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetPrincipalTags()
+	ResetUseDefaults()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for CognitoIdentityPoolProviderPrincipalTag
+type jsiiProxy_CognitoIdentityPoolProviderPrincipalTag struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) IdentityPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) IdentityPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) IdentityProviderName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityProviderName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) IdentityProviderNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"identityProviderNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) PrincipalTags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"principalTags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) PrincipalTagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"principalTagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) UseDefaults() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"useDefaults",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) UseDefaultsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"useDefaultsInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_provider_principal_tag aws_cognito_identity_pool_provider_principal_tag} Resource.
+func NewCognitoIdentityPoolProviderPrincipalTag(scope constructs.Construct, id *string, config *CognitoIdentityPoolProviderPrincipalTagConfig) CognitoIdentityPoolProviderPrincipalTag {
+	_init_.Initialize()
+
+	j := jsiiProxy_CognitoIdentityPoolProviderPrincipalTag{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.CognitoIdentityPoolProviderPrincipalTag",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_provider_principal_tag aws_cognito_identity_pool_provider_principal_tag} Resource.
+func NewCognitoIdentityPoolProviderPrincipalTag_Override(c CognitoIdentityPoolProviderPrincipalTag, scope constructs.Construct, id *string, config *CognitoIdentityPoolProviderPrincipalTagConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.CognitoIdentityPoolProviderPrincipalTag",
+		[]interface{}{scope, id, config},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetIdentityPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"identityPoolId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetIdentityProviderName(val *string) {
+	_jsii_.Set(
+		j,
+		"identityProviderName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetPrincipalTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"principalTags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SetUseDefaults(val interface{}) {
+	_jsii_.Set(
+		j,
+		"useDefaults",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func CognitoIdentityPoolProviderPrincipalTag_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.cognito.CognitoIdentityPoolProviderPrincipalTag",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func CognitoIdentityPoolProviderPrincipalTag_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.cognito.CognitoIdentityPoolProviderPrincipalTag",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		c,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		c,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) ResetPrincipalTags() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetPrincipalTags",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) ResetUseDefaults() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetUseDefaults",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolProviderPrincipalTag) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Cognito.
+type CognitoIdentityPoolProviderPrincipalTagConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_provider_principal_tag#identity_pool_id CognitoIdentityPoolProviderPrincipalTag#identity_pool_id}.
+	IdentityPoolId *string `json:"identityPoolId" yaml:"identityPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_provider_principal_tag#identity_provider_name CognitoIdentityPoolProviderPrincipalTag#identity_provider_name}.
+	IdentityProviderName *string `json:"identityProviderName" yaml:"identityProviderName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_provider_principal_tag#principal_tags CognitoIdentityPoolProviderPrincipalTag#principal_tags}.
+	PrincipalTags *map[string]*string `json:"principalTags" yaml:"principalTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_provider_principal_tag#use_defaults CognitoIdentityPoolProviderPrincipalTag#use_defaults}.
+	UseDefaults interface{} `json:"useDefaults" yaml:"useDefaults"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment aws_cognito_identity_pool_roles_attachment}.
 type CognitoIdentityPoolRolesAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -898,20 +1633,25 @@ type CognitoIdentityPoolRolesAttachment interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RoleMapping() *[]*CognitoIdentityPoolRolesAttachmentRoleMapping
-	SetRoleMapping(val *[]*CognitoIdentityPoolRolesAttachmentRoleMapping)
-	RoleMappingInput() *[]*CognitoIdentityPoolRolesAttachmentRoleMapping
-	Roles() interface{}
-	SetRoles(val interface{})
-	RolesInput() interface{}
+	RoleMapping() interface{}
+	SetRoleMapping(val interface{})
+	RoleMappingInput() interface{}
+	Roles() *map[string]*string
+	SetRoles(val *map[string]*string)
+	RolesInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -947,8 +1687,8 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1057,8 +1797,8 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RawOverrides() interface{
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RoleMapping() *[]*CognitoIdentityPoolRolesAttachmentRoleMapping {
-	var returns *[]*CognitoIdentityPoolRolesAttachmentRoleMapping
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RoleMapping() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"roleMapping",
@@ -1067,8 +1807,8 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RoleMapping() *[]*Cognito
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RoleMappingInput() *[]*CognitoIdentityPoolRolesAttachmentRoleMapping {
-	var returns *[]*CognitoIdentityPoolRolesAttachmentRoleMapping
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RoleMappingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"roleMappingInput",
@@ -1077,8 +1817,8 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RoleMappingInput() *[]*Co
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) Roles() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) Roles() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"roles",
@@ -1087,8 +1827,8 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) Roles() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RolesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) RolesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"rolesInput",
@@ -1127,7 +1867,7 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html aws_cognito_identity_pool_roles_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment aws_cognito_identity_pool_roles_attachment} Resource.
 func NewCognitoIdentityPoolRolesAttachment(scope constructs.Construct, id *string, config *CognitoIdentityPoolRolesAttachmentConfig) CognitoIdentityPoolRolesAttachment {
 	_init_.Initialize()
 
@@ -1142,7 +1882,7 @@ func NewCognitoIdentityPoolRolesAttachment(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html aws_cognito_identity_pool_roles_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment aws_cognito_identity_pool_roles_attachment} Resource.
 func NewCognitoIdentityPoolRolesAttachment_Override(c CognitoIdentityPoolRolesAttachment, scope constructs.Construct, id *string, config *CognitoIdentityPoolRolesAttachmentConfig) {
 	_init_.Initialize()
 
@@ -1153,7 +1893,7 @@ func NewCognitoIdentityPoolRolesAttachment_Override(c CognitoIdentityPoolRolesAt
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1193,7 +1933,7 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetProvider(val cdktf.Ter
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetRoleMapping(val *[]*CognitoIdentityPoolRolesAttachmentRoleMapping) {
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetRoleMapping(val interface{}) {
 	_jsii_.Set(
 		j,
 		"roleMapping",
@@ -1201,7 +1941,7 @@ func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetRoleMapping(val *[]*Co
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetRoles(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityPoolRolesAttachment) SetRoles(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"roles",
@@ -1249,12 +1989,40 @@ func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) AddOverride(path *string,
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1291,12 +2059,54 @@ func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1405,57 +2215,57 @@ func (c *jsiiProxy_CognitoIdentityPoolRolesAttachment) ToTerraform() interface{}
 // AWS Cognito.
 type CognitoIdentityPoolRolesAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#identity_pool_id CognitoIdentityPoolRolesAttachment#identity_pool_id}.
-	IdentityPoolId *string `json:"identityPoolId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#roles CognitoIdentityPoolRolesAttachment#roles}.
-	Roles interface{} `json:"roles"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#identity_pool_id CognitoIdentityPoolRolesAttachment#identity_pool_id}.
+	IdentityPoolId *string `json:"identityPoolId" yaml:"identityPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#roles CognitoIdentityPoolRolesAttachment#roles}.
+	Roles *map[string]*string `json:"roles" yaml:"roles"`
 	// role_mapping block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#role_mapping CognitoIdentityPoolRolesAttachment#role_mapping}
-	RoleMapping *[]*CognitoIdentityPoolRolesAttachmentRoleMapping `json:"roleMapping"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#role_mapping CognitoIdentityPoolRolesAttachment#role_mapping}
+	RoleMapping interface{} `json:"roleMapping" yaml:"roleMapping"`
 }
 
 type CognitoIdentityPoolRolesAttachmentRoleMapping struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#identity_provider CognitoIdentityPoolRolesAttachment#identity_provider}.
-	IdentityProvider *string `json:"identityProvider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#type CognitoIdentityPoolRolesAttachment#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#ambiguous_role_resolution CognitoIdentityPoolRolesAttachment#ambiguous_role_resolution}.
-	AmbiguousRoleResolution *string `json:"ambiguousRoleResolution"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#identity_provider CognitoIdentityPoolRolesAttachment#identity_provider}.
+	IdentityProvider *string `json:"identityProvider" yaml:"identityProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#type CognitoIdentityPoolRolesAttachment#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#ambiguous_role_resolution CognitoIdentityPoolRolesAttachment#ambiguous_role_resolution}.
+	AmbiguousRoleResolution *string `json:"ambiguousRoleResolution" yaml:"ambiguousRoleResolution"`
 	// mapping_rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#mapping_rule CognitoIdentityPoolRolesAttachment#mapping_rule}
-	MappingRule *[]*CognitoIdentityPoolRolesAttachmentRoleMappingMappingRule `json:"mappingRule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#mapping_rule CognitoIdentityPoolRolesAttachment#mapping_rule}
+	MappingRule interface{} `json:"mappingRule" yaml:"mappingRule"`
 }
 
 type CognitoIdentityPoolRolesAttachmentRoleMappingMappingRule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#claim CognitoIdentityPoolRolesAttachment#claim}.
-	Claim *string `json:"claim"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#match_type CognitoIdentityPoolRolesAttachment#match_type}.
-	MatchType *string `json:"matchType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#role_arn CognitoIdentityPoolRolesAttachment#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment.html#value CognitoIdentityPoolRolesAttachment#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#claim CognitoIdentityPoolRolesAttachment#claim}.
+	Claim *string `json:"claim" yaml:"claim"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#match_type CognitoIdentityPoolRolesAttachment#match_type}.
+	MatchType *string `json:"matchType" yaml:"matchType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#role_arn CognitoIdentityPoolRolesAttachment#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool_roles_attachment#value CognitoIdentityPoolRolesAttachment#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html aws_cognito_identity_provider}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider aws_cognito_identity_provider}.
 type CognitoIdentityProvider interface {
 	cdktf.TerraformResource
-	AttributeMapping() interface{}
-	SetAttributeMapping(val interface{})
-	AttributeMappingInput() interface{}
+	AttributeMapping() *map[string]*string
+	SetAttributeMapping(val *map[string]*string)
+	AttributeMappingInput() *map[string]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1469,9 +2279,9 @@ type CognitoIdentityProvider interface {
 	Node() constructs.Node
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
-	ProviderDetails() interface{}
-	SetProviderDetails(val interface{})
-	ProviderDetailsInput() interface{}
+	ProviderDetails() *map[string]*string
+	SetProviderDetails(val *map[string]*string)
+	ProviderDetailsInput() *map[string]*string
 	ProviderName() *string
 	SetProviderName(val *string)
 	ProviderNameInput() *string
@@ -1486,10 +2296,15 @@ type CognitoIdentityProvider interface {
 	SetUserPoolId(val *string)
 	UserPoolIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAttributeMapping()
@@ -1506,8 +2321,8 @@ type jsiiProxy_CognitoIdentityProvider struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) AttributeMapping() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityProvider) AttributeMapping() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"attributeMapping",
@@ -1516,8 +2331,8 @@ func (j *jsiiProxy_CognitoIdentityProvider) AttributeMapping() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) AttributeMappingInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityProvider) AttributeMappingInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"attributeMappingInput",
@@ -1546,8 +2361,8 @@ func (j *jsiiProxy_CognitoIdentityProvider) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityProvider) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1646,8 +2461,8 @@ func (j *jsiiProxy_CognitoIdentityProvider) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) ProviderDetails() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityProvider) ProviderDetails() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"providerDetails",
@@ -1656,8 +2471,8 @@ func (j *jsiiProxy_CognitoIdentityProvider) ProviderDetails() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) ProviderDetailsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoIdentityProvider) ProviderDetailsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"providerDetailsInput",
@@ -1766,7 +2581,7 @@ func (j *jsiiProxy_CognitoIdentityProvider) UserPoolIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html aws_cognito_identity_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider aws_cognito_identity_provider} Resource.
 func NewCognitoIdentityProvider(scope constructs.Construct, id *string, config *CognitoIdentityProviderConfig) CognitoIdentityProvider {
 	_init_.Initialize()
 
@@ -1781,7 +2596,7 @@ func NewCognitoIdentityProvider(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html aws_cognito_identity_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider aws_cognito_identity_provider} Resource.
 func NewCognitoIdentityProvider_Override(c CognitoIdentityProvider, scope constructs.Construct, id *string, config *CognitoIdentityProviderConfig) {
 	_init_.Initialize()
 
@@ -1792,7 +2607,7 @@ func NewCognitoIdentityProvider_Override(c CognitoIdentityProvider, scope constr
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) SetAttributeMapping(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityProvider) SetAttributeMapping(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"attributeMapping",
@@ -1800,7 +2615,7 @@ func (j *jsiiProxy_CognitoIdentityProvider) SetAttributeMapping(val interface{})
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityProvider) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1840,7 +2655,7 @@ func (j *jsiiProxy_CognitoIdentityProvider) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_CognitoIdentityProvider) SetProviderDetails(val interface{}) {
+func (j *jsiiProxy_CognitoIdentityProvider) SetProviderDetails(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"providerDetails",
@@ -1912,12 +2727,40 @@ func (c *jsiiProxy_CognitoIdentityProvider) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoIdentityProvider) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoIdentityProvider) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityProvider) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1954,12 +2797,54 @@ func (c *jsiiProxy_CognitoIdentityProvider) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoIdentityProvider) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityProvider) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoIdentityProvider) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoIdentityProvider) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2076,34 +2961,34 @@ func (c *jsiiProxy_CognitoIdentityProvider) ToTerraform() interface{} {
 // AWS Cognito.
 type CognitoIdentityProviderConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html#provider_details CognitoIdentityProvider#provider_details}.
-	ProviderDetails interface{} `json:"providerDetails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html#provider_name CognitoIdentityProvider#provider_name}.
-	ProviderName *string `json:"providerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html#provider_type CognitoIdentityProvider#provider_type}.
-	ProviderType *string `json:"providerType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html#user_pool_id CognitoIdentityProvider#user_pool_id}.
-	UserPoolId *string `json:"userPoolId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html#attribute_mapping CognitoIdentityProvider#attribute_mapping}.
-	AttributeMapping interface{} `json:"attributeMapping"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider.html#idp_identifiers CognitoIdentityProvider#idp_identifiers}.
-	IdpIdentifiers *[]*string `json:"idpIdentifiers"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider#provider_details CognitoIdentityProvider#provider_details}.
+	ProviderDetails *map[string]*string `json:"providerDetails" yaml:"providerDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider#provider_name CognitoIdentityProvider#provider_name}.
+	ProviderName *string `json:"providerName" yaml:"providerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider#provider_type CognitoIdentityProvider#provider_type}.
+	ProviderType *string `json:"providerType" yaml:"providerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider#user_pool_id CognitoIdentityProvider#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider#attribute_mapping CognitoIdentityProvider#attribute_mapping}.
+	AttributeMapping *map[string]*string `json:"attributeMapping" yaml:"attributeMapping"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_identity_provider#idp_identifiers CognitoIdentityProvider#idp_identifiers}.
+	IdpIdentifiers *[]*string `json:"idpIdentifiers" yaml:"idpIdentifiers"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html aws_cognito_resource_server}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server aws_cognito_resource_server}.
 type CognitoResourceServer interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2121,10 +3006,10 @@ type CognitoResourceServer interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Scope() *[]*CognitoResourceServerScope
-	SetScope(val *[]*CognitoResourceServerScope)
+	Scope() interface{}
+	SetScope(val interface{})
 	ScopeIdentifiers() *[]*string
-	ScopeInput() *[]*CognitoResourceServerScope
+	ScopeInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2132,10 +3017,15 @@ type CognitoResourceServer interface {
 	SetUserPoolId(val *string)
 	UserPoolIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2171,8 +3061,8 @@ func (j *jsiiProxy_CognitoResourceServer) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_CognitoResourceServer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoResourceServer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2301,8 +3191,8 @@ func (j *jsiiProxy_CognitoResourceServer) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoResourceServer) Scope() *[]*CognitoResourceServerScope {
-	var returns *[]*CognitoResourceServerScope
+func (j *jsiiProxy_CognitoResourceServer) Scope() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"scope",
@@ -2321,8 +3211,8 @@ func (j *jsiiProxy_CognitoResourceServer) ScopeIdentifiers() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoResourceServer) ScopeInput() *[]*CognitoResourceServerScope {
-	var returns *[]*CognitoResourceServerScope
+func (j *jsiiProxy_CognitoResourceServer) ScopeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"scopeInput",
@@ -2381,7 +3271,7 @@ func (j *jsiiProxy_CognitoResourceServer) UserPoolIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html aws_cognito_resource_server} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server aws_cognito_resource_server} Resource.
 func NewCognitoResourceServer(scope constructs.Construct, id *string, config *CognitoResourceServerConfig) CognitoResourceServer {
 	_init_.Initialize()
 
@@ -2396,7 +3286,7 @@ func NewCognitoResourceServer(scope constructs.Construct, id *string, config *Co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html aws_cognito_resource_server} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server aws_cognito_resource_server} Resource.
 func NewCognitoResourceServer_Override(c CognitoResourceServer, scope constructs.Construct, id *string, config *CognitoResourceServerConfig) {
 	_init_.Initialize()
 
@@ -2407,7 +3297,7 @@ func NewCognitoResourceServer_Override(c CognitoResourceServer, scope constructs
 	)
 }
 
-func (j *jsiiProxy_CognitoResourceServer) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoResourceServer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2455,7 +3345,7 @@ func (j *jsiiProxy_CognitoResourceServer) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_CognitoResourceServer) SetScope(val *[]*CognitoResourceServerScope) {
+func (j *jsiiProxy_CognitoResourceServer) SetScope(val interface{}) {
 	_jsii_.Set(
 		j,
 		"scope",
@@ -2511,12 +3401,40 @@ func (c *jsiiProxy_CognitoResourceServer) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoResourceServer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoResourceServer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoResourceServer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2553,12 +3471,54 @@ func (c *jsiiProxy_CognitoResourceServer) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoResourceServer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoResourceServer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoResourceServer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoResourceServer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2667,39 +3627,39 @@ func (c *jsiiProxy_CognitoResourceServer) ToTerraform() interface{} {
 // AWS Cognito.
 type CognitoResourceServerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html#identifier CognitoResourceServer#identifier}.
-	Identifier *string `json:"identifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html#name CognitoResourceServer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html#user_pool_id CognitoResourceServer#user_pool_id}.
-	UserPoolId *string `json:"userPoolId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server#identifier CognitoResourceServer#identifier}.
+	Identifier *string `json:"identifier" yaml:"identifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server#name CognitoResourceServer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server#user_pool_id CognitoResourceServer#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
 	// scope block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html#scope CognitoResourceServer#scope}
-	Scope *[]*CognitoResourceServerScope `json:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server#scope CognitoResourceServer#scope}
+	Scope interface{} `json:"scope" yaml:"scope"`
 }
 
 type CognitoResourceServerScope struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html#scope_description CognitoResourceServer#scope_description}.
-	ScopeDescription *string `json:"scopeDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server.html#scope_name CognitoResourceServer#scope_name}.
-	ScopeName *string `json:"scopeName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server#scope_description CognitoResourceServer#scope_description}.
+	ScopeDescription *string `json:"scopeDescription" yaml:"scopeDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_resource_server#scope_name CognitoResourceServer#scope_name}.
+	ScopeName *string `json:"scopeName" yaml:"scopeName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html aws_cognito_user_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group aws_cognito_user_group}.
 type CognitoUserGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2730,10 +3690,15 @@ type CognitoUserGroup interface {
 	SetUserPoolId(val *string)
 	UserPoolIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -2771,8 +3736,8 @@ func (j *jsiiProxy_CognitoUserGroup) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2991,7 +3956,7 @@ func (j *jsiiProxy_CognitoUserGroup) UserPoolIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html aws_cognito_user_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group aws_cognito_user_group} Resource.
 func NewCognitoUserGroup(scope constructs.Construct, id *string, config *CognitoUserGroupConfig) CognitoUserGroup {
 	_init_.Initialize()
 
@@ -3006,7 +3971,7 @@ func NewCognitoUserGroup(scope constructs.Construct, id *string, config *Cognito
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html aws_cognito_user_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group aws_cognito_user_group} Resource.
 func NewCognitoUserGroup_Override(c CognitoUserGroup, scope constructs.Construct, id *string, config *CognitoUserGroupConfig) {
 	_init_.Initialize()
 
@@ -3017,7 +3982,7 @@ func NewCognitoUserGroup_Override(c CognitoUserGroup, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_CognitoUserGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoUserGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3129,12 +4094,40 @@ func (c *jsiiProxy_CognitoUserGroup) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3171,12 +4164,54 @@ func (c *jsiiProxy_CognitoUserGroup) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3301,26 +4336,26 @@ func (c *jsiiProxy_CognitoUserGroup) ToTerraform() interface{} {
 // AWS Cognito.
 type CognitoUserGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html#name CognitoUserGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html#user_pool_id CognitoUserGroup#user_pool_id}.
-	UserPoolId *string `json:"userPoolId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html#description CognitoUserGroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html#precedence CognitoUserGroup#precedence}.
-	Precedence *float64 `json:"precedence"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group.html#role_arn CognitoUserGroup#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group#name CognitoUserGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group#user_pool_id CognitoUserGroup#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group#description CognitoUserGroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group#precedence CognitoUserGroup#precedence}.
+	Precedence *float64 `json:"precedence" yaml:"precedence"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_group#role_arn CognitoUserGroup#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html aws_cognito_user_pool}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool aws_cognito_user_pool}.
 type CognitoUserPool interface {
 	cdktf.TerraformResource
 	AccountRecoverySetting() CognitoUserPoolAccountRecoverySettingOutputReference
@@ -3336,8 +4371,8 @@ type CognitoUserPool interface {
 	AutoVerifiedAttributesInput() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	CustomDomain() *string
 	DependsOn() *[]*string
@@ -3375,9 +4410,9 @@ type CognitoUserPool interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Schema() *[]*CognitoUserPoolSchema
-	SetSchema(val *[]*CognitoUserPoolSchema)
-	SchemaInput() *[]*CognitoUserPoolSchema
+	Schema() interface{}
+	SetSchema(val interface{})
+	SchemaInput() interface{}
 	SmsAuthenticationMessage() *string
 	SetSmsAuthenticationMessage(val *string)
 	SmsAuthenticationMessageInput() *string
@@ -3388,12 +4423,12 @@ type CognitoUserPool interface {
 	SmsVerificationMessageInput() *string
 	SoftwareTokenMfaConfiguration() CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference
 	SoftwareTokenMfaConfigurationInput() *CognitoUserPoolSoftwareTokenMfaConfiguration
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -3407,10 +4442,15 @@ type CognitoUserPool interface {
 	VerificationMessageTemplate() CognitoUserPoolVerificationMessageTemplateOutputReference
 	VerificationMessageTemplateInput() *CognitoUserPoolVerificationMessageTemplate
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAccountRecoverySetting(value *CognitoUserPoolAccountRecoverySetting)
@@ -3568,8 +4608,8 @@ func (j *jsiiProxy_CognitoUserPool) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPool) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPool) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3878,8 +4918,8 @@ func (j *jsiiProxy_CognitoUserPool) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPool) Schema() *[]*CognitoUserPoolSchema {
-	var returns *[]*CognitoUserPoolSchema
+func (j *jsiiProxy_CognitoUserPool) Schema() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"schema",
@@ -3888,8 +4928,8 @@ func (j *jsiiProxy_CognitoUserPool) Schema() *[]*CognitoUserPoolSchema {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPool) SchemaInput() *[]*CognitoUserPoolSchema {
-	var returns *[]*CognitoUserPoolSchema
+func (j *jsiiProxy_CognitoUserPool) SchemaInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"schemaInput",
@@ -3978,8 +5018,8 @@ func (j *jsiiProxy_CognitoUserPool) SoftwareTokenMfaConfigurationInput() *Cognit
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPool) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPool) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3988,8 +5028,8 @@ func (j *jsiiProxy_CognitoUserPool) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPool) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPool) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3998,8 +5038,8 @@ func (j *jsiiProxy_CognitoUserPool) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPool) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPool) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4008,8 +5048,8 @@ func (j *jsiiProxy_CognitoUserPool) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPool) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPool) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4128,7 +5168,7 @@ func (j *jsiiProxy_CognitoUserPool) VerificationMessageTemplateInput() *CognitoU
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html aws_cognito_user_pool} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool aws_cognito_user_pool} Resource.
 func NewCognitoUserPool(scope constructs.Construct, id *string, config *CognitoUserPoolConfig) CognitoUserPool {
 	_init_.Initialize()
 
@@ -4143,7 +5183,7 @@ func NewCognitoUserPool(scope constructs.Construct, id *string, config *CognitoU
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html aws_cognito_user_pool} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool aws_cognito_user_pool} Resource.
 func NewCognitoUserPool_Override(c CognitoUserPool, scope constructs.Construct, id *string, config *CognitoUserPoolConfig) {
 	_init_.Initialize()
 
@@ -4170,7 +5210,7 @@ func (j *jsiiProxy_CognitoUserPool) SetAutoVerifiedAttributes(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPool) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoUserPool) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4234,7 +5274,7 @@ func (j *jsiiProxy_CognitoUserPool) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPool) SetSchema(val *[]*CognitoUserPoolSchema) {
+func (j *jsiiProxy_CognitoUserPool) SetSchema(val interface{}) {
 	_jsii_.Set(
 		j,
 		"schema",
@@ -4258,7 +5298,7 @@ func (j *jsiiProxy_CognitoUserPool) SetSmsVerificationMessage(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPool) SetTags(val interface{}) {
+func (j *jsiiProxy_CognitoUserPool) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4266,7 +5306,7 @@ func (j *jsiiProxy_CognitoUserPool) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPool) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CognitoUserPool) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4322,12 +5362,40 @@ func (c *jsiiProxy_CognitoUserPool) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPool) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPool) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPool) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4364,12 +5432,54 @@ func (c *jsiiProxy_CognitoUserPool) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPool) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPool) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPool) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPool) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4734,8 +5844,8 @@ func (c *jsiiProxy_CognitoUserPool) ToTerraform() interface{} {
 type CognitoUserPoolAccountRecoverySetting struct {
 	// recovery_mechanism block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#recovery_mechanism CognitoUserPool#recovery_mechanism}
-	RecoveryMechanism *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism `json:"recoveryMechanism"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#recovery_mechanism CognitoUserPool#recovery_mechanism}
+	RecoveryMechanism interface{} `json:"recoveryMechanism" yaml:"recoveryMechanism"`
 }
 
 type CognitoUserPoolAccountRecoverySettingOutputReference interface {
@@ -4744,17 +5854,22 @@ type CognitoUserPoolAccountRecoverySettingOutputReference interface {
 	SetInternalValue(val *CognitoUserPoolAccountRecoverySetting)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	RecoveryMechanism() *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism
-	SetRecoveryMechanism(val *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism)
-	RecoveryMechanismInput() *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism
+	RecoveryMechanism() interface{}
+	SetRecoveryMechanism(val interface{})
+	RecoveryMechanismInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -4784,8 +5899,8 @@ func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) IsSingl
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) RecoveryMechanism() *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism {
-	var returns *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism
+func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) RecoveryMechanism() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"recoveryMechanism",
@@ -4794,8 +5909,8 @@ func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) Recover
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) RecoveryMechanismInput() *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism {
-	var returns *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism
+func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) RecoveryMechanismInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"recoveryMechanismInput",
@@ -4814,8 +5929,8 @@ func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4824,7 +5939,7 @@ func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) Terrafo
 	return returns
 }
 
-func NewCognitoUserPoolAccountRecoverySettingOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolAccountRecoverySettingOutputReference {
+func NewCognitoUserPoolAccountRecoverySettingOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolAccountRecoverySettingOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference{}
@@ -4838,7 +5953,7 @@ func NewCognitoUserPoolAccountRecoverySettingOutputReference(terraformResource c
 	return &j
 }
 
-func NewCognitoUserPoolAccountRecoverySettingOutputReference_Override(c CognitoUserPoolAccountRecoverySettingOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolAccountRecoverySettingOutputReference_Override(c CognitoUserPoolAccountRecoverySettingOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4864,7 +5979,7 @@ func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetIsSi
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetRecoveryMechanism(val *[]*CognitoUserPoolAccountRecoverySettingRecoveryMechanism) {
+func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetRecoveryMechanism(val interface{}) {
 	_jsii_.Set(
 		j,
 		"recoveryMechanism",
@@ -4880,7 +5995,7 @@ func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4889,12 +6004,40 @@ func (j *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) SetTerr
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4931,12 +6074,54 @@ func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetNumb
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4973,28 +6158,28 @@ func (c *jsiiProxy_CognitoUserPoolAccountRecoverySettingOutputReference) Interpo
 }
 
 type CognitoUserPoolAccountRecoverySettingRecoveryMechanism struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#name CognitoUserPool#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#priority CognitoUserPool#priority}.
-	Priority *float64 `json:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#name CognitoUserPool#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#priority CognitoUserPool#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
 }
 
 type CognitoUserPoolAdminCreateUserConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#allow_admin_create_user_only CognitoUserPool#allow_admin_create_user_only}.
-	AllowAdminCreateUserOnly interface{} `json:"allowAdminCreateUserOnly"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#allow_admin_create_user_only CognitoUserPool#allow_admin_create_user_only}.
+	AllowAdminCreateUserOnly interface{} `json:"allowAdminCreateUserOnly" yaml:"allowAdminCreateUserOnly"`
 	// invite_message_template block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#invite_message_template CognitoUserPool#invite_message_template}
-	InviteMessageTemplate *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate `json:"inviteMessageTemplate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#invite_message_template CognitoUserPool#invite_message_template}
+	InviteMessageTemplate *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate `json:"inviteMessageTemplate" yaml:"inviteMessageTemplate"`
 }
 
 type CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_message CognitoUserPool#email_message}.
-	EmailMessage *string `json:"emailMessage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_subject CognitoUserPool#email_subject}.
-	EmailSubject *string `json:"emailSubject"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#sms_message CognitoUserPool#sms_message}.
-	SmsMessage *string `json:"smsMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_message CognitoUserPool#email_message}.
+	EmailMessage *string `json:"emailMessage" yaml:"emailMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_subject CognitoUserPool#email_subject}.
+	EmailSubject *string `json:"emailSubject" yaml:"emailSubject"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#sms_message CognitoUserPool#sms_message}.
+	SmsMessage *string `json:"smsMessage" yaml:"smsMessage"`
 }
 
 type CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference interface {
@@ -5014,12 +6199,17 @@ type CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference in
 	SmsMessageInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEmailMessage()
@@ -5122,8 +6312,8 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutp
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5132,7 +6322,7 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutp
 	return returns
 }
 
-func NewCognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference {
+func NewCognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference{}
@@ -5146,7 +6336,7 @@ func NewCognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference
 	return &j
 }
 
-func NewCognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference_Override(c CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference_Override(c CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5204,7 +6394,7 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutp
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5213,12 +6403,40 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutp
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5255,12 +6473,54 @@ func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutp
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigInviteMessageTemplateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5333,12 +6593,17 @@ type CognitoUserPoolAdminCreateUserConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutInviteMessageTemplate(value *CognitoUserPoolAdminCreateUserConfigInviteMessageTemplate)
@@ -5421,8 +6686,8 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5431,7 +6696,7 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) Terrafor
 	return returns
 }
 
-func NewCognitoUserPoolAdminCreateUserConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolAdminCreateUserConfigOutputReference {
+func NewCognitoUserPoolAdminCreateUserConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolAdminCreateUserConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference{}
@@ -5445,7 +6710,7 @@ func NewCognitoUserPoolAdminCreateUserConfigOutputReference(terraformResource cd
 	return &j
 }
 
-func NewCognitoUserPoolAdminCreateUserConfigOutputReference_Override(c CognitoUserPoolAdminCreateUserConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolAdminCreateUserConfigOutputReference_Override(c CognitoUserPoolAdminCreateUserConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5487,7 +6752,7 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5496,12 +6761,40 @@ func (j *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) SetTerra
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5538,12 +6831,54 @@ func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetNumbe
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5603,7 +6938,7 @@ func (c *jsiiProxy_CognitoUserPoolAdminCreateUserConfigOutputReference) ResetInv
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html aws_cognito_user_pool_client}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client aws_cognito_user_pool_client}.
 type CognitoUserPoolClient interface {
 	cdktf.TerraformResource
 	AccessTokenValidity() *float64
@@ -5626,8 +6961,8 @@ type CognitoUserPoolClient interface {
 	CdktfStack() cdktf.TerraformStack
 	ClientSecret() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultRedirectUri() *string
 	SetDefaultRedirectUri(val *string)
 	DefaultRedirectUriInput() *string
@@ -5684,10 +7019,15 @@ type CognitoUserPoolClient interface {
 	SetWriteAttributes(val *[]*string)
 	WriteAttributesInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAnalyticsConfiguration(value *CognitoUserPoolClientAnalyticsConfiguration)
@@ -5872,8 +7212,8 @@ func (j *jsiiProxy_CognitoUserPoolClient) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolClient) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPoolClient) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6272,7 +7612,7 @@ func (j *jsiiProxy_CognitoUserPoolClient) WriteAttributesInput() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html aws_cognito_user_pool_client} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client aws_cognito_user_pool_client} Resource.
 func NewCognitoUserPoolClient(scope constructs.Construct, id *string, config *CognitoUserPoolClientConfig) CognitoUserPoolClient {
 	_init_.Initialize()
 
@@ -6287,7 +7627,7 @@ func NewCognitoUserPoolClient(scope constructs.Construct, id *string, config *Co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html aws_cognito_user_pool_client} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client aws_cognito_user_pool_client} Resource.
 func NewCognitoUserPoolClient_Override(c CognitoUserPoolClient, scope constructs.Construct, id *string, config *CognitoUserPoolClientConfig) {
 	_init_.Initialize()
 
@@ -6338,7 +7678,7 @@ func (j *jsiiProxy_CognitoUserPoolClient) SetCallbackUrls(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolClient) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoUserPoolClient) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6514,12 +7854,40 @@ func (c *jsiiProxy_CognitoUserPoolClient) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolClient) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolClient) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClient) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6556,12 +7924,54 @@ func (c *jsiiProxy_CognitoUserPoolClient) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolClient) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClient) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolClient) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClient) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6820,16 +8230,16 @@ func (c *jsiiProxy_CognitoUserPoolClient) ToTerraform() interface{} {
 }
 
 type CognitoUserPoolClientAnalyticsConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#application_arn CognitoUserPoolClient#application_arn}.
-	ApplicationArn *string `json:"applicationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#application_id CognitoUserPoolClient#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#external_id CognitoUserPoolClient#external_id}.
-	ExternalId *string `json:"externalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#role_arn CognitoUserPoolClient#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#user_data_shared CognitoUserPoolClient#user_data_shared}.
-	UserDataShared interface{} `json:"userDataShared"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#application_arn CognitoUserPoolClient#application_arn}.
+	ApplicationArn *string `json:"applicationArn" yaml:"applicationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#application_id CognitoUserPoolClient#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#external_id CognitoUserPoolClient#external_id}.
+	ExternalId *string `json:"externalId" yaml:"externalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#role_arn CognitoUserPoolClient#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#user_data_shared CognitoUserPoolClient#user_data_shared}.
+	UserDataShared interface{} `json:"userDataShared" yaml:"userDataShared"`
 }
 
 type CognitoUserPoolClientAnalyticsConfigurationOutputReference interface {
@@ -6852,15 +8262,20 @@ type CognitoUserPoolClientAnalyticsConfigurationOutputReference interface {
 	RoleArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserDataShared() interface{}
 	SetUserDataShared(val interface{})
 	UserDataSharedInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetApplicationArn()
@@ -6985,8 +8400,8 @@ func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7015,7 +8430,7 @@ func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) U
 	return returns
 }
 
-func NewCognitoUserPoolClientAnalyticsConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolClientAnalyticsConfigurationOutputReference {
+func NewCognitoUserPoolClientAnalyticsConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolClientAnalyticsConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference{}
@@ -7029,7 +8444,7 @@ func NewCognitoUserPoolClientAnalyticsConfigurationOutputReference(terraformReso
 	return &j
 }
 
-func NewCognitoUserPoolClientAnalyticsConfigurationOutputReference_Override(c CognitoUserPoolClientAnalyticsConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolClientAnalyticsConfigurationOutputReference_Override(c CognitoUserPoolClientAnalyticsConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7095,7 +8510,7 @@ func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7112,12 +8527,40 @@ func (j *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) S
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7154,12 +8597,54 @@ func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) G
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7238,66 +8723,66 @@ func (c *jsiiProxy_CognitoUserPoolClientAnalyticsConfigurationOutputReference) R
 // AWS Cognito.
 type CognitoUserPoolClientConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#name CognitoUserPoolClient#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#user_pool_id CognitoUserPoolClient#user_pool_id}.
-	UserPoolId *string `json:"userPoolId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#access_token_validity CognitoUserPoolClient#access_token_validity}.
-	AccessTokenValidity *float64 `json:"accessTokenValidity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#allowed_oauth_flows CognitoUserPoolClient#allowed_oauth_flows}.
-	AllowedOauthFlows *[]*string `json:"allowedOauthFlows"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#allowed_oauth_flows_user_pool_client CognitoUserPoolClient#allowed_oauth_flows_user_pool_client}.
-	AllowedOauthFlowsUserPoolClient interface{} `json:"allowedOauthFlowsUserPoolClient"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#allowed_oauth_scopes CognitoUserPoolClient#allowed_oauth_scopes}.
-	AllowedOauthScopes *[]*string `json:"allowedOauthScopes"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#name CognitoUserPoolClient#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#user_pool_id CognitoUserPoolClient#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#access_token_validity CognitoUserPoolClient#access_token_validity}.
+	AccessTokenValidity *float64 `json:"accessTokenValidity" yaml:"accessTokenValidity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#allowed_oauth_flows CognitoUserPoolClient#allowed_oauth_flows}.
+	AllowedOauthFlows *[]*string `json:"allowedOauthFlows" yaml:"allowedOauthFlows"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#allowed_oauth_flows_user_pool_client CognitoUserPoolClient#allowed_oauth_flows_user_pool_client}.
+	AllowedOauthFlowsUserPoolClient interface{} `json:"allowedOauthFlowsUserPoolClient" yaml:"allowedOauthFlowsUserPoolClient"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#allowed_oauth_scopes CognitoUserPoolClient#allowed_oauth_scopes}.
+	AllowedOauthScopes *[]*string `json:"allowedOauthScopes" yaml:"allowedOauthScopes"`
 	// analytics_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#analytics_configuration CognitoUserPoolClient#analytics_configuration}
-	AnalyticsConfiguration *CognitoUserPoolClientAnalyticsConfiguration `json:"analyticsConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#callback_urls CognitoUserPoolClient#callback_urls}.
-	CallbackUrls *[]*string `json:"callbackUrls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#default_redirect_uri CognitoUserPoolClient#default_redirect_uri}.
-	DefaultRedirectUri *string `json:"defaultRedirectUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#enable_token_revocation CognitoUserPoolClient#enable_token_revocation}.
-	EnableTokenRevocation interface{} `json:"enableTokenRevocation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#explicit_auth_flows CognitoUserPoolClient#explicit_auth_flows}.
-	ExplicitAuthFlows *[]*string `json:"explicitAuthFlows"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#generate_secret CognitoUserPoolClient#generate_secret}.
-	GenerateSecret interface{} `json:"generateSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#id_token_validity CognitoUserPoolClient#id_token_validity}.
-	IdTokenValidity *float64 `json:"idTokenValidity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#logout_urls CognitoUserPoolClient#logout_urls}.
-	LogoutUrls *[]*string `json:"logoutUrls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#prevent_user_existence_errors CognitoUserPoolClient#prevent_user_existence_errors}.
-	PreventUserExistenceErrors *string `json:"preventUserExistenceErrors"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#read_attributes CognitoUserPoolClient#read_attributes}.
-	ReadAttributes *[]*string `json:"readAttributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#refresh_token_validity CognitoUserPoolClient#refresh_token_validity}.
-	RefreshTokenValidity *float64 `json:"refreshTokenValidity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#supported_identity_providers CognitoUserPoolClient#supported_identity_providers}.
-	SupportedIdentityProviders *[]*string `json:"supportedIdentityProviders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#analytics_configuration CognitoUserPoolClient#analytics_configuration}
+	AnalyticsConfiguration *CognitoUserPoolClientAnalyticsConfiguration `json:"analyticsConfiguration" yaml:"analyticsConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#callback_urls CognitoUserPoolClient#callback_urls}.
+	CallbackUrls *[]*string `json:"callbackUrls" yaml:"callbackUrls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#default_redirect_uri CognitoUserPoolClient#default_redirect_uri}.
+	DefaultRedirectUri *string `json:"defaultRedirectUri" yaml:"defaultRedirectUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#enable_token_revocation CognitoUserPoolClient#enable_token_revocation}.
+	EnableTokenRevocation interface{} `json:"enableTokenRevocation" yaml:"enableTokenRevocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#explicit_auth_flows CognitoUserPoolClient#explicit_auth_flows}.
+	ExplicitAuthFlows *[]*string `json:"explicitAuthFlows" yaml:"explicitAuthFlows"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#generate_secret CognitoUserPoolClient#generate_secret}.
+	GenerateSecret interface{} `json:"generateSecret" yaml:"generateSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#id_token_validity CognitoUserPoolClient#id_token_validity}.
+	IdTokenValidity *float64 `json:"idTokenValidity" yaml:"idTokenValidity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#logout_urls CognitoUserPoolClient#logout_urls}.
+	LogoutUrls *[]*string `json:"logoutUrls" yaml:"logoutUrls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#prevent_user_existence_errors CognitoUserPoolClient#prevent_user_existence_errors}.
+	PreventUserExistenceErrors *string `json:"preventUserExistenceErrors" yaml:"preventUserExistenceErrors"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#read_attributes CognitoUserPoolClient#read_attributes}.
+	ReadAttributes *[]*string `json:"readAttributes" yaml:"readAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#refresh_token_validity CognitoUserPoolClient#refresh_token_validity}.
+	RefreshTokenValidity *float64 `json:"refreshTokenValidity" yaml:"refreshTokenValidity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#supported_identity_providers CognitoUserPoolClient#supported_identity_providers}.
+	SupportedIdentityProviders *[]*string `json:"supportedIdentityProviders" yaml:"supportedIdentityProviders"`
 	// token_validity_units block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#token_validity_units CognitoUserPoolClient#token_validity_units}
-	TokenValidityUnits *CognitoUserPoolClientTokenValidityUnits `json:"tokenValidityUnits"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#write_attributes CognitoUserPoolClient#write_attributes}.
-	WriteAttributes *[]*string `json:"writeAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#token_validity_units CognitoUserPoolClient#token_validity_units}
+	TokenValidityUnits *CognitoUserPoolClientTokenValidityUnits `json:"tokenValidityUnits" yaml:"tokenValidityUnits"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#write_attributes CognitoUserPoolClient#write_attributes}.
+	WriteAttributes *[]*string `json:"writeAttributes" yaml:"writeAttributes"`
 }
 
 type CognitoUserPoolClientTokenValidityUnits struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#access_token CognitoUserPoolClient#access_token}.
-	AccessToken *string `json:"accessToken"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#id_token CognitoUserPoolClient#id_token}.
-	IdToken *string `json:"idToken"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client.html#refresh_token CognitoUserPoolClient#refresh_token}.
-	RefreshToken *string `json:"refreshToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#access_token CognitoUserPoolClient#access_token}.
+	AccessToken *string `json:"accessToken" yaml:"accessToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#id_token CognitoUserPoolClient#id_token}.
+	IdToken *string `json:"idToken" yaml:"idToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_client#refresh_token CognitoUserPoolClient#refresh_token}.
+	RefreshToken *string `json:"refreshToken" yaml:"refreshToken"`
 }
 
 type CognitoUserPoolClientTokenValidityUnitsOutputReference interface {
@@ -7317,12 +8802,17 @@ type CognitoUserPoolClientTokenValidityUnitsOutputReference interface {
 	RefreshTokenInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAccessToken()
@@ -7425,8 +8915,8 @@ func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7435,7 +8925,7 @@ func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) Terra
 	return returns
 }
 
-func NewCognitoUserPoolClientTokenValidityUnitsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolClientTokenValidityUnitsOutputReference {
+func NewCognitoUserPoolClientTokenValidityUnitsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolClientTokenValidityUnitsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference{}
@@ -7449,7 +8939,7 @@ func NewCognitoUserPoolClientTokenValidityUnitsOutputReference(terraformResource
 	return &j
 }
 
-func NewCognitoUserPoolClientTokenValidityUnitsOutputReference_Override(c CognitoUserPoolClientTokenValidityUnitsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolClientTokenValidityUnitsOutputReference_Override(c CognitoUserPoolClientTokenValidityUnitsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7507,7 +8997,7 @@ func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7516,12 +9006,40 @@ func (j *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) SetTe
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7558,12 +9076,54 @@ func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetNu
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7626,90 +9186,90 @@ func (c *jsiiProxy_CognitoUserPoolClientTokenValidityUnitsOutputReference) Reset
 // AWS Cognito.
 type CognitoUserPoolConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#name CognitoUserPool#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#name CognitoUserPool#name}.
+	Name *string `json:"name" yaml:"name"`
 	// account_recovery_setting block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#account_recovery_setting CognitoUserPool#account_recovery_setting}
-	AccountRecoverySetting *CognitoUserPoolAccountRecoverySetting `json:"accountRecoverySetting"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#account_recovery_setting CognitoUserPool#account_recovery_setting}
+	AccountRecoverySetting *CognitoUserPoolAccountRecoverySetting `json:"accountRecoverySetting" yaml:"accountRecoverySetting"`
 	// admin_create_user_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#admin_create_user_config CognitoUserPool#admin_create_user_config}
-	AdminCreateUserConfig *CognitoUserPoolAdminCreateUserConfig `json:"adminCreateUserConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#alias_attributes CognitoUserPool#alias_attributes}.
-	AliasAttributes *[]*string `json:"aliasAttributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#auto_verified_attributes CognitoUserPool#auto_verified_attributes}.
-	AutoVerifiedAttributes *[]*string `json:"autoVerifiedAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#admin_create_user_config CognitoUserPool#admin_create_user_config}
+	AdminCreateUserConfig *CognitoUserPoolAdminCreateUserConfig `json:"adminCreateUserConfig" yaml:"adminCreateUserConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#alias_attributes CognitoUserPool#alias_attributes}.
+	AliasAttributes *[]*string `json:"aliasAttributes" yaml:"aliasAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#auto_verified_attributes CognitoUserPool#auto_verified_attributes}.
+	AutoVerifiedAttributes *[]*string `json:"autoVerifiedAttributes" yaml:"autoVerifiedAttributes"`
 	// device_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#device_configuration CognitoUserPool#device_configuration}
-	DeviceConfiguration *CognitoUserPoolDeviceConfiguration `json:"deviceConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#device_configuration CognitoUserPool#device_configuration}
+	DeviceConfiguration *CognitoUserPoolDeviceConfiguration `json:"deviceConfiguration" yaml:"deviceConfiguration"`
 	// email_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_configuration CognitoUserPool#email_configuration}
-	EmailConfiguration *CognitoUserPoolEmailConfiguration `json:"emailConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_verification_message CognitoUserPool#email_verification_message}.
-	EmailVerificationMessage *string `json:"emailVerificationMessage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_verification_subject CognitoUserPool#email_verification_subject}.
-	EmailVerificationSubject *string `json:"emailVerificationSubject"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_configuration CognitoUserPool#email_configuration}
+	EmailConfiguration *CognitoUserPoolEmailConfiguration `json:"emailConfiguration" yaml:"emailConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_verification_message CognitoUserPool#email_verification_message}.
+	EmailVerificationMessage *string `json:"emailVerificationMessage" yaml:"emailVerificationMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_verification_subject CognitoUserPool#email_verification_subject}.
+	EmailVerificationSubject *string `json:"emailVerificationSubject" yaml:"emailVerificationSubject"`
 	// lambda_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#lambda_config CognitoUserPool#lambda_config}
-	LambdaConfig *CognitoUserPoolLambdaConfig `json:"lambdaConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#mfa_configuration CognitoUserPool#mfa_configuration}.
-	MfaConfiguration *string `json:"mfaConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#lambda_config CognitoUserPool#lambda_config}
+	LambdaConfig *CognitoUserPoolLambdaConfig `json:"lambdaConfig" yaml:"lambdaConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#mfa_configuration CognitoUserPool#mfa_configuration}.
+	MfaConfiguration *string `json:"mfaConfiguration" yaml:"mfaConfiguration"`
 	// password_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#password_policy CognitoUserPool#password_policy}
-	PasswordPolicy *CognitoUserPoolPasswordPolicy `json:"passwordPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#password_policy CognitoUserPool#password_policy}
+	PasswordPolicy *CognitoUserPoolPasswordPolicy `json:"passwordPolicy" yaml:"passwordPolicy"`
 	// schema block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#schema CognitoUserPool#schema}
-	Schema *[]*CognitoUserPoolSchema `json:"schema"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#sms_authentication_message CognitoUserPool#sms_authentication_message}.
-	SmsAuthenticationMessage *string `json:"smsAuthenticationMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#schema CognitoUserPool#schema}
+	Schema interface{} `json:"schema" yaml:"schema"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#sms_authentication_message CognitoUserPool#sms_authentication_message}.
+	SmsAuthenticationMessage *string `json:"smsAuthenticationMessage" yaml:"smsAuthenticationMessage"`
 	// sms_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#sms_configuration CognitoUserPool#sms_configuration}
-	SmsConfiguration *CognitoUserPoolSmsConfiguration `json:"smsConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#sms_verification_message CognitoUserPool#sms_verification_message}.
-	SmsVerificationMessage *string `json:"smsVerificationMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#sms_configuration CognitoUserPool#sms_configuration}
+	SmsConfiguration *CognitoUserPoolSmsConfiguration `json:"smsConfiguration" yaml:"smsConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#sms_verification_message CognitoUserPool#sms_verification_message}.
+	SmsVerificationMessage *string `json:"smsVerificationMessage" yaml:"smsVerificationMessage"`
 	// software_token_mfa_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#software_token_mfa_configuration CognitoUserPool#software_token_mfa_configuration}
-	SoftwareTokenMfaConfiguration *CognitoUserPoolSoftwareTokenMfaConfiguration `json:"softwareTokenMfaConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#tags CognitoUserPool#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#tags_all CognitoUserPool#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#username_attributes CognitoUserPool#username_attributes}.
-	UsernameAttributes *[]*string `json:"usernameAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#software_token_mfa_configuration CognitoUserPool#software_token_mfa_configuration}
+	SoftwareTokenMfaConfiguration *CognitoUserPoolSoftwareTokenMfaConfiguration `json:"softwareTokenMfaConfiguration" yaml:"softwareTokenMfaConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#tags CognitoUserPool#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#tags_all CognitoUserPool#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#username_attributes CognitoUserPool#username_attributes}.
+	UsernameAttributes *[]*string `json:"usernameAttributes" yaml:"usernameAttributes"`
 	// username_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#username_configuration CognitoUserPool#username_configuration}
-	UsernameConfiguration *CognitoUserPoolUsernameConfiguration `json:"usernameConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#username_configuration CognitoUserPool#username_configuration}
+	UsernameConfiguration *CognitoUserPoolUsernameConfiguration `json:"usernameConfiguration" yaml:"usernameConfiguration"`
 	// user_pool_add_ons block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#user_pool_add_ons CognitoUserPool#user_pool_add_ons}
-	UserPoolAddOns *CognitoUserPoolUserPoolAddOns `json:"userPoolAddOns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#user_pool_add_ons CognitoUserPool#user_pool_add_ons}
+	UserPoolAddOns *CognitoUserPoolUserPoolAddOns `json:"userPoolAddOns" yaml:"userPoolAddOns"`
 	// verification_message_template block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#verification_message_template CognitoUserPool#verification_message_template}
-	VerificationMessageTemplate *CognitoUserPoolVerificationMessageTemplate `json:"verificationMessageTemplate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#verification_message_template CognitoUserPool#verification_message_template}
+	VerificationMessageTemplate *CognitoUserPoolVerificationMessageTemplate `json:"verificationMessageTemplate" yaml:"verificationMessageTemplate"`
 }
 
 type CognitoUserPoolDeviceConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#challenge_required_on_new_device CognitoUserPool#challenge_required_on_new_device}.
-	ChallengeRequiredOnNewDevice interface{} `json:"challengeRequiredOnNewDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#device_only_remembered_on_user_prompt CognitoUserPool#device_only_remembered_on_user_prompt}.
-	DeviceOnlyRememberedOnUserPrompt interface{} `json:"deviceOnlyRememberedOnUserPrompt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#challenge_required_on_new_device CognitoUserPool#challenge_required_on_new_device}.
+	ChallengeRequiredOnNewDevice interface{} `json:"challengeRequiredOnNewDevice" yaml:"challengeRequiredOnNewDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#device_only_remembered_on_user_prompt CognitoUserPool#device_only_remembered_on_user_prompt}.
+	DeviceOnlyRememberedOnUserPrompt interface{} `json:"deviceOnlyRememberedOnUserPrompt" yaml:"deviceOnlyRememberedOnUserPrompt"`
 }
 
 type CognitoUserPoolDeviceConfigurationOutputReference interface {
@@ -7726,12 +9286,17 @@ type CognitoUserPoolDeviceConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetChallengeRequiredOnNewDevice()
@@ -7813,8 +9378,8 @@ func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7823,7 +9388,7 @@ func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) TerraformR
 	return returns
 }
 
-func NewCognitoUserPoolDeviceConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolDeviceConfigurationOutputReference {
+func NewCognitoUserPoolDeviceConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolDeviceConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference{}
@@ -7837,7 +9402,7 @@ func NewCognitoUserPoolDeviceConfigurationOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewCognitoUserPoolDeviceConfigurationOutputReference_Override(c CognitoUserPoolDeviceConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolDeviceConfigurationOutputReference_Override(c CognitoUserPoolDeviceConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7887,7 +9452,7 @@ func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7896,12 +9461,40 @@ func (j *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7938,12 +9531,54 @@ func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetNumberA
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7995,7 +9630,7 @@ func (c *jsiiProxy_CognitoUserPoolDeviceConfigurationOutputReference) ResetDevic
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain.html aws_cognito_user_pool_domain}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain aws_cognito_user_pool_domain}.
 type CognitoUserPoolDomain interface {
 	cdktf.TerraformResource
 	AwsAccountId() *string
@@ -8005,8 +9640,8 @@ type CognitoUserPoolDomain interface {
 	CertificateArnInput() *string
 	CloudfrontDistributionArn() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -8030,10 +9665,15 @@ type CognitoUserPoolDomain interface {
 	UserPoolIdInput() *string
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCertificateArn()
@@ -8109,8 +9749,8 @@ func (j *jsiiProxy_CognitoUserPoolDomain) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolDomain) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPoolDomain) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8289,7 +9929,7 @@ func (j *jsiiProxy_CognitoUserPoolDomain) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain.html aws_cognito_user_pool_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain aws_cognito_user_pool_domain} Resource.
 func NewCognitoUserPoolDomain(scope constructs.Construct, id *string, config *CognitoUserPoolDomainConfig) CognitoUserPoolDomain {
 	_init_.Initialize()
 
@@ -8304,7 +9944,7 @@ func NewCognitoUserPoolDomain(scope constructs.Construct, id *string, config *Co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain.html aws_cognito_user_pool_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain aws_cognito_user_pool_domain} Resource.
 func NewCognitoUserPoolDomain_Override(c CognitoUserPoolDomain, scope constructs.Construct, id *string, config *CognitoUserPoolDomainConfig) {
 	_init_.Initialize()
 
@@ -8323,7 +9963,7 @@ func (j *jsiiProxy_CognitoUserPoolDomain) SetCertificateArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolDomain) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoUserPoolDomain) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8411,12 +10051,40 @@ func (c *jsiiProxy_CognitoUserPoolDomain) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolDomain) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolDomain) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolDomain) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8453,12 +10121,54 @@ func (c *jsiiProxy_CognitoUserPoolDomain) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolDomain) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolDomain) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolDomain) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolDomain) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8567,32 +10277,32 @@ func (c *jsiiProxy_CognitoUserPoolDomain) ToTerraform() interface{} {
 // AWS Cognito.
 type CognitoUserPoolDomainConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain.html#domain CognitoUserPoolDomain#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain.html#user_pool_id CognitoUserPoolDomain#user_pool_id}.
-	UserPoolId *string `json:"userPoolId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain.html#certificate_arn CognitoUserPoolDomain#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain#domain CognitoUserPoolDomain#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain#user_pool_id CognitoUserPoolDomain#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_domain#certificate_arn CognitoUserPoolDomain#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
 }
 
 type CognitoUserPoolEmailConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#configuration_set CognitoUserPool#configuration_set}.
-	ConfigurationSet *string `json:"configurationSet"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_sending_account CognitoUserPool#email_sending_account}.
-	EmailSendingAccount *string `json:"emailSendingAccount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#from_email_address CognitoUserPool#from_email_address}.
-	FromEmailAddress *string `json:"fromEmailAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#reply_to_email_address CognitoUserPool#reply_to_email_address}.
-	ReplyToEmailAddress *string `json:"replyToEmailAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#source_arn CognitoUserPool#source_arn}.
-	SourceArn *string `json:"sourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#configuration_set CognitoUserPool#configuration_set}.
+	ConfigurationSet *string `json:"configurationSet" yaml:"configurationSet"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_sending_account CognitoUserPool#email_sending_account}.
+	EmailSendingAccount *string `json:"emailSendingAccount" yaml:"emailSendingAccount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#from_email_address CognitoUserPool#from_email_address}.
+	FromEmailAddress *string `json:"fromEmailAddress" yaml:"fromEmailAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#reply_to_email_address CognitoUserPool#reply_to_email_address}.
+	ReplyToEmailAddress *string `json:"replyToEmailAddress" yaml:"replyToEmailAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#source_arn CognitoUserPool#source_arn}.
+	SourceArn *string `json:"sourceArn" yaml:"sourceArn"`
 }
 
 type CognitoUserPoolEmailConfigurationOutputReference interface {
@@ -8618,12 +10328,17 @@ type CognitoUserPoolEmailConfigurationOutputReference interface {
 	SourceArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetConfigurationSet()
@@ -8768,8 +10483,8 @@ func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8778,7 +10493,7 @@ func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) TerraformRe
 	return returns
 }
 
-func NewCognitoUserPoolEmailConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolEmailConfigurationOutputReference {
+func NewCognitoUserPoolEmailConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolEmailConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference{}
@@ -8792,7 +10507,7 @@ func NewCognitoUserPoolEmailConfigurationOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewCognitoUserPoolEmailConfigurationOutputReference_Override(c CognitoUserPoolEmailConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolEmailConfigurationOutputReference_Override(c CognitoUserPoolEmailConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8866,7 +10581,7 @@ func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8875,12 +10590,40 @@ func (j *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8917,12 +10660,54 @@ func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8999,43 +10784,43 @@ func (c *jsiiProxy_CognitoUserPoolEmailConfigurationOutputReference) ResetSource
 }
 
 type CognitoUserPoolLambdaConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#create_auth_challenge CognitoUserPool#create_auth_challenge}.
-	CreateAuthChallenge *string `json:"createAuthChallenge"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#create_auth_challenge CognitoUserPool#create_auth_challenge}.
+	CreateAuthChallenge *string `json:"createAuthChallenge" yaml:"createAuthChallenge"`
 	// custom_email_sender block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#custom_email_sender CognitoUserPool#custom_email_sender}
-	CustomEmailSender *CognitoUserPoolLambdaConfigCustomEmailSender `json:"customEmailSender"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#custom_message CognitoUserPool#custom_message}.
-	CustomMessage *string `json:"customMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#custom_email_sender CognitoUserPool#custom_email_sender}
+	CustomEmailSender *CognitoUserPoolLambdaConfigCustomEmailSender `json:"customEmailSender" yaml:"customEmailSender"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#custom_message CognitoUserPool#custom_message}.
+	CustomMessage *string `json:"customMessage" yaml:"customMessage"`
 	// custom_sms_sender block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#custom_sms_sender CognitoUserPool#custom_sms_sender}
-	CustomSmsSender *CognitoUserPoolLambdaConfigCustomSmsSender `json:"customSmsSender"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#define_auth_challenge CognitoUserPool#define_auth_challenge}.
-	DefineAuthChallenge *string `json:"defineAuthChallenge"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#kms_key_id CognitoUserPool#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#post_authentication CognitoUserPool#post_authentication}.
-	PostAuthentication *string `json:"postAuthentication"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#post_confirmation CognitoUserPool#post_confirmation}.
-	PostConfirmation *string `json:"postConfirmation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#pre_authentication CognitoUserPool#pre_authentication}.
-	PreAuthentication *string `json:"preAuthentication"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#pre_sign_up CognitoUserPool#pre_sign_up}.
-	PreSignUp *string `json:"preSignUp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#pre_token_generation CognitoUserPool#pre_token_generation}.
-	PreTokenGeneration *string `json:"preTokenGeneration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#user_migration CognitoUserPool#user_migration}.
-	UserMigration *string `json:"userMigration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#verify_auth_challenge_response CognitoUserPool#verify_auth_challenge_response}.
-	VerifyAuthChallengeResponse *string `json:"verifyAuthChallengeResponse"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#custom_sms_sender CognitoUserPool#custom_sms_sender}
+	CustomSmsSender *CognitoUserPoolLambdaConfigCustomSmsSender `json:"customSmsSender" yaml:"customSmsSender"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#define_auth_challenge CognitoUserPool#define_auth_challenge}.
+	DefineAuthChallenge *string `json:"defineAuthChallenge" yaml:"defineAuthChallenge"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#kms_key_id CognitoUserPool#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#post_authentication CognitoUserPool#post_authentication}.
+	PostAuthentication *string `json:"postAuthentication" yaml:"postAuthentication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#post_confirmation CognitoUserPool#post_confirmation}.
+	PostConfirmation *string `json:"postConfirmation" yaml:"postConfirmation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#pre_authentication CognitoUserPool#pre_authentication}.
+	PreAuthentication *string `json:"preAuthentication" yaml:"preAuthentication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#pre_sign_up CognitoUserPool#pre_sign_up}.
+	PreSignUp *string `json:"preSignUp" yaml:"preSignUp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#pre_token_generation CognitoUserPool#pre_token_generation}.
+	PreTokenGeneration *string `json:"preTokenGeneration" yaml:"preTokenGeneration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#user_migration CognitoUserPool#user_migration}.
+	UserMigration *string `json:"userMigration" yaml:"userMigration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#verify_auth_challenge_response CognitoUserPool#verify_auth_challenge_response}.
+	VerifyAuthChallengeResponse *string `json:"verifyAuthChallengeResponse" yaml:"verifyAuthChallengeResponse"`
 }
 
 type CognitoUserPoolLambdaConfigCustomEmailSender struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#lambda_arn CognitoUserPool#lambda_arn}.
-	LambdaArn *string `json:"lambdaArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#lambda_version CognitoUserPool#lambda_version}.
-	LambdaVersion *string `json:"lambdaVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#lambda_arn CognitoUserPool#lambda_arn}.
+	LambdaArn *string `json:"lambdaArn" yaml:"lambdaArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#lambda_version CognitoUserPool#lambda_version}.
+	LambdaVersion *string `json:"lambdaVersion" yaml:"lambdaVersion"`
 }
 
 type CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference interface {
@@ -9052,12 +10837,17 @@ type CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference interface {
 	LambdaVersionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9137,8 +10927,8 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9147,7 +10937,7 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) 
 	return returns
 }
 
-func NewCognitoUserPoolLambdaConfigCustomEmailSenderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference {
+func NewCognitoUserPoolLambdaConfigCustomEmailSenderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference{}
@@ -9161,7 +10951,7 @@ func NewCognitoUserPoolLambdaConfigCustomEmailSenderOutputReference(terraformRes
 	return &j
 }
 
-func NewCognitoUserPoolLambdaConfigCustomEmailSenderOutputReference_Override(c CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolLambdaConfigCustomEmailSenderOutputReference_Override(c CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9211,7 +11001,7 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9220,12 +11010,40 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) 
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9262,12 +11080,54 @@ func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) 
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9304,10 +11164,10 @@ func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomEmailSenderOutputReference) 
 }
 
 type CognitoUserPoolLambdaConfigCustomSmsSender struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#lambda_arn CognitoUserPool#lambda_arn}.
-	LambdaArn *string `json:"lambdaArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#lambda_version CognitoUserPool#lambda_version}.
-	LambdaVersion *string `json:"lambdaVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#lambda_arn CognitoUserPool#lambda_arn}.
+	LambdaArn *string `json:"lambdaArn" yaml:"lambdaArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#lambda_version CognitoUserPool#lambda_version}.
+	LambdaVersion *string `json:"lambdaVersion" yaml:"lambdaVersion"`
 }
 
 type CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference interface {
@@ -9324,12 +11184,17 @@ type CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference interface {
 	LambdaVersionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9409,8 +11274,8 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9419,7 +11284,7 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) Te
 	return returns
 }
 
-func NewCognitoUserPoolLambdaConfigCustomSmsSenderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference {
+func NewCognitoUserPoolLambdaConfigCustomSmsSenderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference{}
@@ -9433,7 +11298,7 @@ func NewCognitoUserPoolLambdaConfigCustomSmsSenderOutputReference(terraformResou
 	return &j
 }
 
-func NewCognitoUserPoolLambdaConfigCustomSmsSenderOutputReference_Override(c CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolLambdaConfigCustomSmsSenderOutputReference_Override(c CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9483,7 +11348,7 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9492,12 +11357,40 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) Se
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9534,12 +11427,54 @@ func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) Ge
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigCustomSmsSenderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9614,18 +11549,23 @@ type CognitoUserPoolLambdaConfigOutputReference interface {
 	PreTokenGenerationInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserMigration() *string
 	SetUserMigration(val *string)
 	UserMigrationInput() *string
 	VerifyAuthChallengeResponse() *string
 	SetVerifyAuthChallengeResponse(val *string)
 	VerifyAuthChallengeResponseInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCustomEmailSender(value *CognitoUserPoolLambdaConfigCustomEmailSender)
@@ -9900,8 +11840,8 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9950,7 +11890,7 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) VerifyAuthChallen
 	return returns
 }
 
-func NewCognitoUserPoolLambdaConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolLambdaConfigOutputReference {
+func NewCognitoUserPoolLambdaConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolLambdaConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolLambdaConfigOutputReference{}
@@ -9964,7 +11904,7 @@ func NewCognitoUserPoolLambdaConfigOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewCognitoUserPoolLambdaConfigOutputReference_Override(c CognitoUserPoolLambdaConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolLambdaConfigOutputReference_Override(c CognitoUserPoolLambdaConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10070,7 +12010,7 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10095,12 +12035,40 @@ func (j *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) SetVerifyAuthChal
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10137,12 +12105,54 @@ func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10299,18 +12309,18 @@ func (c *jsiiProxy_CognitoUserPoolLambdaConfigOutputReference) ResetVerifyAuthCh
 }
 
 type CognitoUserPoolPasswordPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#minimum_length CognitoUserPool#minimum_length}.
-	MinimumLength *float64 `json:"minimumLength"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#require_lowercase CognitoUserPool#require_lowercase}.
-	RequireLowercase interface{} `json:"requireLowercase"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#require_numbers CognitoUserPool#require_numbers}.
-	RequireNumbers interface{} `json:"requireNumbers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#require_symbols CognitoUserPool#require_symbols}.
-	RequireSymbols interface{} `json:"requireSymbols"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#require_uppercase CognitoUserPool#require_uppercase}.
-	RequireUppercase interface{} `json:"requireUppercase"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#temporary_password_validity_days CognitoUserPool#temporary_password_validity_days}.
-	TemporaryPasswordValidityDays *float64 `json:"temporaryPasswordValidityDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#minimum_length CognitoUserPool#minimum_length}.
+	MinimumLength *float64 `json:"minimumLength" yaml:"minimumLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#require_lowercase CognitoUserPool#require_lowercase}.
+	RequireLowercase interface{} `json:"requireLowercase" yaml:"requireLowercase"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#require_numbers CognitoUserPool#require_numbers}.
+	RequireNumbers interface{} `json:"requireNumbers" yaml:"requireNumbers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#require_symbols CognitoUserPool#require_symbols}.
+	RequireSymbols interface{} `json:"requireSymbols" yaml:"requireSymbols"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#require_uppercase CognitoUserPool#require_uppercase}.
+	RequireUppercase interface{} `json:"requireUppercase" yaml:"requireUppercase"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#temporary_password_validity_days CognitoUserPool#temporary_password_validity_days}.
+	TemporaryPasswordValidityDays *float64 `json:"temporaryPasswordValidityDays" yaml:"temporaryPasswordValidityDays"`
 }
 
 type CognitoUserPoolPasswordPolicyOutputReference interface {
@@ -10339,12 +12349,17 @@ type CognitoUserPoolPasswordPolicyOutputReference interface {
 	TemporaryPasswordValidityDaysInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMinimumLength()
@@ -10510,8 +12525,8 @@ func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10520,7 +12535,7 @@ func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) TerraformResour
 	return returns
 }
 
-func NewCognitoUserPoolPasswordPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolPasswordPolicyOutputReference {
+func NewCognitoUserPoolPasswordPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolPasswordPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference{}
@@ -10534,7 +12549,7 @@ func NewCognitoUserPoolPasswordPolicyOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewCognitoUserPoolPasswordPolicyOutputReference_Override(c CognitoUserPoolPasswordPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolPasswordPolicyOutputReference_Override(c CognitoUserPoolPasswordPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10616,7 +12631,7 @@ func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10625,12 +12640,40 @@ func (j *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10667,12 +12710,54 @@ func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10757,31 +12842,31 @@ func (c *jsiiProxy_CognitoUserPoolPasswordPolicyOutputReference) ResetTemporaryP
 }
 
 type CognitoUserPoolSchema struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#attribute_data_type CognitoUserPool#attribute_data_type}.
-	AttributeDataType *string `json:"attributeDataType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#name CognitoUserPool#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#developer_only_attribute CognitoUserPool#developer_only_attribute}.
-	DeveloperOnlyAttribute interface{} `json:"developerOnlyAttribute"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#mutable CognitoUserPool#mutable}.
-	Mutable interface{} `json:"mutable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#attribute_data_type CognitoUserPool#attribute_data_type}.
+	AttributeDataType *string `json:"attributeDataType" yaml:"attributeDataType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#name CognitoUserPool#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#developer_only_attribute CognitoUserPool#developer_only_attribute}.
+	DeveloperOnlyAttribute interface{} `json:"developerOnlyAttribute" yaml:"developerOnlyAttribute"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#mutable CognitoUserPool#mutable}.
+	Mutable interface{} `json:"mutable" yaml:"mutable"`
 	// number_attribute_constraints block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#number_attribute_constraints CognitoUserPool#number_attribute_constraints}
-	NumberAttributeConstraints *CognitoUserPoolSchemaNumberAttributeConstraints `json:"numberAttributeConstraints"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#required CognitoUserPool#required}.
-	Required interface{} `json:"required"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#number_attribute_constraints CognitoUserPool#number_attribute_constraints}
+	NumberAttributeConstraints *CognitoUserPoolSchemaNumberAttributeConstraints `json:"numberAttributeConstraints" yaml:"numberAttributeConstraints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#required CognitoUserPool#required}.
+	Required interface{} `json:"required" yaml:"required"`
 	// string_attribute_constraints block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#string_attribute_constraints CognitoUserPool#string_attribute_constraints}
-	StringAttributeConstraints *CognitoUserPoolSchemaStringAttributeConstraints `json:"stringAttributeConstraints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#string_attribute_constraints CognitoUserPool#string_attribute_constraints}
+	StringAttributeConstraints *CognitoUserPoolSchemaStringAttributeConstraints `json:"stringAttributeConstraints" yaml:"stringAttributeConstraints"`
 }
 
 type CognitoUserPoolSchemaNumberAttributeConstraints struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#max_value CognitoUserPool#max_value}.
-	MaxValue *string `json:"maxValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#min_value CognitoUserPool#min_value}.
-	MinValue *string `json:"minValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#max_value CognitoUserPool#max_value}.
+	MaxValue *string `json:"maxValue" yaml:"maxValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#min_value CognitoUserPool#min_value}.
+	MinValue *string `json:"minValue" yaml:"minValue"`
 }
 
 type CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference interface {
@@ -10798,12 +12883,17 @@ type CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference interface {
 	MinValueInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMaxValue()
@@ -10885,8 +12975,8 @@ func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10895,7 +12985,7 @@ func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReferenc
 	return returns
 }
 
-func NewCognitoUserPoolSchemaNumberAttributeConstraintsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference {
+func NewCognitoUserPoolSchemaNumberAttributeConstraintsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference{}
@@ -10909,7 +12999,7 @@ func NewCognitoUserPoolSchemaNumberAttributeConstraintsOutputReference(terraform
 	return &j
 }
 
-func NewCognitoUserPoolSchemaNumberAttributeConstraintsOutputReference_Override(c CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolSchemaNumberAttributeConstraintsOutputReference_Override(c CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10959,7 +13049,7 @@ func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10968,12 +13058,40 @@ func (j *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReferenc
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11010,12 +13128,54 @@ func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReferenc
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11068,10 +13228,10 @@ func (c *jsiiProxy_CognitoUserPoolSchemaNumberAttributeConstraintsOutputReferenc
 }
 
 type CognitoUserPoolSchemaStringAttributeConstraints struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#max_length CognitoUserPool#max_length}.
-	MaxLength *string `json:"maxLength"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#min_length CognitoUserPool#min_length}.
-	MinLength *string `json:"minLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#max_length CognitoUserPool#max_length}.
+	MaxLength *string `json:"maxLength" yaml:"maxLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#min_length CognitoUserPool#min_length}.
+	MinLength *string `json:"minLength" yaml:"minLength"`
 }
 
 type CognitoUserPoolSchemaStringAttributeConstraintsOutputReference interface {
@@ -11088,12 +13248,17 @@ type CognitoUserPoolSchemaStringAttributeConstraintsOutputReference interface {
 	MinLengthInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMaxLength()
@@ -11175,8 +13340,8 @@ func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11185,7 +13350,7 @@ func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReferenc
 	return returns
 }
 
-func NewCognitoUserPoolSchemaStringAttributeConstraintsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSchemaStringAttributeConstraintsOutputReference {
+func NewCognitoUserPoolSchemaStringAttributeConstraintsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSchemaStringAttributeConstraintsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference{}
@@ -11199,7 +13364,7 @@ func NewCognitoUserPoolSchemaStringAttributeConstraintsOutputReference(terraform
 	return &j
 }
 
-func NewCognitoUserPoolSchemaStringAttributeConstraintsOutputReference_Override(c CognitoUserPoolSchemaStringAttributeConstraintsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolSchemaStringAttributeConstraintsOutputReference_Override(c CognitoUserPoolSchemaStringAttributeConstraintsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11249,7 +13414,7 @@ func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11258,12 +13423,40 @@ func (j *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReferenc
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11300,12 +13493,54 @@ func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReferenc
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11358,10 +13593,10 @@ func (c *jsiiProxy_CognitoUserPoolSchemaStringAttributeConstraintsOutputReferenc
 }
 
 type CognitoUserPoolSmsConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#external_id CognitoUserPool#external_id}.
-	ExternalId *string `json:"externalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#sns_caller_arn CognitoUserPool#sns_caller_arn}.
-	SnsCallerArn *string `json:"snsCallerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#external_id CognitoUserPool#external_id}.
+	ExternalId *string `json:"externalId" yaml:"externalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#sns_caller_arn CognitoUserPool#sns_caller_arn}.
+	SnsCallerArn *string `json:"snsCallerArn" yaml:"snsCallerArn"`
 }
 
 type CognitoUserPoolSmsConfigurationOutputReference interface {
@@ -11378,12 +13613,17 @@ type CognitoUserPoolSmsConfigurationOutputReference interface {
 	SnsCallerArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -11463,8 +13703,8 @@ func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11473,7 +13713,7 @@ func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) TerraformReso
 	return returns
 }
 
-func NewCognitoUserPoolSmsConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSmsConfigurationOutputReference {
+func NewCognitoUserPoolSmsConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSmsConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference{}
@@ -11487,7 +13727,7 @@ func NewCognitoUserPoolSmsConfigurationOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewCognitoUserPoolSmsConfigurationOutputReference_Override(c CognitoUserPoolSmsConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolSmsConfigurationOutputReference_Override(c CognitoUserPoolSmsConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11537,7 +13777,7 @@ func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11546,12 +13786,40 @@ func (j *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11588,12 +13856,54 @@ func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11630,8 +13940,8 @@ func (c *jsiiProxy_CognitoUserPoolSmsConfigurationOutputReference) Interpolation
 }
 
 type CognitoUserPoolSoftwareTokenMfaConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#enabled CognitoUserPool#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#enabled CognitoUserPool#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference interface {
@@ -11645,12 +13955,17 @@ type CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -11710,8 +14025,8 @@ func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11720,7 +14035,7 @@ func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 	return returns
 }
 
-func NewCognitoUserPoolSoftwareTokenMfaConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference {
+func NewCognitoUserPoolSoftwareTokenMfaConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference{}
@@ -11734,7 +14049,7 @@ func NewCognitoUserPoolSoftwareTokenMfaConfigurationOutputReference(terraformRes
 	return &j
 }
 
-func NewCognitoUserPoolSoftwareTokenMfaConfigurationOutputReference_Override(c CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolSoftwareTokenMfaConfigurationOutputReference_Override(c CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11776,7 +14091,7 @@ func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11785,12 +14100,40 @@ func (j *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11827,12 +14170,54 @@ func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11868,7 +14253,7 @@ func (c *jsiiProxy_CognitoUserPoolSoftwareTokenMfaConfigurationOutputReference) 
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization.html aws_cognito_user_pool_ui_customization}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization aws_cognito_user_pool_ui_customization}.
 type CognitoUserPoolUiCustomization interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -11876,8 +14261,8 @@ type CognitoUserPoolUiCustomization interface {
 	SetClientId(val *string)
 	ClientIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	Css() *string
 	SetCss(val *string)
@@ -11906,10 +14291,15 @@ type CognitoUserPoolUiCustomization interface {
 	SetUserPoolId(val *string)
 	UserPoolIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetClientId()
@@ -11967,8 +14357,8 @@ func (j *jsiiProxy_CognitoUserPoolUiCustomization) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolUiCustomization) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CognitoUserPoolUiCustomization) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12187,7 +14577,7 @@ func (j *jsiiProxy_CognitoUserPoolUiCustomization) UserPoolIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization.html aws_cognito_user_pool_ui_customization} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization aws_cognito_user_pool_ui_customization} Resource.
 func NewCognitoUserPoolUiCustomization(scope constructs.Construct, id *string, config *CognitoUserPoolUiCustomizationConfig) CognitoUserPoolUiCustomization {
 	_init_.Initialize()
 
@@ -12202,7 +14592,7 @@ func NewCognitoUserPoolUiCustomization(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization.html aws_cognito_user_pool_ui_customization} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization aws_cognito_user_pool_ui_customization} Resource.
 func NewCognitoUserPoolUiCustomization_Override(c CognitoUserPoolUiCustomization, scope constructs.Construct, id *string, config *CognitoUserPoolUiCustomizationConfig) {
 	_init_.Initialize()
 
@@ -12221,7 +14611,7 @@ func (j *jsiiProxy_CognitoUserPoolUiCustomization) SetClientId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolUiCustomization) SetCount(val interface{}) {
+func (j *jsiiProxy_CognitoUserPoolUiCustomization) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12317,12 +14707,40 @@ func (c *jsiiProxy_CognitoUserPoolUiCustomization) AddOverride(path *string, val
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12359,12 +14777,54 @@ func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUiCustomization) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12489,26 +14949,26 @@ func (c *jsiiProxy_CognitoUserPoolUiCustomization) ToTerraform() interface{} {
 // AWS Cognito.
 type CognitoUserPoolUiCustomizationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization.html#user_pool_id CognitoUserPoolUiCustomization#user_pool_id}.
-	UserPoolId *string `json:"userPoolId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization.html#client_id CognitoUserPoolUiCustomization#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization.html#css CognitoUserPoolUiCustomization#css}.
-	Css *string `json:"css"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization.html#image_file CognitoUserPoolUiCustomization#image_file}.
-	ImageFile *string `json:"imageFile"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization#user_pool_id CognitoUserPoolUiCustomization#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization#client_id CognitoUserPoolUiCustomization#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization#css CognitoUserPoolUiCustomization#css}.
+	Css *string `json:"css" yaml:"css"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool_ui_customization#image_file CognitoUserPoolUiCustomization#image_file}.
+	ImageFile *string `json:"imageFile" yaml:"imageFile"`
 }
 
 type CognitoUserPoolUserPoolAddOns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#advanced_security_mode CognitoUserPool#advanced_security_mode}.
-	AdvancedSecurityMode *string `json:"advancedSecurityMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#advanced_security_mode CognitoUserPool#advanced_security_mode}.
+	AdvancedSecurityMode *string `json:"advancedSecurityMode" yaml:"advancedSecurityMode"`
 }
 
 type CognitoUserPoolUserPoolAddOnsOutputReference interface {
@@ -12522,12 +14982,17 @@ type CognitoUserPoolUserPoolAddOnsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -12587,8 +15052,8 @@ func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12597,7 +15062,7 @@ func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) TerraformResour
 	return returns
 }
 
-func NewCognitoUserPoolUserPoolAddOnsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolUserPoolAddOnsOutputReference {
+func NewCognitoUserPoolUserPoolAddOnsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolUserPoolAddOnsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference{}
@@ -12611,7 +15076,7 @@ func NewCognitoUserPoolUserPoolAddOnsOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewCognitoUserPoolUserPoolAddOnsOutputReference_Override(c CognitoUserPoolUserPoolAddOnsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolUserPoolAddOnsOutputReference_Override(c CognitoUserPoolUserPoolAddOnsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12653,7 +15118,7 @@ func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12662,12 +15127,40 @@ func (j *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12704,12 +15197,54 @@ func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12746,8 +15281,8 @@ func (c *jsiiProxy_CognitoUserPoolUserPoolAddOnsOutputReference) InterpolationFo
 }
 
 type CognitoUserPoolUsernameConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#case_sensitive CognitoUserPool#case_sensitive}.
-	CaseSensitive interface{} `json:"caseSensitive"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#case_sensitive CognitoUserPool#case_sensitive}.
+	CaseSensitive interface{} `json:"caseSensitive" yaml:"caseSensitive"`
 }
 
 type CognitoUserPoolUsernameConfigurationOutputReference interface {
@@ -12761,12 +15296,17 @@ type CognitoUserPoolUsernameConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -12826,8 +15366,8 @@ func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12836,7 +15376,7 @@ func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) Terrafor
 	return returns
 }
 
-func NewCognitoUserPoolUsernameConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolUsernameConfigurationOutputReference {
+func NewCognitoUserPoolUsernameConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolUsernameConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference{}
@@ -12850,7 +15390,7 @@ func NewCognitoUserPoolUsernameConfigurationOutputReference(terraformResource cd
 	return &j
 }
 
-func NewCognitoUserPoolUsernameConfigurationOutputReference_Override(c CognitoUserPoolUsernameConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolUsernameConfigurationOutputReference_Override(c CognitoUserPoolUsernameConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12892,7 +15432,7 @@ func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12901,12 +15441,40 @@ func (j *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) SetTerra
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12943,12 +15511,54 @@ func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetNumbe
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12985,18 +15595,18 @@ func (c *jsiiProxy_CognitoUserPoolUsernameConfigurationOutputReference) Interpol
 }
 
 type CognitoUserPoolVerificationMessageTemplate struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#default_email_option CognitoUserPool#default_email_option}.
-	DefaultEmailOption *string `json:"defaultEmailOption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_message CognitoUserPool#email_message}.
-	EmailMessage *string `json:"emailMessage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_message_by_link CognitoUserPool#email_message_by_link}.
-	EmailMessageByLink *string `json:"emailMessageByLink"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_subject CognitoUserPool#email_subject}.
-	EmailSubject *string `json:"emailSubject"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#email_subject_by_link CognitoUserPool#email_subject_by_link}.
-	EmailSubjectByLink *string `json:"emailSubjectByLink"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#sms_message CognitoUserPool#sms_message}.
-	SmsMessage *string `json:"smsMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#default_email_option CognitoUserPool#default_email_option}.
+	DefaultEmailOption *string `json:"defaultEmailOption" yaml:"defaultEmailOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_message CognitoUserPool#email_message}.
+	EmailMessage *string `json:"emailMessage" yaml:"emailMessage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_message_by_link CognitoUserPool#email_message_by_link}.
+	EmailMessageByLink *string `json:"emailMessageByLink" yaml:"emailMessageByLink"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_subject CognitoUserPool#email_subject}.
+	EmailSubject *string `json:"emailSubject" yaml:"emailSubject"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#email_subject_by_link CognitoUserPool#email_subject_by_link}.
+	EmailSubjectByLink *string `json:"emailSubjectByLink" yaml:"emailSubjectByLink"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cognito_user_pool#sms_message CognitoUserPool#sms_message}.
+	SmsMessage *string `json:"smsMessage" yaml:"smsMessage"`
 }
 
 type CognitoUserPoolVerificationMessageTemplateOutputReference interface {
@@ -13025,12 +15635,17 @@ type CognitoUserPoolVerificationMessageTemplateOutputReference interface {
 	SmsMessageInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDefaultEmailOption()
@@ -13196,8 +15811,8 @@ func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13206,7 +15821,7 @@ func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Te
 	return returns
 }
 
-func NewCognitoUserPoolVerificationMessageTemplateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolVerificationMessageTemplateOutputReference {
+func NewCognitoUserPoolVerificationMessageTemplateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CognitoUserPoolVerificationMessageTemplateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference{}
@@ -13220,7 +15835,7 @@ func NewCognitoUserPoolVerificationMessageTemplateOutputReference(terraformResou
 	return &j
 }
 
-func NewCognitoUserPoolVerificationMessageTemplateOutputReference_Override(c CognitoUserPoolVerificationMessageTemplateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCognitoUserPoolVerificationMessageTemplateOutputReference_Override(c CognitoUserPoolVerificationMessageTemplateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13302,7 +15917,7 @@ func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13311,12 +15926,40 @@ func (j *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Se
 }
 
 // Experimental.
-func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13353,12 +15996,54 @@ func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Ge
 }
 
 // Experimental.
+func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13442,14 +16127,2553 @@ func (c *jsiiProxy_CognitoUserPoolVerificationMessageTemplateOutputReference) Re
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools.html aws_cognito_user_pools}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_client aws_cognito_user_pool_client}.
+type DataAwsCognitoUserPoolClient interface {
+	cdktf.TerraformDataSource
+	AccessTokenValidity() *float64
+	AllowedOauthFlows() *[]*string
+	AllowedOauthFlowsUserPoolClient() cdktf.IResolvable
+	AllowedOauthScopes() *[]*string
+	CallbackUrls() *[]*string
+	CdktfStack() cdktf.TerraformStack
+	ClientId() *string
+	SetClientId(val *string)
+	ClientIdInput() *string
+	ClientSecret() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DefaultRedirectUri() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	EnableTokenRevocation() cdktf.IResolvable
+	ExplicitAuthFlows() *[]*string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	GenerateSecret() cdktf.IResolvable
+	Id() *string
+	IdTokenValidity() *float64
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LogoutUrls() *[]*string
+	Name() *string
+	Node() constructs.Node
+	PreventUserExistenceErrors() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ReadAttributes() *[]*string
+	RefreshTokenValidity() *float64
+	SupportedIdentityProviders() *[]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	UserPoolId() *string
+	SetUserPoolId(val *string)
+	UserPoolIdInput() *string
+	WriteAttributes() *[]*string
+	AddOverride(path *string, value interface{})
+	AnalyticsConfiguration(index *string) DataAwsCognitoUserPoolClientAnalyticsConfiguration
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	TokenValidityUnits(index *string) DataAwsCognitoUserPoolClientTokenValidityUnits
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsCognitoUserPoolClient
+type jsiiProxy_DataAwsCognitoUserPoolClient struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) AccessTokenValidity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"accessTokenValidity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) AllowedOauthFlows() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedOauthFlows",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) AllowedOauthFlowsUserPoolClient() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"allowedOauthFlowsUserPoolClient",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) AllowedOauthScopes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedOauthScopes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) CallbackUrls() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"callbackUrls",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) ClientId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) ClientIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) ClientSecret() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientSecret",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) DefaultRedirectUri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"defaultRedirectUri",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) EnableTokenRevocation() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"enableTokenRevocation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) ExplicitAuthFlows() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"explicitAuthFlows",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) GenerateSecret() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"generateSecret",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) IdTokenValidity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"idTokenValidity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) LogoutUrls() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"logoutUrls",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) PreventUserExistenceErrors() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"preventUserExistenceErrors",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) ReadAttributes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"readAttributes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) RefreshTokenValidity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"refreshTokenValidity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) SupportedIdentityProviders() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"supportedIdentityProviders",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) UserPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) UserPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) WriteAttributes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"writeAttributes",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_client aws_cognito_user_pool_client} Data Source.
+func NewDataAwsCognitoUserPoolClient(scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolClientConfig) DataAwsCognitoUserPoolClient {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCognitoUserPoolClient{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClient",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_client aws_cognito_user_pool_client} Data Source.
+func NewDataAwsCognitoUserPoolClient_Override(d DataAwsCognitoUserPoolClient, scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolClientConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClient",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) SetClientId(val *string) {
+	_jsii_.Set(
+		j,
+		"clientId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClient) SetUserPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"userPoolId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsCognitoUserPoolClient_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClient",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsCognitoUserPoolClient_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClient",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) AnalyticsConfiguration(index *string) DataAwsCognitoUserPoolClientAnalyticsConfiguration {
+	var returns DataAwsCognitoUserPoolClientAnalyticsConfiguration
+
+	_jsii_.Invoke(
+		d,
+		"analyticsConfiguration",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) TokenValidityUnits(index *string) DataAwsCognitoUserPoolClientTokenValidityUnits {
+	var returns DataAwsCognitoUserPoolClientTokenValidityUnits
+
+	_jsii_.Invoke(
+		d,
+		"tokenValidityUnits",
+		[]interface{}{index},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClient) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+type DataAwsCognitoUserPoolClientAnalyticsConfiguration interface {
+	cdktf.ComplexComputedList
+	ApplicationArn() *string
+	ApplicationId() *string
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	ExternalId() *string
+	RoleArn() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UserDataShared() cdktf.IResolvable
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsCognitoUserPoolClientAnalyticsConfiguration
+type jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) ApplicationArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"applicationArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) ApplicationId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"applicationId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) ExternalId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"externalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) RoleArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"roleArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) UserDataShared() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"userDataShared",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsCognitoUserPoolClientAnalyticsConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCognitoUserPoolClientAnalyticsConfiguration {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClientAnalyticsConfiguration",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsCognitoUserPoolClientAnalyticsConfiguration_Override(d DataAwsCognitoUserPoolClientAnalyticsConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClientAnalyticsConfiguration",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientAnalyticsConfiguration) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Cognito.
+type DataAwsCognitoUserPoolClientConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_client#client_id DataAwsCognitoUserPoolClient#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_client#user_pool_id DataAwsCognitoUserPoolClient#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+}
+
+type DataAwsCognitoUserPoolClientTokenValidityUnits interface {
+	cdktf.ComplexComputedList
+	AccessToken() *string
+	ComplexComputedListIndex() *string
+	SetComplexComputedListIndex(val *string)
+	IdToken() *string
+	RefreshToken() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for DataAwsCognitoUserPoolClientTokenValidityUnits
+type jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits struct {
+	internal.Type__cdktfComplexComputedList
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) AccessToken() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accessToken",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) ComplexComputedListIndex() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"complexComputedListIndex",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) IdToken() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"idToken",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) RefreshToken() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"refreshToken",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func NewDataAwsCognitoUserPoolClientTokenValidityUnits(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCognitoUserPoolClientTokenValidityUnits {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClientTokenValidityUnits",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		&j,
+	)
+
+	return &j
+}
+
+// Experimental.
+func NewDataAwsCognitoUserPoolClientTokenValidityUnits_Override(d DataAwsCognitoUserPoolClientTokenValidityUnits, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClientTokenValidityUnits",
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) SetComplexComputedListIndex(val *string) {
+	_jsii_.Set(
+		j,
+		"complexComputedListIndex",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClientTokenValidityUnits) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_clients aws_cognito_user_pool_clients}.
+type DataAwsCognitoUserPoolClients interface {
+	cdktf.TerraformDataSource
+	CdktfStack() cdktf.TerraformStack
+	ClientIds() *[]*string
+	ClientNames() *[]*string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	UserPoolId() *string
+	SetUserPoolId(val *string)
+	UserPoolIdInput() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsCognitoUserPoolClients
+type jsiiProxy_DataAwsCognitoUserPoolClients struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) ClientIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"clientIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) ClientNames() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"clientNames",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) UserPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) UserPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_clients aws_cognito_user_pool_clients} Data Source.
+func NewDataAwsCognitoUserPoolClients(scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolClientsConfig) DataAwsCognitoUserPoolClients {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCognitoUserPoolClients{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClients",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_clients aws_cognito_user_pool_clients} Data Source.
+func NewDataAwsCognitoUserPoolClients_Override(d DataAwsCognitoUserPoolClients, scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolClientsConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClients",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolClients) SetUserPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"userPoolId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsCognitoUserPoolClients_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClients",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsCognitoUserPoolClients_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolClients",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolClients) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Cognito.
+type DataAwsCognitoUserPoolClientsConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_clients#user_pool_id DataAwsCognitoUserPoolClients#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_signing_certificate aws_cognito_user_pool_signing_certificate}.
+type DataAwsCognitoUserPoolSigningCertificate interface {
+	cdktf.TerraformDataSource
+	CdktfStack() cdktf.TerraformStack
+	Certificate() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	UserPoolId() *string
+	SetUserPoolId(val *string)
+	UserPoolIdInput() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsCognitoUserPoolSigningCertificate
+type jsiiProxy_DataAwsCognitoUserPoolSigningCertificate struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) Certificate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"certificate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) UserPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) UserPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userPoolIdInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_signing_certificate aws_cognito_user_pool_signing_certificate} Data Source.
+func NewDataAwsCognitoUserPoolSigningCertificate(scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolSigningCertificateConfig) DataAwsCognitoUserPoolSigningCertificate {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCognitoUserPoolSigningCertificate{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolSigningCertificate",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_signing_certificate aws_cognito_user_pool_signing_certificate} Data Source.
+func NewDataAwsCognitoUserPoolSigningCertificate_Override(d DataAwsCognitoUserPoolSigningCertificate, scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolSigningCertificateConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolSigningCertificate",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) SetUserPoolId(val *string) {
+	_jsii_.Set(
+		j,
+		"userPoolId",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsCognitoUserPoolSigningCertificate_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolSigningCertificate",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsCognitoUserPoolSigningCertificate_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.cognito.DataAwsCognitoUserPoolSigningCertificate",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPoolSigningCertificate) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Cognito.
+type DataAwsCognitoUserPoolSigningCertificateConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pool_signing_certificate#user_pool_id DataAwsCognitoUserPoolSigningCertificate#user_pool_id}.
+	UserPoolId *string `json:"userPoolId" yaml:"userPoolId"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools aws_cognito_user_pools}.
 type DataAwsCognitoUserPools interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13469,10 +18693,15 @@ type DataAwsCognitoUserPools interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -13517,8 +18746,8 @@ func (j *jsiiProxy_DataAwsCognitoUserPools) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCognitoUserPools) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCognitoUserPools) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13667,7 +18896,7 @@ func (j *jsiiProxy_DataAwsCognitoUserPools) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools.html aws_cognito_user_pools} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools aws_cognito_user_pools} Data Source.
 func NewDataAwsCognitoUserPools(scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolsConfig) DataAwsCognitoUserPools {
 	_init_.Initialize()
 
@@ -13682,7 +18911,7 @@ func NewDataAwsCognitoUserPools(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools.html aws_cognito_user_pools} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools aws_cognito_user_pools} Data Source.
 func NewDataAwsCognitoUserPools_Override(d DataAwsCognitoUserPools, scope constructs.Construct, id *string, config *DataAwsCognitoUserPoolsConfig) {
 	_init_.Initialize()
 
@@ -13693,7 +18922,7 @@ func NewDataAwsCognitoUserPools_Override(d DataAwsCognitoUserPools, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsCognitoUserPools) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCognitoUserPools) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13773,12 +19002,40 @@ func (d *jsiiProxy_DataAwsCognitoUserPools) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPools) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCognitoUserPools) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPools) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13815,12 +19072,54 @@ func (d *jsiiProxy_DataAwsCognitoUserPools) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPools) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPools) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCognitoUserPools) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCognitoUserPools) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13921,13 +19220,13 @@ func (d *jsiiProxy_DataAwsCognitoUserPools) ToTerraform() interface{} {
 // AWS Cognito.
 type DataAwsCognitoUserPoolsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools.html#name DataAwsCognitoUserPools#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cognito_user_pools#name DataAwsCognitoUserPools#name}.
+	Name *string `json:"name" yaml:"name"`
 }

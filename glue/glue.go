@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/glue/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/glue_connection.html aws_glue_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/glue_connection aws_glue_connection}.
 type DataAwsGlueConnection interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -17,8 +17,8 @@ type DataAwsGlueConnection interface {
 	CdktfStack() cdktf.TerraformStack
 	ConnectionType() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -35,18 +35,23 @@ type DataAwsGlueConnection interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
-	ConnectionProperties(key *string) *string
+	ConnectionProperties(key *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PhysicalConnectionRequirements(index *string) DataAwsGlueConnectionPhysicalConnectionRequirements
@@ -113,8 +118,8 @@ func (j *jsiiProxy_DataAwsGlueConnection) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -243,8 +248,8 @@ func (j *jsiiProxy_DataAwsGlueConnection) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueConnection) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueConnection) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -253,8 +258,8 @@ func (j *jsiiProxy_DataAwsGlueConnection) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueConnection) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueConnection) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -293,7 +298,7 @@ func (j *jsiiProxy_DataAwsGlueConnection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_connection.html aws_glue_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_connection aws_glue_connection} Data Source.
 func NewDataAwsGlueConnection(scope constructs.Construct, id *string, config *DataAwsGlueConnectionConfig) DataAwsGlueConnection {
 	_init_.Initialize()
 
@@ -308,7 +313,7 @@ func NewDataAwsGlueConnection(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_connection.html aws_glue_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_connection aws_glue_connection} Data Source.
 func NewDataAwsGlueConnection_Override(d DataAwsGlueConnection, scope constructs.Construct, id *string, config *DataAwsGlueConnectionConfig) {
 	_init_.Initialize()
 
@@ -319,7 +324,7 @@ func NewDataAwsGlueConnection_Override(d DataAwsGlueConnection, scope constructs
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsGlueConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -359,7 +364,7 @@ func (j *jsiiProxy_DataAwsGlueConnection) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueConnection) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsGlueConnection) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -406,13 +411,27 @@ func (d *jsiiProxy_DataAwsGlueConnection) AddOverride(path *string, value interf
 	)
 }
 
-func (d *jsiiProxy_DataAwsGlueConnection) ConnectionProperties(key *string) *string {
-	var returns *string
+func (d *jsiiProxy_DataAwsGlueConnection) ConnectionProperties(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		d,
 		"connectionProperties",
 		[]interface{}{key},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
 		&returns,
 	)
 
@@ -426,6 +445,20 @@ func (d *jsiiProxy_DataAwsGlueConnection) GetBooleanAttribute(terraformAttribute
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -462,12 +495,54 @@ func (d *jsiiProxy_DataAwsGlueConnection) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -589,17 +664,17 @@ func (d *jsiiProxy_DataAwsGlueConnection) ToTerraform() interface{} {
 // AWS Glue.
 type DataAwsGlueConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_connection.html#id DataAwsGlueConnection#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_connection.html#tags DataAwsGlueConnection#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_connection#id DataAwsGlueConnection#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_connection#tags DataAwsGlueConnection#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsGlueConnectionPhysicalConnectionRequirements interface {
@@ -611,12 +686,19 @@ type DataAwsGlueConnectionPhysicalConnectionRequirements interface {
 	SubnetId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -675,8 +757,8 @@ func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -685,15 +767,25 @@ func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) Terrafor
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsGlueConnectionPhysicalConnectionRequirements(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsGlueConnectionPhysicalConnectionRequirements {
+func NewDataAwsGlueConnectionPhysicalConnectionRequirements(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsGlueConnectionPhysicalConnectionRequirements {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements{}
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -701,12 +793,12 @@ func NewDataAwsGlueConnectionPhysicalConnectionRequirements(terraformResource cd
 }
 
 // Experimental.
-func NewDataAwsGlueConnectionPhysicalConnectionRequirements_Override(d DataAwsGlueConnectionPhysicalConnectionRequirements, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsGlueConnectionPhysicalConnectionRequirements_Override(d DataAwsGlueConnectionPhysicalConnectionRequirements, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueConnectionPhysicalConnectionRequirements",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -727,7 +819,7 @@ func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) SetTerra
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -735,13 +827,49 @@ func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) SetTerra
 	)
 }
 
+func (j *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -778,12 +906,54 @@ func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetNumbe
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -805,7 +975,7 @@ func (d *jsiiProxy_DataAwsGlueConnectionPhysicalConnectionRequirements) Interpol
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings.html aws_glue_data_catalog_encryption_settings}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings aws_glue_data_catalog_encryption_settings}.
 type DataAwsGlueDataCatalogEncryptionSettings interface {
 	cdktf.TerraformDataSource
 	CatalogId() *string
@@ -813,8 +983,8 @@ type DataAwsGlueDataCatalogEncryptionSettings interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -831,10 +1001,15 @@ type DataAwsGlueDataCatalogEncryptionSettings interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	DataCatalogEncryptionSettings(index *string) DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -889,8 +1064,8 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) ConstructNodeMetada
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1009,7 +1184,7 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) TerraformResourceTy
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings.html aws_glue_data_catalog_encryption_settings} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings aws_glue_data_catalog_encryption_settings} Data Source.
 func NewDataAwsGlueDataCatalogEncryptionSettings(scope constructs.Construct, id *string, config *DataAwsGlueDataCatalogEncryptionSettingsConfig) DataAwsGlueDataCatalogEncryptionSettings {
 	_init_.Initialize()
 
@@ -1024,7 +1199,7 @@ func NewDataAwsGlueDataCatalogEncryptionSettings(scope constructs.Construct, id 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings.html aws_glue_data_catalog_encryption_settings} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings aws_glue_data_catalog_encryption_settings} Data Source.
 func NewDataAwsGlueDataCatalogEncryptionSettings_Override(d DataAwsGlueDataCatalogEncryptionSettings, scope constructs.Construct, id *string, config *DataAwsGlueDataCatalogEncryptionSettingsConfig) {
 	_init_.Initialize()
 
@@ -1043,7 +1218,7 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) SetCatalogId(val *s
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1128,12 +1303,40 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) DataCatalogEncrypti
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1170,12 +1373,54 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetNumberAttribute(
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1276,31 +1521,38 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettings) ToTerraform() inter
 // AWS Glue.
 type DataAwsGlueDataCatalogEncryptionSettingsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings.html#catalog_id DataAwsGlueDataCatalogEncryptionSettings#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_data_catalog_encryption_settings#catalog_id DataAwsGlueDataCatalogEncryptionSettings#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ConnectionPasswordEncryption() interface{}
-	EncryptionAtRest() interface{}
+	ConnectionPasswordEncryption() cdktf.IResolvable
+	EncryptionAtRest() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1319,8 +1571,8 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) ConnectionPasswordEncryption() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) ConnectionPasswordEncryption() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"connectionPasswordEncryption",
@@ -1329,8 +1581,8 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) EncryptionAtRest() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) EncryptionAtRest() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encryptionAtRest",
@@ -1349,8 +1601,8 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1359,15 +1611,25 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings {
+func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings{}
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1375,12 +1637,12 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings(te
 }
 
 // Experimental.
-func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings_Override(d DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings_Override(d DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1401,7 +1663,7 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1409,13 +1671,49 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	)
 }
 
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1452,12 +1750,54 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1484,15 +1824,22 @@ type DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnec
 	AwsKmsKeyId() *string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ReturnConnectionPasswordEncrypted() interface{}
+	ReturnConnectionPasswordEncrypted() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1521,8 +1868,8 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) ReturnConnectionPasswordEncrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) ReturnConnectionPasswordEncrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"returnConnectionPasswordEncrypted",
@@ -1541,8 +1888,8 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1551,15 +1898,25 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption {
+func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption{}
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1567,12 +1924,12 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsCon
 }
 
 // Experimental.
-func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption_Override(d DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption_Override(d DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1593,7 +1950,7 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1601,13 +1958,49 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	)
 }
 
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1644,12 +2037,54 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1679,12 +2114,19 @@ type DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryp
 	SseAwsKmsKeyId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1733,8 +2175,8 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1743,15 +2185,25 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest {
+func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest{}
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1759,12 +2211,12 @@ func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEnc
 }
 
 // Experimental.
-func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest_Override(d DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest_Override(d DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1785,7 +2237,7 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1793,13 +2245,49 @@ func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	)
 }
 
+func (j *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1836,12 +2324,54 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1863,19 +2393,19 @@ func (d *jsiiProxy_DataAwsGlueDataCatalogEncryptionSettingsDataCatalogEncryption
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html aws_glue_script}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/glue_script aws_glue_script}.
 type DataAwsGlueScript interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DagEdge() *[]*DataAwsGlueScriptDagEdge
-	SetDagEdge(val *[]*DataAwsGlueScriptDagEdge)
-	DagEdgeInput() *[]*DataAwsGlueScriptDagEdge
-	DagNode() *[]*DataAwsGlueScriptDagNode
-	SetDagNode(val *[]*DataAwsGlueScriptDagNode)
-	DagNodeInput() *[]*DataAwsGlueScriptDagNode
+	Count() *float64
+	SetCount(val *float64)
+	DagEdge() interface{}
+	SetDagEdge(val interface{})
+	DagEdgeInput() interface{}
+	DagNode() interface{}
+	SetDagNode(val interface{})
+	DagNodeInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1896,10 +2426,15 @@ type DataAwsGlueScript interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetLanguage()
@@ -1935,8 +2470,8 @@ func (j *jsiiProxy_DataAwsGlueScript) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsGlueScript) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1945,8 +2480,8 @@ func (j *jsiiProxy_DataAwsGlueScript) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) DagEdge() *[]*DataAwsGlueScriptDagEdge {
-	var returns *[]*DataAwsGlueScriptDagEdge
+func (j *jsiiProxy_DataAwsGlueScript) DagEdge() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dagEdge",
@@ -1955,8 +2490,8 @@ func (j *jsiiProxy_DataAwsGlueScript) DagEdge() *[]*DataAwsGlueScriptDagEdge {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) DagEdgeInput() *[]*DataAwsGlueScriptDagEdge {
-	var returns *[]*DataAwsGlueScriptDagEdge
+func (j *jsiiProxy_DataAwsGlueScript) DagEdgeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dagEdgeInput",
@@ -1965,8 +2500,8 @@ func (j *jsiiProxy_DataAwsGlueScript) DagEdgeInput() *[]*DataAwsGlueScriptDagEdg
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) DagNode() *[]*DataAwsGlueScriptDagNode {
-	var returns *[]*DataAwsGlueScriptDagNode
+func (j *jsiiProxy_DataAwsGlueScript) DagNode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dagNode",
@@ -1975,8 +2510,8 @@ func (j *jsiiProxy_DataAwsGlueScript) DagNode() *[]*DataAwsGlueScriptDagNode {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) DagNodeInput() *[]*DataAwsGlueScriptDagNode {
-	var returns *[]*DataAwsGlueScriptDagNode
+func (j *jsiiProxy_DataAwsGlueScript) DagNodeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dagNodeInput",
@@ -2135,7 +2670,7 @@ func (j *jsiiProxy_DataAwsGlueScript) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html aws_glue_script} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_script aws_glue_script} Data Source.
 func NewDataAwsGlueScript(scope constructs.Construct, id *string, config *DataAwsGlueScriptConfig) DataAwsGlueScript {
 	_init_.Initialize()
 
@@ -2150,7 +2685,7 @@ func NewDataAwsGlueScript(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html aws_glue_script} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/glue_script aws_glue_script} Data Source.
 func NewDataAwsGlueScript_Override(d DataAwsGlueScript, scope constructs.Construct, id *string, config *DataAwsGlueScriptConfig) {
 	_init_.Initialize()
 
@@ -2161,7 +2696,7 @@ func NewDataAwsGlueScript_Override(d DataAwsGlueScript, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsGlueScript) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2169,7 +2704,7 @@ func (j *jsiiProxy_DataAwsGlueScript) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) SetDagEdge(val *[]*DataAwsGlueScriptDagEdge) {
+func (j *jsiiProxy_DataAwsGlueScript) SetDagEdge(val interface{}) {
 	_jsii_.Set(
 		j,
 		"dagEdge",
@@ -2177,7 +2712,7 @@ func (j *jsiiProxy_DataAwsGlueScript) SetDagEdge(val *[]*DataAwsGlueScriptDagEdg
 	)
 }
 
-func (j *jsiiProxy_DataAwsGlueScript) SetDagNode(val *[]*DataAwsGlueScriptDagNode) {
+func (j *jsiiProxy_DataAwsGlueScript) SetDagNode(val interface{}) {
 	_jsii_.Set(
 		j,
 		"dagNode",
@@ -2257,12 +2792,40 @@ func (d *jsiiProxy_DataAwsGlueScript) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueScript) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueScript) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueScript) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2299,12 +2862,54 @@ func (d *jsiiProxy_DataAwsGlueScript) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsGlueScript) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueScript) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsGlueScript) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsGlueScript) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2413,57 +3018,57 @@ func (d *jsiiProxy_DataAwsGlueScript) ToTerraform() interface{} {
 // AWS Glue.
 type DataAwsGlueScriptConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// dag_edge block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#dag_edge DataAwsGlueScript#dag_edge}
-	DagEdge *[]*DataAwsGlueScriptDagEdge `json:"dagEdge"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#dag_edge DataAwsGlueScript#dag_edge}
+	DagEdge interface{} `json:"dagEdge" yaml:"dagEdge"`
 	// dag_node block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#dag_node DataAwsGlueScript#dag_node}
-	DagNode *[]*DataAwsGlueScriptDagNode `json:"dagNode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#language DataAwsGlueScript#language}.
-	Language *string `json:"language"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#dag_node DataAwsGlueScript#dag_node}
+	DagNode interface{} `json:"dagNode" yaml:"dagNode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#language DataAwsGlueScript#language}.
+	Language *string `json:"language" yaml:"language"`
 }
 
 type DataAwsGlueScriptDagEdge struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#source DataAwsGlueScript#source}.
-	Source *string `json:"source"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#target DataAwsGlueScript#target}.
-	Target *string `json:"target"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#target_parameter DataAwsGlueScript#target_parameter}.
-	TargetParameter *string `json:"targetParameter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#source DataAwsGlueScript#source}.
+	Source *string `json:"source" yaml:"source"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#target DataAwsGlueScript#target}.
+	Target *string `json:"target" yaml:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#target_parameter DataAwsGlueScript#target_parameter}.
+	TargetParameter *string `json:"targetParameter" yaml:"targetParameter"`
 }
 
 type DataAwsGlueScriptDagNode struct {
 	// args block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#args DataAwsGlueScript#args}
-	Args *[]*DataAwsGlueScriptDagNodeArgs `json:"args"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#id DataAwsGlueScript#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#node_type DataAwsGlueScript#node_type}.
-	NodeType *string `json:"nodeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#line_number DataAwsGlueScript#line_number}.
-	LineNumber *float64 `json:"lineNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#args DataAwsGlueScript#args}
+	Args interface{} `json:"args" yaml:"args"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#id DataAwsGlueScript#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#node_type DataAwsGlueScript#node_type}.
+	NodeType *string `json:"nodeType" yaml:"nodeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#line_number DataAwsGlueScript#line_number}.
+	LineNumber *float64 `json:"lineNumber" yaml:"lineNumber"`
 }
 
 type DataAwsGlueScriptDagNodeArgs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#name DataAwsGlueScript#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#value DataAwsGlueScript#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script.html#param DataAwsGlueScript#param}.
-	Param interface{} `json:"param"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#name DataAwsGlueScript#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#value DataAwsGlueScript#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/glue_script#param DataAwsGlueScript#param}.
+	Param interface{} `json:"param" yaml:"param"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html aws_glue_catalog_database}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database aws_glue_catalog_database}.
 type GlueCatalogDatabase interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2472,8 +3077,8 @@ type GlueCatalogDatabase interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2491,9 +3096,9 @@ type GlueCatalogDatabase interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
@@ -2503,10 +3108,15 @@ type GlueCatalogDatabase interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTargetDatabase(value *GlueCatalogDatabaseTargetDatabase)
@@ -2577,8 +3187,8 @@ func (j *jsiiProxy_GlueCatalogDatabase) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogDatabase) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogDatabase) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2707,8 +3317,8 @@ func (j *jsiiProxy_GlueCatalogDatabase) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogDatabase) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogDatabase) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -2717,8 +3327,8 @@ func (j *jsiiProxy_GlueCatalogDatabase) Parameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogDatabase) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogDatabase) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -2797,7 +3407,7 @@ func (j *jsiiProxy_GlueCatalogDatabase) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html aws_glue_catalog_database} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database aws_glue_catalog_database} Resource.
 func NewGlueCatalogDatabase(scope constructs.Construct, id *string, config *GlueCatalogDatabaseConfig) GlueCatalogDatabase {
 	_init_.Initialize()
 
@@ -2812,7 +3422,7 @@ func NewGlueCatalogDatabase(scope constructs.Construct, id *string, config *Glue
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html aws_glue_catalog_database} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database aws_glue_catalog_database} Resource.
 func NewGlueCatalogDatabase_Override(g GlueCatalogDatabase, scope constructs.Construct, id *string, config *GlueCatalogDatabaseConfig) {
 	_init_.Initialize()
 
@@ -2831,7 +3441,7 @@ func (j *jsiiProxy_GlueCatalogDatabase) SetCatalogId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogDatabase) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueCatalogDatabase) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2879,7 +3489,7 @@ func (j *jsiiProxy_GlueCatalogDatabase) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogDatabase) SetParameters(val interface{}) {
+func (j *jsiiProxy_GlueCatalogDatabase) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -2935,12 +3545,40 @@ func (g *jsiiProxy_GlueCatalogDatabase) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogDatabase) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogDatabase) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogDatabase) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2977,12 +3615,54 @@ func (g *jsiiProxy_GlueCatalogDatabase) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogDatabase) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogDatabase) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogDatabase) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogDatabase) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3131,34 +3811,34 @@ func (g *jsiiProxy_GlueCatalogDatabase) ToTerraform() interface{} {
 // AWS Glue.
 type GlueCatalogDatabaseConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#name GlueCatalogDatabase#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#catalog_id GlueCatalogDatabase#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#description GlueCatalogDatabase#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#location_uri GlueCatalogDatabase#location_uri}.
-	LocationUri *string `json:"locationUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#parameters GlueCatalogDatabase#parameters}.
-	Parameters interface{} `json:"parameters"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#name GlueCatalogDatabase#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#catalog_id GlueCatalogDatabase#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#description GlueCatalogDatabase#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#location_uri GlueCatalogDatabase#location_uri}.
+	LocationUri *string `json:"locationUri" yaml:"locationUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#parameters GlueCatalogDatabase#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
 	// target_database block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#target_database GlueCatalogDatabase#target_database}
-	TargetDatabase *GlueCatalogDatabaseTargetDatabase `json:"targetDatabase"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#target_database GlueCatalogDatabase#target_database}
+	TargetDatabase *GlueCatalogDatabaseTargetDatabase `json:"targetDatabase" yaml:"targetDatabase"`
 }
 
 type GlueCatalogDatabaseTargetDatabase struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#catalog_id GlueCatalogDatabase#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database.html#database_name GlueCatalogDatabase#database_name}.
-	DatabaseName *string `json:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#catalog_id GlueCatalogDatabase#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_database#database_name GlueCatalogDatabase#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
 }
 
 type GlueCatalogDatabaseTargetDatabaseOutputReference interface {
@@ -3175,12 +3855,17 @@ type GlueCatalogDatabaseTargetDatabaseOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3260,8 +3945,8 @@ func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3270,7 +3955,7 @@ func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) TerraformRe
 	return returns
 }
 
-func NewGlueCatalogDatabaseTargetDatabaseOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCatalogDatabaseTargetDatabaseOutputReference {
+func NewGlueCatalogDatabaseTargetDatabaseOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCatalogDatabaseTargetDatabaseOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference{}
@@ -3284,7 +3969,7 @@ func NewGlueCatalogDatabaseTargetDatabaseOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewGlueCatalogDatabaseTargetDatabaseOutputReference_Override(g GlueCatalogDatabaseTargetDatabaseOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCatalogDatabaseTargetDatabaseOutputReference_Override(g GlueCatalogDatabaseTargetDatabaseOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3334,7 +4019,7 @@ func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3343,12 +4028,40 @@ func (j *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3385,12 +4098,54 @@ func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3426,7 +4181,7 @@ func (g *jsiiProxy_GlueCatalogDatabaseTargetDatabaseOutputReference) Interpolati
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html aws_glue_catalog_table}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table aws_glue_catalog_table}.
 type GlueCatalogTable interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3435,8 +4190,8 @@ type GlueCatalogTable interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
@@ -3457,15 +4212,15 @@ type GlueCatalogTable interface {
 	Owner() *string
 	SetOwner(val *string)
 	OwnerInput() *string
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
-	PartitionIndex() *[]*GlueCatalogTablePartitionIndex
-	SetPartitionIndex(val *[]*GlueCatalogTablePartitionIndex)
-	PartitionIndexInput() *[]*GlueCatalogTablePartitionIndex
-	PartitionKeys() *[]*GlueCatalogTablePartitionKeys
-	SetPartitionKeys(val *[]*GlueCatalogTablePartitionKeys)
-	PartitionKeysInput() *[]*GlueCatalogTablePartitionKeys
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
+	PartitionIndex() interface{}
+	SetPartitionIndex(val interface{})
+	PartitionIndexInput() interface{}
+	PartitionKeys() interface{}
+	SetPartitionKeys(val interface{})
+	PartitionKeysInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
@@ -3489,10 +4244,15 @@ type GlueCatalogTable interface {
 	SetViewOriginalText(val *string)
 	ViewOriginalTextInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutStorageDescriptor(value *GlueCatalogTableStorageDescriptor)
@@ -3571,8 +4331,8 @@ func (j *jsiiProxy_GlueCatalogTable) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTable) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTable) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3721,8 +4481,8 @@ func (j *jsiiProxy_GlueCatalogTable) OwnerInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTable) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTable) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -3731,8 +4491,8 @@ func (j *jsiiProxy_GlueCatalogTable) Parameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTable) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTable) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -3741,8 +4501,8 @@ func (j *jsiiProxy_GlueCatalogTable) ParametersInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTable) PartitionIndex() *[]*GlueCatalogTablePartitionIndex {
-	var returns *[]*GlueCatalogTablePartitionIndex
+func (j *jsiiProxy_GlueCatalogTable) PartitionIndex() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"partitionIndex",
@@ -3751,8 +4511,8 @@ func (j *jsiiProxy_GlueCatalogTable) PartitionIndex() *[]*GlueCatalogTablePartit
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTable) PartitionIndexInput() *[]*GlueCatalogTablePartitionIndex {
-	var returns *[]*GlueCatalogTablePartitionIndex
+func (j *jsiiProxy_GlueCatalogTable) PartitionIndexInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"partitionIndexInput",
@@ -3761,8 +4521,8 @@ func (j *jsiiProxy_GlueCatalogTable) PartitionIndexInput() *[]*GlueCatalogTableP
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTable) PartitionKeys() *[]*GlueCatalogTablePartitionKeys {
-	var returns *[]*GlueCatalogTablePartitionKeys
+func (j *jsiiProxy_GlueCatalogTable) PartitionKeys() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"partitionKeys",
@@ -3771,8 +4531,8 @@ func (j *jsiiProxy_GlueCatalogTable) PartitionKeys() *[]*GlueCatalogTablePartiti
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTable) PartitionKeysInput() *[]*GlueCatalogTablePartitionKeys {
-	var returns *[]*GlueCatalogTablePartitionKeys
+func (j *jsiiProxy_GlueCatalogTable) PartitionKeysInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"partitionKeysInput",
@@ -3951,7 +4711,7 @@ func (j *jsiiProxy_GlueCatalogTable) ViewOriginalTextInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html aws_glue_catalog_table} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table aws_glue_catalog_table} Resource.
 func NewGlueCatalogTable(scope constructs.Construct, id *string, config *GlueCatalogTableConfig) GlueCatalogTable {
 	_init_.Initialize()
 
@@ -3966,7 +4726,7 @@ func NewGlueCatalogTable(scope constructs.Construct, id *string, config *GlueCat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html aws_glue_catalog_table} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table aws_glue_catalog_table} Resource.
 func NewGlueCatalogTable_Override(g GlueCatalogTable, scope constructs.Construct, id *string, config *GlueCatalogTableConfig) {
 	_init_.Initialize()
 
@@ -3985,7 +4745,7 @@ func (j *jsiiProxy_GlueCatalogTable) SetCatalogId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTable) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueCatalogTable) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4041,7 +4801,7 @@ func (j *jsiiProxy_GlueCatalogTable) SetOwner(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTable) SetParameters(val interface{}) {
+func (j *jsiiProxy_GlueCatalogTable) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -4049,7 +4809,7 @@ func (j *jsiiProxy_GlueCatalogTable) SetParameters(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTable) SetPartitionIndex(val *[]*GlueCatalogTablePartitionIndex) {
+func (j *jsiiProxy_GlueCatalogTable) SetPartitionIndex(val interface{}) {
 	_jsii_.Set(
 		j,
 		"partitionIndex",
@@ -4057,7 +4817,7 @@ func (j *jsiiProxy_GlueCatalogTable) SetPartitionIndex(val *[]*GlueCatalogTableP
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTable) SetPartitionKeys(val *[]*GlueCatalogTablePartitionKeys) {
+func (j *jsiiProxy_GlueCatalogTable) SetPartitionKeys(val interface{}) {
 	_jsii_.Set(
 		j,
 		"partitionKeys",
@@ -4145,12 +4905,40 @@ func (g *jsiiProxy_GlueCatalogTable) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTable) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTable) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTable) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4187,12 +4975,54 @@ func (g *jsiiProxy_GlueCatalogTable) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTable) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTable) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTable) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTable) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4405,115 +5235,115 @@ func (g *jsiiProxy_GlueCatalogTable) ToTerraform() interface{} {
 // AWS Glue.
 type GlueCatalogTableConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#database_name GlueCatalogTable#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#name GlueCatalogTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#catalog_id GlueCatalogTable#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#description GlueCatalogTable#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#owner GlueCatalogTable#owner}.
-	Owner *string `json:"owner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#parameters GlueCatalogTable#parameters}.
-	Parameters interface{} `json:"parameters"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#database_name GlueCatalogTable#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#name GlueCatalogTable#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#catalog_id GlueCatalogTable#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#description GlueCatalogTable#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#owner GlueCatalogTable#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#parameters GlueCatalogTable#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
 	// partition_index block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#partition_index GlueCatalogTable#partition_index}
-	PartitionIndex *[]*GlueCatalogTablePartitionIndex `json:"partitionIndex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#partition_index GlueCatalogTable#partition_index}
+	PartitionIndex interface{} `json:"partitionIndex" yaml:"partitionIndex"`
 	// partition_keys block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#partition_keys GlueCatalogTable#partition_keys}
-	PartitionKeys *[]*GlueCatalogTablePartitionKeys `json:"partitionKeys"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#retention GlueCatalogTable#retention}.
-	Retention *float64 `json:"retention"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#partition_keys GlueCatalogTable#partition_keys}
+	PartitionKeys interface{} `json:"partitionKeys" yaml:"partitionKeys"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#retention GlueCatalogTable#retention}.
+	Retention *float64 `json:"retention" yaml:"retention"`
 	// storage_descriptor block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#storage_descriptor GlueCatalogTable#storage_descriptor}
-	StorageDescriptor *GlueCatalogTableStorageDescriptor `json:"storageDescriptor"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#table_type GlueCatalogTable#table_type}.
-	TableType *string `json:"tableType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#storage_descriptor GlueCatalogTable#storage_descriptor}
+	StorageDescriptor *GlueCatalogTableStorageDescriptor `json:"storageDescriptor" yaml:"storageDescriptor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#table_type GlueCatalogTable#table_type}.
+	TableType *string `json:"tableType" yaml:"tableType"`
 	// target_table block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#target_table GlueCatalogTable#target_table}
-	TargetTable *GlueCatalogTableTargetTable `json:"targetTable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#view_expanded_text GlueCatalogTable#view_expanded_text}.
-	ViewExpandedText *string `json:"viewExpandedText"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#view_original_text GlueCatalogTable#view_original_text}.
-	ViewOriginalText *string `json:"viewOriginalText"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#target_table GlueCatalogTable#target_table}
+	TargetTable *GlueCatalogTableTargetTable `json:"targetTable" yaml:"targetTable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#view_expanded_text GlueCatalogTable#view_expanded_text}.
+	ViewExpandedText *string `json:"viewExpandedText" yaml:"viewExpandedText"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#view_original_text GlueCatalogTable#view_original_text}.
+	ViewOriginalText *string `json:"viewOriginalText" yaml:"viewOriginalText"`
 }
 
 type GlueCatalogTablePartitionIndex struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#index_name GlueCatalogTable#index_name}.
-	IndexName *string `json:"indexName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#keys GlueCatalogTable#keys}.
-	Keys *[]*string `json:"keys"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#index_name GlueCatalogTable#index_name}.
+	IndexName *string `json:"indexName" yaml:"indexName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#keys GlueCatalogTable#keys}.
+	Keys *[]*string `json:"keys" yaml:"keys"`
 }
 
 type GlueCatalogTablePartitionKeys struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#name GlueCatalogTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#comment GlueCatalogTable#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#type GlueCatalogTable#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#name GlueCatalogTable#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#comment GlueCatalogTable#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#type GlueCatalogTable#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type GlueCatalogTableStorageDescriptor struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#bucket_columns GlueCatalogTable#bucket_columns}.
-	BucketColumns *[]*string `json:"bucketColumns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#bucket_columns GlueCatalogTable#bucket_columns}.
+	BucketColumns *[]*string `json:"bucketColumns" yaml:"bucketColumns"`
 	// columns block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#columns GlueCatalogTable#columns}
-	Columns *[]*GlueCatalogTableStorageDescriptorColumns `json:"columns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#compressed GlueCatalogTable#compressed}.
-	Compressed interface{} `json:"compressed"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#input_format GlueCatalogTable#input_format}.
-	InputFormat *string `json:"inputFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#location GlueCatalogTable#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#number_of_buckets GlueCatalogTable#number_of_buckets}.
-	NumberOfBuckets *float64 `json:"numberOfBuckets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#output_format GlueCatalogTable#output_format}.
-	OutputFormat *string `json:"outputFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#parameters GlueCatalogTable#parameters}.
-	Parameters interface{} `json:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#columns GlueCatalogTable#columns}
+	Columns interface{} `json:"columns" yaml:"columns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#compressed GlueCatalogTable#compressed}.
+	Compressed interface{} `json:"compressed" yaml:"compressed"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#input_format GlueCatalogTable#input_format}.
+	InputFormat *string `json:"inputFormat" yaml:"inputFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#location GlueCatalogTable#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#number_of_buckets GlueCatalogTable#number_of_buckets}.
+	NumberOfBuckets *float64 `json:"numberOfBuckets" yaml:"numberOfBuckets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#output_format GlueCatalogTable#output_format}.
+	OutputFormat *string `json:"outputFormat" yaml:"outputFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#parameters GlueCatalogTable#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
 	// schema_reference block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#schema_reference GlueCatalogTable#schema_reference}
-	SchemaReference *GlueCatalogTableStorageDescriptorSchemaReference `json:"schemaReference"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#schema_reference GlueCatalogTable#schema_reference}
+	SchemaReference *GlueCatalogTableStorageDescriptorSchemaReference `json:"schemaReference" yaml:"schemaReference"`
 	// ser_de_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#ser_de_info GlueCatalogTable#ser_de_info}
-	SerDeInfo *GlueCatalogTableStorageDescriptorSerDeInfo `json:"serDeInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#ser_de_info GlueCatalogTable#ser_de_info}
+	SerDeInfo *GlueCatalogTableStorageDescriptorSerDeInfo `json:"serDeInfo" yaml:"serDeInfo"`
 	// skewed_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#skewed_info GlueCatalogTable#skewed_info}
-	SkewedInfo *GlueCatalogTableStorageDescriptorSkewedInfo `json:"skewedInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#skewed_info GlueCatalogTable#skewed_info}
+	SkewedInfo *GlueCatalogTableStorageDescriptorSkewedInfo `json:"skewedInfo" yaml:"skewedInfo"`
 	// sort_columns block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#sort_columns GlueCatalogTable#sort_columns}
-	SortColumns *[]*GlueCatalogTableStorageDescriptorSortColumns `json:"sortColumns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#stored_as_sub_directories GlueCatalogTable#stored_as_sub_directories}.
-	StoredAsSubDirectories interface{} `json:"storedAsSubDirectories"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#sort_columns GlueCatalogTable#sort_columns}
+	SortColumns interface{} `json:"sortColumns" yaml:"sortColumns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#stored_as_sub_directories GlueCatalogTable#stored_as_sub_directories}.
+	StoredAsSubDirectories interface{} `json:"storedAsSubDirectories" yaml:"storedAsSubDirectories"`
 }
 
 type GlueCatalogTableStorageDescriptorColumns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#name GlueCatalogTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#comment GlueCatalogTable#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#parameters GlueCatalogTable#parameters}.
-	Parameters interface{} `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#type GlueCatalogTable#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#name GlueCatalogTable#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#comment GlueCatalogTable#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#parameters GlueCatalogTable#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#type GlueCatalogTable#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type GlueCatalogTableStorageDescriptorOutputReference interface {
@@ -4521,9 +5351,9 @@ type GlueCatalogTableStorageDescriptorOutputReference interface {
 	BucketColumns() *[]*string
 	SetBucketColumns(val *[]*string)
 	BucketColumnsInput() *[]*string
-	Columns() *[]*GlueCatalogTableStorageDescriptorColumns
-	SetColumns(val *[]*GlueCatalogTableStorageDescriptorColumns)
-	ColumnsInput() *[]*GlueCatalogTableStorageDescriptorColumns
+	Columns() interface{}
+	SetColumns(val interface{})
+	ColumnsInput() interface{}
 	Compressed() interface{}
 	SetCompressed(val interface{})
 	CompressedInput() interface{}
@@ -4543,29 +5373,34 @@ type GlueCatalogTableStorageDescriptorOutputReference interface {
 	OutputFormat() *string
 	SetOutputFormat(val *string)
 	OutputFormatInput() *string
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	SchemaReference() GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference
 	SchemaReferenceInput() *GlueCatalogTableStorageDescriptorSchemaReference
 	SerDeInfo() GlueCatalogTableStorageDescriptorSerDeInfoOutputReference
 	SerDeInfoInput() *GlueCatalogTableStorageDescriptorSerDeInfo
 	SkewedInfo() GlueCatalogTableStorageDescriptorSkewedInfoOutputReference
 	SkewedInfoInput() *GlueCatalogTableStorageDescriptorSkewedInfo
-	SortColumns() *[]*GlueCatalogTableStorageDescriptorSortColumns
-	SetSortColumns(val *[]*GlueCatalogTableStorageDescriptorSortColumns)
-	SortColumnsInput() *[]*GlueCatalogTableStorageDescriptorSortColumns
+	SortColumns() interface{}
+	SetSortColumns(val interface{})
+	SortColumnsInput() interface{}
 	StoredAsSubDirectories() interface{}
 	SetStoredAsSubDirectories(val interface{})
 	StoredAsSubDirectoriesInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSchemaReference(value *GlueCatalogTableStorageDescriptorSchemaReference)
@@ -4611,8 +5446,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) BucketColum
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) Columns() *[]*GlueCatalogTableStorageDescriptorColumns {
-	var returns *[]*GlueCatalogTableStorageDescriptorColumns
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) Columns() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"columns",
@@ -4621,8 +5456,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) Columns() *
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) ColumnsInput() *[]*GlueCatalogTableStorageDescriptorColumns {
-	var returns *[]*GlueCatalogTableStorageDescriptorColumns
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) ColumnsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"columnsInput",
@@ -4751,8 +5586,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) OutputForma
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -4761,8 +5596,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) Parameters(
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -4831,8 +5666,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SkewedInfoI
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SortColumns() *[]*GlueCatalogTableStorageDescriptorSortColumns {
-	var returns *[]*GlueCatalogTableStorageDescriptorSortColumns
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SortColumns() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sortColumns",
@@ -4841,8 +5676,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SortColumns
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SortColumnsInput() *[]*GlueCatalogTableStorageDescriptorSortColumns {
-	var returns *[]*GlueCatalogTableStorageDescriptorSortColumns
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SortColumnsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sortColumnsInput",
@@ -4881,8 +5716,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4891,7 +5726,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) TerraformRe
 	return returns
 }
 
-func NewGlueCatalogTableStorageDescriptorOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorOutputReference {
+func NewGlueCatalogTableStorageDescriptorOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference{}
@@ -4905,7 +5740,7 @@ func NewGlueCatalogTableStorageDescriptorOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewGlueCatalogTableStorageDescriptorOutputReference_Override(g GlueCatalogTableStorageDescriptorOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCatalogTableStorageDescriptorOutputReference_Override(g GlueCatalogTableStorageDescriptorOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4923,7 +5758,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetBucketCo
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetColumns(val *[]*GlueCatalogTableStorageDescriptorColumns) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetColumns(val interface{}) {
 	_jsii_.Set(
 		j,
 		"columns",
@@ -4987,7 +5822,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetOutputFo
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetParameters(val interface{}) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -4995,7 +5830,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetParamete
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetSortColumns(val *[]*GlueCatalogTableStorageDescriptorSortColumns) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetSortColumns(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sortColumns",
@@ -5019,7 +5854,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5028,12 +5863,40 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5070,12 +5933,54 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5240,14 +6145,14 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorOutputReference) ResetStored
 }
 
 type GlueCatalogTableStorageDescriptorSchemaReference struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#schema_version_number GlueCatalogTable#schema_version_number}.
-	SchemaVersionNumber *float64 `json:"schemaVersionNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#schema_version_number GlueCatalogTable#schema_version_number}.
+	SchemaVersionNumber *float64 `json:"schemaVersionNumber" yaml:"schemaVersionNumber"`
 	// schema_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#schema_id GlueCatalogTable#schema_id}
-	SchemaId *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId `json:"schemaId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#schema_version_id GlueCatalogTable#schema_version_id}.
-	SchemaVersionId *string `json:"schemaVersionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#schema_id GlueCatalogTable#schema_id}
+	SchemaId *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId `json:"schemaId" yaml:"schemaId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#schema_version_id GlueCatalogTable#schema_version_id}.
+	SchemaVersionId *string `json:"schemaVersionId" yaml:"schemaVersionId"`
 }
 
 type GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference interface {
@@ -5266,12 +6171,17 @@ type GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference interface {
 	SchemaVersionNumberInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSchemaId(value *GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId)
@@ -5374,8 +6284,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5384,7 +6294,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReferen
 	return returns
 }
 
-func NewGlueCatalogTableStorageDescriptorSchemaReferenceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference {
+func NewGlueCatalogTableStorageDescriptorSchemaReferenceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference{}
@@ -5398,7 +6308,7 @@ func NewGlueCatalogTableStorageDescriptorSchemaReferenceOutputReference(terrafor
 	return &j
 }
 
-func NewGlueCatalogTableStorageDescriptorSchemaReferenceOutputReference_Override(g GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCatalogTableStorageDescriptorSchemaReferenceOutputReference_Override(g GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5448,7 +6358,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReferen
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5457,12 +6367,40 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReferen
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5499,12 +6437,54 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReferen
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5565,12 +6545,12 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceOutputReferen
 }
 
 type GlueCatalogTableStorageDescriptorSchemaReferenceSchemaId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#registry_name GlueCatalogTable#registry_name}.
-	RegistryName *string `json:"registryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#schema_arn GlueCatalogTable#schema_arn}.
-	SchemaArn *string `json:"schemaArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#schema_name GlueCatalogTable#schema_name}.
-	SchemaName *string `json:"schemaName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#registry_name GlueCatalogTable#registry_name}.
+	RegistryName *string `json:"registryName" yaml:"registryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#schema_arn GlueCatalogTable#schema_arn}.
+	SchemaArn *string `json:"schemaArn" yaml:"schemaArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#schema_name GlueCatalogTable#schema_name}.
+	SchemaName *string `json:"schemaName" yaml:"schemaName"`
 }
 
 type GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference interface {
@@ -5590,12 +6570,17 @@ type GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference int
 	SchemaNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetRegistryName()
@@ -5698,8 +6683,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutpu
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5708,7 +6693,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutpu
 	return returns
 }
 
-func NewGlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference {
+func NewGlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference{}
@@ -5722,7 +6707,7 @@ func NewGlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference(
 	return &j
 }
 
-func NewGlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference_Override(g GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference_Override(g GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5780,7 +6765,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutpu
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5789,12 +6774,40 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutpu
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5831,12 +6844,54 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutpu
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5897,12 +6952,12 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSchemaReferenceSchemaIdOutpu
 }
 
 type GlueCatalogTableStorageDescriptorSerDeInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#name GlueCatalogTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#parameters GlueCatalogTable#parameters}.
-	Parameters interface{} `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#serialization_library GlueCatalogTable#serialization_library}.
-	SerializationLibrary *string `json:"serializationLibrary"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#name GlueCatalogTable#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#parameters GlueCatalogTable#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#serialization_library GlueCatalogTable#serialization_library}.
+	SerializationLibrary *string `json:"serializationLibrary" yaml:"serializationLibrary"`
 }
 
 type GlueCatalogTableStorageDescriptorSerDeInfoOutputReference interface {
@@ -5914,20 +6969,25 @@ type GlueCatalogTableStorageDescriptorSerDeInfoOutputReference interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	SerializationLibrary() *string
 	SetSerializationLibrary(val *string)
 	SerializationLibraryInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetName()
@@ -5980,8 +7040,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Na
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -5990,8 +7050,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Pa
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -6030,8 +7090,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6040,7 +7100,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Te
 	return returns
 }
 
-func NewGlueCatalogTableStorageDescriptorSerDeInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSerDeInfoOutputReference {
+func NewGlueCatalogTableStorageDescriptorSerDeInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSerDeInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference{}
@@ -6054,7 +7114,7 @@ func NewGlueCatalogTableStorageDescriptorSerDeInfoOutputReference(terraformResou
 	return &j
 }
 
-func NewGlueCatalogTableStorageDescriptorSerDeInfoOutputReference_Override(g GlueCatalogTableStorageDescriptorSerDeInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCatalogTableStorageDescriptorSerDeInfoOutputReference_Override(g GlueCatalogTableStorageDescriptorSerDeInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6088,7 +7148,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) SetParameters(val interface{}) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -6112,7 +7172,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6121,12 +7181,40 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Se
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6163,12 +7251,54 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Ge
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6229,12 +7359,12 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSerDeInfoOutputReference) Re
 }
 
 type GlueCatalogTableStorageDescriptorSkewedInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#skewed_column_names GlueCatalogTable#skewed_column_names}.
-	SkewedColumnNames *[]*string `json:"skewedColumnNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#skewed_column_value_location_maps GlueCatalogTable#skewed_column_value_location_maps}.
-	SkewedColumnValueLocationMaps interface{} `json:"skewedColumnValueLocationMaps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#skewed_column_values GlueCatalogTable#skewed_column_values}.
-	SkewedColumnValues *[]*string `json:"skewedColumnValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#skewed_column_names GlueCatalogTable#skewed_column_names}.
+	SkewedColumnNames *[]*string `json:"skewedColumnNames" yaml:"skewedColumnNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#skewed_column_value_location_maps GlueCatalogTable#skewed_column_value_location_maps}.
+	SkewedColumnValueLocationMaps *map[string]*string `json:"skewedColumnValueLocationMaps" yaml:"skewedColumnValueLocationMaps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#skewed_column_values GlueCatalogTable#skewed_column_values}.
+	SkewedColumnValues *[]*string `json:"skewedColumnValues" yaml:"skewedColumnValues"`
 }
 
 type GlueCatalogTableStorageDescriptorSkewedInfoOutputReference interface {
@@ -6246,20 +7376,25 @@ type GlueCatalogTableStorageDescriptorSkewedInfoOutputReference interface {
 	SkewedColumnNames() *[]*string
 	SetSkewedColumnNames(val *[]*string)
 	SkewedColumnNamesInput() *[]*string
-	SkewedColumnValueLocationMaps() interface{}
-	SetSkewedColumnValueLocationMaps(val interface{})
-	SkewedColumnValueLocationMapsInput() interface{}
+	SkewedColumnValueLocationMaps() *map[string]*string
+	SetSkewedColumnValueLocationMaps(val *map[string]*string)
+	SkewedColumnValueLocationMapsInput() *map[string]*string
 	SkewedColumnValues() *[]*string
 	SetSkewedColumnValues(val *[]*string)
 	SkewedColumnValuesInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSkewedColumnNames()
@@ -6312,8 +7447,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) S
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMaps() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMaps() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"skewedColumnValueLocationMaps",
@@ -6322,8 +7457,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) S
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMapsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMapsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"skewedColumnValueLocationMapsInput",
@@ -6362,8 +7497,8 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6372,7 +7507,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) T
 	return returns
 }
 
-func NewGlueCatalogTableStorageDescriptorSkewedInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSkewedInfoOutputReference {
+func NewGlueCatalogTableStorageDescriptorSkewedInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableStorageDescriptorSkewedInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference{}
@@ -6386,7 +7521,7 @@ func NewGlueCatalogTableStorageDescriptorSkewedInfoOutputReference(terraformReso
 	return &j
 }
 
-func NewGlueCatalogTableStorageDescriptorSkewedInfoOutputReference_Override(g GlueCatalogTableStorageDescriptorSkewedInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCatalogTableStorageDescriptorSkewedInfoOutputReference_Override(g GlueCatalogTableStorageDescriptorSkewedInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6420,7 +7555,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SetSkewedColumnValueLocationMaps(val interface{}) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SetSkewedColumnValueLocationMaps(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"skewedColumnValueLocationMaps",
@@ -6444,7 +7579,7 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6453,12 +7588,40 @@ func (j *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) S
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6495,12 +7658,54 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) G
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6561,19 +7766,19 @@ func (g *jsiiProxy_GlueCatalogTableStorageDescriptorSkewedInfoOutputReference) R
 }
 
 type GlueCatalogTableStorageDescriptorSortColumns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#column GlueCatalogTable#column}.
-	Column *string `json:"column"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#sort_order GlueCatalogTable#sort_order}.
-	SortOrder *float64 `json:"sortOrder"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#column GlueCatalogTable#column}.
+	Column *string `json:"column" yaml:"column"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#sort_order GlueCatalogTable#sort_order}.
+	SortOrder *float64 `json:"sortOrder" yaml:"sortOrder"`
 }
 
 type GlueCatalogTableTargetTable struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#catalog_id GlueCatalogTable#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#database_name GlueCatalogTable#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table.html#name GlueCatalogTable#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#catalog_id GlueCatalogTable#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#database_name GlueCatalogTable#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_catalog_table#name GlueCatalogTable#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type GlueCatalogTableTargetTableOutputReference interface {
@@ -6593,12 +7798,17 @@ type GlueCatalogTableTargetTableOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6698,8 +7908,8 @@ func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6708,7 +7918,7 @@ func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) TerraformResource
 	return returns
 }
 
-func NewGlueCatalogTableTargetTableOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableTargetTableOutputReference {
+func NewGlueCatalogTableTargetTableOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCatalogTableTargetTableOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCatalogTableTargetTableOutputReference{}
@@ -6722,7 +7932,7 @@ func NewGlueCatalogTableTargetTableOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewGlueCatalogTableTargetTableOutputReference_Override(g GlueCatalogTableTargetTableOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCatalogTableTargetTableOutputReference_Override(g GlueCatalogTableTargetTableOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6780,7 +7990,7 @@ func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6789,12 +7999,40 @@ func (j *jsiiProxy_GlueCatalogTableTargetTableOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6831,12 +8069,54 @@ func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6872,13 +8152,13 @@ func (g *jsiiProxy_GlueCatalogTableTargetTableOutputReference) InterpolationForA
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html aws_glue_classifier}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier aws_glue_classifier}.
 type GlueClassifier interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CsvClassifier() GlueClassifierCsvClassifierOutputReference
 	CsvClassifierInput() *GlueClassifierCsvClassifier
 	DependsOn() *[]*string
@@ -6905,10 +8185,15 @@ type GlueClassifier interface {
 	XmlClassifier() GlueClassifierXmlClassifierOutputReference
 	XmlClassifierInput() *GlueClassifierXmlClassifier
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCsvClassifier(value *GlueClassifierCsvClassifier)
@@ -6951,8 +8236,8 @@ func (j *jsiiProxy_GlueClassifier) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_GlueClassifier) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueClassifier) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7171,7 +8456,7 @@ func (j *jsiiProxy_GlueClassifier) XmlClassifierInput() *GlueClassifierXmlClassi
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html aws_glue_classifier} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier aws_glue_classifier} Resource.
 func NewGlueClassifier(scope constructs.Construct, id *string, config *GlueClassifierConfig) GlueClassifier {
 	_init_.Initialize()
 
@@ -7186,7 +8471,7 @@ func NewGlueClassifier(scope constructs.Construct, id *string, config *GlueClass
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html aws_glue_classifier} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier aws_glue_classifier} Resource.
 func NewGlueClassifier_Override(g GlueClassifier, scope constructs.Construct, id *string, config *GlueClassifierConfig) {
 	_init_.Initialize()
 
@@ -7197,7 +8482,7 @@ func NewGlueClassifier_Override(g GlueClassifier, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_GlueClassifier) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueClassifier) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7277,12 +8562,40 @@ func (g *jsiiProxy_GlueClassifier) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueClassifier) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueClassifier) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifier) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7319,12 +8632,54 @@ func (g *jsiiProxy_GlueClassifier) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueClassifier) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifier) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueClassifier) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifier) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7489,46 +8844,46 @@ func (g *jsiiProxy_GlueClassifier) ToTerraform() interface{} {
 // AWS Glue.
 type GlueClassifierConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#name GlueClassifier#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#name GlueClassifier#name}.
+	Name *string `json:"name" yaml:"name"`
 	// csv_classifier block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#csv_classifier GlueClassifier#csv_classifier}
-	CsvClassifier *GlueClassifierCsvClassifier `json:"csvClassifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#csv_classifier GlueClassifier#csv_classifier}
+	CsvClassifier *GlueClassifierCsvClassifier `json:"csvClassifier" yaml:"csvClassifier"`
 	// grok_classifier block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#grok_classifier GlueClassifier#grok_classifier}
-	GrokClassifier *GlueClassifierGrokClassifier `json:"grokClassifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#grok_classifier GlueClassifier#grok_classifier}
+	GrokClassifier *GlueClassifierGrokClassifier `json:"grokClassifier" yaml:"grokClassifier"`
 	// json_classifier block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#json_classifier GlueClassifier#json_classifier}
-	JsonClassifier *GlueClassifierJsonClassifier `json:"jsonClassifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#json_classifier GlueClassifier#json_classifier}
+	JsonClassifier *GlueClassifierJsonClassifier `json:"jsonClassifier" yaml:"jsonClassifier"`
 	// xml_classifier block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#xml_classifier GlueClassifier#xml_classifier}
-	XmlClassifier *GlueClassifierXmlClassifier `json:"xmlClassifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#xml_classifier GlueClassifier#xml_classifier}
+	XmlClassifier *GlueClassifierXmlClassifier `json:"xmlClassifier" yaml:"xmlClassifier"`
 }
 
 type GlueClassifierCsvClassifier struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#allow_single_column GlueClassifier#allow_single_column}.
-	AllowSingleColumn interface{} `json:"allowSingleColumn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#contains_header GlueClassifier#contains_header}.
-	ContainsHeader *string `json:"containsHeader"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#delimiter GlueClassifier#delimiter}.
-	Delimiter *string `json:"delimiter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#disable_value_trimming GlueClassifier#disable_value_trimming}.
-	DisableValueTrimming interface{} `json:"disableValueTrimming"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#header GlueClassifier#header}.
-	Header *[]*string `json:"header"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#quote_symbol GlueClassifier#quote_symbol}.
-	QuoteSymbol *string `json:"quoteSymbol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#allow_single_column GlueClassifier#allow_single_column}.
+	AllowSingleColumn interface{} `json:"allowSingleColumn" yaml:"allowSingleColumn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#contains_header GlueClassifier#contains_header}.
+	ContainsHeader *string `json:"containsHeader" yaml:"containsHeader"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#delimiter GlueClassifier#delimiter}.
+	Delimiter *string `json:"delimiter" yaml:"delimiter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#disable_value_trimming GlueClassifier#disable_value_trimming}.
+	DisableValueTrimming interface{} `json:"disableValueTrimming" yaml:"disableValueTrimming"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#header GlueClassifier#header}.
+	Header *[]*string `json:"header" yaml:"header"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#quote_symbol GlueClassifier#quote_symbol}.
+	QuoteSymbol *string `json:"quoteSymbol" yaml:"quoteSymbol"`
 }
 
 type GlueClassifierCsvClassifierOutputReference interface {
@@ -7557,12 +8912,17 @@ type GlueClassifierCsvClassifierOutputReference interface {
 	QuoteSymbolInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAllowSingleColumn()
@@ -7728,8 +9088,8 @@ func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7738,7 +9098,7 @@ func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) TerraformResource
 	return returns
 }
 
-func NewGlueClassifierCsvClassifierOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueClassifierCsvClassifierOutputReference {
+func NewGlueClassifierCsvClassifierOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueClassifierCsvClassifierOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueClassifierCsvClassifierOutputReference{}
@@ -7752,7 +9112,7 @@ func NewGlueClassifierCsvClassifierOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewGlueClassifierCsvClassifierOutputReference_Override(g GlueClassifierCsvClassifierOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueClassifierCsvClassifierOutputReference_Override(g GlueClassifierCsvClassifierOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7834,7 +9194,7 @@ func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7843,12 +9203,40 @@ func (j *jsiiProxy_GlueClassifierCsvClassifierOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7885,12 +9273,54 @@ func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7975,12 +9405,12 @@ func (g *jsiiProxy_GlueClassifierCsvClassifierOutputReference) ResetQuoteSymbol(
 }
 
 type GlueClassifierGrokClassifier struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#classification GlueClassifier#classification}.
-	Classification *string `json:"classification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#grok_pattern GlueClassifier#grok_pattern}.
-	GrokPattern *string `json:"grokPattern"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#custom_patterns GlueClassifier#custom_patterns}.
-	CustomPatterns *string `json:"customPatterns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#classification GlueClassifier#classification}.
+	Classification *string `json:"classification" yaml:"classification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#grok_pattern GlueClassifier#grok_pattern}.
+	GrokPattern *string `json:"grokPattern" yaml:"grokPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#custom_patterns GlueClassifier#custom_patterns}.
+	CustomPatterns *string `json:"customPatterns" yaml:"customPatterns"`
 }
 
 type GlueClassifierGrokClassifierOutputReference interface {
@@ -8000,12 +9430,17 @@ type GlueClassifierGrokClassifierOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCustomPatterns()
@@ -8106,8 +9541,8 @@ func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8116,7 +9551,7 @@ func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) TerraformResourc
 	return returns
 }
 
-func NewGlueClassifierGrokClassifierOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueClassifierGrokClassifierOutputReference {
+func NewGlueClassifierGrokClassifierOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueClassifierGrokClassifierOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueClassifierGrokClassifierOutputReference{}
@@ -8130,7 +9565,7 @@ func NewGlueClassifierGrokClassifierOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewGlueClassifierGrokClassifierOutputReference_Override(g GlueClassifierGrokClassifierOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueClassifierGrokClassifierOutputReference_Override(g GlueClassifierGrokClassifierOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8188,7 +9623,7 @@ func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8197,12 +9632,40 @@ func (j *jsiiProxy_GlueClassifierGrokClassifierOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8239,12 +9702,54 @@ func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8289,8 +9794,8 @@ func (g *jsiiProxy_GlueClassifierGrokClassifierOutputReference) ResetCustomPatte
 }
 
 type GlueClassifierJsonClassifier struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#json_path GlueClassifier#json_path}.
-	JsonPath *string `json:"jsonPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#json_path GlueClassifier#json_path}.
+	JsonPath *string `json:"jsonPath" yaml:"jsonPath"`
 }
 
 type GlueClassifierJsonClassifierOutputReference interface {
@@ -8304,12 +9809,17 @@ type GlueClassifierJsonClassifierOutputReference interface {
 	JsonPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8369,8 +9879,8 @@ func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8379,7 +9889,7 @@ func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) TerraformResourc
 	return returns
 }
 
-func NewGlueClassifierJsonClassifierOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueClassifierJsonClassifierOutputReference {
+func NewGlueClassifierJsonClassifierOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueClassifierJsonClassifierOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueClassifierJsonClassifierOutputReference{}
@@ -8393,7 +9903,7 @@ func NewGlueClassifierJsonClassifierOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewGlueClassifierJsonClassifierOutputReference_Override(g GlueClassifierJsonClassifierOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueClassifierJsonClassifierOutputReference_Override(g GlueClassifierJsonClassifierOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8435,7 +9945,7 @@ func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8444,12 +9954,40 @@ func (j *jsiiProxy_GlueClassifierJsonClassifierOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8486,12 +10024,54 @@ func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8528,10 +10108,10 @@ func (g *jsiiProxy_GlueClassifierJsonClassifierOutputReference) InterpolationFor
 }
 
 type GlueClassifierXmlClassifier struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#classification GlueClassifier#classification}.
-	Classification *string `json:"classification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier.html#row_tag GlueClassifier#row_tag}.
-	RowTag *string `json:"rowTag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#classification GlueClassifier#classification}.
+	Classification *string `json:"classification" yaml:"classification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_classifier#row_tag GlueClassifier#row_tag}.
+	RowTag *string `json:"rowTag" yaml:"rowTag"`
 }
 
 type GlueClassifierXmlClassifierOutputReference interface {
@@ -8548,12 +10128,17 @@ type GlueClassifierXmlClassifierOutputReference interface {
 	RowTagInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8633,8 +10218,8 @@ func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8643,7 +10228,7 @@ func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) TerraformResource
 	return returns
 }
 
-func NewGlueClassifierXmlClassifierOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueClassifierXmlClassifierOutputReference {
+func NewGlueClassifierXmlClassifierOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueClassifierXmlClassifierOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueClassifierXmlClassifierOutputReference{}
@@ -8657,7 +10242,7 @@ func NewGlueClassifierXmlClassifierOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewGlueClassifierXmlClassifierOutputReference_Override(g GlueClassifierXmlClassifierOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueClassifierXmlClassifierOutputReference_Override(g GlueClassifierXmlClassifierOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8707,7 +10292,7 @@ func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8716,12 +10301,40 @@ func (j *jsiiProxy_GlueClassifierXmlClassifierOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8758,12 +10371,54 @@ func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8799,7 +10454,7 @@ func (g *jsiiProxy_GlueClassifierXmlClassifierOutputReference) InterpolationForA
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html aws_glue_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_connection aws_glue_connection}.
 type GlueConnection interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -8807,15 +10462,15 @@ type GlueConnection interface {
 	SetCatalogId(val *string)
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
-	ConnectionProperties() interface{}
-	SetConnectionProperties(val interface{})
-	ConnectionPropertiesInput() interface{}
+	ConnectionProperties() *map[string]*string
+	SetConnectionProperties(val *map[string]*string)
+	ConnectionPropertiesInput() *map[string]*string
 	ConnectionType() *string
 	SetConnectionType(val *string)
 	ConnectionTypeInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -8838,20 +10493,25 @@ type GlueConnection interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPhysicalConnectionRequirements(value *GlueConnectionPhysicalConnectionRequirements)
@@ -8915,8 +10575,8 @@ func (j *jsiiProxy_GlueConnection) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnection) ConnectionProperties() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueConnection) ConnectionProperties() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"connectionProperties",
@@ -8925,8 +10585,8 @@ func (j *jsiiProxy_GlueConnection) ConnectionProperties() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnection) ConnectionPropertiesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueConnection) ConnectionPropertiesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"connectionPropertiesInput",
@@ -8965,8 +10625,8 @@ func (j *jsiiProxy_GlueConnection) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9135,8 +10795,8 @@ func (j *jsiiProxy_GlueConnection) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnection) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueConnection) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9145,8 +10805,8 @@ func (j *jsiiProxy_GlueConnection) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnection) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueConnection) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9155,8 +10815,8 @@ func (j *jsiiProxy_GlueConnection) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnection) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueConnection) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9165,8 +10825,8 @@ func (j *jsiiProxy_GlueConnection) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnection) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueConnection) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9205,7 +10865,7 @@ func (j *jsiiProxy_GlueConnection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html aws_glue_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_connection aws_glue_connection} Resource.
 func NewGlueConnection(scope constructs.Construct, id *string, config *GlueConnectionConfig) GlueConnection {
 	_init_.Initialize()
 
@@ -9220,7 +10880,7 @@ func NewGlueConnection(scope constructs.Construct, id *string, config *GlueConne
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html aws_glue_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_connection aws_glue_connection} Resource.
 func NewGlueConnection_Override(g GlueConnection, scope constructs.Construct, id *string, config *GlueConnectionConfig) {
 	_init_.Initialize()
 
@@ -9239,7 +10899,7 @@ func (j *jsiiProxy_GlueConnection) SetCatalogId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueConnection) SetConnectionProperties(val interface{}) {
+func (j *jsiiProxy_GlueConnection) SetConnectionProperties(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"connectionProperties",
@@ -9255,7 +10915,7 @@ func (j *jsiiProxy_GlueConnection) SetConnectionType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9311,7 +10971,7 @@ func (j *jsiiProxy_GlueConnection) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GlueConnection) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueConnection) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9319,7 +10979,7 @@ func (j *jsiiProxy_GlueConnection) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueConnection) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueConnection) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9367,12 +11027,40 @@ func (g *jsiiProxy_GlueConnection) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9409,12 +11097,54 @@ func (g *jsiiProxy_GlueConnection) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9587,42 +11317,42 @@ func (g *jsiiProxy_GlueConnection) ToTerraform() interface{} {
 // AWS Glue.
 type GlueConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#name GlueConnection#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#catalog_id GlueConnection#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#connection_properties GlueConnection#connection_properties}.
-	ConnectionProperties interface{} `json:"connectionProperties"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#connection_type GlueConnection#connection_type}.
-	ConnectionType *string `json:"connectionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#description GlueConnection#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#match_criteria GlueConnection#match_criteria}.
-	MatchCriteria *[]*string `json:"matchCriteria"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#name GlueConnection#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#catalog_id GlueConnection#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#connection_properties GlueConnection#connection_properties}.
+	ConnectionProperties *map[string]*string `json:"connectionProperties" yaml:"connectionProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#connection_type GlueConnection#connection_type}.
+	ConnectionType *string `json:"connectionType" yaml:"connectionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#description GlueConnection#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#match_criteria GlueConnection#match_criteria}.
+	MatchCriteria *[]*string `json:"matchCriteria" yaml:"matchCriteria"`
 	// physical_connection_requirements block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#physical_connection_requirements GlueConnection#physical_connection_requirements}
-	PhysicalConnectionRequirements *GlueConnectionPhysicalConnectionRequirements `json:"physicalConnectionRequirements"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#tags GlueConnection#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#tags_all GlueConnection#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#physical_connection_requirements GlueConnection#physical_connection_requirements}
+	PhysicalConnectionRequirements *GlueConnectionPhysicalConnectionRequirements `json:"physicalConnectionRequirements" yaml:"physicalConnectionRequirements"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#tags GlueConnection#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#tags_all GlueConnection#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type GlueConnectionPhysicalConnectionRequirements struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#availability_zone GlueConnection#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#security_group_id_list GlueConnection#security_group_id_list}.
-	SecurityGroupIdList *[]*string `json:"securityGroupIdList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection.html#subnet_id GlueConnection#subnet_id}.
-	SubnetId *string `json:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#availability_zone GlueConnection#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#security_group_id_list GlueConnection#security_group_id_list}.
+	SecurityGroupIdList *[]*string `json:"securityGroupIdList" yaml:"securityGroupIdList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_connection#subnet_id GlueConnection#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
 }
 
 type GlueConnectionPhysicalConnectionRequirementsOutputReference interface {
@@ -9642,12 +11372,17 @@ type GlueConnectionPhysicalConnectionRequirementsOutputReference interface {
 	SubnetIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAvailabilityZone()
@@ -9750,8 +11485,8 @@ func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9760,7 +11495,7 @@ func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 	return returns
 }
 
-func NewGlueConnectionPhysicalConnectionRequirementsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueConnectionPhysicalConnectionRequirementsOutputReference {
+func NewGlueConnectionPhysicalConnectionRequirementsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueConnectionPhysicalConnectionRequirementsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference{}
@@ -9774,7 +11509,7 @@ func NewGlueConnectionPhysicalConnectionRequirementsOutputReference(terraformRes
 	return &j
 }
 
-func NewGlueConnectionPhysicalConnectionRequirementsOutputReference_Override(g GlueConnectionPhysicalConnectionRequirementsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueConnectionPhysicalConnectionRequirementsOutputReference_Override(g GlueConnectionPhysicalConnectionRequirementsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9832,7 +11567,7 @@ func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9841,12 +11576,40 @@ func (j *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9883,12 +11646,54 @@ func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9948,13 +11753,13 @@ func (g *jsiiProxy_GlueConnectionPhysicalConnectionRequirementsOutputReference) 
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html aws_glue_crawler}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler aws_glue_crawler}.
 type GlueCrawler interface {
 	cdktf.TerraformResource
 	Arn() *string
-	CatalogTarget() *[]*GlueCrawlerCatalogTarget
-	SetCatalogTarget(val *[]*GlueCrawlerCatalogTarget)
-	CatalogTargetInput() *[]*GlueCrawlerCatalogTarget
+	CatalogTarget() interface{}
+	SetCatalogTarget(val interface{})
+	CatalogTargetInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	Classifiers() *[]*string
 	SetClassifiers(val *[]*string)
@@ -9963,32 +11768,35 @@ type GlueCrawler interface {
 	SetConfiguration(val *string)
 	ConfigurationInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	DeltaTarget() interface{}
+	SetDeltaTarget(val interface{})
+	DeltaTargetInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
-	DynamodbTarget() *[]*GlueCrawlerDynamodbTarget
-	SetDynamodbTarget(val *[]*GlueCrawlerDynamodbTarget)
-	DynamodbTargetInput() *[]*GlueCrawlerDynamodbTarget
+	DynamodbTarget() interface{}
+	SetDynamodbTarget(val interface{})
+	DynamodbTargetInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	JdbcTarget() *[]*GlueCrawlerJdbcTarget
-	SetJdbcTarget(val *[]*GlueCrawlerJdbcTarget)
-	JdbcTargetInput() *[]*GlueCrawlerJdbcTarget
+	JdbcTarget() interface{}
+	SetJdbcTarget(val interface{})
+	JdbcTargetInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	LineageConfiguration() GlueCrawlerLineageConfigurationOutputReference
 	LineageConfigurationInput() *GlueCrawlerLineageConfiguration
-	MongodbTarget() *[]*GlueCrawlerMongodbTarget
-	SetMongodbTarget(val *[]*GlueCrawlerMongodbTarget)
-	MongodbTargetInput() *[]*GlueCrawlerMongodbTarget
+	MongodbTarget() interface{}
+	SetMongodbTarget(val interface{})
+	MongodbTargetInput() interface{}
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -10001,9 +11809,9 @@ type GlueCrawler interface {
 	Role() *string
 	SetRole(val *string)
 	RoleInput() *string
-	S3Target() *[]*GlueCrawlerS3Target
-	SetS3Target(val *[]*GlueCrawlerS3Target)
-	S3TargetInput() *[]*GlueCrawlerS3Target
+	S3Target() interface{}
+	SetS3Target(val interface{})
+	S3TargetInput() interface{}
 	Schedule() *string
 	SetSchedule(val *string)
 	ScheduleInput() *string
@@ -10015,20 +11823,25 @@ type GlueCrawler interface {
 	TablePrefix() *string
 	SetTablePrefix(val *string)
 	TablePrefixInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutLineageConfiguration(value *GlueCrawlerLineageConfiguration)
@@ -10037,6 +11850,7 @@ type GlueCrawler interface {
 	ResetCatalogTarget()
 	ResetClassifiers()
 	ResetConfiguration()
+	ResetDeltaTarget()
 	ResetDescription()
 	ResetDynamodbTarget()
 	ResetJdbcTarget()
@@ -10072,8 +11886,8 @@ func (j *jsiiProxy_GlueCrawler) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) CatalogTarget() *[]*GlueCrawlerCatalogTarget {
-	var returns *[]*GlueCrawlerCatalogTarget
+func (j *jsiiProxy_GlueCrawler) CatalogTarget() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"catalogTarget",
@@ -10082,8 +11896,8 @@ func (j *jsiiProxy_GlueCrawler) CatalogTarget() *[]*GlueCrawlerCatalogTarget {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) CatalogTargetInput() *[]*GlueCrawlerCatalogTarget {
-	var returns *[]*GlueCrawlerCatalogTarget
+func (j *jsiiProxy_GlueCrawler) CatalogTargetInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"catalogTargetInput",
@@ -10152,8 +11966,8 @@ func (j *jsiiProxy_GlueCrawler) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCrawler) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10177,6 +11991,26 @@ func (j *jsiiProxy_GlueCrawler) DatabaseNameInput() *string {
 	_jsii_.Get(
 		j,
 		"databaseNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueCrawler) DeltaTarget() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deltaTarget",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueCrawler) DeltaTargetInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deltaTargetInput",
 		&returns,
 	)
 	return returns
@@ -10212,8 +12046,8 @@ func (j *jsiiProxy_GlueCrawler) DescriptionInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) DynamodbTarget() *[]*GlueCrawlerDynamodbTarget {
-	var returns *[]*GlueCrawlerDynamodbTarget
+func (j *jsiiProxy_GlueCrawler) DynamodbTarget() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dynamodbTarget",
@@ -10222,8 +12056,8 @@ func (j *jsiiProxy_GlueCrawler) DynamodbTarget() *[]*GlueCrawlerDynamodbTarget {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) DynamodbTargetInput() *[]*GlueCrawlerDynamodbTarget {
-	var returns *[]*GlueCrawlerDynamodbTarget
+func (j *jsiiProxy_GlueCrawler) DynamodbTargetInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dynamodbTargetInput",
@@ -10262,8 +12096,8 @@ func (j *jsiiProxy_GlueCrawler) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) JdbcTarget() *[]*GlueCrawlerJdbcTarget {
-	var returns *[]*GlueCrawlerJdbcTarget
+func (j *jsiiProxy_GlueCrawler) JdbcTarget() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"jdbcTarget",
@@ -10272,8 +12106,8 @@ func (j *jsiiProxy_GlueCrawler) JdbcTarget() *[]*GlueCrawlerJdbcTarget {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) JdbcTargetInput() *[]*GlueCrawlerJdbcTarget {
-	var returns *[]*GlueCrawlerJdbcTarget
+func (j *jsiiProxy_GlueCrawler) JdbcTargetInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"jdbcTargetInput",
@@ -10312,8 +12146,8 @@ func (j *jsiiProxy_GlueCrawler) LineageConfigurationInput() *GlueCrawlerLineageC
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) MongodbTarget() *[]*GlueCrawlerMongodbTarget {
-	var returns *[]*GlueCrawlerMongodbTarget
+func (j *jsiiProxy_GlueCrawler) MongodbTarget() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"mongodbTarget",
@@ -10322,8 +12156,8 @@ func (j *jsiiProxy_GlueCrawler) MongodbTarget() *[]*GlueCrawlerMongodbTarget {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) MongodbTargetInput() *[]*GlueCrawlerMongodbTarget {
-	var returns *[]*GlueCrawlerMongodbTarget
+func (j *jsiiProxy_GlueCrawler) MongodbTargetInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"mongodbTargetInput",
@@ -10422,8 +12256,8 @@ func (j *jsiiProxy_GlueCrawler) RoleInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) S3Target() *[]*GlueCrawlerS3Target {
-	var returns *[]*GlueCrawlerS3Target
+func (j *jsiiProxy_GlueCrawler) S3Target() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"s3Target",
@@ -10432,8 +12266,8 @@ func (j *jsiiProxy_GlueCrawler) S3Target() *[]*GlueCrawlerS3Target {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) S3TargetInput() *[]*GlueCrawlerS3Target {
-	var returns *[]*GlueCrawlerS3Target
+func (j *jsiiProxy_GlueCrawler) S3TargetInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"s3TargetInput",
@@ -10522,8 +12356,8 @@ func (j *jsiiProxy_GlueCrawler) TablePrefixInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCrawler) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10532,8 +12366,8 @@ func (j *jsiiProxy_GlueCrawler) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCrawler) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10542,8 +12376,8 @@ func (j *jsiiProxy_GlueCrawler) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCrawler) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10552,8 +12386,8 @@ func (j *jsiiProxy_GlueCrawler) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawler) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueCrawler) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10592,7 +12426,7 @@ func (j *jsiiProxy_GlueCrawler) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html aws_glue_crawler} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler aws_glue_crawler} Resource.
 func NewGlueCrawler(scope constructs.Construct, id *string, config *GlueCrawlerConfig) GlueCrawler {
 	_init_.Initialize()
 
@@ -10607,7 +12441,7 @@ func NewGlueCrawler(scope constructs.Construct, id *string, config *GlueCrawlerC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html aws_glue_crawler} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler aws_glue_crawler} Resource.
 func NewGlueCrawler_Override(g GlueCrawler, scope constructs.Construct, id *string, config *GlueCrawlerConfig) {
 	_init_.Initialize()
 
@@ -10618,7 +12452,7 @@ func NewGlueCrawler_Override(g GlueCrawler, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetCatalogTarget(val *[]*GlueCrawlerCatalogTarget) {
+func (j *jsiiProxy_GlueCrawler) SetCatalogTarget(val interface{}) {
 	_jsii_.Set(
 		j,
 		"catalogTarget",
@@ -10642,7 +12476,7 @@ func (j *jsiiProxy_GlueCrawler) SetConfiguration(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueCrawler) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10654,6 +12488,14 @@ func (j *jsiiProxy_GlueCrawler) SetDatabaseName(val *string) {
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueCrawler) SetDeltaTarget(val interface{}) {
+	_jsii_.Set(
+		j,
+		"deltaTarget",
 		val,
 	)
 }
@@ -10674,7 +12516,7 @@ func (j *jsiiProxy_GlueCrawler) SetDescription(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetDynamodbTarget(val *[]*GlueCrawlerDynamodbTarget) {
+func (j *jsiiProxy_GlueCrawler) SetDynamodbTarget(val interface{}) {
 	_jsii_.Set(
 		j,
 		"dynamodbTarget",
@@ -10682,7 +12524,7 @@ func (j *jsiiProxy_GlueCrawler) SetDynamodbTarget(val *[]*GlueCrawlerDynamodbTar
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetJdbcTarget(val *[]*GlueCrawlerJdbcTarget) {
+func (j *jsiiProxy_GlueCrawler) SetJdbcTarget(val interface{}) {
 	_jsii_.Set(
 		j,
 		"jdbcTarget",
@@ -10698,7 +12540,7 @@ func (j *jsiiProxy_GlueCrawler) SetLifecycle(val *cdktf.TerraformResourceLifecyc
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetMongodbTarget(val *[]*GlueCrawlerMongodbTarget) {
+func (j *jsiiProxy_GlueCrawler) SetMongodbTarget(val interface{}) {
 	_jsii_.Set(
 		j,
 		"mongodbTarget",
@@ -10730,7 +12572,7 @@ func (j *jsiiProxy_GlueCrawler) SetRole(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetS3Target(val *[]*GlueCrawlerS3Target) {
+func (j *jsiiProxy_GlueCrawler) SetS3Target(val interface{}) {
 	_jsii_.Set(
 		j,
 		"s3Target",
@@ -10762,7 +12604,7 @@ func (j *jsiiProxy_GlueCrawler) SetTablePrefix(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueCrawler) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10770,7 +12612,7 @@ func (j *jsiiProxy_GlueCrawler) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueCrawler) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueCrawler) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10818,12 +12660,40 @@ func (g *jsiiProxy_GlueCrawler) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCrawler) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCrawler) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawler) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10860,12 +12730,54 @@ func (g *jsiiProxy_GlueCrawler) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCrawler) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawler) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCrawler) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawler) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10941,6 +12853,14 @@ func (g *jsiiProxy_GlueCrawler) ResetConfiguration() {
 	_jsii_.InvokeVoid(
 		g,
 		"resetConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (g *jsiiProxy_GlueCrawler) ResetDeltaTarget() {
+	_jsii_.InvokeVoid(
+		g,
+		"resetDeltaTarget",
 		nil, // no parameters
 	)
 }
@@ -11116,99 +13036,112 @@ func (g *jsiiProxy_GlueCrawler) ToTerraform() interface{} {
 }
 
 type GlueCrawlerCatalogTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#database_name GlueCrawler#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#tables GlueCrawler#tables}.
-	Tables *[]*string `json:"tables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#database_name GlueCrawler#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#tables GlueCrawler#tables}.
+	Tables *[]*string `json:"tables" yaml:"tables"`
 }
 
 // AWS Glue.
 type GlueCrawlerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#database_name GlueCrawler#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#name GlueCrawler#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#role GlueCrawler#role}.
-	Role *string `json:"role"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#database_name GlueCrawler#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#name GlueCrawler#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#role GlueCrawler#role}.
+	Role *string `json:"role" yaml:"role"`
 	// catalog_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#catalog_target GlueCrawler#catalog_target}
-	CatalogTarget *[]*GlueCrawlerCatalogTarget `json:"catalogTarget"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#classifiers GlueCrawler#classifiers}.
-	Classifiers *[]*string `json:"classifiers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#configuration GlueCrawler#configuration}.
-	Configuration *string `json:"configuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#description GlueCrawler#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#catalog_target GlueCrawler#catalog_target}
+	CatalogTarget interface{} `json:"catalogTarget" yaml:"catalogTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#classifiers GlueCrawler#classifiers}.
+	Classifiers *[]*string `json:"classifiers" yaml:"classifiers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#configuration GlueCrawler#configuration}.
+	Configuration *string `json:"configuration" yaml:"configuration"`
+	// delta_target block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#delta_target GlueCrawler#delta_target}
+	DeltaTarget interface{} `json:"deltaTarget" yaml:"deltaTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#description GlueCrawler#description}.
+	Description *string `json:"description" yaml:"description"`
 	// dynamodb_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#dynamodb_target GlueCrawler#dynamodb_target}
-	DynamodbTarget *[]*GlueCrawlerDynamodbTarget `json:"dynamodbTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#dynamodb_target GlueCrawler#dynamodb_target}
+	DynamodbTarget interface{} `json:"dynamodbTarget" yaml:"dynamodbTarget"`
 	// jdbc_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#jdbc_target GlueCrawler#jdbc_target}
-	JdbcTarget *[]*GlueCrawlerJdbcTarget `json:"jdbcTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#jdbc_target GlueCrawler#jdbc_target}
+	JdbcTarget interface{} `json:"jdbcTarget" yaml:"jdbcTarget"`
 	// lineage_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#lineage_configuration GlueCrawler#lineage_configuration}
-	LineageConfiguration *GlueCrawlerLineageConfiguration `json:"lineageConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#lineage_configuration GlueCrawler#lineage_configuration}
+	LineageConfiguration *GlueCrawlerLineageConfiguration `json:"lineageConfiguration" yaml:"lineageConfiguration"`
 	// mongodb_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#mongodb_target GlueCrawler#mongodb_target}
-	MongodbTarget *[]*GlueCrawlerMongodbTarget `json:"mongodbTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#mongodb_target GlueCrawler#mongodb_target}
+	MongodbTarget interface{} `json:"mongodbTarget" yaml:"mongodbTarget"`
 	// recrawl_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#recrawl_policy GlueCrawler#recrawl_policy}
-	RecrawlPolicy *GlueCrawlerRecrawlPolicy `json:"recrawlPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#recrawl_policy GlueCrawler#recrawl_policy}
+	RecrawlPolicy *GlueCrawlerRecrawlPolicy `json:"recrawlPolicy" yaml:"recrawlPolicy"`
 	// s3_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#s3_target GlueCrawler#s3_target}
-	S3Target *[]*GlueCrawlerS3Target `json:"s3Target"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#schedule GlueCrawler#schedule}.
-	Schedule *string `json:"schedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#s3_target GlueCrawler#s3_target}
+	S3Target interface{} `json:"s3Target" yaml:"s3Target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#schedule GlueCrawler#schedule}.
+	Schedule *string `json:"schedule" yaml:"schedule"`
 	// schema_change_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#schema_change_policy GlueCrawler#schema_change_policy}
-	SchemaChangePolicy *GlueCrawlerSchemaChangePolicy `json:"schemaChangePolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#security_configuration GlueCrawler#security_configuration}.
-	SecurityConfiguration *string `json:"securityConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#table_prefix GlueCrawler#table_prefix}.
-	TablePrefix *string `json:"tablePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#tags GlueCrawler#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#tags_all GlueCrawler#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#schema_change_policy GlueCrawler#schema_change_policy}
+	SchemaChangePolicy *GlueCrawlerSchemaChangePolicy `json:"schemaChangePolicy" yaml:"schemaChangePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#security_configuration GlueCrawler#security_configuration}.
+	SecurityConfiguration *string `json:"securityConfiguration" yaml:"securityConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#table_prefix GlueCrawler#table_prefix}.
+	TablePrefix *string `json:"tablePrefix" yaml:"tablePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#tags GlueCrawler#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#tags_all GlueCrawler#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+}
+
+type GlueCrawlerDeltaTarget struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#connection_name GlueCrawler#connection_name}.
+	ConnectionName *string `json:"connectionName" yaml:"connectionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#delta_tables GlueCrawler#delta_tables}.
+	DeltaTables *[]*string `json:"deltaTables" yaml:"deltaTables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#write_manifest GlueCrawler#write_manifest}.
+	WriteManifest interface{} `json:"writeManifest" yaml:"writeManifest"`
 }
 
 type GlueCrawlerDynamodbTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#path GlueCrawler#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#scan_all GlueCrawler#scan_all}.
-	ScanAll interface{} `json:"scanAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#scan_rate GlueCrawler#scan_rate}.
-	ScanRate *float64 `json:"scanRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#path GlueCrawler#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#scan_all GlueCrawler#scan_all}.
+	ScanAll interface{} `json:"scanAll" yaml:"scanAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#scan_rate GlueCrawler#scan_rate}.
+	ScanRate *float64 `json:"scanRate" yaml:"scanRate"`
 }
 
 type GlueCrawlerJdbcTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#connection_name GlueCrawler#connection_name}.
-	ConnectionName *string `json:"connectionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#path GlueCrawler#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#exclusions GlueCrawler#exclusions}.
-	Exclusions *[]*string `json:"exclusions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#connection_name GlueCrawler#connection_name}.
+	ConnectionName *string `json:"connectionName" yaml:"connectionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#path GlueCrawler#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#exclusions GlueCrawler#exclusions}.
+	Exclusions *[]*string `json:"exclusions" yaml:"exclusions"`
 }
 
 type GlueCrawlerLineageConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#crawler_lineage_settings GlueCrawler#crawler_lineage_settings}.
-	CrawlerLineageSettings *string `json:"crawlerLineageSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#crawler_lineage_settings GlueCrawler#crawler_lineage_settings}.
+	CrawlerLineageSettings *string `json:"crawlerLineageSettings" yaml:"crawlerLineageSettings"`
 }
 
 type GlueCrawlerLineageConfigurationOutputReference interface {
@@ -11222,12 +13155,17 @@ type GlueCrawlerLineageConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCrawlerLineageSettings()
@@ -11288,8 +13226,8 @@ func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11298,7 +13236,7 @@ func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) TerraformReso
 	return returns
 }
 
-func NewGlueCrawlerLineageConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCrawlerLineageConfigurationOutputReference {
+func NewGlueCrawlerLineageConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCrawlerLineageConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCrawlerLineageConfigurationOutputReference{}
@@ -11312,7 +13250,7 @@ func NewGlueCrawlerLineageConfigurationOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewGlueCrawlerLineageConfigurationOutputReference_Override(g GlueCrawlerLineageConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCrawlerLineageConfigurationOutputReference_Override(g GlueCrawlerLineageConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11354,7 +13292,7 @@ func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11363,12 +13301,40 @@ func (j *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11405,12 +13371,54 @@ func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11455,17 +13463,17 @@ func (g *jsiiProxy_GlueCrawlerLineageConfigurationOutputReference) ResetCrawlerL
 }
 
 type GlueCrawlerMongodbTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#connection_name GlueCrawler#connection_name}.
-	ConnectionName *string `json:"connectionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#path GlueCrawler#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#scan_all GlueCrawler#scan_all}.
-	ScanAll interface{} `json:"scanAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#connection_name GlueCrawler#connection_name}.
+	ConnectionName *string `json:"connectionName" yaml:"connectionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#path GlueCrawler#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#scan_all GlueCrawler#scan_all}.
+	ScanAll interface{} `json:"scanAll" yaml:"scanAll"`
 }
 
 type GlueCrawlerRecrawlPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#recrawl_behavior GlueCrawler#recrawl_behavior}.
-	RecrawlBehavior *string `json:"recrawlBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#recrawl_behavior GlueCrawler#recrawl_behavior}.
+	RecrawlBehavior *string `json:"recrawlBehavior" yaml:"recrawlBehavior"`
 }
 
 type GlueCrawlerRecrawlPolicyOutputReference interface {
@@ -11479,12 +13487,17 @@ type GlueCrawlerRecrawlPolicyOutputReference interface {
 	RecrawlBehaviorInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetRecrawlBehavior()
@@ -11545,8 +13558,8 @@ func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11555,7 +13568,7 @@ func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewGlueCrawlerRecrawlPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCrawlerRecrawlPolicyOutputReference {
+func NewGlueCrawlerRecrawlPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCrawlerRecrawlPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference{}
@@ -11569,7 +13582,7 @@ func NewGlueCrawlerRecrawlPolicyOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewGlueCrawlerRecrawlPolicyOutputReference_Override(g GlueCrawlerRecrawlPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCrawlerRecrawlPolicyOutputReference_Override(g GlueCrawlerRecrawlPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11611,7 +13624,7 @@ func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11620,12 +13633,40 @@ func (j *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11662,12 +13703,54 @@ func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11712,25 +13795,25 @@ func (g *jsiiProxy_GlueCrawlerRecrawlPolicyOutputReference) ResetRecrawlBehavior
 }
 
 type GlueCrawlerS3Target struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#path GlueCrawler#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#connection_name GlueCrawler#connection_name}.
-	ConnectionName *string `json:"connectionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#dlq_event_queue_arn GlueCrawler#dlq_event_queue_arn}.
-	DlqEventQueueArn *string `json:"dlqEventQueueArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#event_queue_arn GlueCrawler#event_queue_arn}.
-	EventQueueArn *string `json:"eventQueueArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#exclusions GlueCrawler#exclusions}.
-	Exclusions *[]*string `json:"exclusions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#sample_size GlueCrawler#sample_size}.
-	SampleSize *float64 `json:"sampleSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#path GlueCrawler#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#connection_name GlueCrawler#connection_name}.
+	ConnectionName *string `json:"connectionName" yaml:"connectionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#dlq_event_queue_arn GlueCrawler#dlq_event_queue_arn}.
+	DlqEventQueueArn *string `json:"dlqEventQueueArn" yaml:"dlqEventQueueArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#event_queue_arn GlueCrawler#event_queue_arn}.
+	EventQueueArn *string `json:"eventQueueArn" yaml:"eventQueueArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#exclusions GlueCrawler#exclusions}.
+	Exclusions *[]*string `json:"exclusions" yaml:"exclusions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#sample_size GlueCrawler#sample_size}.
+	SampleSize *float64 `json:"sampleSize" yaml:"sampleSize"`
 }
 
 type GlueCrawlerSchemaChangePolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#delete_behavior GlueCrawler#delete_behavior}.
-	DeleteBehavior *string `json:"deleteBehavior"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler.html#update_behavior GlueCrawler#update_behavior}.
-	UpdateBehavior *string `json:"updateBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#delete_behavior GlueCrawler#delete_behavior}.
+	DeleteBehavior *string `json:"deleteBehavior" yaml:"deleteBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_crawler#update_behavior GlueCrawler#update_behavior}.
+	UpdateBehavior *string `json:"updateBehavior" yaml:"updateBehavior"`
 }
 
 type GlueCrawlerSchemaChangePolicyOutputReference interface {
@@ -11744,15 +13827,20 @@ type GlueCrawlerSchemaChangePolicyOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UpdateBehavior() *string
 	SetUpdateBehavior(val *string)
 	UpdateBehaviorInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDeleteBehavior()
@@ -11814,8 +13902,8 @@ func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11844,7 +13932,7 @@ func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) UpdateBehaviorI
 	return returns
 }
 
-func NewGlueCrawlerSchemaChangePolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueCrawlerSchemaChangePolicyOutputReference {
+func NewGlueCrawlerSchemaChangePolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueCrawlerSchemaChangePolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference{}
@@ -11858,7 +13946,7 @@ func NewGlueCrawlerSchemaChangePolicyOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewGlueCrawlerSchemaChangePolicyOutputReference_Override(g GlueCrawlerSchemaChangePolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueCrawlerSchemaChangePolicyOutputReference_Override(g GlueCrawlerSchemaChangePolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11900,7 +13988,7 @@ func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11917,12 +14005,40 @@ func (j *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) SetUpdateBehavi
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11959,12 +14075,54 @@ func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12016,7 +14174,7 @@ func (g *jsiiProxy_GlueCrawlerSchemaChangePolicyOutputReference) ResetUpdateBeha
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html aws_glue_data_catalog_encryption_settings}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings aws_glue_data_catalog_encryption_settings}.
 type GlueDataCatalogEncryptionSettings interface {
 	cdktf.TerraformResource
 	CatalogId() *string
@@ -12024,8 +14182,8 @@ type GlueDataCatalogEncryptionSettings interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DataCatalogEncryptionSettings() GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference
 	DataCatalogEncryptionSettingsInput() *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings
 	DependsOn() *[]*string
@@ -12043,10 +14201,15 @@ type GlueDataCatalogEncryptionSettings interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDataCatalogEncryptionSettings(value *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings)
@@ -12103,8 +14266,8 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettings) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettings) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettings) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12243,7 +14406,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettings) TerraformResourceType() *s
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html aws_glue_data_catalog_encryption_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings aws_glue_data_catalog_encryption_settings} Resource.
 func NewGlueDataCatalogEncryptionSettings(scope constructs.Construct, id *string, config *GlueDataCatalogEncryptionSettingsConfig) GlueDataCatalogEncryptionSettings {
 	_init_.Initialize()
 
@@ -12258,7 +14421,7 @@ func NewGlueDataCatalogEncryptionSettings(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html aws_glue_data_catalog_encryption_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings aws_glue_data_catalog_encryption_settings} Resource.
 func NewGlueDataCatalogEncryptionSettings_Override(g GlueDataCatalogEncryptionSettings, scope constructs.Construct, id *string, config *GlueDataCatalogEncryptionSettingsConfig) {
 	_init_.Initialize()
 
@@ -12277,7 +14440,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettings) SetCatalogId(val *string) 
 	)
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettings) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettings) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12349,12 +14512,40 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) AddOverride(path *string, 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12391,12 +14582,54 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12513,37 +14746,37 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettings) ToTerraform() interface{} 
 // AWS Glue.
 type GlueDataCatalogEncryptionSettingsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// data_catalog_encryption_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#data_catalog_encryption_settings GlueDataCatalogEncryptionSettings#data_catalog_encryption_settings}
-	DataCatalogEncryptionSettings *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings `json:"dataCatalogEncryptionSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#catalog_id GlueDataCatalogEncryptionSettings#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#data_catalog_encryption_settings GlueDataCatalogEncryptionSettings#data_catalog_encryption_settings}
+	DataCatalogEncryptionSettings *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings `json:"dataCatalogEncryptionSettings" yaml:"dataCatalogEncryptionSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#catalog_id GlueDataCatalogEncryptionSettings#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings struct {
 	// connection_password_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#connection_password_encryption GlueDataCatalogEncryptionSettings#connection_password_encryption}
-	ConnectionPasswordEncryption *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption `json:"connectionPasswordEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#connection_password_encryption GlueDataCatalogEncryptionSettings#connection_password_encryption}
+	ConnectionPasswordEncryption *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption `json:"connectionPasswordEncryption" yaml:"connectionPasswordEncryption"`
 	// encryption_at_rest block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#encryption_at_rest GlueDataCatalogEncryptionSettings#encryption_at_rest}
-	EncryptionAtRest *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest `json:"encryptionAtRest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#encryption_at_rest GlueDataCatalogEncryptionSettings#encryption_at_rest}
+	EncryptionAtRest *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest `json:"encryptionAtRest" yaml:"encryptionAtRest"`
 }
 
 type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#return_connection_password_encrypted GlueDataCatalogEncryptionSettings#return_connection_password_encrypted}.
-	ReturnConnectionPasswordEncrypted interface{} `json:"returnConnectionPasswordEncrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#aws_kms_key_id GlueDataCatalogEncryptionSettings#aws_kms_key_id}.
-	AwsKmsKeyId *string `json:"awsKmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#return_connection_password_encrypted GlueDataCatalogEncryptionSettings#return_connection_password_encrypted}.
+	ReturnConnectionPasswordEncrypted interface{} `json:"returnConnectionPasswordEncrypted" yaml:"returnConnectionPasswordEncrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#aws_kms_key_id GlueDataCatalogEncryptionSettings#aws_kms_key_id}.
+	AwsKmsKeyId *string `json:"awsKmsKeyId" yaml:"awsKmsKeyId"`
 }
 
 type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference interface {
@@ -12560,12 +14793,17 @@ type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPas
 	ReturnConnectionPasswordEncryptedInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAwsKmsKeyId()
@@ -12646,8 +14884,8 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	return returns
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12656,7 +14894,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	return returns
 }
 
-func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference {
+func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference{}
@@ -12670,7 +14908,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnection
 	return &j
 }
 
-func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference_Override(g GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference_Override(g GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12720,7 +14958,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	)
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12729,12 +14967,40 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12771,12 +15037,54 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12821,10 +15129,10 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 }
 
 type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRest struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#catalog_encryption_mode GlueDataCatalogEncryptionSettings#catalog_encryption_mode}.
-	CatalogEncryptionMode *string `json:"catalogEncryptionMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings.html#sse_aws_kms_key_id GlueDataCatalogEncryptionSettings#sse_aws_kms_key_id}.
-	SseAwsKmsKeyId *string `json:"sseAwsKmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#catalog_encryption_mode GlueDataCatalogEncryptionSettings#catalog_encryption_mode}.
+	CatalogEncryptionMode *string `json:"catalogEncryptionMode" yaml:"catalogEncryptionMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_data_catalog_encryption_settings#sse_aws_kms_key_id GlueDataCatalogEncryptionSettings#sse_aws_kms_key_id}.
+	SseAwsKmsKeyId *string `json:"sseAwsKmsKeyId" yaml:"sseAwsKmsKeyId"`
 }
 
 type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference interface {
@@ -12841,12 +15149,17 @@ type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtR
 	SseAwsKmsKeyIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSseAwsKmsKeyId()
@@ -12927,8 +15240,8 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	return returns
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12937,7 +15250,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	return returns
 }
 
-func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference {
+func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference{}
@@ -12951,7 +15264,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryption
 	return &j
 }
 
-func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference_Override(g GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference_Override(g GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13001,7 +15314,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	)
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13010,12 +15323,40 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13052,12 +15393,54 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13113,12 +15496,17 @@ type GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReferen
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutConnectionPasswordEncryption(value *GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsConnectionPasswordEncryption)
@@ -13200,8 +15588,8 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	return returns
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13210,7 +15598,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	return returns
 }
 
-func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference {
+func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference{}
@@ -13224,7 +15612,7 @@ func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputRefe
 	return &j
 }
 
-func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference_Override(g GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference_Override(g GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13258,7 +15646,7 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	)
 }
 
-func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13267,12 +15655,40 @@ func (j *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13309,12 +15725,54 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13366,18 +15824,18 @@ func (g *jsiiProxy_GlueDataCatalogEncryptionSettingsDataCatalogEncryptionSetting
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html aws_glue_dev_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint aws_glue_dev_endpoint}.
 type GlueDevEndpoint interface {
 	cdktf.TerraformResource
-	Arguments() interface{}
-	SetArguments(val interface{})
-	ArgumentsInput() interface{}
+	Arguments() *map[string]*string
+	SetArguments(val *map[string]*string)
+	ArgumentsInput() *map[string]*string
 	Arn() *string
 	AvailabilityZone() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExtraJarsS3Path() *string
@@ -13429,12 +15887,12 @@ type GlueDevEndpoint interface {
 	SubnetId() *string
 	SetSubnetId(val *string)
 	SubnetIdInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -13445,10 +15903,15 @@ type GlueDevEndpoint interface {
 	YarnEndpointAddress() *string
 	ZeppelinRemoteSparkInterpreterPort() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetArguments()
@@ -13477,8 +15940,8 @@ type jsiiProxy_GlueDevEndpoint struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) Arguments() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDevEndpoint) Arguments() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"arguments",
@@ -13487,8 +15950,8 @@ func (j *jsiiProxy_GlueDevEndpoint) Arguments() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) ArgumentsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDevEndpoint) ArgumentsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"argumentsInput",
@@ -13537,8 +16000,8 @@ func (j *jsiiProxy_GlueDevEndpoint) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDevEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13907,8 +16370,8 @@ func (j *jsiiProxy_GlueDevEndpoint) SubnetIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDevEndpoint) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -13917,8 +16380,8 @@ func (j *jsiiProxy_GlueDevEndpoint) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDevEndpoint) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -13927,8 +16390,8 @@ func (j *jsiiProxy_GlueDevEndpoint) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDevEndpoint) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -13937,8 +16400,8 @@ func (j *jsiiProxy_GlueDevEndpoint) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueDevEndpoint) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14027,7 +16490,7 @@ func (j *jsiiProxy_GlueDevEndpoint) ZeppelinRemoteSparkInterpreterPort() *float6
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html aws_glue_dev_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint aws_glue_dev_endpoint} Resource.
 func NewGlueDevEndpoint(scope constructs.Construct, id *string, config *GlueDevEndpointConfig) GlueDevEndpoint {
 	_init_.Initialize()
 
@@ -14042,7 +16505,7 @@ func NewGlueDevEndpoint(scope constructs.Construct, id *string, config *GlueDevE
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html aws_glue_dev_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint aws_glue_dev_endpoint} Resource.
 func NewGlueDevEndpoint_Override(g GlueDevEndpoint, scope constructs.Construct, id *string, config *GlueDevEndpointConfig) {
 	_init_.Initialize()
 
@@ -14053,7 +16516,7 @@ func NewGlueDevEndpoint_Override(g GlueDevEndpoint, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) SetArguments(val interface{}) {
+func (j *jsiiProxy_GlueDevEndpoint) SetArguments(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"arguments",
@@ -14061,7 +16524,7 @@ func (j *jsiiProxy_GlueDevEndpoint) SetArguments(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueDevEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14189,7 +16652,7 @@ func (j *jsiiProxy_GlueDevEndpoint) SetSubnetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueDevEndpoint) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14197,7 +16660,7 @@ func (j *jsiiProxy_GlueDevEndpoint) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueDevEndpoint) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueDevEndpoint) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -14253,12 +16716,40 @@ func (g *jsiiProxy_GlueDevEndpoint) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueDevEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueDevEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDevEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14295,12 +16786,54 @@ func (g *jsiiProxy_GlueDevEndpoint) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueDevEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDevEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueDevEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueDevEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14513,48 +17046,48 @@ func (g *jsiiProxy_GlueDevEndpoint) ToTerraform() interface{} {
 // AWS Glue.
 type GlueDevEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#name GlueDevEndpoint#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#role_arn GlueDevEndpoint#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#arguments GlueDevEndpoint#arguments}.
-	Arguments interface{} `json:"arguments"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#extra_jars_s3_path GlueDevEndpoint#extra_jars_s3_path}.
-	ExtraJarsS3Path *string `json:"extraJarsS3Path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#extra_python_libs_s3_path GlueDevEndpoint#extra_python_libs_s3_path}.
-	ExtraPythonLibsS3Path *string `json:"extraPythonLibsS3Path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#glue_version GlueDevEndpoint#glue_version}.
-	GlueVersion *string `json:"glueVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#number_of_nodes GlueDevEndpoint#number_of_nodes}.
-	NumberOfNodes *float64 `json:"numberOfNodes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#number_of_workers GlueDevEndpoint#number_of_workers}.
-	NumberOfWorkers *float64 `json:"numberOfWorkers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#public_key GlueDevEndpoint#public_key}.
-	PublicKey *string `json:"publicKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#public_keys GlueDevEndpoint#public_keys}.
-	PublicKeys *[]*string `json:"publicKeys"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#security_configuration GlueDevEndpoint#security_configuration}.
-	SecurityConfiguration *string `json:"securityConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#security_group_ids GlueDevEndpoint#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#subnet_id GlueDevEndpoint#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#tags GlueDevEndpoint#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#tags_all GlueDevEndpoint#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint.html#worker_type GlueDevEndpoint#worker_type}.
-	WorkerType *string `json:"workerType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#name GlueDevEndpoint#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#role_arn GlueDevEndpoint#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#arguments GlueDevEndpoint#arguments}.
+	Arguments *map[string]*string `json:"arguments" yaml:"arguments"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#extra_jars_s3_path GlueDevEndpoint#extra_jars_s3_path}.
+	ExtraJarsS3Path *string `json:"extraJarsS3Path" yaml:"extraJarsS3Path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#extra_python_libs_s3_path GlueDevEndpoint#extra_python_libs_s3_path}.
+	ExtraPythonLibsS3Path *string `json:"extraPythonLibsS3Path" yaml:"extraPythonLibsS3Path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#glue_version GlueDevEndpoint#glue_version}.
+	GlueVersion *string `json:"glueVersion" yaml:"glueVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#number_of_nodes GlueDevEndpoint#number_of_nodes}.
+	NumberOfNodes *float64 `json:"numberOfNodes" yaml:"numberOfNodes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#number_of_workers GlueDevEndpoint#number_of_workers}.
+	NumberOfWorkers *float64 `json:"numberOfWorkers" yaml:"numberOfWorkers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#public_key GlueDevEndpoint#public_key}.
+	PublicKey *string `json:"publicKey" yaml:"publicKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#public_keys GlueDevEndpoint#public_keys}.
+	PublicKeys *[]*string `json:"publicKeys" yaml:"publicKeys"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#security_configuration GlueDevEndpoint#security_configuration}.
+	SecurityConfiguration *string `json:"securityConfiguration" yaml:"securityConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#security_group_ids GlueDevEndpoint#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#subnet_id GlueDevEndpoint#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#tags GlueDevEndpoint#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#tags_all GlueDevEndpoint#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_dev_endpoint#worker_type GlueDevEndpoint#worker_type}.
+	WorkerType *string `json:"workerType" yaml:"workerType"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html aws_glue_job}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_job aws_glue_job}.
 type GlueJob interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -14565,11 +17098,11 @@ type GlueJob interface {
 	SetConnections(val *[]*string)
 	ConnectionsInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DefaultArguments() interface{}
-	SetDefaultArguments(val interface{})
-	DefaultArgumentsInput() interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DefaultArguments() *map[string]*string
+	SetDefaultArguments(val *map[string]*string)
+	DefaultArgumentsInput() *map[string]*string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -14595,9 +17128,9 @@ type GlueJob interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	NonOverridableArguments() interface{}
-	SetNonOverridableArguments(val interface{})
-	NonOverridableArgumentsInput() interface{}
+	NonOverridableArguments() *map[string]*string
+	SetNonOverridableArguments(val *map[string]*string)
+	NonOverridableArgumentsInput() *map[string]*string
 	NotificationProperty() GlueJobNotificationPropertyOutputReference
 	NotificationPropertyInput() *GlueJobNotificationProperty
 	NumberOfWorkers() *float64
@@ -14612,12 +17145,12 @@ type GlueJob interface {
 	SecurityConfiguration() *string
 	SetSecurityConfiguration(val *string)
 	SecurityConfigurationInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -14628,10 +17161,15 @@ type GlueJob interface {
 	SetWorkerType(val *string)
 	WorkerTypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCommand(value *GlueJobCommand)
@@ -14734,8 +17272,8 @@ func (j *jsiiProxy_GlueJob) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14744,8 +17282,8 @@ func (j *jsiiProxy_GlueJob) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) DefaultArguments() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) DefaultArguments() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"defaultArguments",
@@ -14754,8 +17292,8 @@ func (j *jsiiProxy_GlueJob) DefaultArguments() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) DefaultArgumentsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) DefaultArgumentsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"defaultArgumentsInput",
@@ -14944,8 +17482,8 @@ func (j *jsiiProxy_GlueJob) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) NonOverridableArguments() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) NonOverridableArguments() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"nonOverridableArguments",
@@ -14954,8 +17492,8 @@ func (j *jsiiProxy_GlueJob) NonOverridableArguments() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) NonOverridableArgumentsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) NonOverridableArgumentsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"nonOverridableArgumentsInput",
@@ -15064,8 +17602,8 @@ func (j *jsiiProxy_GlueJob) SecurityConfigurationInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -15074,8 +17612,8 @@ func (j *jsiiProxy_GlueJob) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -15084,8 +17622,8 @@ func (j *jsiiProxy_GlueJob) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -15094,8 +17632,8 @@ func (j *jsiiProxy_GlueJob) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJob) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueJob) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -15174,7 +17712,7 @@ func (j *jsiiProxy_GlueJob) WorkerTypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html aws_glue_job} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_job aws_glue_job} Resource.
 func NewGlueJob(scope constructs.Construct, id *string, config *GlueJobConfig) GlueJob {
 	_init_.Initialize()
 
@@ -15189,7 +17727,7 @@ func NewGlueJob(scope constructs.Construct, id *string, config *GlueJobConfig) G
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html aws_glue_job} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_job aws_glue_job} Resource.
 func NewGlueJob_Override(g GlueJob, scope constructs.Construct, id *string, config *GlueJobConfig) {
 	_init_.Initialize()
 
@@ -15208,7 +17746,7 @@ func (j *jsiiProxy_GlueJob) SetConnections(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_GlueJob) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueJob) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15216,7 +17754,7 @@ func (j *jsiiProxy_GlueJob) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueJob) SetDefaultArguments(val interface{}) {
+func (j *jsiiProxy_GlueJob) SetDefaultArguments(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"defaultArguments",
@@ -15280,7 +17818,7 @@ func (j *jsiiProxy_GlueJob) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueJob) SetNonOverridableArguments(val interface{}) {
+func (j *jsiiProxy_GlueJob) SetNonOverridableArguments(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"nonOverridableArguments",
@@ -15320,7 +17858,7 @@ func (j *jsiiProxy_GlueJob) SetSecurityConfiguration(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueJob) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueJob) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -15328,7 +17866,7 @@ func (j *jsiiProxy_GlueJob) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueJob) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueJob) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -15392,12 +17930,40 @@ func (g *jsiiProxy_GlueJob) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueJob) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueJob) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJob) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15434,12 +18000,54 @@ func (g *jsiiProxy_GlueJob) GetNumberAttribute(terraformAttribute *string) *floa
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueJob) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJob) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueJob) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJob) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15682,12 +18290,12 @@ func (g *jsiiProxy_GlueJob) ToTerraform() interface{} {
 }
 
 type GlueJobCommand struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#script_location GlueJob#script_location}.
-	ScriptLocation *string `json:"scriptLocation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#name GlueJob#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#python_version GlueJob#python_version}.
-	PythonVersion *string `json:"pythonVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#script_location GlueJob#script_location}.
+	ScriptLocation *string `json:"scriptLocation" yaml:"scriptLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#name GlueJob#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#python_version GlueJob#python_version}.
+	PythonVersion *string `json:"pythonVersion" yaml:"pythonVersion"`
 }
 
 type GlueJobCommandOutputReference interface {
@@ -15707,12 +18315,17 @@ type GlueJobCommandOutputReference interface {
 	ScriptLocationInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetName()
@@ -15814,8 +18427,8 @@ func (j *jsiiProxy_GlueJobCommandOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueJobCommandOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueJobCommandOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15824,7 +18437,7 @@ func (j *jsiiProxy_GlueJobCommandOutputReference) TerraformResource() cdktf.ITer
 	return returns
 }
 
-func NewGlueJobCommandOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueJobCommandOutputReference {
+func NewGlueJobCommandOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueJobCommandOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueJobCommandOutputReference{}
@@ -15838,7 +18451,7 @@ func NewGlueJobCommandOutputReference(terraformResource cdktf.ITerraformResource
 	return &j
 }
 
-func NewGlueJobCommandOutputReference_Override(g GlueJobCommandOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueJobCommandOutputReference_Override(g GlueJobCommandOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15896,7 +18509,7 @@ func (j *jsiiProxy_GlueJobCommandOutputReference) SetTerraformAttribute(val *str
 	)
 }
 
-func (j *jsiiProxy_GlueJobCommandOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueJobCommandOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15905,12 +18518,40 @@ func (j *jsiiProxy_GlueJobCommandOutputReference) SetTerraformResource(val cdktf
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueJobCommandOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueJobCommandOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobCommandOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobCommandOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15947,12 +18588,54 @@ func (g *jsiiProxy_GlueJobCommandOutputReference) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueJobCommandOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobCommandOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueJobCommandOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobCommandOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16007,60 +18690,60 @@ func (g *jsiiProxy_GlueJobCommandOutputReference) ResetPythonVersion() {
 // AWS Glue.
 type GlueJobConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// command block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#command GlueJob#command}
-	Command *GlueJobCommand `json:"command"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#name GlueJob#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#role_arn GlueJob#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#connections GlueJob#connections}.
-	Connections *[]*string `json:"connections"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#default_arguments GlueJob#default_arguments}.
-	DefaultArguments interface{} `json:"defaultArguments"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#description GlueJob#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#command GlueJob#command}
+	Command *GlueJobCommand `json:"command" yaml:"command"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#name GlueJob#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#role_arn GlueJob#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#connections GlueJob#connections}.
+	Connections *[]*string `json:"connections" yaml:"connections"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#default_arguments GlueJob#default_arguments}.
+	DefaultArguments *map[string]*string `json:"defaultArguments" yaml:"defaultArguments"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#description GlueJob#description}.
+	Description *string `json:"description" yaml:"description"`
 	// execution_property block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#execution_property GlueJob#execution_property}
-	ExecutionProperty *GlueJobExecutionProperty `json:"executionProperty"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#glue_version GlueJob#glue_version}.
-	GlueVersion *string `json:"glueVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#max_capacity GlueJob#max_capacity}.
-	MaxCapacity *float64 `json:"maxCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#max_retries GlueJob#max_retries}.
-	MaxRetries *float64 `json:"maxRetries"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#non_overridable_arguments GlueJob#non_overridable_arguments}.
-	NonOverridableArguments interface{} `json:"nonOverridableArguments"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#execution_property GlueJob#execution_property}
+	ExecutionProperty *GlueJobExecutionProperty `json:"executionProperty" yaml:"executionProperty"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#glue_version GlueJob#glue_version}.
+	GlueVersion *string `json:"glueVersion" yaml:"glueVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#max_capacity GlueJob#max_capacity}.
+	MaxCapacity *float64 `json:"maxCapacity" yaml:"maxCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#max_retries GlueJob#max_retries}.
+	MaxRetries *float64 `json:"maxRetries" yaml:"maxRetries"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#non_overridable_arguments GlueJob#non_overridable_arguments}.
+	NonOverridableArguments *map[string]*string `json:"nonOverridableArguments" yaml:"nonOverridableArguments"`
 	// notification_property block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#notification_property GlueJob#notification_property}
-	NotificationProperty *GlueJobNotificationProperty `json:"notificationProperty"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#number_of_workers GlueJob#number_of_workers}.
-	NumberOfWorkers *float64 `json:"numberOfWorkers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#security_configuration GlueJob#security_configuration}.
-	SecurityConfiguration *string `json:"securityConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#tags GlueJob#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#tags_all GlueJob#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#timeout GlueJob#timeout}.
-	Timeout *float64 `json:"timeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#worker_type GlueJob#worker_type}.
-	WorkerType *string `json:"workerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#notification_property GlueJob#notification_property}
+	NotificationProperty *GlueJobNotificationProperty `json:"notificationProperty" yaml:"notificationProperty"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#number_of_workers GlueJob#number_of_workers}.
+	NumberOfWorkers *float64 `json:"numberOfWorkers" yaml:"numberOfWorkers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#security_configuration GlueJob#security_configuration}.
+	SecurityConfiguration *string `json:"securityConfiguration" yaml:"securityConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#tags GlueJob#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#tags_all GlueJob#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#timeout GlueJob#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#worker_type GlueJob#worker_type}.
+	WorkerType *string `json:"workerType" yaml:"workerType"`
 }
 
 type GlueJobExecutionProperty struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#max_concurrent_runs GlueJob#max_concurrent_runs}.
-	MaxConcurrentRuns *float64 `json:"maxConcurrentRuns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#max_concurrent_runs GlueJob#max_concurrent_runs}.
+	MaxConcurrentRuns *float64 `json:"maxConcurrentRuns" yaml:"maxConcurrentRuns"`
 }
 
 type GlueJobExecutionPropertyOutputReference interface {
@@ -16074,12 +18757,17 @@ type GlueJobExecutionPropertyOutputReference interface {
 	MaxConcurrentRunsInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMaxConcurrentRuns()
@@ -16140,8 +18828,8 @@ func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16150,7 +18838,7 @@ func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewGlueJobExecutionPropertyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueJobExecutionPropertyOutputReference {
+func NewGlueJobExecutionPropertyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueJobExecutionPropertyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueJobExecutionPropertyOutputReference{}
@@ -16164,7 +18852,7 @@ func NewGlueJobExecutionPropertyOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewGlueJobExecutionPropertyOutputReference_Override(g GlueJobExecutionPropertyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueJobExecutionPropertyOutputReference_Override(g GlueJobExecutionPropertyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16206,7 +18894,7 @@ func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16215,12 +18903,40 @@ func (j *jsiiProxy_GlueJobExecutionPropertyOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16257,12 +18973,54 @@ func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16307,8 +19065,8 @@ func (g *jsiiProxy_GlueJobExecutionPropertyOutputReference) ResetMaxConcurrentRu
 }
 
 type GlueJobNotificationProperty struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job.html#notify_delay_after GlueJob#notify_delay_after}.
-	NotifyDelayAfter *float64 `json:"notifyDelayAfter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_job#notify_delay_after GlueJob#notify_delay_after}.
+	NotifyDelayAfter *float64 `json:"notifyDelayAfter" yaml:"notifyDelayAfter"`
 }
 
 type GlueJobNotificationPropertyOutputReference interface {
@@ -16322,12 +19080,17 @@ type GlueJobNotificationPropertyOutputReference interface {
 	NotifyDelayAfterInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetNotifyDelayAfter()
@@ -16388,8 +19151,8 @@ func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16398,7 +19161,7 @@ func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) TerraformResource
 	return returns
 }
 
-func NewGlueJobNotificationPropertyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueJobNotificationPropertyOutputReference {
+func NewGlueJobNotificationPropertyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueJobNotificationPropertyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueJobNotificationPropertyOutputReference{}
@@ -16412,7 +19175,7 @@ func NewGlueJobNotificationPropertyOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewGlueJobNotificationPropertyOutputReference_Override(g GlueJobNotificationPropertyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueJobNotificationPropertyOutputReference_Override(g GlueJobNotificationPropertyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16454,7 +19217,7 @@ func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16463,12 +19226,40 @@ func (j *jsiiProxy_GlueJobNotificationPropertyOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16505,12 +19296,54 @@ func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16554,14 +19387,14 @@ func (g *jsiiProxy_GlueJobNotificationPropertyOutputReference) ResetNotifyDelayA
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html aws_glue_ml_transform}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform aws_glue_ml_transform}.
 type GlueMlTransform interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -16573,9 +19406,9 @@ type GlueMlTransform interface {
 	SetGlueVersion(val *string)
 	GlueVersionInput() *string
 	Id() *string
-	InputRecordTables() *[]*GlueMlTransformInputRecordTables
-	SetInputRecordTables(val *[]*GlueMlTransformInputRecordTables)
-	InputRecordTablesInput() *[]*GlueMlTransformInputRecordTables
+	InputRecordTables() interface{}
+	SetInputRecordTables(val interface{})
+	InputRecordTablesInput() interface{}
 	LabelCount() *float64
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -16600,12 +19433,12 @@ type GlueMlTransform interface {
 	RoleArn() *string
 	SetRoleArn(val *string)
 	RoleArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -16616,10 +19449,15 @@ type GlueMlTransform interface {
 	SetWorkerType(val *string)
 	WorkerTypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutParameters(value *GlueMlTransformParameters)
@@ -16675,8 +19513,8 @@ func (j *jsiiProxy_GlueMlTransform) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransform) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueMlTransform) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16765,8 +19603,8 @@ func (j *jsiiProxy_GlueMlTransform) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransform) InputRecordTables() *[]*GlueMlTransformInputRecordTables {
-	var returns *[]*GlueMlTransformInputRecordTables
+func (j *jsiiProxy_GlueMlTransform) InputRecordTables() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"inputRecordTables",
@@ -16775,8 +19613,8 @@ func (j *jsiiProxy_GlueMlTransform) InputRecordTables() *[]*GlueMlTransformInput
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransform) InputRecordTablesInput() *[]*GlueMlTransformInputRecordTables {
-	var returns *[]*GlueMlTransformInputRecordTables
+func (j *jsiiProxy_GlueMlTransform) InputRecordTablesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"inputRecordTablesInput",
@@ -16955,8 +19793,8 @@ func (j *jsiiProxy_GlueMlTransform) RoleArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransform) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueMlTransform) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -16965,8 +19803,8 @@ func (j *jsiiProxy_GlueMlTransform) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransform) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueMlTransform) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -16975,8 +19813,8 @@ func (j *jsiiProxy_GlueMlTransform) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransform) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueMlTransform) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -16985,8 +19823,8 @@ func (j *jsiiProxy_GlueMlTransform) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransform) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueMlTransform) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -17065,7 +19903,7 @@ func (j *jsiiProxy_GlueMlTransform) WorkerTypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html aws_glue_ml_transform} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform aws_glue_ml_transform} Resource.
 func NewGlueMlTransform(scope constructs.Construct, id *string, config *GlueMlTransformConfig) GlueMlTransform {
 	_init_.Initialize()
 
@@ -17080,7 +19918,7 @@ func NewGlueMlTransform(scope constructs.Construct, id *string, config *GlueMlTr
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html aws_glue_ml_transform} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform aws_glue_ml_transform} Resource.
 func NewGlueMlTransform_Override(g GlueMlTransform, scope constructs.Construct, id *string, config *GlueMlTransformConfig) {
 	_init_.Initialize()
 
@@ -17091,7 +19929,7 @@ func NewGlueMlTransform_Override(g GlueMlTransform, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_GlueMlTransform) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueMlTransform) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17123,7 +19961,7 @@ func (j *jsiiProxy_GlueMlTransform) SetGlueVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueMlTransform) SetInputRecordTables(val *[]*GlueMlTransformInputRecordTables) {
+func (j *jsiiProxy_GlueMlTransform) SetInputRecordTables(val interface{}) {
 	_jsii_.Set(
 		j,
 		"inputRecordTables",
@@ -17187,7 +20025,7 @@ func (j *jsiiProxy_GlueMlTransform) SetRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueMlTransform) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueMlTransform) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -17195,7 +20033,7 @@ func (j *jsiiProxy_GlueMlTransform) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueMlTransform) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueMlTransform) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -17259,12 +20097,40 @@ func (g *jsiiProxy_GlueMlTransform) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueMlTransform) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueMlTransform) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransform) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17301,12 +20167,54 @@ func (g *jsiiProxy_GlueMlTransform) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueMlTransform) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransform) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueMlTransform) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransform) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17500,74 +20408,74 @@ func (g *jsiiProxy_GlueMlTransform) ToTerraform() interface{} {
 // AWS Glue.
 type GlueMlTransformConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// input_record_tables block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#input_record_tables GlueMlTransform#input_record_tables}
-	InputRecordTables *[]*GlueMlTransformInputRecordTables `json:"inputRecordTables"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#name GlueMlTransform#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#input_record_tables GlueMlTransform#input_record_tables}
+	InputRecordTables interface{} `json:"inputRecordTables" yaml:"inputRecordTables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#name GlueMlTransform#name}.
+	Name *string `json:"name" yaml:"name"`
 	// parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#parameters GlueMlTransform#parameters}
-	Parameters *GlueMlTransformParameters `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#role_arn GlueMlTransform#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#description GlueMlTransform#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#glue_version GlueMlTransform#glue_version}.
-	GlueVersion *string `json:"glueVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#max_capacity GlueMlTransform#max_capacity}.
-	MaxCapacity *float64 `json:"maxCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#max_retries GlueMlTransform#max_retries}.
-	MaxRetries *float64 `json:"maxRetries"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#number_of_workers GlueMlTransform#number_of_workers}.
-	NumberOfWorkers *float64 `json:"numberOfWorkers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#tags GlueMlTransform#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#tags_all GlueMlTransform#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#timeout GlueMlTransform#timeout}.
-	Timeout *float64 `json:"timeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#worker_type GlueMlTransform#worker_type}.
-	WorkerType *string `json:"workerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#parameters GlueMlTransform#parameters}
+	Parameters *GlueMlTransformParameters `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#role_arn GlueMlTransform#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#description GlueMlTransform#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#glue_version GlueMlTransform#glue_version}.
+	GlueVersion *string `json:"glueVersion" yaml:"glueVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#max_capacity GlueMlTransform#max_capacity}.
+	MaxCapacity *float64 `json:"maxCapacity" yaml:"maxCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#max_retries GlueMlTransform#max_retries}.
+	MaxRetries *float64 `json:"maxRetries" yaml:"maxRetries"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#number_of_workers GlueMlTransform#number_of_workers}.
+	NumberOfWorkers *float64 `json:"numberOfWorkers" yaml:"numberOfWorkers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#tags GlueMlTransform#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#tags_all GlueMlTransform#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#timeout GlueMlTransform#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#worker_type GlueMlTransform#worker_type}.
+	WorkerType *string `json:"workerType" yaml:"workerType"`
 }
 
 type GlueMlTransformInputRecordTables struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#database_name GlueMlTransform#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#table_name GlueMlTransform#table_name}.
-	TableName *string `json:"tableName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#catalog_id GlueMlTransform#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#connection_name GlueMlTransform#connection_name}.
-	ConnectionName *string `json:"connectionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#database_name GlueMlTransform#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#table_name GlueMlTransform#table_name}.
+	TableName *string `json:"tableName" yaml:"tableName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#catalog_id GlueMlTransform#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#connection_name GlueMlTransform#connection_name}.
+	ConnectionName *string `json:"connectionName" yaml:"connectionName"`
 }
 
 type GlueMlTransformParameters struct {
 	// find_matches_parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#find_matches_parameters GlueMlTransform#find_matches_parameters}
-	FindMatchesParameters *GlueMlTransformParametersFindMatchesParameters `json:"findMatchesParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#transform_type GlueMlTransform#transform_type}.
-	TransformType *string `json:"transformType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#find_matches_parameters GlueMlTransform#find_matches_parameters}
+	FindMatchesParameters *GlueMlTransformParametersFindMatchesParameters `json:"findMatchesParameters" yaml:"findMatchesParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#transform_type GlueMlTransform#transform_type}.
+	TransformType *string `json:"transformType" yaml:"transformType"`
 }
 
 type GlueMlTransformParametersFindMatchesParameters struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#accuracy_cost_trade_off GlueMlTransform#accuracy_cost_trade_off}.
-	AccuracyCostTradeOff *float64 `json:"accuracyCostTradeOff"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#enforce_provided_labels GlueMlTransform#enforce_provided_labels}.
-	EnforceProvidedLabels interface{} `json:"enforceProvidedLabels"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#precision_recall_trade_off GlueMlTransform#precision_recall_trade_off}.
-	PrecisionRecallTradeOff *float64 `json:"precisionRecallTradeOff"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform.html#primary_key_column_name GlueMlTransform#primary_key_column_name}.
-	PrimaryKeyColumnName *string `json:"primaryKeyColumnName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#accuracy_cost_trade_off GlueMlTransform#accuracy_cost_trade_off}.
+	AccuracyCostTradeOff *float64 `json:"accuracyCostTradeOff" yaml:"accuracyCostTradeOff"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#enforce_provided_labels GlueMlTransform#enforce_provided_labels}.
+	EnforceProvidedLabels interface{} `json:"enforceProvidedLabels" yaml:"enforceProvidedLabels"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#precision_recall_trade_off GlueMlTransform#precision_recall_trade_off}.
+	PrecisionRecallTradeOff *float64 `json:"precisionRecallTradeOff" yaml:"precisionRecallTradeOff"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_ml_transform#primary_key_column_name GlueMlTransform#primary_key_column_name}.
+	PrimaryKeyColumnName *string `json:"primaryKeyColumnName" yaml:"primaryKeyColumnName"`
 }
 
 type GlueMlTransformParametersFindMatchesParametersOutputReference interface {
@@ -17590,12 +20498,17 @@ type GlueMlTransformParametersFindMatchesParametersOutputReference interface {
 	PrimaryKeyColumnNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAccuracyCostTradeOff()
@@ -17719,8 +20632,8 @@ func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17729,7 +20642,7 @@ func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference
 	return returns
 }
 
-func NewGlueMlTransformParametersFindMatchesParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueMlTransformParametersFindMatchesParametersOutputReference {
+func NewGlueMlTransformParametersFindMatchesParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueMlTransformParametersFindMatchesParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference{}
@@ -17743,7 +20656,7 @@ func NewGlueMlTransformParametersFindMatchesParametersOutputReference(terraformR
 	return &j
 }
 
-func NewGlueMlTransformParametersFindMatchesParametersOutputReference_Override(g GlueMlTransformParametersFindMatchesParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueMlTransformParametersFindMatchesParametersOutputReference_Override(g GlueMlTransformParametersFindMatchesParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -17809,7 +20722,7 @@ func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference
 	)
 }
 
-func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17818,12 +20731,40 @@ func (j *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17860,12 +20801,54 @@ func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersFindMatchesParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17943,15 +20926,20 @@ type GlueMlTransformParametersOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TransformType() *string
 	SetTransformType(val *string)
 	TransformTypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutFindMatchesParameters(value *GlueMlTransformParametersFindMatchesParameters)
@@ -18012,8 +21000,8 @@ func (j *jsiiProxy_GlueMlTransformParametersOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransformParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueMlTransformParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18042,7 +21030,7 @@ func (j *jsiiProxy_GlueMlTransformParametersOutputReference) TransformTypeInput(
 	return returns
 }
 
-func NewGlueMlTransformParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueMlTransformParametersOutputReference {
+func NewGlueMlTransformParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueMlTransformParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueMlTransformParametersOutputReference{}
@@ -18056,7 +21044,7 @@ func NewGlueMlTransformParametersOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewGlueMlTransformParametersOutputReference_Override(g GlueMlTransformParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueMlTransformParametersOutputReference_Override(g GlueMlTransformParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18090,7 +21078,7 @@ func (j *jsiiProxy_GlueMlTransformParametersOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_GlueMlTransformParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueMlTransformParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18107,12 +21095,40 @@ func (j *jsiiProxy_GlueMlTransformParametersOutputReference) SetTransformType(va
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18149,12 +21165,54 @@ func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18206,12 +21264,19 @@ type GlueMlTransformSchema interface {
 	Name() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -18260,8 +21325,8 @@ func (j *jsiiProxy_GlueMlTransformSchema) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueMlTransformSchema) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueMlTransformSchema) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18270,15 +21335,25 @@ func (j *jsiiProxy_GlueMlTransformSchema) TerraformResource() cdktf.ITerraformRe
 	return returns
 }
 
+func (j *jsiiProxy_GlueMlTransformSchema) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewGlueMlTransformSchema(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) GlueMlTransformSchema {
+func NewGlueMlTransformSchema(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) GlueMlTransformSchema {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueMlTransformSchema{}
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.GlueMlTransformSchema",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -18286,12 +21361,12 @@ func NewGlueMlTransformSchema(terraformResource cdktf.ITerraformResource, terraf
 }
 
 // Experimental.
-func NewGlueMlTransformSchema_Override(g GlueMlTransformSchema, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewGlueMlTransformSchema_Override(g GlueMlTransformSchema, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.glue.GlueMlTransformSchema",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		g,
 	)
 }
@@ -18312,7 +21387,7 @@ func (j *jsiiProxy_GlueMlTransformSchema) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueMlTransformSchema) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueMlTransformSchema) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18320,13 +21395,49 @@ func (j *jsiiProxy_GlueMlTransformSchema) SetTerraformResource(val cdktf.ITerraf
 	)
 }
 
+func (j *jsiiProxy_GlueMlTransformSchema) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (g *jsiiProxy_GlueMlTransformSchema) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueMlTransformSchema) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformSchema) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformSchema) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18363,12 +21474,54 @@ func (g *jsiiProxy_GlueMlTransformSchema) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueMlTransformSchema) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformSchema) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueMlTransformSchema) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueMlTransformSchema) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18390,7 +21543,7 @@ func (g *jsiiProxy_GlueMlTransformSchema) InterpolationForAttribute(property *st
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html aws_glue_partition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_partition aws_glue_partition}.
 type GluePartition interface {
 	cdktf.TerraformResource
 	CatalogId() *string
@@ -18398,8 +21551,8 @@ type GluePartition interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationTime() *string
 	DatabaseName() *string
 	SetDatabaseName(val *string)
@@ -18414,9 +21567,9 @@ type GluePartition interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	PartitionValues() *[]*string
 	SetPartitionValues(val *[]*string)
 	PartitionValuesInput() *[]*string
@@ -18432,10 +21585,15 @@ type GluePartition interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutStorageDescriptor(value *GluePartitionStorageDescriptor)
@@ -18494,8 +21652,8 @@ func (j *jsiiProxy_GluePartition) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_GluePartition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18614,8 +21772,8 @@ func (j *jsiiProxy_GluePartition) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_GluePartition) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartition) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -18624,8 +21782,8 @@ func (j *jsiiProxy_GluePartition) Parameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GluePartition) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartition) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -18744,7 +21902,7 @@ func (j *jsiiProxy_GluePartition) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html aws_glue_partition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition aws_glue_partition} Resource.
 func NewGluePartition(scope constructs.Construct, id *string, config *GluePartitionConfig) GluePartition {
 	_init_.Initialize()
 
@@ -18759,7 +21917,7 @@ func NewGluePartition(scope constructs.Construct, id *string, config *GluePartit
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html aws_glue_partition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition aws_glue_partition} Resource.
 func NewGluePartition_Override(g GluePartition, scope constructs.Construct, id *string, config *GluePartitionConfig) {
 	_init_.Initialize()
 
@@ -18778,7 +21936,7 @@ func (j *jsiiProxy_GluePartition) SetCatalogId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GluePartition) SetCount(val interface{}) {
+func (j *jsiiProxy_GluePartition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18810,7 +21968,7 @@ func (j *jsiiProxy_GluePartition) SetLifecycle(val *cdktf.TerraformResourceLifec
 	)
 }
 
-func (j *jsiiProxy_GluePartition) SetParameters(val interface{}) {
+func (j *jsiiProxy_GluePartition) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -18882,12 +22040,40 @@ func (g *jsiiProxy_GluePartition) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18924,12 +22110,54 @@ func (g *jsiiProxy_GluePartition) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19062,30 +22290,30 @@ func (g *jsiiProxy_GluePartition) ToTerraform() interface{} {
 // AWS Glue.
 type GluePartitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#database_name GluePartition#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#partition_values GluePartition#partition_values}.
-	PartitionValues *[]*string `json:"partitionValues"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#table_name GluePartition#table_name}.
-	TableName *string `json:"tableName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#catalog_id GluePartition#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#parameters GluePartition#parameters}.
-	Parameters interface{} `json:"parameters"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#database_name GluePartition#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#partition_values GluePartition#partition_values}.
+	PartitionValues *[]*string `json:"partitionValues" yaml:"partitionValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#table_name GluePartition#table_name}.
+	TableName *string `json:"tableName" yaml:"tableName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#catalog_id GluePartition#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#parameters GluePartition#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
 	// storage_descriptor block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#storage_descriptor GluePartition#storage_descriptor}
-	StorageDescriptor *GluePartitionStorageDescriptor `json:"storageDescriptor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#storage_descriptor GluePartition#storage_descriptor}
+	StorageDescriptor *GluePartitionStorageDescriptor `json:"storageDescriptor" yaml:"storageDescriptor"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html aws_glue_partition_index}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index aws_glue_partition_index}.
 type GluePartitionIndex interface {
 	cdktf.TerraformResource
 	CatalogId() *string
@@ -19093,8 +22321,8 @@ type GluePartitionIndex interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
@@ -19118,10 +22346,15 @@ type GluePartitionIndex interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPartitionIndex(value *GluePartitionIndexPartitionIndex)
@@ -19178,8 +22411,8 @@ func (j *jsiiProxy_GluePartitionIndex) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionIndex) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartitionIndex) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19358,7 +22591,7 @@ func (j *jsiiProxy_GluePartitionIndex) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html aws_glue_partition_index} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index aws_glue_partition_index} Resource.
 func NewGluePartitionIndex(scope constructs.Construct, id *string, config *GluePartitionIndexConfig) GluePartitionIndex {
 	_init_.Initialize()
 
@@ -19373,7 +22606,7 @@ func NewGluePartitionIndex(scope constructs.Construct, id *string, config *GlueP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html aws_glue_partition_index} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index aws_glue_partition_index} Resource.
 func NewGluePartitionIndex_Override(g GluePartitionIndex, scope constructs.Construct, id *string, config *GluePartitionIndexConfig) {
 	_init_.Initialize()
 
@@ -19392,7 +22625,7 @@ func (j *jsiiProxy_GluePartitionIndex) SetCatalogId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GluePartitionIndex) SetCount(val interface{}) {
+func (j *jsiiProxy_GluePartitionIndex) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19480,12 +22713,40 @@ func (g *jsiiProxy_GluePartitionIndex) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartitionIndex) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartitionIndex) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionIndex) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19522,12 +22783,54 @@ func (g *jsiiProxy_GluePartitionIndex) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartitionIndex) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionIndex) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartitionIndex) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionIndex) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19644,30 +22947,30 @@ func (g *jsiiProxy_GluePartitionIndex) ToTerraform() interface{} {
 // AWS Glue.
 type GluePartitionIndexConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html#database_name GluePartitionIndex#database_name}.
-	DatabaseName *string `json:"databaseName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index#database_name GluePartitionIndex#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
 	// partition_index block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html#partition_index GluePartitionIndex#partition_index}
-	PartitionIndex *GluePartitionIndexPartitionIndex `json:"partitionIndex"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html#table_name GluePartitionIndex#table_name}.
-	TableName *string `json:"tableName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html#catalog_id GluePartitionIndex#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index#partition_index GluePartitionIndex#partition_index}
+	PartitionIndex *GluePartitionIndexPartitionIndex `json:"partitionIndex" yaml:"partitionIndex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index#table_name GluePartitionIndex#table_name}.
+	TableName *string `json:"tableName" yaml:"tableName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index#catalog_id GluePartitionIndex#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type GluePartitionIndexPartitionIndex struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html#index_name GluePartitionIndex#index_name}.
-	IndexName *string `json:"indexName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index.html#keys GluePartitionIndex#keys}.
-	Keys *[]*string `json:"keys"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index#index_name GluePartitionIndex#index_name}.
+	IndexName *string `json:"indexName" yaml:"indexName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition_index#keys GluePartitionIndex#keys}.
+	Keys *[]*string `json:"keys" yaml:"keys"`
 }
 
 type GluePartitionIndexPartitionIndexOutputReference interface {
@@ -19675,6 +22978,7 @@ type GluePartitionIndexPartitionIndexOutputReference interface {
 	IndexName() *string
 	SetIndexName(val *string)
 	IndexNameInput() *string
+	IndexStatus() *string
 	InternalValue() *GluePartitionIndexPartitionIndex
 	SetInternalValue(val *GluePartitionIndexPartitionIndex)
 	IsSingleItem() *bool
@@ -19684,12 +22988,17 @@ type GluePartitionIndexPartitionIndexOutputReference interface {
 	KeysInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIndexName()
@@ -19716,6 +23025,16 @@ func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) IndexNameInp
 	_jsii_.Get(
 		j,
 		"indexNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) IndexStatus() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"indexStatus",
 		&returns,
 	)
 	return returns
@@ -19771,8 +23090,8 @@ func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19781,7 +23100,7 @@ func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) TerraformRes
 	return returns
 }
 
-func NewGluePartitionIndexPartitionIndexOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GluePartitionIndexPartitionIndexOutputReference {
+func NewGluePartitionIndexPartitionIndexOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GluePartitionIndexPartitionIndexOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GluePartitionIndexPartitionIndexOutputReference{}
@@ -19795,7 +23114,7 @@ func NewGluePartitionIndexPartitionIndexOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewGluePartitionIndexPartitionIndexOutputReference_Override(g GluePartitionIndexPartitionIndexOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGluePartitionIndexPartitionIndexOutputReference_Override(g GluePartitionIndexPartitionIndexOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -19845,7 +23164,7 @@ func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19854,12 +23173,40 @@ func (j *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) SetTerraform
 }
 
 // Experimental.
-func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19896,12 +23243,54 @@ func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19954,47 +23343,47 @@ func (g *jsiiProxy_GluePartitionIndexPartitionIndexOutputReference) ResetKeys() 
 }
 
 type GluePartitionStorageDescriptor struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#bucket_columns GluePartition#bucket_columns}.
-	BucketColumns *[]*string `json:"bucketColumns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#bucket_columns GluePartition#bucket_columns}.
+	BucketColumns *[]*string `json:"bucketColumns" yaml:"bucketColumns"`
 	// columns block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#columns GluePartition#columns}
-	Columns *[]*GluePartitionStorageDescriptorColumns `json:"columns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#compressed GluePartition#compressed}.
-	Compressed interface{} `json:"compressed"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#input_format GluePartition#input_format}.
-	InputFormat *string `json:"inputFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#location GluePartition#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#number_of_buckets GluePartition#number_of_buckets}.
-	NumberOfBuckets *float64 `json:"numberOfBuckets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#output_format GluePartition#output_format}.
-	OutputFormat *string `json:"outputFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#parameters GluePartition#parameters}.
-	Parameters interface{} `json:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#columns GluePartition#columns}
+	Columns interface{} `json:"columns" yaml:"columns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#compressed GluePartition#compressed}.
+	Compressed interface{} `json:"compressed" yaml:"compressed"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#input_format GluePartition#input_format}.
+	InputFormat *string `json:"inputFormat" yaml:"inputFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#location GluePartition#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#number_of_buckets GluePartition#number_of_buckets}.
+	NumberOfBuckets *float64 `json:"numberOfBuckets" yaml:"numberOfBuckets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#output_format GluePartition#output_format}.
+	OutputFormat *string `json:"outputFormat" yaml:"outputFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#parameters GluePartition#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
 	// ser_de_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#ser_de_info GluePartition#ser_de_info}
-	SerDeInfo *GluePartitionStorageDescriptorSerDeInfo `json:"serDeInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#ser_de_info GluePartition#ser_de_info}
+	SerDeInfo *GluePartitionStorageDescriptorSerDeInfo `json:"serDeInfo" yaml:"serDeInfo"`
 	// skewed_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#skewed_info GluePartition#skewed_info}
-	SkewedInfo *GluePartitionStorageDescriptorSkewedInfo `json:"skewedInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#skewed_info GluePartition#skewed_info}
+	SkewedInfo *GluePartitionStorageDescriptorSkewedInfo `json:"skewedInfo" yaml:"skewedInfo"`
 	// sort_columns block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#sort_columns GluePartition#sort_columns}
-	SortColumns *[]*GluePartitionStorageDescriptorSortColumns `json:"sortColumns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#stored_as_sub_directories GluePartition#stored_as_sub_directories}.
-	StoredAsSubDirectories interface{} `json:"storedAsSubDirectories"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#sort_columns GluePartition#sort_columns}
+	SortColumns interface{} `json:"sortColumns" yaml:"sortColumns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#stored_as_sub_directories GluePartition#stored_as_sub_directories}.
+	StoredAsSubDirectories interface{} `json:"storedAsSubDirectories" yaml:"storedAsSubDirectories"`
 }
 
 type GluePartitionStorageDescriptorColumns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#name GluePartition#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#comment GluePartition#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#type GluePartition#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#name GluePartition#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#comment GluePartition#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#type GluePartition#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type GluePartitionStorageDescriptorOutputReference interface {
@@ -20002,9 +23391,9 @@ type GluePartitionStorageDescriptorOutputReference interface {
 	BucketColumns() *[]*string
 	SetBucketColumns(val *[]*string)
 	BucketColumnsInput() *[]*string
-	Columns() *[]*GluePartitionStorageDescriptorColumns
-	SetColumns(val *[]*GluePartitionStorageDescriptorColumns)
-	ColumnsInput() *[]*GluePartitionStorageDescriptorColumns
+	Columns() interface{}
+	SetColumns(val interface{})
+	ColumnsInput() interface{}
 	Compressed() interface{}
 	SetCompressed(val interface{})
 	CompressedInput() interface{}
@@ -20024,27 +23413,32 @@ type GluePartitionStorageDescriptorOutputReference interface {
 	OutputFormat() *string
 	SetOutputFormat(val *string)
 	OutputFormatInput() *string
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	SerDeInfo() GluePartitionStorageDescriptorSerDeInfoOutputReference
 	SerDeInfoInput() *GluePartitionStorageDescriptorSerDeInfo
 	SkewedInfo() GluePartitionStorageDescriptorSkewedInfoOutputReference
 	SkewedInfoInput() *GluePartitionStorageDescriptorSkewedInfo
-	SortColumns() *[]*GluePartitionStorageDescriptorSortColumns
-	SetSortColumns(val *[]*GluePartitionStorageDescriptorSortColumns)
-	SortColumnsInput() *[]*GluePartitionStorageDescriptorSortColumns
+	SortColumns() interface{}
+	SetSortColumns(val interface{})
+	SortColumnsInput() interface{}
 	StoredAsSubDirectories() interface{}
 	SetStoredAsSubDirectories(val interface{})
 	StoredAsSubDirectoriesInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSerDeInfo(value *GluePartitionStorageDescriptorSerDeInfo)
@@ -20088,8 +23482,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) BucketColumnsI
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) Columns() *[]*GluePartitionStorageDescriptorColumns {
-	var returns *[]*GluePartitionStorageDescriptorColumns
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) Columns() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"columns",
@@ -20098,8 +23492,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) Columns() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) ColumnsInput() *[]*GluePartitionStorageDescriptorColumns {
-	var returns *[]*GluePartitionStorageDescriptorColumns
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) ColumnsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"columnsInput",
@@ -20228,8 +23622,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) OutputFormatIn
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -20238,8 +23632,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) Parameters() i
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -20288,8 +23682,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SkewedInfoInpu
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SortColumns() *[]*GluePartitionStorageDescriptorSortColumns {
-	var returns *[]*GluePartitionStorageDescriptorSortColumns
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SortColumns() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sortColumns",
@@ -20298,8 +23692,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SortColumns() 
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SortColumnsInput() *[]*GluePartitionStorageDescriptorSortColumns {
-	var returns *[]*GluePartitionStorageDescriptorSortColumns
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SortColumnsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sortColumnsInput",
@@ -20338,8 +23732,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20348,7 +23742,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) TerraformResou
 	return returns
 }
 
-func NewGluePartitionStorageDescriptorOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GluePartitionStorageDescriptorOutputReference {
+func NewGluePartitionStorageDescriptorOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GluePartitionStorageDescriptorOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GluePartitionStorageDescriptorOutputReference{}
@@ -20362,7 +23756,7 @@ func NewGluePartitionStorageDescriptorOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewGluePartitionStorageDescriptorOutputReference_Override(g GluePartitionStorageDescriptorOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGluePartitionStorageDescriptorOutputReference_Override(g GluePartitionStorageDescriptorOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20380,7 +23774,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetBucketColum
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetColumns(val *[]*GluePartitionStorageDescriptorColumns) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetColumns(val interface{}) {
 	_jsii_.Set(
 		j,
 		"columns",
@@ -20444,7 +23838,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetOutputForma
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetParameters(val interface{}) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -20452,7 +23846,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetParameters(
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetSortColumns(val *[]*GluePartitionStorageDescriptorSortColumns) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetSortColumns(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sortColumns",
@@ -20476,7 +23870,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20485,12 +23879,40 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20527,12 +23949,54 @@ func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20681,12 +24145,12 @@ func (g *jsiiProxy_GluePartitionStorageDescriptorOutputReference) ResetStoredAsS
 }
 
 type GluePartitionStorageDescriptorSerDeInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#name GluePartition#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#parameters GluePartition#parameters}.
-	Parameters interface{} `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#serialization_library GluePartition#serialization_library}.
-	SerializationLibrary *string `json:"serializationLibrary"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#name GluePartition#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#parameters GluePartition#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#serialization_library GluePartition#serialization_library}.
+	SerializationLibrary *string `json:"serializationLibrary" yaml:"serializationLibrary"`
 }
 
 type GluePartitionStorageDescriptorSerDeInfoOutputReference interface {
@@ -20698,20 +24162,25 @@ type GluePartitionStorageDescriptorSerDeInfoOutputReference interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	SerializationLibrary() *string
 	SetSerializationLibrary(val *string)
 	SerializationLibraryInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetName()
@@ -20764,8 +24233,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) NameI
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -20774,8 +24243,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) Param
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -20814,8 +24283,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20824,7 +24293,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) Terra
 	return returns
 }
 
-func NewGluePartitionStorageDescriptorSerDeInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GluePartitionStorageDescriptorSerDeInfoOutputReference {
+func NewGluePartitionStorageDescriptorSerDeInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GluePartitionStorageDescriptorSerDeInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference{}
@@ -20838,7 +24307,7 @@ func NewGluePartitionStorageDescriptorSerDeInfoOutputReference(terraformResource
 	return &j
 }
 
-func NewGluePartitionStorageDescriptorSerDeInfoOutputReference_Override(g GluePartitionStorageDescriptorSerDeInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGluePartitionStorageDescriptorSerDeInfoOutputReference_Override(g GluePartitionStorageDescriptorSerDeInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20872,7 +24341,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetNa
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetParameters(val interface{}) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -20896,7 +24365,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20905,12 +24374,40 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) SetTe
 }
 
 // Experimental.
-func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20947,12 +24444,54 @@ func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetNu
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21013,12 +24552,12 @@ func (g *jsiiProxy_GluePartitionStorageDescriptorSerDeInfoOutputReference) Reset
 }
 
 type GluePartitionStorageDescriptorSkewedInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#skewed_column_names GluePartition#skewed_column_names}.
-	SkewedColumnNames *[]*string `json:"skewedColumnNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#skewed_column_value_location_maps GluePartition#skewed_column_value_location_maps}.
-	SkewedColumnValueLocationMaps interface{} `json:"skewedColumnValueLocationMaps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#skewed_column_values GluePartition#skewed_column_values}.
-	SkewedColumnValues *[]*string `json:"skewedColumnValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#skewed_column_names GluePartition#skewed_column_names}.
+	SkewedColumnNames *[]*string `json:"skewedColumnNames" yaml:"skewedColumnNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#skewed_column_value_location_maps GluePartition#skewed_column_value_location_maps}.
+	SkewedColumnValueLocationMaps *map[string]*string `json:"skewedColumnValueLocationMaps" yaml:"skewedColumnValueLocationMaps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#skewed_column_values GluePartition#skewed_column_values}.
+	SkewedColumnValues *[]*string `json:"skewedColumnValues" yaml:"skewedColumnValues"`
 }
 
 type GluePartitionStorageDescriptorSkewedInfoOutputReference interface {
@@ -21030,20 +24569,25 @@ type GluePartitionStorageDescriptorSkewedInfoOutputReference interface {
 	SkewedColumnNames() *[]*string
 	SetSkewedColumnNames(val *[]*string)
 	SkewedColumnNamesInput() *[]*string
-	SkewedColumnValueLocationMaps() interface{}
-	SetSkewedColumnValueLocationMaps(val interface{})
-	SkewedColumnValueLocationMapsInput() interface{}
+	SkewedColumnValueLocationMaps() *map[string]*string
+	SetSkewedColumnValueLocationMaps(val *map[string]*string)
+	SkewedColumnValueLocationMapsInput() *map[string]*string
 	SkewedColumnValues() *[]*string
 	SetSkewedColumnValues(val *[]*string)
 	SkewedColumnValuesInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSkewedColumnNames()
@@ -21096,8 +24640,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) Skew
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMaps() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMaps() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"skewedColumnValueLocationMaps",
@@ -21106,8 +24650,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) Skew
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMapsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SkewedColumnValueLocationMapsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"skewedColumnValueLocationMapsInput",
@@ -21146,8 +24690,8 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21156,7 +24700,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) Terr
 	return returns
 }
 
-func NewGluePartitionStorageDescriptorSkewedInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GluePartitionStorageDescriptorSkewedInfoOutputReference {
+func NewGluePartitionStorageDescriptorSkewedInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GluePartitionStorageDescriptorSkewedInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference{}
@@ -21170,7 +24714,7 @@ func NewGluePartitionStorageDescriptorSkewedInfoOutputReference(terraformResourc
 	return &j
 }
 
-func NewGluePartitionStorageDescriptorSkewedInfoOutputReference_Override(g GluePartitionStorageDescriptorSkewedInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGluePartitionStorageDescriptorSkewedInfoOutputReference_Override(g GluePartitionStorageDescriptorSkewedInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21204,7 +24748,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetS
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetSkewedColumnValueLocationMaps(val interface{}) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetSkewedColumnValueLocationMaps(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"skewedColumnValueLocationMaps",
@@ -21228,7 +24772,7 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21237,12 +24781,40 @@ func (j *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) SetT
 }
 
 // Experimental.
-func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21279,12 +24851,54 @@ func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetN
 }
 
 // Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21345,20 +24959,20 @@ func (g *jsiiProxy_GluePartitionStorageDescriptorSkewedInfoOutputReference) Rese
 }
 
 type GluePartitionStorageDescriptorSortColumns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#column GluePartition#column}.
-	Column *string `json:"column"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition.html#sort_order GluePartition#sort_order}.
-	SortOrder *float64 `json:"sortOrder"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#column GluePartition#column}.
+	Column *string `json:"column" yaml:"column"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_partition#sort_order GluePartition#sort_order}.
+	SortOrder *float64 `json:"sortOrder" yaml:"sortOrder"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_registry.html aws_glue_registry}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_registry aws_glue_registry}.
 type GlueRegistry interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -21376,20 +24990,25 @@ type GlueRegistry interface {
 	RegistryName() *string
 	SetRegistryName(val *string)
 	RegistryNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -21437,8 +25056,8 @@ func (j *jsiiProxy_GlueRegistry) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_GlueRegistry) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueRegistry) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -21567,8 +25186,8 @@ func (j *jsiiProxy_GlueRegistry) RegistryNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueRegistry) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueRegistry) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -21577,8 +25196,8 @@ func (j *jsiiProxy_GlueRegistry) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueRegistry) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueRegistry) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -21587,8 +25206,8 @@ func (j *jsiiProxy_GlueRegistry) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueRegistry) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueRegistry) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -21597,8 +25216,8 @@ func (j *jsiiProxy_GlueRegistry) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueRegistry) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueRegistry) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -21637,7 +25256,7 @@ func (j *jsiiProxy_GlueRegistry) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_registry.html aws_glue_registry} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_registry aws_glue_registry} Resource.
 func NewGlueRegistry(scope constructs.Construct, id *string, config *GlueRegistryConfig) GlueRegistry {
 	_init_.Initialize()
 
@@ -21652,7 +25271,7 @@ func NewGlueRegistry(scope constructs.Construct, id *string, config *GlueRegistr
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_registry.html aws_glue_registry} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_registry aws_glue_registry} Resource.
 func NewGlueRegistry_Override(g GlueRegistry, scope constructs.Construct, id *string, config *GlueRegistryConfig) {
 	_init_.Initialize()
 
@@ -21663,7 +25282,7 @@ func NewGlueRegistry_Override(g GlueRegistry, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_GlueRegistry) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueRegistry) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -21711,7 +25330,7 @@ func (j *jsiiProxy_GlueRegistry) SetRegistryName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueRegistry) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueRegistry) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -21719,7 +25338,7 @@ func (j *jsiiProxy_GlueRegistry) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueRegistry) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueRegistry) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -21767,12 +25386,40 @@ func (g *jsiiProxy_GlueRegistry) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueRegistry) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueRegistry) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueRegistry) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21809,12 +25456,54 @@ func (g *jsiiProxy_GlueRegistry) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueRegistry) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueRegistry) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueRegistry) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueRegistry) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21939,30 +25628,30 @@ func (g *jsiiProxy_GlueRegistry) ToTerraform() interface{} {
 // AWS Glue.
 type GlueRegistryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry.html#registry_name GlueRegistry#registry_name}.
-	RegistryName *string `json:"registryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry.html#description GlueRegistry#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry.html#tags GlueRegistry#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry.html#tags_all GlueRegistry#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry#registry_name GlueRegistry#registry_name}.
+	RegistryName *string `json:"registryName" yaml:"registryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry#description GlueRegistry#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry#tags GlueRegistry#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_registry#tags_all GlueRegistry#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy.html aws_glue_resource_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy aws_glue_resource_policy}.
 type GlueResourcePolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EnableHybrid() *string
@@ -21984,10 +25673,15 @@ type GlueResourcePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnableHybrid()
@@ -22023,8 +25717,8 @@ func (j *jsiiProxy_GlueResourcePolicy) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_GlueResourcePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueResourcePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -22183,7 +25877,7 @@ func (j *jsiiProxy_GlueResourcePolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy.html aws_glue_resource_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy aws_glue_resource_policy} Resource.
 func NewGlueResourcePolicy(scope constructs.Construct, id *string, config *GlueResourcePolicyConfig) GlueResourcePolicy {
 	_init_.Initialize()
 
@@ -22198,7 +25892,7 @@ func NewGlueResourcePolicy(scope constructs.Construct, id *string, config *GlueR
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy.html aws_glue_resource_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy aws_glue_resource_policy} Resource.
 func NewGlueResourcePolicy_Override(g GlueResourcePolicy, scope constructs.Construct, id *string, config *GlueResourcePolicyConfig) {
 	_init_.Initialize()
 
@@ -22209,7 +25903,7 @@ func NewGlueResourcePolicy_Override(g GlueResourcePolicy, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_GlueResourcePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueResourcePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -22297,12 +25991,40 @@ func (g *jsiiProxy_GlueResourcePolicy) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueResourcePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueResourcePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueResourcePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22339,12 +26061,54 @@ func (g *jsiiProxy_GlueResourcePolicy) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueResourcePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueResourcePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueResourcePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueResourcePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22453,20 +26217,20 @@ func (g *jsiiProxy_GlueResourcePolicy) ToTerraform() interface{} {
 // AWS Glue.
 type GlueResourcePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy.html#policy GlueResourcePolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy.html#enable_hybrid GlueResourcePolicy#enable_hybrid}.
-	EnableHybrid *string `json:"enableHybrid"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy#policy GlueResourcePolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_resource_policy#enable_hybrid GlueResourcePolicy#enable_hybrid}.
+	EnableHybrid *string `json:"enableHybrid" yaml:"enableHybrid"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html aws_glue_schema}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_schema aws_glue_schema}.
 type GlueSchema interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -22475,8 +26239,8 @@ type GlueSchema interface {
 	SetCompatibility(val *string)
 	CompatibilityInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DataFormat() *string
 	SetDataFormat(val *string)
 	DataFormatInput() *string
@@ -22507,20 +26271,25 @@ type GlueSchema interface {
 	SchemaName() *string
 	SetSchemaName(val *string)
 	SchemaNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -22589,8 +26358,8 @@ func (j *jsiiProxy_GlueSchema) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueSchema) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueSchema) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -22819,8 +26588,8 @@ func (j *jsiiProxy_GlueSchema) SchemaNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueSchema) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueSchema) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -22829,8 +26598,8 @@ func (j *jsiiProxy_GlueSchema) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueSchema) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueSchema) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -22839,8 +26608,8 @@ func (j *jsiiProxy_GlueSchema) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueSchema) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueSchema) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -22849,8 +26618,8 @@ func (j *jsiiProxy_GlueSchema) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueSchema) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueSchema) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -22889,7 +26658,7 @@ func (j *jsiiProxy_GlueSchema) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html aws_glue_schema} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_schema aws_glue_schema} Resource.
 func NewGlueSchema(scope constructs.Construct, id *string, config *GlueSchemaConfig) GlueSchema {
 	_init_.Initialize()
 
@@ -22904,7 +26673,7 @@ func NewGlueSchema(scope constructs.Construct, id *string, config *GlueSchemaCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html aws_glue_schema} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_schema aws_glue_schema} Resource.
 func NewGlueSchema_Override(g GlueSchema, scope constructs.Construct, id *string, config *GlueSchemaConfig) {
 	_init_.Initialize()
 
@@ -22923,7 +26692,7 @@ func (j *jsiiProxy_GlueSchema) SetCompatibility(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueSchema) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueSchema) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -22995,7 +26764,7 @@ func (j *jsiiProxy_GlueSchema) SetSchemaName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueSchema) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueSchema) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -23003,7 +26772,7 @@ func (j *jsiiProxy_GlueSchema) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueSchema) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueSchema) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -23051,12 +26820,40 @@ func (g *jsiiProxy_GlueSchema) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSchema) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSchema) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSchema) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23093,12 +26890,54 @@ func (g *jsiiProxy_GlueSchema) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSchema) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSchema) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSchema) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSchema) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23231,38 +27070,38 @@ func (g *jsiiProxy_GlueSchema) ToTerraform() interface{} {
 // AWS Glue.
 type GlueSchemaConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#compatibility GlueSchema#compatibility}.
-	Compatibility *string `json:"compatibility"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#data_format GlueSchema#data_format}.
-	DataFormat *string `json:"dataFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#schema_definition GlueSchema#schema_definition}.
-	SchemaDefinition *string `json:"schemaDefinition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#schema_name GlueSchema#schema_name}.
-	SchemaName *string `json:"schemaName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#description GlueSchema#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#registry_arn GlueSchema#registry_arn}.
-	RegistryArn *string `json:"registryArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#tags GlueSchema#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema.html#tags_all GlueSchema#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#compatibility GlueSchema#compatibility}.
+	Compatibility *string `json:"compatibility" yaml:"compatibility"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#data_format GlueSchema#data_format}.
+	DataFormat *string `json:"dataFormat" yaml:"dataFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#schema_definition GlueSchema#schema_definition}.
+	SchemaDefinition *string `json:"schemaDefinition" yaml:"schemaDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#schema_name GlueSchema#schema_name}.
+	SchemaName *string `json:"schemaName" yaml:"schemaName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#description GlueSchema#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#registry_arn GlueSchema#registry_arn}.
+	RegistryArn *string `json:"registryArn" yaml:"registryArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#tags GlueSchema#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_schema#tags_all GlueSchema#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html aws_glue_security_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration aws_glue_security_configuration}.
 type GlueSecurityConfiguration interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EncryptionConfiguration() GlueSecurityConfigurationEncryptionConfigurationOutputReference
@@ -23283,10 +27122,15 @@ type GlueSecurityConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEncryptionConfiguration(value *GlueSecurityConfigurationEncryptionConfiguration)
@@ -23322,8 +27166,8 @@ func (j *jsiiProxy_GlueSecurityConfiguration) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_GlueSecurityConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueSecurityConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -23482,7 +27326,7 @@ func (j *jsiiProxy_GlueSecurityConfiguration) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html aws_glue_security_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration aws_glue_security_configuration} Resource.
 func NewGlueSecurityConfiguration(scope constructs.Construct, id *string, config *GlueSecurityConfigurationConfig) GlueSecurityConfiguration {
 	_init_.Initialize()
 
@@ -23497,7 +27341,7 @@ func NewGlueSecurityConfiguration(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html aws_glue_security_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration aws_glue_security_configuration} Resource.
 func NewGlueSecurityConfiguration_Override(g GlueSecurityConfiguration, scope constructs.Construct, id *string, config *GlueSecurityConfigurationConfig) {
 	_init_.Initialize()
 
@@ -23508,7 +27352,7 @@ func NewGlueSecurityConfiguration_Override(g GlueSecurityConfiguration, scope co
 	)
 }
 
-func (j *jsiiProxy_GlueSecurityConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueSecurityConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -23588,12 +27432,40 @@ func (g *jsiiProxy_GlueSecurityConfiguration) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSecurityConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSecurityConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23630,12 +27502,54 @@ func (g *jsiiProxy_GlueSecurityConfiguration) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSecurityConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSecurityConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23744,41 +27658,41 @@ func (g *jsiiProxy_GlueSecurityConfiguration) ToTerraform() interface{} {
 // AWS Glue.
 type GlueSecurityConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// encryption_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#encryption_configuration GlueSecurityConfiguration#encryption_configuration}
-	EncryptionConfiguration *GlueSecurityConfigurationEncryptionConfiguration `json:"encryptionConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#name GlueSecurityConfiguration#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#encryption_configuration GlueSecurityConfiguration#encryption_configuration}
+	EncryptionConfiguration *GlueSecurityConfigurationEncryptionConfiguration `json:"encryptionConfiguration" yaml:"encryptionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#name GlueSecurityConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type GlueSecurityConfigurationEncryptionConfiguration struct {
 	// cloudwatch_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#cloudwatch_encryption GlueSecurityConfiguration#cloudwatch_encryption}
-	CloudwatchEncryption *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption `json:"cloudwatchEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#cloudwatch_encryption GlueSecurityConfiguration#cloudwatch_encryption}
+	CloudwatchEncryption *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption `json:"cloudwatchEncryption" yaml:"cloudwatchEncryption"`
 	// job_bookmarks_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#job_bookmarks_encryption GlueSecurityConfiguration#job_bookmarks_encryption}
-	JobBookmarksEncryption *GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption `json:"jobBookmarksEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#job_bookmarks_encryption GlueSecurityConfiguration#job_bookmarks_encryption}
+	JobBookmarksEncryption *GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption `json:"jobBookmarksEncryption" yaml:"jobBookmarksEncryption"`
 	// s3_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#s3_encryption GlueSecurityConfiguration#s3_encryption}
-	S3Encryption *GlueSecurityConfigurationEncryptionConfigurationS3Encryption `json:"s3Encryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#s3_encryption GlueSecurityConfiguration#s3_encryption}
+	S3Encryption *GlueSecurityConfigurationEncryptionConfigurationS3Encryption `json:"s3Encryption" yaml:"s3Encryption"`
 }
 
 type GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#cloudwatch_encryption_mode GlueSecurityConfiguration#cloudwatch_encryption_mode}.
-	CloudwatchEncryptionMode *string `json:"cloudwatchEncryptionMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#kms_key_arn GlueSecurityConfiguration#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#cloudwatch_encryption_mode GlueSecurityConfiguration#cloudwatch_encryption_mode}.
+	CloudwatchEncryptionMode *string `json:"cloudwatchEncryptionMode" yaml:"cloudwatchEncryptionMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#kms_key_arn GlueSecurityConfiguration#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 }
 
 type GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference interface {
@@ -23795,12 +27709,17 @@ type GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputR
 	KmsKeyArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCloudwatchEncryptionMode()
@@ -23882,8 +27801,8 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 	return returns
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23892,7 +27811,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 	return returns
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference {
+func NewGlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference{}
@@ -23906,7 +27825,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutp
 	return &j
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23956,7 +27875,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 	)
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23965,12 +27884,40 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24007,12 +27954,54 @@ func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24065,10 +28054,10 @@ func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationCloudwatchEnc
 }
 
 type GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#job_bookmarks_encryption_mode GlueSecurityConfiguration#job_bookmarks_encryption_mode}.
-	JobBookmarksEncryptionMode *string `json:"jobBookmarksEncryptionMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#kms_key_arn GlueSecurityConfiguration#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#job_bookmarks_encryption_mode GlueSecurityConfiguration#job_bookmarks_encryption_mode}.
+	JobBookmarksEncryptionMode *string `json:"jobBookmarksEncryptionMode" yaml:"jobBookmarksEncryptionMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#kms_key_arn GlueSecurityConfiguration#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 }
 
 type GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference interface {
@@ -24085,12 +28074,17 @@ type GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutpu
 	KmsKeyArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetJobBookmarksEncryptionMode()
@@ -24172,8 +28166,8 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksE
 	return returns
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24182,7 +28176,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksE
 	return returns
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference {
+func NewGlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference{}
@@ -24196,7 +28190,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOu
 	return &j
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24246,7 +28240,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksE
 	)
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24255,12 +28249,40 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksE
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24297,12 +28319,54 @@ func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksE
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationJobBookmarksEncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24368,12 +28432,17 @@ type GlueSecurityConfigurationEncryptionConfigurationOutputReference interface {
 	S3EncryptionInput() *GlueSecurityConfigurationEncryptionConfigurationS3Encryption
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCloudwatchEncryption(value *GlueSecurityConfigurationEncryptionConfigurationCloudwatchEncryption)
@@ -24476,8 +28545,8 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24486,7 +28555,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReferen
 	return returns
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationOutputReference {
+func NewGlueSecurityConfigurationEncryptionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference{}
@@ -24500,7 +28569,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationOutputReference(terrafor
 	return &j
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueSecurityConfigurationEncryptionConfigurationOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24534,7 +28603,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReferen
 	)
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24543,12 +28612,40 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReferen
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24585,12 +28682,54 @@ func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReferen
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24651,10 +28790,10 @@ func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationOutputReferen
 }
 
 type GlueSecurityConfigurationEncryptionConfigurationS3Encryption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#kms_key_arn GlueSecurityConfiguration#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration.html#s3_encryption_mode GlueSecurityConfiguration#s3_encryption_mode}.
-	S3EncryptionMode *string `json:"s3EncryptionMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#kms_key_arn GlueSecurityConfiguration#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_security_configuration#s3_encryption_mode GlueSecurityConfiguration#s3_encryption_mode}.
+	S3EncryptionMode *string `json:"s3EncryptionMode" yaml:"s3EncryptionMode"`
 }
 
 type GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference interface {
@@ -24671,12 +28810,17 @@ type GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference
 	S3EncryptionModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKeyArn()
@@ -24758,8 +28902,8 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionO
 	return returns
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24768,7 +28912,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionO
 	return returns
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference {
+func NewGlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference{}
@@ -24782,7 +28926,7 @@ func NewGlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputRefere
 	return &j
 }
 
-func NewGlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference_Override(g GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -24832,7 +28976,7 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionO
 	)
 }
 
-func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24841,12 +28985,40 @@ func (j *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionO
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24883,12 +29055,54 @@ func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionO
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24940,17 +29154,17 @@ func (g *jsiiProxy_GlueSecurityConfigurationEncryptionConfigurationS3EncryptionO
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html aws_glue_trigger}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger aws_glue_trigger}.
 type GlueTrigger interface {
 	cdktf.TerraformResource
-	Actions() *[]*GlueTriggerActions
-	SetActions(val *[]*GlueTriggerActions)
-	ActionsInput() *[]*GlueTriggerActions
+	Actions() interface{}
+	SetActions(val interface{})
+	ActionsInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -24976,13 +29190,16 @@ type GlueTrigger interface {
 	Schedule() *string
 	SetSchedule(val *string)
 	ScheduleInput() *string
+	StartOnCreation() interface{}
+	SetStartOnCreation(val interface{})
+	StartOnCreationInput() interface{}
 	State() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -24995,10 +29212,15 @@ type GlueTrigger interface {
 	SetWorkflowName(val *string)
 	WorkflowNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPredicate(value *GlueTriggerPredicate)
@@ -25008,6 +29230,7 @@ type GlueTrigger interface {
 	ResetOverrideLogicalId()
 	ResetPredicate()
 	ResetSchedule()
+	ResetStartOnCreation()
 	ResetTags()
 	ResetTagsAll()
 	ResetTimeouts()
@@ -25023,8 +29246,8 @@ type jsiiProxy_GlueTrigger struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_GlueTrigger) Actions() *[]*GlueTriggerActions {
-	var returns *[]*GlueTriggerActions
+func (j *jsiiProxy_GlueTrigger) Actions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"actions",
@@ -25033,8 +29256,8 @@ func (j *jsiiProxy_GlueTrigger) Actions() *[]*GlueTriggerActions {
 	return returns
 }
 
-func (j *jsiiProxy_GlueTrigger) ActionsInput() *[]*GlueTriggerActions {
-	var returns *[]*GlueTriggerActions
+func (j *jsiiProxy_GlueTrigger) ActionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"actionsInput",
@@ -25073,8 +29296,8 @@ func (j *jsiiProxy_GlueTrigger) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_GlueTrigger) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueTrigger) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -25263,6 +29486,26 @@ func (j *jsiiProxy_GlueTrigger) ScheduleInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_GlueTrigger) StartOnCreation() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"startOnCreation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlueTrigger) StartOnCreationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"startOnCreationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_GlueTrigger) State() *string {
 	var returns *string
 	_jsii_.Get(
@@ -25273,8 +29516,8 @@ func (j *jsiiProxy_GlueTrigger) State() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GlueTrigger) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueTrigger) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -25283,8 +29526,8 @@ func (j *jsiiProxy_GlueTrigger) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueTrigger) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueTrigger) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -25293,8 +29536,8 @@ func (j *jsiiProxy_GlueTrigger) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueTrigger) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueTrigger) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -25303,8 +29546,8 @@ func (j *jsiiProxy_GlueTrigger) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueTrigger) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueTrigger) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -25403,7 +29646,7 @@ func (j *jsiiProxy_GlueTrigger) WorkflowNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html aws_glue_trigger} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger aws_glue_trigger} Resource.
 func NewGlueTrigger(scope constructs.Construct, id *string, config *GlueTriggerConfig) GlueTrigger {
 	_init_.Initialize()
 
@@ -25418,7 +29661,7 @@ func NewGlueTrigger(scope constructs.Construct, id *string, config *GlueTriggerC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html aws_glue_trigger} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger aws_glue_trigger} Resource.
 func NewGlueTrigger_Override(g GlueTrigger, scope constructs.Construct, id *string, config *GlueTriggerConfig) {
 	_init_.Initialize()
 
@@ -25429,7 +29672,7 @@ func NewGlueTrigger_Override(g GlueTrigger, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_GlueTrigger) SetActions(val *[]*GlueTriggerActions) {
+func (j *jsiiProxy_GlueTrigger) SetActions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"actions",
@@ -25437,7 +29680,7 @@ func (j *jsiiProxy_GlueTrigger) SetActions(val *[]*GlueTriggerActions) {
 	)
 }
 
-func (j *jsiiProxy_GlueTrigger) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueTrigger) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -25501,7 +29744,15 @@ func (j *jsiiProxy_GlueTrigger) SetSchedule(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueTrigger) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueTrigger) SetStartOnCreation(val interface{}) {
+	_jsii_.Set(
+		j,
+		"startOnCreation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_GlueTrigger) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -25509,7 +29760,7 @@ func (j *jsiiProxy_GlueTrigger) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueTrigger) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueTrigger) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -25573,12 +29824,40 @@ func (g *jsiiProxy_GlueTrigger) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueTrigger) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueTrigger) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTrigger) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25615,12 +29894,54 @@ func (g *jsiiProxy_GlueTrigger) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueTrigger) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTrigger) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueTrigger) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTrigger) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25706,6 +30027,14 @@ func (g *jsiiProxy_GlueTrigger) ResetSchedule() {
 	_jsii_.InvokeVoid(
 		g,
 		"resetSchedule",
+		nil, // no parameters
+	)
+}
+
+func (g *jsiiProxy_GlueTrigger) ResetStartOnCreation() {
+	_jsii_.InvokeVoid(
+		g,
+		"resetStartOnCreation",
 		nil, // no parameters
 	)
 }
@@ -25799,25 +30128,25 @@ func (g *jsiiProxy_GlueTrigger) ToTerraform() interface{} {
 }
 
 type GlueTriggerActions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#arguments GlueTrigger#arguments}.
-	Arguments interface{} `json:"arguments"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#crawler_name GlueTrigger#crawler_name}.
-	CrawlerName *string `json:"crawlerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#job_name GlueTrigger#job_name}.
-	JobName *string `json:"jobName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#arguments GlueTrigger#arguments}.
+	Arguments *map[string]*string `json:"arguments" yaml:"arguments"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#crawler_name GlueTrigger#crawler_name}.
+	CrawlerName *string `json:"crawlerName" yaml:"crawlerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#job_name GlueTrigger#job_name}.
+	JobName *string `json:"jobName" yaml:"jobName"`
 	// notification_property block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#notification_property GlueTrigger#notification_property}
-	NotificationProperty *GlueTriggerActionsNotificationProperty `json:"notificationProperty"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#security_configuration GlueTrigger#security_configuration}.
-	SecurityConfiguration *string `json:"securityConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#timeout GlueTrigger#timeout}.
-	Timeout *float64 `json:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#notification_property GlueTrigger#notification_property}
+	NotificationProperty *GlueTriggerActionsNotificationProperty `json:"notificationProperty" yaml:"notificationProperty"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#security_configuration GlueTrigger#security_configuration}.
+	SecurityConfiguration *string `json:"securityConfiguration" yaml:"securityConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#timeout GlueTrigger#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
 }
 
 type GlueTriggerActionsNotificationProperty struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#notify_delay_after GlueTrigger#notify_delay_after}.
-	NotifyDelayAfter *float64 `json:"notifyDelayAfter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#notify_delay_after GlueTrigger#notify_delay_after}.
+	NotifyDelayAfter *float64 `json:"notifyDelayAfter" yaml:"notifyDelayAfter"`
 }
 
 type GlueTriggerActionsNotificationPropertyOutputReference interface {
@@ -25831,12 +30160,17 @@ type GlueTriggerActionsNotificationPropertyOutputReference interface {
 	NotifyDelayAfterInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetNotifyDelayAfter()
@@ -25897,8 +30231,8 @@ func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -25907,7 +30241,7 @@ func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) Terraf
 	return returns
 }
 
-func NewGlueTriggerActionsNotificationPropertyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueTriggerActionsNotificationPropertyOutputReference {
+func NewGlueTriggerActionsNotificationPropertyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueTriggerActionsNotificationPropertyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference{}
@@ -25921,7 +30255,7 @@ func NewGlueTriggerActionsNotificationPropertyOutputReference(terraformResource 
 	return &j
 }
 
-func NewGlueTriggerActionsNotificationPropertyOutputReference_Override(g GlueTriggerActionsNotificationPropertyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueTriggerActionsNotificationPropertyOutputReference_Override(g GlueTriggerActionsNotificationPropertyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -25963,7 +30297,7 @@ func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -25972,12 +30306,40 @@ func (j *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) SetTer
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26014,12 +30376,54 @@ func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetNum
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26066,70 +30470,72 @@ func (g *jsiiProxy_GlueTriggerActionsNotificationPropertyOutputReference) ResetN
 // AWS Glue.
 type GlueTriggerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// actions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#actions GlueTrigger#actions}
-	Actions *[]*GlueTriggerActions `json:"actions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#name GlueTrigger#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#type GlueTrigger#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#description GlueTrigger#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#enabled GlueTrigger#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#actions GlueTrigger#actions}
+	Actions interface{} `json:"actions" yaml:"actions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#name GlueTrigger#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#type GlueTrigger#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#description GlueTrigger#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#enabled GlueTrigger#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 	// predicate block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#predicate GlueTrigger#predicate}
-	Predicate *GlueTriggerPredicate `json:"predicate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#schedule GlueTrigger#schedule}.
-	Schedule *string `json:"schedule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#tags GlueTrigger#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#tags_all GlueTrigger#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#predicate GlueTrigger#predicate}
+	Predicate *GlueTriggerPredicate `json:"predicate" yaml:"predicate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#schedule GlueTrigger#schedule}.
+	Schedule *string `json:"schedule" yaml:"schedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#start_on_creation GlueTrigger#start_on_creation}.
+	StartOnCreation interface{} `json:"startOnCreation" yaml:"startOnCreation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#tags GlueTrigger#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#tags_all GlueTrigger#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#timeouts GlueTrigger#timeouts}
-	Timeouts *GlueTriggerTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#workflow_name GlueTrigger#workflow_name}.
-	WorkflowName *string `json:"workflowName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#timeouts GlueTrigger#timeouts}
+	Timeouts *GlueTriggerTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#workflow_name GlueTrigger#workflow_name}.
+	WorkflowName *string `json:"workflowName" yaml:"workflowName"`
 }
 
 type GlueTriggerPredicate struct {
 	// conditions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#conditions GlueTrigger#conditions}
-	Conditions *[]*GlueTriggerPredicateConditions `json:"conditions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#logical GlueTrigger#logical}.
-	Logical *string `json:"logical"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#conditions GlueTrigger#conditions}
+	Conditions interface{} `json:"conditions" yaml:"conditions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#logical GlueTrigger#logical}.
+	Logical *string `json:"logical" yaml:"logical"`
 }
 
 type GlueTriggerPredicateConditions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#crawler_name GlueTrigger#crawler_name}.
-	CrawlerName *string `json:"crawlerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#crawl_state GlueTrigger#crawl_state}.
-	CrawlState *string `json:"crawlState"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#job_name GlueTrigger#job_name}.
-	JobName *string `json:"jobName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#logical_operator GlueTrigger#logical_operator}.
-	LogicalOperator *string `json:"logicalOperator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#state GlueTrigger#state}.
-	State *string `json:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#crawler_name GlueTrigger#crawler_name}.
+	CrawlerName *string `json:"crawlerName" yaml:"crawlerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#crawl_state GlueTrigger#crawl_state}.
+	CrawlState *string `json:"crawlState" yaml:"crawlState"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#job_name GlueTrigger#job_name}.
+	JobName *string `json:"jobName" yaml:"jobName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#logical_operator GlueTrigger#logical_operator}.
+	LogicalOperator *string `json:"logicalOperator" yaml:"logicalOperator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#state GlueTrigger#state}.
+	State *string `json:"state" yaml:"state"`
 }
 
 type GlueTriggerPredicateOutputReference interface {
 	cdktf.ComplexObject
-	Conditions() *[]*GlueTriggerPredicateConditions
-	SetConditions(val *[]*GlueTriggerPredicateConditions)
-	ConditionsInput() *[]*GlueTriggerPredicateConditions
+	Conditions() interface{}
+	SetConditions(val interface{})
+	ConditionsInput() interface{}
 	InternalValue() *GlueTriggerPredicate
 	SetInternalValue(val *GlueTriggerPredicate)
 	IsSingleItem() *bool
@@ -26139,12 +30545,17 @@ type GlueTriggerPredicateOutputReference interface {
 	LogicalInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLogical()
@@ -26155,8 +30566,8 @@ type jsiiProxy_GlueTriggerPredicateOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_GlueTriggerPredicateOutputReference) Conditions() *[]*GlueTriggerPredicateConditions {
-	var returns *[]*GlueTriggerPredicateConditions
+func (j *jsiiProxy_GlueTriggerPredicateOutputReference) Conditions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"conditions",
@@ -26165,8 +30576,8 @@ func (j *jsiiProxy_GlueTriggerPredicateOutputReference) Conditions() *[]*GlueTri
 	return returns
 }
 
-func (j *jsiiProxy_GlueTriggerPredicateOutputReference) ConditionsInput() *[]*GlueTriggerPredicateConditions {
-	var returns *[]*GlueTriggerPredicateConditions
+func (j *jsiiProxy_GlueTriggerPredicateOutputReference) ConditionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"conditionsInput",
@@ -26225,8 +30636,8 @@ func (j *jsiiProxy_GlueTriggerPredicateOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_GlueTriggerPredicateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueTriggerPredicateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -26235,7 +30646,7 @@ func (j *jsiiProxy_GlueTriggerPredicateOutputReference) TerraformResource() cdkt
 	return returns
 }
 
-func NewGlueTriggerPredicateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueTriggerPredicateOutputReference {
+func NewGlueTriggerPredicateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueTriggerPredicateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueTriggerPredicateOutputReference{}
@@ -26249,7 +30660,7 @@ func NewGlueTriggerPredicateOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewGlueTriggerPredicateOutputReference_Override(g GlueTriggerPredicateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueTriggerPredicateOutputReference_Override(g GlueTriggerPredicateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -26259,7 +30670,7 @@ func NewGlueTriggerPredicateOutputReference_Override(g GlueTriggerPredicateOutpu
 	)
 }
 
-func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetConditions(val *[]*GlueTriggerPredicateConditions) {
+func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetConditions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"conditions",
@@ -26299,7 +30710,7 @@ func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -26308,12 +30719,40 @@ func (j *jsiiProxy_GlueTriggerPredicateOutputReference) SetTerraformResource(val
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26350,12 +30789,54 @@ func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerPredicateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26400,10 +30881,10 @@ func (g *jsiiProxy_GlueTriggerPredicateOutputReference) ResetLogical() {
 }
 
 type GlueTriggerTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#create GlueTrigger#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger.html#delete GlueTrigger#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#create GlueTrigger#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_trigger#delete GlueTrigger#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type GlueTriggerTimeoutsOutputReference interface {
@@ -26420,12 +30901,17 @@ type GlueTriggerTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -26507,8 +30993,8 @@ func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -26517,7 +31003,7 @@ func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) TerraformResource() cdktf
 	return returns
 }
 
-func NewGlueTriggerTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GlueTriggerTimeoutsOutputReference {
+func NewGlueTriggerTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GlueTriggerTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GlueTriggerTimeoutsOutputReference{}
@@ -26531,7 +31017,7 @@ func NewGlueTriggerTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	return &j
 }
 
-func NewGlueTriggerTimeoutsOutputReference_Override(g GlueTriggerTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGlueTriggerTimeoutsOutputReference_Override(g GlueTriggerTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -26581,7 +31067,7 @@ func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -26590,12 +31076,40 @@ func (j *jsiiProxy_GlueTriggerTimeoutsOutputReference) SetTerraformResource(val 
 }
 
 // Experimental.
-func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26632,12 +31146,54 @@ func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26689,7 +31245,7 @@ func (g *jsiiProxy_GlueTriggerTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html aws_glue_user_defined_function}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function aws_glue_user_defined_function}.
 type GlueUserDefinedFunction interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -26701,8 +31257,8 @@ type GlueUserDefinedFunction interface {
 	SetClassName(val *string)
 	ClassNameInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateTime() *string
 	DatabaseName() *string
 	SetDatabaseName(val *string)
@@ -26727,17 +31283,22 @@ type GlueUserDefinedFunction interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	ResourceUris() *[]*GlueUserDefinedFunctionResourceUris
-	SetResourceUris(val *[]*GlueUserDefinedFunctionResourceUris)
-	ResourceUrisInput() *[]*GlueUserDefinedFunctionResourceUris
+	ResourceUris() interface{}
+	SetResourceUris(val interface{})
+	ResourceUrisInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCatalogId()
@@ -26824,8 +31385,8 @@ func (j *jsiiProxy_GlueUserDefinedFunction) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_GlueUserDefinedFunction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueUserDefinedFunction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -27004,8 +31565,8 @@ func (j *jsiiProxy_GlueUserDefinedFunction) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueUserDefinedFunction) ResourceUris() *[]*GlueUserDefinedFunctionResourceUris {
-	var returns *[]*GlueUserDefinedFunctionResourceUris
+func (j *jsiiProxy_GlueUserDefinedFunction) ResourceUris() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceUris",
@@ -27014,8 +31575,8 @@ func (j *jsiiProxy_GlueUserDefinedFunction) ResourceUris() *[]*GlueUserDefinedFu
 	return returns
 }
 
-func (j *jsiiProxy_GlueUserDefinedFunction) ResourceUrisInput() *[]*GlueUserDefinedFunctionResourceUris {
-	var returns *[]*GlueUserDefinedFunctionResourceUris
+func (j *jsiiProxy_GlueUserDefinedFunction) ResourceUrisInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceUrisInput",
@@ -27054,7 +31615,7 @@ func (j *jsiiProxy_GlueUserDefinedFunction) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html aws_glue_user_defined_function} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function aws_glue_user_defined_function} Resource.
 func NewGlueUserDefinedFunction(scope constructs.Construct, id *string, config *GlueUserDefinedFunctionConfig) GlueUserDefinedFunction {
 	_init_.Initialize()
 
@@ -27069,7 +31630,7 @@ func NewGlueUserDefinedFunction(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html aws_glue_user_defined_function} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function aws_glue_user_defined_function} Resource.
 func NewGlueUserDefinedFunction_Override(g GlueUserDefinedFunction, scope constructs.Construct, id *string, config *GlueUserDefinedFunctionConfig) {
 	_init_.Initialize()
 
@@ -27096,7 +31657,7 @@ func (j *jsiiProxy_GlueUserDefinedFunction) SetClassName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlueUserDefinedFunction) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueUserDefinedFunction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -27160,7 +31721,7 @@ func (j *jsiiProxy_GlueUserDefinedFunction) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_GlueUserDefinedFunction) SetResourceUris(val *[]*GlueUserDefinedFunctionResourceUris) {
+func (j *jsiiProxy_GlueUserDefinedFunction) SetResourceUris(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceUris",
@@ -27208,12 +31769,40 @@ func (g *jsiiProxy_GlueUserDefinedFunction) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueUserDefinedFunction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueUserDefinedFunction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueUserDefinedFunction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27250,12 +31839,54 @@ func (g *jsiiProxy_GlueUserDefinedFunction) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueUserDefinedFunction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueUserDefinedFunction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueUserDefinedFunction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueUserDefinedFunction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27372,49 +32003,49 @@ func (g *jsiiProxy_GlueUserDefinedFunction) ToTerraform() interface{} {
 // AWS Glue.
 type GlueUserDefinedFunctionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#class_name GlueUserDefinedFunction#class_name}.
-	ClassName *string `json:"className"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#database_name GlueUserDefinedFunction#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#name GlueUserDefinedFunction#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#owner_name GlueUserDefinedFunction#owner_name}.
-	OwnerName *string `json:"ownerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#owner_type GlueUserDefinedFunction#owner_type}.
-	OwnerType *string `json:"ownerType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#catalog_id GlueUserDefinedFunction#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#class_name GlueUserDefinedFunction#class_name}.
+	ClassName *string `json:"className" yaml:"className"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#database_name GlueUserDefinedFunction#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#name GlueUserDefinedFunction#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#owner_name GlueUserDefinedFunction#owner_name}.
+	OwnerName *string `json:"ownerName" yaml:"ownerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#owner_type GlueUserDefinedFunction#owner_type}.
+	OwnerType *string `json:"ownerType" yaml:"ownerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#catalog_id GlueUserDefinedFunction#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 	// resource_uris block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#resource_uris GlueUserDefinedFunction#resource_uris}
-	ResourceUris *[]*GlueUserDefinedFunctionResourceUris `json:"resourceUris"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#resource_uris GlueUserDefinedFunction#resource_uris}
+	ResourceUris interface{} `json:"resourceUris" yaml:"resourceUris"`
 }
 
 type GlueUserDefinedFunctionResourceUris struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#resource_type GlueUserDefinedFunction#resource_type}.
-	ResourceType *string `json:"resourceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function.html#uri GlueUserDefinedFunction#uri}.
-	Uri *string `json:"uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#resource_type GlueUserDefinedFunction#resource_type}.
+	ResourceType *string `json:"resourceType" yaml:"resourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_user_defined_function#uri GlueUserDefinedFunction#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html aws_glue_workflow}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow aws_glue_workflow}.
 type GlueWorkflow interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DefaultRunProperties() interface{}
-	SetDefaultRunProperties(val interface{})
-	DefaultRunPropertiesInput() interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DefaultRunProperties() *map[string]*string
+	SetDefaultRunProperties(val *map[string]*string)
+	DefaultRunPropertiesInput() *map[string]*string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -27435,20 +32066,25 @@ type GlueWorkflow interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDefaultRunProperties()
@@ -27499,8 +32135,8 @@ func (j *jsiiProxy_GlueWorkflow) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_GlueWorkflow) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueWorkflow) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -27509,8 +32145,8 @@ func (j *jsiiProxy_GlueWorkflow) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueWorkflow) DefaultRunProperties() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueWorkflow) DefaultRunProperties() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"defaultRunProperties",
@@ -27519,8 +32155,8 @@ func (j *jsiiProxy_GlueWorkflow) DefaultRunProperties() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueWorkflow) DefaultRunPropertiesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueWorkflow) DefaultRunPropertiesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"defaultRunPropertiesInput",
@@ -27669,8 +32305,8 @@ func (j *jsiiProxy_GlueWorkflow) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueWorkflow) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueWorkflow) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -27679,8 +32315,8 @@ func (j *jsiiProxy_GlueWorkflow) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueWorkflow) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueWorkflow) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -27689,8 +32325,8 @@ func (j *jsiiProxy_GlueWorkflow) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueWorkflow) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueWorkflow) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -27699,8 +32335,8 @@ func (j *jsiiProxy_GlueWorkflow) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GlueWorkflow) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GlueWorkflow) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -27739,7 +32375,7 @@ func (j *jsiiProxy_GlueWorkflow) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html aws_glue_workflow} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow aws_glue_workflow} Resource.
 func NewGlueWorkflow(scope constructs.Construct, id *string, config *GlueWorkflowConfig) GlueWorkflow {
 	_init_.Initialize()
 
@@ -27754,7 +32390,7 @@ func NewGlueWorkflow(scope constructs.Construct, id *string, config *GlueWorkflo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html aws_glue_workflow} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow aws_glue_workflow} Resource.
 func NewGlueWorkflow_Override(g GlueWorkflow, scope constructs.Construct, id *string, config *GlueWorkflowConfig) {
 	_init_.Initialize()
 
@@ -27765,7 +32401,7 @@ func NewGlueWorkflow_Override(g GlueWorkflow, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_GlueWorkflow) SetCount(val interface{}) {
+func (j *jsiiProxy_GlueWorkflow) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -27773,7 +32409,7 @@ func (j *jsiiProxy_GlueWorkflow) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueWorkflow) SetDefaultRunProperties(val interface{}) {
+func (j *jsiiProxy_GlueWorkflow) SetDefaultRunProperties(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"defaultRunProperties",
@@ -27829,7 +32465,7 @@ func (j *jsiiProxy_GlueWorkflow) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GlueWorkflow) SetTags(val interface{}) {
+func (j *jsiiProxy_GlueWorkflow) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -27837,7 +32473,7 @@ func (j *jsiiProxy_GlueWorkflow) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GlueWorkflow) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GlueWorkflow) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -27885,12 +32521,40 @@ func (g *jsiiProxy_GlueWorkflow) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueWorkflow) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueWorkflow) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueWorkflow) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27927,12 +32591,54 @@ func (g *jsiiProxy_GlueWorkflow) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (g *jsiiProxy_GlueWorkflow) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueWorkflow) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GlueWorkflow) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GlueWorkflow) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28081,23 +32787,23 @@ func (g *jsiiProxy_GlueWorkflow) ToTerraform() interface{} {
 // AWS Glue.
 type GlueWorkflowConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html#default_run_properties GlueWorkflow#default_run_properties}.
-	DefaultRunProperties interface{} `json:"defaultRunProperties"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html#description GlueWorkflow#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html#max_concurrent_runs GlueWorkflow#max_concurrent_runs}.
-	MaxConcurrentRuns *float64 `json:"maxConcurrentRuns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html#name GlueWorkflow#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html#tags GlueWorkflow#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow.html#tags_all GlueWorkflow#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow#default_run_properties GlueWorkflow#default_run_properties}.
+	DefaultRunProperties *map[string]*string `json:"defaultRunProperties" yaml:"defaultRunProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow#description GlueWorkflow#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow#max_concurrent_runs GlueWorkflow#max_concurrent_runs}.
+	MaxConcurrentRuns *float64 `json:"maxConcurrentRuns" yaml:"maxConcurrentRuns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow#name GlueWorkflow#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow#tags GlueWorkflow#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/glue_workflow#tags_all GlueWorkflow#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

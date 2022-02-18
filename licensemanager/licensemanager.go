@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/licensemanager/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association.html aws_licensemanager_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association aws_licensemanager_association}.
 type LicensemanagerAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37,10 +37,15 @@ type LicensemanagerAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -75,8 +80,8 @@ func (j *jsiiProxy_LicensemanagerAssociation) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_LicensemanagerAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LicensemanagerAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -235,7 +240,7 @@ func (j *jsiiProxy_LicensemanagerAssociation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association.html aws_licensemanager_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association aws_licensemanager_association} Resource.
 func NewLicensemanagerAssociation(scope constructs.Construct, id *string, config *LicensemanagerAssociationConfig) LicensemanagerAssociation {
 	_init_.Initialize()
 
@@ -250,7 +255,7 @@ func NewLicensemanagerAssociation(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association.html aws_licensemanager_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association aws_licensemanager_association} Resource.
 func NewLicensemanagerAssociation_Override(l LicensemanagerAssociation, scope constructs.Construct, id *string, config *LicensemanagerAssociationConfig) {
 	_init_.Initialize()
 
@@ -261,7 +266,7 @@ func NewLicensemanagerAssociation_Override(l LicensemanagerAssociation, scope co
 	)
 }
 
-func (j *jsiiProxy_LicensemanagerAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_LicensemanagerAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -349,12 +354,40 @@ func (l *jsiiProxy_LicensemanagerAssociation) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (l *jsiiProxy_LicensemanagerAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LicensemanagerAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LicensemanagerAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -391,12 +424,54 @@ func (l *jsiiProxy_LicensemanagerAssociation) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (l *jsiiProxy_LicensemanagerAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LicensemanagerAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LicensemanagerAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LicensemanagerAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -497,27 +572,27 @@ func (l *jsiiProxy_LicensemanagerAssociation) ToTerraform() interface{} {
 // AWS License Manager.
 type LicensemanagerAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association.html#license_configuration_arn LicensemanagerAssociation#license_configuration_arn}.
-	LicenseConfigurationArn *string `json:"licenseConfigurationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association.html#resource_arn LicensemanagerAssociation#resource_arn}.
-	ResourceArn *string `json:"resourceArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association#license_configuration_arn LicensemanagerAssociation#license_configuration_arn}.
+	LicenseConfigurationArn *string `json:"licenseConfigurationArn" yaml:"licenseConfigurationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_association#resource_arn LicensemanagerAssociation#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html aws_licensemanager_license_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration aws_licensemanager_license_configuration}.
 type LicensemanagerLicenseConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -548,20 +623,25 @@ type LicensemanagerLicenseConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -612,8 +692,8 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -832,8 +912,8 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) RawOverrides() interface{
 	return returns
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -842,8 +922,8 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -852,8 +932,8 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -862,8 +942,8 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsAllInput() interface{
 	return returns
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -902,7 +982,7 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html aws_licensemanager_license_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration aws_licensemanager_license_configuration} Resource.
 func NewLicensemanagerLicenseConfiguration(scope constructs.Construct, id *string, config *LicensemanagerLicenseConfigurationConfig) LicensemanagerLicenseConfiguration {
 	_init_.Initialize()
 
@@ -917,7 +997,7 @@ func NewLicensemanagerLicenseConfiguration(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html aws_licensemanager_license_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration aws_licensemanager_license_configuration} Resource.
 func NewLicensemanagerLicenseConfiguration_Override(l LicensemanagerLicenseConfiguration, scope constructs.Construct, id *string, config *LicensemanagerLicenseConfigurationConfig) {
 	_init_.Initialize()
 
@@ -928,7 +1008,7 @@ func NewLicensemanagerLicenseConfiguration_Override(l LicensemanagerLicenseConfi
 	)
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1008,7 +1088,7 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetProvider(val cdktf.Ter
 	)
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetTags(val interface{}) {
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1016,7 +1096,7 @@ func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetTags(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_LicensemanagerLicenseConfiguration) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1064,12 +1144,40 @@ func (l *jsiiProxy_LicensemanagerLicenseConfiguration) AddOverride(path *string,
 }
 
 // Experimental.
+func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1106,12 +1214,54 @@ func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LicensemanagerLicenseConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1260,27 +1410,27 @@ func (l *jsiiProxy_LicensemanagerLicenseConfiguration) ToTerraform() interface{}
 // AWS License Manager.
 type LicensemanagerLicenseConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#license_counting_type LicensemanagerLicenseConfiguration#license_counting_type}.
-	LicenseCountingType *string `json:"licenseCountingType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#name LicensemanagerLicenseConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#description LicensemanagerLicenseConfiguration#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#license_count LicensemanagerLicenseConfiguration#license_count}.
-	LicenseCount *float64 `json:"licenseCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#license_count_hard_limit LicensemanagerLicenseConfiguration#license_count_hard_limit}.
-	LicenseCountHardLimit interface{} `json:"licenseCountHardLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#license_rules LicensemanagerLicenseConfiguration#license_rules}.
-	LicenseRules *[]*string `json:"licenseRules"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#tags LicensemanagerLicenseConfiguration#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration.html#tags_all LicensemanagerLicenseConfiguration#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#license_counting_type LicensemanagerLicenseConfiguration#license_counting_type}.
+	LicenseCountingType *string `json:"licenseCountingType" yaml:"licenseCountingType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#name LicensemanagerLicenseConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#description LicensemanagerLicenseConfiguration#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#license_count LicensemanagerLicenseConfiguration#license_count}.
+	LicenseCount *float64 `json:"licenseCount" yaml:"licenseCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#license_count_hard_limit LicensemanagerLicenseConfiguration#license_count_hard_limit}.
+	LicenseCountHardLimit interface{} `json:"licenseCountHardLimit" yaml:"licenseCountHardLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#license_rules LicensemanagerLicenseConfiguration#license_rules}.
+	LicenseRules *[]*string `json:"licenseRules" yaml:"licenseRules"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#tags LicensemanagerLicenseConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/licensemanager_license_configuration#tags_all LicensemanagerLicenseConfiguration#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

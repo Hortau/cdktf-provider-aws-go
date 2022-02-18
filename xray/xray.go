@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/xray/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config.html aws_xray_encryption_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config aws_xray_encryption_config}.
 type XrayEncryptionConfig interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37,10 +37,15 @@ type XrayEncryptionConfig interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKeyId()
@@ -76,8 +81,8 @@ func (j *jsiiProxy_XrayEncryptionConfig) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_XrayEncryptionConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XrayEncryptionConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -236,7 +241,7 @@ func (j *jsiiProxy_XrayEncryptionConfig) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config.html aws_xray_encryption_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config aws_xray_encryption_config} Resource.
 func NewXrayEncryptionConfig(scope constructs.Construct, id *string, config *XrayEncryptionConfigConfig) XrayEncryptionConfig {
 	_init_.Initialize()
 
@@ -251,7 +256,7 @@ func NewXrayEncryptionConfig(scope constructs.Construct, id *string, config *Xra
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config.html aws_xray_encryption_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config aws_xray_encryption_config} Resource.
 func NewXrayEncryptionConfig_Override(x XrayEncryptionConfig, scope constructs.Construct, id *string, config *XrayEncryptionConfigConfig) {
 	_init_.Initialize()
 
@@ -262,7 +267,7 @@ func NewXrayEncryptionConfig_Override(x XrayEncryptionConfig, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_XrayEncryptionConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_XrayEncryptionConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -350,12 +355,40 @@ func (x *jsiiProxy_XrayEncryptionConfig) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (x *jsiiProxy_XrayEncryptionConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		x,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (x *jsiiProxy_XrayEncryptionConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		x,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XrayEncryptionConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		x,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -392,12 +425,54 @@ func (x *jsiiProxy_XrayEncryptionConfig) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (x *jsiiProxy_XrayEncryptionConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		x,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XrayEncryptionConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		x,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (x *jsiiProxy_XrayEncryptionConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		x,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XrayEncryptionConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		x,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -506,27 +581,27 @@ func (x *jsiiProxy_XrayEncryptionConfig) ToTerraform() interface{} {
 // AWS X-Ray.
 type XrayEncryptionConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config.html#type XrayEncryptionConfig#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config.html#key_id XrayEncryptionConfig#key_id}.
-	KeyId *string `json:"keyId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config#type XrayEncryptionConfig#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_encryption_config#key_id XrayEncryptionConfig#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/xray_group.html aws_xray_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/xray_group aws_xray_group}.
 type XrayGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FilterExpression() *string
@@ -544,20 +619,25 @@ type XrayGroup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -604,8 +684,8 @@ func (j *jsiiProxy_XrayGroup) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XrayGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XrayGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -734,8 +814,8 @@ func (j *jsiiProxy_XrayGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XrayGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XrayGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -744,8 +824,8 @@ func (j *jsiiProxy_XrayGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XrayGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XrayGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -754,8 +834,8 @@ func (j *jsiiProxy_XrayGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XrayGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XrayGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -764,8 +844,8 @@ func (j *jsiiProxy_XrayGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XrayGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XrayGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -804,7 +884,7 @@ func (j *jsiiProxy_XrayGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_group.html aws_xray_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_group aws_xray_group} Resource.
 func NewXrayGroup(scope constructs.Construct, id *string, config *XrayGroupConfig) XrayGroup {
 	_init_.Initialize()
 
@@ -819,7 +899,7 @@ func NewXrayGroup(scope constructs.Construct, id *string, config *XrayGroupConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_group.html aws_xray_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_group aws_xray_group} Resource.
 func NewXrayGroup_Override(x XrayGroup, scope constructs.Construct, id *string, config *XrayGroupConfig) {
 	_init_.Initialize()
 
@@ -830,7 +910,7 @@ func NewXrayGroup_Override(x XrayGroup, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_XrayGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_XrayGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -878,7 +958,7 @@ func (j *jsiiProxy_XrayGroup) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_XrayGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_XrayGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -886,7 +966,7 @@ func (j *jsiiProxy_XrayGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_XrayGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_XrayGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -934,12 +1014,40 @@ func (x *jsiiProxy_XrayGroup) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (x *jsiiProxy_XrayGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		x,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (x *jsiiProxy_XrayGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		x,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XrayGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		x,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -976,12 +1084,54 @@ func (x *jsiiProxy_XrayGroup) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (x *jsiiProxy_XrayGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		x,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XrayGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		x,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (x *jsiiProxy_XrayGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		x,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XrayGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		x,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1098,34 +1248,34 @@ func (x *jsiiProxy_XrayGroup) ToTerraform() interface{} {
 // AWS X-Ray.
 type XrayGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group.html#filter_expression XrayGroup#filter_expression}.
-	FilterExpression *string `json:"filterExpression"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group.html#group_name XrayGroup#group_name}.
-	GroupName *string `json:"groupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group.html#tags XrayGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group.html#tags_all XrayGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group#filter_expression XrayGroup#filter_expression}.
+	FilterExpression *string `json:"filterExpression" yaml:"filterExpression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group#group_name XrayGroup#group_name}.
+	GroupName *string `json:"groupName" yaml:"groupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group#tags XrayGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_group#tags_all XrayGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html aws_xray_sampling_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule aws_xray_sampling_rule}.
 type XraySamplingRule interface {
 	cdktf.TerraformResource
 	Arn() *string
-	Attributes() interface{}
-	SetAttributes(val interface{})
-	AttributesInput() interface{}
+	Attributes() *map[string]*string
+	SetAttributes(val *map[string]*string)
+	AttributesInput() *map[string]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FixedRate() *float64
@@ -1164,12 +1314,12 @@ type XraySamplingRule interface {
 	ServiceType() *string
 	SetServiceType(val *string)
 	ServiceTypeInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1180,10 +1330,15 @@ type XraySamplingRule interface {
 	SetVersion(val *float64)
 	VersionInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAttributes()
@@ -1212,8 +1367,8 @@ func (j *jsiiProxy_XraySamplingRule) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_XraySamplingRule) Attributes() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XraySamplingRule) Attributes() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"attributes",
@@ -1222,8 +1377,8 @@ func (j *jsiiProxy_XraySamplingRule) Attributes() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XraySamplingRule) AttributesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XraySamplingRule) AttributesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"attributesInput",
@@ -1252,8 +1407,8 @@ func (j *jsiiProxy_XraySamplingRule) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_XraySamplingRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XraySamplingRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1522,8 +1677,8 @@ func (j *jsiiProxy_XraySamplingRule) ServiceTypeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_XraySamplingRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XraySamplingRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1532,8 +1687,8 @@ func (j *jsiiProxy_XraySamplingRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XraySamplingRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XraySamplingRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1542,8 +1697,8 @@ func (j *jsiiProxy_XraySamplingRule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XraySamplingRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XraySamplingRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1552,8 +1707,8 @@ func (j *jsiiProxy_XraySamplingRule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_XraySamplingRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_XraySamplingRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1632,7 +1787,7 @@ func (j *jsiiProxy_XraySamplingRule) VersionInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html aws_xray_sampling_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule aws_xray_sampling_rule} Resource.
 func NewXraySamplingRule(scope constructs.Construct, id *string, config *XraySamplingRuleConfig) XraySamplingRule {
 	_init_.Initialize()
 
@@ -1647,7 +1802,7 @@ func NewXraySamplingRule(scope constructs.Construct, id *string, config *XraySam
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html aws_xray_sampling_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule aws_xray_sampling_rule} Resource.
 func NewXraySamplingRule_Override(x XraySamplingRule, scope constructs.Construct, id *string, config *XraySamplingRuleConfig) {
 	_init_.Initialize()
 
@@ -1658,7 +1813,7 @@ func NewXraySamplingRule_Override(x XraySamplingRule, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_XraySamplingRule) SetAttributes(val interface{}) {
+func (j *jsiiProxy_XraySamplingRule) SetAttributes(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"attributes",
@@ -1666,7 +1821,7 @@ func (j *jsiiProxy_XraySamplingRule) SetAttributes(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_XraySamplingRule) SetCount(val interface{}) {
+func (j *jsiiProxy_XraySamplingRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1770,7 +1925,7 @@ func (j *jsiiProxy_XraySamplingRule) SetServiceType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_XraySamplingRule) SetTags(val interface{}) {
+func (j *jsiiProxy_XraySamplingRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1778,7 +1933,7 @@ func (j *jsiiProxy_XraySamplingRule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_XraySamplingRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_XraySamplingRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1842,12 +1997,40 @@ func (x *jsiiProxy_XraySamplingRule) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (x *jsiiProxy_XraySamplingRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		x,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (x *jsiiProxy_XraySamplingRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		x,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XraySamplingRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		x,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1884,12 +2067,54 @@ func (x *jsiiProxy_XraySamplingRule) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (x *jsiiProxy_XraySamplingRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		x,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XraySamplingRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		x,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (x *jsiiProxy_XraySamplingRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		x,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (x *jsiiProxy_XraySamplingRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		x,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2022,39 +2247,39 @@ func (x *jsiiProxy_XraySamplingRule) ToTerraform() interface{} {
 // AWS X-Ray.
 type XraySamplingRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#fixed_rate XraySamplingRule#fixed_rate}.
-	FixedRate *float64 `json:"fixedRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#host XraySamplingRule#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#http_method XraySamplingRule#http_method}.
-	HttpMethod *string `json:"httpMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#priority XraySamplingRule#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#reservoir_size XraySamplingRule#reservoir_size}.
-	ReservoirSize *float64 `json:"reservoirSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#resource_arn XraySamplingRule#resource_arn}.
-	ResourceArn *string `json:"resourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#service_name XraySamplingRule#service_name}.
-	ServiceName *string `json:"serviceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#service_type XraySamplingRule#service_type}.
-	ServiceType *string `json:"serviceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#url_path XraySamplingRule#url_path}.
-	UrlPath *string `json:"urlPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#version XraySamplingRule#version}.
-	Version *float64 `json:"version"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#attributes XraySamplingRule#attributes}.
-	Attributes interface{} `json:"attributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#rule_name XraySamplingRule#rule_name}.
-	RuleName *string `json:"ruleName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#tags XraySamplingRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule.html#tags_all XraySamplingRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#fixed_rate XraySamplingRule#fixed_rate}.
+	FixedRate *float64 `json:"fixedRate" yaml:"fixedRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#host XraySamplingRule#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#http_method XraySamplingRule#http_method}.
+	HttpMethod *string `json:"httpMethod" yaml:"httpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#priority XraySamplingRule#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#reservoir_size XraySamplingRule#reservoir_size}.
+	ReservoirSize *float64 `json:"reservoirSize" yaml:"reservoirSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#resource_arn XraySamplingRule#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#service_name XraySamplingRule#service_name}.
+	ServiceName *string `json:"serviceName" yaml:"serviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#service_type XraySamplingRule#service_type}.
+	ServiceType *string `json:"serviceType" yaml:"serviceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#url_path XraySamplingRule#url_path}.
+	UrlPath *string `json:"urlPath" yaml:"urlPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#version XraySamplingRule#version}.
+	Version *float64 `json:"version" yaml:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#attributes XraySamplingRule#attributes}.
+	Attributes *map[string]*string `json:"attributes" yaml:"attributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#rule_name XraySamplingRule#rule_name}.
+	RuleName *string `json:"ruleName" yaml:"ruleName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#tags XraySamplingRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/xray_sampling_rule#tags_all XraySamplingRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

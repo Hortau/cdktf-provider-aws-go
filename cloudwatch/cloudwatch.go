@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/cloudwatch/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html aws_cloudwatch_composite_alarm}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm aws_cloudwatch_composite_alarm}.
 type CloudwatchCompositeAlarm interface {
 	cdktf.TerraformResource
 	ActionsEnabled() interface{}
@@ -30,8 +30,8 @@ type CloudwatchCompositeAlarm interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -49,20 +49,25 @@ type CloudwatchCompositeAlarm interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetActionsEnabled()
@@ -214,8 +219,8 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchCompositeAlarm) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -344,8 +349,8 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchCompositeAlarm) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -354,8 +359,8 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -364,8 +369,8 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -374,8 +379,8 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchCompositeAlarm) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -414,7 +419,7 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html aws_cloudwatch_composite_alarm} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm aws_cloudwatch_composite_alarm} Resource.
 func NewCloudwatchCompositeAlarm(scope constructs.Construct, id *string, config *CloudwatchCompositeAlarmConfig) CloudwatchCompositeAlarm {
 	_init_.Initialize()
 
@@ -429,7 +434,7 @@ func NewCloudwatchCompositeAlarm(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html aws_cloudwatch_composite_alarm} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm aws_cloudwatch_composite_alarm} Resource.
 func NewCloudwatchCompositeAlarm_Override(c CloudwatchCompositeAlarm, scope constructs.Construct, id *string, config *CloudwatchCompositeAlarmConfig) {
 	_init_.Initialize()
 
@@ -480,7 +485,7 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) SetAlarmRule(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchCompositeAlarm) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -528,7 +533,7 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudwatchCompositeAlarm) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -536,7 +541,7 @@ func (j *jsiiProxy_CloudwatchCompositeAlarm) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchCompositeAlarm) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudwatchCompositeAlarm) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -584,12 +589,40 @@ func (c *jsiiProxy_CloudwatchCompositeAlarm) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchCompositeAlarm) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchCompositeAlarm) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchCompositeAlarm) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -626,12 +659,54 @@ func (c *jsiiProxy_CloudwatchCompositeAlarm) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchCompositeAlarm) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchCompositeAlarm) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchCompositeAlarm) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchCompositeAlarm) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -788,40 +863,40 @@ func (c *jsiiProxy_CloudwatchCompositeAlarm) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchCompositeAlarmConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#alarm_name CloudwatchCompositeAlarm#alarm_name}.
-	AlarmName *string `json:"alarmName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#alarm_rule CloudwatchCompositeAlarm#alarm_rule}.
-	AlarmRule *string `json:"alarmRule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#actions_enabled CloudwatchCompositeAlarm#actions_enabled}.
-	ActionsEnabled interface{} `json:"actionsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#alarm_actions CloudwatchCompositeAlarm#alarm_actions}.
-	AlarmActions *[]*string `json:"alarmActions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#alarm_description CloudwatchCompositeAlarm#alarm_description}.
-	AlarmDescription *string `json:"alarmDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#insufficient_data_actions CloudwatchCompositeAlarm#insufficient_data_actions}.
-	InsufficientDataActions *[]*string `json:"insufficientDataActions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#ok_actions CloudwatchCompositeAlarm#ok_actions}.
-	OkActions *[]*string `json:"okActions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#tags CloudwatchCompositeAlarm#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm.html#tags_all CloudwatchCompositeAlarm#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#alarm_name CloudwatchCompositeAlarm#alarm_name}.
+	AlarmName *string `json:"alarmName" yaml:"alarmName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#alarm_rule CloudwatchCompositeAlarm#alarm_rule}.
+	AlarmRule *string `json:"alarmRule" yaml:"alarmRule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#actions_enabled CloudwatchCompositeAlarm#actions_enabled}.
+	ActionsEnabled interface{} `json:"actionsEnabled" yaml:"actionsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#alarm_actions CloudwatchCompositeAlarm#alarm_actions}.
+	AlarmActions *[]*string `json:"alarmActions" yaml:"alarmActions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#alarm_description CloudwatchCompositeAlarm#alarm_description}.
+	AlarmDescription *string `json:"alarmDescription" yaml:"alarmDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#insufficient_data_actions CloudwatchCompositeAlarm#insufficient_data_actions}.
+	InsufficientDataActions *[]*string `json:"insufficientDataActions" yaml:"insufficientDataActions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#ok_actions CloudwatchCompositeAlarm#ok_actions}.
+	OkActions *[]*string `json:"okActions" yaml:"okActions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#tags CloudwatchCompositeAlarm#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_composite_alarm#tags_all CloudwatchCompositeAlarm#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard.html aws_cloudwatch_dashboard}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard aws_cloudwatch_dashboard}.
 type CloudwatchDashboard interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DashboardArn() *string
 	DashboardBody() *string
 	SetDashboardBody(val *string)
@@ -844,10 +919,15 @@ type CloudwatchDashboard interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -882,8 +962,8 @@ func (j *jsiiProxy_CloudwatchDashboard) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchDashboard) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchDashboard) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1052,7 +1132,7 @@ func (j *jsiiProxy_CloudwatchDashboard) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard.html aws_cloudwatch_dashboard} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard aws_cloudwatch_dashboard} Resource.
 func NewCloudwatchDashboard(scope constructs.Construct, id *string, config *CloudwatchDashboardConfig) CloudwatchDashboard {
 	_init_.Initialize()
 
@@ -1067,7 +1147,7 @@ func NewCloudwatchDashboard(scope constructs.Construct, id *string, config *Clou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard.html aws_cloudwatch_dashboard} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard aws_cloudwatch_dashboard} Resource.
 func NewCloudwatchDashboard_Override(c CloudwatchDashboard, scope constructs.Construct, id *string, config *CloudwatchDashboardConfig) {
 	_init_.Initialize()
 
@@ -1078,7 +1158,7 @@ func NewCloudwatchDashboard_Override(c CloudwatchDashboard, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_CloudwatchDashboard) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchDashboard) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1166,12 +1246,40 @@ func (c *jsiiProxy_CloudwatchDashboard) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchDashboard) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchDashboard) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchDashboard) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1208,12 +1316,54 @@ func (c *jsiiProxy_CloudwatchDashboard) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchDashboard) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchDashboard) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchDashboard) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchDashboard) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1314,27 +1464,27 @@ func (c *jsiiProxy_CloudwatchDashboard) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchDashboardConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard.html#dashboard_body CloudwatchDashboard#dashboard_body}.
-	DashboardBody *string `json:"dashboardBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard.html#dashboard_name CloudwatchDashboard#dashboard_name}.
-	DashboardName *string `json:"dashboardName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard#dashboard_body CloudwatchDashboard#dashboard_body}.
+	DashboardBody *string `json:"dashboardBody" yaml:"dashboardBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_dashboard#dashboard_name CloudwatchDashboard#dashboard_name}.
+	DashboardName *string `json:"dashboardName" yaml:"dashboardName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination.html aws_cloudwatch_log_destination}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination aws_cloudwatch_log_destination}.
 type CloudwatchLogDestination interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1359,10 +1509,15 @@ type CloudwatchLogDestination interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1407,8 +1562,8 @@ func (j *jsiiProxy_CloudwatchLogDestination) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogDestination) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogDestination) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1587,7 +1742,7 @@ func (j *jsiiProxy_CloudwatchLogDestination) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination.html aws_cloudwatch_log_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination aws_cloudwatch_log_destination} Resource.
 func NewCloudwatchLogDestination(scope constructs.Construct, id *string, config *CloudwatchLogDestinationConfig) CloudwatchLogDestination {
 	_init_.Initialize()
 
@@ -1602,7 +1757,7 @@ func NewCloudwatchLogDestination(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination.html aws_cloudwatch_log_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination aws_cloudwatch_log_destination} Resource.
 func NewCloudwatchLogDestination_Override(c CloudwatchLogDestination, scope constructs.Construct, id *string, config *CloudwatchLogDestinationConfig) {
 	_init_.Initialize()
 
@@ -1613,7 +1768,7 @@ func NewCloudwatchLogDestination_Override(c CloudwatchLogDestination, scope cons
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogDestination) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogDestination) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1709,12 +1864,40 @@ func (c *jsiiProxy_CloudwatchLogDestination) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogDestination) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogDestination) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogDestination) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1751,12 +1934,54 @@ func (c *jsiiProxy_CloudwatchLogDestination) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogDestination) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogDestination) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogDestination) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogDestination) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1857,22 +2082,22 @@ func (c *jsiiProxy_CloudwatchLogDestination) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchLogDestinationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination.html#name CloudwatchLogDestination#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination.html#role_arn CloudwatchLogDestination#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination.html#target_arn CloudwatchLogDestination#target_arn}.
-	TargetArn *string `json:"targetArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination#name CloudwatchLogDestination#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination#role_arn CloudwatchLogDestination#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination#target_arn CloudwatchLogDestination#target_arn}.
+	TargetArn *string `json:"targetArn" yaml:"targetArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy.html aws_cloudwatch_log_destination_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy aws_cloudwatch_log_destination_policy}.
 type CloudwatchLogDestinationPolicy interface {
 	cdktf.TerraformResource
 	AccessPolicy() *string
@@ -1880,13 +2105,16 @@ type CloudwatchLogDestinationPolicy interface {
 	AccessPolicyInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationName() *string
 	SetDestinationName(val *string)
 	DestinationNameInput() *string
+	ForceUpdate() interface{}
+	SetForceUpdate(val interface{})
+	ForceUpdateInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -1900,12 +2128,18 @@ type CloudwatchLogDestinationPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	ResetForceUpdate()
 	ResetOverrideLogicalId()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
@@ -1958,8 +2192,8 @@ func (j *jsiiProxy_CloudwatchLogDestinationPolicy) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogDestinationPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogDestinationPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1993,6 +2227,26 @@ func (j *jsiiProxy_CloudwatchLogDestinationPolicy) DestinationNameInput() *strin
 	_jsii_.Get(
 		j,
 		"destinationNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchLogDestinationPolicy) ForceUpdate() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"forceUpdate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CloudwatchLogDestinationPolicy) ForceUpdateInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"forceUpdateInput",
 		&returns,
 	)
 	return returns
@@ -2098,7 +2352,7 @@ func (j *jsiiProxy_CloudwatchLogDestinationPolicy) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy.html aws_cloudwatch_log_destination_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy aws_cloudwatch_log_destination_policy} Resource.
 func NewCloudwatchLogDestinationPolicy(scope constructs.Construct, id *string, config *CloudwatchLogDestinationPolicyConfig) CloudwatchLogDestinationPolicy {
 	_init_.Initialize()
 
@@ -2113,7 +2367,7 @@ func NewCloudwatchLogDestinationPolicy(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy.html aws_cloudwatch_log_destination_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy aws_cloudwatch_log_destination_policy} Resource.
 func NewCloudwatchLogDestinationPolicy_Override(c CloudwatchLogDestinationPolicy, scope constructs.Construct, id *string, config *CloudwatchLogDestinationPolicyConfig) {
 	_init_.Initialize()
 
@@ -2132,7 +2386,7 @@ func (j *jsiiProxy_CloudwatchLogDestinationPolicy) SetAccessPolicy(val *string) 
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogDestinationPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogDestinationPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2152,6 +2406,14 @@ func (j *jsiiProxy_CloudwatchLogDestinationPolicy) SetDestinationName(val *strin
 	_jsii_.Set(
 		j,
 		"destinationName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CloudwatchLogDestinationPolicy) SetForceUpdate(val interface{}) {
+	_jsii_.Set(
+		j,
+		"forceUpdate",
 		val,
 	)
 }
@@ -2212,12 +2474,40 @@ func (c *jsiiProxy_CloudwatchLogDestinationPolicy) AddOverride(path *string, val
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2254,12 +2544,54 @@ func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogDestinationPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2288,6 +2620,14 @@ func (c *jsiiProxy_CloudwatchLogDestinationPolicy) OverrideLogicalId(newLogicalI
 		c,
 		"overrideLogicalId",
 		[]interface{}{newLogicalId},
+	)
+}
+
+func (c *jsiiProxy_CloudwatchLogDestinationPolicy) ResetForceUpdate() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetForceUpdate",
+		nil, // no parameters
 	)
 }
 
@@ -2360,27 +2700,29 @@ func (c *jsiiProxy_CloudwatchLogDestinationPolicy) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchLogDestinationPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy.html#access_policy CloudwatchLogDestinationPolicy#access_policy}.
-	AccessPolicy *string `json:"accessPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy.html#destination_name CloudwatchLogDestinationPolicy#destination_name}.
-	DestinationName *string `json:"destinationName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy#access_policy CloudwatchLogDestinationPolicy#access_policy}.
+	AccessPolicy *string `json:"accessPolicy" yaml:"accessPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy#destination_name CloudwatchLogDestinationPolicy#destination_name}.
+	DestinationName *string `json:"destinationName" yaml:"destinationName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_destination_policy#force_update CloudwatchLogDestinationPolicy#force_update}.
+	ForceUpdate interface{} `json:"forceUpdate" yaml:"forceUpdate"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html aws_cloudwatch_log_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group aws_cloudwatch_log_group}.
 type CloudwatchLogGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2404,20 +2746,25 @@ type CloudwatchLogGroup interface {
 	RetentionInDays() *float64
 	SetRetentionInDays(val *float64)
 	RetentionInDaysInput() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKmsKeyId()
@@ -2468,8 +2815,8 @@ func (j *jsiiProxy_CloudwatchLogGroup) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2638,8 +2985,8 @@ func (j *jsiiProxy_CloudwatchLogGroup) RetentionInDaysInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2648,8 +2995,8 @@ func (j *jsiiProxy_CloudwatchLogGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2658,8 +3005,8 @@ func (j *jsiiProxy_CloudwatchLogGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2668,8 +3015,8 @@ func (j *jsiiProxy_CloudwatchLogGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2708,7 +3055,7 @@ func (j *jsiiProxy_CloudwatchLogGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html aws_cloudwatch_log_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group aws_cloudwatch_log_group} Resource.
 func NewCloudwatchLogGroup(scope constructs.Construct, id *string, config *CloudwatchLogGroupConfig) CloudwatchLogGroup {
 	_init_.Initialize()
 
@@ -2723,7 +3070,7 @@ func NewCloudwatchLogGroup(scope constructs.Construct, id *string, config *Cloud
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html aws_cloudwatch_log_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group aws_cloudwatch_log_group} Resource.
 func NewCloudwatchLogGroup_Override(c CloudwatchLogGroup, scope constructs.Construct, id *string, config *CloudwatchLogGroupConfig) {
 	_init_.Initialize()
 
@@ -2734,7 +3081,7 @@ func NewCloudwatchLogGroup_Override(c CloudwatchLogGroup, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2798,7 +3145,7 @@ func (j *jsiiProxy_CloudwatchLogGroup) SetRetentionInDays(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2806,7 +3153,7 @@ func (j *jsiiProxy_CloudwatchLogGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2854,12 +3201,40 @@ func (c *jsiiProxy_CloudwatchLogGroup) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2896,12 +3271,54 @@ func (c *jsiiProxy_CloudwatchLogGroup) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3050,34 +3467,34 @@ func (c *jsiiProxy_CloudwatchLogGroup) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchLogGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html#kms_key_id CloudwatchLogGroup#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html#name CloudwatchLogGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html#name_prefix CloudwatchLogGroup#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html#retention_in_days CloudwatchLogGroup#retention_in_days}.
-	RetentionInDays *float64 `json:"retentionInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html#tags CloudwatchLogGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group.html#tags_all CloudwatchLogGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group#kms_key_id CloudwatchLogGroup#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group#name CloudwatchLogGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group#name_prefix CloudwatchLogGroup#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group#retention_in_days CloudwatchLogGroup#retention_in_days}.
+	RetentionInDays *float64 `json:"retentionInDays" yaml:"retentionInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group#tags CloudwatchLogGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_group#tags_all CloudwatchLogGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html aws_cloudwatch_log_metric_filter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter aws_cloudwatch_log_metric_filter}.
 type CloudwatchLogMetricFilter interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3104,10 +3521,15 @@ type CloudwatchLogMetricFilter interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutMetricTransformation(value *CloudwatchLogMetricFilterMetricTransformation)
@@ -3143,8 +3565,8 @@ func (j *jsiiProxy_CloudwatchLogMetricFilter) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogMetricFilter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogMetricFilter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3343,7 +3765,7 @@ func (j *jsiiProxy_CloudwatchLogMetricFilter) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html aws_cloudwatch_log_metric_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter aws_cloudwatch_log_metric_filter} Resource.
 func NewCloudwatchLogMetricFilter(scope constructs.Construct, id *string, config *CloudwatchLogMetricFilterConfig) CloudwatchLogMetricFilter {
 	_init_.Initialize()
 
@@ -3358,7 +3780,7 @@ func NewCloudwatchLogMetricFilter(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html aws_cloudwatch_log_metric_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter aws_cloudwatch_log_metric_filter} Resource.
 func NewCloudwatchLogMetricFilter_Override(c CloudwatchLogMetricFilter, scope constructs.Construct, id *string, config *CloudwatchLogMetricFilterConfig) {
 	_init_.Initialize()
 
@@ -3369,7 +3791,7 @@ func NewCloudwatchLogMetricFilter_Override(c CloudwatchLogMetricFilter, scope co
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogMetricFilter) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogMetricFilter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3465,12 +3887,40 @@ func (c *jsiiProxy_CloudwatchLogMetricFilter) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogMetricFilter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3507,12 +3957,54 @@ func (c *jsiiProxy_CloudwatchLogMetricFilter) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogMetricFilter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3621,38 +4113,38 @@ func (c *jsiiProxy_CloudwatchLogMetricFilter) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchLogMetricFilterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#log_group_name CloudwatchLogMetricFilter#log_group_name}.
-	LogGroupName *string `json:"logGroupName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#log_group_name CloudwatchLogMetricFilter#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
 	// metric_transformation block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#metric_transformation CloudwatchLogMetricFilter#metric_transformation}
-	MetricTransformation *CloudwatchLogMetricFilterMetricTransformation `json:"metricTransformation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#name CloudwatchLogMetricFilter#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#pattern CloudwatchLogMetricFilter#pattern}.
-	Pattern *string `json:"pattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#metric_transformation CloudwatchLogMetricFilter#metric_transformation}
+	MetricTransformation *CloudwatchLogMetricFilterMetricTransformation `json:"metricTransformation" yaml:"metricTransformation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#name CloudwatchLogMetricFilter#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#pattern CloudwatchLogMetricFilter#pattern}.
+	Pattern *string `json:"pattern" yaml:"pattern"`
 }
 
 type CloudwatchLogMetricFilterMetricTransformation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#name CloudwatchLogMetricFilter#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#namespace CloudwatchLogMetricFilter#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#value CloudwatchLogMetricFilter#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#default_value CloudwatchLogMetricFilter#default_value}.
-	DefaultValue *string `json:"defaultValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#dimensions CloudwatchLogMetricFilter#dimensions}.
-	Dimensions interface{} `json:"dimensions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html#unit CloudwatchLogMetricFilter#unit}.
-	Unit *string `json:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#name CloudwatchLogMetricFilter#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#namespace CloudwatchLogMetricFilter#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#value CloudwatchLogMetricFilter#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#default_value CloudwatchLogMetricFilter#default_value}.
+	DefaultValue *string `json:"defaultValue" yaml:"defaultValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#dimensions CloudwatchLogMetricFilter#dimensions}.
+	Dimensions *map[string]*string `json:"dimensions" yaml:"dimensions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter#unit CloudwatchLogMetricFilter#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
 }
 
 type CloudwatchLogMetricFilterMetricTransformationOutputReference interface {
@@ -3660,9 +4152,9 @@ type CloudwatchLogMetricFilterMetricTransformationOutputReference interface {
 	DefaultValue() *string
 	SetDefaultValue(val *string)
 	DefaultValueInput() *string
-	Dimensions() interface{}
-	SetDimensions(val interface{})
-	DimensionsInput() interface{}
+	Dimensions() *map[string]*string
+	SetDimensions(val *map[string]*string)
+	DimensionsInput() *map[string]*string
 	InternalValue() *CloudwatchLogMetricFilterMetricTransformation
 	SetInternalValue(val *CloudwatchLogMetricFilterMetricTransformation)
 	IsSingleItem() *bool
@@ -3675,18 +4167,23 @@ type CloudwatchLogMetricFilterMetricTransformationOutputReference interface {
 	NamespaceInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDefaultValue()
@@ -3719,8 +4216,8 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) Dimensions() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) Dimensions() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"dimensions",
@@ -3729,8 +4226,8 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) DimensionsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) DimensionsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"dimensionsInput",
@@ -3809,8 +4306,8 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3859,7 +4356,7 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	return returns
 }
 
-func NewCloudwatchLogMetricFilterMetricTransformationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchLogMetricFilterMetricTransformationOutputReference {
+func NewCloudwatchLogMetricFilterMetricTransformationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchLogMetricFilterMetricTransformationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference{}
@@ -3873,7 +4370,7 @@ func NewCloudwatchLogMetricFilterMetricTransformationOutputReference(terraformRe
 	return &j
 }
 
-func NewCloudwatchLogMetricFilterMetricTransformationOutputReference_Override(c CloudwatchLogMetricFilterMetricTransformationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchLogMetricFilterMetricTransformationOutputReference_Override(c CloudwatchLogMetricFilterMetricTransformationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3891,7 +4388,7 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) SetDimensions(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) SetDimensions(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"dimensions",
@@ -3939,7 +4436,7 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3964,12 +4461,40 @@ func (j *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4006,12 +4531,54 @@ func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4071,13 +4638,13 @@ func (c *jsiiProxy_CloudwatchLogMetricFilterMetricTransformationOutputReference)
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy.html aws_cloudwatch_log_resource_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy aws_cloudwatch_log_resource_policy}.
 type CloudwatchLogResourcePolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4099,10 +4666,15 @@ type CloudwatchLogResourcePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4137,8 +4709,8 @@ func (j *jsiiProxy_CloudwatchLogResourcePolicy) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogResourcePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogResourcePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4297,7 +4869,7 @@ func (j *jsiiProxy_CloudwatchLogResourcePolicy) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy.html aws_cloudwatch_log_resource_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy aws_cloudwatch_log_resource_policy} Resource.
 func NewCloudwatchLogResourcePolicy(scope constructs.Construct, id *string, config *CloudwatchLogResourcePolicyConfig) CloudwatchLogResourcePolicy {
 	_init_.Initialize()
 
@@ -4312,7 +4884,7 @@ func NewCloudwatchLogResourcePolicy(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy.html aws_cloudwatch_log_resource_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy aws_cloudwatch_log_resource_policy} Resource.
 func NewCloudwatchLogResourcePolicy_Override(c CloudwatchLogResourcePolicy, scope constructs.Construct, id *string, config *CloudwatchLogResourcePolicyConfig) {
 	_init_.Initialize()
 
@@ -4323,7 +4895,7 @@ func NewCloudwatchLogResourcePolicy_Override(c CloudwatchLogResourcePolicy, scop
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogResourcePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogResourcePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4411,12 +4983,40 @@ func (c *jsiiProxy_CloudwatchLogResourcePolicy) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4453,12 +5053,54 @@ func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogResourcePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4559,27 +5201,27 @@ func (c *jsiiProxy_CloudwatchLogResourcePolicy) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchLogResourcePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy.html#policy_document CloudwatchLogResourcePolicy#policy_document}.
-	PolicyDocument *string `json:"policyDocument"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy.html#policy_name CloudwatchLogResourcePolicy#policy_name}.
-	PolicyName *string `json:"policyName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy#policy_document CloudwatchLogResourcePolicy#policy_document}.
+	PolicyDocument *string `json:"policyDocument" yaml:"policyDocument"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_resource_policy#policy_name CloudwatchLogResourcePolicy#policy_name}.
+	PolicyName *string `json:"policyName" yaml:"policyName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream.html aws_cloudwatch_log_stream}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream aws_cloudwatch_log_stream}.
 type CloudwatchLogStream interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4601,10 +5243,15 @@ type CloudwatchLogStream interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4649,8 +5296,8 @@ func (j *jsiiProxy_CloudwatchLogStream) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogStream) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogStream) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4809,7 +5456,7 @@ func (j *jsiiProxy_CloudwatchLogStream) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream.html aws_cloudwatch_log_stream} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream aws_cloudwatch_log_stream} Resource.
 func NewCloudwatchLogStream(scope constructs.Construct, id *string, config *CloudwatchLogStreamConfig) CloudwatchLogStream {
 	_init_.Initialize()
 
@@ -4824,7 +5471,7 @@ func NewCloudwatchLogStream(scope constructs.Construct, id *string, config *Clou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream.html aws_cloudwatch_log_stream} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream aws_cloudwatch_log_stream} Resource.
 func NewCloudwatchLogStream_Override(c CloudwatchLogStream, scope constructs.Construct, id *string, config *CloudwatchLogStreamConfig) {
 	_init_.Initialize()
 
@@ -4835,7 +5482,7 @@ func NewCloudwatchLogStream_Override(c CloudwatchLogStream, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogStream) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogStream) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4923,12 +5570,40 @@ func (c *jsiiProxy_CloudwatchLogStream) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogStream) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogStream) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogStream) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4965,12 +5640,54 @@ func (c *jsiiProxy_CloudwatchLogStream) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogStream) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogStream) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogStream) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogStream) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5071,26 +5788,26 @@ func (c *jsiiProxy_CloudwatchLogStream) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchLogStreamConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream.html#log_group_name CloudwatchLogStream#log_group_name}.
-	LogGroupName *string `json:"logGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream.html#name CloudwatchLogStream#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream#log_group_name CloudwatchLogStream#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_stream#name CloudwatchLogStream#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html aws_cloudwatch_log_subscription_filter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter aws_cloudwatch_log_subscription_filter}.
 type CloudwatchLogSubscriptionFilter interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationArn() *string
@@ -5124,10 +5841,15 @@ type CloudwatchLogSubscriptionFilter interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDistribution()
@@ -5164,8 +5886,8 @@ func (j *jsiiProxy_CloudwatchLogSubscriptionFilter) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchLogSubscriptionFilter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchLogSubscriptionFilter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5404,7 +6126,7 @@ func (j *jsiiProxy_CloudwatchLogSubscriptionFilter) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html aws_cloudwatch_log_subscription_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter aws_cloudwatch_log_subscription_filter} Resource.
 func NewCloudwatchLogSubscriptionFilter(scope constructs.Construct, id *string, config *CloudwatchLogSubscriptionFilterConfig) CloudwatchLogSubscriptionFilter {
 	_init_.Initialize()
 
@@ -5419,7 +6141,7 @@ func NewCloudwatchLogSubscriptionFilter(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html aws_cloudwatch_log_subscription_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter aws_cloudwatch_log_subscription_filter} Resource.
 func NewCloudwatchLogSubscriptionFilter_Override(c CloudwatchLogSubscriptionFilter, scope constructs.Construct, id *string, config *CloudwatchLogSubscriptionFilterConfig) {
 	_init_.Initialize()
 
@@ -5430,7 +6152,7 @@ func NewCloudwatchLogSubscriptionFilter_Override(c CloudwatchLogSubscriptionFilt
 	)
 }
 
-func (j *jsiiProxy_CloudwatchLogSubscriptionFilter) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchLogSubscriptionFilter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5550,12 +6272,40 @@ func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) AddOverride(path *string, va
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5592,12 +6342,54 @@ func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5714,28 +6506,28 @@ func (c *jsiiProxy_CloudwatchLogSubscriptionFilter) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchLogSubscriptionFilterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html#destination_arn CloudwatchLogSubscriptionFilter#destination_arn}.
-	DestinationArn *string `json:"destinationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html#filter_pattern CloudwatchLogSubscriptionFilter#filter_pattern}.
-	FilterPattern *string `json:"filterPattern"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html#log_group_name CloudwatchLogSubscriptionFilter#log_group_name}.
-	LogGroupName *string `json:"logGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html#name CloudwatchLogSubscriptionFilter#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html#distribution CloudwatchLogSubscriptionFilter#distribution}.
-	Distribution *string `json:"distribution"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter.html#role_arn CloudwatchLogSubscriptionFilter#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter#destination_arn CloudwatchLogSubscriptionFilter#destination_arn}.
+	DestinationArn *string `json:"destinationArn" yaml:"destinationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter#filter_pattern CloudwatchLogSubscriptionFilter#filter_pattern}.
+	FilterPattern *string `json:"filterPattern" yaml:"filterPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter#log_group_name CloudwatchLogSubscriptionFilter#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter#name CloudwatchLogSubscriptionFilter#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter#distribution CloudwatchLogSubscriptionFilter#distribution}.
+	Distribution *string `json:"distribution" yaml:"distribution"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_subscription_filter#role_arn CloudwatchLogSubscriptionFilter#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html aws_cloudwatch_metric_alarm}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm aws_cloudwatch_metric_alarm}.
 type CloudwatchMetricAlarm interface {
 	cdktf.TerraformResource
 	ActionsEnabled() interface{}
@@ -5756,16 +6548,16 @@ type CloudwatchMetricAlarm interface {
 	SetComparisonOperator(val *string)
 	ComparisonOperatorInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DatapointsToAlarm() *float64
 	SetDatapointsToAlarm(val *float64)
 	DatapointsToAlarmInput() *float64
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Dimensions() interface{}
-	SetDimensions(val interface{})
-	DimensionsInput() interface{}
+	Dimensions() *map[string]*string
+	SetDimensions(val *map[string]*string)
+	DimensionsInput() *map[string]*string
 	EvaluateLowSampleCountPercentiles() *string
 	SetEvaluateLowSampleCountPercentiles(val *string)
 	EvaluateLowSampleCountPercentilesInput() *string
@@ -5786,9 +6578,9 @@ type CloudwatchMetricAlarm interface {
 	MetricName() *string
 	SetMetricName(val *string)
 	MetricNameInput() *string
-	MetricQuery() *[]*CloudwatchMetricAlarmMetricQuery
-	SetMetricQuery(val *[]*CloudwatchMetricAlarmMetricQuery)
-	MetricQueryInput() *[]*CloudwatchMetricAlarmMetricQuery
+	MetricQuery() interface{}
+	SetMetricQuery(val interface{})
+	MetricQueryInput() interface{}
 	Namespace() *string
 	SetNamespace(val *string)
 	NamespaceInput() *string
@@ -5805,12 +6597,12 @@ type CloudwatchMetricAlarm interface {
 	Statistic() *string
 	SetStatistic(val *string)
 	StatisticInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5827,10 +6619,15 @@ type CloudwatchMetricAlarm interface {
 	SetUnit(val *string)
 	UnitInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetActionsEnabled()
@@ -5995,8 +6792,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarm) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6035,8 +6832,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) Dimensions() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarm) Dimensions() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"dimensions",
@@ -6045,8 +6842,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) Dimensions() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) DimensionsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarm) DimensionsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"dimensionsInput",
@@ -6195,8 +6992,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) MetricNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) MetricQuery() *[]*CloudwatchMetricAlarmMetricQuery {
-	var returns *[]*CloudwatchMetricAlarmMetricQuery
+func (j *jsiiProxy_CloudwatchMetricAlarm) MetricQuery() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"metricQuery",
@@ -6205,8 +7002,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) MetricQuery() *[]*CloudwatchMetricAlar
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) MetricQueryInput() *[]*CloudwatchMetricAlarmMetricQuery {
-	var returns *[]*CloudwatchMetricAlarmMetricQuery
+func (j *jsiiProxy_CloudwatchMetricAlarm) MetricQueryInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"metricQueryInput",
@@ -6325,8 +7122,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) StatisticInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarm) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6335,8 +7132,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarm) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6345,8 +7142,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarm) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6355,8 +7152,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarm) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6475,7 +7272,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) UnitInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html aws_cloudwatch_metric_alarm} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm aws_cloudwatch_metric_alarm} Resource.
 func NewCloudwatchMetricAlarm(scope constructs.Construct, id *string, config *CloudwatchMetricAlarmConfig) CloudwatchMetricAlarm {
 	_init_.Initialize()
 
@@ -6490,7 +7287,7 @@ func NewCloudwatchMetricAlarm(scope constructs.Construct, id *string, config *Cl
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html aws_cloudwatch_metric_alarm} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm aws_cloudwatch_metric_alarm} Resource.
 func NewCloudwatchMetricAlarm_Override(c CloudwatchMetricAlarm, scope constructs.Construct, id *string, config *CloudwatchMetricAlarmConfig) {
 	_init_.Initialize()
 
@@ -6541,7 +7338,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) SetComparisonOperator(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricAlarm) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6565,7 +7362,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) SetDimensions(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricAlarm) SetDimensions(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"dimensions",
@@ -6621,7 +7418,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) SetMetricName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) SetMetricQuery(val *[]*CloudwatchMetricAlarmMetricQuery) {
+func (j *jsiiProxy_CloudwatchMetricAlarm) SetMetricQuery(val interface{}) {
 	_jsii_.Set(
 		j,
 		"metricQuery",
@@ -6669,7 +7466,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) SetStatistic(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricAlarm) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6677,7 +7474,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarm) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarm) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricAlarm) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6757,12 +7554,40 @@ func (c *jsiiProxy_CloudwatchMetricAlarm) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarm) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchMetricAlarm) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarm) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6799,12 +7624,54 @@ func (c *jsiiProxy_CloudwatchMetricAlarm) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarm) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarm) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchMetricAlarm) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarm) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7065,100 +7932,100 @@ func (c *jsiiProxy_CloudwatchMetricAlarm) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchMetricAlarmConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#alarm_name CloudwatchMetricAlarm#alarm_name}.
-	AlarmName *string `json:"alarmName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#comparison_operator CloudwatchMetricAlarm#comparison_operator}.
-	ComparisonOperator *string `json:"comparisonOperator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#evaluation_periods CloudwatchMetricAlarm#evaluation_periods}.
-	EvaluationPeriods *float64 `json:"evaluationPeriods"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#actions_enabled CloudwatchMetricAlarm#actions_enabled}.
-	ActionsEnabled interface{} `json:"actionsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#alarm_actions CloudwatchMetricAlarm#alarm_actions}.
-	AlarmActions *[]*string `json:"alarmActions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#alarm_description CloudwatchMetricAlarm#alarm_description}.
-	AlarmDescription *string `json:"alarmDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#datapoints_to_alarm CloudwatchMetricAlarm#datapoints_to_alarm}.
-	DatapointsToAlarm *float64 `json:"datapointsToAlarm"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#dimensions CloudwatchMetricAlarm#dimensions}.
-	Dimensions interface{} `json:"dimensions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#evaluate_low_sample_count_percentiles CloudwatchMetricAlarm#evaluate_low_sample_count_percentiles}.
-	EvaluateLowSampleCountPercentiles *string `json:"evaluateLowSampleCountPercentiles"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#extended_statistic CloudwatchMetricAlarm#extended_statistic}.
-	ExtendedStatistic *string `json:"extendedStatistic"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#insufficient_data_actions CloudwatchMetricAlarm#insufficient_data_actions}.
-	InsufficientDataActions *[]*string `json:"insufficientDataActions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#metric_name CloudwatchMetricAlarm#metric_name}.
-	MetricName *string `json:"metricName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#alarm_name CloudwatchMetricAlarm#alarm_name}.
+	AlarmName *string `json:"alarmName" yaml:"alarmName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#comparison_operator CloudwatchMetricAlarm#comparison_operator}.
+	ComparisonOperator *string `json:"comparisonOperator" yaml:"comparisonOperator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#evaluation_periods CloudwatchMetricAlarm#evaluation_periods}.
+	EvaluationPeriods *float64 `json:"evaluationPeriods" yaml:"evaluationPeriods"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#actions_enabled CloudwatchMetricAlarm#actions_enabled}.
+	ActionsEnabled interface{} `json:"actionsEnabled" yaml:"actionsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#alarm_actions CloudwatchMetricAlarm#alarm_actions}.
+	AlarmActions *[]*string `json:"alarmActions" yaml:"alarmActions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#alarm_description CloudwatchMetricAlarm#alarm_description}.
+	AlarmDescription *string `json:"alarmDescription" yaml:"alarmDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#datapoints_to_alarm CloudwatchMetricAlarm#datapoints_to_alarm}.
+	DatapointsToAlarm *float64 `json:"datapointsToAlarm" yaml:"datapointsToAlarm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#dimensions CloudwatchMetricAlarm#dimensions}.
+	Dimensions *map[string]*string `json:"dimensions" yaml:"dimensions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#evaluate_low_sample_count_percentiles CloudwatchMetricAlarm#evaluate_low_sample_count_percentiles}.
+	EvaluateLowSampleCountPercentiles *string `json:"evaluateLowSampleCountPercentiles" yaml:"evaluateLowSampleCountPercentiles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#extended_statistic CloudwatchMetricAlarm#extended_statistic}.
+	ExtendedStatistic *string `json:"extendedStatistic" yaml:"extendedStatistic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#insufficient_data_actions CloudwatchMetricAlarm#insufficient_data_actions}.
+	InsufficientDataActions *[]*string `json:"insufficientDataActions" yaml:"insufficientDataActions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#metric_name CloudwatchMetricAlarm#metric_name}.
+	MetricName *string `json:"metricName" yaml:"metricName"`
 	// metric_query block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#metric_query CloudwatchMetricAlarm#metric_query}
-	MetricQuery *[]*CloudwatchMetricAlarmMetricQuery `json:"metricQuery"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#namespace CloudwatchMetricAlarm#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#ok_actions CloudwatchMetricAlarm#ok_actions}.
-	OkActions *[]*string `json:"okActions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#period CloudwatchMetricAlarm#period}.
-	Period *float64 `json:"period"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#statistic CloudwatchMetricAlarm#statistic}.
-	Statistic *string `json:"statistic"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#tags CloudwatchMetricAlarm#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#tags_all CloudwatchMetricAlarm#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#threshold CloudwatchMetricAlarm#threshold}.
-	Threshold *float64 `json:"threshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#threshold_metric_id CloudwatchMetricAlarm#threshold_metric_id}.
-	ThresholdMetricId *string `json:"thresholdMetricId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#treat_missing_data CloudwatchMetricAlarm#treat_missing_data}.
-	TreatMissingData *string `json:"treatMissingData"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#unit CloudwatchMetricAlarm#unit}.
-	Unit *string `json:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#metric_query CloudwatchMetricAlarm#metric_query}
+	MetricQuery interface{} `json:"metricQuery" yaml:"metricQuery"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#namespace CloudwatchMetricAlarm#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#ok_actions CloudwatchMetricAlarm#ok_actions}.
+	OkActions *[]*string `json:"okActions" yaml:"okActions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#period CloudwatchMetricAlarm#period}.
+	Period *float64 `json:"period" yaml:"period"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#statistic CloudwatchMetricAlarm#statistic}.
+	Statistic *string `json:"statistic" yaml:"statistic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#tags CloudwatchMetricAlarm#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#tags_all CloudwatchMetricAlarm#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#threshold CloudwatchMetricAlarm#threshold}.
+	Threshold *float64 `json:"threshold" yaml:"threshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#threshold_metric_id CloudwatchMetricAlarm#threshold_metric_id}.
+	ThresholdMetricId *string `json:"thresholdMetricId" yaml:"thresholdMetricId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#treat_missing_data CloudwatchMetricAlarm#treat_missing_data}.
+	TreatMissingData *string `json:"treatMissingData" yaml:"treatMissingData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#unit CloudwatchMetricAlarm#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
 }
 
 type CloudwatchMetricAlarmMetricQuery struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#id CloudwatchMetricAlarm#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#account_id CloudwatchMetricAlarm#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#expression CloudwatchMetricAlarm#expression}.
-	Expression *string `json:"expression"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#label CloudwatchMetricAlarm#label}.
-	Label *string `json:"label"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#id CloudwatchMetricAlarm#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#account_id CloudwatchMetricAlarm#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#expression CloudwatchMetricAlarm#expression}.
+	Expression *string `json:"expression" yaml:"expression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#label CloudwatchMetricAlarm#label}.
+	Label *string `json:"label" yaml:"label"`
 	// metric block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#metric CloudwatchMetricAlarm#metric}
-	Metric *CloudwatchMetricAlarmMetricQueryMetric `json:"metric"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#return_data CloudwatchMetricAlarm#return_data}.
-	ReturnData interface{} `json:"returnData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#metric CloudwatchMetricAlarm#metric}
+	Metric *CloudwatchMetricAlarmMetricQueryMetric `json:"metric" yaml:"metric"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#return_data CloudwatchMetricAlarm#return_data}.
+	ReturnData interface{} `json:"returnData" yaml:"returnData"`
 }
 
 type CloudwatchMetricAlarmMetricQueryMetric struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#metric_name CloudwatchMetricAlarm#metric_name}.
-	MetricName *string `json:"metricName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#period CloudwatchMetricAlarm#period}.
-	Period *float64 `json:"period"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#stat CloudwatchMetricAlarm#stat}.
-	Stat *string `json:"stat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#dimensions CloudwatchMetricAlarm#dimensions}.
-	Dimensions interface{} `json:"dimensions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#namespace CloudwatchMetricAlarm#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html#unit CloudwatchMetricAlarm#unit}.
-	Unit *string `json:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#metric_name CloudwatchMetricAlarm#metric_name}.
+	MetricName *string `json:"metricName" yaml:"metricName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#period CloudwatchMetricAlarm#period}.
+	Period *float64 `json:"period" yaml:"period"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#stat CloudwatchMetricAlarm#stat}.
+	Stat *string `json:"stat" yaml:"stat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#dimensions CloudwatchMetricAlarm#dimensions}.
+	Dimensions *map[string]*string `json:"dimensions" yaml:"dimensions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#namespace CloudwatchMetricAlarm#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm#unit CloudwatchMetricAlarm#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
 }
 
 type CloudwatchMetricAlarmMetricQueryMetricOutputReference interface {
 	cdktf.ComplexObject
-	Dimensions() interface{}
-	SetDimensions(val interface{})
-	DimensionsInput() interface{}
+	Dimensions() *map[string]*string
+	SetDimensions(val *map[string]*string)
+	DimensionsInput() *map[string]*string
 	InternalValue() *CloudwatchMetricAlarmMetricQueryMetric
 	SetInternalValue(val *CloudwatchMetricAlarmMetricQueryMetric)
 	IsSingleItem() *bool
@@ -7177,15 +8044,20 @@ type CloudwatchMetricAlarmMetricQueryMetricOutputReference interface {
 	StatInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDimensions()
@@ -7198,8 +8070,8 @@ type jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) Dimensions() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) Dimensions() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"dimensions",
@@ -7208,8 +8080,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) Dimens
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) DimensionsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) DimensionsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"dimensionsInput",
@@ -7328,8 +8200,8 @@ func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7358,7 +8230,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) UnitIn
 	return returns
 }
 
-func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchMetricAlarmMetricQueryMetricOutputReference {
+func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchMetricAlarmMetricQueryMetricOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference{}
@@ -7372,7 +8244,7 @@ func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference(terraformResource 
 	return &j
 }
 
-func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference_Override(c CloudwatchMetricAlarmMetricQueryMetricOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference_Override(c CloudwatchMetricAlarmMetricQueryMetricOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7382,7 +8254,7 @@ func NewCloudwatchMetricAlarmMetricQueryMetricOutputReference_Override(c Cloudwa
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetDimensions(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetDimensions(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"dimensions",
@@ -7446,7 +8318,7 @@ func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7463,12 +8335,40 @@ func (j *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) SetUni
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7505,12 +8405,54 @@ func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetNum
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7570,29 +8512,29 @@ func (c *jsiiProxy_CloudwatchMetricAlarmMetricQueryMetricOutputReference) ResetU
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html aws_cloudwatch_metric_stream}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream aws_cloudwatch_metric_stream}.
 type CloudwatchMetricStream interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	ExcludeFilter() *[]*CloudwatchMetricStreamExcludeFilter
-	SetExcludeFilter(val *[]*CloudwatchMetricStreamExcludeFilter)
-	ExcludeFilterInput() *[]*CloudwatchMetricStreamExcludeFilter
+	ExcludeFilter() interface{}
+	SetExcludeFilter(val interface{})
+	ExcludeFilterInput() interface{}
 	FirehoseArn() *string
 	SetFirehoseArn(val *string)
 	FirehoseArnInput() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	IncludeFilter() *[]*CloudwatchMetricStreamIncludeFilter
-	SetIncludeFilter(val *[]*CloudwatchMetricStreamIncludeFilter)
-	IncludeFilterInput() *[]*CloudwatchMetricStreamIncludeFilter
+	IncludeFilter() interface{}
+	SetIncludeFilter(val interface{})
+	IncludeFilterInput() interface{}
 	LastUpdateDate() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -7613,22 +8555,27 @@ type CloudwatchMetricStream interface {
 	SetRoleArn(val *string)
 	RoleArnInput() *string
 	State() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() CloudwatchMetricStreamTimeoutsOutputReference
 	TimeoutsInput() *CloudwatchMetricStreamTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *CloudwatchMetricStreamTimeouts)
@@ -7681,8 +8628,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricStream) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7711,8 +8658,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) ExcludeFilter() *[]*CloudwatchMetricStreamExcludeFilter {
-	var returns *[]*CloudwatchMetricStreamExcludeFilter
+func (j *jsiiProxy_CloudwatchMetricStream) ExcludeFilter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"excludeFilter",
@@ -7721,8 +8668,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) ExcludeFilter() *[]*CloudwatchMetricS
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) ExcludeFilterInput() *[]*CloudwatchMetricStreamExcludeFilter {
-	var returns *[]*CloudwatchMetricStreamExcludeFilter
+func (j *jsiiProxy_CloudwatchMetricStream) ExcludeFilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"excludeFilterInput",
@@ -7781,8 +8728,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) IncludeFilter() *[]*CloudwatchMetricStreamIncludeFilter {
-	var returns *[]*CloudwatchMetricStreamIncludeFilter
+func (j *jsiiProxy_CloudwatchMetricStream) IncludeFilter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"includeFilter",
@@ -7791,8 +8738,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) IncludeFilter() *[]*CloudwatchMetricS
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) IncludeFilterInput() *[]*CloudwatchMetricStreamIncludeFilter {
-	var returns *[]*CloudwatchMetricStreamIncludeFilter
+func (j *jsiiProxy_CloudwatchMetricStream) IncludeFilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"includeFilterInput",
@@ -7941,8 +8888,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) State() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricStream) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7951,8 +8898,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricStream) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7961,8 +8908,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricStream) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7971,8 +8918,8 @@ func (j *jsiiProxy_CloudwatchMetricStream) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchMetricStream) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8031,7 +8978,7 @@ func (j *jsiiProxy_CloudwatchMetricStream) TimeoutsInput() *CloudwatchMetricStre
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html aws_cloudwatch_metric_stream} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream aws_cloudwatch_metric_stream} Resource.
 func NewCloudwatchMetricStream(scope constructs.Construct, id *string, config *CloudwatchMetricStreamConfig) CloudwatchMetricStream {
 	_init_.Initialize()
 
@@ -8046,7 +8993,7 @@ func NewCloudwatchMetricStream(scope constructs.Construct, id *string, config *C
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html aws_cloudwatch_metric_stream} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream aws_cloudwatch_metric_stream} Resource.
 func NewCloudwatchMetricStream_Override(c CloudwatchMetricStream, scope constructs.Construct, id *string, config *CloudwatchMetricStreamConfig) {
 	_init_.Initialize()
 
@@ -8057,7 +9004,7 @@ func NewCloudwatchMetricStream_Override(c CloudwatchMetricStream, scope construc
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricStream) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8073,7 +9020,7 @@ func (j *jsiiProxy_CloudwatchMetricStream) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) SetExcludeFilter(val *[]*CloudwatchMetricStreamExcludeFilter) {
+func (j *jsiiProxy_CloudwatchMetricStream) SetExcludeFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"excludeFilter",
@@ -8089,7 +9036,7 @@ func (j *jsiiProxy_CloudwatchMetricStream) SetFirehoseArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) SetIncludeFilter(val *[]*CloudwatchMetricStreamIncludeFilter) {
+func (j *jsiiProxy_CloudwatchMetricStream) SetIncludeFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"includeFilter",
@@ -8145,7 +9092,7 @@ func (j *jsiiProxy_CloudwatchMetricStream) SetRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricStream) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8153,7 +9100,7 @@ func (j *jsiiProxy_CloudwatchMetricStream) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricStream) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudwatchMetricStream) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8201,12 +9148,40 @@ func (c *jsiiProxy_CloudwatchMetricStream) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchMetricStream) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchMetricStream) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricStream) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8243,12 +9218,54 @@ func (c *jsiiProxy_CloudwatchMetricStream) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchMetricStream) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricStream) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchMetricStream) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricStream) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8413,56 +9430,56 @@ func (c *jsiiProxy_CloudwatchMetricStream) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchMetricStreamConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#firehose_arn CloudwatchMetricStream#firehose_arn}.
-	FirehoseArn *string `json:"firehoseArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#output_format CloudwatchMetricStream#output_format}.
-	OutputFormat *string `json:"outputFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#role_arn CloudwatchMetricStream#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#firehose_arn CloudwatchMetricStream#firehose_arn}.
+	FirehoseArn *string `json:"firehoseArn" yaml:"firehoseArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#output_format CloudwatchMetricStream#output_format}.
+	OutputFormat *string `json:"outputFormat" yaml:"outputFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#role_arn CloudwatchMetricStream#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 	// exclude_filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#exclude_filter CloudwatchMetricStream#exclude_filter}
-	ExcludeFilter *[]*CloudwatchMetricStreamExcludeFilter `json:"excludeFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#exclude_filter CloudwatchMetricStream#exclude_filter}
+	ExcludeFilter interface{} `json:"excludeFilter" yaml:"excludeFilter"`
 	// include_filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#include_filter CloudwatchMetricStream#include_filter}
-	IncludeFilter *[]*CloudwatchMetricStreamIncludeFilter `json:"includeFilter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#name CloudwatchMetricStream#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#name_prefix CloudwatchMetricStream#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#tags CloudwatchMetricStream#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#tags_all CloudwatchMetricStream#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#include_filter CloudwatchMetricStream#include_filter}
+	IncludeFilter interface{} `json:"includeFilter" yaml:"includeFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#name CloudwatchMetricStream#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#name_prefix CloudwatchMetricStream#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#tags CloudwatchMetricStream#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#tags_all CloudwatchMetricStream#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#timeouts CloudwatchMetricStream#timeouts}
-	Timeouts *CloudwatchMetricStreamTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#timeouts CloudwatchMetricStream#timeouts}
+	Timeouts *CloudwatchMetricStreamTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type CloudwatchMetricStreamExcludeFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#namespace CloudwatchMetricStream#namespace}.
-	Namespace *string `json:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#namespace CloudwatchMetricStream#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
 }
 
 type CloudwatchMetricStreamIncludeFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#namespace CloudwatchMetricStream#namespace}.
-	Namespace *string `json:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#namespace CloudwatchMetricStream#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
 }
 
 type CloudwatchMetricStreamTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#create CloudwatchMetricStream#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream.html#delete CloudwatchMetricStream#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#create CloudwatchMetricStream#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_stream#delete CloudwatchMetricStream#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type CloudwatchMetricStreamTimeoutsOutputReference interface {
@@ -8479,12 +9496,17 @@ type CloudwatchMetricStreamTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -8566,8 +9588,8 @@ func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8576,7 +9598,7 @@ func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) TerraformResou
 	return returns
 }
 
-func NewCloudwatchMetricStreamTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchMetricStreamTimeoutsOutputReference {
+func NewCloudwatchMetricStreamTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchMetricStreamTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference{}
@@ -8590,7 +9612,7 @@ func NewCloudwatchMetricStreamTimeoutsOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewCloudwatchMetricStreamTimeoutsOutputReference_Override(c CloudwatchMetricStreamTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchMetricStreamTimeoutsOutputReference_Override(c CloudwatchMetricStreamTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8640,7 +9662,7 @@ func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8649,12 +9671,40 @@ func (j *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8691,12 +9741,54 @@ func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8748,13 +9840,13 @@ func (c *jsiiProxy_CloudwatchMetricStreamTimeoutsOutputReference) ResetDelete() 
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition.html aws_cloudwatch_query_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition aws_cloudwatch_query_definition}.
 type CloudwatchQueryDefinition interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8780,10 +9872,15 @@ type CloudwatchQueryDefinition interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetLogGroupNames()
@@ -8819,8 +9916,8 @@ func (j *jsiiProxy_CloudwatchQueryDefinition) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchQueryDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchQueryDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9009,7 +10106,7 @@ func (j *jsiiProxy_CloudwatchQueryDefinition) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition.html aws_cloudwatch_query_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition aws_cloudwatch_query_definition} Resource.
 func NewCloudwatchQueryDefinition(scope constructs.Construct, id *string, config *CloudwatchQueryDefinitionConfig) CloudwatchQueryDefinition {
 	_init_.Initialize()
 
@@ -9024,7 +10121,7 @@ func NewCloudwatchQueryDefinition(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition.html aws_cloudwatch_query_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition aws_cloudwatch_query_definition} Resource.
 func NewCloudwatchQueryDefinition_Override(c CloudwatchQueryDefinition, scope constructs.Construct, id *string, config *CloudwatchQueryDefinitionConfig) {
 	_init_.Initialize()
 
@@ -9035,7 +10132,7 @@ func NewCloudwatchQueryDefinition_Override(c CloudwatchQueryDefinition, scope co
 	)
 }
 
-func (j *jsiiProxy_CloudwatchQueryDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchQueryDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9131,12 +10228,40 @@ func (c *jsiiProxy_CloudwatchQueryDefinition) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchQueryDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchQueryDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchQueryDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9173,12 +10298,54 @@ func (c *jsiiProxy_CloudwatchQueryDefinition) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchQueryDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchQueryDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchQueryDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchQueryDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9287,29 +10454,29 @@ func (c *jsiiProxy_CloudwatchQueryDefinition) ToTerraform() interface{} {
 // AWS CloudWatch.
 type CloudwatchQueryDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition.html#name CloudwatchQueryDefinition#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition.html#query_string CloudwatchQueryDefinition#query_string}.
-	QueryString *string `json:"queryString"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition.html#log_group_names CloudwatchQueryDefinition#log_group_names}.
-	LogGroupNames *[]*string `json:"logGroupNames"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition#name CloudwatchQueryDefinition#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition#query_string CloudwatchQueryDefinition#query_string}.
+	QueryString *string `json:"queryString" yaml:"queryString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_query_definition#log_group_names CloudwatchQueryDefinition#log_group_names}.
+	LogGroupNames *[]*string `json:"logGroupNames" yaml:"logGroupNames"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group.html aws_cloudwatch_log_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group aws_cloudwatch_log_group}.
 type DataAwsCloudwatchLogGroup interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationTime() *float64
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -9327,17 +10494,22 @@ type DataAwsCloudwatchLogGroup interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	RetentionInDays() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -9383,8 +10555,8 @@ func (j *jsiiProxy_DataAwsCloudwatchLogGroup) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchLogGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudwatchLogGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9523,8 +10695,8 @@ func (j *jsiiProxy_DataAwsCloudwatchLogGroup) RetentionInDays() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchLogGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudwatchLogGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9533,8 +10705,8 @@ func (j *jsiiProxy_DataAwsCloudwatchLogGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchLogGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudwatchLogGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9573,7 +10745,7 @@ func (j *jsiiProxy_DataAwsCloudwatchLogGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group.html aws_cloudwatch_log_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group aws_cloudwatch_log_group} Data Source.
 func NewDataAwsCloudwatchLogGroup(scope constructs.Construct, id *string, config *DataAwsCloudwatchLogGroupConfig) DataAwsCloudwatchLogGroup {
 	_init_.Initialize()
 
@@ -9588,7 +10760,7 @@ func NewDataAwsCloudwatchLogGroup(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group.html aws_cloudwatch_log_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group aws_cloudwatch_log_group} Data Source.
 func NewDataAwsCloudwatchLogGroup_Override(d DataAwsCloudwatchLogGroup, scope constructs.Construct, id *string, config *DataAwsCloudwatchLogGroupConfig) {
 	_init_.Initialize()
 
@@ -9599,7 +10771,7 @@ func NewDataAwsCloudwatchLogGroup_Override(d DataAwsCloudwatchLogGroup, scope co
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchLogGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudwatchLogGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9639,7 +10811,7 @@ func (j *jsiiProxy_DataAwsCloudwatchLogGroup) SetProvider(val cdktf.TerraformPro
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchLogGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudwatchLogGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9687,12 +10859,40 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroup) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9729,12 +10929,54 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9843,27 +11085,27 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroup) ToTerraform() interface{} {
 // AWS CloudWatch.
 type DataAwsCloudwatchLogGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group.html#name DataAwsCloudwatchLogGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group.html#tags DataAwsCloudwatchLogGroup#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group#name DataAwsCloudwatchLogGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_group#tags DataAwsCloudwatchLogGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups.html aws_cloudwatch_log_groups}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups aws_cloudwatch_log_groups}.
 type DataAwsCloudwatchLogGroups interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9883,10 +11125,15 @@ type DataAwsCloudwatchLogGroups interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -9931,8 +11178,8 @@ func (j *jsiiProxy_DataAwsCloudwatchLogGroups) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchLogGroups) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudwatchLogGroups) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10081,7 +11328,7 @@ func (j *jsiiProxy_DataAwsCloudwatchLogGroups) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups.html aws_cloudwatch_log_groups} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups aws_cloudwatch_log_groups} Data Source.
 func NewDataAwsCloudwatchLogGroups(scope constructs.Construct, id *string, config *DataAwsCloudwatchLogGroupsConfig) DataAwsCloudwatchLogGroups {
 	_init_.Initialize()
 
@@ -10096,7 +11343,7 @@ func NewDataAwsCloudwatchLogGroups(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups.html aws_cloudwatch_log_groups} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups aws_cloudwatch_log_groups} Data Source.
 func NewDataAwsCloudwatchLogGroups_Override(d DataAwsCloudwatchLogGroups, scope constructs.Construct, id *string, config *DataAwsCloudwatchLogGroupsConfig) {
 	_init_.Initialize()
 
@@ -10107,7 +11354,7 @@ func NewDataAwsCloudwatchLogGroups_Override(d DataAwsCloudwatchLogGroups, scope 
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchLogGroups) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudwatchLogGroups) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10187,12 +11434,40 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroups) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10229,12 +11504,54 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchLogGroups) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10335,13 +11652,13 @@ func (d *jsiiProxy_DataAwsCloudwatchLogGroups) ToTerraform() interface{} {
 // AWS CloudWatch.
 type DataAwsCloudwatchLogGroupsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups.html#log_group_name_prefix DataAwsCloudwatchLogGroups#log_group_name_prefix}.
-	LogGroupNamePrefix *string `json:"logGroupNamePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_log_groups#log_group_name_prefix DataAwsCloudwatchLogGroups#log_group_name_prefix}.
+	LogGroupNamePrefix *string `json:"logGroupNamePrefix" yaml:"logGroupNamePrefix"`
 }

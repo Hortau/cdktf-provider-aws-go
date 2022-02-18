@@ -1,15 +1,15 @@
 package apprunner
 
 import (
-	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
+	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 
+	"github.com/hortau/cdktf-provider-aws-go/apprunner/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
-	"github.com/hortau/cdktf-provider-aws-go/apprunner/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html aws_apprunner_auto_scaling_configuration_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version aws_apprunner_auto_scaling_configuration_version}.
 type ApprunnerAutoScalingConfigurationVersion interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -19,14 +19,14 @@ type ApprunnerAutoScalingConfigurationVersion interface {
 	AutoScalingConfigurationRevision() *float64
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	Latest() interface{}
+	Latest() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	MaxConcurrency() *float64
@@ -43,20 +43,25 @@ type ApprunnerAutoScalingConfigurationVersion interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetMaxConcurrency()
@@ -136,8 +141,8 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) ConstructNodeMetada
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -186,8 +191,8 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Latest() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Latest() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"latest",
@@ -306,8 +311,8 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -316,8 +321,8 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) Tags() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -326,8 +331,8 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsAll() interface
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -336,8 +341,8 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsAllInput() inte
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -376,7 +381,8 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) TerraformResourceTy
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html aws_apprunner_auto_scaling_configuration_version} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version aws_apprunner_auto_scaling_configuration_version} Resource.
 func NewApprunnerAutoScalingConfigurationVersion(scope constructs.Construct, id *string, config *ApprunnerAutoScalingConfigurationVersionConfig) ApprunnerAutoScalingConfigurationVersion {
 	_init_.Initialize()
 
@@ -391,7 +397,7 @@ func NewApprunnerAutoScalingConfigurationVersion(scope constructs.Construct, id 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html aws_apprunner_auto_scaling_configuration_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version aws_apprunner_auto_scaling_configuration_version} Resource.
 func NewApprunnerAutoScalingConfigurationVersion_Override(a ApprunnerAutoScalingConfigurationVersion, scope constructs.Construct, id *string, config *ApprunnerAutoScalingConfigurationVersionConfig) {
 	_init_.Initialize()
 
@@ -410,7 +416,7 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetAutoScalingConfi
 	)
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -466,7 +472,7 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetProvider(val cdk
 	)
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetTags(val interface{}) {
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -474,7 +480,7 @@ func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetTags(val interfa
 	)
 }
 
-func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -522,12 +528,40 @@ func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) AddOverride(path *s
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -564,12 +598,54 @@ func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetNumberAttribute(
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -710,28 +786,28 @@ func (a *jsiiProxy_ApprunnerAutoScalingConfigurationVersion) ToTerraform() inter
 // App Runner.
 type ApprunnerAutoScalingConfigurationVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html#auto_scaling_configuration_name ApprunnerAutoScalingConfigurationVersion#auto_scaling_configuration_name}.
-	AutoScalingConfigurationName *string `json:"autoScalingConfigurationName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html#max_concurrency ApprunnerAutoScalingConfigurationVersion#max_concurrency}.
-	MaxConcurrency *float64 `json:"maxConcurrency"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html#max_size ApprunnerAutoScalingConfigurationVersion#max_size}.
-	MaxSize *float64 `json:"maxSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html#min_size ApprunnerAutoScalingConfigurationVersion#min_size}.
-	MinSize *float64 `json:"minSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html#tags ApprunnerAutoScalingConfigurationVersion#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version.html#tags_all ApprunnerAutoScalingConfigurationVersion#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version#auto_scaling_configuration_name ApprunnerAutoScalingConfigurationVersion#auto_scaling_configuration_name}.
+	AutoScalingConfigurationName *string `json:"autoScalingConfigurationName" yaml:"autoScalingConfigurationName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version#max_concurrency ApprunnerAutoScalingConfigurationVersion#max_concurrency}.
+	MaxConcurrency *float64 `json:"maxConcurrency" yaml:"maxConcurrency"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version#max_size ApprunnerAutoScalingConfigurationVersion#max_size}.
+	MaxSize *float64 `json:"maxSize" yaml:"maxSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version#min_size ApprunnerAutoScalingConfigurationVersion#min_size}.
+	MinSize *float64 `json:"minSize" yaml:"minSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version#tags ApprunnerAutoScalingConfigurationVersion#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_auto_scaling_configuration_version#tags_all ApprunnerAutoScalingConfigurationVersion#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection.html aws_apprunner_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection aws_apprunner_connection}.
 type ApprunnerConnection interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -740,8 +816,8 @@ type ApprunnerConnection interface {
 	SetConnectionName(val *string)
 	ConnectionNameInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -757,20 +833,25 @@ type ApprunnerConnection interface {
 	ProviderTypeInput() *string
 	RawOverrides() interface{}
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -837,8 +918,8 @@ func (j *jsiiProxy_ApprunnerConnection) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -957,8 +1038,8 @@ func (j *jsiiProxy_ApprunnerConnection) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerConnection) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerConnection) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -967,8 +1048,8 @@ func (j *jsiiProxy_ApprunnerConnection) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerConnection) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerConnection) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -977,8 +1058,8 @@ func (j *jsiiProxy_ApprunnerConnection) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerConnection) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerConnection) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -987,8 +1068,8 @@ func (j *jsiiProxy_ApprunnerConnection) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerConnection) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerConnection) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1027,7 +1108,8 @@ func (j *jsiiProxy_ApprunnerConnection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection.html aws_apprunner_connection} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection aws_apprunner_connection} Resource.
 func NewApprunnerConnection(scope constructs.Construct, id *string, config *ApprunnerConnectionConfig) ApprunnerConnection {
 	_init_.Initialize()
 
@@ -1042,7 +1124,7 @@ func NewApprunnerConnection(scope constructs.Construct, id *string, config *Appr
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection.html aws_apprunner_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection aws_apprunner_connection} Resource.
 func NewApprunnerConnection_Override(a ApprunnerConnection, scope constructs.Construct, id *string, config *ApprunnerConnectionConfig) {
 	_init_.Initialize()
 
@@ -1061,7 +1143,7 @@ func (j *jsiiProxy_ApprunnerConnection) SetConnectionName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApprunnerConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_ApprunnerConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1101,7 +1183,7 @@ func (j *jsiiProxy_ApprunnerConnection) SetProviderType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApprunnerConnection) SetTags(val interface{}) {
+func (j *jsiiProxy_ApprunnerConnection) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1109,7 +1191,7 @@ func (j *jsiiProxy_ApprunnerConnection) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApprunnerConnection) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApprunnerConnection) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1157,12 +1239,40 @@ func (a *jsiiProxy_ApprunnerConnection) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1199,12 +1309,54 @@ func (a *jsiiProxy_ApprunnerConnection) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1321,30 +1473,30 @@ func (a *jsiiProxy_ApprunnerConnection) ToTerraform() interface{} {
 // App Runner.
 type ApprunnerConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection.html#connection_name ApprunnerConnection#connection_name}.
-	ConnectionName *string `json:"connectionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection.html#provider_type ApprunnerConnection#provider_type}.
-	ProviderType *string `json:"providerType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection.html#tags ApprunnerConnection#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection.html#tags_all ApprunnerConnection#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection#connection_name ApprunnerConnection#connection_name}.
+	ConnectionName *string `json:"connectionName" yaml:"connectionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection#provider_type ApprunnerConnection#provider_type}.
+	ProviderType *string `json:"providerType" yaml:"providerType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection#tags ApprunnerConnection#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_connection#tags_all ApprunnerConnection#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association.html aws_apprunner_custom_domain_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association aws_apprunner_custom_domain_association}.
 type ApprunnerCustomDomainAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsTarget() *string
@@ -1372,10 +1524,15 @@ type ApprunnerCustomDomainAssociation interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	CertificateValidationRecords(index *string) ApprunnerCustomDomainAssociationCertificateValidationRecords
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnableWwwSubdomain()
@@ -1411,8 +1568,8 @@ func (j *jsiiProxy_ApprunnerCustomDomainAssociation) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerCustomDomainAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerCustomDomainAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1611,7 +1768,8 @@ func (j *jsiiProxy_ApprunnerCustomDomainAssociation) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association.html aws_apprunner_custom_domain_association} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association aws_apprunner_custom_domain_association} Resource.
 func NewApprunnerCustomDomainAssociation(scope constructs.Construct, id *string, config *ApprunnerCustomDomainAssociationConfig) ApprunnerCustomDomainAssociation {
 	_init_.Initialize()
 
@@ -1626,7 +1784,7 @@ func NewApprunnerCustomDomainAssociation(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association.html aws_apprunner_custom_domain_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association aws_apprunner_custom_domain_association} Resource.
 func NewApprunnerCustomDomainAssociation_Override(a ApprunnerCustomDomainAssociation, scope constructs.Construct, id *string, config *ApprunnerCustomDomainAssociationConfig) {
 	_init_.Initialize()
 
@@ -1637,7 +1795,7 @@ func NewApprunnerCustomDomainAssociation_Override(a ApprunnerCustomDomainAssocia
 	)
 }
 
-func (j *jsiiProxy_ApprunnerCustomDomainAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_ApprunnerCustomDomainAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1746,12 +1904,40 @@ func (a *jsiiProxy_ApprunnerCustomDomainAssociation) CertificateValidationRecord
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1788,12 +1974,54 @@ func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1907,14 +2135,21 @@ type ApprunnerCustomDomainAssociationCertificateValidationRecords interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	Value() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1963,8 +2198,8 @@ func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords)
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1993,15 +2228,26 @@ func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords)
 	return returns
 }
 
+func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
+
 // Experimental.
-func NewApprunnerCustomDomainAssociationCertificateValidationRecords(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) ApprunnerCustomDomainAssociationCertificateValidationRecords {
+func NewApprunnerCustomDomainAssociationCertificateValidationRecords(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) ApprunnerCustomDomainAssociationCertificateValidationRecords {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords{}
 
 	_jsii_.Create(
 		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2009,12 +2255,12 @@ func NewApprunnerCustomDomainAssociationCertificateValidationRecords(terraformRe
 }
 
 // Experimental.
-func NewApprunnerCustomDomainAssociationCertificateValidationRecords_Override(a ApprunnerCustomDomainAssociationCertificateValidationRecords, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewApprunnerCustomDomainAssociationCertificateValidationRecords_Override(a ApprunnerCustomDomainAssociationCertificateValidationRecords, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.apprunner.ApprunnerCustomDomainAssociationCertificateValidationRecords",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		a,
 	)
 }
@@ -2035,7 +2281,7 @@ func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords)
 	)
 }
 
-func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2043,13 +2289,49 @@ func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords)
 	)
 }
 
+func (j *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2086,12 +2368,54 @@ func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords)
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2116,22 +2440,22 @@ func (a *jsiiProxy_ApprunnerCustomDomainAssociationCertificateValidationRecords)
 // App Runner.
 type ApprunnerCustomDomainAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association.html#domain_name ApprunnerCustomDomainAssociation#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association.html#service_arn ApprunnerCustomDomainAssociation#service_arn}.
-	ServiceArn *string `json:"serviceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association.html#enable_www_subdomain ApprunnerCustomDomainAssociation#enable_www_subdomain}.
-	EnableWwwSubdomain interface{} `json:"enableWwwSubdomain"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association#domain_name ApprunnerCustomDomainAssociation#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association#service_arn ApprunnerCustomDomainAssociation#service_arn}.
+	ServiceArn *string `json:"serviceArn" yaml:"serviceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_custom_domain_association#enable_www_subdomain ApprunnerCustomDomainAssociation#enable_www_subdomain}.
+	EnableWwwSubdomain interface{} `json:"enableWwwSubdomain" yaml:"enableWwwSubdomain"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html aws_apprunner_service}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service aws_apprunner_service}.
 type ApprunnerService interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2140,8 +2464,8 @@ type ApprunnerService interface {
 	AutoScalingConfigurationArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EncryptionConfiguration() ApprunnerServiceEncryptionConfigurationOutputReference
@@ -2167,20 +2491,25 @@ type ApprunnerService interface {
 	SourceConfiguration() ApprunnerServiceSourceConfigurationOutputReference
 	SourceConfigurationInput() *ApprunnerServiceSourceConfiguration
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEncryptionConfiguration(value *ApprunnerServiceEncryptionConfiguration)
@@ -2255,8 +2584,8 @@ func (j *jsiiProxy_ApprunnerService) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerService) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerService) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2475,8 +2804,8 @@ func (j *jsiiProxy_ApprunnerService) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerService) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerService) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2485,8 +2814,8 @@ func (j *jsiiProxy_ApprunnerService) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerService) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerService) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2495,8 +2824,8 @@ func (j *jsiiProxy_ApprunnerService) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerService) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerService) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2505,8 +2834,8 @@ func (j *jsiiProxy_ApprunnerService) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerService) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerService) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2545,7 +2874,8 @@ func (j *jsiiProxy_ApprunnerService) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html aws_apprunner_service} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service aws_apprunner_service} Resource.
 func NewApprunnerService(scope constructs.Construct, id *string, config *ApprunnerServiceConfig) ApprunnerService {
 	_init_.Initialize()
 
@@ -2560,7 +2890,7 @@ func NewApprunnerService(scope constructs.Construct, id *string, config *Apprunn
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html aws_apprunner_service} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service aws_apprunner_service} Resource.
 func NewApprunnerService_Override(a ApprunnerService, scope constructs.Construct, id *string, config *ApprunnerServiceConfig) {
 	_init_.Initialize()
 
@@ -2579,7 +2909,7 @@ func (j *jsiiProxy_ApprunnerService) SetAutoScalingConfigurationArn(val *string)
 	)
 }
 
-func (j *jsiiProxy_ApprunnerService) SetCount(val interface{}) {
+func (j *jsiiProxy_ApprunnerService) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2619,7 +2949,7 @@ func (j *jsiiProxy_ApprunnerService) SetServiceName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApprunnerService) SetTags(val interface{}) {
+func (j *jsiiProxy_ApprunnerService) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2627,7 +2957,7 @@ func (j *jsiiProxy_ApprunnerService) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApprunnerService) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApprunnerService) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2675,12 +3005,40 @@ func (a *jsiiProxy_ApprunnerService) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerService) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerService) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerService) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2717,12 +3075,54 @@ func (a *jsiiProxy_ApprunnerService) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerService) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerService) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerService) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerService) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2903,42 +3303,42 @@ func (a *jsiiProxy_ApprunnerService) ToTerraform() interface{} {
 // App Runner.
 type ApprunnerServiceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#service_name ApprunnerService#service_name}.
-	ServiceName *string `json:"serviceName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#service_name ApprunnerService#service_name}.
+	ServiceName *string `json:"serviceName" yaml:"serviceName"`
 	// source_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#source_configuration ApprunnerService#source_configuration}
-	SourceConfiguration *ApprunnerServiceSourceConfiguration `json:"sourceConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#auto_scaling_configuration_arn ApprunnerService#auto_scaling_configuration_arn}.
-	AutoScalingConfigurationArn *string `json:"autoScalingConfigurationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#source_configuration ApprunnerService#source_configuration}
+	SourceConfiguration *ApprunnerServiceSourceConfiguration `json:"sourceConfiguration" yaml:"sourceConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#auto_scaling_configuration_arn ApprunnerService#auto_scaling_configuration_arn}.
+	AutoScalingConfigurationArn *string `json:"autoScalingConfigurationArn" yaml:"autoScalingConfigurationArn"`
 	// encryption_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#encryption_configuration ApprunnerService#encryption_configuration}
-	EncryptionConfiguration *ApprunnerServiceEncryptionConfiguration `json:"encryptionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#encryption_configuration ApprunnerService#encryption_configuration}
+	EncryptionConfiguration *ApprunnerServiceEncryptionConfiguration `json:"encryptionConfiguration" yaml:"encryptionConfiguration"`
 	// health_check_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#health_check_configuration ApprunnerService#health_check_configuration}
-	HealthCheckConfiguration *ApprunnerServiceHealthCheckConfiguration `json:"healthCheckConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#health_check_configuration ApprunnerService#health_check_configuration}
+	HealthCheckConfiguration *ApprunnerServiceHealthCheckConfiguration `json:"healthCheckConfiguration" yaml:"healthCheckConfiguration"`
 	// instance_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#instance_configuration ApprunnerService#instance_configuration}
-	InstanceConfiguration *ApprunnerServiceInstanceConfiguration `json:"instanceConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#tags ApprunnerService#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#tags_all ApprunnerService#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#instance_configuration ApprunnerService#instance_configuration}
+	InstanceConfiguration *ApprunnerServiceInstanceConfiguration `json:"instanceConfiguration" yaml:"instanceConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#tags ApprunnerService#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#tags_all ApprunnerService#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ApprunnerServiceEncryptionConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#kms_key ApprunnerService#kms_key}.
-	KmsKey *string `json:"kmsKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#kms_key ApprunnerService#kms_key}.
+	KmsKey *string `json:"kmsKey" yaml:"kmsKey"`
 }
 
 type ApprunnerServiceEncryptionConfigurationOutputReference interface {
@@ -2952,12 +3352,17 @@ type ApprunnerServiceEncryptionConfigurationOutputReference interface {
 	KmsKeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3017,8 +3422,8 @@ func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3027,7 +3432,8 @@ func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) Terra
 	return returns
 }
 
-func NewApprunnerServiceEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceEncryptionConfigurationOutputReference {
+
+func NewApprunnerServiceEncryptionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference{}
@@ -3041,7 +3447,7 @@ func NewApprunnerServiceEncryptionConfigurationOutputReference(terraformResource
 	return &j
 }
 
-func NewApprunnerServiceEncryptionConfigurationOutputReference_Override(a ApprunnerServiceEncryptionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceEncryptionConfigurationOutputReference_Override(a ApprunnerServiceEncryptionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3083,7 +3489,7 @@ func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3092,12 +3498,40 @@ func (j *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) SetTe
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3134,12 +3568,54 @@ func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetNu
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3176,18 +3652,18 @@ func (a *jsiiProxy_ApprunnerServiceEncryptionConfigurationOutputReference) Inter
 }
 
 type ApprunnerServiceHealthCheckConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#healthy_threshold ApprunnerService#healthy_threshold}.
-	HealthyThreshold *float64 `json:"healthyThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#interval ApprunnerService#interval}.
-	Interval *float64 `json:"interval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#path ApprunnerService#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#protocol ApprunnerService#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#timeout ApprunnerService#timeout}.
-	Timeout *float64 `json:"timeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#unhealthy_threshold ApprunnerService#unhealthy_threshold}.
-	UnhealthyThreshold *float64 `json:"unhealthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#healthy_threshold ApprunnerService#healthy_threshold}.
+	HealthyThreshold *float64 `json:"healthyThreshold" yaml:"healthyThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#interval ApprunnerService#interval}.
+	Interval *float64 `json:"interval" yaml:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#path ApprunnerService#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#protocol ApprunnerService#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#timeout ApprunnerService#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#unhealthy_threshold ApprunnerService#unhealthy_threshold}.
+	UnhealthyThreshold *float64 `json:"unhealthyThreshold" yaml:"unhealthyThreshold"`
 }
 
 type ApprunnerServiceHealthCheckConfigurationOutputReference interface {
@@ -3210,18 +3686,23 @@ type ApprunnerServiceHealthCheckConfigurationOutputReference interface {
 	ProtocolInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Timeout() *float64
 	SetTimeout(val *float64)
 	TimeoutInput() *float64
 	UnhealthyThreshold() *float64
 	SetUnhealthyThreshold(val *float64)
 	UnhealthyThresholdInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHealthyThreshold()
@@ -3347,8 +3828,8 @@ func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3397,7 +3878,8 @@ func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) Unhe
 	return returns
 }
 
-func NewApprunnerServiceHealthCheckConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceHealthCheckConfigurationOutputReference {
+
+func NewApprunnerServiceHealthCheckConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceHealthCheckConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference{}
@@ -3411,7 +3893,7 @@ func NewApprunnerServiceHealthCheckConfigurationOutputReference(terraformResourc
 	return &j
 }
 
-func NewApprunnerServiceHealthCheckConfigurationOutputReference_Override(a ApprunnerServiceHealthCheckConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceHealthCheckConfigurationOutputReference_Override(a ApprunnerServiceHealthCheckConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3477,7 +3959,7 @@ func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3502,12 +3984,40 @@ func (j *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) SetU
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3544,12 +4054,54 @@ func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetN
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3634,12 +4186,12 @@ func (a *jsiiProxy_ApprunnerServiceHealthCheckConfigurationOutputReference) Rese
 }
 
 type ApprunnerServiceInstanceConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#cpu ApprunnerService#cpu}.
-	Cpu *string `json:"cpu"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#instance_role_arn ApprunnerService#instance_role_arn}.
-	InstanceRoleArn *string `json:"instanceRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#memory ApprunnerService#memory}.
-	Memory *string `json:"memory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#cpu ApprunnerService#cpu}.
+	Cpu *string `json:"cpu" yaml:"cpu"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#instance_role_arn ApprunnerService#instance_role_arn}.
+	InstanceRoleArn *string `json:"instanceRoleArn" yaml:"instanceRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#memory ApprunnerService#memory}.
+	Memory *string `json:"memory" yaml:"memory"`
 }
 
 type ApprunnerServiceInstanceConfigurationOutputReference interface {
@@ -3659,12 +4211,17 @@ type ApprunnerServiceInstanceConfigurationOutputReference interface {
 	MemoryInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCpu()
@@ -3767,8 +4324,8 @@ func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3777,7 +4334,8 @@ func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) Terrafo
 	return returns
 }
 
-func NewApprunnerServiceInstanceConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceInstanceConfigurationOutputReference {
+
+func NewApprunnerServiceInstanceConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceInstanceConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference{}
@@ -3791,7 +4349,7 @@ func NewApprunnerServiceInstanceConfigurationOutputReference(terraformResource c
 	return &j
 }
 
-func NewApprunnerServiceInstanceConfigurationOutputReference_Override(a ApprunnerServiceInstanceConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceInstanceConfigurationOutputReference_Override(a ApprunnerServiceInstanceConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3849,7 +4407,7 @@ func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3858,12 +4416,40 @@ func (j *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) SetTerr
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3900,12 +4486,54 @@ func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetNumb
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3968,25 +4596,25 @@ func (a *jsiiProxy_ApprunnerServiceInstanceConfigurationOutputReference) ResetMe
 type ApprunnerServiceSourceConfiguration struct {
 	// authentication_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#authentication_configuration ApprunnerService#authentication_configuration}
-	AuthenticationConfiguration *ApprunnerServiceSourceConfigurationAuthenticationConfiguration `json:"authenticationConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#auto_deployments_enabled ApprunnerService#auto_deployments_enabled}.
-	AutoDeploymentsEnabled interface{} `json:"autoDeploymentsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#authentication_configuration ApprunnerService#authentication_configuration}
+	AuthenticationConfiguration *ApprunnerServiceSourceConfigurationAuthenticationConfiguration `json:"authenticationConfiguration" yaml:"authenticationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#auto_deployments_enabled ApprunnerService#auto_deployments_enabled}.
+	AutoDeploymentsEnabled interface{} `json:"autoDeploymentsEnabled" yaml:"autoDeploymentsEnabled"`
 	// code_repository block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#code_repository ApprunnerService#code_repository}
-	CodeRepository *ApprunnerServiceSourceConfigurationCodeRepository `json:"codeRepository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#code_repository ApprunnerService#code_repository}
+	CodeRepository *ApprunnerServiceSourceConfigurationCodeRepository `json:"codeRepository" yaml:"codeRepository"`
 	// image_repository block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#image_repository ApprunnerService#image_repository}
-	ImageRepository *ApprunnerServiceSourceConfigurationImageRepository `json:"imageRepository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#image_repository ApprunnerService#image_repository}
+	ImageRepository *ApprunnerServiceSourceConfigurationImageRepository `json:"imageRepository" yaml:"imageRepository"`
 }
 
 type ApprunnerServiceSourceConfigurationAuthenticationConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#access_role_arn ApprunnerService#access_role_arn}.
-	AccessRoleArn *string `json:"accessRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#connection_arn ApprunnerService#connection_arn}.
-	ConnectionArn *string `json:"connectionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#access_role_arn ApprunnerService#access_role_arn}.
+	AccessRoleArn *string `json:"accessRoleArn" yaml:"accessRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#connection_arn ApprunnerService#connection_arn}.
+	ConnectionArn *string `json:"connectionArn" yaml:"connectionArn"`
 }
 
 type ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference interface {
@@ -4003,12 +4631,17 @@ type ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReferen
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAccessRoleArn()
@@ -4090,8 +4723,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4100,7 +4733,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference {
+
+func NewApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference{}
@@ -4114,7 +4748,7 @@ func NewApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputRefe
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4164,7 +4798,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4173,12 +4807,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4215,12 +4877,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4273,38 +4977,38 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationAuthenticationConfiguratio
 }
 
 type ApprunnerServiceSourceConfigurationCodeRepository struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#repository_url ApprunnerService#repository_url}.
-	RepositoryUrl *string `json:"repositoryUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#repository_url ApprunnerService#repository_url}.
+	RepositoryUrl *string `json:"repositoryUrl" yaml:"repositoryUrl"`
 	// source_code_version block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#source_code_version ApprunnerService#source_code_version}
-	SourceCodeVersion *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion `json:"sourceCodeVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#source_code_version ApprunnerService#source_code_version}
+	SourceCodeVersion *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion `json:"sourceCodeVersion" yaml:"sourceCodeVersion"`
 	// code_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#code_configuration ApprunnerService#code_configuration}
-	CodeConfiguration *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration `json:"codeConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#code_configuration ApprunnerService#code_configuration}
+	CodeConfiguration *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration `json:"codeConfiguration" yaml:"codeConfiguration"`
 }
 
 type ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#configuration_source ApprunnerService#configuration_source}.
-	ConfigurationSource *string `json:"configurationSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#configuration_source ApprunnerService#configuration_source}.
+	ConfigurationSource *string `json:"configurationSource" yaml:"configurationSource"`
 	// code_configuration_values block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#code_configuration_values ApprunnerService#code_configuration_values}
-	CodeConfigurationValues *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues `json:"codeConfigurationValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#code_configuration_values ApprunnerService#code_configuration_values}
+	CodeConfigurationValues *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues `json:"codeConfigurationValues" yaml:"codeConfigurationValues"`
 }
 
 type ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#runtime ApprunnerService#runtime}.
-	Runtime *string `json:"runtime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#build_command ApprunnerService#build_command}.
-	BuildCommand *string `json:"buildCommand"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#port ApprunnerService#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#runtime_environment_variables ApprunnerService#runtime_environment_variables}.
-	RuntimeEnvironmentVariables interface{} `json:"runtimeEnvironmentVariables"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#start_command ApprunnerService#start_command}.
-	StartCommand *string `json:"startCommand"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#runtime ApprunnerService#runtime}.
+	Runtime *string `json:"runtime" yaml:"runtime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#build_command ApprunnerService#build_command}.
+	BuildCommand *string `json:"buildCommand" yaml:"buildCommand"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#port ApprunnerService#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#runtime_environment_variables ApprunnerService#runtime_environment_variables}.
+	RuntimeEnvironmentVariables *map[string]*string `json:"runtimeEnvironmentVariables" yaml:"runtimeEnvironmentVariables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#start_command ApprunnerService#start_command}.
+	StartCommand *string `json:"startCommand" yaml:"startCommand"`
 }
 
 type ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference interface {
@@ -4321,21 +5025,26 @@ type ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfi
 	PortInput() *string
 	Runtime() *string
 	SetRuntime(val *string)
-	RuntimeEnvironmentVariables() interface{}
-	SetRuntimeEnvironmentVariables(val interface{})
-	RuntimeEnvironmentVariablesInput() interface{}
+	RuntimeEnvironmentVariables() *map[string]*string
+	SetRuntimeEnvironmentVariables(val *map[string]*string)
+	RuntimeEnvironmentVariablesInput() *map[string]*string
 	RuntimeInput() *string
 	StartCommand() *string
 	SetStartCommand(val *string)
 	StartCommandInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBuildCommand()
@@ -4419,8 +5128,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) RuntimeEnvironmentVariables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) RuntimeEnvironmentVariables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"runtimeEnvironmentVariables",
@@ -4429,8 +5138,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) RuntimeEnvironmentVariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) RuntimeEnvironmentVariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"runtimeEnvironmentVariablesInput",
@@ -4479,8 +5188,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4489,7 +5198,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference {
+
+func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference{}
@@ -4503,7 +5213,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeCo
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4553,7 +5263,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) SetRuntimeEnvironmentVariables(val interface{}) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) SetRuntimeEnvironmentVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"runtimeEnvironmentVariables",
@@ -4577,7 +5287,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4586,12 +5296,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4628,12 +5366,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4714,12 +5494,17 @@ type ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputRef
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCodeConfigurationValues(value *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValues)
@@ -4801,8 +5586,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4811,7 +5596,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference {
+
+func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference{}
@@ -4825,7 +5611,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutput
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4867,7 +5653,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4876,12 +5662,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4918,12 +5732,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigur
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4990,12 +5846,17 @@ type ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference interface 
 	SourceCodeVersionInput() *ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCodeConfiguration(value *ApprunnerServiceSourceConfigurationCodeRepositoryCodeConfiguration)
@@ -5098,8 +5959,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5108,7 +5969,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputRefere
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositoryOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference {
+
+func NewApprunnerServiceSourceConfigurationCodeRepositoryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference{}
@@ -5122,7 +5984,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositoryOutputReference(terrafo
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositoryOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationCodeRepositoryOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5164,7 +6026,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputRefere
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5173,12 +6035,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputRefere
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5215,12 +6105,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputRefere
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5281,10 +6213,10 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositoryOutputRefere
 }
 
 type ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersion struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#type ApprunnerService#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#value ApprunnerService#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#type ApprunnerService#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#value ApprunnerService#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference interface {
@@ -5295,18 +6227,23 @@ type ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputRef
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5346,8 +6283,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVe
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5396,7 +6333,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVe
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference {
+
+func NewApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference{}
@@ -5410,7 +6348,7 @@ func NewApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutput
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference_Override(a ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5444,7 +6382,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVe
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5469,12 +6407,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVe
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5511,12 +6477,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVe
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVersionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5553,23 +6561,23 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationCodeRepositorySourceCodeVe
 }
 
 type ApprunnerServiceSourceConfigurationImageRepository struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#image_identifier ApprunnerService#image_identifier}.
-	ImageIdentifier *string `json:"imageIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#image_repository_type ApprunnerService#image_repository_type}.
-	ImageRepositoryType *string `json:"imageRepositoryType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#image_identifier ApprunnerService#image_identifier}.
+	ImageIdentifier *string `json:"imageIdentifier" yaml:"imageIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#image_repository_type ApprunnerService#image_repository_type}.
+	ImageRepositoryType *string `json:"imageRepositoryType" yaml:"imageRepositoryType"`
 	// image_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#image_configuration ApprunnerService#image_configuration}
-	ImageConfiguration *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration `json:"imageConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#image_configuration ApprunnerService#image_configuration}
+	ImageConfiguration *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration `json:"imageConfiguration" yaml:"imageConfiguration"`
 }
 
 type ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#port ApprunnerService#port}.
-	Port *string `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#runtime_environment_variables ApprunnerService#runtime_environment_variables}.
-	RuntimeEnvironmentVariables interface{} `json:"runtimeEnvironmentVariables"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service.html#start_command ApprunnerService#start_command}.
-	StartCommand *string `json:"startCommand"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#port ApprunnerService#port}.
+	Port *string `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#runtime_environment_variables ApprunnerService#runtime_environment_variables}.
+	RuntimeEnvironmentVariables *map[string]*string `json:"runtimeEnvironmentVariables" yaml:"runtimeEnvironmentVariables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/apprunner_service#start_command ApprunnerService#start_command}.
+	StartCommand *string `json:"startCommand" yaml:"startCommand"`
 }
 
 type ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference interface {
@@ -5581,20 +6589,25 @@ type ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputR
 	Port() *string
 	SetPort(val *string)
 	PortInput() *string
-	RuntimeEnvironmentVariables() interface{}
-	SetRuntimeEnvironmentVariables(val interface{})
-	RuntimeEnvironmentVariablesInput() interface{}
+	RuntimeEnvironmentVariables() *map[string]*string
+	SetRuntimeEnvironmentVariables(val *map[string]*string)
+	RuntimeEnvironmentVariablesInput() *map[string]*string
 	StartCommand() *string
 	SetStartCommand(val *string)
 	StartCommandInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPort()
@@ -5647,8 +6660,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) RuntimeEnvironmentVariables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) RuntimeEnvironmentVariables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"runtimeEnvironmentVariables",
@@ -5657,8 +6670,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) RuntimeEnvironmentVariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) RuntimeEnvironmentVariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"runtimeEnvironmentVariablesInput",
@@ -5697,8 +6710,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5707,7 +6720,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference {
+
+func NewApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference{}
@@ -5721,7 +6735,7 @@ func NewApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutp
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5755,7 +6769,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) SetRuntimeEnvironmentVariables(val interface{}) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) SetRuntimeEnvironmentVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"runtimeEnvironmentVariables",
@@ -5779,7 +6793,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5788,12 +6802,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5830,12 +6872,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfig
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryImageConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5911,12 +6995,17 @@ type ApprunnerServiceSourceConfigurationImageRepositoryOutputReference interface
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutImageConfiguration(value *ApprunnerServiceSourceConfigurationImageRepositoryImageConfiguration)
@@ -6018,8 +7107,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6028,7 +7117,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputRefer
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationImageRepositoryOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationImageRepositoryOutputReference {
+
+func NewApprunnerServiceSourceConfigurationImageRepositoryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationImageRepositoryOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference{}
@@ -6042,7 +7132,7 @@ func NewApprunnerServiceSourceConfigurationImageRepositoryOutputReference(terraf
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationImageRepositoryOutputReference_Override(a ApprunnerServiceSourceConfigurationImageRepositoryOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationImageRepositoryOutputReference_Override(a ApprunnerServiceSourceConfigurationImageRepositoryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6092,7 +7182,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputRefer
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6101,12 +7191,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputRefer
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6143,12 +7261,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputRefer
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationImageRepositoryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6217,12 +7377,17 @@ type ApprunnerServiceSourceConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAuthenticationConfiguration(value *ApprunnerServiceSourceConfigurationAuthenticationConfiguration)
@@ -6349,8 +7514,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6359,7 +7524,8 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) Terraform
 	return returns
 }
 
-func NewApprunnerServiceSourceConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationOutputReference {
+
+func NewApprunnerServiceSourceConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApprunnerServiceSourceConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference{}
@@ -6373,7 +7539,7 @@ func NewApprunnerServiceSourceConfigurationOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewApprunnerServiceSourceConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApprunnerServiceSourceConfigurationOutputReference_Override(a ApprunnerServiceSourceConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6415,7 +7581,7 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6424,12 +7590,40 @@ func (j *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) SetTerraf
 }
 
 // Experimental.
-func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6466,12 +7660,54 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetNumber
 }
 
 // Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6562,3 +7798,4 @@ func (a *jsiiProxy_ApprunnerServiceSourceConfigurationOutputReference) ResetImag
 		nil, // no parameters
 	)
 }
+

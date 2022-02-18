@@ -9,14 +9,1665 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/ses/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set.html aws_ses_active_receipt_rule_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ses_active_receipt_rule_set aws_ses_active_receipt_rule_set}.
+type DataAwsSesActiveReceiptRuleSet interface {
+	cdktf.TerraformDataSource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RuleSetName() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsSesActiveReceiptRuleSet
+type jsiiProxy_DataAwsSesActiveReceiptRuleSet struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) RuleSetName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ruleSetName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ses_active_receipt_rule_set aws_ses_active_receipt_rule_set} Data Source.
+func NewDataAwsSesActiveReceiptRuleSet(scope constructs.Construct, id *string, config *DataAwsSesActiveReceiptRuleSetConfig) DataAwsSesActiveReceiptRuleSet {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsSesActiveReceiptRuleSet{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ses.DataAwsSesActiveReceiptRuleSet",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ses_active_receipt_rule_set aws_ses_active_receipt_rule_set} Data Source.
+func NewDataAwsSesActiveReceiptRuleSet_Override(d DataAwsSesActiveReceiptRuleSet, scope constructs.Construct, id *string, config *DataAwsSesActiveReceiptRuleSetConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ses.DataAwsSesActiveReceiptRuleSet",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesActiveReceiptRuleSet) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsSesActiveReceiptRuleSet_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ses.DataAwsSesActiveReceiptRuleSet",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsSesActiveReceiptRuleSet_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ses.DataAwsSesActiveReceiptRuleSet",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesActiveReceiptRuleSet) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Email Service.
+type DataAwsSesActiveReceiptRuleSetConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ses_domain_identity aws_ses_domain_identity}.
+type DataAwsSesDomainIdentity interface {
+	cdktf.TerraformDataSource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Domain() *string
+	SetDomain(val *string)
+	DomainInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	VerificationToken() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsSesDomainIdentity
+type jsiiProxy_DataAwsSesDomainIdentity struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Domain() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"domain",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) DomainInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"domainInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) VerificationToken() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"verificationToken",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ses_domain_identity aws_ses_domain_identity} Data Source.
+func NewDataAwsSesDomainIdentity(scope constructs.Construct, id *string, config *DataAwsSesDomainIdentityConfig) DataAwsSesDomainIdentity {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsSesDomainIdentity{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ses.DataAwsSesDomainIdentity",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ses_domain_identity aws_ses_domain_identity} Data Source.
+func NewDataAwsSesDomainIdentity_Override(d DataAwsSesDomainIdentity, scope constructs.Construct, id *string, config *DataAwsSesDomainIdentityConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ses.DataAwsSesDomainIdentity",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) SetDomain(val *string) {
+	_jsii_.Set(
+		j,
+		"domain",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesDomainIdentity) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsSesDomainIdentity_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ses.DataAwsSesDomainIdentity",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsSesDomainIdentity_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ses.DataAwsSesDomainIdentity",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsSesDomainIdentity) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesDomainIdentity) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Email Service.
+type DataAwsSesDomainIdentityConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ses_domain_identity#domain DataAwsSesDomainIdentity#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ses_email_identity aws_ses_email_identity}.
+type DataAwsSesEmailIdentity interface {
+	cdktf.TerraformDataSource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Email() *string
+	SetEmail(val *string)
+	EmailInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsSesEmailIdentity
+type jsiiProxy_DataAwsSesEmailIdentity struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Email() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"email",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) EmailInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"emailInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ses_email_identity aws_ses_email_identity} Data Source.
+func NewDataAwsSesEmailIdentity(scope constructs.Construct, id *string, config *DataAwsSesEmailIdentityConfig) DataAwsSesEmailIdentity {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsSesEmailIdentity{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ses.DataAwsSesEmailIdentity",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ses_email_identity aws_ses_email_identity} Data Source.
+func NewDataAwsSesEmailIdentity_Override(d DataAwsSesEmailIdentity, scope constructs.Construct, id *string, config *DataAwsSesEmailIdentityConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ses.DataAwsSesEmailIdentity",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) SetEmail(val *string) {
+	_jsii_.Set(
+		j,
+		"email",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsSesEmailIdentity) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsSesEmailIdentity_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ses.DataAwsSesEmailIdentity",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsSesEmailIdentity_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ses.DataAwsSesEmailIdentity",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsSesEmailIdentity) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsSesEmailIdentity) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Simple Email Service.
+type DataAwsSesEmailIdentityConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ses_email_identity#email DataAwsSesEmailIdentity#email}.
+	Email *string `json:"email" yaml:"email"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set aws_ses_active_receipt_rule_set}.
 type SesActiveReceiptRuleSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -35,10 +1686,15 @@ type SesActiveReceiptRuleSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -83,8 +1739,8 @@ func (j *jsiiProxy_SesActiveReceiptRuleSet) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_SesActiveReceiptRuleSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesActiveReceiptRuleSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -223,7 +1879,7 @@ func (j *jsiiProxy_SesActiveReceiptRuleSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set.html aws_ses_active_receipt_rule_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set aws_ses_active_receipt_rule_set} Resource.
 func NewSesActiveReceiptRuleSet(scope constructs.Construct, id *string, config *SesActiveReceiptRuleSetConfig) SesActiveReceiptRuleSet {
 	_init_.Initialize()
 
@@ -238,7 +1894,7 @@ func NewSesActiveReceiptRuleSet(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set.html aws_ses_active_receipt_rule_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set aws_ses_active_receipt_rule_set} Resource.
 func NewSesActiveReceiptRuleSet_Override(s SesActiveReceiptRuleSet, scope constructs.Construct, id *string, config *SesActiveReceiptRuleSetConfig) {
 	_init_.Initialize()
 
@@ -249,7 +1905,7 @@ func NewSesActiveReceiptRuleSet_Override(s SesActiveReceiptRuleSet, scope constr
 	)
 }
 
-func (j *jsiiProxy_SesActiveReceiptRuleSet) SetCount(val interface{}) {
+func (j *jsiiProxy_SesActiveReceiptRuleSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -329,12 +1985,40 @@ func (s *jsiiProxy_SesActiveReceiptRuleSet) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_SesActiveReceiptRuleSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesActiveReceiptRuleSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesActiveReceiptRuleSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -371,12 +2055,54 @@ func (s *jsiiProxy_SesActiveReceiptRuleSet) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_SesActiveReceiptRuleSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesActiveReceiptRuleSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesActiveReceiptRuleSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesActiveReceiptRuleSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -477,25 +2203,25 @@ func (s *jsiiProxy_SesActiveReceiptRuleSet) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesActiveReceiptRuleSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set.html#rule_set_name SesActiveReceiptRuleSet#rule_set_name}.
-	RuleSetName *string `json:"ruleSetName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_active_receipt_rule_set#rule_set_name SesActiveReceiptRuleSet#rule_set_name}.
+	RuleSetName *string `json:"ruleSetName" yaml:"ruleSetName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html aws_ses_configuration_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set aws_ses_configuration_set}.
 type SesConfigurationSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeliveryOptions() SesConfigurationSetDeliveryOptionsOutputReference
 	DeliveryOptionsInput() *SesConfigurationSetDeliveryOptions
 	DependsOn() *[]*string
@@ -523,10 +2249,15 @@ type SesConfigurationSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDeliveryOptions(value *SesConfigurationSetDeliveryOptions)
@@ -575,8 +2306,8 @@ func (j *jsiiProxy_SesConfigurationSet) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_SesConfigurationSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesConfigurationSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -785,7 +2516,7 @@ func (j *jsiiProxy_SesConfigurationSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html aws_ses_configuration_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set aws_ses_configuration_set} Resource.
 func NewSesConfigurationSet(scope constructs.Construct, id *string, config *SesConfigurationSetConfig) SesConfigurationSet {
 	_init_.Initialize()
 
@@ -800,7 +2531,7 @@ func NewSesConfigurationSet(scope constructs.Construct, id *string, config *SesC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html aws_ses_configuration_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set aws_ses_configuration_set} Resource.
 func NewSesConfigurationSet_Override(s SesConfigurationSet, scope constructs.Construct, id *string, config *SesConfigurationSetConfig) {
 	_init_.Initialize()
 
@@ -811,7 +2542,7 @@ func NewSesConfigurationSet_Override(s SesConfigurationSet, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_SesConfigurationSet) SetCount(val interface{}) {
+func (j *jsiiProxy_SesConfigurationSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -907,12 +2638,40 @@ func (s *jsiiProxy_SesConfigurationSet) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (s *jsiiProxy_SesConfigurationSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesConfigurationSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesConfigurationSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -949,12 +2708,54 @@ func (s *jsiiProxy_SesConfigurationSet) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (s *jsiiProxy_SesConfigurationSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesConfigurationSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesConfigurationSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesConfigurationSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1087,28 +2888,28 @@ func (s *jsiiProxy_SesConfigurationSet) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesConfigurationSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html#name SesConfigurationSet#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set#name SesConfigurationSet#name}.
+	Name *string `json:"name" yaml:"name"`
 	// delivery_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html#delivery_options SesConfigurationSet#delivery_options}
-	DeliveryOptions *SesConfigurationSetDeliveryOptions `json:"deliveryOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html#reputation_metrics_enabled SesConfigurationSet#reputation_metrics_enabled}.
-	ReputationMetricsEnabled interface{} `json:"reputationMetricsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html#sending_enabled SesConfigurationSet#sending_enabled}.
-	SendingEnabled interface{} `json:"sendingEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set#delivery_options SesConfigurationSet#delivery_options}
+	DeliveryOptions *SesConfigurationSetDeliveryOptions `json:"deliveryOptions" yaml:"deliveryOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set#reputation_metrics_enabled SesConfigurationSet#reputation_metrics_enabled}.
+	ReputationMetricsEnabled interface{} `json:"reputationMetricsEnabled" yaml:"reputationMetricsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set#sending_enabled SesConfigurationSet#sending_enabled}.
+	SendingEnabled interface{} `json:"sendingEnabled" yaml:"sendingEnabled"`
 }
 
 type SesConfigurationSetDeliveryOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set.html#tls_policy SesConfigurationSet#tls_policy}.
-	TlsPolicy *string `json:"tlsPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_configuration_set#tls_policy SesConfigurationSet#tls_policy}.
+	TlsPolicy *string `json:"tlsPolicy" yaml:"tlsPolicy"`
 }
 
 type SesConfigurationSetDeliveryOptionsOutputReference interface {
@@ -1119,15 +2920,20 @@ type SesConfigurationSetDeliveryOptionsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TlsPolicy() *string
 	SetTlsPolicy(val *string)
 	TlsPolicyInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetTlsPolicy()
@@ -1168,8 +2974,8 @@ func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1198,7 +3004,7 @@ func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) TlsPolicyI
 	return returns
 }
 
-func NewSesConfigurationSetDeliveryOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SesConfigurationSetDeliveryOptionsOutputReference {
+func NewSesConfigurationSetDeliveryOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SesConfigurationSetDeliveryOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference{}
@@ -1212,7 +3018,7 @@ func NewSesConfigurationSetDeliveryOptionsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewSesConfigurationSetDeliveryOptionsOutputReference_Override(s SesConfigurationSetDeliveryOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSesConfigurationSetDeliveryOptionsOutputReference_Override(s SesConfigurationSetDeliveryOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1246,7 +3052,7 @@ func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1263,12 +3069,40 @@ func (j *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) SetTlsPoli
 }
 
 // Experimental.
-func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1305,12 +3139,54 @@ func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1354,13 +3230,13 @@ func (s *jsiiProxy_SesConfigurationSetDeliveryOptionsOutputReference) ResetTlsPo
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim.html aws_ses_domain_dkim}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim aws_ses_domain_dkim}.
 type SesDomainDkim interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DkimTokens() *[]*string
@@ -1380,10 +3256,15 @@ type SesDomainDkim interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1418,8 +3299,8 @@ func (j *jsiiProxy_SesDomainDkim) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_SesDomainDkim) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesDomainDkim) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1568,7 +3449,7 @@ func (j *jsiiProxy_SesDomainDkim) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim.html aws_ses_domain_dkim} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim aws_ses_domain_dkim} Resource.
 func NewSesDomainDkim(scope constructs.Construct, id *string, config *SesDomainDkimConfig) SesDomainDkim {
 	_init_.Initialize()
 
@@ -1583,7 +3464,7 @@ func NewSesDomainDkim(scope constructs.Construct, id *string, config *SesDomainD
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim.html aws_ses_domain_dkim} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim aws_ses_domain_dkim} Resource.
 func NewSesDomainDkim_Override(s SesDomainDkim, scope constructs.Construct, id *string, config *SesDomainDkimConfig) {
 	_init_.Initialize()
 
@@ -1594,7 +3475,7 @@ func NewSesDomainDkim_Override(s SesDomainDkim, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_SesDomainDkim) SetCount(val interface{}) {
+func (j *jsiiProxy_SesDomainDkim) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1674,12 +3555,40 @@ func (s *jsiiProxy_SesDomainDkim) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainDkim) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainDkim) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainDkim) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1716,12 +3625,54 @@ func (s *jsiiProxy_SesDomainDkim) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainDkim) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainDkim) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainDkim) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainDkim) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1822,25 +3773,25 @@ func (s *jsiiProxy_SesDomainDkim) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesDomainDkimConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim.html#domain SesDomainDkim#domain}.
-	Domain *string `json:"domain"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_dkim#domain SesDomainDkim#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity.html aws_ses_domain_identity}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity aws_ses_domain_identity}.
 type SesDomainIdentity interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -1860,10 +3811,15 @@ type SesDomainIdentity interface {
 	TerraformResourceType() *string
 	VerificationToken() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1908,8 +3864,8 @@ func (j *jsiiProxy_SesDomainIdentity) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SesDomainIdentity) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesDomainIdentity) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2058,7 +4014,7 @@ func (j *jsiiProxy_SesDomainIdentity) VerificationToken() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity.html aws_ses_domain_identity} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity aws_ses_domain_identity} Resource.
 func NewSesDomainIdentity(scope constructs.Construct, id *string, config *SesDomainIdentityConfig) SesDomainIdentity {
 	_init_.Initialize()
 
@@ -2073,7 +4029,7 @@ func NewSesDomainIdentity(scope constructs.Construct, id *string, config *SesDom
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity.html aws_ses_domain_identity} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity aws_ses_domain_identity} Resource.
 func NewSesDomainIdentity_Override(s SesDomainIdentity, scope constructs.Construct, id *string, config *SesDomainIdentityConfig) {
 	_init_.Initialize()
 
@@ -2084,7 +4040,7 @@ func NewSesDomainIdentity_Override(s SesDomainIdentity, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_SesDomainIdentity) SetCount(val interface{}) {
+func (j *jsiiProxy_SesDomainIdentity) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2164,12 +4120,40 @@ func (s *jsiiProxy_SesDomainIdentity) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainIdentity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainIdentity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2206,12 +4190,54 @@ func (s *jsiiProxy_SesDomainIdentity) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainIdentity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainIdentity) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2312,25 +4338,25 @@ func (s *jsiiProxy_SesDomainIdentity) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesDomainIdentityConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity.html#domain SesDomainIdentity#domain}.
-	Domain *string `json:"domain"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity#domain SesDomainIdentity#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification.html aws_ses_domain_identity_verification}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification aws_ses_domain_identity_verification}.
 type SesDomainIdentityVerification interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -2351,10 +4377,15 @@ type SesDomainIdentityVerification interface {
 	Timeouts() SesDomainIdentityVerificationTimeoutsOutputReference
 	TimeoutsInput() *SesDomainIdentityVerificationTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *SesDomainIdentityVerificationTimeouts)
@@ -2401,8 +4432,8 @@ func (j *jsiiProxy_SesDomainIdentityVerification) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_SesDomainIdentityVerification) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesDomainIdentityVerification) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2561,7 +4592,7 @@ func (j *jsiiProxy_SesDomainIdentityVerification) TimeoutsInput() *SesDomainIden
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification.html aws_ses_domain_identity_verification} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification aws_ses_domain_identity_verification} Resource.
 func NewSesDomainIdentityVerification(scope constructs.Construct, id *string, config *SesDomainIdentityVerificationConfig) SesDomainIdentityVerification {
 	_init_.Initialize()
 
@@ -2576,7 +4607,7 @@ func NewSesDomainIdentityVerification(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification.html aws_ses_domain_identity_verification} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification aws_ses_domain_identity_verification} Resource.
 func NewSesDomainIdentityVerification_Override(s SesDomainIdentityVerification, scope constructs.Construct, id *string, config *SesDomainIdentityVerificationConfig) {
 	_init_.Initialize()
 
@@ -2587,7 +4618,7 @@ func NewSesDomainIdentityVerification_Override(s SesDomainIdentityVerification, 
 	)
 }
 
-func (j *jsiiProxy_SesDomainIdentityVerification) SetCount(val interface{}) {
+func (j *jsiiProxy_SesDomainIdentityVerification) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2667,12 +4698,40 @@ func (s *jsiiProxy_SesDomainIdentityVerification) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerification) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainIdentityVerification) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerification) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2709,12 +4768,54 @@ func (s *jsiiProxy_SesDomainIdentityVerification) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerification) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerification) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainIdentityVerification) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerification) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2831,24 +4932,24 @@ func (s *jsiiProxy_SesDomainIdentityVerification) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesDomainIdentityVerificationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification.html#domain SesDomainIdentityVerification#domain}.
-	Domain *string `json:"domain"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification#domain SesDomainIdentityVerification#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification.html#timeouts SesDomainIdentityVerification#timeouts}
-	Timeouts *SesDomainIdentityVerificationTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification#timeouts SesDomainIdentityVerification#timeouts}
+	Timeouts *SesDomainIdentityVerificationTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type SesDomainIdentityVerificationTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification.html#create SesDomainIdentityVerification#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_identity_verification#create SesDomainIdentityVerification#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type SesDomainIdentityVerificationTimeoutsOutputReference interface {
@@ -2862,12 +4963,17 @@ type SesDomainIdentityVerificationTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2928,8 +5034,8 @@ func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2938,7 +5044,7 @@ func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) Terrafo
 	return returns
 }
 
-func NewSesDomainIdentityVerificationTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SesDomainIdentityVerificationTimeoutsOutputReference {
+func NewSesDomainIdentityVerificationTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SesDomainIdentityVerificationTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference{}
@@ -2952,7 +5058,7 @@ func NewSesDomainIdentityVerificationTimeoutsOutputReference(terraformResource c
 	return &j
 }
 
-func NewSesDomainIdentityVerificationTimeoutsOutputReference_Override(s SesDomainIdentityVerificationTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSesDomainIdentityVerificationTimeoutsOutputReference_Override(s SesDomainIdentityVerificationTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2994,7 +5100,7 @@ func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3003,12 +5109,40 @@ func (j *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) SetTerr
 }
 
 // Experimental.
-func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3045,12 +5179,54 @@ func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetNumb
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3094,7 +5270,7 @@ func (s *jsiiProxy_SesDomainIdentityVerificationTimeoutsOutputReference) ResetCr
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from.html aws_ses_domain_mail_from}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from aws_ses_domain_mail_from}.
 type SesDomainMailFrom interface {
 	cdktf.TerraformResource
 	BehaviorOnMxFailure() *string
@@ -3102,8 +5278,8 @@ type SesDomainMailFrom interface {
 	BehaviorOnMxFailureInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -3125,10 +5301,15 @@ type SesDomainMailFrom interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBehaviorOnMxFailure()
@@ -3184,8 +5365,8 @@ func (j *jsiiProxy_SesDomainMailFrom) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SesDomainMailFrom) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesDomainMailFrom) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3344,7 +5525,7 @@ func (j *jsiiProxy_SesDomainMailFrom) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from.html aws_ses_domain_mail_from} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from aws_ses_domain_mail_from} Resource.
 func NewSesDomainMailFrom(scope constructs.Construct, id *string, config *SesDomainMailFromConfig) SesDomainMailFrom {
 	_init_.Initialize()
 
@@ -3359,7 +5540,7 @@ func NewSesDomainMailFrom(scope constructs.Construct, id *string, config *SesDom
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from.html aws_ses_domain_mail_from} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from aws_ses_domain_mail_from} Resource.
 func NewSesDomainMailFrom_Override(s SesDomainMailFrom, scope constructs.Construct, id *string, config *SesDomainMailFromConfig) {
 	_init_.Initialize()
 
@@ -3378,7 +5559,7 @@ func (j *jsiiProxy_SesDomainMailFrom) SetBehaviorOnMxFailure(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SesDomainMailFrom) SetCount(val interface{}) {
+func (j *jsiiProxy_SesDomainMailFrom) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3466,12 +5647,40 @@ func (s *jsiiProxy_SesDomainMailFrom) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainMailFrom) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainMailFrom) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainMailFrom) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3508,12 +5717,54 @@ func (s *jsiiProxy_SesDomainMailFrom) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SesDomainMailFrom) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainMailFrom) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesDomainMailFrom) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesDomainMailFrom) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3622,29 +5873,29 @@ func (s *jsiiProxy_SesDomainMailFrom) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesDomainMailFromConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from.html#domain SesDomainMailFrom#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from.html#mail_from_domain SesDomainMailFrom#mail_from_domain}.
-	MailFromDomain *string `json:"mailFromDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from.html#behavior_on_mx_failure SesDomainMailFrom#behavior_on_mx_failure}.
-	BehaviorOnMxFailure *string `json:"behaviorOnMxFailure"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from#domain SesDomainMailFrom#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from#mail_from_domain SesDomainMailFrom#mail_from_domain}.
+	MailFromDomain *string `json:"mailFromDomain" yaml:"mailFromDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_domain_mail_from#behavior_on_mx_failure SesDomainMailFrom#behavior_on_mx_failure}.
+	BehaviorOnMxFailure *string `json:"behaviorOnMxFailure" yaml:"behaviorOnMxFailure"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity.html aws_ses_email_identity}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity aws_ses_email_identity}.
 type SesEmailIdentity interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Email() *string
@@ -3663,10 +5914,15 @@ type SesEmailIdentity interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3711,8 +5967,8 @@ func (j *jsiiProxy_SesEmailIdentity) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_SesEmailIdentity) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesEmailIdentity) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3851,7 +6107,7 @@ func (j *jsiiProxy_SesEmailIdentity) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity.html aws_ses_email_identity} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity aws_ses_email_identity} Resource.
 func NewSesEmailIdentity(scope constructs.Construct, id *string, config *SesEmailIdentityConfig) SesEmailIdentity {
 	_init_.Initialize()
 
@@ -3866,7 +6122,7 @@ func NewSesEmailIdentity(scope constructs.Construct, id *string, config *SesEmai
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity.html aws_ses_email_identity} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity aws_ses_email_identity} Resource.
 func NewSesEmailIdentity_Override(s SesEmailIdentity, scope constructs.Construct, id *string, config *SesEmailIdentityConfig) {
 	_init_.Initialize()
 
@@ -3877,7 +6133,7 @@ func NewSesEmailIdentity_Override(s SesEmailIdentity, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_SesEmailIdentity) SetCount(val interface{}) {
+func (j *jsiiProxy_SesEmailIdentity) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3957,12 +6213,40 @@ func (s *jsiiProxy_SesEmailIdentity) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (s *jsiiProxy_SesEmailIdentity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesEmailIdentity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEmailIdentity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3999,12 +6283,54 @@ func (s *jsiiProxy_SesEmailIdentity) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (s *jsiiProxy_SesEmailIdentity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEmailIdentity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesEmailIdentity) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEmailIdentity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4105,31 +6431,31 @@ func (s *jsiiProxy_SesEmailIdentity) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesEmailIdentityConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity.html#email SesEmailIdentity#email}.
-	Email *string `json:"email"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_email_identity#email SesEmailIdentity#email}.
+	Email *string `json:"email" yaml:"email"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html aws_ses_event_destination}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination aws_ses_event_destination}.
 type SesEventDestination interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
-	CloudwatchDestination() *[]*SesEventDestinationCloudwatchDestination
-	SetCloudwatchDestination(val *[]*SesEventDestinationCloudwatchDestination)
-	CloudwatchDestinationInput() *[]*SesEventDestinationCloudwatchDestination
+	CloudwatchDestination() interface{}
+	SetCloudwatchDestination(val interface{})
+	CloudwatchDestinationInput() interface{}
 	ConfigurationSetName() *string
 	SetConfigurationSetName(val *string)
 	ConfigurationSetNameInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -4158,10 +6484,15 @@ type SesEventDestination interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutKinesisDestination(value *SesEventDestinationKinesisDestination)
@@ -4202,8 +6533,8 @@ func (j *jsiiProxy_SesEventDestination) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_SesEventDestination) CloudwatchDestination() *[]*SesEventDestinationCloudwatchDestination {
-	var returns *[]*SesEventDestinationCloudwatchDestination
+func (j *jsiiProxy_SesEventDestination) CloudwatchDestination() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"cloudwatchDestination",
@@ -4212,8 +6543,8 @@ func (j *jsiiProxy_SesEventDestination) CloudwatchDestination() *[]*SesEventDest
 	return returns
 }
 
-func (j *jsiiProxy_SesEventDestination) CloudwatchDestinationInput() *[]*SesEventDestinationCloudwatchDestination {
-	var returns *[]*SesEventDestinationCloudwatchDestination
+func (j *jsiiProxy_SesEventDestination) CloudwatchDestinationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"cloudwatchDestinationInput",
@@ -4252,8 +6583,8 @@ func (j *jsiiProxy_SesEventDestination) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_SesEventDestination) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesEventDestination) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4472,7 +6803,7 @@ func (j *jsiiProxy_SesEventDestination) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html aws_ses_event_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination aws_ses_event_destination} Resource.
 func NewSesEventDestination(scope constructs.Construct, id *string, config *SesEventDestinationConfig) SesEventDestination {
 	_init_.Initialize()
 
@@ -4487,7 +6818,7 @@ func NewSesEventDestination(scope constructs.Construct, id *string, config *SesE
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html aws_ses_event_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination aws_ses_event_destination} Resource.
 func NewSesEventDestination_Override(s SesEventDestination, scope constructs.Construct, id *string, config *SesEventDestinationConfig) {
 	_init_.Initialize()
 
@@ -4498,7 +6829,7 @@ func NewSesEventDestination_Override(s SesEventDestination, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_SesEventDestination) SetCloudwatchDestination(val *[]*SesEventDestinationCloudwatchDestination) {
+func (j *jsiiProxy_SesEventDestination) SetCloudwatchDestination(val interface{}) {
 	_jsii_.Set(
 		j,
 		"cloudwatchDestination",
@@ -4514,7 +6845,7 @@ func (j *jsiiProxy_SesEventDestination) SetConfigurationSetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SesEventDestination) SetCount(val interface{}) {
+func (j *jsiiProxy_SesEventDestination) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4610,12 +6941,40 @@ func (s *jsiiProxy_SesEventDestination) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (s *jsiiProxy_SesEventDestination) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesEventDestination) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestination) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4652,12 +7011,54 @@ func (s *jsiiProxy_SesEventDestination) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (s *jsiiProxy_SesEventDestination) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestination) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesEventDestination) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestination) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4804,51 +7205,51 @@ func (s *jsiiProxy_SesEventDestination) ToTerraform() interface{} {
 }
 
 type SesEventDestinationCloudwatchDestination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#default_value SesEventDestination#default_value}.
-	DefaultValue *string `json:"defaultValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#dimension_name SesEventDestination#dimension_name}.
-	DimensionName *string `json:"dimensionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#value_source SesEventDestination#value_source}.
-	ValueSource *string `json:"valueSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#default_value SesEventDestination#default_value}.
+	DefaultValue *string `json:"defaultValue" yaml:"defaultValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#dimension_name SesEventDestination#dimension_name}.
+	DimensionName *string `json:"dimensionName" yaml:"dimensionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#value_source SesEventDestination#value_source}.
+	ValueSource *string `json:"valueSource" yaml:"valueSource"`
 }
 
 // AWS Simple Email Service.
 type SesEventDestinationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#configuration_set_name SesEventDestination#configuration_set_name}.
-	ConfigurationSetName *string `json:"configurationSetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#matching_types SesEventDestination#matching_types}.
-	MatchingTypes *[]*string `json:"matchingTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#name SesEventDestination#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#configuration_set_name SesEventDestination#configuration_set_name}.
+	ConfigurationSetName *string `json:"configurationSetName" yaml:"configurationSetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#matching_types SesEventDestination#matching_types}.
+	MatchingTypes *[]*string `json:"matchingTypes" yaml:"matchingTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#name SesEventDestination#name}.
+	Name *string `json:"name" yaml:"name"`
 	// cloudwatch_destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#cloudwatch_destination SesEventDestination#cloudwatch_destination}
-	CloudwatchDestination *[]*SesEventDestinationCloudwatchDestination `json:"cloudwatchDestination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#enabled SesEventDestination#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#cloudwatch_destination SesEventDestination#cloudwatch_destination}
+	CloudwatchDestination interface{} `json:"cloudwatchDestination" yaml:"cloudwatchDestination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#enabled SesEventDestination#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 	// kinesis_destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#kinesis_destination SesEventDestination#kinesis_destination}
-	KinesisDestination *SesEventDestinationKinesisDestination `json:"kinesisDestination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#kinesis_destination SesEventDestination#kinesis_destination}
+	KinesisDestination *SesEventDestinationKinesisDestination `json:"kinesisDestination" yaml:"kinesisDestination"`
 	// sns_destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#sns_destination SesEventDestination#sns_destination}
-	SnsDestination *SesEventDestinationSnsDestination `json:"snsDestination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#sns_destination SesEventDestination#sns_destination}
+	SnsDestination *SesEventDestinationSnsDestination `json:"snsDestination" yaml:"snsDestination"`
 }
 
 type SesEventDestinationKinesisDestination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#role_arn SesEventDestination#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#stream_arn SesEventDestination#stream_arn}.
-	StreamArn *string `json:"streamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#role_arn SesEventDestination#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#stream_arn SesEventDestination#stream_arn}.
+	StreamArn *string `json:"streamArn" yaml:"streamArn"`
 }
 
 type SesEventDestinationKinesisDestinationOutputReference interface {
@@ -4865,12 +7266,17 @@ type SesEventDestinationKinesisDestinationOutputReference interface {
 	StreamArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -4950,8 +7356,8 @@ func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4960,7 +7366,7 @@ func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) Terrafo
 	return returns
 }
 
-func NewSesEventDestinationKinesisDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SesEventDestinationKinesisDestinationOutputReference {
+func NewSesEventDestinationKinesisDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SesEventDestinationKinesisDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SesEventDestinationKinesisDestinationOutputReference{}
@@ -4974,7 +7380,7 @@ func NewSesEventDestinationKinesisDestinationOutputReference(terraformResource c
 	return &j
 }
 
-func NewSesEventDestinationKinesisDestinationOutputReference_Override(s SesEventDestinationKinesisDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSesEventDestinationKinesisDestinationOutputReference_Override(s SesEventDestinationKinesisDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5024,7 +7430,7 @@ func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5033,12 +7439,40 @@ func (j *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) SetTerr
 }
 
 // Experimental.
-func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5075,12 +7509,54 @@ func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetNumb
 }
 
 // Experimental.
+func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5117,8 +7593,8 @@ func (s *jsiiProxy_SesEventDestinationKinesisDestinationOutputReference) Interpo
 }
 
 type SesEventDestinationSnsDestination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination.html#topic_arn SesEventDestination#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_event_destination#topic_arn SesEventDestination#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
 type SesEventDestinationSnsDestinationOutputReference interface {
@@ -5129,15 +7605,20 @@ type SesEventDestinationSnsDestinationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TopicArn() *string
 	SetTopicArn(val *string)
 	TopicArnInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5177,8 +7658,8 @@ func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5207,7 +7688,7 @@ func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) TopicArnInp
 	return returns
 }
 
-func NewSesEventDestinationSnsDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SesEventDestinationSnsDestinationOutputReference {
+func NewSesEventDestinationSnsDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SesEventDestinationSnsDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SesEventDestinationSnsDestinationOutputReference{}
@@ -5221,7 +7702,7 @@ func NewSesEventDestinationSnsDestinationOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewSesEventDestinationSnsDestinationOutputReference_Override(s SesEventDestinationSnsDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSesEventDestinationSnsDestinationOutputReference_Override(s SesEventDestinationSnsDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5255,7 +7736,7 @@ func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5272,12 +7753,40 @@ func (j *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) SetTopicArn
 }
 
 // Experimental.
-func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5314,12 +7823,54 @@ func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5355,13 +7906,13 @@ func (s *jsiiProxy_SesEventDestinationSnsDestinationOutputReference) Interpolati
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic.html aws_ses_identity_notification_topic}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic aws_ses_identity_notification_topic}.
 type SesIdentityNotificationTopic interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5389,10 +7940,15 @@ type SesIdentityNotificationTopic interface {
 	SetTopicArn(val *string)
 	TopicArnInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetIncludeOriginalHeaders()
@@ -5429,8 +7985,8 @@ func (j *jsiiProxy_SesIdentityNotificationTopic) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_SesIdentityNotificationTopic) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesIdentityNotificationTopic) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5629,7 +8185,7 @@ func (j *jsiiProxy_SesIdentityNotificationTopic) TopicArnInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic.html aws_ses_identity_notification_topic} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic aws_ses_identity_notification_topic} Resource.
 func NewSesIdentityNotificationTopic(scope constructs.Construct, id *string, config *SesIdentityNotificationTopicConfig) SesIdentityNotificationTopic {
 	_init_.Initialize()
 
@@ -5644,7 +8200,7 @@ func NewSesIdentityNotificationTopic(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic.html aws_ses_identity_notification_topic} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic aws_ses_identity_notification_topic} Resource.
 func NewSesIdentityNotificationTopic_Override(s SesIdentityNotificationTopic, scope constructs.Construct, id *string, config *SesIdentityNotificationTopicConfig) {
 	_init_.Initialize()
 
@@ -5655,7 +8211,7 @@ func NewSesIdentityNotificationTopic_Override(s SesIdentityNotificationTopic, sc
 	)
 }
 
-func (j *jsiiProxy_SesIdentityNotificationTopic) SetCount(val interface{}) {
+func (j *jsiiProxy_SesIdentityNotificationTopic) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5759,12 +8315,40 @@ func (s *jsiiProxy_SesIdentityNotificationTopic) AddOverride(path *string, value
 }
 
 // Experimental.
+func (s *jsiiProxy_SesIdentityNotificationTopic) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesIdentityNotificationTopic) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesIdentityNotificationTopic) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5801,12 +8385,54 @@ func (s *jsiiProxy_SesIdentityNotificationTopic) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SesIdentityNotificationTopic) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesIdentityNotificationTopic) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesIdentityNotificationTopic) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesIdentityNotificationTopic) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5923,30 +8549,30 @@ func (s *jsiiProxy_SesIdentityNotificationTopic) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesIdentityNotificationTopicConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic.html#identity SesIdentityNotificationTopic#identity}.
-	Identity *string `json:"identity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic.html#notification_type SesIdentityNotificationTopic#notification_type}.
-	NotificationType *string `json:"notificationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic.html#include_original_headers SesIdentityNotificationTopic#include_original_headers}.
-	IncludeOriginalHeaders interface{} `json:"includeOriginalHeaders"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic.html#topic_arn SesIdentityNotificationTopic#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic#identity SesIdentityNotificationTopic#identity}.
+	Identity *string `json:"identity" yaml:"identity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic#notification_type SesIdentityNotificationTopic#notification_type}.
+	NotificationType *string `json:"notificationType" yaml:"notificationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic#include_original_headers SesIdentityNotificationTopic#include_original_headers}.
+	IncludeOriginalHeaders interface{} `json:"includeOriginalHeaders" yaml:"includeOriginalHeaders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_notification_topic#topic_arn SesIdentityNotificationTopic#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy.html aws_ses_identity_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy aws_ses_identity_policy}.
 type SesIdentityPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5971,10 +8597,15 @@ type SesIdentityPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6009,8 +8640,8 @@ func (j *jsiiProxy_SesIdentityPolicy) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SesIdentityPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesIdentityPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6189,7 +8820,7 @@ func (j *jsiiProxy_SesIdentityPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy.html aws_ses_identity_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy aws_ses_identity_policy} Resource.
 func NewSesIdentityPolicy(scope constructs.Construct, id *string, config *SesIdentityPolicyConfig) SesIdentityPolicy {
 	_init_.Initialize()
 
@@ -6204,7 +8835,7 @@ func NewSesIdentityPolicy(scope constructs.Construct, id *string, config *SesIde
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy.html aws_ses_identity_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy aws_ses_identity_policy} Resource.
 func NewSesIdentityPolicy_Override(s SesIdentityPolicy, scope constructs.Construct, id *string, config *SesIdentityPolicyConfig) {
 	_init_.Initialize()
 
@@ -6215,7 +8846,7 @@ func NewSesIdentityPolicy_Override(s SesIdentityPolicy, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_SesIdentityPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_SesIdentityPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6311,12 +8942,40 @@ func (s *jsiiProxy_SesIdentityPolicy) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SesIdentityPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesIdentityPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesIdentityPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6353,12 +9012,54 @@ func (s *jsiiProxy_SesIdentityPolicy) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SesIdentityPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesIdentityPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesIdentityPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesIdentityPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6459,22 +9160,22 @@ func (s *jsiiProxy_SesIdentityPolicy) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesIdentityPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy.html#identity SesIdentityPolicy#identity}.
-	Identity *string `json:"identity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy.html#name SesIdentityPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy.html#policy SesIdentityPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy#identity SesIdentityPolicy#identity}.
+	Identity *string `json:"identity" yaml:"identity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy#name SesIdentityPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_identity_policy#policy SesIdentityPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter.html aws_ses_receipt_filter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter aws_ses_receipt_filter}.
 type SesReceiptFilter interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -6483,8 +9184,8 @@ type SesReceiptFilter interface {
 	SetCidr(val *string)
 	CidrInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6506,10 +9207,15 @@ type SesReceiptFilter interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6574,8 +9280,8 @@ func (j *jsiiProxy_SesReceiptFilter) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptFilter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesReceiptFilter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6734,7 +9440,7 @@ func (j *jsiiProxy_SesReceiptFilter) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter.html aws_ses_receipt_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter aws_ses_receipt_filter} Resource.
 func NewSesReceiptFilter(scope constructs.Construct, id *string, config *SesReceiptFilterConfig) SesReceiptFilter {
 	_init_.Initialize()
 
@@ -6749,7 +9455,7 @@ func NewSesReceiptFilter(scope constructs.Construct, id *string, config *SesRece
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter.html aws_ses_receipt_filter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter aws_ses_receipt_filter} Resource.
 func NewSesReceiptFilter_Override(s SesReceiptFilter, scope constructs.Construct, id *string, config *SesReceiptFilterConfig) {
 	_init_.Initialize()
 
@@ -6768,7 +9474,7 @@ func (j *jsiiProxy_SesReceiptFilter) SetCidr(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SesReceiptFilter) SetCount(val interface{}) {
+func (j *jsiiProxy_SesReceiptFilter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6856,12 +9562,40 @@ func (s *jsiiProxy_SesReceiptFilter) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (s *jsiiProxy_SesReceiptFilter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesReceiptFilter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptFilter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6898,12 +9632,54 @@ func (s *jsiiProxy_SesReceiptFilter) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (s *jsiiProxy_SesReceiptFilter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptFilter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesReceiptFilter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptFilter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7004,38 +9780,38 @@ func (s *jsiiProxy_SesReceiptFilter) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesReceiptFilterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter.html#cidr SesReceiptFilter#cidr}.
-	Cidr *string `json:"cidr"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter.html#name SesReceiptFilter#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter.html#policy SesReceiptFilter#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter#cidr SesReceiptFilter#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter#name SesReceiptFilter#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_filter#policy SesReceiptFilter#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html aws_ses_receipt_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule aws_ses_receipt_rule}.
 type SesReceiptRule interface {
 	cdktf.TerraformResource
-	AddHeaderAction() *[]*SesReceiptRuleAddHeaderAction
-	SetAddHeaderAction(val *[]*SesReceiptRuleAddHeaderAction)
-	AddHeaderActionInput() *[]*SesReceiptRuleAddHeaderAction
+	AddHeaderAction() interface{}
+	SetAddHeaderAction(val interface{})
+	AddHeaderActionInput() interface{}
 	After() *string
 	SetAfter(val *string)
 	AfterInput() *string
 	Arn() *string
-	BounceAction() *[]*SesReceiptRuleBounceAction
-	SetBounceAction(val *[]*SesReceiptRuleBounceAction)
-	BounceActionInput() *[]*SesReceiptRuleBounceAction
+	BounceAction() interface{}
+	SetBounceAction(val interface{})
+	BounceActionInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -7044,9 +9820,9 @@ type SesReceiptRule interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	LambdaAction() *[]*SesReceiptRuleLambdaAction
-	SetLambdaAction(val *[]*SesReceiptRuleLambdaAction)
-	LambdaActionInput() *[]*SesReceiptRuleLambdaAction
+	LambdaAction() interface{}
+	SetLambdaAction(val interface{})
+	LambdaActionInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Name() *string
@@ -7062,32 +9838,37 @@ type SesReceiptRule interface {
 	RuleSetName() *string
 	SetRuleSetName(val *string)
 	RuleSetNameInput() *string
-	S3Action() *[]*SesReceiptRuleS3Action
-	SetS3Action(val *[]*SesReceiptRuleS3Action)
-	S3ActionInput() *[]*SesReceiptRuleS3Action
+	S3Action() interface{}
+	SetS3Action(val interface{})
+	S3ActionInput() interface{}
 	ScanEnabled() interface{}
 	SetScanEnabled(val interface{})
 	ScanEnabledInput() interface{}
-	SnsAction() *[]*SesReceiptRuleSnsAction
-	SetSnsAction(val *[]*SesReceiptRuleSnsAction)
-	SnsActionInput() *[]*SesReceiptRuleSnsAction
-	StopAction() *[]*SesReceiptRuleStopAction
-	SetStopAction(val *[]*SesReceiptRuleStopAction)
-	StopActionInput() *[]*SesReceiptRuleStopAction
+	SnsAction() interface{}
+	SetSnsAction(val interface{})
+	SnsActionInput() interface{}
+	StopAction() interface{}
+	SetStopAction(val interface{})
+	StopActionInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	TlsPolicy() *string
 	SetTlsPolicy(val *string)
 	TlsPolicyInput() *string
-	WorkmailAction() *[]*SesReceiptRuleWorkmailAction
-	SetWorkmailAction(val *[]*SesReceiptRuleWorkmailAction)
-	WorkmailActionInput() *[]*SesReceiptRuleWorkmailAction
+	WorkmailAction() interface{}
+	SetWorkmailAction(val interface{})
+	WorkmailActionInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAddHeaderAction()
@@ -7114,8 +9895,8 @@ type jsiiProxy_SesReceiptRule struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_SesReceiptRule) AddHeaderAction() *[]*SesReceiptRuleAddHeaderAction {
-	var returns *[]*SesReceiptRuleAddHeaderAction
+func (j *jsiiProxy_SesReceiptRule) AddHeaderAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"addHeaderAction",
@@ -7124,8 +9905,8 @@ func (j *jsiiProxy_SesReceiptRule) AddHeaderAction() *[]*SesReceiptRuleAddHeader
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) AddHeaderActionInput() *[]*SesReceiptRuleAddHeaderAction {
-	var returns *[]*SesReceiptRuleAddHeaderAction
+func (j *jsiiProxy_SesReceiptRule) AddHeaderActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"addHeaderActionInput",
@@ -7164,8 +9945,8 @@ func (j *jsiiProxy_SesReceiptRule) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) BounceAction() *[]*SesReceiptRuleBounceAction {
-	var returns *[]*SesReceiptRuleBounceAction
+func (j *jsiiProxy_SesReceiptRule) BounceAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bounceAction",
@@ -7174,8 +9955,8 @@ func (j *jsiiProxy_SesReceiptRule) BounceAction() *[]*SesReceiptRuleBounceAction
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) BounceActionInput() *[]*SesReceiptRuleBounceAction {
-	var returns *[]*SesReceiptRuleBounceAction
+func (j *jsiiProxy_SesReceiptRule) BounceActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bounceActionInput",
@@ -7204,8 +9985,8 @@ func (j *jsiiProxy_SesReceiptRule) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesReceiptRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7274,8 +10055,8 @@ func (j *jsiiProxy_SesReceiptRule) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) LambdaAction() *[]*SesReceiptRuleLambdaAction {
-	var returns *[]*SesReceiptRuleLambdaAction
+func (j *jsiiProxy_SesReceiptRule) LambdaAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lambdaAction",
@@ -7284,8 +10065,8 @@ func (j *jsiiProxy_SesReceiptRule) LambdaAction() *[]*SesReceiptRuleLambdaAction
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) LambdaActionInput() *[]*SesReceiptRuleLambdaAction {
-	var returns *[]*SesReceiptRuleLambdaAction
+func (j *jsiiProxy_SesReceiptRule) LambdaActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lambdaActionInput",
@@ -7394,8 +10175,8 @@ func (j *jsiiProxy_SesReceiptRule) RuleSetNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) S3Action() *[]*SesReceiptRuleS3Action {
-	var returns *[]*SesReceiptRuleS3Action
+func (j *jsiiProxy_SesReceiptRule) S3Action() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"s3Action",
@@ -7404,8 +10185,8 @@ func (j *jsiiProxy_SesReceiptRule) S3Action() *[]*SesReceiptRuleS3Action {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) S3ActionInput() *[]*SesReceiptRuleS3Action {
-	var returns *[]*SesReceiptRuleS3Action
+func (j *jsiiProxy_SesReceiptRule) S3ActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"s3ActionInput",
@@ -7434,8 +10215,8 @@ func (j *jsiiProxy_SesReceiptRule) ScanEnabledInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) SnsAction() *[]*SesReceiptRuleSnsAction {
-	var returns *[]*SesReceiptRuleSnsAction
+func (j *jsiiProxy_SesReceiptRule) SnsAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"snsAction",
@@ -7444,8 +10225,8 @@ func (j *jsiiProxy_SesReceiptRule) SnsAction() *[]*SesReceiptRuleSnsAction {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) SnsActionInput() *[]*SesReceiptRuleSnsAction {
-	var returns *[]*SesReceiptRuleSnsAction
+func (j *jsiiProxy_SesReceiptRule) SnsActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"snsActionInput",
@@ -7454,8 +10235,8 @@ func (j *jsiiProxy_SesReceiptRule) SnsActionInput() *[]*SesReceiptRuleSnsAction 
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) StopAction() *[]*SesReceiptRuleStopAction {
-	var returns *[]*SesReceiptRuleStopAction
+func (j *jsiiProxy_SesReceiptRule) StopAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"stopAction",
@@ -7464,8 +10245,8 @@ func (j *jsiiProxy_SesReceiptRule) StopAction() *[]*SesReceiptRuleStopAction {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) StopActionInput() *[]*SesReceiptRuleStopAction {
-	var returns *[]*SesReceiptRuleStopAction
+func (j *jsiiProxy_SesReceiptRule) StopActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"stopActionInput",
@@ -7524,8 +10305,8 @@ func (j *jsiiProxy_SesReceiptRule) TlsPolicyInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) WorkmailAction() *[]*SesReceiptRuleWorkmailAction {
-	var returns *[]*SesReceiptRuleWorkmailAction
+func (j *jsiiProxy_SesReceiptRule) WorkmailAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"workmailAction",
@@ -7534,8 +10315,8 @@ func (j *jsiiProxy_SesReceiptRule) WorkmailAction() *[]*SesReceiptRuleWorkmailAc
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRule) WorkmailActionInput() *[]*SesReceiptRuleWorkmailAction {
-	var returns *[]*SesReceiptRuleWorkmailAction
+func (j *jsiiProxy_SesReceiptRule) WorkmailActionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"workmailActionInput",
@@ -7544,7 +10325,7 @@ func (j *jsiiProxy_SesReceiptRule) WorkmailActionInput() *[]*SesReceiptRuleWorkm
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html aws_ses_receipt_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule aws_ses_receipt_rule} Resource.
 func NewSesReceiptRule(scope constructs.Construct, id *string, config *SesReceiptRuleConfig) SesReceiptRule {
 	_init_.Initialize()
 
@@ -7559,7 +10340,7 @@ func NewSesReceiptRule(scope constructs.Construct, id *string, config *SesReceip
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html aws_ses_receipt_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule aws_ses_receipt_rule} Resource.
 func NewSesReceiptRule_Override(s SesReceiptRule, scope constructs.Construct, id *string, config *SesReceiptRuleConfig) {
 	_init_.Initialize()
 
@@ -7570,7 +10351,7 @@ func NewSesReceiptRule_Override(s SesReceiptRule, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetAddHeaderAction(val *[]*SesReceiptRuleAddHeaderAction) {
+func (j *jsiiProxy_SesReceiptRule) SetAddHeaderAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"addHeaderAction",
@@ -7586,7 +10367,7 @@ func (j *jsiiProxy_SesReceiptRule) SetAfter(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetBounceAction(val *[]*SesReceiptRuleBounceAction) {
+func (j *jsiiProxy_SesReceiptRule) SetBounceAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"bounceAction",
@@ -7594,7 +10375,7 @@ func (j *jsiiProxy_SesReceiptRule) SetBounceAction(val *[]*SesReceiptRuleBounceA
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetCount(val interface{}) {
+func (j *jsiiProxy_SesReceiptRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7618,7 +10399,7 @@ func (j *jsiiProxy_SesReceiptRule) SetEnabled(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetLambdaAction(val *[]*SesReceiptRuleLambdaAction) {
+func (j *jsiiProxy_SesReceiptRule) SetLambdaAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"lambdaAction",
@@ -7666,7 +10447,7 @@ func (j *jsiiProxy_SesReceiptRule) SetRuleSetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetS3Action(val *[]*SesReceiptRuleS3Action) {
+func (j *jsiiProxy_SesReceiptRule) SetS3Action(val interface{}) {
 	_jsii_.Set(
 		j,
 		"s3Action",
@@ -7682,7 +10463,7 @@ func (j *jsiiProxy_SesReceiptRule) SetScanEnabled(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetSnsAction(val *[]*SesReceiptRuleSnsAction) {
+func (j *jsiiProxy_SesReceiptRule) SetSnsAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"snsAction",
@@ -7690,7 +10471,7 @@ func (j *jsiiProxy_SesReceiptRule) SetSnsAction(val *[]*SesReceiptRuleSnsAction)
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetStopAction(val *[]*SesReceiptRuleStopAction) {
+func (j *jsiiProxy_SesReceiptRule) SetStopAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"stopAction",
@@ -7706,7 +10487,7 @@ func (j *jsiiProxy_SesReceiptRule) SetTlsPolicy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRule) SetWorkmailAction(val *[]*SesReceiptRuleWorkmailAction) {
+func (j *jsiiProxy_SesReceiptRule) SetWorkmailAction(val interface{}) {
 	_jsii_.Set(
 		j,
 		"workmailAction",
@@ -7754,12 +10535,40 @@ func (s *jsiiProxy_SesReceiptRule) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_SesReceiptRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesReceiptRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7796,12 +10605,54 @@ func (s *jsiiProxy_SesReceiptRule) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_SesReceiptRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesReceiptRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7996,115 +10847,115 @@ func (s *jsiiProxy_SesReceiptRule) ToTerraform() interface{} {
 }
 
 type SesReceiptRuleAddHeaderAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#header_name SesReceiptRule#header_name}.
-	HeaderName *string `json:"headerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#header_value SesReceiptRule#header_value}.
-	HeaderValue *string `json:"headerValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#position SesReceiptRule#position}.
-	Position *float64 `json:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#header_name SesReceiptRule#header_name}.
+	HeaderName *string `json:"headerName" yaml:"headerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#header_value SesReceiptRule#header_value}.
+	HeaderValue *string `json:"headerValue" yaml:"headerValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#position SesReceiptRule#position}.
+	Position *float64 `json:"position" yaml:"position"`
 }
 
 type SesReceiptRuleBounceAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#message SesReceiptRule#message}.
-	Message *string `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#position SesReceiptRule#position}.
-	Position *float64 `json:"position"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#sender SesReceiptRule#sender}.
-	Sender *string `json:"sender"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#smtp_reply_code SesReceiptRule#smtp_reply_code}.
-	SmtpReplyCode *string `json:"smtpReplyCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#status_code SesReceiptRule#status_code}.
-	StatusCode *string `json:"statusCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#topic_arn SesReceiptRule#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#message SesReceiptRule#message}.
+	Message *string `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#position SesReceiptRule#position}.
+	Position *float64 `json:"position" yaml:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#sender SesReceiptRule#sender}.
+	Sender *string `json:"sender" yaml:"sender"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#smtp_reply_code SesReceiptRule#smtp_reply_code}.
+	SmtpReplyCode *string `json:"smtpReplyCode" yaml:"smtpReplyCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#status_code SesReceiptRule#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#topic_arn SesReceiptRule#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
 // AWS Simple Email Service.
 type SesReceiptRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#name SesReceiptRule#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#rule_set_name SesReceiptRule#rule_set_name}.
-	RuleSetName *string `json:"ruleSetName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#name SesReceiptRule#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#rule_set_name SesReceiptRule#rule_set_name}.
+	RuleSetName *string `json:"ruleSetName" yaml:"ruleSetName"`
 	// add_header_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#add_header_action SesReceiptRule#add_header_action}
-	AddHeaderAction *[]*SesReceiptRuleAddHeaderAction `json:"addHeaderAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#after SesReceiptRule#after}.
-	After *string `json:"after"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#add_header_action SesReceiptRule#add_header_action}
+	AddHeaderAction interface{} `json:"addHeaderAction" yaml:"addHeaderAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#after SesReceiptRule#after}.
+	After *string `json:"after" yaml:"after"`
 	// bounce_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#bounce_action SesReceiptRule#bounce_action}
-	BounceAction *[]*SesReceiptRuleBounceAction `json:"bounceAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#enabled SesReceiptRule#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#bounce_action SesReceiptRule#bounce_action}
+	BounceAction interface{} `json:"bounceAction" yaml:"bounceAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#enabled SesReceiptRule#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 	// lambda_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#lambda_action SesReceiptRule#lambda_action}
-	LambdaAction *[]*SesReceiptRuleLambdaAction `json:"lambdaAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#recipients SesReceiptRule#recipients}.
-	Recipients *[]*string `json:"recipients"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#lambda_action SesReceiptRule#lambda_action}
+	LambdaAction interface{} `json:"lambdaAction" yaml:"lambdaAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#recipients SesReceiptRule#recipients}.
+	Recipients *[]*string `json:"recipients" yaml:"recipients"`
 	// s3_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#s3_action SesReceiptRule#s3_action}
-	S3Action *[]*SesReceiptRuleS3Action `json:"s3Action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#scan_enabled SesReceiptRule#scan_enabled}.
-	ScanEnabled interface{} `json:"scanEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#s3_action SesReceiptRule#s3_action}
+	S3Action interface{} `json:"s3Action" yaml:"s3Action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#scan_enabled SesReceiptRule#scan_enabled}.
+	ScanEnabled interface{} `json:"scanEnabled" yaml:"scanEnabled"`
 	// sns_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#sns_action SesReceiptRule#sns_action}
-	SnsAction *[]*SesReceiptRuleSnsAction `json:"snsAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#sns_action SesReceiptRule#sns_action}
+	SnsAction interface{} `json:"snsAction" yaml:"snsAction"`
 	// stop_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#stop_action SesReceiptRule#stop_action}
-	StopAction *[]*SesReceiptRuleStopAction `json:"stopAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#tls_policy SesReceiptRule#tls_policy}.
-	TlsPolicy *string `json:"tlsPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#stop_action SesReceiptRule#stop_action}
+	StopAction interface{} `json:"stopAction" yaml:"stopAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#tls_policy SesReceiptRule#tls_policy}.
+	TlsPolicy *string `json:"tlsPolicy" yaml:"tlsPolicy"`
 	// workmail_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#workmail_action SesReceiptRule#workmail_action}
-	WorkmailAction *[]*SesReceiptRuleWorkmailAction `json:"workmailAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#workmail_action SesReceiptRule#workmail_action}
+	WorkmailAction interface{} `json:"workmailAction" yaml:"workmailAction"`
 }
 
 type SesReceiptRuleLambdaAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#function_arn SesReceiptRule#function_arn}.
-	FunctionArn *string `json:"functionArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#position SesReceiptRule#position}.
-	Position *float64 `json:"position"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#invocation_type SesReceiptRule#invocation_type}.
-	InvocationType *string `json:"invocationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#topic_arn SesReceiptRule#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#function_arn SesReceiptRule#function_arn}.
+	FunctionArn *string `json:"functionArn" yaml:"functionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#position SesReceiptRule#position}.
+	Position *float64 `json:"position" yaml:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#invocation_type SesReceiptRule#invocation_type}.
+	InvocationType *string `json:"invocationType" yaml:"invocationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#topic_arn SesReceiptRule#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
 type SesReceiptRuleS3Action struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#bucket_name SesReceiptRule#bucket_name}.
-	BucketName *string `json:"bucketName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#position SesReceiptRule#position}.
-	Position *float64 `json:"position"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#kms_key_arn SesReceiptRule#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#object_key_prefix SesReceiptRule#object_key_prefix}.
-	ObjectKeyPrefix *string `json:"objectKeyPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#topic_arn SesReceiptRule#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#bucket_name SesReceiptRule#bucket_name}.
+	BucketName *string `json:"bucketName" yaml:"bucketName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#position SesReceiptRule#position}.
+	Position *float64 `json:"position" yaml:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#kms_key_arn SesReceiptRule#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#object_key_prefix SesReceiptRule#object_key_prefix}.
+	ObjectKeyPrefix *string `json:"objectKeyPrefix" yaml:"objectKeyPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#topic_arn SesReceiptRule#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set.html aws_ses_receipt_rule_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set aws_ses_receipt_rule_set}.
 type SesReceiptRuleSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8123,10 +10974,15 @@ type SesReceiptRuleSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -8171,8 +11027,8 @@ func (j *jsiiProxy_SesReceiptRuleSet) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SesReceiptRuleSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesReceiptRuleSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8311,7 +11167,7 @@ func (j *jsiiProxy_SesReceiptRuleSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set.html aws_ses_receipt_rule_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set aws_ses_receipt_rule_set} Resource.
 func NewSesReceiptRuleSet(scope constructs.Construct, id *string, config *SesReceiptRuleSetConfig) SesReceiptRuleSet {
 	_init_.Initialize()
 
@@ -8326,7 +11182,7 @@ func NewSesReceiptRuleSet(scope constructs.Construct, id *string, config *SesRec
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set.html aws_ses_receipt_rule_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set aws_ses_receipt_rule_set} Resource.
 func NewSesReceiptRuleSet_Override(s SesReceiptRuleSet, scope constructs.Construct, id *string, config *SesReceiptRuleSetConfig) {
 	_init_.Initialize()
 
@@ -8337,7 +11193,7 @@ func NewSesReceiptRuleSet_Override(s SesReceiptRuleSet, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_SesReceiptRuleSet) SetCount(val interface{}) {
+func (j *jsiiProxy_SesReceiptRuleSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8417,12 +11273,40 @@ func (s *jsiiProxy_SesReceiptRuleSet) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SesReceiptRuleSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesReceiptRuleSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptRuleSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8459,12 +11343,54 @@ func (s *jsiiProxy_SesReceiptRuleSet) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SesReceiptRuleSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptRuleSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesReceiptRuleSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesReceiptRuleSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8565,52 +11491,52 @@ func (s *jsiiProxy_SesReceiptRuleSet) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesReceiptRuleSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set.html#rule_set_name SesReceiptRuleSet#rule_set_name}.
-	RuleSetName *string `json:"ruleSetName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule_set#rule_set_name SesReceiptRuleSet#rule_set_name}.
+	RuleSetName *string `json:"ruleSetName" yaml:"ruleSetName"`
 }
 
 type SesReceiptRuleSnsAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#position SesReceiptRule#position}.
-	Position *float64 `json:"position"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#topic_arn SesReceiptRule#topic_arn}.
-	TopicArn *string `json:"topicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#encoding SesReceiptRule#encoding}.
-	Encoding *string `json:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#position SesReceiptRule#position}.
+	Position *float64 `json:"position" yaml:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#topic_arn SesReceiptRule#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#encoding SesReceiptRule#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
 }
 
 type SesReceiptRuleStopAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#position SesReceiptRule#position}.
-	Position *float64 `json:"position"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#scope SesReceiptRule#scope}.
-	Scope *string `json:"scope"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#topic_arn SesReceiptRule#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#position SesReceiptRule#position}.
+	Position *float64 `json:"position" yaml:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#scope SesReceiptRule#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#topic_arn SesReceiptRule#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
 type SesReceiptRuleWorkmailAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#organization_arn SesReceiptRule#organization_arn}.
-	OrganizationArn *string `json:"organizationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#position SesReceiptRule#position}.
-	Position *float64 `json:"position"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule.html#topic_arn SesReceiptRule#topic_arn}.
-	TopicArn *string `json:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#organization_arn SesReceiptRule#organization_arn}.
+	OrganizationArn *string `json:"organizationArn" yaml:"organizationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#position SesReceiptRule#position}.
+	Position *float64 `json:"position" yaml:"position"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_receipt_rule#topic_arn SesReceiptRule#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_template.html aws_ses_template}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ses_template aws_ses_template}.
 type SesTemplate interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8638,10 +11564,15 @@ type SesTemplate interface {
 	SetText(val *string)
 	TextInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetHtml()
@@ -8689,8 +11620,8 @@ func (j *jsiiProxy_SesTemplate) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_SesTemplate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SesTemplate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8889,7 +11820,7 @@ func (j *jsiiProxy_SesTemplate) TextInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_template.html aws_ses_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_template aws_ses_template} Resource.
 func NewSesTemplate(scope constructs.Construct, id *string, config *SesTemplateConfig) SesTemplate {
 	_init_.Initialize()
 
@@ -8904,7 +11835,7 @@ func NewSesTemplate(scope constructs.Construct, id *string, config *SesTemplateC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_template.html aws_ses_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ses_template aws_ses_template} Resource.
 func NewSesTemplate_Override(s SesTemplate, scope constructs.Construct, id *string, config *SesTemplateConfig) {
 	_init_.Initialize()
 
@@ -8915,7 +11846,7 @@ func NewSesTemplate_Override(s SesTemplate, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_SesTemplate) SetCount(val interface{}) {
+func (j *jsiiProxy_SesTemplate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9019,12 +11950,40 @@ func (s *jsiiProxy_SesTemplate) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_SesTemplate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesTemplate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9061,12 +12020,54 @@ func (s *jsiiProxy_SesTemplate) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (s *jsiiProxy_SesTemplate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesTemplate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SesTemplate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SesTemplate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9191,19 +12192,19 @@ func (s *jsiiProxy_SesTemplate) ToTerraform() interface{} {
 // AWS Simple Email Service.
 type SesTemplateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template.html#name SesTemplate#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template.html#html SesTemplate#html}.
-	Html *string `json:"html"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template.html#subject SesTemplate#subject}.
-	Subject *string `json:"subject"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template.html#text SesTemplate#text}.
-	Text *string `json:"text"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template#name SesTemplate#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template#html SesTemplate#html}.
+	Html *string `json:"html" yaml:"html"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template#subject SesTemplate#subject}.
+	Subject *string `json:"subject" yaml:"subject"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ses_template#text SesTemplate#text}.
+	Text *string `json:"text" yaml:"text"`
 }

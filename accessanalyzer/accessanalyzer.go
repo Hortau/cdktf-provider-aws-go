@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/accessanalyzer/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer.html aws_accessanalyzer_analyzer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer aws_accessanalyzer_analyzer}.
 type AccessanalyzerAnalyzer interface {
 	cdktf.TerraformResource
 	AnalyzerName() *string
@@ -18,8 +18,8 @@ type AccessanalyzerAnalyzer interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -31,12 +31,12 @@ type AccessanalyzerAnalyzer interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -44,10 +44,15 @@ type AccessanalyzerAnalyzer interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -115,8 +120,8 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AccessanalyzerAnalyzer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -205,8 +210,8 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AccessanalyzerAnalyzer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -215,8 +220,8 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -225,8 +230,8 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -235,8 +240,8 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AccessanalyzerAnalyzer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -295,7 +300,7 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer.html aws_accessanalyzer_analyzer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer aws_accessanalyzer_analyzer} Resource.
 func NewAccessanalyzerAnalyzer(scope constructs.Construct, id *string, config *AccessanalyzerAnalyzerConfig) AccessanalyzerAnalyzer {
 	_init_.Initialize()
 
@@ -310,7 +315,7 @@ func NewAccessanalyzerAnalyzer(scope constructs.Construct, id *string, config *A
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer.html aws_accessanalyzer_analyzer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer aws_accessanalyzer_analyzer} Resource.
 func NewAccessanalyzerAnalyzer_Override(a AccessanalyzerAnalyzer, scope constructs.Construct, id *string, config *AccessanalyzerAnalyzerConfig) {
 	_init_.Initialize()
 
@@ -329,7 +334,7 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) SetAnalyzerName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) SetCount(val interface{}) {
+func (j *jsiiProxy_AccessanalyzerAnalyzer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -361,7 +366,7 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) SetProvider(val cdktf.TerraformProvid
 	)
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) SetTags(val interface{}) {
+func (j *jsiiProxy_AccessanalyzerAnalyzer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -369,7 +374,7 @@ func (j *jsiiProxy_AccessanalyzerAnalyzer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AccessanalyzerAnalyzer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AccessanalyzerAnalyzer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -425,12 +430,40 @@ func (a *jsiiProxy_AccessanalyzerAnalyzer) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (a *jsiiProxy_AccessanalyzerAnalyzer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AccessanalyzerAnalyzer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccessanalyzerAnalyzer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -467,12 +500,54 @@ func (a *jsiiProxy_AccessanalyzerAnalyzer) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (a *jsiiProxy_AccessanalyzerAnalyzer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccessanalyzerAnalyzer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AccessanalyzerAnalyzer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AccessanalyzerAnalyzer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -597,19 +672,19 @@ func (a *jsiiProxy_AccessanalyzerAnalyzer) ToTerraform() interface{} {
 // Access Analyzer Analyzer.
 type AccessanalyzerAnalyzerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer.html#analyzer_name AccessanalyzerAnalyzer#analyzer_name}.
-	AnalyzerName *string `json:"analyzerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer.html#tags AccessanalyzerAnalyzer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer.html#tags_all AccessanalyzerAnalyzer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer.html#type AccessanalyzerAnalyzer#type}.
-	Type *string `json:"type"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer#analyzer_name AccessanalyzerAnalyzer#analyzer_name}.
+	AnalyzerName *string `json:"analyzerName" yaml:"analyzerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer#tags AccessanalyzerAnalyzer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer#tags_all AccessanalyzerAnalyzer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/accessanalyzer_analyzer#type AccessanalyzerAnalyzer#type}.
+	Type *string `json:"type" yaml:"type"`
 }

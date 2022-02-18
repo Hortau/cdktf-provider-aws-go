@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/chime/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector.html aws_chime_voice_connector}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector aws_chime_voice_connector}.
 type ChimeVoiceConnector interface {
 	cdktf.TerraformResource
 	AwsRegion() *string
@@ -17,8 +17,8 @@ type ChimeVoiceConnector interface {
 	AwsRegionInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -41,10 +41,15 @@ type ChimeVoiceConnector interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAwsRegion()
@@ -100,8 +105,8 @@ func (j *jsiiProxy_ChimeVoiceConnector) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnector) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ChimeVoiceConnector) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -270,7 +275,7 @@ func (j *jsiiProxy_ChimeVoiceConnector) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector.html aws_chime_voice_connector} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector aws_chime_voice_connector} Resource.
 func NewChimeVoiceConnector(scope constructs.Construct, id *string, config *ChimeVoiceConnectorConfig) ChimeVoiceConnector {
 	_init_.Initialize()
 
@@ -285,7 +290,7 @@ func NewChimeVoiceConnector(scope constructs.Construct, id *string, config *Chim
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector.html aws_chime_voice_connector} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector aws_chime_voice_connector} Resource.
 func NewChimeVoiceConnector_Override(c ChimeVoiceConnector, scope constructs.Construct, id *string, config *ChimeVoiceConnectorConfig) {
 	_init_.Initialize()
 
@@ -304,7 +309,7 @@ func (j *jsiiProxy_ChimeVoiceConnector) SetAwsRegion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnector) SetCount(val interface{}) {
+func (j *jsiiProxy_ChimeVoiceConnector) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -392,12 +397,40 @@ func (c *jsiiProxy_ChimeVoiceConnector) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnector) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnector) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnector) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -434,12 +467,54 @@ func (c *jsiiProxy_ChimeVoiceConnector) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnector) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnector) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnector) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnector) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -548,31 +623,31 @@ func (c *jsiiProxy_ChimeVoiceConnector) ToTerraform() interface{} {
 // Amazon Chime.
 type ChimeVoiceConnectorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector.html#name ChimeVoiceConnector#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector.html#require_encryption ChimeVoiceConnector#require_encryption}.
-	RequireEncryption interface{} `json:"requireEncryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector.html#aws_region ChimeVoiceConnector#aws_region}.
-	AwsRegion *string `json:"awsRegion"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector#name ChimeVoiceConnector#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector#require_encryption ChimeVoiceConnector#require_encryption}.
+	RequireEncryption interface{} `json:"requireEncryption" yaml:"requireEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector#aws_region ChimeVoiceConnector#aws_region}.
+	AwsRegion *string `json:"awsRegion" yaml:"awsRegion"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group.html aws_chime_voice_connector_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group aws_chime_voice_connector_group}.
 type ChimeVoiceConnectorGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
-	Connector() *[]*ChimeVoiceConnectorGroupConnector
-	SetConnector(val *[]*ChimeVoiceConnectorGroupConnector)
-	ConnectorInput() *[]*ChimeVoiceConnectorGroupConnector
+	Connector() interface{}
+	SetConnector(val interface{})
+	ConnectorInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -591,10 +666,15 @@ type ChimeVoiceConnectorGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetConnector()
@@ -620,8 +700,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorGroup) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorGroup) Connector() *[]*ChimeVoiceConnectorGroupConnector {
-	var returns *[]*ChimeVoiceConnectorGroupConnector
+func (j *jsiiProxy_ChimeVoiceConnectorGroup) Connector() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"connector",
@@ -630,8 +710,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorGroup) Connector() *[]*ChimeVoiceConnector
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorGroup) ConnectorInput() *[]*ChimeVoiceConnectorGroupConnector {
-	var returns *[]*ChimeVoiceConnectorGroupConnector
+func (j *jsiiProxy_ChimeVoiceConnectorGroup) ConnectorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"connectorInput",
@@ -650,8 +730,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorGroup) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ChimeVoiceConnectorGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -790,7 +870,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group.html aws_chime_voice_connector_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group aws_chime_voice_connector_group} Resource.
 func NewChimeVoiceConnectorGroup(scope constructs.Construct, id *string, config *ChimeVoiceConnectorGroupConfig) ChimeVoiceConnectorGroup {
 	_init_.Initialize()
 
@@ -805,7 +885,7 @@ func NewChimeVoiceConnectorGroup(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group.html aws_chime_voice_connector_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group aws_chime_voice_connector_group} Resource.
 func NewChimeVoiceConnectorGroup_Override(c ChimeVoiceConnectorGroup, scope constructs.Construct, id *string, config *ChimeVoiceConnectorGroupConfig) {
 	_init_.Initialize()
 
@@ -816,7 +896,7 @@ func NewChimeVoiceConnectorGroup_Override(c ChimeVoiceConnectorGroup, scope cons
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorGroup) SetConnector(val *[]*ChimeVoiceConnectorGroupConnector) {
+func (j *jsiiProxy_ChimeVoiceConnectorGroup) SetConnector(val interface{}) {
 	_jsii_.Set(
 		j,
 		"connector",
@@ -824,7 +904,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorGroup) SetConnector(val *[]*ChimeVoiceConn
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ChimeVoiceConnectorGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -904,12 +984,40 @@ func (c *jsiiProxy_ChimeVoiceConnectorGroup) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -946,12 +1054,54 @@ func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1060,35 +1210,35 @@ func (c *jsiiProxy_ChimeVoiceConnectorGroup) ToTerraform() interface{} {
 // Amazon Chime.
 type ChimeVoiceConnectorGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group.html#name ChimeVoiceConnectorGroup#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group#name ChimeVoiceConnectorGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 	// connector block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group.html#connector ChimeVoiceConnectorGroup#connector}
-	Connector *[]*ChimeVoiceConnectorGroupConnector `json:"connector"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group#connector ChimeVoiceConnectorGroup#connector}
+	Connector interface{} `json:"connector" yaml:"connector"`
 }
 
 type ChimeVoiceConnectorGroupConnector struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group.html#priority ChimeVoiceConnectorGroup#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group.html#voice_connector_id ChimeVoiceConnectorGroup#voice_connector_id}.
-	VoiceConnectorId *string `json:"voiceConnectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group#priority ChimeVoiceConnectorGroup#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_group#voice_connector_id ChimeVoiceConnectorGroup#voice_connector_id}.
+	VoiceConnectorId *string `json:"voiceConnectorId" yaml:"voiceConnectorId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging.html aws_chime_voice_connector_logging}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging aws_chime_voice_connector_logging}.
 type ChimeVoiceConnectorLogging interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EnableSipLogs() interface{}
@@ -1110,10 +1260,15 @@ type ChimeVoiceConnectorLogging interface {
 	SetVoiceConnectorId(val *string)
 	VoiceConnectorIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnableSipLogs()
@@ -1149,8 +1304,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorLogging) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorLogging) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ChimeVoiceConnectorLogging) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1309,7 +1464,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorLogging) VoiceConnectorIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging.html aws_chime_voice_connector_logging} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging aws_chime_voice_connector_logging} Resource.
 func NewChimeVoiceConnectorLogging(scope constructs.Construct, id *string, config *ChimeVoiceConnectorLoggingConfig) ChimeVoiceConnectorLogging {
 	_init_.Initialize()
 
@@ -1324,7 +1479,7 @@ func NewChimeVoiceConnectorLogging(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging.html aws_chime_voice_connector_logging} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging aws_chime_voice_connector_logging} Resource.
 func NewChimeVoiceConnectorLogging_Override(c ChimeVoiceConnectorLogging, scope constructs.Construct, id *string, config *ChimeVoiceConnectorLoggingConfig) {
 	_init_.Initialize()
 
@@ -1335,7 +1490,7 @@ func NewChimeVoiceConnectorLogging_Override(c ChimeVoiceConnectorLogging, scope 
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorLogging) SetCount(val interface{}) {
+func (j *jsiiProxy_ChimeVoiceConnectorLogging) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1423,12 +1578,40 @@ func (c *jsiiProxy_ChimeVoiceConnectorLogging) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1465,12 +1648,54 @@ func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorLogging) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1579,26 +1804,26 @@ func (c *jsiiProxy_ChimeVoiceConnectorLogging) ToTerraform() interface{} {
 // Amazon Chime.
 type ChimeVoiceConnectorLoggingConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging.html#voice_connector_id ChimeVoiceConnectorLogging#voice_connector_id}.
-	VoiceConnectorId *string `json:"voiceConnectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging.html#enable_sip_logs ChimeVoiceConnectorLogging#enable_sip_logs}.
-	EnableSipLogs interface{} `json:"enableSipLogs"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging#voice_connector_id ChimeVoiceConnectorLogging#voice_connector_id}.
+	VoiceConnectorId *string `json:"voiceConnectorId" yaml:"voiceConnectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_logging#enable_sip_logs ChimeVoiceConnectorLogging#enable_sip_logs}.
+	EnableSipLogs interface{} `json:"enableSipLogs" yaml:"enableSipLogs"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html aws_chime_voice_connector_origination}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination aws_chime_voice_connector_origination}.
 type ChimeVoiceConnectorOrigination interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Disabled() interface{}
@@ -1613,9 +1838,9 @@ type ChimeVoiceConnectorOrigination interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Route() *[]*ChimeVoiceConnectorOriginationRoute
-	SetRoute(val *[]*ChimeVoiceConnectorOriginationRoute)
-	RouteInput() *[]*ChimeVoiceConnectorOriginationRoute
+	Route() interface{}
+	SetRoute(val interface{})
+	RouteInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1623,10 +1848,15 @@ type ChimeVoiceConnectorOrigination interface {
 	SetVoiceConnectorId(val *string)
 	VoiceConnectorIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDisabled()
@@ -1662,8 +1892,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorOrigination) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorOrigination) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ChimeVoiceConnectorOrigination) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1772,8 +2002,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorOrigination) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorOrigination) Route() *[]*ChimeVoiceConnectorOriginationRoute {
-	var returns *[]*ChimeVoiceConnectorOriginationRoute
+func (j *jsiiProxy_ChimeVoiceConnectorOrigination) Route() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"route",
@@ -1782,8 +2012,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorOrigination) Route() *[]*ChimeVoiceConnect
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorOrigination) RouteInput() *[]*ChimeVoiceConnectorOriginationRoute {
-	var returns *[]*ChimeVoiceConnectorOriginationRoute
+func (j *jsiiProxy_ChimeVoiceConnectorOrigination) RouteInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"routeInput",
@@ -1842,7 +2072,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorOrigination) VoiceConnectorIdInput() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html aws_chime_voice_connector_origination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination aws_chime_voice_connector_origination} Resource.
 func NewChimeVoiceConnectorOrigination(scope constructs.Construct, id *string, config *ChimeVoiceConnectorOriginationConfig) ChimeVoiceConnectorOrigination {
 	_init_.Initialize()
 
@@ -1857,7 +2087,7 @@ func NewChimeVoiceConnectorOrigination(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html aws_chime_voice_connector_origination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination aws_chime_voice_connector_origination} Resource.
 func NewChimeVoiceConnectorOrigination_Override(c ChimeVoiceConnectorOrigination, scope constructs.Construct, id *string, config *ChimeVoiceConnectorOriginationConfig) {
 	_init_.Initialize()
 
@@ -1868,7 +2098,7 @@ func NewChimeVoiceConnectorOrigination_Override(c ChimeVoiceConnectorOrigination
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorOrigination) SetCount(val interface{}) {
+func (j *jsiiProxy_ChimeVoiceConnectorOrigination) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1908,7 +2138,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorOrigination) SetProvider(val cdktf.Terrafo
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorOrigination) SetRoute(val *[]*ChimeVoiceConnectorOriginationRoute) {
+func (j *jsiiProxy_ChimeVoiceConnectorOrigination) SetRoute(val interface{}) {
 	_jsii_.Set(
 		j,
 		"route",
@@ -1964,12 +2194,40 @@ func (c *jsiiProxy_ChimeVoiceConnectorOrigination) AddOverride(path *string, val
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2006,12 +2264,54 @@ func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorOrigination) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2120,43 +2420,43 @@ func (c *jsiiProxy_ChimeVoiceConnectorOrigination) ToTerraform() interface{} {
 // Amazon Chime.
 type ChimeVoiceConnectorOriginationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// route block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#route ChimeVoiceConnectorOrigination#route}
-	Route *[]*ChimeVoiceConnectorOriginationRoute `json:"route"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#voice_connector_id ChimeVoiceConnectorOrigination#voice_connector_id}.
-	VoiceConnectorId *string `json:"voiceConnectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#disabled ChimeVoiceConnectorOrigination#disabled}.
-	Disabled interface{} `json:"disabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#route ChimeVoiceConnectorOrigination#route}
+	Route interface{} `json:"route" yaml:"route"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#voice_connector_id ChimeVoiceConnectorOrigination#voice_connector_id}.
+	VoiceConnectorId *string `json:"voiceConnectorId" yaml:"voiceConnectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#disabled ChimeVoiceConnectorOrigination#disabled}.
+	Disabled interface{} `json:"disabled" yaml:"disabled"`
 }
 
 type ChimeVoiceConnectorOriginationRoute struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#host ChimeVoiceConnectorOrigination#host}.
-	Host *string `json:"host"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#priority ChimeVoiceConnectorOrigination#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#protocol ChimeVoiceConnectorOrigination#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#weight ChimeVoiceConnectorOrigination#weight}.
-	Weight *float64 `json:"weight"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination.html#port ChimeVoiceConnectorOrigination#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#host ChimeVoiceConnectorOrigination#host}.
+	Host *string `json:"host" yaml:"host"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#priority ChimeVoiceConnectorOrigination#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#protocol ChimeVoiceConnectorOrigination#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#weight ChimeVoiceConnectorOrigination#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_origination#port ChimeVoiceConnectorOrigination#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming.html aws_chime_voice_connector_streaming}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming aws_chime_voice_connector_streaming}.
 type ChimeVoiceConnectorStreaming interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DataRetention() *float64
 	SetDataRetention(val *float64)
 	DataRetentionInput() *float64
@@ -2184,10 +2484,15 @@ type ChimeVoiceConnectorStreaming interface {
 	SetVoiceConnectorId(val *string)
 	VoiceConnectorIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDisabled()
@@ -2224,8 +2529,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorStreaming) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorStreaming) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ChimeVoiceConnectorStreaming) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2424,7 +2729,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorStreaming) VoiceConnectorIdInput() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming.html aws_chime_voice_connector_streaming} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming aws_chime_voice_connector_streaming} Resource.
 func NewChimeVoiceConnectorStreaming(scope constructs.Construct, id *string, config *ChimeVoiceConnectorStreamingConfig) ChimeVoiceConnectorStreaming {
 	_init_.Initialize()
 
@@ -2439,7 +2744,7 @@ func NewChimeVoiceConnectorStreaming(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming.html aws_chime_voice_connector_streaming} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming aws_chime_voice_connector_streaming} Resource.
 func NewChimeVoiceConnectorStreaming_Override(c ChimeVoiceConnectorStreaming, scope constructs.Construct, id *string, config *ChimeVoiceConnectorStreamingConfig) {
 	_init_.Initialize()
 
@@ -2450,7 +2755,7 @@ func NewChimeVoiceConnectorStreaming_Override(c ChimeVoiceConnectorStreaming, sc
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorStreaming) SetCount(val interface{}) {
+func (j *jsiiProxy_ChimeVoiceConnectorStreaming) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2554,12 +2859,40 @@ func (c *jsiiProxy_ChimeVoiceConnectorStreaming) AddOverride(path *string, value
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2596,12 +2929,54 @@ func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorStreaming) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2718,24 +3093,24 @@ func (c *jsiiProxy_ChimeVoiceConnectorStreaming) ToTerraform() interface{} {
 // Amazon Chime.
 type ChimeVoiceConnectorStreamingConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming.html#data_retention ChimeVoiceConnectorStreaming#data_retention}.
-	DataRetention *float64 `json:"dataRetention"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming.html#voice_connector_id ChimeVoiceConnectorStreaming#voice_connector_id}.
-	VoiceConnectorId *string `json:"voiceConnectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming.html#disabled ChimeVoiceConnectorStreaming#disabled}.
-	Disabled interface{} `json:"disabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming.html#streaming_notification_targets ChimeVoiceConnectorStreaming#streaming_notification_targets}.
-	StreamingNotificationTargets *[]*string `json:"streamingNotificationTargets"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming#data_retention ChimeVoiceConnectorStreaming#data_retention}.
+	DataRetention *float64 `json:"dataRetention" yaml:"dataRetention"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming#voice_connector_id ChimeVoiceConnectorStreaming#voice_connector_id}.
+	VoiceConnectorId *string `json:"voiceConnectorId" yaml:"voiceConnectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming#disabled ChimeVoiceConnectorStreaming#disabled}.
+	Disabled interface{} `json:"disabled" yaml:"disabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_streaming#streaming_notification_targets ChimeVoiceConnectorStreaming#streaming_notification_targets}.
+	StreamingNotificationTargets *[]*string `json:"streamingNotificationTargets" yaml:"streamingNotificationTargets"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html aws_chime_voice_connector_termination}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination aws_chime_voice_connector_termination}.
 type ChimeVoiceConnectorTermination interface {
 	cdktf.TerraformResource
 	CallingRegions() *[]*string
@@ -2746,8 +3121,8 @@ type ChimeVoiceConnectorTermination interface {
 	SetCidrAllowList(val *[]*string)
 	CidrAllowListInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CpsLimit() *float64
 	SetCpsLimit(val *float64)
 	CpsLimitInput() *float64
@@ -2775,10 +3150,15 @@ type ChimeVoiceConnectorTermination interface {
 	SetVoiceConnectorId(val *string)
 	VoiceConnectorIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCpsLimit()
@@ -2856,8 +3236,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorTermination) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorTermination) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ChimeVoiceConnectorTermination) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3056,7 +3436,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorTermination) VoiceConnectorIdInput() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html aws_chime_voice_connector_termination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination aws_chime_voice_connector_termination} Resource.
 func NewChimeVoiceConnectorTermination(scope constructs.Construct, id *string, config *ChimeVoiceConnectorTerminationConfig) ChimeVoiceConnectorTermination {
 	_init_.Initialize()
 
@@ -3071,7 +3451,7 @@ func NewChimeVoiceConnectorTermination(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html aws_chime_voice_connector_termination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination aws_chime_voice_connector_termination} Resource.
 func NewChimeVoiceConnectorTermination_Override(c ChimeVoiceConnectorTermination, scope constructs.Construct, id *string, config *ChimeVoiceConnectorTerminationConfig) {
 	_init_.Initialize()
 
@@ -3098,7 +3478,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorTermination) SetCidrAllowList(val *[]*stri
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorTermination) SetCount(val interface{}) {
+func (j *jsiiProxy_ChimeVoiceConnectorTermination) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3202,12 +3582,40 @@ func (c *jsiiProxy_ChimeVoiceConnectorTermination) AddOverride(path *string, val
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3244,12 +3652,54 @@ func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTermination) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3374,37 +3824,37 @@ func (c *jsiiProxy_ChimeVoiceConnectorTermination) ToTerraform() interface{} {
 // Amazon Chime.
 type ChimeVoiceConnectorTerminationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html#calling_regions ChimeVoiceConnectorTermination#calling_regions}.
-	CallingRegions *[]*string `json:"callingRegions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html#cidr_allow_list ChimeVoiceConnectorTermination#cidr_allow_list}.
-	CidrAllowList *[]*string `json:"cidrAllowList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html#voice_connector_id ChimeVoiceConnectorTermination#voice_connector_id}.
-	VoiceConnectorId *string `json:"voiceConnectorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html#cps_limit ChimeVoiceConnectorTermination#cps_limit}.
-	CpsLimit *float64 `json:"cpsLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html#default_phone_number ChimeVoiceConnectorTermination#default_phone_number}.
-	DefaultPhoneNumber *string `json:"defaultPhoneNumber"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination.html#disabled ChimeVoiceConnectorTermination#disabled}.
-	Disabled interface{} `json:"disabled"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination#calling_regions ChimeVoiceConnectorTermination#calling_regions}.
+	CallingRegions *[]*string `json:"callingRegions" yaml:"callingRegions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination#cidr_allow_list ChimeVoiceConnectorTermination#cidr_allow_list}.
+	CidrAllowList *[]*string `json:"cidrAllowList" yaml:"cidrAllowList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination#voice_connector_id ChimeVoiceConnectorTermination#voice_connector_id}.
+	VoiceConnectorId *string `json:"voiceConnectorId" yaml:"voiceConnectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination#cps_limit ChimeVoiceConnectorTermination#cps_limit}.
+	CpsLimit *float64 `json:"cpsLimit" yaml:"cpsLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination#default_phone_number ChimeVoiceConnectorTermination#default_phone_number}.
+	DefaultPhoneNumber *string `json:"defaultPhoneNumber" yaml:"defaultPhoneNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination#disabled ChimeVoiceConnectorTermination#disabled}.
+	Disabled interface{} `json:"disabled" yaml:"disabled"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials.html aws_chime_voice_connector_termination_credentials}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials aws_chime_voice_connector_termination_credentials}.
 type ChimeVoiceConnectorTerminationCredentials interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	Credentials() *[]*ChimeVoiceConnectorTerminationCredentialsCredentials
-	SetCredentials(val *[]*ChimeVoiceConnectorTerminationCredentialsCredentials)
-	CredentialsInput() *[]*ChimeVoiceConnectorTerminationCredentialsCredentials
+	Count() *float64
+	SetCount(val *float64)
+	Credentials() interface{}
+	SetCredentials(val interface{})
+	CredentialsInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3423,10 +3873,15 @@ type ChimeVoiceConnectorTerminationCredentials interface {
 	SetVoiceConnectorId(val *string)
 	VoiceConnectorIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3461,8 +3916,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) ConstructNodeMetad
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3471,8 +3926,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) Count() interface{
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) Credentials() *[]*ChimeVoiceConnectorTerminationCredentialsCredentials {
-	var returns *[]*ChimeVoiceConnectorTerminationCredentialsCredentials
+func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) Credentials() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"credentials",
@@ -3481,8 +3936,8 @@ func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) Credentials() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) CredentialsInput() *[]*ChimeVoiceConnectorTerminationCredentialsCredentials {
-	var returns *[]*ChimeVoiceConnectorTerminationCredentialsCredentials
+func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) CredentialsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"credentialsInput",
@@ -3621,7 +4076,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) VoiceConnectorIdIn
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials.html aws_chime_voice_connector_termination_credentials} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials aws_chime_voice_connector_termination_credentials} Resource.
 func NewChimeVoiceConnectorTerminationCredentials(scope constructs.Construct, id *string, config *ChimeVoiceConnectorTerminationCredentialsConfig) ChimeVoiceConnectorTerminationCredentials {
 	_init_.Initialize()
 
@@ -3636,7 +4091,7 @@ func NewChimeVoiceConnectorTerminationCredentials(scope constructs.Construct, id
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials.html aws_chime_voice_connector_termination_credentials} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials aws_chime_voice_connector_termination_credentials} Resource.
 func NewChimeVoiceConnectorTerminationCredentials_Override(c ChimeVoiceConnectorTerminationCredentials, scope constructs.Construct, id *string, config *ChimeVoiceConnectorTerminationCredentialsConfig) {
 	_init_.Initialize()
 
@@ -3647,7 +4102,7 @@ func NewChimeVoiceConnectorTerminationCredentials_Override(c ChimeVoiceConnector
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) SetCount(val interface{}) {
+func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3655,7 +4110,7 @@ func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) SetCount(val inter
 	)
 }
 
-func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) SetCredentials(val *[]*ChimeVoiceConnectorTerminationCredentialsCredentials) {
+func (j *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) SetCredentials(val interface{}) {
 	_jsii_.Set(
 		j,
 		"credentials",
@@ -3735,12 +4190,40 @@ func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) AddOverride(path *
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3777,12 +4260,54 @@ func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetNumberAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3883,24 +4408,24 @@ func (c *jsiiProxy_ChimeVoiceConnectorTerminationCredentials) ToTerraform() inte
 // Amazon Chime.
 type ChimeVoiceConnectorTerminationCredentialsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// credentials block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials.html#credentials ChimeVoiceConnectorTerminationCredentials#credentials}
-	Credentials *[]*ChimeVoiceConnectorTerminationCredentialsCredentials `json:"credentials"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials.html#voice_connector_id ChimeVoiceConnectorTerminationCredentials#voice_connector_id}.
-	VoiceConnectorId *string `json:"voiceConnectorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials#credentials ChimeVoiceConnectorTerminationCredentials#credentials}
+	Credentials interface{} `json:"credentials" yaml:"credentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials#voice_connector_id ChimeVoiceConnectorTerminationCredentials#voice_connector_id}.
+	VoiceConnectorId *string `json:"voiceConnectorId" yaml:"voiceConnectorId"`
 }
 
 type ChimeVoiceConnectorTerminationCredentialsCredentials struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials.html#password ChimeVoiceConnectorTerminationCredentials#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials.html#username ChimeVoiceConnectorTerminationCredentials#username}.
-	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials#password ChimeVoiceConnectorTerminationCredentials#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/chime_voice_connector_termination_credentials#username ChimeVoiceConnectorTerminationCredentials#username}.
+	Username *string `json:"username" yaml:"username"`
 }

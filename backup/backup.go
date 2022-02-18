@@ -9,20 +9,20 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/backup/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings.html aws_backup_global_settings}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings aws_backup_global_settings}.
 type BackupGlobalSettings interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
-	GlobalSettings() interface{}
-	SetGlobalSettings(val interface{})
-	GlobalSettingsInput() interface{}
+	GlobalSettings() *map[string]*string
+	SetGlobalSettings(val *map[string]*string)
+	GlobalSettingsInput() *map[string]*string
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -34,10 +34,15 @@ type BackupGlobalSettings interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -72,8 +77,8 @@ func (j *jsiiProxy_BackupGlobalSettings) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_BackupGlobalSettings) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupGlobalSettings) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -112,8 +117,8 @@ func (j *jsiiProxy_BackupGlobalSettings) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_BackupGlobalSettings) GlobalSettings() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupGlobalSettings) GlobalSettings() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"globalSettings",
@@ -122,8 +127,8 @@ func (j *jsiiProxy_BackupGlobalSettings) GlobalSettings() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupGlobalSettings) GlobalSettingsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupGlobalSettings) GlobalSettingsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"globalSettingsInput",
@@ -212,7 +217,7 @@ func (j *jsiiProxy_BackupGlobalSettings) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings.html aws_backup_global_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings aws_backup_global_settings} Resource.
 func NewBackupGlobalSettings(scope constructs.Construct, id *string, config *BackupGlobalSettingsConfig) BackupGlobalSettings {
 	_init_.Initialize()
 
@@ -227,7 +232,7 @@ func NewBackupGlobalSettings(scope constructs.Construct, id *string, config *Bac
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings.html aws_backup_global_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings aws_backup_global_settings} Resource.
 func NewBackupGlobalSettings_Override(b BackupGlobalSettings, scope constructs.Construct, id *string, config *BackupGlobalSettingsConfig) {
 	_init_.Initialize()
 
@@ -238,7 +243,7 @@ func NewBackupGlobalSettings_Override(b BackupGlobalSettings, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_BackupGlobalSettings) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupGlobalSettings) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -254,7 +259,7 @@ func (j *jsiiProxy_BackupGlobalSettings) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_BackupGlobalSettings) SetGlobalSettings(val interface{}) {
+func (j *jsiiProxy_BackupGlobalSettings) SetGlobalSettings(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"globalSettings",
@@ -318,12 +323,40 @@ func (b *jsiiProxy_BackupGlobalSettings) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupGlobalSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupGlobalSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupGlobalSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -360,12 +393,54 @@ func (b *jsiiProxy_BackupGlobalSettings) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupGlobalSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupGlobalSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupGlobalSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupGlobalSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -466,28 +541,28 @@ func (b *jsiiProxy_BackupGlobalSettings) ToTerraform() interface{} {
 // AWS Backup.
 type BackupGlobalSettingsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings.html#global_settings BackupGlobalSettings#global_settings}.
-	GlobalSettings interface{} `json:"globalSettings"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_global_settings#global_settings BackupGlobalSettings#global_settings}.
+	GlobalSettings *map[string]*string `json:"globalSettings" yaml:"globalSettings"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html aws_backup_plan}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_plan aws_backup_plan}.
 type BackupPlan interface {
 	cdktf.TerraformResource
-	AdvancedBackupSetting() *[]*BackupPlanAdvancedBackupSetting
-	SetAdvancedBackupSetting(val *[]*BackupPlanAdvancedBackupSetting)
-	AdvancedBackupSettingInput() *[]*BackupPlanAdvancedBackupSetting
+	AdvancedBackupSetting() interface{}
+	SetAdvancedBackupSetting(val interface{})
+	AdvancedBackupSettingInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -502,24 +577,29 @@ type BackupPlan interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Rule() *[]*BackupPlanRule
-	SetRule(val *[]*BackupPlanRule)
-	RuleInput() *[]*BackupPlanRule
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Rule() interface{}
+	SetRule(val interface{})
+	RuleInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAdvancedBackupSetting()
@@ -537,8 +617,8 @@ type jsiiProxy_BackupPlan struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_BackupPlan) AdvancedBackupSetting() *[]*BackupPlanAdvancedBackupSetting {
-	var returns *[]*BackupPlanAdvancedBackupSetting
+func (j *jsiiProxy_BackupPlan) AdvancedBackupSetting() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"advancedBackupSetting",
@@ -547,8 +627,8 @@ func (j *jsiiProxy_BackupPlan) AdvancedBackupSetting() *[]*BackupPlanAdvancedBac
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) AdvancedBackupSettingInput() *[]*BackupPlanAdvancedBackupSetting {
-	var returns *[]*BackupPlanAdvancedBackupSetting
+func (j *jsiiProxy_BackupPlan) AdvancedBackupSettingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"advancedBackupSettingInput",
@@ -587,8 +667,8 @@ func (j *jsiiProxy_BackupPlan) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupPlan) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -697,8 +777,8 @@ func (j *jsiiProxy_BackupPlan) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) Rule() *[]*BackupPlanRule {
-	var returns *[]*BackupPlanRule
+func (j *jsiiProxy_BackupPlan) Rule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rule",
@@ -707,8 +787,8 @@ func (j *jsiiProxy_BackupPlan) Rule() *[]*BackupPlanRule {
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) RuleInput() *[]*BackupPlanRule {
-	var returns *[]*BackupPlanRule
+func (j *jsiiProxy_BackupPlan) RuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ruleInput",
@@ -717,8 +797,8 @@ func (j *jsiiProxy_BackupPlan) RuleInput() *[]*BackupPlanRule {
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupPlan) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -727,8 +807,8 @@ func (j *jsiiProxy_BackupPlan) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupPlan) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -737,8 +817,8 @@ func (j *jsiiProxy_BackupPlan) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupPlan) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -747,8 +827,8 @@ func (j *jsiiProxy_BackupPlan) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlan) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupPlan) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -797,7 +877,7 @@ func (j *jsiiProxy_BackupPlan) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html aws_backup_plan} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_plan aws_backup_plan} Resource.
 func NewBackupPlan(scope constructs.Construct, id *string, config *BackupPlanConfig) BackupPlan {
 	_init_.Initialize()
 
@@ -812,7 +892,7 @@ func NewBackupPlan(scope constructs.Construct, id *string, config *BackupPlanCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html aws_backup_plan} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_plan aws_backup_plan} Resource.
 func NewBackupPlan_Override(b BackupPlan, scope constructs.Construct, id *string, config *BackupPlanConfig) {
 	_init_.Initialize()
 
@@ -823,7 +903,7 @@ func NewBackupPlan_Override(b BackupPlan, scope constructs.Construct, id *string
 	)
 }
 
-func (j *jsiiProxy_BackupPlan) SetAdvancedBackupSetting(val *[]*BackupPlanAdvancedBackupSetting) {
+func (j *jsiiProxy_BackupPlan) SetAdvancedBackupSetting(val interface{}) {
 	_jsii_.Set(
 		j,
 		"advancedBackupSetting",
@@ -831,7 +911,7 @@ func (j *jsiiProxy_BackupPlan) SetAdvancedBackupSetting(val *[]*BackupPlanAdvanc
 	)
 }
 
-func (j *jsiiProxy_BackupPlan) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupPlan) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -871,7 +951,7 @@ func (j *jsiiProxy_BackupPlan) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_BackupPlan) SetRule(val *[]*BackupPlanRule) {
+func (j *jsiiProxy_BackupPlan) SetRule(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rule",
@@ -879,7 +959,7 @@ func (j *jsiiProxy_BackupPlan) SetRule(val *[]*BackupPlanRule) {
 	)
 }
 
-func (j *jsiiProxy_BackupPlan) SetTags(val interface{}) {
+func (j *jsiiProxy_BackupPlan) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -887,7 +967,7 @@ func (j *jsiiProxy_BackupPlan) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_BackupPlan) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_BackupPlan) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -935,12 +1015,40 @@ func (b *jsiiProxy_BackupPlan) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupPlan) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupPlan) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlan) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -977,12 +1085,54 @@ func (b *jsiiProxy_BackupPlan) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupPlan) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlan) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupPlan) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlan) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1105,77 +1255,77 @@ func (b *jsiiProxy_BackupPlan) ToTerraform() interface{} {
 }
 
 type BackupPlanAdvancedBackupSetting struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#backup_options BackupPlan#backup_options}.
-	BackupOptions interface{} `json:"backupOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#resource_type BackupPlan#resource_type}.
-	ResourceType *string `json:"resourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#backup_options BackupPlan#backup_options}.
+	BackupOptions *map[string]*string `json:"backupOptions" yaml:"backupOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#resource_type BackupPlan#resource_type}.
+	ResourceType *string `json:"resourceType" yaml:"resourceType"`
 }
 
 // AWS Backup.
 type BackupPlanConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#name BackupPlan#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#name BackupPlan#name}.
+	Name *string `json:"name" yaml:"name"`
 	// rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#rule BackupPlan#rule}
-	Rule *[]*BackupPlanRule `json:"rule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#rule BackupPlan#rule}
+	Rule interface{} `json:"rule" yaml:"rule"`
 	// advanced_backup_setting block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#advanced_backup_setting BackupPlan#advanced_backup_setting}
-	AdvancedBackupSetting *[]*BackupPlanAdvancedBackupSetting `json:"advancedBackupSetting"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#tags BackupPlan#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#tags_all BackupPlan#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#advanced_backup_setting BackupPlan#advanced_backup_setting}
+	AdvancedBackupSetting interface{} `json:"advancedBackupSetting" yaml:"advancedBackupSetting"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#tags BackupPlan#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#tags_all BackupPlan#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type BackupPlanRule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#rule_name BackupPlan#rule_name}.
-	RuleName *string `json:"ruleName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#target_vault_name BackupPlan#target_vault_name}.
-	TargetVaultName *string `json:"targetVaultName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#completion_window BackupPlan#completion_window}.
-	CompletionWindow *float64 `json:"completionWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#rule_name BackupPlan#rule_name}.
+	RuleName *string `json:"ruleName" yaml:"ruleName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#target_vault_name BackupPlan#target_vault_name}.
+	TargetVaultName *string `json:"targetVaultName" yaml:"targetVaultName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#completion_window BackupPlan#completion_window}.
+	CompletionWindow *float64 `json:"completionWindow" yaml:"completionWindow"`
 	// copy_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#copy_action BackupPlan#copy_action}
-	CopyAction *[]*BackupPlanRuleCopyAction `json:"copyAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#enable_continuous_backup BackupPlan#enable_continuous_backup}.
-	EnableContinuousBackup interface{} `json:"enableContinuousBackup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#copy_action BackupPlan#copy_action}
+	CopyAction interface{} `json:"copyAction" yaml:"copyAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#enable_continuous_backup BackupPlan#enable_continuous_backup}.
+	EnableContinuousBackup interface{} `json:"enableContinuousBackup" yaml:"enableContinuousBackup"`
 	// lifecycle block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#lifecycle BackupPlan#lifecycle}
-	Lifecycle *BackupPlanRuleLifecycle `json:"lifecycle"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#recovery_point_tags BackupPlan#recovery_point_tags}.
-	RecoveryPointTags interface{} `json:"recoveryPointTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#schedule BackupPlan#schedule}.
-	Schedule *string `json:"schedule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#start_window BackupPlan#start_window}.
-	StartWindow *float64 `json:"startWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#lifecycle BackupPlan#lifecycle}
+	Lifecycle *BackupPlanRuleLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#recovery_point_tags BackupPlan#recovery_point_tags}.
+	RecoveryPointTags *map[string]*string `json:"recoveryPointTags" yaml:"recoveryPointTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#schedule BackupPlan#schedule}.
+	Schedule *string `json:"schedule" yaml:"schedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#start_window BackupPlan#start_window}.
+	StartWindow *float64 `json:"startWindow" yaml:"startWindow"`
 }
 
 type BackupPlanRuleCopyAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#destination_vault_arn BackupPlan#destination_vault_arn}.
-	DestinationVaultArn *string `json:"destinationVaultArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#destination_vault_arn BackupPlan#destination_vault_arn}.
+	DestinationVaultArn *string `json:"destinationVaultArn" yaml:"destinationVaultArn"`
 	// lifecycle block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#lifecycle BackupPlan#lifecycle}
-	Lifecycle *BackupPlanRuleCopyActionLifecycle `json:"lifecycle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#lifecycle BackupPlan#lifecycle}
+	Lifecycle *BackupPlanRuleCopyActionLifecycle `json:"lifecycle" yaml:"lifecycle"`
 }
 
 type BackupPlanRuleCopyActionLifecycle struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#cold_storage_after BackupPlan#cold_storage_after}.
-	ColdStorageAfter *float64 `json:"coldStorageAfter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#delete_after BackupPlan#delete_after}.
-	DeleteAfter *float64 `json:"deleteAfter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#cold_storage_after BackupPlan#cold_storage_after}.
+	ColdStorageAfter *float64 `json:"coldStorageAfter" yaml:"coldStorageAfter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#delete_after BackupPlan#delete_after}.
+	DeleteAfter *float64 `json:"deleteAfter" yaml:"deleteAfter"`
 }
 
 type BackupPlanRuleCopyActionLifecycleOutputReference interface {
@@ -1192,12 +1342,17 @@ type BackupPlanRuleCopyActionLifecycleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetColdStorageAfter()
@@ -1279,8 +1434,8 @@ func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1289,7 +1444,7 @@ func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) TerraformRe
 	return returns
 }
 
-func NewBackupPlanRuleCopyActionLifecycleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BackupPlanRuleCopyActionLifecycleOutputReference {
+func NewBackupPlanRuleCopyActionLifecycleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BackupPlanRuleCopyActionLifecycleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference{}
@@ -1303,7 +1458,7 @@ func NewBackupPlanRuleCopyActionLifecycleOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewBackupPlanRuleCopyActionLifecycleOutputReference_Override(b BackupPlanRuleCopyActionLifecycleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBackupPlanRuleCopyActionLifecycleOutputReference_Override(b BackupPlanRuleCopyActionLifecycleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1353,7 +1508,7 @@ func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1362,12 +1517,40 @@ func (j *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1404,12 +1587,54 @@ func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1462,10 +1687,10 @@ func (b *jsiiProxy_BackupPlanRuleCopyActionLifecycleOutputReference) ResetDelete
 }
 
 type BackupPlanRuleLifecycle struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#cold_storage_after BackupPlan#cold_storage_after}.
-	ColdStorageAfter *float64 `json:"coldStorageAfter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan.html#delete_after BackupPlan#delete_after}.
-	DeleteAfter *float64 `json:"deleteAfter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#cold_storage_after BackupPlan#cold_storage_after}.
+	ColdStorageAfter *float64 `json:"coldStorageAfter" yaml:"coldStorageAfter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_plan#delete_after BackupPlan#delete_after}.
+	DeleteAfter *float64 `json:"deleteAfter" yaml:"deleteAfter"`
 }
 
 type BackupPlanRuleLifecycleOutputReference interface {
@@ -1482,12 +1707,17 @@ type BackupPlanRuleLifecycleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetColdStorageAfter()
@@ -1569,8 +1799,8 @@ func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1579,7 +1809,7 @@ func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewBackupPlanRuleLifecycleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) BackupPlanRuleLifecycleOutputReference {
+func NewBackupPlanRuleLifecycleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) BackupPlanRuleLifecycleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_BackupPlanRuleLifecycleOutputReference{}
@@ -1593,7 +1823,7 @@ func NewBackupPlanRuleLifecycleOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewBackupPlanRuleLifecycleOutputReference_Override(b BackupPlanRuleLifecycleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewBackupPlanRuleLifecycleOutputReference_Override(b BackupPlanRuleLifecycleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1643,7 +1873,7 @@ func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1652,12 +1882,40 @@ func (j *jsiiProxy_BackupPlanRuleLifecycleOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1694,12 +1952,54 @@ func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1751,13 +2051,13 @@ func (b *jsiiProxy_BackupPlanRuleLifecycleOutputReference) ResetDeleteAfter() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings.html aws_backup_region_settings}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings aws_backup_region_settings}.
 type BackupRegionSettings interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1769,20 +2069,25 @@ type BackupRegionSettings interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	ResourceTypeManagementPreference() interface{}
-	SetResourceTypeManagementPreference(val interface{})
-	ResourceTypeManagementPreferenceInput() interface{}
-	ResourceTypeOptInPreference() interface{}
-	SetResourceTypeOptInPreference(val interface{})
-	ResourceTypeOptInPreferenceInput() interface{}
+	ResourceTypeManagementPreference() *map[string]interface{}
+	SetResourceTypeManagementPreference(val *map[string]interface{})
+	ResourceTypeManagementPreferenceInput() *map[string]interface{}
+	ResourceTypeOptInPreference() *map[string]interface{}
+	SetResourceTypeOptInPreference(val *map[string]interface{})
+	ResourceTypeOptInPreferenceInput() *map[string]interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1818,8 +2123,8 @@ func (j *jsiiProxy_BackupRegionSettings) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_BackupRegionSettings) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupRegionSettings) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1908,8 +2213,8 @@ func (j *jsiiProxy_BackupRegionSettings) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreference() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreference() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"resourceTypeManagementPreference",
@@ -1918,8 +2223,8 @@ func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreference() inte
 	return returns
 }
 
-func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreferenceInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreferenceInput() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"resourceTypeManagementPreferenceInput",
@@ -1928,8 +2233,8 @@ func (j *jsiiProxy_BackupRegionSettings) ResourceTypeManagementPreferenceInput()
 	return returns
 }
 
-func (j *jsiiProxy_BackupRegionSettings) ResourceTypeOptInPreference() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupRegionSettings) ResourceTypeOptInPreference() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"resourceTypeOptInPreference",
@@ -1938,8 +2243,8 @@ func (j *jsiiProxy_BackupRegionSettings) ResourceTypeOptInPreference() interface
 	return returns
 }
 
-func (j *jsiiProxy_BackupRegionSettings) ResourceTypeOptInPreferenceInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupRegionSettings) ResourceTypeOptInPreferenceInput() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"resourceTypeOptInPreferenceInput",
@@ -1978,7 +2283,7 @@ func (j *jsiiProxy_BackupRegionSettings) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings.html aws_backup_region_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings aws_backup_region_settings} Resource.
 func NewBackupRegionSettings(scope constructs.Construct, id *string, config *BackupRegionSettingsConfig) BackupRegionSettings {
 	_init_.Initialize()
 
@@ -1993,7 +2298,7 @@ func NewBackupRegionSettings(scope constructs.Construct, id *string, config *Bac
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings.html aws_backup_region_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings aws_backup_region_settings} Resource.
 func NewBackupRegionSettings_Override(b BackupRegionSettings, scope constructs.Construct, id *string, config *BackupRegionSettingsConfig) {
 	_init_.Initialize()
 
@@ -2004,7 +2309,7 @@ func NewBackupRegionSettings_Override(b BackupRegionSettings, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_BackupRegionSettings) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupRegionSettings) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2036,7 +2341,7 @@ func (j *jsiiProxy_BackupRegionSettings) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_BackupRegionSettings) SetResourceTypeManagementPreference(val interface{}) {
+func (j *jsiiProxy_BackupRegionSettings) SetResourceTypeManagementPreference(val *map[string]interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceTypeManagementPreference",
@@ -2044,7 +2349,7 @@ func (j *jsiiProxy_BackupRegionSettings) SetResourceTypeManagementPreference(val
 	)
 }
 
-func (j *jsiiProxy_BackupRegionSettings) SetResourceTypeOptInPreference(val interface{}) {
+func (j *jsiiProxy_BackupRegionSettings) SetResourceTypeOptInPreference(val *map[string]interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceTypeOptInPreference",
@@ -2092,12 +2397,40 @@ func (b *jsiiProxy_BackupRegionSettings) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupRegionSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupRegionSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupRegionSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2134,12 +2467,54 @@ func (b *jsiiProxy_BackupRegionSettings) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupRegionSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupRegionSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupRegionSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupRegionSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2248,26 +2623,29 @@ func (b *jsiiProxy_BackupRegionSettings) ToTerraform() interface{} {
 // AWS Backup.
 type BackupRegionSettingsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings.html#resource_type_opt_in_preference BackupRegionSettings#resource_type_opt_in_preference}.
-	ResourceTypeOptInPreference interface{} `json:"resourceTypeOptInPreference"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings.html#resource_type_management_preference BackupRegionSettings#resource_type_management_preference}.
-	ResourceTypeManagementPreference interface{} `json:"resourceTypeManagementPreference"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings#resource_type_opt_in_preference BackupRegionSettings#resource_type_opt_in_preference}.
+	ResourceTypeOptInPreference *map[string]interface{} `json:"resourceTypeOptInPreference" yaml:"resourceTypeOptInPreference"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_region_settings#resource_type_management_preference BackupRegionSettings#resource_type_management_preference}.
+	ResourceTypeManagementPreference *map[string]interface{} `json:"resourceTypeManagementPreference" yaml:"resourceTypeManagementPreference"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html aws_backup_selection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_selection aws_backup_selection}.
 type BackupSelection interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
+	Condition() interface{}
+	SetCondition(val interface{})
+	ConditionInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2282,6 +2660,9 @@ type BackupSelection interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
+	NotResources() *[]*string
+	SetNotResources(val *[]*string)
+	NotResourcesInput() *[]*string
 	PlanId() *string
 	SetPlanId(val *string)
 	PlanIdInput() *string
@@ -2291,19 +2672,26 @@ type BackupSelection interface {
 	Resources() *[]*string
 	SetResources(val *[]*string)
 	ResourcesInput() *[]*string
-	SelectionTag() *[]*BackupSelectionSelectionTag
-	SetSelectionTag(val *[]*BackupSelectionSelectionTag)
-	SelectionTagInput() *[]*BackupSelectionSelectionTag
+	SelectionTag() interface{}
+	SetSelectionTag(val interface{})
+	SelectionTagInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	ResetCondition()
+	ResetNotResources()
 	ResetOverrideLogicalId()
 	ResetResources()
 	ResetSelectionTag()
@@ -2328,6 +2716,26 @@ func (j *jsiiProxy_BackupSelection) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_BackupSelection) Condition() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"condition",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupSelection) ConditionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"conditionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BackupSelection) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -2338,8 +2746,8 @@ func (j *jsiiProxy_BackupSelection) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_BackupSelection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupSelection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2448,6 +2856,26 @@ func (j *jsiiProxy_BackupSelection) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_BackupSelection) NotResources() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"notResources",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupSelection) NotResourcesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"notResourcesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BackupSelection) PlanId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -2508,8 +2936,8 @@ func (j *jsiiProxy_BackupSelection) ResourcesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_BackupSelection) SelectionTag() *[]*BackupSelectionSelectionTag {
-	var returns *[]*BackupSelectionSelectionTag
+func (j *jsiiProxy_BackupSelection) SelectionTag() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"selectionTag",
@@ -2518,8 +2946,8 @@ func (j *jsiiProxy_BackupSelection) SelectionTag() *[]*BackupSelectionSelectionT
 	return returns
 }
 
-func (j *jsiiProxy_BackupSelection) SelectionTagInput() *[]*BackupSelectionSelectionTag {
-	var returns *[]*BackupSelectionSelectionTag
+func (j *jsiiProxy_BackupSelection) SelectionTagInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"selectionTagInput",
@@ -2558,7 +2986,7 @@ func (j *jsiiProxy_BackupSelection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html aws_backup_selection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_selection aws_backup_selection} Resource.
 func NewBackupSelection(scope constructs.Construct, id *string, config *BackupSelectionConfig) BackupSelection {
 	_init_.Initialize()
 
@@ -2573,7 +3001,7 @@ func NewBackupSelection(scope constructs.Construct, id *string, config *BackupSe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html aws_backup_selection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_selection aws_backup_selection} Resource.
 func NewBackupSelection_Override(b BackupSelection, scope constructs.Construct, id *string, config *BackupSelectionConfig) {
 	_init_.Initialize()
 
@@ -2584,7 +3012,15 @@ func NewBackupSelection_Override(b BackupSelection, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_BackupSelection) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupSelection) SetCondition(val interface{}) {
+	_jsii_.Set(
+		j,
+		"condition",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BackupSelection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2624,6 +3060,14 @@ func (j *jsiiProxy_BackupSelection) SetName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_BackupSelection) SetNotResources(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"notResources",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BackupSelection) SetPlanId(val *string) {
 	_jsii_.Set(
 		j,
@@ -2648,7 +3092,7 @@ func (j *jsiiProxy_BackupSelection) SetResources(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_BackupSelection) SetSelectionTag(val *[]*BackupSelectionSelectionTag) {
+func (j *jsiiProxy_BackupSelection) SetSelectionTag(val interface{}) {
 	_jsii_.Set(
 		j,
 		"selectionTag",
@@ -2696,12 +3140,40 @@ func (b *jsiiProxy_BackupSelection) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupSelection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupSelection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupSelection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2738,12 +3210,54 @@ func (b *jsiiProxy_BackupSelection) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupSelection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupSelection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupSelection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupSelection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2772,6 +3286,22 @@ func (b *jsiiProxy_BackupSelection) OverrideLogicalId(newLogicalId *string) {
 		b,
 		"overrideLogicalId",
 		[]interface{}{newLogicalId},
+	)
+}
+
+func (b *jsiiProxy_BackupSelection) ResetCondition() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetCondition",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BackupSelection) ResetNotResources() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetNotResources",
+		nil, // no parameters
 	)
 }
 
@@ -2857,47 +3387,100 @@ func (b *jsiiProxy_BackupSelection) ToTerraform() interface{} {
 	return returns
 }
 
+type BackupSelectionCondition struct {
+	// string_equals block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#string_equals BackupSelection#string_equals}
+	StringEquals interface{} `json:"stringEquals" yaml:"stringEquals"`
+	// string_like block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#string_like BackupSelection#string_like}
+	StringLike interface{} `json:"stringLike" yaml:"stringLike"`
+	// string_not_equals block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#string_not_equals BackupSelection#string_not_equals}
+	StringNotEquals interface{} `json:"stringNotEquals" yaml:"stringNotEquals"`
+	// string_not_like block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#string_not_like BackupSelection#string_not_like}
+	StringNotLike interface{} `json:"stringNotLike" yaml:"stringNotLike"`
+}
+
+type BackupSelectionConditionStringEquals struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#key BackupSelection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#value BackupSelection#value}.
+	Value *string `json:"value" yaml:"value"`
+}
+
+type BackupSelectionConditionStringLike struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#key BackupSelection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#value BackupSelection#value}.
+	Value *string `json:"value" yaml:"value"`
+}
+
+type BackupSelectionConditionStringNotEquals struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#key BackupSelection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#value BackupSelection#value}.
+	Value *string `json:"value" yaml:"value"`
+}
+
+type BackupSelectionConditionStringNotLike struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#key BackupSelection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#value BackupSelection#value}.
+	Value *string `json:"value" yaml:"value"`
+}
+
 // AWS Backup.
 type BackupSelectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#iam_role_arn BackupSelection#iam_role_arn}.
-	IamRoleArn *string `json:"iamRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#name BackupSelection#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#plan_id BackupSelection#plan_id}.
-	PlanId *string `json:"planId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#resources BackupSelection#resources}.
-	Resources *[]*string `json:"resources"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#iam_role_arn BackupSelection#iam_role_arn}.
+	IamRoleArn *string `json:"iamRoleArn" yaml:"iamRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#name BackupSelection#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#plan_id BackupSelection#plan_id}.
+	PlanId *string `json:"planId" yaml:"planId"`
+	// condition block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#condition BackupSelection#condition}
+	Condition interface{} `json:"condition" yaml:"condition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#not_resources BackupSelection#not_resources}.
+	NotResources *[]*string `json:"notResources" yaml:"notResources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#resources BackupSelection#resources}.
+	Resources *[]*string `json:"resources" yaml:"resources"`
 	// selection_tag block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#selection_tag BackupSelection#selection_tag}
-	SelectionTag *[]*BackupSelectionSelectionTag `json:"selectionTag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#selection_tag BackupSelection#selection_tag}
+	SelectionTag interface{} `json:"selectionTag" yaml:"selectionTag"`
 }
 
 type BackupSelectionSelectionTag struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#key BackupSelection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#type BackupSelection#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection.html#value BackupSelection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#key BackupSelection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#type BackupSelection#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_selection#value BackupSelection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault.html aws_backup_vault}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault aws_backup_vault}.
 type BackupVault interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2916,20 +3499,25 @@ type BackupVault interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	RecoveryPoints() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKmsKeyArn()
@@ -2977,8 +3565,8 @@ func (j *jsiiProxy_BackupVault) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_BackupVault) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVault) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3117,8 +3705,8 @@ func (j *jsiiProxy_BackupVault) RecoveryPoints() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_BackupVault) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVault) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3127,8 +3715,8 @@ func (j *jsiiProxy_BackupVault) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupVault) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVault) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3137,8 +3725,8 @@ func (j *jsiiProxy_BackupVault) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupVault) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVault) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3147,8 +3735,8 @@ func (j *jsiiProxy_BackupVault) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_BackupVault) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVault) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3187,7 +3775,7 @@ func (j *jsiiProxy_BackupVault) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault.html aws_backup_vault} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault aws_backup_vault} Resource.
 func NewBackupVault(scope constructs.Construct, id *string, config *BackupVaultConfig) BackupVault {
 	_init_.Initialize()
 
@@ -3202,7 +3790,7 @@ func NewBackupVault(scope constructs.Construct, id *string, config *BackupVaultC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault.html aws_backup_vault} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault aws_backup_vault} Resource.
 func NewBackupVault_Override(b BackupVault, scope constructs.Construct, id *string, config *BackupVaultConfig) {
 	_init_.Initialize()
 
@@ -3213,7 +3801,7 @@ func NewBackupVault_Override(b BackupVault, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_BackupVault) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupVault) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3261,7 +3849,7 @@ func (j *jsiiProxy_BackupVault) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_BackupVault) SetTags(val interface{}) {
+func (j *jsiiProxy_BackupVault) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3269,7 +3857,7 @@ func (j *jsiiProxy_BackupVault) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_BackupVault) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_BackupVault) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3317,12 +3905,40 @@ func (b *jsiiProxy_BackupVault) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVault) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVault) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVault) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3359,12 +3975,54 @@ func (b *jsiiProxy_BackupVault) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVault) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVault) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVault) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVault) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3489,24 +4147,24 @@ func (b *jsiiProxy_BackupVault) ToTerraform() interface{} {
 // AWS Backup.
 type BackupVaultConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault.html#name BackupVault#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault.html#kms_key_arn BackupVault#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault.html#tags BackupVault#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault.html#tags_all BackupVault#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault#name BackupVault#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault#kms_key_arn BackupVault#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault#tags BackupVault#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault#tags_all BackupVault#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration.html aws_backup_vault_lock_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration aws_backup_vault_lock_configuration}.
 type BackupVaultLockConfiguration interface {
 	cdktf.TerraformResource
 	BackupVaultArn() *string
@@ -3518,8 +4176,8 @@ type BackupVaultLockConfiguration interface {
 	SetChangeableForDays(val *float64)
 	ChangeableForDaysInput() *float64
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3541,10 +4199,15 @@ type BackupVaultLockConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetChangeableForDays()
@@ -3632,8 +4295,8 @@ func (j *jsiiProxy_BackupVaultLockConfiguration) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_BackupVaultLockConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVaultLockConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3792,7 +4455,7 @@ func (j *jsiiProxy_BackupVaultLockConfiguration) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration.html aws_backup_vault_lock_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration aws_backup_vault_lock_configuration} Resource.
 func NewBackupVaultLockConfiguration(scope constructs.Construct, id *string, config *BackupVaultLockConfigurationConfig) BackupVaultLockConfiguration {
 	_init_.Initialize()
 
@@ -3807,7 +4470,7 @@ func NewBackupVaultLockConfiguration(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration.html aws_backup_vault_lock_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration aws_backup_vault_lock_configuration} Resource.
 func NewBackupVaultLockConfiguration_Override(b BackupVaultLockConfiguration, scope constructs.Construct, id *string, config *BackupVaultLockConfigurationConfig) {
 	_init_.Initialize()
 
@@ -3834,7 +4497,7 @@ func (j *jsiiProxy_BackupVaultLockConfiguration) SetChangeableForDays(val *float
 	)
 }
 
-func (j *jsiiProxy_BackupVaultLockConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupVaultLockConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3922,12 +4585,40 @@ func (b *jsiiProxy_BackupVaultLockConfiguration) AddOverride(path *string, value
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVaultLockConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVaultLockConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultLockConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3964,12 +4655,54 @@ func (b *jsiiProxy_BackupVaultLockConfiguration) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVaultLockConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultLockConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVaultLockConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultLockConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4094,24 +4827,24 @@ func (b *jsiiProxy_BackupVaultLockConfiguration) ToTerraform() interface{} {
 // AWS Backup.
 type BackupVaultLockConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration.html#backup_vault_name BackupVaultLockConfiguration#backup_vault_name}.
-	BackupVaultName *string `json:"backupVaultName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration.html#changeable_for_days BackupVaultLockConfiguration#changeable_for_days}.
-	ChangeableForDays *float64 `json:"changeableForDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration.html#max_retention_days BackupVaultLockConfiguration#max_retention_days}.
-	MaxRetentionDays *float64 `json:"maxRetentionDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration.html#min_retention_days BackupVaultLockConfiguration#min_retention_days}.
-	MinRetentionDays *float64 `json:"minRetentionDays"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration#backup_vault_name BackupVaultLockConfiguration#backup_vault_name}.
+	BackupVaultName *string `json:"backupVaultName" yaml:"backupVaultName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration#changeable_for_days BackupVaultLockConfiguration#changeable_for_days}.
+	ChangeableForDays *float64 `json:"changeableForDays" yaml:"changeableForDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration#max_retention_days BackupVaultLockConfiguration#max_retention_days}.
+	MaxRetentionDays *float64 `json:"maxRetentionDays" yaml:"maxRetentionDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_lock_configuration#min_retention_days BackupVaultLockConfiguration#min_retention_days}.
+	MinRetentionDays *float64 `json:"minRetentionDays" yaml:"minRetentionDays"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications.html aws_backup_vault_notifications}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications aws_backup_vault_notifications}.
 type BackupVaultNotifications interface {
 	cdktf.TerraformResource
 	BackupVaultArn() *string
@@ -4123,8 +4856,8 @@ type BackupVaultNotifications interface {
 	BackupVaultNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4143,10 +4876,15 @@ type BackupVaultNotifications interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4231,8 +4969,8 @@ func (j *jsiiProxy_BackupVaultNotifications) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_BackupVaultNotifications) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVaultNotifications) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4371,7 +5109,7 @@ func (j *jsiiProxy_BackupVaultNotifications) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications.html aws_backup_vault_notifications} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications aws_backup_vault_notifications} Resource.
 func NewBackupVaultNotifications(scope constructs.Construct, id *string, config *BackupVaultNotificationsConfig) BackupVaultNotifications {
 	_init_.Initialize()
 
@@ -4386,7 +5124,7 @@ func NewBackupVaultNotifications(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications.html aws_backup_vault_notifications} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications aws_backup_vault_notifications} Resource.
 func NewBackupVaultNotifications_Override(b BackupVaultNotifications, scope constructs.Construct, id *string, config *BackupVaultNotificationsConfig) {
 	_init_.Initialize()
 
@@ -4413,7 +5151,7 @@ func (j *jsiiProxy_BackupVaultNotifications) SetBackupVaultName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BackupVaultNotifications) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupVaultNotifications) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4493,12 +5231,40 @@ func (b *jsiiProxy_BackupVaultNotifications) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVaultNotifications) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVaultNotifications) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultNotifications) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4535,12 +5301,54 @@ func (b *jsiiProxy_BackupVaultNotifications) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVaultNotifications) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultNotifications) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVaultNotifications) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultNotifications) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4641,22 +5449,22 @@ func (b *jsiiProxy_BackupVaultNotifications) ToTerraform() interface{} {
 // AWS Backup.
 type BackupVaultNotificationsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications.html#backup_vault_events BackupVaultNotifications#backup_vault_events}.
-	BackupVaultEvents *[]*string `json:"backupVaultEvents"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications.html#backup_vault_name BackupVaultNotifications#backup_vault_name}.
-	BackupVaultName *string `json:"backupVaultName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications.html#sns_topic_arn BackupVaultNotifications#sns_topic_arn}.
-	SnsTopicArn *string `json:"snsTopicArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications#backup_vault_events BackupVaultNotifications#backup_vault_events}.
+	BackupVaultEvents *[]*string `json:"backupVaultEvents" yaml:"backupVaultEvents"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications#backup_vault_name BackupVaultNotifications#backup_vault_name}.
+	BackupVaultName *string `json:"backupVaultName" yaml:"backupVaultName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_notifications#sns_topic_arn BackupVaultNotifications#sns_topic_arn}.
+	SnsTopicArn *string `json:"snsTopicArn" yaml:"snsTopicArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy.html aws_backup_vault_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy aws_backup_vault_policy}.
 type BackupVaultPolicy interface {
 	cdktf.TerraformResource
 	BackupVaultArn() *string
@@ -4665,8 +5473,8 @@ type BackupVaultPolicy interface {
 	BackupVaultNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4685,10 +5493,15 @@ type BackupVaultPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4753,8 +5566,8 @@ func (j *jsiiProxy_BackupVaultPolicy) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_BackupVaultPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_BackupVaultPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4893,7 +5706,7 @@ func (j *jsiiProxy_BackupVaultPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy.html aws_backup_vault_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy aws_backup_vault_policy} Resource.
 func NewBackupVaultPolicy(scope constructs.Construct, id *string, config *BackupVaultPolicyConfig) BackupVaultPolicy {
 	_init_.Initialize()
 
@@ -4908,7 +5721,7 @@ func NewBackupVaultPolicy(scope constructs.Construct, id *string, config *Backup
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy.html aws_backup_vault_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy aws_backup_vault_policy} Resource.
 func NewBackupVaultPolicy_Override(b BackupVaultPolicy, scope constructs.Construct, id *string, config *BackupVaultPolicyConfig) {
 	_init_.Initialize()
 
@@ -4927,7 +5740,7 @@ func (j *jsiiProxy_BackupVaultPolicy) SetBackupVaultName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BackupVaultPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_BackupVaultPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5007,12 +5820,40 @@ func (b *jsiiProxy_BackupVaultPolicy) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVaultPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		b,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVaultPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		b,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		b,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5049,12 +5890,54 @@ func (b *jsiiProxy_BackupVaultPolicy) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (b *jsiiProxy_BackupVaultPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		b,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (b *jsiiProxy_BackupVaultPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		b,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (b *jsiiProxy_BackupVaultPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		b,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5155,27 +6038,27 @@ func (b *jsiiProxy_BackupVaultPolicy) ToTerraform() interface{} {
 // AWS Backup.
 type BackupVaultPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy.html#backup_vault_name BackupVaultPolicy#backup_vault_name}.
-	BackupVaultName *string `json:"backupVaultName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy.html#policy BackupVaultPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy#backup_vault_name BackupVaultPolicy#backup_vault_name}.
+	BackupVaultName *string `json:"backupVaultName" yaml:"backupVaultName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/backup_vault_policy#policy BackupVaultPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/backup_plan.html aws_backup_plan}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/backup_plan aws_backup_plan}.
 type DataAwsBackupPlan interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5191,18 +6074,23 @@ type DataAwsBackupPlan interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5248,8 +6136,8 @@ func (j *jsiiProxy_DataAwsBackupPlan) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBackupPlan) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBackupPlan) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5368,8 +6256,8 @@ func (j *jsiiProxy_DataAwsBackupPlan) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBackupPlan) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBackupPlan) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5378,8 +6266,8 @@ func (j *jsiiProxy_DataAwsBackupPlan) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBackupPlan) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBackupPlan) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5428,7 +6316,7 @@ func (j *jsiiProxy_DataAwsBackupPlan) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_plan.html aws_backup_plan} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_plan aws_backup_plan} Data Source.
 func NewDataAwsBackupPlan(scope constructs.Construct, id *string, config *DataAwsBackupPlanConfig) DataAwsBackupPlan {
 	_init_.Initialize()
 
@@ -5443,7 +6331,7 @@ func NewDataAwsBackupPlan(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_plan.html aws_backup_plan} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_plan aws_backup_plan} Data Source.
 func NewDataAwsBackupPlan_Override(d DataAwsBackupPlan, scope constructs.Construct, id *string, config *DataAwsBackupPlanConfig) {
 	_init_.Initialize()
 
@@ -5454,7 +6342,7 @@ func NewDataAwsBackupPlan_Override(d DataAwsBackupPlan, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DataAwsBackupPlan) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsBackupPlan) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5494,7 +6382,7 @@ func (j *jsiiProxy_DataAwsBackupPlan) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsBackupPlan) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsBackupPlan) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5542,12 +6430,40 @@ func (d *jsiiProxy_DataAwsBackupPlan) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBackupPlan) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBackupPlan) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupPlan) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5584,12 +6500,54 @@ func (d *jsiiProxy_DataAwsBackupPlan) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBackupPlan) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupPlan) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBackupPlan) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupPlan) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5698,26 +6656,26 @@ func (d *jsiiProxy_DataAwsBackupPlan) ToTerraform() interface{} {
 // AWS Backup.
 type DataAwsBackupPlanConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_plan.html#plan_id DataAwsBackupPlan#plan_id}.
-	PlanId *string `json:"planId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_plan.html#tags DataAwsBackupPlan#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_plan#plan_id DataAwsBackupPlan#plan_id}.
+	PlanId *string `json:"planId" yaml:"planId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_plan#tags DataAwsBackupPlan#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/backup_selection.html aws_backup_selection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/backup_selection aws_backup_selection}.
 type DataAwsBackupSelection interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5742,10 +6700,15 @@ type DataAwsBackupSelection interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5780,8 +6743,8 @@ func (j *jsiiProxy_DataAwsBackupSelection) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBackupSelection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBackupSelection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5970,7 +6933,7 @@ func (j *jsiiProxy_DataAwsBackupSelection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_selection.html aws_backup_selection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_selection aws_backup_selection} Data Source.
 func NewDataAwsBackupSelection(scope constructs.Construct, id *string, config *DataAwsBackupSelectionConfig) DataAwsBackupSelection {
 	_init_.Initialize()
 
@@ -5985,7 +6948,7 @@ func NewDataAwsBackupSelection(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_selection.html aws_backup_selection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_selection aws_backup_selection} Data Source.
 func NewDataAwsBackupSelection_Override(d DataAwsBackupSelection, scope constructs.Construct, id *string, config *DataAwsBackupSelectionConfig) {
 	_init_.Initialize()
 
@@ -5996,7 +6959,7 @@ func NewDataAwsBackupSelection_Override(d DataAwsBackupSelection, scope construc
 	)
 }
 
-func (j *jsiiProxy_DataAwsBackupSelection) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsBackupSelection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6084,12 +7047,40 @@ func (d *jsiiProxy_DataAwsBackupSelection) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBackupSelection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBackupSelection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupSelection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6126,12 +7117,54 @@ func (d *jsiiProxy_DataAwsBackupSelection) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBackupSelection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupSelection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBackupSelection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupSelection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6232,27 +7265,27 @@ func (d *jsiiProxy_DataAwsBackupSelection) ToTerraform() interface{} {
 // AWS Backup.
 type DataAwsBackupSelectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_selection.html#plan_id DataAwsBackupSelection#plan_id}.
-	PlanId *string `json:"planId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_selection.html#selection_id DataAwsBackupSelection#selection_id}.
-	SelectionId *string `json:"selectionId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_selection#plan_id DataAwsBackupSelection#plan_id}.
+	PlanId *string `json:"planId" yaml:"planId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_selection#selection_id DataAwsBackupSelection#selection_id}.
+	SelectionId *string `json:"selectionId" yaml:"selectionId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/backup_vault.html aws_backup_vault}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/backup_vault aws_backup_vault}.
 type DataAwsBackupVault interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6269,17 +7302,22 @@ type DataAwsBackupVault interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	RecoveryPoints() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6325,8 +7363,8 @@ func (j *jsiiProxy_DataAwsBackupVault) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBackupVault) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBackupVault) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6455,8 +7493,8 @@ func (j *jsiiProxy_DataAwsBackupVault) RecoveryPoints() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBackupVault) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBackupVault) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6465,8 +7503,8 @@ func (j *jsiiProxy_DataAwsBackupVault) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsBackupVault) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsBackupVault) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6505,7 +7543,7 @@ func (j *jsiiProxy_DataAwsBackupVault) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_vault.html aws_backup_vault} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_vault aws_backup_vault} Data Source.
 func NewDataAwsBackupVault(scope constructs.Construct, id *string, config *DataAwsBackupVaultConfig) DataAwsBackupVault {
 	_init_.Initialize()
 
@@ -6520,7 +7558,7 @@ func NewDataAwsBackupVault(scope constructs.Construct, id *string, config *DataA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_vault.html aws_backup_vault} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/backup_vault aws_backup_vault} Data Source.
 func NewDataAwsBackupVault_Override(d DataAwsBackupVault, scope constructs.Construct, id *string, config *DataAwsBackupVaultConfig) {
 	_init_.Initialize()
 
@@ -6531,7 +7569,7 @@ func NewDataAwsBackupVault_Override(d DataAwsBackupVault, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_DataAwsBackupVault) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsBackupVault) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6571,7 +7609,7 @@ func (j *jsiiProxy_DataAwsBackupVault) SetProvider(val cdktf.TerraformProvider) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsBackupVault) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsBackupVault) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6619,12 +7657,40 @@ func (d *jsiiProxy_DataAwsBackupVault) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBackupVault) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBackupVault) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupVault) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6661,12 +7727,54 @@ func (d *jsiiProxy_DataAwsBackupVault) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsBackupVault) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupVault) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsBackupVault) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsBackupVault) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6775,15 +7883,15 @@ func (d *jsiiProxy_DataAwsBackupVault) ToTerraform() interface{} {
 // AWS Backup.
 type DataAwsBackupVaultConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_vault.html#name DataAwsBackupVault#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_vault.html#tags DataAwsBackupVault#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_vault#name DataAwsBackupVault#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/backup_vault#tags DataAwsBackupVault#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }

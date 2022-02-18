@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/imagebuilder/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component.html aws_imagebuilder_component}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component aws_imagebuilder_component}.
 type DataAwsImagebuilderComponent interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -18,14 +18,14 @@ type DataAwsImagebuilderComponent interface {
 	CdktfStack() cdktf.TerraformStack
 	ChangeDescription() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Data() *string
 	DateCreated() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
-	Encrypted() interface{}
+	Encrypted() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -40,19 +40,24 @@ type DataAwsImagebuilderComponent interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	SupportedOsVersions() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Type() *string
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -118,8 +123,8 @@ func (j *jsiiProxy_DataAwsImagebuilderComponent) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderComponent) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderComponent) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -168,8 +173,8 @@ func (j *jsiiProxy_DataAwsImagebuilderComponent) Description() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderComponent) Encrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderComponent) Encrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encrypted",
@@ -298,8 +303,8 @@ func (j *jsiiProxy_DataAwsImagebuilderComponent) SupportedOsVersions() *[]*strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderComponent) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderComponent) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -308,8 +313,8 @@ func (j *jsiiProxy_DataAwsImagebuilderComponent) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderComponent) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderComponent) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -368,7 +373,7 @@ func (j *jsiiProxy_DataAwsImagebuilderComponent) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component.html aws_imagebuilder_component} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component aws_imagebuilder_component} Data Source.
 func NewDataAwsImagebuilderComponent(scope constructs.Construct, id *string, config *DataAwsImagebuilderComponentConfig) DataAwsImagebuilderComponent {
 	_init_.Initialize()
 
@@ -383,7 +388,7 @@ func NewDataAwsImagebuilderComponent(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component.html aws_imagebuilder_component} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component aws_imagebuilder_component} Data Source.
 func NewDataAwsImagebuilderComponent_Override(d DataAwsImagebuilderComponent, scope constructs.Construct, id *string, config *DataAwsImagebuilderComponentConfig) {
 	_init_.Initialize()
 
@@ -402,7 +407,7 @@ func (j *jsiiProxy_DataAwsImagebuilderComponent) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderComponent) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderComponent) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -434,7 +439,7 @@ func (j *jsiiProxy_DataAwsImagebuilderComponent) SetProvider(val cdktf.Terraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderComponent) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderComponent) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -482,12 +487,40 @@ func (d *jsiiProxy_DataAwsImagebuilderComponent) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponent) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderComponent) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponent) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -524,12 +557,54 @@ func (d *jsiiProxy_DataAwsImagebuilderComponent) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponent) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponent) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderComponent) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponent) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -638,20 +713,645 @@ func (d *jsiiProxy_DataAwsImagebuilderComponent) ToTerraform() interface{} {
 // AWS Image Builder.
 type DataAwsImagebuilderComponentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component.html#arn DataAwsImagebuilderComponent#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component.html#tags DataAwsImagebuilderComponent#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component#arn DataAwsImagebuilderComponent#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_component#tags DataAwsImagebuilderComponent#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration.html aws_imagebuilder_distribution_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_components aws_imagebuilder_components}.
+type DataAwsImagebuilderComponents interface {
+	cdktf.TerraformDataSource
+	Arns() *[]*string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Names() *[]*string
+	Node() constructs.Node
+	Owner() *string
+	SetOwner(val *string)
+	OwnerInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetFilter()
+	ResetOverrideLogicalId()
+	ResetOwner()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsImagebuilderComponents
+type jsiiProxy_DataAwsImagebuilderComponents struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Arns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"arns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Filter() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) FilterInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Names() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"names",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Owner() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"owner",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) OwnerInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ownerInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_components aws_imagebuilder_components} Data Source.
+func NewDataAwsImagebuilderComponents(scope constructs.Construct, id *string, config *DataAwsImagebuilderComponentsConfig) DataAwsImagebuilderComponents {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsImagebuilderComponents{}
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponents",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_components aws_imagebuilder_components} Data Source.
+func NewDataAwsImagebuilderComponents_Override(d DataAwsImagebuilderComponents, scope constructs.Construct, id *string, config *DataAwsImagebuilderComponentsConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponents",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) SetFilter(val interface{}) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) SetOwner(val *string) {
+	_jsii_.Set(
+		j,
+		"owner",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderComponents) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsImagebuilderComponents_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponents",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsImagebuilderComponents_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderComponents",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderComponents) ResetFilter() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderComponents) ResetOwner() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOwner",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderComponents) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderComponents) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Image Builder.
+type DataAwsImagebuilderComponentsConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_components#filter DataAwsImagebuilderComponents#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_components#owner DataAwsImagebuilderComponents#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
+}
+
+type DataAwsImagebuilderComponentsFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_components#name DataAwsImagebuilderComponents#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_components#values DataAwsImagebuilderComponents#values}.
+	Values *[]*string `json:"values" yaml:"values"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration aws_imagebuilder_distribution_configuration}.
 type DataAwsImagebuilderDistributionConfiguration interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -659,8 +1359,8 @@ type DataAwsImagebuilderDistributionConfiguration interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DateUpdated() *string
 	DependsOn() *[]*string
@@ -676,18 +1376,23 @@ type DataAwsImagebuilderDistributionConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	Distribution(index *string) DataAwsImagebuilderDistributionConfigurationDistribution
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -743,8 +1448,8 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) ConstructNodeMe
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -873,8 +1578,8 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) RawOverrides() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -883,8 +1588,8 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) Tags() interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -923,7 +1628,7 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) TerraformResour
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration.html aws_imagebuilder_distribution_configuration} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration aws_imagebuilder_distribution_configuration} Data Source.
 func NewDataAwsImagebuilderDistributionConfiguration(scope constructs.Construct, id *string, config *DataAwsImagebuilderDistributionConfigurationConfig) DataAwsImagebuilderDistributionConfiguration {
 	_init_.Initialize()
 
@@ -938,7 +1643,7 @@ func NewDataAwsImagebuilderDistributionConfiguration(scope constructs.Construct,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration.html aws_imagebuilder_distribution_configuration} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration aws_imagebuilder_distribution_configuration} Data Source.
 func NewDataAwsImagebuilderDistributionConfiguration_Override(d DataAwsImagebuilderDistributionConfiguration, scope constructs.Construct, id *string, config *DataAwsImagebuilderDistributionConfigurationConfig) {
 	_init_.Initialize()
 
@@ -957,7 +1662,7 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) SetArn(val *str
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -989,7 +1694,7 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) SetProvider(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1050,12 +1755,40 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) Distribution(in
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1092,12 +1825,54 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetNumberAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1206,34 +1981,41 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfiguration) ToTerraform() i
 // AWS Image Builder.
 type DataAwsImagebuilderDistributionConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration.html#arn DataAwsImagebuilderDistributionConfiguration#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration.html#tags DataAwsImagebuilderDistributionConfiguration#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration#arn DataAwsImagebuilderDistributionConfiguration#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configuration#tags DataAwsImagebuilderDistributionConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsImagebuilderDistributionConfigurationDistribution interface {
 	cdktf.ComplexComputedList
-	AmiDistributionConfiguration() interface{}
+	AmiDistributionConfiguration() cdktf.IResolvable
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	LicenseConfigurationArns() *[]*string
 	Region() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1242,8 +2024,8 @@ type jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) AmiDistributionConfiguration() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) AmiDistributionConfiguration() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"amiDistributionConfiguration",
@@ -1292,8 +2074,8 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) Ter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1302,15 +2084,25 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) Ter
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderDistributionConfigurationDistribution(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderDistributionConfigurationDistribution {
+func NewDataAwsImagebuilderDistributionConfigurationDistribution(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderDistributionConfigurationDistribution {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1318,12 +2110,12 @@ func NewDataAwsImagebuilderDistributionConfigurationDistribution(terraformResour
 }
 
 // Experimental.
-func NewDataAwsImagebuilderDistributionConfigurationDistribution_Override(d DataAwsImagebuilderDistributionConfigurationDistribution, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderDistributionConfigurationDistribution_Override(d DataAwsImagebuilderDistributionConfigurationDistribution, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistribution",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1344,7 +2136,7 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) Set
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1352,13 +2144,49 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) Set
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1395,12 +2223,54 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) Get
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1424,22 +2294,29 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistribution) Int
 
 type DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration interface {
 	cdktf.ComplexComputedList
-	AmiTags() interface{}
+	AmiTags() *map[string]*string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	Description() *string
 	KmsKeyId() *string
-	LaunchPermission() interface{}
+	LaunchPermission() cdktf.IResolvable
 	Name() *string
 	TargetAccountIds() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1448,8 +2325,8 @@ type jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistri
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) AmiTags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) AmiTags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"amiTags",
@@ -1488,8 +2365,8 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) LaunchPermission() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) LaunchPermission() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"launchPermission",
@@ -1528,8 +2405,8 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1538,15 +2415,25 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration {
+func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1554,12 +2441,12 @@ func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionC
 }
 
 // Experimental.
-func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration_Override(d DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration_Override(d DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1580,7 +2467,7 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1588,13 +2475,49 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1631,12 +2554,54 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1664,14 +2629,21 @@ type DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConf
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserGroups() *[]*string
 	UserIds() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1700,8 +2672,8 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1730,15 +2702,25 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission {
+func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1746,12 +2728,12 @@ func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionC
 }
 
 // Experimental.
-func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission_Override(d DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission_Override(d DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1772,7 +2754,7 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1780,13 +2762,49 @@ func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1823,12 +2841,54 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1850,7 +2910,590 @@ func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurationDistributionAmiDi
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image.html aws_imagebuilder_image}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configurations aws_imagebuilder_distribution_configurations}.
+type DataAwsImagebuilderDistributionConfigurations interface {
+	cdktf.TerraformDataSource
+	Arns() *[]*string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Names() *[]*string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetFilter()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsImagebuilderDistributionConfigurations
+type jsiiProxy_DataAwsImagebuilderDistributionConfigurations struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Arns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"arns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Filter() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) FilterInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Names() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"names",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configurations aws_imagebuilder_distribution_configurations} Data Source.
+func NewDataAwsImagebuilderDistributionConfigurations(scope constructs.Construct, id *string, config *DataAwsImagebuilderDistributionConfigurationsConfig) DataAwsImagebuilderDistributionConfigurations {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsImagebuilderDistributionConfigurations{}
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurations",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configurations aws_imagebuilder_distribution_configurations} Data Source.
+func NewDataAwsImagebuilderDistributionConfigurations_Override(d DataAwsImagebuilderDistributionConfigurations, scope constructs.Construct, id *string, config *DataAwsImagebuilderDistributionConfigurationsConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurations",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) SetFilter(val interface{}) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsImagebuilderDistributionConfigurations_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurations",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsImagebuilderDistributionConfigurations_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderDistributionConfigurations",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) ResetFilter() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderDistributionConfigurations) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Image Builder.
+type DataAwsImagebuilderDistributionConfigurationsConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configurations#filter DataAwsImagebuilderDistributionConfigurations#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+}
+
+type DataAwsImagebuilderDistributionConfigurationsFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configurations#name DataAwsImagebuilderDistributionConfigurations#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_distribution_configurations#values DataAwsImagebuilderDistributionConfigurations#values}.
+	Values *[]*string `json:"values" yaml:"values"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image aws_imagebuilder_image}.
 type DataAwsImagebuilderImage interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -1859,13 +3502,13 @@ type DataAwsImagebuilderImage interface {
 	BuildVersionArn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DistributionConfigurationArn() *string
-	EnhancedImageMetadataEnabled() interface{}
+	EnhancedImageMetadataEnabled() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -1880,18 +3523,23 @@ type DataAwsImagebuilderImage interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	ImageTestsConfiguration(index *string) DataAwsImagebuilderImageImageTestsConfiguration
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OutputResources(index *string) DataAwsImagebuilderImageOutputResources
@@ -1959,8 +3607,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImage) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1999,8 +3647,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImage) DistributionConfigurationArn() *str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImage) EnhancedImageMetadataEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImage) EnhancedImageMetadataEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enhancedImageMetadataEnabled",
@@ -2129,8 +3777,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImage) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImage) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImage) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2139,8 +3787,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImage) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImage) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImage) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2189,7 +3837,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImage) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image.html aws_imagebuilder_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image aws_imagebuilder_image} Data Source.
 func NewDataAwsImagebuilderImage(scope constructs.Construct, id *string, config *DataAwsImagebuilderImageConfig) DataAwsImagebuilderImage {
 	_init_.Initialize()
 
@@ -2204,7 +3852,7 @@ func NewDataAwsImagebuilderImage(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image.html aws_imagebuilder_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image aws_imagebuilder_image} Data Source.
 func NewDataAwsImagebuilderImage_Override(d DataAwsImagebuilderImage, scope constructs.Construct, id *string, config *DataAwsImagebuilderImageConfig) {
 	_init_.Initialize()
 
@@ -2223,7 +3871,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImage) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImage) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderImage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2255,7 +3903,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImage) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImage) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderImage) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2303,12 +3951,40 @@ func (d *jsiiProxy_DataAwsImagebuilderImage) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2345,12 +4021,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImage) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2485,33 +4203,40 @@ func (d *jsiiProxy_DataAwsImagebuilderImage) ToTerraform() interface{} {
 // AWS Image Builder.
 type DataAwsImagebuilderImageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image.html#arn DataAwsImagebuilderImage#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image.html#tags DataAwsImagebuilderImage#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image#arn DataAwsImagebuilderImage#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image#tags DataAwsImagebuilderImage#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsImagebuilderImageImageTestsConfiguration interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ImageTestsEnabled() interface{}
+	ImageTestsEnabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeoutMinutes() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2530,8 +4255,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) ComplexCompu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) ImageTestsEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) ImageTestsEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"imageTestsEnabled",
@@ -2550,8 +4275,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2570,15 +4295,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) TimeoutMinut
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImageImageTestsConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImageImageTestsConfiguration {
+func NewDataAwsImagebuilderImageImageTestsConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImageImageTestsConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageImageTestsConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2586,12 +4321,12 @@ func NewDataAwsImagebuilderImageImageTestsConfiguration(terraformResource cdktf.
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImageImageTestsConfiguration_Override(d DataAwsImagebuilderImageImageTestsConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImageImageTestsConfiguration_Override(d DataAwsImagebuilderImageImageTestsConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageImageTestsConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2612,7 +4347,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2620,13 +4355,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) SetTerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2663,12 +4434,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2692,17 +4505,24 @@ func (d *jsiiProxy_DataAwsImagebuilderImageImageTestsConfiguration) Interpolatio
 
 type DataAwsImagebuilderImageOutputResources interface {
 	cdktf.ComplexComputedList
-	Amis() interface{}
+	Amis() cdktf.IResolvable
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2711,8 +4531,8 @@ type jsiiProxy_DataAwsImagebuilderImageOutputResources struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) Amis() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) Amis() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"amis",
@@ -2741,8 +4561,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2751,15 +4571,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImageOutputResources(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImageOutputResources {
+func NewDataAwsImagebuilderImageOutputResources(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImageOutputResources {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImageOutputResources{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResources",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2767,12 +4597,12 @@ func NewDataAwsImagebuilderImageOutputResources(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImageOutputResources_Override(d DataAwsImagebuilderImageOutputResources, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImageOutputResources_Override(d DataAwsImagebuilderImageOutputResources, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResources",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2793,7 +4623,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2801,13 +4631,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResources) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2844,12 +4710,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResources) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2882,12 +4790,19 @@ type DataAwsImagebuilderImageOutputResourcesAmis interface {
 	Region() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2966,8 +4881,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2976,15 +4891,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImageOutputResourcesAmis(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImageOutputResourcesAmis {
+func NewDataAwsImagebuilderImageOutputResourcesAmis(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImageOutputResourcesAmis {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResourcesAmis",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2992,12 +4917,12 @@ func NewDataAwsImagebuilderImageOutputResourcesAmis(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImageOutputResourcesAmis_Override(d DataAwsImagebuilderImageOutputResourcesAmis, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImageOutputResourcesAmis_Override(d DataAwsImagebuilderImageOutputResourcesAmis, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageOutputResourcesAmis",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -3018,7 +4943,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3026,13 +4951,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3069,12 +5030,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3096,7 +5099,7 @@ func (d *jsiiProxy_DataAwsImagebuilderImageOutputResourcesAmis) InterpolationFor
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline.html aws_imagebuilder_image_pipeline}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline aws_imagebuilder_image_pipeline}.
 type DataAwsImagebuilderImagePipeline interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -3104,8 +5107,8 @@ type DataAwsImagebuilderImagePipeline interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DateLastRun() *string
 	DateNextRun() *string
@@ -3114,7 +5117,7 @@ type DataAwsImagebuilderImagePipeline interface {
 	SetDependsOn(val *[]*string)
 	Description() *string
 	DistributionConfigurationArn() *string
-	EnhancedImageMetadataEnabled() interface{}
+	EnhancedImageMetadataEnabled() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -3129,17 +5132,22 @@ type DataAwsImagebuilderImagePipeline interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	ImageTestsConfiguration(index *string) DataAwsImagebuilderImagePipelineImageTestsConfiguration
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
@@ -3197,8 +5205,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3277,8 +5285,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) DistributionConfigurationAr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) EnhancedImageMetadataEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) EnhancedImageMetadataEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enhancedImageMetadataEnabled",
@@ -3407,8 +5415,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3417,8 +5425,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3457,7 +5465,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline.html aws_imagebuilder_image_pipeline} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline aws_imagebuilder_image_pipeline} Data Source.
 func NewDataAwsImagebuilderImagePipeline(scope constructs.Construct, id *string, config *DataAwsImagebuilderImagePipelineConfig) DataAwsImagebuilderImagePipeline {
 	_init_.Initialize()
 
@@ -3472,7 +5480,7 @@ func NewDataAwsImagebuilderImagePipeline(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline.html aws_imagebuilder_image_pipeline} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline aws_imagebuilder_image_pipeline} Data Source.
 func NewDataAwsImagebuilderImagePipeline_Override(d DataAwsImagebuilderImagePipeline, scope constructs.Construct, id *string, config *DataAwsImagebuilderImagePipelineConfig) {
 	_init_.Initialize()
 
@@ -3491,7 +5499,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3523,7 +5531,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) SetProvider(val cdktf.Terra
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderImagePipeline) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3571,12 +5579,40 @@ func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) AddOverride(path *string, v
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3613,12 +5649,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3753,33 +5831,40 @@ func (d *jsiiProxy_DataAwsImagebuilderImagePipeline) ToTerraform() interface{} {
 // AWS Image Builder.
 type DataAwsImagebuilderImagePipelineConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline.html#arn DataAwsImagebuilderImagePipeline#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline.html#tags DataAwsImagebuilderImagePipeline#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline#arn DataAwsImagebuilderImagePipeline#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_pipeline#tags DataAwsImagebuilderImagePipeline#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsImagebuilderImagePipelineImageTestsConfiguration interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ImageTestsEnabled() interface{}
+	ImageTestsEnabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeoutMinutes() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -3798,8 +5883,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) Comp
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) ImageTestsEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) ImageTestsEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"imageTestsEnabled",
@@ -3818,8 +5903,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) Terr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3838,15 +5923,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) Time
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImagePipelineImageTestsConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImagePipelineImageTestsConfiguration {
+func NewDataAwsImagebuilderImagePipelineImageTestsConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImagePipelineImageTestsConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -3854,12 +5949,12 @@ func NewDataAwsImagebuilderImagePipelineImageTestsConfiguration(terraformResourc
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImagePipelineImageTestsConfiguration_Override(d DataAwsImagebuilderImagePipelineImageTestsConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImagePipelineImageTestsConfiguration_Override(d DataAwsImagebuilderImagePipelineImageTestsConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineImageTestsConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -3880,7 +5975,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) SetT
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3888,13 +5983,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) SetT
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3931,12 +6062,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetN
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineImageTestsConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3966,12 +6139,19 @@ type DataAwsImagebuilderImagePipelineSchedule interface {
 	ScheduleExpression() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4020,8 +6200,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4030,15 +6210,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) TerraformResource()
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImagePipelineSchedule(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImagePipelineSchedule {
+func NewDataAwsImagebuilderImagePipelineSchedule(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImagePipelineSchedule {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImagePipelineSchedule{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineSchedule",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4046,12 +6236,12 @@ func NewDataAwsImagebuilderImagePipelineSchedule(terraformResource cdktf.ITerraf
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImagePipelineSchedule_Override(d DataAwsImagebuilderImagePipelineSchedule, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImagePipelineSchedule_Override(d DataAwsImagebuilderImagePipelineSchedule, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImagePipelineSchedule",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -4072,7 +6262,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4080,13 +6270,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) SetTerraformResourc
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4123,12 +6349,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetNumberAttribute(
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4150,7 +6418,7 @@ func (d *jsiiProxy_DataAwsImagebuilderImagePipelineSchedule) InterpolationForAtt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe.html aws_imagebuilder_image_recipe}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe aws_imagebuilder_image_recipe}.
 type DataAwsImagebuilderImageRecipe interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -4158,8 +6426,8 @@ type DataAwsImagebuilderImageRecipe interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -4177,21 +6445,27 @@ type DataAwsImagebuilderImageRecipe interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
+	UserDataBase64() *string
 	Version() *string
 	WorkingDirectory() *string
 	AddOverride(path *string, value interface{})
 	BlockDeviceMapping(index *string) DataAwsImagebuilderImageRecipeBlockDeviceMapping
 	Component(index *string) DataAwsImagebuilderImageRecipeComponent
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4247,8 +6521,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4397,8 +6671,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4407,8 +6681,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4447,6 +6721,16 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) TerraformResourceType() *stri
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) UserDataBase64() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userDataBase64",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) Version() *string {
 	var returns *string
 	_jsii_.Get(
@@ -4467,7 +6751,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) WorkingDirectory() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe.html aws_imagebuilder_image_recipe} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe aws_imagebuilder_image_recipe} Data Source.
 func NewDataAwsImagebuilderImageRecipe(scope constructs.Construct, id *string, config *DataAwsImagebuilderImageRecipeConfig) DataAwsImagebuilderImageRecipe {
 	_init_.Initialize()
 
@@ -4482,7 +6766,7 @@ func NewDataAwsImagebuilderImageRecipe(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe.html aws_imagebuilder_image_recipe} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe aws_imagebuilder_image_recipe} Data Source.
 func NewDataAwsImagebuilderImageRecipe_Override(d DataAwsImagebuilderImageRecipe, scope constructs.Construct, id *string, config *DataAwsImagebuilderImageRecipeConfig) {
 	_init_.Initialize()
 
@@ -4501,7 +6785,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4533,7 +6817,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) SetProvider(val cdktf.Terrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipe) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4607,12 +6891,40 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) Component(index *string) Data
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4649,12 +6961,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipe) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4765,17 +7119,24 @@ type DataAwsImagebuilderImageRecipeBlockDeviceMapping interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	DeviceName() *string
-	Ebs() interface{}
+	Ebs() cdktf.IResolvable
 	NoDevice() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VirtualName() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4804,8 +7165,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) DeviceName(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) Ebs() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) Ebs() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"ebs",
@@ -4834,8 +7195,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4854,15 +7215,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) VirtualName
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImageRecipeBlockDeviceMapping(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImageRecipeBlockDeviceMapping {
+func NewDataAwsImagebuilderImageRecipeBlockDeviceMapping(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImageRecipeBlockDeviceMapping {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4870,12 +7241,12 @@ func NewDataAwsImagebuilderImageRecipeBlockDeviceMapping(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImageRecipeBlockDeviceMapping_Override(d DataAwsImagebuilderImageRecipeBlockDeviceMapping, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImageRecipeBlockDeviceMapping_Override(d DataAwsImagebuilderImageRecipeBlockDeviceMapping, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMapping",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -4896,7 +7267,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4904,13 +7275,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4947,12 +7354,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMapping) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4978,21 +7427,28 @@ type DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	DeleteOnTermination() interface{}
-	Encrypted() interface{}
+	DeleteOnTermination() cdktf.IResolvable
+	Encrypted() cdktf.IResolvable
 	Iops() *float64
 	KmsKeyId() *string
 	SnapshotId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VolumeSize() *float64
 	VolumeType() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -5011,8 +7467,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) ComplexC
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) DeleteOnTermination() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) DeleteOnTermination() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"deleteOnTermination",
@@ -5021,8 +7477,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) DeleteOn
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) Encrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) Encrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encrypted",
@@ -5071,8 +7527,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5101,15 +7557,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) VolumeTy
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImageRecipeBlockDeviceMappingEbs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs {
+func NewDataAwsImagebuilderImageRecipeBlockDeviceMappingEbs(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -5117,12 +7583,12 @@ func NewDataAwsImagebuilderImageRecipeBlockDeviceMappingEbs(terraformResource cd
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImageRecipeBlockDeviceMappingEbs_Override(d DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImageRecipeBlockDeviceMappingEbs_Override(d DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -5143,7 +7609,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) SetTerra
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5151,13 +7617,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) SetTerra
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5194,12 +7696,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetNumbe
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeBlockDeviceMappingEbs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5228,12 +7772,19 @@ type DataAwsImagebuilderImageRecipeComponent interface {
 	ComponentArn() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -5272,8 +7823,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5282,15 +7833,25 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderImageRecipeComponent(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderImageRecipeComponent {
+func NewDataAwsImagebuilderImageRecipeComponent(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderImageRecipeComponent {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderImageRecipeComponent{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeComponent",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -5298,12 +7859,12 @@ func NewDataAwsImagebuilderImageRecipeComponent(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewDataAwsImagebuilderImageRecipeComponent_Override(d DataAwsImagebuilderImageRecipeComponent, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderImageRecipeComponent_Override(d DataAwsImagebuilderImageRecipeComponent, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderImageRecipeComponent",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -5324,7 +7885,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5332,13 +7893,49 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5375,12 +7972,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5405,32 +8044,32 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipeComponent) InterpolationForAttr
 // AWS Image Builder.
 type DataAwsImagebuilderImageRecipeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe.html#arn DataAwsImagebuilderImageRecipe#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe.html#tags DataAwsImagebuilderImageRecipe#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe#arn DataAwsImagebuilderImageRecipe#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipe#tags DataAwsImagebuilderImageRecipe#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html aws_imagebuilder_image_recipes}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes aws_imagebuilder_image_recipes}.
 type DataAwsImagebuilderImageRecipes interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filter() *[]*DataAwsImagebuilderImageRecipesFilter
-	SetFilter(val *[]*DataAwsImagebuilderImageRecipesFilter)
-	FilterInput() *[]*DataAwsImagebuilderImageRecipesFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -5448,10 +8087,15 @@ type DataAwsImagebuilderImageRecipes interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetFilter()
@@ -5498,8 +8142,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5518,8 +8162,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Filter() *[]*DataAwsImagebuilderImageRecipesFilter {
-	var returns *[]*DataAwsImagebuilderImageRecipesFilter
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -5528,8 +8172,8 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) Filter() *[]*DataAwsImagebui
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) FilterInput() *[]*DataAwsImagebuilderImageRecipesFilter {
-	var returns *[]*DataAwsImagebuilderImageRecipesFilter
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -5668,7 +8312,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html aws_imagebuilder_image_recipes} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes aws_imagebuilder_image_recipes} Data Source.
 func NewDataAwsImagebuilderImageRecipes(scope constructs.Construct, id *string, config *DataAwsImagebuilderImageRecipesConfig) DataAwsImagebuilderImageRecipes {
 	_init_.Initialize()
 
@@ -5683,7 +8327,7 @@ func NewDataAwsImagebuilderImageRecipes(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html aws_imagebuilder_image_recipes} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes aws_imagebuilder_image_recipes} Data Source.
 func NewDataAwsImagebuilderImageRecipes_Override(d DataAwsImagebuilderImageRecipes, scope constructs.Construct, id *string, config *DataAwsImagebuilderImageRecipesConfig) {
 	_init_.Initialize()
 
@@ -5694,7 +8338,7 @@ func NewDataAwsImagebuilderImageRecipes_Override(d DataAwsImagebuilderImageRecip
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5710,7 +8354,7 @@ func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetDependsOn(val *[]*string)
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetFilter(val *[]*DataAwsImagebuilderImageRecipesFilter) {
+func (j *jsiiProxy_DataAwsImagebuilderImageRecipes) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -5782,12 +8426,40 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5824,12 +8496,54 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5946,29 +8660,29 @@ func (d *jsiiProxy_DataAwsImagebuilderImageRecipes) ToTerraform() interface{} {
 // AWS Image Builder.
 type DataAwsImagebuilderImageRecipesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#filter DataAwsImagebuilderImageRecipes#filter}
-	Filter *[]*DataAwsImagebuilderImageRecipesFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#owner DataAwsImagebuilderImageRecipes#owner}.
-	Owner *string `json:"owner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes#filter DataAwsImagebuilderImageRecipes#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes#owner DataAwsImagebuilderImageRecipes#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
 }
 
 type DataAwsImagebuilderImageRecipesFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#name DataAwsImagebuilderImageRecipes#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes.html#values DataAwsImagebuilderImageRecipes#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes#name DataAwsImagebuilderImageRecipes#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_image_recipes#values DataAwsImagebuilderImageRecipes#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration.html aws_imagebuilder_infrastructure_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration aws_imagebuilder_infrastructure_configuration}.
 type DataAwsImagebuilderInfrastructureConfiguration interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -5976,8 +8690,8 @@ type DataAwsImagebuilderInfrastructureConfiguration interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DateUpdated() *string
 	DependsOn() *[]*string
@@ -5996,24 +8710,29 @@ type DataAwsImagebuilderInfrastructureConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	ResourceTags() interface{}
-	SetResourceTags(val interface{})
-	ResourceTagsInput() interface{}
+	ResourceTags() *map[string]*string
+	SetResourceTags(val *map[string]*string)
+	ResourceTagsInput() *map[string]*string
 	SecurityGroupIds() *[]*string
 	SnsTopicArn() *string
 	SubnetId() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
-	TerminateInstanceOnFailure() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
+	TerminateInstanceOnFailure() cdktf.IResolvable
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	Logging(index *string) DataAwsImagebuilderInfrastructureConfigurationLogging
 	OverrideLogicalId(newLogicalId *string)
@@ -6071,8 +8790,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ConstructNode
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6231,8 +8950,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) RawOverrides(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ResourceTags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ResourceTags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"resourceTags",
@@ -6241,8 +8960,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ResourceTags(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ResourceTagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ResourceTagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"resourceTagsInput",
@@ -6281,8 +9000,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SubnetId() *s
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6291,8 +9010,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) Tags() interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6301,8 +9020,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) TagsInput() i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) TerminateInstanceOnFailure() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) TerminateInstanceOnFailure() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"terminateInstanceOnFailure",
@@ -6341,7 +9060,7 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) TerraformReso
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration.html aws_imagebuilder_infrastructure_configuration} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration aws_imagebuilder_infrastructure_configuration} Data Source.
 func NewDataAwsImagebuilderInfrastructureConfiguration(scope constructs.Construct, id *string, config *DataAwsImagebuilderInfrastructureConfigurationConfig) DataAwsImagebuilderInfrastructureConfiguration {
 	_init_.Initialize()
 
@@ -6356,7 +9075,7 @@ func NewDataAwsImagebuilderInfrastructureConfiguration(scope constructs.Construc
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration.html aws_imagebuilder_infrastructure_configuration} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration aws_imagebuilder_infrastructure_configuration} Data Source.
 func NewDataAwsImagebuilderInfrastructureConfiguration_Override(d DataAwsImagebuilderInfrastructureConfiguration, scope constructs.Construct, id *string, config *DataAwsImagebuilderInfrastructureConfigurationConfig) {
 	_init_.Initialize()
 
@@ -6375,7 +9094,7 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetArn(val *s
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6407,7 +9126,7 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetProvider(v
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetResourceTags(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetResourceTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"resourceTags",
@@ -6415,7 +9134,7 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetResourceTa
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6463,12 +9182,40 @@ func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) AddOverride(p
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6505,12 +9252,54 @@ func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6640,34 +9429,41 @@ func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfiguration) ToTerraform()
 // AWS Image Builder.
 type DataAwsImagebuilderInfrastructureConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration.html#arn DataAwsImagebuilderInfrastructureConfiguration#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration.html#resource_tags DataAwsImagebuilderInfrastructureConfiguration#resource_tags}.
-	ResourceTags interface{} `json:"resourceTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration.html#tags DataAwsImagebuilderInfrastructureConfiguration#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration#arn DataAwsImagebuilderInfrastructureConfiguration#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration#resource_tags DataAwsImagebuilderInfrastructureConfiguration#resource_tags}.
+	ResourceTags *map[string]*string `json:"resourceTags" yaml:"resourceTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configuration#tags DataAwsImagebuilderInfrastructureConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsImagebuilderInfrastructureConfigurationLogging interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	S3Logs() interface{}
+	S3Logs() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6686,8 +9482,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) Comple
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) S3Logs() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) S3Logs() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"s3Logs",
@@ -6706,8 +9502,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6716,15 +9512,25 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) Terraf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderInfrastructureConfigurationLogging(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderInfrastructureConfigurationLogging {
+func NewDataAwsImagebuilderInfrastructureConfigurationLogging(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderInfrastructureConfigurationLogging {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -6732,12 +9538,12 @@ func NewDataAwsImagebuilderInfrastructureConfigurationLogging(terraformResource 
 }
 
 // Experimental.
-func NewDataAwsImagebuilderInfrastructureConfigurationLogging_Override(d DataAwsImagebuilderInfrastructureConfigurationLogging, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderInfrastructureConfigurationLogging_Override(d DataAwsImagebuilderInfrastructureConfigurationLogging, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLogging",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -6758,7 +9564,7 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) SetTer
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6766,13 +9572,49 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) SetTer
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6809,12 +9651,54 @@ func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetNum
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLogging) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6844,12 +9728,19 @@ type DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs interface {
 	S3KeyPrefix() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6898,8 +9789,8 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6908,15 +9799,25 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs {
+func NewDataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -6924,12 +9825,12 @@ func NewDataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs(terraformRes
 }
 
 // Experimental.
-func NewDataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs_Override(d DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs_Override(d DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -6950,7 +9851,7 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6958,13 +9859,49 @@ func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) 
 	)
 }
 
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7001,12 +9938,54 @@ func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7028,7 +10007,590 @@ func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurationLoggingS3Logs) 
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html aws_imagebuilder_component}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configurations aws_imagebuilder_infrastructure_configurations}.
+type DataAwsImagebuilderInfrastructureConfigurations interface {
+	cdktf.TerraformDataSource
+	Arns() *[]*string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Names() *[]*string
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetFilter()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsImagebuilderInfrastructureConfigurations
+type jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Arns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"arns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Filter() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"filter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) FilterInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"filterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Names() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"names",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configurations aws_imagebuilder_infrastructure_configurations} Data Source.
+func NewDataAwsImagebuilderInfrastructureConfigurations(scope constructs.Construct, id *string, config *DataAwsImagebuilderInfrastructureConfigurationsConfig) DataAwsImagebuilderInfrastructureConfigurations {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations{}
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurations",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configurations aws_imagebuilder_infrastructure_configurations} Data Source.
+func NewDataAwsImagebuilderInfrastructureConfigurations_Override(d DataAwsImagebuilderInfrastructureConfigurations, scope constructs.Construct, id *string, config *DataAwsImagebuilderInfrastructureConfigurationsConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurations",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) SetFilter(val interface{}) {
+	_jsii_.Set(
+		j,
+		"filter",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsImagebuilderInfrastructureConfigurations_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurations",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsImagebuilderInfrastructureConfigurations_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.imagebuilder.DataAwsImagebuilderInfrastructureConfigurations",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) ResetFilter() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFilter",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsImagebuilderInfrastructureConfigurations) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Image Builder.
+type DataAwsImagebuilderInfrastructureConfigurationsConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configurations#filter DataAwsImagebuilderInfrastructureConfigurations#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+}
+
+type DataAwsImagebuilderInfrastructureConfigurationsFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configurations#name DataAwsImagebuilderInfrastructureConfigurations#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/imagebuilder_infrastructure_configurations#values DataAwsImagebuilderInfrastructureConfigurations#values}.
+	Values *[]*string `json:"values" yaml:"values"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component aws_imagebuilder_component}.
 type ImagebuilderComponent interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -7037,8 +10599,8 @@ type ImagebuilderComponent interface {
 	SetChangeDescription(val *string)
 	ChangeDescriptionInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
@@ -7048,7 +10610,7 @@ type ImagebuilderComponent interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
-	Encrypted() interface{}
+	Encrypted() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -7071,12 +10633,12 @@ type ImagebuilderComponent interface {
 	SupportedOsVersions() *[]*string
 	SetSupportedOsVersions(val *[]*string)
 	SupportedOsVersionsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7088,10 +10650,15 @@ type ImagebuilderComponent interface {
 	SetVersion(val *string)
 	VersionInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetChangeDescription()
@@ -7164,8 +10731,8 @@ func (j *jsiiProxy_ImagebuilderComponent) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderComponent) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7234,8 +10801,8 @@ func (j *jsiiProxy_ImagebuilderComponent) DescriptionInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) Encrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderComponent) Encrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encrypted",
@@ -7404,8 +10971,8 @@ func (j *jsiiProxy_ImagebuilderComponent) SupportedOsVersionsInput() *[]*string 
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderComponent) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7414,8 +10981,8 @@ func (j *jsiiProxy_ImagebuilderComponent) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderComponent) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7424,8 +10991,8 @@ func (j *jsiiProxy_ImagebuilderComponent) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderComponent) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7434,8 +11001,8 @@ func (j *jsiiProxy_ImagebuilderComponent) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderComponent) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7524,7 +11091,7 @@ func (j *jsiiProxy_ImagebuilderComponent) VersionInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html aws_imagebuilder_component} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component aws_imagebuilder_component} Resource.
 func NewImagebuilderComponent(scope constructs.Construct, id *string, config *ImagebuilderComponentConfig) ImagebuilderComponent {
 	_init_.Initialize()
 
@@ -7539,7 +11106,7 @@ func NewImagebuilderComponent(scope constructs.Construct, id *string, config *Im
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html aws_imagebuilder_component} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component aws_imagebuilder_component} Resource.
 func NewImagebuilderComponent_Override(i ImagebuilderComponent, scope constructs.Construct, id *string, config *ImagebuilderComponentConfig) {
 	_init_.Initialize()
 
@@ -7558,7 +11125,7 @@ func (j *jsiiProxy_ImagebuilderComponent) SetChangeDescription(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) SetCount(val interface{}) {
+func (j *jsiiProxy_ImagebuilderComponent) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7638,7 +11205,7 @@ func (j *jsiiProxy_ImagebuilderComponent) SetSupportedOsVersions(val *[]*string)
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) SetTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderComponent) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7646,7 +11213,7 @@ func (j *jsiiProxy_ImagebuilderComponent) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderComponent) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ImagebuilderComponent) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7710,12 +11277,40 @@ func (i *jsiiProxy_ImagebuilderComponent) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderComponent) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderComponent) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderComponent) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7752,12 +11347,54 @@ func (i *jsiiProxy_ImagebuilderComponent) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderComponent) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderComponent) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderComponent) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderComponent) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7922,45 +11559,45 @@ func (i *jsiiProxy_ImagebuilderComponent) ToTerraform() interface{} {
 // AWS Image Builder.
 type ImagebuilderComponentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#name ImagebuilderComponent#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#platform ImagebuilderComponent#platform}.
-	Platform *string `json:"platform"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#version ImagebuilderComponent#version}.
-	Version *string `json:"version"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#change_description ImagebuilderComponent#change_description}.
-	ChangeDescription *string `json:"changeDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#data ImagebuilderComponent#data}.
-	Data *string `json:"data"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#description ImagebuilderComponent#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#kms_key_id ImagebuilderComponent#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#supported_os_versions ImagebuilderComponent#supported_os_versions}.
-	SupportedOsVersions *[]*string `json:"supportedOsVersions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#tags ImagebuilderComponent#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#tags_all ImagebuilderComponent#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component.html#uri ImagebuilderComponent#uri}.
-	Uri *string `json:"uri"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#name ImagebuilderComponent#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#platform ImagebuilderComponent#platform}.
+	Platform *string `json:"platform" yaml:"platform"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#version ImagebuilderComponent#version}.
+	Version *string `json:"version" yaml:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#change_description ImagebuilderComponent#change_description}.
+	ChangeDescription *string `json:"changeDescription" yaml:"changeDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#data ImagebuilderComponent#data}.
+	Data *string `json:"data" yaml:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#description ImagebuilderComponent#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#kms_key_id ImagebuilderComponent#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#supported_os_versions ImagebuilderComponent#supported_os_versions}.
+	SupportedOsVersions *[]*string `json:"supportedOsVersions" yaml:"supportedOsVersions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#tags ImagebuilderComponent#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#tags_all ImagebuilderComponent#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_component#uri ImagebuilderComponent#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html aws_imagebuilder_distribution_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration aws_imagebuilder_distribution_configuration}.
 type ImagebuilderDistributionConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DateUpdated() *string
 	DependsOn() *[]*string
@@ -7968,9 +11605,9 @@ type ImagebuilderDistributionConfiguration interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
-	Distribution() *[]*ImagebuilderDistributionConfigurationDistribution
-	SetDistribution(val *[]*ImagebuilderDistributionConfigurationDistribution)
-	DistributionInput() *[]*ImagebuilderDistributionConfigurationDistribution
+	Distribution() interface{}
+	SetDistribution(val interface{})
+	DistributionInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -7983,20 +11620,25 @@ type ImagebuilderDistributionConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -8044,8 +11686,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8104,8 +11746,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) DescriptionInput() *st
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Distribution() *[]*ImagebuilderDistributionConfigurationDistribution {
-	var returns *[]*ImagebuilderDistributionConfigurationDistribution
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Distribution() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"distribution",
@@ -8114,8 +11756,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Distribution() *[]*Ima
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) DistributionInput() *[]*ImagebuilderDistributionConfigurationDistribution {
-	var returns *[]*ImagebuilderDistributionConfigurationDistribution
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) DistributionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"distributionInput",
@@ -8214,8 +11856,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) RawOverrides() interfa
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8224,8 +11866,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8234,8 +11876,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsAll() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8244,8 +11886,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsAllInput() interfa
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8284,7 +11926,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html aws_imagebuilder_distribution_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration aws_imagebuilder_distribution_configuration} Resource.
 func NewImagebuilderDistributionConfiguration(scope constructs.Construct, id *string, config *ImagebuilderDistributionConfigurationConfig) ImagebuilderDistributionConfiguration {
 	_init_.Initialize()
 
@@ -8299,7 +11941,7 @@ func NewImagebuilderDistributionConfiguration(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html aws_imagebuilder_distribution_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration aws_imagebuilder_distribution_configuration} Resource.
 func NewImagebuilderDistributionConfiguration_Override(i ImagebuilderDistributionConfiguration, scope constructs.Construct, id *string, config *ImagebuilderDistributionConfigurationConfig) {
 	_init_.Initialize()
 
@@ -8310,7 +11952,7 @@ func NewImagebuilderDistributionConfiguration_Override(i ImagebuilderDistributio
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8334,7 +11976,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetDescription(val *st
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetDistribution(val *[]*ImagebuilderDistributionConfigurationDistribution) {
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetDistribution(val interface{}) {
 	_jsii_.Set(
 		j,
 		"distribution",
@@ -8366,7 +12008,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetProvider(val cdktf.
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8374,7 +12016,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetTags(val interface{
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ImagebuilderDistributionConfiguration) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8422,12 +12064,40 @@ func (i *jsiiProxy_ImagebuilderDistributionConfiguration) AddOverride(path *stri
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8464,12 +12134,54 @@ func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8594,60 +12306,64 @@ func (i *jsiiProxy_ImagebuilderDistributionConfiguration) ToTerraform() interfac
 // AWS Image Builder.
 type ImagebuilderDistributionConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// distribution block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#distribution ImagebuilderDistributionConfiguration#distribution}
-	Distribution *[]*ImagebuilderDistributionConfigurationDistribution `json:"distribution"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#name ImagebuilderDistributionConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#description ImagebuilderDistributionConfiguration#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#tags ImagebuilderDistributionConfiguration#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#tags_all ImagebuilderDistributionConfiguration#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#distribution ImagebuilderDistributionConfiguration#distribution}
+	Distribution interface{} `json:"distribution" yaml:"distribution"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#name ImagebuilderDistributionConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#description ImagebuilderDistributionConfiguration#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#tags ImagebuilderDistributionConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#tags_all ImagebuilderDistributionConfiguration#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ImagebuilderDistributionConfigurationDistribution struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#region ImagebuilderDistributionConfiguration#region}.
-	Region *string `json:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#region ImagebuilderDistributionConfiguration#region}.
+	Region *string `json:"region" yaml:"region"`
 	// ami_distribution_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#ami_distribution_configuration ImagebuilderDistributionConfiguration#ami_distribution_configuration}
-	AmiDistributionConfiguration *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration `json:"amiDistributionConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#license_configuration_arns ImagebuilderDistributionConfiguration#license_configuration_arns}.
-	LicenseConfigurationArns *[]*string `json:"licenseConfigurationArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#ami_distribution_configuration ImagebuilderDistributionConfiguration#ami_distribution_configuration}
+	AmiDistributionConfiguration *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration `json:"amiDistributionConfiguration" yaml:"amiDistributionConfiguration"`
+	// container_distribution_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#container_distribution_configuration ImagebuilderDistributionConfiguration#container_distribution_configuration}
+	ContainerDistributionConfiguration *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfiguration `json:"containerDistributionConfiguration" yaml:"containerDistributionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#license_configuration_arns ImagebuilderDistributionConfiguration#license_configuration_arns}.
+	LicenseConfigurationArns *[]*string `json:"licenseConfigurationArns" yaml:"licenseConfigurationArns"`
 }
 
 type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#ami_tags ImagebuilderDistributionConfiguration#ami_tags}.
-	AmiTags interface{} `json:"amiTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#description ImagebuilderDistributionConfiguration#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#kms_key_id ImagebuilderDistributionConfiguration#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#ami_tags ImagebuilderDistributionConfiguration#ami_tags}.
+	AmiTags *map[string]*string `json:"amiTags" yaml:"amiTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#description ImagebuilderDistributionConfiguration#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#kms_key_id ImagebuilderDistributionConfiguration#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 	// launch_permission block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#launch_permission ImagebuilderDistributionConfiguration#launch_permission}
-	LaunchPermission *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission `json:"launchPermission"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#name ImagebuilderDistributionConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#target_account_ids ImagebuilderDistributionConfiguration#target_account_ids}.
-	TargetAccountIds *[]*string `json:"targetAccountIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#launch_permission ImagebuilderDistributionConfiguration#launch_permission}
+	LaunchPermission *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission `json:"launchPermission" yaml:"launchPermission"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#name ImagebuilderDistributionConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#target_account_ids ImagebuilderDistributionConfiguration#target_account_ids}.
+	TargetAccountIds *[]*string `json:"targetAccountIds" yaml:"targetAccountIds"`
 }
 
 type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#user_groups ImagebuilderDistributionConfiguration#user_groups}.
-	UserGroups *[]*string `json:"userGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration.html#user_ids ImagebuilderDistributionConfiguration#user_ids}.
-	UserIds *[]*string `json:"userIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#user_groups ImagebuilderDistributionConfiguration#user_groups}.
+	UserGroups *[]*string `json:"userGroups" yaml:"userGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#user_ids ImagebuilderDistributionConfiguration#user_ids}.
+	UserIds *[]*string `json:"userIds" yaml:"userIds"`
 }
 
 type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference interface {
@@ -8658,18 +12374,23 @@ type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurati
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserGroups() *[]*string
 	SetUserGroups(val *[]*string)
 	UserGroupsInput() *[]*string
 	UserIds() *[]*string
 	SetUserIds(val *[]*string)
 	UserIdsInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetUserGroups()
@@ -8711,8 +12432,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8761,7 +12482,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	return returns
 }
 
-func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference {
+func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference{}
@@ -8775,7 +12496,7 @@ func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigur
 	return &j
 }
 
-func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference_Override(i ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference_Override(i ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8809,7 +12530,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8834,12 +12555,40 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8876,12 +12625,54 @@ func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8935,9 +12726,9 @@ func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 
 type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference interface {
 	cdktf.ComplexObject
-	AmiTags() interface{}
-	SetAmiTags(val interface{})
-	AmiTagsInput() interface{}
+	AmiTags() *map[string]*string
+	SetAmiTags(val *map[string]*string)
+	AmiTagsInput() *map[string]*string
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
@@ -8958,12 +12749,17 @@ type ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurati
 	TargetAccountIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutLaunchPermission(value *ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission)
@@ -8980,8 +12776,8 @@ type jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionC
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) AmiTags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) AmiTags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"amiTags",
@@ -8990,8 +12786,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) AmiTagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) AmiTagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"amiTagsInput",
@@ -9130,8 +12926,8 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9140,7 +12936,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	return returns
 }
 
-func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference {
+func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference{}
@@ -9154,7 +12950,7 @@ func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigur
 	return &j
 }
 
-func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference_Override(i ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference_Override(i ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9164,7 +12960,7 @@ func NewImagebuilderDistributionConfigurationDistributionAmiDistributionConfigur
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) SetAmiTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) SetAmiTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"amiTags",
@@ -9228,7 +13024,7 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9237,12 +13033,40 @@ func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9279,12 +13103,54 @@ func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistributionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9376,14 +13242,761 @@ func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionAmiDistribut
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html aws_imagebuilder_image}.
+type ImagebuilderDistributionConfigurationDistributionContainerDistributionConfiguration struct {
+	// target_repository block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#target_repository ImagebuilderDistributionConfiguration#target_repository}
+	TargetRepository *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository `json:"targetRepository" yaml:"targetRepository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#container_tags ImagebuilderDistributionConfiguration#container_tags}.
+	ContainerTags *[]*string `json:"containerTags" yaml:"containerTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#description ImagebuilderDistributionConfiguration#description}.
+	Description *string `json:"description" yaml:"description"`
+}
+
+type ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	ContainerTags() *[]*string
+	SetContainerTags(val *[]*string)
+	ContainerTagsInput() *[]*string
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
+	InternalValue() *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfiguration
+	SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	TargetRepository() ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference
+	TargetRepositoryInput() *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutTargetRepository(value *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository)
+	ResetContainerTags()
+	ResetDescription()
+}
+
+// The jsii proxy struct for ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference
+type jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) ContainerTags() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"containerTags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) ContainerTagsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"containerTagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) InternalValue() *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfiguration {
+	var returns *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) TargetRepository() ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference {
+	var returns ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference
+	_jsii_.Get(
+		j,
+		"targetRepository",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) TargetRepositoryInput() *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository {
+	var returns *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository
+	_jsii_.Get(
+		j,
+		"targetRepositoryInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference_Override(i ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		i,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) SetContainerTags(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"containerTags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) SetDescription(val *string) {
+	_jsii_.Set(
+		j,
+		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) PutTargetRepository(value *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository) {
+	_jsii_.InvokeVoid(
+		i,
+		"putTargetRepository",
+		[]interface{}{value},
+	)
+}
+
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) ResetContainerTags() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetContainerTags",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationOutputReference) ResetDescription() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+type ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#repository_name ImagebuilderDistributionConfiguration#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_distribution_configuration#service ImagebuilderDistributionConfiguration#service}.
+	Service *string `json:"service" yaml:"service"`
+}
+
+type ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference interface {
+	cdktf.ComplexObject
+	InternalValue() *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository
+	SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	RepositoryName() *string
+	SetRepositoryName(val *string)
+	RepositoryNameInput() *string
+	Service() *string
+	SetService(val *string)
+	ServiceInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+}
+
+// The jsii proxy struct for ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference
+type jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) InternalValue() *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository {
+	var returns *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) RepositoryName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"repositoryName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) RepositoryNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"repositoryNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) Service() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"service",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) ServiceInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"serviceInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference_Override(i ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.imagebuilder.ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		i,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) SetInternalValue(val *ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepository) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) SetRepositoryName(val *string) {
+	_jsii_.Set(
+		j,
+		"repositoryName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) SetService(val *string) {
+	_jsii_.Set(
+		j,
+		"service",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderDistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		i,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image aws_imagebuilder_image}.
 type ImagebuilderImage interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -9413,12 +14026,12 @@ type ImagebuilderImage interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -9426,10 +14039,15 @@ type ImagebuilderImage interface {
 	TimeoutsInput() *ImagebuilderImageTimeouts
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OutputResources(index *string) ImagebuilderImageOutputResources
 	OverrideLogicalId(newLogicalId *string)
@@ -9483,8 +14101,8 @@ func (j *jsiiProxy_ImagebuilderImage) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9713,8 +14331,8 @@ func (j *jsiiProxy_ImagebuilderImage) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImage) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImage) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9723,8 +14341,8 @@ func (j *jsiiProxy_ImagebuilderImage) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImage) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImage) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9733,8 +14351,8 @@ func (j *jsiiProxy_ImagebuilderImage) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImage) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImage) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9743,8 +14361,8 @@ func (j *jsiiProxy_ImagebuilderImage) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImage) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImage) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9813,7 +14431,7 @@ func (j *jsiiProxy_ImagebuilderImage) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html aws_imagebuilder_image} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image aws_imagebuilder_image} Resource.
 func NewImagebuilderImage(scope constructs.Construct, id *string, config *ImagebuilderImageConfig) ImagebuilderImage {
 	_init_.Initialize()
 
@@ -9828,7 +14446,7 @@ func NewImagebuilderImage(scope constructs.Construct, id *string, config *Imageb
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html aws_imagebuilder_image} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image aws_imagebuilder_image} Resource.
 func NewImagebuilderImage_Override(i ImagebuilderImage, scope constructs.Construct, id *string, config *ImagebuilderImageConfig) {
 	_init_.Initialize()
 
@@ -9839,7 +14457,7 @@ func NewImagebuilderImage_Override(i ImagebuilderImage, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImage) SetCount(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9903,7 +14521,7 @@ func (j *jsiiProxy_ImagebuilderImage) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImage) SetTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImage) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9911,7 +14529,7 @@ func (j *jsiiProxy_ImagebuilderImage) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImage) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImage) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9959,12 +14577,40 @@ func (i *jsiiProxy_ImagebuilderImage) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10001,12 +14647,54 @@ func (i *jsiiProxy_ImagebuilderImage) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10184,40 +14872,40 @@ func (i *jsiiProxy_ImagebuilderImage) ToTerraform() interface{} {
 // AWS Image Builder.
 type ImagebuilderImageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#image_recipe_arn ImagebuilderImage#image_recipe_arn}.
-	ImageRecipeArn *string `json:"imageRecipeArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#infrastructure_configuration_arn ImagebuilderImage#infrastructure_configuration_arn}.
-	InfrastructureConfigurationArn *string `json:"infrastructureConfigurationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#distribution_configuration_arn ImagebuilderImage#distribution_configuration_arn}.
-	DistributionConfigurationArn *string `json:"distributionConfigurationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#enhanced_image_metadata_enabled ImagebuilderImage#enhanced_image_metadata_enabled}.
-	EnhancedImageMetadataEnabled interface{} `json:"enhancedImageMetadataEnabled"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#image_recipe_arn ImagebuilderImage#image_recipe_arn}.
+	ImageRecipeArn *string `json:"imageRecipeArn" yaml:"imageRecipeArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#infrastructure_configuration_arn ImagebuilderImage#infrastructure_configuration_arn}.
+	InfrastructureConfigurationArn *string `json:"infrastructureConfigurationArn" yaml:"infrastructureConfigurationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#distribution_configuration_arn ImagebuilderImage#distribution_configuration_arn}.
+	DistributionConfigurationArn *string `json:"distributionConfigurationArn" yaml:"distributionConfigurationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#enhanced_image_metadata_enabled ImagebuilderImage#enhanced_image_metadata_enabled}.
+	EnhancedImageMetadataEnabled interface{} `json:"enhancedImageMetadataEnabled" yaml:"enhancedImageMetadataEnabled"`
 	// image_tests_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#image_tests_configuration ImagebuilderImage#image_tests_configuration}
-	ImageTestsConfiguration *ImagebuilderImageImageTestsConfiguration `json:"imageTestsConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#tags ImagebuilderImage#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#tags_all ImagebuilderImage#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#image_tests_configuration ImagebuilderImage#image_tests_configuration}
+	ImageTestsConfiguration *ImagebuilderImageImageTestsConfiguration `json:"imageTestsConfiguration" yaml:"imageTestsConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#tags ImagebuilderImage#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#tags_all ImagebuilderImage#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#timeouts ImagebuilderImage#timeouts}
-	Timeouts *ImagebuilderImageTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#timeouts ImagebuilderImage#timeouts}
+	Timeouts *ImagebuilderImageTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type ImagebuilderImageImageTestsConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#image_tests_enabled ImagebuilderImage#image_tests_enabled}.
-	ImageTestsEnabled interface{} `json:"imageTestsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#timeout_minutes ImagebuilderImage#timeout_minutes}.
-	TimeoutMinutes *float64 `json:"timeoutMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#image_tests_enabled ImagebuilderImage#image_tests_enabled}.
+	ImageTestsEnabled interface{} `json:"imageTestsEnabled" yaml:"imageTestsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#timeout_minutes ImagebuilderImage#timeout_minutes}.
+	TimeoutMinutes *float64 `json:"timeoutMinutes" yaml:"timeoutMinutes"`
 }
 
 type ImagebuilderImageImageTestsConfigurationOutputReference interface {
@@ -10231,15 +14919,20 @@ type ImagebuilderImageImageTestsConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeoutMinutes() *float64
 	SetTimeoutMinutes(val *float64)
 	TimeoutMinutesInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetImageTestsEnabled()
@@ -10301,8 +14994,8 @@ func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10331,7 +15024,7 @@ func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) Time
 	return returns
 }
 
-func NewImagebuilderImageImageTestsConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderImageImageTestsConfigurationOutputReference {
+func NewImagebuilderImageImageTestsConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderImageImageTestsConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference{}
@@ -10345,7 +15038,7 @@ func NewImagebuilderImageImageTestsConfigurationOutputReference(terraformResourc
 	return &j
 }
 
-func NewImagebuilderImageImageTestsConfigurationOutputReference_Override(i ImagebuilderImageImageTestsConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderImageImageTestsConfigurationOutputReference_Override(i ImagebuilderImageImageTestsConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10387,7 +15080,7 @@ func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10404,12 +15097,40 @@ func (j *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) SetT
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10446,12 +15167,54 @@ func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetN
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10505,17 +15268,24 @@ func (i *jsiiProxy_ImagebuilderImageImageTestsConfigurationOutputReference) Rese
 
 type ImagebuilderImageOutputResources interface {
 	cdktf.ComplexComputedList
-	Amis() interface{}
+	Amis() cdktf.IResolvable
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -10524,8 +15294,8 @@ type jsiiProxy_ImagebuilderImageOutputResources struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_ImagebuilderImageOutputResources) Amis() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImageOutputResources) Amis() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"amis",
@@ -10554,8 +15324,8 @@ func (j *jsiiProxy_ImagebuilderImageOutputResources) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageOutputResources) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderImageOutputResources) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10564,15 +15334,25 @@ func (j *jsiiProxy_ImagebuilderImageOutputResources) TerraformResource() cdktf.I
 	return returns
 }
 
+func (j *jsiiProxy_ImagebuilderImageOutputResources) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewImagebuilderImageOutputResources(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) ImagebuilderImageOutputResources {
+func NewImagebuilderImageOutputResources(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) ImagebuilderImageOutputResources {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderImageOutputResources{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResources",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -10580,12 +15360,12 @@ func NewImagebuilderImageOutputResources(terraformResource cdktf.ITerraformResou
 }
 
 // Experimental.
-func NewImagebuilderImageOutputResources_Override(i ImagebuilderImageOutputResources, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewImagebuilderImageOutputResources_Override(i ImagebuilderImageOutputResources, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResources",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		i,
 	)
 }
@@ -10606,7 +15386,7 @@ func (j *jsiiProxy_ImagebuilderImageOutputResources) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageOutputResources) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderImageOutputResources) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10614,13 +15394,49 @@ func (j *jsiiProxy_ImagebuilderImageOutputResources) SetTerraformResource(val cd
 	)
 }
 
+func (j *jsiiProxy_ImagebuilderImageOutputResources) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (i *jsiiProxy_ImagebuilderImageOutputResources) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderImageOutputResources) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResources) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResources) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10657,12 +15473,54 @@ func (i *jsiiProxy_ImagebuilderImageOutputResources) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResources) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResources) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImageOutputResources) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResources) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10695,12 +15553,19 @@ type ImagebuilderImageOutputResourcesAmis interface {
 	Region() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -10779,8 +15644,8 @@ func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10789,15 +15654,25 @@ func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) TerraformResource() cdk
 	return returns
 }
 
+func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewImagebuilderImageOutputResourcesAmis(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) ImagebuilderImageOutputResourcesAmis {
+func NewImagebuilderImageOutputResourcesAmis(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) ImagebuilderImageOutputResourcesAmis {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderImageOutputResourcesAmis{}
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResourcesAmis",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -10805,12 +15680,12 @@ func NewImagebuilderImageOutputResourcesAmis(terraformResource cdktf.ITerraformR
 }
 
 // Experimental.
-func NewImagebuilderImageOutputResourcesAmis_Override(i ImagebuilderImageOutputResourcesAmis, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewImagebuilderImageOutputResourcesAmis_Override(i ImagebuilderImageOutputResourcesAmis, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.imagebuilder.ImagebuilderImageOutputResourcesAmis",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		i,
 	)
 }
@@ -10831,7 +15706,7 @@ func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10839,13 +15714,49 @@ func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) SetTerraformResource(va
 	)
 }
 
+func (j *jsiiProxy_ImagebuilderImageOutputResourcesAmis) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10882,12 +15793,54 @@ func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10909,14 +15862,14 @@ func (i *jsiiProxy_ImagebuilderImageOutputResourcesAmis) InterpolationForAttribu
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html aws_imagebuilder_image_pipeline}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline aws_imagebuilder_image_pipeline}.
 type ImagebuilderImagePipeline interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DateLastRun() *string
 	DateNextRun() *string
@@ -10958,20 +15911,25 @@ type ImagebuilderImagePipeline interface {
 	Status() *string
 	SetStatus(val *string)
 	StatusInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutImageTestsConfiguration(value *ImagebuilderImagePipelineImageTestsConfiguration)
@@ -11026,8 +15984,8 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImagePipeline) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11346,8 +16304,8 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) StatusInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImagePipeline) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -11356,8 +16314,8 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImagePipeline) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -11366,8 +16324,8 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImagePipeline) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -11376,8 +16334,8 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImagePipeline) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -11416,7 +16374,7 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html aws_imagebuilder_image_pipeline} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline aws_imagebuilder_image_pipeline} Resource.
 func NewImagebuilderImagePipeline(scope constructs.Construct, id *string, config *ImagebuilderImagePipelineConfig) ImagebuilderImagePipeline {
 	_init_.Initialize()
 
@@ -11431,7 +16389,7 @@ func NewImagebuilderImagePipeline(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html aws_imagebuilder_image_pipeline} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline aws_imagebuilder_image_pipeline} Resource.
 func NewImagebuilderImagePipeline_Override(i ImagebuilderImagePipeline, scope constructs.Construct, id *string, config *ImagebuilderImagePipelineConfig) {
 	_init_.Initialize()
 
@@ -11442,7 +16400,7 @@ func NewImagebuilderImagePipeline_Override(i ImagebuilderImagePipeline, scope co
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) SetCount(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImagePipeline) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11530,7 +16488,7 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) SetStatus(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) SetTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImagePipeline) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -11538,7 +16496,7 @@ func (j *jsiiProxy_ImagebuilderImagePipeline) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipeline) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImagePipeline) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -11586,12 +16544,40 @@ func (i *jsiiProxy_ImagebuilderImagePipeline) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipeline) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImagePipeline) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipeline) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11628,12 +16614,54 @@ func (i *jsiiProxy_ImagebuilderImagePipeline) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipeline) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipeline) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImagePipeline) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipeline) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11814,46 +16842,46 @@ func (i *jsiiProxy_ImagebuilderImagePipeline) ToTerraform() interface{} {
 // AWS Image Builder.
 type ImagebuilderImagePipelineConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#image_recipe_arn ImagebuilderImagePipeline#image_recipe_arn}.
-	ImageRecipeArn *string `json:"imageRecipeArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#infrastructure_configuration_arn ImagebuilderImagePipeline#infrastructure_configuration_arn}.
-	InfrastructureConfigurationArn *string `json:"infrastructureConfigurationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#name ImagebuilderImagePipeline#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#description ImagebuilderImagePipeline#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#distribution_configuration_arn ImagebuilderImagePipeline#distribution_configuration_arn}.
-	DistributionConfigurationArn *string `json:"distributionConfigurationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#enhanced_image_metadata_enabled ImagebuilderImagePipeline#enhanced_image_metadata_enabled}.
-	EnhancedImageMetadataEnabled interface{} `json:"enhancedImageMetadataEnabled"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#image_recipe_arn ImagebuilderImagePipeline#image_recipe_arn}.
+	ImageRecipeArn *string `json:"imageRecipeArn" yaml:"imageRecipeArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#infrastructure_configuration_arn ImagebuilderImagePipeline#infrastructure_configuration_arn}.
+	InfrastructureConfigurationArn *string `json:"infrastructureConfigurationArn" yaml:"infrastructureConfigurationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#name ImagebuilderImagePipeline#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#description ImagebuilderImagePipeline#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#distribution_configuration_arn ImagebuilderImagePipeline#distribution_configuration_arn}.
+	DistributionConfigurationArn *string `json:"distributionConfigurationArn" yaml:"distributionConfigurationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#enhanced_image_metadata_enabled ImagebuilderImagePipeline#enhanced_image_metadata_enabled}.
+	EnhancedImageMetadataEnabled interface{} `json:"enhancedImageMetadataEnabled" yaml:"enhancedImageMetadataEnabled"`
 	// image_tests_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#image_tests_configuration ImagebuilderImagePipeline#image_tests_configuration}
-	ImageTestsConfiguration *ImagebuilderImagePipelineImageTestsConfiguration `json:"imageTestsConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#image_tests_configuration ImagebuilderImagePipeline#image_tests_configuration}
+	ImageTestsConfiguration *ImagebuilderImagePipelineImageTestsConfiguration `json:"imageTestsConfiguration" yaml:"imageTestsConfiguration"`
 	// schedule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#schedule ImagebuilderImagePipeline#schedule}
-	Schedule *ImagebuilderImagePipelineSchedule `json:"schedule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#status ImagebuilderImagePipeline#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#tags ImagebuilderImagePipeline#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#tags_all ImagebuilderImagePipeline#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#schedule ImagebuilderImagePipeline#schedule}
+	Schedule *ImagebuilderImagePipelineSchedule `json:"schedule" yaml:"schedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#status ImagebuilderImagePipeline#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#tags ImagebuilderImagePipeline#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#tags_all ImagebuilderImagePipeline#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ImagebuilderImagePipelineImageTestsConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#image_tests_enabled ImagebuilderImagePipeline#image_tests_enabled}.
-	ImageTestsEnabled interface{} `json:"imageTestsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#timeout_minutes ImagebuilderImagePipeline#timeout_minutes}.
-	TimeoutMinutes *float64 `json:"timeoutMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#image_tests_enabled ImagebuilderImagePipeline#image_tests_enabled}.
+	ImageTestsEnabled interface{} `json:"imageTestsEnabled" yaml:"imageTestsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#timeout_minutes ImagebuilderImagePipeline#timeout_minutes}.
+	TimeoutMinutes *float64 `json:"timeoutMinutes" yaml:"timeoutMinutes"`
 }
 
 type ImagebuilderImagePipelineImageTestsConfigurationOutputReference interface {
@@ -11867,15 +16895,20 @@ type ImagebuilderImagePipelineImageTestsConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeoutMinutes() *float64
 	SetTimeoutMinutes(val *float64)
 	TimeoutMinutesInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetImageTestsEnabled()
@@ -11937,8 +16970,8 @@ func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11967,7 +17000,7 @@ func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 	return returns
 }
 
-func NewImagebuilderImagePipelineImageTestsConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderImagePipelineImageTestsConfigurationOutputReference {
+func NewImagebuilderImagePipelineImageTestsConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderImagePipelineImageTestsConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference{}
@@ -11981,7 +17014,7 @@ func NewImagebuilderImagePipelineImageTestsConfigurationOutputReference(terrafor
 	return &j
 }
 
-func NewImagebuilderImagePipelineImageTestsConfigurationOutputReference_Override(i ImagebuilderImagePipelineImageTestsConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderImagePipelineImageTestsConfigurationOutputReference_Override(i ImagebuilderImagePipelineImageTestsConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12023,7 +17056,7 @@ func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12040,12 +17073,40 @@ func (j *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12082,12 +17143,54 @@ func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12140,10 +17243,10 @@ func (i *jsiiProxy_ImagebuilderImagePipelineImageTestsConfigurationOutputReferen
 }
 
 type ImagebuilderImagePipelineSchedule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#schedule_expression ImagebuilderImagePipeline#schedule_expression}.
-	ScheduleExpression *string `json:"scheduleExpression"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline.html#pipeline_execution_start_condition ImagebuilderImagePipeline#pipeline_execution_start_condition}.
-	PipelineExecutionStartCondition *string `json:"pipelineExecutionStartCondition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#schedule_expression ImagebuilderImagePipeline#schedule_expression}.
+	ScheduleExpression *string `json:"scheduleExpression" yaml:"scheduleExpression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_pipeline#pipeline_execution_start_condition ImagebuilderImagePipeline#pipeline_execution_start_condition}.
+	PipelineExecutionStartCondition *string `json:"pipelineExecutionStartCondition" yaml:"pipelineExecutionStartCondition"`
 }
 
 type ImagebuilderImagePipelineScheduleOutputReference interface {
@@ -12160,12 +17263,17 @@ type ImagebuilderImagePipelineScheduleOutputReference interface {
 	ScheduleExpressionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPipelineExecutionStartCondition()
@@ -12246,8 +17354,8 @@ func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12256,7 +17364,7 @@ func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) TerraformRe
 	return returns
 }
 
-func NewImagebuilderImagePipelineScheduleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderImagePipelineScheduleOutputReference {
+func NewImagebuilderImagePipelineScheduleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderImagePipelineScheduleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference{}
@@ -12270,7 +17378,7 @@ func NewImagebuilderImagePipelineScheduleOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewImagebuilderImagePipelineScheduleOutputReference_Override(i ImagebuilderImagePipelineScheduleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderImagePipelineScheduleOutputReference_Override(i ImagebuilderImagePipelineScheduleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12320,7 +17428,7 @@ func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12329,12 +17437,40 @@ func (j *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12371,12 +17507,54 @@ func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12420,20 +17598,20 @@ func (i *jsiiProxy_ImagebuilderImagePipelineScheduleOutputReference) ResetPipeli
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html aws_imagebuilder_image_recipe}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe aws_imagebuilder_image_recipe}.
 type ImagebuilderImageRecipe interface {
 	cdktf.TerraformResource
 	Arn() *string
-	BlockDeviceMapping() *[]*ImagebuilderImageRecipeBlockDeviceMapping
-	SetBlockDeviceMapping(val *[]*ImagebuilderImageRecipeBlockDeviceMapping)
-	BlockDeviceMappingInput() *[]*ImagebuilderImageRecipeBlockDeviceMapping
+	BlockDeviceMapping() interface{}
+	SetBlockDeviceMapping(val interface{})
+	BlockDeviceMappingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
-	Component() *[]*ImagebuilderImageRecipeComponent
-	SetComponent(val *[]*ImagebuilderImageRecipeComponent)
-	ComponentInput() *[]*ImagebuilderImageRecipeComponent
+	Component() interface{}
+	SetComponent(val interface{})
+	ComponentInput() interface{}
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -12457,15 +17635,18 @@ type ImagebuilderImageRecipe interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
+	UserDataBase64() *string
+	SetUserDataBase64(val *string)
+	UserDataBase64Input() *string
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
@@ -12473,10 +17654,15 @@ type ImagebuilderImageRecipe interface {
 	SetWorkingDirectory(val *string)
 	WorkingDirectoryInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBlockDeviceMapping()
@@ -12484,6 +17670,7 @@ type ImagebuilderImageRecipe interface {
 	ResetOverrideLogicalId()
 	ResetTags()
 	ResetTagsAll()
+	ResetUserDataBase64()
 	ResetWorkingDirectory()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
@@ -12506,8 +17693,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) BlockDeviceMapping() *[]*ImagebuilderImageRecipeBlockDeviceMapping {
-	var returns *[]*ImagebuilderImageRecipeBlockDeviceMapping
+func (j *jsiiProxy_ImagebuilderImageRecipe) BlockDeviceMapping() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"blockDeviceMapping",
@@ -12516,8 +17703,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) BlockDeviceMapping() *[]*Imagebuilde
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) BlockDeviceMappingInput() *[]*ImagebuilderImageRecipeBlockDeviceMapping {
-	var returns *[]*ImagebuilderImageRecipeBlockDeviceMapping
+func (j *jsiiProxy_ImagebuilderImageRecipe) BlockDeviceMappingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"blockDeviceMappingInput",
@@ -12536,8 +17723,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) Component() *[]*ImagebuilderImageRecipeComponent {
-	var returns *[]*ImagebuilderImageRecipeComponent
+func (j *jsiiProxy_ImagebuilderImageRecipe) Component() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"component",
@@ -12546,8 +17733,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) Component() *[]*ImagebuilderImageRec
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) ComponentInput() *[]*ImagebuilderImageRecipeComponent {
-	var returns *[]*ImagebuilderImageRecipeComponent
+func (j *jsiiProxy_ImagebuilderImageRecipe) ComponentInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"componentInput",
@@ -12566,8 +17753,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImageRecipe) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12746,8 +17933,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImageRecipe) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -12756,8 +17943,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImageRecipe) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -12766,8 +17953,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImageRecipe) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -12776,8 +17963,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderImageRecipe) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -12811,6 +17998,26 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) TerraformResourceType() *string {
 	_jsii_.Get(
 		j,
 		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderImageRecipe) UserDataBase64() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userDataBase64",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImagebuilderImageRecipe) UserDataBase64Input() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userDataBase64Input",
 		&returns,
 	)
 	return returns
@@ -12856,7 +18063,7 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) WorkingDirectoryInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html aws_imagebuilder_image_recipe} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe aws_imagebuilder_image_recipe} Resource.
 func NewImagebuilderImageRecipe(scope constructs.Construct, id *string, config *ImagebuilderImageRecipeConfig) ImagebuilderImageRecipe {
 	_init_.Initialize()
 
@@ -12871,7 +18078,7 @@ func NewImagebuilderImageRecipe(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html aws_imagebuilder_image_recipe} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe aws_imagebuilder_image_recipe} Resource.
 func NewImagebuilderImageRecipe_Override(i ImagebuilderImageRecipe, scope constructs.Construct, id *string, config *ImagebuilderImageRecipeConfig) {
 	_init_.Initialize()
 
@@ -12882,7 +18089,7 @@ func NewImagebuilderImageRecipe_Override(i ImagebuilderImageRecipe, scope constr
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) SetBlockDeviceMapping(val *[]*ImagebuilderImageRecipeBlockDeviceMapping) {
+func (j *jsiiProxy_ImagebuilderImageRecipe) SetBlockDeviceMapping(val interface{}) {
 	_jsii_.Set(
 		j,
 		"blockDeviceMapping",
@@ -12890,7 +18097,7 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) SetBlockDeviceMapping(val *[]*Imageb
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) SetComponent(val *[]*ImagebuilderImageRecipeComponent) {
+func (j *jsiiProxy_ImagebuilderImageRecipe) SetComponent(val interface{}) {
 	_jsii_.Set(
 		j,
 		"component",
@@ -12898,7 +18105,7 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) SetComponent(val *[]*ImagebuilderIma
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) SetCount(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImageRecipe) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12954,7 +18161,7 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) SetTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImageRecipe) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -12962,10 +18169,18 @@ func (j *jsiiProxy_ImagebuilderImageRecipe) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipe) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ImagebuilderImageRecipe) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ImagebuilderImageRecipe) SetUserDataBase64(val *string) {
+	_jsii_.Set(
+		j,
+		"userDataBase64",
 		val,
 	)
 }
@@ -13026,12 +18241,40 @@ func (i *jsiiProxy_ImagebuilderImageRecipe) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipe) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImageRecipe) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipe) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13068,12 +18311,54 @@ func (i *jsiiProxy_ImagebuilderImageRecipe) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipe) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipe) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImageRecipe) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipe) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13147,6 +18432,14 @@ func (i *jsiiProxy_ImagebuilderImageRecipe) ResetTagsAll() {
 	)
 }
 
+func (i *jsiiProxy_ImagebuilderImageRecipe) ResetUserDataBase64() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetUserDataBase64",
+		nil, // no parameters
+	)
+}
+
 func (i *jsiiProxy_ImagebuilderImageRecipe) ResetWorkingDirectory() {
 	_jsii_.InvokeVoid(
 		i,
@@ -13212,33 +18505,33 @@ func (i *jsiiProxy_ImagebuilderImageRecipe) ToTerraform() interface{} {
 }
 
 type ImagebuilderImageRecipeBlockDeviceMapping struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#device_name ImagebuilderImageRecipe#device_name}.
-	DeviceName *string `json:"deviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#device_name ImagebuilderImageRecipe#device_name}.
+	DeviceName *string `json:"deviceName" yaml:"deviceName"`
 	// ebs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#ebs ImagebuilderImageRecipe#ebs}
-	Ebs *ImagebuilderImageRecipeBlockDeviceMappingEbs `json:"ebs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#no_device ImagebuilderImageRecipe#no_device}.
-	NoDevice interface{} `json:"noDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#virtual_name ImagebuilderImageRecipe#virtual_name}.
-	VirtualName *string `json:"virtualName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#ebs ImagebuilderImageRecipe#ebs}
+	Ebs *ImagebuilderImageRecipeBlockDeviceMappingEbs `json:"ebs" yaml:"ebs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#no_device ImagebuilderImageRecipe#no_device}.
+	NoDevice interface{} `json:"noDevice" yaml:"noDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#virtual_name ImagebuilderImageRecipe#virtual_name}.
+	VirtualName *string `json:"virtualName" yaml:"virtualName"`
 }
 
 type ImagebuilderImageRecipeBlockDeviceMappingEbs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#delete_on_termination ImagebuilderImageRecipe#delete_on_termination}.
-	DeleteOnTermination *string `json:"deleteOnTermination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#encrypted ImagebuilderImageRecipe#encrypted}.
-	Encrypted *string `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#iops ImagebuilderImageRecipe#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#kms_key_id ImagebuilderImageRecipe#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#snapshot_id ImagebuilderImageRecipe#snapshot_id}.
-	SnapshotId *string `json:"snapshotId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#volume_size ImagebuilderImageRecipe#volume_size}.
-	VolumeSize *float64 `json:"volumeSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#volume_type ImagebuilderImageRecipe#volume_type}.
-	VolumeType *string `json:"volumeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#delete_on_termination ImagebuilderImageRecipe#delete_on_termination}.
+	DeleteOnTermination *string `json:"deleteOnTermination" yaml:"deleteOnTermination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#encrypted ImagebuilderImageRecipe#encrypted}.
+	Encrypted *string `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#iops ImagebuilderImageRecipe#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#kms_key_id ImagebuilderImageRecipe#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#snapshot_id ImagebuilderImageRecipe#snapshot_id}.
+	SnapshotId *string `json:"snapshotId" yaml:"snapshotId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#volume_size ImagebuilderImageRecipe#volume_size}.
+	VolumeSize *float64 `json:"volumeSize" yaml:"volumeSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#volume_type ImagebuilderImageRecipe#volume_type}.
+	VolumeType *string `json:"volumeType" yaml:"volumeType"`
 }
 
 type ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference interface {
@@ -13264,18 +18557,23 @@ type ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference interface {
 	SnapshotIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VolumeSize() *float64
 	SetVolumeSize(val *float64)
 	VolumeSizeInput() *float64
 	VolumeType() *string
 	SetVolumeType(val *string)
 	VolumeTypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDeleteOnTermination()
@@ -13422,8 +18720,8 @@ func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13472,7 +18770,7 @@ func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 	return returns
 }
 
-func NewImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference {
+func NewImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference{}
@@ -13486,7 +18784,7 @@ func NewImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference(terraformRes
 	return &j
 }
 
-func NewImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference_Override(i ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference_Override(i ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13560,7 +18858,7 @@ func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13585,12 +18883,40 @@ func (j *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13627,12 +18953,54 @@ func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13725,47 +19093,49 @@ func (i *jsiiProxy_ImagebuilderImageRecipeBlockDeviceMappingEbsOutputReference) 
 }
 
 type ImagebuilderImageRecipeComponent struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#component_arn ImagebuilderImageRecipe#component_arn}.
-	ComponentArn *string `json:"componentArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#component_arn ImagebuilderImageRecipe#component_arn}.
+	ComponentArn *string `json:"componentArn" yaml:"componentArn"`
 }
 
 // AWS Image Builder.
 type ImagebuilderImageRecipeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// component block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#component ImagebuilderImageRecipe#component}
-	Component *[]*ImagebuilderImageRecipeComponent `json:"component"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#name ImagebuilderImageRecipe#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#parent_image ImagebuilderImageRecipe#parent_image}.
-	ParentImage *string `json:"parentImage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#version ImagebuilderImageRecipe#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#component ImagebuilderImageRecipe#component}
+	Component interface{} `json:"component" yaml:"component"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#name ImagebuilderImageRecipe#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#parent_image ImagebuilderImageRecipe#parent_image}.
+	ParentImage *string `json:"parentImage" yaml:"parentImage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#version ImagebuilderImageRecipe#version}.
+	Version *string `json:"version" yaml:"version"`
 	// block_device_mapping block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#block_device_mapping ImagebuilderImageRecipe#block_device_mapping}
-	BlockDeviceMapping *[]*ImagebuilderImageRecipeBlockDeviceMapping `json:"blockDeviceMapping"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#description ImagebuilderImageRecipe#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#tags ImagebuilderImageRecipe#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#tags_all ImagebuilderImageRecipe#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe.html#working_directory ImagebuilderImageRecipe#working_directory}.
-	WorkingDirectory *string `json:"workingDirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#block_device_mapping ImagebuilderImageRecipe#block_device_mapping}
+	BlockDeviceMapping interface{} `json:"blockDeviceMapping" yaml:"blockDeviceMapping"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#description ImagebuilderImageRecipe#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#tags ImagebuilderImageRecipe#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#tags_all ImagebuilderImageRecipe#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#user_data_base64 ImagebuilderImageRecipe#user_data_base64}.
+	UserDataBase64 *string `json:"userDataBase64" yaml:"userDataBase64"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image_recipe#working_directory ImagebuilderImageRecipe#working_directory}.
+	WorkingDirectory *string `json:"workingDirectory" yaml:"workingDirectory"`
 }
 
 type ImagebuilderImageTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image.html#create ImagebuilderImage#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_image#create ImagebuilderImage#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type ImagebuilderImageTimeoutsOutputReference interface {
@@ -13779,12 +19149,17 @@ type ImagebuilderImageTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -13845,8 +19220,8 @@ func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13855,7 +19230,7 @@ func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) TerraformResource()
 	return returns
 }
 
-func NewImagebuilderImageTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderImageTimeoutsOutputReference {
+func NewImagebuilderImageTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderImageTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderImageTimeoutsOutputReference{}
@@ -13869,7 +19244,7 @@ func NewImagebuilderImageTimeoutsOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewImagebuilderImageTimeoutsOutputReference_Override(i ImagebuilderImageTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderImageTimeoutsOutputReference_Override(i ImagebuilderImageTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13911,7 +19286,7 @@ func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13920,12 +19295,40 @@ func (j *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) SetTerraformResourc
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13962,12 +19365,54 @@ func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14011,14 +19456,14 @@ func (i *jsiiProxy_ImagebuilderImageTimeoutsOutputReference) ResetCreate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html aws_imagebuilder_infrastructure_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration aws_imagebuilder_infrastructure_configuration}.
 type ImagebuilderInfrastructureConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DateCreated() *string
 	DateUpdated() *string
 	DependsOn() *[]*string
@@ -14049,9 +19494,9 @@ type ImagebuilderInfrastructureConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	ResourceTags() interface{}
-	SetResourceTags(val interface{})
-	ResourceTagsInput() interface{}
+	ResourceTags() *map[string]*string
+	SetResourceTags(val *map[string]*string)
+	ResourceTagsInput() *map[string]*string
 	SecurityGroupIds() *[]*string
 	SetSecurityGroupIds(val *[]*string)
 	SecurityGroupIdsInput() *[]*string
@@ -14061,12 +19506,12 @@ type ImagebuilderInfrastructureConfiguration interface {
 	SubnetId() *string
 	SetSubnetId(val *string)
 	SubnetIdInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerminateInstanceOnFailure() interface{}
 	SetTerminateInstanceOnFailure(val interface{})
 	TerminateInstanceOnFailureInput() interface{}
@@ -14074,10 +19519,15 @@ type ImagebuilderInfrastructureConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutLogging(value *ImagebuilderInfrastructureConfigurationLogging)
@@ -14134,8 +19584,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) ConstructNodeMetadat
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14364,8 +19814,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) RawOverrides() inter
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) ResourceTags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) ResourceTags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"resourceTags",
@@ -14374,8 +19824,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) ResourceTags() inter
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) ResourceTagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) ResourceTagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"resourceTagsInput",
@@ -14444,8 +19894,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SubnetIdInput() *str
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -14454,8 +19904,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -14464,8 +19914,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsAll() interface{
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -14474,8 +19924,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsAllInput() inter
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14534,7 +19984,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) TerraformResourceTyp
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html aws_imagebuilder_infrastructure_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration aws_imagebuilder_infrastructure_configuration} Resource.
 func NewImagebuilderInfrastructureConfiguration(scope constructs.Construct, id *string, config *ImagebuilderInfrastructureConfigurationConfig) ImagebuilderInfrastructureConfiguration {
 	_init_.Initialize()
 
@@ -14549,7 +19999,7 @@ func NewImagebuilderInfrastructureConfiguration(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html aws_imagebuilder_infrastructure_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration aws_imagebuilder_infrastructure_configuration} Resource.
 func NewImagebuilderInfrastructureConfiguration_Override(i ImagebuilderInfrastructureConfiguration, scope constructs.Construct, id *string, config *ImagebuilderInfrastructureConfigurationConfig) {
 	_init_.Initialize()
 
@@ -14560,7 +20010,7 @@ func NewImagebuilderInfrastructureConfiguration_Override(i ImagebuilderInfrastru
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14632,7 +20082,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetProvider(val cdkt
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetResourceTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetResourceTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"resourceTags",
@@ -14664,7 +20114,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetSubnetId(val *str
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetTags(val interface{}) {
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14672,7 +20122,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetTags(val interfac
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ImagebuilderInfrastructureConfiguration) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -14728,12 +20178,40 @@ func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) AddOverride(path *st
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14770,12 +20248,54 @@ func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetNumberAttribute(t
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14972,48 +20492,48 @@ func (i *jsiiProxy_ImagebuilderInfrastructureConfiguration) ToTerraform() interf
 // AWS Image Builder.
 type ImagebuilderInfrastructureConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#instance_profile_name ImagebuilderInfrastructureConfiguration#instance_profile_name}.
-	InstanceProfileName *string `json:"instanceProfileName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#name ImagebuilderInfrastructureConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#description ImagebuilderInfrastructureConfiguration#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#instance_types ImagebuilderInfrastructureConfiguration#instance_types}.
-	InstanceTypes *[]*string `json:"instanceTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#key_pair ImagebuilderInfrastructureConfiguration#key_pair}.
-	KeyPair *string `json:"keyPair"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#instance_profile_name ImagebuilderInfrastructureConfiguration#instance_profile_name}.
+	InstanceProfileName *string `json:"instanceProfileName" yaml:"instanceProfileName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#name ImagebuilderInfrastructureConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#description ImagebuilderInfrastructureConfiguration#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#instance_types ImagebuilderInfrastructureConfiguration#instance_types}.
+	InstanceTypes *[]*string `json:"instanceTypes" yaml:"instanceTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#key_pair ImagebuilderInfrastructureConfiguration#key_pair}.
+	KeyPair *string `json:"keyPair" yaml:"keyPair"`
 	// logging block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#logging ImagebuilderInfrastructureConfiguration#logging}
-	Logging *ImagebuilderInfrastructureConfigurationLogging `json:"logging"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#resource_tags ImagebuilderInfrastructureConfiguration#resource_tags}.
-	ResourceTags interface{} `json:"resourceTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#security_group_ids ImagebuilderInfrastructureConfiguration#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#sns_topic_arn ImagebuilderInfrastructureConfiguration#sns_topic_arn}.
-	SnsTopicArn *string `json:"snsTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#subnet_id ImagebuilderInfrastructureConfiguration#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#tags ImagebuilderInfrastructureConfiguration#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#tags_all ImagebuilderInfrastructureConfiguration#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#terminate_instance_on_failure ImagebuilderInfrastructureConfiguration#terminate_instance_on_failure}.
-	TerminateInstanceOnFailure interface{} `json:"terminateInstanceOnFailure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#logging ImagebuilderInfrastructureConfiguration#logging}
+	Logging *ImagebuilderInfrastructureConfigurationLogging `json:"logging" yaml:"logging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#resource_tags ImagebuilderInfrastructureConfiguration#resource_tags}.
+	ResourceTags *map[string]*string `json:"resourceTags" yaml:"resourceTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#security_group_ids ImagebuilderInfrastructureConfiguration#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#sns_topic_arn ImagebuilderInfrastructureConfiguration#sns_topic_arn}.
+	SnsTopicArn *string `json:"snsTopicArn" yaml:"snsTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#subnet_id ImagebuilderInfrastructureConfiguration#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#tags ImagebuilderInfrastructureConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#tags_all ImagebuilderInfrastructureConfiguration#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#terminate_instance_on_failure ImagebuilderInfrastructureConfiguration#terminate_instance_on_failure}.
+	TerminateInstanceOnFailure interface{} `json:"terminateInstanceOnFailure" yaml:"terminateInstanceOnFailure"`
 }
 
 type ImagebuilderInfrastructureConfigurationLogging struct {
 	// s3_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#s3_logs ImagebuilderInfrastructureConfiguration#s3_logs}
-	S3Logs *ImagebuilderInfrastructureConfigurationLoggingS3Logs `json:"s3Logs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#s3_logs ImagebuilderInfrastructureConfiguration#s3_logs}
+	S3Logs *ImagebuilderInfrastructureConfigurationLoggingS3Logs `json:"s3Logs" yaml:"s3Logs"`
 }
 
 type ImagebuilderInfrastructureConfigurationLoggingOutputReference interface {
@@ -15026,12 +20546,17 @@ type ImagebuilderInfrastructureConfigurationLoggingOutputReference interface {
 	S3LogsInput() *ImagebuilderInfrastructureConfigurationLoggingS3Logs
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3Logs(value *ImagebuilderInfrastructureConfigurationLoggingS3Logs)
@@ -15092,8 +20617,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15102,7 +20627,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference
 	return returns
 }
 
-func NewImagebuilderInfrastructureConfigurationLoggingOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderInfrastructureConfigurationLoggingOutputReference {
+func NewImagebuilderInfrastructureConfigurationLoggingOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderInfrastructureConfigurationLoggingOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference{}
@@ -15116,7 +20641,7 @@ func NewImagebuilderInfrastructureConfigurationLoggingOutputReference(terraformR
 	return &j
 }
 
-func NewImagebuilderInfrastructureConfigurationLoggingOutputReference_Override(i ImagebuilderInfrastructureConfigurationLoggingOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderInfrastructureConfigurationLoggingOutputReference_Override(i ImagebuilderInfrastructureConfigurationLoggingOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15150,7 +20675,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15159,12 +20684,40 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15201,12 +20754,54 @@ func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15251,10 +20846,10 @@ func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingOutputReference
 }
 
 type ImagebuilderInfrastructureConfigurationLoggingS3Logs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#s3_bucket_name ImagebuilderInfrastructureConfiguration#s3_bucket_name}.
-	S3BucketName *string `json:"s3BucketName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration.html#s3_key_prefix ImagebuilderInfrastructureConfiguration#s3_key_prefix}.
-	S3KeyPrefix *string `json:"s3KeyPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#s3_bucket_name ImagebuilderInfrastructureConfiguration#s3_bucket_name}.
+	S3BucketName *string `json:"s3BucketName" yaml:"s3BucketName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/imagebuilder_infrastructure_configuration#s3_key_prefix ImagebuilderInfrastructureConfiguration#s3_key_prefix}.
+	S3KeyPrefix *string `json:"s3KeyPrefix" yaml:"s3KeyPrefix"`
 }
 
 type ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference interface {
@@ -15271,12 +20866,17 @@ type ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference interfa
 	S3KeyPrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetS3KeyPrefix()
@@ -15357,8 +20957,8 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputRef
 	return returns
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15367,7 +20967,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputRef
 	return returns
 }
 
-func NewImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference {
+func NewImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference{}
@@ -15381,7 +20981,7 @@ func NewImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference(terr
 	return &j
 }
 
-func NewImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference_Override(i ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference_Override(i ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15431,7 +21031,7 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputRef
 	)
 }
 
-func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15440,12 +21040,40 @@ func (j *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputRef
 }
 
 // Experimental.
-func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15482,12 +21110,54 @@ func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputRef
 }
 
 // Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_ImagebuilderInfrastructureConfigurationLoggingS3LogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

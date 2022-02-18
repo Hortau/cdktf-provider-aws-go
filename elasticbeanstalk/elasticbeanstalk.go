@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/elasticbeanstalk/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application.html aws_elastic_beanstalk_application}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application aws_elastic_beanstalk_application}.
 type DataAwsElasticBeanstalkApplication interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -37,10 +37,15 @@ type DataAwsElasticBeanstalkApplication interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	AppversionLifecycle(index *string) DataAwsElasticBeanstalkApplicationAppversionLifecycle
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -85,8 +90,8 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkApplication) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkApplication) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticBeanstalkApplication) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -235,7 +240,7 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkApplication) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application.html aws_elastic_beanstalk_application} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application aws_elastic_beanstalk_application} Data Source.
 func NewDataAwsElasticBeanstalkApplication(scope constructs.Construct, id *string, config *DataAwsElasticBeanstalkApplicationConfig) DataAwsElasticBeanstalkApplication {
 	_init_.Initialize()
 
@@ -250,7 +255,7 @@ func NewDataAwsElasticBeanstalkApplication(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application.html aws_elastic_beanstalk_application} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application aws_elastic_beanstalk_application} Data Source.
 func NewDataAwsElasticBeanstalkApplication_Override(d DataAwsElasticBeanstalkApplication, scope constructs.Construct, id *string, config *DataAwsElasticBeanstalkApplicationConfig) {
 	_init_.Initialize()
 
@@ -261,7 +266,7 @@ func NewDataAwsElasticBeanstalkApplication_Override(d DataAwsElasticBeanstalkApp
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkApplication) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElasticBeanstalkApplication) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -354,12 +359,40 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) AppversionLifecycle(index
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -396,12 +429,54 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplication) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -503,18 +578,25 @@ type DataAwsElasticBeanstalkApplicationAppversionLifecycle interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	DeleteSourceFromS3() interface{}
+	DeleteSourceFromS3() cdktf.IResolvable
 	MaxAgeInDays() *float64
 	MaxCount() *float64
 	ServiceRole() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -533,8 +615,8 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) Comple
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) DeleteSourceFromS3() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) DeleteSourceFromS3() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"deleteSourceFromS3",
@@ -583,8 +665,8 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -593,15 +675,25 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) Terraf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsElasticBeanstalkApplicationAppversionLifecycle(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElasticBeanstalkApplicationAppversionLifecycle {
+func NewDataAwsElasticBeanstalkApplicationAppversionLifecycle(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsElasticBeanstalkApplicationAppversionLifecycle {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -609,12 +701,12 @@ func NewDataAwsElasticBeanstalkApplicationAppversionLifecycle(terraformResource 
 }
 
 // Experimental.
-func NewDataAwsElasticBeanstalkApplicationAppversionLifecycle_Override(d DataAwsElasticBeanstalkApplicationAppversionLifecycle, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsElasticBeanstalkApplicationAppversionLifecycle_Override(d DataAwsElasticBeanstalkApplicationAppversionLifecycle, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticbeanstalk.DataAwsElasticBeanstalkApplicationAppversionLifecycle",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -635,7 +727,7 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) SetTer
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -643,13 +735,49 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) SetTer
 	)
 }
 
+func (j *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -686,12 +814,54 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetNum
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -716,24 +886,24 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkApplicationAppversionLifecycle) Interp
 // AWS Elastic Beanstalk.
 type DataAwsElasticBeanstalkApplicationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application.html#name DataAwsElasticBeanstalkApplication#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_application#name DataAwsElasticBeanstalkApplication#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone.html aws_elastic_beanstalk_hosted_zone}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone aws_elastic_beanstalk_hosted_zone}.
 type DataAwsElasticBeanstalkHostedZone interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -752,10 +922,15 @@ type DataAwsElasticBeanstalkHostedZone interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -791,8 +966,8 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkHostedZone) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkHostedZone) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticBeanstalkHostedZone) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -931,7 +1106,7 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkHostedZone) TerraformResourceType() *s
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone.html aws_elastic_beanstalk_hosted_zone} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone aws_elastic_beanstalk_hosted_zone} Data Source.
 func NewDataAwsElasticBeanstalkHostedZone(scope constructs.Construct, id *string, config *DataAwsElasticBeanstalkHostedZoneConfig) DataAwsElasticBeanstalkHostedZone {
 	_init_.Initialize()
 
@@ -946,7 +1121,7 @@ func NewDataAwsElasticBeanstalkHostedZone(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone.html aws_elastic_beanstalk_hosted_zone} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone aws_elastic_beanstalk_hosted_zone} Data Source.
 func NewDataAwsElasticBeanstalkHostedZone_Override(d DataAwsElasticBeanstalkHostedZone, scope constructs.Construct, id *string, config *DataAwsElasticBeanstalkHostedZoneConfig) {
 	_init_.Initialize()
 
@@ -957,7 +1132,7 @@ func NewDataAwsElasticBeanstalkHostedZone_Override(d DataAwsElasticBeanstalkHost
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkHostedZone) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElasticBeanstalkHostedZone) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1037,12 +1212,40 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) AddOverride(path *string, 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1079,12 +1282,54 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1193,24 +1438,24 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkHostedZone) ToTerraform() interface{} 
 // AWS Elastic Beanstalk.
 type DataAwsElasticBeanstalkHostedZoneConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone.html#region DataAwsElasticBeanstalkHostedZone#region}.
-	Region *string `json:"region"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_hosted_zone#region DataAwsElasticBeanstalkHostedZone#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack.html aws_elastic_beanstalk_solution_stack}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack aws_elastic_beanstalk_solution_stack}.
 type DataAwsElasticBeanstalkSolutionStack interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1233,10 +1478,15 @@ type DataAwsElasticBeanstalkSolutionStack interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetMostRecent()
@@ -1272,8 +1522,8 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) ConstructNodeMetadata()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1442,7 +1692,7 @@ func (j *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) TerraformResourceType()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack.html aws_elastic_beanstalk_solution_stack} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack aws_elastic_beanstalk_solution_stack} Data Source.
 func NewDataAwsElasticBeanstalkSolutionStack(scope constructs.Construct, id *string, config *DataAwsElasticBeanstalkSolutionStackConfig) DataAwsElasticBeanstalkSolutionStack {
 	_init_.Initialize()
 
@@ -1457,7 +1707,7 @@ func NewDataAwsElasticBeanstalkSolutionStack(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack.html aws_elastic_beanstalk_solution_stack} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack aws_elastic_beanstalk_solution_stack} Data Source.
 func NewDataAwsElasticBeanstalkSolutionStack_Override(d DataAwsElasticBeanstalkSolutionStack, scope constructs.Construct, id *string, config *DataAwsElasticBeanstalkSolutionStackConfig) {
 	_init_.Initialize()
 
@@ -1468,7 +1718,7 @@ func NewDataAwsElasticBeanstalkSolutionStack_Override(d DataAwsElasticBeanstalkS
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1556,12 +1806,40 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) AddOverride(path *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1598,12 +1876,54 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1712,20 +2032,20 @@ func (d *jsiiProxy_DataAwsElasticBeanstalkSolutionStack) ToTerraform() interface
 // AWS Elastic Beanstalk.
 type DataAwsElasticBeanstalkSolutionStackConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack.html#name_regex DataAwsElasticBeanstalkSolutionStack#name_regex}.
-	NameRegex *string `json:"nameRegex"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack.html#most_recent DataAwsElasticBeanstalkSolutionStack#most_recent}.
-	MostRecent interface{} `json:"mostRecent"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack#name_regex DataAwsElasticBeanstalkSolutionStack#name_regex}.
+	NameRegex *string `json:"nameRegex" yaml:"nameRegex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elastic_beanstalk_solution_stack#most_recent DataAwsElasticBeanstalkSolutionStack#most_recent}.
+	MostRecent interface{} `json:"mostRecent" yaml:"mostRecent"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html aws_elastic_beanstalk_application}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application aws_elastic_beanstalk_application}.
 type ElasticBeanstalkApplication interface {
 	cdktf.TerraformResource
 	AppversionLifecycle() ElasticBeanstalkApplicationAppversionLifecycleOutputReference
@@ -1733,8 +2053,8 @@ type ElasticBeanstalkApplication interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1752,20 +2072,25 @@ type ElasticBeanstalkApplication interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAppversionLifecycle(value *ElasticBeanstalkApplicationAppversionLifecycle)
@@ -1835,8 +2160,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplication) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1965,8 +2290,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplication) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1975,8 +2300,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplication) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1985,8 +2310,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplication) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1995,8 +2320,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplication) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2035,7 +2360,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html aws_elastic_beanstalk_application} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application aws_elastic_beanstalk_application} Resource.
 func NewElasticBeanstalkApplication(scope constructs.Construct, id *string, config *ElasticBeanstalkApplicationConfig) ElasticBeanstalkApplication {
 	_init_.Initialize()
 
@@ -2050,7 +2375,7 @@ func NewElasticBeanstalkApplication(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html aws_elastic_beanstalk_application} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application aws_elastic_beanstalk_application} Resource.
 func NewElasticBeanstalkApplication_Override(e ElasticBeanstalkApplication, scope constructs.Construct, id *string, config *ElasticBeanstalkApplicationConfig) {
 	_init_.Initialize()
 
@@ -2061,7 +2386,7 @@ func NewElasticBeanstalkApplication_Override(e ElasticBeanstalkApplication, scop
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkApplication) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2109,7 +2434,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) SetProvider(val cdktf.TerraformP
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkApplication) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2117,7 +2442,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplication) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplication) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkApplication) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2165,12 +2490,40 @@ func (e *jsiiProxy_ElasticBeanstalkApplication) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplication) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkApplication) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplication) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2207,12 +2560,54 @@ func (e *jsiiProxy_ElasticBeanstalkApplication) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplication) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplication) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkApplication) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplication) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2351,14 +2746,14 @@ func (e *jsiiProxy_ElasticBeanstalkApplication) ToTerraform() interface{} {
 }
 
 type ElasticBeanstalkApplicationAppversionLifecycle struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#service_role ElasticBeanstalkApplication#service_role}.
-	ServiceRole *string `json:"serviceRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#delete_source_from_s3 ElasticBeanstalkApplication#delete_source_from_s3}.
-	DeleteSourceFromS3 interface{} `json:"deleteSourceFromS3"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#max_age_in_days ElasticBeanstalkApplication#max_age_in_days}.
-	MaxAgeInDays *float64 `json:"maxAgeInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#max_count ElasticBeanstalkApplication#max_count}.
-	MaxCount *float64 `json:"maxCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#service_role ElasticBeanstalkApplication#service_role}.
+	ServiceRole *string `json:"serviceRole" yaml:"serviceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#delete_source_from_s3 ElasticBeanstalkApplication#delete_source_from_s3}.
+	DeleteSourceFromS3 interface{} `json:"deleteSourceFromS3" yaml:"deleteSourceFromS3"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#max_age_in_days ElasticBeanstalkApplication#max_age_in_days}.
+	MaxAgeInDays *float64 `json:"maxAgeInDays" yaml:"maxAgeInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#max_count ElasticBeanstalkApplication#max_count}.
+	MaxCount *float64 `json:"maxCount" yaml:"maxCount"`
 }
 
 type ElasticBeanstalkApplicationAppversionLifecycleOutputReference interface {
@@ -2381,12 +2776,17 @@ type ElasticBeanstalkApplicationAppversionLifecycleOutputReference interface {
 	ServiceRoleInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDeleteSourceFromS3()
@@ -2509,8 +2909,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2519,7 +2919,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 	return returns
 }
 
-func NewElasticBeanstalkApplicationAppversionLifecycleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElasticBeanstalkApplicationAppversionLifecycleOutputReference {
+func NewElasticBeanstalkApplicationAppversionLifecycleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElasticBeanstalkApplicationAppversionLifecycleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference{}
@@ -2533,7 +2933,7 @@ func NewElasticBeanstalkApplicationAppversionLifecycleOutputReference(terraformR
 	return &j
 }
 
-func NewElasticBeanstalkApplicationAppversionLifecycleOutputReference_Override(e ElasticBeanstalkApplicationAppversionLifecycleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElasticBeanstalkApplicationAppversionLifecycleOutputReference_Override(e ElasticBeanstalkApplicationAppversionLifecycleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2599,7 +2999,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2608,12 +3008,40 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 }
 
 // Experimental.
-func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2650,12 +3078,54 @@ func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2718,28 +3188,28 @@ func (e *jsiiProxy_ElasticBeanstalkApplicationAppversionLifecycleOutputReference
 // AWS Elastic Beanstalk.
 type ElasticBeanstalkApplicationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#name ElasticBeanstalkApplication#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#name ElasticBeanstalkApplication#name}.
+	Name *string `json:"name" yaml:"name"`
 	// appversion_lifecycle block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#appversion_lifecycle ElasticBeanstalkApplication#appversion_lifecycle}
-	AppversionLifecycle *ElasticBeanstalkApplicationAppversionLifecycle `json:"appversionLifecycle"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#description ElasticBeanstalkApplication#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#tags ElasticBeanstalkApplication#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application.html#tags_all ElasticBeanstalkApplication#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#appversion_lifecycle ElasticBeanstalkApplication#appversion_lifecycle}
+	AppversionLifecycle *ElasticBeanstalkApplicationAppversionLifecycle `json:"appversionLifecycle" yaml:"appversionLifecycle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#description ElasticBeanstalkApplication#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#tags ElasticBeanstalkApplication#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application#tags_all ElasticBeanstalkApplication#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html aws_elastic_beanstalk_application_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version aws_elastic_beanstalk_application_version}.
 type ElasticBeanstalkApplicationVersion interface {
 	cdktf.TerraformResource
 	Application() *string
@@ -2751,8 +3221,8 @@ type ElasticBeanstalkApplicationVersion interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2776,20 +3246,25 @@ type ElasticBeanstalkApplicationVersion interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -2878,8 +3353,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3048,8 +3523,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) RawOverrides() interface{
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3058,8 +3533,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3068,8 +3543,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3078,8 +3553,8 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsAllInput() interface{
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3118,7 +3593,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html aws_elastic_beanstalk_application_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version aws_elastic_beanstalk_application_version} Resource.
 func NewElasticBeanstalkApplicationVersion(scope constructs.Construct, id *string, config *ElasticBeanstalkApplicationVersionConfig) ElasticBeanstalkApplicationVersion {
 	_init_.Initialize()
 
@@ -3133,7 +3608,7 @@ func NewElasticBeanstalkApplicationVersion(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html aws_elastic_beanstalk_application_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version aws_elastic_beanstalk_application_version} Resource.
 func NewElasticBeanstalkApplicationVersion_Override(e ElasticBeanstalkApplicationVersion, scope constructs.Construct, id *string, config *ElasticBeanstalkApplicationVersionConfig) {
 	_init_.Initialize()
 
@@ -3160,7 +3635,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3224,7 +3699,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetProvider(val cdktf.Ter
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3232,7 +3707,7 @@ func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetTags(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkApplicationVersion) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3280,12 +3755,40 @@ func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) AddOverride(path *string,
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3322,12 +3825,54 @@ func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3460,32 +4005,32 @@ func (e *jsiiProxy_ElasticBeanstalkApplicationVersion) ToTerraform() interface{}
 // AWS Elastic Beanstalk.
 type ElasticBeanstalkApplicationVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#application ElasticBeanstalkApplicationVersion#application}.
-	Application *string `json:"application"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#bucket ElasticBeanstalkApplicationVersion#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#key ElasticBeanstalkApplicationVersion#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#name ElasticBeanstalkApplicationVersion#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#description ElasticBeanstalkApplicationVersion#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#force_delete ElasticBeanstalkApplicationVersion#force_delete}.
-	ForceDelete interface{} `json:"forceDelete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#tags ElasticBeanstalkApplicationVersion#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version.html#tags_all ElasticBeanstalkApplicationVersion#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#application ElasticBeanstalkApplicationVersion#application}.
+	Application *string `json:"application" yaml:"application"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#bucket ElasticBeanstalkApplicationVersion#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#key ElasticBeanstalkApplicationVersion#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#name ElasticBeanstalkApplicationVersion#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#description ElasticBeanstalkApplicationVersion#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#force_delete ElasticBeanstalkApplicationVersion#force_delete}.
+	ForceDelete interface{} `json:"forceDelete" yaml:"forceDelete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#tags ElasticBeanstalkApplicationVersion#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_application_version#tags_all ElasticBeanstalkApplicationVersion#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html aws_elastic_beanstalk_configuration_template}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template aws_elastic_beanstalk_configuration_template}.
 type ElasticBeanstalkConfigurationTemplate interface {
 	cdktf.TerraformResource
 	Application() *string
@@ -3493,8 +4038,8 @@ type ElasticBeanstalkConfigurationTemplate interface {
 	ApplicationInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -3515,9 +4060,9 @@ type ElasticBeanstalkConfigurationTemplate interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Setting() *[]*ElasticBeanstalkConfigurationTemplateSetting
-	SetSetting(val *[]*ElasticBeanstalkConfigurationTemplateSetting)
-	SettingInput() *[]*ElasticBeanstalkConfigurationTemplateSetting
+	Setting() interface{}
+	SetSetting(val interface{})
+	SettingInput() interface{}
 	SolutionStackName() *string
 	SetSolutionStackName(val *string)
 	SolutionStackNameInput() *string
@@ -3525,10 +4070,15 @@ type ElasticBeanstalkConfigurationTemplate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -3587,8 +4137,8 @@ func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3737,8 +4287,8 @@ func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) RawOverrides() interfa
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) Setting() *[]*ElasticBeanstalkConfigurationTemplateSetting {
-	var returns *[]*ElasticBeanstalkConfigurationTemplateSetting
+func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) Setting() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"setting",
@@ -3747,8 +4297,8 @@ func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) Setting() *[]*ElasticB
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SettingInput() *[]*ElasticBeanstalkConfigurationTemplateSetting {
-	var returns *[]*ElasticBeanstalkConfigurationTemplateSetting
+func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SettingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"settingInput",
@@ -3807,7 +4357,7 @@ func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html aws_elastic_beanstalk_configuration_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template aws_elastic_beanstalk_configuration_template} Resource.
 func NewElasticBeanstalkConfigurationTemplate(scope constructs.Construct, id *string, config *ElasticBeanstalkConfigurationTemplateConfig) ElasticBeanstalkConfigurationTemplate {
 	_init_.Initialize()
 
@@ -3822,7 +4372,7 @@ func NewElasticBeanstalkConfigurationTemplate(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html aws_elastic_beanstalk_configuration_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template aws_elastic_beanstalk_configuration_template} Resource.
 func NewElasticBeanstalkConfigurationTemplate_Override(e ElasticBeanstalkConfigurationTemplate, scope constructs.Construct, id *string, config *ElasticBeanstalkConfigurationTemplateConfig) {
 	_init_.Initialize()
 
@@ -3841,7 +4391,7 @@ func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SetApplication(val *st
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3897,7 +4447,7 @@ func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SetProvider(val cdktf.
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SetSetting(val *[]*ElasticBeanstalkConfigurationTemplateSetting) {
+func (j *jsiiProxy_ElasticBeanstalkConfigurationTemplate) SetSetting(val interface{}) {
 	_jsii_.Set(
 		j,
 		"setting",
@@ -3953,12 +4503,40 @@ func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) AddOverride(path *stri
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3995,12 +4573,54 @@ func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4133,41 +4753,41 @@ func (e *jsiiProxy_ElasticBeanstalkConfigurationTemplate) ToTerraform() interfac
 // AWS Elastic Beanstalk.
 type ElasticBeanstalkConfigurationTemplateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#application ElasticBeanstalkConfigurationTemplate#application}.
-	Application *string `json:"application"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#name ElasticBeanstalkConfigurationTemplate#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#description ElasticBeanstalkConfigurationTemplate#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#environment_id ElasticBeanstalkConfigurationTemplate#environment_id}.
-	EnvironmentId *string `json:"environmentId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#application ElasticBeanstalkConfigurationTemplate#application}.
+	Application *string `json:"application" yaml:"application"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#name ElasticBeanstalkConfigurationTemplate#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#description ElasticBeanstalkConfigurationTemplate#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#environment_id ElasticBeanstalkConfigurationTemplate#environment_id}.
+	EnvironmentId *string `json:"environmentId" yaml:"environmentId"`
 	// setting block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#setting ElasticBeanstalkConfigurationTemplate#setting}
-	Setting *[]*ElasticBeanstalkConfigurationTemplateSetting `json:"setting"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#solution_stack_name ElasticBeanstalkConfigurationTemplate#solution_stack_name}.
-	SolutionStackName *string `json:"solutionStackName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#setting ElasticBeanstalkConfigurationTemplate#setting}
+	Setting interface{} `json:"setting" yaml:"setting"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#solution_stack_name ElasticBeanstalkConfigurationTemplate#solution_stack_name}.
+	SolutionStackName *string `json:"solutionStackName" yaml:"solutionStackName"`
 }
 
 type ElasticBeanstalkConfigurationTemplateSetting struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#name ElasticBeanstalkConfigurationTemplate#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#namespace ElasticBeanstalkConfigurationTemplate#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#value ElasticBeanstalkConfigurationTemplate#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template.html#resource ElasticBeanstalkConfigurationTemplate#resource}.
-	Resource *string `json:"resource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#name ElasticBeanstalkConfigurationTemplate#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#namespace ElasticBeanstalkConfigurationTemplate#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#value ElasticBeanstalkConfigurationTemplate#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_configuration_template#resource ElasticBeanstalkConfigurationTemplate#resource}.
+	Resource *string `json:"resource" yaml:"resource"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html aws_elastic_beanstalk_environment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment aws_elastic_beanstalk_environment}.
 type ElasticBeanstalkEnvironment interface {
 	cdktf.TerraformResource
 	Application() *string
@@ -4181,8 +4801,8 @@ type ElasticBeanstalkEnvironment interface {
 	SetCnamePrefix(val *string)
 	CnamePrefixInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -4211,18 +4831,18 @@ type ElasticBeanstalkEnvironment interface {
 	SetProvider(val cdktf.TerraformProvider)
 	Queues() *[]*string
 	RawOverrides() interface{}
-	Setting() *[]*ElasticBeanstalkEnvironmentSetting
-	SetSetting(val *[]*ElasticBeanstalkEnvironmentSetting)
-	SettingInput() *[]*ElasticBeanstalkEnvironmentSetting
+	Setting() interface{}
+	SetSetting(val interface{})
+	SettingInput() interface{}
 	SolutionStackName() *string
 	SetSolutionStackName(val *string)
 	SolutionStackNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TemplateName() *string
 	SetTemplateName(val *string)
 	TemplateNameInput() *string
@@ -4241,10 +4861,15 @@ type ElasticBeanstalkEnvironment interface {
 	WaitForReadyTimeoutInput() *string
 	AddOverride(path *string, value interface{})
 	AllSettings(index *string) ElasticBeanstalkEnvironmentAllSettings
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCnamePrefix()
@@ -4361,8 +4986,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4581,8 +5206,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) Setting() *[]*ElasticBeanstalkEnvironmentSetting {
-	var returns *[]*ElasticBeanstalkEnvironmentSetting
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) Setting() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"setting",
@@ -4591,8 +5216,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) Setting() *[]*ElasticBeanstalkEn
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) SettingInput() *[]*ElasticBeanstalkEnvironmentSetting {
-	var returns *[]*ElasticBeanstalkEnvironmentSetting
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) SettingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"settingInput",
@@ -4621,8 +5246,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) SolutionStackNameInput() *string
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4631,8 +5256,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4641,8 +5266,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4651,8 +5276,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4781,7 +5406,7 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) WaitForReadyTimeoutInput() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html aws_elastic_beanstalk_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment aws_elastic_beanstalk_environment} Resource.
 func NewElasticBeanstalkEnvironment(scope constructs.Construct, id *string, config *ElasticBeanstalkEnvironmentConfig) ElasticBeanstalkEnvironment {
 	_init_.Initialize()
 
@@ -4796,7 +5421,7 @@ func NewElasticBeanstalkEnvironment(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html aws_elastic_beanstalk_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment aws_elastic_beanstalk_environment} Resource.
 func NewElasticBeanstalkEnvironment_Override(e ElasticBeanstalkEnvironment, scope constructs.Construct, id *string, config *ElasticBeanstalkEnvironmentConfig) {
 	_init_.Initialize()
 
@@ -4823,7 +5448,7 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetCnamePrefix(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4887,7 +5512,7 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetProvider(val cdktf.TerraformP
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetSetting(val *[]*ElasticBeanstalkEnvironmentSetting) {
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetSetting(val interface{}) {
 	_jsii_.Set(
 		j,
 		"setting",
@@ -4903,7 +5528,7 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetSolutionStackName(val *string
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4911,7 +5536,7 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticBeanstalkEnvironment) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5004,12 +5629,40 @@ func (e *jsiiProxy_ElasticBeanstalkEnvironment) AllSettings(index *string) Elast
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5046,12 +5699,54 @@ func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5254,13 +5949,20 @@ type ElasticBeanstalkEnvironmentAllSettings interface {
 	Resource() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -5319,8 +6021,8 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5339,15 +6041,25 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) Value() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewElasticBeanstalkEnvironmentAllSettings(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) ElasticBeanstalkEnvironmentAllSettings {
+func NewElasticBeanstalkEnvironmentAllSettings(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) ElasticBeanstalkEnvironmentAllSettings {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElasticBeanstalkEnvironmentAllSettings{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironmentAllSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -5355,12 +6067,12 @@ func NewElasticBeanstalkEnvironmentAllSettings(terraformResource cdktf.ITerrafor
 }
 
 // Experimental.
-func NewElasticBeanstalkEnvironmentAllSettings_Override(e ElasticBeanstalkEnvironmentAllSettings, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewElasticBeanstalkEnvironmentAllSettings_Override(e ElasticBeanstalkEnvironmentAllSettings, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticbeanstalk.ElasticBeanstalkEnvironmentAllSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		e,
 	)
 }
@@ -5381,7 +6093,7 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5389,13 +6101,49 @@ func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) SetTerraformResource(
 	)
 }
 
+func (j *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5432,12 +6180,54 @@ func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetNumberAttribute(te
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5462,52 +6252,52 @@ func (e *jsiiProxy_ElasticBeanstalkEnvironmentAllSettings) InterpolationForAttri
 // AWS Elastic Beanstalk.
 type ElasticBeanstalkEnvironmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#application ElasticBeanstalkEnvironment#application}.
-	Application *string `json:"application"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#name ElasticBeanstalkEnvironment#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#cname_prefix ElasticBeanstalkEnvironment#cname_prefix}.
-	CnamePrefix *string `json:"cnamePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#description ElasticBeanstalkEnvironment#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#platform_arn ElasticBeanstalkEnvironment#platform_arn}.
-	PlatformArn *string `json:"platformArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#poll_interval ElasticBeanstalkEnvironment#poll_interval}.
-	PollInterval *string `json:"pollInterval"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#application ElasticBeanstalkEnvironment#application}.
+	Application *string `json:"application" yaml:"application"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#name ElasticBeanstalkEnvironment#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#cname_prefix ElasticBeanstalkEnvironment#cname_prefix}.
+	CnamePrefix *string `json:"cnamePrefix" yaml:"cnamePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#description ElasticBeanstalkEnvironment#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#platform_arn ElasticBeanstalkEnvironment#platform_arn}.
+	PlatformArn *string `json:"platformArn" yaml:"platformArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#poll_interval ElasticBeanstalkEnvironment#poll_interval}.
+	PollInterval *string `json:"pollInterval" yaml:"pollInterval"`
 	// setting block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#setting ElasticBeanstalkEnvironment#setting}
-	Setting *[]*ElasticBeanstalkEnvironmentSetting `json:"setting"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#solution_stack_name ElasticBeanstalkEnvironment#solution_stack_name}.
-	SolutionStackName *string `json:"solutionStackName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#tags ElasticBeanstalkEnvironment#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#tags_all ElasticBeanstalkEnvironment#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#template_name ElasticBeanstalkEnvironment#template_name}.
-	TemplateName *string `json:"templateName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#tier ElasticBeanstalkEnvironment#tier}.
-	Tier *string `json:"tier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#version_label ElasticBeanstalkEnvironment#version_label}.
-	VersionLabel *string `json:"versionLabel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#wait_for_ready_timeout ElasticBeanstalkEnvironment#wait_for_ready_timeout}.
-	WaitForReadyTimeout *string `json:"waitForReadyTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#setting ElasticBeanstalkEnvironment#setting}
+	Setting interface{} `json:"setting" yaml:"setting"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#solution_stack_name ElasticBeanstalkEnvironment#solution_stack_name}.
+	SolutionStackName *string `json:"solutionStackName" yaml:"solutionStackName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#tags ElasticBeanstalkEnvironment#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#tags_all ElasticBeanstalkEnvironment#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#template_name ElasticBeanstalkEnvironment#template_name}.
+	TemplateName *string `json:"templateName" yaml:"templateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#tier ElasticBeanstalkEnvironment#tier}.
+	Tier *string `json:"tier" yaml:"tier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#version_label ElasticBeanstalkEnvironment#version_label}.
+	VersionLabel *string `json:"versionLabel" yaml:"versionLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#wait_for_ready_timeout ElasticBeanstalkEnvironment#wait_for_ready_timeout}.
+	WaitForReadyTimeout *string `json:"waitForReadyTimeout" yaml:"waitForReadyTimeout"`
 }
 
 type ElasticBeanstalkEnvironmentSetting struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#name ElasticBeanstalkEnvironment#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#namespace ElasticBeanstalkEnvironment#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#value ElasticBeanstalkEnvironment#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment.html#resource ElasticBeanstalkEnvironment#resource}.
-	Resource *string `json:"resource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#name ElasticBeanstalkEnvironment#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#namespace ElasticBeanstalkEnvironment#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#value ElasticBeanstalkEnvironment#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastic_beanstalk_environment#resource ElasticBeanstalkEnvironment#resource}.
+	Resource *string `json:"resource" yaml:"resource"`
 }

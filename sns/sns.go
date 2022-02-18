@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/sns/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/sns_topic.html aws_sns_topic}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/sns_topic aws_sns_topic}.
 type DataAwsSnsTopic interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -35,10 +35,15 @@ type DataAwsSnsTopic interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -83,8 +88,8 @@ func (j *jsiiProxy_DataAwsSnsTopic) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSnsTopic) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSnsTopic) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -223,7 +228,7 @@ func (j *jsiiProxy_DataAwsSnsTopic) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sns_topic.html aws_sns_topic} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sns_topic aws_sns_topic} Data Source.
 func NewDataAwsSnsTopic(scope constructs.Construct, id *string, config *DataAwsSnsTopicConfig) DataAwsSnsTopic {
 	_init_.Initialize()
 
@@ -238,7 +243,7 @@ func NewDataAwsSnsTopic(scope constructs.Construct, id *string, config *DataAwsS
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sns_topic.html aws_sns_topic} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/sns_topic aws_sns_topic} Data Source.
 func NewDataAwsSnsTopic_Override(d DataAwsSnsTopic, scope constructs.Construct, id *string, config *DataAwsSnsTopicConfig) {
 	_init_.Initialize()
 
@@ -249,7 +254,7 @@ func NewDataAwsSnsTopic_Override(d DataAwsSnsTopic, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsSnsTopic) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsSnsTopic) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -329,12 +334,40 @@ func (d *jsiiProxy_DataAwsSnsTopic) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSnsTopic) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSnsTopic) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSnsTopic) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -371,12 +404,54 @@ func (d *jsiiProxy_DataAwsSnsTopic) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSnsTopic) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSnsTopic) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSnsTopic) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSnsTopic) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -477,25 +552,25 @@ func (d *jsiiProxy_DataAwsSnsTopic) ToTerraform() interface{} {
 // AWS Simple Notification Service.
 type DataAwsSnsTopicConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sns_topic.html#name DataAwsSnsTopic#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/sns_topic#name DataAwsSnsTopic#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html aws_sns_platform_application}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application aws_sns_platform_application}.
 type SnsPlatformApplication interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EventDeliveryFailureTopicArn() *string
@@ -544,10 +619,15 @@ type SnsPlatformApplication interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEventDeliveryFailureTopicArn()
@@ -600,8 +680,8 @@ func (j *jsiiProxy_SnsPlatformApplication) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_SnsPlatformApplication) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsPlatformApplication) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -940,7 +1020,7 @@ func (j *jsiiProxy_SnsPlatformApplication) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html aws_sns_platform_application} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application aws_sns_platform_application} Resource.
 func NewSnsPlatformApplication(scope constructs.Construct, id *string, config *SnsPlatformApplicationConfig) SnsPlatformApplication {
 	_init_.Initialize()
 
@@ -955,7 +1035,7 @@ func NewSnsPlatformApplication(scope constructs.Construct, id *string, config *S
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html aws_sns_platform_application} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application aws_sns_platform_application} Resource.
 func NewSnsPlatformApplication_Override(s SnsPlatformApplication, scope constructs.Construct, id *string, config *SnsPlatformApplicationConfig) {
 	_init_.Initialize()
 
@@ -966,7 +1046,7 @@ func NewSnsPlatformApplication_Override(s SnsPlatformApplication, scope construc
 	)
 }
 
-func (j *jsiiProxy_SnsPlatformApplication) SetCount(val interface{}) {
+func (j *jsiiProxy_SnsPlatformApplication) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1126,12 +1206,40 @@ func (s *jsiiProxy_SnsPlatformApplication) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsPlatformApplication) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsPlatformApplication) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsPlatformApplication) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1168,12 +1276,54 @@ func (s *jsiiProxy_SnsPlatformApplication) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsPlatformApplication) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsPlatformApplication) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsPlatformApplication) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsPlatformApplication) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1338,44 +1488,44 @@ func (s *jsiiProxy_SnsPlatformApplication) ToTerraform() interface{} {
 // AWS Simple Notification Service.
 type SnsPlatformApplicationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#name SnsPlatformApplication#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#platform SnsPlatformApplication#platform}.
-	Platform *string `json:"platform"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#platform_credential SnsPlatformApplication#platform_credential}.
-	PlatformCredential *string `json:"platformCredential"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#event_delivery_failure_topic_arn SnsPlatformApplication#event_delivery_failure_topic_arn}.
-	EventDeliveryFailureTopicArn *string `json:"eventDeliveryFailureTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#event_endpoint_created_topic_arn SnsPlatformApplication#event_endpoint_created_topic_arn}.
-	EventEndpointCreatedTopicArn *string `json:"eventEndpointCreatedTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#event_endpoint_deleted_topic_arn SnsPlatformApplication#event_endpoint_deleted_topic_arn}.
-	EventEndpointDeletedTopicArn *string `json:"eventEndpointDeletedTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#event_endpoint_updated_topic_arn SnsPlatformApplication#event_endpoint_updated_topic_arn}.
-	EventEndpointUpdatedTopicArn *string `json:"eventEndpointUpdatedTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#failure_feedback_role_arn SnsPlatformApplication#failure_feedback_role_arn}.
-	FailureFeedbackRoleArn *string `json:"failureFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#platform_principal SnsPlatformApplication#platform_principal}.
-	PlatformPrincipal *string `json:"platformPrincipal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#success_feedback_role_arn SnsPlatformApplication#success_feedback_role_arn}.
-	SuccessFeedbackRoleArn *string `json:"successFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application.html#success_feedback_sample_rate SnsPlatformApplication#success_feedback_sample_rate}.
-	SuccessFeedbackSampleRate *string `json:"successFeedbackSampleRate"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#name SnsPlatformApplication#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#platform SnsPlatformApplication#platform}.
+	Platform *string `json:"platform" yaml:"platform"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#platform_credential SnsPlatformApplication#platform_credential}.
+	PlatformCredential *string `json:"platformCredential" yaml:"platformCredential"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#event_delivery_failure_topic_arn SnsPlatformApplication#event_delivery_failure_topic_arn}.
+	EventDeliveryFailureTopicArn *string `json:"eventDeliveryFailureTopicArn" yaml:"eventDeliveryFailureTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#event_endpoint_created_topic_arn SnsPlatformApplication#event_endpoint_created_topic_arn}.
+	EventEndpointCreatedTopicArn *string `json:"eventEndpointCreatedTopicArn" yaml:"eventEndpointCreatedTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#event_endpoint_deleted_topic_arn SnsPlatformApplication#event_endpoint_deleted_topic_arn}.
+	EventEndpointDeletedTopicArn *string `json:"eventEndpointDeletedTopicArn" yaml:"eventEndpointDeletedTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#event_endpoint_updated_topic_arn SnsPlatformApplication#event_endpoint_updated_topic_arn}.
+	EventEndpointUpdatedTopicArn *string `json:"eventEndpointUpdatedTopicArn" yaml:"eventEndpointUpdatedTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#failure_feedback_role_arn SnsPlatformApplication#failure_feedback_role_arn}.
+	FailureFeedbackRoleArn *string `json:"failureFeedbackRoleArn" yaml:"failureFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#platform_principal SnsPlatformApplication#platform_principal}.
+	PlatformPrincipal *string `json:"platformPrincipal" yaml:"platformPrincipal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#success_feedback_role_arn SnsPlatformApplication#success_feedback_role_arn}.
+	SuccessFeedbackRoleArn *string `json:"successFeedbackRoleArn" yaml:"successFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_platform_application#success_feedback_sample_rate SnsPlatformApplication#success_feedback_sample_rate}.
+	SuccessFeedbackSampleRate *string `json:"successFeedbackSampleRate" yaml:"successFeedbackSampleRate"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html aws_sns_sms_preferences}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences aws_sns_sms_preferences}.
 type SnsSmsPreferences interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultSenderId() *string
 	SetDefaultSenderId(val *string)
 	DefaultSenderIdInput() *string
@@ -1409,10 +1559,15 @@ type SnsSmsPreferences interface {
 	SetUsageReportS3Bucket(val *string)
 	UsageReportS3BucketInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDefaultSenderId()
@@ -1453,8 +1608,8 @@ func (j *jsiiProxy_SnsSmsPreferences) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SnsSmsPreferences) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsSmsPreferences) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1693,7 +1848,7 @@ func (j *jsiiProxy_SnsSmsPreferences) UsageReportS3BucketInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html aws_sns_sms_preferences} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences aws_sns_sms_preferences} Resource.
 func NewSnsSmsPreferences(scope constructs.Construct, id *string, config *SnsSmsPreferencesConfig) SnsSmsPreferences {
 	_init_.Initialize()
 
@@ -1708,7 +1863,7 @@ func NewSnsSmsPreferences(scope constructs.Construct, id *string, config *SnsSms
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html aws_sns_sms_preferences} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences aws_sns_sms_preferences} Resource.
 func NewSnsSmsPreferences_Override(s SnsSmsPreferences, scope constructs.Construct, id *string, config *SnsSmsPreferencesConfig) {
 	_init_.Initialize()
 
@@ -1719,7 +1874,7 @@ func NewSnsSmsPreferences_Override(s SnsSmsPreferences, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_SnsSmsPreferences) SetCount(val interface{}) {
+func (j *jsiiProxy_SnsSmsPreferences) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1839,12 +1994,40 @@ func (s *jsiiProxy_SnsSmsPreferences) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsSmsPreferences) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsSmsPreferences) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsSmsPreferences) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1881,12 +2064,54 @@ func (s *jsiiProxy_SnsSmsPreferences) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsSmsPreferences) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsSmsPreferences) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsSmsPreferences) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsSmsPreferences) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2035,28 +2260,28 @@ func (s *jsiiProxy_SnsSmsPreferences) ToTerraform() interface{} {
 // AWS Simple Notification Service.
 type SnsSmsPreferencesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#default_sender_id SnsSmsPreferences#default_sender_id}.
-	DefaultSenderId *string `json:"defaultSenderId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#default_sms_type SnsSmsPreferences#default_sms_type}.
-	DefaultSmsType *string `json:"defaultSmsType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#delivery_status_iam_role_arn SnsSmsPreferences#delivery_status_iam_role_arn}.
-	DeliveryStatusIamRoleArn *string `json:"deliveryStatusIamRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#delivery_status_success_sampling_rate SnsSmsPreferences#delivery_status_success_sampling_rate}.
-	DeliveryStatusSuccessSamplingRate *string `json:"deliveryStatusSuccessSamplingRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#monthly_spend_limit SnsSmsPreferences#monthly_spend_limit}.
-	MonthlySpendLimit *float64 `json:"monthlySpendLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences.html#usage_report_s3_bucket SnsSmsPreferences#usage_report_s3_bucket}.
-	UsageReportS3Bucket *string `json:"usageReportS3Bucket"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences#default_sender_id SnsSmsPreferences#default_sender_id}.
+	DefaultSenderId *string `json:"defaultSenderId" yaml:"defaultSenderId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences#default_sms_type SnsSmsPreferences#default_sms_type}.
+	DefaultSmsType *string `json:"defaultSmsType" yaml:"defaultSmsType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences#delivery_status_iam_role_arn SnsSmsPreferences#delivery_status_iam_role_arn}.
+	DeliveryStatusIamRoleArn *string `json:"deliveryStatusIamRoleArn" yaml:"deliveryStatusIamRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences#delivery_status_success_sampling_rate SnsSmsPreferences#delivery_status_success_sampling_rate}.
+	DeliveryStatusSuccessSamplingRate *string `json:"deliveryStatusSuccessSamplingRate" yaml:"deliveryStatusSuccessSamplingRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences#monthly_spend_limit SnsSmsPreferences#monthly_spend_limit}.
+	MonthlySpendLimit *float64 `json:"monthlySpendLimit" yaml:"monthlySpendLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_sms_preferences#usage_report_s3_bucket SnsSmsPreferences#usage_report_s3_bucket}.
+	UsageReportS3Bucket *string `json:"usageReportS3Bucket" yaml:"usageReportS3Bucket"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html aws_sns_topic}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_topic aws_sns_topic}.
 type SnsTopic interface {
 	cdktf.TerraformResource
 	ApplicationFailureFeedbackRoleArn() *string
@@ -2074,8 +2299,8 @@ type SnsTopic interface {
 	ContentBasedDeduplication() interface{}
 	SetContentBasedDeduplication(val interface{})
 	ContentBasedDeduplicationInput() interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeliveryPolicy() *string
 	SetDeliveryPolicy(val *string)
 	DeliveryPolicyInput() *string
@@ -2145,20 +2370,25 @@ type SnsTopic interface {
 	SqsSuccessFeedbackSampleRate() *float64
 	SetSqsSuccessFeedbackSampleRate(val *float64)
 	SqsSuccessFeedbackSampleRateInput() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetApplicationFailureFeedbackRoleArn()
@@ -2308,8 +2538,8 @@ func (j *jsiiProxy_SnsTopic) ContentBasedDeduplicationInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopic) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopic) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2788,8 +3018,8 @@ func (j *jsiiProxy_SnsTopic) SqsSuccessFeedbackSampleRateInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopic) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopic) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2798,8 +3028,8 @@ func (j *jsiiProxy_SnsTopic) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopic) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopic) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2808,8 +3038,8 @@ func (j *jsiiProxy_SnsTopic) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopic) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopic) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2818,8 +3048,8 @@ func (j *jsiiProxy_SnsTopic) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopic) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopic) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2858,7 +3088,7 @@ func (j *jsiiProxy_SnsTopic) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html aws_sns_topic} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic aws_sns_topic} Resource.
 func NewSnsTopic(scope constructs.Construct, id *string, config *SnsTopicConfig) SnsTopic {
 	_init_.Initialize()
 
@@ -2873,7 +3103,7 @@ func NewSnsTopic(scope constructs.Construct, id *string, config *SnsTopicConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html aws_sns_topic} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic aws_sns_topic} Resource.
 func NewSnsTopic_Override(s SnsTopic, scope constructs.Construct, id *string, config *SnsTopicConfig) {
 	_init_.Initialize()
 
@@ -2916,7 +3146,7 @@ func (j *jsiiProxy_SnsTopic) SetContentBasedDeduplication(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SnsTopic) SetCount(val interface{}) {
+func (j *jsiiProxy_SnsTopic) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3100,7 +3330,7 @@ func (j *jsiiProxy_SnsTopic) SetSqsSuccessFeedbackSampleRate(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_SnsTopic) SetTags(val interface{}) {
+func (j *jsiiProxy_SnsTopic) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3108,7 +3338,7 @@ func (j *jsiiProxy_SnsTopic) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SnsTopic) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SnsTopic) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3156,12 +3386,40 @@ func (s *jsiiProxy_SnsTopic) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsTopic) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsTopic) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopic) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3198,12 +3456,54 @@ func (s *jsiiProxy_SnsTopic) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsTopic) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopic) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsTopic) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopic) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3504,66 +3804,66 @@ func (s *jsiiProxy_SnsTopic) ToTerraform() interface{} {
 // AWS Simple Notification Service.
 type SnsTopicConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#application_failure_feedback_role_arn SnsTopic#application_failure_feedback_role_arn}.
-	ApplicationFailureFeedbackRoleArn *string `json:"applicationFailureFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#application_success_feedback_role_arn SnsTopic#application_success_feedback_role_arn}.
-	ApplicationSuccessFeedbackRoleArn *string `json:"applicationSuccessFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#application_success_feedback_sample_rate SnsTopic#application_success_feedback_sample_rate}.
-	ApplicationSuccessFeedbackSampleRate *float64 `json:"applicationSuccessFeedbackSampleRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#content_based_deduplication SnsTopic#content_based_deduplication}.
-	ContentBasedDeduplication interface{} `json:"contentBasedDeduplication"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#delivery_policy SnsTopic#delivery_policy}.
-	DeliveryPolicy *string `json:"deliveryPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#display_name SnsTopic#display_name}.
-	DisplayName *string `json:"displayName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#fifo_topic SnsTopic#fifo_topic}.
-	FifoTopic interface{} `json:"fifoTopic"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#firehose_failure_feedback_role_arn SnsTopic#firehose_failure_feedback_role_arn}.
-	FirehoseFailureFeedbackRoleArn *string `json:"firehoseFailureFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#firehose_success_feedback_role_arn SnsTopic#firehose_success_feedback_role_arn}.
-	FirehoseSuccessFeedbackRoleArn *string `json:"firehoseSuccessFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#firehose_success_feedback_sample_rate SnsTopic#firehose_success_feedback_sample_rate}.
-	FirehoseSuccessFeedbackSampleRate *float64 `json:"firehoseSuccessFeedbackSampleRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#http_failure_feedback_role_arn SnsTopic#http_failure_feedback_role_arn}.
-	HttpFailureFeedbackRoleArn *string `json:"httpFailureFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#http_success_feedback_role_arn SnsTopic#http_success_feedback_role_arn}.
-	HttpSuccessFeedbackRoleArn *string `json:"httpSuccessFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#http_success_feedback_sample_rate SnsTopic#http_success_feedback_sample_rate}.
-	HttpSuccessFeedbackSampleRate *float64 `json:"httpSuccessFeedbackSampleRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#kms_master_key_id SnsTopic#kms_master_key_id}.
-	KmsMasterKeyId *string `json:"kmsMasterKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#lambda_failure_feedback_role_arn SnsTopic#lambda_failure_feedback_role_arn}.
-	LambdaFailureFeedbackRoleArn *string `json:"lambdaFailureFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#lambda_success_feedback_role_arn SnsTopic#lambda_success_feedback_role_arn}.
-	LambdaSuccessFeedbackRoleArn *string `json:"lambdaSuccessFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#lambda_success_feedback_sample_rate SnsTopic#lambda_success_feedback_sample_rate}.
-	LambdaSuccessFeedbackSampleRate *float64 `json:"lambdaSuccessFeedbackSampleRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#name SnsTopic#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#name_prefix SnsTopic#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#policy SnsTopic#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#sqs_failure_feedback_role_arn SnsTopic#sqs_failure_feedback_role_arn}.
-	SqsFailureFeedbackRoleArn *string `json:"sqsFailureFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#sqs_success_feedback_role_arn SnsTopic#sqs_success_feedback_role_arn}.
-	SqsSuccessFeedbackRoleArn *string `json:"sqsSuccessFeedbackRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#sqs_success_feedback_sample_rate SnsTopic#sqs_success_feedback_sample_rate}.
-	SqsSuccessFeedbackSampleRate *float64 `json:"sqsSuccessFeedbackSampleRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#tags SnsTopic#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic.html#tags_all SnsTopic#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#application_failure_feedback_role_arn SnsTopic#application_failure_feedback_role_arn}.
+	ApplicationFailureFeedbackRoleArn *string `json:"applicationFailureFeedbackRoleArn" yaml:"applicationFailureFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#application_success_feedback_role_arn SnsTopic#application_success_feedback_role_arn}.
+	ApplicationSuccessFeedbackRoleArn *string `json:"applicationSuccessFeedbackRoleArn" yaml:"applicationSuccessFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#application_success_feedback_sample_rate SnsTopic#application_success_feedback_sample_rate}.
+	ApplicationSuccessFeedbackSampleRate *float64 `json:"applicationSuccessFeedbackSampleRate" yaml:"applicationSuccessFeedbackSampleRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#content_based_deduplication SnsTopic#content_based_deduplication}.
+	ContentBasedDeduplication interface{} `json:"contentBasedDeduplication" yaml:"contentBasedDeduplication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#delivery_policy SnsTopic#delivery_policy}.
+	DeliveryPolicy *string `json:"deliveryPolicy" yaml:"deliveryPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#display_name SnsTopic#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#fifo_topic SnsTopic#fifo_topic}.
+	FifoTopic interface{} `json:"fifoTopic" yaml:"fifoTopic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#firehose_failure_feedback_role_arn SnsTopic#firehose_failure_feedback_role_arn}.
+	FirehoseFailureFeedbackRoleArn *string `json:"firehoseFailureFeedbackRoleArn" yaml:"firehoseFailureFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#firehose_success_feedback_role_arn SnsTopic#firehose_success_feedback_role_arn}.
+	FirehoseSuccessFeedbackRoleArn *string `json:"firehoseSuccessFeedbackRoleArn" yaml:"firehoseSuccessFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#firehose_success_feedback_sample_rate SnsTopic#firehose_success_feedback_sample_rate}.
+	FirehoseSuccessFeedbackSampleRate *float64 `json:"firehoseSuccessFeedbackSampleRate" yaml:"firehoseSuccessFeedbackSampleRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#http_failure_feedback_role_arn SnsTopic#http_failure_feedback_role_arn}.
+	HttpFailureFeedbackRoleArn *string `json:"httpFailureFeedbackRoleArn" yaml:"httpFailureFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#http_success_feedback_role_arn SnsTopic#http_success_feedback_role_arn}.
+	HttpSuccessFeedbackRoleArn *string `json:"httpSuccessFeedbackRoleArn" yaml:"httpSuccessFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#http_success_feedback_sample_rate SnsTopic#http_success_feedback_sample_rate}.
+	HttpSuccessFeedbackSampleRate *float64 `json:"httpSuccessFeedbackSampleRate" yaml:"httpSuccessFeedbackSampleRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#kms_master_key_id SnsTopic#kms_master_key_id}.
+	KmsMasterKeyId *string `json:"kmsMasterKeyId" yaml:"kmsMasterKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#lambda_failure_feedback_role_arn SnsTopic#lambda_failure_feedback_role_arn}.
+	LambdaFailureFeedbackRoleArn *string `json:"lambdaFailureFeedbackRoleArn" yaml:"lambdaFailureFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#lambda_success_feedback_role_arn SnsTopic#lambda_success_feedback_role_arn}.
+	LambdaSuccessFeedbackRoleArn *string `json:"lambdaSuccessFeedbackRoleArn" yaml:"lambdaSuccessFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#lambda_success_feedback_sample_rate SnsTopic#lambda_success_feedback_sample_rate}.
+	LambdaSuccessFeedbackSampleRate *float64 `json:"lambdaSuccessFeedbackSampleRate" yaml:"lambdaSuccessFeedbackSampleRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#name SnsTopic#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#name_prefix SnsTopic#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#policy SnsTopic#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#sqs_failure_feedback_role_arn SnsTopic#sqs_failure_feedback_role_arn}.
+	SqsFailureFeedbackRoleArn *string `json:"sqsFailureFeedbackRoleArn" yaml:"sqsFailureFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#sqs_success_feedback_role_arn SnsTopic#sqs_success_feedback_role_arn}.
+	SqsSuccessFeedbackRoleArn *string `json:"sqsSuccessFeedbackRoleArn" yaml:"sqsSuccessFeedbackRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#sqs_success_feedback_sample_rate SnsTopic#sqs_success_feedback_sample_rate}.
+	SqsSuccessFeedbackSampleRate *float64 `json:"sqsSuccessFeedbackSampleRate" yaml:"sqsSuccessFeedbackSampleRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#tags SnsTopic#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic#tags_all SnsTopic#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy.html aws_sns_topic_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy aws_sns_topic_policy}.
 type SnsTopicPolicy interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3571,8 +3871,8 @@ type SnsTopicPolicy interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3592,10 +3892,15 @@ type SnsTopicPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3650,8 +3955,8 @@ func (j *jsiiProxy_SnsTopicPolicy) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopicPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopicPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3800,7 +4105,7 @@ func (j *jsiiProxy_SnsTopicPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy.html aws_sns_topic_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy aws_sns_topic_policy} Resource.
 func NewSnsTopicPolicy(scope constructs.Construct, id *string, config *SnsTopicPolicyConfig) SnsTopicPolicy {
 	_init_.Initialize()
 
@@ -3815,7 +4120,7 @@ func NewSnsTopicPolicy(scope constructs.Construct, id *string, config *SnsTopicP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy.html aws_sns_topic_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy aws_sns_topic_policy} Resource.
 func NewSnsTopicPolicy_Override(s SnsTopicPolicy, scope constructs.Construct, id *string, config *SnsTopicPolicyConfig) {
 	_init_.Initialize()
 
@@ -3834,7 +4139,7 @@ func (j *jsiiProxy_SnsTopicPolicy) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SnsTopicPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_SnsTopicPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3914,12 +4219,40 @@ func (s *jsiiProxy_SnsTopicPolicy) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsTopicPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsTopicPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopicPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3956,12 +4289,54 @@ func (s *jsiiProxy_SnsTopicPolicy) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsTopicPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopicPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsTopicPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopicPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4062,20 +4437,20 @@ func (s *jsiiProxy_SnsTopicPolicy) ToTerraform() interface{} {
 // AWS Simple Notification Service.
 type SnsTopicPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy.html#arn SnsTopicPolicy#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy.html#policy SnsTopicPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy#arn SnsTopicPolicy#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_policy#policy SnsTopicPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html aws_sns_topic_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription aws_sns_topic_subscription}.
 type SnsTopicSubscription interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -4083,10 +4458,10 @@ type SnsTopicSubscription interface {
 	ConfirmationTimeoutInMinutes() *float64
 	SetConfirmationTimeoutInMinutes(val *float64)
 	ConfirmationTimeoutInMinutesInput() *float64
-	ConfirmationWasAuthenticated() interface{}
+	ConfirmationWasAuthenticated() cdktf.IResolvable
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeliveryPolicy() *string
 	SetDeliveryPolicy(val *string)
 	DeliveryPolicyInput() *string
@@ -4108,7 +4483,7 @@ type SnsTopicSubscription interface {
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
 	OwnerId() *string
-	PendingConfirmation() interface{}
+	PendingConfirmation() cdktf.IResolvable
 	Protocol() *string
 	SetProtocol(val *string)
 	ProtocolInput() *string
@@ -4131,10 +4506,15 @@ type SnsTopicSubscription interface {
 	SetTopicArn(val *string)
 	TopicArnInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetConfirmationTimeoutInMinutes()
@@ -4196,8 +4576,8 @@ func (j *jsiiProxy_SnsTopicSubscription) ConfirmationTimeoutInMinutesInput() *fl
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopicSubscription) ConfirmationWasAuthenticated() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopicSubscription) ConfirmationWasAuthenticated() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"confirmationWasAuthenticated",
@@ -4216,8 +4596,8 @@ func (j *jsiiProxy_SnsTopicSubscription) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopicSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopicSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4376,8 +4756,8 @@ func (j *jsiiProxy_SnsTopicSubscription) OwnerId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SnsTopicSubscription) PendingConfirmation() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SnsTopicSubscription) PendingConfirmation() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"pendingConfirmation",
@@ -4536,7 +4916,7 @@ func (j *jsiiProxy_SnsTopicSubscription) TopicArnInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html aws_sns_topic_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription aws_sns_topic_subscription} Resource.
 func NewSnsTopicSubscription(scope constructs.Construct, id *string, config *SnsTopicSubscriptionConfig) SnsTopicSubscription {
 	_init_.Initialize()
 
@@ -4551,7 +4931,7 @@ func NewSnsTopicSubscription(scope constructs.Construct, id *string, config *Sns
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html aws_sns_topic_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription aws_sns_topic_subscription} Resource.
 func NewSnsTopicSubscription_Override(s SnsTopicSubscription, scope constructs.Construct, id *string, config *SnsTopicSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -4570,7 +4950,7 @@ func (j *jsiiProxy_SnsTopicSubscription) SetConfirmationTimeoutInMinutes(val *fl
 	)
 }
 
-func (j *jsiiProxy_SnsTopicSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_SnsTopicSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4714,12 +5094,40 @@ func (s *jsiiProxy_SnsTopicSubscription) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsTopicSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsTopicSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopicSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4756,12 +5164,54 @@ func (s *jsiiProxy_SnsTopicSubscription) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (s *jsiiProxy_SnsTopicSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopicSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SnsTopicSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SnsTopicSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4918,31 +5368,31 @@ func (s *jsiiProxy_SnsTopicSubscription) ToTerraform() interface{} {
 // AWS Simple Notification Service.
 type SnsTopicSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#endpoint SnsTopicSubscription#endpoint}.
-	Endpoint *string `json:"endpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#protocol SnsTopicSubscription#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#topic_arn SnsTopicSubscription#topic_arn}.
-	TopicArn *string `json:"topicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#confirmation_timeout_in_minutes SnsTopicSubscription#confirmation_timeout_in_minutes}.
-	ConfirmationTimeoutInMinutes *float64 `json:"confirmationTimeoutInMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#delivery_policy SnsTopicSubscription#delivery_policy}.
-	DeliveryPolicy *string `json:"deliveryPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#endpoint_auto_confirms SnsTopicSubscription#endpoint_auto_confirms}.
-	EndpointAutoConfirms interface{} `json:"endpointAutoConfirms"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#filter_policy SnsTopicSubscription#filter_policy}.
-	FilterPolicy *string `json:"filterPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#raw_message_delivery SnsTopicSubscription#raw_message_delivery}.
-	RawMessageDelivery interface{} `json:"rawMessageDelivery"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#redrive_policy SnsTopicSubscription#redrive_policy}.
-	RedrivePolicy *string `json:"redrivePolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html#subscription_role_arn SnsTopicSubscription#subscription_role_arn}.
-	SubscriptionRoleArn *string `json:"subscriptionRoleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#endpoint SnsTopicSubscription#endpoint}.
+	Endpoint *string `json:"endpoint" yaml:"endpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#protocol SnsTopicSubscription#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#topic_arn SnsTopicSubscription#topic_arn}.
+	TopicArn *string `json:"topicArn" yaml:"topicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#confirmation_timeout_in_minutes SnsTopicSubscription#confirmation_timeout_in_minutes}.
+	ConfirmationTimeoutInMinutes *float64 `json:"confirmationTimeoutInMinutes" yaml:"confirmationTimeoutInMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#delivery_policy SnsTopicSubscription#delivery_policy}.
+	DeliveryPolicy *string `json:"deliveryPolicy" yaml:"deliveryPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#endpoint_auto_confirms SnsTopicSubscription#endpoint_auto_confirms}.
+	EndpointAutoConfirms interface{} `json:"endpointAutoConfirms" yaml:"endpointAutoConfirms"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#filter_policy SnsTopicSubscription#filter_policy}.
+	FilterPolicy *string `json:"filterPolicy" yaml:"filterPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#raw_message_delivery SnsTopicSubscription#raw_message_delivery}.
+	RawMessageDelivery interface{} `json:"rawMessageDelivery" yaml:"rawMessageDelivery"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#redrive_policy SnsTopicSubscription#redrive_policy}.
+	RedrivePolicy *string `json:"redrivePolicy" yaml:"redrivePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription#subscription_role_arn SnsTopicSubscription#subscription_role_arn}.
+	SubscriptionRoleArn *string `json:"subscriptionRoleArn" yaml:"subscriptionRoleArn"`
 }

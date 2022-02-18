@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/amplify/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html aws_amplify_app}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_app aws_amplify_app}.
 type AmplifyApp interface {
 	cdktf.TerraformResource
 	AccessToken() *string
@@ -29,11 +29,11 @@ type AmplifyApp interface {
 	BuildSpecInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	CustomRule() *[]*AmplifyAppCustomRule
-	SetCustomRule(val *[]*AmplifyAppCustomRule)
-	CustomRuleInput() *[]*AmplifyAppCustomRule
+	Count() *float64
+	SetCount(val *float64)
+	CustomRule() interface{}
+	SetCustomRule(val interface{})
+	CustomRuleInput() interface{}
 	DefaultDomain() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -52,9 +52,9 @@ type AmplifyApp interface {
 	EnableBranchAutoDeletion() interface{}
 	SetEnableBranchAutoDeletion(val interface{})
 	EnableBranchAutoDeletionInput() interface{}
-	EnvironmentVariables() interface{}
-	SetEnvironmentVariables(val interface{})
-	EnvironmentVariablesInput() interface{}
+	EnvironmentVariables() *map[string]*string
+	SetEnvironmentVariables(val *map[string]*string)
+	EnvironmentVariablesInput() *map[string]*string
 	Fqn() *string
 	FriendlyUniqueId() *string
 	IamServiceRoleArn() *string
@@ -79,20 +79,25 @@ type AmplifyApp interface {
 	Repository() *string
 	SetRepository(val *string)
 	RepositoryInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ProductionBranch(index *string) AmplifyAppProductionBranch
@@ -257,8 +262,8 @@ func (j *jsiiProxy_AmplifyApp) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyApp) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -267,8 +272,8 @@ func (j *jsiiProxy_AmplifyApp) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) CustomRule() *[]*AmplifyAppCustomRule {
-	var returns *[]*AmplifyAppCustomRule
+func (j *jsiiProxy_AmplifyApp) CustomRule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customRule",
@@ -277,8 +282,8 @@ func (j *jsiiProxy_AmplifyApp) CustomRule() *[]*AmplifyAppCustomRule {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) CustomRuleInput() *[]*AmplifyAppCustomRule {
-	var returns *[]*AmplifyAppCustomRule
+func (j *jsiiProxy_AmplifyApp) CustomRuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customRuleInput",
@@ -407,8 +412,8 @@ func (j *jsiiProxy_AmplifyApp) EnableBranchAutoDeletionInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) EnvironmentVariables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyApp) EnvironmentVariables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environmentVariables",
@@ -417,8 +422,8 @@ func (j *jsiiProxy_AmplifyApp) EnvironmentVariables() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) EnvironmentVariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyApp) EnvironmentVariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environmentVariablesInput",
@@ -597,8 +602,8 @@ func (j *jsiiProxy_AmplifyApp) RepositoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyApp) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -607,8 +612,8 @@ func (j *jsiiProxy_AmplifyApp) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyApp) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -617,8 +622,8 @@ func (j *jsiiProxy_AmplifyApp) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyApp) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -627,8 +632,8 @@ func (j *jsiiProxy_AmplifyApp) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyApp) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyApp) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -667,7 +672,7 @@ func (j *jsiiProxy_AmplifyApp) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html aws_amplify_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_app aws_amplify_app} Resource.
 func NewAmplifyApp(scope constructs.Construct, id *string, config *AmplifyAppConfig) AmplifyApp {
 	_init_.Initialize()
 
@@ -682,7 +687,7 @@ func NewAmplifyApp(scope constructs.Construct, id *string, config *AmplifyAppCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html aws_amplify_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_app aws_amplify_app} Resource.
 func NewAmplifyApp_Override(a AmplifyApp, scope constructs.Construct, id *string, config *AmplifyAppConfig) {
 	_init_.Initialize()
 
@@ -725,7 +730,7 @@ func (j *jsiiProxy_AmplifyApp) SetBuildSpec(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyApp) SetCount(val interface{}) {
+func (j *jsiiProxy_AmplifyApp) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -733,7 +738,7 @@ func (j *jsiiProxy_AmplifyApp) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyApp) SetCustomRule(val *[]*AmplifyAppCustomRule) {
+func (j *jsiiProxy_AmplifyApp) SetCustomRule(val interface{}) {
 	_jsii_.Set(
 		j,
 		"customRule",
@@ -789,7 +794,7 @@ func (j *jsiiProxy_AmplifyApp) SetEnableBranchAutoDeletion(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyApp) SetEnvironmentVariables(val interface{}) {
+func (j *jsiiProxy_AmplifyApp) SetEnvironmentVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"environmentVariables",
@@ -853,7 +858,7 @@ func (j *jsiiProxy_AmplifyApp) SetRepository(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyApp) SetTags(val interface{}) {
+func (j *jsiiProxy_AmplifyApp) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -861,7 +866,7 @@ func (j *jsiiProxy_AmplifyApp) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyApp) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AmplifyApp) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -909,12 +914,40 @@ func (a *jsiiProxy_AmplifyApp) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyApp) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyApp) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyApp) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -951,12 +984,54 @@ func (a *jsiiProxy_AmplifyApp) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyApp) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyApp) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyApp) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyApp) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1220,26 +1295,26 @@ func (a *jsiiProxy_AmplifyApp) ToTerraform() interface{} {
 }
 
 type AmplifyAppAutoBranchCreationConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#basic_auth_credentials AmplifyApp#basic_auth_credentials}.
-	BasicAuthCredentials *string `json:"basicAuthCredentials"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#build_spec AmplifyApp#build_spec}.
-	BuildSpec *string `json:"buildSpec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_auto_build AmplifyApp#enable_auto_build}.
-	EnableAutoBuild interface{} `json:"enableAutoBuild"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_basic_auth AmplifyApp#enable_basic_auth}.
-	EnableBasicAuth interface{} `json:"enableBasicAuth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_performance_mode AmplifyApp#enable_performance_mode}.
-	EnablePerformanceMode interface{} `json:"enablePerformanceMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_pull_request_preview AmplifyApp#enable_pull_request_preview}.
-	EnablePullRequestPreview interface{} `json:"enablePullRequestPreview"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#environment_variables AmplifyApp#environment_variables}.
-	EnvironmentVariables interface{} `json:"environmentVariables"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#framework AmplifyApp#framework}.
-	Framework *string `json:"framework"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#pull_request_environment_name AmplifyApp#pull_request_environment_name}.
-	PullRequestEnvironmentName *string `json:"pullRequestEnvironmentName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#stage AmplifyApp#stage}.
-	Stage *string `json:"stage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#basic_auth_credentials AmplifyApp#basic_auth_credentials}.
+	BasicAuthCredentials *string `json:"basicAuthCredentials" yaml:"basicAuthCredentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#build_spec AmplifyApp#build_spec}.
+	BuildSpec *string `json:"buildSpec" yaml:"buildSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_auto_build AmplifyApp#enable_auto_build}.
+	EnableAutoBuild interface{} `json:"enableAutoBuild" yaml:"enableAutoBuild"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_basic_auth AmplifyApp#enable_basic_auth}.
+	EnableBasicAuth interface{} `json:"enableBasicAuth" yaml:"enableBasicAuth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_performance_mode AmplifyApp#enable_performance_mode}.
+	EnablePerformanceMode interface{} `json:"enablePerformanceMode" yaml:"enablePerformanceMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_pull_request_preview AmplifyApp#enable_pull_request_preview}.
+	EnablePullRequestPreview interface{} `json:"enablePullRequestPreview" yaml:"enablePullRequestPreview"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#environment_variables AmplifyApp#environment_variables}.
+	EnvironmentVariables *map[string]*string `json:"environmentVariables" yaml:"environmentVariables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#framework AmplifyApp#framework}.
+	Framework *string `json:"framework" yaml:"framework"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#pull_request_environment_name AmplifyApp#pull_request_environment_name}.
+	PullRequestEnvironmentName *string `json:"pullRequestEnvironmentName" yaml:"pullRequestEnvironmentName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#stage AmplifyApp#stage}.
+	Stage *string `json:"stage" yaml:"stage"`
 }
 
 type AmplifyAppAutoBranchCreationConfigOutputReference interface {
@@ -1262,9 +1337,9 @@ type AmplifyAppAutoBranchCreationConfigOutputReference interface {
 	EnablePullRequestPreview() interface{}
 	SetEnablePullRequestPreview(val interface{})
 	EnablePullRequestPreviewInput() interface{}
-	EnvironmentVariables() interface{}
-	SetEnvironmentVariables(val interface{})
-	EnvironmentVariablesInput() interface{}
+	EnvironmentVariables() *map[string]*string
+	SetEnvironmentVariables(val *map[string]*string)
+	EnvironmentVariablesInput() *map[string]*string
 	Framework() *string
 	SetFramework(val *string)
 	FrameworkInput() *string
@@ -1280,12 +1355,17 @@ type AmplifyAppAutoBranchCreationConfigOutputReference interface {
 	StageInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBasicAuthCredentials()
@@ -1425,8 +1505,8 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) EnablePull
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) EnvironmentVariables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) EnvironmentVariables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environmentVariables",
@@ -1435,8 +1515,8 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) Environmen
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) EnvironmentVariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) EnvironmentVariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environmentVariablesInput",
@@ -1535,8 +1615,8 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1545,7 +1625,7 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) TerraformR
 	return returns
 }
 
-func NewAmplifyAppAutoBranchCreationConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AmplifyAppAutoBranchCreationConfigOutputReference {
+func NewAmplifyAppAutoBranchCreationConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AmplifyAppAutoBranchCreationConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference{}
@@ -1559,7 +1639,7 @@ func NewAmplifyAppAutoBranchCreationConfigOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewAmplifyAppAutoBranchCreationConfigOutputReference_Override(a AmplifyAppAutoBranchCreationConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAmplifyAppAutoBranchCreationConfigOutputReference_Override(a AmplifyAppAutoBranchCreationConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1617,7 +1697,7 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetEnableP
 	)
 }
 
-func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetEnvironmentVariables(val interface{}) {
+func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetEnvironmentVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"environmentVariables",
@@ -1673,7 +1753,7 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1682,12 +1762,40 @@ func (j *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1724,12 +1832,54 @@ func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetNumberA
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1848,66 +1998,66 @@ func (a *jsiiProxy_AmplifyAppAutoBranchCreationConfigOutputReference) ResetStage
 // AWS Amplify.
 type AmplifyAppConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#name AmplifyApp#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#access_token AmplifyApp#access_token}.
-	AccessToken *string `json:"accessToken"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#name AmplifyApp#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#access_token AmplifyApp#access_token}.
+	AccessToken *string `json:"accessToken" yaml:"accessToken"`
 	// auto_branch_creation_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#auto_branch_creation_config AmplifyApp#auto_branch_creation_config}
-	AutoBranchCreationConfig *AmplifyAppAutoBranchCreationConfig `json:"autoBranchCreationConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#auto_branch_creation_patterns AmplifyApp#auto_branch_creation_patterns}.
-	AutoBranchCreationPatterns *[]*string `json:"autoBranchCreationPatterns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#basic_auth_credentials AmplifyApp#basic_auth_credentials}.
-	BasicAuthCredentials *string `json:"basicAuthCredentials"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#build_spec AmplifyApp#build_spec}.
-	BuildSpec *string `json:"buildSpec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#auto_branch_creation_config AmplifyApp#auto_branch_creation_config}
+	AutoBranchCreationConfig *AmplifyAppAutoBranchCreationConfig `json:"autoBranchCreationConfig" yaml:"autoBranchCreationConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#auto_branch_creation_patterns AmplifyApp#auto_branch_creation_patterns}.
+	AutoBranchCreationPatterns *[]*string `json:"autoBranchCreationPatterns" yaml:"autoBranchCreationPatterns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#basic_auth_credentials AmplifyApp#basic_auth_credentials}.
+	BasicAuthCredentials *string `json:"basicAuthCredentials" yaml:"basicAuthCredentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#build_spec AmplifyApp#build_spec}.
+	BuildSpec *string `json:"buildSpec" yaml:"buildSpec"`
 	// custom_rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#custom_rule AmplifyApp#custom_rule}
-	CustomRule *[]*AmplifyAppCustomRule `json:"customRule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#description AmplifyApp#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_auto_branch_creation AmplifyApp#enable_auto_branch_creation}.
-	EnableAutoBranchCreation interface{} `json:"enableAutoBranchCreation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_basic_auth AmplifyApp#enable_basic_auth}.
-	EnableBasicAuth interface{} `json:"enableBasicAuth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_branch_auto_build AmplifyApp#enable_branch_auto_build}.
-	EnableBranchAutoBuild interface{} `json:"enableBranchAutoBuild"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#enable_branch_auto_deletion AmplifyApp#enable_branch_auto_deletion}.
-	EnableBranchAutoDeletion interface{} `json:"enableBranchAutoDeletion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#environment_variables AmplifyApp#environment_variables}.
-	EnvironmentVariables interface{} `json:"environmentVariables"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#iam_service_role_arn AmplifyApp#iam_service_role_arn}.
-	IamServiceRoleArn *string `json:"iamServiceRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#oauth_token AmplifyApp#oauth_token}.
-	OauthToken *string `json:"oauthToken"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#platform AmplifyApp#platform}.
-	Platform *string `json:"platform"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#repository AmplifyApp#repository}.
-	Repository *string `json:"repository"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#tags AmplifyApp#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#tags_all AmplifyApp#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#custom_rule AmplifyApp#custom_rule}
+	CustomRule interface{} `json:"customRule" yaml:"customRule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#description AmplifyApp#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_auto_branch_creation AmplifyApp#enable_auto_branch_creation}.
+	EnableAutoBranchCreation interface{} `json:"enableAutoBranchCreation" yaml:"enableAutoBranchCreation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_basic_auth AmplifyApp#enable_basic_auth}.
+	EnableBasicAuth interface{} `json:"enableBasicAuth" yaml:"enableBasicAuth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_branch_auto_build AmplifyApp#enable_branch_auto_build}.
+	EnableBranchAutoBuild interface{} `json:"enableBranchAutoBuild" yaml:"enableBranchAutoBuild"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#enable_branch_auto_deletion AmplifyApp#enable_branch_auto_deletion}.
+	EnableBranchAutoDeletion interface{} `json:"enableBranchAutoDeletion" yaml:"enableBranchAutoDeletion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#environment_variables AmplifyApp#environment_variables}.
+	EnvironmentVariables *map[string]*string `json:"environmentVariables" yaml:"environmentVariables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#iam_service_role_arn AmplifyApp#iam_service_role_arn}.
+	IamServiceRoleArn *string `json:"iamServiceRoleArn" yaml:"iamServiceRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#oauth_token AmplifyApp#oauth_token}.
+	OauthToken *string `json:"oauthToken" yaml:"oauthToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#platform AmplifyApp#platform}.
+	Platform *string `json:"platform" yaml:"platform"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#repository AmplifyApp#repository}.
+	Repository *string `json:"repository" yaml:"repository"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#tags AmplifyApp#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#tags_all AmplifyApp#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type AmplifyAppCustomRule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#source AmplifyApp#source}.
-	Source *string `json:"source"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#target AmplifyApp#target}.
-	Target *string `json:"target"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#condition AmplifyApp#condition}.
-	Condition *string `json:"condition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app.html#status AmplifyApp#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#source AmplifyApp#source}.
+	Source *string `json:"source" yaml:"source"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#target AmplifyApp#target}.
+	Target *string `json:"target" yaml:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#condition AmplifyApp#condition}.
+	Condition *string `json:"condition" yaml:"condition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_app#status AmplifyApp#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type AmplifyAppProductionBranch interface {
@@ -1919,13 +2069,20 @@ type AmplifyAppProductionBranch interface {
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	ThumbnailUrl() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1984,8 +2141,8 @@ func (j *jsiiProxy_AmplifyAppProductionBranch) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyAppProductionBranch) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AmplifyAppProductionBranch) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2004,15 +2161,25 @@ func (j *jsiiProxy_AmplifyAppProductionBranch) ThumbnailUrl() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AmplifyAppProductionBranch) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewAmplifyAppProductionBranch(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) AmplifyAppProductionBranch {
+func NewAmplifyAppProductionBranch(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) AmplifyAppProductionBranch {
 	_init_.Initialize()
 
 	j := jsiiProxy_AmplifyAppProductionBranch{}
 
 	_jsii_.Create(
 		"hashicorp_aws.amplify.AmplifyAppProductionBranch",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2020,12 +2187,12 @@ func NewAmplifyAppProductionBranch(terraformResource cdktf.ITerraformResource, t
 }
 
 // Experimental.
-func NewAmplifyAppProductionBranch_Override(a AmplifyAppProductionBranch, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewAmplifyAppProductionBranch_Override(a AmplifyAppProductionBranch, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.amplify.AmplifyAppProductionBranch",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		a,
 	)
 }
@@ -2046,7 +2213,7 @@ func (j *jsiiProxy_AmplifyAppProductionBranch) SetTerraformAttribute(val *string
 	)
 }
 
-func (j *jsiiProxy_AmplifyAppProductionBranch) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AmplifyAppProductionBranch) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2054,13 +2221,49 @@ func (j *jsiiProxy_AmplifyAppProductionBranch) SetTerraformResource(val cdktf.IT
 	)
 }
 
+func (j *jsiiProxy_AmplifyAppProductionBranch) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (a *jsiiProxy_AmplifyAppProductionBranch) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AmplifyAppProductionBranch) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppProductionBranch) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppProductionBranch) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2097,12 +2300,54 @@ func (a *jsiiProxy_AmplifyAppProductionBranch) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyAppProductionBranch) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppProductionBranch) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyAppProductionBranch) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyAppProductionBranch) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2124,7 +2369,7 @@ func (a *jsiiProxy_AmplifyAppProductionBranch) InterpolationForAttribute(propert
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment.html aws_amplify_backend_environment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment aws_amplify_backend_environment}.
 type AmplifyBackendEnvironment interface {
 	cdktf.TerraformResource
 	AppId() *string
@@ -2133,8 +2378,8 @@ type AmplifyBackendEnvironment interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentArtifacts() *string
@@ -2159,10 +2404,15 @@ type AmplifyBackendEnvironment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDeploymentArtifacts()
@@ -2229,8 +2479,8 @@ func (j *jsiiProxy_AmplifyBackendEnvironment) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBackendEnvironment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBackendEnvironment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2409,7 +2659,7 @@ func (j *jsiiProxy_AmplifyBackendEnvironment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment.html aws_amplify_backend_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment aws_amplify_backend_environment} Resource.
 func NewAmplifyBackendEnvironment(scope constructs.Construct, id *string, config *AmplifyBackendEnvironmentConfig) AmplifyBackendEnvironment {
 	_init_.Initialize()
 
@@ -2424,7 +2674,7 @@ func NewAmplifyBackendEnvironment(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment.html aws_amplify_backend_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment aws_amplify_backend_environment} Resource.
 func NewAmplifyBackendEnvironment_Override(a AmplifyBackendEnvironment, scope constructs.Construct, id *string, config *AmplifyBackendEnvironmentConfig) {
 	_init_.Initialize()
 
@@ -2443,7 +2693,7 @@ func (j *jsiiProxy_AmplifyBackendEnvironment) SetAppId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyBackendEnvironment) SetCount(val interface{}) {
+func (j *jsiiProxy_AmplifyBackendEnvironment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2539,12 +2789,40 @@ func (a *jsiiProxy_AmplifyBackendEnvironment) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyBackendEnvironment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyBackendEnvironment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyBackendEnvironment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2581,12 +2859,54 @@ func (a *jsiiProxy_AmplifyBackendEnvironment) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyBackendEnvironment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyBackendEnvironment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyBackendEnvironment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyBackendEnvironment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2703,24 +3023,24 @@ func (a *jsiiProxy_AmplifyBackendEnvironment) ToTerraform() interface{} {
 // AWS Amplify.
 type AmplifyBackendEnvironmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment.html#app_id AmplifyBackendEnvironment#app_id}.
-	AppId *string `json:"appId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment.html#environment_name AmplifyBackendEnvironment#environment_name}.
-	EnvironmentName *string `json:"environmentName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment.html#deployment_artifacts AmplifyBackendEnvironment#deployment_artifacts}.
-	DeploymentArtifacts *string `json:"deploymentArtifacts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment.html#stack_name AmplifyBackendEnvironment#stack_name}.
-	StackName *string `json:"stackName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment#app_id AmplifyBackendEnvironment#app_id}.
+	AppId *string `json:"appId" yaml:"appId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment#environment_name AmplifyBackendEnvironment#environment_name}.
+	EnvironmentName *string `json:"environmentName" yaml:"environmentName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment#deployment_artifacts AmplifyBackendEnvironment#deployment_artifacts}.
+	DeploymentArtifacts *string `json:"deploymentArtifacts" yaml:"deploymentArtifacts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_backend_environment#stack_name AmplifyBackendEnvironment#stack_name}.
+	StackName *string `json:"stackName" yaml:"stackName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html aws_amplify_branch}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch aws_amplify_branch}.
 type AmplifyBranch interface {
 	cdktf.TerraformResource
 	AppId() *string
@@ -2739,8 +3059,8 @@ type AmplifyBranch interface {
 	BranchNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomDomains() *[]*string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2766,9 +3086,9 @@ type AmplifyBranch interface {
 	EnablePullRequestPreview() interface{}
 	SetEnablePullRequestPreview(val interface{})
 	EnablePullRequestPreviewInput() interface{}
-	EnvironmentVariables() interface{}
-	SetEnvironmentVariables(val interface{})
-	EnvironmentVariablesInput() interface{}
+	EnvironmentVariables() *map[string]*string
+	SetEnvironmentVariables(val *map[string]*string)
+	EnvironmentVariablesInput() *map[string]*string
 	Fqn() *string
 	Framework() *string
 	SetFramework(val *string)
@@ -2788,12 +3108,12 @@ type AmplifyBranch interface {
 	Stage() *string
 	SetStage(val *string)
 	StageInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2801,10 +3121,15 @@ type AmplifyBranch interface {
 	SetTtl(val *string)
 	TtlInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBackendEnvironmentArn()
@@ -2955,8 +3280,8 @@ func (j *jsiiProxy_AmplifyBranch) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBranch) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBranch) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3135,8 +3460,8 @@ func (j *jsiiProxy_AmplifyBranch) EnablePullRequestPreviewInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBranch) EnvironmentVariables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBranch) EnvironmentVariables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environmentVariables",
@@ -3145,8 +3470,8 @@ func (j *jsiiProxy_AmplifyBranch) EnvironmentVariables() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBranch) EnvironmentVariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBranch) EnvironmentVariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"environmentVariablesInput",
@@ -3295,8 +3620,8 @@ func (j *jsiiProxy_AmplifyBranch) StageInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBranch) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBranch) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3305,8 +3630,8 @@ func (j *jsiiProxy_AmplifyBranch) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBranch) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBranch) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3315,8 +3640,8 @@ func (j *jsiiProxy_AmplifyBranch) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBranch) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBranch) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3325,8 +3650,8 @@ func (j *jsiiProxy_AmplifyBranch) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyBranch) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyBranch) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3385,7 +3710,7 @@ func (j *jsiiProxy_AmplifyBranch) TtlInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html aws_amplify_branch} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch aws_amplify_branch} Resource.
 func NewAmplifyBranch(scope constructs.Construct, id *string, config *AmplifyBranchConfig) AmplifyBranch {
 	_init_.Initialize()
 
@@ -3400,7 +3725,7 @@ func NewAmplifyBranch(scope constructs.Construct, id *string, config *AmplifyBra
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html aws_amplify_branch} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch aws_amplify_branch} Resource.
 func NewAmplifyBranch_Override(a AmplifyBranch, scope constructs.Construct, id *string, config *AmplifyBranchConfig) {
 	_init_.Initialize()
 
@@ -3443,7 +3768,7 @@ func (j *jsiiProxy_AmplifyBranch) SetBranchName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyBranch) SetCount(val interface{}) {
+func (j *jsiiProxy_AmplifyBranch) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3515,7 +3840,7 @@ func (j *jsiiProxy_AmplifyBranch) SetEnablePullRequestPreview(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyBranch) SetEnvironmentVariables(val interface{}) {
+func (j *jsiiProxy_AmplifyBranch) SetEnvironmentVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"environmentVariables",
@@ -3563,7 +3888,7 @@ func (j *jsiiProxy_AmplifyBranch) SetStage(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyBranch) SetTags(val interface{}) {
+func (j *jsiiProxy_AmplifyBranch) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3571,7 +3896,7 @@ func (j *jsiiProxy_AmplifyBranch) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyBranch) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AmplifyBranch) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3627,12 +3952,40 @@ func (a *jsiiProxy_AmplifyBranch) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyBranch) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyBranch) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyBranch) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3669,12 +4022,54 @@ func (a *jsiiProxy_AmplifyBranch) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyBranch) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyBranch) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyBranch) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyBranch) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3903,52 +4298,52 @@ func (a *jsiiProxy_AmplifyBranch) ToTerraform() interface{} {
 // AWS Amplify.
 type AmplifyBranchConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#app_id AmplifyBranch#app_id}.
-	AppId *string `json:"appId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#branch_name AmplifyBranch#branch_name}.
-	BranchName *string `json:"branchName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#backend_environment_arn AmplifyBranch#backend_environment_arn}.
-	BackendEnvironmentArn *string `json:"backendEnvironmentArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#basic_auth_credentials AmplifyBranch#basic_auth_credentials}.
-	BasicAuthCredentials *string `json:"basicAuthCredentials"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#description AmplifyBranch#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#display_name AmplifyBranch#display_name}.
-	DisplayName *string `json:"displayName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#enable_auto_build AmplifyBranch#enable_auto_build}.
-	EnableAutoBuild interface{} `json:"enableAutoBuild"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#enable_basic_auth AmplifyBranch#enable_basic_auth}.
-	EnableBasicAuth interface{} `json:"enableBasicAuth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#enable_notification AmplifyBranch#enable_notification}.
-	EnableNotification interface{} `json:"enableNotification"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#enable_performance_mode AmplifyBranch#enable_performance_mode}.
-	EnablePerformanceMode interface{} `json:"enablePerformanceMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#enable_pull_request_preview AmplifyBranch#enable_pull_request_preview}.
-	EnablePullRequestPreview interface{} `json:"enablePullRequestPreview"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#environment_variables AmplifyBranch#environment_variables}.
-	EnvironmentVariables interface{} `json:"environmentVariables"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#framework AmplifyBranch#framework}.
-	Framework *string `json:"framework"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#pull_request_environment_name AmplifyBranch#pull_request_environment_name}.
-	PullRequestEnvironmentName *string `json:"pullRequestEnvironmentName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#stage AmplifyBranch#stage}.
-	Stage *string `json:"stage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#tags AmplifyBranch#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#tags_all AmplifyBranch#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch.html#ttl AmplifyBranch#ttl}.
-	Ttl *string `json:"ttl"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#app_id AmplifyBranch#app_id}.
+	AppId *string `json:"appId" yaml:"appId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#branch_name AmplifyBranch#branch_name}.
+	BranchName *string `json:"branchName" yaml:"branchName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#backend_environment_arn AmplifyBranch#backend_environment_arn}.
+	BackendEnvironmentArn *string `json:"backendEnvironmentArn" yaml:"backendEnvironmentArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#basic_auth_credentials AmplifyBranch#basic_auth_credentials}.
+	BasicAuthCredentials *string `json:"basicAuthCredentials" yaml:"basicAuthCredentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#description AmplifyBranch#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#display_name AmplifyBranch#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#enable_auto_build AmplifyBranch#enable_auto_build}.
+	EnableAutoBuild interface{} `json:"enableAutoBuild" yaml:"enableAutoBuild"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#enable_basic_auth AmplifyBranch#enable_basic_auth}.
+	EnableBasicAuth interface{} `json:"enableBasicAuth" yaml:"enableBasicAuth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#enable_notification AmplifyBranch#enable_notification}.
+	EnableNotification interface{} `json:"enableNotification" yaml:"enableNotification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#enable_performance_mode AmplifyBranch#enable_performance_mode}.
+	EnablePerformanceMode interface{} `json:"enablePerformanceMode" yaml:"enablePerformanceMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#enable_pull_request_preview AmplifyBranch#enable_pull_request_preview}.
+	EnablePullRequestPreview interface{} `json:"enablePullRequestPreview" yaml:"enablePullRequestPreview"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#environment_variables AmplifyBranch#environment_variables}.
+	EnvironmentVariables *map[string]*string `json:"environmentVariables" yaml:"environmentVariables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#framework AmplifyBranch#framework}.
+	Framework *string `json:"framework" yaml:"framework"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#pull_request_environment_name AmplifyBranch#pull_request_environment_name}.
+	PullRequestEnvironmentName *string `json:"pullRequestEnvironmentName" yaml:"pullRequestEnvironmentName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#stage AmplifyBranch#stage}.
+	Stage *string `json:"stage" yaml:"stage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#tags AmplifyBranch#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#tags_all AmplifyBranch#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_branch#ttl AmplifyBranch#ttl}.
+	Ttl *string `json:"ttl" yaml:"ttl"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html aws_amplify_domain_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association aws_amplify_domain_association}.
 type AmplifyDomainAssociation interface {
 	cdktf.TerraformResource
 	AppId() *string
@@ -3958,8 +4353,8 @@ type AmplifyDomainAssociation interface {
 	CdktfStack() cdktf.TerraformStack
 	CertificateVerificationDnsRecord() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -3974,9 +4369,9 @@ type AmplifyDomainAssociation interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	SubDomain() *[]*AmplifyDomainAssociationSubDomain
-	SetSubDomain(val *[]*AmplifyDomainAssociationSubDomain)
-	SubDomainInput() *[]*AmplifyDomainAssociationSubDomain
+	SubDomain() interface{}
+	SetSubDomain(val interface{})
+	SubDomainInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -3984,10 +4379,15 @@ type AmplifyDomainAssociation interface {
 	SetWaitForVerification(val interface{})
 	WaitForVerificationInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4063,8 +4463,8 @@ func (j *jsiiProxy_AmplifyDomainAssociation) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyDomainAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyDomainAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4173,8 +4573,8 @@ func (j *jsiiProxy_AmplifyDomainAssociation) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyDomainAssociation) SubDomain() *[]*AmplifyDomainAssociationSubDomain {
-	var returns *[]*AmplifyDomainAssociationSubDomain
+func (j *jsiiProxy_AmplifyDomainAssociation) SubDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subDomain",
@@ -4183,8 +4583,8 @@ func (j *jsiiProxy_AmplifyDomainAssociation) SubDomain() *[]*AmplifyDomainAssoci
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyDomainAssociation) SubDomainInput() *[]*AmplifyDomainAssociationSubDomain {
-	var returns *[]*AmplifyDomainAssociationSubDomain
+func (j *jsiiProxy_AmplifyDomainAssociation) SubDomainInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"subDomainInput",
@@ -4243,7 +4643,7 @@ func (j *jsiiProxy_AmplifyDomainAssociation) WaitForVerificationInput() interfac
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html aws_amplify_domain_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association aws_amplify_domain_association} Resource.
 func NewAmplifyDomainAssociation(scope constructs.Construct, id *string, config *AmplifyDomainAssociationConfig) AmplifyDomainAssociation {
 	_init_.Initialize()
 
@@ -4258,7 +4658,7 @@ func NewAmplifyDomainAssociation(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html aws_amplify_domain_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association aws_amplify_domain_association} Resource.
 func NewAmplifyDomainAssociation_Override(a AmplifyDomainAssociation, scope constructs.Construct, id *string, config *AmplifyDomainAssociationConfig) {
 	_init_.Initialize()
 
@@ -4277,7 +4677,7 @@ func (j *jsiiProxy_AmplifyDomainAssociation) SetAppId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyDomainAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_AmplifyDomainAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4317,7 +4717,7 @@ func (j *jsiiProxy_AmplifyDomainAssociation) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_AmplifyDomainAssociation) SetSubDomain(val *[]*AmplifyDomainAssociationSubDomain) {
+func (j *jsiiProxy_AmplifyDomainAssociation) SetSubDomain(val interface{}) {
 	_jsii_.Set(
 		j,
 		"subDomain",
@@ -4373,12 +4773,40 @@ func (a *jsiiProxy_AmplifyDomainAssociation) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyDomainAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyDomainAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyDomainAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4415,12 +4843,54 @@ func (a *jsiiProxy_AmplifyDomainAssociation) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyDomainAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyDomainAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyDomainAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyDomainAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4529,33 +4999,33 @@ func (a *jsiiProxy_AmplifyDomainAssociation) ToTerraform() interface{} {
 // AWS Amplify.
 type AmplifyDomainAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html#app_id AmplifyDomainAssociation#app_id}.
-	AppId *string `json:"appId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html#domain_name AmplifyDomainAssociation#domain_name}.
-	DomainName *string `json:"domainName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association#app_id AmplifyDomainAssociation#app_id}.
+	AppId *string `json:"appId" yaml:"appId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association#domain_name AmplifyDomainAssociation#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
 	// sub_domain block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html#sub_domain AmplifyDomainAssociation#sub_domain}
-	SubDomain *[]*AmplifyDomainAssociationSubDomain `json:"subDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html#wait_for_verification AmplifyDomainAssociation#wait_for_verification}.
-	WaitForVerification interface{} `json:"waitForVerification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association#sub_domain AmplifyDomainAssociation#sub_domain}
+	SubDomain interface{} `json:"subDomain" yaml:"subDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association#wait_for_verification AmplifyDomainAssociation#wait_for_verification}.
+	WaitForVerification interface{} `json:"waitForVerification" yaml:"waitForVerification"`
 }
 
 type AmplifyDomainAssociationSubDomain struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html#branch_name AmplifyDomainAssociation#branch_name}.
-	BranchName *string `json:"branchName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association.html#prefix AmplifyDomainAssociation#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association#branch_name AmplifyDomainAssociation#branch_name}.
+	BranchName *string `json:"branchName" yaml:"branchName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_domain_association#prefix AmplifyDomainAssociation#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook.html aws_amplify_webhook}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook aws_amplify_webhook}.
 type AmplifyWebhook interface {
 	cdktf.TerraformResource
 	AppId() *string
@@ -4567,8 +5037,8 @@ type AmplifyWebhook interface {
 	BranchNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -4588,10 +5058,15 @@ type AmplifyWebhook interface {
 	TerraformResourceType() *string
 	Url() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -4677,8 +5152,8 @@ func (j *jsiiProxy_AmplifyWebhook) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_AmplifyWebhook) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AmplifyWebhook) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4827,7 +5302,7 @@ func (j *jsiiProxy_AmplifyWebhook) Url() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook.html aws_amplify_webhook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook aws_amplify_webhook} Resource.
 func NewAmplifyWebhook(scope constructs.Construct, id *string, config *AmplifyWebhookConfig) AmplifyWebhook {
 	_init_.Initialize()
 
@@ -4842,7 +5317,7 @@ func NewAmplifyWebhook(scope constructs.Construct, id *string, config *AmplifyWe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook.html aws_amplify_webhook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook aws_amplify_webhook} Resource.
 func NewAmplifyWebhook_Override(a AmplifyWebhook, scope constructs.Construct, id *string, config *AmplifyWebhookConfig) {
 	_init_.Initialize()
 
@@ -4869,7 +5344,7 @@ func (j *jsiiProxy_AmplifyWebhook) SetBranchName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AmplifyWebhook) SetCount(val interface{}) {
+func (j *jsiiProxy_AmplifyWebhook) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4949,12 +5424,40 @@ func (a *jsiiProxy_AmplifyWebhook) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyWebhook) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyWebhook) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyWebhook) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4991,12 +5494,54 @@ func (a *jsiiProxy_AmplifyWebhook) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (a *jsiiProxy_AmplifyWebhook) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyWebhook) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AmplifyWebhook) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AmplifyWebhook) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5105,17 +5650,17 @@ func (a *jsiiProxy_AmplifyWebhook) ToTerraform() interface{} {
 // AWS Amplify.
 type AmplifyWebhookConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook.html#app_id AmplifyWebhook#app_id}.
-	AppId *string `json:"appId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook.html#branch_name AmplifyWebhook#branch_name}.
-	BranchName *string `json:"branchName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook.html#description AmplifyWebhook#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook#app_id AmplifyWebhook#app_id}.
+	AppId *string `json:"appId" yaml:"appId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook#branch_name AmplifyWebhook#branch_name}.
+	BranchName *string `json:"branchName" yaml:"branchName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/amplify_webhook#description AmplifyWebhook#description}.
+	Description *string `json:"description" yaml:"description"`
 }

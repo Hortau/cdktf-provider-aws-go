@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/lambdafunction/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias.html aws_lambda_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias aws_lambda_alias}.
 type DataAwsLambdaAlias interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -41,10 +41,15 @@ type DataAwsLambdaAlias interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -89,8 +94,8 @@ func (j *jsiiProxy_DataAwsLambdaAlias) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -279,7 +284,7 @@ func (j *jsiiProxy_DataAwsLambdaAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias.html aws_lambda_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias aws_lambda_alias} Data Source.
 func NewDataAwsLambdaAlias(scope constructs.Construct, id *string, config *DataAwsLambdaAliasConfig) DataAwsLambdaAlias {
 	_init_.Initialize()
 
@@ -294,7 +299,7 @@ func NewDataAwsLambdaAlias(scope constructs.Construct, id *string, config *DataA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias.html aws_lambda_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias aws_lambda_alias} Data Source.
 func NewDataAwsLambdaAlias_Override(d DataAwsLambdaAlias, scope constructs.Construct, id *string, config *DataAwsLambdaAliasConfig) {
 	_init_.Initialize()
 
@@ -305,7 +310,7 @@ func NewDataAwsLambdaAlias_Override(d DataAwsLambdaAlias, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLambdaAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -393,12 +398,40 @@ func (d *jsiiProxy_DataAwsLambdaAlias) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -435,12 +468,54 @@ func (d *jsiiProxy_DataAwsLambdaAlias) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -541,20 +616,20 @@ func (d *jsiiProxy_DataAwsLambdaAlias) ToTerraform() interface{} {
 // AWS Lambda.
 type DataAwsLambdaAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias.html#function_name DataAwsLambdaAlias#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias.html#name DataAwsLambdaAlias#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias#function_name DataAwsLambdaAlias#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_alias#name DataAwsLambdaAlias#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config.html aws_lambda_code_signing_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config aws_lambda_code_signing_config}.
 type DataAwsLambdaCodeSigningConfig interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -563,8 +638,8 @@ type DataAwsLambdaCodeSigningConfig interface {
 	CdktfStack() cdktf.TerraformStack
 	ConfigId() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -583,10 +658,15 @@ type DataAwsLambdaCodeSigningConfig interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	AllowedPublishers(index *string) DataAwsLambdaCodeSigningConfigAllowedPublishers
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	Policies(index *string) DataAwsLambdaCodeSigningConfigPolicies
@@ -652,8 +732,8 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfig) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaCodeSigningConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -792,7 +872,7 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfig) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config.html aws_lambda_code_signing_config} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config aws_lambda_code_signing_config} Data Source.
 func NewDataAwsLambdaCodeSigningConfig(scope constructs.Construct, id *string, config *DataAwsLambdaCodeSigningConfigConfig) DataAwsLambdaCodeSigningConfig {
 	_init_.Initialize()
 
@@ -807,7 +887,7 @@ func NewDataAwsLambdaCodeSigningConfig(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config.html aws_lambda_code_signing_config} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config aws_lambda_code_signing_config} Data Source.
 func NewDataAwsLambdaCodeSigningConfig_Override(d DataAwsLambdaCodeSigningConfig, scope constructs.Construct, id *string, config *DataAwsLambdaCodeSigningConfigConfig) {
 	_init_.Initialize()
 
@@ -826,7 +906,7 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfig) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaCodeSigningConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -911,12 +991,40 @@ func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) AllowedPublishers(index *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -953,12 +1061,54 @@ func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1076,12 +1226,19 @@ type DataAwsLambdaCodeSigningConfigAllowedPublishers interface {
 	SigningProfileVersionArns() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1120,8 +1277,8 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1130,15 +1287,25 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) TerraformRes
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLambdaCodeSigningConfigAllowedPublishers(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLambdaCodeSigningConfigAllowedPublishers {
+func NewDataAwsLambdaCodeSigningConfigAllowedPublishers(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLambdaCodeSigningConfigAllowedPublishers {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigAllowedPublishers",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1146,12 +1313,12 @@ func NewDataAwsLambdaCodeSigningConfigAllowedPublishers(terraformResource cdktf.
 }
 
 // Experimental.
-func NewDataAwsLambdaCodeSigningConfigAllowedPublishers_Override(d DataAwsLambdaCodeSigningConfigAllowedPublishers, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLambdaCodeSigningConfigAllowedPublishers_Override(d DataAwsLambdaCodeSigningConfigAllowedPublishers, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigAllowedPublishers",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1172,7 +1339,7 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1180,13 +1347,49 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) SetTerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1223,12 +1426,54 @@ func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1253,15 +1498,15 @@ func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigAllowedPublishers) Interpolatio
 // AWS Lambda.
 type DataAwsLambdaCodeSigningConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config.html#arn DataAwsLambdaCodeSigningConfig#arn}.
-	Arn *string `json:"arn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_code_signing_config#arn DataAwsLambdaCodeSigningConfig#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 }
 
 type DataAwsLambdaCodeSigningConfigPolicies interface {
@@ -1270,13 +1515,20 @@ type DataAwsLambdaCodeSigningConfigPolicies interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UntrustedArtifactOnDeployment() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1305,8 +1557,8 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1325,15 +1577,25 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) UntrustedArtifactOnDe
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLambdaCodeSigningConfigPolicies(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLambdaCodeSigningConfigPolicies {
+func NewDataAwsLambdaCodeSigningConfigPolicies(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLambdaCodeSigningConfigPolicies {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigPolicies",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1341,12 +1603,12 @@ func NewDataAwsLambdaCodeSigningConfigPolicies(terraformResource cdktf.ITerrafor
 }
 
 // Experimental.
-func NewDataAwsLambdaCodeSigningConfigPolicies_Override(d DataAwsLambdaCodeSigningConfigPolicies, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLambdaCodeSigningConfigPolicies_Override(d DataAwsLambdaCodeSigningConfigPolicies, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaCodeSigningConfigPolicies",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1367,7 +1629,7 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1375,13 +1637,49 @@ func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) SetTerraformResource(
 	)
 }
 
+func (j *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1418,12 +1716,54 @@ func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetNumberAttribute(te
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1445,7 +1785,7 @@ func (d *jsiiProxy_DataAwsLambdaCodeSigningConfigPolicies) InterpolationForAttri
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_function.html aws_lambda_function}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_function aws_lambda_function}.
 type DataAwsLambdaFunction interface {
 	cdktf.TerraformDataSource
 	Architectures() *[]*string
@@ -1453,8 +1793,8 @@ type DataAwsLambdaFunction interface {
 	CdktfStack() cdktf.TerraformStack
 	CodeSigningConfigArn() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1488,9 +1828,9 @@ type DataAwsLambdaFunction interface {
 	SigningProfileVersionArn() *string
 	SourceCodeHash() *string
 	SourceCodeSize() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1500,10 +1840,15 @@ type DataAwsLambdaFunction interface {
 	DeadLetterConfig(index *string) DataAwsLambdaFunctionDeadLetterConfig
 	Environment(index *string) DataAwsLambdaFunctionEnvironment
 	FileSystemConfig(index *string) DataAwsLambdaFunctionFileSystemConfig
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1572,8 +1917,8 @@ func (j *jsiiProxy_DataAwsLambdaFunction) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaFunction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1862,8 +2207,8 @@ func (j *jsiiProxy_DataAwsLambdaFunction) SourceCodeSize() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunction) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaFunction) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1872,8 +2217,8 @@ func (j *jsiiProxy_DataAwsLambdaFunction) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunction) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaFunction) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1932,7 +2277,7 @@ func (j *jsiiProxy_DataAwsLambdaFunction) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_function.html aws_lambda_function} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_function aws_lambda_function} Data Source.
 func NewDataAwsLambdaFunction(scope constructs.Construct, id *string, config *DataAwsLambdaFunctionConfig) DataAwsLambdaFunction {
 	_init_.Initialize()
 
@@ -1947,7 +2292,7 @@ func NewDataAwsLambdaFunction(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_function.html aws_lambda_function} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_function aws_lambda_function} Data Source.
 func NewDataAwsLambdaFunction_Override(d DataAwsLambdaFunction, scope constructs.Construct, id *string, config *DataAwsLambdaFunctionConfig) {
 	_init_.Initialize()
 
@@ -1958,7 +2303,7 @@ func NewDataAwsLambdaFunction_Override(d DataAwsLambdaFunction, scope constructs
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunction) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLambdaFunction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2006,7 +2351,7 @@ func (j *jsiiProxy_DataAwsLambdaFunction) SetQualifier(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunction) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsLambdaFunction) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2093,12 +2438,40 @@ func (d *jsiiProxy_DataAwsLambdaFunction) FileSystemConfig(index *string) DataAw
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaFunction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2135,12 +2508,54 @@ func (d *jsiiProxy_DataAwsLambdaFunction) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaFunction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2283,19 +2698,19 @@ func (d *jsiiProxy_DataAwsLambdaFunction) VpcConfig(index *string) DataAwsLambda
 // AWS Lambda.
 type DataAwsLambdaFunctionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_function.html#function_name DataAwsLambdaFunction#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_function.html#qualifier DataAwsLambdaFunction#qualifier}.
-	Qualifier *string `json:"qualifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_function.html#tags DataAwsLambdaFunction#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_function#function_name DataAwsLambdaFunction#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_function#qualifier DataAwsLambdaFunction#qualifier}.
+	Qualifier *string `json:"qualifier" yaml:"qualifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_function#tags DataAwsLambdaFunction#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsLambdaFunctionDeadLetterConfig interface {
@@ -2305,12 +2720,19 @@ type DataAwsLambdaFunctionDeadLetterConfig interface {
 	TargetArn() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2349,8 +2771,8 @@ func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2359,15 +2781,25 @@ func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLambdaFunctionDeadLetterConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLambdaFunctionDeadLetterConfig {
+func NewDataAwsLambdaFunctionDeadLetterConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLambdaFunctionDeadLetterConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionDeadLetterConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2375,12 +2807,12 @@ func NewDataAwsLambdaFunctionDeadLetterConfig(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewDataAwsLambdaFunctionDeadLetterConfig_Override(d DataAwsLambdaFunctionDeadLetterConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLambdaFunctionDeadLetterConfig_Override(d DataAwsLambdaFunctionDeadLetterConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionDeadLetterConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2401,7 +2833,7 @@ func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2409,13 +2841,49 @@ func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2452,12 +2920,54 @@ func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionDeadLetterConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2485,13 +2995,20 @@ type DataAwsLambdaFunctionEnvironment interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	Variables() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Variables() *map[string]*string
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2520,8 +3037,8 @@ func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2530,8 +3047,8 @@ func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) TerraformResource() cdktf.I
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) Variables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) Variables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"variables",
@@ -2540,15 +3057,25 @@ func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) Variables() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLambdaFunctionEnvironment(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLambdaFunctionEnvironment {
+func NewDataAwsLambdaFunctionEnvironment(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLambdaFunctionEnvironment {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLambdaFunctionEnvironment{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionEnvironment",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2556,12 +3083,12 @@ func NewDataAwsLambdaFunctionEnvironment(terraformResource cdktf.ITerraformResou
 }
 
 // Experimental.
-func NewDataAwsLambdaFunctionEnvironment_Override(d DataAwsLambdaFunctionEnvironment, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLambdaFunctionEnvironment_Override(d DataAwsLambdaFunctionEnvironment, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionEnvironment",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2582,7 +3109,7 @@ func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2590,13 +3117,49 @@ func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) SetTerraformResource(val cd
 	)
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionEnvironment) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2633,12 +3196,54 @@ func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionEnvironment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2668,12 +3273,19 @@ type DataAwsLambdaFunctionFileSystemConfig interface {
 	LocalMountPath() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2722,8 +3334,8 @@ func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2732,15 +3344,25 @@ func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLambdaFunctionFileSystemConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLambdaFunctionFileSystemConfig {
+func NewDataAwsLambdaFunctionFileSystemConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLambdaFunctionFileSystemConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLambdaFunctionFileSystemConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionFileSystemConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2748,12 +3370,12 @@ func NewDataAwsLambdaFunctionFileSystemConfig(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewDataAwsLambdaFunctionFileSystemConfig_Override(d DataAwsLambdaFunctionFileSystemConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLambdaFunctionFileSystemConfig_Override(d DataAwsLambdaFunctionFileSystemConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionFileSystemConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2774,7 +3396,7 @@ func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2782,13 +3404,49 @@ func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2825,12 +3483,54 @@ func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionFileSystemConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2859,12 +3559,19 @@ type DataAwsLambdaFunctionTracingConfig interface {
 	Mode() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2903,8 +3610,8 @@ func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2913,15 +3620,25 @@ func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) TerraformResource() cdktf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLambdaFunctionTracingConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLambdaFunctionTracingConfig {
+func NewDataAwsLambdaFunctionTracingConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLambdaFunctionTracingConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLambdaFunctionTracingConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionTracingConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2929,12 +3646,12 @@ func NewDataAwsLambdaFunctionTracingConfig(terraformResource cdktf.ITerraformRes
 }
 
 // Experimental.
-func NewDataAwsLambdaFunctionTracingConfig_Override(d DataAwsLambdaFunctionTracingConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLambdaFunctionTracingConfig_Override(d DataAwsLambdaFunctionTracingConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionTracingConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2955,7 +3672,7 @@ func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2963,13 +3680,49 @@ func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) SetTerraformResource(val 
 	)
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionTracingConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3006,12 +3759,54 @@ func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionTracingConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3041,13 +3836,20 @@ type DataAwsLambdaFunctionVpcConfig interface {
 	SubnetIds() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -3096,8 +3898,8 @@ func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3116,15 +3918,25 @@ func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) VpcId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLambdaFunctionVpcConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLambdaFunctionVpcConfig {
+func NewDataAwsLambdaFunctionVpcConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLambdaFunctionVpcConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLambdaFunctionVpcConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionVpcConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -3132,12 +3944,12 @@ func NewDataAwsLambdaFunctionVpcConfig(terraformResource cdktf.ITerraformResourc
 }
 
 // Experimental.
-func NewDataAwsLambdaFunctionVpcConfig_Override(d DataAwsLambdaFunctionVpcConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLambdaFunctionVpcConfig_Override(d DataAwsLambdaFunctionVpcConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lambdafunction.DataAwsLambdaFunctionVpcConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -3158,7 +3970,7 @@ func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3166,13 +3978,49 @@ func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) SetTerraformResource(val cdkt
 	)
 }
 
+func (j *jsiiProxy_DataAwsLambdaFunctionVpcConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3209,12 +4057,54 @@ func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3236,13 +4126,13 @@ func (d *jsiiProxy_DataAwsLambdaFunctionVpcConfig) InterpolationForAttribute(pro
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation.html aws_lambda_invocation}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation aws_lambda_invocation}.
 type DataAwsLambdaInvocation interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3268,10 +4158,15 @@ type DataAwsLambdaInvocation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3307,8 +4202,8 @@ func (j *jsiiProxy_DataAwsLambdaInvocation) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaInvocation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaInvocation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3497,7 +4392,7 @@ func (j *jsiiProxy_DataAwsLambdaInvocation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation.html aws_lambda_invocation} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation aws_lambda_invocation} Data Source.
 func NewDataAwsLambdaInvocation(scope constructs.Construct, id *string, config *DataAwsLambdaInvocationConfig) DataAwsLambdaInvocation {
 	_init_.Initialize()
 
@@ -3512,7 +4407,7 @@ func NewDataAwsLambdaInvocation(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation.html aws_lambda_invocation} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation aws_lambda_invocation} Data Source.
 func NewDataAwsLambdaInvocation_Override(d DataAwsLambdaInvocation, scope constructs.Construct, id *string, config *DataAwsLambdaInvocationConfig) {
 	_init_.Initialize()
 
@@ -3523,7 +4418,7 @@ func NewDataAwsLambdaInvocation_Override(d DataAwsLambdaInvocation, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaInvocation) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLambdaInvocation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3619,12 +4514,40 @@ func (d *jsiiProxy_DataAwsLambdaInvocation) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaInvocation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaInvocation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaInvocation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3661,12 +4584,54 @@ func (d *jsiiProxy_DataAwsLambdaInvocation) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaInvocation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaInvocation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaInvocation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaInvocation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3775,22 +4740,22 @@ func (d *jsiiProxy_DataAwsLambdaInvocation) ToTerraform() interface{} {
 // AWS Lambda.
 type DataAwsLambdaInvocationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation.html#function_name DataAwsLambdaInvocation#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation.html#input DataAwsLambdaInvocation#input}.
-	Input *string `json:"input"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation.html#qualifier DataAwsLambdaInvocation#qualifier}.
-	Qualifier *string `json:"qualifier"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation#function_name DataAwsLambdaInvocation#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation#input DataAwsLambdaInvocation#input}.
+	Input *string `json:"input" yaml:"input"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_invocation#qualifier DataAwsLambdaInvocation#qualifier}.
+	Qualifier *string `json:"qualifier" yaml:"qualifier"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version.html aws_lambda_layer_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version aws_lambda_layer_version}.
 type DataAwsLambdaLayerVersion interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -3804,8 +4769,8 @@ type DataAwsLambdaLayerVersion interface {
 	CompatibleRuntimeInput() *string
 	CompatibleRuntimes() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -3835,10 +4800,15 @@ type DataAwsLambdaLayerVersion interface {
 	SetVersion(val *float64)
 	VersionInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCompatibleArchitecture()
@@ -3946,8 +4916,8 @@ func (j *jsiiProxy_DataAwsLambdaLayerVersion) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLambdaLayerVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLambdaLayerVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4186,7 +5156,7 @@ func (j *jsiiProxy_DataAwsLambdaLayerVersion) VersionInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version.html aws_lambda_layer_version} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version aws_lambda_layer_version} Data Source.
 func NewDataAwsLambdaLayerVersion(scope constructs.Construct, id *string, config *DataAwsLambdaLayerVersionConfig) DataAwsLambdaLayerVersion {
 	_init_.Initialize()
 
@@ -4201,7 +5171,7 @@ func NewDataAwsLambdaLayerVersion(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version.html aws_lambda_layer_version} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version aws_lambda_layer_version} Data Source.
 func NewDataAwsLambdaLayerVersion_Override(d DataAwsLambdaLayerVersion, scope constructs.Construct, id *string, config *DataAwsLambdaLayerVersionConfig) {
 	_init_.Initialize()
 
@@ -4228,7 +5198,7 @@ func (j *jsiiProxy_DataAwsLambdaLayerVersion) SetCompatibleRuntime(val *string) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsLambdaLayerVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLambdaLayerVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4316,12 +5286,40 @@ func (d *jsiiProxy_DataAwsLambdaLayerVersion) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4358,12 +5356,54 @@ func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLambdaLayerVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4488,31 +5528,31 @@ func (d *jsiiProxy_DataAwsLambdaLayerVersion) ToTerraform() interface{} {
 // AWS Lambda.
 type DataAwsLambdaLayerVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version.html#layer_name DataAwsLambdaLayerVersion#layer_name}.
-	LayerName *string `json:"layerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version.html#compatible_architecture DataAwsLambdaLayerVersion#compatible_architecture}.
-	CompatibleArchitecture *string `json:"compatibleArchitecture"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version.html#compatible_runtime DataAwsLambdaLayerVersion#compatible_runtime}.
-	CompatibleRuntime *string `json:"compatibleRuntime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version.html#version DataAwsLambdaLayerVersion#version}.
-	Version *float64 `json:"version"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version#layer_name DataAwsLambdaLayerVersion#layer_name}.
+	LayerName *string `json:"layerName" yaml:"layerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version#compatible_architecture DataAwsLambdaLayerVersion#compatible_architecture}.
+	CompatibleArchitecture *string `json:"compatibleArchitecture" yaml:"compatibleArchitecture"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version#compatible_runtime DataAwsLambdaLayerVersion#compatible_runtime}.
+	CompatibleRuntime *string `json:"compatibleRuntime" yaml:"compatibleRuntime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lambda_layer_version#version DataAwsLambdaLayerVersion#version}.
+	Version *float64 `json:"version" yaml:"version"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html aws_lambda_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias aws_lambda_alias}.
 type LambdaAlias interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -4543,10 +5583,15 @@ type LambdaAlias interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutRoutingConfig(value *LambdaAliasRoutingConfig)
@@ -4594,8 +5639,8 @@ func (j *jsiiProxy_LambdaAlias) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_LambdaAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4824,7 +5869,7 @@ func (j *jsiiProxy_LambdaAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html aws_lambda_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias aws_lambda_alias} Resource.
 func NewLambdaAlias(scope constructs.Construct, id *string, config *LambdaAliasConfig) LambdaAlias {
 	_init_.Initialize()
 
@@ -4839,7 +5884,7 @@ func NewLambdaAlias(scope constructs.Construct, id *string, config *LambdaAliasC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html aws_lambda_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias aws_lambda_alias} Resource.
 func NewLambdaAlias_Override(l LambdaAlias, scope constructs.Construct, id *string, config *LambdaAliasConfig) {
 	_init_.Initialize()
 
@@ -4850,7 +5895,7 @@ func NewLambdaAlias_Override(l LambdaAlias, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_LambdaAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4954,12 +5999,40 @@ func (l *jsiiProxy_LambdaAlias) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4996,12 +6069,54 @@ func (l *jsiiProxy_LambdaAlias) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5126,49 +6241,54 @@ func (l *jsiiProxy_LambdaAlias) ToTerraform() interface{} {
 // AWS Lambda.
 type LambdaAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html#function_name LambdaAlias#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html#function_version LambdaAlias#function_version}.
-	FunctionVersion *string `json:"functionVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html#name LambdaAlias#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html#description LambdaAlias#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias#function_name LambdaAlias#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias#function_version LambdaAlias#function_version}.
+	FunctionVersion *string `json:"functionVersion" yaml:"functionVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias#name LambdaAlias#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias#description LambdaAlias#description}.
+	Description *string `json:"description" yaml:"description"`
 	// routing_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html#routing_config LambdaAlias#routing_config}
-	RoutingConfig *LambdaAliasRoutingConfig `json:"routingConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias#routing_config LambdaAlias#routing_config}
+	RoutingConfig *LambdaAliasRoutingConfig `json:"routingConfig" yaml:"routingConfig"`
 }
 
 type LambdaAliasRoutingConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias.html#additional_version_weights LambdaAlias#additional_version_weights}.
-	AdditionalVersionWeights interface{} `json:"additionalVersionWeights"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_alias#additional_version_weights LambdaAlias#additional_version_weights}.
+	AdditionalVersionWeights *map[string]*float64 `json:"additionalVersionWeights" yaml:"additionalVersionWeights"`
 }
 
 type LambdaAliasRoutingConfigOutputReference interface {
 	cdktf.ComplexObject
-	AdditionalVersionWeights() interface{}
-	SetAdditionalVersionWeights(val interface{})
-	AdditionalVersionWeightsInput() interface{}
+	AdditionalVersionWeights() *map[string]*float64
+	SetAdditionalVersionWeights(val *map[string]*float64)
+	AdditionalVersionWeightsInput() *map[string]*float64
 	InternalValue() *LambdaAliasRoutingConfig
 	SetInternalValue(val *LambdaAliasRoutingConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAdditionalVersionWeights()
@@ -5179,8 +6299,8 @@ type jsiiProxy_LambdaAliasRoutingConfigOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) AdditionalVersionWeights() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) AdditionalVersionWeights() *map[string]*float64 {
+	var returns *map[string]*float64
 	_jsii_.Get(
 		j,
 		"additionalVersionWeights",
@@ -5189,8 +6309,8 @@ func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) AdditionalVersionWei
 	return returns
 }
 
-func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) AdditionalVersionWeightsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) AdditionalVersionWeightsInput() *map[string]*float64 {
+	var returns *map[string]*float64
 	_jsii_.Get(
 		j,
 		"additionalVersionWeightsInput",
@@ -5229,8 +6349,8 @@ func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5239,7 +6359,7 @@ func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewLambdaAliasRoutingConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaAliasRoutingConfigOutputReference {
+func NewLambdaAliasRoutingConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaAliasRoutingConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaAliasRoutingConfigOutputReference{}
@@ -5253,7 +6373,7 @@ func NewLambdaAliasRoutingConfigOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewLambdaAliasRoutingConfigOutputReference_Override(l LambdaAliasRoutingConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaAliasRoutingConfigOutputReference_Override(l LambdaAliasRoutingConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5263,7 +6383,7 @@ func NewLambdaAliasRoutingConfigOutputReference_Override(l LambdaAliasRoutingCon
 	)
 }
 
-func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetAdditionalVersionWeights(val interface{}) {
+func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetAdditionalVersionWeights(val *map[string]*float64) {
 	_jsii_.Set(
 		j,
 		"additionalVersionWeights",
@@ -5295,7 +6415,7 @@ func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5304,12 +6424,40 @@ func (j *jsiiProxy_LambdaAliasRoutingConfigOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5346,12 +6494,54 @@ func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5395,7 +6585,7 @@ func (l *jsiiProxy_LambdaAliasRoutingConfigOutputReference) ResetAdditionalVersi
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html aws_lambda_code_signing_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config aws_lambda_code_signing_config}.
 type LambdaCodeSigningConfig interface {
 	cdktf.TerraformResource
 	AllowedPublishers() LambdaCodeSigningConfigAllowedPublishersOutputReference
@@ -5404,8 +6594,8 @@ type LambdaCodeSigningConfig interface {
 	CdktfStack() cdktf.TerraformStack
 	ConfigId() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -5427,10 +6617,15 @@ type LambdaCodeSigningConfig interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAllowedPublishers(value *LambdaCodeSigningConfigAllowedPublishers)
@@ -5509,8 +6704,8 @@ func (j *jsiiProxy_LambdaCodeSigningConfig) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_LambdaCodeSigningConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaCodeSigningConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5679,7 +6874,7 @@ func (j *jsiiProxy_LambdaCodeSigningConfig) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html aws_lambda_code_signing_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config aws_lambda_code_signing_config} Resource.
 func NewLambdaCodeSigningConfig(scope constructs.Construct, id *string, config *LambdaCodeSigningConfigConfig) LambdaCodeSigningConfig {
 	_init_.Initialize()
 
@@ -5694,7 +6889,7 @@ func NewLambdaCodeSigningConfig(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html aws_lambda_code_signing_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config aws_lambda_code_signing_config} Resource.
 func NewLambdaCodeSigningConfig_Override(l LambdaCodeSigningConfig, scope constructs.Construct, id *string, config *LambdaCodeSigningConfigConfig) {
 	_init_.Initialize()
 
@@ -5705,7 +6900,7 @@ func NewLambdaCodeSigningConfig_Override(l LambdaCodeSigningConfig, scope constr
 	)
 }
 
-func (j *jsiiProxy_LambdaCodeSigningConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaCodeSigningConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5785,12 +6980,40 @@ func (l *jsiiProxy_LambdaCodeSigningConfig) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaCodeSigningConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5827,12 +7050,54 @@ func (l *jsiiProxy_LambdaCodeSigningConfig) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaCodeSigningConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5963,8 +7228,8 @@ func (l *jsiiProxy_LambdaCodeSigningConfig) ToTerraform() interface{} {
 }
 
 type LambdaCodeSigningConfigAllowedPublishers struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html#signing_profile_version_arns LambdaCodeSigningConfig#signing_profile_version_arns}.
-	SigningProfileVersionArns *[]*string `json:"signingProfileVersionArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config#signing_profile_version_arns LambdaCodeSigningConfig#signing_profile_version_arns}.
+	SigningProfileVersionArns *[]*string `json:"signingProfileVersionArns" yaml:"signingProfileVersionArns"`
 }
 
 type LambdaCodeSigningConfigAllowedPublishersOutputReference interface {
@@ -5978,12 +7243,17 @@ type LambdaCodeSigningConfigAllowedPublishersOutputReference interface {
 	SigningProfileVersionArnsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6043,8 +7313,8 @@ func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6053,7 +7323,7 @@ func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) Terr
 	return returns
 }
 
-func NewLambdaCodeSigningConfigAllowedPublishersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaCodeSigningConfigAllowedPublishersOutputReference {
+func NewLambdaCodeSigningConfigAllowedPublishersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaCodeSigningConfigAllowedPublishersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference{}
@@ -6067,7 +7337,7 @@ func NewLambdaCodeSigningConfigAllowedPublishersOutputReference(terraformResourc
 	return &j
 }
 
-func NewLambdaCodeSigningConfigAllowedPublishersOutputReference_Override(l LambdaCodeSigningConfigAllowedPublishersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaCodeSigningConfigAllowedPublishersOutputReference_Override(l LambdaCodeSigningConfigAllowedPublishersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6109,7 +7379,7 @@ func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6118,12 +7388,40 @@ func (j *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) SetT
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6160,12 +7458,54 @@ func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetN
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6204,28 +7544,28 @@ func (l *jsiiProxy_LambdaCodeSigningConfigAllowedPublishersOutputReference) Inte
 // AWS Lambda.
 type LambdaCodeSigningConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// allowed_publishers block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html#allowed_publishers LambdaCodeSigningConfig#allowed_publishers}
-	AllowedPublishers *LambdaCodeSigningConfigAllowedPublishers `json:"allowedPublishers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html#description LambdaCodeSigningConfig#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config#allowed_publishers LambdaCodeSigningConfig#allowed_publishers}
+	AllowedPublishers *LambdaCodeSigningConfigAllowedPublishers `json:"allowedPublishers" yaml:"allowedPublishers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config#description LambdaCodeSigningConfig#description}.
+	Description *string `json:"description" yaml:"description"`
 	// policies block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html#policies LambdaCodeSigningConfig#policies}
-	Policies *LambdaCodeSigningConfigPolicies `json:"policies"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config#policies LambdaCodeSigningConfig#policies}
+	Policies *LambdaCodeSigningConfigPolicies `json:"policies" yaml:"policies"`
 }
 
 type LambdaCodeSigningConfigPolicies struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config.html#untrusted_artifact_on_deployment LambdaCodeSigningConfig#untrusted_artifact_on_deployment}.
-	UntrustedArtifactOnDeployment *string `json:"untrustedArtifactOnDeployment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_code_signing_config#untrusted_artifact_on_deployment LambdaCodeSigningConfig#untrusted_artifact_on_deployment}.
+	UntrustedArtifactOnDeployment *string `json:"untrustedArtifactOnDeployment" yaml:"untrustedArtifactOnDeployment"`
 }
 
 type LambdaCodeSigningConfigPoliciesOutputReference interface {
@@ -6236,15 +7576,20 @@ type LambdaCodeSigningConfigPoliciesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UntrustedArtifactOnDeployment() *string
 	SetUntrustedArtifactOnDeployment(val *string)
 	UntrustedArtifactOnDeploymentInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6284,8 +7629,8 @@ func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6314,7 +7659,7 @@ func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) UntrustedArti
 	return returns
 }
 
-func NewLambdaCodeSigningConfigPoliciesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaCodeSigningConfigPoliciesOutputReference {
+func NewLambdaCodeSigningConfigPoliciesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaCodeSigningConfigPoliciesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference{}
@@ -6328,7 +7673,7 @@ func NewLambdaCodeSigningConfigPoliciesOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewLambdaCodeSigningConfigPoliciesOutputReference_Override(l LambdaCodeSigningConfigPoliciesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaCodeSigningConfigPoliciesOutputReference_Override(l LambdaCodeSigningConfigPoliciesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6362,7 +7707,7 @@ func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6379,12 +7724,40 @@ func (j *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) SetUntrustedA
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6421,12 +7794,54 @@ func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6462,7 +7877,7 @@ func (l *jsiiProxy_LambdaCodeSigningConfigPoliciesOutputReference) Interpolation
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html aws_lambda_event_source_mapping}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping aws_lambda_event_source_mapping}.
 type LambdaEventSourceMapping interface {
 	cdktf.TerraformResource
 	BatchSize() *float64
@@ -6473,8 +7888,8 @@ type LambdaEventSourceMapping interface {
 	BisectBatchOnFunctionErrorInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationConfig() LambdaEventSourceMappingDestinationConfigOutputReference
@@ -6522,9 +7937,9 @@ type LambdaEventSourceMapping interface {
 	RawOverrides() interface{}
 	SelfManagedEventSource() LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 	SelfManagedEventSourceInput() *LambdaEventSourceMappingSelfManagedEventSource
-	SourceAccessConfiguration() *[]*LambdaEventSourceMappingSourceAccessConfiguration
-	SetSourceAccessConfiguration(val *[]*LambdaEventSourceMappingSourceAccessConfiguration)
-	SourceAccessConfigurationInput() *[]*LambdaEventSourceMappingSourceAccessConfiguration
+	SourceAccessConfiguration() interface{}
+	SetSourceAccessConfiguration(val interface{})
+	SourceAccessConfigurationInput() interface{}
 	StartingPosition() *string
 	SetStartingPosition(val *string)
 	StartingPositionInput() *string
@@ -6544,10 +7959,15 @@ type LambdaEventSourceMapping interface {
 	TumblingWindowInSecondsInput() *float64
 	Uuid() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDestinationConfig(value *LambdaEventSourceMappingDestinationConfig)
@@ -6643,8 +8063,8 @@ func (j *jsiiProxy_LambdaEventSourceMapping) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMapping) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaEventSourceMapping) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7003,8 +8423,8 @@ func (j *jsiiProxy_LambdaEventSourceMapping) SelfManagedEventSourceInput() *Lamb
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMapping) SourceAccessConfiguration() *[]*LambdaEventSourceMappingSourceAccessConfiguration {
-	var returns *[]*LambdaEventSourceMappingSourceAccessConfiguration
+func (j *jsiiProxy_LambdaEventSourceMapping) SourceAccessConfiguration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sourceAccessConfiguration",
@@ -7013,8 +8433,8 @@ func (j *jsiiProxy_LambdaEventSourceMapping) SourceAccessConfiguration() *[]*Lam
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMapping) SourceAccessConfigurationInput() *[]*LambdaEventSourceMappingSourceAccessConfiguration {
-	var returns *[]*LambdaEventSourceMappingSourceAccessConfiguration
+func (j *jsiiProxy_LambdaEventSourceMapping) SourceAccessConfigurationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sourceAccessConfigurationInput",
@@ -7163,7 +8583,7 @@ func (j *jsiiProxy_LambdaEventSourceMapping) Uuid() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html aws_lambda_event_source_mapping} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping aws_lambda_event_source_mapping} Resource.
 func NewLambdaEventSourceMapping(scope constructs.Construct, id *string, config *LambdaEventSourceMappingConfig) LambdaEventSourceMapping {
 	_init_.Initialize()
 
@@ -7178,7 +8598,7 @@ func NewLambdaEventSourceMapping(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html aws_lambda_event_source_mapping} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping aws_lambda_event_source_mapping} Resource.
 func NewLambdaEventSourceMapping_Override(l LambdaEventSourceMapping, scope constructs.Construct, id *string, config *LambdaEventSourceMappingConfig) {
 	_init_.Initialize()
 
@@ -7205,7 +8625,7 @@ func (j *jsiiProxy_LambdaEventSourceMapping) SetBisectBatchOnFunctionError(val i
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMapping) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaEventSourceMapping) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7309,7 +8729,7 @@ func (j *jsiiProxy_LambdaEventSourceMapping) SetQueues(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMapping) SetSourceAccessConfiguration(val *[]*LambdaEventSourceMappingSourceAccessConfiguration) {
+func (j *jsiiProxy_LambdaEventSourceMapping) SetSourceAccessConfiguration(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sourceAccessConfiguration",
@@ -7389,12 +8809,40 @@ func (l *jsiiProxy_LambdaEventSourceMapping) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaEventSourceMapping) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaEventSourceMapping) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMapping) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7431,12 +8879,54 @@ func (l *jsiiProxy_LambdaEventSourceMapping) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaEventSourceMapping) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMapping) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaEventSourceMapping) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMapping) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7705,71 +9195,71 @@ func (l *jsiiProxy_LambdaEventSourceMapping) ToTerraform() interface{} {
 // AWS Lambda.
 type LambdaEventSourceMappingConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#function_name LambdaEventSourceMapping#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#batch_size LambdaEventSourceMapping#batch_size}.
-	BatchSize *float64 `json:"batchSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#bisect_batch_on_function_error LambdaEventSourceMapping#bisect_batch_on_function_error}.
-	BisectBatchOnFunctionError interface{} `json:"bisectBatchOnFunctionError"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#function_name LambdaEventSourceMapping#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#batch_size LambdaEventSourceMapping#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#bisect_batch_on_function_error LambdaEventSourceMapping#bisect_batch_on_function_error}.
+	BisectBatchOnFunctionError interface{} `json:"bisectBatchOnFunctionError" yaml:"bisectBatchOnFunctionError"`
 	// destination_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#destination_config LambdaEventSourceMapping#destination_config}
-	DestinationConfig *LambdaEventSourceMappingDestinationConfig `json:"destinationConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#enabled LambdaEventSourceMapping#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#event_source_arn LambdaEventSourceMapping#event_source_arn}.
-	EventSourceArn *string `json:"eventSourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#destination_config LambdaEventSourceMapping#destination_config}
+	DestinationConfig *LambdaEventSourceMappingDestinationConfig `json:"destinationConfig" yaml:"destinationConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#enabled LambdaEventSourceMapping#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#event_source_arn LambdaEventSourceMapping#event_source_arn}.
+	EventSourceArn *string `json:"eventSourceArn" yaml:"eventSourceArn"`
 	// filter_criteria block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#filter_criteria LambdaEventSourceMapping#filter_criteria}
-	FilterCriteria *LambdaEventSourceMappingFilterCriteria `json:"filterCriteria"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#function_response_types LambdaEventSourceMapping#function_response_types}.
-	FunctionResponseTypes *[]*string `json:"functionResponseTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#maximum_batching_window_in_seconds LambdaEventSourceMapping#maximum_batching_window_in_seconds}.
-	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#maximum_record_age_in_seconds LambdaEventSourceMapping#maximum_record_age_in_seconds}.
-	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#maximum_retry_attempts LambdaEventSourceMapping#maximum_retry_attempts}.
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#parallelization_factor LambdaEventSourceMapping#parallelization_factor}.
-	ParallelizationFactor *float64 `json:"parallelizationFactor"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#queues LambdaEventSourceMapping#queues}.
-	Queues *[]*string `json:"queues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#filter_criteria LambdaEventSourceMapping#filter_criteria}
+	FilterCriteria *LambdaEventSourceMappingFilterCriteria `json:"filterCriteria" yaml:"filterCriteria"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#function_response_types LambdaEventSourceMapping#function_response_types}.
+	FunctionResponseTypes *[]*string `json:"functionResponseTypes" yaml:"functionResponseTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#maximum_batching_window_in_seconds LambdaEventSourceMapping#maximum_batching_window_in_seconds}.
+	MaximumBatchingWindowInSeconds *float64 `json:"maximumBatchingWindowInSeconds" yaml:"maximumBatchingWindowInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#maximum_record_age_in_seconds LambdaEventSourceMapping#maximum_record_age_in_seconds}.
+	MaximumRecordAgeInSeconds *float64 `json:"maximumRecordAgeInSeconds" yaml:"maximumRecordAgeInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#maximum_retry_attempts LambdaEventSourceMapping#maximum_retry_attempts}.
+	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts" yaml:"maximumRetryAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#parallelization_factor LambdaEventSourceMapping#parallelization_factor}.
+	ParallelizationFactor *float64 `json:"parallelizationFactor" yaml:"parallelizationFactor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#queues LambdaEventSourceMapping#queues}.
+	Queues *[]*string `json:"queues" yaml:"queues"`
 	// self_managed_event_source block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#self_managed_event_source LambdaEventSourceMapping#self_managed_event_source}
-	SelfManagedEventSource *LambdaEventSourceMappingSelfManagedEventSource `json:"selfManagedEventSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#self_managed_event_source LambdaEventSourceMapping#self_managed_event_source}
+	SelfManagedEventSource *LambdaEventSourceMappingSelfManagedEventSource `json:"selfManagedEventSource" yaml:"selfManagedEventSource"`
 	// source_access_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#source_access_configuration LambdaEventSourceMapping#source_access_configuration}
-	SourceAccessConfiguration *[]*LambdaEventSourceMappingSourceAccessConfiguration `json:"sourceAccessConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#starting_position LambdaEventSourceMapping#starting_position}.
-	StartingPosition *string `json:"startingPosition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#starting_position_timestamp LambdaEventSourceMapping#starting_position_timestamp}.
-	StartingPositionTimestamp *string `json:"startingPositionTimestamp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#topics LambdaEventSourceMapping#topics}.
-	Topics *[]*string `json:"topics"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#tumbling_window_in_seconds LambdaEventSourceMapping#tumbling_window_in_seconds}.
-	TumblingWindowInSeconds *float64 `json:"tumblingWindowInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#source_access_configuration LambdaEventSourceMapping#source_access_configuration}
+	SourceAccessConfiguration interface{} `json:"sourceAccessConfiguration" yaml:"sourceAccessConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#starting_position LambdaEventSourceMapping#starting_position}.
+	StartingPosition *string `json:"startingPosition" yaml:"startingPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#starting_position_timestamp LambdaEventSourceMapping#starting_position_timestamp}.
+	StartingPositionTimestamp *string `json:"startingPositionTimestamp" yaml:"startingPositionTimestamp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#topics LambdaEventSourceMapping#topics}.
+	Topics *[]*string `json:"topics" yaml:"topics"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#tumbling_window_in_seconds LambdaEventSourceMapping#tumbling_window_in_seconds}.
+	TumblingWindowInSeconds *float64 `json:"tumblingWindowInSeconds" yaml:"tumblingWindowInSeconds"`
 }
 
 type LambdaEventSourceMappingDestinationConfig struct {
 	// on_failure block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#on_failure LambdaEventSourceMapping#on_failure}
-	OnFailure *LambdaEventSourceMappingDestinationConfigOnFailure `json:"onFailure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#on_failure LambdaEventSourceMapping#on_failure}
+	OnFailure *LambdaEventSourceMappingDestinationConfigOnFailure `json:"onFailure" yaml:"onFailure"`
 }
 
 type LambdaEventSourceMappingDestinationConfigOnFailure struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#destination_arn LambdaEventSourceMapping#destination_arn}.
-	DestinationArn *string `json:"destinationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#destination_arn LambdaEventSourceMapping#destination_arn}.
+	DestinationArn *string `json:"destinationArn" yaml:"destinationArn"`
 }
 
 type LambdaEventSourceMappingDestinationConfigOnFailureOutputReference interface {
@@ -7783,12 +9273,17 @@ type LambdaEventSourceMappingDestinationConfigOnFailureOutputReference interface
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7848,8 +9343,8 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7858,7 +9353,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 	return returns
 }
 
-func NewLambdaEventSourceMappingDestinationConfigOnFailureOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingDestinationConfigOnFailureOutputReference {
+func NewLambdaEventSourceMappingDestinationConfigOnFailureOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingDestinationConfigOnFailureOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference{}
@@ -7872,7 +9367,7 @@ func NewLambdaEventSourceMappingDestinationConfigOnFailureOutputReference(terraf
 	return &j
 }
 
-func NewLambdaEventSourceMappingDestinationConfigOnFailureOutputReference_Override(l LambdaEventSourceMappingDestinationConfigOnFailureOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaEventSourceMappingDestinationConfigOnFailureOutputReference_Override(l LambdaEventSourceMappingDestinationConfigOnFailureOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7914,7 +9409,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7923,12 +9418,40 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7965,12 +9488,54 @@ func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputRefer
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOnFailureOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8016,12 +9581,17 @@ type LambdaEventSourceMappingDestinationConfigOutputReference interface {
 	OnFailureInput() *LambdaEventSourceMappingDestinationConfigOnFailure
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutOnFailure(value *LambdaEventSourceMappingDestinationConfigOnFailure)
@@ -8083,8 +9653,8 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8093,7 +9663,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) Ter
 	return returns
 }
 
-func NewLambdaEventSourceMappingDestinationConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingDestinationConfigOutputReference {
+func NewLambdaEventSourceMappingDestinationConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingDestinationConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference{}
@@ -8107,7 +9677,7 @@ func NewLambdaEventSourceMappingDestinationConfigOutputReference(terraformResour
 	return &j
 }
 
-func NewLambdaEventSourceMappingDestinationConfigOutputReference_Override(l LambdaEventSourceMappingDestinationConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaEventSourceMappingDestinationConfigOutputReference_Override(l LambdaEventSourceMappingDestinationConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8141,7 +9711,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8150,12 +9720,40 @@ func (j *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) Set
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8192,12 +9790,54 @@ func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) Get
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8252,32 +9892,37 @@ func (l *jsiiProxy_LambdaEventSourceMappingDestinationConfigOutputReference) Res
 type LambdaEventSourceMappingFilterCriteria struct {
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#filter LambdaEventSourceMapping#filter}
-	Filter *[]*LambdaEventSourceMappingFilterCriteriaFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#filter LambdaEventSourceMapping#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
 }
 
 type LambdaEventSourceMappingFilterCriteriaFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#pattern LambdaEventSourceMapping#pattern}.
-	Pattern *string `json:"pattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#pattern LambdaEventSourceMapping#pattern}.
+	Pattern *string `json:"pattern" yaml:"pattern"`
 }
 
 type LambdaEventSourceMappingFilterCriteriaOutputReference interface {
 	cdktf.ComplexObject
-	Filter() *[]*LambdaEventSourceMappingFilterCriteriaFilter
-	SetFilter(val *[]*LambdaEventSourceMappingFilterCriteriaFilter)
-	FilterInput() *[]*LambdaEventSourceMappingFilterCriteriaFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	InternalValue() *LambdaEventSourceMappingFilterCriteria
 	SetInternalValue(val *LambdaEventSourceMappingFilterCriteria)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFilter()
@@ -8288,8 +9933,8 @@ type jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) Filter() *[]*LambdaEventSourceMappingFilterCriteriaFilter {
-	var returns *[]*LambdaEventSourceMappingFilterCriteriaFilter
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -8298,8 +9943,8 @@ func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) Filter
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) FilterInput() *[]*LambdaEventSourceMappingFilterCriteriaFilter {
-	var returns *[]*LambdaEventSourceMappingFilterCriteriaFilter
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -8338,8 +9983,8 @@ func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8348,7 +9993,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) Terraf
 	return returns
 }
 
-func NewLambdaEventSourceMappingFilterCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingFilterCriteriaOutputReference {
+func NewLambdaEventSourceMappingFilterCriteriaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingFilterCriteriaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference{}
@@ -8362,7 +10007,7 @@ func NewLambdaEventSourceMappingFilterCriteriaOutputReference(terraformResource 
 	return &j
 }
 
-func NewLambdaEventSourceMappingFilterCriteriaOutputReference_Override(l LambdaEventSourceMappingFilterCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaEventSourceMappingFilterCriteriaOutputReference_Override(l LambdaEventSourceMappingFilterCriteriaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8372,7 +10017,7 @@ func NewLambdaEventSourceMappingFilterCriteriaOutputReference_Override(l LambdaE
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetFilter(val *[]*LambdaEventSourceMappingFilterCriteriaFilter) {
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -8404,7 +10049,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8413,12 +10058,40 @@ func (j *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) SetTer
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8455,12 +10128,54 @@ func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetNum
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8505,27 +10220,32 @@ func (l *jsiiProxy_LambdaEventSourceMappingFilterCriteriaOutputReference) ResetF
 }
 
 type LambdaEventSourceMappingSelfManagedEventSource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#endpoints LambdaEventSourceMapping#endpoints}.
-	Endpoints interface{} `json:"endpoints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#endpoints LambdaEventSourceMapping#endpoints}.
+	Endpoints *map[string]*string `json:"endpoints" yaml:"endpoints"`
 }
 
 type LambdaEventSourceMappingSelfManagedEventSourceOutputReference interface {
 	cdktf.ComplexObject
-	Endpoints() interface{}
-	SetEndpoints(val interface{})
-	EndpointsInput() interface{}
+	Endpoints() *map[string]*string
+	SetEndpoints(val *map[string]*string)
+	EndpointsInput() *map[string]*string
 	InternalValue() *LambdaEventSourceMappingSelfManagedEventSource
 	SetInternalValue(val *LambdaEventSourceMappingSelfManagedEventSource)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8535,8 +10255,8 @@ type jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference str
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) Endpoints() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) Endpoints() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"endpoints",
@@ -8545,8 +10265,8 @@ func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) EndpointsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) EndpointsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"endpointsInput",
@@ -8585,8 +10305,8 @@ func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8595,7 +10315,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 	return returns
 }
 
-func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingSelfManagedEventSourceOutputReference {
+func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaEventSourceMappingSelfManagedEventSourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference{}
@@ -8609,7 +10329,7 @@ func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference(terraformR
 	return &j
 }
 
-func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference_Override(l LambdaEventSourceMappingSelfManagedEventSourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference_Override(l LambdaEventSourceMappingSelfManagedEventSourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8619,7 +10339,7 @@ func NewLambdaEventSourceMappingSelfManagedEventSourceOutputReference_Override(l
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) SetEndpoints(val interface{}) {
+func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) SetEndpoints(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"endpoints",
@@ -8651,7 +10371,7 @@ func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 	)
 }
 
-func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8660,12 +10380,40 @@ func (j *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8702,12 +10450,54 @@ func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8744,13 +10534,13 @@ func (l *jsiiProxy_LambdaEventSourceMappingSelfManagedEventSourceOutputReference
 }
 
 type LambdaEventSourceMappingSourceAccessConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#type LambdaEventSourceMapping#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping.html#uri LambdaEventSourceMapping#uri}.
-	Uri *string `json:"uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#type LambdaEventSourceMapping#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_event_source_mapping#uri LambdaEventSourceMapping#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html aws_lambda_function}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_function aws_lambda_function}.
 type LambdaFunction interface {
 	cdktf.TerraformResource
 	Architectures() *[]*string
@@ -8762,8 +10552,8 @@ type LambdaFunction interface {
 	SetCodeSigningConfigArn(val *string)
 	CodeSigningConfigArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeadLetterConfig() LambdaFunctionDeadLetterConfigOutputReference
 	DeadLetterConfigInput() *LambdaFunctionDeadLetterConfig
 	DependsOn() *[]*string
@@ -8840,12 +10630,12 @@ type LambdaFunction interface {
 	SetSourceCodeHash(val *string)
 	SourceCodeHashInput() *string
 	SourceCodeSize() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -8860,10 +10650,15 @@ type LambdaFunction interface {
 	VpcConfig() LambdaFunctionVpcConfigOutputReference
 	VpcConfigInput() *LambdaFunctionVpcConfig
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDeadLetterConfig(value *LambdaFunctionDeadLetterConfig)
@@ -8982,8 +10777,8 @@ func (j *jsiiProxy_LambdaFunction) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9552,8 +11347,8 @@ func (j *jsiiProxy_LambdaFunction) SourceCodeSize() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunction) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunction) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9562,8 +11357,8 @@ func (j *jsiiProxy_LambdaFunction) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunction) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunction) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9572,8 +11367,8 @@ func (j *jsiiProxy_LambdaFunction) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunction) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunction) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9582,8 +11377,8 @@ func (j *jsiiProxy_LambdaFunction) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunction) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunction) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9712,7 +11507,7 @@ func (j *jsiiProxy_LambdaFunction) VpcConfigInput() *LambdaFunctionVpcConfig {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html aws_lambda_function} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function aws_lambda_function} Resource.
 func NewLambdaFunction(scope constructs.Construct, id *string, config *LambdaFunctionConfig) LambdaFunction {
 	_init_.Initialize()
 
@@ -9727,7 +11522,7 @@ func NewLambdaFunction(scope constructs.Construct, id *string, config *LambdaFun
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html aws_lambda_function} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function aws_lambda_function} Resource.
 func NewLambdaFunction_Override(l LambdaFunction, scope constructs.Construct, id *string, config *LambdaFunctionConfig) {
 	_init_.Initialize()
 
@@ -9754,7 +11549,7 @@ func (j *jsiiProxy_LambdaFunction) SetCodeSigningConfigArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LambdaFunction) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaFunction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9922,7 +11717,7 @@ func (j *jsiiProxy_LambdaFunction) SetSourceCodeHash(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LambdaFunction) SetTags(val interface{}) {
+func (j *jsiiProxy_LambdaFunction) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9930,7 +11725,7 @@ func (j *jsiiProxy_LambdaFunction) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LambdaFunction) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_LambdaFunction) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9986,12 +11781,40 @@ func (l *jsiiProxy_LambdaFunction) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10028,12 +11851,54 @@ func (l *jsiiProxy_LambdaFunction) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10406,90 +12271,90 @@ func (l *jsiiProxy_LambdaFunction) ToTerraform() interface{} {
 // AWS Lambda.
 type LambdaFunctionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#function_name LambdaFunction#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#role LambdaFunction#role}.
-	Role *string `json:"role"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#architectures LambdaFunction#architectures}.
-	Architectures *[]*string `json:"architectures"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#code_signing_config_arn LambdaFunction#code_signing_config_arn}.
-	CodeSigningConfigArn *string `json:"codeSigningConfigArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#function_name LambdaFunction#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#role LambdaFunction#role}.
+	Role *string `json:"role" yaml:"role"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#architectures LambdaFunction#architectures}.
+	Architectures *[]*string `json:"architectures" yaml:"architectures"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#code_signing_config_arn LambdaFunction#code_signing_config_arn}.
+	CodeSigningConfigArn *string `json:"codeSigningConfigArn" yaml:"codeSigningConfigArn"`
 	// dead_letter_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#dead_letter_config LambdaFunction#dead_letter_config}
-	DeadLetterConfig *LambdaFunctionDeadLetterConfig `json:"deadLetterConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#description LambdaFunction#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#dead_letter_config LambdaFunction#dead_letter_config}
+	DeadLetterConfig *LambdaFunctionDeadLetterConfig `json:"deadLetterConfig" yaml:"deadLetterConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#description LambdaFunction#description}.
+	Description *string `json:"description" yaml:"description"`
 	// environment block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#environment LambdaFunction#environment}
-	Environment *LambdaFunctionEnvironment `json:"environment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#filename LambdaFunction#filename}.
-	Filename *string `json:"filename"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#environment LambdaFunction#environment}
+	Environment *LambdaFunctionEnvironment `json:"environment" yaml:"environment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#filename LambdaFunction#filename}.
+	Filename *string `json:"filename" yaml:"filename"`
 	// file_system_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#file_system_config LambdaFunction#file_system_config}
-	FileSystemConfig *LambdaFunctionFileSystemConfig `json:"fileSystemConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#handler LambdaFunction#handler}.
-	Handler *string `json:"handler"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#file_system_config LambdaFunction#file_system_config}
+	FileSystemConfig *LambdaFunctionFileSystemConfig `json:"fileSystemConfig" yaml:"fileSystemConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#handler LambdaFunction#handler}.
+	Handler *string `json:"handler" yaml:"handler"`
 	// image_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#image_config LambdaFunction#image_config}
-	ImageConfig *LambdaFunctionImageConfig `json:"imageConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#image_uri LambdaFunction#image_uri}.
-	ImageUri *string `json:"imageUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#kms_key_arn LambdaFunction#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#layers LambdaFunction#layers}.
-	Layers *[]*string `json:"layers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#memory_size LambdaFunction#memory_size}.
-	MemorySize *float64 `json:"memorySize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#package_type LambdaFunction#package_type}.
-	PackageType *string `json:"packageType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#publish LambdaFunction#publish}.
-	Publish interface{} `json:"publish"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#reserved_concurrent_executions LambdaFunction#reserved_concurrent_executions}.
-	ReservedConcurrentExecutions *float64 `json:"reservedConcurrentExecutions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#runtime LambdaFunction#runtime}.
-	Runtime *string `json:"runtime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#s3_bucket LambdaFunction#s3_bucket}.
-	S3Bucket *string `json:"s3Bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#s3_key LambdaFunction#s3_key}.
-	S3Key *string `json:"s3Key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#s3_object_version LambdaFunction#s3_object_version}.
-	S3ObjectVersion *string `json:"s3ObjectVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#source_code_hash LambdaFunction#source_code_hash}.
-	SourceCodeHash *string `json:"sourceCodeHash"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#tags LambdaFunction#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#tags_all LambdaFunction#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#timeout LambdaFunction#timeout}.
-	Timeout *float64 `json:"timeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#image_config LambdaFunction#image_config}
+	ImageConfig *LambdaFunctionImageConfig `json:"imageConfig" yaml:"imageConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#image_uri LambdaFunction#image_uri}.
+	ImageUri *string `json:"imageUri" yaml:"imageUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#kms_key_arn LambdaFunction#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#layers LambdaFunction#layers}.
+	Layers *[]*string `json:"layers" yaml:"layers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#memory_size LambdaFunction#memory_size}.
+	MemorySize *float64 `json:"memorySize" yaml:"memorySize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#package_type LambdaFunction#package_type}.
+	PackageType *string `json:"packageType" yaml:"packageType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#publish LambdaFunction#publish}.
+	Publish interface{} `json:"publish" yaml:"publish"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#reserved_concurrent_executions LambdaFunction#reserved_concurrent_executions}.
+	ReservedConcurrentExecutions *float64 `json:"reservedConcurrentExecutions" yaml:"reservedConcurrentExecutions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#runtime LambdaFunction#runtime}.
+	Runtime *string `json:"runtime" yaml:"runtime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_bucket LambdaFunction#s3_bucket}.
+	S3Bucket *string `json:"s3Bucket" yaml:"s3Bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_key LambdaFunction#s3_key}.
+	S3Key *string `json:"s3Key" yaml:"s3Key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#s3_object_version LambdaFunction#s3_object_version}.
+	S3ObjectVersion *string `json:"s3ObjectVersion" yaml:"s3ObjectVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#source_code_hash LambdaFunction#source_code_hash}.
+	SourceCodeHash *string `json:"sourceCodeHash" yaml:"sourceCodeHash"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#tags LambdaFunction#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#tags_all LambdaFunction#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#timeout LambdaFunction#timeout}.
+	Timeout *float64 `json:"timeout" yaml:"timeout"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#timeouts LambdaFunction#timeouts}
-	Timeouts *LambdaFunctionTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#timeouts LambdaFunction#timeouts}
+	Timeouts *LambdaFunctionTimeouts `json:"timeouts" yaml:"timeouts"`
 	// tracing_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#tracing_config LambdaFunction#tracing_config}
-	TracingConfig *LambdaFunctionTracingConfig `json:"tracingConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#tracing_config LambdaFunction#tracing_config}
+	TracingConfig *LambdaFunctionTracingConfig `json:"tracingConfig" yaml:"tracingConfig"`
 	// vpc_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#vpc_config LambdaFunction#vpc_config}
-	VpcConfig *LambdaFunctionVpcConfig `json:"vpcConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#vpc_config LambdaFunction#vpc_config}
+	VpcConfig *LambdaFunctionVpcConfig `json:"vpcConfig" yaml:"vpcConfig"`
 }
 
 type LambdaFunctionDeadLetterConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#target_arn LambdaFunction#target_arn}.
-	TargetArn *string `json:"targetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#target_arn LambdaFunction#target_arn}.
+	TargetArn *string `json:"targetArn" yaml:"targetArn"`
 }
 
 type LambdaFunctionDeadLetterConfigOutputReference interface {
@@ -10503,12 +12368,17 @@ type LambdaFunctionDeadLetterConfigOutputReference interface {
 	TargetArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10568,8 +12438,8 @@ func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10578,7 +12448,7 @@ func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) TerraformResou
 	return returns
 }
 
-func NewLambdaFunctionDeadLetterConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionDeadLetterConfigOutputReference {
+func NewLambdaFunctionDeadLetterConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionDeadLetterConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference{}
@@ -10592,7 +12462,7 @@ func NewLambdaFunctionDeadLetterConfigOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewLambdaFunctionDeadLetterConfigOutputReference_Override(l LambdaFunctionDeadLetterConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionDeadLetterConfigOutputReference_Override(l LambdaFunctionDeadLetterConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10634,7 +12504,7 @@ func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10643,12 +12513,40 @@ func (j *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10685,12 +12583,54 @@ func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10727,8 +12667,8 @@ func (l *jsiiProxy_LambdaFunctionDeadLetterConfigOutputReference) InterpolationF
 }
 
 type LambdaFunctionEnvironment struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#variables LambdaFunction#variables}.
-	Variables interface{} `json:"variables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#variables LambdaFunction#variables}.
+	Variables *map[string]*string `json:"variables" yaml:"variables"`
 }
 
 type LambdaFunctionEnvironmentOutputReference interface {
@@ -10739,15 +12679,20 @@ type LambdaFunctionEnvironmentOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	Variables() interface{}
-	SetVariables(val interface{})
-	VariablesInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Variables() *map[string]*string
+	SetVariables(val *map[string]*string)
+	VariablesInput() *map[string]*string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetVariables()
@@ -10788,8 +12733,8 @@ func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10798,8 +12743,8 @@ func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) TerraformResource()
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) Variables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) Variables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"variables",
@@ -10808,8 +12753,8 @@ func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) Variables() interfa
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) VariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) VariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"variablesInput",
@@ -10818,7 +12763,7 @@ func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) VariablesInput() in
 	return returns
 }
 
-func NewLambdaFunctionEnvironmentOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEnvironmentOutputReference {
+func NewLambdaFunctionEnvironmentOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEnvironmentOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionEnvironmentOutputReference{}
@@ -10832,7 +12777,7 @@ func NewLambdaFunctionEnvironmentOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewLambdaFunctionEnvironmentOutputReference_Override(l LambdaFunctionEnvironmentOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionEnvironmentOutputReference_Override(l LambdaFunctionEnvironmentOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10866,7 +12811,7 @@ func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10874,7 +12819,7 @@ func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetTerraformResourc
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetVariables(val interface{}) {
+func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"variables",
@@ -10883,12 +12828,40 @@ func (j *jsiiProxy_LambdaFunctionEnvironmentOutputReference) SetVariables(val in
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10925,12 +12898,54 @@ func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10974,13 +12989,13 @@ func (l *jsiiProxy_LambdaFunctionEnvironmentOutputReference) ResetVariables() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html aws_lambda_function_event_invoke_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config aws_lambda_function_event_invoke_config}.
 type LambdaFunctionEventInvokeConfig interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationConfig() LambdaFunctionEventInvokeConfigDestinationConfigOutputReference
@@ -11010,10 +13025,15 @@ type LambdaFunctionEventInvokeConfig interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDestinationConfig(value *LambdaFunctionEventInvokeConfigDestinationConfig)
@@ -11053,8 +13073,8 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfig) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11273,7 +13293,7 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfig) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html aws_lambda_function_event_invoke_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config aws_lambda_function_event_invoke_config} Resource.
 func NewLambdaFunctionEventInvokeConfig(scope constructs.Construct, id *string, config *LambdaFunctionEventInvokeConfigConfig) LambdaFunctionEventInvokeConfig {
 	_init_.Initialize()
 
@@ -11288,7 +13308,7 @@ func NewLambdaFunctionEventInvokeConfig(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html aws_lambda_function_event_invoke_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config aws_lambda_function_event_invoke_config} Resource.
 func NewLambdaFunctionEventInvokeConfig_Override(l LambdaFunctionEventInvokeConfig, scope constructs.Construct, id *string, config *LambdaFunctionEventInvokeConfigConfig) {
 	_init_.Initialize()
 
@@ -11299,7 +13319,7 @@ func NewLambdaFunctionEventInvokeConfig_Override(l LambdaFunctionEventInvokeConf
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11403,12 +13423,40 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) AddOverride(path *string, va
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11445,12 +13493,54 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11591,41 +13681,41 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfig) ToTerraform() interface{} {
 // AWS Lambda.
 type LambdaFunctionEventInvokeConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#function_name LambdaFunctionEventInvokeConfig#function_name}.
-	FunctionName *string `json:"functionName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#function_name LambdaFunctionEventInvokeConfig#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
 	// destination_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#destination_config LambdaFunctionEventInvokeConfig#destination_config}
-	DestinationConfig *LambdaFunctionEventInvokeConfigDestinationConfig `json:"destinationConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#maximum_event_age_in_seconds LambdaFunctionEventInvokeConfig#maximum_event_age_in_seconds}.
-	MaximumEventAgeInSeconds *float64 `json:"maximumEventAgeInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#maximum_retry_attempts LambdaFunctionEventInvokeConfig#maximum_retry_attempts}.
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#qualifier LambdaFunctionEventInvokeConfig#qualifier}.
-	Qualifier *string `json:"qualifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#destination_config LambdaFunctionEventInvokeConfig#destination_config}
+	DestinationConfig *LambdaFunctionEventInvokeConfigDestinationConfig `json:"destinationConfig" yaml:"destinationConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#maximum_event_age_in_seconds LambdaFunctionEventInvokeConfig#maximum_event_age_in_seconds}.
+	MaximumEventAgeInSeconds *float64 `json:"maximumEventAgeInSeconds" yaml:"maximumEventAgeInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#maximum_retry_attempts LambdaFunctionEventInvokeConfig#maximum_retry_attempts}.
+	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts" yaml:"maximumRetryAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#qualifier LambdaFunctionEventInvokeConfig#qualifier}.
+	Qualifier *string `json:"qualifier" yaml:"qualifier"`
 }
 
 type LambdaFunctionEventInvokeConfigDestinationConfig struct {
 	// on_failure block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#on_failure LambdaFunctionEventInvokeConfig#on_failure}
-	OnFailure *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure `json:"onFailure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#on_failure LambdaFunctionEventInvokeConfig#on_failure}
+	OnFailure *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure `json:"onFailure" yaml:"onFailure"`
 	// on_success block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#on_success LambdaFunctionEventInvokeConfig#on_success}
-	OnSuccess *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess `json:"onSuccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#on_success LambdaFunctionEventInvokeConfig#on_success}
+	OnSuccess *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess `json:"onSuccess" yaml:"onSuccess"`
 }
 
 type LambdaFunctionEventInvokeConfigDestinationConfigOnFailure struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#destination LambdaFunctionEventInvokeConfig#destination}.
-	Destination *string `json:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#destination LambdaFunctionEventInvokeConfig#destination}.
+	Destination *string `json:"destination" yaml:"destination"`
 }
 
 type LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference interface {
@@ -11639,12 +13729,17 @@ type LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference in
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -11704,8 +13799,8 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11714,7 +13809,7 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 	return returns
 }
 
-func NewLambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference {
+func NewLambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference{}
@@ -11728,7 +13823,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference
 	return &j
 }
 
-func NewLambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference_Override(l LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference_Override(l LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11770,7 +13865,7 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11779,12 +13874,40 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11821,12 +13944,54 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11863,8 +14028,8 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnFailureOutp
 }
 
 type LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config.html#destination LambdaFunctionEventInvokeConfig#destination}.
-	Destination *string `json:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function_event_invoke_config#destination LambdaFunctionEventInvokeConfig#destination}.
+	Destination *string `json:"destination" yaml:"destination"`
 }
 
 type LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference interface {
@@ -11878,12 +14043,17 @@ type LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference in
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -11943,8 +14113,8 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11953,7 +14123,7 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 	return returns
 }
 
-func NewLambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference {
+func NewLambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference{}
@@ -11967,7 +14137,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference
 	return &j
 }
 
-func NewLambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference_Override(l LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference_Override(l LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12009,7 +14179,7 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12018,12 +14188,40 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12060,12 +14258,54 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutp
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOnSuccessOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12113,12 +14353,17 @@ type LambdaFunctionEventInvokeConfigDestinationConfigOutputReference interface {
 	OnSuccessInput() *LambdaFunctionEventInvokeConfigDestinationConfigOnSuccess
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutOnFailure(value *LambdaFunctionEventInvokeConfigDestinationConfigOnFailure)
@@ -12202,8 +14447,8 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12212,7 +14457,7 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReferen
 	return returns
 }
 
-func NewLambdaFunctionEventInvokeConfigDestinationConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEventInvokeConfigDestinationConfigOutputReference {
+func NewLambdaFunctionEventInvokeConfigDestinationConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionEventInvokeConfigDestinationConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference{}
@@ -12226,7 +14471,7 @@ func NewLambdaFunctionEventInvokeConfigDestinationConfigOutputReference(terrafor
 	return &j
 }
 
-func NewLambdaFunctionEventInvokeConfigDestinationConfigOutputReference_Override(l LambdaFunctionEventInvokeConfigDestinationConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionEventInvokeConfigDestinationConfigOutputReference_Override(l LambdaFunctionEventInvokeConfigDestinationConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12260,7 +14505,7 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReferen
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12269,12 +14514,40 @@ func (j *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReferen
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12311,12 +14584,54 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReferen
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12385,10 +14700,10 @@ func (l *jsiiProxy_LambdaFunctionEventInvokeConfigDestinationConfigOutputReferen
 }
 
 type LambdaFunctionFileSystemConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#arn LambdaFunction#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#local_mount_path LambdaFunction#local_mount_path}.
-	LocalMountPath *string `json:"localMountPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#arn LambdaFunction#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#local_mount_path LambdaFunction#local_mount_path}.
+	LocalMountPath *string `json:"localMountPath" yaml:"localMountPath"`
 }
 
 type LambdaFunctionFileSystemConfigOutputReference interface {
@@ -12405,12 +14720,17 @@ type LambdaFunctionFileSystemConfigOutputReference interface {
 	LocalMountPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -12490,8 +14810,8 @@ func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12500,7 +14820,7 @@ func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) TerraformResou
 	return returns
 }
 
-func NewLambdaFunctionFileSystemConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionFileSystemConfigOutputReference {
+func NewLambdaFunctionFileSystemConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionFileSystemConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionFileSystemConfigOutputReference{}
@@ -12514,7 +14834,7 @@ func NewLambdaFunctionFileSystemConfigOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewLambdaFunctionFileSystemConfigOutputReference_Override(l LambdaFunctionFileSystemConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionFileSystemConfigOutputReference_Override(l LambdaFunctionFileSystemConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12564,7 +14884,7 @@ func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12573,12 +14893,40 @@ func (j *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12615,12 +14963,54 @@ func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12657,12 +15047,12 @@ func (l *jsiiProxy_LambdaFunctionFileSystemConfigOutputReference) InterpolationF
 }
 
 type LambdaFunctionImageConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#command LambdaFunction#command}.
-	Command *[]*string `json:"command"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#entry_point LambdaFunction#entry_point}.
-	EntryPoint *[]*string `json:"entryPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#working_directory LambdaFunction#working_directory}.
-	WorkingDirectory *string `json:"workingDirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#command LambdaFunction#command}.
+	Command *[]*string `json:"command" yaml:"command"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#entry_point LambdaFunction#entry_point}.
+	EntryPoint *[]*string `json:"entryPoint" yaml:"entryPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#working_directory LambdaFunction#working_directory}.
+	WorkingDirectory *string `json:"workingDirectory" yaml:"workingDirectory"`
 }
 
 type LambdaFunctionImageConfigOutputReference interface {
@@ -12679,15 +15069,20 @@ type LambdaFunctionImageConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WorkingDirectory() *string
 	SetWorkingDirectory(val *string)
 	WorkingDirectoryInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCommand()
@@ -12770,8 +15165,8 @@ func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12800,7 +15195,7 @@ func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) WorkingDirectoryInp
 	return returns
 }
 
-func NewLambdaFunctionImageConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionImageConfigOutputReference {
+func NewLambdaFunctionImageConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionImageConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionImageConfigOutputReference{}
@@ -12814,7 +15209,7 @@ func NewLambdaFunctionImageConfigOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewLambdaFunctionImageConfigOutputReference_Override(l LambdaFunctionImageConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionImageConfigOutputReference_Override(l LambdaFunctionImageConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12864,7 +15259,7 @@ func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12881,12 +15276,40 @@ func (j *jsiiProxy_LambdaFunctionImageConfigOutputReference) SetWorkingDirectory
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12923,12 +15346,54 @@ func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12989,8 +15454,8 @@ func (l *jsiiProxy_LambdaFunctionImageConfigOutputReference) ResetWorkingDirecto
 }
 
 type LambdaFunctionTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#create LambdaFunction#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#create LambdaFunction#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type LambdaFunctionTimeoutsOutputReference interface {
@@ -13004,12 +15469,17 @@ type LambdaFunctionTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -13070,8 +15540,8 @@ func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13080,7 +15550,7 @@ func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) TerraformResource() cd
 	return returns
 }
 
-func NewLambdaFunctionTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionTimeoutsOutputReference {
+func NewLambdaFunctionTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionTimeoutsOutputReference{}
@@ -13094,7 +15564,7 @@ func NewLambdaFunctionTimeoutsOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewLambdaFunctionTimeoutsOutputReference_Override(l LambdaFunctionTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionTimeoutsOutputReference_Override(l LambdaFunctionTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13136,7 +15606,7 @@ func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13145,12 +15615,40 @@ func (j *jsiiProxy_LambdaFunctionTimeoutsOutputReference) SetTerraformResource(v
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13187,12 +15685,54 @@ func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13237,8 +15777,8 @@ func (l *jsiiProxy_LambdaFunctionTimeoutsOutputReference) ResetCreate() {
 }
 
 type LambdaFunctionTracingConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#mode LambdaFunction#mode}.
-	Mode *string `json:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#mode LambdaFunction#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
 }
 
 type LambdaFunctionTracingConfigOutputReference interface {
@@ -13252,12 +15792,17 @@ type LambdaFunctionTracingConfigOutputReference interface {
 	ModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -13317,8 +15862,8 @@ func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13327,7 +15872,7 @@ func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) TerraformResource
 	return returns
 }
 
-func NewLambdaFunctionTracingConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionTracingConfigOutputReference {
+func NewLambdaFunctionTracingConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionTracingConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionTracingConfigOutputReference{}
@@ -13341,7 +15886,7 @@ func NewLambdaFunctionTracingConfigOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewLambdaFunctionTracingConfigOutputReference_Override(l LambdaFunctionTracingConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionTracingConfigOutputReference_Override(l LambdaFunctionTracingConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13383,7 +15928,7 @@ func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13392,12 +15937,40 @@ func (j *jsiiProxy_LambdaFunctionTracingConfigOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13434,12 +16007,54 @@ func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13476,10 +16091,10 @@ func (l *jsiiProxy_LambdaFunctionTracingConfigOutputReference) InterpolationForA
 }
 
 type LambdaFunctionVpcConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#security_group_ids LambdaFunction#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function.html#subnet_ids LambdaFunction#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#security_group_ids LambdaFunction#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_function#subnet_ids LambdaFunction#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
 }
 
 type LambdaFunctionVpcConfigOutputReference interface {
@@ -13496,12 +16111,18 @@ type LambdaFunctionVpcConfigOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	VpcId() *string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -13581,8 +16202,8 @@ func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13591,7 +16212,17 @@ func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewLambdaFunctionVpcConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaFunctionVpcConfigOutputReference {
+func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) VpcId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"vpcId",
+		&returns,
+	)
+	return returns
+}
+
+func NewLambdaFunctionVpcConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaFunctionVpcConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaFunctionVpcConfigOutputReference{}
@@ -13605,7 +16236,7 @@ func NewLambdaFunctionVpcConfigOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewLambdaFunctionVpcConfigOutputReference_Override(l LambdaFunctionVpcConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaFunctionVpcConfigOutputReference_Override(l LambdaFunctionVpcConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13655,7 +16286,7 @@ func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13664,12 +16295,40 @@ func (j *jsiiProxy_LambdaFunctionVpcConfigOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13706,12 +16365,54 @@ func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13747,7 +16448,678 @@ func (l *jsiiProxy_LambdaFunctionVpcConfigOutputReference) InterpolationForAttri
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html aws_lambda_layer_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_invocation aws_lambda_invocation}.
+type LambdaInvocation interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	FunctionName() *string
+	SetFunctionName(val *string)
+	FunctionNameInput() *string
+	Id() *string
+	Input() *string
+	SetInput(val *string)
+	InputInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	Qualifier() *string
+	SetQualifier(val *string)
+	QualifierInput() *string
+	RawOverrides() interface{}
+	Result() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Triggers() *map[string]*string
+	SetTriggers(val *map[string]*string)
+	TriggersInput() *map[string]*string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetQualifier()
+	ResetTriggers()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for LambdaInvocation
+type jsiiProxy_LambdaInvocation struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_LambdaInvocation) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) FunctionName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"functionName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) FunctionNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"functionNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Input() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"input",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) InputInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"inputInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Qualifier() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"qualifier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) QualifierInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"qualifierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Result() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"result",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) Triggers() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"triggers",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LambdaInvocation) TriggersInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"triggersInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_invocation aws_lambda_invocation} Resource.
+func NewLambdaInvocation(scope constructs.Construct, id *string, config *LambdaInvocationConfig) LambdaInvocation {
+	_init_.Initialize()
+
+	j := jsiiProxy_LambdaInvocation{}
+
+	_jsii_.Create(
+		"hashicorp_aws.lambdafunction.LambdaInvocation",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_invocation aws_lambda_invocation} Resource.
+func NewLambdaInvocation_Override(l LambdaInvocation, scope constructs.Construct, id *string, config *LambdaInvocationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.lambdafunction.LambdaInvocation",
+		[]interface{}{scope, id, config},
+		l,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetFunctionName(val *string) {
+	_jsii_.Set(
+		j,
+		"functionName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetInput(val *string) {
+	_jsii_.Set(
+		j,
+		"input",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetQualifier(val *string) {
+	_jsii_.Set(
+		j,
+		"qualifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LambdaInvocation) SetTriggers(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"triggers",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func LambdaInvocation_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.lambdafunction.LambdaInvocation",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func LambdaInvocation_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.lambdafunction.LambdaInvocation",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		l,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		l,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		l,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LambdaInvocation) ResetQualifier() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetQualifier",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LambdaInvocation) ResetTriggers() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetTriggers",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LambdaInvocation) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		l,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (l *jsiiProxy_LambdaInvocation) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (l *jsiiProxy_LambdaInvocation) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		l,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS Lambda.
+type LambdaInvocationConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_invocation#function_name LambdaInvocation#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_invocation#input LambdaInvocation#input}.
+	Input *string `json:"input" yaml:"input"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_invocation#qualifier LambdaInvocation#qualifier}.
+	Qualifier *string `json:"qualifier" yaml:"qualifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_invocation#triggers LambdaInvocation#triggers}.
+	Triggers *map[string]*string `json:"triggers" yaml:"triggers"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version aws_lambda_layer_version}.
 type LambdaLayerVersion interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -13759,8 +17131,8 @@ type LambdaLayerVersion interface {
 	SetCompatibleRuntimes(val *[]*string)
 	CompatibleRuntimesInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -13809,10 +17181,15 @@ type LambdaLayerVersion interface {
 	TerraformResourceType() *string
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCompatibleArchitectures()
@@ -13907,8 +17284,8 @@ func (j *jsiiProxy_LambdaLayerVersion) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_LambdaLayerVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaLayerVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14267,7 +17644,7 @@ func (j *jsiiProxy_LambdaLayerVersion) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html aws_lambda_layer_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version aws_lambda_layer_version} Resource.
 func NewLambdaLayerVersion(scope constructs.Construct, id *string, config *LambdaLayerVersionConfig) LambdaLayerVersion {
 	_init_.Initialize()
 
@@ -14282,7 +17659,7 @@ func NewLambdaLayerVersion(scope constructs.Construct, id *string, config *Lambd
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html aws_lambda_layer_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version aws_lambda_layer_version} Resource.
 func NewLambdaLayerVersion_Override(l LambdaLayerVersion, scope constructs.Construct, id *string, config *LambdaLayerVersionConfig) {
 	_init_.Initialize()
 
@@ -14309,7 +17686,7 @@ func (j *jsiiProxy_LambdaLayerVersion) SetCompatibleRuntimes(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_LambdaLayerVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaLayerVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14453,12 +17830,40 @@ func (l *jsiiProxy_LambdaLayerVersion) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaLayerVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaLayerVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14495,12 +17900,54 @@ func (l *jsiiProxy_LambdaLayerVersion) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaLayerVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaLayerVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14681,38 +18128,38 @@ func (l *jsiiProxy_LambdaLayerVersion) ToTerraform() interface{} {
 // AWS Lambda.
 type LambdaLayerVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#layer_name LambdaLayerVersion#layer_name}.
-	LayerName *string `json:"layerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#compatible_architectures LambdaLayerVersion#compatible_architectures}.
-	CompatibleArchitectures *[]*string `json:"compatibleArchitectures"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#compatible_runtimes LambdaLayerVersion#compatible_runtimes}.
-	CompatibleRuntimes *[]*string `json:"compatibleRuntimes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#description LambdaLayerVersion#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#filename LambdaLayerVersion#filename}.
-	Filename *string `json:"filename"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#license_info LambdaLayerVersion#license_info}.
-	LicenseInfo *string `json:"licenseInfo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#s3_bucket LambdaLayerVersion#s3_bucket}.
-	S3Bucket *string `json:"s3Bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#s3_key LambdaLayerVersion#s3_key}.
-	S3Key *string `json:"s3Key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#s3_object_version LambdaLayerVersion#s3_object_version}.
-	S3ObjectVersion *string `json:"s3ObjectVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#skip_destroy LambdaLayerVersion#skip_destroy}.
-	SkipDestroy interface{} `json:"skipDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version.html#source_code_hash LambdaLayerVersion#source_code_hash}.
-	SourceCodeHash *string `json:"sourceCodeHash"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#layer_name LambdaLayerVersion#layer_name}.
+	LayerName *string `json:"layerName" yaml:"layerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#compatible_architectures LambdaLayerVersion#compatible_architectures}.
+	CompatibleArchitectures *[]*string `json:"compatibleArchitectures" yaml:"compatibleArchitectures"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#compatible_runtimes LambdaLayerVersion#compatible_runtimes}.
+	CompatibleRuntimes *[]*string `json:"compatibleRuntimes" yaml:"compatibleRuntimes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#description LambdaLayerVersion#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#filename LambdaLayerVersion#filename}.
+	Filename *string `json:"filename" yaml:"filename"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#license_info LambdaLayerVersion#license_info}.
+	LicenseInfo *string `json:"licenseInfo" yaml:"licenseInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#s3_bucket LambdaLayerVersion#s3_bucket}.
+	S3Bucket *string `json:"s3Bucket" yaml:"s3Bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#s3_key LambdaLayerVersion#s3_key}.
+	S3Key *string `json:"s3Key" yaml:"s3Key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#s3_object_version LambdaLayerVersion#s3_object_version}.
+	S3ObjectVersion *string `json:"s3ObjectVersion" yaml:"s3ObjectVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#skip_destroy LambdaLayerVersion#skip_destroy}.
+	SkipDestroy interface{} `json:"skipDestroy" yaml:"skipDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version#source_code_hash LambdaLayerVersion#source_code_hash}.
+	SourceCodeHash *string `json:"sourceCodeHash" yaml:"sourceCodeHash"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html aws_lambda_layer_version_permission}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission aws_lambda_layer_version_permission}.
 type LambdaLayerVersionPermission interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -14720,8 +18167,8 @@ type LambdaLayerVersionPermission interface {
 	ActionInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -14754,10 +18201,15 @@ type LambdaLayerVersionPermission interface {
 	SetVersionNumber(val *float64)
 	VersionNumberInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOrganizationId()
@@ -14813,8 +18265,8 @@ func (j *jsiiProxy_LambdaLayerVersionPermission) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_LambdaLayerVersionPermission) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaLayerVersionPermission) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15053,7 +18505,7 @@ func (j *jsiiProxy_LambdaLayerVersionPermission) VersionNumberInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html aws_lambda_layer_version_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission aws_lambda_layer_version_permission} Resource.
 func NewLambdaLayerVersionPermission(scope constructs.Construct, id *string, config *LambdaLayerVersionPermissionConfig) LambdaLayerVersionPermission {
 	_init_.Initialize()
 
@@ -15068,7 +18520,7 @@ func NewLambdaLayerVersionPermission(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html aws_lambda_layer_version_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission aws_lambda_layer_version_permission} Resource.
 func NewLambdaLayerVersionPermission_Override(l LambdaLayerVersionPermission, scope constructs.Construct, id *string, config *LambdaLayerVersionPermissionConfig) {
 	_init_.Initialize()
 
@@ -15087,7 +18539,7 @@ func (j *jsiiProxy_LambdaLayerVersionPermission) SetAction(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LambdaLayerVersionPermission) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaLayerVersionPermission) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15199,12 +18651,40 @@ func (l *jsiiProxy_LambdaLayerVersionPermission) AddOverride(path *string, value
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaLayerVersionPermission) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15241,12 +18721,54 @@ func (l *jsiiProxy_LambdaLayerVersionPermission) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaLayerVersionPermission) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaLayerVersionPermission) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15355,28 +18877,28 @@ func (l *jsiiProxy_LambdaLayerVersionPermission) ToTerraform() interface{} {
 // AWS Lambda.
 type LambdaLayerVersionPermissionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#action LambdaLayerVersionPermission#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#layer_name LambdaLayerVersionPermission#layer_name}.
-	LayerName *string `json:"layerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#principal LambdaLayerVersionPermission#principal}.
-	Principal *string `json:"principal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#statement_id LambdaLayerVersionPermission#statement_id}.
-	StatementId *string `json:"statementId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#version_number LambdaLayerVersionPermission#version_number}.
-	VersionNumber *float64 `json:"versionNumber"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission.html#organization_id LambdaLayerVersionPermission#organization_id}.
-	OrganizationId *string `json:"organizationId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission#action LambdaLayerVersionPermission#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission#layer_name LambdaLayerVersionPermission#layer_name}.
+	LayerName *string `json:"layerName" yaml:"layerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission#principal LambdaLayerVersionPermission#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission#statement_id LambdaLayerVersionPermission#statement_id}.
+	StatementId *string `json:"statementId" yaml:"statementId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission#version_number LambdaLayerVersionPermission#version_number}.
+	VersionNumber *float64 `json:"versionNumber" yaml:"versionNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_layer_version_permission#organization_id LambdaLayerVersionPermission#organization_id}.
+	OrganizationId *string `json:"organizationId" yaml:"organizationId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html aws_lambda_permission}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission aws_lambda_permission}.
 type LambdaPermission interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -15384,8 +18906,8 @@ type LambdaPermission interface {
 	ActionInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EventSourceToken() *string
@@ -15425,10 +18947,15 @@ type LambdaPermission interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEventSourceToken()
@@ -15489,8 +19016,8 @@ func (j *jsiiProxy_LambdaPermission) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_LambdaPermission) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaPermission) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15769,7 +19296,7 @@ func (j *jsiiProxy_LambdaPermission) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html aws_lambda_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission aws_lambda_permission} Resource.
 func NewLambdaPermission(scope constructs.Construct, id *string, config *LambdaPermissionConfig) LambdaPermission {
 	_init_.Initialize()
 
@@ -15784,7 +19311,7 @@ func NewLambdaPermission(scope constructs.Construct, id *string, config *LambdaP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html aws_lambda_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission aws_lambda_permission} Resource.
 func NewLambdaPermission_Override(l LambdaPermission, scope constructs.Construct, id *string, config *LambdaPermissionConfig) {
 	_init_.Initialize()
 
@@ -15803,7 +19330,7 @@ func (j *jsiiProxy_LambdaPermission) SetAction(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LambdaPermission) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaPermission) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15939,12 +19466,40 @@ func (l *jsiiProxy_LambdaPermission) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaPermission) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaPermission) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaPermission) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15981,12 +19536,54 @@ func (l *jsiiProxy_LambdaPermission) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaPermission) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaPermission) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaPermission) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaPermission) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16135,40 +19732,40 @@ func (l *jsiiProxy_LambdaPermission) ToTerraform() interface{} {
 // AWS Lambda.
 type LambdaPermissionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#action LambdaPermission#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#function_name LambdaPermission#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#principal LambdaPermission#principal}.
-	Principal *string `json:"principal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#event_source_token LambdaPermission#event_source_token}.
-	EventSourceToken *string `json:"eventSourceToken"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#qualifier LambdaPermission#qualifier}.
-	Qualifier *string `json:"qualifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#source_account LambdaPermission#source_account}.
-	SourceAccount *string `json:"sourceAccount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#source_arn LambdaPermission#source_arn}.
-	SourceArn *string `json:"sourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#statement_id LambdaPermission#statement_id}.
-	StatementId *string `json:"statementId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission.html#statement_id_prefix LambdaPermission#statement_id_prefix}.
-	StatementIdPrefix *string `json:"statementIdPrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#action LambdaPermission#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#function_name LambdaPermission#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#principal LambdaPermission#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#event_source_token LambdaPermission#event_source_token}.
+	EventSourceToken *string `json:"eventSourceToken" yaml:"eventSourceToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#qualifier LambdaPermission#qualifier}.
+	Qualifier *string `json:"qualifier" yaml:"qualifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#source_account LambdaPermission#source_account}.
+	SourceAccount *string `json:"sourceAccount" yaml:"sourceAccount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#source_arn LambdaPermission#source_arn}.
+	SourceArn *string `json:"sourceArn" yaml:"sourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#statement_id LambdaPermission#statement_id}.
+	StatementId *string `json:"statementId" yaml:"statementId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_permission#statement_id_prefix LambdaPermission#statement_id_prefix}.
+	StatementIdPrefix *string `json:"statementIdPrefix" yaml:"statementIdPrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html aws_lambda_provisioned_concurrency_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config aws_lambda_provisioned_concurrency_config}.
 type LambdaProvisionedConcurrencyConfig interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -16195,10 +19792,15 @@ type LambdaProvisionedConcurrencyConfig interface {
 	Timeouts() LambdaProvisionedConcurrencyConfigTimeoutsOutputReference
 	TimeoutsInput() *LambdaProvisionedConcurrencyConfigTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *LambdaProvisionedConcurrencyConfigTimeouts)
@@ -16235,8 +19837,8 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfig) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_LambdaProvisionedConcurrencyConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LambdaProvisionedConcurrencyConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16435,7 +20037,7 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfig) TimeoutsInput() *LambdaPr
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html aws_lambda_provisioned_concurrency_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config aws_lambda_provisioned_concurrency_config} Resource.
 func NewLambdaProvisionedConcurrencyConfig(scope constructs.Construct, id *string, config *LambdaProvisionedConcurrencyConfigConfig) LambdaProvisionedConcurrencyConfig {
 	_init_.Initialize()
 
@@ -16450,7 +20052,7 @@ func NewLambdaProvisionedConcurrencyConfig(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html aws_lambda_provisioned_concurrency_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config aws_lambda_provisioned_concurrency_config} Resource.
 func NewLambdaProvisionedConcurrencyConfig_Override(l LambdaProvisionedConcurrencyConfig, scope constructs.Construct, id *string, config *LambdaProvisionedConcurrencyConfigConfig) {
 	_init_.Initialize()
 
@@ -16461,7 +20063,7 @@ func NewLambdaProvisionedConcurrencyConfig_Override(l LambdaProvisionedConcurren
 	)
 }
 
-func (j *jsiiProxy_LambdaProvisionedConcurrencyConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_LambdaProvisionedConcurrencyConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -16557,12 +20159,40 @@ func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) AddOverride(path *string,
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16599,12 +20229,54 @@ func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16721,30 +20393,30 @@ func (l *jsiiProxy_LambdaProvisionedConcurrencyConfig) ToTerraform() interface{}
 // AWS Lambda.
 type LambdaProvisionedConcurrencyConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html#function_name LambdaProvisionedConcurrencyConfig#function_name}.
-	FunctionName *string `json:"functionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html#provisioned_concurrent_executions LambdaProvisionedConcurrencyConfig#provisioned_concurrent_executions}.
-	ProvisionedConcurrentExecutions *float64 `json:"provisionedConcurrentExecutions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html#qualifier LambdaProvisionedConcurrencyConfig#qualifier}.
-	Qualifier *string `json:"qualifier"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config#function_name LambdaProvisionedConcurrencyConfig#function_name}.
+	FunctionName *string `json:"functionName" yaml:"functionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config#provisioned_concurrent_executions LambdaProvisionedConcurrencyConfig#provisioned_concurrent_executions}.
+	ProvisionedConcurrentExecutions *float64 `json:"provisionedConcurrentExecutions" yaml:"provisionedConcurrentExecutions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config#qualifier LambdaProvisionedConcurrencyConfig#qualifier}.
+	Qualifier *string `json:"qualifier" yaml:"qualifier"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html#timeouts LambdaProvisionedConcurrencyConfig#timeouts}
-	Timeouts *LambdaProvisionedConcurrencyConfigTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config#timeouts LambdaProvisionedConcurrencyConfig#timeouts}
+	Timeouts *LambdaProvisionedConcurrencyConfigTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type LambdaProvisionedConcurrencyConfigTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html#create LambdaProvisionedConcurrencyConfig#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config.html#update LambdaProvisionedConcurrencyConfig#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config#create LambdaProvisionedConcurrencyConfig#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lambda_provisioned_concurrency_config#update LambdaProvisionedConcurrencyConfig#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type LambdaProvisionedConcurrencyConfigTimeoutsOutputReference interface {
@@ -16758,15 +20430,20 @@ type LambdaProvisionedConcurrencyConfigTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -16828,8 +20505,8 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16858,7 +20535,7 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) Up
 	return returns
 }
 
-func NewLambdaProvisionedConcurrencyConfigTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LambdaProvisionedConcurrencyConfigTimeoutsOutputReference {
+func NewLambdaProvisionedConcurrencyConfigTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LambdaProvisionedConcurrencyConfigTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference{}
@@ -16872,7 +20549,7 @@ func NewLambdaProvisionedConcurrencyConfigTimeoutsOutputReference(terraformResou
 	return &j
 }
 
-func NewLambdaProvisionedConcurrencyConfigTimeoutsOutputReference_Override(l LambdaProvisionedConcurrencyConfigTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLambdaProvisionedConcurrencyConfigTimeoutsOutputReference_Override(l LambdaProvisionedConcurrencyConfigTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16914,7 +20591,7 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16931,12 +20608,40 @@ func (j *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) Se
 }
 
 // Experimental.
-func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16973,12 +20678,54 @@ func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) Ge
 }
 
 // Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LambdaProvisionedConcurrencyConfigTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

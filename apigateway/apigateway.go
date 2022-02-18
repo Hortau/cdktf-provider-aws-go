@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/apigateway/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account.html aws_api_gateway_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account aws_api_gateway_account}.
 type ApiGatewayAccount interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -17,8 +17,8 @@ type ApiGatewayAccount interface {
 	SetCloudwatchRoleArn(val *string)
 	CloudwatchRoleArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -34,10 +34,15 @@ type ApiGatewayAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCloudwatchRoleArn()
@@ -94,8 +99,8 @@ func (j *jsiiProxy_ApiGatewayAccount) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -214,7 +219,7 @@ func (j *jsiiProxy_ApiGatewayAccount) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account.html aws_api_gateway_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account aws_api_gateway_account} Resource.
 func NewApiGatewayAccount(scope constructs.Construct, id *string, config *ApiGatewayAccountConfig) ApiGatewayAccount {
 	_init_.Initialize()
 
@@ -229,7 +234,7 @@ func NewApiGatewayAccount(scope constructs.Construct, id *string, config *ApiGat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account.html aws_api_gateway_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account aws_api_gateway_account} Resource.
 func NewApiGatewayAccount_Override(a ApiGatewayAccount, scope constructs.Construct, id *string, config *ApiGatewayAccountConfig) {
 	_init_.Initialize()
 
@@ -248,7 +253,7 @@ func (j *jsiiProxy_ApiGatewayAccount) SetCloudwatchRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -320,12 +325,40 @@ func (a *jsiiProxy_ApiGatewayAccount) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -362,12 +395,54 @@ func (a *jsiiProxy_ApiGatewayAccount) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -489,15 +564,15 @@ func (a *jsiiProxy_ApiGatewayAccount) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account.html#cloudwatch_role_arn ApiGatewayAccount#cloudwatch_role_arn}.
-	CloudwatchRoleArn *string `json:"cloudwatchRoleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_account#cloudwatch_role_arn ApiGatewayAccount#cloudwatch_role_arn}.
+	CloudwatchRoleArn *string `json:"cloudwatchRoleArn" yaml:"cloudwatchRoleArn"`
 }
 
 type ApiGatewayAccountThrottleSettings interface {
@@ -508,12 +583,19 @@ type ApiGatewayAccountThrottleSettings interface {
 	RateLimit() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -562,8 +644,8 @@ func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) TerraformAttribute() *stri
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -572,15 +654,25 @@ func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) TerraformResource() cdktf.
 	return returns
 }
 
+func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewApiGatewayAccountThrottleSettings(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) ApiGatewayAccountThrottleSettings {
+func NewApiGatewayAccountThrottleSettings(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) ApiGatewayAccountThrottleSettings {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayAccountThrottleSettings{}
 
 	_jsii_.Create(
 		"hashicorp_aws.apigateway.ApiGatewayAccountThrottleSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -588,12 +680,12 @@ func NewApiGatewayAccountThrottleSettings(terraformResource cdktf.ITerraformReso
 }
 
 // Experimental.
-func NewApiGatewayAccountThrottleSettings_Override(a ApiGatewayAccountThrottleSettings, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewApiGatewayAccountThrottleSettings_Override(a ApiGatewayAccountThrottleSettings, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.apigateway.ApiGatewayAccountThrottleSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		a,
 	)
 }
@@ -614,7 +706,7 @@ func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) SetTerraformAttribute(val 
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -622,13 +714,49 @@ func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) SetTerraformResource(val c
 	)
 }
 
+func (j *jsiiProxy_ApiGatewayAccountThrottleSettings) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -665,12 +793,54 @@ func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -692,14 +862,14 @@ func (a *jsiiProxy_ApiGatewayAccountThrottleSettings) InterpolationForAttribute(
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html aws_api_gateway_api_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key aws_api_gateway_api_key}.
 type ApiGatewayApiKey interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -722,12 +892,12 @@ type ApiGatewayApiKey interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -735,10 +905,15 @@ type ApiGatewayApiKey interface {
 	SetValue(val *string)
 	ValueInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -788,8 +963,8 @@ func (j *jsiiProxy_ApiGatewayApiKey) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayApiKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -958,8 +1133,8 @@ func (j *jsiiProxy_ApiGatewayApiKey) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayApiKey) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -968,8 +1143,8 @@ func (j *jsiiProxy_ApiGatewayApiKey) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayApiKey) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -978,8 +1153,8 @@ func (j *jsiiProxy_ApiGatewayApiKey) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayApiKey) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -988,8 +1163,8 @@ func (j *jsiiProxy_ApiGatewayApiKey) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayApiKey) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1048,7 +1223,7 @@ func (j *jsiiProxy_ApiGatewayApiKey) ValueInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html aws_api_gateway_api_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key aws_api_gateway_api_key} Resource.
 func NewApiGatewayApiKey(scope constructs.Construct, id *string, config *ApiGatewayApiKeyConfig) ApiGatewayApiKey {
 	_init_.Initialize()
 
@@ -1063,7 +1238,7 @@ func NewApiGatewayApiKey(scope constructs.Construct, id *string, config *ApiGate
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html aws_api_gateway_api_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key aws_api_gateway_api_key} Resource.
 func NewApiGatewayApiKey_Override(a ApiGatewayApiKey, scope constructs.Construct, id *string, config *ApiGatewayApiKeyConfig) {
 	_init_.Initialize()
 
@@ -1074,7 +1249,7 @@ func NewApiGatewayApiKey_Override(a ApiGatewayApiKey, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayApiKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1130,7 +1305,7 @@ func (j *jsiiProxy_ApiGatewayApiKey) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) SetTags(val interface{}) {
+func (j *jsiiProxy_ApiGatewayApiKey) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1138,7 +1313,7 @@ func (j *jsiiProxy_ApiGatewayApiKey) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayApiKey) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApiGatewayApiKey) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1194,12 +1369,40 @@ func (a *jsiiProxy_ApiGatewayApiKey) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayApiKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayApiKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayApiKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1236,12 +1439,54 @@ func (a *jsiiProxy_ApiGatewayApiKey) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayApiKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayApiKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayApiKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayApiKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1382,28 +1627,28 @@ func (a *jsiiProxy_ApiGatewayApiKey) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayApiKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html#name ApiGatewayApiKey#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html#description ApiGatewayApiKey#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html#enabled ApiGatewayApiKey#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html#tags ApiGatewayApiKey#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html#tags_all ApiGatewayApiKey#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key.html#value ApiGatewayApiKey#value}.
-	Value *string `json:"value"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key#name ApiGatewayApiKey#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key#description ApiGatewayApiKey#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key#enabled ApiGatewayApiKey#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key#tags ApiGatewayApiKey#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key#tags_all ApiGatewayApiKey#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_api_key#value ApiGatewayApiKey#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html aws_api_gateway_authorizer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer aws_api_gateway_authorizer}.
 type ApiGatewayAuthorizer interface {
 	cdktf.TerraformResource
 	AuthorizerCredentials() *string
@@ -1417,8 +1662,8 @@ type ApiGatewayAuthorizer interface {
 	AuthorizerUriInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1452,10 +1697,15 @@ type ApiGatewayAuthorizer interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAuthorizerCredentials()
@@ -1557,8 +1807,8 @@ func (j *jsiiProxy_ApiGatewayAuthorizer) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayAuthorizer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayAuthorizer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1797,7 +2047,7 @@ func (j *jsiiProxy_ApiGatewayAuthorizer) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html aws_api_gateway_authorizer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer aws_api_gateway_authorizer} Resource.
 func NewApiGatewayAuthorizer(scope constructs.Construct, id *string, config *ApiGatewayAuthorizerConfig) ApiGatewayAuthorizer {
 	_init_.Initialize()
 
@@ -1812,7 +2062,7 @@ func NewApiGatewayAuthorizer(scope constructs.Construct, id *string, config *Api
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html aws_api_gateway_authorizer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer aws_api_gateway_authorizer} Resource.
 func NewApiGatewayAuthorizer_Override(a ApiGatewayAuthorizer, scope constructs.Construct, id *string, config *ApiGatewayAuthorizerConfig) {
 	_init_.Initialize()
 
@@ -1847,7 +2097,7 @@ func (j *jsiiProxy_ApiGatewayAuthorizer) SetAuthorizerUri(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayAuthorizer) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayAuthorizer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1967,12 +2217,40 @@ func (a *jsiiProxy_ApiGatewayAuthorizer) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayAuthorizer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayAuthorizer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAuthorizer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2009,12 +2287,54 @@ func (a *jsiiProxy_ApiGatewayAuthorizer) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayAuthorizer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAuthorizer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayAuthorizer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayAuthorizer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2171,34 +2491,34 @@ func (a *jsiiProxy_ApiGatewayAuthorizer) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayAuthorizerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#name ApiGatewayAuthorizer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#rest_api_id ApiGatewayAuthorizer#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#authorizer_credentials ApiGatewayAuthorizer#authorizer_credentials}.
-	AuthorizerCredentials *string `json:"authorizerCredentials"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#authorizer_result_ttl_in_seconds ApiGatewayAuthorizer#authorizer_result_ttl_in_seconds}.
-	AuthorizerResultTtlInSeconds *float64 `json:"authorizerResultTtlInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#authorizer_uri ApiGatewayAuthorizer#authorizer_uri}.
-	AuthorizerUri *string `json:"authorizerUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#identity_source ApiGatewayAuthorizer#identity_source}.
-	IdentitySource *string `json:"identitySource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#identity_validation_expression ApiGatewayAuthorizer#identity_validation_expression}.
-	IdentityValidationExpression *string `json:"identityValidationExpression"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#provider_arns ApiGatewayAuthorizer#provider_arns}.
-	ProviderArns *[]*string `json:"providerArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer.html#type ApiGatewayAuthorizer#type}.
-	Type *string `json:"type"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#name ApiGatewayAuthorizer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#rest_api_id ApiGatewayAuthorizer#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#authorizer_credentials ApiGatewayAuthorizer#authorizer_credentials}.
+	AuthorizerCredentials *string `json:"authorizerCredentials" yaml:"authorizerCredentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#authorizer_result_ttl_in_seconds ApiGatewayAuthorizer#authorizer_result_ttl_in_seconds}.
+	AuthorizerResultTtlInSeconds *float64 `json:"authorizerResultTtlInSeconds" yaml:"authorizerResultTtlInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#authorizer_uri ApiGatewayAuthorizer#authorizer_uri}.
+	AuthorizerUri *string `json:"authorizerUri" yaml:"authorizerUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#identity_source ApiGatewayAuthorizer#identity_source}.
+	IdentitySource *string `json:"identitySource" yaml:"identitySource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#identity_validation_expression ApiGatewayAuthorizer#identity_validation_expression}.
+	IdentityValidationExpression *string `json:"identityValidationExpression" yaml:"identityValidationExpression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#provider_arns ApiGatewayAuthorizer#provider_arns}.
+	ProviderArns *[]*string `json:"providerArns" yaml:"providerArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_authorizer#type ApiGatewayAuthorizer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping.html aws_api_gateway_base_path_mapping}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping aws_api_gateway_base_path_mapping}.
 type ApiGatewayBasePathMapping interface {
 	cdktf.TerraformResource
 	ApiId() *string
@@ -2209,8 +2529,8 @@ type ApiGatewayBasePathMapping interface {
 	BasePathInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -2232,10 +2552,15 @@ type ApiGatewayBasePathMapping interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBasePath()
@@ -2312,8 +2637,8 @@ func (j *jsiiProxy_ApiGatewayBasePathMapping) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayBasePathMapping) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayBasePathMapping) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2472,7 +2797,7 @@ func (j *jsiiProxy_ApiGatewayBasePathMapping) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping.html aws_api_gateway_base_path_mapping} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping aws_api_gateway_base_path_mapping} Resource.
 func NewApiGatewayBasePathMapping(scope constructs.Construct, id *string, config *ApiGatewayBasePathMappingConfig) ApiGatewayBasePathMapping {
 	_init_.Initialize()
 
@@ -2487,7 +2812,7 @@ func NewApiGatewayBasePathMapping(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping.html aws_api_gateway_base_path_mapping} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping aws_api_gateway_base_path_mapping} Resource.
 func NewApiGatewayBasePathMapping_Override(a ApiGatewayBasePathMapping, scope constructs.Construct, id *string, config *ApiGatewayBasePathMappingConfig) {
 	_init_.Initialize()
 
@@ -2514,7 +2839,7 @@ func (j *jsiiProxy_ApiGatewayBasePathMapping) SetBasePath(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayBasePathMapping) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayBasePathMapping) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2602,12 +2927,40 @@ func (a *jsiiProxy_ApiGatewayBasePathMapping) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayBasePathMapping) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayBasePathMapping) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayBasePathMapping) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2644,12 +2997,54 @@ func (a *jsiiProxy_ApiGatewayBasePathMapping) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayBasePathMapping) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayBasePathMapping) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayBasePathMapping) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayBasePathMapping) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2766,31 +3161,31 @@ func (a *jsiiProxy_ApiGatewayBasePathMapping) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayBasePathMappingConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping.html#api_id ApiGatewayBasePathMapping#api_id}.
-	ApiId *string `json:"apiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping.html#domain_name ApiGatewayBasePathMapping#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping.html#base_path ApiGatewayBasePathMapping#base_path}.
-	BasePath *string `json:"basePath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping.html#stage_name ApiGatewayBasePathMapping#stage_name}.
-	StageName *string `json:"stageName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping#api_id ApiGatewayBasePathMapping#api_id}.
+	ApiId *string `json:"apiId" yaml:"apiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping#domain_name ApiGatewayBasePathMapping#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping#base_path ApiGatewayBasePathMapping#base_path}.
+	BasePath *string `json:"basePath" yaml:"basePath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_base_path_mapping#stage_name ApiGatewayBasePathMapping#stage_name}.
+	StageName *string `json:"stageName" yaml:"stageName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate.html aws_api_gateway_client_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate aws_api_gateway_client_certificate}.
 type ApiGatewayClientCertificate interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2808,20 +3203,25 @@ type ApiGatewayClientCertificate interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -2869,8 +3269,8 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayClientCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3009,8 +3409,8 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayClientCertificate) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3019,8 +3419,8 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayClientCertificate) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3029,8 +3429,8 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayClientCertificate) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3039,8 +3439,8 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayClientCertificate) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3079,7 +3479,7 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate.html aws_api_gateway_client_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate aws_api_gateway_client_certificate} Resource.
 func NewApiGatewayClientCertificate(scope constructs.Construct, id *string, config *ApiGatewayClientCertificateConfig) ApiGatewayClientCertificate {
 	_init_.Initialize()
 
@@ -3094,7 +3494,7 @@ func NewApiGatewayClientCertificate(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate.html aws_api_gateway_client_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate aws_api_gateway_client_certificate} Resource.
 func NewApiGatewayClientCertificate_Override(a ApiGatewayClientCertificate, scope constructs.Construct, id *string, config *ApiGatewayClientCertificateConfig) {
 	_init_.Initialize()
 
@@ -3105,7 +3505,7 @@ func NewApiGatewayClientCertificate_Override(a ApiGatewayClientCertificate, scop
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayClientCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3145,7 +3545,7 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) SetProvider(val cdktf.TerraformP
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) SetTags(val interface{}) {
+func (j *jsiiProxy_ApiGatewayClientCertificate) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3153,7 +3553,7 @@ func (j *jsiiProxy_ApiGatewayClientCertificate) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayClientCertificate) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApiGatewayClientCertificate) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3201,12 +3601,40 @@ func (a *jsiiProxy_ApiGatewayClientCertificate) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayClientCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayClientCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayClientCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3243,12 +3671,54 @@ func (a *jsiiProxy_ApiGatewayClientCertificate) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayClientCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayClientCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayClientCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayClientCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3373,28 +3843,28 @@ func (a *jsiiProxy_ApiGatewayClientCertificate) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayClientCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate.html#description ApiGatewayClientCertificate#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate.html#tags ApiGatewayClientCertificate#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate.html#tags_all ApiGatewayClientCertificate#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate#description ApiGatewayClientCertificate#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate#tags ApiGatewayClientCertificate#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_client_certificate#tags_all ApiGatewayClientCertificate#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html aws_api_gateway_deployment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment aws_api_gateway_deployment}.
 type ApiGatewayDeployment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -3424,17 +3894,22 @@ type ApiGatewayDeployment interface {
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Triggers() interface{}
-	SetTriggers(val interface{})
-	TriggersInput() interface{}
-	Variables() interface{}
-	SetVariables(val interface{})
-	VariablesInput() interface{}
+	Triggers() *map[string]*string
+	SetTriggers(val *map[string]*string)
+	TriggersInput() *map[string]*string
+	Variables() *map[string]*string
+	SetVariables(val *map[string]*string)
+	VariablesInput() *map[string]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -3474,8 +3949,8 @@ func (j *jsiiProxy_ApiGatewayDeployment) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDeployment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3704,8 +4179,8 @@ func (j *jsiiProxy_ApiGatewayDeployment) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) Triggers() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDeployment) Triggers() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"triggers",
@@ -3714,8 +4189,8 @@ func (j *jsiiProxy_ApiGatewayDeployment) Triggers() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) TriggersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDeployment) TriggersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"triggersInput",
@@ -3724,8 +4199,8 @@ func (j *jsiiProxy_ApiGatewayDeployment) TriggersInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) Variables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDeployment) Variables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"variables",
@@ -3734,8 +4209,8 @@ func (j *jsiiProxy_ApiGatewayDeployment) Variables() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) VariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDeployment) VariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"variablesInput",
@@ -3744,7 +4219,7 @@ func (j *jsiiProxy_ApiGatewayDeployment) VariablesInput() interface{} {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html aws_api_gateway_deployment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment aws_api_gateway_deployment} Resource.
 func NewApiGatewayDeployment(scope constructs.Construct, id *string, config *ApiGatewayDeploymentConfig) ApiGatewayDeployment {
 	_init_.Initialize()
 
@@ -3759,7 +4234,7 @@ func NewApiGatewayDeployment(scope constructs.Construct, id *string, config *Api
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html aws_api_gateway_deployment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment aws_api_gateway_deployment} Resource.
 func NewApiGatewayDeployment_Override(a ApiGatewayDeployment, scope constructs.Construct, id *string, config *ApiGatewayDeploymentConfig) {
 	_init_.Initialize()
 
@@ -3770,7 +4245,7 @@ func NewApiGatewayDeployment_Override(a ApiGatewayDeployment, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDeployment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3834,7 +4309,7 @@ func (j *jsiiProxy_ApiGatewayDeployment) SetStageName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) SetTriggers(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDeployment) SetTriggers(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"triggers",
@@ -3842,7 +4317,7 @@ func (j *jsiiProxy_ApiGatewayDeployment) SetTriggers(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDeployment) SetVariables(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDeployment) SetVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"variables",
@@ -3890,12 +4365,40 @@ func (a *jsiiProxy_ApiGatewayDeployment) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDeployment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDeployment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDeployment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3932,12 +4435,54 @@ func (a *jsiiProxy_ApiGatewayDeployment) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDeployment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDeployment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDeployment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDeployment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4078,34 +4623,34 @@ func (a *jsiiProxy_ApiGatewayDeployment) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayDeploymentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html#rest_api_id ApiGatewayDeployment#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html#description ApiGatewayDeployment#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html#stage_description ApiGatewayDeployment#stage_description}.
-	StageDescription *string `json:"stageDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html#stage_name ApiGatewayDeployment#stage_name}.
-	StageName *string `json:"stageName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html#triggers ApiGatewayDeployment#triggers}.
-	Triggers interface{} `json:"triggers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment.html#variables ApiGatewayDeployment#variables}.
-	Variables interface{} `json:"variables"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment#rest_api_id ApiGatewayDeployment#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment#description ApiGatewayDeployment#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment#stage_description ApiGatewayDeployment#stage_description}.
+	StageDescription *string `json:"stageDescription" yaml:"stageDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment#stage_name ApiGatewayDeployment#stage_name}.
+	StageName *string `json:"stageName" yaml:"stageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment#triggers ApiGatewayDeployment#triggers}.
+	Triggers *map[string]*string `json:"triggers" yaml:"triggers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_deployment#variables ApiGatewayDeployment#variables}.
+	Variables *map[string]*string `json:"variables" yaml:"variables"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html aws_api_gateway_documentation_part}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part aws_api_gateway_documentation_part}.
 type ApiGatewayDocumentationPart interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4129,10 +4674,15 @@ type ApiGatewayDocumentationPart interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutLocation(value *ApiGatewayDocumentationPartLocation)
@@ -4168,8 +4718,8 @@ func (j *jsiiProxy_ApiGatewayDocumentationPart) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDocumentationPart) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDocumentationPart) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4348,7 +4898,7 @@ func (j *jsiiProxy_ApiGatewayDocumentationPart) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html aws_api_gateway_documentation_part} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part aws_api_gateway_documentation_part} Resource.
 func NewApiGatewayDocumentationPart(scope constructs.Construct, id *string, config *ApiGatewayDocumentationPartConfig) ApiGatewayDocumentationPart {
 	_init_.Initialize()
 
@@ -4363,7 +4913,7 @@ func NewApiGatewayDocumentationPart(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html aws_api_gateway_documentation_part} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part aws_api_gateway_documentation_part} Resource.
 func NewApiGatewayDocumentationPart_Override(a ApiGatewayDocumentationPart, scope constructs.Construct, id *string, config *ApiGatewayDocumentationPartConfig) {
 	_init_.Initialize()
 
@@ -4374,7 +4924,7 @@ func NewApiGatewayDocumentationPart_Override(a ApiGatewayDocumentationPart, scop
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDocumentationPart) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDocumentationPart) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4462,12 +5012,40 @@ func (a *jsiiProxy_ApiGatewayDocumentationPart) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPart) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDocumentationPart) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPart) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4504,12 +5082,54 @@ func (a *jsiiProxy_ApiGatewayDocumentationPart) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPart) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPart) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDocumentationPart) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPart) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4618,34 +5238,34 @@ func (a *jsiiProxy_ApiGatewayDocumentationPart) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayDocumentationPartConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// location block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#location ApiGatewayDocumentationPart#location}
-	Location *ApiGatewayDocumentationPartLocation `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#properties ApiGatewayDocumentationPart#properties}.
-	Properties *string `json:"properties"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#rest_api_id ApiGatewayDocumentationPart#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#location ApiGatewayDocumentationPart#location}
+	Location *ApiGatewayDocumentationPartLocation `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#properties ApiGatewayDocumentationPart#properties}.
+	Properties *string `json:"properties" yaml:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#rest_api_id ApiGatewayDocumentationPart#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
 }
 
 type ApiGatewayDocumentationPartLocation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#type ApiGatewayDocumentationPart#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#method ApiGatewayDocumentationPart#method}.
-	Method *string `json:"method"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#name ApiGatewayDocumentationPart#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#path ApiGatewayDocumentationPart#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part.html#status_code ApiGatewayDocumentationPart#status_code}.
-	StatusCode *string `json:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#type ApiGatewayDocumentationPart#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#method ApiGatewayDocumentationPart#method}.
+	Method *string `json:"method" yaml:"method"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#name ApiGatewayDocumentationPart#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#path ApiGatewayDocumentationPart#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_part#status_code ApiGatewayDocumentationPart#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
 }
 
 type ApiGatewayDocumentationPartLocationOutputReference interface {
@@ -4668,15 +5288,20 @@ type ApiGatewayDocumentationPartLocationOutputReference interface {
 	StatusCodeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMethod()
@@ -4800,8 +5425,8 @@ func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4830,7 +5455,7 @@ func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) TypeInput
 	return returns
 }
 
-func NewApiGatewayDocumentationPartLocationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayDocumentationPartLocationOutputReference {
+func NewApiGatewayDocumentationPartLocationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayDocumentationPartLocationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference{}
@@ -4844,7 +5469,7 @@ func NewApiGatewayDocumentationPartLocationOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewApiGatewayDocumentationPartLocationOutputReference_Override(a ApiGatewayDocumentationPartLocationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayDocumentationPartLocationOutputReference_Override(a ApiGatewayDocumentationPartLocationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4910,7 +5535,7 @@ func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4927,12 +5552,40 @@ func (j *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) SetType(v
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4969,12 +5622,54 @@ func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetNumber
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5042,13 +5737,13 @@ func (a *jsiiProxy_ApiGatewayDocumentationPartLocationOutputReference) ResetStat
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version.html aws_api_gateway_documentation_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version aws_api_gateway_documentation_version}.
 type ApiGatewayDocumentationVersion interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -5073,10 +5768,15 @@ type ApiGatewayDocumentationVersion interface {
 	SetVersion(val *string)
 	VersionInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -5112,8 +5812,8 @@ func (j *jsiiProxy_ApiGatewayDocumentationVersion) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDocumentationVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDocumentationVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5292,7 +5992,7 @@ func (j *jsiiProxy_ApiGatewayDocumentationVersion) VersionInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version.html aws_api_gateway_documentation_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version aws_api_gateway_documentation_version} Resource.
 func NewApiGatewayDocumentationVersion(scope constructs.Construct, id *string, config *ApiGatewayDocumentationVersionConfig) ApiGatewayDocumentationVersion {
 	_init_.Initialize()
 
@@ -5307,7 +6007,7 @@ func NewApiGatewayDocumentationVersion(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version.html aws_api_gateway_documentation_version} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version aws_api_gateway_documentation_version} Resource.
 func NewApiGatewayDocumentationVersion_Override(a ApiGatewayDocumentationVersion, scope constructs.Construct, id *string, config *ApiGatewayDocumentationVersionConfig) {
 	_init_.Initialize()
 
@@ -5318,7 +6018,7 @@ func NewApiGatewayDocumentationVersion_Override(a ApiGatewayDocumentationVersion
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDocumentationVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDocumentationVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5414,12 +6114,40 @@ func (a *jsiiProxy_ApiGatewayDocumentationVersion) AddOverride(path *string, val
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5456,12 +6184,54 @@ func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDocumentationVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5570,22 +6340,22 @@ func (a *jsiiProxy_ApiGatewayDocumentationVersion) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayDocumentationVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version.html#rest_api_id ApiGatewayDocumentationVersion#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version.html#version ApiGatewayDocumentationVersion#version}.
-	Version *string `json:"version"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version.html#description ApiGatewayDocumentationVersion#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version#rest_api_id ApiGatewayDocumentationVersion#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version#version ApiGatewayDocumentationVersion#version}.
+	Version *string `json:"version" yaml:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_documentation_version#description ApiGatewayDocumentationVersion#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html aws_api_gateway_domain_name}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name aws_api_gateway_domain_name}.
 type ApiGatewayDomainName interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -5609,8 +6379,8 @@ type ApiGatewayDomainName interface {
 	CloudfrontDomainName() *string
 	CloudfrontZoneId() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -5640,20 +6410,25 @@ type ApiGatewayDomainName interface {
 	SecurityPolicy() *string
 	SetSecurityPolicy(val *string)
 	SecurityPolicyInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEndpointConfiguration(value *ApiGatewayDomainNameEndpointConfiguration)
@@ -5842,8 +6617,8 @@ func (j *jsiiProxy_ApiGatewayDomainName) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDomainName) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6072,8 +6847,8 @@ func (j *jsiiProxy_ApiGatewayDomainName) SecurityPolicyInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDomainName) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6082,8 +6857,8 @@ func (j *jsiiProxy_ApiGatewayDomainName) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDomainName) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6092,8 +6867,8 @@ func (j *jsiiProxy_ApiGatewayDomainName) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDomainName) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6102,8 +6877,8 @@ func (j *jsiiProxy_ApiGatewayDomainName) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayDomainName) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6142,7 +6917,7 @@ func (j *jsiiProxy_ApiGatewayDomainName) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html aws_api_gateway_domain_name} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name aws_api_gateway_domain_name} Resource.
 func NewApiGatewayDomainName(scope constructs.Construct, id *string, config *ApiGatewayDomainNameConfig) ApiGatewayDomainName {
 	_init_.Initialize()
 
@@ -6157,7 +6932,7 @@ func NewApiGatewayDomainName(scope constructs.Construct, id *string, config *Api
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html aws_api_gateway_domain_name} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name aws_api_gateway_domain_name} Resource.
 func NewApiGatewayDomainName_Override(a ApiGatewayDomainName, scope constructs.Construct, id *string, config *ApiGatewayDomainNameConfig) {
 	_init_.Initialize()
 
@@ -6208,7 +6983,7 @@ func (j *jsiiProxy_ApiGatewayDomainName) SetCertificatePrivateKey(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDomainName) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6272,7 +7047,7 @@ func (j *jsiiProxy_ApiGatewayDomainName) SetSecurityPolicy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) SetTags(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDomainName) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6280,7 +7055,7 @@ func (j *jsiiProxy_ApiGatewayDomainName) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDomainName) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApiGatewayDomainName) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6328,12 +7103,40 @@ func (a *jsiiProxy_ApiGatewayDomainName) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDomainName) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDomainName) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainName) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6370,12 +7173,54 @@ func (a *jsiiProxy_ApiGatewayDomainName) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDomainName) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainName) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDomainName) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainName) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6588,48 +7433,48 @@ func (a *jsiiProxy_ApiGatewayDomainName) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayDomainNameConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#domain_name ApiGatewayDomainName#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#certificate_arn ApiGatewayDomainName#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#certificate_body ApiGatewayDomainName#certificate_body}.
-	CertificateBody *string `json:"certificateBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#certificate_chain ApiGatewayDomainName#certificate_chain}.
-	CertificateChain *string `json:"certificateChain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#certificate_name ApiGatewayDomainName#certificate_name}.
-	CertificateName *string `json:"certificateName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#certificate_private_key ApiGatewayDomainName#certificate_private_key}.
-	CertificatePrivateKey *string `json:"certificatePrivateKey"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#domain_name ApiGatewayDomainName#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#certificate_arn ApiGatewayDomainName#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#certificate_body ApiGatewayDomainName#certificate_body}.
+	CertificateBody *string `json:"certificateBody" yaml:"certificateBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#certificate_chain ApiGatewayDomainName#certificate_chain}.
+	CertificateChain *string `json:"certificateChain" yaml:"certificateChain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#certificate_name ApiGatewayDomainName#certificate_name}.
+	CertificateName *string `json:"certificateName" yaml:"certificateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#certificate_private_key ApiGatewayDomainName#certificate_private_key}.
+	CertificatePrivateKey *string `json:"certificatePrivateKey" yaml:"certificatePrivateKey"`
 	// endpoint_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#endpoint_configuration ApiGatewayDomainName#endpoint_configuration}
-	EndpointConfiguration *ApiGatewayDomainNameEndpointConfiguration `json:"endpointConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#endpoint_configuration ApiGatewayDomainName#endpoint_configuration}
+	EndpointConfiguration *ApiGatewayDomainNameEndpointConfiguration `json:"endpointConfiguration" yaml:"endpointConfiguration"`
 	// mutual_tls_authentication block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#mutual_tls_authentication ApiGatewayDomainName#mutual_tls_authentication}
-	MutualTlsAuthentication *ApiGatewayDomainNameMutualTlsAuthentication `json:"mutualTlsAuthentication"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#regional_certificate_arn ApiGatewayDomainName#regional_certificate_arn}.
-	RegionalCertificateArn *string `json:"regionalCertificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#regional_certificate_name ApiGatewayDomainName#regional_certificate_name}.
-	RegionalCertificateName *string `json:"regionalCertificateName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#security_policy ApiGatewayDomainName#security_policy}.
-	SecurityPolicy *string `json:"securityPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#tags ApiGatewayDomainName#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#tags_all ApiGatewayDomainName#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#mutual_tls_authentication ApiGatewayDomainName#mutual_tls_authentication}
+	MutualTlsAuthentication *ApiGatewayDomainNameMutualTlsAuthentication `json:"mutualTlsAuthentication" yaml:"mutualTlsAuthentication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#regional_certificate_arn ApiGatewayDomainName#regional_certificate_arn}.
+	RegionalCertificateArn *string `json:"regionalCertificateArn" yaml:"regionalCertificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#regional_certificate_name ApiGatewayDomainName#regional_certificate_name}.
+	RegionalCertificateName *string `json:"regionalCertificateName" yaml:"regionalCertificateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#security_policy ApiGatewayDomainName#security_policy}.
+	SecurityPolicy *string `json:"securityPolicy" yaml:"securityPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#tags ApiGatewayDomainName#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#tags_all ApiGatewayDomainName#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ApiGatewayDomainNameEndpointConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#types ApiGatewayDomainName#types}.
-	Types *[]*string `json:"types"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#types ApiGatewayDomainName#types}.
+	Types *[]*string `json:"types" yaml:"types"`
 }
 
 type ApiGatewayDomainNameEndpointConfigurationOutputReference interface {
@@ -6640,15 +7485,20 @@ type ApiGatewayDomainNameEndpointConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Types() *[]*string
 	SetTypes(val *[]*string)
 	TypesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6688,8 +7538,8 @@ func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6718,7 +7568,7 @@ func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) Typ
 	return returns
 }
 
-func NewApiGatewayDomainNameEndpointConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayDomainNameEndpointConfigurationOutputReference {
+func NewApiGatewayDomainNameEndpointConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayDomainNameEndpointConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference{}
@@ -6732,7 +7582,7 @@ func NewApiGatewayDomainNameEndpointConfigurationOutputReference(terraformResour
 	return &j
 }
 
-func NewApiGatewayDomainNameEndpointConfigurationOutputReference_Override(a ApiGatewayDomainNameEndpointConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayDomainNameEndpointConfigurationOutputReference_Override(a ApiGatewayDomainNameEndpointConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6766,7 +7616,7 @@ func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6783,12 +7633,40 @@ func (j *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) Set
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6825,12 +7703,54 @@ func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) Get
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6867,10 +7787,10 @@ func (a *jsiiProxy_ApiGatewayDomainNameEndpointConfigurationOutputReference) Int
 }
 
 type ApiGatewayDomainNameMutualTlsAuthentication struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#truststore_uri ApiGatewayDomainName#truststore_uri}.
-	TruststoreUri *string `json:"truststoreUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name.html#truststore_version ApiGatewayDomainName#truststore_version}.
-	TruststoreVersion *string `json:"truststoreVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#truststore_uri ApiGatewayDomainName#truststore_uri}.
+	TruststoreUri *string `json:"truststoreUri" yaml:"truststoreUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_domain_name#truststore_version ApiGatewayDomainName#truststore_version}.
+	TruststoreVersion *string `json:"truststoreVersion" yaml:"truststoreVersion"`
 }
 
 type ApiGatewayDomainNameMutualTlsAuthenticationOutputReference interface {
@@ -6881,18 +7801,23 @@ type ApiGatewayDomainNameMutualTlsAuthenticationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TruststoreUri() *string
 	SetTruststoreUri(val *string)
 	TruststoreUriInput() *string
 	TruststoreVersion() *string
 	SetTruststoreVersion(val *string)
 	TruststoreVersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetTruststoreVersion()
@@ -6933,8 +7858,8 @@ func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6983,7 +7908,7 @@ func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) T
 	return returns
 }
 
-func NewApiGatewayDomainNameMutualTlsAuthenticationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayDomainNameMutualTlsAuthenticationOutputReference {
+func NewApiGatewayDomainNameMutualTlsAuthenticationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayDomainNameMutualTlsAuthenticationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference{}
@@ -6997,7 +7922,7 @@ func NewApiGatewayDomainNameMutualTlsAuthenticationOutputReference(terraformReso
 	return &j
 }
 
-func NewApiGatewayDomainNameMutualTlsAuthenticationOutputReference_Override(a ApiGatewayDomainNameMutualTlsAuthenticationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayDomainNameMutualTlsAuthenticationOutputReference_Override(a ApiGatewayDomainNameMutualTlsAuthenticationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7031,7 +7956,7 @@ func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7056,12 +7981,40 @@ func (j *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) S
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7098,12 +8051,54 @@ func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) G
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7147,13 +8142,13 @@ func (a *jsiiProxy_ApiGatewayDomainNameMutualTlsAuthenticationOutputReference) R
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html aws_api_gateway_gateway_response}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response aws_api_gateway_gateway_response}.
 type ApiGatewayGatewayResponse interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7165,12 +8160,12 @@ type ApiGatewayGatewayResponse interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	ResponseParameters() interface{}
-	SetResponseParameters(val interface{})
-	ResponseParametersInput() interface{}
-	ResponseTemplates() interface{}
-	SetResponseTemplates(val interface{})
-	ResponseTemplatesInput() interface{}
+	ResponseParameters() *map[string]*string
+	SetResponseParameters(val *map[string]*string)
+	ResponseParametersInput() *map[string]*string
+	ResponseTemplates() *map[string]*string
+	SetResponseTemplates(val *map[string]*string)
+	ResponseTemplatesInput() *map[string]*string
 	ResponseType() *string
 	SetResponseType(val *string)
 	ResponseTypeInput() *string
@@ -7184,10 +8179,15 @@ type ApiGatewayGatewayResponse interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7225,8 +8225,8 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayGatewayResponse) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7315,8 +8315,8 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseParameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseParameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseParameters",
@@ -7325,8 +8325,8 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseParameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseParametersInput",
@@ -7335,8 +8335,8 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseParametersInput() interfac
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseTemplates() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseTemplates() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseTemplates",
@@ -7345,8 +8345,8 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseTemplates() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseTemplatesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayGatewayResponse) ResponseTemplatesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseTemplatesInput",
@@ -7445,7 +8445,7 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html aws_api_gateway_gateway_response} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response aws_api_gateway_gateway_response} Resource.
 func NewApiGatewayGatewayResponse(scope constructs.Construct, id *string, config *ApiGatewayGatewayResponseConfig) ApiGatewayGatewayResponse {
 	_init_.Initialize()
 
@@ -7460,7 +8460,7 @@ func NewApiGatewayGatewayResponse(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html aws_api_gateway_gateway_response} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response aws_api_gateway_gateway_response} Resource.
 func NewApiGatewayGatewayResponse_Override(a ApiGatewayGatewayResponse, scope constructs.Construct, id *string, config *ApiGatewayGatewayResponseConfig) {
 	_init_.Initialize()
 
@@ -7471,7 +8471,7 @@ func NewApiGatewayGatewayResponse_Override(a ApiGatewayGatewayResponse, scope co
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayGatewayResponse) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7503,7 +8503,7 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) SetProvider(val cdktf.TerraformPro
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) SetResponseParameters(val interface{}) {
+func (j *jsiiProxy_ApiGatewayGatewayResponse) SetResponseParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"responseParameters",
@@ -7511,7 +8511,7 @@ func (j *jsiiProxy_ApiGatewayGatewayResponse) SetResponseParameters(val interfac
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayGatewayResponse) SetResponseTemplates(val interface{}) {
+func (j *jsiiProxy_ApiGatewayGatewayResponse) SetResponseTemplates(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"responseTemplates",
@@ -7583,12 +8583,40 @@ func (a *jsiiProxy_ApiGatewayGatewayResponse) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayGatewayResponse) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayGatewayResponse) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayGatewayResponse) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7625,12 +8653,54 @@ func (a *jsiiProxy_ApiGatewayGatewayResponse) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayGatewayResponse) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayGatewayResponse) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayGatewayResponse) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayGatewayResponse) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7755,26 +8825,26 @@ func (a *jsiiProxy_ApiGatewayGatewayResponse) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayGatewayResponseConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html#response_type ApiGatewayGatewayResponse#response_type}.
-	ResponseType *string `json:"responseType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html#rest_api_id ApiGatewayGatewayResponse#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html#response_parameters ApiGatewayGatewayResponse#response_parameters}.
-	ResponseParameters interface{} `json:"responseParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html#response_templates ApiGatewayGatewayResponse#response_templates}.
-	ResponseTemplates interface{} `json:"responseTemplates"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response.html#status_code ApiGatewayGatewayResponse#status_code}.
-	StatusCode *string `json:"statusCode"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response#response_type ApiGatewayGatewayResponse#response_type}.
+	ResponseType *string `json:"responseType" yaml:"responseType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response#rest_api_id ApiGatewayGatewayResponse#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response#response_parameters ApiGatewayGatewayResponse#response_parameters}.
+	ResponseParameters *map[string]*string `json:"responseParameters" yaml:"responseParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response#response_templates ApiGatewayGatewayResponse#response_templates}.
+	ResponseTemplates *map[string]*string `json:"responseTemplates" yaml:"responseTemplates"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_gateway_response#status_code ApiGatewayGatewayResponse#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html aws_api_gateway_integration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration aws_api_gateway_integration}.
 type ApiGatewayIntegration interface {
 	cdktf.TerraformResource
 	CacheKeyParameters() *[]*string
@@ -7794,8 +8864,8 @@ type ApiGatewayIntegration interface {
 	ContentHandling() *string
 	SetContentHandling(val *string)
 	ContentHandlingInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Credentials() *string
 	SetCredentials(val *string)
 	CredentialsInput() *string
@@ -7819,12 +8889,12 @@ type ApiGatewayIntegration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RequestParameters() interface{}
-	SetRequestParameters(val interface{})
-	RequestParametersInput() interface{}
-	RequestTemplates() interface{}
-	SetRequestTemplates(val interface{})
-	RequestTemplatesInput() interface{}
+	RequestParameters() *map[string]*string
+	SetRequestParameters(val *map[string]*string)
+	RequestParametersInput() *map[string]*string
+	RequestTemplates() *map[string]*string
+	SetRequestTemplates(val *map[string]*string)
+	RequestTemplatesInput() *map[string]*string
 	ResourceId() *string
 	SetResourceId(val *string)
 	ResourceIdInput() *string
@@ -7846,10 +8916,15 @@ type ApiGatewayIntegration interface {
 	SetUri(val *string)
 	UriInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTlsConfig(value *ApiGatewayIntegrationTlsConfig)
@@ -7998,8 +9073,8 @@ func (j *jsiiProxy_ApiGatewayIntegration) ContentHandlingInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8168,8 +9243,8 @@ func (j *jsiiProxy_ApiGatewayIntegration) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) RequestParameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegration) RequestParameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"requestParameters",
@@ -8178,8 +9253,8 @@ func (j *jsiiProxy_ApiGatewayIntegration) RequestParameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) RequestParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegration) RequestParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"requestParametersInput",
@@ -8188,8 +9263,8 @@ func (j *jsiiProxy_ApiGatewayIntegration) RequestParametersInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) RequestTemplates() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegration) RequestTemplates() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"requestTemplates",
@@ -8198,8 +9273,8 @@ func (j *jsiiProxy_ApiGatewayIntegration) RequestTemplates() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) RequestTemplatesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegration) RequestTemplatesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"requestTemplatesInput",
@@ -8358,7 +9433,7 @@ func (j *jsiiProxy_ApiGatewayIntegration) UriInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html aws_api_gateway_integration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration aws_api_gateway_integration} Resource.
 func NewApiGatewayIntegration(scope constructs.Construct, id *string, config *ApiGatewayIntegrationConfig) ApiGatewayIntegration {
 	_init_.Initialize()
 
@@ -8373,7 +9448,7 @@ func NewApiGatewayIntegration(scope constructs.Construct, id *string, config *Ap
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html aws_api_gateway_integration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration aws_api_gateway_integration} Resource.
 func NewApiGatewayIntegration_Override(a ApiGatewayIntegration, scope constructs.Construct, id *string, config *ApiGatewayIntegrationConfig) {
 	_init_.Initialize()
 
@@ -8424,7 +9499,7 @@ func (j *jsiiProxy_ApiGatewayIntegration) SetContentHandling(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayIntegration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8488,7 +9563,7 @@ func (j *jsiiProxy_ApiGatewayIntegration) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) SetRequestParameters(val interface{}) {
+func (j *jsiiProxy_ApiGatewayIntegration) SetRequestParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"requestParameters",
@@ -8496,7 +9571,7 @@ func (j *jsiiProxy_ApiGatewayIntegration) SetRequestParameters(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayIntegration) SetRequestTemplates(val interface{}) {
+func (j *jsiiProxy_ApiGatewayIntegration) SetRequestTemplates(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"requestTemplates",
@@ -8584,12 +9659,40 @@ func (a *jsiiProxy_ApiGatewayIntegration) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayIntegration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayIntegration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8626,12 +9729,54 @@ func (a *jsiiProxy_ApiGatewayIntegration) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayIntegration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayIntegration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8844,52 +9989,52 @@ func (a *jsiiProxy_ApiGatewayIntegration) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayIntegrationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#http_method ApiGatewayIntegration#http_method}.
-	HttpMethod *string `json:"httpMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#resource_id ApiGatewayIntegration#resource_id}.
-	ResourceId *string `json:"resourceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#rest_api_id ApiGatewayIntegration#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#type ApiGatewayIntegration#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#cache_key_parameters ApiGatewayIntegration#cache_key_parameters}.
-	CacheKeyParameters *[]*string `json:"cacheKeyParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#cache_namespace ApiGatewayIntegration#cache_namespace}.
-	CacheNamespace *string `json:"cacheNamespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#connection_id ApiGatewayIntegration#connection_id}.
-	ConnectionId *string `json:"connectionId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#connection_type ApiGatewayIntegration#connection_type}.
-	ConnectionType *string `json:"connectionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#content_handling ApiGatewayIntegration#content_handling}.
-	ContentHandling *string `json:"contentHandling"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#credentials ApiGatewayIntegration#credentials}.
-	Credentials *string `json:"credentials"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#integration_http_method ApiGatewayIntegration#integration_http_method}.
-	IntegrationHttpMethod *string `json:"integrationHttpMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#passthrough_behavior ApiGatewayIntegration#passthrough_behavior}.
-	PassthroughBehavior *string `json:"passthroughBehavior"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#request_parameters ApiGatewayIntegration#request_parameters}.
-	RequestParameters interface{} `json:"requestParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#request_templates ApiGatewayIntegration#request_templates}.
-	RequestTemplates interface{} `json:"requestTemplates"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#timeout_milliseconds ApiGatewayIntegration#timeout_milliseconds}.
-	TimeoutMilliseconds *float64 `json:"timeoutMilliseconds"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#http_method ApiGatewayIntegration#http_method}.
+	HttpMethod *string `json:"httpMethod" yaml:"httpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#resource_id ApiGatewayIntegration#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#rest_api_id ApiGatewayIntegration#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#type ApiGatewayIntegration#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#cache_key_parameters ApiGatewayIntegration#cache_key_parameters}.
+	CacheKeyParameters *[]*string `json:"cacheKeyParameters" yaml:"cacheKeyParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#cache_namespace ApiGatewayIntegration#cache_namespace}.
+	CacheNamespace *string `json:"cacheNamespace" yaml:"cacheNamespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#connection_id ApiGatewayIntegration#connection_id}.
+	ConnectionId *string `json:"connectionId" yaml:"connectionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#connection_type ApiGatewayIntegration#connection_type}.
+	ConnectionType *string `json:"connectionType" yaml:"connectionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#content_handling ApiGatewayIntegration#content_handling}.
+	ContentHandling *string `json:"contentHandling" yaml:"contentHandling"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#credentials ApiGatewayIntegration#credentials}.
+	Credentials *string `json:"credentials" yaml:"credentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#integration_http_method ApiGatewayIntegration#integration_http_method}.
+	IntegrationHttpMethod *string `json:"integrationHttpMethod" yaml:"integrationHttpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#passthrough_behavior ApiGatewayIntegration#passthrough_behavior}.
+	PassthroughBehavior *string `json:"passthroughBehavior" yaml:"passthroughBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#request_parameters ApiGatewayIntegration#request_parameters}.
+	RequestParameters *map[string]*string `json:"requestParameters" yaml:"requestParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#request_templates ApiGatewayIntegration#request_templates}.
+	RequestTemplates *map[string]*string `json:"requestTemplates" yaml:"requestTemplates"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#timeout_milliseconds ApiGatewayIntegration#timeout_milliseconds}.
+	TimeoutMilliseconds *float64 `json:"timeoutMilliseconds" yaml:"timeoutMilliseconds"`
 	// tls_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#tls_config ApiGatewayIntegration#tls_config}
-	TlsConfig *ApiGatewayIntegrationTlsConfig `json:"tlsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#uri ApiGatewayIntegration#uri}.
-	Uri *string `json:"uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#tls_config ApiGatewayIntegration#tls_config}
+	TlsConfig *ApiGatewayIntegrationTlsConfig `json:"tlsConfig" yaml:"tlsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#uri ApiGatewayIntegration#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html aws_api_gateway_integration_response}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response aws_api_gateway_integration_response}.
 type ApiGatewayIntegrationResponse interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -8897,8 +10042,8 @@ type ApiGatewayIntegrationResponse interface {
 	ContentHandling() *string
 	SetContentHandling(val *string)
 	ContentHandlingInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8916,12 +10061,12 @@ type ApiGatewayIntegrationResponse interface {
 	ResourceId() *string
 	SetResourceId(val *string)
 	ResourceIdInput() *string
-	ResponseParameters() interface{}
-	SetResponseParameters(val interface{})
-	ResponseParametersInput() interface{}
-	ResponseTemplates() interface{}
-	SetResponseTemplates(val interface{})
-	ResponseTemplatesInput() interface{}
+	ResponseParameters() *map[string]*string
+	SetResponseParameters(val *map[string]*string)
+	ResponseParametersInput() *map[string]*string
+	ResponseTemplates() *map[string]*string
+	SetResponseTemplates(val *map[string]*string)
+	ResponseTemplatesInput() *map[string]*string
 	RestApiId() *string
 	SetRestApiId(val *string)
 	RestApiIdInput() *string
@@ -8935,10 +10080,15 @@ type ApiGatewayIntegrationResponse interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetContentHandling()
@@ -8997,8 +10147,8 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) ContentHandlingInput() *string
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9127,8 +10277,8 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResourceIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseParameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseParameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseParameters",
@@ -9137,8 +10287,8 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseParameters() interface
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseParametersInput",
@@ -9147,8 +10297,8 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseParametersInput() inte
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseTemplates() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseTemplates() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseTemplates",
@@ -9157,8 +10307,8 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseTemplates() interface{
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseTemplatesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) ResponseTemplatesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseTemplatesInput",
@@ -9257,7 +10407,7 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html aws_api_gateway_integration_response} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response aws_api_gateway_integration_response} Resource.
 func NewApiGatewayIntegrationResponse(scope constructs.Construct, id *string, config *ApiGatewayIntegrationResponseConfig) ApiGatewayIntegrationResponse {
 	_init_.Initialize()
 
@@ -9272,7 +10422,7 @@ func NewApiGatewayIntegrationResponse(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html aws_api_gateway_integration_response} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response aws_api_gateway_integration_response} Resource.
 func NewApiGatewayIntegrationResponse_Override(a ApiGatewayIntegrationResponse, scope constructs.Construct, id *string, config *ApiGatewayIntegrationResponseConfig) {
 	_init_.Initialize()
 
@@ -9291,7 +10441,7 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetContentHandling(val *string
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9339,7 +10489,7 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetResourceId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetResponseParameters(val interface{}) {
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetResponseParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"responseParameters",
@@ -9347,7 +10497,7 @@ func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetResponseParameters(val inte
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetResponseTemplates(val interface{}) {
+func (j *jsiiProxy_ApiGatewayIntegrationResponse) SetResponseTemplates(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"responseTemplates",
@@ -9419,12 +10569,40 @@ func (a *jsiiProxy_ApiGatewayIntegrationResponse) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9461,12 +10639,54 @@ func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationResponse) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9599,34 +10819,34 @@ func (a *jsiiProxy_ApiGatewayIntegrationResponse) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayIntegrationResponseConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#http_method ApiGatewayIntegrationResponse#http_method}.
-	HttpMethod *string `json:"httpMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#resource_id ApiGatewayIntegrationResponse#resource_id}.
-	ResourceId *string `json:"resourceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#rest_api_id ApiGatewayIntegrationResponse#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#status_code ApiGatewayIntegrationResponse#status_code}.
-	StatusCode *string `json:"statusCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#content_handling ApiGatewayIntegrationResponse#content_handling}.
-	ContentHandling *string `json:"contentHandling"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#response_parameters ApiGatewayIntegrationResponse#response_parameters}.
-	ResponseParameters interface{} `json:"responseParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#response_templates ApiGatewayIntegrationResponse#response_templates}.
-	ResponseTemplates interface{} `json:"responseTemplates"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response.html#selection_pattern ApiGatewayIntegrationResponse#selection_pattern}.
-	SelectionPattern *string `json:"selectionPattern"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#http_method ApiGatewayIntegrationResponse#http_method}.
+	HttpMethod *string `json:"httpMethod" yaml:"httpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#resource_id ApiGatewayIntegrationResponse#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#rest_api_id ApiGatewayIntegrationResponse#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#status_code ApiGatewayIntegrationResponse#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#content_handling ApiGatewayIntegrationResponse#content_handling}.
+	ContentHandling *string `json:"contentHandling" yaml:"contentHandling"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#response_parameters ApiGatewayIntegrationResponse#response_parameters}.
+	ResponseParameters *map[string]*string `json:"responseParameters" yaml:"responseParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#response_templates ApiGatewayIntegrationResponse#response_templates}.
+	ResponseTemplates *map[string]*string `json:"responseTemplates" yaml:"responseTemplates"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration_response#selection_pattern ApiGatewayIntegrationResponse#selection_pattern}.
+	SelectionPattern *string `json:"selectionPattern" yaml:"selectionPattern"`
 }
 
 type ApiGatewayIntegrationTlsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html#insecure_skip_verification ApiGatewayIntegration#insecure_skip_verification}.
-	InsecureSkipVerification interface{} `json:"insecureSkipVerification"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_integration#insecure_skip_verification ApiGatewayIntegration#insecure_skip_verification}.
+	InsecureSkipVerification interface{} `json:"insecureSkipVerification" yaml:"insecureSkipVerification"`
 }
 
 type ApiGatewayIntegrationTlsConfigOutputReference interface {
@@ -9640,12 +10860,17 @@ type ApiGatewayIntegrationTlsConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInsecureSkipVerification()
@@ -9706,8 +10931,8 @@ func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9716,7 +10941,7 @@ func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) TerraformResou
 	return returns
 }
 
-func NewApiGatewayIntegrationTlsConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayIntegrationTlsConfigOutputReference {
+func NewApiGatewayIntegrationTlsConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayIntegrationTlsConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference{}
@@ -9730,7 +10955,7 @@ func NewApiGatewayIntegrationTlsConfigOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewApiGatewayIntegrationTlsConfigOutputReference_Override(a ApiGatewayIntegrationTlsConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayIntegrationTlsConfigOutputReference_Override(a ApiGatewayIntegrationTlsConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9772,7 +10997,7 @@ func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9781,12 +11006,40 @@ func (j *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9823,12 +11076,54 @@ func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9872,7 +11167,7 @@ func (a *jsiiProxy_ApiGatewayIntegrationTlsConfigOutputReference) ResetInsecureS
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html aws_api_gateway_method}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method aws_api_gateway_method}.
 type ApiGatewayMethod interface {
 	cdktf.TerraformResource
 	ApiKeyRequired() interface{}
@@ -9889,8 +11184,8 @@ type ApiGatewayMethod interface {
 	AuthorizerIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9908,12 +11203,12 @@ type ApiGatewayMethod interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RequestModels() interface{}
-	SetRequestModels(val interface{})
-	RequestModelsInput() interface{}
-	RequestParameters() interface{}
-	SetRequestParameters(val interface{})
-	RequestParametersInput() interface{}
+	RequestModels() *map[string]*string
+	SetRequestModels(val *map[string]*string)
+	RequestModelsInput() *map[string]*string
+	RequestParameters() *map[string]interface{}
+	SetRequestParameters(val *map[string]interface{})
+	RequestParametersInput() *map[string]interface{}
 	RequestValidatorId() *string
 	SetRequestValidatorId(val *string)
 	RequestValidatorIdInput() *string
@@ -9927,10 +11222,15 @@ type ApiGatewayMethod interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetApiKeyRequired()
@@ -10052,8 +11352,8 @@ func (j *jsiiProxy_ApiGatewayMethod) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethod) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10182,8 +11482,8 @@ func (j *jsiiProxy_ApiGatewayMethod) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) RequestModels() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethod) RequestModels() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"requestModels",
@@ -10192,8 +11492,8 @@ func (j *jsiiProxy_ApiGatewayMethod) RequestModels() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) RequestModelsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethod) RequestModelsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"requestModelsInput",
@@ -10202,8 +11502,8 @@ func (j *jsiiProxy_ApiGatewayMethod) RequestModelsInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) RequestParameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethod) RequestParameters() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"requestParameters",
@@ -10212,8 +11512,8 @@ func (j *jsiiProxy_ApiGatewayMethod) RequestParameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) RequestParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethod) RequestParametersInput() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"requestParametersInput",
@@ -10312,7 +11612,7 @@ func (j *jsiiProxy_ApiGatewayMethod) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html aws_api_gateway_method} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method aws_api_gateway_method} Resource.
 func NewApiGatewayMethod(scope constructs.Construct, id *string, config *ApiGatewayMethodConfig) ApiGatewayMethod {
 	_init_.Initialize()
 
@@ -10327,7 +11627,7 @@ func NewApiGatewayMethod(scope constructs.Construct, id *string, config *ApiGate
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html aws_api_gateway_method} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method aws_api_gateway_method} Resource.
 func NewApiGatewayMethod_Override(a ApiGatewayMethod, scope constructs.Construct, id *string, config *ApiGatewayMethodConfig) {
 	_init_.Initialize()
 
@@ -10370,7 +11670,7 @@ func (j *jsiiProxy_ApiGatewayMethod) SetAuthorizerId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayMethod) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10418,7 +11718,7 @@ func (j *jsiiProxy_ApiGatewayMethod) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) SetRequestModels(val interface{}) {
+func (j *jsiiProxy_ApiGatewayMethod) SetRequestModels(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"requestModels",
@@ -10426,7 +11726,7 @@ func (j *jsiiProxy_ApiGatewayMethod) SetRequestModels(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethod) SetRequestParameters(val interface{}) {
+func (j *jsiiProxy_ApiGatewayMethod) SetRequestParameters(val *map[string]interface{}) {
 	_jsii_.Set(
 		j,
 		"requestParameters",
@@ -10498,12 +11798,40 @@ func (a *jsiiProxy_ApiGatewayMethod) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayMethod) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayMethod) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethod) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10540,12 +11868,54 @@ func (a *jsiiProxy_ApiGatewayMethod) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayMethod) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethod) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayMethod) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethod) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10702,44 +12072,44 @@ func (a *jsiiProxy_ApiGatewayMethod) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayMethodConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#authorization ApiGatewayMethod#authorization}.
-	Authorization *string `json:"authorization"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#http_method ApiGatewayMethod#http_method}.
-	HttpMethod *string `json:"httpMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#resource_id ApiGatewayMethod#resource_id}.
-	ResourceId *string `json:"resourceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#rest_api_id ApiGatewayMethod#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#api_key_required ApiGatewayMethod#api_key_required}.
-	ApiKeyRequired interface{} `json:"apiKeyRequired"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#authorization_scopes ApiGatewayMethod#authorization_scopes}.
-	AuthorizationScopes *[]*string `json:"authorizationScopes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#authorizer_id ApiGatewayMethod#authorizer_id}.
-	AuthorizerId *string `json:"authorizerId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#operation_name ApiGatewayMethod#operation_name}.
-	OperationName *string `json:"operationName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#request_models ApiGatewayMethod#request_models}.
-	RequestModels interface{} `json:"requestModels"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#request_parameters ApiGatewayMethod#request_parameters}.
-	RequestParameters interface{} `json:"requestParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method.html#request_validator_id ApiGatewayMethod#request_validator_id}.
-	RequestValidatorId *string `json:"requestValidatorId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#authorization ApiGatewayMethod#authorization}.
+	Authorization *string `json:"authorization" yaml:"authorization"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#http_method ApiGatewayMethod#http_method}.
+	HttpMethod *string `json:"httpMethod" yaml:"httpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#resource_id ApiGatewayMethod#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#rest_api_id ApiGatewayMethod#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#api_key_required ApiGatewayMethod#api_key_required}.
+	ApiKeyRequired interface{} `json:"apiKeyRequired" yaml:"apiKeyRequired"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#authorization_scopes ApiGatewayMethod#authorization_scopes}.
+	AuthorizationScopes *[]*string `json:"authorizationScopes" yaml:"authorizationScopes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#authorizer_id ApiGatewayMethod#authorizer_id}.
+	AuthorizerId *string `json:"authorizerId" yaml:"authorizerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#operation_name ApiGatewayMethod#operation_name}.
+	OperationName *string `json:"operationName" yaml:"operationName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#request_models ApiGatewayMethod#request_models}.
+	RequestModels *map[string]*string `json:"requestModels" yaml:"requestModels"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#request_parameters ApiGatewayMethod#request_parameters}.
+	RequestParameters *map[string]interface{} `json:"requestParameters" yaml:"requestParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method#request_validator_id ApiGatewayMethod#request_validator_id}.
+	RequestValidatorId *string `json:"requestValidatorId" yaml:"requestValidatorId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html aws_api_gateway_method_response}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response aws_api_gateway_method_response}.
 type ApiGatewayMethodResponse interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10757,12 +12127,12 @@ type ApiGatewayMethodResponse interface {
 	ResourceId() *string
 	SetResourceId(val *string)
 	ResourceIdInput() *string
-	ResponseModels() interface{}
-	SetResponseModels(val interface{})
-	ResponseModelsInput() interface{}
-	ResponseParameters() interface{}
-	SetResponseParameters(val interface{})
-	ResponseParametersInput() interface{}
+	ResponseModels() *map[string]*string
+	SetResponseModels(val *map[string]*string)
+	ResponseModelsInput() *map[string]*string
+	ResponseParameters() *map[string]interface{}
+	SetResponseParameters(val *map[string]interface{})
+	ResponseParametersInput() *map[string]interface{}
 	RestApiId() *string
 	SetRestApiId(val *string)
 	RestApiIdInput() *string
@@ -10773,10 +12143,15 @@ type ApiGatewayMethodResponse interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -10813,8 +12188,8 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethodResponse) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10943,8 +12318,8 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) ResourceIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseModels() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseModels() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseModels",
@@ -10953,8 +12328,8 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseModels() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseModelsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseModelsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"responseModelsInput",
@@ -10963,8 +12338,8 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseModelsInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseParameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseParameters() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"responseParameters",
@@ -10973,8 +12348,8 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseParameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethodResponse) ResponseParametersInput() *map[string]interface{} {
+	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"responseParametersInput",
@@ -11053,7 +12428,7 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html aws_api_gateway_method_response} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response aws_api_gateway_method_response} Resource.
 func NewApiGatewayMethodResponse(scope constructs.Construct, id *string, config *ApiGatewayMethodResponseConfig) ApiGatewayMethodResponse {
 	_init_.Initialize()
 
@@ -11068,7 +12443,7 @@ func NewApiGatewayMethodResponse(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html aws_api_gateway_method_response} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response aws_api_gateway_method_response} Resource.
 func NewApiGatewayMethodResponse_Override(a ApiGatewayMethodResponse, scope constructs.Construct, id *string, config *ApiGatewayMethodResponseConfig) {
 	_init_.Initialize()
 
@@ -11079,7 +12454,7 @@ func NewApiGatewayMethodResponse_Override(a ApiGatewayMethodResponse, scope cons
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayMethodResponse) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11127,7 +12502,7 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) SetResourceId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) SetResponseModels(val interface{}) {
+func (j *jsiiProxy_ApiGatewayMethodResponse) SetResponseModels(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"responseModels",
@@ -11135,7 +12510,7 @@ func (j *jsiiProxy_ApiGatewayMethodResponse) SetResponseModels(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethodResponse) SetResponseParameters(val interface{}) {
+func (j *jsiiProxy_ApiGatewayMethodResponse) SetResponseParameters(val *map[string]interface{}) {
 	_jsii_.Set(
 		j,
 		"responseParameters",
@@ -11199,12 +12574,40 @@ func (a *jsiiProxy_ApiGatewayMethodResponse) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayMethodResponse) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayMethodResponse) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodResponse) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11241,12 +12644,54 @@ func (a *jsiiProxy_ApiGatewayMethodResponse) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayMethodResponse) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodResponse) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayMethodResponse) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodResponse) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11363,34 +12808,34 @@ func (a *jsiiProxy_ApiGatewayMethodResponse) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayMethodResponseConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html#http_method ApiGatewayMethodResponse#http_method}.
-	HttpMethod *string `json:"httpMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html#resource_id ApiGatewayMethodResponse#resource_id}.
-	ResourceId *string `json:"resourceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html#rest_api_id ApiGatewayMethodResponse#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html#status_code ApiGatewayMethodResponse#status_code}.
-	StatusCode *string `json:"statusCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html#response_models ApiGatewayMethodResponse#response_models}.
-	ResponseModels interface{} `json:"responseModels"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response.html#response_parameters ApiGatewayMethodResponse#response_parameters}.
-	ResponseParameters interface{} `json:"responseParameters"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response#http_method ApiGatewayMethodResponse#http_method}.
+	HttpMethod *string `json:"httpMethod" yaml:"httpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response#resource_id ApiGatewayMethodResponse#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response#rest_api_id ApiGatewayMethodResponse#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response#status_code ApiGatewayMethodResponse#status_code}.
+	StatusCode *string `json:"statusCode" yaml:"statusCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response#response_models ApiGatewayMethodResponse#response_models}.
+	ResponseModels *map[string]*string `json:"responseModels" yaml:"responseModels"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_response#response_parameters ApiGatewayMethodResponse#response_parameters}.
+	ResponseParameters *map[string]interface{} `json:"responseParameters" yaml:"responseParameters"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html aws_api_gateway_method_settings}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings aws_api_gateway_method_settings}.
 type ApiGatewayMethodSettings interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -11417,10 +12862,15 @@ type ApiGatewayMethodSettings interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutSettings(value *ApiGatewayMethodSettingsSettings)
@@ -11456,8 +12906,8 @@ func (j *jsiiProxy_ApiGatewayMethodSettings) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethodSettings) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayMethodSettings) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11656,7 +13106,7 @@ func (j *jsiiProxy_ApiGatewayMethodSettings) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html aws_api_gateway_method_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings aws_api_gateway_method_settings} Resource.
 func NewApiGatewayMethodSettings(scope constructs.Construct, id *string, config *ApiGatewayMethodSettingsConfig) ApiGatewayMethodSettings {
 	_init_.Initialize()
 
@@ -11671,7 +13121,7 @@ func NewApiGatewayMethodSettings(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html aws_api_gateway_method_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings aws_api_gateway_method_settings} Resource.
 func NewApiGatewayMethodSettings_Override(a ApiGatewayMethodSettings, scope constructs.Construct, id *string, config *ApiGatewayMethodSettingsConfig) {
 	_init_.Initialize()
 
@@ -11682,7 +13132,7 @@ func NewApiGatewayMethodSettings_Override(a ApiGatewayMethodSettings, scope cons
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethodSettings) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayMethodSettings) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11778,12 +13228,40 @@ func (a *jsiiProxy_ApiGatewayMethodSettings) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayMethodSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11820,12 +13298,54 @@ func (a *jsiiProxy_ApiGatewayMethodSettings) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayMethodSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11934,46 +13454,46 @@ func (a *jsiiProxy_ApiGatewayMethodSettings) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayMethodSettingsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#method_path ApiGatewayMethodSettings#method_path}.
-	MethodPath *string `json:"methodPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#rest_api_id ApiGatewayMethodSettings#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#method_path ApiGatewayMethodSettings#method_path}.
+	MethodPath *string `json:"methodPath" yaml:"methodPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#rest_api_id ApiGatewayMethodSettings#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
 	// settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#settings ApiGatewayMethodSettings#settings}
-	Settings *ApiGatewayMethodSettingsSettings `json:"settings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#stage_name ApiGatewayMethodSettings#stage_name}.
-	StageName *string `json:"stageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#settings ApiGatewayMethodSettings#settings}
+	Settings *ApiGatewayMethodSettingsSettings `json:"settings" yaml:"settings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#stage_name ApiGatewayMethodSettings#stage_name}.
+	StageName *string `json:"stageName" yaml:"stageName"`
 }
 
 type ApiGatewayMethodSettingsSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#cache_data_encrypted ApiGatewayMethodSettings#cache_data_encrypted}.
-	CacheDataEncrypted interface{} `json:"cacheDataEncrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#cache_ttl_in_seconds ApiGatewayMethodSettings#cache_ttl_in_seconds}.
-	CacheTtlInSeconds *float64 `json:"cacheTtlInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#caching_enabled ApiGatewayMethodSettings#caching_enabled}.
-	CachingEnabled interface{} `json:"cachingEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#data_trace_enabled ApiGatewayMethodSettings#data_trace_enabled}.
-	DataTraceEnabled interface{} `json:"dataTraceEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#logging_level ApiGatewayMethodSettings#logging_level}.
-	LoggingLevel *string `json:"loggingLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#metrics_enabled ApiGatewayMethodSettings#metrics_enabled}.
-	MetricsEnabled interface{} `json:"metricsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#require_authorization_for_cache_control ApiGatewayMethodSettings#require_authorization_for_cache_control}.
-	RequireAuthorizationForCacheControl interface{} `json:"requireAuthorizationForCacheControl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#throttling_burst_limit ApiGatewayMethodSettings#throttling_burst_limit}.
-	ThrottlingBurstLimit *float64 `json:"throttlingBurstLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#throttling_rate_limit ApiGatewayMethodSettings#throttling_rate_limit}.
-	ThrottlingRateLimit *float64 `json:"throttlingRateLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings.html#unauthorized_cache_control_header_strategy ApiGatewayMethodSettings#unauthorized_cache_control_header_strategy}.
-	UnauthorizedCacheControlHeaderStrategy *string `json:"unauthorizedCacheControlHeaderStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#cache_data_encrypted ApiGatewayMethodSettings#cache_data_encrypted}.
+	CacheDataEncrypted interface{} `json:"cacheDataEncrypted" yaml:"cacheDataEncrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#cache_ttl_in_seconds ApiGatewayMethodSettings#cache_ttl_in_seconds}.
+	CacheTtlInSeconds *float64 `json:"cacheTtlInSeconds" yaml:"cacheTtlInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#caching_enabled ApiGatewayMethodSettings#caching_enabled}.
+	CachingEnabled interface{} `json:"cachingEnabled" yaml:"cachingEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#data_trace_enabled ApiGatewayMethodSettings#data_trace_enabled}.
+	DataTraceEnabled interface{} `json:"dataTraceEnabled" yaml:"dataTraceEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#logging_level ApiGatewayMethodSettings#logging_level}.
+	LoggingLevel *string `json:"loggingLevel" yaml:"loggingLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#metrics_enabled ApiGatewayMethodSettings#metrics_enabled}.
+	MetricsEnabled interface{} `json:"metricsEnabled" yaml:"metricsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#require_authorization_for_cache_control ApiGatewayMethodSettings#require_authorization_for_cache_control}.
+	RequireAuthorizationForCacheControl interface{} `json:"requireAuthorizationForCacheControl" yaml:"requireAuthorizationForCacheControl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#throttling_burst_limit ApiGatewayMethodSettings#throttling_burst_limit}.
+	ThrottlingBurstLimit *float64 `json:"throttlingBurstLimit" yaml:"throttlingBurstLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#throttling_rate_limit ApiGatewayMethodSettings#throttling_rate_limit}.
+	ThrottlingRateLimit *float64 `json:"throttlingRateLimit" yaml:"throttlingRateLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_method_settings#unauthorized_cache_control_header_strategy ApiGatewayMethodSettings#unauthorized_cache_control_header_strategy}.
+	UnauthorizedCacheControlHeaderStrategy *string `json:"unauthorizedCacheControlHeaderStrategy" yaml:"unauthorizedCacheControlHeaderStrategy"`
 }
 
 type ApiGatewayMethodSettingsSettingsOutputReference interface {
@@ -12005,8 +13525,8 @@ type ApiGatewayMethodSettingsSettingsOutputReference interface {
 	RequireAuthorizationForCacheControlInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	ThrottlingBurstLimit() *float64
 	SetThrottlingBurstLimit(val *float64)
 	ThrottlingBurstLimitInput() *float64
@@ -12016,10 +13536,15 @@ type ApiGatewayMethodSettingsSettingsOutputReference interface {
 	UnauthorizedCacheControlHeaderStrategy() *string
 	SetUnauthorizedCacheControlHeaderStrategy(val *string)
 	UnauthorizedCacheControlHeaderStrategyInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCacheDataEncrypted()
@@ -12209,8 +13734,8 @@ func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12279,7 +13804,7 @@ func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) Unauthorized
 	return returns
 }
 
-func NewApiGatewayMethodSettingsSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayMethodSettingsSettingsOutputReference {
+func NewApiGatewayMethodSettingsSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayMethodSettingsSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference{}
@@ -12293,7 +13818,7 @@ func NewApiGatewayMethodSettingsSettingsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewApiGatewayMethodSettingsSettingsOutputReference_Override(a ApiGatewayMethodSettingsSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayMethodSettingsSettingsOutputReference_Override(a ApiGatewayMethodSettingsSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12383,7 +13908,7 @@ func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12416,12 +13941,40 @@ func (j *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) SetUnauthori
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12458,12 +14011,54 @@ func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12579,7 +14174,7 @@ func (a *jsiiProxy_ApiGatewayMethodSettingsSettingsOutputReference) ResetUnautho
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html aws_api_gateway_model}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model aws_api_gateway_model}.
 type ApiGatewayModel interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -12587,8 +14182,8 @@ type ApiGatewayModel interface {
 	ContentType() *string
 	SetContentType(val *string)
 	ContentTypeInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -12616,10 +14211,15 @@ type ApiGatewayModel interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -12676,8 +14276,8 @@ func (j *jsiiProxy_ApiGatewayModel) ContentTypeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayModel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayModel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12876,7 +14476,7 @@ func (j *jsiiProxy_ApiGatewayModel) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html aws_api_gateway_model} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model aws_api_gateway_model} Resource.
 func NewApiGatewayModel(scope constructs.Construct, id *string, config *ApiGatewayModelConfig) ApiGatewayModel {
 	_init_.Initialize()
 
@@ -12891,7 +14491,7 @@ func NewApiGatewayModel(scope constructs.Construct, id *string, config *ApiGatew
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html aws_api_gateway_model} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model aws_api_gateway_model} Resource.
 func NewApiGatewayModel_Override(a ApiGatewayModel, scope constructs.Construct, id *string, config *ApiGatewayModelConfig) {
 	_init_.Initialize()
 
@@ -12910,7 +14510,7 @@ func (j *jsiiProxy_ApiGatewayModel) SetContentType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayModel) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayModel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13014,12 +14614,40 @@ func (a *jsiiProxy_ApiGatewayModel) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayModel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayModel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayModel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13056,12 +14684,54 @@ func (a *jsiiProxy_ApiGatewayModel) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayModel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayModel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayModel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayModel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13178,32 +14848,32 @@ func (a *jsiiProxy_ApiGatewayModel) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayModelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html#content_type ApiGatewayModel#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html#name ApiGatewayModel#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html#rest_api_id ApiGatewayModel#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html#description ApiGatewayModel#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model.html#schema ApiGatewayModel#schema}.
-	Schema *string `json:"schema"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model#content_type ApiGatewayModel#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model#name ApiGatewayModel#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model#rest_api_id ApiGatewayModel#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model#description ApiGatewayModel#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_model#schema ApiGatewayModel#schema}.
+	Schema *string `json:"schema" yaml:"schema"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator.html aws_api_gateway_request_validator}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator aws_api_gateway_request_validator}.
 type ApiGatewayRequestValidator interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13231,10 +14901,15 @@ type ApiGatewayRequestValidator interface {
 	SetValidateRequestParameters(val interface{})
 	ValidateRequestParametersInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -13271,8 +14946,8 @@ func (j *jsiiProxy_ApiGatewayRequestValidator) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRequestValidator) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRequestValidator) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13471,7 +15146,7 @@ func (j *jsiiProxy_ApiGatewayRequestValidator) ValidateRequestParametersInput() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator.html aws_api_gateway_request_validator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator aws_api_gateway_request_validator} Resource.
 func NewApiGatewayRequestValidator(scope constructs.Construct, id *string, config *ApiGatewayRequestValidatorConfig) ApiGatewayRequestValidator {
 	_init_.Initialize()
 
@@ -13486,7 +15161,7 @@ func NewApiGatewayRequestValidator(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator.html aws_api_gateway_request_validator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator aws_api_gateway_request_validator} Resource.
 func NewApiGatewayRequestValidator_Override(a ApiGatewayRequestValidator, scope constructs.Construct, id *string, config *ApiGatewayRequestValidatorConfig) {
 	_init_.Initialize()
 
@@ -13497,7 +15172,7 @@ func NewApiGatewayRequestValidator_Override(a ApiGatewayRequestValidator, scope 
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayRequestValidator) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayRequestValidator) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13601,12 +15276,40 @@ func (a *jsiiProxy_ApiGatewayRequestValidator) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayRequestValidator) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayRequestValidator) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRequestValidator) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13643,12 +15346,54 @@ func (a *jsiiProxy_ApiGatewayRequestValidator) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayRequestValidator) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRequestValidator) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayRequestValidator) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRequestValidator) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13765,30 +15510,30 @@ func (a *jsiiProxy_ApiGatewayRequestValidator) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayRequestValidatorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator.html#name ApiGatewayRequestValidator#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator.html#rest_api_id ApiGatewayRequestValidator#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator.html#validate_request_body ApiGatewayRequestValidator#validate_request_body}.
-	ValidateRequestBody interface{} `json:"validateRequestBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator.html#validate_request_parameters ApiGatewayRequestValidator#validate_request_parameters}.
-	ValidateRequestParameters interface{} `json:"validateRequestParameters"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator#name ApiGatewayRequestValidator#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator#rest_api_id ApiGatewayRequestValidator#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator#validate_request_body ApiGatewayRequestValidator#validate_request_body}.
+	ValidateRequestBody interface{} `json:"validateRequestBody" yaml:"validateRequestBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_request_validator#validate_request_parameters ApiGatewayRequestValidator#validate_request_parameters}.
+	ValidateRequestParameters interface{} `json:"validateRequestParameters" yaml:"validateRequestParameters"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource.html aws_api_gateway_resource}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource aws_api_gateway_resource}.
 type ApiGatewayResource interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13814,10 +15559,15 @@ type ApiGatewayResource interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -13852,8 +15602,8 @@ func (j *jsiiProxy_ApiGatewayResource) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayResource) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayResource) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14042,7 +15792,7 @@ func (j *jsiiProxy_ApiGatewayResource) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource.html aws_api_gateway_resource} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource aws_api_gateway_resource} Resource.
 func NewApiGatewayResource(scope constructs.Construct, id *string, config *ApiGatewayResourceConfig) ApiGatewayResource {
 	_init_.Initialize()
 
@@ -14057,7 +15807,7 @@ func NewApiGatewayResource(scope constructs.Construct, id *string, config *ApiGa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource.html aws_api_gateway_resource} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource aws_api_gateway_resource} Resource.
 func NewApiGatewayResource_Override(a ApiGatewayResource, scope constructs.Construct, id *string, config *ApiGatewayResourceConfig) {
 	_init_.Initialize()
 
@@ -14068,7 +15818,7 @@ func NewApiGatewayResource_Override(a ApiGatewayResource, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayResource) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayResource) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14164,12 +15914,40 @@ func (a *jsiiProxy_ApiGatewayResource) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayResource) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayResource) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayResource) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14206,12 +15984,54 @@ func (a *jsiiProxy_ApiGatewayResource) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayResource) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayResource) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayResource) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayResource) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14312,22 +16132,22 @@ func (a *jsiiProxy_ApiGatewayResource) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayResourceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource.html#parent_id ApiGatewayResource#parent_id}.
-	ParentId *string `json:"parentId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource.html#path_part ApiGatewayResource#path_part}.
-	PathPart *string `json:"pathPart"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource.html#rest_api_id ApiGatewayResource#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource#parent_id ApiGatewayResource#parent_id}.
+	ParentId *string `json:"parentId" yaml:"parentId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource#path_part ApiGatewayResource#path_part}.
+	PathPart *string `json:"pathPart" yaml:"pathPart"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_resource#rest_api_id ApiGatewayResource#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html aws_api_gateway_rest_api}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api aws_api_gateway_rest_api}.
 type ApiGatewayRestApi interface {
 	cdktf.TerraformResource
 	ApiKeySource() *string
@@ -14342,8 +16162,8 @@ type ApiGatewayRestApi interface {
 	BodyInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -14368,9 +16188,9 @@ type ApiGatewayRestApi interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	Policy() *string
 	SetPolicy(val *string)
 	PolicyInput() *string
@@ -14378,20 +16198,25 @@ type ApiGatewayRestApi interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	RootResourceId() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEndpointConfiguration(value *ApiGatewayRestApiEndpointConfiguration)
@@ -14508,8 +16333,8 @@ func (j *jsiiProxy_ApiGatewayRestApi) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApi) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14698,8 +16523,8 @@ func (j *jsiiProxy_ApiGatewayRestApi) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApi) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -14708,8 +16533,8 @@ func (j *jsiiProxy_ApiGatewayRestApi) Parameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApi) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -14768,8 +16593,8 @@ func (j *jsiiProxy_ApiGatewayRestApi) RootResourceId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApi) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -14778,8 +16603,8 @@ func (j *jsiiProxy_ApiGatewayRestApi) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApi) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -14788,8 +16613,8 @@ func (j *jsiiProxy_ApiGatewayRestApi) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApi) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -14798,8 +16623,8 @@ func (j *jsiiProxy_ApiGatewayRestApi) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApi) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14838,7 +16663,7 @@ func (j *jsiiProxy_ApiGatewayRestApi) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html aws_api_gateway_rest_api} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api aws_api_gateway_rest_api} Resource.
 func NewApiGatewayRestApi(scope constructs.Construct, id *string, config *ApiGatewayRestApiConfig) ApiGatewayRestApi {
 	_init_.Initialize()
 
@@ -14853,7 +16678,7 @@ func NewApiGatewayRestApi(scope constructs.Construct, id *string, config *ApiGat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html aws_api_gateway_rest_api} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api aws_api_gateway_rest_api} Resource.
 func NewApiGatewayRestApi_Override(a ApiGatewayRestApi, scope constructs.Construct, id *string, config *ApiGatewayRestApiConfig) {
 	_init_.Initialize()
 
@@ -14888,7 +16713,7 @@ func (j *jsiiProxy_ApiGatewayRestApi) SetBody(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayRestApi) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14944,7 +16769,7 @@ func (j *jsiiProxy_ApiGatewayRestApi) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) SetParameters(val interface{}) {
+func (j *jsiiProxy_ApiGatewayRestApi) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -14968,7 +16793,7 @@ func (j *jsiiProxy_ApiGatewayRestApi) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) SetTags(val interface{}) {
+func (j *jsiiProxy_ApiGatewayRestApi) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14976,7 +16801,7 @@ func (j *jsiiProxy_ApiGatewayRestApi) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayRestApi) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApiGatewayRestApi) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -15024,12 +16849,40 @@ func (a *jsiiProxy_ApiGatewayRestApi) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayRestApi) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayRestApi) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApi) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15066,12 +16919,54 @@ func (a *jsiiProxy_ApiGatewayRestApi) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayRestApi) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApi) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayRestApi) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApi) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15268,46 +17163,46 @@ func (a *jsiiProxy_ApiGatewayRestApi) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayRestApiConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#name ApiGatewayRestApi#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#api_key_source ApiGatewayRestApi#api_key_source}.
-	ApiKeySource *string `json:"apiKeySource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#binary_media_types ApiGatewayRestApi#binary_media_types}.
-	BinaryMediaTypes *[]*string `json:"binaryMediaTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#body ApiGatewayRestApi#body}.
-	Body *string `json:"body"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#description ApiGatewayRestApi#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#disable_execute_api_endpoint ApiGatewayRestApi#disable_execute_api_endpoint}.
-	DisableExecuteApiEndpoint interface{} `json:"disableExecuteApiEndpoint"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#name ApiGatewayRestApi#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#api_key_source ApiGatewayRestApi#api_key_source}.
+	ApiKeySource *string `json:"apiKeySource" yaml:"apiKeySource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#binary_media_types ApiGatewayRestApi#binary_media_types}.
+	BinaryMediaTypes *[]*string `json:"binaryMediaTypes" yaml:"binaryMediaTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#body ApiGatewayRestApi#body}.
+	Body *string `json:"body" yaml:"body"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#description ApiGatewayRestApi#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#disable_execute_api_endpoint ApiGatewayRestApi#disable_execute_api_endpoint}.
+	DisableExecuteApiEndpoint interface{} `json:"disableExecuteApiEndpoint" yaml:"disableExecuteApiEndpoint"`
 	// endpoint_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#endpoint_configuration ApiGatewayRestApi#endpoint_configuration}
-	EndpointConfiguration *ApiGatewayRestApiEndpointConfiguration `json:"endpointConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#minimum_compression_size ApiGatewayRestApi#minimum_compression_size}.
-	MinimumCompressionSize *float64 `json:"minimumCompressionSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#parameters ApiGatewayRestApi#parameters}.
-	Parameters interface{} `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#policy ApiGatewayRestApi#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#tags ApiGatewayRestApi#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#tags_all ApiGatewayRestApi#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#endpoint_configuration ApiGatewayRestApi#endpoint_configuration}
+	EndpointConfiguration *ApiGatewayRestApiEndpointConfiguration `json:"endpointConfiguration" yaml:"endpointConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#minimum_compression_size ApiGatewayRestApi#minimum_compression_size}.
+	MinimumCompressionSize *float64 `json:"minimumCompressionSize" yaml:"minimumCompressionSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#parameters ApiGatewayRestApi#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#policy ApiGatewayRestApi#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#tags ApiGatewayRestApi#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#tags_all ApiGatewayRestApi#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ApiGatewayRestApiEndpointConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#types ApiGatewayRestApi#types}.
-	Types *[]*string `json:"types"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html#vpc_endpoint_ids ApiGatewayRestApi#vpc_endpoint_ids}.
-	VpcEndpointIds *[]*string `json:"vpcEndpointIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#types ApiGatewayRestApi#types}.
+	Types *[]*string `json:"types" yaml:"types"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api#vpc_endpoint_ids ApiGatewayRestApi#vpc_endpoint_ids}.
+	VpcEndpointIds *[]*string `json:"vpcEndpointIds" yaml:"vpcEndpointIds"`
 }
 
 type ApiGatewayRestApiEndpointConfigurationOutputReference interface {
@@ -15318,18 +17213,23 @@ type ApiGatewayRestApiEndpointConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Types() *[]*string
 	SetTypes(val *[]*string)
 	TypesInput() *[]*string
 	VpcEndpointIds() *[]*string
 	SetVpcEndpointIds(val *[]*string)
 	VpcEndpointIdsInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetVpcEndpointIds()
@@ -15370,8 +17270,8 @@ func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15420,7 +17320,7 @@ func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) VpcEnd
 	return returns
 }
 
-func NewApiGatewayRestApiEndpointConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayRestApiEndpointConfigurationOutputReference {
+func NewApiGatewayRestApiEndpointConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayRestApiEndpointConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference{}
@@ -15434,7 +17334,7 @@ func NewApiGatewayRestApiEndpointConfigurationOutputReference(terraformResource 
 	return &j
 }
 
-func NewApiGatewayRestApiEndpointConfigurationOutputReference_Override(a ApiGatewayRestApiEndpointConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayRestApiEndpointConfigurationOutputReference_Override(a ApiGatewayRestApiEndpointConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15468,7 +17368,7 @@ func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15493,12 +17393,40 @@ func (j *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) SetVpc
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15535,12 +17463,54 @@ func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetNum
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15584,13 +17554,13 @@ func (a *jsiiProxy_ApiGatewayRestApiEndpointConfigurationOutputReference) ResetV
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy.html aws_api_gateway_rest_api_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy aws_api_gateway_rest_api_policy}.
 type ApiGatewayRestApiPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -15612,10 +17582,15 @@ type ApiGatewayRestApiPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -15650,8 +17625,8 @@ func (j *jsiiProxy_ApiGatewayRestApiPolicy) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayRestApiPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayRestApiPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15810,7 +17785,7 @@ func (j *jsiiProxy_ApiGatewayRestApiPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy.html aws_api_gateway_rest_api_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy aws_api_gateway_rest_api_policy} Resource.
 func NewApiGatewayRestApiPolicy(scope constructs.Construct, id *string, config *ApiGatewayRestApiPolicyConfig) ApiGatewayRestApiPolicy {
 	_init_.Initialize()
 
@@ -15825,7 +17800,7 @@ func NewApiGatewayRestApiPolicy(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy.html aws_api_gateway_rest_api_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy aws_api_gateway_rest_api_policy} Resource.
 func NewApiGatewayRestApiPolicy_Override(a ApiGatewayRestApiPolicy, scope constructs.Construct, id *string, config *ApiGatewayRestApiPolicyConfig) {
 	_init_.Initialize()
 
@@ -15836,7 +17811,7 @@ func NewApiGatewayRestApiPolicy_Override(a ApiGatewayRestApiPolicy, scope constr
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayRestApiPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayRestApiPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15924,12 +17899,40 @@ func (a *jsiiProxy_ApiGatewayRestApiPolicy) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15966,12 +17969,54 @@ func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayRestApiPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16072,20 +18117,20 @@ func (a *jsiiProxy_ApiGatewayRestApiPolicy) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayRestApiPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy.html#policy ApiGatewayRestApiPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy.html#rest_api_id ApiGatewayRestApiPolicy#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy#policy ApiGatewayRestApiPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api_policy#rest_api_id ApiGatewayRestApiPolicy#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html aws_api_gateway_stage}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage aws_api_gateway_stage}.
 type ApiGatewayStage interface {
 	cdktf.TerraformResource
 	AccessLogSettings() ApiGatewayStageAccessLogSettingsOutputReference
@@ -16102,8 +18147,8 @@ type ApiGatewayStage interface {
 	SetClientCertificateId(val *string)
 	ClientCertificateIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentId() *string
@@ -16132,26 +18177,32 @@ type ApiGatewayStage interface {
 	StageName() *string
 	SetStageName(val *string)
 	StageNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Variables() interface{}
-	SetVariables(val interface{})
-	VariablesInput() interface{}
+	Variables() *map[string]*string
+	SetVariables(val *map[string]*string)
+	VariablesInput() *map[string]*string
+	WebAclArn() *string
 	XrayTracingEnabled() interface{}
 	SetXrayTracingEnabled(val interface{})
 	XrayTracingEnabledInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAccessLogSettings(value *ApiGatewayStageAccessLogSettings)
@@ -16287,8 +18338,8 @@ func (j *jsiiProxy_ApiGatewayStage) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayStage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16497,8 +18548,8 @@ func (j *jsiiProxy_ApiGatewayStage) StageNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStage) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayStage) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -16507,8 +18558,8 @@ func (j *jsiiProxy_ApiGatewayStage) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStage) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayStage) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -16517,8 +18568,8 @@ func (j *jsiiProxy_ApiGatewayStage) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStage) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayStage) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -16527,8 +18578,8 @@ func (j *jsiiProxy_ApiGatewayStage) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStage) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayStage) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -16567,8 +18618,8 @@ func (j *jsiiProxy_ApiGatewayStage) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStage) Variables() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayStage) Variables() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"variables",
@@ -16577,11 +18628,21 @@ func (j *jsiiProxy_ApiGatewayStage) Variables() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStage) VariablesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayStage) VariablesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"variablesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiGatewayStage) WebAclArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"webAclArn",
 		&returns,
 	)
 	return returns
@@ -16607,7 +18668,7 @@ func (j *jsiiProxy_ApiGatewayStage) XrayTracingEnabledInput() interface{} {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html aws_api_gateway_stage} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage aws_api_gateway_stage} Resource.
 func NewApiGatewayStage(scope constructs.Construct, id *string, config *ApiGatewayStageConfig) ApiGatewayStage {
 	_init_.Initialize()
 
@@ -16622,7 +18683,7 @@ func NewApiGatewayStage(scope constructs.Construct, id *string, config *ApiGatew
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html aws_api_gateway_stage} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage aws_api_gateway_stage} Resource.
 func NewApiGatewayStage_Override(a ApiGatewayStage, scope constructs.Construct, id *string, config *ApiGatewayStageConfig) {
 	_init_.Initialize()
 
@@ -16657,7 +18718,7 @@ func (j *jsiiProxy_ApiGatewayStage) SetClientCertificateId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayStage) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayStage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -16729,7 +18790,7 @@ func (j *jsiiProxy_ApiGatewayStage) SetStageName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayStage) SetTags(val interface{}) {
+func (j *jsiiProxy_ApiGatewayStage) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -16737,7 +18798,7 @@ func (j *jsiiProxy_ApiGatewayStage) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayStage) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApiGatewayStage) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -16745,7 +18806,7 @@ func (j *jsiiProxy_ApiGatewayStage) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayStage) SetVariables(val interface{}) {
+func (j *jsiiProxy_ApiGatewayStage) SetVariables(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"variables",
@@ -16801,12 +18862,40 @@ func (a *jsiiProxy_ApiGatewayStage) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayStage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayStage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayStage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16843,12 +18932,54 @@ func (a *jsiiProxy_ApiGatewayStage) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayStage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayStage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayStage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayStage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17035,10 +19166,10 @@ func (a *jsiiProxy_ApiGatewayStage) ToTerraform() interface{} {
 }
 
 type ApiGatewayStageAccessLogSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#destination_arn ApiGatewayStage#destination_arn}.
-	DestinationArn *string `json:"destinationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#format ApiGatewayStage#format}.
-	Format *string `json:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#destination_arn ApiGatewayStage#destination_arn}.
+	DestinationArn *string `json:"destinationArn" yaml:"destinationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#format ApiGatewayStage#format}.
+	Format *string `json:"format" yaml:"format"`
 }
 
 type ApiGatewayStageAccessLogSettingsOutputReference interface {
@@ -17055,12 +19186,17 @@ type ApiGatewayStageAccessLogSettingsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -17140,8 +19276,8 @@ func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17150,7 +19286,7 @@ func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) TerraformRes
 	return returns
 }
 
-func NewApiGatewayStageAccessLogSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayStageAccessLogSettingsOutputReference {
+func NewApiGatewayStageAccessLogSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayStageAccessLogSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference{}
@@ -17164,7 +19300,7 @@ func NewApiGatewayStageAccessLogSettingsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewApiGatewayStageAccessLogSettingsOutputReference_Override(a ApiGatewayStageAccessLogSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayStageAccessLogSettingsOutputReference_Override(a ApiGatewayStageAccessLogSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -17214,7 +19350,7 @@ func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17223,12 +19359,40 @@ func (j *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17265,12 +19429,54 @@ func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17309,54 +19515,54 @@ func (a *jsiiProxy_ApiGatewayStageAccessLogSettingsOutputReference) Interpolatio
 // API Gateway.
 type ApiGatewayStageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#deployment_id ApiGatewayStage#deployment_id}.
-	DeploymentId *string `json:"deploymentId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#rest_api_id ApiGatewayStage#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#stage_name ApiGatewayStage#stage_name}.
-	StageName *string `json:"stageName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#deployment_id ApiGatewayStage#deployment_id}.
+	DeploymentId *string `json:"deploymentId" yaml:"deploymentId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#rest_api_id ApiGatewayStage#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#stage_name ApiGatewayStage#stage_name}.
+	StageName *string `json:"stageName" yaml:"stageName"`
 	// access_log_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#access_log_settings ApiGatewayStage#access_log_settings}
-	AccessLogSettings *ApiGatewayStageAccessLogSettings `json:"accessLogSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#cache_cluster_enabled ApiGatewayStage#cache_cluster_enabled}.
-	CacheClusterEnabled interface{} `json:"cacheClusterEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#cache_cluster_size ApiGatewayStage#cache_cluster_size}.
-	CacheClusterSize *string `json:"cacheClusterSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#client_certificate_id ApiGatewayStage#client_certificate_id}.
-	ClientCertificateId *string `json:"clientCertificateId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#description ApiGatewayStage#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#documentation_version ApiGatewayStage#documentation_version}.
-	DocumentationVersion *string `json:"documentationVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#tags ApiGatewayStage#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#tags_all ApiGatewayStage#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#variables ApiGatewayStage#variables}.
-	Variables interface{} `json:"variables"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage.html#xray_tracing_enabled ApiGatewayStage#xray_tracing_enabled}.
-	XrayTracingEnabled interface{} `json:"xrayTracingEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#access_log_settings ApiGatewayStage#access_log_settings}
+	AccessLogSettings *ApiGatewayStageAccessLogSettings `json:"accessLogSettings" yaml:"accessLogSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#cache_cluster_enabled ApiGatewayStage#cache_cluster_enabled}.
+	CacheClusterEnabled interface{} `json:"cacheClusterEnabled" yaml:"cacheClusterEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#cache_cluster_size ApiGatewayStage#cache_cluster_size}.
+	CacheClusterSize *string `json:"cacheClusterSize" yaml:"cacheClusterSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#client_certificate_id ApiGatewayStage#client_certificate_id}.
+	ClientCertificateId *string `json:"clientCertificateId" yaml:"clientCertificateId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#description ApiGatewayStage#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#documentation_version ApiGatewayStage#documentation_version}.
+	DocumentationVersion *string `json:"documentationVersion" yaml:"documentationVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#tags ApiGatewayStage#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#tags_all ApiGatewayStage#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#variables ApiGatewayStage#variables}.
+	Variables *map[string]*string `json:"variables" yaml:"variables"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_stage#xray_tracing_enabled ApiGatewayStage#xray_tracing_enabled}.
+	XrayTracingEnabled interface{} `json:"xrayTracingEnabled" yaml:"xrayTracingEnabled"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html aws_api_gateway_usage_plan}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan aws_api_gateway_usage_plan}.
 type ApiGatewayUsagePlan interface {
 	cdktf.TerraformResource
-	ApiStages() *[]*ApiGatewayUsagePlanApiStages
-	SetApiStages(val *[]*ApiGatewayUsagePlanApiStages)
-	ApiStagesInput() *[]*ApiGatewayUsagePlanApiStages
+	ApiStages() interface{}
+	SetApiStages(val interface{})
+	ApiStagesInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -17379,22 +19585,27 @@ type ApiGatewayUsagePlan interface {
 	QuotaSettings() ApiGatewayUsagePlanQuotaSettingsOutputReference
 	QuotaSettingsInput() *ApiGatewayUsagePlanQuotaSettings
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	ThrottleSettings() ApiGatewayUsagePlanThrottleSettingsOutputReference
 	ThrottleSettingsInput() *ApiGatewayUsagePlanThrottleSettings
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutQuotaSettings(value *ApiGatewayUsagePlanQuotaSettings)
@@ -17418,8 +19629,8 @@ type jsiiProxy_ApiGatewayUsagePlan struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) ApiStages() *[]*ApiGatewayUsagePlanApiStages {
-	var returns *[]*ApiGatewayUsagePlanApiStages
+func (j *jsiiProxy_ApiGatewayUsagePlan) ApiStages() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"apiStages",
@@ -17428,8 +19639,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) ApiStages() *[]*ApiGatewayUsagePlanApiSt
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) ApiStagesInput() *[]*ApiGatewayUsagePlanApiStages {
-	var returns *[]*ApiGatewayUsagePlanApiStages
+func (j *jsiiProxy_ApiGatewayUsagePlan) ApiStagesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"apiStagesInput",
@@ -17468,8 +19679,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayUsagePlan) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17638,8 +19849,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayUsagePlan) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -17648,8 +19859,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayUsagePlan) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -17658,8 +19869,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayUsagePlan) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -17668,8 +19879,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayUsagePlan) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -17728,7 +19939,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) ThrottleSettingsInput() *ApiGatewayUsage
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html aws_api_gateway_usage_plan} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan aws_api_gateway_usage_plan} Resource.
 func NewApiGatewayUsagePlan(scope constructs.Construct, id *string, config *ApiGatewayUsagePlanConfig) ApiGatewayUsagePlan {
 	_init_.Initialize()
 
@@ -17743,7 +19954,7 @@ func NewApiGatewayUsagePlan(scope constructs.Construct, id *string, config *ApiG
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html aws_api_gateway_usage_plan} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan aws_api_gateway_usage_plan} Resource.
 func NewApiGatewayUsagePlan_Override(a ApiGatewayUsagePlan, scope constructs.Construct, id *string, config *ApiGatewayUsagePlanConfig) {
 	_init_.Initialize()
 
@@ -17754,7 +19965,7 @@ func NewApiGatewayUsagePlan_Override(a ApiGatewayUsagePlan, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) SetApiStages(val *[]*ApiGatewayUsagePlanApiStages) {
+func (j *jsiiProxy_ApiGatewayUsagePlan) SetApiStages(val interface{}) {
 	_jsii_.Set(
 		j,
 		"apiStages",
@@ -17762,7 +19973,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) SetApiStages(val *[]*ApiGatewayUsagePlan
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayUsagePlan) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17818,7 +20029,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) SetTags(val interface{}) {
+func (j *jsiiProxy_ApiGatewayUsagePlan) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -17826,7 +20037,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlan) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlan) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApiGatewayUsagePlan) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -17874,12 +20085,40 @@ func (a *jsiiProxy_ApiGatewayUsagePlan) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlan) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayUsagePlan) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlan) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17916,12 +20155,54 @@ func (a *jsiiProxy_ApiGatewayUsagePlan) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlan) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlan) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayUsagePlan) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlan) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18092,66 +20373,66 @@ func (a *jsiiProxy_ApiGatewayUsagePlan) ToTerraform() interface{} {
 }
 
 type ApiGatewayUsagePlanApiStages struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#api_id ApiGatewayUsagePlan#api_id}.
-	ApiId *string `json:"apiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#stage ApiGatewayUsagePlan#stage}.
-	Stage *string `json:"stage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#api_id ApiGatewayUsagePlan#api_id}.
+	ApiId *string `json:"apiId" yaml:"apiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#stage ApiGatewayUsagePlan#stage}.
+	Stage *string `json:"stage" yaml:"stage"`
 	// throttle block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#throttle ApiGatewayUsagePlan#throttle}
-	Throttle *[]*ApiGatewayUsagePlanApiStagesThrottle `json:"throttle"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#throttle ApiGatewayUsagePlan#throttle}
+	Throttle interface{} `json:"throttle" yaml:"throttle"`
 }
 
 type ApiGatewayUsagePlanApiStagesThrottle struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#path ApiGatewayUsagePlan#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#burst_limit ApiGatewayUsagePlan#burst_limit}.
-	BurstLimit *float64 `json:"burstLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#rate_limit ApiGatewayUsagePlan#rate_limit}.
-	RateLimit *float64 `json:"rateLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#path ApiGatewayUsagePlan#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#burst_limit ApiGatewayUsagePlan#burst_limit}.
+	BurstLimit *float64 `json:"burstLimit" yaml:"burstLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#rate_limit ApiGatewayUsagePlan#rate_limit}.
+	RateLimit *float64 `json:"rateLimit" yaml:"rateLimit"`
 }
 
 // API Gateway.
 type ApiGatewayUsagePlanConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#name ApiGatewayUsagePlan#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#name ApiGatewayUsagePlan#name}.
+	Name *string `json:"name" yaml:"name"`
 	// api_stages block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#api_stages ApiGatewayUsagePlan#api_stages}
-	ApiStages *[]*ApiGatewayUsagePlanApiStages `json:"apiStages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#description ApiGatewayUsagePlan#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#product_code ApiGatewayUsagePlan#product_code}.
-	ProductCode *string `json:"productCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#api_stages ApiGatewayUsagePlan#api_stages}
+	ApiStages interface{} `json:"apiStages" yaml:"apiStages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#description ApiGatewayUsagePlan#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#product_code ApiGatewayUsagePlan#product_code}.
+	ProductCode *string `json:"productCode" yaml:"productCode"`
 	// quota_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#quota_settings ApiGatewayUsagePlan#quota_settings}
-	QuotaSettings *ApiGatewayUsagePlanQuotaSettings `json:"quotaSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#tags ApiGatewayUsagePlan#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#tags_all ApiGatewayUsagePlan#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#quota_settings ApiGatewayUsagePlan#quota_settings}
+	QuotaSettings *ApiGatewayUsagePlanQuotaSettings `json:"quotaSettings" yaml:"quotaSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#tags ApiGatewayUsagePlan#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#tags_all ApiGatewayUsagePlan#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// throttle_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#throttle_settings ApiGatewayUsagePlan#throttle_settings}
-	ThrottleSettings *ApiGatewayUsagePlanThrottleSettings `json:"throttleSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#throttle_settings ApiGatewayUsagePlan#throttle_settings}
+	ThrottleSettings *ApiGatewayUsagePlanThrottleSettings `json:"throttleSettings" yaml:"throttleSettings"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key.html aws_api_gateway_usage_plan_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key aws_api_gateway_usage_plan_key}.
 type ApiGatewayUsagePlanKey interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -18178,10 +20459,15 @@ type ApiGatewayUsagePlanKey interface {
 	UsagePlanIdInput() *string
 	Value() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -18216,8 +20502,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlanKey) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlanKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayUsagePlanKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18416,7 +20702,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlanKey) Value() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key.html aws_api_gateway_usage_plan_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key aws_api_gateway_usage_plan_key} Resource.
 func NewApiGatewayUsagePlanKey(scope constructs.Construct, id *string, config *ApiGatewayUsagePlanKeyConfig) ApiGatewayUsagePlanKey {
 	_init_.Initialize()
 
@@ -18431,7 +20717,7 @@ func NewApiGatewayUsagePlanKey(scope constructs.Construct, id *string, config *A
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key.html aws_api_gateway_usage_plan_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key aws_api_gateway_usage_plan_key} Resource.
 func NewApiGatewayUsagePlanKey_Override(a ApiGatewayUsagePlanKey, scope constructs.Construct, id *string, config *ApiGatewayUsagePlanKeyConfig) {
 	_init_.Initialize()
 
@@ -18442,7 +20728,7 @@ func NewApiGatewayUsagePlanKey_Override(a ApiGatewayUsagePlanKey, scope construc
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlanKey) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayUsagePlanKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18538,12 +20824,40 @@ func (a *jsiiProxy_ApiGatewayUsagePlanKey) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18580,12 +20894,54 @@ func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18686,28 +21042,28 @@ func (a *jsiiProxy_ApiGatewayUsagePlanKey) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayUsagePlanKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key.html#key_id ApiGatewayUsagePlanKey#key_id}.
-	KeyId *string `json:"keyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key.html#key_type ApiGatewayUsagePlanKey#key_type}.
-	KeyType *string `json:"keyType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key.html#usage_plan_id ApiGatewayUsagePlanKey#usage_plan_id}.
-	UsagePlanId *string `json:"usagePlanId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key#key_id ApiGatewayUsagePlanKey#key_id}.
+	KeyId *string `json:"keyId" yaml:"keyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key#key_type ApiGatewayUsagePlanKey#key_type}.
+	KeyType *string `json:"keyType" yaml:"keyType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan_key#usage_plan_id ApiGatewayUsagePlanKey#usage_plan_id}.
+	UsagePlanId *string `json:"usagePlanId" yaml:"usagePlanId"`
 }
 
 type ApiGatewayUsagePlanQuotaSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#limit ApiGatewayUsagePlan#limit}.
-	Limit *float64 `json:"limit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#period ApiGatewayUsagePlan#period}.
-	Period *string `json:"period"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#offset ApiGatewayUsagePlan#offset}.
-	Offset *float64 `json:"offset"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#limit ApiGatewayUsagePlan#limit}.
+	Limit *float64 `json:"limit" yaml:"limit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#period ApiGatewayUsagePlan#period}.
+	Period *string `json:"period" yaml:"period"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#offset ApiGatewayUsagePlan#offset}.
+	Offset *float64 `json:"offset" yaml:"offset"`
 }
 
 type ApiGatewayUsagePlanQuotaSettingsOutputReference interface {
@@ -18727,12 +21083,17 @@ type ApiGatewayUsagePlanQuotaSettingsOutputReference interface {
 	PeriodInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetOffset()
@@ -18833,8 +21194,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18843,7 +21204,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) TerraformRes
 	return returns
 }
 
-func NewApiGatewayUsagePlanQuotaSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayUsagePlanQuotaSettingsOutputReference {
+func NewApiGatewayUsagePlanQuotaSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayUsagePlanQuotaSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference{}
@@ -18857,7 +21218,7 @@ func NewApiGatewayUsagePlanQuotaSettingsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewApiGatewayUsagePlanQuotaSettingsOutputReference_Override(a ApiGatewayUsagePlanQuotaSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayUsagePlanQuotaSettingsOutputReference_Override(a ApiGatewayUsagePlanQuotaSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18915,7 +21276,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18924,12 +21285,40 @@ func (j *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18966,12 +21355,54 @@ func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19016,10 +21447,10 @@ func (a *jsiiProxy_ApiGatewayUsagePlanQuotaSettingsOutputReference) ResetOffset(
 }
 
 type ApiGatewayUsagePlanThrottleSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#burst_limit ApiGatewayUsagePlan#burst_limit}.
-	BurstLimit *float64 `json:"burstLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan.html#rate_limit ApiGatewayUsagePlan#rate_limit}.
-	RateLimit *float64 `json:"rateLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#burst_limit ApiGatewayUsagePlan#burst_limit}.
+	BurstLimit *float64 `json:"burstLimit" yaml:"burstLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_usage_plan#rate_limit ApiGatewayUsagePlan#rate_limit}.
+	RateLimit *float64 `json:"rateLimit" yaml:"rateLimit"`
 }
 
 type ApiGatewayUsagePlanThrottleSettingsOutputReference interface {
@@ -19036,12 +21467,17 @@ type ApiGatewayUsagePlanThrottleSettingsOutputReference interface {
 	RateLimitInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBurstLimit()
@@ -19123,8 +21559,8 @@ func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19133,7 +21569,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) Terraform
 	return returns
 }
 
-func NewApiGatewayUsagePlanThrottleSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ApiGatewayUsagePlanThrottleSettingsOutputReference {
+func NewApiGatewayUsagePlanThrottleSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ApiGatewayUsagePlanThrottleSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference{}
@@ -19147,7 +21583,7 @@ func NewApiGatewayUsagePlanThrottleSettingsOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewApiGatewayUsagePlanThrottleSettingsOutputReference_Override(a ApiGatewayUsagePlanThrottleSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewApiGatewayUsagePlanThrottleSettingsOutputReference_Override(a ApiGatewayUsagePlanThrottleSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -19197,7 +21633,7 @@ func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19206,12 +21642,40 @@ func (j *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) SetTerraf
 }
 
 // Experimental.
-func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19248,12 +21712,54 @@ func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetNumber
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19305,14 +21811,14 @@ func (a *jsiiProxy_ApiGatewayUsagePlanThrottleSettingsOutputReference) ResetRate
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html aws_api_gateway_vpc_link}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link aws_api_gateway_vpc_link}.
 type ApiGatewayVpcLink interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -19330,12 +21836,12 @@ type ApiGatewayVpcLink interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetArns() *[]*string
 	SetTargetArns(val *[]*string)
 	TargetArnsInput() *[]*string
@@ -19343,10 +21849,15 @@ type ApiGatewayVpcLink interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -19394,8 +21905,8 @@ func (j *jsiiProxy_ApiGatewayVpcLink) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayVpcLink) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19524,8 +22035,8 @@ func (j *jsiiProxy_ApiGatewayVpcLink) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayVpcLink) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -19534,8 +22045,8 @@ func (j *jsiiProxy_ApiGatewayVpcLink) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayVpcLink) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -19544,8 +22055,8 @@ func (j *jsiiProxy_ApiGatewayVpcLink) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayVpcLink) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -19554,8 +22065,8 @@ func (j *jsiiProxy_ApiGatewayVpcLink) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ApiGatewayVpcLink) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -19614,7 +22125,7 @@ func (j *jsiiProxy_ApiGatewayVpcLink) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html aws_api_gateway_vpc_link} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link aws_api_gateway_vpc_link} Resource.
 func NewApiGatewayVpcLink(scope constructs.Construct, id *string, config *ApiGatewayVpcLinkConfig) ApiGatewayVpcLink {
 	_init_.Initialize()
 
@@ -19629,7 +22140,7 @@ func NewApiGatewayVpcLink(scope constructs.Construct, id *string, config *ApiGat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html aws_api_gateway_vpc_link} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link aws_api_gateway_vpc_link} Resource.
 func NewApiGatewayVpcLink_Override(a ApiGatewayVpcLink, scope constructs.Construct, id *string, config *ApiGatewayVpcLinkConfig) {
 	_init_.Initialize()
 
@@ -19640,7 +22151,7 @@ func NewApiGatewayVpcLink_Override(a ApiGatewayVpcLink, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) SetCount(val interface{}) {
+func (j *jsiiProxy_ApiGatewayVpcLink) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19688,7 +22199,7 @@ func (j *jsiiProxy_ApiGatewayVpcLink) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) SetTags(val interface{}) {
+func (j *jsiiProxy_ApiGatewayVpcLink) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -19696,7 +22207,7 @@ func (j *jsiiProxy_ApiGatewayVpcLink) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ApiGatewayVpcLink) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ApiGatewayVpcLink) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -19752,12 +22263,40 @@ func (a *jsiiProxy_ApiGatewayVpcLink) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayVpcLink) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayVpcLink) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayVpcLink) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19794,12 +22333,54 @@ func (a *jsiiProxy_ApiGatewayVpcLink) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (a *jsiiProxy_ApiGatewayVpcLink) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayVpcLink) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_ApiGatewayVpcLink) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_ApiGatewayVpcLink) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19924,37 +22505,37 @@ func (a *jsiiProxy_ApiGatewayVpcLink) ToTerraform() interface{} {
 // API Gateway.
 type ApiGatewayVpcLinkConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html#name ApiGatewayVpcLink#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html#target_arns ApiGatewayVpcLink#target_arns}.
-	TargetArns *[]*string `json:"targetArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html#description ApiGatewayVpcLink#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html#tags ApiGatewayVpcLink#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link.html#tags_all ApiGatewayVpcLink#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link#name ApiGatewayVpcLink#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link#target_arns ApiGatewayVpcLink#target_arns}.
+	TargetArns *[]*string `json:"targetArns" yaml:"targetArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link#description ApiGatewayVpcLink#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link#tags ApiGatewayVpcLink#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/api_gateway_vpc_link#tags_all ApiGatewayVpcLink#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key.html aws_api_gateway_api_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key aws_api_gateway_api_key}.
 type DataAwsApiGatewayApiKey interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -19968,18 +22549,23 @@ type DataAwsApiGatewayApiKey interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Value() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -20015,8 +22601,8 @@ func (j *jsiiProxy_DataAwsApiGatewayApiKey) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayApiKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayApiKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20055,8 +22641,8 @@ func (j *jsiiProxy_DataAwsApiGatewayApiKey) Description() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayApiKey) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayApiKey) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -20165,8 +22751,8 @@ func (j *jsiiProxy_DataAwsApiGatewayApiKey) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayApiKey) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayApiKey) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -20175,8 +22761,8 @@ func (j *jsiiProxy_DataAwsApiGatewayApiKey) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayApiKey) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayApiKey) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -20225,7 +22811,7 @@ func (j *jsiiProxy_DataAwsApiGatewayApiKey) Value() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key.html aws_api_gateway_api_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key aws_api_gateway_api_key} Data Source.
 func NewDataAwsApiGatewayApiKey(scope constructs.Construct, id *string, config *DataAwsApiGatewayApiKeyConfig) DataAwsApiGatewayApiKey {
 	_init_.Initialize()
 
@@ -20240,7 +22826,7 @@ func NewDataAwsApiGatewayApiKey(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key.html aws_api_gateway_api_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key aws_api_gateway_api_key} Data Source.
 func NewDataAwsApiGatewayApiKey_Override(d DataAwsApiGatewayApiKey, scope constructs.Construct, id *string, config *DataAwsApiGatewayApiKeyConfig) {
 	_init_.Initialize()
 
@@ -20251,7 +22837,7 @@ func NewDataAwsApiGatewayApiKey_Override(d DataAwsApiGatewayApiKey, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayApiKey) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayApiKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20291,7 +22877,7 @@ func (j *jsiiProxy_DataAwsApiGatewayApiKey) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayApiKey) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayApiKey) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -20339,12 +22925,40 @@ func (d *jsiiProxy_DataAwsApiGatewayApiKey) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20381,12 +22995,54 @@ func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayApiKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20495,20 +23151,20 @@ func (d *jsiiProxy_DataAwsApiGatewayApiKey) ToTerraform() interface{} {
 // API Gateway.
 type DataAwsApiGatewayApiKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key.html#id DataAwsApiGatewayApiKey#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key.html#tags DataAwsApiGatewayApiKey#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key#id DataAwsApiGatewayApiKey#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_api_key#tags DataAwsApiGatewayApiKey#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name.html aws_api_gateway_domain_name}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name aws_api_gateway_domain_name}.
 type DataAwsApiGatewayDomainName interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -20519,8 +23175,8 @@ type DataAwsApiGatewayDomainName interface {
 	CloudfrontDomainName() *string
 	CloudfrontZoneId() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -20540,18 +23196,23 @@ type DataAwsApiGatewayDomainName interface {
 	RegionalDomainName() *string
 	RegionalZoneId() *string
 	SecurityPolicy() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	EndpointConfiguration(index *string) DataAwsApiGatewayDomainNameEndpointConfiguration
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -20647,8 +23308,8 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainName) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayDomainName) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayDomainName) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20807,8 +23468,8 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainName) SecurityPolicy() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayDomainName) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayDomainName) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -20817,8 +23478,8 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainName) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayDomainName) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayDomainName) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -20857,7 +23518,7 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainName) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name.html aws_api_gateway_domain_name} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name aws_api_gateway_domain_name} Data Source.
 func NewDataAwsApiGatewayDomainName(scope constructs.Construct, id *string, config *DataAwsApiGatewayDomainNameConfig) DataAwsApiGatewayDomainName {
 	_init_.Initialize()
 
@@ -20872,7 +23533,7 @@ func NewDataAwsApiGatewayDomainName(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name.html aws_api_gateway_domain_name} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name aws_api_gateway_domain_name} Data Source.
 func NewDataAwsApiGatewayDomainName_Override(d DataAwsApiGatewayDomainName, scope constructs.Construct, id *string, config *DataAwsApiGatewayDomainNameConfig) {
 	_init_.Initialize()
 
@@ -20883,7 +23544,7 @@ func NewDataAwsApiGatewayDomainName_Override(d DataAwsApiGatewayDomainName, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayDomainName) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayDomainName) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20923,7 +23584,7 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainName) SetProvider(val cdktf.TerraformP
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayDomainName) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayDomainName) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -20984,12 +23645,40 @@ func (d *jsiiProxy_DataAwsApiGatewayDomainName) EndpointConfiguration(index *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21026,12 +23715,54 @@ func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainName) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21140,17 +23871,17 @@ func (d *jsiiProxy_DataAwsApiGatewayDomainName) ToTerraform() interface{} {
 // API Gateway.
 type DataAwsApiGatewayDomainNameConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name.html#domain_name DataAwsApiGatewayDomainName#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name.html#tags DataAwsApiGatewayDomainName#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name#domain_name DataAwsApiGatewayDomainName#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_domain_name#tags DataAwsApiGatewayDomainName#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsApiGatewayDomainNameEndpointConfiguration interface {
@@ -21159,13 +23890,20 @@ type DataAwsApiGatewayDomainNameEndpointConfiguration interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Types() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -21194,8 +23932,8 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21214,15 +23952,25 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) Types() *[]
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsApiGatewayDomainNameEndpointConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsApiGatewayDomainNameEndpointConfiguration {
+func NewDataAwsApiGatewayDomainNameEndpointConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsApiGatewayDomainNameEndpointConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainNameEndpointConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -21230,12 +23978,12 @@ func NewDataAwsApiGatewayDomainNameEndpointConfiguration(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsApiGatewayDomainNameEndpointConfiguration_Override(d DataAwsApiGatewayDomainNameEndpointConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsApiGatewayDomainNameEndpointConfiguration_Override(d DataAwsApiGatewayDomainNameEndpointConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.apigateway.DataAwsApiGatewayDomainNameEndpointConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -21256,7 +24004,7 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21264,13 +24012,49 @@ func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21307,12 +24091,54 @@ func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21334,13 +24160,739 @@ func (d *jsiiProxy_DataAwsApiGatewayDomainNameEndpointConfiguration) Interpolati
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource.html aws_api_gateway_resource}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export aws_api_gateway_export}.
+type DataAwsApiGatewayExport interface {
+	cdktf.TerraformDataSource
+	Accepts() *string
+	SetAccepts(val *string)
+	AcceptsInput() *string
+	Body() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	ContentDisposition() *string
+	ContentType() *string
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	ExportType() *string
+	SetExportType(val *string)
+	ExportTypeInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RestApiId() *string
+	SetRestApiId(val *string)
+	RestApiIdInput() *string
+	StageName() *string
+	SetStageName(val *string)
+	StageNameInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetAccepts()
+	ResetOverrideLogicalId()
+	ResetParameters()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsApiGatewayExport
+type jsiiProxy_DataAwsApiGatewayExport struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Accepts() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accepts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) AcceptsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"acceptsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Body() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"body",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) ContentDisposition() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentDisposition",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) ContentType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) ExportType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"exportType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) ExportTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"exportTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Parameters() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"parameters",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"parametersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) RestApiId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restApiId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) RestApiIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restApiIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) StageName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stageName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) StageNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stageNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export aws_api_gateway_export} Data Source.
+func NewDataAwsApiGatewayExport(scope constructs.Construct, id *string, config *DataAwsApiGatewayExportConfig) DataAwsApiGatewayExport {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsApiGatewayExport{}
+
+	_jsii_.Create(
+		"hashicorp_aws.apigateway.DataAwsApiGatewayExport",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export aws_api_gateway_export} Data Source.
+func NewDataAwsApiGatewayExport_Override(d DataAwsApiGatewayExport, scope constructs.Construct, id *string, config *DataAwsApiGatewayExportConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.apigateway.DataAwsApiGatewayExport",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetAccepts(val *string) {
+	_jsii_.Set(
+		j,
+		"accepts",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetExportType(val *string) {
+	_jsii_.Set(
+		j,
+		"exportType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetParameters(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"parameters",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetRestApiId(val *string) {
+	_jsii_.Set(
+		j,
+		"restApiId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewayExport) SetStageName(val *string) {
+	_jsii_.Set(
+		j,
+		"stageName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsApiGatewayExport_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.apigateway.DataAwsApiGatewayExport",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsApiGatewayExport_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.apigateway.DataAwsApiGatewayExport",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DataAwsApiGatewayExport) ResetAccepts() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetAccepts",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsApiGatewayExport) ResetParameters() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetParameters",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsApiGatewayExport) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsApiGatewayExport) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayExport) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// API Gateway.
+type DataAwsApiGatewayExportConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export#export_type DataAwsApiGatewayExport#export_type}.
+	ExportType *string `json:"exportType" yaml:"exportType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export#rest_api_id DataAwsApiGatewayExport#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export#stage_name DataAwsApiGatewayExport#stage_name}.
+	StageName *string `json:"stageName" yaml:"stageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export#accepts DataAwsApiGatewayExport#accepts}.
+	Accepts *string `json:"accepts" yaml:"accepts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_export#parameters DataAwsApiGatewayExport#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource aws_api_gateway_resource}.
 type DataAwsApiGatewayResource interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -21364,10 +24916,15 @@ type DataAwsApiGatewayResource interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -21402,8 +24959,8 @@ func (j *jsiiProxy_DataAwsApiGatewayResource) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayResource) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayResource) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -21582,7 +25139,7 @@ func (j *jsiiProxy_DataAwsApiGatewayResource) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource.html aws_api_gateway_resource} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource aws_api_gateway_resource} Data Source.
 func NewDataAwsApiGatewayResource(scope constructs.Construct, id *string, config *DataAwsApiGatewayResourceConfig) DataAwsApiGatewayResource {
 	_init_.Initialize()
 
@@ -21597,7 +25154,7 @@ func NewDataAwsApiGatewayResource(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource.html aws_api_gateway_resource} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource aws_api_gateway_resource} Data Source.
 func NewDataAwsApiGatewayResource_Override(d DataAwsApiGatewayResource, scope constructs.Construct, id *string, config *DataAwsApiGatewayResourceConfig) {
 	_init_.Initialize()
 
@@ -21608,7 +25165,7 @@ func NewDataAwsApiGatewayResource_Override(d DataAwsApiGatewayResource, scope co
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayResource) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayResource) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -21696,12 +25253,40 @@ func (d *jsiiProxy_DataAwsApiGatewayResource) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayResource) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayResource) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayResource) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21738,12 +25323,54 @@ func (d *jsiiProxy_DataAwsApiGatewayResource) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayResource) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayResource) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayResource) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayResource) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21844,20 +25471,20 @@ func (d *jsiiProxy_DataAwsApiGatewayResource) ToTerraform() interface{} {
 // API Gateway.
 type DataAwsApiGatewayResourceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource.html#path DataAwsApiGatewayResource#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource.html#rest_api_id DataAwsApiGatewayResource#rest_api_id}.
-	RestApiId *string `json:"restApiId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource#path DataAwsApiGatewayResource#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_resource#rest_api_id DataAwsApiGatewayResource#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api.html aws_api_gateway_rest_api}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api aws_api_gateway_rest_api}.
 type DataAwsApiGatewayRestApi interface {
 	cdktf.TerraformDataSource
 	ApiKeySource() *string
@@ -21865,8 +25492,8 @@ type DataAwsApiGatewayRestApi interface {
 	BinaryMediaTypes() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -21886,18 +25513,23 @@ type DataAwsApiGatewayRestApi interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	RootResourceId() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	EndpointConfiguration(index *string) DataAwsApiGatewayRestApiEndpointConfiguration
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -21963,8 +25595,8 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApi) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayRestApi) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayRestApi) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -22123,8 +25755,8 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApi) RootResourceId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayRestApi) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayRestApi) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -22133,8 +25765,8 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApi) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayRestApi) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayRestApi) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -22173,7 +25805,7 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApi) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api.html aws_api_gateway_rest_api} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api aws_api_gateway_rest_api} Data Source.
 func NewDataAwsApiGatewayRestApi(scope constructs.Construct, id *string, config *DataAwsApiGatewayRestApiConfig) DataAwsApiGatewayRestApi {
 	_init_.Initialize()
 
@@ -22188,7 +25820,7 @@ func NewDataAwsApiGatewayRestApi(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api.html aws_api_gateway_rest_api} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api aws_api_gateway_rest_api} Data Source.
 func NewDataAwsApiGatewayRestApi_Override(d DataAwsApiGatewayRestApi, scope constructs.Construct, id *string, config *DataAwsApiGatewayRestApiConfig) {
 	_init_.Initialize()
 
@@ -22199,7 +25831,7 @@ func NewDataAwsApiGatewayRestApi_Override(d DataAwsApiGatewayRestApi, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayRestApi) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayRestApi) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -22239,7 +25871,7 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApi) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayRestApi) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayRestApi) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -22300,12 +25932,40 @@ func (d *jsiiProxy_DataAwsApiGatewayRestApi) EndpointConfiguration(index *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22342,12 +26002,54 @@ func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApi) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22456,17 +26158,17 @@ func (d *jsiiProxy_DataAwsApiGatewayRestApi) ToTerraform() interface{} {
 // API Gateway.
 type DataAwsApiGatewayRestApiConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api.html#name DataAwsApiGatewayRestApi#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api.html#tags DataAwsApiGatewayRestApi#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api#name DataAwsApiGatewayRestApi#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_rest_api#tags DataAwsApiGatewayRestApi#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsApiGatewayRestApiEndpointConfiguration interface {
@@ -22475,14 +26177,21 @@ type DataAwsApiGatewayRestApiEndpointConfiguration interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Types() *[]*string
 	VpcEndpointIds() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -22511,8 +26220,8 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22541,15 +26250,25 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) VpcEndpointIds
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsApiGatewayRestApiEndpointConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsApiGatewayRestApiEndpointConfiguration {
+func NewDataAwsApiGatewayRestApiEndpointConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsApiGatewayRestApiEndpointConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApiEndpointConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -22557,12 +26276,12 @@ func NewDataAwsApiGatewayRestApiEndpointConfiguration(terraformResource cdktf.IT
 }
 
 // Experimental.
-func NewDataAwsApiGatewayRestApiEndpointConfiguration_Override(d DataAwsApiGatewayRestApiEndpointConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsApiGatewayRestApiEndpointConfiguration_Override(d DataAwsApiGatewayRestApiEndpointConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.apigateway.DataAwsApiGatewayRestApiEndpointConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -22583,7 +26302,7 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22591,13 +26310,49 @@ func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) SetTerraformRe
 	)
 }
 
+func (j *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22634,12 +26389,54 @@ func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetNumberAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22661,13 +26458,697 @@ func (d *jsiiProxy_DataAwsApiGatewayRestApiEndpointConfiguration) InterpolationF
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link.html aws_api_gateway_vpc_link}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_sdk aws_api_gateway_sdk}.
+type DataAwsApiGatewaySdk interface {
+	cdktf.TerraformDataSource
+	Body() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	ContentDisposition() *string
+	ContentType() *string
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RestApiId() *string
+	SetRestApiId(val *string)
+	RestApiIdInput() *string
+	SdkType() *string
+	SetSdkType(val *string)
+	SdkTypeInput() *string
+	StageName() *string
+	SetStageName(val *string)
+	StageNameInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetParameters()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsApiGatewaySdk
+type jsiiProxy_DataAwsApiGatewaySdk struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Body() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"body",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) ContentDisposition() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentDisposition",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) ContentType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Parameters() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"parameters",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"parametersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) RestApiId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restApiId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) RestApiIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restApiIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SdkType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sdkType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SdkTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sdkTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) StageName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stageName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) StageNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"stageNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_sdk aws_api_gateway_sdk} Data Source.
+func NewDataAwsApiGatewaySdk(scope constructs.Construct, id *string, config *DataAwsApiGatewaySdkConfig) DataAwsApiGatewaySdk {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsApiGatewaySdk{}
+
+	_jsii_.Create(
+		"hashicorp_aws.apigateway.DataAwsApiGatewaySdk",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_sdk aws_api_gateway_sdk} Data Source.
+func NewDataAwsApiGatewaySdk_Override(d DataAwsApiGatewaySdk, scope constructs.Construct, id *string, config *DataAwsApiGatewaySdkConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.apigateway.DataAwsApiGatewaySdk",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetParameters(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"parameters",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetRestApiId(val *string) {
+	_jsii_.Set(
+		j,
+		"restApiId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetSdkType(val *string) {
+	_jsii_.Set(
+		j,
+		"sdkType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsApiGatewaySdk) SetStageName(val *string) {
+	_jsii_.Set(
+		j,
+		"stageName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsApiGatewaySdk_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.apigateway.DataAwsApiGatewaySdk",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsApiGatewaySdk_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.apigateway.DataAwsApiGatewaySdk",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsApiGatewaySdk) ResetParameters() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetParameters",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsApiGatewaySdk) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewaySdk) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// API Gateway.
+type DataAwsApiGatewaySdkConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_sdk#rest_api_id DataAwsApiGatewaySdk#rest_api_id}.
+	RestApiId *string `json:"restApiId" yaml:"restApiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_sdk#sdk_type DataAwsApiGatewaySdk#sdk_type}.
+	SdkType *string `json:"sdkType" yaml:"sdkType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_sdk#stage_name DataAwsApiGatewaySdk#stage_name}.
+	StageName *string `json:"stageName" yaml:"stageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_sdk#parameters DataAwsApiGatewaySdk#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link aws_api_gateway_vpc_link}.
 type DataAwsApiGatewayVpcLink interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -22685,18 +27166,23 @@ type DataAwsApiGatewayVpcLink interface {
 	RawOverrides() interface{}
 	Status() *string
 	StatusMessage() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TargetArns() *[]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -22732,8 +27218,8 @@ func (j *jsiiProxy_DataAwsApiGatewayVpcLink) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayVpcLink) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayVpcLink) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -22872,8 +27358,8 @@ func (j *jsiiProxy_DataAwsApiGatewayVpcLink) StatusMessage() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayVpcLink) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayVpcLink) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -22882,8 +27368,8 @@ func (j *jsiiProxy_DataAwsApiGatewayVpcLink) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayVpcLink) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsApiGatewayVpcLink) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -22932,7 +27418,7 @@ func (j *jsiiProxy_DataAwsApiGatewayVpcLink) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link.html aws_api_gateway_vpc_link} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link aws_api_gateway_vpc_link} Data Source.
 func NewDataAwsApiGatewayVpcLink(scope constructs.Construct, id *string, config *DataAwsApiGatewayVpcLinkConfig) DataAwsApiGatewayVpcLink {
 	_init_.Initialize()
 
@@ -22947,7 +27433,7 @@ func NewDataAwsApiGatewayVpcLink(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link.html aws_api_gateway_vpc_link} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link aws_api_gateway_vpc_link} Data Source.
 func NewDataAwsApiGatewayVpcLink_Override(d DataAwsApiGatewayVpcLink, scope constructs.Construct, id *string, config *DataAwsApiGatewayVpcLinkConfig) {
 	_init_.Initialize()
 
@@ -22958,7 +27444,7 @@ func NewDataAwsApiGatewayVpcLink_Override(d DataAwsApiGatewayVpcLink, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayVpcLink) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayVpcLink) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -22998,7 +27484,7 @@ func (j *jsiiProxy_DataAwsApiGatewayVpcLink) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_DataAwsApiGatewayVpcLink) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsApiGatewayVpcLink) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -23046,12 +27532,40 @@ func (d *jsiiProxy_DataAwsApiGatewayVpcLink) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23088,12 +27602,54 @@ func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsApiGatewayVpcLink) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23202,15 +27758,15 @@ func (d *jsiiProxy_DataAwsApiGatewayVpcLink) ToTerraform() interface{} {
 // API Gateway.
 type DataAwsApiGatewayVpcLinkConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link.html#name DataAwsApiGatewayVpcLink#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link.html#tags DataAwsApiGatewayVpcLink#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link#name DataAwsApiGatewayVpcLink#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/api_gateway_vpc_link#tags DataAwsApiGatewayVpcLink#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }

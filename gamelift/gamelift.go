@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/gamelift/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html aws_gamelift_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias aws_gamelift_alias}.
 type GameliftAlias interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -36,20 +36,25 @@ type GameliftAlias interface {
 	RawOverrides() interface{}
 	RoutingStrategy() GameliftAliasRoutingStrategyOutputReference
 	RoutingStrategyInput() *GameliftAliasRoutingStrategy
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutRoutingStrategy(value *GameliftAliasRoutingStrategy)
@@ -98,8 +103,8 @@ func (j *jsiiProxy_GameliftAlias) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_GameliftAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -248,8 +253,8 @@ func (j *jsiiProxy_GameliftAlias) RoutingStrategyInput() *GameliftAliasRoutingSt
 	return returns
 }
 
-func (j *jsiiProxy_GameliftAlias) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftAlias) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -258,8 +263,8 @@ func (j *jsiiProxy_GameliftAlias) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftAlias) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftAlias) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -268,8 +273,8 @@ func (j *jsiiProxy_GameliftAlias) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftAlias) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftAlias) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -278,8 +283,8 @@ func (j *jsiiProxy_GameliftAlias) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftAlias) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftAlias) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -318,7 +323,7 @@ func (j *jsiiProxy_GameliftAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html aws_gamelift_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias aws_gamelift_alias} Resource.
 func NewGameliftAlias(scope constructs.Construct, id *string, config *GameliftAliasConfig) GameliftAlias {
 	_init_.Initialize()
 
@@ -333,7 +338,7 @@ func NewGameliftAlias(scope constructs.Construct, id *string, config *GameliftAl
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html aws_gamelift_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias aws_gamelift_alias} Resource.
 func NewGameliftAlias_Override(g GameliftAlias, scope constructs.Construct, id *string, config *GameliftAliasConfig) {
 	_init_.Initialize()
 
@@ -344,7 +349,7 @@ func NewGameliftAlias_Override(g GameliftAlias, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_GameliftAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_GameliftAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -392,7 +397,7 @@ func (j *jsiiProxy_GameliftAlias) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GameliftAlias) SetTags(val interface{}) {
+func (j *jsiiProxy_GameliftAlias) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -400,7 +405,7 @@ func (j *jsiiProxy_GameliftAlias) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GameliftAlias) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GameliftAlias) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -448,12 +453,40 @@ func (g *jsiiProxy_GameliftAlias) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -490,12 +523,54 @@ func (g *jsiiProxy_GameliftAlias) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -628,34 +703,34 @@ func (g *jsiiProxy_GameliftAlias) ToTerraform() interface{} {
 // AWS GameLift.
 type GameliftAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#name GameliftAlias#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#name GameliftAlias#name}.
+	Name *string `json:"name" yaml:"name"`
 	// routing_strategy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#routing_strategy GameliftAlias#routing_strategy}
-	RoutingStrategy *GameliftAliasRoutingStrategy `json:"routingStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#description GameliftAlias#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#tags GameliftAlias#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#tags_all GameliftAlias#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#routing_strategy GameliftAlias#routing_strategy}
+	RoutingStrategy *GameliftAliasRoutingStrategy `json:"routingStrategy" yaml:"routingStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#description GameliftAlias#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#tags GameliftAlias#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#tags_all GameliftAlias#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type GameliftAliasRoutingStrategy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#type GameliftAlias#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#fleet_id GameliftAlias#fleet_id}.
-	FleetId *string `json:"fleetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias.html#message GameliftAlias#message}.
-	Message *string `json:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#type GameliftAlias#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#fleet_id GameliftAlias#fleet_id}.
+	FleetId *string `json:"fleetId" yaml:"fleetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_alias#message GameliftAlias#message}.
+	Message *string `json:"message" yaml:"message"`
 }
 
 type GameliftAliasRoutingStrategyOutputReference interface {
@@ -672,15 +747,20 @@ type GameliftAliasRoutingStrategyOutputReference interface {
 	MessageInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFleetId()
@@ -762,8 +842,8 @@ func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -792,7 +872,7 @@ func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) TypeInput() *str
 	return returns
 }
 
-func NewGameliftAliasRoutingStrategyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GameliftAliasRoutingStrategyOutputReference {
+func NewGameliftAliasRoutingStrategyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GameliftAliasRoutingStrategyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GameliftAliasRoutingStrategyOutputReference{}
@@ -806,7 +886,7 @@ func NewGameliftAliasRoutingStrategyOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewGameliftAliasRoutingStrategyOutputReference_Override(g GameliftAliasRoutingStrategyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGameliftAliasRoutingStrategyOutputReference_Override(g GameliftAliasRoutingStrategyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -856,7 +936,7 @@ func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -873,12 +953,40 @@ func (j *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) SetType(val *str
 }
 
 // Experimental.
-func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -915,12 +1023,54 @@ func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -972,14 +1122,14 @@ func (g *jsiiProxy_GameliftAliasRoutingStrategyOutputReference) ResetMessage() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html aws_gamelift_build}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build aws_gamelift_build}.
 type GameliftBuild interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -999,12 +1149,12 @@ type GameliftBuild interface {
 	RawOverrides() interface{}
 	StorageLocation() GameliftBuildStorageLocationOutputReference
 	StorageLocationInput() *GameliftBuildStorageLocation
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1012,10 +1162,15 @@ type GameliftBuild interface {
 	SetVersion(val *string)
 	VersionInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutStorageLocation(value *GameliftBuildStorageLocation)
@@ -1064,8 +1219,8 @@ func (j *jsiiProxy_GameliftBuild) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_GameliftBuild) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftBuild) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1214,8 +1369,8 @@ func (j *jsiiProxy_GameliftBuild) StorageLocationInput() *GameliftBuildStorageLo
 	return returns
 }
 
-func (j *jsiiProxy_GameliftBuild) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftBuild) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1224,8 +1379,8 @@ func (j *jsiiProxy_GameliftBuild) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftBuild) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftBuild) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1234,8 +1389,8 @@ func (j *jsiiProxy_GameliftBuild) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftBuild) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftBuild) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1244,8 +1399,8 @@ func (j *jsiiProxy_GameliftBuild) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftBuild) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftBuild) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1304,7 +1459,7 @@ func (j *jsiiProxy_GameliftBuild) VersionInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html aws_gamelift_build} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build aws_gamelift_build} Resource.
 func NewGameliftBuild(scope constructs.Construct, id *string, config *GameliftBuildConfig) GameliftBuild {
 	_init_.Initialize()
 
@@ -1319,7 +1474,7 @@ func NewGameliftBuild(scope constructs.Construct, id *string, config *GameliftBu
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html aws_gamelift_build} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build aws_gamelift_build} Resource.
 func NewGameliftBuild_Override(g GameliftBuild, scope constructs.Construct, id *string, config *GameliftBuildConfig) {
 	_init_.Initialize()
 
@@ -1330,7 +1485,7 @@ func NewGameliftBuild_Override(g GameliftBuild, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_GameliftBuild) SetCount(val interface{}) {
+func (j *jsiiProxy_GameliftBuild) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1378,7 +1533,7 @@ func (j *jsiiProxy_GameliftBuild) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GameliftBuild) SetTags(val interface{}) {
+func (j *jsiiProxy_GameliftBuild) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1386,7 +1541,7 @@ func (j *jsiiProxy_GameliftBuild) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GameliftBuild) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GameliftBuild) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1442,12 +1597,40 @@ func (g *jsiiProxy_GameliftBuild) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftBuild) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftBuild) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftBuild) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1484,12 +1667,54 @@ func (g *jsiiProxy_GameliftBuild) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftBuild) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftBuild) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftBuild) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftBuild) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1622,36 +1847,36 @@ func (g *jsiiProxy_GameliftBuild) ToTerraform() interface{} {
 // AWS GameLift.
 type GameliftBuildConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#name GameliftBuild#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#operating_system GameliftBuild#operating_system}.
-	OperatingSystem *string `json:"operatingSystem"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#name GameliftBuild#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#operating_system GameliftBuild#operating_system}.
+	OperatingSystem *string `json:"operatingSystem" yaml:"operatingSystem"`
 	// storage_location block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#storage_location GameliftBuild#storage_location}
-	StorageLocation *GameliftBuildStorageLocation `json:"storageLocation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#tags GameliftBuild#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#tags_all GameliftBuild#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#version GameliftBuild#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#storage_location GameliftBuild#storage_location}
+	StorageLocation *GameliftBuildStorageLocation `json:"storageLocation" yaml:"storageLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#tags GameliftBuild#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#tags_all GameliftBuild#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#version GameliftBuild#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type GameliftBuildStorageLocation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#bucket GameliftBuild#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#key GameliftBuild#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build.html#role_arn GameliftBuild#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#bucket GameliftBuild#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#key GameliftBuild#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_build#role_arn GameliftBuild#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }
 
 type GameliftBuildStorageLocationOutputReference interface {
@@ -1671,12 +1896,17 @@ type GameliftBuildStorageLocationOutputReference interface {
 	RoleArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1776,8 +2006,8 @@ func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1786,7 +2016,7 @@ func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) TerraformResourc
 	return returns
 }
 
-func NewGameliftBuildStorageLocationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GameliftBuildStorageLocationOutputReference {
+func NewGameliftBuildStorageLocationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GameliftBuildStorageLocationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GameliftBuildStorageLocationOutputReference{}
@@ -1800,7 +2030,7 @@ func NewGameliftBuildStorageLocationOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewGameliftBuildStorageLocationOutputReference_Override(g GameliftBuildStorageLocationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGameliftBuildStorageLocationOutputReference_Override(g GameliftBuildStorageLocationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1858,7 +2088,7 @@ func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1867,12 +2097,40 @@ func (j *jsiiProxy_GameliftBuildStorageLocationOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1909,12 +2167,54 @@ func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1950,7 +2250,7 @@ func (g *jsiiProxy_GameliftBuildStorageLocationOutputReference) InterpolationFor
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html aws_gamelift_fleet}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet aws_gamelift_fleet}.
 type GameliftFleet interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1959,16 +2259,16 @@ type GameliftFleet interface {
 	BuildIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
-	Ec2InboundPermission() *[]*GameliftFleetEc2InboundPermission
-	SetEc2InboundPermission(val *[]*GameliftFleetEc2InboundPermission)
-	Ec2InboundPermissionInput() *[]*GameliftFleetEc2InboundPermission
+	Ec2InboundPermission() interface{}
+	SetEc2InboundPermission(val interface{})
+	Ec2InboundPermissionInput() interface{}
 	Ec2InstanceType() *string
 	SetEc2InstanceType(val *string)
 	Ec2InstanceTypeInput() *string
@@ -2002,22 +2302,27 @@ type GameliftFleet interface {
 	ResourceCreationLimitPolicyInput() *GameliftFleetResourceCreationLimitPolicy
 	RuntimeConfiguration() GameliftFleetRuntimeConfigurationOutputReference
 	RuntimeConfigurationInput() *GameliftFleetRuntimeConfiguration
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() GameliftFleetTimeoutsOutputReference
 	TimeoutsInput() *GameliftFleetTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutResourceCreationLimitPolicy(value *GameliftFleetResourceCreationLimitPolicy)
@@ -2096,8 +2401,8 @@ func (j *jsiiProxy_GameliftFleet) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftFleet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2136,8 +2441,8 @@ func (j *jsiiProxy_GameliftFleet) DescriptionInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleet) Ec2InboundPermission() *[]*GameliftFleetEc2InboundPermission {
-	var returns *[]*GameliftFleetEc2InboundPermission
+func (j *jsiiProxy_GameliftFleet) Ec2InboundPermission() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ec2InboundPermission",
@@ -2146,8 +2451,8 @@ func (j *jsiiProxy_GameliftFleet) Ec2InboundPermission() *[]*GameliftFleetEc2Inb
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleet) Ec2InboundPermissionInput() *[]*GameliftFleetEc2InboundPermission {
-	var returns *[]*GameliftFleetEc2InboundPermission
+func (j *jsiiProxy_GameliftFleet) Ec2InboundPermissionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ec2InboundPermissionInput",
@@ -2406,8 +2711,8 @@ func (j *jsiiProxy_GameliftFleet) RuntimeConfigurationInput() *GameliftFleetRunt
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftFleet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2416,8 +2721,8 @@ func (j *jsiiProxy_GameliftFleet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleet) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftFleet) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2426,8 +2731,8 @@ func (j *jsiiProxy_GameliftFleet) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleet) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftFleet) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2436,8 +2741,8 @@ func (j *jsiiProxy_GameliftFleet) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftFleet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2496,7 +2801,7 @@ func (j *jsiiProxy_GameliftFleet) TimeoutsInput() *GameliftFleetTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html aws_gamelift_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet aws_gamelift_fleet} Resource.
 func NewGameliftFleet(scope constructs.Construct, id *string, config *GameliftFleetConfig) GameliftFleet {
 	_init_.Initialize()
 
@@ -2511,7 +2816,7 @@ func NewGameliftFleet(scope constructs.Construct, id *string, config *GameliftFl
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html aws_gamelift_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet aws_gamelift_fleet} Resource.
 func NewGameliftFleet_Override(g GameliftFleet, scope constructs.Construct, id *string, config *GameliftFleetConfig) {
 	_init_.Initialize()
 
@@ -2530,7 +2835,7 @@ func (j *jsiiProxy_GameliftFleet) SetBuildId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GameliftFleet) SetCount(val interface{}) {
+func (j *jsiiProxy_GameliftFleet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2554,7 +2859,7 @@ func (j *jsiiProxy_GameliftFleet) SetDescription(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GameliftFleet) SetEc2InboundPermission(val *[]*GameliftFleetEc2InboundPermission) {
+func (j *jsiiProxy_GameliftFleet) SetEc2InboundPermission(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ec2InboundPermission",
@@ -2626,7 +2931,7 @@ func (j *jsiiProxy_GameliftFleet) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_GameliftFleet) SetTags(val interface{}) {
+func (j *jsiiProxy_GameliftFleet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2634,7 +2939,7 @@ func (j *jsiiProxy_GameliftFleet) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GameliftFleet) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GameliftFleet) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2682,12 +2987,40 @@ func (g *jsiiProxy_GameliftFleet) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftFleet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftFleet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2724,12 +3057,54 @@ func (g *jsiiProxy_GameliftFleet) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftFleet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftFleet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2942,67 +3317,67 @@ func (g *jsiiProxy_GameliftFleet) ToTerraform() interface{} {
 // AWS GameLift.
 type GameliftFleetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#build_id GameliftFleet#build_id}.
-	BuildId *string `json:"buildId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#ec2_instance_type GameliftFleet#ec2_instance_type}.
-	Ec2InstanceType *string `json:"ec2InstanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#name GameliftFleet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#description GameliftFleet#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#build_id GameliftFleet#build_id}.
+	BuildId *string `json:"buildId" yaml:"buildId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#ec2_instance_type GameliftFleet#ec2_instance_type}.
+	Ec2InstanceType *string `json:"ec2InstanceType" yaml:"ec2InstanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#name GameliftFleet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#description GameliftFleet#description}.
+	Description *string `json:"description" yaml:"description"`
 	// ec2_inbound_permission block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#ec2_inbound_permission GameliftFleet#ec2_inbound_permission}
-	Ec2InboundPermission *[]*GameliftFleetEc2InboundPermission `json:"ec2InboundPermission"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#fleet_type GameliftFleet#fleet_type}.
-	FleetType *string `json:"fleetType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#instance_role_arn GameliftFleet#instance_role_arn}.
-	InstanceRoleArn *string `json:"instanceRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#metric_groups GameliftFleet#metric_groups}.
-	MetricGroups *[]*string `json:"metricGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#new_game_session_protection_policy GameliftFleet#new_game_session_protection_policy}.
-	NewGameSessionProtectionPolicy *string `json:"newGameSessionProtectionPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#ec2_inbound_permission GameliftFleet#ec2_inbound_permission}
+	Ec2InboundPermission interface{} `json:"ec2InboundPermission" yaml:"ec2InboundPermission"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#fleet_type GameliftFleet#fleet_type}.
+	FleetType *string `json:"fleetType" yaml:"fleetType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#instance_role_arn GameliftFleet#instance_role_arn}.
+	InstanceRoleArn *string `json:"instanceRoleArn" yaml:"instanceRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#metric_groups GameliftFleet#metric_groups}.
+	MetricGroups *[]*string `json:"metricGroups" yaml:"metricGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#new_game_session_protection_policy GameliftFleet#new_game_session_protection_policy}.
+	NewGameSessionProtectionPolicy *string `json:"newGameSessionProtectionPolicy" yaml:"newGameSessionProtectionPolicy"`
 	// resource_creation_limit_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#resource_creation_limit_policy GameliftFleet#resource_creation_limit_policy}
-	ResourceCreationLimitPolicy *GameliftFleetResourceCreationLimitPolicy `json:"resourceCreationLimitPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#resource_creation_limit_policy GameliftFleet#resource_creation_limit_policy}
+	ResourceCreationLimitPolicy *GameliftFleetResourceCreationLimitPolicy `json:"resourceCreationLimitPolicy" yaml:"resourceCreationLimitPolicy"`
 	// runtime_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#runtime_configuration GameliftFleet#runtime_configuration}
-	RuntimeConfiguration *GameliftFleetRuntimeConfiguration `json:"runtimeConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#tags GameliftFleet#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#tags_all GameliftFleet#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#runtime_configuration GameliftFleet#runtime_configuration}
+	RuntimeConfiguration *GameliftFleetRuntimeConfiguration `json:"runtimeConfiguration" yaml:"runtimeConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#tags GameliftFleet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#tags_all GameliftFleet#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#timeouts GameliftFleet#timeouts}
-	Timeouts *GameliftFleetTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#timeouts GameliftFleet#timeouts}
+	Timeouts *GameliftFleetTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type GameliftFleetEc2InboundPermission struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#from_port GameliftFleet#from_port}.
-	FromPort *float64 `json:"fromPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#ip_range GameliftFleet#ip_range}.
-	IpRange *string `json:"ipRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#protocol GameliftFleet#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#to_port GameliftFleet#to_port}.
-	ToPort *float64 `json:"toPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#from_port GameliftFleet#from_port}.
+	FromPort *float64 `json:"fromPort" yaml:"fromPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#ip_range GameliftFleet#ip_range}.
+	IpRange *string `json:"ipRange" yaml:"ipRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#protocol GameliftFleet#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#to_port GameliftFleet#to_port}.
+	ToPort *float64 `json:"toPort" yaml:"toPort"`
 }
 
 type GameliftFleetResourceCreationLimitPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#new_game_sessions_per_creator GameliftFleet#new_game_sessions_per_creator}.
-	NewGameSessionsPerCreator *float64 `json:"newGameSessionsPerCreator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#policy_period_in_minutes GameliftFleet#policy_period_in_minutes}.
-	PolicyPeriodInMinutes *float64 `json:"policyPeriodInMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#new_game_sessions_per_creator GameliftFleet#new_game_sessions_per_creator}.
+	NewGameSessionsPerCreator *float64 `json:"newGameSessionsPerCreator" yaml:"newGameSessionsPerCreator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#policy_period_in_minutes GameliftFleet#policy_period_in_minutes}.
+	PolicyPeriodInMinutes *float64 `json:"policyPeriodInMinutes" yaml:"policyPeriodInMinutes"`
 }
 
 type GameliftFleetResourceCreationLimitPolicyOutputReference interface {
@@ -3019,12 +3394,17 @@ type GameliftFleetResourceCreationLimitPolicyOutputReference interface {
 	PolicyPeriodInMinutesInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetNewGameSessionsPerCreator()
@@ -3106,8 +3486,8 @@ func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3116,7 +3496,7 @@ func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) Terr
 	return returns
 }
 
-func NewGameliftFleetResourceCreationLimitPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GameliftFleetResourceCreationLimitPolicyOutputReference {
+func NewGameliftFleetResourceCreationLimitPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GameliftFleetResourceCreationLimitPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference{}
@@ -3130,7 +3510,7 @@ func NewGameliftFleetResourceCreationLimitPolicyOutputReference(terraformResourc
 	return &j
 }
 
-func NewGameliftFleetResourceCreationLimitPolicyOutputReference_Override(g GameliftFleetResourceCreationLimitPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGameliftFleetResourceCreationLimitPolicyOutputReference_Override(g GameliftFleetResourceCreationLimitPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3180,7 +3560,7 @@ func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3189,12 +3569,40 @@ func (j *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) SetT
 }
 
 // Experimental.
-func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3231,12 +3639,54 @@ func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetN
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3289,14 +3739,14 @@ func (g *jsiiProxy_GameliftFleetResourceCreationLimitPolicyOutputReference) Rese
 }
 
 type GameliftFleetRuntimeConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#game_session_activation_timeout_seconds GameliftFleet#game_session_activation_timeout_seconds}.
-	GameSessionActivationTimeoutSeconds *float64 `json:"gameSessionActivationTimeoutSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#max_concurrent_game_session_activations GameliftFleet#max_concurrent_game_session_activations}.
-	MaxConcurrentGameSessionActivations *float64 `json:"maxConcurrentGameSessionActivations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#game_session_activation_timeout_seconds GameliftFleet#game_session_activation_timeout_seconds}.
+	GameSessionActivationTimeoutSeconds *float64 `json:"gameSessionActivationTimeoutSeconds" yaml:"gameSessionActivationTimeoutSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#max_concurrent_game_session_activations GameliftFleet#max_concurrent_game_session_activations}.
+	MaxConcurrentGameSessionActivations *float64 `json:"maxConcurrentGameSessionActivations" yaml:"maxConcurrentGameSessionActivations"`
 	// server_process block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#server_process GameliftFleet#server_process}
-	ServerProcess *[]*GameliftFleetRuntimeConfigurationServerProcess `json:"serverProcess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#server_process GameliftFleet#server_process}
+	ServerProcess interface{} `json:"serverProcess" yaml:"serverProcess"`
 }
 
 type GameliftFleetRuntimeConfigurationOutputReference interface {
@@ -3311,17 +3761,22 @@ type GameliftFleetRuntimeConfigurationOutputReference interface {
 	MaxConcurrentGameSessionActivations() *float64
 	SetMaxConcurrentGameSessionActivations(val *float64)
 	MaxConcurrentGameSessionActivationsInput() *float64
-	ServerProcess() *[]*GameliftFleetRuntimeConfigurationServerProcess
-	SetServerProcess(val *[]*GameliftFleetRuntimeConfigurationServerProcess)
-	ServerProcessInput() *[]*GameliftFleetRuntimeConfigurationServerProcess
+	ServerProcess() interface{}
+	SetServerProcess(val interface{})
+	ServerProcessInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetGameSessionActivationTimeoutSeconds()
@@ -3394,8 +3849,8 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) MaxConcurre
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) ServerProcess() *[]*GameliftFleetRuntimeConfigurationServerProcess {
-	var returns *[]*GameliftFleetRuntimeConfigurationServerProcess
+func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) ServerProcess() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"serverProcess",
@@ -3404,8 +3859,8 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) ServerProce
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) ServerProcessInput() *[]*GameliftFleetRuntimeConfigurationServerProcess {
-	var returns *[]*GameliftFleetRuntimeConfigurationServerProcess
+func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) ServerProcessInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"serverProcessInput",
@@ -3424,8 +3879,8 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3434,7 +3889,7 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) TerraformRe
 	return returns
 }
 
-func NewGameliftFleetRuntimeConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GameliftFleetRuntimeConfigurationOutputReference {
+func NewGameliftFleetRuntimeConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GameliftFleetRuntimeConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference{}
@@ -3448,7 +3903,7 @@ func NewGameliftFleetRuntimeConfigurationOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewGameliftFleetRuntimeConfigurationOutputReference_Override(g GameliftFleetRuntimeConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGameliftFleetRuntimeConfigurationOutputReference_Override(g GameliftFleetRuntimeConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3490,7 +3945,7 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetMaxConcu
 	)
 }
 
-func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetServerProcess(val *[]*GameliftFleetRuntimeConfigurationServerProcess) {
+func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetServerProcess(val interface{}) {
 	_jsii_.Set(
 		j,
 		"serverProcess",
@@ -3506,7 +3961,7 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3515,12 +3970,40 @@ func (j *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3557,12 +4040,54 @@ func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3623,19 +4148,19 @@ func (g *jsiiProxy_GameliftFleetRuntimeConfigurationOutputReference) ResetServer
 }
 
 type GameliftFleetRuntimeConfigurationServerProcess struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#concurrent_executions GameliftFleet#concurrent_executions}.
-	ConcurrentExecutions *float64 `json:"concurrentExecutions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#launch_path GameliftFleet#launch_path}.
-	LaunchPath *string `json:"launchPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#parameters GameliftFleet#parameters}.
-	Parameters *string `json:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#concurrent_executions GameliftFleet#concurrent_executions}.
+	ConcurrentExecutions *float64 `json:"concurrentExecutions" yaml:"concurrentExecutions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#launch_path GameliftFleet#launch_path}.
+	LaunchPath *string `json:"launchPath" yaml:"launchPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#parameters GameliftFleet#parameters}.
+	Parameters *string `json:"parameters" yaml:"parameters"`
 }
 
 type GameliftFleetTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#create GameliftFleet#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet.html#delete GameliftFleet#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#create GameliftFleet#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_fleet#delete GameliftFleet#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type GameliftFleetTimeoutsOutputReference interface {
@@ -3652,12 +4177,17 @@ type GameliftFleetTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -3739,8 +4269,8 @@ func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3749,7 +4279,7 @@ func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) TerraformResource() cdk
 	return returns
 }
 
-func NewGameliftFleetTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) GameliftFleetTimeoutsOutputReference {
+func NewGameliftFleetTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) GameliftFleetTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_GameliftFleetTimeoutsOutputReference{}
@@ -3763,7 +4293,7 @@ func NewGameliftFleetTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewGameliftFleetTimeoutsOutputReference_Override(g GameliftFleetTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewGameliftFleetTimeoutsOutputReference_Override(g GameliftFleetTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3813,7 +4343,7 @@ func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3822,12 +4352,40 @@ func (j *jsiiProxy_GameliftFleetTimeoutsOutputReference) SetTerraformResource(va
 }
 
 // Experimental.
-func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3864,12 +4422,54 @@ func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3921,14 +4521,14 @@ func (g *jsiiProxy_GameliftFleetTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html aws_gamelift_game_session_queue}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue aws_gamelift_game_session_queue}.
 type GameliftGameSessionQueue interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Destinations() *[]*string
@@ -3943,18 +4543,18 @@ type GameliftGameSessionQueue interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	PlayerLatencyPolicy() *[]*GameliftGameSessionQueuePlayerLatencyPolicy
-	SetPlayerLatencyPolicy(val *[]*GameliftGameSessionQueuePlayerLatencyPolicy)
-	PlayerLatencyPolicyInput() *[]*GameliftGameSessionQueuePlayerLatencyPolicy
+	PlayerLatencyPolicy() interface{}
+	SetPlayerLatencyPolicy(val interface{})
+	PlayerLatencyPolicyInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -3962,10 +4562,15 @@ type GameliftGameSessionQueue interface {
 	SetTimeoutInSeconds(val *float64)
 	TimeoutInSecondsInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDestinations()
@@ -4015,8 +4620,8 @@ func (j *jsiiProxy_GameliftGameSessionQueue) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftGameSessionQueue) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4125,8 +4730,8 @@ func (j *jsiiProxy_GameliftGameSessionQueue) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) PlayerLatencyPolicy() *[]*GameliftGameSessionQueuePlayerLatencyPolicy {
-	var returns *[]*GameliftGameSessionQueuePlayerLatencyPolicy
+func (j *jsiiProxy_GameliftGameSessionQueue) PlayerLatencyPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"playerLatencyPolicy",
@@ -4135,8 +4740,8 @@ func (j *jsiiProxy_GameliftGameSessionQueue) PlayerLatencyPolicy() *[]*GameliftG
 	return returns
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) PlayerLatencyPolicyInput() *[]*GameliftGameSessionQueuePlayerLatencyPolicy {
-	var returns *[]*GameliftGameSessionQueuePlayerLatencyPolicy
+func (j *jsiiProxy_GameliftGameSessionQueue) PlayerLatencyPolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"playerLatencyPolicyInput",
@@ -4165,8 +4770,8 @@ func (j *jsiiProxy_GameliftGameSessionQueue) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftGameSessionQueue) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4175,8 +4780,8 @@ func (j *jsiiProxy_GameliftGameSessionQueue) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftGameSessionQueue) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4185,8 +4790,8 @@ func (j *jsiiProxy_GameliftGameSessionQueue) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftGameSessionQueue) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4195,8 +4800,8 @@ func (j *jsiiProxy_GameliftGameSessionQueue) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_GameliftGameSessionQueue) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4255,7 +4860,7 @@ func (j *jsiiProxy_GameliftGameSessionQueue) TimeoutInSecondsInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html aws_gamelift_game_session_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue aws_gamelift_game_session_queue} Resource.
 func NewGameliftGameSessionQueue(scope constructs.Construct, id *string, config *GameliftGameSessionQueueConfig) GameliftGameSessionQueue {
 	_init_.Initialize()
 
@@ -4270,7 +4875,7 @@ func NewGameliftGameSessionQueue(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html aws_gamelift_game_session_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue aws_gamelift_game_session_queue} Resource.
 func NewGameliftGameSessionQueue_Override(g GameliftGameSessionQueue, scope constructs.Construct, id *string, config *GameliftGameSessionQueueConfig) {
 	_init_.Initialize()
 
@@ -4281,7 +4886,7 @@ func NewGameliftGameSessionQueue_Override(g GameliftGameSessionQueue, scope cons
 	)
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) SetCount(val interface{}) {
+func (j *jsiiProxy_GameliftGameSessionQueue) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4321,7 +4926,7 @@ func (j *jsiiProxy_GameliftGameSessionQueue) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) SetPlayerLatencyPolicy(val *[]*GameliftGameSessionQueuePlayerLatencyPolicy) {
+func (j *jsiiProxy_GameliftGameSessionQueue) SetPlayerLatencyPolicy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"playerLatencyPolicy",
@@ -4337,7 +4942,7 @@ func (j *jsiiProxy_GameliftGameSessionQueue) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) SetTags(val interface{}) {
+func (j *jsiiProxy_GameliftGameSessionQueue) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4345,7 +4950,7 @@ func (j *jsiiProxy_GameliftGameSessionQueue) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_GameliftGameSessionQueue) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_GameliftGameSessionQueue) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4401,12 +5006,40 @@ func (g *jsiiProxy_GameliftGameSessionQueue) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftGameSessionQueue) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		g,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftGameSessionQueue) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		g,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftGameSessionQueue) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		g,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4443,12 +5076,54 @@ func (g *jsiiProxy_GameliftGameSessionQueue) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (g *jsiiProxy_GameliftGameSessionQueue) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftGameSessionQueue) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		g,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (g *jsiiProxy_GameliftGameSessionQueue) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		g,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (g *jsiiProxy_GameliftGameSessionQueue) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		g,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4589,32 +5264,32 @@ func (g *jsiiProxy_GameliftGameSessionQueue) ToTerraform() interface{} {
 // AWS GameLift.
 type GameliftGameSessionQueueConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#name GameliftGameSessionQueue#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#destinations GameliftGameSessionQueue#destinations}.
-	Destinations *[]*string `json:"destinations"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#name GameliftGameSessionQueue#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#destinations GameliftGameSessionQueue#destinations}.
+	Destinations *[]*string `json:"destinations" yaml:"destinations"`
 	// player_latency_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#player_latency_policy GameliftGameSessionQueue#player_latency_policy}
-	PlayerLatencyPolicy *[]*GameliftGameSessionQueuePlayerLatencyPolicy `json:"playerLatencyPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#tags GameliftGameSessionQueue#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#tags_all GameliftGameSessionQueue#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#timeout_in_seconds GameliftGameSessionQueue#timeout_in_seconds}.
-	TimeoutInSeconds *float64 `json:"timeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#player_latency_policy GameliftGameSessionQueue#player_latency_policy}
+	PlayerLatencyPolicy interface{} `json:"playerLatencyPolicy" yaml:"playerLatencyPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#tags GameliftGameSessionQueue#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#tags_all GameliftGameSessionQueue#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#timeout_in_seconds GameliftGameSessionQueue#timeout_in_seconds}.
+	TimeoutInSeconds *float64 `json:"timeoutInSeconds" yaml:"timeoutInSeconds"`
 }
 
 type GameliftGameSessionQueuePlayerLatencyPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#maximum_individual_player_latency_milliseconds GameliftGameSessionQueue#maximum_individual_player_latency_milliseconds}.
-	MaximumIndividualPlayerLatencyMilliseconds *float64 `json:"maximumIndividualPlayerLatencyMilliseconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue.html#policy_duration_seconds GameliftGameSessionQueue#policy_duration_seconds}.
-	PolicyDurationSeconds *float64 `json:"policyDurationSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#maximum_individual_player_latency_milliseconds GameliftGameSessionQueue#maximum_individual_player_latency_milliseconds}.
+	MaximumIndividualPlayerLatencyMilliseconds *float64 `json:"maximumIndividualPlayerLatencyMilliseconds" yaml:"maximumIndividualPlayerLatencyMilliseconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/gamelift_game_session_queue#policy_duration_seconds GameliftGameSessionQueue#policy_duration_seconds}.
+	PolicyDurationSeconds *float64 `json:"policyDurationSeconds" yaml:"policyDurationSeconds"`
 }

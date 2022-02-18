@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/codebuild/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html aws_codebuild_project}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project aws_codebuild_project}.
 type CodebuildProject interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -31,8 +31,8 @@ type CodebuildProject interface {
 	SetConcurrentBuildLimit(val *float64)
 	ConcurrentBuildLimitInput() *float64
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -43,9 +43,9 @@ type CodebuildProject interface {
 	EncryptionKeyInput() *string
 	Environment() CodebuildProjectEnvironmentOutputReference
 	EnvironmentInput() *CodebuildProjectEnvironment
-	FileSystemLocations() *[]*CodebuildProjectFileSystemLocations
-	SetFileSystemLocations(val *[]*CodebuildProjectFileSystemLocations)
-	FileSystemLocationsInput() *[]*CodebuildProjectFileSystemLocations
+	FileSystemLocations() interface{}
+	SetFileSystemLocations(val interface{})
+	FileSystemLocationsInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -57,18 +57,28 @@ type CodebuildProject interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
+	ProjectVisibility() *string
+	SetProjectVisibility(val *string)
+	ProjectVisibilityInput() *string
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
+	PublicProjectAlias() *string
 	QueuedTimeout() *float64
 	SetQueuedTimeout(val *float64)
 	QueuedTimeoutInput() *float64
 	RawOverrides() interface{}
-	SecondaryArtifacts() *[]*CodebuildProjectSecondaryArtifacts
-	SetSecondaryArtifacts(val *[]*CodebuildProjectSecondaryArtifacts)
-	SecondaryArtifactsInput() *[]*CodebuildProjectSecondaryArtifacts
-	SecondarySources() *[]*CodebuildProjectSecondarySources
-	SetSecondarySources(val *[]*CodebuildProjectSecondarySources)
-	SecondarySourcesInput() *[]*CodebuildProjectSecondarySources
+	ResourceAccessRole() *string
+	SetResourceAccessRole(val *string)
+	ResourceAccessRoleInput() *string
+	SecondaryArtifacts() interface{}
+	SetSecondaryArtifacts(val interface{})
+	SecondaryArtifactsInput() interface{}
+	SecondarySources() interface{}
+	SetSecondarySources(val interface{})
+	SecondarySourcesInput() interface{}
+	SecondarySourceVersion() interface{}
+	SetSecondarySourceVersion(val interface{})
+	SecondarySourceVersionInput() interface{}
 	ServiceRole() *string
 	SetServiceRole(val *string)
 	ServiceRoleInput() *string
@@ -77,22 +87,27 @@ type CodebuildProject interface {
 	SourceVersion() *string
 	SetSourceVersion(val *string)
 	SourceVersionInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcConfig() CodebuildProjectVpcConfigOutputReference
 	VpcConfigInput() *CodebuildProjectVpcConfig
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutArtifacts(value *CodebuildProjectArtifacts)
@@ -112,9 +127,12 @@ type CodebuildProject interface {
 	ResetFileSystemLocations()
 	ResetLogsConfig()
 	ResetOverrideLogicalId()
+	ResetProjectVisibility()
 	ResetQueuedTimeout()
+	ResetResourceAccessRole()
 	ResetSecondaryArtifacts()
 	ResetSecondarySources()
+	ResetSecondarySourceVersion()
 	ResetSourceVersion()
 	ResetTags()
 	ResetTagsAll()
@@ -290,8 +308,8 @@ func (j *jsiiProxy_CodebuildProject) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildProject) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -370,8 +388,8 @@ func (j *jsiiProxy_CodebuildProject) EnvironmentInput() *CodebuildProjectEnviron
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) FileSystemLocations() *[]*CodebuildProjectFileSystemLocations {
-	var returns *[]*CodebuildProjectFileSystemLocations
+func (j *jsiiProxy_CodebuildProject) FileSystemLocations() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"fileSystemLocations",
@@ -380,8 +398,8 @@ func (j *jsiiProxy_CodebuildProject) FileSystemLocations() *[]*CodebuildProjectF
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) FileSystemLocationsInput() *[]*CodebuildProjectFileSystemLocations {
-	var returns *[]*CodebuildProjectFileSystemLocations
+func (j *jsiiProxy_CodebuildProject) FileSystemLocationsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"fileSystemLocationsInput",
@@ -480,11 +498,41 @@ func (j *jsiiProxy_CodebuildProject) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_CodebuildProject) ProjectVisibility() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"projectVisibility",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProject) ProjectVisibilityInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"projectVisibilityInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CodebuildProject) Provider() cdktf.TerraformProvider {
 	var returns cdktf.TerraformProvider
 	_jsii_.Get(
 		j,
 		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProject) PublicProjectAlias() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicProjectAlias",
 		&returns,
 	)
 	return returns
@@ -520,8 +568,28 @@ func (j *jsiiProxy_CodebuildProject) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) SecondaryArtifacts() *[]*CodebuildProjectSecondaryArtifacts {
-	var returns *[]*CodebuildProjectSecondaryArtifacts
+func (j *jsiiProxy_CodebuildProject) ResourceAccessRole() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceAccessRole",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProject) ResourceAccessRoleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceAccessRoleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProject) SecondaryArtifacts() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secondaryArtifacts",
@@ -530,8 +598,8 @@ func (j *jsiiProxy_CodebuildProject) SecondaryArtifacts() *[]*CodebuildProjectSe
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) SecondaryArtifactsInput() *[]*CodebuildProjectSecondaryArtifacts {
-	var returns *[]*CodebuildProjectSecondaryArtifacts
+func (j *jsiiProxy_CodebuildProject) SecondaryArtifactsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secondaryArtifactsInput",
@@ -540,8 +608,8 @@ func (j *jsiiProxy_CodebuildProject) SecondaryArtifactsInput() *[]*CodebuildProj
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) SecondarySources() *[]*CodebuildProjectSecondarySources {
-	var returns *[]*CodebuildProjectSecondarySources
+func (j *jsiiProxy_CodebuildProject) SecondarySources() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secondarySources",
@@ -550,11 +618,31 @@ func (j *jsiiProxy_CodebuildProject) SecondarySources() *[]*CodebuildProjectSeco
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) SecondarySourcesInput() *[]*CodebuildProjectSecondarySources {
-	var returns *[]*CodebuildProjectSecondarySources
+func (j *jsiiProxy_CodebuildProject) SecondarySourcesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"secondarySourcesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProject) SecondarySourceVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"secondarySourceVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProject) SecondarySourceVersionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"secondarySourceVersionInput",
 		&returns,
 	)
 	return returns
@@ -620,8 +708,8 @@ func (j *jsiiProxy_CodebuildProject) SourceVersionInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildProject) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -630,8 +718,8 @@ func (j *jsiiProxy_CodebuildProject) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildProject) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -640,8 +728,8 @@ func (j *jsiiProxy_CodebuildProject) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildProject) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -650,8 +738,8 @@ func (j *jsiiProxy_CodebuildProject) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProject) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildProject) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -710,7 +798,7 @@ func (j *jsiiProxy_CodebuildProject) VpcConfigInput() *CodebuildProjectVpcConfig
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html aws_codebuild_project} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project aws_codebuild_project} Resource.
 func NewCodebuildProject(scope constructs.Construct, id *string, config *CodebuildProjectConfig) CodebuildProject {
 	_init_.Initialize()
 
@@ -725,7 +813,7 @@ func NewCodebuildProject(scope constructs.Construct, id *string, config *Codebui
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html aws_codebuild_project} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project aws_codebuild_project} Resource.
 func NewCodebuildProject_Override(c CodebuildProject, scope constructs.Construct, id *string, config *CodebuildProjectConfig) {
 	_init_.Initialize()
 
@@ -760,7 +848,7 @@ func (j *jsiiProxy_CodebuildProject) SetConcurrentBuildLimit(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildProject) SetCount(val interface{}) {
+func (j *jsiiProxy_CodebuildProject) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -792,7 +880,7 @@ func (j *jsiiProxy_CodebuildProject) SetEncryptionKey(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildProject) SetFileSystemLocations(val *[]*CodebuildProjectFileSystemLocations) {
+func (j *jsiiProxy_CodebuildProject) SetFileSystemLocations(val interface{}) {
 	_jsii_.Set(
 		j,
 		"fileSystemLocations",
@@ -816,6 +904,14 @@ func (j *jsiiProxy_CodebuildProject) SetName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_CodebuildProject) SetProjectVisibility(val *string) {
+	_jsii_.Set(
+		j,
+		"projectVisibility",
+		val,
+	)
+}
+
 func (j *jsiiProxy_CodebuildProject) SetProvider(val cdktf.TerraformProvider) {
 	_jsii_.Set(
 		j,
@@ -832,7 +928,15 @@ func (j *jsiiProxy_CodebuildProject) SetQueuedTimeout(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildProject) SetSecondaryArtifacts(val *[]*CodebuildProjectSecondaryArtifacts) {
+func (j *jsiiProxy_CodebuildProject) SetResourceAccessRole(val *string) {
+	_jsii_.Set(
+		j,
+		"resourceAccessRole",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProject) SetSecondaryArtifacts(val interface{}) {
 	_jsii_.Set(
 		j,
 		"secondaryArtifacts",
@@ -840,10 +944,18 @@ func (j *jsiiProxy_CodebuildProject) SetSecondaryArtifacts(val *[]*CodebuildProj
 	)
 }
 
-func (j *jsiiProxy_CodebuildProject) SetSecondarySources(val *[]*CodebuildProjectSecondarySources) {
+func (j *jsiiProxy_CodebuildProject) SetSecondarySources(val interface{}) {
 	_jsii_.Set(
 		j,
 		"secondarySources",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProject) SetSecondarySourceVersion(val interface{}) {
+	_jsii_.Set(
+		j,
+		"secondarySourceVersion",
 		val,
 	)
 }
@@ -864,7 +976,7 @@ func (j *jsiiProxy_CodebuildProject) SetSourceVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildProject) SetTags(val interface{}) {
+func (j *jsiiProxy_CodebuildProject) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -872,7 +984,7 @@ func (j *jsiiProxy_CodebuildProject) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildProject) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodebuildProject) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -920,12 +1032,40 @@ func (c *jsiiProxy_CodebuildProject) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProject) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProject) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProject) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -962,12 +1102,54 @@ func (c *jsiiProxy_CodebuildProject) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProject) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProject) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProject) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProject) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1137,10 +1319,26 @@ func (c *jsiiProxy_CodebuildProject) ResetOverrideLogicalId() {
 	)
 }
 
+func (c *jsiiProxy_CodebuildProject) ResetProjectVisibility() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetProjectVisibility",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_CodebuildProject) ResetQueuedTimeout() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetQueuedTimeout",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CodebuildProject) ResetResourceAccessRole() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetResourceAccessRole",
 		nil, // no parameters
 	)
 }
@@ -1157,6 +1355,14 @@ func (c *jsiiProxy_CodebuildProject) ResetSecondarySources() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetSecondarySources",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CodebuildProject) ResetSecondarySourceVersion() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetSecondarySourceVersion",
 		nil, // no parameters
 	)
 }
@@ -1250,24 +1456,26 @@ func (c *jsiiProxy_CodebuildProject) ToTerraform() interface{} {
 }
 
 type CodebuildProjectArtifacts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#artifact_identifier CodebuildProject#artifact_identifier}.
-	ArtifactIdentifier *string `json:"artifactIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#encryption_disabled CodebuildProject#encryption_disabled}.
-	EncryptionDisabled interface{} `json:"encryptionDisabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#location CodebuildProject#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#name CodebuildProject#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#namespace_type CodebuildProject#namespace_type}.
-	NamespaceType *string `json:"namespaceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#override_artifact_name CodebuildProject#override_artifact_name}.
-	OverrideArtifactName interface{} `json:"overrideArtifactName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#packaging CodebuildProject#packaging}.
-	Packaging *string `json:"packaging"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#path CodebuildProject#path}.
-	Path *string `json:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#artifact_identifier CodebuildProject#artifact_identifier}.
+	ArtifactIdentifier *string `json:"artifactIdentifier" yaml:"artifactIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#bucket_owner_access CodebuildProject#bucket_owner_access}.
+	BucketOwnerAccess *string `json:"bucketOwnerAccess" yaml:"bucketOwnerAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#encryption_disabled CodebuildProject#encryption_disabled}.
+	EncryptionDisabled interface{} `json:"encryptionDisabled" yaml:"encryptionDisabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#location CodebuildProject#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#name CodebuildProject#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#namespace_type CodebuildProject#namespace_type}.
+	NamespaceType *string `json:"namespaceType" yaml:"namespaceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#override_artifact_name CodebuildProject#override_artifact_name}.
+	OverrideArtifactName interface{} `json:"overrideArtifactName" yaml:"overrideArtifactName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#packaging CodebuildProject#packaging}.
+	Packaging *string `json:"packaging" yaml:"packaging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#path CodebuildProject#path}.
+	Path *string `json:"path" yaml:"path"`
 }
 
 type CodebuildProjectArtifactsOutputReference interface {
@@ -1275,6 +1483,9 @@ type CodebuildProjectArtifactsOutputReference interface {
 	ArtifactIdentifier() *string
 	SetArtifactIdentifier(val *string)
 	ArtifactIdentifierInput() *string
+	BucketOwnerAccess() *string
+	SetBucketOwnerAccess(val *string)
+	BucketOwnerAccessInput() *string
 	EncryptionDisabled() interface{}
 	SetEncryptionDisabled(val interface{})
 	EncryptionDisabledInput() interface{}
@@ -1302,18 +1513,24 @@ type CodebuildProjectArtifactsOutputReference interface {
 	PathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetArtifactIdentifier()
+	ResetBucketOwnerAccess()
 	ResetEncryptionDisabled()
 	ResetLocation()
 	ResetName()
@@ -1343,6 +1560,26 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) ArtifactIdentifierI
 	_jsii_.Get(
 		j,
 		"artifactIdentifierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) BucketOwnerAccess() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucketOwnerAccess",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) BucketOwnerAccessInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucketOwnerAccessInput",
 		&returns,
 	)
 	return returns
@@ -1518,8 +1755,8 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1548,7 +1785,7 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) TypeInput() *string
 	return returns
 }
 
-func NewCodebuildProjectArtifactsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectArtifactsOutputReference {
+func NewCodebuildProjectArtifactsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectArtifactsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectArtifactsOutputReference{}
@@ -1562,7 +1799,7 @@ func NewCodebuildProjectArtifactsOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewCodebuildProjectArtifactsOutputReference_Override(c CodebuildProjectArtifactsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectArtifactsOutputReference_Override(c CodebuildProjectArtifactsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1576,6 +1813,14 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetArtifactIdentifi
 	_jsii_.Set(
 		j,
 		"artifactIdentifier",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetBucketOwnerAccess(val *string) {
+	_jsii_.Set(
+		j,
+		"bucketOwnerAccess",
 		val,
 	)
 }
@@ -1660,7 +1905,7 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1677,12 +1922,40 @@ func (j *jsiiProxy_CodebuildProjectArtifactsOutputReference) SetType(val *string
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1719,12 +1992,54 @@ func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1764,6 +2079,14 @@ func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) ResetArtifactIdenti
 	_jsii_.InvokeVoid(
 		c,
 		"resetArtifactIdentifier",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) ResetBucketOwnerAccess() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetBucketOwnerAccess",
 		nil, // no parameters
 	)
 }
@@ -1825,16 +2148,16 @@ func (c *jsiiProxy_CodebuildProjectArtifactsOutputReference) ResetPath() {
 }
 
 type CodebuildProjectBuildBatchConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#service_role CodebuildProject#service_role}.
-	ServiceRole *string `json:"serviceRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#combine_artifacts CodebuildProject#combine_artifacts}.
-	CombineArtifacts interface{} `json:"combineArtifacts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#service_role CodebuildProject#service_role}.
+	ServiceRole *string `json:"serviceRole" yaml:"serviceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#combine_artifacts CodebuildProject#combine_artifacts}.
+	CombineArtifacts interface{} `json:"combineArtifacts" yaml:"combineArtifacts"`
 	// restrictions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#restrictions CodebuildProject#restrictions}
-	Restrictions *CodebuildProjectBuildBatchConfigRestrictions `json:"restrictions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#timeout_in_mins CodebuildProject#timeout_in_mins}.
-	TimeoutInMins *float64 `json:"timeoutInMins"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#restrictions CodebuildProject#restrictions}
+	Restrictions *CodebuildProjectBuildBatchConfigRestrictions `json:"restrictions" yaml:"restrictions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#timeout_in_mins CodebuildProject#timeout_in_mins}.
+	TimeoutInMins *float64 `json:"timeoutInMins" yaml:"timeoutInMins"`
 }
 
 type CodebuildProjectBuildBatchConfigOutputReference interface {
@@ -1853,15 +2176,20 @@ type CodebuildProjectBuildBatchConfigOutputReference interface {
 	ServiceRoleInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeoutInMins() *float64
 	SetTimeoutInMins(val *float64)
 	TimeoutInMinsInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRestrictions(value *CodebuildProjectBuildBatchConfigRestrictions)
@@ -1965,8 +2293,8 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1995,7 +2323,7 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) TimeoutInMin
 	return returns
 }
 
-func NewCodebuildProjectBuildBatchConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectBuildBatchConfigOutputReference {
+func NewCodebuildProjectBuildBatchConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectBuildBatchConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference{}
@@ -2009,7 +2337,7 @@ func NewCodebuildProjectBuildBatchConfigOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewCodebuildProjectBuildBatchConfigOutputReference_Override(c CodebuildProjectBuildBatchConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectBuildBatchConfigOutputReference_Override(c CodebuildProjectBuildBatchConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2059,7 +2387,7 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2076,12 +2404,40 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) SetTimeoutIn
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2118,12 +2474,54 @@ func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2192,10 +2590,10 @@ func (c *jsiiProxy_CodebuildProjectBuildBatchConfigOutputReference) ResetTimeout
 }
 
 type CodebuildProjectBuildBatchConfigRestrictions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#compute_types_allowed CodebuildProject#compute_types_allowed}.
-	ComputeTypesAllowed *[]*string `json:"computeTypesAllowed"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#maximum_builds_allowed CodebuildProject#maximum_builds_allowed}.
-	MaximumBuildsAllowed *float64 `json:"maximumBuildsAllowed"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#compute_types_allowed CodebuildProject#compute_types_allowed}.
+	ComputeTypesAllowed *[]*string `json:"computeTypesAllowed" yaml:"computeTypesAllowed"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#maximum_builds_allowed CodebuildProject#maximum_builds_allowed}.
+	MaximumBuildsAllowed *float64 `json:"maximumBuildsAllowed" yaml:"maximumBuildsAllowed"`
 }
 
 type CodebuildProjectBuildBatchConfigRestrictionsOutputReference interface {
@@ -2212,12 +2610,17 @@ type CodebuildProjectBuildBatchConfigRestrictionsOutputReference interface {
 	MaximumBuildsAllowedInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetComputeTypesAllowed()
@@ -2299,8 +2702,8 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2309,7 +2712,7 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 	return returns
 }
 
-func NewCodebuildProjectBuildBatchConfigRestrictionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectBuildBatchConfigRestrictionsOutputReference {
+func NewCodebuildProjectBuildBatchConfigRestrictionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectBuildBatchConfigRestrictionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference{}
@@ -2323,7 +2726,7 @@ func NewCodebuildProjectBuildBatchConfigRestrictionsOutputReference(terraformRes
 	return &j
 }
 
-func NewCodebuildProjectBuildBatchConfigRestrictionsOutputReference_Override(c CodebuildProjectBuildBatchConfigRestrictionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectBuildBatchConfigRestrictionsOutputReference_Override(c CodebuildProjectBuildBatchConfigRestrictionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2373,7 +2776,7 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2382,12 +2785,40 @@ func (j *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2424,12 +2855,54 @@ func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2482,12 +2955,12 @@ func (c *jsiiProxy_CodebuildProjectBuildBatchConfigRestrictionsOutputReference) 
 }
 
 type CodebuildProjectCache struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#location CodebuildProject#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#modes CodebuildProject#modes}.
-	Modes *[]*string `json:"modes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#location CodebuildProject#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#modes CodebuildProject#modes}.
+	Modes *[]*string `json:"modes" yaml:"modes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type CodebuildProjectCacheOutputReference interface {
@@ -2504,15 +2977,20 @@ type CodebuildProjectCacheOutputReference interface {
 	ModesInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLocation()
@@ -2595,8 +3073,8 @@ func (j *jsiiProxy_CodebuildProjectCacheOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectCacheOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectCacheOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2625,7 +3103,7 @@ func (j *jsiiProxy_CodebuildProjectCacheOutputReference) TypeInput() *string {
 	return returns
 }
 
-func NewCodebuildProjectCacheOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectCacheOutputReference {
+func NewCodebuildProjectCacheOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectCacheOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectCacheOutputReference{}
@@ -2639,7 +3117,7 @@ func NewCodebuildProjectCacheOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewCodebuildProjectCacheOutputReference_Override(c CodebuildProjectCacheOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectCacheOutputReference_Override(c CodebuildProjectCacheOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2689,7 +3167,7 @@ func (j *jsiiProxy_CodebuildProjectCacheOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectCacheOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectCacheOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2706,12 +3184,40 @@ func (j *jsiiProxy_CodebuildProjectCacheOutputReference) SetType(val *string) {
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2748,12 +3254,54 @@ func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectCacheOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2816,107 +3364,115 @@ func (c *jsiiProxy_CodebuildProjectCacheOutputReference) ResetType() {
 // AWS CodeBuild.
 type CodebuildProjectConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// artifacts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#artifacts CodebuildProject#artifacts}
-	Artifacts *CodebuildProjectArtifacts `json:"artifacts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#artifacts CodebuildProject#artifacts}
+	Artifacts *CodebuildProjectArtifacts `json:"artifacts" yaml:"artifacts"`
 	// environment block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#environment CodebuildProject#environment}
-	Environment *CodebuildProjectEnvironment `json:"environment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#name CodebuildProject#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#service_role CodebuildProject#service_role}.
-	ServiceRole *string `json:"serviceRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#environment CodebuildProject#environment}
+	Environment *CodebuildProjectEnvironment `json:"environment" yaml:"environment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#name CodebuildProject#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#service_role CodebuildProject#service_role}.
+	ServiceRole *string `json:"serviceRole" yaml:"serviceRole"`
 	// source block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#source CodebuildProject#source}
-	Source *CodebuildProjectSource `json:"source"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#badge_enabled CodebuildProject#badge_enabled}.
-	BadgeEnabled interface{} `json:"badgeEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#source CodebuildProject#source}
+	Source *CodebuildProjectSource `json:"source" yaml:"source"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#badge_enabled CodebuildProject#badge_enabled}.
+	BadgeEnabled interface{} `json:"badgeEnabled" yaml:"badgeEnabled"`
 	// build_batch_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#build_batch_config CodebuildProject#build_batch_config}
-	BuildBatchConfig *CodebuildProjectBuildBatchConfig `json:"buildBatchConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#build_timeout CodebuildProject#build_timeout}.
-	BuildTimeout *float64 `json:"buildTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#build_batch_config CodebuildProject#build_batch_config}
+	BuildBatchConfig *CodebuildProjectBuildBatchConfig `json:"buildBatchConfig" yaml:"buildBatchConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#build_timeout CodebuildProject#build_timeout}.
+	BuildTimeout *float64 `json:"buildTimeout" yaml:"buildTimeout"`
 	// cache block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#cache CodebuildProject#cache}
-	Cache *CodebuildProjectCache `json:"cache"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#concurrent_build_limit CodebuildProject#concurrent_build_limit}.
-	ConcurrentBuildLimit *float64 `json:"concurrentBuildLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#description CodebuildProject#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#encryption_key CodebuildProject#encryption_key}.
-	EncryptionKey *string `json:"encryptionKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#cache CodebuildProject#cache}
+	Cache *CodebuildProjectCache `json:"cache" yaml:"cache"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#concurrent_build_limit CodebuildProject#concurrent_build_limit}.
+	ConcurrentBuildLimit *float64 `json:"concurrentBuildLimit" yaml:"concurrentBuildLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#description CodebuildProject#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#encryption_key CodebuildProject#encryption_key}.
+	EncryptionKey *string `json:"encryptionKey" yaml:"encryptionKey"`
 	// file_system_locations block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#file_system_locations CodebuildProject#file_system_locations}
-	FileSystemLocations *[]*CodebuildProjectFileSystemLocations `json:"fileSystemLocations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#file_system_locations CodebuildProject#file_system_locations}
+	FileSystemLocations interface{} `json:"fileSystemLocations" yaml:"fileSystemLocations"`
 	// logs_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#logs_config CodebuildProject#logs_config}
-	LogsConfig *CodebuildProjectLogsConfig `json:"logsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#queued_timeout CodebuildProject#queued_timeout}.
-	QueuedTimeout *float64 `json:"queuedTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#logs_config CodebuildProject#logs_config}
+	LogsConfig *CodebuildProjectLogsConfig `json:"logsConfig" yaml:"logsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#project_visibility CodebuildProject#project_visibility}.
+	ProjectVisibility *string `json:"projectVisibility" yaml:"projectVisibility"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#queued_timeout CodebuildProject#queued_timeout}.
+	QueuedTimeout *float64 `json:"queuedTimeout" yaml:"queuedTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#resource_access_role CodebuildProject#resource_access_role}.
+	ResourceAccessRole *string `json:"resourceAccessRole" yaml:"resourceAccessRole"`
 	// secondary_artifacts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#secondary_artifacts CodebuildProject#secondary_artifacts}
-	SecondaryArtifacts *[]*CodebuildProjectSecondaryArtifacts `json:"secondaryArtifacts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#secondary_artifacts CodebuildProject#secondary_artifacts}
+	SecondaryArtifacts interface{} `json:"secondaryArtifacts" yaml:"secondaryArtifacts"`
 	// secondary_sources block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#secondary_sources CodebuildProject#secondary_sources}
-	SecondarySources *[]*CodebuildProjectSecondarySources `json:"secondarySources"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#source_version CodebuildProject#source_version}.
-	SourceVersion *string `json:"sourceVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#tags CodebuildProject#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#tags_all CodebuildProject#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#secondary_sources CodebuildProject#secondary_sources}
+	SecondarySources interface{} `json:"secondarySources" yaml:"secondarySources"`
+	// secondary_source_version block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#secondary_source_version CodebuildProject#secondary_source_version}
+	SecondarySourceVersion interface{} `json:"secondarySourceVersion" yaml:"secondarySourceVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#source_version CodebuildProject#source_version}.
+	SourceVersion *string `json:"sourceVersion" yaml:"sourceVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#tags CodebuildProject#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#tags_all CodebuildProject#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// vpc_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#vpc_config CodebuildProject#vpc_config}
-	VpcConfig *CodebuildProjectVpcConfig `json:"vpcConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#vpc_config CodebuildProject#vpc_config}
+	VpcConfig *CodebuildProjectVpcConfig `json:"vpcConfig" yaml:"vpcConfig"`
 }
 
 type CodebuildProjectEnvironment struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#compute_type CodebuildProject#compute_type}.
-	ComputeType *string `json:"computeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#image CodebuildProject#image}.
-	Image *string `json:"image"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#certificate CodebuildProject#certificate}.
-	Certificate *string `json:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#compute_type CodebuildProject#compute_type}.
+	ComputeType *string `json:"computeType" yaml:"computeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#image CodebuildProject#image}.
+	Image *string `json:"image" yaml:"image"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#certificate CodebuildProject#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
 	// environment_variable block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#environment_variable CodebuildProject#environment_variable}
-	EnvironmentVariable *[]*CodebuildProjectEnvironmentEnvironmentVariable `json:"environmentVariable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#image_pull_credentials_type CodebuildProject#image_pull_credentials_type}.
-	ImagePullCredentialsType *string `json:"imagePullCredentialsType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#privileged_mode CodebuildProject#privileged_mode}.
-	PrivilegedMode interface{} `json:"privilegedMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#environment_variable CodebuildProject#environment_variable}
+	EnvironmentVariable interface{} `json:"environmentVariable" yaml:"environmentVariable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#image_pull_credentials_type CodebuildProject#image_pull_credentials_type}.
+	ImagePullCredentialsType *string `json:"imagePullCredentialsType" yaml:"imagePullCredentialsType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#privileged_mode CodebuildProject#privileged_mode}.
+	PrivilegedMode interface{} `json:"privilegedMode" yaml:"privilegedMode"`
 	// registry_credential block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#registry_credential CodebuildProject#registry_credential}
-	RegistryCredential *CodebuildProjectEnvironmentRegistryCredential `json:"registryCredential"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#registry_credential CodebuildProject#registry_credential}
+	RegistryCredential *CodebuildProjectEnvironmentRegistryCredential `json:"registryCredential" yaml:"registryCredential"`
 }
 
 type CodebuildProjectEnvironmentEnvironmentVariable struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#name CodebuildProject#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#value CodebuildProject#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#name CodebuildProject#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#value CodebuildProject#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type CodebuildProjectEnvironmentOutputReference interface {
@@ -2927,9 +3483,9 @@ type CodebuildProjectEnvironmentOutputReference interface {
 	ComputeType() *string
 	SetComputeType(val *string)
 	ComputeTypeInput() *string
-	EnvironmentVariable() *[]*CodebuildProjectEnvironmentEnvironmentVariable
-	SetEnvironmentVariable(val *[]*CodebuildProjectEnvironmentEnvironmentVariable)
-	EnvironmentVariableInput() *[]*CodebuildProjectEnvironmentEnvironmentVariable
+	EnvironmentVariable() interface{}
+	SetEnvironmentVariable(val interface{})
+	EnvironmentVariableInput() interface{}
 	Image() *string
 	SetImage(val *string)
 	ImageInput() *string
@@ -2947,15 +3503,20 @@ type CodebuildProjectEnvironmentOutputReference interface {
 	RegistryCredentialInput() *CodebuildProjectEnvironmentRegistryCredential
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRegistryCredential(value *CodebuildProjectEnvironmentRegistryCredential)
@@ -3011,8 +3572,8 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) ComputeTypeInput(
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) EnvironmentVariable() *[]*CodebuildProjectEnvironmentEnvironmentVariable {
-	var returns *[]*CodebuildProjectEnvironmentEnvironmentVariable
+func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) EnvironmentVariable() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"environmentVariable",
@@ -3021,8 +3582,8 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) EnvironmentVariab
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) EnvironmentVariableInput() *[]*CodebuildProjectEnvironmentEnvironmentVariable {
-	var returns *[]*CodebuildProjectEnvironmentEnvironmentVariable
+func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) EnvironmentVariableInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"environmentVariableInput",
@@ -3141,8 +3702,8 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3171,7 +3732,7 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) TypeInput() *stri
 	return returns
 }
 
-func NewCodebuildProjectEnvironmentOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectEnvironmentOutputReference {
+func NewCodebuildProjectEnvironmentOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectEnvironmentOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectEnvironmentOutputReference{}
@@ -3185,7 +3746,7 @@ func NewCodebuildProjectEnvironmentOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewCodebuildProjectEnvironmentOutputReference_Override(c CodebuildProjectEnvironmentOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectEnvironmentOutputReference_Override(c CodebuildProjectEnvironmentOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3211,7 +3772,7 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetComputeType(va
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetEnvironmentVariable(val *[]*CodebuildProjectEnvironmentEnvironmentVariable) {
+func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetEnvironmentVariable(val interface{}) {
 	_jsii_.Set(
 		j,
 		"environmentVariable",
@@ -3267,7 +3828,7 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3284,12 +3845,40 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentOutputReference) SetType(val *stri
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3326,12 +3915,54 @@ func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3416,10 +4047,10 @@ func (c *jsiiProxy_CodebuildProjectEnvironmentOutputReference) ResetRegistryCred
 }
 
 type CodebuildProjectEnvironmentRegistryCredential struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#credential CodebuildProject#credential}.
-	Credential *string `json:"credential"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#credential_provider CodebuildProject#credential_provider}.
-	CredentialProvider *string `json:"credentialProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#credential CodebuildProject#credential}.
+	Credential *string `json:"credential" yaml:"credential"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#credential_provider CodebuildProject#credential_provider}.
+	CredentialProvider *string `json:"credentialProvider" yaml:"credentialProvider"`
 }
 
 type CodebuildProjectEnvironmentRegistryCredentialOutputReference interface {
@@ -3436,12 +4067,17 @@ type CodebuildProjectEnvironmentRegistryCredentialOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3521,8 +4157,8 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3531,7 +4167,7 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 	return returns
 }
 
-func NewCodebuildProjectEnvironmentRegistryCredentialOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectEnvironmentRegistryCredentialOutputReference {
+func NewCodebuildProjectEnvironmentRegistryCredentialOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectEnvironmentRegistryCredentialOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference{}
@@ -3545,7 +4181,7 @@ func NewCodebuildProjectEnvironmentRegistryCredentialOutputReference(terraformRe
 	return &j
 }
 
-func NewCodebuildProjectEnvironmentRegistryCredentialOutputReference_Override(c CodebuildProjectEnvironmentRegistryCredentialOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectEnvironmentRegistryCredentialOutputReference_Override(c CodebuildProjectEnvironmentRegistryCredentialOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3595,7 +4231,7 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3604,12 +4240,40 @@ func (j *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3646,12 +4310,54 @@ func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3688,36 +4394,36 @@ func (c *jsiiProxy_CodebuildProjectEnvironmentRegistryCredentialOutputReference)
 }
 
 type CodebuildProjectFileSystemLocations struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#identifier CodebuildProject#identifier}.
-	Identifier *string `json:"identifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#location CodebuildProject#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#mount_options CodebuildProject#mount_options}.
-	MountOptions *string `json:"mountOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#mount_point CodebuildProject#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#identifier CodebuildProject#identifier}.
+	Identifier *string `json:"identifier" yaml:"identifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#location CodebuildProject#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#mount_options CodebuildProject#mount_options}.
+	MountOptions *string `json:"mountOptions" yaml:"mountOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#mount_point CodebuildProject#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type CodebuildProjectLogsConfig struct {
 	// cloudwatch_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#cloudwatch_logs CodebuildProject#cloudwatch_logs}
-	CloudwatchLogs *CodebuildProjectLogsConfigCloudwatchLogs `json:"cloudwatchLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#cloudwatch_logs CodebuildProject#cloudwatch_logs}
+	CloudwatchLogs *CodebuildProjectLogsConfigCloudwatchLogs `json:"cloudwatchLogs" yaml:"cloudwatchLogs"`
 	// s3_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#s3_logs CodebuildProject#s3_logs}
-	S3Logs *CodebuildProjectLogsConfigS3Logs `json:"s3Logs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#s3_logs CodebuildProject#s3_logs}
+	S3Logs *CodebuildProjectLogsConfigS3Logs `json:"s3Logs" yaml:"s3Logs"`
 }
 
 type CodebuildProjectLogsConfigCloudwatchLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#group_name CodebuildProject#group_name}.
-	GroupName *string `json:"groupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#status CodebuildProject#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#stream_name CodebuildProject#stream_name}.
-	StreamName *string `json:"streamName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#group_name CodebuildProject#group_name}.
+	GroupName *string `json:"groupName" yaml:"groupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#status CodebuildProject#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#stream_name CodebuildProject#stream_name}.
+	StreamName *string `json:"streamName" yaml:"streamName"`
 }
 
 type CodebuildProjectLogsConfigCloudwatchLogsOutputReference interface {
@@ -3737,12 +4443,17 @@ type CodebuildProjectLogsConfigCloudwatchLogsOutputReference interface {
 	StreamNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetGroupName()
@@ -3845,8 +4556,8 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3855,7 +4566,7 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) Terr
 	return returns
 }
 
-func NewCodebuildProjectLogsConfigCloudwatchLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectLogsConfigCloudwatchLogsOutputReference {
+func NewCodebuildProjectLogsConfigCloudwatchLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectLogsConfigCloudwatchLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference{}
@@ -3869,7 +4580,7 @@ func NewCodebuildProjectLogsConfigCloudwatchLogsOutputReference(terraformResourc
 	return &j
 }
 
-func NewCodebuildProjectLogsConfigCloudwatchLogsOutputReference_Override(c CodebuildProjectLogsConfigCloudwatchLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectLogsConfigCloudwatchLogsOutputReference_Override(c CodebuildProjectLogsConfigCloudwatchLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3927,7 +4638,7 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3936,12 +4647,40 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) SetT
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3978,12 +4717,54 @@ func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetN
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigCloudwatchLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4055,12 +4836,17 @@ type CodebuildProjectLogsConfigOutputReference interface {
 	S3LogsInput() *CodebuildProjectLogsConfigS3Logs
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCloudwatchLogs(value *CodebuildProjectLogsConfigCloudwatchLogs)
@@ -4144,8 +4930,8 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4154,7 +4940,7 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) TerraformResource(
 	return returns
 }
 
-func NewCodebuildProjectLogsConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectLogsConfigOutputReference {
+func NewCodebuildProjectLogsConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectLogsConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectLogsConfigOutputReference{}
@@ -4168,7 +4954,7 @@ func NewCodebuildProjectLogsConfigOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewCodebuildProjectLogsConfigOutputReference_Override(c CodebuildProjectLogsConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectLogsConfigOutputReference_Override(c CodebuildProjectLogsConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4202,7 +4988,7 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4211,12 +4997,40 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigOutputReference) SetTerraformResour
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4253,12 +5067,54 @@ func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4327,16 +5183,21 @@ func (c *jsiiProxy_CodebuildProjectLogsConfigOutputReference) ResetS3Logs() {
 }
 
 type CodebuildProjectLogsConfigS3Logs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#encryption_disabled CodebuildProject#encryption_disabled}.
-	EncryptionDisabled interface{} `json:"encryptionDisabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#location CodebuildProject#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#status CodebuildProject#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#bucket_owner_access CodebuildProject#bucket_owner_access}.
+	BucketOwnerAccess *string `json:"bucketOwnerAccess" yaml:"bucketOwnerAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#encryption_disabled CodebuildProject#encryption_disabled}.
+	EncryptionDisabled interface{} `json:"encryptionDisabled" yaml:"encryptionDisabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#location CodebuildProject#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#status CodebuildProject#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type CodebuildProjectLogsConfigS3LogsOutputReference interface {
 	cdktf.ComplexObject
+	BucketOwnerAccess() *string
+	SetBucketOwnerAccess(val *string)
+	BucketOwnerAccessInput() *string
 	EncryptionDisabled() interface{}
 	SetEncryptionDisabled(val interface{})
 	EncryptionDisabledInput() interface{}
@@ -4352,14 +5213,20 @@ type CodebuildProjectLogsConfigS3LogsOutputReference interface {
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetBucketOwnerAccess()
 	ResetEncryptionDisabled()
 	ResetLocation()
 	ResetStatus()
@@ -4368,6 +5235,26 @@ type CodebuildProjectLogsConfigS3LogsOutputReference interface {
 // The jsii proxy struct for CodebuildProjectLogsConfigS3LogsOutputReference
 type jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) BucketOwnerAccess() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucketOwnerAccess",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) BucketOwnerAccessInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"bucketOwnerAccessInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) EncryptionDisabled() interface{} {
@@ -4460,8 +5347,8 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4470,7 +5357,7 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) TerraformRes
 	return returns
 }
 
-func NewCodebuildProjectLogsConfigS3LogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectLogsConfigS3LogsOutputReference {
+func NewCodebuildProjectLogsConfigS3LogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectLogsConfigS3LogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference{}
@@ -4484,13 +5371,21 @@ func NewCodebuildProjectLogsConfigS3LogsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewCodebuildProjectLogsConfigS3LogsOutputReference_Override(c CodebuildProjectLogsConfigS3LogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectLogsConfigS3LogsOutputReference_Override(c CodebuildProjectLogsConfigS3LogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.codebuild.CodebuildProjectLogsConfigS3LogsOutputReference",
 		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) SetBucketOwnerAccess(val *string) {
+	_jsii_.Set(
+		j,
+		"bucketOwnerAccess",
+		val,
 	)
 }
 
@@ -4542,7 +5437,7 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4551,12 +5446,40 @@ func (j *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4593,12 +5516,54 @@ func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4634,6 +5599,14 @@ func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) Interpolatio
 	return returns
 }
 
+func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) ResetBucketOwnerAccess() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetBucketOwnerAccess",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) ResetEncryptionDisabled() {
 	_jsii_.InvokeVoid(
 		c,
@@ -4659,60 +5632,69 @@ func (c *jsiiProxy_CodebuildProjectLogsConfigS3LogsOutputReference) ResetStatus(
 }
 
 type CodebuildProjectSecondaryArtifacts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#artifact_identifier CodebuildProject#artifact_identifier}.
-	ArtifactIdentifier *string `json:"artifactIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#encryption_disabled CodebuildProject#encryption_disabled}.
-	EncryptionDisabled interface{} `json:"encryptionDisabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#location CodebuildProject#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#name CodebuildProject#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#namespace_type CodebuildProject#namespace_type}.
-	NamespaceType *string `json:"namespaceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#override_artifact_name CodebuildProject#override_artifact_name}.
-	OverrideArtifactName interface{} `json:"overrideArtifactName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#packaging CodebuildProject#packaging}.
-	Packaging *string `json:"packaging"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#path CodebuildProject#path}.
-	Path *string `json:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#artifact_identifier CodebuildProject#artifact_identifier}.
+	ArtifactIdentifier *string `json:"artifactIdentifier" yaml:"artifactIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#bucket_owner_access CodebuildProject#bucket_owner_access}.
+	BucketOwnerAccess *string `json:"bucketOwnerAccess" yaml:"bucketOwnerAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#encryption_disabled CodebuildProject#encryption_disabled}.
+	EncryptionDisabled interface{} `json:"encryptionDisabled" yaml:"encryptionDisabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#location CodebuildProject#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#name CodebuildProject#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#namespace_type CodebuildProject#namespace_type}.
+	NamespaceType *string `json:"namespaceType" yaml:"namespaceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#override_artifact_name CodebuildProject#override_artifact_name}.
+	OverrideArtifactName interface{} `json:"overrideArtifactName" yaml:"overrideArtifactName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#packaging CodebuildProject#packaging}.
+	Packaging *string `json:"packaging" yaml:"packaging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#path CodebuildProject#path}.
+	Path *string `json:"path" yaml:"path"`
+}
+
+type CodebuildProjectSecondarySourceVersion struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#source_identifier CodebuildProject#source_identifier}.
+	SourceIdentifier *string `json:"sourceIdentifier" yaml:"sourceIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#source_version CodebuildProject#source_version}.
+	SourceVersion *string `json:"sourceVersion" yaml:"sourceVersion"`
 }
 
 type CodebuildProjectSecondarySources struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#source_identifier CodebuildProject#source_identifier}.
-	SourceIdentifier *string `json:"sourceIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#source_identifier CodebuildProject#source_identifier}.
+	SourceIdentifier *string `json:"sourceIdentifier" yaml:"sourceIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
 	// auth block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#auth CodebuildProject#auth}
-	Auth *CodebuildProjectSecondarySourcesAuth `json:"auth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#buildspec CodebuildProject#buildspec}.
-	Buildspec *string `json:"buildspec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#auth CodebuildProject#auth}
+	Auth *CodebuildProjectSecondarySourcesAuth `json:"auth" yaml:"auth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#buildspec CodebuildProject#buildspec}.
+	Buildspec *string `json:"buildspec" yaml:"buildspec"`
 	// build_status_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#build_status_config CodebuildProject#build_status_config}
-	BuildStatusConfig *CodebuildProjectSecondarySourcesBuildStatusConfig `json:"buildStatusConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#git_clone_depth CodebuildProject#git_clone_depth}.
-	GitCloneDepth *float64 `json:"gitCloneDepth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#build_status_config CodebuildProject#build_status_config}
+	BuildStatusConfig *CodebuildProjectSecondarySourcesBuildStatusConfig `json:"buildStatusConfig" yaml:"buildStatusConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#git_clone_depth CodebuildProject#git_clone_depth}.
+	GitCloneDepth *float64 `json:"gitCloneDepth" yaml:"gitCloneDepth"`
 	// git_submodules_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#git_submodules_config CodebuildProject#git_submodules_config}
-	GitSubmodulesConfig *CodebuildProjectSecondarySourcesGitSubmodulesConfig `json:"gitSubmodulesConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#insecure_ssl CodebuildProject#insecure_ssl}.
-	InsecureSsl interface{} `json:"insecureSsl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#location CodebuildProject#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#report_build_status CodebuildProject#report_build_status}.
-	ReportBuildStatus interface{} `json:"reportBuildStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#git_submodules_config CodebuildProject#git_submodules_config}
+	GitSubmodulesConfig *CodebuildProjectSecondarySourcesGitSubmodulesConfig `json:"gitSubmodulesConfig" yaml:"gitSubmodulesConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#insecure_ssl CodebuildProject#insecure_ssl}.
+	InsecureSsl interface{} `json:"insecureSsl" yaml:"insecureSsl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#location CodebuildProject#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#report_build_status CodebuildProject#report_build_status}.
+	ReportBuildStatus interface{} `json:"reportBuildStatus" yaml:"reportBuildStatus"`
 }
 
 type CodebuildProjectSecondarySourcesAuth struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#resource CodebuildProject#resource}.
-	Resource *string `json:"resource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#resource CodebuildProject#resource}.
+	Resource *string `json:"resource" yaml:"resource"`
 }
 
 type CodebuildProjectSecondarySourcesAuthOutputReference interface {
@@ -4726,15 +5708,20 @@ type CodebuildProjectSecondarySourcesAuthOutputReference interface {
 	ResourceInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResource()
@@ -4795,8 +5782,8 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4825,7 +5812,7 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) TypeInpu
 	return returns
 }
 
-func NewCodebuildProjectSecondarySourcesAuthOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSecondarySourcesAuthOutputReference {
+func NewCodebuildProjectSecondarySourcesAuthOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSecondarySourcesAuthOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference{}
@@ -4839,7 +5826,7 @@ func NewCodebuildProjectSecondarySourcesAuthOutputReference(terraformResource cd
 	return &j
 }
 
-func NewCodebuildProjectSecondarySourcesAuthOutputReference_Override(c CodebuildProjectSecondarySourcesAuthOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectSecondarySourcesAuthOutputReference_Override(c CodebuildProjectSecondarySourcesAuthOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4881,7 +5868,7 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4898,12 +5885,40 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) SetType(
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4940,12 +5955,54 @@ func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetNumbe
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4990,10 +6047,10 @@ func (c *jsiiProxy_CodebuildProjectSecondarySourcesAuthOutputReference) ResetRes
 }
 
 type CodebuildProjectSecondarySourcesBuildStatusConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#context CodebuildProject#context}.
-	Context *string `json:"context"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#target_url CodebuildProject#target_url}.
-	TargetUrl *string `json:"targetUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#context CodebuildProject#context}.
+	Context *string `json:"context" yaml:"context"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#target_url CodebuildProject#target_url}.
+	TargetUrl *string `json:"targetUrl" yaml:"targetUrl"`
 }
 
 type CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference interface {
@@ -5010,12 +6067,17 @@ type CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference interface 
 	TargetUrlInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetContext()
@@ -5097,8 +6159,8 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5107,7 +6169,7 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 	return returns
 }
 
-func NewCodebuildProjectSecondarySourcesBuildStatusConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference {
+func NewCodebuildProjectSecondarySourcesBuildStatusConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference{}
@@ -5121,7 +6183,7 @@ func NewCodebuildProjectSecondarySourcesBuildStatusConfigOutputReference(terrafo
 	return &j
 }
 
-func NewCodebuildProjectSecondarySourcesBuildStatusConfigOutputReference_Override(c CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectSecondarySourcesBuildStatusConfigOutputReference_Override(c CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5171,7 +6233,7 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5180,12 +6242,40 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5222,12 +6312,54 @@ func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5280,8 +6412,8 @@ func (c *jsiiProxy_CodebuildProjectSecondarySourcesBuildStatusConfigOutputRefere
 }
 
 type CodebuildProjectSecondarySourcesGitSubmodulesConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#fetch_submodules CodebuildProject#fetch_submodules}.
-	FetchSubmodules interface{} `json:"fetchSubmodules"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#fetch_submodules CodebuildProject#fetch_submodules}.
+	FetchSubmodules interface{} `json:"fetchSubmodules" yaml:"fetchSubmodules"`
 }
 
 type CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference interface {
@@ -5295,12 +6427,17 @@ type CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference interfac
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5360,8 +6497,8 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5370,7 +6507,7 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 	return returns
 }
 
-func NewCodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference {
+func NewCodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference{}
@@ -5384,7 +6521,7 @@ func NewCodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference(terra
 	return &j
 }
 
-func NewCodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference_Override(c CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference_Override(c CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5426,7 +6563,7 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5435,12 +6572,40 @@ func (j *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5477,12 +6642,54 @@ func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5519,37 +6726,37 @@ func (c *jsiiProxy_CodebuildProjectSecondarySourcesGitSubmodulesConfigOutputRefe
 }
 
 type CodebuildProjectSource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
 	// auth block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#auth CodebuildProject#auth}
-	Auth *CodebuildProjectSourceAuth `json:"auth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#buildspec CodebuildProject#buildspec}.
-	Buildspec *string `json:"buildspec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#auth CodebuildProject#auth}
+	Auth *CodebuildProjectSourceAuth `json:"auth" yaml:"auth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#buildspec CodebuildProject#buildspec}.
+	Buildspec *string `json:"buildspec" yaml:"buildspec"`
 	// build_status_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#build_status_config CodebuildProject#build_status_config}
-	BuildStatusConfig *CodebuildProjectSourceBuildStatusConfig `json:"buildStatusConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#git_clone_depth CodebuildProject#git_clone_depth}.
-	GitCloneDepth *float64 `json:"gitCloneDepth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#build_status_config CodebuildProject#build_status_config}
+	BuildStatusConfig *CodebuildProjectSourceBuildStatusConfig `json:"buildStatusConfig" yaml:"buildStatusConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#git_clone_depth CodebuildProject#git_clone_depth}.
+	GitCloneDepth *float64 `json:"gitCloneDepth" yaml:"gitCloneDepth"`
 	// git_submodules_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#git_submodules_config CodebuildProject#git_submodules_config}
-	GitSubmodulesConfig *CodebuildProjectSourceGitSubmodulesConfig `json:"gitSubmodulesConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#insecure_ssl CodebuildProject#insecure_ssl}.
-	InsecureSsl interface{} `json:"insecureSsl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#location CodebuildProject#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#report_build_status CodebuildProject#report_build_status}.
-	ReportBuildStatus interface{} `json:"reportBuildStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#git_submodules_config CodebuildProject#git_submodules_config}
+	GitSubmodulesConfig *CodebuildProjectSourceGitSubmodulesConfig `json:"gitSubmodulesConfig" yaml:"gitSubmodulesConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#insecure_ssl CodebuildProject#insecure_ssl}.
+	InsecureSsl interface{} `json:"insecureSsl" yaml:"insecureSsl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#location CodebuildProject#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#report_build_status CodebuildProject#report_build_status}.
+	ReportBuildStatus interface{} `json:"reportBuildStatus" yaml:"reportBuildStatus"`
 }
 
 type CodebuildProjectSourceAuth struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#type CodebuildProject#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#resource CodebuildProject#resource}.
-	Resource *string `json:"resource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#type CodebuildProject#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#resource CodebuildProject#resource}.
+	Resource *string `json:"resource" yaml:"resource"`
 }
 
 type CodebuildProjectSourceAuthOutputReference interface {
@@ -5563,15 +6770,20 @@ type CodebuildProjectSourceAuthOutputReference interface {
 	ResourceInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResource()
@@ -5632,8 +6844,8 @@ func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5662,7 +6874,7 @@ func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) TypeInput() *strin
 	return returns
 }
 
-func NewCodebuildProjectSourceAuthOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceAuthOutputReference {
+func NewCodebuildProjectSourceAuthOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceAuthOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectSourceAuthOutputReference{}
@@ -5676,7 +6888,7 @@ func NewCodebuildProjectSourceAuthOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewCodebuildProjectSourceAuthOutputReference_Override(c CodebuildProjectSourceAuthOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectSourceAuthOutputReference_Override(c CodebuildProjectSourceAuthOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5718,7 +6930,7 @@ func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5735,12 +6947,40 @@ func (j *jsiiProxy_CodebuildProjectSourceAuthOutputReference) SetType(val *strin
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5777,12 +7017,54 @@ func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5827,10 +7109,10 @@ func (c *jsiiProxy_CodebuildProjectSourceAuthOutputReference) ResetResource() {
 }
 
 type CodebuildProjectSourceBuildStatusConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#context CodebuildProject#context}.
-	Context *string `json:"context"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#target_url CodebuildProject#target_url}.
-	TargetUrl *string `json:"targetUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#context CodebuildProject#context}.
+	Context *string `json:"context" yaml:"context"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#target_url CodebuildProject#target_url}.
+	TargetUrl *string `json:"targetUrl" yaml:"targetUrl"`
 }
 
 type CodebuildProjectSourceBuildStatusConfigOutputReference interface {
@@ -5847,12 +7129,17 @@ type CodebuildProjectSourceBuildStatusConfigOutputReference interface {
 	TargetUrlInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetContext()
@@ -5934,8 +7221,8 @@ func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5944,7 +7231,7 @@ func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) Terra
 	return returns
 }
 
-func NewCodebuildProjectSourceBuildStatusConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceBuildStatusConfigOutputReference {
+func NewCodebuildProjectSourceBuildStatusConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceBuildStatusConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference{}
@@ -5958,7 +7245,7 @@ func NewCodebuildProjectSourceBuildStatusConfigOutputReference(terraformResource
 	return &j
 }
 
-func NewCodebuildProjectSourceBuildStatusConfigOutputReference_Override(c CodebuildProjectSourceBuildStatusConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectSourceBuildStatusConfigOutputReference_Override(c CodebuildProjectSourceBuildStatusConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6008,7 +7295,7 @@ func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6017,12 +7304,40 @@ func (j *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) SetTe
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6059,12 +7374,54 @@ func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetNu
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6117,8 +7474,8 @@ func (c *jsiiProxy_CodebuildProjectSourceBuildStatusConfigOutputReference) Reset
 }
 
 type CodebuildProjectSourceGitSubmodulesConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#fetch_submodules CodebuildProject#fetch_submodules}.
-	FetchSubmodules interface{} `json:"fetchSubmodules"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#fetch_submodules CodebuildProject#fetch_submodules}.
+	FetchSubmodules interface{} `json:"fetchSubmodules" yaml:"fetchSubmodules"`
 }
 
 type CodebuildProjectSourceGitSubmodulesConfigOutputReference interface {
@@ -6132,12 +7489,17 @@ type CodebuildProjectSourceGitSubmodulesConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6197,8 +7559,8 @@ func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6207,7 +7569,7 @@ func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) Ter
 	return returns
 }
 
-func NewCodebuildProjectSourceGitSubmodulesConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceGitSubmodulesConfigOutputReference {
+func NewCodebuildProjectSourceGitSubmodulesConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceGitSubmodulesConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference{}
@@ -6221,7 +7583,7 @@ func NewCodebuildProjectSourceGitSubmodulesConfigOutputReference(terraformResour
 	return &j
 }
 
-func NewCodebuildProjectSourceGitSubmodulesConfigOutputReference_Override(c CodebuildProjectSourceGitSubmodulesConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectSourceGitSubmodulesConfigOutputReference_Override(c CodebuildProjectSourceGitSubmodulesConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6263,7 +7625,7 @@ func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6272,12 +7634,40 @@ func (j *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) Set
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6314,12 +7704,54 @@ func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) Get
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceGitSubmodulesConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6384,15 +7816,20 @@ type CodebuildProjectSourceOutputReference interface {
 	ReportBuildStatusInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAuth(value *CodebuildProjectSourceAuth)
@@ -6603,8 +8040,8 @@ func (j *jsiiProxy_CodebuildProjectSourceOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectSourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6633,7 +8070,7 @@ func (j *jsiiProxy_CodebuildProjectSourceOutputReference) TypeInput() *string {
 	return returns
 }
 
-func NewCodebuildProjectSourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceOutputReference {
+func NewCodebuildProjectSourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectSourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectSourceOutputReference{}
@@ -6647,7 +8084,7 @@ func NewCodebuildProjectSourceOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewCodebuildProjectSourceOutputReference_Override(c CodebuildProjectSourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectSourceOutputReference_Override(c CodebuildProjectSourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6721,7 +8158,7 @@ func (j *jsiiProxy_CodebuildProjectSourceOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectSourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectSourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6738,12 +8175,40 @@ func (j *jsiiProxy_CodebuildProjectSourceOutputReference) SetType(val *string) {
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6780,12 +8245,54 @@ func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectSourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6910,12 +8417,12 @@ func (c *jsiiProxy_CodebuildProjectSourceOutputReference) ResetReportBuildStatus
 }
 
 type CodebuildProjectVpcConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#security_group_ids CodebuildProject#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#subnets CodebuildProject#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project.html#vpc_id CodebuildProject#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#security_group_ids CodebuildProject#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#subnets CodebuildProject#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_project#vpc_id CodebuildProject#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type CodebuildProjectVpcConfigOutputReference interface {
@@ -6932,15 +8439,20 @@ type CodebuildProjectVpcConfigOutputReference interface {
 	SubnetsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
 	SetVpcId(val *string)
 	VpcIdInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7020,8 +8532,8 @@ func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7050,7 +8562,7 @@ func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) VpcIdInput() *strin
 	return returns
 }
 
-func NewCodebuildProjectVpcConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildProjectVpcConfigOutputReference {
+func NewCodebuildProjectVpcConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildProjectVpcConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildProjectVpcConfigOutputReference{}
@@ -7064,7 +8576,7 @@ func NewCodebuildProjectVpcConfigOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewCodebuildProjectVpcConfigOutputReference_Override(c CodebuildProjectVpcConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildProjectVpcConfigOutputReference_Override(c CodebuildProjectVpcConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7114,7 +8626,7 @@ func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7131,12 +8643,40 @@ func (j *jsiiProxy_CodebuildProjectVpcConfigOutputReference) SetVpcId(val *strin
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7173,12 +8713,54 @@ func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7214,14 +8796,14 @@ func (c *jsiiProxy_CodebuildProjectVpcConfigOutputReference) InterpolationForAtt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html aws_codebuild_report_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group aws_codebuild_report_group}.
 type CodebuildReportGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Created() *string
 	DeleteReports() interface{}
 	SetDeleteReports(val interface{})
@@ -7242,12 +8824,12 @@ type CodebuildReportGroup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7255,10 +8837,15 @@ type CodebuildReportGroup interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutExportConfig(value *CodebuildReportGroupExportConfig)
@@ -7307,8 +8894,8 @@ func (j *jsiiProxy_CodebuildReportGroup) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildReportGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7467,8 +9054,8 @@ func (j *jsiiProxy_CodebuildReportGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildReportGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7477,8 +9064,8 @@ func (j *jsiiProxy_CodebuildReportGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildReportGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7487,8 +9074,8 @@ func (j *jsiiProxy_CodebuildReportGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildReportGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7497,8 +9084,8 @@ func (j *jsiiProxy_CodebuildReportGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildReportGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7557,7 +9144,7 @@ func (j *jsiiProxy_CodebuildReportGroup) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html aws_codebuild_report_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group aws_codebuild_report_group} Resource.
 func NewCodebuildReportGroup(scope constructs.Construct, id *string, config *CodebuildReportGroupConfig) CodebuildReportGroup {
 	_init_.Initialize()
 
@@ -7572,7 +9159,7 @@ func NewCodebuildReportGroup(scope constructs.Construct, id *string, config *Cod
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html aws_codebuild_report_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group aws_codebuild_report_group} Resource.
 func NewCodebuildReportGroup_Override(c CodebuildReportGroup, scope constructs.Construct, id *string, config *CodebuildReportGroupConfig) {
 	_init_.Initialize()
 
@@ -7583,7 +9170,7 @@ func NewCodebuildReportGroup_Override(c CodebuildReportGroup, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_CodebuildReportGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7631,7 +9218,7 @@ func (j *jsiiProxy_CodebuildReportGroup) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_CodebuildReportGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7639,7 +9226,7 @@ func (j *jsiiProxy_CodebuildReportGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildReportGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodebuildReportGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7695,12 +9282,40 @@ func (c *jsiiProxy_CodebuildReportGroup) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildReportGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildReportGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7737,12 +9352,54 @@ func (c *jsiiProxy_CodebuildReportGroup) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildReportGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildReportGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7875,36 +9532,36 @@ func (c *jsiiProxy_CodebuildReportGroup) ToTerraform() interface{} {
 // AWS CodeBuild.
 type CodebuildReportGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// export_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#export_config CodebuildReportGroup#export_config}
-	ExportConfig *CodebuildReportGroupExportConfig `json:"exportConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#name CodebuildReportGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#type CodebuildReportGroup#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#delete_reports CodebuildReportGroup#delete_reports}.
-	DeleteReports interface{} `json:"deleteReports"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#tags CodebuildReportGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#tags_all CodebuildReportGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#export_config CodebuildReportGroup#export_config}
+	ExportConfig *CodebuildReportGroupExportConfig `json:"exportConfig" yaml:"exportConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#name CodebuildReportGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#type CodebuildReportGroup#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#delete_reports CodebuildReportGroup#delete_reports}.
+	DeleteReports interface{} `json:"deleteReports" yaml:"deleteReports"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#tags CodebuildReportGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#tags_all CodebuildReportGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type CodebuildReportGroupExportConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#type CodebuildReportGroup#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#type CodebuildReportGroup#type}.
+	Type *string `json:"type" yaml:"type"`
 	// s3_destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#s3_destination CodebuildReportGroup#s3_destination}
-	S3Destination *CodebuildReportGroupExportConfigS3Destination `json:"s3Destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#s3_destination CodebuildReportGroup#s3_destination}
+	S3Destination *CodebuildReportGroupExportConfigS3Destination `json:"s3Destination" yaml:"s3Destination"`
 }
 
 type CodebuildReportGroupExportConfigOutputReference interface {
@@ -7917,15 +9574,20 @@ type CodebuildReportGroupExportConfigOutputReference interface {
 	S3DestinationInput() *CodebuildReportGroupExportConfigS3Destination
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3Destination(value *CodebuildReportGroupExportConfigS3Destination)
@@ -7987,8 +9649,8 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8017,7 +9679,7 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) TypeInput() 
 	return returns
 }
 
-func NewCodebuildReportGroupExportConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildReportGroupExportConfigOutputReference {
+func NewCodebuildReportGroupExportConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildReportGroupExportConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildReportGroupExportConfigOutputReference{}
@@ -8031,7 +9693,7 @@ func NewCodebuildReportGroupExportConfigOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewCodebuildReportGroupExportConfigOutputReference_Override(c CodebuildReportGroupExportConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildReportGroupExportConfigOutputReference_Override(c CodebuildReportGroupExportConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8065,7 +9727,7 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8082,12 +9744,40 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) SetType(val 
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8124,12 +9814,54 @@ func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8182,16 +9914,16 @@ func (c *jsiiProxy_CodebuildReportGroupExportConfigOutputReference) ResetS3Desti
 }
 
 type CodebuildReportGroupExportConfigS3Destination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#bucket CodebuildReportGroup#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#encryption_key CodebuildReportGroup#encryption_key}.
-	EncryptionKey *string `json:"encryptionKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#encryption_disabled CodebuildReportGroup#encryption_disabled}.
-	EncryptionDisabled interface{} `json:"encryptionDisabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#packaging CodebuildReportGroup#packaging}.
-	Packaging *string `json:"packaging"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group.html#path CodebuildReportGroup#path}.
-	Path *string `json:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#bucket CodebuildReportGroup#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#encryption_key CodebuildReportGroup#encryption_key}.
+	EncryptionKey *string `json:"encryptionKey" yaml:"encryptionKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#encryption_disabled CodebuildReportGroup#encryption_disabled}.
+	EncryptionDisabled interface{} `json:"encryptionDisabled" yaml:"encryptionDisabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#packaging CodebuildReportGroup#packaging}.
+	Packaging *string `json:"packaging" yaml:"packaging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_report_group#path CodebuildReportGroup#path}.
+	Path *string `json:"path" yaml:"path"`
 }
 
 type CodebuildReportGroupExportConfigS3DestinationOutputReference interface {
@@ -8217,12 +9949,17 @@ type CodebuildReportGroupExportConfigS3DestinationOutputReference interface {
 	PathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEncryptionDisabled()
@@ -8365,8 +10102,8 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8375,7 +10112,7 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 	return returns
 }
 
-func NewCodebuildReportGroupExportConfigS3DestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodebuildReportGroupExportConfigS3DestinationOutputReference {
+func NewCodebuildReportGroupExportConfigS3DestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodebuildReportGroupExportConfigS3DestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference{}
@@ -8389,7 +10126,7 @@ func NewCodebuildReportGroupExportConfigS3DestinationOutputReference(terraformRe
 	return &j
 }
 
-func NewCodebuildReportGroupExportConfigS3DestinationOutputReference_Override(c CodebuildReportGroupExportConfigS3DestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodebuildReportGroupExportConfigS3DestinationOutputReference_Override(c CodebuildReportGroupExportConfigS3DestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8463,7 +10200,7 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 	)
 }
 
-func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8472,12 +10209,40 @@ func (j *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 }
 
 // Experimental.
-func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8514,12 +10279,54 @@ func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8579,7 +10386,583 @@ func (c *jsiiProxy_CodebuildReportGroupExportConfigS3DestinationOutputReference)
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential.html aws_codebuild_source_credential}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_resource_policy aws_codebuild_resource_policy}.
+type CodebuildResourcePolicy interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Policy() *string
+	SetPolicy(val *string)
+	PolicyInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	ResourceArn() *string
+	SetResourceArn(val *string)
+	ResourceArnInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for CodebuildResourcePolicy
+type jsiiProxy_CodebuildResourcePolicy struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) Policy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) PolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) ResourceArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) ResourceArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_resource_policy aws_codebuild_resource_policy} Resource.
+func NewCodebuildResourcePolicy(scope constructs.Construct, id *string, config *CodebuildResourcePolicyConfig) CodebuildResourcePolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_CodebuildResourcePolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.codebuild.CodebuildResourcePolicy",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_resource_policy aws_codebuild_resource_policy} Resource.
+func NewCodebuildResourcePolicy_Override(c CodebuildResourcePolicy, scope constructs.Construct, id *string, config *CodebuildResourcePolicyConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.codebuild.CodebuildResourcePolicy",
+		[]interface{}{scope, id, config},
+		c,
+	)
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) SetPolicy(val *string) {
+	_jsii_.Set(
+		j,
+		"policy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CodebuildResourcePolicy) SetResourceArn(val *string) {
+	_jsii_.Set(
+		j,
+		"resourceArn",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func CodebuildResourcePolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.codebuild.CodebuildResourcePolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func CodebuildResourcePolicy_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.codebuild.CodebuildResourcePolicy",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		c,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		c,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		c,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CodebuildResourcePolicy) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (c *jsiiProxy_CodebuildResourcePolicy) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (c *jsiiProxy_CodebuildResourcePolicy) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		c,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS CodeBuild.
+type CodebuildResourcePolicyConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_resource_policy#policy CodebuildResourcePolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_resource_policy#resource_arn CodebuildResourcePolicy#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential aws_codebuild_source_credential}.
 type CodebuildSourceCredential interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -8588,8 +10971,8 @@ type CodebuildSourceCredential interface {
 	AuthTypeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8614,10 +10997,15 @@ type CodebuildSourceCredential interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -8683,8 +11071,8 @@ func (j *jsiiProxy_CodebuildSourceCredential) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildSourceCredential) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildSourceCredential) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8863,7 +11251,7 @@ func (j *jsiiProxy_CodebuildSourceCredential) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential.html aws_codebuild_source_credential} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential aws_codebuild_source_credential} Resource.
 func NewCodebuildSourceCredential(scope constructs.Construct, id *string, config *CodebuildSourceCredentialConfig) CodebuildSourceCredential {
 	_init_.Initialize()
 
@@ -8878,7 +11266,7 @@ func NewCodebuildSourceCredential(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential.html aws_codebuild_source_credential} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential aws_codebuild_source_credential} Resource.
 func NewCodebuildSourceCredential_Override(c CodebuildSourceCredential, scope constructs.Construct, id *string, config *CodebuildSourceCredentialConfig) {
 	_init_.Initialize()
 
@@ -8897,7 +11285,7 @@ func (j *jsiiProxy_CodebuildSourceCredential) SetAuthType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildSourceCredential) SetCount(val interface{}) {
+func (j *jsiiProxy_CodebuildSourceCredential) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8993,12 +11381,40 @@ func (c *jsiiProxy_CodebuildSourceCredential) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildSourceCredential) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildSourceCredential) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildSourceCredential) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9035,12 +11451,54 @@ func (c *jsiiProxy_CodebuildSourceCredential) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildSourceCredential) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildSourceCredential) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildSourceCredential) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildSourceCredential) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9149,24 +11607,24 @@ func (c *jsiiProxy_CodebuildSourceCredential) ToTerraform() interface{} {
 // AWS CodeBuild.
 type CodebuildSourceCredentialConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential.html#auth_type CodebuildSourceCredential#auth_type}.
-	AuthType *string `json:"authType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential.html#server_type CodebuildSourceCredential#server_type}.
-	ServerType *string `json:"serverType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential.html#token CodebuildSourceCredential#token}.
-	Token *string `json:"token"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential.html#user_name CodebuildSourceCredential#user_name}.
-	UserName *string `json:"userName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential#auth_type CodebuildSourceCredential#auth_type}.
+	AuthType *string `json:"authType" yaml:"authType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential#server_type CodebuildSourceCredential#server_type}.
+	ServerType *string `json:"serverType" yaml:"serverType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential#token CodebuildSourceCredential#token}.
+	Token *string `json:"token" yaml:"token"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_source_credential#user_name CodebuildSourceCredential#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html aws_codebuild_webhook}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook aws_codebuild_webhook}.
 type CodebuildWebhook interface {
 	cdktf.TerraformResource
 	BranchFilter() *string
@@ -9177,13 +11635,13 @@ type CodebuildWebhook interface {
 	BuildTypeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	FilterGroup() *[]*CodebuildWebhookFilterGroup
-	SetFilterGroup(val *[]*CodebuildWebhookFilterGroup)
-	FilterGroupInput() *[]*CodebuildWebhookFilterGroup
+	FilterGroup() interface{}
+	SetFilterGroup(val interface{})
+	FilterGroupInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -9203,10 +11661,15 @@ type CodebuildWebhook interface {
 	TerraformResourceType() *string
 	Url() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBranchFilter()
@@ -9284,8 +11747,8 @@ func (j *jsiiProxy_CodebuildWebhook) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildWebhook) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodebuildWebhook) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9304,8 +11767,8 @@ func (j *jsiiProxy_CodebuildWebhook) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildWebhook) FilterGroup() *[]*CodebuildWebhookFilterGroup {
-	var returns *[]*CodebuildWebhookFilterGroup
+func (j *jsiiProxy_CodebuildWebhook) FilterGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterGroup",
@@ -9314,8 +11777,8 @@ func (j *jsiiProxy_CodebuildWebhook) FilterGroup() *[]*CodebuildWebhookFilterGro
 	return returns
 }
 
-func (j *jsiiProxy_CodebuildWebhook) FilterGroupInput() *[]*CodebuildWebhookFilterGroup {
-	var returns *[]*CodebuildWebhookFilterGroup
+func (j *jsiiProxy_CodebuildWebhook) FilterGroupInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterGroupInput",
@@ -9474,7 +11937,7 @@ func (j *jsiiProxy_CodebuildWebhook) Url() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html aws_codebuild_webhook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook aws_codebuild_webhook} Resource.
 func NewCodebuildWebhook(scope constructs.Construct, id *string, config *CodebuildWebhookConfig) CodebuildWebhook {
 	_init_.Initialize()
 
@@ -9489,7 +11952,7 @@ func NewCodebuildWebhook(scope constructs.Construct, id *string, config *Codebui
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html aws_codebuild_webhook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook aws_codebuild_webhook} Resource.
 func NewCodebuildWebhook_Override(c CodebuildWebhook, scope constructs.Construct, id *string, config *CodebuildWebhookConfig) {
 	_init_.Initialize()
 
@@ -9516,7 +11979,7 @@ func (j *jsiiProxy_CodebuildWebhook) SetBuildType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildWebhook) SetCount(val interface{}) {
+func (j *jsiiProxy_CodebuildWebhook) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9532,7 +11995,7 @@ func (j *jsiiProxy_CodebuildWebhook) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CodebuildWebhook) SetFilterGroup(val *[]*CodebuildWebhookFilterGroup) {
+func (j *jsiiProxy_CodebuildWebhook) SetFilterGroup(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filterGroup",
@@ -9604,12 +12067,40 @@ func (c *jsiiProxy_CodebuildWebhook) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildWebhook) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildWebhook) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildWebhook) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9646,12 +12137,54 @@ func (c *jsiiProxy_CodebuildWebhook) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (c *jsiiProxy_CodebuildWebhook) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildWebhook) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodebuildWebhook) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodebuildWebhook) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9776,37 +12309,37 @@ func (c *jsiiProxy_CodebuildWebhook) ToTerraform() interface{} {
 // AWS CodeBuild.
 type CodebuildWebhookConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#project_name CodebuildWebhook#project_name}.
-	ProjectName *string `json:"projectName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#branch_filter CodebuildWebhook#branch_filter}.
-	BranchFilter *string `json:"branchFilter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#build_type CodebuildWebhook#build_type}.
-	BuildType *string `json:"buildType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#project_name CodebuildWebhook#project_name}.
+	ProjectName *string `json:"projectName" yaml:"projectName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#branch_filter CodebuildWebhook#branch_filter}.
+	BranchFilter *string `json:"branchFilter" yaml:"branchFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#build_type CodebuildWebhook#build_type}.
+	BuildType *string `json:"buildType" yaml:"buildType"`
 	// filter_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#filter_group CodebuildWebhook#filter_group}
-	FilterGroup *[]*CodebuildWebhookFilterGroup `json:"filterGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#filter_group CodebuildWebhook#filter_group}
+	FilterGroup interface{} `json:"filterGroup" yaml:"filterGroup"`
 }
 
 type CodebuildWebhookFilterGroup struct {
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#filter CodebuildWebhook#filter}
-	Filter *[]*CodebuildWebhookFilterGroupFilter `json:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#filter CodebuildWebhook#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
 }
 
 type CodebuildWebhookFilterGroupFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#pattern CodebuildWebhook#pattern}.
-	Pattern *string `json:"pattern"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#type CodebuildWebhook#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook.html#exclude_matched_pattern CodebuildWebhook#exclude_matched_pattern}.
-	ExcludeMatchedPattern interface{} `json:"excludeMatchedPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#pattern CodebuildWebhook#pattern}.
+	Pattern *string `json:"pattern" yaml:"pattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#type CodebuildWebhook#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codebuild_webhook#exclude_matched_pattern CodebuildWebhook#exclude_matched_pattern}.
+	ExcludeMatchedPattern interface{} `json:"excludeMatchedPattern" yaml:"excludeMatchedPattern"`
 }

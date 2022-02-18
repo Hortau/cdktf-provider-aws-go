@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/fms/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account.html aws_fms_admin_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account aws_fms_admin_account}.
 type FmsAdminAccount interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -17,8 +17,8 @@ type FmsAdminAccount interface {
 	AccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -34,10 +34,15 @@ type FmsAdminAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAccountId()
@@ -93,8 +98,8 @@ func (j *jsiiProxy_FmsAdminAccount) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_FmsAdminAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FmsAdminAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -213,7 +218,7 @@ func (j *jsiiProxy_FmsAdminAccount) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account.html aws_fms_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account aws_fms_admin_account} Resource.
 func NewFmsAdminAccount(scope constructs.Construct, id *string, config *FmsAdminAccountConfig) FmsAdminAccount {
 	_init_.Initialize()
 
@@ -228,7 +233,7 @@ func NewFmsAdminAccount(scope constructs.Construct, id *string, config *FmsAdmin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account.html aws_fms_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account aws_fms_admin_account} Resource.
 func NewFmsAdminAccount_Override(f FmsAdminAccount, scope constructs.Construct, id *string, config *FmsAdminAccountConfig) {
 	_init_.Initialize()
 
@@ -247,7 +252,7 @@ func (j *jsiiProxy_FmsAdminAccount) SetAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_FmsAdminAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_FmsAdminAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -319,12 +324,40 @@ func (f *jsiiProxy_FmsAdminAccount) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (f *jsiiProxy_FmsAdminAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FmsAdminAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsAdminAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -361,12 +394,54 @@ func (f *jsiiProxy_FmsAdminAccount) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (f *jsiiProxy_FmsAdminAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsAdminAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FmsAdminAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsAdminAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -475,25 +550,25 @@ func (f *jsiiProxy_FmsAdminAccount) ToTerraform() interface{} {
 // AWS Firewall Management Service.
 type FmsAdminAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account.html#account_id FmsAdminAccount#account_id}.
-	AccountId *string `json:"accountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_admin_account#account_id FmsAdminAccount#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html aws_fms_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/fms_policy aws_fms_policy}.
 type FmsPolicy interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeleteAllPolicyResources() interface{}
 	SetDeleteAllPolicyResources(val interface{})
 	DeleteAllPolicyResourcesInput() interface{}
@@ -522,9 +597,9 @@ type FmsPolicy interface {
 	RemediationEnabled() interface{}
 	SetRemediationEnabled(val interface{})
 	RemediationEnabledInput() interface{}
-	ResourceTags() interface{}
-	SetResourceTags(val interface{})
-	ResourceTagsInput() interface{}
+	ResourceTags() *map[string]*string
+	SetResourceTags(val *map[string]*string)
+	ResourceTagsInput() *map[string]*string
 	ResourceType() *string
 	SetResourceType(val *string)
 	ResourceTypeInput() *string
@@ -537,10 +612,15 @@ type FmsPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutExcludeMap(value *FmsPolicyExcludeMap)
@@ -595,8 +675,8 @@ func (j *jsiiProxy_FmsPolicy) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FmsPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FmsPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -815,8 +895,8 @@ func (j *jsiiProxy_FmsPolicy) RemediationEnabledInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FmsPolicy) ResourceTags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FmsPolicy) ResourceTags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"resourceTags",
@@ -825,8 +905,8 @@ func (j *jsiiProxy_FmsPolicy) ResourceTags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_FmsPolicy) ResourceTagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_FmsPolicy) ResourceTagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"resourceTagsInput",
@@ -925,7 +1005,7 @@ func (j *jsiiProxy_FmsPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html aws_fms_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_policy aws_fms_policy} Resource.
 func NewFmsPolicy(scope constructs.Construct, id *string, config *FmsPolicyConfig) FmsPolicy {
 	_init_.Initialize()
 
@@ -940,7 +1020,7 @@ func NewFmsPolicy(scope constructs.Construct, id *string, config *FmsPolicyConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html aws_fms_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/fms_policy aws_fms_policy} Resource.
 func NewFmsPolicy_Override(f FmsPolicy, scope constructs.Construct, id *string, config *FmsPolicyConfig) {
 	_init_.Initialize()
 
@@ -951,7 +1031,7 @@ func NewFmsPolicy_Override(f FmsPolicy, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_FmsPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_FmsPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1015,7 +1095,7 @@ func (j *jsiiProxy_FmsPolicy) SetRemediationEnabled(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_FmsPolicy) SetResourceTags(val interface{}) {
+func (j *jsiiProxy_FmsPolicy) SetResourceTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"resourceTags",
@@ -1079,12 +1159,40 @@ func (f *jsiiProxy_FmsPolicy) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (f *jsiiProxy_FmsPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FmsPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1121,12 +1229,54 @@ func (f *jsiiProxy_FmsPolicy) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (f *jsiiProxy_FmsPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FmsPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1307,46 +1457,46 @@ func (f *jsiiProxy_FmsPolicy) ToTerraform() interface{} {
 // AWS Firewall Management Service.
 type FmsPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#exclude_resource_tags FmsPolicy#exclude_resource_tags}.
-	ExcludeResourceTags interface{} `json:"excludeResourceTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#name FmsPolicy#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#exclude_resource_tags FmsPolicy#exclude_resource_tags}.
+	ExcludeResourceTags interface{} `json:"excludeResourceTags" yaml:"excludeResourceTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#name FmsPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 	// security_service_policy_data block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#security_service_policy_data FmsPolicy#security_service_policy_data}
-	SecurityServicePolicyData *FmsPolicySecurityServicePolicyData `json:"securityServicePolicyData"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#delete_all_policy_resources FmsPolicy#delete_all_policy_resources}.
-	DeleteAllPolicyResources interface{} `json:"deleteAllPolicyResources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#security_service_policy_data FmsPolicy#security_service_policy_data}
+	SecurityServicePolicyData *FmsPolicySecurityServicePolicyData `json:"securityServicePolicyData" yaml:"securityServicePolicyData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#delete_all_policy_resources FmsPolicy#delete_all_policy_resources}.
+	DeleteAllPolicyResources interface{} `json:"deleteAllPolicyResources" yaml:"deleteAllPolicyResources"`
 	// exclude_map block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#exclude_map FmsPolicy#exclude_map}
-	ExcludeMap *FmsPolicyExcludeMap `json:"excludeMap"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#exclude_map FmsPolicy#exclude_map}
+	ExcludeMap *FmsPolicyExcludeMap `json:"excludeMap" yaml:"excludeMap"`
 	// include_map block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#include_map FmsPolicy#include_map}
-	IncludeMap *FmsPolicyIncludeMap `json:"includeMap"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#remediation_enabled FmsPolicy#remediation_enabled}.
-	RemediationEnabled interface{} `json:"remediationEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#resource_tags FmsPolicy#resource_tags}.
-	ResourceTags interface{} `json:"resourceTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#resource_type FmsPolicy#resource_type}.
-	ResourceType *string `json:"resourceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#resource_type_list FmsPolicy#resource_type_list}.
-	ResourceTypeList *[]*string `json:"resourceTypeList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#include_map FmsPolicy#include_map}
+	IncludeMap *FmsPolicyIncludeMap `json:"includeMap" yaml:"includeMap"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#remediation_enabled FmsPolicy#remediation_enabled}.
+	RemediationEnabled interface{} `json:"remediationEnabled" yaml:"remediationEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#resource_tags FmsPolicy#resource_tags}.
+	ResourceTags *map[string]*string `json:"resourceTags" yaml:"resourceTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#resource_type FmsPolicy#resource_type}.
+	ResourceType *string `json:"resourceType" yaml:"resourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#resource_type_list FmsPolicy#resource_type_list}.
+	ResourceTypeList *[]*string `json:"resourceTypeList" yaml:"resourceTypeList"`
 }
 
 type FmsPolicyExcludeMap struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#account FmsPolicy#account}.
-	Account *[]*string `json:"account"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#orgunit FmsPolicy#orgunit}.
-	Orgunit *[]*string `json:"orgunit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#account FmsPolicy#account}.
+	Account *[]*string `json:"account" yaml:"account"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#orgunit FmsPolicy#orgunit}.
+	Orgunit *[]*string `json:"orgunit" yaml:"orgunit"`
 }
 
 type FmsPolicyExcludeMapOutputReference interface {
@@ -1363,12 +1513,17 @@ type FmsPolicyExcludeMapOutputReference interface {
 	OrgunitInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAccount()
@@ -1450,8 +1605,8 @@ func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1460,7 +1615,7 @@ func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) TerraformResource() cdktf
 	return returns
 }
 
-func NewFmsPolicyExcludeMapOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FmsPolicyExcludeMapOutputReference {
+func NewFmsPolicyExcludeMapOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FmsPolicyExcludeMapOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FmsPolicyExcludeMapOutputReference{}
@@ -1474,7 +1629,7 @@ func NewFmsPolicyExcludeMapOutputReference(terraformResource cdktf.ITerraformRes
 	return &j
 }
 
-func NewFmsPolicyExcludeMapOutputReference_Override(f FmsPolicyExcludeMapOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFmsPolicyExcludeMapOutputReference_Override(f FmsPolicyExcludeMapOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1524,7 +1679,7 @@ func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1533,12 +1688,40 @@ func (j *jsiiProxy_FmsPolicyExcludeMapOutputReference) SetTerraformResource(val 
 }
 
 // Experimental.
-func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1575,12 +1758,54 @@ func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1633,10 +1858,10 @@ func (f *jsiiProxy_FmsPolicyExcludeMapOutputReference) ResetOrgunit() {
 }
 
 type FmsPolicyIncludeMap struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#account FmsPolicy#account}.
-	Account *[]*string `json:"account"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#orgunit FmsPolicy#orgunit}.
-	Orgunit *[]*string `json:"orgunit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#account FmsPolicy#account}.
+	Account *[]*string `json:"account" yaml:"account"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#orgunit FmsPolicy#orgunit}.
+	Orgunit *[]*string `json:"orgunit" yaml:"orgunit"`
 }
 
 type FmsPolicyIncludeMapOutputReference interface {
@@ -1653,12 +1878,17 @@ type FmsPolicyIncludeMapOutputReference interface {
 	OrgunitInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAccount()
@@ -1740,8 +1970,8 @@ func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1750,7 +1980,7 @@ func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) TerraformResource() cdktf
 	return returns
 }
 
-func NewFmsPolicyIncludeMapOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FmsPolicyIncludeMapOutputReference {
+func NewFmsPolicyIncludeMapOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FmsPolicyIncludeMapOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FmsPolicyIncludeMapOutputReference{}
@@ -1764,7 +1994,7 @@ func NewFmsPolicyIncludeMapOutputReference(terraformResource cdktf.ITerraformRes
 	return &j
 }
 
-func NewFmsPolicyIncludeMapOutputReference_Override(f FmsPolicyIncludeMapOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFmsPolicyIncludeMapOutputReference_Override(f FmsPolicyIncludeMapOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1814,7 +2044,7 @@ func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1823,12 +2053,40 @@ func (j *jsiiProxy_FmsPolicyIncludeMapOutputReference) SetTerraformResource(val 
 }
 
 // Experimental.
-func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1865,12 +2123,54 @@ func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1923,10 +2223,10 @@ func (f *jsiiProxy_FmsPolicyIncludeMapOutputReference) ResetOrgunit() {
 }
 
 type FmsPolicySecurityServicePolicyData struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#type FmsPolicy#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy.html#managed_service_data FmsPolicy#managed_service_data}.
-	ManagedServiceData *string `json:"managedServiceData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#type FmsPolicy#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/fms_policy#managed_service_data FmsPolicy#managed_service_data}.
+	ManagedServiceData *string `json:"managedServiceData" yaml:"managedServiceData"`
 }
 
 type FmsPolicySecurityServicePolicyDataOutputReference interface {
@@ -1940,15 +2240,20 @@ type FmsPolicySecurityServicePolicyDataOutputReference interface {
 	ManagedServiceDataInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetManagedServiceData()
@@ -2009,8 +2314,8 @@ func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2039,7 +2344,7 @@ func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) TypeInput(
 	return returns
 }
 
-func NewFmsPolicySecurityServicePolicyDataOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) FmsPolicySecurityServicePolicyDataOutputReference {
+func NewFmsPolicySecurityServicePolicyDataOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) FmsPolicySecurityServicePolicyDataOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference{}
@@ -2053,7 +2358,7 @@ func NewFmsPolicySecurityServicePolicyDataOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewFmsPolicySecurityServicePolicyDataOutputReference_Override(f FmsPolicySecurityServicePolicyDataOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewFmsPolicySecurityServicePolicyDataOutputReference_Override(f FmsPolicySecurityServicePolicyDataOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2095,7 +2400,7 @@ func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2112,12 +2417,40 @@ func (j *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) SetType(va
 }
 
 // Experimental.
-func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		f,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		f,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		f,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2154,12 +2487,54 @@ func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetNumberA
 }
 
 // Experimental.
+func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		f,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		f,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (f *jsiiProxy_FmsPolicySecurityServicePolicyDataOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		f,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

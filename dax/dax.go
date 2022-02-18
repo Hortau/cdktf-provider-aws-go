@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/dax/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html aws_dax_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster aws_dax_cluster}.
 type DaxCluster interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -18,13 +18,16 @@ type DaxCluster interface {
 	AvailabilityZonesInput() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ClusterAddress() *string
+	ClusterEndpointEncryptionType() *string
+	SetClusterEndpointEncryptionType(val *string)
+	ClusterEndpointEncryptionTypeInput() *string
 	ClusterName() *string
 	SetClusterName(val *string)
 	ClusterNameInput() *string
 	ConfigurationEndpoint() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -66,28 +69,34 @@ type DaxCluster interface {
 	SubnetGroupName() *string
 	SetSubnetGroupName(val *string)
 	SubnetGroupNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() DaxClusterTimeoutsOutputReference
 	TimeoutsInput() *DaxClusterTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	Nodes(index *string) DaxClusterNodes
 	OverrideLogicalId(newLogicalId *string)
 	PutServerSideEncryption(value *DaxClusterServerSideEncryption)
 	PutTimeouts(value *DaxClusterTimeouts)
 	ResetAvailabilityZones()
+	ResetClusterEndpointEncryptionType()
 	ResetDescription()
 	ResetMaintenanceWindow()
 	ResetNotificationTopicArn()
@@ -160,6 +169,26 @@ func (j *jsiiProxy_DaxCluster) ClusterAddress() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DaxCluster) ClusterEndpointEncryptionType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clusterEndpointEncryptionType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DaxCluster) ClusterEndpointEncryptionTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clusterEndpointEncryptionTypeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DaxCluster) ClusterName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -200,8 +229,8 @@ func (j *jsiiProxy_DaxCluster) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DaxCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DaxCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -500,8 +529,8 @@ func (j *jsiiProxy_DaxCluster) SubnetGroupNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DaxCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DaxCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -510,8 +539,8 @@ func (j *jsiiProxy_DaxCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DaxCluster) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DaxCluster) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -520,8 +549,8 @@ func (j *jsiiProxy_DaxCluster) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DaxCluster) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DaxCluster) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -530,8 +559,8 @@ func (j *jsiiProxy_DaxCluster) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DaxCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DaxCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -590,7 +619,7 @@ func (j *jsiiProxy_DaxCluster) TimeoutsInput() *DaxClusterTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html aws_dax_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster aws_dax_cluster} Resource.
 func NewDaxCluster(scope constructs.Construct, id *string, config *DaxClusterConfig) DaxCluster {
 	_init_.Initialize()
 
@@ -605,7 +634,7 @@ func NewDaxCluster(scope constructs.Construct, id *string, config *DaxClusterCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html aws_dax_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster aws_dax_cluster} Resource.
 func NewDaxCluster_Override(d DaxCluster, scope constructs.Construct, id *string, config *DaxClusterConfig) {
 	_init_.Initialize()
 
@@ -624,6 +653,14 @@ func (j *jsiiProxy_DaxCluster) SetAvailabilityZones(val *[]*string) {
 	)
 }
 
+func (j *jsiiProxy_DaxCluster) SetClusterEndpointEncryptionType(val *string) {
+	_jsii_.Set(
+		j,
+		"clusterEndpointEncryptionType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_DaxCluster) SetClusterName(val *string) {
 	_jsii_.Set(
 		j,
@@ -632,7 +669,7 @@ func (j *jsiiProxy_DaxCluster) SetClusterName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DaxCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_DaxCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -736,7 +773,7 @@ func (j *jsiiProxy_DaxCluster) SetSubnetGroupName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DaxCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_DaxCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -744,7 +781,7 @@ func (j *jsiiProxy_DaxCluster) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DaxCluster) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DaxCluster) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -792,12 +829,40 @@ func (d *jsiiProxy_DaxCluster) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -834,12 +899,54 @@ func (d *jsiiProxy_DaxCluster) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -904,6 +1011,14 @@ func (d *jsiiProxy_DaxCluster) ResetAvailabilityZones() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetAvailabilityZones",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DaxCluster) ResetClusterEndpointEncryptionType() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetClusterEndpointEncryptionType",
 		nil, // no parameters
 	)
 }
@@ -1057,47 +1172,49 @@ func (d *jsiiProxy_DaxCluster) ToTerraform() interface{} {
 // AWS DynamoDB Accelerator.
 type DaxClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#cluster_name DaxCluster#cluster_name}.
-	ClusterName *string `json:"clusterName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#iam_role_arn DaxCluster#iam_role_arn}.
-	IamRoleArn *string `json:"iamRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#node_type DaxCluster#node_type}.
-	NodeType *string `json:"nodeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#replication_factor DaxCluster#replication_factor}.
-	ReplicationFactor *float64 `json:"replicationFactor"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#availability_zones DaxCluster#availability_zones}.
-	AvailabilityZones *[]*string `json:"availabilityZones"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#description DaxCluster#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#maintenance_window DaxCluster#maintenance_window}.
-	MaintenanceWindow *string `json:"maintenanceWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#notification_topic_arn DaxCluster#notification_topic_arn}.
-	NotificationTopicArn *string `json:"notificationTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#parameter_group_name DaxCluster#parameter_group_name}.
-	ParameterGroupName *string `json:"parameterGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#security_group_ids DaxCluster#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#cluster_name DaxCluster#cluster_name}.
+	ClusterName *string `json:"clusterName" yaml:"clusterName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#iam_role_arn DaxCluster#iam_role_arn}.
+	IamRoleArn *string `json:"iamRoleArn" yaml:"iamRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#node_type DaxCluster#node_type}.
+	NodeType *string `json:"nodeType" yaml:"nodeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#replication_factor DaxCluster#replication_factor}.
+	ReplicationFactor *float64 `json:"replicationFactor" yaml:"replicationFactor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#availability_zones DaxCluster#availability_zones}.
+	AvailabilityZones *[]*string `json:"availabilityZones" yaml:"availabilityZones"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#cluster_endpoint_encryption_type DaxCluster#cluster_endpoint_encryption_type}.
+	ClusterEndpointEncryptionType *string `json:"clusterEndpointEncryptionType" yaml:"clusterEndpointEncryptionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#description DaxCluster#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#maintenance_window DaxCluster#maintenance_window}.
+	MaintenanceWindow *string `json:"maintenanceWindow" yaml:"maintenanceWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#notification_topic_arn DaxCluster#notification_topic_arn}.
+	NotificationTopicArn *string `json:"notificationTopicArn" yaml:"notificationTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#parameter_group_name DaxCluster#parameter_group_name}.
+	ParameterGroupName *string `json:"parameterGroupName" yaml:"parameterGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#security_group_ids DaxCluster#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
 	// server_side_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#server_side_encryption DaxCluster#server_side_encryption}
-	ServerSideEncryption *DaxClusterServerSideEncryption `json:"serverSideEncryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#subnet_group_name DaxCluster#subnet_group_name}.
-	SubnetGroupName *string `json:"subnetGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#tags DaxCluster#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#tags_all DaxCluster#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#server_side_encryption DaxCluster#server_side_encryption}
+	ServerSideEncryption *DaxClusterServerSideEncryption `json:"serverSideEncryption" yaml:"serverSideEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#subnet_group_name DaxCluster#subnet_group_name}.
+	SubnetGroupName *string `json:"subnetGroupName" yaml:"subnetGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#tags DaxCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#tags_all DaxCluster#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#timeouts DaxCluster#timeouts}
-	Timeouts *DaxClusterTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#timeouts DaxCluster#timeouts}
+	Timeouts *DaxClusterTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DaxClusterNodes interface {
@@ -1110,12 +1227,19 @@ type DaxClusterNodes interface {
 	Port() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1184,8 +1308,8 @@ func (j *jsiiProxy_DaxClusterNodes) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DaxClusterNodes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DaxClusterNodes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1194,15 +1318,25 @@ func (j *jsiiProxy_DaxClusterNodes) TerraformResource() cdktf.ITerraformResource
 	return returns
 }
 
+func (j *jsiiProxy_DaxClusterNodes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDaxClusterNodes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DaxClusterNodes {
+func NewDaxClusterNodes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DaxClusterNodes {
 	_init_.Initialize()
 
 	j := jsiiProxy_DaxClusterNodes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.dax.DaxClusterNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1210,12 +1344,12 @@ func NewDaxClusterNodes(terraformResource cdktf.ITerraformResource, terraformAtt
 }
 
 // Experimental.
-func NewDaxClusterNodes_Override(d DaxClusterNodes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDaxClusterNodes_Override(d DaxClusterNodes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.dax.DaxClusterNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1236,7 +1370,7 @@ func (j *jsiiProxy_DaxClusterNodes) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DaxClusterNodes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DaxClusterNodes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1244,13 +1378,49 @@ func (j *jsiiProxy_DaxClusterNodes) SetTerraformResource(val cdktf.ITerraformRes
 	)
 }
 
+func (j *jsiiProxy_DaxClusterNodes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DaxClusterNodes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DaxClusterNodes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterNodes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterNodes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1287,12 +1457,54 @@ func (d *jsiiProxy_DaxClusterNodes) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxClusterNodes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterNodes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxClusterNodes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterNodes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1315,8 +1527,8 @@ func (d *jsiiProxy_DaxClusterNodes) InterpolationForAttribute(property *string) 
 }
 
 type DaxClusterServerSideEncryption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#enabled DaxCluster#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#enabled DaxCluster#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type DaxClusterServerSideEncryptionOutputReference interface {
@@ -1330,12 +1542,17 @@ type DaxClusterServerSideEncryptionOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -1396,8 +1613,8 @@ func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1406,7 +1623,7 @@ func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) TerraformResou
 	return returns
 }
 
-func NewDaxClusterServerSideEncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DaxClusterServerSideEncryptionOutputReference {
+func NewDaxClusterServerSideEncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DaxClusterServerSideEncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DaxClusterServerSideEncryptionOutputReference{}
@@ -1420,7 +1637,7 @@ func NewDaxClusterServerSideEncryptionOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewDaxClusterServerSideEncryptionOutputReference_Override(d DaxClusterServerSideEncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDaxClusterServerSideEncryptionOutputReference_Override(d DaxClusterServerSideEncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1462,7 +1679,7 @@ func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1471,12 +1688,40 @@ func (j *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1513,12 +1758,54 @@ func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1563,12 +1850,12 @@ func (d *jsiiProxy_DaxClusterServerSideEncryptionOutputReference) ResetEnabled()
 }
 
 type DaxClusterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#create DaxCluster#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#delete DaxCluster#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster.html#update DaxCluster#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#create DaxCluster#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#delete DaxCluster#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_cluster#update DaxCluster#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DaxClusterTimeoutsOutputReference interface {
@@ -1585,15 +1872,20 @@ type DaxClusterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -1676,8 +1968,8 @@ func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) TerraformAttribute() *stri
 	return returns
 }
 
-func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1706,7 +1998,7 @@ func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewDaxClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DaxClusterTimeoutsOutputReference {
+func NewDaxClusterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DaxClusterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DaxClusterTimeoutsOutputReference{}
@@ -1720,7 +2012,7 @@ func NewDaxClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	return &j
 }
 
-func NewDaxClusterTimeoutsOutputReference_Override(d DaxClusterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDaxClusterTimeoutsOutputReference_Override(d DaxClusterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1770,7 +2062,7 @@ func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) SetTerraformAttribute(val 
 	)
 }
 
-func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1787,12 +2079,40 @@ func (j *jsiiProxy_DaxClusterTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1829,12 +2149,54 @@ func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1894,13 +2256,13 @@ func (d *jsiiProxy_DaxClusterTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html aws_dax_parameter_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group aws_dax_parameter_group}.
 type DaxParameterGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1915,9 +2277,9 @@ type DaxParameterGroup interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameters() *[]*DaxParameterGroupParameters
-	SetParameters(val *[]*DaxParameterGroupParameters)
-	ParametersInput() *[]*DaxParameterGroupParameters
+	Parameters() interface{}
+	SetParameters(val interface{})
+	ParametersInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
@@ -1925,10 +2287,15 @@ type DaxParameterGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -1965,8 +2332,8 @@ func (j *jsiiProxy_DaxParameterGroup) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DaxParameterGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DaxParameterGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2075,8 +2442,8 @@ func (j *jsiiProxy_DaxParameterGroup) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_DaxParameterGroup) Parameters() *[]*DaxParameterGroupParameters {
-	var returns *[]*DaxParameterGroupParameters
+func (j *jsiiProxy_DaxParameterGroup) Parameters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -2085,8 +2452,8 @@ func (j *jsiiProxy_DaxParameterGroup) Parameters() *[]*DaxParameterGroupParamete
 	return returns
 }
 
-func (j *jsiiProxy_DaxParameterGroup) ParametersInput() *[]*DaxParameterGroupParameters {
-	var returns *[]*DaxParameterGroupParameters
+func (j *jsiiProxy_DaxParameterGroup) ParametersInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -2145,7 +2512,7 @@ func (j *jsiiProxy_DaxParameterGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html aws_dax_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group aws_dax_parameter_group} Resource.
 func NewDaxParameterGroup(scope constructs.Construct, id *string, config *DaxParameterGroupConfig) DaxParameterGroup {
 	_init_.Initialize()
 
@@ -2160,7 +2527,7 @@ func NewDaxParameterGroup(scope constructs.Construct, id *string, config *DaxPar
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html aws_dax_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group aws_dax_parameter_group} Resource.
 func NewDaxParameterGroup_Override(d DaxParameterGroup, scope constructs.Construct, id *string, config *DaxParameterGroupConfig) {
 	_init_.Initialize()
 
@@ -2171,7 +2538,7 @@ func NewDaxParameterGroup_Override(d DaxParameterGroup, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DaxParameterGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DaxParameterGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2211,7 +2578,7 @@ func (j *jsiiProxy_DaxParameterGroup) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DaxParameterGroup) SetParameters(val *[]*DaxParameterGroupParameters) {
+func (j *jsiiProxy_DaxParameterGroup) SetParameters(val interface{}) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -2267,12 +2634,40 @@ func (d *jsiiProxy_DaxParameterGroup) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxParameterGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxParameterGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxParameterGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2309,12 +2704,54 @@ func (d *jsiiProxy_DaxParameterGroup) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxParameterGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxParameterGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxParameterGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxParameterGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2431,37 +2868,37 @@ func (d *jsiiProxy_DaxParameterGroup) ToTerraform() interface{} {
 // AWS DynamoDB Accelerator.
 type DaxParameterGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html#name DaxParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html#description DaxParameterGroup#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group#name DaxParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group#description DaxParameterGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 	// parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html#parameters DaxParameterGroup#parameters}
-	Parameters *[]*DaxParameterGroupParameters `json:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group#parameters DaxParameterGroup#parameters}
+	Parameters interface{} `json:"parameters" yaml:"parameters"`
 }
 
 type DaxParameterGroupParameters struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html#name DaxParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group.html#value DaxParameterGroup#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group#name DaxParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_parameter_group#value DaxParameterGroup#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group.html aws_dax_subnet_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group aws_dax_subnet_group}.
 type DaxSubnetGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2487,10 +2924,15 @@ type DaxSubnetGroup interface {
 	TerraformResourceType() *string
 	VpcId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -2526,8 +2968,8 @@ func (j *jsiiProxy_DaxSubnetGroup) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_DaxSubnetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DaxSubnetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2716,7 +3158,7 @@ func (j *jsiiProxy_DaxSubnetGroup) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group.html aws_dax_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group aws_dax_subnet_group} Resource.
 func NewDaxSubnetGroup(scope constructs.Construct, id *string, config *DaxSubnetGroupConfig) DaxSubnetGroup {
 	_init_.Initialize()
 
@@ -2731,7 +3173,7 @@ func NewDaxSubnetGroup(scope constructs.Construct, id *string, config *DaxSubnet
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group.html aws_dax_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group aws_dax_subnet_group} Resource.
 func NewDaxSubnetGroup_Override(d DaxSubnetGroup, scope constructs.Construct, id *string, config *DaxSubnetGroupConfig) {
 	_init_.Initialize()
 
@@ -2742,7 +3184,7 @@ func NewDaxSubnetGroup_Override(d DaxSubnetGroup, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_DaxSubnetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DaxSubnetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2838,12 +3280,40 @@ func (d *jsiiProxy_DaxSubnetGroup) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxSubnetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxSubnetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxSubnetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2880,12 +3350,54 @@ func (d *jsiiProxy_DaxSubnetGroup) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DaxSubnetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxSubnetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DaxSubnetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DaxSubnetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2994,17 +3506,17 @@ func (d *jsiiProxy_DaxSubnetGroup) ToTerraform() interface{} {
 // AWS DynamoDB Accelerator.
 type DaxSubnetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group.html#name DaxSubnetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group.html#subnet_ids DaxSubnetGroup#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group.html#description DaxSubnetGroup#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group#name DaxSubnetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group#subnet_ids DaxSubnetGroup#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dax_subnet_group#description DaxSubnetGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/cloudformation/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html aws_cloudformation_stack}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack aws_cloudformation_stack}.
 type CloudformationStack interface {
 	cdktf.TerraformResource
 	Capabilities() *[]*string
@@ -17,8 +17,8 @@ type CloudformationStack interface {
 	CapabilitiesInput() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DisableRollback() interface{}
@@ -42,9 +42,9 @@ type CloudformationStack interface {
 	OnFailure() *string
 	SetOnFailure(val *string)
 	OnFailureInput() *string
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	PolicyBody() *string
 	SetPolicyBody(val *string)
 	PolicyBodyInput() *string
@@ -54,12 +54,12 @@ type CloudformationStack interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TemplateBody() *string
 	SetTemplateBody(val *string)
 	TemplateBodyInput() *string
@@ -75,12 +75,17 @@ type CloudformationStack interface {
 	Timeouts() CloudformationStackTimeoutsOutputReference
 	TimeoutsInput() *CloudformationStackTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
-	Outputs(key *string) *string
+	Outputs(key *string) interface{}
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *CloudformationStackTimeouts)
 	ResetCapabilities()
@@ -149,8 +154,8 @@ func (j *jsiiProxy_CloudformationStack) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStack) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStack) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -319,8 +324,8 @@ func (j *jsiiProxy_CloudformationStack) OnFailureInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStack) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStack) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -329,8 +334,8 @@ func (j *jsiiProxy_CloudformationStack) Parameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStack) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStack) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -399,8 +404,8 @@ func (j *jsiiProxy_CloudformationStack) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStack) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStack) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -409,8 +414,8 @@ func (j *jsiiProxy_CloudformationStack) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStack) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStack) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -419,8 +424,8 @@ func (j *jsiiProxy_CloudformationStack) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStack) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStack) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -429,8 +434,8 @@ func (j *jsiiProxy_CloudformationStack) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStack) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStack) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -549,7 +554,7 @@ func (j *jsiiProxy_CloudformationStack) TimeoutsInput() *CloudformationStackTime
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html aws_cloudformation_stack} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack aws_cloudformation_stack} Resource.
 func NewCloudformationStack(scope constructs.Construct, id *string, config *CloudformationStackConfig) CloudformationStack {
 	_init_.Initialize()
 
@@ -564,7 +569,7 @@ func NewCloudformationStack(scope constructs.Construct, id *string, config *Clou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html aws_cloudformation_stack} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack aws_cloudformation_stack} Resource.
 func NewCloudformationStack_Override(c CloudformationStack, scope constructs.Construct, id *string, config *CloudformationStackConfig) {
 	_init_.Initialize()
 
@@ -583,7 +588,7 @@ func (j *jsiiProxy_CloudformationStack) SetCapabilities(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CloudformationStack) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudformationStack) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -647,7 +652,7 @@ func (j *jsiiProxy_CloudformationStack) SetOnFailure(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudformationStack) SetParameters(val interface{}) {
+func (j *jsiiProxy_CloudformationStack) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -679,7 +684,7 @@ func (j *jsiiProxy_CloudformationStack) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_CloudformationStack) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudformationStack) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -687,7 +692,7 @@ func (j *jsiiProxy_CloudformationStack) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudformationStack) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudformationStack) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -759,12 +764,40 @@ func (c *jsiiProxy_CloudformationStack) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStack) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStack) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStack) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -801,12 +834,54 @@ func (c *jsiiProxy_CloudformationStack) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStack) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStack) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStack) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStack) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -828,8 +903,8 @@ func (c *jsiiProxy_CloudformationStack) InterpolationForAttribute(terraformAttri
 	return returns
 }
 
-func (c *jsiiProxy_CloudformationStack) Outputs(key *string) *string {
-	var returns *string
+func (c *jsiiProxy_CloudformationStack) Outputs(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		c,
@@ -1040,48 +1115,48 @@ func (c *jsiiProxy_CloudformationStack) ToTerraform() interface{} {
 // AWS CloudFormation.
 type CloudformationStackConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#name CloudformationStack#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#capabilities CloudformationStack#capabilities}.
-	Capabilities *[]*string `json:"capabilities"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#disable_rollback CloudformationStack#disable_rollback}.
-	DisableRollback interface{} `json:"disableRollback"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#iam_role_arn CloudformationStack#iam_role_arn}.
-	IamRoleArn *string `json:"iamRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#notification_arns CloudformationStack#notification_arns}.
-	NotificationArns *[]*string `json:"notificationArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#on_failure CloudformationStack#on_failure}.
-	OnFailure *string `json:"onFailure"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#parameters CloudformationStack#parameters}.
-	Parameters interface{} `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#policy_body CloudformationStack#policy_body}.
-	PolicyBody *string `json:"policyBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#policy_url CloudformationStack#policy_url}.
-	PolicyUrl *string `json:"policyUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#tags CloudformationStack#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#tags_all CloudformationStack#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#template_body CloudformationStack#template_body}.
-	TemplateBody *string `json:"templateBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#template_url CloudformationStack#template_url}.
-	TemplateUrl *string `json:"templateUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#timeout_in_minutes CloudformationStack#timeout_in_minutes}.
-	TimeoutInMinutes *float64 `json:"timeoutInMinutes"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#name CloudformationStack#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#capabilities CloudformationStack#capabilities}.
+	Capabilities *[]*string `json:"capabilities" yaml:"capabilities"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#disable_rollback CloudformationStack#disable_rollback}.
+	DisableRollback interface{} `json:"disableRollback" yaml:"disableRollback"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#iam_role_arn CloudformationStack#iam_role_arn}.
+	IamRoleArn *string `json:"iamRoleArn" yaml:"iamRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#notification_arns CloudformationStack#notification_arns}.
+	NotificationArns *[]*string `json:"notificationArns" yaml:"notificationArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#on_failure CloudformationStack#on_failure}.
+	OnFailure *string `json:"onFailure" yaml:"onFailure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#parameters CloudformationStack#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#policy_body CloudformationStack#policy_body}.
+	PolicyBody *string `json:"policyBody" yaml:"policyBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#policy_url CloudformationStack#policy_url}.
+	PolicyUrl *string `json:"policyUrl" yaml:"policyUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#tags CloudformationStack#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#tags_all CloudformationStack#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#template_body CloudformationStack#template_body}.
+	TemplateBody *string `json:"templateBody" yaml:"templateBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#template_url CloudformationStack#template_url}.
+	TemplateUrl *string `json:"templateUrl" yaml:"templateUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#timeout_in_minutes CloudformationStack#timeout_in_minutes}.
+	TimeoutInMinutes *float64 `json:"timeoutInMinutes" yaml:"timeoutInMinutes"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#timeouts CloudformationStack#timeouts}
-	Timeouts *CloudformationStackTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#timeouts CloudformationStack#timeouts}
+	Timeouts *CloudformationStackTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html aws_cloudformation_stack_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set aws_cloudformation_stack_set}.
 type CloudformationStackSet interface {
 	cdktf.TerraformResource
 	AdministrationRoleArn() *string
@@ -1095,8 +1170,8 @@ type CloudformationStackSet interface {
 	CapabilitiesInput() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1114,9 +1189,9 @@ type CloudformationStackSet interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameters() interface{}
-	SetParameters(val interface{})
-	ParametersInput() interface{}
+	Parameters() *map[string]*string
+	SetParameters(val *map[string]*string)
+	ParametersInput() *map[string]*string
 	PermissionModel() *string
 	SetPermissionModel(val *string)
 	PermissionModelInput() *string
@@ -1124,12 +1199,12 @@ type CloudformationStackSet interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	StackSetId() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TemplateBody() *string
 	SetTemplateBody(val *string)
 	TemplateBodyInput() *string
@@ -1142,10 +1217,15 @@ type CloudformationStackSet interface {
 	Timeouts() CloudformationStackSetTimeoutsOutputReference
 	TimeoutsInput() *CloudformationStackSetTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAutoDeployment(value *CloudformationStackSetAutoDeployment)
@@ -1264,8 +1344,8 @@ func (j *jsiiProxy_CloudformationStackSet) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1394,8 +1474,8 @@ func (j *jsiiProxy_CloudformationStackSet) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSet) Parameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSet) Parameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameters",
@@ -1404,8 +1484,8 @@ func (j *jsiiProxy_CloudformationStackSet) Parameters() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSet) ParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSet) ParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parametersInput",
@@ -1464,8 +1544,8 @@ func (j *jsiiProxy_CloudformationStackSet) StackSetId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1474,8 +1554,8 @@ func (j *jsiiProxy_CloudformationStackSet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSet) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSet) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1484,8 +1564,8 @@ func (j *jsiiProxy_CloudformationStackSet) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSet) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSet) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1494,8 +1574,8 @@ func (j *jsiiProxy_CloudformationStackSet) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1594,7 +1674,7 @@ func (j *jsiiProxy_CloudformationStackSet) TimeoutsInput() *CloudformationStackS
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html aws_cloudformation_stack_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set aws_cloudformation_stack_set} Resource.
 func NewCloudformationStackSet(scope constructs.Construct, id *string, config *CloudformationStackSetConfig) CloudformationStackSet {
 	_init_.Initialize()
 
@@ -1609,7 +1689,7 @@ func NewCloudformationStackSet(scope constructs.Construct, id *string, config *C
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html aws_cloudformation_stack_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set aws_cloudformation_stack_set} Resource.
 func NewCloudformationStackSet_Override(c CloudformationStackSet, scope constructs.Construct, id *string, config *CloudformationStackSetConfig) {
 	_init_.Initialize()
 
@@ -1636,7 +1716,7 @@ func (j *jsiiProxy_CloudformationStackSet) SetCapabilities(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSet) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudformationStackSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1684,7 +1764,7 @@ func (j *jsiiProxy_CloudformationStackSet) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSet) SetParameters(val interface{}) {
+func (j *jsiiProxy_CloudformationStackSet) SetParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameters",
@@ -1708,7 +1788,7 @@ func (j *jsiiProxy_CloudformationStackSet) SetProvider(val cdktf.TerraformProvid
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSet) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudformationStackSet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1716,7 +1796,7 @@ func (j *jsiiProxy_CloudformationStackSet) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSet) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudformationStackSet) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1780,12 +1860,40 @@ func (c *jsiiProxy_CloudformationStackSet) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1822,12 +1930,54 @@ func (c *jsiiProxy_CloudformationStackSet) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2038,10 +2188,10 @@ func (c *jsiiProxy_CloudformationStackSet) ToTerraform() interface{} {
 }
 
 type CloudformationStackSetAutoDeployment struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#enabled CloudformationStackSet#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#retain_stacks_on_account_removal CloudformationStackSet#retain_stacks_on_account_removal}.
-	RetainStacksOnAccountRemoval interface{} `json:"retainStacksOnAccountRemoval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#enabled CloudformationStackSet#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#retain_stacks_on_account_removal CloudformationStackSet#retain_stacks_on_account_removal}.
+	RetainStacksOnAccountRemoval interface{} `json:"retainStacksOnAccountRemoval" yaml:"retainStacksOnAccountRemoval"`
 }
 
 type CloudformationStackSetAutoDeploymentOutputReference interface {
@@ -2058,12 +2208,17 @@ type CloudformationStackSetAutoDeploymentOutputReference interface {
 	RetainStacksOnAccountRemovalInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -2145,8 +2300,8 @@ func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2155,7 +2310,7 @@ func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) Terrafor
 	return returns
 }
 
-func NewCloudformationStackSetAutoDeploymentOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetAutoDeploymentOutputReference {
+func NewCloudformationStackSetAutoDeploymentOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetAutoDeploymentOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference{}
@@ -2169,7 +2324,7 @@ func NewCloudformationStackSetAutoDeploymentOutputReference(terraformResource cd
 	return &j
 }
 
-func NewCloudformationStackSetAutoDeploymentOutputReference_Override(c CloudformationStackSetAutoDeploymentOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudformationStackSetAutoDeploymentOutputReference_Override(c CloudformationStackSetAutoDeploymentOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2219,7 +2374,7 @@ func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2228,12 +2383,40 @@ func (j *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) SetTerra
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2270,12 +2453,54 @@ func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetNumbe
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2330,46 +2555,46 @@ func (c *jsiiProxy_CloudformationStackSetAutoDeploymentOutputReference) ResetRet
 // AWS CloudFormation.
 type CloudformationStackSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#name CloudformationStackSet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#administration_role_arn CloudformationStackSet#administration_role_arn}.
-	AdministrationRoleArn *string `json:"administrationRoleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#name CloudformationStackSet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#administration_role_arn CloudformationStackSet#administration_role_arn}.
+	AdministrationRoleArn *string `json:"administrationRoleArn" yaml:"administrationRoleArn"`
 	// auto_deployment block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#auto_deployment CloudformationStackSet#auto_deployment}
-	AutoDeployment *CloudformationStackSetAutoDeployment `json:"autoDeployment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#capabilities CloudformationStackSet#capabilities}.
-	Capabilities *[]*string `json:"capabilities"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#description CloudformationStackSet#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#execution_role_name CloudformationStackSet#execution_role_name}.
-	ExecutionRoleName *string `json:"executionRoleName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#parameters CloudformationStackSet#parameters}.
-	Parameters interface{} `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#permission_model CloudformationStackSet#permission_model}.
-	PermissionModel *string `json:"permissionModel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#tags CloudformationStackSet#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#tags_all CloudformationStackSet#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#template_body CloudformationStackSet#template_body}.
-	TemplateBody *string `json:"templateBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#template_url CloudformationStackSet#template_url}.
-	TemplateUrl *string `json:"templateUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#auto_deployment CloudformationStackSet#auto_deployment}
+	AutoDeployment *CloudformationStackSetAutoDeployment `json:"autoDeployment" yaml:"autoDeployment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#capabilities CloudformationStackSet#capabilities}.
+	Capabilities *[]*string `json:"capabilities" yaml:"capabilities"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#description CloudformationStackSet#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#execution_role_name CloudformationStackSet#execution_role_name}.
+	ExecutionRoleName *string `json:"executionRoleName" yaml:"executionRoleName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#parameters CloudformationStackSet#parameters}.
+	Parameters *map[string]*string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#permission_model CloudformationStackSet#permission_model}.
+	PermissionModel *string `json:"permissionModel" yaml:"permissionModel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#tags CloudformationStackSet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#tags_all CloudformationStackSet#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#template_body CloudformationStackSet#template_body}.
+	TemplateBody *string `json:"templateBody" yaml:"templateBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#template_url CloudformationStackSet#template_url}.
+	TemplateUrl *string `json:"templateUrl" yaml:"templateUrl"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#timeouts CloudformationStackSet#timeouts}
-	Timeouts *CloudformationStackSetTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#timeouts CloudformationStackSet#timeouts}
+	Timeouts *CloudformationStackSetTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html aws_cloudformation_stack_set_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance aws_cloudformation_stack_set_instance}.
 type CloudformationStackSetInstance interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -2377,8 +2602,8 @@ type CloudformationStackSetInstance interface {
 	AccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentTargets() CloudformationStackSetInstanceDeploymentTargetsOutputReference
@@ -2390,9 +2615,9 @@ type CloudformationStackSetInstance interface {
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
 	OrganizationalUnitId() *string
-	ParameterOverrides() interface{}
-	SetParameterOverrides(val interface{})
-	ParameterOverridesInput() interface{}
+	ParameterOverrides() *map[string]*string
+	SetParameterOverrides(val *map[string]*string)
+	ParameterOverridesInput() *map[string]*string
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
@@ -2412,10 +2637,15 @@ type CloudformationStackSetInstance interface {
 	Timeouts() CloudformationStackSetInstanceTimeoutsOutputReference
 	TimeoutsInput() *CloudformationStackSetInstanceTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDeploymentTargets(value *CloudformationStackSetInstanceDeploymentTargets)
@@ -2478,8 +2708,8 @@ func (j *jsiiProxy_CloudformationStackSetInstance) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSetInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2578,8 +2808,8 @@ func (j *jsiiProxy_CloudformationStackSetInstance) OrganizationalUnitId() *strin
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstance) ParameterOverrides() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSetInstance) ParameterOverrides() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameterOverrides",
@@ -2588,8 +2818,8 @@ func (j *jsiiProxy_CloudformationStackSetInstance) ParameterOverrides() interfac
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstance) ParameterOverridesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationStackSetInstance) ParameterOverridesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"parameterOverridesInput",
@@ -2738,7 +2968,7 @@ func (j *jsiiProxy_CloudformationStackSetInstance) TimeoutsInput() *Cloudformati
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html aws_cloudformation_stack_set_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance aws_cloudformation_stack_set_instance} Resource.
 func NewCloudformationStackSetInstance(scope constructs.Construct, id *string, config *CloudformationStackSetInstanceConfig) CloudformationStackSetInstance {
 	_init_.Initialize()
 
@@ -2753,7 +2983,7 @@ func NewCloudformationStackSetInstance(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html aws_cloudformation_stack_set_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance aws_cloudformation_stack_set_instance} Resource.
 func NewCloudformationStackSetInstance_Override(c CloudformationStackSetInstance, scope constructs.Construct, id *string, config *CloudformationStackSetInstanceConfig) {
 	_init_.Initialize()
 
@@ -2772,7 +3002,7 @@ func (j *jsiiProxy_CloudformationStackSetInstance) SetAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudformationStackSetInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2796,7 +3026,7 @@ func (j *jsiiProxy_CloudformationStackSetInstance) SetLifecycle(val *cdktf.Terra
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstance) SetParameterOverrides(val interface{}) {
+func (j *jsiiProxy_CloudformationStackSetInstance) SetParameterOverrides(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"parameterOverrides",
@@ -2876,12 +3106,40 @@ func (c *jsiiProxy_CloudformationStackSetInstance) AddOverride(path *string, val
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSetInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2918,12 +3176,54 @@ func (c *jsiiProxy_CloudformationStackSetInstance) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSetInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3088,36 +3388,36 @@ func (c *jsiiProxy_CloudformationStackSetInstance) ToTerraform() interface{} {
 // AWS CloudFormation.
 type CloudformationStackSetInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#stack_set_name CloudformationStackSetInstance#stack_set_name}.
-	StackSetName *string `json:"stackSetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#account_id CloudformationStackSetInstance#account_id}.
-	AccountId *string `json:"accountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#stack_set_name CloudformationStackSetInstance#stack_set_name}.
+	StackSetName *string `json:"stackSetName" yaml:"stackSetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#account_id CloudformationStackSetInstance#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
 	// deployment_targets block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#deployment_targets CloudformationStackSetInstance#deployment_targets}
-	DeploymentTargets *CloudformationStackSetInstanceDeploymentTargets `json:"deploymentTargets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#parameter_overrides CloudformationStackSetInstance#parameter_overrides}.
-	ParameterOverrides interface{} `json:"parameterOverrides"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#region CloudformationStackSetInstance#region}.
-	Region *string `json:"region"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#retain_stack CloudformationStackSetInstance#retain_stack}.
-	RetainStack interface{} `json:"retainStack"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#deployment_targets CloudformationStackSetInstance#deployment_targets}
+	DeploymentTargets *CloudformationStackSetInstanceDeploymentTargets `json:"deploymentTargets" yaml:"deploymentTargets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#parameter_overrides CloudformationStackSetInstance#parameter_overrides}.
+	ParameterOverrides *map[string]*string `json:"parameterOverrides" yaml:"parameterOverrides"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#region CloudformationStackSetInstance#region}.
+	Region *string `json:"region" yaml:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#retain_stack CloudformationStackSetInstance#retain_stack}.
+	RetainStack interface{} `json:"retainStack" yaml:"retainStack"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#timeouts CloudformationStackSetInstance#timeouts}
-	Timeouts *CloudformationStackSetInstanceTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#timeouts CloudformationStackSetInstance#timeouts}
+	Timeouts *CloudformationStackSetInstanceTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type CloudformationStackSetInstanceDeploymentTargets struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#organizational_unit_ids CloudformationStackSetInstance#organizational_unit_ids}.
-	OrganizationalUnitIds *[]*string `json:"organizationalUnitIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#organizational_unit_ids CloudformationStackSetInstance#organizational_unit_ids}.
+	OrganizationalUnitIds *[]*string `json:"organizationalUnitIds" yaml:"organizationalUnitIds"`
 }
 
 type CloudformationStackSetInstanceDeploymentTargetsOutputReference interface {
@@ -3131,12 +3431,17 @@ type CloudformationStackSetInstanceDeploymentTargetsOutputReference interface {
 	OrganizationalUnitIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetOrganizationalUnitIds()
@@ -3197,8 +3502,8 @@ func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3207,7 +3512,7 @@ func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReferenc
 	return returns
 }
 
-func NewCloudformationStackSetInstanceDeploymentTargetsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetInstanceDeploymentTargetsOutputReference {
+func NewCloudformationStackSetInstanceDeploymentTargetsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetInstanceDeploymentTargetsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference{}
@@ -3221,7 +3526,7 @@ func NewCloudformationStackSetInstanceDeploymentTargetsOutputReference(terraform
 	return &j
 }
 
-func NewCloudformationStackSetInstanceDeploymentTargetsOutputReference_Override(c CloudformationStackSetInstanceDeploymentTargetsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudformationStackSetInstanceDeploymentTargetsOutputReference_Override(c CloudformationStackSetInstanceDeploymentTargetsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3263,7 +3568,7 @@ func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3272,12 +3577,40 @@ func (j *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReferenc
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3314,12 +3647,54 @@ func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReferenc
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3364,12 +3739,12 @@ func (c *jsiiProxy_CloudformationStackSetInstanceDeploymentTargetsOutputReferenc
 }
 
 type CloudformationStackSetInstanceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#create CloudformationStackSetInstance#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#delete CloudformationStackSetInstance#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance.html#update CloudformationStackSetInstance#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#create CloudformationStackSetInstance#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#delete CloudformationStackSetInstance#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set_instance#update CloudformationStackSetInstance#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type CloudformationStackSetInstanceTimeoutsOutputReference interface {
@@ -3386,15 +3761,20 @@ type CloudformationStackSetInstanceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -3477,8 +3857,8 @@ func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3507,7 +3887,7 @@ func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) Update
 	return returns
 }
 
-func NewCloudformationStackSetInstanceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetInstanceTimeoutsOutputReference {
+func NewCloudformationStackSetInstanceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetInstanceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference{}
@@ -3521,7 +3901,7 @@ func NewCloudformationStackSetInstanceTimeoutsOutputReference(terraformResource 
 	return &j
 }
 
-func NewCloudformationStackSetInstanceTimeoutsOutputReference_Override(c CloudformationStackSetInstanceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudformationStackSetInstanceTimeoutsOutputReference_Override(c CloudformationStackSetInstanceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3571,7 +3951,7 @@ func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3588,12 +3968,40 @@ func (j *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) SetUpd
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3630,12 +4038,54 @@ func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetNum
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3696,8 +4146,8 @@ func (c *jsiiProxy_CloudformationStackSetInstanceTimeoutsOutputReference) ResetU
 }
 
 type CloudformationStackSetTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set.html#update CloudformationStackSet#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack_set#update CloudformationStackSet#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type CloudformationStackSetTimeoutsOutputReference interface {
@@ -3708,15 +4158,20 @@ type CloudformationStackSetTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetUpdate()
@@ -3757,8 +4212,8 @@ func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3787,7 +4242,7 @@ func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) UpdateInput() 
 	return returns
 }
 
-func NewCloudformationStackSetTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetTimeoutsOutputReference {
+func NewCloudformationStackSetTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudformationStackSetTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudformationStackSetTimeoutsOutputReference{}
@@ -3801,7 +4256,7 @@ func NewCloudformationStackSetTimeoutsOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewCloudformationStackSetTimeoutsOutputReference_Override(c CloudformationStackSetTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudformationStackSetTimeoutsOutputReference_Override(c CloudformationStackSetTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3835,7 +4290,7 @@ func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3852,12 +4307,40 @@ func (j *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) SetUpdate(val 
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3894,12 +4377,54 @@ func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3944,12 +4469,12 @@ func (c *jsiiProxy_CloudformationStackSetTimeoutsOutputReference) ResetUpdate() 
 }
 
 type CloudformationStackTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#create CloudformationStack#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#delete CloudformationStack#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html#update CloudformationStack#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#create CloudformationStack#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#delete CloudformationStack#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_stack#update CloudformationStack#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type CloudformationStackTimeoutsOutputReference interface {
@@ -3966,15 +4491,20 @@ type CloudformationStackTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -4057,8 +4587,8 @@ func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4087,7 +4617,7 @@ func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) UpdateInput() *st
 	return returns
 }
 
-func NewCloudformationStackTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudformationStackTimeoutsOutputReference {
+func NewCloudformationStackTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudformationStackTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudformationStackTimeoutsOutputReference{}
@@ -4101,7 +4631,7 @@ func NewCloudformationStackTimeoutsOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewCloudformationStackTimeoutsOutputReference_Override(c CloudformationStackTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudformationStackTimeoutsOutputReference_Override(c CloudformationStackTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4151,7 +4681,7 @@ func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4168,12 +4698,40 @@ func (j *jsiiProxy_CloudformationStackTimeoutsOutputReference) SetUpdate(val *st
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4210,12 +4768,54 @@ func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4275,14 +4875,14 @@ func (c *jsiiProxy_CloudformationStackTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html aws_cloudformation_type}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type aws_cloudformation_type}.
 type CloudformationType interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultVersionId() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -4295,7 +4895,7 @@ type CloudformationType interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	IsDefaultVersion() interface{}
+	IsDefaultVersion() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	LoggingConfig() CloudformationTypeLoggingConfigOutputReference
@@ -4323,10 +4923,15 @@ type CloudformationType interface {
 	VersionId() *string
 	Visibility() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutLoggingConfig(value *CloudformationTypeLoggingConfig)
@@ -4375,8 +4980,8 @@ func (j *jsiiProxy_CloudformationType) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationType) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationType) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4485,8 +5090,8 @@ func (j *jsiiProxy_CloudformationType) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationType) IsDefaultVersion() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudformationType) IsDefaultVersion() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"isDefaultVersion",
@@ -4705,7 +5310,7 @@ func (j *jsiiProxy_CloudformationType) Visibility() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html aws_cloudformation_type} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type aws_cloudformation_type} Resource.
 func NewCloudformationType(scope constructs.Construct, id *string, config *CloudformationTypeConfig) CloudformationType {
 	_init_.Initialize()
 
@@ -4720,7 +5325,7 @@ func NewCloudformationType(scope constructs.Construct, id *string, config *Cloud
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html aws_cloudformation_type} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type aws_cloudformation_type} Resource.
 func NewCloudformationType_Override(c CloudformationType, scope constructs.Construct, id *string, config *CloudformationTypeConfig) {
 	_init_.Initialize()
 
@@ -4731,7 +5336,7 @@ func NewCloudformationType_Override(c CloudformationType, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_CloudformationType) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudformationType) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4835,12 +5440,40 @@ func (c *jsiiProxy_CloudformationType) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationType) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationType) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationType) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4877,12 +5510,54 @@ func (c *jsiiProxy_CloudformationType) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationType) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationType) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationType) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationType) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5015,32 +5690,32 @@ func (c *jsiiProxy_CloudformationType) ToTerraform() interface{} {
 // AWS CloudFormation.
 type CloudformationTypeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html#schema_handler_package CloudformationType#schema_handler_package}.
-	SchemaHandlerPackage *string `json:"schemaHandlerPackage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html#type_name CloudformationType#type_name}.
-	TypeName *string `json:"typeName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html#execution_role_arn CloudformationType#execution_role_arn}.
-	ExecutionRoleArn *string `json:"executionRoleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type#schema_handler_package CloudformationType#schema_handler_package}.
+	SchemaHandlerPackage *string `json:"schemaHandlerPackage" yaml:"schemaHandlerPackage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type#type_name CloudformationType#type_name}.
+	TypeName *string `json:"typeName" yaml:"typeName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type#execution_role_arn CloudformationType#execution_role_arn}.
+	ExecutionRoleArn *string `json:"executionRoleArn" yaml:"executionRoleArn"`
 	// logging_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html#logging_config CloudformationType#logging_config}
-	LoggingConfig *CloudformationTypeLoggingConfig `json:"loggingConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html#type CloudformationType#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type#logging_config CloudformationType#logging_config}
+	LoggingConfig *CloudformationTypeLoggingConfig `json:"loggingConfig" yaml:"loggingConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type#type CloudformationType#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type CloudformationTypeLoggingConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html#log_group_name CloudformationType#log_group_name}.
-	LogGroupName *string `json:"logGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type.html#log_role_arn CloudformationType#log_role_arn}.
-	LogRoleArn *string `json:"logRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type#log_group_name CloudformationType#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudformation_type#log_role_arn CloudformationType#log_role_arn}.
+	LogRoleArn *string `json:"logRoleArn" yaml:"logRoleArn"`
 }
 
 type CloudformationTypeLoggingConfigOutputReference interface {
@@ -5057,12 +5732,17 @@ type CloudformationTypeLoggingConfigOutputReference interface {
 	LogRoleArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5142,8 +5822,8 @@ func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5152,7 +5832,7 @@ func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) TerraformReso
 	return returns
 }
 
-func NewCloudformationTypeLoggingConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudformationTypeLoggingConfigOutputReference {
+func NewCloudformationTypeLoggingConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudformationTypeLoggingConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudformationTypeLoggingConfigOutputReference{}
@@ -5166,7 +5846,7 @@ func NewCloudformationTypeLoggingConfigOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewCloudformationTypeLoggingConfigOutputReference_Override(c CloudformationTypeLoggingConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudformationTypeLoggingConfigOutputReference_Override(c CloudformationTypeLoggingConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5216,7 +5896,7 @@ func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5225,12 +5905,40 @@ func (j *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5267,12 +5975,54 @@ func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5308,13 +6058,13 @@ func (c *jsiiProxy_CloudformationTypeLoggingConfigOutputReference) Interpolation
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export.html aws_cloudformation_export}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export aws_cloudformation_export}.
 type DataAwsCloudformationExport interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExportingStackId() *string
@@ -5335,10 +6085,15 @@ type DataAwsCloudformationExport interface {
 	TerraformResourceType() *string
 	Value() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5373,8 +6128,8 @@ func (j *jsiiProxy_DataAwsCloudformationExport) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationExport) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudformationExport) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5533,7 +6288,7 @@ func (j *jsiiProxy_DataAwsCloudformationExport) Value() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export.html aws_cloudformation_export} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export aws_cloudformation_export} Data Source.
 func NewDataAwsCloudformationExport(scope constructs.Construct, id *string, config *DataAwsCloudformationExportConfig) DataAwsCloudformationExport {
 	_init_.Initialize()
 
@@ -5548,7 +6303,7 @@ func NewDataAwsCloudformationExport(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export.html aws_cloudformation_export} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export aws_cloudformation_export} Data Source.
 func NewDataAwsCloudformationExport_Override(d DataAwsCloudformationExport, scope constructs.Construct, id *string, config *DataAwsCloudformationExportConfig) {
 	_init_.Initialize()
 
@@ -5559,7 +6314,7 @@ func NewDataAwsCloudformationExport_Override(d DataAwsCloudformationExport, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudformationExport) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudformationExport) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5639,12 +6394,40 @@ func (d *jsiiProxy_DataAwsCloudformationExport) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudformationExport) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudformationExport) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationExport) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5681,12 +6464,54 @@ func (d *jsiiProxy_DataAwsCloudformationExport) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudformationExport) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationExport) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudformationExport) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationExport) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5787,29 +6612,29 @@ func (d *jsiiProxy_DataAwsCloudformationExport) ToTerraform() interface{} {
 // AWS CloudFormation.
 type DataAwsCloudformationExportConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export.html#name DataAwsCloudformationExport#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_export#name DataAwsCloudformationExport#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack.html aws_cloudformation_stack}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack aws_cloudformation_stack}.
 type DataAwsCloudformationStack interface {
 	cdktf.TerraformDataSource
 	Capabilities() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
-	DisableRollback() interface{}
+	DisableRollback() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	IamRoleArn() *string
@@ -5824,23 +6649,28 @@ type DataAwsCloudformationStack interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TemplateBody() *string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	TimeoutInMinutes() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
-	Outputs(key *string) *string
+	Outputs(key *string) interface{}
 	OverrideLogicalId(newLogicalId *string)
-	Parameters(key *string) *string
+	Parameters(key *string) interface{}
 	ResetOverrideLogicalId()
 	ResetTags()
 	SynthesizeAttributes() *map[string]interface{}
@@ -5884,8 +6714,8 @@ func (j *jsiiProxy_DataAwsCloudformationStack) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationStack) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudformationStack) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5914,8 +6744,8 @@ func (j *jsiiProxy_DataAwsCloudformationStack) Description() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationStack) DisableRollback() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudformationStack) DisableRollback() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"disableRollback",
@@ -6034,8 +6864,8 @@ func (j *jsiiProxy_DataAwsCloudformationStack) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationStack) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudformationStack) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6044,8 +6874,8 @@ func (j *jsiiProxy_DataAwsCloudformationStack) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationStack) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudformationStack) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6104,7 +6934,7 @@ func (j *jsiiProxy_DataAwsCloudformationStack) TimeoutInMinutes() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack.html aws_cloudformation_stack} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack aws_cloudformation_stack} Data Source.
 func NewDataAwsCloudformationStack(scope constructs.Construct, id *string, config *DataAwsCloudformationStackConfig) DataAwsCloudformationStack {
 	_init_.Initialize()
 
@@ -6119,7 +6949,7 @@ func NewDataAwsCloudformationStack(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack.html aws_cloudformation_stack} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack aws_cloudformation_stack} Data Source.
 func NewDataAwsCloudformationStack_Override(d DataAwsCloudformationStack, scope constructs.Construct, id *string, config *DataAwsCloudformationStackConfig) {
 	_init_.Initialize()
 
@@ -6130,7 +6960,7 @@ func NewDataAwsCloudformationStack_Override(d DataAwsCloudformationStack, scope 
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudformationStack) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudformationStack) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6170,7 +7000,7 @@ func (j *jsiiProxy_DataAwsCloudformationStack) SetProvider(val cdktf.TerraformPr
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudformationStack) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudformationStack) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6218,12 +7048,40 @@ func (d *jsiiProxy_DataAwsCloudformationStack) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudformationStack) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudformationStack) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationStack) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6260,12 +7118,54 @@ func (d *jsiiProxy_DataAwsCloudformationStack) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudformationStack) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationStack) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudformationStack) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationStack) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6287,8 +7187,8 @@ func (d *jsiiProxy_DataAwsCloudformationStack) InterpolationForAttribute(terrafo
 	return returns
 }
 
-func (d *jsiiProxy_DataAwsCloudformationStack) Outputs(key *string) *string {
-	var returns *string
+func (d *jsiiProxy_DataAwsCloudformationStack) Outputs(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		d,
@@ -6310,8 +7210,8 @@ func (d *jsiiProxy_DataAwsCloudformationStack) OverrideLogicalId(newLogicalId *s
 	)
 }
 
-func (d *jsiiProxy_DataAwsCloudformationStack) Parameters(key *string) *string {
-	var returns *string
+func (d *jsiiProxy_DataAwsCloudformationStack) Parameters(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		d,
@@ -6400,27 +7300,27 @@ func (d *jsiiProxy_DataAwsCloudformationStack) ToTerraform() interface{} {
 // AWS CloudFormation.
 type DataAwsCloudformationStackConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack.html#name DataAwsCloudformationStack#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack.html#tags DataAwsCloudformationStack#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack#name DataAwsCloudformationStack#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_stack#tags DataAwsCloudformationStack#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type.html aws_cloudformation_type}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type aws_cloudformation_type}.
 type DataAwsCloudformationType interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultVersionId() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -6431,7 +7331,7 @@ type DataAwsCloudformationType interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	IsDefaultVersion() interface{}
+	IsDefaultVersion() cdktf.IResolvable
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
@@ -6456,10 +7356,15 @@ type DataAwsCloudformationType interface {
 	VersionIdInput() *string
 	Visibility() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	LoggingConfig(index *string) DataAwsCloudformationTypeLoggingConfig
 	OverrideLogicalId(newLogicalId *string)
@@ -6508,8 +7413,8 @@ func (j *jsiiProxy_DataAwsCloudformationType) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationType) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudformationType) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6608,8 +7513,8 @@ func (j *jsiiProxy_DataAwsCloudformationType) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationType) IsDefaultVersion() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudformationType) IsDefaultVersion() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"isDefaultVersion",
@@ -6798,7 +7703,7 @@ func (j *jsiiProxy_DataAwsCloudformationType) Visibility() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type.html aws_cloudformation_type} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type aws_cloudformation_type} Data Source.
 func NewDataAwsCloudformationType(scope constructs.Construct, id *string, config *DataAwsCloudformationTypeConfig) DataAwsCloudformationType {
 	_init_.Initialize()
 
@@ -6813,7 +7718,7 @@ func NewDataAwsCloudformationType(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type.html aws_cloudformation_type} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type aws_cloudformation_type} Data Source.
 func NewDataAwsCloudformationType_Override(d DataAwsCloudformationType, scope constructs.Construct, id *string, config *DataAwsCloudformationTypeConfig) {
 	_init_.Initialize()
 
@@ -6824,7 +7729,7 @@ func NewDataAwsCloudformationType_Override(d DataAwsCloudformationType, scope co
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudformationType) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudformationType) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6920,12 +7825,40 @@ func (d *jsiiProxy_DataAwsCloudformationType) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudformationType) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudformationType) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationType) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6962,12 +7895,54 @@ func (d *jsiiProxy_DataAwsCloudformationType) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudformationType) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationType) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudformationType) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationType) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7105,19 +8080,19 @@ func (d *jsiiProxy_DataAwsCloudformationType) ToTerraform() interface{} {
 // AWS CloudFormation.
 type DataAwsCloudformationTypeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type.html#type DataAwsCloudformationType#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type.html#type_name DataAwsCloudformationType#type_name}.
-	TypeName *string `json:"typeName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type.html#version_id DataAwsCloudformationType#version_id}.
-	VersionId *string `json:"versionId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type#type DataAwsCloudformationType#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type#type_name DataAwsCloudformationType#type_name}.
+	TypeName *string `json:"typeName" yaml:"typeName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudformation_type#version_id DataAwsCloudformationType#version_id}.
+	VersionId *string `json:"versionId" yaml:"versionId"`
 }
 
 type DataAwsCloudformationTypeLoggingConfig interface {
@@ -7128,12 +8103,19 @@ type DataAwsCloudformationTypeLoggingConfig interface {
 	LogRoleArn() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7182,8 +8164,8 @@ func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7192,15 +8174,25 @@ func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) TerraformResource() c
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudformationTypeLoggingConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudformationTypeLoggingConfig {
+func NewDataAwsCloudformationTypeLoggingConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudformationTypeLoggingConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudformationTypeLoggingConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudformation.DataAwsCloudformationTypeLoggingConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7208,12 +8200,12 @@ func NewDataAwsCloudformationTypeLoggingConfig(terraformResource cdktf.ITerrafor
 }
 
 // Experimental.
-func NewDataAwsCloudformationTypeLoggingConfig_Override(d DataAwsCloudformationTypeLoggingConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudformationTypeLoggingConfig_Override(d DataAwsCloudformationTypeLoggingConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudformation.DataAwsCloudformationTypeLoggingConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -7234,7 +8226,7 @@ func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7242,13 +8234,49 @@ func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) SetTerraformResource(
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7285,12 +8313,54 @@ func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetNumberAttribute(te
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudformationTypeLoggingConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

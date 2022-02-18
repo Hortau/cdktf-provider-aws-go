@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/efs/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point.html aws_efs_access_point}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point aws_efs_access_point}.
 type DataAwsEfsAccessPoint interface {
 	cdktf.TerraformDataSource
 	AccessPointId() *string
@@ -18,8 +18,8 @@ type DataAwsEfsAccessPoint interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemArn() *string
@@ -34,17 +34,22 @@ type DataAwsEfsAccessPoint interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PosixUser(index *string) DataAwsEfsAccessPointPosixUser
@@ -112,8 +117,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPoint) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsAccessPoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -232,8 +237,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPoint) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPoint) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsAccessPoint) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -242,8 +247,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPoint) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPoint) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsAccessPoint) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -282,7 +287,7 @@ func (j *jsiiProxy_DataAwsEfsAccessPoint) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point.html aws_efs_access_point} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point aws_efs_access_point} Data Source.
 func NewDataAwsEfsAccessPoint(scope constructs.Construct, id *string, config *DataAwsEfsAccessPointConfig) DataAwsEfsAccessPoint {
 	_init_.Initialize()
 
@@ -297,7 +302,7 @@ func NewDataAwsEfsAccessPoint(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point.html aws_efs_access_point} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point aws_efs_access_point} Data Source.
 func NewDataAwsEfsAccessPoint_Override(d DataAwsEfsAccessPoint, scope constructs.Construct, id *string, config *DataAwsEfsAccessPointConfig) {
 	_init_.Initialize()
 
@@ -316,7 +321,7 @@ func (j *jsiiProxy_DataAwsEfsAccessPoint) SetAccessPointId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPoint) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEfsAccessPoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -348,7 +353,7 @@ func (j *jsiiProxy_DataAwsEfsAccessPoint) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPoint) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsEfsAccessPoint) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -396,12 +401,40 @@ func (d *jsiiProxy_DataAwsEfsAccessPoint) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsAccessPoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -438,12 +471,54 @@ func (d *jsiiProxy_DataAwsEfsAccessPoint) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsAccessPoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -578,17 +653,17 @@ func (d *jsiiProxy_DataAwsEfsAccessPoint) ToTerraform() interface{} {
 // AWS EFS.
 type DataAwsEfsAccessPointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point.html#access_point_id DataAwsEfsAccessPoint#access_point_id}.
-	AccessPointId *string `json:"accessPointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point.html#tags DataAwsEfsAccessPoint#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point#access_point_id DataAwsEfsAccessPoint#access_point_id}.
+	AccessPointId *string `json:"accessPointId" yaml:"accessPointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_access_point#tags DataAwsEfsAccessPoint#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsEfsAccessPointPosixUser interface {
@@ -596,16 +671,23 @@ type DataAwsEfsAccessPointPosixUser interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	Gid() *float64
-	SecondaryGids() interface{}
+	SecondaryGids() *[]*float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Uid() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -634,8 +716,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) Gid() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) SecondaryGids() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) SecondaryGids() *[]*float64 {
+	var returns *[]*float64
 	_jsii_.Get(
 		j,
 		"secondaryGids",
@@ -654,8 +736,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -674,15 +756,25 @@ func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) Uid() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsEfsAccessPointPosixUser(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsEfsAccessPointPosixUser {
+func NewDataAwsEfsAccessPointPosixUser(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsEfsAccessPointPosixUser {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEfsAccessPointPosixUser{}
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsAccessPointPosixUser",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -690,12 +782,12 @@ func NewDataAwsEfsAccessPointPosixUser(terraformResource cdktf.ITerraformResourc
 }
 
 // Experimental.
-func NewDataAwsEfsAccessPointPosixUser_Override(d DataAwsEfsAccessPointPosixUser, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsEfsAccessPointPosixUser_Override(d DataAwsEfsAccessPointPosixUser, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsAccessPointPosixUser",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -716,7 +808,7 @@ func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -724,13 +816,49 @@ func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) SetTerraformResource(val cdkt
 	)
 }
 
+func (j *jsiiProxy_DataAwsEfsAccessPointPosixUser) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -767,12 +895,54 @@ func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointPosixUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -798,16 +968,23 @@ type DataAwsEfsAccessPointRootDirectory interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	CreationInfo() interface{}
+	CreationInfo() cdktf.IResolvable
 	Path() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -826,8 +1003,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) ComplexComputedListIndex(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) CreationInfo() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) CreationInfo() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"creationInfo",
@@ -856,8 +1033,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -866,15 +1043,25 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) TerraformResource() cdktf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsEfsAccessPointRootDirectory(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsEfsAccessPointRootDirectory {
+func NewDataAwsEfsAccessPointRootDirectory(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsEfsAccessPointRootDirectory {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEfsAccessPointRootDirectory{}
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectory",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -882,12 +1069,12 @@ func NewDataAwsEfsAccessPointRootDirectory(terraformResource cdktf.ITerraformRes
 }
 
 // Experimental.
-func NewDataAwsEfsAccessPointRootDirectory_Override(d DataAwsEfsAccessPointRootDirectory, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsEfsAccessPointRootDirectory_Override(d DataAwsEfsAccessPointRootDirectory, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectory",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -908,7 +1095,7 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -916,13 +1103,49 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) SetTerraformResource(val 
 	)
 }
 
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectory) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -959,12 +1182,54 @@ func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectory) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -995,12 +1260,19 @@ type DataAwsEfsAccessPointRootDirectoryCreationInfo interface {
 	Permissions() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1059,8 +1331,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1069,15 +1341,25 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) TerraformReso
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsEfsAccessPointRootDirectoryCreationInfo(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsEfsAccessPointRootDirectoryCreationInfo {
+func NewDataAwsEfsAccessPointRootDirectoryCreationInfo(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsEfsAccessPointRootDirectoryCreationInfo {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo{}
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectoryCreationInfo",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1085,12 +1367,12 @@ func NewDataAwsEfsAccessPointRootDirectoryCreationInfo(terraformResource cdktf.I
 }
 
 // Experimental.
-func NewDataAwsEfsAccessPointRootDirectoryCreationInfo_Override(d DataAwsEfsAccessPointRootDirectoryCreationInfo, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsEfsAccessPointRootDirectoryCreationInfo_Override(d DataAwsEfsAccessPointRootDirectoryCreationInfo, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsAccessPointRootDirectoryCreationInfo",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1111,7 +1393,7 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1119,13 +1401,49 @@ func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) SetTerraformR
 	)
 }
 
+func (j *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1162,12 +1480,54 @@ func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1189,14 +1549,14 @@ func (d *jsiiProxy_DataAwsEfsAccessPointRootDirectoryCreationInfo) Interpolation
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points.html aws_efs_access_points}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points aws_efs_access_points}.
 type DataAwsEfsAccessPoints interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemId() *string
@@ -1216,10 +1576,15 @@ type DataAwsEfsAccessPoints interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1264,8 +1629,8 @@ func (j *jsiiProxy_DataAwsEfsAccessPoints) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPoints) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsAccessPoints) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1414,7 +1779,7 @@ func (j *jsiiProxy_DataAwsEfsAccessPoints) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points.html aws_efs_access_points} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points aws_efs_access_points} Data Source.
 func NewDataAwsEfsAccessPoints(scope constructs.Construct, id *string, config *DataAwsEfsAccessPointsConfig) DataAwsEfsAccessPoints {
 	_init_.Initialize()
 
@@ -1429,7 +1794,7 @@ func NewDataAwsEfsAccessPoints(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points.html aws_efs_access_points} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points aws_efs_access_points} Data Source.
 func NewDataAwsEfsAccessPoints_Override(d DataAwsEfsAccessPoints, scope constructs.Construct, id *string, config *DataAwsEfsAccessPointsConfig) {
 	_init_.Initialize()
 
@@ -1440,7 +1805,7 @@ func NewDataAwsEfsAccessPoints_Override(d DataAwsEfsAccessPoints, scope construc
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsAccessPoints) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEfsAccessPoints) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1520,12 +1885,40 @@ func (d *jsiiProxy_DataAwsEfsAccessPoints) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoints) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsAccessPoints) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoints) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1562,12 +1955,54 @@ func (d *jsiiProxy_DataAwsEfsAccessPoints) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoints) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoints) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsAccessPoints) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsAccessPoints) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1668,18 +2103,18 @@ func (d *jsiiProxy_DataAwsEfsAccessPoints) ToTerraform() interface{} {
 // AWS EFS.
 type DataAwsEfsAccessPointsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points.html#file_system_id DataAwsEfsAccessPoints#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_access_points#file_system_id DataAwsEfsAccessPoints#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system.html aws_efs_file_system}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system aws_efs_file_system}.
 type DataAwsEfsFileSystem interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -1687,15 +2122,15 @@ type DataAwsEfsFileSystem interface {
 	AvailabilityZoneName() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationToken() *string
 	SetCreationToken(val *string)
 	CreationTokenInput() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsName() *string
-	Encrypted() interface{}
+	Encrypted() cdktf.IResolvable
 	FileSystemId() *string
 	SetFileSystemId(val *string)
 	FileSystemIdInput() *string
@@ -1712,18 +2147,23 @@ type DataAwsEfsFileSystem interface {
 	ProvisionedThroughputInMibps() *float64
 	RawOverrides() interface{}
 	SizeInBytes() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	ThroughputMode() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	LifecyclePolicy(index *string) DataAwsEfsFileSystemLifecyclePolicy
 	OverrideLogicalId(newLogicalId *string)
@@ -1792,8 +2232,8 @@ func (j *jsiiProxy_DataAwsEfsFileSystem) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystem) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsFileSystem) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1842,8 +2282,8 @@ func (j *jsiiProxy_DataAwsEfsFileSystem) DnsName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystem) Encrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsFileSystem) Encrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"encrypted",
@@ -1982,8 +2422,8 @@ func (j *jsiiProxy_DataAwsEfsFileSystem) SizeInBytes() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystem) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1992,8 +2432,8 @@ func (j *jsiiProxy_DataAwsEfsFileSystem) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystem) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2042,7 +2482,7 @@ func (j *jsiiProxy_DataAwsEfsFileSystem) ThroughputMode() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system.html aws_efs_file_system} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system aws_efs_file_system} Data Source.
 func NewDataAwsEfsFileSystem(scope constructs.Construct, id *string, config *DataAwsEfsFileSystemConfig) DataAwsEfsFileSystem {
 	_init_.Initialize()
 
@@ -2057,7 +2497,7 @@ func NewDataAwsEfsFileSystem(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system.html aws_efs_file_system} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system aws_efs_file_system} Data Source.
 func NewDataAwsEfsFileSystem_Override(d DataAwsEfsFileSystem, scope constructs.Construct, id *string, config *DataAwsEfsFileSystemConfig) {
 	_init_.Initialize()
 
@@ -2068,7 +2508,7 @@ func NewDataAwsEfsFileSystem_Override(d DataAwsEfsFileSystem, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystem) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEfsFileSystem) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2116,7 +2556,7 @@ func (j *jsiiProxy_DataAwsEfsFileSystem) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystem) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsEfsFileSystem) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2164,12 +2604,40 @@ func (d *jsiiProxy_DataAwsEfsFileSystem) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2206,12 +2674,54 @@ func (d *jsiiProxy_DataAwsEfsFileSystem) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsFileSystem) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2349,19 +2859,19 @@ func (d *jsiiProxy_DataAwsEfsFileSystem) ToTerraform() interface{} {
 // AWS EFS.
 type DataAwsEfsFileSystemConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system.html#creation_token DataAwsEfsFileSystem#creation_token}.
-	CreationToken *string `json:"creationToken"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system.html#file_system_id DataAwsEfsFileSystem#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system.html#tags DataAwsEfsFileSystem#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system#creation_token DataAwsEfsFileSystem#creation_token}.
+	CreationToken *string `json:"creationToken" yaml:"creationToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system#file_system_id DataAwsEfsFileSystem#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_file_system#tags DataAwsEfsFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsEfsFileSystemLifecyclePolicy interface {
@@ -2370,14 +2880,21 @@ type DataAwsEfsFileSystemLifecyclePolicy interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TransitionToIa() *string
 	TransitionToPrimaryStorageClass() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2406,8 +2923,8 @@ func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2436,15 +2953,25 @@ func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) TransitionToPrimaryStora
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsEfsFileSystemLifecyclePolicy(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsEfsFileSystemLifecyclePolicy {
+func NewDataAwsEfsFileSystemLifecyclePolicy(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsEfsFileSystemLifecyclePolicy {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy{}
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsFileSystemLifecyclePolicy",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2452,12 +2979,12 @@ func NewDataAwsEfsFileSystemLifecyclePolicy(terraformResource cdktf.ITerraformRe
 }
 
 // Experimental.
-func NewDataAwsEfsFileSystemLifecyclePolicy_Override(d DataAwsEfsFileSystemLifecyclePolicy, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsEfsFileSystemLifecyclePolicy_Override(d DataAwsEfsFileSystemLifecyclePolicy, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.DataAwsEfsFileSystemLifecyclePolicy",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2478,7 +3005,7 @@ func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2486,13 +3013,49 @@ func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) SetTerraformResource(val
 	)
 }
 
+func (j *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2529,12 +3092,54 @@ func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2556,7 +3161,7 @@ func (d *jsiiProxy_DataAwsEfsFileSystemLifecyclePolicy) InterpolationForAttribut
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target.html aws_efs_mount_target}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target aws_efs_mount_target}.
 type DataAwsEfsMountTarget interface {
 	cdktf.TerraformDataSource
 	AccessPointId() *string
@@ -2566,8 +3171,8 @@ type DataAwsEfsMountTarget interface {
 	AvailabilityZoneName() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsName() *string
@@ -2597,10 +3202,15 @@ type DataAwsEfsMountTarget interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAccessPointId()
@@ -2678,8 +3288,8 @@ func (j *jsiiProxy_DataAwsEfsMountTarget) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEfsMountTarget) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEfsMountTarget) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2918,7 +3528,7 @@ func (j *jsiiProxy_DataAwsEfsMountTarget) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target.html aws_efs_mount_target} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target aws_efs_mount_target} Data Source.
 func NewDataAwsEfsMountTarget(scope constructs.Construct, id *string, config *DataAwsEfsMountTargetConfig) DataAwsEfsMountTarget {
 	_init_.Initialize()
 
@@ -2933,7 +3543,7 @@ func NewDataAwsEfsMountTarget(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target.html aws_efs_mount_target} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target aws_efs_mount_target} Data Source.
 func NewDataAwsEfsMountTarget_Override(d DataAwsEfsMountTarget, scope constructs.Construct, id *string, config *DataAwsEfsMountTargetConfig) {
 	_init_.Initialize()
 
@@ -2952,7 +3562,7 @@ func (j *jsiiProxy_DataAwsEfsMountTarget) SetAccessPointId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsEfsMountTarget) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEfsMountTarget) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3040,12 +3650,40 @@ func (d *jsiiProxy_DataAwsEfsMountTarget) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsMountTarget) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsMountTarget) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsMountTarget) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3082,12 +3720,54 @@ func (d *jsiiProxy_DataAwsEfsMountTarget) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEfsMountTarget) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsMountTarget) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEfsMountTarget) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEfsMountTarget) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3212,29 +3892,29 @@ func (d *jsiiProxy_DataAwsEfsMountTarget) ToTerraform() interface{} {
 // AWS EFS.
 type DataAwsEfsMountTargetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target.html#access_point_id DataAwsEfsMountTarget#access_point_id}.
-	AccessPointId *string `json:"accessPointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target.html#file_system_id DataAwsEfsMountTarget#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target.html#mount_target_id DataAwsEfsMountTarget#mount_target_id}.
-	MountTargetId *string `json:"mountTargetId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target#access_point_id DataAwsEfsMountTarget#access_point_id}.
+	AccessPointId *string `json:"accessPointId" yaml:"accessPointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target#file_system_id DataAwsEfsMountTarget#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/efs_mount_target#mount_target_id DataAwsEfsMountTarget#mount_target_id}.
+	MountTargetId *string `json:"mountTargetId" yaml:"mountTargetId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html aws_efs_access_point}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point aws_efs_access_point}.
 type EfsAccessPoint interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemArn() *string
@@ -3255,20 +3935,25 @@ type EfsAccessPoint interface {
 	RawOverrides() interface{}
 	RootDirectory() EfsAccessPointRootDirectoryOutputReference
 	RootDirectoryInput() *EfsAccessPointRootDirectory
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPosixUser(value *EfsAccessPointPosixUser)
@@ -3319,8 +4004,8 @@ func (j *jsiiProxy_EfsAccessPoint) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsAccessPoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3489,8 +4174,8 @@ func (j *jsiiProxy_EfsAccessPoint) RootDirectoryInput() *EfsAccessPointRootDirec
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPoint) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsAccessPoint) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3499,8 +4184,8 @@ func (j *jsiiProxy_EfsAccessPoint) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPoint) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsAccessPoint) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3509,8 +4194,8 @@ func (j *jsiiProxy_EfsAccessPoint) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPoint) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsAccessPoint) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3519,8 +4204,8 @@ func (j *jsiiProxy_EfsAccessPoint) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPoint) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsAccessPoint) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3559,7 +4244,7 @@ func (j *jsiiProxy_EfsAccessPoint) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html aws_efs_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point aws_efs_access_point} Resource.
 func NewEfsAccessPoint(scope constructs.Construct, id *string, config *EfsAccessPointConfig) EfsAccessPoint {
 	_init_.Initialize()
 
@@ -3574,7 +4259,7 @@ func NewEfsAccessPoint(scope constructs.Construct, id *string, config *EfsAccess
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html aws_efs_access_point} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point aws_efs_access_point} Resource.
 func NewEfsAccessPoint_Override(e EfsAccessPoint, scope constructs.Construct, id *string, config *EfsAccessPointConfig) {
 	_init_.Initialize()
 
@@ -3585,7 +4270,7 @@ func NewEfsAccessPoint_Override(e EfsAccessPoint, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_EfsAccessPoint) SetCount(val interface{}) {
+func (j *jsiiProxy_EfsAccessPoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3625,7 +4310,7 @@ func (j *jsiiProxy_EfsAccessPoint) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_EfsAccessPoint) SetTags(val interface{}) {
+func (j *jsiiProxy_EfsAccessPoint) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3633,7 +4318,7 @@ func (j *jsiiProxy_EfsAccessPoint) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EfsAccessPoint) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EfsAccessPoint) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3681,12 +4366,40 @@ func (e *jsiiProxy_EfsAccessPoint) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsAccessPoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsAccessPoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3723,12 +4436,54 @@ func (e *jsiiProxy_EfsAccessPoint) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsAccessPoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsAccessPoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3877,36 +4632,36 @@ func (e *jsiiProxy_EfsAccessPoint) ToTerraform() interface{} {
 // AWS EFS.
 type EfsAccessPointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#file_system_id EfsAccessPoint#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#file_system_id EfsAccessPoint#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
 	// posix_user block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#posix_user EfsAccessPoint#posix_user}
-	PosixUser *EfsAccessPointPosixUser `json:"posixUser"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#posix_user EfsAccessPoint#posix_user}
+	PosixUser *EfsAccessPointPosixUser `json:"posixUser" yaml:"posixUser"`
 	// root_directory block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#root_directory EfsAccessPoint#root_directory}
-	RootDirectory *EfsAccessPointRootDirectory `json:"rootDirectory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#tags EfsAccessPoint#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#tags_all EfsAccessPoint#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#root_directory EfsAccessPoint#root_directory}
+	RootDirectory *EfsAccessPointRootDirectory `json:"rootDirectory" yaml:"rootDirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#tags EfsAccessPoint#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#tags_all EfsAccessPoint#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type EfsAccessPointPosixUser struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#gid EfsAccessPoint#gid}.
-	Gid *float64 `json:"gid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#uid EfsAccessPoint#uid}.
-	Uid *float64 `json:"uid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#secondary_gids EfsAccessPoint#secondary_gids}.
-	SecondaryGids *[]*float64 `json:"secondaryGids"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#gid EfsAccessPoint#gid}.
+	Gid *float64 `json:"gid" yaml:"gid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#uid EfsAccessPoint#uid}.
+	Uid *float64 `json:"uid" yaml:"uid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#secondary_gids EfsAccessPoint#secondary_gids}.
+	SecondaryGids *[]*float64 `json:"secondaryGids" yaml:"secondaryGids"`
 }
 
 type EfsAccessPointPosixUserOutputReference interface {
@@ -3923,15 +4678,20 @@ type EfsAccessPointPosixUserOutputReference interface {
 	SecondaryGidsInput() *[]*float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Uid() *float64
 	SetUid(val *float64)
 	UidInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSecondaryGids()
@@ -4012,8 +4772,8 @@ func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4042,7 +4802,7 @@ func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) UidInput() *float64 {
 	return returns
 }
 
-func NewEfsAccessPointPosixUserOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EfsAccessPointPosixUserOutputReference {
+func NewEfsAccessPointPosixUserOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EfsAccessPointPosixUserOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EfsAccessPointPosixUserOutputReference{}
@@ -4056,7 +4816,7 @@ func NewEfsAccessPointPosixUserOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewEfsAccessPointPosixUserOutputReference_Override(e EfsAccessPointPosixUserOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEfsAccessPointPosixUserOutputReference_Override(e EfsAccessPointPosixUserOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4106,7 +4866,7 @@ func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4123,12 +4883,40 @@ func (j *jsiiProxy_EfsAccessPointPosixUserOutputReference) SetUid(val *float64) 
 }
 
 // Experimental.
-func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4165,12 +4953,54 @@ func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4217,19 +5047,19 @@ func (e *jsiiProxy_EfsAccessPointPosixUserOutputReference) ResetSecondaryGids() 
 type EfsAccessPointRootDirectory struct {
 	// creation_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#creation_info EfsAccessPoint#creation_info}
-	CreationInfo *EfsAccessPointRootDirectoryCreationInfo `json:"creationInfo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#path EfsAccessPoint#path}.
-	Path *string `json:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#creation_info EfsAccessPoint#creation_info}
+	CreationInfo *EfsAccessPointRootDirectoryCreationInfo `json:"creationInfo" yaml:"creationInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#path EfsAccessPoint#path}.
+	Path *string `json:"path" yaml:"path"`
 }
 
 type EfsAccessPointRootDirectoryCreationInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#owner_gid EfsAccessPoint#owner_gid}.
-	OwnerGid *float64 `json:"ownerGid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#owner_uid EfsAccessPoint#owner_uid}.
-	OwnerUid *float64 `json:"ownerUid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point.html#permissions EfsAccessPoint#permissions}.
-	Permissions *string `json:"permissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#owner_gid EfsAccessPoint#owner_gid}.
+	OwnerGid *float64 `json:"ownerGid" yaml:"ownerGid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#owner_uid EfsAccessPoint#owner_uid}.
+	OwnerUid *float64 `json:"ownerUid" yaml:"ownerUid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_access_point#permissions EfsAccessPoint#permissions}.
+	Permissions *string `json:"permissions" yaml:"permissions"`
 }
 
 type EfsAccessPointRootDirectoryCreationInfoOutputReference interface {
@@ -4249,12 +5079,17 @@ type EfsAccessPointRootDirectoryCreationInfoOutputReference interface {
 	PermissionsInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -4354,8 +5189,8 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4364,7 +5199,7 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) Terra
 	return returns
 }
 
-func NewEfsAccessPointRootDirectoryCreationInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EfsAccessPointRootDirectoryCreationInfoOutputReference {
+func NewEfsAccessPointRootDirectoryCreationInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EfsAccessPointRootDirectoryCreationInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference{}
@@ -4378,7 +5213,7 @@ func NewEfsAccessPointRootDirectoryCreationInfoOutputReference(terraformResource
 	return &j
 }
 
-func NewEfsAccessPointRootDirectoryCreationInfoOutputReference_Override(e EfsAccessPointRootDirectoryCreationInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEfsAccessPointRootDirectoryCreationInfoOutputReference_Override(e EfsAccessPointRootDirectoryCreationInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4436,7 +5271,7 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4445,12 +5280,40 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) SetTe
 }
 
 // Experimental.
-func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4487,12 +5350,54 @@ func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetNu
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryCreationInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4541,12 +5446,17 @@ type EfsAccessPointRootDirectoryOutputReference interface {
 	PathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCreationInfo(value *EfsAccessPointRootDirectoryCreationInfo)
@@ -4629,8 +5539,8 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4639,7 +5549,7 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) TerraformResource
 	return returns
 }
 
-func NewEfsAccessPointRootDirectoryOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EfsAccessPointRootDirectoryOutputReference {
+func NewEfsAccessPointRootDirectoryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EfsAccessPointRootDirectoryOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EfsAccessPointRootDirectoryOutputReference{}
@@ -4653,7 +5563,7 @@ func NewEfsAccessPointRootDirectoryOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewEfsAccessPointRootDirectoryOutputReference_Override(e EfsAccessPointRootDirectoryOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEfsAccessPointRootDirectoryOutputReference_Override(e EfsAccessPointRootDirectoryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4695,7 +5605,7 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4704,12 +5614,40 @@ func (j *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4746,12 +5684,54 @@ func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4811,15 +5791,15 @@ func (e *jsiiProxy_EfsAccessPointRootDirectoryOutputReference) ResetPath() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy.html aws_efs_backup_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy aws_efs_backup_policy}.
 type EfsBackupPolicy interface {
 	cdktf.TerraformResource
 	BackupPolicy() EfsBackupPolicyBackupPolicyOutputReference
 	BackupPolicyInput() *EfsBackupPolicyBackupPolicy
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemId() *string
@@ -4838,10 +5818,15 @@ type EfsBackupPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutBackupPolicy(value *EfsBackupPolicyBackupPolicy)
@@ -4897,8 +5882,8 @@ func (j *jsiiProxy_EfsBackupPolicy) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_EfsBackupPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsBackupPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5037,7 +6022,7 @@ func (j *jsiiProxy_EfsBackupPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy.html aws_efs_backup_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy aws_efs_backup_policy} Resource.
 func NewEfsBackupPolicy(scope constructs.Construct, id *string, config *EfsBackupPolicyConfig) EfsBackupPolicy {
 	_init_.Initialize()
 
@@ -5052,7 +6037,7 @@ func NewEfsBackupPolicy(scope constructs.Construct, id *string, config *EfsBacku
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy.html aws_efs_backup_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy aws_efs_backup_policy} Resource.
 func NewEfsBackupPolicy_Override(e EfsBackupPolicy, scope constructs.Construct, id *string, config *EfsBackupPolicyConfig) {
 	_init_.Initialize()
 
@@ -5063,7 +6048,7 @@ func NewEfsBackupPolicy_Override(e EfsBackupPolicy, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_EfsBackupPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_EfsBackupPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5143,12 +6128,40 @@ func (e *jsiiProxy_EfsBackupPolicy) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsBackupPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsBackupPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsBackupPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5185,12 +6198,54 @@ func (e *jsiiProxy_EfsBackupPolicy) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsBackupPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsBackupPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsBackupPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsBackupPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5297,8 +6352,8 @@ func (e *jsiiProxy_EfsBackupPolicy) ToTerraform() interface{} {
 }
 
 type EfsBackupPolicyBackupPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy.html#status EfsBackupPolicy#status}.
-	Status *string `json:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy#status EfsBackupPolicy#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
 type EfsBackupPolicyBackupPolicyOutputReference interface {
@@ -5312,12 +6367,17 @@ type EfsBackupPolicyBackupPolicyOutputReference interface {
 	StatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5377,8 +6437,8 @@ func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5387,7 +6447,7 @@ func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) TerraformResource
 	return returns
 }
 
-func NewEfsBackupPolicyBackupPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EfsBackupPolicyBackupPolicyOutputReference {
+func NewEfsBackupPolicyBackupPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EfsBackupPolicyBackupPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference{}
@@ -5401,7 +6461,7 @@ func NewEfsBackupPolicyBackupPolicyOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewEfsBackupPolicyBackupPolicyOutputReference_Override(e EfsBackupPolicyBackupPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEfsBackupPolicyBackupPolicyOutputReference_Override(e EfsBackupPolicyBackupPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5443,7 +6503,7 @@ func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5452,12 +6512,40 @@ func (j *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5494,12 +6582,54 @@ func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5538,22 +6668,22 @@ func (e *jsiiProxy_EfsBackupPolicyBackupPolicyOutputReference) InterpolationForA
 // AWS EFS.
 type EfsBackupPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// backup_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy.html#backup_policy EfsBackupPolicy#backup_policy}
-	BackupPolicy *EfsBackupPolicyBackupPolicy `json:"backupPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy.html#file_system_id EfsBackupPolicy#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy#backup_policy EfsBackupPolicy#backup_policy}
+	BackupPolicy *EfsBackupPolicyBackupPolicy `json:"backupPolicy" yaml:"backupPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_backup_policy#file_system_id EfsBackupPolicy#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html aws_efs_file_system}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system aws_efs_file_system}.
 type EfsFileSystem interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -5563,8 +6693,8 @@ type EfsFileSystem interface {
 	AvailabilityZoneNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationToken() *string
 	SetCreationToken(val *string)
 	CreationTokenInput() *string
@@ -5582,9 +6712,9 @@ type EfsFileSystem interface {
 	KmsKeyIdInput() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	LifecyclePolicy() *[]*EfsFileSystemLifecyclePolicy
-	SetLifecyclePolicy(val *[]*EfsFileSystemLifecyclePolicy)
-	LifecyclePolicyInput() *[]*EfsFileSystemLifecyclePolicy
+	LifecyclePolicy() interface{}
+	SetLifecyclePolicy(val interface{})
+	LifecyclePolicyInput() interface{}
 	Node() constructs.Node
 	NumberOfMountTargets() *float64
 	OwnerId() *string
@@ -5597,12 +6727,12 @@ type EfsFileSystem interface {
 	SetProvisionedThroughputInMibps(val *float64)
 	ProvisionedThroughputInMibpsInput() *float64
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5610,10 +6740,15 @@ type EfsFileSystem interface {
 	SetThroughputMode(val *string)
 	ThroughputModeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAvailabilityZoneName()
@@ -5699,8 +6834,8 @@ func (j *jsiiProxy_EfsFileSystem) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystem) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsFileSystem) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5829,8 +6964,8 @@ func (j *jsiiProxy_EfsFileSystem) Lifecycle() *cdktf.TerraformResourceLifecycle 
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystem) LifecyclePolicy() *[]*EfsFileSystemLifecyclePolicy {
-	var returns *[]*EfsFileSystemLifecyclePolicy
+func (j *jsiiProxy_EfsFileSystem) LifecyclePolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lifecyclePolicy",
@@ -5839,8 +6974,8 @@ func (j *jsiiProxy_EfsFileSystem) LifecyclePolicy() *[]*EfsFileSystemLifecyclePo
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystem) LifecyclePolicyInput() *[]*EfsFileSystemLifecyclePolicy {
-	var returns *[]*EfsFileSystemLifecyclePolicy
+func (j *jsiiProxy_EfsFileSystem) LifecyclePolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lifecyclePolicyInput",
@@ -5939,8 +7074,8 @@ func (j *jsiiProxy_EfsFileSystem) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystem) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5949,8 +7084,8 @@ func (j *jsiiProxy_EfsFileSystem) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystem) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsFileSystem) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5959,8 +7094,8 @@ func (j *jsiiProxy_EfsFileSystem) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystem) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsFileSystem) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5969,8 +7104,8 @@ func (j *jsiiProxy_EfsFileSystem) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystem) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6029,7 +7164,7 @@ func (j *jsiiProxy_EfsFileSystem) ThroughputModeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html aws_efs_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system aws_efs_file_system} Resource.
 func NewEfsFileSystem(scope constructs.Construct, id *string, config *EfsFileSystemConfig) EfsFileSystem {
 	_init_.Initialize()
 
@@ -6044,7 +7179,7 @@ func NewEfsFileSystem(scope constructs.Construct, id *string, config *EfsFileSys
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html aws_efs_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system aws_efs_file_system} Resource.
 func NewEfsFileSystem_Override(e EfsFileSystem, scope constructs.Construct, id *string, config *EfsFileSystemConfig) {
 	_init_.Initialize()
 
@@ -6063,7 +7198,7 @@ func (j *jsiiProxy_EfsFileSystem) SetAvailabilityZoneName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EfsFileSystem) SetCount(val interface{}) {
+func (j *jsiiProxy_EfsFileSystem) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6111,7 +7246,7 @@ func (j *jsiiProxy_EfsFileSystem) SetLifecycle(val *cdktf.TerraformResourceLifec
 	)
 }
 
-func (j *jsiiProxy_EfsFileSystem) SetLifecyclePolicy(val *[]*EfsFileSystemLifecyclePolicy) {
+func (j *jsiiProxy_EfsFileSystem) SetLifecyclePolicy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"lifecyclePolicy",
@@ -6143,7 +7278,7 @@ func (j *jsiiProxy_EfsFileSystem) SetProvisionedThroughputInMibps(val *float64) 
 	)
 }
 
-func (j *jsiiProxy_EfsFileSystem) SetTags(val interface{}) {
+func (j *jsiiProxy_EfsFileSystem) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6151,7 +7286,7 @@ func (j *jsiiProxy_EfsFileSystem) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EfsFileSystem) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EfsFileSystem) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6207,12 +7342,40 @@ func (e *jsiiProxy_EfsFileSystem) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6249,12 +7412,54 @@ func (e *jsiiProxy_EfsFileSystem) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsFileSystem) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6448,45 +7653,45 @@ func (e *jsiiProxy_EfsFileSystem) ToTerraform() interface{} {
 // AWS EFS.
 type EfsFileSystemConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#availability_zone_name EfsFileSystem#availability_zone_name}.
-	AvailabilityZoneName *string `json:"availabilityZoneName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#creation_token EfsFileSystem#creation_token}.
-	CreationToken *string `json:"creationToken"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#encrypted EfsFileSystem#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#kms_key_id EfsFileSystem#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#availability_zone_name EfsFileSystem#availability_zone_name}.
+	AvailabilityZoneName *string `json:"availabilityZoneName" yaml:"availabilityZoneName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#creation_token EfsFileSystem#creation_token}.
+	CreationToken *string `json:"creationToken" yaml:"creationToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#encrypted EfsFileSystem#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#kms_key_id EfsFileSystem#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 	// lifecycle_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#lifecycle_policy EfsFileSystem#lifecycle_policy}
-	LifecyclePolicy *[]*EfsFileSystemLifecyclePolicy `json:"lifecyclePolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#performance_mode EfsFileSystem#performance_mode}.
-	PerformanceMode *string `json:"performanceMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#provisioned_throughput_in_mibps EfsFileSystem#provisioned_throughput_in_mibps}.
-	ProvisionedThroughputInMibps *float64 `json:"provisionedThroughputInMibps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#tags EfsFileSystem#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#tags_all EfsFileSystem#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#throughput_mode EfsFileSystem#throughput_mode}.
-	ThroughputMode *string `json:"throughputMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#lifecycle_policy EfsFileSystem#lifecycle_policy}
+	LifecyclePolicy interface{} `json:"lifecyclePolicy" yaml:"lifecyclePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#performance_mode EfsFileSystem#performance_mode}.
+	PerformanceMode *string `json:"performanceMode" yaml:"performanceMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#provisioned_throughput_in_mibps EfsFileSystem#provisioned_throughput_in_mibps}.
+	ProvisionedThroughputInMibps *float64 `json:"provisionedThroughputInMibps" yaml:"provisionedThroughputInMibps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#tags EfsFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#tags_all EfsFileSystem#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#throughput_mode EfsFileSystem#throughput_mode}.
+	ThroughputMode *string `json:"throughputMode" yaml:"throughputMode"`
 }
 
 type EfsFileSystemLifecyclePolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#transition_to_ia EfsFileSystem#transition_to_ia}.
-	TransitionToIa *string `json:"transitionToIa"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system.html#transition_to_primary_storage_class EfsFileSystem#transition_to_primary_storage_class}.
-	TransitionToPrimaryStorageClass *string `json:"transitionToPrimaryStorageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#transition_to_ia EfsFileSystem#transition_to_ia}.
+	TransitionToIa *string `json:"transitionToIa" yaml:"transitionToIa"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system#transition_to_primary_storage_class EfsFileSystem#transition_to_primary_storage_class}.
+	TransitionToPrimaryStorageClass *string `json:"transitionToPrimaryStorageClass" yaml:"transitionToPrimaryStorageClass"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy.html aws_efs_file_system_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy aws_efs_file_system_policy}.
 type EfsFileSystemPolicy interface {
 	cdktf.TerraformResource
 	BypassPolicyLockoutSafetyCheck() interface{}
@@ -6494,8 +7699,8 @@ type EfsFileSystemPolicy interface {
 	BypassPolicyLockoutSafetyCheckInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FileSystemId() *string
@@ -6517,10 +7722,15 @@ type EfsFileSystemPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBypassPolicyLockoutSafetyCheck()
@@ -6576,8 +7786,8 @@ func (j *jsiiProxy_EfsFileSystemPolicy) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystemPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsFileSystemPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6736,7 +7946,7 @@ func (j *jsiiProxy_EfsFileSystemPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy.html aws_efs_file_system_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy aws_efs_file_system_policy} Resource.
 func NewEfsFileSystemPolicy(scope constructs.Construct, id *string, config *EfsFileSystemPolicyConfig) EfsFileSystemPolicy {
 	_init_.Initialize()
 
@@ -6751,7 +7961,7 @@ func NewEfsFileSystemPolicy(scope constructs.Construct, id *string, config *EfsF
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy.html aws_efs_file_system_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy aws_efs_file_system_policy} Resource.
 func NewEfsFileSystemPolicy_Override(e EfsFileSystemPolicy, scope constructs.Construct, id *string, config *EfsFileSystemPolicyConfig) {
 	_init_.Initialize()
 
@@ -6770,7 +7980,7 @@ func (j *jsiiProxy_EfsFileSystemPolicy) SetBypassPolicyLockoutSafetyCheck(val in
 	)
 }
 
-func (j *jsiiProxy_EfsFileSystemPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_EfsFileSystemPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6858,12 +8068,40 @@ func (e *jsiiProxy_EfsFileSystemPolicy) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsFileSystemPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsFileSystemPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystemPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6900,12 +8138,54 @@ func (e *jsiiProxy_EfsFileSystemPolicy) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsFileSystemPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystemPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsFileSystemPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystemPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7014,19 +8294,19 @@ func (e *jsiiProxy_EfsFileSystemPolicy) ToTerraform() interface{} {
 // AWS EFS.
 type EfsFileSystemPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy.html#file_system_id EfsFileSystemPolicy#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy.html#policy EfsFileSystemPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy.html#bypass_policy_lockout_safety_check EfsFileSystemPolicy#bypass_policy_lockout_safety_check}.
-	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy#file_system_id EfsFileSystemPolicy#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy#policy EfsFileSystemPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_file_system_policy#bypass_policy_lockout_safety_check EfsFileSystemPolicy#bypass_policy_lockout_safety_check}.
+	BypassPolicyLockoutSafetyCheck interface{} `json:"bypassPolicyLockoutSafetyCheck" yaml:"bypassPolicyLockoutSafetyCheck"`
 }
 
 type EfsFileSystemSizeInBytes interface {
@@ -7035,15 +8315,22 @@ type EfsFileSystemSizeInBytes interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *float64
 	ValueInIa() *float64
 	ValueInStandard() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -7072,8 +8359,8 @@ func (j *jsiiProxy_EfsFileSystemSizeInBytes) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EfsFileSystemSizeInBytes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EfsFileSystemSizeInBytes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7112,15 +8399,25 @@ func (j *jsiiProxy_EfsFileSystemSizeInBytes) ValueInStandard() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_EfsFileSystemSizeInBytes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewEfsFileSystemSizeInBytes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) EfsFileSystemSizeInBytes {
+func NewEfsFileSystemSizeInBytes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) EfsFileSystemSizeInBytes {
 	_init_.Initialize()
 
 	j := jsiiProxy_EfsFileSystemSizeInBytes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.EfsFileSystemSizeInBytes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -7128,12 +8425,12 @@ func NewEfsFileSystemSizeInBytes(terraformResource cdktf.ITerraformResource, ter
 }
 
 // Experimental.
-func NewEfsFileSystemSizeInBytes_Override(e EfsFileSystemSizeInBytes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewEfsFileSystemSizeInBytes_Override(e EfsFileSystemSizeInBytes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.efs.EfsFileSystemSizeInBytes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		e,
 	)
 }
@@ -7154,7 +8451,7 @@ func (j *jsiiProxy_EfsFileSystemSizeInBytes) SetTerraformAttribute(val *string) 
 	)
 }
 
-func (j *jsiiProxy_EfsFileSystemSizeInBytes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EfsFileSystemSizeInBytes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7162,13 +8459,49 @@ func (j *jsiiProxy_EfsFileSystemSizeInBytes) SetTerraformResource(val cdktf.ITer
 	)
 }
 
+func (j *jsiiProxy_EfsFileSystemSizeInBytes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7205,12 +8538,54 @@ func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsFileSystemSizeInBytes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7232,15 +8607,15 @@ func (e *jsiiProxy_EfsFileSystemSizeInBytes) InterpolationForAttribute(property 
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html aws_efs_mount_target}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target aws_efs_mount_target}.
 type EfsMountTarget interface {
 	cdktf.TerraformResource
 	AvailabilityZoneId() *string
 	AvailabilityZoneName() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DnsName() *string
@@ -7273,10 +8648,15 @@ type EfsMountTarget interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetIpAddress()
@@ -7333,8 +8713,8 @@ func (j *jsiiProxy_EfsMountTarget) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_EfsMountTarget) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EfsMountTarget) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7583,7 +8963,7 @@ func (j *jsiiProxy_EfsMountTarget) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html aws_efs_mount_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target aws_efs_mount_target} Resource.
 func NewEfsMountTarget(scope constructs.Construct, id *string, config *EfsMountTargetConfig) EfsMountTarget {
 	_init_.Initialize()
 
@@ -7598,7 +8978,7 @@ func NewEfsMountTarget(scope constructs.Construct, id *string, config *EfsMountT
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html aws_efs_mount_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target aws_efs_mount_target} Resource.
 func NewEfsMountTarget_Override(e EfsMountTarget, scope constructs.Construct, id *string, config *EfsMountTargetConfig) {
 	_init_.Initialize()
 
@@ -7609,7 +8989,7 @@ func NewEfsMountTarget_Override(e EfsMountTarget, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_EfsMountTarget) SetCount(val interface{}) {
+func (j *jsiiProxy_EfsMountTarget) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7713,12 +9093,40 @@ func (e *jsiiProxy_EfsMountTarget) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsMountTarget) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsMountTarget) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsMountTarget) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7755,12 +9163,54 @@ func (e *jsiiProxy_EfsMountTarget) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (e *jsiiProxy_EfsMountTarget) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsMountTarget) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EfsMountTarget) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EfsMountTarget) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7877,19 +9327,19 @@ func (e *jsiiProxy_EfsMountTarget) ToTerraform() interface{} {
 // AWS EFS.
 type EfsMountTargetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html#file_system_id EfsMountTarget#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html#subnet_id EfsMountTarget#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html#ip_address EfsMountTarget#ip_address}.
-	IpAddress *string `json:"ipAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target.html#security_groups EfsMountTarget#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target#file_system_id EfsMountTarget#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target#subnet_id EfsMountTarget#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target#ip_address EfsMountTarget#ip_address}.
+	IpAddress *string `json:"ipAddress" yaml:"ipAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/efs_mount_target#security_groups EfsMountTarget#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 }

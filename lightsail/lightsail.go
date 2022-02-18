@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/lightsail/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain.html aws_lightsail_domain}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain aws_lightsail_domain}.
 type LightsailDomain interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -35,10 +35,15 @@ type LightsailDomain interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -83,8 +88,8 @@ func (j *jsiiProxy_LightsailDomain) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_LightsailDomain) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailDomain) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -223,7 +228,7 @@ func (j *jsiiProxy_LightsailDomain) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain.html aws_lightsail_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain aws_lightsail_domain} Resource.
 func NewLightsailDomain(scope constructs.Construct, id *string, config *LightsailDomainConfig) LightsailDomain {
 	_init_.Initialize()
 
@@ -238,7 +243,7 @@ func NewLightsailDomain(scope constructs.Construct, id *string, config *Lightsai
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain.html aws_lightsail_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain aws_lightsail_domain} Resource.
 func NewLightsailDomain_Override(l LightsailDomain, scope constructs.Construct, id *string, config *LightsailDomainConfig) {
 	_init_.Initialize()
 
@@ -249,7 +254,7 @@ func NewLightsailDomain_Override(l LightsailDomain, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_LightsailDomain) SetCount(val interface{}) {
+func (j *jsiiProxy_LightsailDomain) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -329,12 +334,40 @@ func (l *jsiiProxy_LightsailDomain) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailDomain) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailDomain) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailDomain) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -371,12 +404,54 @@ func (l *jsiiProxy_LightsailDomain) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailDomain) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailDomain) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailDomain) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailDomain) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -477,18 +552,18 @@ func (l *jsiiProxy_LightsailDomain) ToTerraform() interface{} {
 // AWS Lightsail.
 type LightsailDomainConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain.html#domain_name LightsailDomain#domain_name}.
-	DomainName *string `json:"domainName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_domain#domain_name LightsailDomain#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html aws_lightsail_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance aws_lightsail_instance}.
 type LightsailInstance interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -503,8 +578,8 @@ type LightsailInstance interface {
 	BundleIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CpuCount() *float64
 	CreatedAt() *string
 	DependsOn() *[]*string
@@ -514,7 +589,7 @@ type LightsailInstance interface {
 	Id() *string
 	Ipv6Address() *string
 	Ipv6Addresses() *[]*string
-	IsStaticIp() interface{}
+	IsStaticIp() cdktf.IResolvable
 	KeyPairName() *string
 	SetKeyPairName(val *string)
 	KeyPairNameInput() *string
@@ -530,12 +605,12 @@ type LightsailInstance interface {
 	PublicIpAddress() *string
 	RamSize() *float64
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -544,10 +619,15 @@ type LightsailInstance interface {
 	UserDataInput() *string
 	Username() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKeyPairName()
@@ -656,8 +736,8 @@ func (j *jsiiProxy_LightsailInstance) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -746,8 +826,8 @@ func (j *jsiiProxy_LightsailInstance) Ipv6Addresses() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstance) IsStaticIp() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailInstance) IsStaticIp() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"isStaticIp",
@@ -866,8 +946,8 @@ func (j *jsiiProxy_LightsailInstance) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstance) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailInstance) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -876,8 +956,8 @@ func (j *jsiiProxy_LightsailInstance) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstance) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailInstance) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -886,8 +966,8 @@ func (j *jsiiProxy_LightsailInstance) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstance) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailInstance) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -896,8 +976,8 @@ func (j *jsiiProxy_LightsailInstance) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstance) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailInstance) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -966,7 +1046,7 @@ func (j *jsiiProxy_LightsailInstance) Username() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html aws_lightsail_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance aws_lightsail_instance} Resource.
 func NewLightsailInstance(scope constructs.Construct, id *string, config *LightsailInstanceConfig) LightsailInstance {
 	_init_.Initialize()
 
@@ -981,7 +1061,7 @@ func NewLightsailInstance(scope constructs.Construct, id *string, config *Lights
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html aws_lightsail_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance aws_lightsail_instance} Resource.
 func NewLightsailInstance_Override(l LightsailInstance, scope constructs.Construct, id *string, config *LightsailInstanceConfig) {
 	_init_.Initialize()
 
@@ -1016,7 +1096,7 @@ func (j *jsiiProxy_LightsailInstance) SetBundleId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LightsailInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_LightsailInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1064,7 +1144,7 @@ func (j *jsiiProxy_LightsailInstance) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_LightsailInstance) SetTags(val interface{}) {
+func (j *jsiiProxy_LightsailInstance) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1072,7 +1152,7 @@ func (j *jsiiProxy_LightsailInstance) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LightsailInstance) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_LightsailInstance) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1128,12 +1208,40 @@ func (l *jsiiProxy_LightsailInstance) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1170,12 +1278,54 @@ func (l *jsiiProxy_LightsailInstance) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1308,38 +1458,38 @@ func (l *jsiiProxy_LightsailInstance) ToTerraform() interface{} {
 // AWS Lightsail.
 type LightsailInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#availability_zone LightsailInstance#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#blueprint_id LightsailInstance#blueprint_id}.
-	BlueprintId *string `json:"blueprintId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#bundle_id LightsailInstance#bundle_id}.
-	BundleId *string `json:"bundleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#name LightsailInstance#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#key_pair_name LightsailInstance#key_pair_name}.
-	KeyPairName *string `json:"keyPairName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#tags LightsailInstance#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#tags_all LightsailInstance#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance.html#user_data LightsailInstance#user_data}.
-	UserData *string `json:"userData"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#availability_zone LightsailInstance#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#blueprint_id LightsailInstance#blueprint_id}.
+	BlueprintId *string `json:"blueprintId" yaml:"blueprintId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#bundle_id LightsailInstance#bundle_id}.
+	BundleId *string `json:"bundleId" yaml:"bundleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#name LightsailInstance#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#key_pair_name LightsailInstance#key_pair_name}.
+	KeyPairName *string `json:"keyPairName" yaml:"keyPairName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#tags LightsailInstance#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#tags_all LightsailInstance#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance#user_data LightsailInstance#user_data}.
+	UserData *string `json:"userData" yaml:"userData"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html aws_lightsail_instance_public_ports}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports aws_lightsail_instance_public_ports}.
 type LightsailInstancePublicPorts interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1351,9 +1501,9 @@ type LightsailInstancePublicPorts interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Node() constructs.Node
-	PortInfo() *[]*LightsailInstancePublicPortsPortInfo
-	SetPortInfo(val *[]*LightsailInstancePublicPortsPortInfo)
-	PortInfoInput() *[]*LightsailInstancePublicPortsPortInfo
+	PortInfo() interface{}
+	SetPortInfo(val interface{})
+	PortInfoInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
@@ -1361,10 +1511,15 @@ type LightsailInstancePublicPorts interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1399,8 +1554,8 @@ func (j *jsiiProxy_LightsailInstancePublicPorts) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstancePublicPorts) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailInstancePublicPorts) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1489,8 +1644,8 @@ func (j *jsiiProxy_LightsailInstancePublicPorts) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstancePublicPorts) PortInfo() *[]*LightsailInstancePublicPortsPortInfo {
-	var returns *[]*LightsailInstancePublicPortsPortInfo
+func (j *jsiiProxy_LightsailInstancePublicPorts) PortInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"portInfo",
@@ -1499,8 +1654,8 @@ func (j *jsiiProxy_LightsailInstancePublicPorts) PortInfo() *[]*LightsailInstanc
 	return returns
 }
 
-func (j *jsiiProxy_LightsailInstancePublicPorts) PortInfoInput() *[]*LightsailInstancePublicPortsPortInfo {
-	var returns *[]*LightsailInstancePublicPortsPortInfo
+func (j *jsiiProxy_LightsailInstancePublicPorts) PortInfoInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"portInfoInput",
@@ -1559,7 +1714,7 @@ func (j *jsiiProxy_LightsailInstancePublicPorts) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html aws_lightsail_instance_public_ports} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports aws_lightsail_instance_public_ports} Resource.
 func NewLightsailInstancePublicPorts(scope constructs.Construct, id *string, config *LightsailInstancePublicPortsConfig) LightsailInstancePublicPorts {
 	_init_.Initialize()
 
@@ -1574,7 +1729,7 @@ func NewLightsailInstancePublicPorts(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html aws_lightsail_instance_public_ports} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports aws_lightsail_instance_public_ports} Resource.
 func NewLightsailInstancePublicPorts_Override(l LightsailInstancePublicPorts, scope constructs.Construct, id *string, config *LightsailInstancePublicPortsConfig) {
 	_init_.Initialize()
 
@@ -1585,7 +1740,7 @@ func NewLightsailInstancePublicPorts_Override(l LightsailInstancePublicPorts, sc
 	)
 }
 
-func (j *jsiiProxy_LightsailInstancePublicPorts) SetCount(val interface{}) {
+func (j *jsiiProxy_LightsailInstancePublicPorts) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1617,7 +1772,7 @@ func (j *jsiiProxy_LightsailInstancePublicPorts) SetLifecycle(val *cdktf.Terrafo
 	)
 }
 
-func (j *jsiiProxy_LightsailInstancePublicPorts) SetPortInfo(val *[]*LightsailInstancePublicPortsPortInfo) {
+func (j *jsiiProxy_LightsailInstancePublicPorts) SetPortInfo(val interface{}) {
 	_jsii_.Set(
 		j,
 		"portInfo",
@@ -1673,12 +1828,40 @@ func (l *jsiiProxy_LightsailInstancePublicPorts) AddOverride(path *string, value
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailInstancePublicPorts) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailInstancePublicPorts) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailInstancePublicPorts) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1715,12 +1898,54 @@ func (l *jsiiProxy_LightsailInstancePublicPorts) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailInstancePublicPorts) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailInstancePublicPorts) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailInstancePublicPorts) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailInstancePublicPorts) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1821,40 +2046,40 @@ func (l *jsiiProxy_LightsailInstancePublicPorts) ToTerraform() interface{} {
 // AWS Lightsail.
 type LightsailInstancePublicPortsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html#instance_name LightsailInstancePublicPorts#instance_name}.
-	InstanceName *string `json:"instanceName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports#instance_name LightsailInstancePublicPorts#instance_name}.
+	InstanceName *string `json:"instanceName" yaml:"instanceName"`
 	// port_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html#port_info LightsailInstancePublicPorts#port_info}
-	PortInfo *[]*LightsailInstancePublicPortsPortInfo `json:"portInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports#port_info LightsailInstancePublicPorts#port_info}
+	PortInfo interface{} `json:"portInfo" yaml:"portInfo"`
 }
 
 type LightsailInstancePublicPortsPortInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html#from_port LightsailInstancePublicPorts#from_port}.
-	FromPort *float64 `json:"fromPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html#protocol LightsailInstancePublicPorts#protocol}.
-	Protocol *string `json:"protocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html#to_port LightsailInstancePublicPorts#to_port}.
-	ToPort *float64 `json:"toPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports.html#cidrs LightsailInstancePublicPorts#cidrs}.
-	Cidrs *[]*string `json:"cidrs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports#from_port LightsailInstancePublicPorts#from_port}.
+	FromPort *float64 `json:"fromPort" yaml:"fromPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports#protocol LightsailInstancePublicPorts#protocol}.
+	Protocol *string `json:"protocol" yaml:"protocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports#to_port LightsailInstancePublicPorts#to_port}.
+	ToPort *float64 `json:"toPort" yaml:"toPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_instance_public_ports#cidrs LightsailInstancePublicPorts#cidrs}.
+	Cidrs *[]*string `json:"cidrs" yaml:"cidrs"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair.html aws_lightsail_key_pair}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair aws_lightsail_key_pair}.
 type LightsailKeyPair interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EncryptedFingerprint() *string
@@ -1886,10 +2111,15 @@ type LightsailKeyPair interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -1938,8 +2168,8 @@ func (j *jsiiProxy_LightsailKeyPair) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_LightsailKeyPair) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailKeyPair) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2178,7 +2408,7 @@ func (j *jsiiProxy_LightsailKeyPair) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair.html aws_lightsail_key_pair} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair aws_lightsail_key_pair} Resource.
 func NewLightsailKeyPair(scope constructs.Construct, id *string, config *LightsailKeyPairConfig) LightsailKeyPair {
 	_init_.Initialize()
 
@@ -2193,7 +2423,7 @@ func NewLightsailKeyPair(scope constructs.Construct, id *string, config *Lightsa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair.html aws_lightsail_key_pair} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair aws_lightsail_key_pair} Resource.
 func NewLightsailKeyPair_Override(l LightsailKeyPair, scope constructs.Construct, id *string, config *LightsailKeyPairConfig) {
 	_init_.Initialize()
 
@@ -2204,7 +2434,7 @@ func NewLightsailKeyPair_Override(l LightsailKeyPair, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_LightsailKeyPair) SetCount(val interface{}) {
+func (j *jsiiProxy_LightsailKeyPair) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2308,12 +2538,40 @@ func (l *jsiiProxy_LightsailKeyPair) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailKeyPair) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailKeyPair) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailKeyPair) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2350,12 +2608,54 @@ func (l *jsiiProxy_LightsailKeyPair) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailKeyPair) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailKeyPair) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailKeyPair) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailKeyPair) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2488,31 +2788,31 @@ func (l *jsiiProxy_LightsailKeyPair) ToTerraform() interface{} {
 // AWS Lightsail.
 type LightsailKeyPairConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair.html#name LightsailKeyPair#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair.html#name_prefix LightsailKeyPair#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair.html#pgp_key LightsailKeyPair#pgp_key}.
-	PgpKey *string `json:"pgpKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair.html#public_key LightsailKeyPair#public_key}.
-	PublicKey *string `json:"publicKey"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair#name LightsailKeyPair#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair#name_prefix LightsailKeyPair#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair#pgp_key LightsailKeyPair#pgp_key}.
+	PgpKey *string `json:"pgpKey" yaml:"pgpKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_key_pair#public_key LightsailKeyPair#public_key}.
+	PublicKey *string `json:"publicKey" yaml:"publicKey"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip.html aws_lightsail_static_ip}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip aws_lightsail_static_ip}.
 type LightsailStaticIp interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2533,10 +2833,15 @@ type LightsailStaticIp interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2581,8 +2886,8 @@ func (j *jsiiProxy_LightsailStaticIp) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_LightsailStaticIp) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailStaticIp) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2741,7 +3046,7 @@ func (j *jsiiProxy_LightsailStaticIp) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip.html aws_lightsail_static_ip} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip aws_lightsail_static_ip} Resource.
 func NewLightsailStaticIp(scope constructs.Construct, id *string, config *LightsailStaticIpConfig) LightsailStaticIp {
 	_init_.Initialize()
 
@@ -2756,7 +3061,7 @@ func NewLightsailStaticIp(scope constructs.Construct, id *string, config *Lights
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip.html aws_lightsail_static_ip} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip aws_lightsail_static_ip} Resource.
 func NewLightsailStaticIp_Override(l LightsailStaticIp, scope constructs.Construct, id *string, config *LightsailStaticIpConfig) {
 	_init_.Initialize()
 
@@ -2767,7 +3072,7 @@ func NewLightsailStaticIp_Override(l LightsailStaticIp, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_LightsailStaticIp) SetCount(val interface{}) {
+func (j *jsiiProxy_LightsailStaticIp) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2847,12 +3152,40 @@ func (l *jsiiProxy_LightsailStaticIp) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailStaticIp) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailStaticIp) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailStaticIp) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2889,12 +3222,54 @@ func (l *jsiiProxy_LightsailStaticIp) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailStaticIp) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailStaticIp) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailStaticIp) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailStaticIp) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2992,13 +3367,13 @@ func (l *jsiiProxy_LightsailStaticIp) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment.html aws_lightsail_static_ip_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment aws_lightsail_static_ip_attachment}.
 type LightsailStaticIpAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3021,10 +3396,15 @@ type LightsailStaticIpAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3059,8 +3439,8 @@ func (j *jsiiProxy_LightsailStaticIpAttachment) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_LightsailStaticIpAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LightsailStaticIpAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3229,7 +3609,7 @@ func (j *jsiiProxy_LightsailStaticIpAttachment) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment.html aws_lightsail_static_ip_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment aws_lightsail_static_ip_attachment} Resource.
 func NewLightsailStaticIpAttachment(scope constructs.Construct, id *string, config *LightsailStaticIpAttachmentConfig) LightsailStaticIpAttachment {
 	_init_.Initialize()
 
@@ -3244,7 +3624,7 @@ func NewLightsailStaticIpAttachment(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment.html aws_lightsail_static_ip_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment aws_lightsail_static_ip_attachment} Resource.
 func NewLightsailStaticIpAttachment_Override(l LightsailStaticIpAttachment, scope constructs.Construct, id *string, config *LightsailStaticIpAttachmentConfig) {
 	_init_.Initialize()
 
@@ -3255,7 +3635,7 @@ func NewLightsailStaticIpAttachment_Override(l LightsailStaticIpAttachment, scop
 	)
 }
 
-func (j *jsiiProxy_LightsailStaticIpAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_LightsailStaticIpAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3343,12 +3723,40 @@ func (l *jsiiProxy_LightsailStaticIpAttachment) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailStaticIpAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailStaticIpAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailStaticIpAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3385,12 +3793,54 @@ func (l *jsiiProxy_LightsailStaticIpAttachment) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (l *jsiiProxy_LightsailStaticIpAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailStaticIpAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LightsailStaticIpAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LightsailStaticIpAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3491,29 +3941,29 @@ func (l *jsiiProxy_LightsailStaticIpAttachment) ToTerraform() interface{} {
 // AWS Lightsail.
 type LightsailStaticIpAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment.html#instance_name LightsailStaticIpAttachment#instance_name}.
-	InstanceName *string `json:"instanceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment.html#static_ip_name LightsailStaticIpAttachment#static_ip_name}.
-	StaticIpName *string `json:"staticIpName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment#instance_name LightsailStaticIpAttachment#instance_name}.
+	InstanceName *string `json:"instanceName" yaml:"instanceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip_attachment#static_ip_name LightsailStaticIpAttachment#static_ip_name}.
+	StaticIpName *string `json:"staticIpName" yaml:"staticIpName"`
 }
 
 // AWS Lightsail.
 type LightsailStaticIpConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip.html#name LightsailStaticIp#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lightsail_static_ip#name LightsailStaticIp#name}.
+	Name *string `json:"name" yaml:"name"`
 }

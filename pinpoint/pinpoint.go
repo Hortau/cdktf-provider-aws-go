@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/pinpoint/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel.html aws_pinpoint_adm_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel aws_pinpoint_adm_channel}.
 type PinpointAdmChannel interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -23,8 +23,8 @@ type PinpointAdmChannel interface {
 	SetClientSecret(val *string)
 	ClientSecretInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -43,10 +43,15 @@ type PinpointAdmChannel interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnabled()
@@ -142,8 +147,8 @@ func (j *jsiiProxy_PinpointAdmChannel) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_PinpointAdmChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointAdmChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -282,7 +287,7 @@ func (j *jsiiProxy_PinpointAdmChannel) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel.html aws_pinpoint_adm_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel aws_pinpoint_adm_channel} Resource.
 func NewPinpointAdmChannel(scope constructs.Construct, id *string, config *PinpointAdmChannelConfig) PinpointAdmChannel {
 	_init_.Initialize()
 
@@ -297,7 +302,7 @@ func NewPinpointAdmChannel(scope constructs.Construct, id *string, config *Pinpo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel.html aws_pinpoint_adm_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel aws_pinpoint_adm_channel} Resource.
 func NewPinpointAdmChannel_Override(p PinpointAdmChannel, scope constructs.Construct, id *string, config *PinpointAdmChannelConfig) {
 	_init_.Initialize()
 
@@ -332,7 +337,7 @@ func (j *jsiiProxy_PinpointAdmChannel) SetClientSecret(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointAdmChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointAdmChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -412,12 +417,40 @@ func (p *jsiiProxy_PinpointAdmChannel) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointAdmChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointAdmChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAdmChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -454,12 +487,54 @@ func (p *jsiiProxy_PinpointAdmChannel) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointAdmChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAdmChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointAdmChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAdmChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -568,24 +643,24 @@ func (p *jsiiProxy_PinpointAdmChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointAdmChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel.html#application_id PinpointAdmChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel.html#client_id PinpointAdmChannel#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel.html#client_secret PinpointAdmChannel#client_secret}.
-	ClientSecret *string `json:"clientSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel.html#enabled PinpointAdmChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel#application_id PinpointAdmChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel#client_id PinpointAdmChannel#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel#client_secret PinpointAdmChannel#client_secret}.
+	ClientSecret *string `json:"clientSecret" yaml:"clientSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_adm_channel#enabled PinpointAdmChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html aws_pinpoint_apns_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel aws_pinpoint_apns_channel}.
 type PinpointApnsChannel interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -599,8 +674,8 @@ type PinpointApnsChannel interface {
 	SetCertificate(val *string)
 	CertificateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultAuthenticationMethod() *string
 	SetDefaultAuthenticationMethod(val *string)
 	DefaultAuthenticationMethodInput() *string
@@ -634,10 +709,15 @@ type PinpointApnsChannel interface {
 	TokenKeyIdInput() *string
 	TokenKeyInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBundleId()
@@ -740,8 +820,8 @@ func (j *jsiiProxy_PinpointApnsChannel) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApnsChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApnsChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -980,7 +1060,7 @@ func (j *jsiiProxy_PinpointApnsChannel) TokenKeyInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html aws_pinpoint_apns_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel aws_pinpoint_apns_channel} Resource.
 func NewPinpointApnsChannel(scope constructs.Construct, id *string, config *PinpointApnsChannelConfig) PinpointApnsChannel {
 	_init_.Initialize()
 
@@ -995,7 +1075,7 @@ func NewPinpointApnsChannel(scope constructs.Construct, id *string, config *Pinp
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html aws_pinpoint_apns_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel aws_pinpoint_apns_channel} Resource.
 func NewPinpointApnsChannel_Override(p PinpointApnsChannel, scope constructs.Construct, id *string, config *PinpointApnsChannelConfig) {
 	_init_.Initialize()
 
@@ -1030,7 +1110,7 @@ func (j *jsiiProxy_PinpointApnsChannel) SetCertificate(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointApnsChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointApnsChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1150,12 +1230,40 @@ func (p *jsiiProxy_PinpointApnsChannel) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1192,12 +1300,54 @@ func (p *jsiiProxy_PinpointApnsChannel) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1362,34 +1512,34 @@ func (p *jsiiProxy_PinpointApnsChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointApnsChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#application_id PinpointApnsChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#bundle_id PinpointApnsChannel#bundle_id}.
-	BundleId *string `json:"bundleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#certificate PinpointApnsChannel#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#default_authentication_method PinpointApnsChannel#default_authentication_method}.
-	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#enabled PinpointApnsChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#private_key PinpointApnsChannel#private_key}.
-	PrivateKey *string `json:"privateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#team_id PinpointApnsChannel#team_id}.
-	TeamId *string `json:"teamId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#token_key PinpointApnsChannel#token_key}.
-	TokenKey *string `json:"tokenKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel.html#token_key_id PinpointApnsChannel#token_key_id}.
-	TokenKeyId *string `json:"tokenKeyId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#application_id PinpointApnsChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#bundle_id PinpointApnsChannel#bundle_id}.
+	BundleId *string `json:"bundleId" yaml:"bundleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#certificate PinpointApnsChannel#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#default_authentication_method PinpointApnsChannel#default_authentication_method}.
+	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod" yaml:"defaultAuthenticationMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#enabled PinpointApnsChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#private_key PinpointApnsChannel#private_key}.
+	PrivateKey *string `json:"privateKey" yaml:"privateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#team_id PinpointApnsChannel#team_id}.
+	TeamId *string `json:"teamId" yaml:"teamId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#token_key PinpointApnsChannel#token_key}.
+	TokenKey *string `json:"tokenKey" yaml:"tokenKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_channel#token_key_id PinpointApnsChannel#token_key_id}.
+	TokenKeyId *string `json:"tokenKeyId" yaml:"tokenKeyId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html aws_pinpoint_apns_sandbox_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel aws_pinpoint_apns_sandbox_channel}.
 type PinpointApnsSandboxChannel interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -1403,8 +1553,8 @@ type PinpointApnsSandboxChannel interface {
 	SetCertificate(val *string)
 	CertificateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultAuthenticationMethod() *string
 	SetDefaultAuthenticationMethod(val *string)
 	DefaultAuthenticationMethodInput() *string
@@ -1438,10 +1588,15 @@ type PinpointApnsSandboxChannel interface {
 	TokenKeyIdInput() *string
 	TokenKeyInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBundleId()
@@ -1544,8 +1699,8 @@ func (j *jsiiProxy_PinpointApnsSandboxChannel) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApnsSandboxChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApnsSandboxChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1784,7 +1939,7 @@ func (j *jsiiProxy_PinpointApnsSandboxChannel) TokenKeyInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html aws_pinpoint_apns_sandbox_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel aws_pinpoint_apns_sandbox_channel} Resource.
 func NewPinpointApnsSandboxChannel(scope constructs.Construct, id *string, config *PinpointApnsSandboxChannelConfig) PinpointApnsSandboxChannel {
 	_init_.Initialize()
 
@@ -1799,7 +1954,7 @@ func NewPinpointApnsSandboxChannel(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html aws_pinpoint_apns_sandbox_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel aws_pinpoint_apns_sandbox_channel} Resource.
 func NewPinpointApnsSandboxChannel_Override(p PinpointApnsSandboxChannel, scope constructs.Construct, id *string, config *PinpointApnsSandboxChannelConfig) {
 	_init_.Initialize()
 
@@ -1834,7 +1989,7 @@ func (j *jsiiProxy_PinpointApnsSandboxChannel) SetCertificate(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointApnsSandboxChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointApnsSandboxChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1954,12 +2109,40 @@ func (p *jsiiProxy_PinpointApnsSandboxChannel) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsSandboxChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsSandboxChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsSandboxChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1996,12 +2179,54 @@ func (p *jsiiProxy_PinpointApnsSandboxChannel) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsSandboxChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsSandboxChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsSandboxChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsSandboxChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2166,34 +2391,34 @@ func (p *jsiiProxy_PinpointApnsSandboxChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointApnsSandboxChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#application_id PinpointApnsSandboxChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#bundle_id PinpointApnsSandboxChannel#bundle_id}.
-	BundleId *string `json:"bundleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#certificate PinpointApnsSandboxChannel#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#default_authentication_method PinpointApnsSandboxChannel#default_authentication_method}.
-	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#enabled PinpointApnsSandboxChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#private_key PinpointApnsSandboxChannel#private_key}.
-	PrivateKey *string `json:"privateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#team_id PinpointApnsSandboxChannel#team_id}.
-	TeamId *string `json:"teamId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#token_key PinpointApnsSandboxChannel#token_key}.
-	TokenKey *string `json:"tokenKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel.html#token_key_id PinpointApnsSandboxChannel#token_key_id}.
-	TokenKeyId *string `json:"tokenKeyId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#application_id PinpointApnsSandboxChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#bundle_id PinpointApnsSandboxChannel#bundle_id}.
+	BundleId *string `json:"bundleId" yaml:"bundleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#certificate PinpointApnsSandboxChannel#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#default_authentication_method PinpointApnsSandboxChannel#default_authentication_method}.
+	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod" yaml:"defaultAuthenticationMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#enabled PinpointApnsSandboxChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#private_key PinpointApnsSandboxChannel#private_key}.
+	PrivateKey *string `json:"privateKey" yaml:"privateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#team_id PinpointApnsSandboxChannel#team_id}.
+	TeamId *string `json:"teamId" yaml:"teamId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#token_key PinpointApnsSandboxChannel#token_key}.
+	TokenKey *string `json:"tokenKey" yaml:"tokenKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_sandbox_channel#token_key_id PinpointApnsSandboxChannel#token_key_id}.
+	TokenKeyId *string `json:"tokenKeyId" yaml:"tokenKeyId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html aws_pinpoint_apns_voip_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel aws_pinpoint_apns_voip_channel}.
 type PinpointApnsVoipChannel interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -2207,8 +2432,8 @@ type PinpointApnsVoipChannel interface {
 	SetCertificate(val *string)
 	CertificateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultAuthenticationMethod() *string
 	SetDefaultAuthenticationMethod(val *string)
 	DefaultAuthenticationMethodInput() *string
@@ -2242,10 +2467,15 @@ type PinpointApnsVoipChannel interface {
 	TokenKeyIdInput() *string
 	TokenKeyInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBundleId()
@@ -2348,8 +2578,8 @@ func (j *jsiiProxy_PinpointApnsVoipChannel) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApnsVoipChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApnsVoipChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2588,7 +2818,7 @@ func (j *jsiiProxy_PinpointApnsVoipChannel) TokenKeyInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html aws_pinpoint_apns_voip_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel aws_pinpoint_apns_voip_channel} Resource.
 func NewPinpointApnsVoipChannel(scope constructs.Construct, id *string, config *PinpointApnsVoipChannelConfig) PinpointApnsVoipChannel {
 	_init_.Initialize()
 
@@ -2603,7 +2833,7 @@ func NewPinpointApnsVoipChannel(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html aws_pinpoint_apns_voip_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel aws_pinpoint_apns_voip_channel} Resource.
 func NewPinpointApnsVoipChannel_Override(p PinpointApnsVoipChannel, scope constructs.Construct, id *string, config *PinpointApnsVoipChannelConfig) {
 	_init_.Initialize()
 
@@ -2638,7 +2868,7 @@ func (j *jsiiProxy_PinpointApnsVoipChannel) SetCertificate(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointApnsVoipChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointApnsVoipChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2758,12 +2988,40 @@ func (p *jsiiProxy_PinpointApnsVoipChannel) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsVoipChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsVoipChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsVoipChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2800,12 +3058,54 @@ func (p *jsiiProxy_PinpointApnsVoipChannel) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsVoipChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsVoipChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsVoipChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsVoipChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2970,34 +3270,34 @@ func (p *jsiiProxy_PinpointApnsVoipChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointApnsVoipChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#application_id PinpointApnsVoipChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#bundle_id PinpointApnsVoipChannel#bundle_id}.
-	BundleId *string `json:"bundleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#certificate PinpointApnsVoipChannel#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#default_authentication_method PinpointApnsVoipChannel#default_authentication_method}.
-	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#enabled PinpointApnsVoipChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#private_key PinpointApnsVoipChannel#private_key}.
-	PrivateKey *string `json:"privateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#team_id PinpointApnsVoipChannel#team_id}.
-	TeamId *string `json:"teamId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#token_key PinpointApnsVoipChannel#token_key}.
-	TokenKey *string `json:"tokenKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel.html#token_key_id PinpointApnsVoipChannel#token_key_id}.
-	TokenKeyId *string `json:"tokenKeyId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#application_id PinpointApnsVoipChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#bundle_id PinpointApnsVoipChannel#bundle_id}.
+	BundleId *string `json:"bundleId" yaml:"bundleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#certificate PinpointApnsVoipChannel#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#default_authentication_method PinpointApnsVoipChannel#default_authentication_method}.
+	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod" yaml:"defaultAuthenticationMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#enabled PinpointApnsVoipChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#private_key PinpointApnsVoipChannel#private_key}.
+	PrivateKey *string `json:"privateKey" yaml:"privateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#team_id PinpointApnsVoipChannel#team_id}.
+	TeamId *string `json:"teamId" yaml:"teamId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#token_key PinpointApnsVoipChannel#token_key}.
+	TokenKey *string `json:"tokenKey" yaml:"tokenKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_channel#token_key_id PinpointApnsVoipChannel#token_key_id}.
+	TokenKeyId *string `json:"tokenKeyId" yaml:"tokenKeyId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html aws_pinpoint_apns_voip_sandbox_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel aws_pinpoint_apns_voip_sandbox_channel}.
 type PinpointApnsVoipSandboxChannel interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -3011,8 +3311,8 @@ type PinpointApnsVoipSandboxChannel interface {
 	SetCertificate(val *string)
 	CertificateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultAuthenticationMethod() *string
 	SetDefaultAuthenticationMethod(val *string)
 	DefaultAuthenticationMethodInput() *string
@@ -3046,10 +3346,15 @@ type PinpointApnsVoipSandboxChannel interface {
 	TokenKeyIdInput() *string
 	TokenKeyInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBundleId()
@@ -3152,8 +3457,8 @@ func (j *jsiiProxy_PinpointApnsVoipSandboxChannel) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApnsVoipSandboxChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApnsVoipSandboxChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3392,7 +3697,7 @@ func (j *jsiiProxy_PinpointApnsVoipSandboxChannel) TokenKeyInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html aws_pinpoint_apns_voip_sandbox_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel aws_pinpoint_apns_voip_sandbox_channel} Resource.
 func NewPinpointApnsVoipSandboxChannel(scope constructs.Construct, id *string, config *PinpointApnsVoipSandboxChannelConfig) PinpointApnsVoipSandboxChannel {
 	_init_.Initialize()
 
@@ -3407,7 +3712,7 @@ func NewPinpointApnsVoipSandboxChannel(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html aws_pinpoint_apns_voip_sandbox_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel aws_pinpoint_apns_voip_sandbox_channel} Resource.
 func NewPinpointApnsVoipSandboxChannel_Override(p PinpointApnsVoipSandboxChannel, scope constructs.Construct, id *string, config *PinpointApnsVoipSandboxChannelConfig) {
 	_init_.Initialize()
 
@@ -3442,7 +3747,7 @@ func (j *jsiiProxy_PinpointApnsVoipSandboxChannel) SetCertificate(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointApnsVoipSandboxChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointApnsVoipSandboxChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3562,12 +3867,40 @@ func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) AddOverride(path *string, val
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3604,12 +3937,54 @@ func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3774,34 +4149,34 @@ func (p *jsiiProxy_PinpointApnsVoipSandboxChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointApnsVoipSandboxChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#application_id PinpointApnsVoipSandboxChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#bundle_id PinpointApnsVoipSandboxChannel#bundle_id}.
-	BundleId *string `json:"bundleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#certificate PinpointApnsVoipSandboxChannel#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#default_authentication_method PinpointApnsVoipSandboxChannel#default_authentication_method}.
-	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#enabled PinpointApnsVoipSandboxChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#private_key PinpointApnsVoipSandboxChannel#private_key}.
-	PrivateKey *string `json:"privateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#team_id PinpointApnsVoipSandboxChannel#team_id}.
-	TeamId *string `json:"teamId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#token_key PinpointApnsVoipSandboxChannel#token_key}.
-	TokenKey *string `json:"tokenKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel.html#token_key_id PinpointApnsVoipSandboxChannel#token_key_id}.
-	TokenKeyId *string `json:"tokenKeyId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#application_id PinpointApnsVoipSandboxChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#bundle_id PinpointApnsVoipSandboxChannel#bundle_id}.
+	BundleId *string `json:"bundleId" yaml:"bundleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#certificate PinpointApnsVoipSandboxChannel#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#default_authentication_method PinpointApnsVoipSandboxChannel#default_authentication_method}.
+	DefaultAuthenticationMethod *string `json:"defaultAuthenticationMethod" yaml:"defaultAuthenticationMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#enabled PinpointApnsVoipSandboxChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#private_key PinpointApnsVoipSandboxChannel#private_key}.
+	PrivateKey *string `json:"privateKey" yaml:"privateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#team_id PinpointApnsVoipSandboxChannel#team_id}.
+	TeamId *string `json:"teamId" yaml:"teamId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#token_key PinpointApnsVoipSandboxChannel#token_key}.
+	TokenKey *string `json:"tokenKey" yaml:"tokenKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_apns_voip_sandbox_channel#token_key_id PinpointApnsVoipSandboxChannel#token_key_id}.
+	TokenKeyId *string `json:"tokenKeyId" yaml:"tokenKeyId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html aws_pinpoint_app}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app aws_pinpoint_app}.
 type PinpointApp interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -3810,8 +4185,8 @@ type PinpointApp interface {
 	CampaignHookInput() *PinpointAppCampaignHook
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3833,20 +4208,25 @@ type PinpointApp interface {
 	QuietTime() PinpointAppQuietTimeOutputReference
 	QuietTimeInput() *PinpointAppQuietTime
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCampaignHook(value *PinpointAppCampaignHook)
@@ -3931,8 +4311,8 @@ func (j *jsiiProxy_PinpointApp) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApp) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApp) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4101,8 +4481,8 @@ func (j *jsiiProxy_PinpointApp) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApp) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApp) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4111,8 +4491,8 @@ func (j *jsiiProxy_PinpointApp) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApp) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApp) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4121,8 +4501,8 @@ func (j *jsiiProxy_PinpointApp) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApp) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApp) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4131,8 +4511,8 @@ func (j *jsiiProxy_PinpointApp) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_PinpointApp) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointApp) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4171,7 +4551,7 @@ func (j *jsiiProxy_PinpointApp) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html aws_pinpoint_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app aws_pinpoint_app} Resource.
 func NewPinpointApp(scope constructs.Construct, id *string, config *PinpointAppConfig) PinpointApp {
 	_init_.Initialize()
 
@@ -4186,7 +4566,7 @@ func NewPinpointApp(scope constructs.Construct, id *string, config *PinpointAppC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html aws_pinpoint_app} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app aws_pinpoint_app} Resource.
 func NewPinpointApp_Override(p PinpointApp, scope constructs.Construct, id *string, config *PinpointAppConfig) {
 	_init_.Initialize()
 
@@ -4197,7 +4577,7 @@ func NewPinpointApp_Override(p PinpointApp, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_PinpointApp) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointApp) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4245,7 +4625,7 @@ func (j *jsiiProxy_PinpointApp) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_PinpointApp) SetTags(val interface{}) {
+func (j *jsiiProxy_PinpointApp) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4253,7 +4633,7 @@ func (j *jsiiProxy_PinpointApp) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_PinpointApp) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_PinpointApp) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4301,12 +4681,40 @@ func (p *jsiiProxy_PinpointApp) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApp) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApp) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApp) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4343,12 +4751,54 @@ func (p *jsiiProxy_PinpointApp) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointApp) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApp) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointApp) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointApp) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4527,12 +4977,12 @@ func (p *jsiiProxy_PinpointApp) ToTerraform() interface{} {
 }
 
 type PinpointAppCampaignHook struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#lambda_function_name PinpointApp#lambda_function_name}.
-	LambdaFunctionName *string `json:"lambdaFunctionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#mode PinpointApp#mode}.
-	Mode *string `json:"mode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#web_url PinpointApp#web_url}.
-	WebUrl *string `json:"webUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#lambda_function_name PinpointApp#lambda_function_name}.
+	LambdaFunctionName *string `json:"lambdaFunctionName" yaml:"lambdaFunctionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#mode PinpointApp#mode}.
+	Mode *string `json:"mode" yaml:"mode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#web_url PinpointApp#web_url}.
+	WebUrl *string `json:"webUrl" yaml:"webUrl"`
 }
 
 type PinpointAppCampaignHookOutputReference interface {
@@ -4549,15 +4999,20 @@ type PinpointAppCampaignHookOutputReference interface {
 	ModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WebUrl() *string
 	SetWebUrl(val *string)
 	WebUrlInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLambdaFunctionName()
@@ -4640,8 +5095,8 @@ func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4670,7 +5125,7 @@ func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) WebUrlInput() *string
 	return returns
 }
 
-func NewPinpointAppCampaignHookOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) PinpointAppCampaignHookOutputReference {
+func NewPinpointAppCampaignHookOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) PinpointAppCampaignHookOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_PinpointAppCampaignHookOutputReference{}
@@ -4684,7 +5139,7 @@ func NewPinpointAppCampaignHookOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewPinpointAppCampaignHookOutputReference_Override(p PinpointAppCampaignHookOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewPinpointAppCampaignHookOutputReference_Override(p PinpointAppCampaignHookOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4734,7 +5189,7 @@ func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4751,12 +5206,40 @@ func (j *jsiiProxy_PinpointAppCampaignHookOutputReference) SetWebUrl(val *string
 }
 
 // Experimental.
-func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4793,12 +5276,54 @@ func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4861,44 +5386,44 @@ func (p *jsiiProxy_PinpointAppCampaignHookOutputReference) ResetWebUrl() {
 // AWS Pinpoint.
 type PinpointAppConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// campaign_hook block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#campaign_hook PinpointApp#campaign_hook}
-	CampaignHook *PinpointAppCampaignHook `json:"campaignHook"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#campaign_hook PinpointApp#campaign_hook}
+	CampaignHook *PinpointAppCampaignHook `json:"campaignHook" yaml:"campaignHook"`
 	// limits block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#limits PinpointApp#limits}
-	Limits *PinpointAppLimits `json:"limits"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#name PinpointApp#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#name_prefix PinpointApp#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#limits PinpointApp#limits}
+	Limits *PinpointAppLimits `json:"limits" yaml:"limits"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#name PinpointApp#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#name_prefix PinpointApp#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 	// quiet_time block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#quiet_time PinpointApp#quiet_time}
-	QuietTime *PinpointAppQuietTime `json:"quietTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#tags PinpointApp#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#tags_all PinpointApp#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#quiet_time PinpointApp#quiet_time}
+	QuietTime *PinpointAppQuietTime `json:"quietTime" yaml:"quietTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#tags PinpointApp#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#tags_all PinpointApp#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type PinpointAppLimits struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#daily PinpointApp#daily}.
-	Daily *float64 `json:"daily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#maximum_duration PinpointApp#maximum_duration}.
-	MaximumDuration *float64 `json:"maximumDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#messages_per_second PinpointApp#messages_per_second}.
-	MessagesPerSecond *float64 `json:"messagesPerSecond"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#total PinpointApp#total}.
-	Total *float64 `json:"total"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#daily PinpointApp#daily}.
+	Daily *float64 `json:"daily" yaml:"daily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#maximum_duration PinpointApp#maximum_duration}.
+	MaximumDuration *float64 `json:"maximumDuration" yaml:"maximumDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#messages_per_second PinpointApp#messages_per_second}.
+	MessagesPerSecond *float64 `json:"messagesPerSecond" yaml:"messagesPerSecond"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#total PinpointApp#total}.
+	Total *float64 `json:"total" yaml:"total"`
 }
 
 type PinpointAppLimitsOutputReference interface {
@@ -4918,15 +5443,20 @@ type PinpointAppLimitsOutputReference interface {
 	MessagesPerSecondInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Total() *float64
 	SetTotal(val *float64)
 	TotalInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDaily()
@@ -5030,8 +5560,8 @@ func (j *jsiiProxy_PinpointAppLimitsOutputReference) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_PinpointAppLimitsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_PinpointAppLimitsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5060,7 +5590,7 @@ func (j *jsiiProxy_PinpointAppLimitsOutputReference) TotalInput() *float64 {
 	return returns
 }
 
-func NewPinpointAppLimitsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) PinpointAppLimitsOutputReference {
+func NewPinpointAppLimitsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) PinpointAppLimitsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_PinpointAppLimitsOutputReference{}
@@ -5074,7 +5604,7 @@ func NewPinpointAppLimitsOutputReference(terraformResource cdktf.ITerraformResou
 	return &j
 }
 
-func NewPinpointAppLimitsOutputReference_Override(p PinpointAppLimitsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewPinpointAppLimitsOutputReference_Override(p PinpointAppLimitsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5132,7 +5662,7 @@ func (j *jsiiProxy_PinpointAppLimitsOutputReference) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_PinpointAppLimitsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_PinpointAppLimitsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5149,12 +5679,40 @@ func (j *jsiiProxy_PinpointAppLimitsOutputReference) SetTotal(val *float64) {
 }
 
 // Experimental.
-func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5191,12 +5749,54 @@ func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppLimitsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5265,10 +5865,10 @@ func (p *jsiiProxy_PinpointAppLimitsOutputReference) ResetTotal() {
 }
 
 type PinpointAppQuietTime struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#end PinpointApp#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app.html#start PinpointApp#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#end PinpointApp#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_app#start PinpointApp#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type PinpointAppQuietTimeOutputReference interface {
@@ -5285,12 +5885,17 @@ type PinpointAppQuietTimeOutputReference interface {
 	StartInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnd()
@@ -5372,8 +5977,8 @@ func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5382,7 +5987,7 @@ func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) TerraformResource() cdkt
 	return returns
 }
 
-func NewPinpointAppQuietTimeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) PinpointAppQuietTimeOutputReference {
+func NewPinpointAppQuietTimeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) PinpointAppQuietTimeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_PinpointAppQuietTimeOutputReference{}
@@ -5396,7 +6001,7 @@ func NewPinpointAppQuietTimeOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewPinpointAppQuietTimeOutputReference_Override(p PinpointAppQuietTimeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewPinpointAppQuietTimeOutputReference_Override(p PinpointAppQuietTimeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5446,7 +6051,7 @@ func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5455,12 +6060,40 @@ func (j *jsiiProxy_PinpointAppQuietTimeOutputReference) SetTerraformResource(val
 }
 
 // Experimental.
-func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5497,12 +6130,54 @@ func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5554,7 +6229,7 @@ func (p *jsiiProxy_PinpointAppQuietTimeOutputReference) ResetStart() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel.html aws_pinpoint_baidu_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel aws_pinpoint_baidu_channel}.
 type PinpointBaiduChannel interface {
 	cdktf.TerraformResource
 	ApiKey() *string
@@ -5565,8 +6240,8 @@ type PinpointBaiduChannel interface {
 	ApplicationIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -5588,10 +6263,15 @@ type PinpointBaiduChannel interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnabled()
@@ -5667,8 +6347,8 @@ func (j *jsiiProxy_PinpointBaiduChannel) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_PinpointBaiduChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointBaiduChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5827,7 +6507,7 @@ func (j *jsiiProxy_PinpointBaiduChannel) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel.html aws_pinpoint_baidu_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel aws_pinpoint_baidu_channel} Resource.
 func NewPinpointBaiduChannel(scope constructs.Construct, id *string, config *PinpointBaiduChannelConfig) PinpointBaiduChannel {
 	_init_.Initialize()
 
@@ -5842,7 +6522,7 @@ func NewPinpointBaiduChannel(scope constructs.Construct, id *string, config *Pin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel.html aws_pinpoint_baidu_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel aws_pinpoint_baidu_channel} Resource.
 func NewPinpointBaiduChannel_Override(p PinpointBaiduChannel, scope constructs.Construct, id *string, config *PinpointBaiduChannelConfig) {
 	_init_.Initialize()
 
@@ -5869,7 +6549,7 @@ func (j *jsiiProxy_PinpointBaiduChannel) SetApplicationId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointBaiduChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointBaiduChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5957,12 +6637,40 @@ func (p *jsiiProxy_PinpointBaiduChannel) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointBaiduChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointBaiduChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointBaiduChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5999,12 +6707,54 @@ func (p *jsiiProxy_PinpointBaiduChannel) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointBaiduChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointBaiduChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointBaiduChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointBaiduChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6113,24 +6863,24 @@ func (p *jsiiProxy_PinpointBaiduChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointBaiduChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel.html#api_key PinpointBaiduChannel#api_key}.
-	ApiKey *string `json:"apiKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel.html#application_id PinpointBaiduChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel.html#secret_key PinpointBaiduChannel#secret_key}.
-	SecretKey *string `json:"secretKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel.html#enabled PinpointBaiduChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel#api_key PinpointBaiduChannel#api_key}.
+	ApiKey *string `json:"apiKey" yaml:"apiKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel#application_id PinpointBaiduChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel#secret_key PinpointBaiduChannel#secret_key}.
+	SecretKey *string `json:"secretKey" yaml:"secretKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_baidu_channel#enabled PinpointBaiduChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html aws_pinpoint_email_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel aws_pinpoint_email_channel}.
 type PinpointEmailChannel interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -6141,8 +6891,8 @@ type PinpointEmailChannel interface {
 	SetConfigurationSet(val *string)
 	ConfigurationSetInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -6171,10 +6921,15 @@ type PinpointEmailChannel interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetConfigurationSet()
@@ -6252,8 +7007,8 @@ func (j *jsiiProxy_PinpointEmailChannel) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_PinpointEmailChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointEmailChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6462,7 +7217,7 @@ func (j *jsiiProxy_PinpointEmailChannel) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html aws_pinpoint_email_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel aws_pinpoint_email_channel} Resource.
 func NewPinpointEmailChannel(scope constructs.Construct, id *string, config *PinpointEmailChannelConfig) PinpointEmailChannel {
 	_init_.Initialize()
 
@@ -6477,7 +7232,7 @@ func NewPinpointEmailChannel(scope constructs.Construct, id *string, config *Pin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html aws_pinpoint_email_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel aws_pinpoint_email_channel} Resource.
 func NewPinpointEmailChannel_Override(p PinpointEmailChannel, scope constructs.Construct, id *string, config *PinpointEmailChannelConfig) {
 	_init_.Initialize()
 
@@ -6504,7 +7259,7 @@ func (j *jsiiProxy_PinpointEmailChannel) SetConfigurationSet(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointEmailChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointEmailChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6608,12 +7363,40 @@ func (p *jsiiProxy_PinpointEmailChannel) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointEmailChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointEmailChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointEmailChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6650,12 +7433,54 @@ func (p *jsiiProxy_PinpointEmailChannel) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointEmailChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointEmailChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointEmailChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointEmailChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6780,28 +7605,28 @@ func (p *jsiiProxy_PinpointEmailChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointEmailChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html#application_id PinpointEmailChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html#from_address PinpointEmailChannel#from_address}.
-	FromAddress *string `json:"fromAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html#identity PinpointEmailChannel#identity}.
-	Identity *string `json:"identity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html#configuration_set PinpointEmailChannel#configuration_set}.
-	ConfigurationSet *string `json:"configurationSet"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html#enabled PinpointEmailChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel.html#role_arn PinpointEmailChannel#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel#application_id PinpointEmailChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel#from_address PinpointEmailChannel#from_address}.
+	FromAddress *string `json:"fromAddress" yaml:"fromAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel#identity PinpointEmailChannel#identity}.
+	Identity *string `json:"identity" yaml:"identity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel#configuration_set PinpointEmailChannel#configuration_set}.
+	ConfigurationSet *string `json:"configurationSet" yaml:"configurationSet"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel#enabled PinpointEmailChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_email_channel#role_arn PinpointEmailChannel#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream.html aws_pinpoint_event_stream}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream aws_pinpoint_event_stream}.
 type PinpointEventStream interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -6809,8 +7634,8 @@ type PinpointEventStream interface {
 	ApplicationIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationStreamArn() *string
@@ -6832,10 +7657,15 @@ type PinpointEventStream interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6890,8 +7720,8 @@ func (j *jsiiProxy_PinpointEventStream) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_PinpointEventStream) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointEventStream) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7050,7 +7880,7 @@ func (j *jsiiProxy_PinpointEventStream) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream.html aws_pinpoint_event_stream} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream aws_pinpoint_event_stream} Resource.
 func NewPinpointEventStream(scope constructs.Construct, id *string, config *PinpointEventStreamConfig) PinpointEventStream {
 	_init_.Initialize()
 
@@ -7065,7 +7895,7 @@ func NewPinpointEventStream(scope constructs.Construct, id *string, config *Pinp
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream.html aws_pinpoint_event_stream} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream aws_pinpoint_event_stream} Resource.
 func NewPinpointEventStream_Override(p PinpointEventStream, scope constructs.Construct, id *string, config *PinpointEventStreamConfig) {
 	_init_.Initialize()
 
@@ -7084,7 +7914,7 @@ func (j *jsiiProxy_PinpointEventStream) SetApplicationId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointEventStream) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointEventStream) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7172,12 +8002,40 @@ func (p *jsiiProxy_PinpointEventStream) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointEventStream) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointEventStream) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointEventStream) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7214,12 +8072,54 @@ func (p *jsiiProxy_PinpointEventStream) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointEventStream) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointEventStream) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointEventStream) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointEventStream) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7320,22 +8220,22 @@ func (p *jsiiProxy_PinpointEventStream) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointEventStreamConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream.html#application_id PinpointEventStream#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream.html#destination_stream_arn PinpointEventStream#destination_stream_arn}.
-	DestinationStreamArn *string `json:"destinationStreamArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream.html#role_arn PinpointEventStream#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream#application_id PinpointEventStream#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream#destination_stream_arn PinpointEventStream#destination_stream_arn}.
+	DestinationStreamArn *string `json:"destinationStreamArn" yaml:"destinationStreamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_event_stream#role_arn PinpointEventStream#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel.html aws_pinpoint_gcm_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel aws_pinpoint_gcm_channel}.
 type PinpointGcmChannel interface {
 	cdktf.TerraformResource
 	ApiKey() *string
@@ -7346,8 +8246,8 @@ type PinpointGcmChannel interface {
 	ApplicationIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -7366,10 +8266,15 @@ type PinpointGcmChannel interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnabled()
@@ -7445,8 +8350,8 @@ func (j *jsiiProxy_PinpointGcmChannel) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_PinpointGcmChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointGcmChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7585,7 +8490,7 @@ func (j *jsiiProxy_PinpointGcmChannel) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel.html aws_pinpoint_gcm_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel aws_pinpoint_gcm_channel} Resource.
 func NewPinpointGcmChannel(scope constructs.Construct, id *string, config *PinpointGcmChannelConfig) PinpointGcmChannel {
 	_init_.Initialize()
 
@@ -7600,7 +8505,7 @@ func NewPinpointGcmChannel(scope constructs.Construct, id *string, config *Pinpo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel.html aws_pinpoint_gcm_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel aws_pinpoint_gcm_channel} Resource.
 func NewPinpointGcmChannel_Override(p PinpointGcmChannel, scope constructs.Construct, id *string, config *PinpointGcmChannelConfig) {
 	_init_.Initialize()
 
@@ -7627,7 +8532,7 @@ func (j *jsiiProxy_PinpointGcmChannel) SetApplicationId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointGcmChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointGcmChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7707,12 +8612,40 @@ func (p *jsiiProxy_PinpointGcmChannel) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointGcmChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointGcmChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointGcmChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7749,12 +8682,54 @@ func (p *jsiiProxy_PinpointGcmChannel) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointGcmChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointGcmChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointGcmChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointGcmChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7863,22 +8838,22 @@ func (p *jsiiProxy_PinpointGcmChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointGcmChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel.html#api_key PinpointGcmChannel#api_key}.
-	ApiKey *string `json:"apiKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel.html#application_id PinpointGcmChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel.html#enabled PinpointGcmChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel#api_key PinpointGcmChannel#api_key}.
+	ApiKey *string `json:"apiKey" yaml:"apiKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel#application_id PinpointGcmChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_gcm_channel#enabled PinpointGcmChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel.html aws_pinpoint_sms_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel aws_pinpoint_sms_channel}.
 type PinpointSmsChannel interface {
 	cdktf.TerraformResource
 	ApplicationId() *string
@@ -7886,8 +8861,8 @@ type PinpointSmsChannel interface {
 	ApplicationIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -7914,10 +8889,15 @@ type PinpointSmsChannel interface {
 	TerraformResourceType() *string
 	TransactionalMessagesPerSecond() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnabled()
@@ -7975,8 +8955,8 @@ func (j *jsiiProxy_PinpointSmsChannel) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_PinpointSmsChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_PinpointSmsChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8175,7 +9155,7 @@ func (j *jsiiProxy_PinpointSmsChannel) TransactionalMessagesPerSecond() *float64
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel.html aws_pinpoint_sms_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel aws_pinpoint_sms_channel} Resource.
 func NewPinpointSmsChannel(scope constructs.Construct, id *string, config *PinpointSmsChannelConfig) PinpointSmsChannel {
 	_init_.Initialize()
 
@@ -8190,7 +9170,7 @@ func NewPinpointSmsChannel(scope constructs.Construct, id *string, config *Pinpo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel.html aws_pinpoint_sms_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel aws_pinpoint_sms_channel} Resource.
 func NewPinpointSmsChannel_Override(p PinpointSmsChannel, scope constructs.Construct, id *string, config *PinpointSmsChannelConfig) {
 	_init_.Initialize()
 
@@ -8209,7 +9189,7 @@ func (j *jsiiProxy_PinpointSmsChannel) SetApplicationId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PinpointSmsChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_PinpointSmsChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8305,12 +9285,40 @@ func (p *jsiiProxy_PinpointSmsChannel) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointSmsChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		p,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointSmsChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		p,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointSmsChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		p,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8347,12 +9355,54 @@ func (p *jsiiProxy_PinpointSmsChannel) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (p *jsiiProxy_PinpointSmsChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointSmsChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		p,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (p *jsiiProxy_PinpointSmsChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		p,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (p *jsiiProxy_PinpointSmsChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		p,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8477,19 +9527,19 @@ func (p *jsiiProxy_PinpointSmsChannel) ToTerraform() interface{} {
 // AWS Pinpoint.
 type PinpointSmsChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel.html#application_id PinpointSmsChannel#application_id}.
-	ApplicationId *string `json:"applicationId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel.html#enabled PinpointSmsChannel#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel.html#sender_id PinpointSmsChannel#sender_id}.
-	SenderId *string `json:"senderId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel.html#short_code PinpointSmsChannel#short_code}.
-	ShortCode *string `json:"shortCode"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel#application_id PinpointSmsChannel#application_id}.
+	ApplicationId *string `json:"applicationId" yaml:"applicationId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel#enabled PinpointSmsChannel#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel#sender_id PinpointSmsChannel#sender_id}.
+	SenderId *string `json:"senderId" yaml:"senderId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/pinpoint_sms_channel#short_code PinpointSmsChannel#short_code}.
+	ShortCode *string `json:"shortCode" yaml:"shortCode"`
 }

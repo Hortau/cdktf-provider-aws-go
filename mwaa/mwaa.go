@@ -9,20 +9,20 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/mwaa/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html aws_mwaa_environment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment aws_mwaa_environment}.
 type MwaaEnvironment interface {
 	cdktf.TerraformResource
-	AirflowConfigurationOptions() interface{}
-	SetAirflowConfigurationOptions(val interface{})
-	AirflowConfigurationOptionsInput() interface{}
+	AirflowConfigurationOptions() *map[string]*string
+	SetAirflowConfigurationOptions(val *map[string]*string)
+	AirflowConfigurationOptionsInput() *map[string]*string
 	AirflowVersion() *string
 	SetAirflowVersion(val *string)
 	AirflowVersionInput() *string
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedAt() *string
 	DagS3Path() *string
 	SetDagS3Path(val *string)
@@ -77,12 +77,12 @@ type MwaaEnvironment interface {
 	SetSourceBucketArn(val *string)
 	SourceBucketArnInput() *string
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -94,10 +94,15 @@ type MwaaEnvironment interface {
 	SetWeeklyMaintenanceWindowStart(val *string)
 	WeeklyMaintenanceWindowStartInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	LastUpdated(index *string) MwaaEnvironmentLastUpdated
 	OverrideLogicalId(newLogicalId *string)
@@ -130,8 +135,8 @@ type jsiiProxy_MwaaEnvironment struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_MwaaEnvironment) AirflowConfigurationOptions() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironment) AirflowConfigurationOptions() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"airflowConfigurationOptions",
@@ -140,8 +145,8 @@ func (j *jsiiProxy_MwaaEnvironment) AirflowConfigurationOptions() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironment) AirflowConfigurationOptionsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironment) AirflowConfigurationOptionsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"airflowConfigurationOptionsInput",
@@ -200,8 +205,8 @@ func (j *jsiiProxy_MwaaEnvironment) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -600,8 +605,8 @@ func (j *jsiiProxy_MwaaEnvironment) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironment) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironment) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -610,8 +615,8 @@ func (j *jsiiProxy_MwaaEnvironment) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironment) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironment) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -620,8 +625,8 @@ func (j *jsiiProxy_MwaaEnvironment) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironment) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironment) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -630,8 +635,8 @@ func (j *jsiiProxy_MwaaEnvironment) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironment) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironment) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -720,7 +725,7 @@ func (j *jsiiProxy_MwaaEnvironment) WeeklyMaintenanceWindowStartInput() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html aws_mwaa_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment aws_mwaa_environment} Resource.
 func NewMwaaEnvironment(scope constructs.Construct, id *string, config *MwaaEnvironmentConfig) MwaaEnvironment {
 	_init_.Initialize()
 
@@ -735,7 +740,7 @@ func NewMwaaEnvironment(scope constructs.Construct, id *string, config *MwaaEnvi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html aws_mwaa_environment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment aws_mwaa_environment} Resource.
 func NewMwaaEnvironment_Override(m MwaaEnvironment, scope constructs.Construct, id *string, config *MwaaEnvironmentConfig) {
 	_init_.Initialize()
 
@@ -746,7 +751,7 @@ func NewMwaaEnvironment_Override(m MwaaEnvironment, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironment) SetAirflowConfigurationOptions(val interface{}) {
+func (j *jsiiProxy_MwaaEnvironment) SetAirflowConfigurationOptions(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"airflowConfigurationOptions",
@@ -762,7 +767,7 @@ func (j *jsiiProxy_MwaaEnvironment) SetAirflowVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironment) SetCount(val interface{}) {
+func (j *jsiiProxy_MwaaEnvironment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -890,7 +895,7 @@ func (j *jsiiProxy_MwaaEnvironment) SetSourceBucketArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironment) SetTags(val interface{}) {
+func (j *jsiiProxy_MwaaEnvironment) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -898,7 +903,7 @@ func (j *jsiiProxy_MwaaEnvironment) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironment) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_MwaaEnvironment) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -962,12 +967,40 @@ func (m *jsiiProxy_MwaaEnvironment) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1004,12 +1037,54 @@ func (m *jsiiProxy_MwaaEnvironment) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1259,57 +1334,57 @@ func (m *jsiiProxy_MwaaEnvironment) ToTerraform() interface{} {
 // AWS Managed Workloads for Apache Airflow.
 type MwaaEnvironmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#dag_s3_path MwaaEnvironment#dag_s3_path}.
-	DagS3Path *string `json:"dagS3Path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#execution_role_arn MwaaEnvironment#execution_role_arn}.
-	ExecutionRoleArn *string `json:"executionRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#name MwaaEnvironment#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#dag_s3_path MwaaEnvironment#dag_s3_path}.
+	DagS3Path *string `json:"dagS3Path" yaml:"dagS3Path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#execution_role_arn MwaaEnvironment#execution_role_arn}.
+	ExecutionRoleArn *string `json:"executionRoleArn" yaml:"executionRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#name MwaaEnvironment#name}.
+	Name *string `json:"name" yaml:"name"`
 	// network_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#network_configuration MwaaEnvironment#network_configuration}
-	NetworkConfiguration *MwaaEnvironmentNetworkConfiguration `json:"networkConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#source_bucket_arn MwaaEnvironment#source_bucket_arn}.
-	SourceBucketArn *string `json:"sourceBucketArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#airflow_configuration_options MwaaEnvironment#airflow_configuration_options}.
-	AirflowConfigurationOptions interface{} `json:"airflowConfigurationOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#airflow_version MwaaEnvironment#airflow_version}.
-	AirflowVersion *string `json:"airflowVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#environment_class MwaaEnvironment#environment_class}.
-	EnvironmentClass *string `json:"environmentClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#kms_key MwaaEnvironment#kms_key}.
-	KmsKey *string `json:"kmsKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#network_configuration MwaaEnvironment#network_configuration}
+	NetworkConfiguration *MwaaEnvironmentNetworkConfiguration `json:"networkConfiguration" yaml:"networkConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#source_bucket_arn MwaaEnvironment#source_bucket_arn}.
+	SourceBucketArn *string `json:"sourceBucketArn" yaml:"sourceBucketArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#airflow_configuration_options MwaaEnvironment#airflow_configuration_options}.
+	AirflowConfigurationOptions *map[string]*string `json:"airflowConfigurationOptions" yaml:"airflowConfigurationOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#airflow_version MwaaEnvironment#airflow_version}.
+	AirflowVersion *string `json:"airflowVersion" yaml:"airflowVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#environment_class MwaaEnvironment#environment_class}.
+	EnvironmentClass *string `json:"environmentClass" yaml:"environmentClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#kms_key MwaaEnvironment#kms_key}.
+	KmsKey *string `json:"kmsKey" yaml:"kmsKey"`
 	// logging_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#logging_configuration MwaaEnvironment#logging_configuration}
-	LoggingConfiguration *MwaaEnvironmentLoggingConfiguration `json:"loggingConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#max_workers MwaaEnvironment#max_workers}.
-	MaxWorkers *float64 `json:"maxWorkers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#min_workers MwaaEnvironment#min_workers}.
-	MinWorkers *float64 `json:"minWorkers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#plugins_s3_object_version MwaaEnvironment#plugins_s3_object_version}.
-	PluginsS3ObjectVersion *string `json:"pluginsS3ObjectVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#plugins_s3_path MwaaEnvironment#plugins_s3_path}.
-	PluginsS3Path *string `json:"pluginsS3Path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#requirements_s3_object_version MwaaEnvironment#requirements_s3_object_version}.
-	RequirementsS3ObjectVersion *string `json:"requirementsS3ObjectVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#requirements_s3_path MwaaEnvironment#requirements_s3_path}.
-	RequirementsS3Path *string `json:"requirementsS3Path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#tags MwaaEnvironment#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#tags_all MwaaEnvironment#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#webserver_access_mode MwaaEnvironment#webserver_access_mode}.
-	WebserverAccessMode *string `json:"webserverAccessMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#weekly_maintenance_window_start MwaaEnvironment#weekly_maintenance_window_start}.
-	WeeklyMaintenanceWindowStart *string `json:"weeklyMaintenanceWindowStart"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#logging_configuration MwaaEnvironment#logging_configuration}
+	LoggingConfiguration *MwaaEnvironmentLoggingConfiguration `json:"loggingConfiguration" yaml:"loggingConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#max_workers MwaaEnvironment#max_workers}.
+	MaxWorkers *float64 `json:"maxWorkers" yaml:"maxWorkers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#min_workers MwaaEnvironment#min_workers}.
+	MinWorkers *float64 `json:"minWorkers" yaml:"minWorkers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#plugins_s3_object_version MwaaEnvironment#plugins_s3_object_version}.
+	PluginsS3ObjectVersion *string `json:"pluginsS3ObjectVersion" yaml:"pluginsS3ObjectVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#plugins_s3_path MwaaEnvironment#plugins_s3_path}.
+	PluginsS3Path *string `json:"pluginsS3Path" yaml:"pluginsS3Path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#requirements_s3_object_version MwaaEnvironment#requirements_s3_object_version}.
+	RequirementsS3ObjectVersion *string `json:"requirementsS3ObjectVersion" yaml:"requirementsS3ObjectVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#requirements_s3_path MwaaEnvironment#requirements_s3_path}.
+	RequirementsS3Path *string `json:"requirementsS3Path" yaml:"requirementsS3Path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#tags MwaaEnvironment#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#tags_all MwaaEnvironment#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#webserver_access_mode MwaaEnvironment#webserver_access_mode}.
+	WebserverAccessMode *string `json:"webserverAccessMode" yaml:"webserverAccessMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#weekly_maintenance_window_start MwaaEnvironment#weekly_maintenance_window_start}.
+	WeeklyMaintenanceWindowStart *string `json:"weeklyMaintenanceWindowStart" yaml:"weeklyMaintenanceWindowStart"`
 }
 
 type MwaaEnvironmentLastUpdated interface {
@@ -1317,16 +1392,23 @@ type MwaaEnvironmentLastUpdated interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	CreatedAt() *string
-	Error() interface{}
+	Error() cdktf.IResolvable
 	Status() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1355,8 +1437,8 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdated) CreatedAt() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLastUpdated) Error() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MwaaEnvironmentLastUpdated) Error() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"error",
@@ -1385,8 +1467,8 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdated) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLastUpdated) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLastUpdated) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1395,15 +1477,25 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdated) TerraformResource() cdktf.ITerraf
 	return returns
 }
 
+func (j *jsiiProxy_MwaaEnvironmentLastUpdated) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewMwaaEnvironmentLastUpdated(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) MwaaEnvironmentLastUpdated {
+func NewMwaaEnvironmentLastUpdated(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) MwaaEnvironmentLastUpdated {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLastUpdated{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdated",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1411,12 +1503,12 @@ func NewMwaaEnvironmentLastUpdated(terraformResource cdktf.ITerraformResource, t
 }
 
 // Experimental.
-func NewMwaaEnvironmentLastUpdated_Override(m MwaaEnvironmentLastUpdated, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewMwaaEnvironmentLastUpdated_Override(m MwaaEnvironmentLastUpdated, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdated",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		m,
 	)
 }
@@ -1437,7 +1529,7 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdated) SetTerraformAttribute(val *string
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLastUpdated) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLastUpdated) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1445,13 +1537,49 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdated) SetTerraformResource(val cdktf.IT
 	)
 }
 
+func (j *jsiiProxy_MwaaEnvironmentLastUpdated) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1488,12 +1616,54 @@ func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdated) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1523,12 +1693,19 @@ type MwaaEnvironmentLastUpdatedError interface {
 	ErrorMessage() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1577,8 +1754,8 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) TerraformAttribute() *string
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1587,15 +1764,25 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) TerraformResource() cdktf.IT
 	return returns
 }
 
+func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewMwaaEnvironmentLastUpdatedError(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) MwaaEnvironmentLastUpdatedError {
+func NewMwaaEnvironmentLastUpdatedError(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) MwaaEnvironmentLastUpdatedError {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLastUpdatedError{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdatedError",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1603,12 +1790,12 @@ func NewMwaaEnvironmentLastUpdatedError(terraformResource cdktf.ITerraformResour
 }
 
 // Experimental.
-func NewMwaaEnvironmentLastUpdatedError_Override(m MwaaEnvironmentLastUpdatedError, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewMwaaEnvironmentLastUpdatedError_Override(m MwaaEnvironmentLastUpdatedError, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mwaa.MwaaEnvironmentLastUpdatedError",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		m,
 	)
 }
@@ -1629,7 +1816,7 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) SetTerraformAttribute(val *s
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1637,13 +1824,49 @@ func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) SetTerraformResource(val cdk
 	)
 }
 
+func (j *jsiiProxy_MwaaEnvironmentLastUpdatedError) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1680,12 +1903,54 @@ func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1710,35 +1975,36 @@ func (m *jsiiProxy_MwaaEnvironmentLastUpdatedError) InterpolationForAttribute(pr
 type MwaaEnvironmentLoggingConfiguration struct {
 	// dag_processing_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#dag_processing_logs MwaaEnvironment#dag_processing_logs}
-	DagProcessingLogs *MwaaEnvironmentLoggingConfigurationDagProcessingLogs `json:"dagProcessingLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#dag_processing_logs MwaaEnvironment#dag_processing_logs}
+	DagProcessingLogs *MwaaEnvironmentLoggingConfigurationDagProcessingLogs `json:"dagProcessingLogs" yaml:"dagProcessingLogs"`
 	// scheduler_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#scheduler_logs MwaaEnvironment#scheduler_logs}
-	SchedulerLogs *MwaaEnvironmentLoggingConfigurationSchedulerLogs `json:"schedulerLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#scheduler_logs MwaaEnvironment#scheduler_logs}
+	SchedulerLogs *MwaaEnvironmentLoggingConfigurationSchedulerLogs `json:"schedulerLogs" yaml:"schedulerLogs"`
 	// task_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#task_logs MwaaEnvironment#task_logs}
-	TaskLogs *MwaaEnvironmentLoggingConfigurationTaskLogs `json:"taskLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#task_logs MwaaEnvironment#task_logs}
+	TaskLogs *MwaaEnvironmentLoggingConfigurationTaskLogs `json:"taskLogs" yaml:"taskLogs"`
 	// webserver_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#webserver_logs MwaaEnvironment#webserver_logs}
-	WebserverLogs *MwaaEnvironmentLoggingConfigurationWebserverLogs `json:"webserverLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#webserver_logs MwaaEnvironment#webserver_logs}
+	WebserverLogs *MwaaEnvironmentLoggingConfigurationWebserverLogs `json:"webserverLogs" yaml:"webserverLogs"`
 	// worker_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#worker_logs MwaaEnvironment#worker_logs}
-	WorkerLogs *MwaaEnvironmentLoggingConfigurationWorkerLogs `json:"workerLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#worker_logs MwaaEnvironment#worker_logs}
+	WorkerLogs *MwaaEnvironmentLoggingConfigurationWorkerLogs `json:"workerLogs" yaml:"workerLogs"`
 }
 
 type MwaaEnvironmentLoggingConfigurationDagProcessingLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#enabled MwaaEnvironment#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#log_level MwaaEnvironment#log_level}.
-	LogLevel *string `json:"logLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#enabled MwaaEnvironment#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#log_level MwaaEnvironment#log_level}.
+	LogLevel *string `json:"logLevel" yaml:"logLevel"`
 }
 
 type MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference interface {
 	cdktf.ComplexObject
+	CloudWatchLogGroupArn() *string
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
@@ -1751,12 +2017,17 @@ type MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference interfa
 	LogLevelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -1766,6 +2037,16 @@ type MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference interfa
 // The jsii proxy struct for MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference
 type jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) CloudWatchLogGroupArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cloudWatchLogGroupArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) Enabled() interface{} {
@@ -1838,8 +2119,8 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputRef
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1848,7 +2129,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputRef
 	return returns
 }
 
-func NewMwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference {
+func NewMwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference{}
@@ -1862,7 +2143,7 @@ func NewMwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference(terr
 	return &j
 }
 
-func NewMwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1912,7 +2193,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputRef
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1921,12 +2202,40 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputRef
 }
 
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1963,12 +2272,54 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputRef
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationDagProcessingLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2034,16 +2385,21 @@ type MwaaEnvironmentLoggingConfigurationOutputReference interface {
 	TaskLogsInput() *MwaaEnvironmentLoggingConfigurationTaskLogs
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WebserverLogs() MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference
 	WebserverLogsInput() *MwaaEnvironmentLoggingConfigurationWebserverLogs
 	WorkerLogs() MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference
 	WorkerLogsInput() *MwaaEnvironmentLoggingConfigurationWorkerLogs
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDagProcessingLogs(value *MwaaEnvironmentLoggingConfigurationDagProcessingLogs)
@@ -2153,8 +2509,8 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2203,7 +2559,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) WorkerLog
 	return returns
 }
 
-func NewMwaaEnvironmentLoggingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationOutputReference {
+func NewMwaaEnvironmentLoggingConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference{}
@@ -2217,7 +2573,7 @@ func NewMwaaEnvironmentLoggingConfigurationOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewMwaaEnvironmentLoggingConfigurationOutputReference_Override(m MwaaEnvironmentLoggingConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMwaaEnvironmentLoggingConfigurationOutputReference_Override(m MwaaEnvironmentLoggingConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2251,7 +2607,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2260,12 +2616,40 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) SetTerraf
 }
 
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2302,12 +2686,54 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetNumber
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2424,14 +2850,15 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationOutputReference) ResetWork
 }
 
 type MwaaEnvironmentLoggingConfigurationSchedulerLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#enabled MwaaEnvironment#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#log_level MwaaEnvironment#log_level}.
-	LogLevel *string `json:"logLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#enabled MwaaEnvironment#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#log_level MwaaEnvironment#log_level}.
+	LogLevel *string `json:"logLevel" yaml:"logLevel"`
 }
 
 type MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference interface {
 	cdktf.ComplexObject
+	CloudWatchLogGroupArn() *string
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
@@ -2444,12 +2871,17 @@ type MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference interface {
 	LogLevelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -2459,6 +2891,16 @@ type MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference interface {
 // The jsii proxy struct for MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference
 type jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) CloudWatchLogGroupArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cloudWatchLogGroupArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) Enabled() interface{} {
@@ -2531,8 +2973,8 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2541,7 +2983,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 	return returns
 }
 
-func NewMwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference {
+func NewMwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference{}
@@ -2555,7 +2997,7 @@ func NewMwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference(terrafor
 	return &j
 }
 
-func NewMwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2605,7 +3047,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2614,12 +3056,40 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 }
 
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2656,12 +3126,54 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2714,14 +3226,15 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationSchedulerLogsOutputReferen
 }
 
 type MwaaEnvironmentLoggingConfigurationTaskLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#enabled MwaaEnvironment#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#log_level MwaaEnvironment#log_level}.
-	LogLevel *string `json:"logLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#enabled MwaaEnvironment#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#log_level MwaaEnvironment#log_level}.
+	LogLevel *string `json:"logLevel" yaml:"logLevel"`
 }
 
 type MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference interface {
 	cdktf.ComplexObject
+	CloudWatchLogGroupArn() *string
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
@@ -2734,12 +3247,17 @@ type MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference interface {
 	LogLevelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -2749,6 +3267,16 @@ type MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference interface {
 // The jsii proxy struct for MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference
 type jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) CloudWatchLogGroupArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cloudWatchLogGroupArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) Enabled() interface{} {
@@ -2821,8 +3349,8 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2831,7 +3359,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) T
 	return returns
 }
 
-func NewMwaaEnvironmentLoggingConfigurationTaskLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference {
+func NewMwaaEnvironmentLoggingConfigurationTaskLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference{}
@@ -2845,7 +3373,7 @@ func NewMwaaEnvironmentLoggingConfigurationTaskLogsOutputReference(terraformReso
 	return &j
 }
 
-func NewMwaaEnvironmentLoggingConfigurationTaskLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMwaaEnvironmentLoggingConfigurationTaskLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2895,7 +3423,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2904,12 +3432,40 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) S
 }
 
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2946,12 +3502,54 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) G
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3004,14 +3602,15 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationTaskLogsOutputReference) R
 }
 
 type MwaaEnvironmentLoggingConfigurationWebserverLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#enabled MwaaEnvironment#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#log_level MwaaEnvironment#log_level}.
-	LogLevel *string `json:"logLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#enabled MwaaEnvironment#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#log_level MwaaEnvironment#log_level}.
+	LogLevel *string `json:"logLevel" yaml:"logLevel"`
 }
 
 type MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference interface {
 	cdktf.ComplexObject
+	CloudWatchLogGroupArn() *string
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
@@ -3024,12 +3623,17 @@ type MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference interface {
 	LogLevelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -3039,6 +3643,16 @@ type MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference interface {
 // The jsii proxy struct for MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference
 type jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) CloudWatchLogGroupArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cloudWatchLogGroupArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) Enabled() interface{} {
@@ -3111,8 +3725,8 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3121,7 +3735,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 	return returns
 }
 
-func NewMwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference {
+func NewMwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference{}
@@ -3135,7 +3749,7 @@ func NewMwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference(terrafor
 	return &j
 }
 
-func NewMwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3185,7 +3799,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3194,12 +3808,40 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 }
 
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3236,12 +3878,54 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3294,14 +3978,15 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWebserverLogsOutputReferen
 }
 
 type MwaaEnvironmentLoggingConfigurationWorkerLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#enabled MwaaEnvironment#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#log_level MwaaEnvironment#log_level}.
-	LogLevel *string `json:"logLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#enabled MwaaEnvironment#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#log_level MwaaEnvironment#log_level}.
+	LogLevel *string `json:"logLevel" yaml:"logLevel"`
 }
 
 type MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference interface {
 	cdktf.ComplexObject
+	CloudWatchLogGroupArn() *string
 	Enabled() interface{}
 	SetEnabled(val interface{})
 	EnabledInput() interface{}
@@ -3314,12 +3999,17 @@ type MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference interface {
 	LogLevelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -3329,6 +4019,16 @@ type MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference interface {
 // The jsii proxy struct for MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference
 type jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) CloudWatchLogGroupArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cloudWatchLogGroupArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) Enabled() interface{} {
@@ -3401,8 +4101,8 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3411,7 +4111,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 	return returns
 }
 
-func NewMwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference {
+func NewMwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference{}
@@ -3425,7 +4125,7 @@ func NewMwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference(terraformRe
 	return &j
 }
 
-func NewMwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference_Override(m MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3475,7 +4175,7 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3484,12 +4184,40 @@ func (j *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 }
 
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3526,12 +4254,54 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3584,10 +4354,10 @@ func (m *jsiiProxy_MwaaEnvironmentLoggingConfigurationWorkerLogsOutputReference)
 }
 
 type MwaaEnvironmentNetworkConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#security_group_ids MwaaEnvironment#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment.html#subnet_ids MwaaEnvironment#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#security_group_ids MwaaEnvironment#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mwaa_environment#subnet_ids MwaaEnvironment#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
 }
 
 type MwaaEnvironmentNetworkConfigurationOutputReference interface {
@@ -3604,12 +4374,17 @@ type MwaaEnvironmentNetworkConfigurationOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3689,8 +4464,8 @@ func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3699,7 +4474,7 @@ func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) Terraform
 	return returns
 }
 
-func NewMwaaEnvironmentNetworkConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentNetworkConfigurationOutputReference {
+func NewMwaaEnvironmentNetworkConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MwaaEnvironmentNetworkConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference{}
@@ -3713,7 +4488,7 @@ func NewMwaaEnvironmentNetworkConfigurationOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewMwaaEnvironmentNetworkConfigurationOutputReference_Override(m MwaaEnvironmentNetworkConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMwaaEnvironmentNetworkConfigurationOutputReference_Override(m MwaaEnvironmentNetworkConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3763,7 +4538,7 @@ func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3772,12 +4547,40 @@ func (j *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) SetTerraf
 }
 
 // Experimental.
-func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3814,12 +4617,54 @@ func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetNumber
 }
 
 // Experimental.
+func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MwaaEnvironmentNetworkConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/inspector/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/inspector_rules_packages.html aws_inspector_rules_packages}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/inspector_rules_packages aws_inspector_rules_packages}.
 type DataAwsInspectorRulesPackages interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -32,10 +32,15 @@ type DataAwsInspectorRulesPackages interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -80,8 +85,8 @@ func (j *jsiiProxy_DataAwsInspectorRulesPackages) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsInspectorRulesPackages) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsInspectorRulesPackages) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -200,7 +205,7 @@ func (j *jsiiProxy_DataAwsInspectorRulesPackages) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/inspector_rules_packages.html aws_inspector_rules_packages} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/inspector_rules_packages aws_inspector_rules_packages} Data Source.
 func NewDataAwsInspectorRulesPackages(scope constructs.Construct, id *string, config *DataAwsInspectorRulesPackagesConfig) DataAwsInspectorRulesPackages {
 	_init_.Initialize()
 
@@ -215,7 +220,7 @@ func NewDataAwsInspectorRulesPackages(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/inspector_rules_packages.html aws_inspector_rules_packages} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/inspector_rules_packages aws_inspector_rules_packages} Data Source.
 func NewDataAwsInspectorRulesPackages_Override(d DataAwsInspectorRulesPackages, scope constructs.Construct, id *string, config *DataAwsInspectorRulesPackagesConfig) {
 	_init_.Initialize()
 
@@ -226,7 +231,7 @@ func NewDataAwsInspectorRulesPackages_Override(d DataAwsInspectorRulesPackages, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsInspectorRulesPackages) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsInspectorRulesPackages) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -298,12 +303,40 @@ func (d *jsiiProxy_DataAwsInspectorRulesPackages) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -340,12 +373,54 @@ func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsInspectorRulesPackages) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -446,23 +521,23 @@ func (d *jsiiProxy_DataAwsInspectorRulesPackages) ToTerraform() interface{} {
 // AWS Inspector.
 type DataAwsInspectorRulesPackagesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target.html aws_inspector_assessment_target}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target aws_inspector_assessment_target}.
 type InspectorAssessmentTarget interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -484,10 +559,15 @@ type InspectorAssessmentTarget interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -533,8 +613,8 @@ func (j *jsiiProxy_InspectorAssessmentTarget) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_InspectorAssessmentTarget) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorAssessmentTarget) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -693,7 +773,7 @@ func (j *jsiiProxy_InspectorAssessmentTarget) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target.html aws_inspector_assessment_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target aws_inspector_assessment_target} Resource.
 func NewInspectorAssessmentTarget(scope constructs.Construct, id *string, config *InspectorAssessmentTargetConfig) InspectorAssessmentTarget {
 	_init_.Initialize()
 
@@ -708,7 +788,7 @@ func NewInspectorAssessmentTarget(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target.html aws_inspector_assessment_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target aws_inspector_assessment_target} Resource.
 func NewInspectorAssessmentTarget_Override(i InspectorAssessmentTarget, scope constructs.Construct, id *string, config *InspectorAssessmentTargetConfig) {
 	_init_.Initialize()
 
@@ -719,7 +799,7 @@ func NewInspectorAssessmentTarget_Override(i InspectorAssessmentTarget, scope co
 	)
 }
 
-func (j *jsiiProxy_InspectorAssessmentTarget) SetCount(val interface{}) {
+func (j *jsiiProxy_InspectorAssessmentTarget) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -807,12 +887,40 @@ func (i *jsiiProxy_InspectorAssessmentTarget) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (i *jsiiProxy_InspectorAssessmentTarget) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_InspectorAssessmentTarget) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorAssessmentTarget) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -849,12 +957,54 @@ func (i *jsiiProxy_InspectorAssessmentTarget) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (i *jsiiProxy_InspectorAssessmentTarget) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorAssessmentTarget) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_InspectorAssessmentTarget) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorAssessmentTarget) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -963,27 +1113,27 @@ func (i *jsiiProxy_InspectorAssessmentTarget) ToTerraform() interface{} {
 // AWS Inspector.
 type InspectorAssessmentTargetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target.html#name InspectorAssessmentTarget#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target.html#resource_group_arn InspectorAssessmentTarget#resource_group_arn}.
-	ResourceGroupArn *string `json:"resourceGroupArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target#name InspectorAssessmentTarget#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_target#resource_group_arn InspectorAssessmentTarget#resource_group_arn}.
+	ResourceGroupArn *string `json:"resourceGroupArn" yaml:"resourceGroupArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html aws_inspector_assessment_template}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template aws_inspector_assessment_template}.
 type InspectorAssessmentTemplate interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Duration() *float64
@@ -1004,12 +1154,12 @@ type InspectorAssessmentTemplate interface {
 	RulesPackageArns() *[]*string
 	SetRulesPackageArns(val *[]*string)
 	RulesPackageArnsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetArn() *string
 	SetTargetArn(val *string)
 	TargetArnInput() *string
@@ -1017,10 +1167,15 @@ type InspectorAssessmentTemplate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1067,8 +1222,8 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorAssessmentTemplate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1217,8 +1372,8 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) RulesPackageArnsInput() *[]*stri
 	return returns
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorAssessmentTemplate) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1227,8 +1382,8 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorAssessmentTemplate) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1237,8 +1392,8 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorAssessmentTemplate) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1247,8 +1402,8 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorAssessmentTemplate) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1307,7 +1462,7 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html aws_inspector_assessment_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template aws_inspector_assessment_template} Resource.
 func NewInspectorAssessmentTemplate(scope constructs.Construct, id *string, config *InspectorAssessmentTemplateConfig) InspectorAssessmentTemplate {
 	_init_.Initialize()
 
@@ -1322,7 +1477,7 @@ func NewInspectorAssessmentTemplate(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html aws_inspector_assessment_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template aws_inspector_assessment_template} Resource.
 func NewInspectorAssessmentTemplate_Override(i InspectorAssessmentTemplate, scope constructs.Construct, id *string, config *InspectorAssessmentTemplateConfig) {
 	_init_.Initialize()
 
@@ -1333,7 +1488,7 @@ func NewInspectorAssessmentTemplate_Override(i InspectorAssessmentTemplate, scop
 	)
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) SetCount(val interface{}) {
+func (j *jsiiProxy_InspectorAssessmentTemplate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1389,7 +1544,7 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) SetRulesPackageArns(val *[]*stri
 	)
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) SetTags(val interface{}) {
+func (j *jsiiProxy_InspectorAssessmentTemplate) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1397,7 +1552,7 @@ func (j *jsiiProxy_InspectorAssessmentTemplate) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_InspectorAssessmentTemplate) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_InspectorAssessmentTemplate) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1453,12 +1608,40 @@ func (i *jsiiProxy_InspectorAssessmentTemplate) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (i *jsiiProxy_InspectorAssessmentTemplate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_InspectorAssessmentTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorAssessmentTemplate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1495,12 +1678,54 @@ func (i *jsiiProxy_InspectorAssessmentTemplate) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (i *jsiiProxy_InspectorAssessmentTemplate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorAssessmentTemplate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_InspectorAssessmentTemplate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorAssessmentTemplate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1617,35 +1842,35 @@ func (i *jsiiProxy_InspectorAssessmentTemplate) ToTerraform() interface{} {
 // AWS Inspector.
 type InspectorAssessmentTemplateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html#duration InspectorAssessmentTemplate#duration}.
-	Duration *float64 `json:"duration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html#name InspectorAssessmentTemplate#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html#rules_package_arns InspectorAssessmentTemplate#rules_package_arns}.
-	RulesPackageArns *[]*string `json:"rulesPackageArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html#target_arn InspectorAssessmentTemplate#target_arn}.
-	TargetArn *string `json:"targetArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html#tags InspectorAssessmentTemplate#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template.html#tags_all InspectorAssessmentTemplate#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template#duration InspectorAssessmentTemplate#duration}.
+	Duration *float64 `json:"duration" yaml:"duration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template#name InspectorAssessmentTemplate#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template#rules_package_arns InspectorAssessmentTemplate#rules_package_arns}.
+	RulesPackageArns *[]*string `json:"rulesPackageArns" yaml:"rulesPackageArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template#target_arn InspectorAssessmentTemplate#target_arn}.
+	TargetArn *string `json:"targetArn" yaml:"targetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template#tags InspectorAssessmentTemplate#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_assessment_template#tags_all InspectorAssessmentTemplate#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group.html aws_inspector_resource_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group aws_inspector_resource_group}.
 type InspectorResourceGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1657,17 +1882,22 @@ type InspectorResourceGroup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1712,8 +1942,8 @@ func (j *jsiiProxy_InspectorResourceGroup) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_InspectorResourceGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorResourceGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1802,8 +2032,8 @@ func (j *jsiiProxy_InspectorResourceGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_InspectorResourceGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorResourceGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1812,8 +2042,8 @@ func (j *jsiiProxy_InspectorResourceGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_InspectorResourceGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_InspectorResourceGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1852,7 +2082,7 @@ func (j *jsiiProxy_InspectorResourceGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group.html aws_inspector_resource_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group aws_inspector_resource_group} Resource.
 func NewInspectorResourceGroup(scope constructs.Construct, id *string, config *InspectorResourceGroupConfig) InspectorResourceGroup {
 	_init_.Initialize()
 
@@ -1867,7 +2097,7 @@ func NewInspectorResourceGroup(scope constructs.Construct, id *string, config *I
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group.html aws_inspector_resource_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group aws_inspector_resource_group} Resource.
 func NewInspectorResourceGroup_Override(i InspectorResourceGroup, scope constructs.Construct, id *string, config *InspectorResourceGroupConfig) {
 	_init_.Initialize()
 
@@ -1878,7 +2108,7 @@ func NewInspectorResourceGroup_Override(i InspectorResourceGroup, scope construc
 	)
 }
 
-func (j *jsiiProxy_InspectorResourceGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_InspectorResourceGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1910,7 +2140,7 @@ func (j *jsiiProxy_InspectorResourceGroup) SetProvider(val cdktf.TerraformProvid
 	)
 }
 
-func (j *jsiiProxy_InspectorResourceGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_InspectorResourceGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1958,12 +2188,40 @@ func (i *jsiiProxy_InspectorResourceGroup) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (i *jsiiProxy_InspectorResourceGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_InspectorResourceGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorResourceGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2000,12 +2258,54 @@ func (i *jsiiProxy_InspectorResourceGroup) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (i *jsiiProxy_InspectorResourceGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorResourceGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_InspectorResourceGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_InspectorResourceGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2106,13 +2406,13 @@ func (i *jsiiProxy_InspectorResourceGroup) ToTerraform() interface{} {
 // AWS Inspector.
 type InspectorResourceGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group.html#tags InspectorResourceGroup#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/inspector_resource_group#tags InspectorResourceGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }

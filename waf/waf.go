@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/waf/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset.html aws_waf_ipset}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset aws_waf_ipset}.
 type DataAwsWafIpset interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -34,10 +34,15 @@ type DataAwsWafIpset interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -72,8 +77,8 @@ func (j *jsiiProxy_DataAwsWafIpset) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWafIpset) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWafIpset) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -212,7 +217,7 @@ func (j *jsiiProxy_DataAwsWafIpset) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset.html aws_waf_ipset} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset aws_waf_ipset} Data Source.
 func NewDataAwsWafIpset(scope constructs.Construct, id *string, config *DataAwsWafIpsetConfig) DataAwsWafIpset {
 	_init_.Initialize()
 
@@ -227,7 +232,7 @@ func NewDataAwsWafIpset(scope constructs.Construct, id *string, config *DataAwsW
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset.html aws_waf_ipset} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset aws_waf_ipset} Data Source.
 func NewDataAwsWafIpset_Override(d DataAwsWafIpset, scope constructs.Construct, id *string, config *DataAwsWafIpsetConfig) {
 	_init_.Initialize()
 
@@ -238,7 +243,7 @@ func NewDataAwsWafIpset_Override(d DataAwsWafIpset, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsWafIpset) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWafIpset) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -318,12 +323,40 @@ func (d *jsiiProxy_DataAwsWafIpset) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafIpset) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafIpset) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafIpset) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -360,12 +393,54 @@ func (d *jsiiProxy_DataAwsWafIpset) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafIpset) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafIpset) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafIpset) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafIpset) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -466,24 +541,24 @@ func (d *jsiiProxy_DataAwsWafIpset) ToTerraform() interface{} {
 // AWS WAF.
 type DataAwsWafIpsetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset.html#name DataAwsWafIpset#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_ipset#name DataAwsWafIpset#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule.html aws_waf_rate_based_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule aws_waf_rate_based_rule}.
 type DataAwsWafRateBasedRule interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -502,10 +577,15 @@ type DataAwsWafRateBasedRule interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -540,8 +620,8 @@ func (j *jsiiProxy_DataAwsWafRateBasedRule) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWafRateBasedRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWafRateBasedRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -680,7 +760,7 @@ func (j *jsiiProxy_DataAwsWafRateBasedRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule.html aws_waf_rate_based_rule} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule aws_waf_rate_based_rule} Data Source.
 func NewDataAwsWafRateBasedRule(scope constructs.Construct, id *string, config *DataAwsWafRateBasedRuleConfig) DataAwsWafRateBasedRule {
 	_init_.Initialize()
 
@@ -695,7 +775,7 @@ func NewDataAwsWafRateBasedRule(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule.html aws_waf_rate_based_rule} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule aws_waf_rate_based_rule} Data Source.
 func NewDataAwsWafRateBasedRule_Override(d DataAwsWafRateBasedRule, scope constructs.Construct, id *string, config *DataAwsWafRateBasedRuleConfig) {
 	_init_.Initialize()
 
@@ -706,7 +786,7 @@ func NewDataAwsWafRateBasedRule_Override(d DataAwsWafRateBasedRule, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsWafRateBasedRule) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWafRateBasedRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -786,12 +866,40 @@ func (d *jsiiProxy_DataAwsWafRateBasedRule) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafRateBasedRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafRateBasedRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafRateBasedRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -828,12 +936,54 @@ func (d *jsiiProxy_DataAwsWafRateBasedRule) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafRateBasedRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafRateBasedRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafRateBasedRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafRateBasedRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -934,24 +1084,24 @@ func (d *jsiiProxy_DataAwsWafRateBasedRule) ToTerraform() interface{} {
 // AWS WAF.
 type DataAwsWafRateBasedRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule.html#name DataAwsWafRateBasedRule#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_rate_based_rule#name DataAwsWafRateBasedRule#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_rule.html aws_waf_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_rule aws_waf_rule}.
 type DataAwsWafRule interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -970,10 +1120,15 @@ type DataAwsWafRule interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1008,8 +1163,8 @@ func (j *jsiiProxy_DataAwsWafRule) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWafRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWafRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1148,7 +1303,7 @@ func (j *jsiiProxy_DataAwsWafRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rule.html aws_waf_rule} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rule aws_waf_rule} Data Source.
 func NewDataAwsWafRule(scope constructs.Construct, id *string, config *DataAwsWafRuleConfig) DataAwsWafRule {
 	_init_.Initialize()
 
@@ -1163,7 +1318,7 @@ func NewDataAwsWafRule(scope constructs.Construct, id *string, config *DataAwsWa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rule.html aws_waf_rule} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_rule aws_waf_rule} Data Source.
 func NewDataAwsWafRule_Override(d DataAwsWafRule, scope constructs.Construct, id *string, config *DataAwsWafRuleConfig) {
 	_init_.Initialize()
 
@@ -1174,7 +1329,7 @@ func NewDataAwsWafRule_Override(d DataAwsWafRule, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_DataAwsWafRule) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWafRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1254,12 +1409,40 @@ func (d *jsiiProxy_DataAwsWafRule) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1296,12 +1479,54 @@ func (d *jsiiProxy_DataAwsWafRule) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1402,24 +1627,24 @@ func (d *jsiiProxy_DataAwsWafRule) ToTerraform() interface{} {
 // AWS WAF.
 type DataAwsWafRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_rule.html#name DataAwsWafRule#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_rule#name DataAwsWafRule#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl.html aws_waf_web_acl}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl aws_waf_web_acl}.
 type DataAwsWafWebAcl interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1438,10 +1663,15 @@ type DataAwsWafWebAcl interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1476,8 +1706,8 @@ func (j *jsiiProxy_DataAwsWafWebAcl) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWafWebAcl) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWafWebAcl) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1616,7 +1846,7 @@ func (j *jsiiProxy_DataAwsWafWebAcl) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl.html aws_waf_web_acl} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl aws_waf_web_acl} Data Source.
 func NewDataAwsWafWebAcl(scope constructs.Construct, id *string, config *DataAwsWafWebAclConfig) DataAwsWafWebAcl {
 	_init_.Initialize()
 
@@ -1631,7 +1861,7 @@ func NewDataAwsWafWebAcl(scope constructs.Construct, id *string, config *DataAws
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl.html aws_waf_web_acl} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl aws_waf_web_acl} Data Source.
 func NewDataAwsWafWebAcl_Override(d DataAwsWafWebAcl, scope constructs.Construct, id *string, config *DataAwsWafWebAclConfig) {
 	_init_.Initialize()
 
@@ -1642,7 +1872,7 @@ func NewDataAwsWafWebAcl_Override(d DataAwsWafWebAcl, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_DataAwsWafWebAcl) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWafWebAcl) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1722,12 +1952,40 @@ func (d *jsiiProxy_DataAwsWafWebAcl) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafWebAcl) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafWebAcl) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafWebAcl) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1764,12 +2022,54 @@ func (d *jsiiProxy_DataAwsWafWebAcl) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWafWebAcl) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafWebAcl) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWafWebAcl) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWafWebAcl) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1870,27 +2170,27 @@ func (d *jsiiProxy_DataAwsWafWebAcl) ToTerraform() interface{} {
 // AWS WAF.
 type DataAwsWafWebAclConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl.html#name DataAwsWafWebAcl#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/waf_web_acl#name DataAwsWafWebAcl#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html aws_waf_byte_match_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set aws_waf_byte_match_set}.
 type WafByteMatchSet interface {
 	cdktf.TerraformResource
-	ByteMatchTuples() *[]*WafByteMatchSetByteMatchTuples
-	SetByteMatchTuples(val *[]*WafByteMatchSetByteMatchTuples)
-	ByteMatchTuplesInput() *[]*WafByteMatchSetByteMatchTuples
+	ByteMatchTuples() interface{}
+	SetByteMatchTuples(val interface{})
+	ByteMatchTuplesInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1909,10 +2209,15 @@ type WafByteMatchSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetByteMatchTuples()
@@ -1928,8 +2233,8 @@ type jsiiProxy_WafByteMatchSet struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_WafByteMatchSet) ByteMatchTuples() *[]*WafByteMatchSetByteMatchTuples {
-	var returns *[]*WafByteMatchSetByteMatchTuples
+func (j *jsiiProxy_WafByteMatchSet) ByteMatchTuples() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"byteMatchTuples",
@@ -1938,8 +2243,8 @@ func (j *jsiiProxy_WafByteMatchSet) ByteMatchTuples() *[]*WafByteMatchSetByteMat
 	return returns
 }
 
-func (j *jsiiProxy_WafByteMatchSet) ByteMatchTuplesInput() *[]*WafByteMatchSetByteMatchTuples {
-	var returns *[]*WafByteMatchSetByteMatchTuples
+func (j *jsiiProxy_WafByteMatchSet) ByteMatchTuplesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"byteMatchTuplesInput",
@@ -1968,8 +2273,8 @@ func (j *jsiiProxy_WafByteMatchSet) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_WafByteMatchSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafByteMatchSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2108,7 +2413,7 @@ func (j *jsiiProxy_WafByteMatchSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html aws_waf_byte_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set aws_waf_byte_match_set} Resource.
 func NewWafByteMatchSet(scope constructs.Construct, id *string, config *WafByteMatchSetConfig) WafByteMatchSet {
 	_init_.Initialize()
 
@@ -2123,7 +2428,7 @@ func NewWafByteMatchSet(scope constructs.Construct, id *string, config *WafByteM
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html aws_waf_byte_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set aws_waf_byte_match_set} Resource.
 func NewWafByteMatchSet_Override(w WafByteMatchSet, scope constructs.Construct, id *string, config *WafByteMatchSetConfig) {
 	_init_.Initialize()
 
@@ -2134,7 +2439,7 @@ func NewWafByteMatchSet_Override(w WafByteMatchSet, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_WafByteMatchSet) SetByteMatchTuples(val *[]*WafByteMatchSetByteMatchTuples) {
+func (j *jsiiProxy_WafByteMatchSet) SetByteMatchTuples(val interface{}) {
 	_jsii_.Set(
 		j,
 		"byteMatchTuples",
@@ -2142,7 +2447,7 @@ func (j *jsiiProxy_WafByteMatchSet) SetByteMatchTuples(val *[]*WafByteMatchSetBy
 	)
 }
 
-func (j *jsiiProxy_WafByteMatchSet) SetCount(val interface{}) {
+func (j *jsiiProxy_WafByteMatchSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2222,12 +2527,40 @@ func (w *jsiiProxy_WafByteMatchSet) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (w *jsiiProxy_WafByteMatchSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafByteMatchSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafByteMatchSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2264,12 +2597,54 @@ func (w *jsiiProxy_WafByteMatchSet) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (w *jsiiProxy_WafByteMatchSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafByteMatchSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafByteMatchSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafByteMatchSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2378,21 +2753,21 @@ func (w *jsiiProxy_WafByteMatchSet) ToTerraform() interface{} {
 type WafByteMatchSetByteMatchTuples struct {
 	// field_to_match block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#field_to_match WafByteMatchSet#field_to_match}
-	FieldToMatch *WafByteMatchSetByteMatchTuplesFieldToMatch `json:"fieldToMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#positional_constraint WafByteMatchSet#positional_constraint}.
-	PositionalConstraint *string `json:"positionalConstraint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#text_transformation WafByteMatchSet#text_transformation}.
-	TextTransformation *string `json:"textTransformation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#target_string WafByteMatchSet#target_string}.
-	TargetString *string `json:"targetString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#field_to_match WafByteMatchSet#field_to_match}
+	FieldToMatch *WafByteMatchSetByteMatchTuplesFieldToMatch `json:"fieldToMatch" yaml:"fieldToMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#positional_constraint WafByteMatchSet#positional_constraint}.
+	PositionalConstraint *string `json:"positionalConstraint" yaml:"positionalConstraint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#text_transformation WafByteMatchSet#text_transformation}.
+	TextTransformation *string `json:"textTransformation" yaml:"textTransformation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#target_string WafByteMatchSet#target_string}.
+	TargetString *string `json:"targetString" yaml:"targetString"`
 }
 
 type WafByteMatchSetByteMatchTuplesFieldToMatch struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#type WafByteMatchSet#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#data WafByteMatchSet#data}.
-	Data *string `json:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#type WafByteMatchSet#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#data WafByteMatchSet#data}.
+	Data *string `json:"data" yaml:"data"`
 }
 
 type WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference interface {
@@ -2406,15 +2781,20 @@ type WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetData()
@@ -2475,8 +2855,8 @@ func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2505,7 +2885,7 @@ func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Ty
 	return returns
 }
 
-func NewWafByteMatchSetByteMatchTuplesFieldToMatchOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference {
+func NewWafByteMatchSetByteMatchTuplesFieldToMatchOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference{}
@@ -2519,7 +2899,7 @@ func NewWafByteMatchSetByteMatchTuplesFieldToMatchOutputReference(terraformResou
 	return &j
 }
 
-func NewWafByteMatchSetByteMatchTuplesFieldToMatchOutputReference_Override(w WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafByteMatchSetByteMatchTuplesFieldToMatchOutputReference_Override(w WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2561,7 +2941,7 @@ func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2578,12 +2958,40 @@ func (j *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Se
 }
 
 // Experimental.
-func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2620,12 +3028,54 @@ func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Ge
 }
 
 // Experimental.
+func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2672,36 +3122,36 @@ func (w *jsiiProxy_WafByteMatchSetByteMatchTuplesFieldToMatchOutputReference) Re
 // AWS WAF.
 type WafByteMatchSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#name WafByteMatchSet#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#name WafByteMatchSet#name}.
+	Name *string `json:"name" yaml:"name"`
 	// byte_match_tuples block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set.html#byte_match_tuples WafByteMatchSet#byte_match_tuples}
-	ByteMatchTuples *[]*WafByteMatchSetByteMatchTuples `json:"byteMatchTuples"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_byte_match_set#byte_match_tuples WafByteMatchSet#byte_match_tuples}
+	ByteMatchTuples interface{} `json:"byteMatchTuples" yaml:"byteMatchTuples"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set.html aws_waf_geo_match_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set aws_waf_geo_match_set}.
 type WafGeoMatchSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
-	GeoMatchConstraint() *[]*WafGeoMatchSetGeoMatchConstraint
-	SetGeoMatchConstraint(val *[]*WafGeoMatchSetGeoMatchConstraint)
-	GeoMatchConstraintInput() *[]*WafGeoMatchSetGeoMatchConstraint
+	GeoMatchConstraint() interface{}
+	SetGeoMatchConstraint(val interface{})
+	GeoMatchConstraintInput() interface{}
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -2716,10 +3166,15 @@ type WafGeoMatchSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetGeoMatchConstraint()
@@ -2765,8 +3220,8 @@ func (j *jsiiProxy_WafGeoMatchSet) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_WafGeoMatchSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafGeoMatchSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2805,8 +3260,8 @@ func (j *jsiiProxy_WafGeoMatchSet) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_WafGeoMatchSet) GeoMatchConstraint() *[]*WafGeoMatchSetGeoMatchConstraint {
-	var returns *[]*WafGeoMatchSetGeoMatchConstraint
+func (j *jsiiProxy_WafGeoMatchSet) GeoMatchConstraint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"geoMatchConstraint",
@@ -2815,8 +3270,8 @@ func (j *jsiiProxy_WafGeoMatchSet) GeoMatchConstraint() *[]*WafGeoMatchSetGeoMat
 	return returns
 }
 
-func (j *jsiiProxy_WafGeoMatchSet) GeoMatchConstraintInput() *[]*WafGeoMatchSetGeoMatchConstraint {
-	var returns *[]*WafGeoMatchSetGeoMatchConstraint
+func (j *jsiiProxy_WafGeoMatchSet) GeoMatchConstraintInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"geoMatchConstraintInput",
@@ -2925,7 +3380,7 @@ func (j *jsiiProxy_WafGeoMatchSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set.html aws_waf_geo_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set aws_waf_geo_match_set} Resource.
 func NewWafGeoMatchSet(scope constructs.Construct, id *string, config *WafGeoMatchSetConfig) WafGeoMatchSet {
 	_init_.Initialize()
 
@@ -2940,7 +3395,7 @@ func NewWafGeoMatchSet(scope constructs.Construct, id *string, config *WafGeoMat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set.html aws_waf_geo_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set aws_waf_geo_match_set} Resource.
 func NewWafGeoMatchSet_Override(w WafGeoMatchSet, scope constructs.Construct, id *string, config *WafGeoMatchSetConfig) {
 	_init_.Initialize()
 
@@ -2951,7 +3406,7 @@ func NewWafGeoMatchSet_Override(w WafGeoMatchSet, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_WafGeoMatchSet) SetCount(val interface{}) {
+func (j *jsiiProxy_WafGeoMatchSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2967,7 +3422,7 @@ func (j *jsiiProxy_WafGeoMatchSet) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_WafGeoMatchSet) SetGeoMatchConstraint(val *[]*WafGeoMatchSetGeoMatchConstraint) {
+func (j *jsiiProxy_WafGeoMatchSet) SetGeoMatchConstraint(val interface{}) {
 	_jsii_.Set(
 		j,
 		"geoMatchConstraint",
@@ -3039,12 +3494,40 @@ func (w *jsiiProxy_WafGeoMatchSet) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (w *jsiiProxy_WafGeoMatchSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafGeoMatchSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafGeoMatchSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3081,12 +3564,54 @@ func (w *jsiiProxy_WafGeoMatchSet) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (w *jsiiProxy_WafGeoMatchSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafGeoMatchSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafGeoMatchSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafGeoMatchSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3195,44 +3720,44 @@ func (w *jsiiProxy_WafGeoMatchSet) ToTerraform() interface{} {
 // AWS WAF.
 type WafGeoMatchSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set.html#name WafGeoMatchSet#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set#name WafGeoMatchSet#name}.
+	Name *string `json:"name" yaml:"name"`
 	// geo_match_constraint block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set.html#geo_match_constraint WafGeoMatchSet#geo_match_constraint}
-	GeoMatchConstraint *[]*WafGeoMatchSetGeoMatchConstraint `json:"geoMatchConstraint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set#geo_match_constraint WafGeoMatchSet#geo_match_constraint}
+	GeoMatchConstraint interface{} `json:"geoMatchConstraint" yaml:"geoMatchConstraint"`
 }
 
 type WafGeoMatchSetGeoMatchConstraint struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set.html#type WafGeoMatchSet#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set.html#value WafGeoMatchSet#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set#type WafGeoMatchSet#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_geo_match_set#value WafGeoMatchSet#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset.html aws_waf_ipset}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset aws_waf_ipset}.
 type WafIpset interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	IpSetDescriptors() *[]*WafIpsetIpSetDescriptors
-	SetIpSetDescriptors(val *[]*WafIpsetIpSetDescriptors)
-	IpSetDescriptorsInput() *[]*WafIpsetIpSetDescriptors
+	IpSetDescriptors() interface{}
+	SetIpSetDescriptors(val interface{})
+	IpSetDescriptorsInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Name() *string
@@ -3246,10 +3771,15 @@ type WafIpset interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetIpSetDescriptors()
@@ -3295,8 +3825,8 @@ func (j *jsiiProxy_WafIpset) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafIpset) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafIpset) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3345,8 +3875,8 @@ func (j *jsiiProxy_WafIpset) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_WafIpset) IpSetDescriptors() *[]*WafIpsetIpSetDescriptors {
-	var returns *[]*WafIpsetIpSetDescriptors
+func (j *jsiiProxy_WafIpset) IpSetDescriptors() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ipSetDescriptors",
@@ -3355,8 +3885,8 @@ func (j *jsiiProxy_WafIpset) IpSetDescriptors() *[]*WafIpsetIpSetDescriptors {
 	return returns
 }
 
-func (j *jsiiProxy_WafIpset) IpSetDescriptorsInput() *[]*WafIpsetIpSetDescriptors {
-	var returns *[]*WafIpsetIpSetDescriptors
+func (j *jsiiProxy_WafIpset) IpSetDescriptorsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ipSetDescriptorsInput",
@@ -3455,7 +3985,7 @@ func (j *jsiiProxy_WafIpset) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset.html aws_waf_ipset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset aws_waf_ipset} Resource.
 func NewWafIpset(scope constructs.Construct, id *string, config *WafIpsetConfig) WafIpset {
 	_init_.Initialize()
 
@@ -3470,7 +4000,7 @@ func NewWafIpset(scope constructs.Construct, id *string, config *WafIpsetConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset.html aws_waf_ipset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset aws_waf_ipset} Resource.
 func NewWafIpset_Override(w WafIpset, scope constructs.Construct, id *string, config *WafIpsetConfig) {
 	_init_.Initialize()
 
@@ -3481,7 +4011,7 @@ func NewWafIpset_Override(w WafIpset, scope constructs.Construct, id *string, co
 	)
 }
 
-func (j *jsiiProxy_WafIpset) SetCount(val interface{}) {
+func (j *jsiiProxy_WafIpset) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3497,7 +4027,7 @@ func (j *jsiiProxy_WafIpset) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_WafIpset) SetIpSetDescriptors(val *[]*WafIpsetIpSetDescriptors) {
+func (j *jsiiProxy_WafIpset) SetIpSetDescriptors(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ipSetDescriptors",
@@ -3569,12 +4099,40 @@ func (w *jsiiProxy_WafIpset) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (w *jsiiProxy_WafIpset) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafIpset) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafIpset) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3611,12 +4169,54 @@ func (w *jsiiProxy_WafIpset) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (w *jsiiProxy_WafIpset) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafIpset) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafIpset) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafIpset) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3725,36 +4325,36 @@ func (w *jsiiProxy_WafIpset) ToTerraform() interface{} {
 // AWS WAF.
 type WafIpsetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset.html#name WafIpset#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset#name WafIpset#name}.
+	Name *string `json:"name" yaml:"name"`
 	// ip_set_descriptors block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset.html#ip_set_descriptors WafIpset#ip_set_descriptors}
-	IpSetDescriptors *[]*WafIpsetIpSetDescriptors `json:"ipSetDescriptors"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset#ip_set_descriptors WafIpset#ip_set_descriptors}
+	IpSetDescriptors interface{} `json:"ipSetDescriptors" yaml:"ipSetDescriptors"`
 }
 
 type WafIpsetIpSetDescriptors struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset.html#type WafIpset#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset.html#value WafIpset#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset#type WafIpset#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_ipset#value WafIpset#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html aws_waf_rate_based_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule aws_waf_rate_based_rule}.
 type WafRateBasedRule interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3769,9 +4369,9 @@ type WafRateBasedRule interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Predicates() *[]*WafRateBasedRulePredicates
-	SetPredicates(val *[]*WafRateBasedRulePredicates)
-	PredicatesInput() *[]*WafRateBasedRulePredicates
+	Predicates() interface{}
+	SetPredicates(val interface{})
+	PredicatesInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RateKey() *string
@@ -3781,20 +4381,25 @@ type WafRateBasedRule interface {
 	SetRateLimit(val *float64)
 	RateLimitInput() *float64
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3842,8 +4447,8 @@ func (j *jsiiProxy_WafRateBasedRule) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_WafRateBasedRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRateBasedRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3952,8 +4557,8 @@ func (j *jsiiProxy_WafRateBasedRule) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_WafRateBasedRule) Predicates() *[]*WafRateBasedRulePredicates {
-	var returns *[]*WafRateBasedRulePredicates
+func (j *jsiiProxy_WafRateBasedRule) Predicates() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"predicates",
@@ -3962,8 +4567,8 @@ func (j *jsiiProxy_WafRateBasedRule) Predicates() *[]*WafRateBasedRulePredicates
 	return returns
 }
 
-func (j *jsiiProxy_WafRateBasedRule) PredicatesInput() *[]*WafRateBasedRulePredicates {
-	var returns *[]*WafRateBasedRulePredicates
+func (j *jsiiProxy_WafRateBasedRule) PredicatesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"predicatesInput",
@@ -4032,8 +4637,8 @@ func (j *jsiiProxy_WafRateBasedRule) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRateBasedRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRateBasedRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4042,8 +4647,8 @@ func (j *jsiiProxy_WafRateBasedRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRateBasedRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRateBasedRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4052,8 +4657,8 @@ func (j *jsiiProxy_WafRateBasedRule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRateBasedRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRateBasedRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4062,8 +4667,8 @@ func (j *jsiiProxy_WafRateBasedRule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRateBasedRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRateBasedRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4102,7 +4707,7 @@ func (j *jsiiProxy_WafRateBasedRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html aws_waf_rate_based_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule aws_waf_rate_based_rule} Resource.
 func NewWafRateBasedRule(scope constructs.Construct, id *string, config *WafRateBasedRuleConfig) WafRateBasedRule {
 	_init_.Initialize()
 
@@ -4117,7 +4722,7 @@ func NewWafRateBasedRule(scope constructs.Construct, id *string, config *WafRate
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html aws_waf_rate_based_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule aws_waf_rate_based_rule} Resource.
 func NewWafRateBasedRule_Override(w WafRateBasedRule, scope constructs.Construct, id *string, config *WafRateBasedRuleConfig) {
 	_init_.Initialize()
 
@@ -4128,7 +4733,7 @@ func NewWafRateBasedRule_Override(w WafRateBasedRule, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_WafRateBasedRule) SetCount(val interface{}) {
+func (j *jsiiProxy_WafRateBasedRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4168,7 +4773,7 @@ func (j *jsiiProxy_WafRateBasedRule) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WafRateBasedRule) SetPredicates(val *[]*WafRateBasedRulePredicates) {
+func (j *jsiiProxy_WafRateBasedRule) SetPredicates(val interface{}) {
 	_jsii_.Set(
 		j,
 		"predicates",
@@ -4200,7 +4805,7 @@ func (j *jsiiProxy_WafRateBasedRule) SetRateLimit(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_WafRateBasedRule) SetTags(val interface{}) {
+func (j *jsiiProxy_WafRateBasedRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4208,7 +4813,7 @@ func (j *jsiiProxy_WafRateBasedRule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_WafRateBasedRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_WafRateBasedRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4256,12 +4861,40 @@ func (w *jsiiProxy_WafRateBasedRule) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRateBasedRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRateBasedRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRateBasedRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4298,12 +4931,54 @@ func (w *jsiiProxy_WafRateBasedRule) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRateBasedRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRateBasedRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRateBasedRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRateBasedRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4428,48 +5103,48 @@ func (w *jsiiProxy_WafRateBasedRule) ToTerraform() interface{} {
 // AWS WAF.
 type WafRateBasedRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#metric_name WafRateBasedRule#metric_name}.
-	MetricName *string `json:"metricName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#name WafRateBasedRule#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#rate_key WafRateBasedRule#rate_key}.
-	RateKey *string `json:"rateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#rate_limit WafRateBasedRule#rate_limit}.
-	RateLimit *float64 `json:"rateLimit"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#metric_name WafRateBasedRule#metric_name}.
+	MetricName *string `json:"metricName" yaml:"metricName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#name WafRateBasedRule#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#rate_key WafRateBasedRule#rate_key}.
+	RateKey *string `json:"rateKey" yaml:"rateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#rate_limit WafRateBasedRule#rate_limit}.
+	RateLimit *float64 `json:"rateLimit" yaml:"rateLimit"`
 	// predicates block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#predicates WafRateBasedRule#predicates}
-	Predicates *[]*WafRateBasedRulePredicates `json:"predicates"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#tags WafRateBasedRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#tags_all WafRateBasedRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#predicates WafRateBasedRule#predicates}
+	Predicates interface{} `json:"predicates" yaml:"predicates"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#tags WafRateBasedRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#tags_all WafRateBasedRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type WafRateBasedRulePredicates struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#data_id WafRateBasedRule#data_id}.
-	DataId *string `json:"dataId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#negated WafRateBasedRule#negated}.
-	Negated interface{} `json:"negated"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule.html#type WafRateBasedRule#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#data_id WafRateBasedRule#data_id}.
+	DataId *string `json:"dataId" yaml:"dataId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#negated WafRateBasedRule#negated}.
+	Negated interface{} `json:"negated" yaml:"negated"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rate_based_rule#type WafRateBasedRule#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html aws_waf_regex_match_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set aws_waf_regex_match_set}.
 type WafRegexMatchSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4484,17 +5159,22 @@ type WafRegexMatchSet interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RegexMatchTuple() *[]*WafRegexMatchSetRegexMatchTuple
-	SetRegexMatchTuple(val *[]*WafRegexMatchSetRegexMatchTuple)
-	RegexMatchTupleInput() *[]*WafRegexMatchSetRegexMatchTuple
+	RegexMatchTuple() interface{}
+	SetRegexMatchTuple(val interface{})
+	RegexMatchTupleInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4540,8 +5220,8 @@ func (j *jsiiProxy_WafRegexMatchSet) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_WafRegexMatchSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRegexMatchSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4650,8 +5330,8 @@ func (j *jsiiProxy_WafRegexMatchSet) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRegexMatchSet) RegexMatchTuple() *[]*WafRegexMatchSetRegexMatchTuple {
-	var returns *[]*WafRegexMatchSetRegexMatchTuple
+func (j *jsiiProxy_WafRegexMatchSet) RegexMatchTuple() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"regexMatchTuple",
@@ -4660,8 +5340,8 @@ func (j *jsiiProxy_WafRegexMatchSet) RegexMatchTuple() *[]*WafRegexMatchSetRegex
 	return returns
 }
 
-func (j *jsiiProxy_WafRegexMatchSet) RegexMatchTupleInput() *[]*WafRegexMatchSetRegexMatchTuple {
-	var returns *[]*WafRegexMatchSetRegexMatchTuple
+func (j *jsiiProxy_WafRegexMatchSet) RegexMatchTupleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"regexMatchTupleInput",
@@ -4700,7 +5380,7 @@ func (j *jsiiProxy_WafRegexMatchSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html aws_waf_regex_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set aws_waf_regex_match_set} Resource.
 func NewWafRegexMatchSet(scope constructs.Construct, id *string, config *WafRegexMatchSetConfig) WafRegexMatchSet {
 	_init_.Initialize()
 
@@ -4715,7 +5395,7 @@ func NewWafRegexMatchSet(scope constructs.Construct, id *string, config *WafRege
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html aws_waf_regex_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set aws_waf_regex_match_set} Resource.
 func NewWafRegexMatchSet_Override(w WafRegexMatchSet, scope constructs.Construct, id *string, config *WafRegexMatchSetConfig) {
 	_init_.Initialize()
 
@@ -4726,7 +5406,7 @@ func NewWafRegexMatchSet_Override(w WafRegexMatchSet, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_WafRegexMatchSet) SetCount(val interface{}) {
+func (j *jsiiProxy_WafRegexMatchSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4766,7 +5446,7 @@ func (j *jsiiProxy_WafRegexMatchSet) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_WafRegexMatchSet) SetRegexMatchTuple(val *[]*WafRegexMatchSetRegexMatchTuple) {
+func (j *jsiiProxy_WafRegexMatchSet) SetRegexMatchTuple(val interface{}) {
 	_jsii_.Set(
 		j,
 		"regexMatchTuple",
@@ -4814,12 +5494,40 @@ func (w *jsiiProxy_WafRegexMatchSet) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRegexMatchSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRegexMatchSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexMatchSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4856,12 +5564,54 @@ func (w *jsiiProxy_WafRegexMatchSet) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRegexMatchSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexMatchSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRegexMatchSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexMatchSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4970,37 +5720,37 @@ func (w *jsiiProxy_WafRegexMatchSet) ToTerraform() interface{} {
 // AWS WAF.
 type WafRegexMatchSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html#name WafRegexMatchSet#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set#name WafRegexMatchSet#name}.
+	Name *string `json:"name" yaml:"name"`
 	// regex_match_tuple block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html#regex_match_tuple WafRegexMatchSet#regex_match_tuple}
-	RegexMatchTuple *[]*WafRegexMatchSetRegexMatchTuple `json:"regexMatchTuple"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set#regex_match_tuple WafRegexMatchSet#regex_match_tuple}
+	RegexMatchTuple interface{} `json:"regexMatchTuple" yaml:"regexMatchTuple"`
 }
 
 type WafRegexMatchSetRegexMatchTuple struct {
 	// field_to_match block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html#field_to_match WafRegexMatchSet#field_to_match}
-	FieldToMatch *WafRegexMatchSetRegexMatchTupleFieldToMatch `json:"fieldToMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html#regex_pattern_set_id WafRegexMatchSet#regex_pattern_set_id}.
-	RegexPatternSetId *string `json:"regexPatternSetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html#text_transformation WafRegexMatchSet#text_transformation}.
-	TextTransformation *string `json:"textTransformation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set#field_to_match WafRegexMatchSet#field_to_match}
+	FieldToMatch *WafRegexMatchSetRegexMatchTupleFieldToMatch `json:"fieldToMatch" yaml:"fieldToMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set#regex_pattern_set_id WafRegexMatchSet#regex_pattern_set_id}.
+	RegexPatternSetId *string `json:"regexPatternSetId" yaml:"regexPatternSetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set#text_transformation WafRegexMatchSet#text_transformation}.
+	TextTransformation *string `json:"textTransformation" yaml:"textTransformation"`
 }
 
 type WafRegexMatchSetRegexMatchTupleFieldToMatch struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html#type WafRegexMatchSet#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set.html#data WafRegexMatchSet#data}.
-	Data *string `json:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set#type WafRegexMatchSet#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_match_set#data WafRegexMatchSet#data}.
+	Data *string `json:"data" yaml:"data"`
 }
 
 type WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference interface {
@@ -5014,15 +5764,20 @@ type WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetData()
@@ -5083,8 +5838,8 @@ func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5113,7 +5868,7 @@ func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) T
 	return returns
 }
 
-func NewWafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference {
+func NewWafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference{}
@@ -5127,7 +5882,7 @@ func NewWafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference(terraformReso
 	return &j
 }
 
-func NewWafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference_Override(w WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference_Override(w WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5169,7 +5924,7 @@ func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5186,12 +5941,40 @@ func (j *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) S
 }
 
 // Experimental.
-func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5228,12 +6011,54 @@ func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) G
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5277,14 +6102,14 @@ func (w *jsiiProxy_WafRegexMatchSetRegexMatchTupleFieldToMatchOutputReference) R
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set.html aws_waf_regex_pattern_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set aws_waf_regex_pattern_set}.
 type WafRegexPatternSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5306,10 +6131,15 @@ type WafRegexPatternSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5355,8 +6185,8 @@ func (j *jsiiProxy_WafRegexPatternSet) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_WafRegexPatternSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRegexPatternSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5515,7 +6345,7 @@ func (j *jsiiProxy_WafRegexPatternSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set.html aws_waf_regex_pattern_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set aws_waf_regex_pattern_set} Resource.
 func NewWafRegexPatternSet(scope constructs.Construct, id *string, config *WafRegexPatternSetConfig) WafRegexPatternSet {
 	_init_.Initialize()
 
@@ -5530,7 +6360,7 @@ func NewWafRegexPatternSet(scope constructs.Construct, id *string, config *WafRe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set.html aws_waf_regex_pattern_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set aws_waf_regex_pattern_set} Resource.
 func NewWafRegexPatternSet_Override(w WafRegexPatternSet, scope constructs.Construct, id *string, config *WafRegexPatternSetConfig) {
 	_init_.Initialize()
 
@@ -5541,7 +6371,7 @@ func NewWafRegexPatternSet_Override(w WafRegexPatternSet, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_WafRegexPatternSet) SetCount(val interface{}) {
+func (j *jsiiProxy_WafRegexPatternSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5629,12 +6459,40 @@ func (w *jsiiProxy_WafRegexPatternSet) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRegexPatternSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRegexPatternSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexPatternSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5671,12 +6529,54 @@ func (w *jsiiProxy_WafRegexPatternSet) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRegexPatternSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexPatternSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRegexPatternSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRegexPatternSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5785,27 +6685,27 @@ func (w *jsiiProxy_WafRegexPatternSet) ToTerraform() interface{} {
 // AWS WAF.
 type WafRegexPatternSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set.html#name WafRegexPatternSet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set.html#regex_pattern_strings WafRegexPatternSet#regex_pattern_strings}.
-	RegexPatternStrings *[]*string `json:"regexPatternStrings"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set#name WafRegexPatternSet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_regex_pattern_set#regex_pattern_strings WafRegexPatternSet#regex_pattern_strings}.
+	RegexPatternStrings *[]*string `json:"regexPatternStrings" yaml:"regexPatternStrings"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html aws_waf_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_rule aws_waf_rule}.
 type WafRule interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5820,26 +6720,31 @@ type WafRule interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Predicates() *[]*WafRulePredicates
-	SetPredicates(val *[]*WafRulePredicates)
-	PredicatesInput() *[]*WafRulePredicates
+	Predicates() interface{}
+	SetPredicates(val interface{})
+	PredicatesInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5887,8 +6792,8 @@ func (j *jsiiProxy_WafRule) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5997,8 +6902,8 @@ func (j *jsiiProxy_WafRule) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_WafRule) Predicates() *[]*WafRulePredicates {
-	var returns *[]*WafRulePredicates
+func (j *jsiiProxy_WafRule) Predicates() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"predicates",
@@ -6007,8 +6912,8 @@ func (j *jsiiProxy_WafRule) Predicates() *[]*WafRulePredicates {
 	return returns
 }
 
-func (j *jsiiProxy_WafRule) PredicatesInput() *[]*WafRulePredicates {
-	var returns *[]*WafRulePredicates
+func (j *jsiiProxy_WafRule) PredicatesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"predicatesInput",
@@ -6037,8 +6942,8 @@ func (j *jsiiProxy_WafRule) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6047,8 +6952,8 @@ func (j *jsiiProxy_WafRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6057,8 +6962,8 @@ func (j *jsiiProxy_WafRule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6067,8 +6972,8 @@ func (j *jsiiProxy_WafRule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6107,7 +7012,7 @@ func (j *jsiiProxy_WafRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html aws_waf_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule aws_waf_rule} Resource.
 func NewWafRule(scope constructs.Construct, id *string, config *WafRuleConfig) WafRule {
 	_init_.Initialize()
 
@@ -6122,7 +7027,7 @@ func NewWafRule(scope constructs.Construct, id *string, config *WafRuleConfig) W
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html aws_waf_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule aws_waf_rule} Resource.
 func NewWafRule_Override(w WafRule, scope constructs.Construct, id *string, config *WafRuleConfig) {
 	_init_.Initialize()
 
@@ -6133,7 +7038,7 @@ func NewWafRule_Override(w WafRule, scope constructs.Construct, id *string, conf
 	)
 }
 
-func (j *jsiiProxy_WafRule) SetCount(val interface{}) {
+func (j *jsiiProxy_WafRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6173,7 +7078,7 @@ func (j *jsiiProxy_WafRule) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WafRule) SetPredicates(val *[]*WafRulePredicates) {
+func (j *jsiiProxy_WafRule) SetPredicates(val interface{}) {
 	_jsii_.Set(
 		j,
 		"predicates",
@@ -6189,7 +7094,7 @@ func (j *jsiiProxy_WafRule) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_WafRule) SetTags(val interface{}) {
+func (j *jsiiProxy_WafRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6197,7 +7102,7 @@ func (j *jsiiProxy_WafRule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_WafRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_WafRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6245,12 +7150,40 @@ func (w *jsiiProxy_WafRule) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6287,12 +7220,54 @@ func (w *jsiiProxy_WafRule) GetNumberAttribute(terraformAttribute *string) *floa
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6417,38 +7392,38 @@ func (w *jsiiProxy_WafRule) ToTerraform() interface{} {
 // AWS WAF.
 type WafRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#metric_name WafRule#metric_name}.
-	MetricName *string `json:"metricName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#name WafRule#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#metric_name WafRule#metric_name}.
+	MetricName *string `json:"metricName" yaml:"metricName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#name WafRule#name}.
+	Name *string `json:"name" yaml:"name"`
 	// predicates block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#predicates WafRule#predicates}
-	Predicates *[]*WafRulePredicates `json:"predicates"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#tags WafRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#tags_all WafRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#predicates WafRule#predicates}
+	Predicates interface{} `json:"predicates" yaml:"predicates"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#tags WafRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#tags_all WafRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html aws_waf_rule_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group aws_waf_rule_group}.
 type WafRuleGroup interface {
 	cdktf.TerraformResource
-	ActivatedRule() *[]*WafRuleGroupActivatedRule
-	SetActivatedRule(val *[]*WafRuleGroupActivatedRule)
-	ActivatedRuleInput() *[]*WafRuleGroupActivatedRule
+	ActivatedRule() interface{}
+	SetActivatedRule(val interface{})
+	ActivatedRuleInput() interface{}
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6466,20 +7441,25 @@ type WafRuleGroup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetActivatedRule()
@@ -6497,8 +7477,8 @@ type jsiiProxy_WafRuleGroup struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_WafRuleGroup) ActivatedRule() *[]*WafRuleGroupActivatedRule {
-	var returns *[]*WafRuleGroupActivatedRule
+func (j *jsiiProxy_WafRuleGroup) ActivatedRule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"activatedRule",
@@ -6507,8 +7487,8 @@ func (j *jsiiProxy_WafRuleGroup) ActivatedRule() *[]*WafRuleGroupActivatedRule {
 	return returns
 }
 
-func (j *jsiiProxy_WafRuleGroup) ActivatedRuleInput() *[]*WafRuleGroupActivatedRule {
-	var returns *[]*WafRuleGroupActivatedRule
+func (j *jsiiProxy_WafRuleGroup) ActivatedRuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"activatedRuleInput",
@@ -6547,8 +7527,8 @@ func (j *jsiiProxy_WafRuleGroup) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_WafRuleGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRuleGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6677,8 +7657,8 @@ func (j *jsiiProxy_WafRuleGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRuleGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRuleGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6687,8 +7667,8 @@ func (j *jsiiProxy_WafRuleGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRuleGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRuleGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6697,8 +7677,8 @@ func (j *jsiiProxy_WafRuleGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRuleGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRuleGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6707,8 +7687,8 @@ func (j *jsiiProxy_WafRuleGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafRuleGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafRuleGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6747,7 +7727,7 @@ func (j *jsiiProxy_WafRuleGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html aws_waf_rule_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group aws_waf_rule_group} Resource.
 func NewWafRuleGroup(scope constructs.Construct, id *string, config *WafRuleGroupConfig) WafRuleGroup {
 	_init_.Initialize()
 
@@ -6762,7 +7742,7 @@ func NewWafRuleGroup(scope constructs.Construct, id *string, config *WafRuleGrou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html aws_waf_rule_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group aws_waf_rule_group} Resource.
 func NewWafRuleGroup_Override(w WafRuleGroup, scope constructs.Construct, id *string, config *WafRuleGroupConfig) {
 	_init_.Initialize()
 
@@ -6773,7 +7753,7 @@ func NewWafRuleGroup_Override(w WafRuleGroup, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_WafRuleGroup) SetActivatedRule(val *[]*WafRuleGroupActivatedRule) {
+func (j *jsiiProxy_WafRuleGroup) SetActivatedRule(val interface{}) {
 	_jsii_.Set(
 		j,
 		"activatedRule",
@@ -6781,7 +7761,7 @@ func (j *jsiiProxy_WafRuleGroup) SetActivatedRule(val *[]*WafRuleGroupActivatedR
 	)
 }
 
-func (j *jsiiProxy_WafRuleGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_WafRuleGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6829,7 +7809,7 @@ func (j *jsiiProxy_WafRuleGroup) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_WafRuleGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_WafRuleGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6837,7 +7817,7 @@ func (j *jsiiProxy_WafRuleGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_WafRuleGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_WafRuleGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6885,12 +7865,40 @@ func (w *jsiiProxy_WafRuleGroup) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRuleGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRuleGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRuleGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6927,12 +7935,54 @@ func (w *jsiiProxy_WafRuleGroup) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRuleGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRuleGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRuleGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRuleGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7057,19 +8107,19 @@ func (w *jsiiProxy_WafRuleGroup) ToTerraform() interface{} {
 type WafRuleGroupActivatedRule struct {
 	// action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#action WafRuleGroup#action}
-	Action *WafRuleGroupActivatedRuleAction `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#priority WafRuleGroup#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#rule_id WafRuleGroup#rule_id}.
-	RuleId *string `json:"ruleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#type WafRuleGroup#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#action WafRuleGroup#action}
+	Action *WafRuleGroupActivatedRuleAction `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#priority WafRuleGroup#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#rule_id WafRuleGroup#rule_id}.
+	RuleId *string `json:"ruleId" yaml:"ruleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#type WafRuleGroup#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type WafRuleGroupActivatedRuleAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#type WafRuleGroup#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#type WafRuleGroup#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type WafRuleGroupActivatedRuleActionOutputReference interface {
@@ -7080,15 +8130,20 @@ type WafRuleGroupActivatedRuleActionOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7128,8 +8183,8 @@ func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7158,7 +8213,7 @@ func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) TypeInput() *
 	return returns
 }
 
-func NewWafRuleGroupActivatedRuleActionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafRuleGroupActivatedRuleActionOutputReference {
+func NewWafRuleGroupActivatedRuleActionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafRuleGroupActivatedRuleActionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference{}
@@ -7172,7 +8227,7 @@ func NewWafRuleGroupActivatedRuleActionOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewWafRuleGroupActivatedRuleActionOutputReference_Override(w WafRuleGroupActivatedRuleActionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafRuleGroupActivatedRuleActionOutputReference_Override(w WafRuleGroupActivatedRuleActionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7206,7 +8261,7 @@ func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7223,12 +8278,40 @@ func (j *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) SetType(val *
 }
 
 // Experimental.
-func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7265,12 +8348,54 @@ func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7309,44 +8434,44 @@ func (w *jsiiProxy_WafRuleGroupActivatedRuleActionOutputReference) Interpolation
 // AWS WAF.
 type WafRuleGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#metric_name WafRuleGroup#metric_name}.
-	MetricName *string `json:"metricName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#name WafRuleGroup#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#metric_name WafRuleGroup#metric_name}.
+	MetricName *string `json:"metricName" yaml:"metricName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#name WafRuleGroup#name}.
+	Name *string `json:"name" yaml:"name"`
 	// activated_rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#activated_rule WafRuleGroup#activated_rule}
-	ActivatedRule *[]*WafRuleGroupActivatedRule `json:"activatedRule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#tags WafRuleGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group.html#tags_all WafRuleGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#activated_rule WafRuleGroup#activated_rule}
+	ActivatedRule interface{} `json:"activatedRule" yaml:"activatedRule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#tags WafRuleGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule_group#tags_all WafRuleGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type WafRulePredicates struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#data_id WafRule#data_id}.
-	DataId *string `json:"dataId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#negated WafRule#negated}.
-	Negated interface{} `json:"negated"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule.html#type WafRule#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#data_id WafRule#data_id}.
+	DataId *string `json:"dataId" yaml:"dataId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#negated WafRule#negated}.
+	Negated interface{} `json:"negated" yaml:"negated"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_rule#type WafRule#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html aws_waf_size_constraint_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set aws_waf_size_constraint_set}.
 type WafSizeConstraintSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7361,17 +8486,22 @@ type WafSizeConstraintSet interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	SizeConstraints() *[]*WafSizeConstraintSetSizeConstraints
-	SetSizeConstraints(val *[]*WafSizeConstraintSetSizeConstraints)
-	SizeConstraintsInput() *[]*WafSizeConstraintSetSizeConstraints
+	SizeConstraints() interface{}
+	SetSizeConstraints(val interface{})
+	SizeConstraintsInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7417,8 +8547,8 @@ func (j *jsiiProxy_WafSizeConstraintSet) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_WafSizeConstraintSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafSizeConstraintSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7527,8 +8657,8 @@ func (j *jsiiProxy_WafSizeConstraintSet) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafSizeConstraintSet) SizeConstraints() *[]*WafSizeConstraintSetSizeConstraints {
-	var returns *[]*WafSizeConstraintSetSizeConstraints
+func (j *jsiiProxy_WafSizeConstraintSet) SizeConstraints() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sizeConstraints",
@@ -7537,8 +8667,8 @@ func (j *jsiiProxy_WafSizeConstraintSet) SizeConstraints() *[]*WafSizeConstraint
 	return returns
 }
 
-func (j *jsiiProxy_WafSizeConstraintSet) SizeConstraintsInput() *[]*WafSizeConstraintSetSizeConstraints {
-	var returns *[]*WafSizeConstraintSetSizeConstraints
+func (j *jsiiProxy_WafSizeConstraintSet) SizeConstraintsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sizeConstraintsInput",
@@ -7577,7 +8707,7 @@ func (j *jsiiProxy_WafSizeConstraintSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html aws_waf_size_constraint_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set aws_waf_size_constraint_set} Resource.
 func NewWafSizeConstraintSet(scope constructs.Construct, id *string, config *WafSizeConstraintSetConfig) WafSizeConstraintSet {
 	_init_.Initialize()
 
@@ -7592,7 +8722,7 @@ func NewWafSizeConstraintSet(scope constructs.Construct, id *string, config *Waf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html aws_waf_size_constraint_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set aws_waf_size_constraint_set} Resource.
 func NewWafSizeConstraintSet_Override(w WafSizeConstraintSet, scope constructs.Construct, id *string, config *WafSizeConstraintSetConfig) {
 	_init_.Initialize()
 
@@ -7603,7 +8733,7 @@ func NewWafSizeConstraintSet_Override(w WafSizeConstraintSet, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_WafSizeConstraintSet) SetCount(val interface{}) {
+func (j *jsiiProxy_WafSizeConstraintSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7643,7 +8773,7 @@ func (j *jsiiProxy_WafSizeConstraintSet) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_WafSizeConstraintSet) SetSizeConstraints(val *[]*WafSizeConstraintSetSizeConstraints) {
+func (j *jsiiProxy_WafSizeConstraintSet) SetSizeConstraints(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sizeConstraints",
@@ -7691,12 +8821,40 @@ func (w *jsiiProxy_WafSizeConstraintSet) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (w *jsiiProxy_WafSizeConstraintSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafSizeConstraintSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSizeConstraintSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7733,12 +8891,54 @@ func (w *jsiiProxy_WafSizeConstraintSet) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (w *jsiiProxy_WafSizeConstraintSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSizeConstraintSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafSizeConstraintSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSizeConstraintSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7847,39 +9047,39 @@ func (w *jsiiProxy_WafSizeConstraintSet) ToTerraform() interface{} {
 // AWS WAF.
 type WafSizeConstraintSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#name WafSizeConstraintSet#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#name WafSizeConstraintSet#name}.
+	Name *string `json:"name" yaml:"name"`
 	// size_constraints block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#size_constraints WafSizeConstraintSet#size_constraints}
-	SizeConstraints *[]*WafSizeConstraintSetSizeConstraints `json:"sizeConstraints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#size_constraints WafSizeConstraintSet#size_constraints}
+	SizeConstraints interface{} `json:"sizeConstraints" yaml:"sizeConstraints"`
 }
 
 type WafSizeConstraintSetSizeConstraints struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#comparison_operator WafSizeConstraintSet#comparison_operator}.
-	ComparisonOperator *string `json:"comparisonOperator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#comparison_operator WafSizeConstraintSet#comparison_operator}.
+	ComparisonOperator *string `json:"comparisonOperator" yaml:"comparisonOperator"`
 	// field_to_match block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#field_to_match WafSizeConstraintSet#field_to_match}
-	FieldToMatch *WafSizeConstraintSetSizeConstraintsFieldToMatch `json:"fieldToMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#size WafSizeConstraintSet#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#text_transformation WafSizeConstraintSet#text_transformation}.
-	TextTransformation *string `json:"textTransformation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#field_to_match WafSizeConstraintSet#field_to_match}
+	FieldToMatch *WafSizeConstraintSetSizeConstraintsFieldToMatch `json:"fieldToMatch" yaml:"fieldToMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#size WafSizeConstraintSet#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#text_transformation WafSizeConstraintSet#text_transformation}.
+	TextTransformation *string `json:"textTransformation" yaml:"textTransformation"`
 }
 
 type WafSizeConstraintSetSizeConstraintsFieldToMatch struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#type WafSizeConstraintSet#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set.html#data WafSizeConstraintSet#data}.
-	Data *string `json:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#type WafSizeConstraintSet#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_size_constraint_set#data WafSizeConstraintSet#data}.
+	Data *string `json:"data" yaml:"data"`
 }
 
 type WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference interface {
@@ -7893,15 +9093,20 @@ type WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetData()
@@ -7962,8 +9167,8 @@ func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7992,7 +9197,7 @@ func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 	return returns
 }
 
-func NewWafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference {
+func NewWafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference{}
@@ -8006,7 +9211,7 @@ func NewWafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference(terraform
 	return &j
 }
 
-func NewWafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference_Override(w WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference_Override(w WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8048,7 +9253,7 @@ func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8065,12 +9270,40 @@ func (j *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 }
 
 // Experimental.
-func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8107,12 +9340,54 @@ func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 }
 
 // Experimental.
+func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8156,13 +9431,13 @@ func (w *jsiiProxy_WafSizeConstraintSetSizeConstraintsFieldToMatchOutputReferenc
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html aws_waf_sql_injection_match_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set aws_waf_sql_injection_match_set}.
 type WafSqlInjectionMatchSet interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8177,17 +9452,22 @@ type WafSqlInjectionMatchSet interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	SqlInjectionMatchTuples() *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples
-	SetSqlInjectionMatchTuples(val *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples)
-	SqlInjectionMatchTuplesInput() *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples
+	SqlInjectionMatchTuples() interface{}
+	SetSqlInjectionMatchTuples(val interface{})
+	SqlInjectionMatchTuplesInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -8223,8 +9503,8 @@ func (j *jsiiProxy_WafSqlInjectionMatchSet) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_WafSqlInjectionMatchSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafSqlInjectionMatchSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8333,8 +9613,8 @@ func (j *jsiiProxy_WafSqlInjectionMatchSet) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafSqlInjectionMatchSet) SqlInjectionMatchTuples() *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples {
-	var returns *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples
+func (j *jsiiProxy_WafSqlInjectionMatchSet) SqlInjectionMatchTuples() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sqlInjectionMatchTuples",
@@ -8343,8 +9623,8 @@ func (j *jsiiProxy_WafSqlInjectionMatchSet) SqlInjectionMatchTuples() *[]*WafSql
 	return returns
 }
 
-func (j *jsiiProxy_WafSqlInjectionMatchSet) SqlInjectionMatchTuplesInput() *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples {
-	var returns *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples
+func (j *jsiiProxy_WafSqlInjectionMatchSet) SqlInjectionMatchTuplesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sqlInjectionMatchTuplesInput",
@@ -8383,7 +9663,7 @@ func (j *jsiiProxy_WafSqlInjectionMatchSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html aws_waf_sql_injection_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set aws_waf_sql_injection_match_set} Resource.
 func NewWafSqlInjectionMatchSet(scope constructs.Construct, id *string, config *WafSqlInjectionMatchSetConfig) WafSqlInjectionMatchSet {
 	_init_.Initialize()
 
@@ -8398,7 +9678,7 @@ func NewWafSqlInjectionMatchSet(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html aws_waf_sql_injection_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set aws_waf_sql_injection_match_set} Resource.
 func NewWafSqlInjectionMatchSet_Override(w WafSqlInjectionMatchSet, scope constructs.Construct, id *string, config *WafSqlInjectionMatchSetConfig) {
 	_init_.Initialize()
 
@@ -8409,7 +9689,7 @@ func NewWafSqlInjectionMatchSet_Override(w WafSqlInjectionMatchSet, scope constr
 	)
 }
 
-func (j *jsiiProxy_WafSqlInjectionMatchSet) SetCount(val interface{}) {
+func (j *jsiiProxy_WafSqlInjectionMatchSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8449,7 +9729,7 @@ func (j *jsiiProxy_WafSqlInjectionMatchSet) SetProvider(val cdktf.TerraformProvi
 	)
 }
 
-func (j *jsiiProxy_WafSqlInjectionMatchSet) SetSqlInjectionMatchTuples(val *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples) {
+func (j *jsiiProxy_WafSqlInjectionMatchSet) SetSqlInjectionMatchTuples(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sqlInjectionMatchTuples",
@@ -8497,12 +9777,40 @@ func (w *jsiiProxy_WafSqlInjectionMatchSet) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafSqlInjectionMatchSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8539,12 +9847,54 @@ func (w *jsiiProxy_WafSqlInjectionMatchSet) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafSqlInjectionMatchSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8653,35 +10003,35 @@ func (w *jsiiProxy_WafSqlInjectionMatchSet) ToTerraform() interface{} {
 // AWS WAF.
 type WafSqlInjectionMatchSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html#name WafSqlInjectionMatchSet#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set#name WafSqlInjectionMatchSet#name}.
+	Name *string `json:"name" yaml:"name"`
 	// sql_injection_match_tuples block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html#sql_injection_match_tuples WafSqlInjectionMatchSet#sql_injection_match_tuples}
-	SqlInjectionMatchTuples *[]*WafSqlInjectionMatchSetSqlInjectionMatchTuples `json:"sqlInjectionMatchTuples"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set#sql_injection_match_tuples WafSqlInjectionMatchSet#sql_injection_match_tuples}
+	SqlInjectionMatchTuples interface{} `json:"sqlInjectionMatchTuples" yaml:"sqlInjectionMatchTuples"`
 }
 
 type WafSqlInjectionMatchSetSqlInjectionMatchTuples struct {
 	// field_to_match block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html#field_to_match WafSqlInjectionMatchSet#field_to_match}
-	FieldToMatch *WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch `json:"fieldToMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html#text_transformation WafSqlInjectionMatchSet#text_transformation}.
-	TextTransformation *string `json:"textTransformation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set#field_to_match WafSqlInjectionMatchSet#field_to_match}
+	FieldToMatch *WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch `json:"fieldToMatch" yaml:"fieldToMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set#text_transformation WafSqlInjectionMatchSet#text_transformation}.
+	TextTransformation *string `json:"textTransformation" yaml:"textTransformation"`
 }
 
 type WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatch struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html#type WafSqlInjectionMatchSet#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set.html#data WafSqlInjectionMatchSet#data}.
-	Data *string `json:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set#type WafSqlInjectionMatchSet#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_sql_injection_match_set#data WafSqlInjectionMatchSet#data}.
+	Data *string `json:"data" yaml:"data"`
 }
 
 type WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference interface {
@@ -8695,15 +10045,20 @@ type WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference i
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetData()
@@ -8764,8 +10119,8 @@ func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 	return returns
 }
 
-func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8794,7 +10149,7 @@ func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 	return returns
 }
 
-func NewWafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference {
+func NewWafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference{}
@@ -8808,7 +10163,7 @@ func NewWafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReferenc
 	return &j
 }
 
-func NewWafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference_Override(w WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference_Override(w WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8850,7 +10205,7 @@ func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 	)
 }
 
-func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8867,12 +10222,40 @@ func (j *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 }
 
 // Experimental.
-func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8909,12 +10292,54 @@ func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 }
 
 // Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8958,14 +10383,14 @@ func (w *jsiiProxy_WafSqlInjectionMatchSetSqlInjectionMatchTuplesFieldToMatchOut
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html aws_waf_web_acl}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl aws_waf_web_acl}.
 type WafWebAcl interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultAction() WafWebAclDefaultActionOutputReference
 	DefaultActionInput() *WafWebAclDefaultAction
 	DependsOn() *[]*string
@@ -8987,23 +10412,28 @@ type WafWebAcl interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Rules() *[]*WafWebAclRules
-	SetRules(val *[]*WafWebAclRules)
-	RulesInput() *[]*WafWebAclRules
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Rules() interface{}
+	SetRules(val interface{})
+	RulesInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDefaultAction(value *WafWebAclDefaultAction)
@@ -9054,8 +10484,8 @@ func (j *jsiiProxy_WafWebAcl) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAcl) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafWebAcl) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9224,8 +10654,8 @@ func (j *jsiiProxy_WafWebAcl) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAcl) Rules() *[]*WafWebAclRules {
-	var returns *[]*WafWebAclRules
+func (j *jsiiProxy_WafWebAcl) Rules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rules",
@@ -9234,8 +10664,8 @@ func (j *jsiiProxy_WafWebAcl) Rules() *[]*WafWebAclRules {
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAcl) RulesInput() *[]*WafWebAclRules {
-	var returns *[]*WafWebAclRules
+func (j *jsiiProxy_WafWebAcl) RulesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rulesInput",
@@ -9244,8 +10674,8 @@ func (j *jsiiProxy_WafWebAcl) RulesInput() *[]*WafWebAclRules {
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAcl) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafWebAcl) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9254,8 +10684,8 @@ func (j *jsiiProxy_WafWebAcl) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAcl) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafWebAcl) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9264,8 +10694,8 @@ func (j *jsiiProxy_WafWebAcl) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAcl) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafWebAcl) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9274,8 +10704,8 @@ func (j *jsiiProxy_WafWebAcl) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAcl) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafWebAcl) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9314,7 +10744,7 @@ func (j *jsiiProxy_WafWebAcl) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html aws_waf_web_acl} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl aws_waf_web_acl} Resource.
 func NewWafWebAcl(scope constructs.Construct, id *string, config *WafWebAclConfig) WafWebAcl {
 	_init_.Initialize()
 
@@ -9329,7 +10759,7 @@ func NewWafWebAcl(scope constructs.Construct, id *string, config *WafWebAclConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html aws_waf_web_acl} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl aws_waf_web_acl} Resource.
 func NewWafWebAcl_Override(w WafWebAcl, scope constructs.Construct, id *string, config *WafWebAclConfig) {
 	_init_.Initialize()
 
@@ -9340,7 +10770,7 @@ func NewWafWebAcl_Override(w WafWebAcl, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_WafWebAcl) SetCount(val interface{}) {
+func (j *jsiiProxy_WafWebAcl) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9388,7 +10818,7 @@ func (j *jsiiProxy_WafWebAcl) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_WafWebAcl) SetRules(val *[]*WafWebAclRules) {
+func (j *jsiiProxy_WafWebAcl) SetRules(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rules",
@@ -9396,7 +10826,7 @@ func (j *jsiiProxy_WafWebAcl) SetRules(val *[]*WafWebAclRules) {
 	)
 }
 
-func (j *jsiiProxy_WafWebAcl) SetTags(val interface{}) {
+func (j *jsiiProxy_WafWebAcl) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9404,7 +10834,7 @@ func (j *jsiiProxy_WafWebAcl) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_WafWebAcl) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_WafWebAcl) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9452,12 +10882,40 @@ func (w *jsiiProxy_WafWebAcl) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (w *jsiiProxy_WafWebAcl) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafWebAcl) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAcl) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9494,12 +10952,54 @@ func (w *jsiiProxy_WafWebAcl) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (w *jsiiProxy_WafWebAcl) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAcl) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafWebAcl) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAcl) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9648,38 +11148,38 @@ func (w *jsiiProxy_WafWebAcl) ToTerraform() interface{} {
 // AWS WAF.
 type WafWebAclConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// default_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#default_action WafWebAcl#default_action}
-	DefaultAction *WafWebAclDefaultAction `json:"defaultAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#metric_name WafWebAcl#metric_name}.
-	MetricName *string `json:"metricName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#name WafWebAcl#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#default_action WafWebAcl#default_action}
+	DefaultAction *WafWebAclDefaultAction `json:"defaultAction" yaml:"defaultAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#metric_name WafWebAcl#metric_name}.
+	MetricName *string `json:"metricName" yaml:"metricName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#name WafWebAcl#name}.
+	Name *string `json:"name" yaml:"name"`
 	// logging_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#logging_configuration WafWebAcl#logging_configuration}
-	LoggingConfiguration *WafWebAclLoggingConfiguration `json:"loggingConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#logging_configuration WafWebAcl#logging_configuration}
+	LoggingConfiguration *WafWebAclLoggingConfiguration `json:"loggingConfiguration" yaml:"loggingConfiguration"`
 	// rules block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#rules WafWebAcl#rules}
-	Rules *[]*WafWebAclRules `json:"rules"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#tags WafWebAcl#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#tags_all WafWebAcl#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#rules WafWebAcl#rules}
+	Rules interface{} `json:"rules" yaml:"rules"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#tags WafWebAcl#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#tags_all WafWebAcl#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type WafWebAclDefaultAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#type WafWebAcl#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#type WafWebAcl#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type WafWebAclDefaultActionOutputReference interface {
@@ -9690,15 +11190,20 @@ type WafWebAclDefaultActionOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9738,8 +11243,8 @@ func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9768,7 +11273,7 @@ func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) TypeInput() *string {
 	return returns
 }
 
-func NewWafWebAclDefaultActionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafWebAclDefaultActionOutputReference {
+func NewWafWebAclDefaultActionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafWebAclDefaultActionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafWebAclDefaultActionOutputReference{}
@@ -9782,7 +11287,7 @@ func NewWafWebAclDefaultActionOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewWafWebAclDefaultActionOutputReference_Override(w WafWebAclDefaultActionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafWebAclDefaultActionOutputReference_Override(w WafWebAclDefaultActionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9816,7 +11321,7 @@ func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9833,12 +11338,40 @@ func (j *jsiiProxy_WafWebAclDefaultActionOutputReference) SetType(val *string) {
 }
 
 // Experimental.
-func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9875,12 +11408,54 @@ func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9917,12 +11492,12 @@ func (w *jsiiProxy_WafWebAclDefaultActionOutputReference) InterpolationForAttrib
 }
 
 type WafWebAclLoggingConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#log_destination WafWebAcl#log_destination}.
-	LogDestination *string `json:"logDestination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#log_destination WafWebAcl#log_destination}.
+	LogDestination *string `json:"logDestination" yaml:"logDestination"`
 	// redacted_fields block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#redacted_fields WafWebAcl#redacted_fields}
-	RedactedFields *WafWebAclLoggingConfigurationRedactedFields `json:"redactedFields"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#redacted_fields WafWebAcl#redacted_fields}
+	RedactedFields *WafWebAclLoggingConfigurationRedactedFields `json:"redactedFields" yaml:"redactedFields"`
 }
 
 type WafWebAclLoggingConfigurationOutputReference interface {
@@ -9938,12 +11513,17 @@ type WafWebAclLoggingConfigurationOutputReference interface {
 	RedactedFieldsInput() *WafWebAclLoggingConfigurationRedactedFields
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRedactedFields(value *WafWebAclLoggingConfigurationRedactedFields)
@@ -10025,8 +11605,8 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10035,7 +11615,7 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) TerraformResour
 	return returns
 }
 
-func NewWafWebAclLoggingConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafWebAclLoggingConfigurationOutputReference {
+func NewWafWebAclLoggingConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafWebAclLoggingConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafWebAclLoggingConfigurationOutputReference{}
@@ -10049,7 +11629,7 @@ func NewWafWebAclLoggingConfigurationOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewWafWebAclLoggingConfigurationOutputReference_Override(w WafWebAclLoggingConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafWebAclLoggingConfigurationOutputReference_Override(w WafWebAclLoggingConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10091,7 +11671,7 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10100,12 +11680,40 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10142,12 +11750,54 @@ func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10202,34 +11852,39 @@ func (w *jsiiProxy_WafWebAclLoggingConfigurationOutputReference) ResetRedactedFi
 type WafWebAclLoggingConfigurationRedactedFields struct {
 	// field_to_match block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#field_to_match WafWebAcl#field_to_match}
-	FieldToMatch *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch `json:"fieldToMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#field_to_match WafWebAcl#field_to_match}
+	FieldToMatch interface{} `json:"fieldToMatch" yaml:"fieldToMatch"`
 }
 
 type WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#type WafWebAcl#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#data WafWebAcl#data}.
-	Data *string `json:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#type WafWebAcl#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#data WafWebAcl#data}.
+	Data *string `json:"data" yaml:"data"`
 }
 
 type WafWebAclLoggingConfigurationRedactedFieldsOutputReference interface {
 	cdktf.ComplexObject
-	FieldToMatch() *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch
-	SetFieldToMatch(val *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch)
-	FieldToMatchInput() *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch
+	FieldToMatch() interface{}
+	SetFieldToMatch(val interface{})
+	FieldToMatchInput() interface{}
 	InternalValue() *WafWebAclLoggingConfigurationRedactedFields
 	SetInternalValue(val *WafWebAclLoggingConfigurationRedactedFields)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10239,8 +11894,8 @@ type jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference struct
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) FieldToMatch() *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch {
-	var returns *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch
+func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) FieldToMatch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"fieldToMatch",
@@ -10249,8 +11904,8 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) F
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) FieldToMatchInput() *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch {
-	var returns *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch
+func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) FieldToMatchInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"fieldToMatchInput",
@@ -10289,8 +11944,8 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10299,7 +11954,7 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) T
 	return returns
 }
 
-func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafWebAclLoggingConfigurationRedactedFieldsOutputReference {
+func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafWebAclLoggingConfigurationRedactedFieldsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference{}
@@ -10313,7 +11968,7 @@ func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference(terraformReso
 	return &j
 }
 
-func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference_Override(w WafWebAclLoggingConfigurationRedactedFieldsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference_Override(w WafWebAclLoggingConfigurationRedactedFieldsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10323,7 +11978,7 @@ func NewWafWebAclLoggingConfigurationRedactedFieldsOutputReference_Override(w Wa
 	)
 }
 
-func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) SetFieldToMatch(val *[]*WafWebAclLoggingConfigurationRedactedFieldsFieldToMatch) {
+func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) SetFieldToMatch(val interface{}) {
 	_jsii_.Set(
 		j,
 		"fieldToMatch",
@@ -10355,7 +12010,7 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10364,12 +12019,40 @@ func (j *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) S
 }
 
 // Experimental.
-func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10406,12 +12089,54 @@ func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) G
 }
 
 // Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10448,25 +12173,25 @@ func (w *jsiiProxy_WafWebAclLoggingConfigurationRedactedFieldsOutputReference) I
 }
 
 type WafWebAclRules struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#priority WafWebAcl#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#rule_id WafWebAcl#rule_id}.
-	RuleId *string `json:"ruleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#priority WafWebAcl#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#rule_id WafWebAcl#rule_id}.
+	RuleId *string `json:"ruleId" yaml:"ruleId"`
 	// action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#action WafWebAcl#action}
-	Action *WafWebAclRulesAction `json:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#action WafWebAcl#action}
+	Action *WafWebAclRulesAction `json:"action" yaml:"action"`
 	// override_action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#override_action WafWebAcl#override_action}
-	OverrideAction *WafWebAclRulesOverrideAction `json:"overrideAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#type WafWebAcl#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#override_action WafWebAcl#override_action}
+	OverrideAction *WafWebAclRulesOverrideAction `json:"overrideAction" yaml:"overrideAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#type WafWebAcl#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type WafWebAclRulesAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#type WafWebAcl#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#type WafWebAcl#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type WafWebAclRulesActionOutputReference interface {
@@ -10477,15 +12202,20 @@ type WafWebAclRulesActionOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10525,8 +12255,8 @@ func (j *jsiiProxy_WafWebAclRulesActionOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAclRulesActionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafWebAclRulesActionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10555,7 +12285,7 @@ func (j *jsiiProxy_WafWebAclRulesActionOutputReference) TypeInput() *string {
 	return returns
 }
 
-func NewWafWebAclRulesActionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafWebAclRulesActionOutputReference {
+func NewWafWebAclRulesActionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafWebAclRulesActionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafWebAclRulesActionOutputReference{}
@@ -10569,7 +12299,7 @@ func NewWafWebAclRulesActionOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewWafWebAclRulesActionOutputReference_Override(w WafWebAclRulesActionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafWebAclRulesActionOutputReference_Override(w WafWebAclRulesActionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10603,7 +12333,7 @@ func (j *jsiiProxy_WafWebAclRulesActionOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_WafWebAclRulesActionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafWebAclRulesActionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10620,12 +12350,40 @@ func (j *jsiiProxy_WafWebAclRulesActionOutputReference) SetType(val *string) {
 }
 
 // Experimental.
-func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10662,12 +12420,54 @@ func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesActionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10704,8 +12504,8 @@ func (w *jsiiProxy_WafWebAclRulesActionOutputReference) InterpolationForAttribut
 }
 
 type WafWebAclRulesOverrideAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl.html#type WafWebAcl#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_web_acl#type WafWebAcl#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type WafWebAclRulesOverrideActionOutputReference interface {
@@ -10716,15 +12516,20 @@ type WafWebAclRulesOverrideActionOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10764,8 +12569,8 @@ func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10794,7 +12599,7 @@ func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) TypeInput() *str
 	return returns
 }
 
-func NewWafWebAclRulesOverrideActionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafWebAclRulesOverrideActionOutputReference {
+func NewWafWebAclRulesOverrideActionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafWebAclRulesOverrideActionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafWebAclRulesOverrideActionOutputReference{}
@@ -10808,7 +12613,7 @@ func NewWafWebAclRulesOverrideActionOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewWafWebAclRulesOverrideActionOutputReference_Override(w WafWebAclRulesOverrideActionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafWebAclRulesOverrideActionOutputReference_Override(w WafWebAclRulesOverrideActionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10842,7 +12647,7 @@ func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10859,12 +12664,40 @@ func (j *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) SetType(val *str
 }
 
 // Experimental.
-func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10901,12 +12734,54 @@ func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10942,14 +12817,14 @@ func (w *jsiiProxy_WafWebAclRulesOverrideActionOutputReference) InterpolationFor
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html aws_waf_xss_match_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set aws_waf_xss_match_set}.
 type WafXssMatchSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10967,14 +12842,19 @@ type WafXssMatchSet interface {
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	XssMatchTuples() *[]*WafXssMatchSetXssMatchTuples
-	SetXssMatchTuples(val *[]*WafXssMatchSetXssMatchTuples)
-	XssMatchTuplesInput() *[]*WafXssMatchSetXssMatchTuples
+	XssMatchTuples() interface{}
+	SetXssMatchTuples(val interface{})
+	XssMatchTuplesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -11020,8 +12900,8 @@ func (j *jsiiProxy_WafXssMatchSet) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_WafXssMatchSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WafXssMatchSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11160,8 +13040,8 @@ func (j *jsiiProxy_WafXssMatchSet) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_WafXssMatchSet) XssMatchTuples() *[]*WafXssMatchSetXssMatchTuples {
-	var returns *[]*WafXssMatchSetXssMatchTuples
+func (j *jsiiProxy_WafXssMatchSet) XssMatchTuples() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"xssMatchTuples",
@@ -11170,8 +13050,8 @@ func (j *jsiiProxy_WafXssMatchSet) XssMatchTuples() *[]*WafXssMatchSetXssMatchTu
 	return returns
 }
 
-func (j *jsiiProxy_WafXssMatchSet) XssMatchTuplesInput() *[]*WafXssMatchSetXssMatchTuples {
-	var returns *[]*WafXssMatchSetXssMatchTuples
+func (j *jsiiProxy_WafXssMatchSet) XssMatchTuplesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"xssMatchTuplesInput",
@@ -11180,7 +13060,7 @@ func (j *jsiiProxy_WafXssMatchSet) XssMatchTuplesInput() *[]*WafXssMatchSetXssMa
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html aws_waf_xss_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set aws_waf_xss_match_set} Resource.
 func NewWafXssMatchSet(scope constructs.Construct, id *string, config *WafXssMatchSetConfig) WafXssMatchSet {
 	_init_.Initialize()
 
@@ -11195,7 +13075,7 @@ func NewWafXssMatchSet(scope constructs.Construct, id *string, config *WafXssMat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html aws_waf_xss_match_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set aws_waf_xss_match_set} Resource.
 func NewWafXssMatchSet_Override(w WafXssMatchSet, scope constructs.Construct, id *string, config *WafXssMatchSetConfig) {
 	_init_.Initialize()
 
@@ -11206,7 +13086,7 @@ func NewWafXssMatchSet_Override(w WafXssMatchSet, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_WafXssMatchSet) SetCount(val interface{}) {
+func (j *jsiiProxy_WafXssMatchSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11246,7 +13126,7 @@ func (j *jsiiProxy_WafXssMatchSet) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_WafXssMatchSet) SetXssMatchTuples(val *[]*WafXssMatchSetXssMatchTuples) {
+func (j *jsiiProxy_WafXssMatchSet) SetXssMatchTuples(val interface{}) {
 	_jsii_.Set(
 		j,
 		"xssMatchTuples",
@@ -11294,12 +13174,40 @@ func (w *jsiiProxy_WafXssMatchSet) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (w *jsiiProxy_WafXssMatchSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafXssMatchSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafXssMatchSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11336,12 +13244,54 @@ func (w *jsiiProxy_WafXssMatchSet) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (w *jsiiProxy_WafXssMatchSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafXssMatchSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafXssMatchSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafXssMatchSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11450,35 +13400,35 @@ func (w *jsiiProxy_WafXssMatchSet) ToTerraform() interface{} {
 // AWS WAF.
 type WafXssMatchSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html#name WafXssMatchSet#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set#name WafXssMatchSet#name}.
+	Name *string `json:"name" yaml:"name"`
 	// xss_match_tuples block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html#xss_match_tuples WafXssMatchSet#xss_match_tuples}
-	XssMatchTuples *[]*WafXssMatchSetXssMatchTuples `json:"xssMatchTuples"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set#xss_match_tuples WafXssMatchSet#xss_match_tuples}
+	XssMatchTuples interface{} `json:"xssMatchTuples" yaml:"xssMatchTuples"`
 }
 
 type WafXssMatchSetXssMatchTuples struct {
 	// field_to_match block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html#field_to_match WafXssMatchSet#field_to_match}
-	FieldToMatch *WafXssMatchSetXssMatchTuplesFieldToMatch `json:"fieldToMatch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html#text_transformation WafXssMatchSet#text_transformation}.
-	TextTransformation *string `json:"textTransformation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set#field_to_match WafXssMatchSet#field_to_match}
+	FieldToMatch *WafXssMatchSetXssMatchTuplesFieldToMatch `json:"fieldToMatch" yaml:"fieldToMatch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set#text_transformation WafXssMatchSet#text_transformation}.
+	TextTransformation *string `json:"textTransformation" yaml:"textTransformation"`
 }
 
 type WafXssMatchSetXssMatchTuplesFieldToMatch struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html#type WafXssMatchSet#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set.html#data WafXssMatchSet#data}.
-	Data *string `json:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set#type WafXssMatchSet#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/waf_xss_match_set#data WafXssMatchSet#data}.
+	Data *string `json:"data" yaml:"data"`
 }
 
 type WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference interface {
@@ -11492,15 +13442,20 @@ type WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetData()
@@ -11561,8 +13516,8 @@ func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11591,7 +13546,7 @@ func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) Type
 	return returns
 }
 
-func NewWafXssMatchSetXssMatchTuplesFieldToMatchOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference {
+func NewWafXssMatchSetXssMatchTuplesFieldToMatchOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference{}
@@ -11605,7 +13560,7 @@ func NewWafXssMatchSetXssMatchTuplesFieldToMatchOutputReference(terraformResourc
 	return &j
 }
 
-func NewWafXssMatchSetXssMatchTuplesFieldToMatchOutputReference_Override(w WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWafXssMatchSetXssMatchTuplesFieldToMatchOutputReference_Override(w WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11647,7 +13602,7 @@ func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11664,12 +13619,40 @@ func (j *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) SetT
 }
 
 // Experimental.
-func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11706,12 +13689,54 @@ func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetN
 }
 
 // Experimental.
+func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WafXssMatchSetXssMatchTuplesFieldToMatchOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

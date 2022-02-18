@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/lakeformation/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings.html aws_lakeformation_data_lake_settings}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings aws_lakeformation_data_lake_settings}.
 type DataAwsLakeformationDataLakeSettings interface {
 	cdktf.TerraformDataSource
 	Admins() *[]*string
@@ -18,8 +18,8 @@ type DataAwsLakeformationDataLakeSettings interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -38,10 +38,15 @@ type DataAwsLakeformationDataLakeSettings interface {
 	AddOverride(path *string, value interface{})
 	CreateDatabaseDefaultPermissions(index *string) DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions
 	CreateTableDefaultPermissions(index *string) DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCatalogId()
@@ -107,8 +112,8 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettings) ConstructNodeMetadata()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationDataLakeSettings) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettings) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -237,7 +242,7 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettings) TrustedResourceOwners()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings.html aws_lakeformation_data_lake_settings} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings aws_lakeformation_data_lake_settings} Data Source.
 func NewDataAwsLakeformationDataLakeSettings(scope constructs.Construct, id *string, config *DataAwsLakeformationDataLakeSettingsConfig) DataAwsLakeformationDataLakeSettings {
 	_init_.Initialize()
 
@@ -252,7 +257,7 @@ func NewDataAwsLakeformationDataLakeSettings(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings.html aws_lakeformation_data_lake_settings} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings aws_lakeformation_data_lake_settings} Data Source.
 func NewDataAwsLakeformationDataLakeSettings_Override(d DataAwsLakeformationDataLakeSettings, scope constructs.Construct, id *string, config *DataAwsLakeformationDataLakeSettingsConfig) {
 	_init_.Initialize()
 
@@ -271,7 +276,7 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettings) SetCatalogId(val *strin
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationDataLakeSettings) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettings) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -369,12 +374,40 @@ func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) CreateTableDefaultPermi
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -411,12 +444,54 @@ func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -525,15 +600,15 @@ func (d *jsiiProxy_DataAwsLakeformationDataLakeSettings) ToTerraform() interface
 // AWS Lake Formation.
 type DataAwsLakeformationDataLakeSettingsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings.html#catalog_id DataAwsLakeformationDataLakeSettings#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_data_lake_settings#catalog_id DataAwsLakeformationDataLakeSettings#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions interface {
@@ -544,12 +619,19 @@ type DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions interf
 	Principal() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -598,8 +680,8 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPerm
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -608,15 +690,25 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPerm
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions {
+func NewDataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -624,12 +716,12 @@ func NewDataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions(ter
 }
 
 // Experimental.
-func NewDataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions_Override(d DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions_Override(d DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -650,7 +742,7 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPerm
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -658,13 +750,49 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPerm
 	)
 }
 
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -701,12 +829,54 @@ func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPerm
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -736,12 +906,19 @@ type DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions interface
 	Principal() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -790,8 +967,8 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermiss
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -800,15 +977,25 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermiss
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions {
+func NewDataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -816,12 +1003,12 @@ func NewDataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions(terraf
 }
 
 // Experimental.
-func NewDataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions_Override(d DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions_Override(d DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lakeformation.DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -842,7 +1029,7 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermiss
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -850,13 +1037,49 @@ func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermiss
 	)
 }
 
+func (j *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -893,12 +1116,54 @@ func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermiss
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermissions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -920,7 +1185,7 @@ func (d *jsiiProxy_DataAwsLakeformationDataLakeSettingsCreateTableDefaultPermiss
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html aws_lakeformation_permissions}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions aws_lakeformation_permissions}.
 type DataAwsLakeformationPermissions interface {
 	cdktf.TerraformDataSource
 	CatalogId() *string
@@ -931,8 +1196,8 @@ type DataAwsLakeformationPermissions interface {
 	CatalogResourceInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Database() DataAwsLakeformationPermissionsDatabaseOutputReference
 	DatabaseInput() *DataAwsLakeformationPermissionsDatabase
 	DataLocation() DataAwsLakeformationPermissionsDataLocationOutputReference
@@ -961,10 +1226,15 @@ type DataAwsLakeformationPermissions interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDatabase(value *DataAwsLakeformationPermissionsDatabase)
@@ -1049,8 +1319,8 @@ func (j *jsiiProxy_DataAwsLakeformationPermissions) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissions) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLakeformationPermissions) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1289,7 +1559,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissions) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html aws_lakeformation_permissions} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions aws_lakeformation_permissions} Data Source.
 func NewDataAwsLakeformationPermissions(scope constructs.Construct, id *string, config *DataAwsLakeformationPermissionsConfig) DataAwsLakeformationPermissions {
 	_init_.Initialize()
 
@@ -1304,7 +1574,7 @@ func NewDataAwsLakeformationPermissions(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html aws_lakeformation_permissions} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions aws_lakeformation_permissions} Data Source.
 func NewDataAwsLakeformationPermissions_Override(d DataAwsLakeformationPermissions, scope constructs.Construct, id *string, config *DataAwsLakeformationPermissionsConfig) {
 	_init_.Initialize()
 
@@ -1331,7 +1601,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissions) SetCatalogResource(val inter
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissions) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLakeformationPermissions) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1411,12 +1681,40 @@ func (d *jsiiProxy_DataAwsLakeformationPermissions) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationPermissions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1453,12 +1751,54 @@ func (d *jsiiProxy_DataAwsLakeformationPermissions) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationPermissions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1639,42 +1979,42 @@ func (d *jsiiProxy_DataAwsLakeformationPermissions) ToTerraform() interface{} {
 // AWS Lake Formation.
 type DataAwsLakeformationPermissionsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#principal DataAwsLakeformationPermissions#principal}.
-	Principal *string `json:"principal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#catalog_id DataAwsLakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#catalog_resource DataAwsLakeformationPermissions#catalog_resource}.
-	CatalogResource interface{} `json:"catalogResource"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#principal DataAwsLakeformationPermissions#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#catalog_id DataAwsLakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#catalog_resource DataAwsLakeformationPermissions#catalog_resource}.
+	CatalogResource interface{} `json:"catalogResource" yaml:"catalogResource"`
 	// database block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#database DataAwsLakeformationPermissions#database}
-	Database *DataAwsLakeformationPermissionsDatabase `json:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#database DataAwsLakeformationPermissions#database}
+	Database *DataAwsLakeformationPermissionsDatabase `json:"database" yaml:"database"`
 	// data_location block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#data_location DataAwsLakeformationPermissions#data_location}
-	DataLocation *DataAwsLakeformationPermissionsDataLocation `json:"dataLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#data_location DataAwsLakeformationPermissions#data_location}
+	DataLocation *DataAwsLakeformationPermissionsDataLocation `json:"dataLocation" yaml:"dataLocation"`
 	// table block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#table DataAwsLakeformationPermissions#table}
-	Table *DataAwsLakeformationPermissionsTable `json:"table"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#table DataAwsLakeformationPermissions#table}
+	Table *DataAwsLakeformationPermissionsTable `json:"table" yaml:"table"`
 	// table_with_columns block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#table_with_columns DataAwsLakeformationPermissions#table_with_columns}
-	TableWithColumns *DataAwsLakeformationPermissionsTableWithColumns `json:"tableWithColumns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#table_with_columns DataAwsLakeformationPermissions#table_with_columns}
+	TableWithColumns *DataAwsLakeformationPermissionsTableWithColumns `json:"tableWithColumns" yaml:"tableWithColumns"`
 }
 
 type DataAwsLakeformationPermissionsDataLocation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#arn DataAwsLakeformationPermissions#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#catalog_id DataAwsLakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#arn DataAwsLakeformationPermissions#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#catalog_id DataAwsLakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type DataAwsLakeformationPermissionsDataLocationOutputReference interface {
@@ -1691,12 +2031,17 @@ type DataAwsLakeformationPermissionsDataLocationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -1777,8 +2122,8 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1787,7 +2132,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) T
 	return returns
 }
 
-func NewDataAwsLakeformationPermissionsDataLocationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsDataLocationOutputReference {
+func NewDataAwsLakeformationPermissionsDataLocationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsDataLocationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference{}
@@ -1801,7 +2146,7 @@ func NewDataAwsLakeformationPermissionsDataLocationOutputReference(terraformReso
 	return &j
 }
 
-func NewDataAwsLakeformationPermissionsDataLocationOutputReference_Override(d DataAwsLakeformationPermissionsDataLocationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDataAwsLakeformationPermissionsDataLocationOutputReference_Override(d DataAwsLakeformationPermissionsDataLocationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1851,7 +2196,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1860,12 +2205,40 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) S
 }
 
 // Experimental.
-func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1902,12 +2275,54 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) G
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1952,10 +2367,10 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsDataLocationOutputReference) R
 }
 
 type DataAwsLakeformationPermissionsDatabase struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#name DataAwsLakeformationPermissions#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#catalog_id DataAwsLakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#name DataAwsLakeformationPermissions#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#catalog_id DataAwsLakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type DataAwsLakeformationPermissionsDatabaseOutputReference interface {
@@ -1972,12 +2387,17 @@ type DataAwsLakeformationPermissionsDatabaseOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -2058,8 +2478,8 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2068,7 +2488,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) Terra
 	return returns
 }
 
-func NewDataAwsLakeformationPermissionsDatabaseOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsDatabaseOutputReference {
+func NewDataAwsLakeformationPermissionsDatabaseOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsDatabaseOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference{}
@@ -2082,7 +2502,7 @@ func NewDataAwsLakeformationPermissionsDatabaseOutputReference(terraformResource
 	return &j
 }
 
-func NewDataAwsLakeformationPermissionsDatabaseOutputReference_Override(d DataAwsLakeformationPermissionsDatabaseOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDataAwsLakeformationPermissionsDatabaseOutputReference_Override(d DataAwsLakeformationPermissionsDatabaseOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2132,7 +2552,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2141,12 +2561,40 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) SetTe
 }
 
 // Experimental.
-func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2183,12 +2631,54 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetNu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2233,14 +2723,14 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsDatabaseOutputReference) Reset
 }
 
 type DataAwsLakeformationPermissionsTable struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#database_name DataAwsLakeformationPermissions#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#catalog_id DataAwsLakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#name DataAwsLakeformationPermissions#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#wildcard DataAwsLakeformationPermissions#wildcard}.
-	Wildcard interface{} `json:"wildcard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#database_name DataAwsLakeformationPermissions#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#catalog_id DataAwsLakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#name DataAwsLakeformationPermissions#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#wildcard DataAwsLakeformationPermissions#wildcard}.
+	Wildcard interface{} `json:"wildcard" yaml:"wildcard"`
 }
 
 type DataAwsLakeformationPermissionsTableOutputReference interface {
@@ -2260,15 +2750,20 @@ type DataAwsLakeformationPermissionsTableOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Wildcard() interface{}
 	SetWildcard(val interface{})
 	WildcardInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -2371,8 +2866,8 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2401,7 +2896,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) Wildcard
 	return returns
 }
 
-func NewDataAwsLakeformationPermissionsTableOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsTableOutputReference {
+func NewDataAwsLakeformationPermissionsTableOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsTableOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference{}
@@ -2415,7 +2910,7 @@ func NewDataAwsLakeformationPermissionsTableOutputReference(terraformResource cd
 	return &j
 }
 
-func NewDataAwsLakeformationPermissionsTableOutputReference_Override(d DataAwsLakeformationPermissionsTableOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDataAwsLakeformationPermissionsTableOutputReference_Override(d DataAwsLakeformationPermissionsTableOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2473,7 +2968,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2490,12 +2985,40 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) SetWildc
 }
 
 // Experimental.
-func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2532,12 +3055,54 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetNumbe
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2598,18 +3163,18 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsTableOutputReference) ResetWil
 }
 
 type DataAwsLakeformationPermissionsTableWithColumns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#database_name DataAwsLakeformationPermissions#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#name DataAwsLakeformationPermissions#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#catalog_id DataAwsLakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#column_names DataAwsLakeformationPermissions#column_names}.
-	ColumnNames *[]*string `json:"columnNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#excluded_column_names DataAwsLakeformationPermissions#excluded_column_names}.
-	ExcludedColumnNames *[]*string `json:"excludedColumnNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions.html#wildcard DataAwsLakeformationPermissions#wildcard}.
-	Wildcard interface{} `json:"wildcard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#database_name DataAwsLakeformationPermissions#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#name DataAwsLakeformationPermissions#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#catalog_id DataAwsLakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#column_names DataAwsLakeformationPermissions#column_names}.
+	ColumnNames *[]*string `json:"columnNames" yaml:"columnNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#excluded_column_names DataAwsLakeformationPermissions#excluded_column_names}.
+	ExcludedColumnNames *[]*string `json:"excludedColumnNames" yaml:"excludedColumnNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_permissions#wildcard DataAwsLakeformationPermissions#wildcard}.
+	Wildcard interface{} `json:"wildcard" yaml:"wildcard"`
 }
 
 type DataAwsLakeformationPermissionsTableWithColumnsOutputReference interface {
@@ -2635,15 +3200,20 @@ type DataAwsLakeformationPermissionsTableWithColumnsOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Wildcard() interface{}
 	SetWildcard(val interface{})
 	WildcardInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -2787,8 +3357,8 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2817,7 +3387,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 	return returns
 }
 
-func NewDataAwsLakeformationPermissionsTableWithColumnsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsTableWithColumnsOutputReference {
+func NewDataAwsLakeformationPermissionsTableWithColumnsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DataAwsLakeformationPermissionsTableWithColumnsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference{}
@@ -2831,7 +3401,7 @@ func NewDataAwsLakeformationPermissionsTableWithColumnsOutputReference(terraform
 	return &j
 }
 
-func NewDataAwsLakeformationPermissionsTableWithColumnsOutputReference_Override(d DataAwsLakeformationPermissionsTableWithColumnsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDataAwsLakeformationPermissionsTableWithColumnsOutputReference_Override(d DataAwsLakeformationPermissionsTableWithColumnsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2905,7 +3475,7 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2922,12 +3492,40 @@ func (j *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 }
 
 // Experimental.
-func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2964,12 +3562,54 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3037,7 +3677,7 @@ func (d *jsiiProxy_DataAwsLakeformationPermissionsTableWithColumnsOutputReferenc
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource.html aws_lakeformation_resource}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource aws_lakeformation_resource}.
 type DataAwsLakeformationResource interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -3045,8 +3685,8 @@ type DataAwsLakeformationResource interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3064,10 +3704,15 @@ type DataAwsLakeformationResource interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3122,8 +3767,8 @@ func (j *jsiiProxy_DataAwsLakeformationResource) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLakeformationResource) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLakeformationResource) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3262,7 +3907,7 @@ func (j *jsiiProxy_DataAwsLakeformationResource) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource.html aws_lakeformation_resource} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource aws_lakeformation_resource} Data Source.
 func NewDataAwsLakeformationResource(scope constructs.Construct, id *string, config *DataAwsLakeformationResourceConfig) DataAwsLakeformationResource {
 	_init_.Initialize()
 
@@ -3277,7 +3922,7 @@ func NewDataAwsLakeformationResource(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource.html aws_lakeformation_resource} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource aws_lakeformation_resource} Data Source.
 func NewDataAwsLakeformationResource_Override(d DataAwsLakeformationResource, scope constructs.Construct, id *string, config *DataAwsLakeformationResourceConfig) {
 	_init_.Initialize()
 
@@ -3296,7 +3941,7 @@ func (j *jsiiProxy_DataAwsLakeformationResource) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLakeformationResource) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLakeformationResource) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3368,12 +4013,40 @@ func (d *jsiiProxy_DataAwsLakeformationResource) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationResource) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationResource) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationResource) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3410,12 +4083,54 @@ func (d *jsiiProxy_DataAwsLakeformationResource) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLakeformationResource) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationResource) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLakeformationResource) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLakeformationResource) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3516,18 +4231,18 @@ func (d *jsiiProxy_DataAwsLakeformationResource) ToTerraform() interface{} {
 // AWS Lake Formation.
 type DataAwsLakeformationResourceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource.html#arn DataAwsLakeformationResource#arn}.
-	Arn *string `json:"arn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lakeformation_resource#arn DataAwsLakeformationResource#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html aws_lakeformation_data_lake_settings}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings aws_lakeformation_data_lake_settings}.
 type LakeformationDataLakeSettings interface {
 	cdktf.TerraformResource
 	Admins() *[]*string
@@ -3538,14 +4253,14 @@ type LakeformationDataLakeSettings interface {
 	CatalogIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	CreateDatabaseDefaultPermissions() *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions
-	SetCreateDatabaseDefaultPermissions(val *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions)
-	CreateDatabaseDefaultPermissionsInput() *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions
-	CreateTableDefaultPermissions() *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions
-	SetCreateTableDefaultPermissions(val *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions)
-	CreateTableDefaultPermissionsInput() *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions
+	Count() *float64
+	SetCount(val *float64)
+	CreateDatabaseDefaultPermissions() interface{}
+	SetCreateDatabaseDefaultPermissions(val interface{})
+	CreateDatabaseDefaultPermissionsInput() interface{}
+	CreateTableDefaultPermissions() interface{}
+	SetCreateTableDefaultPermissions(val interface{})
+	CreateTableDefaultPermissionsInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3564,10 +4279,15 @@ type LakeformationDataLakeSettings interface {
 	SetTrustedResourceOwners(val *[]*string)
 	TrustedResourceOwnersInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAdmins()
@@ -3647,8 +4367,8 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LakeformationDataLakeSettings) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3657,8 +4377,8 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) CreateDatabaseDefaultPermissions() *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions {
-	var returns *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions
+func (j *jsiiProxy_LakeformationDataLakeSettings) CreateDatabaseDefaultPermissions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"createDatabaseDefaultPermissions",
@@ -3667,8 +4387,8 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) CreateDatabaseDefaultPermissio
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) CreateDatabaseDefaultPermissionsInput() *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions {
-	var returns *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions
+func (j *jsiiProxy_LakeformationDataLakeSettings) CreateDatabaseDefaultPermissionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"createDatabaseDefaultPermissionsInput",
@@ -3677,8 +4397,8 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) CreateDatabaseDefaultPermissio
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) CreateTableDefaultPermissions() *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions {
-	var returns *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions
+func (j *jsiiProxy_LakeformationDataLakeSettings) CreateTableDefaultPermissions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"createTableDefaultPermissions",
@@ -3687,8 +4407,8 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) CreateTableDefaultPermissions(
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) CreateTableDefaultPermissionsInput() *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions {
-	var returns *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions
+func (j *jsiiProxy_LakeformationDataLakeSettings) CreateTableDefaultPermissionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"createTableDefaultPermissionsInput",
@@ -3827,7 +4547,7 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) TrustedResourceOwnersInput() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html aws_lakeformation_data_lake_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings aws_lakeformation_data_lake_settings} Resource.
 func NewLakeformationDataLakeSettings(scope constructs.Construct, id *string, config *LakeformationDataLakeSettingsConfig) LakeformationDataLakeSettings {
 	_init_.Initialize()
 
@@ -3842,7 +4562,7 @@ func NewLakeformationDataLakeSettings(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html aws_lakeformation_data_lake_settings} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings aws_lakeformation_data_lake_settings} Resource.
 func NewLakeformationDataLakeSettings_Override(l LakeformationDataLakeSettings, scope constructs.Construct, id *string, config *LakeformationDataLakeSettingsConfig) {
 	_init_.Initialize()
 
@@ -3869,7 +4589,7 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) SetCatalogId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) SetCount(val interface{}) {
+func (j *jsiiProxy_LakeformationDataLakeSettings) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3877,7 +4597,7 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) SetCreateDatabaseDefaultPermissions(val *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions) {
+func (j *jsiiProxy_LakeformationDataLakeSettings) SetCreateDatabaseDefaultPermissions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"createDatabaseDefaultPermissions",
@@ -3885,7 +4605,7 @@ func (j *jsiiProxy_LakeformationDataLakeSettings) SetCreateDatabaseDefaultPermis
 	)
 }
 
-func (j *jsiiProxy_LakeformationDataLakeSettings) SetCreateTableDefaultPermissions(val *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions) {
+func (j *jsiiProxy_LakeformationDataLakeSettings) SetCreateTableDefaultPermissions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"createTableDefaultPermissions",
@@ -3965,12 +4685,40 @@ func (l *jsiiProxy_LakeformationDataLakeSettings) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationDataLakeSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationDataLakeSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationDataLakeSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4007,12 +4755,54 @@ func (l *jsiiProxy_LakeformationDataLakeSettings) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationDataLakeSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationDataLakeSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationDataLakeSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationDataLakeSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4153,44 +4943,44 @@ func (l *jsiiProxy_LakeformationDataLakeSettings) ToTerraform() interface{} {
 // AWS Lake Formation.
 type LakeformationDataLakeSettingsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#admins LakeformationDataLakeSettings#admins}.
-	Admins *[]*string `json:"admins"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#catalog_id LakeformationDataLakeSettings#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#admins LakeformationDataLakeSettings#admins}.
+	Admins *[]*string `json:"admins" yaml:"admins"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#catalog_id LakeformationDataLakeSettings#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 	// create_database_default_permissions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#create_database_default_permissions LakeformationDataLakeSettings#create_database_default_permissions}
-	CreateDatabaseDefaultPermissions *[]*LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions `json:"createDatabaseDefaultPermissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#create_database_default_permissions LakeformationDataLakeSettings#create_database_default_permissions}
+	CreateDatabaseDefaultPermissions interface{} `json:"createDatabaseDefaultPermissions" yaml:"createDatabaseDefaultPermissions"`
 	// create_table_default_permissions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#create_table_default_permissions LakeformationDataLakeSettings#create_table_default_permissions}
-	CreateTableDefaultPermissions *[]*LakeformationDataLakeSettingsCreateTableDefaultPermissions `json:"createTableDefaultPermissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#trusted_resource_owners LakeformationDataLakeSettings#trusted_resource_owners}.
-	TrustedResourceOwners *[]*string `json:"trustedResourceOwners"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#create_table_default_permissions LakeformationDataLakeSettings#create_table_default_permissions}
+	CreateTableDefaultPermissions interface{} `json:"createTableDefaultPermissions" yaml:"createTableDefaultPermissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#trusted_resource_owners LakeformationDataLakeSettings#trusted_resource_owners}.
+	TrustedResourceOwners *[]*string `json:"trustedResourceOwners" yaml:"trustedResourceOwners"`
 }
 
 type LakeformationDataLakeSettingsCreateDatabaseDefaultPermissions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#permissions LakeformationDataLakeSettings#permissions}.
-	Permissions *[]*string `json:"permissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#principal LakeformationDataLakeSettings#principal}.
-	Principal *string `json:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#permissions LakeformationDataLakeSettings#permissions}.
+	Permissions *[]*string `json:"permissions" yaml:"permissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#principal LakeformationDataLakeSettings#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
 }
 
 type LakeformationDataLakeSettingsCreateTableDefaultPermissions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#permissions LakeformationDataLakeSettings#permissions}.
-	Permissions *[]*string `json:"permissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings.html#principal LakeformationDataLakeSettings#principal}.
-	Principal *string `json:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#permissions LakeformationDataLakeSettings#permissions}.
+	Permissions *[]*string `json:"permissions" yaml:"permissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_data_lake_settings#principal LakeformationDataLakeSettings#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html aws_lakeformation_permissions}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions aws_lakeformation_permissions}.
 type LakeformationPermissions interface {
 	cdktf.TerraformResource
 	CatalogId() *string
@@ -4201,8 +4991,8 @@ type LakeformationPermissions interface {
 	CatalogResourceInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Database() LakeformationPermissionsDatabaseOutputReference
 	DatabaseInput() *LakeformationPermissionsDatabase
 	DataLocation() LakeformationPermissionsDataLocationOutputReference
@@ -4235,10 +5025,15 @@ type LakeformationPermissions interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDatabase(value *LakeformationPermissionsDatabase)
@@ -4324,8 +5119,8 @@ func (j *jsiiProxy_LakeformationPermissions) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationPermissions) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LakeformationPermissions) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4584,7 +5379,7 @@ func (j *jsiiProxy_LakeformationPermissions) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html aws_lakeformation_permissions} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions aws_lakeformation_permissions} Resource.
 func NewLakeformationPermissions(scope constructs.Construct, id *string, config *LakeformationPermissionsConfig) LakeformationPermissions {
 	_init_.Initialize()
 
@@ -4599,7 +5394,7 @@ func NewLakeformationPermissions(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html aws_lakeformation_permissions} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions aws_lakeformation_permissions} Resource.
 func NewLakeformationPermissions_Override(l LakeformationPermissions, scope constructs.Construct, id *string, config *LakeformationPermissionsConfig) {
 	_init_.Initialize()
 
@@ -4626,7 +5421,7 @@ func (j *jsiiProxy_LakeformationPermissions) SetCatalogResource(val interface{})
 	)
 }
 
-func (j *jsiiProxy_LakeformationPermissions) SetCount(val interface{}) {
+func (j *jsiiProxy_LakeformationPermissions) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4722,12 +5517,40 @@ func (l *jsiiProxy_LakeformationPermissions) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationPermissions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationPermissions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4764,12 +5587,54 @@ func (l *jsiiProxy_LakeformationPermissions) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationPermissions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationPermissions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4958,46 +5823,46 @@ func (l *jsiiProxy_LakeformationPermissions) ToTerraform() interface{} {
 // AWS Lake Formation.
 type LakeformationPermissionsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#permissions LakeformationPermissions#permissions}.
-	Permissions *[]*string `json:"permissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#principal LakeformationPermissions#principal}.
-	Principal *string `json:"principal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#catalog_id LakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#catalog_resource LakeformationPermissions#catalog_resource}.
-	CatalogResource interface{} `json:"catalogResource"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#permissions LakeformationPermissions#permissions}.
+	Permissions *[]*string `json:"permissions" yaml:"permissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#principal LakeformationPermissions#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#catalog_id LakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#catalog_resource LakeformationPermissions#catalog_resource}.
+	CatalogResource interface{} `json:"catalogResource" yaml:"catalogResource"`
 	// database block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#database LakeformationPermissions#database}
-	Database *LakeformationPermissionsDatabase `json:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#database LakeformationPermissions#database}
+	Database *LakeformationPermissionsDatabase `json:"database" yaml:"database"`
 	// data_location block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#data_location LakeformationPermissions#data_location}
-	DataLocation *LakeformationPermissionsDataLocation `json:"dataLocation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#permissions_with_grant_option LakeformationPermissions#permissions_with_grant_option}.
-	PermissionsWithGrantOption *[]*string `json:"permissionsWithGrantOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#data_location LakeformationPermissions#data_location}
+	DataLocation *LakeformationPermissionsDataLocation `json:"dataLocation" yaml:"dataLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#permissions_with_grant_option LakeformationPermissions#permissions_with_grant_option}.
+	PermissionsWithGrantOption *[]*string `json:"permissionsWithGrantOption" yaml:"permissionsWithGrantOption"`
 	// table block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#table LakeformationPermissions#table}
-	Table *LakeformationPermissionsTable `json:"table"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#table LakeformationPermissions#table}
+	Table *LakeformationPermissionsTable `json:"table" yaml:"table"`
 	// table_with_columns block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#table_with_columns LakeformationPermissions#table_with_columns}
-	TableWithColumns *LakeformationPermissionsTableWithColumns `json:"tableWithColumns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#table_with_columns LakeformationPermissions#table_with_columns}
+	TableWithColumns *LakeformationPermissionsTableWithColumns `json:"tableWithColumns" yaml:"tableWithColumns"`
 }
 
 type LakeformationPermissionsDataLocation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#arn LakeformationPermissions#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#catalog_id LakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#arn LakeformationPermissions#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#catalog_id LakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type LakeformationPermissionsDataLocationOutputReference interface {
@@ -5014,12 +5879,17 @@ type LakeformationPermissionsDataLocationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -5100,8 +5970,8 @@ func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5110,7 +5980,7 @@ func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) Terrafor
 	return returns
 }
 
-func NewLakeformationPermissionsDataLocationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsDataLocationOutputReference {
+func NewLakeformationPermissionsDataLocationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsDataLocationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LakeformationPermissionsDataLocationOutputReference{}
@@ -5124,7 +5994,7 @@ func NewLakeformationPermissionsDataLocationOutputReference(terraformResource cd
 	return &j
 }
 
-func NewLakeformationPermissionsDataLocationOutputReference_Override(l LakeformationPermissionsDataLocationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLakeformationPermissionsDataLocationOutputReference_Override(l LakeformationPermissionsDataLocationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5174,7 +6044,7 @@ func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5183,12 +6053,40 @@ func (j *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) SetTerra
 }
 
 // Experimental.
-func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5225,12 +6123,54 @@ func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetNumbe
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5275,10 +6215,10 @@ func (l *jsiiProxy_LakeformationPermissionsDataLocationOutputReference) ResetCat
 }
 
 type LakeformationPermissionsDatabase struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#name LakeformationPermissions#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#catalog_id LakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#name LakeformationPermissions#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#catalog_id LakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
 }
 
 type LakeformationPermissionsDatabaseOutputReference interface {
@@ -5295,12 +6235,17 @@ type LakeformationPermissionsDatabaseOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -5381,8 +6326,8 @@ func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5391,7 +6336,7 @@ func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) TerraformRes
 	return returns
 }
 
-func NewLakeformationPermissionsDatabaseOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsDatabaseOutputReference {
+func NewLakeformationPermissionsDatabaseOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsDatabaseOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LakeformationPermissionsDatabaseOutputReference{}
@@ -5405,7 +6350,7 @@ func NewLakeformationPermissionsDatabaseOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewLakeformationPermissionsDatabaseOutputReference_Override(l LakeformationPermissionsDatabaseOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLakeformationPermissionsDatabaseOutputReference_Override(l LakeformationPermissionsDatabaseOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5455,7 +6400,7 @@ func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5464,12 +6409,40 @@ func (j *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) SetTerraform
 }
 
 // Experimental.
-func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5506,12 +6479,54 @@ func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5556,14 +6571,14 @@ func (l *jsiiProxy_LakeformationPermissionsDatabaseOutputReference) ResetCatalog
 }
 
 type LakeformationPermissionsTable struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#database_name LakeformationPermissions#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#catalog_id LakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#name LakeformationPermissions#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#wildcard LakeformationPermissions#wildcard}.
-	Wildcard interface{} `json:"wildcard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#database_name LakeformationPermissions#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#catalog_id LakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#name LakeformationPermissions#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#wildcard LakeformationPermissions#wildcard}.
+	Wildcard interface{} `json:"wildcard" yaml:"wildcard"`
 }
 
 type LakeformationPermissionsTableOutputReference interface {
@@ -5583,15 +6598,20 @@ type LakeformationPermissionsTableOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Wildcard() interface{}
 	SetWildcard(val interface{})
 	WildcardInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -5694,8 +6714,8 @@ func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5724,7 +6744,7 @@ func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) WildcardInput()
 	return returns
 }
 
-func NewLakeformationPermissionsTableOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsTableOutputReference {
+func NewLakeformationPermissionsTableOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsTableOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LakeformationPermissionsTableOutputReference{}
@@ -5738,7 +6758,7 @@ func NewLakeformationPermissionsTableOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewLakeformationPermissionsTableOutputReference_Override(l LakeformationPermissionsTableOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLakeformationPermissionsTableOutputReference_Override(l LakeformationPermissionsTableOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5796,7 +6816,7 @@ func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5813,12 +6833,40 @@ func (j *jsiiProxy_LakeformationPermissionsTableOutputReference) SetWildcard(val
 }
 
 // Experimental.
-func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5855,12 +6903,54 @@ func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5921,18 +7011,18 @@ func (l *jsiiProxy_LakeformationPermissionsTableOutputReference) ResetWildcard()
 }
 
 type LakeformationPermissionsTableWithColumns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#database_name LakeformationPermissions#database_name}.
-	DatabaseName *string `json:"databaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#name LakeformationPermissions#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#catalog_id LakeformationPermissions#catalog_id}.
-	CatalogId *string `json:"catalogId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#column_names LakeformationPermissions#column_names}.
-	ColumnNames *[]*string `json:"columnNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#excluded_column_names LakeformationPermissions#excluded_column_names}.
-	ExcludedColumnNames *[]*string `json:"excludedColumnNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions.html#wildcard LakeformationPermissions#wildcard}.
-	Wildcard interface{} `json:"wildcard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#database_name LakeformationPermissions#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#name LakeformationPermissions#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#catalog_id LakeformationPermissions#catalog_id}.
+	CatalogId *string `json:"catalogId" yaml:"catalogId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#column_names LakeformationPermissions#column_names}.
+	ColumnNames *[]*string `json:"columnNames" yaml:"columnNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#excluded_column_names LakeformationPermissions#excluded_column_names}.
+	ExcludedColumnNames *[]*string `json:"excludedColumnNames" yaml:"excludedColumnNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_permissions#wildcard LakeformationPermissions#wildcard}.
+	Wildcard interface{} `json:"wildcard" yaml:"wildcard"`
 }
 
 type LakeformationPermissionsTableWithColumnsOutputReference interface {
@@ -5958,15 +7048,20 @@ type LakeformationPermissionsTableWithColumnsOutputReference interface {
 	NameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Wildcard() interface{}
 	SetWildcard(val interface{})
 	WildcardInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCatalogId()
@@ -6110,8 +7205,8 @@ func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6140,7 +7235,7 @@ func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) Wild
 	return returns
 }
 
-func NewLakeformationPermissionsTableWithColumnsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsTableWithColumnsOutputReference {
+func NewLakeformationPermissionsTableWithColumnsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LakeformationPermissionsTableWithColumnsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference{}
@@ -6154,7 +7249,7 @@ func NewLakeformationPermissionsTableWithColumnsOutputReference(terraformResourc
 	return &j
 }
 
-func NewLakeformationPermissionsTableWithColumnsOutputReference_Override(l LakeformationPermissionsTableWithColumnsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLakeformationPermissionsTableWithColumnsOutputReference_Override(l LakeformationPermissionsTableWithColumnsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6228,7 +7323,7 @@ func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6245,12 +7340,40 @@ func (j *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) SetW
 }
 
 // Experimental.
-func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6287,12 +7410,54 @@ func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetN
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6360,7 +7525,7 @@ func (l *jsiiProxy_LakeformationPermissionsTableWithColumnsOutputReference) Rese
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource.html aws_lakeformation_resource}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource aws_lakeformation_resource}.
 type LakeformationResource interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -6368,8 +7533,8 @@ type LakeformationResource interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6389,10 +7554,15 @@ type LakeformationResource interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6448,8 +7618,8 @@ func (j *jsiiProxy_LakeformationResource) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_LakeformationResource) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LakeformationResource) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6598,7 +7768,7 @@ func (j *jsiiProxy_LakeformationResource) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource.html aws_lakeformation_resource} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource aws_lakeformation_resource} Resource.
 func NewLakeformationResource(scope constructs.Construct, id *string, config *LakeformationResourceConfig) LakeformationResource {
 	_init_.Initialize()
 
@@ -6613,7 +7783,7 @@ func NewLakeformationResource(scope constructs.Construct, id *string, config *La
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource.html aws_lakeformation_resource} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource aws_lakeformation_resource} Resource.
 func NewLakeformationResource_Override(l LakeformationResource, scope constructs.Construct, id *string, config *LakeformationResourceConfig) {
 	_init_.Initialize()
 
@@ -6632,7 +7802,7 @@ func (j *jsiiProxy_LakeformationResource) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LakeformationResource) SetCount(val interface{}) {
+func (j *jsiiProxy_LakeformationResource) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6712,12 +7882,40 @@ func (l *jsiiProxy_LakeformationResource) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationResource) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationResource) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationResource) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6754,12 +7952,54 @@ func (l *jsiiProxy_LakeformationResource) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (l *jsiiProxy_LakeformationResource) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationResource) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LakeformationResource) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LakeformationResource) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6868,15 +8108,15 @@ func (l *jsiiProxy_LakeformationResource) ToTerraform() interface{} {
 // AWS Lake Formation.
 type LakeformationResourceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource.html#arn LakeformationResource#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource.html#role_arn LakeformationResource#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource#arn LakeformationResource#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lakeformation_resource#role_arn LakeformationResource#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 }

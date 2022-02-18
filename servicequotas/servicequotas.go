@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/servicequotas/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service.html aws_servicequotas_service}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service aws_servicequotas_service}.
 type DataAwsServicequotasService interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -35,10 +35,15 @@ type DataAwsServicequotasService interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -73,8 +78,8 @@ func (j *jsiiProxy_DataAwsServicequotasService) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicequotasService) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicequotasService) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -223,7 +228,7 @@ func (j *jsiiProxy_DataAwsServicequotasService) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service.html aws_servicequotas_service} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service aws_servicequotas_service} Data Source.
 func NewDataAwsServicequotasService(scope constructs.Construct, id *string, config *DataAwsServicequotasServiceConfig) DataAwsServicequotasService {
 	_init_.Initialize()
 
@@ -238,7 +243,7 @@ func NewDataAwsServicequotasService(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service.html aws_servicequotas_service} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service aws_servicequotas_service} Data Source.
 func NewDataAwsServicequotasService_Override(d DataAwsServicequotasService, scope constructs.Construct, id *string, config *DataAwsServicequotasServiceConfig) {
 	_init_.Initialize()
 
@@ -249,7 +254,7 @@ func NewDataAwsServicequotasService_Override(d DataAwsServicequotasService, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicequotasService) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServicequotasService) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -329,12 +334,40 @@ func (d *jsiiProxy_DataAwsServicequotasService) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicequotasService) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicequotasService) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicequotasService) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -371,12 +404,54 @@ func (d *jsiiProxy_DataAwsServicequotasService) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicequotasService) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicequotasService) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicequotasService) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicequotasService) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -477,32 +552,32 @@ func (d *jsiiProxy_DataAwsServicequotasService) ToTerraform() interface{} {
 // AWS Service Quotas.
 type DataAwsServicequotasServiceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service.html#service_name DataAwsServicequotasService#service_name}.
-	ServiceName *string `json:"serviceName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service#service_name DataAwsServicequotasService#service_name}.
+	ServiceName *string `json:"serviceName" yaml:"serviceName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota.html aws_servicequotas_service_quota}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota aws_servicequotas_service_quota}.
 type DataAwsServicequotasServiceQuota interface {
 	cdktf.TerraformDataSource
-	Adjustable() interface{}
+	Adjustable() cdktf.IResolvable
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultValue() *float64
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
-	GlobalQuota() interface{}
+	GlobalQuota() cdktf.IResolvable
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -525,10 +600,15 @@ type DataAwsServicequotasServiceQuota interface {
 	TerraformResourceType() *string
 	Value() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -545,8 +625,8 @@ type jsiiProxy_DataAwsServicequotasServiceQuota struct {
 	internal.Type__cdktfTerraformDataSource
 }
 
-func (j *jsiiProxy_DataAwsServicequotasServiceQuota) Adjustable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicequotasServiceQuota) Adjustable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"adjustable",
@@ -585,8 +665,8 @@ func (j *jsiiProxy_DataAwsServicequotasServiceQuota) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicequotasServiceQuota) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicequotasServiceQuota) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -635,8 +715,8 @@ func (j *jsiiProxy_DataAwsServicequotasServiceQuota) FriendlyUniqueId() *string 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicequotasServiceQuota) GlobalQuota() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicequotasServiceQuota) GlobalQuota() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"globalQuota",
@@ -805,7 +885,7 @@ func (j *jsiiProxy_DataAwsServicequotasServiceQuota) Value() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota.html aws_servicequotas_service_quota} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota aws_servicequotas_service_quota} Data Source.
 func NewDataAwsServicequotasServiceQuota(scope constructs.Construct, id *string, config *DataAwsServicequotasServiceQuotaConfig) DataAwsServicequotasServiceQuota {
 	_init_.Initialize()
 
@@ -820,7 +900,7 @@ func NewDataAwsServicequotasServiceQuota(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota.html aws_servicequotas_service_quota} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota aws_servicequotas_service_quota} Data Source.
 func NewDataAwsServicequotasServiceQuota_Override(d DataAwsServicequotasServiceQuota, scope constructs.Construct, id *string, config *DataAwsServicequotasServiceQuotaConfig) {
 	_init_.Initialize()
 
@@ -831,7 +911,7 @@ func NewDataAwsServicequotasServiceQuota_Override(d DataAwsServicequotasServiceQ
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicequotasServiceQuota) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServicequotasServiceQuota) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -927,12 +1007,40 @@ func (d *jsiiProxy_DataAwsServicequotasServiceQuota) AddOverride(path *string, v
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -969,12 +1077,54 @@ func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicequotasServiceQuota) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1091,30 +1241,30 @@ func (d *jsiiProxy_DataAwsServicequotasServiceQuota) ToTerraform() interface{} {
 // AWS Service Quotas.
 type DataAwsServicequotasServiceQuotaConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota.html#service_code DataAwsServicequotasServiceQuota#service_code}.
-	ServiceCode *string `json:"serviceCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota.html#quota_code DataAwsServicequotasServiceQuota#quota_code}.
-	QuotaCode *string `json:"quotaCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota.html#quota_name DataAwsServicequotasServiceQuota#quota_name}.
-	QuotaName *string `json:"quotaName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota#service_code DataAwsServicequotasServiceQuota#service_code}.
+	ServiceCode *string `json:"serviceCode" yaml:"serviceCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota#quota_code DataAwsServicequotasServiceQuota#quota_code}.
+	QuotaCode *string `json:"quotaCode" yaml:"quotaCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicequotas_service_quota#quota_name DataAwsServicequotasServiceQuota#quota_name}.
+	QuotaName *string `json:"quotaName" yaml:"quotaName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota.html aws_servicequotas_service_quota}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota aws_servicequotas_service_quota}.
 type ServicequotasServiceQuota interface {
 	cdktf.TerraformResource
-	Adjustable() interface{}
+	Adjustable() cdktf.IResolvable
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultValue() *float64
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -1144,10 +1294,15 @@ type ServicequotasServiceQuota interface {
 	SetValue(val *float64)
 	ValueInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1162,8 +1317,8 @@ type jsiiProxy_ServicequotasServiceQuota struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_ServicequotasServiceQuota) Adjustable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicequotasServiceQuota) Adjustable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"adjustable",
@@ -1202,8 +1357,8 @@ func (j *jsiiProxy_ServicequotasServiceQuota) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_ServicequotasServiceQuota) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicequotasServiceQuota) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1432,7 +1587,7 @@ func (j *jsiiProxy_ServicequotasServiceQuota) ValueInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota.html aws_servicequotas_service_quota} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota aws_servicequotas_service_quota} Resource.
 func NewServicequotasServiceQuota(scope constructs.Construct, id *string, config *ServicequotasServiceQuotaConfig) ServicequotasServiceQuota {
 	_init_.Initialize()
 
@@ -1447,7 +1602,7 @@ func NewServicequotasServiceQuota(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota.html aws_servicequotas_service_quota} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota aws_servicequotas_service_quota} Resource.
 func NewServicequotasServiceQuota_Override(s ServicequotasServiceQuota, scope constructs.Construct, id *string, config *ServicequotasServiceQuotaConfig) {
 	_init_.Initialize()
 
@@ -1458,7 +1613,7 @@ func NewServicequotasServiceQuota_Override(s ServicequotasServiceQuota, scope co
 	)
 }
 
-func (j *jsiiProxy_ServicequotasServiceQuota) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicequotasServiceQuota) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1554,12 +1709,40 @@ func (s *jsiiProxy_ServicequotasServiceQuota) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicequotasServiceQuota) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicequotasServiceQuota) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicequotasServiceQuota) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1596,12 +1779,54 @@ func (s *jsiiProxy_ServicequotasServiceQuota) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicequotasServiceQuota) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicequotasServiceQuota) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicequotasServiceQuota) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicequotasServiceQuota) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1702,17 +1927,17 @@ func (s *jsiiProxy_ServicequotasServiceQuota) ToTerraform() interface{} {
 // AWS Service Quotas.
 type ServicequotasServiceQuotaConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota.html#quota_code ServicequotasServiceQuota#quota_code}.
-	QuotaCode *string `json:"quotaCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota.html#service_code ServicequotasServiceQuota#service_code}.
-	ServiceCode *string `json:"serviceCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota.html#value ServicequotasServiceQuota#value}.
-	Value *float64 `json:"value"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota#quota_code ServicequotasServiceQuota#quota_code}.
+	QuotaCode *string `json:"quotaCode" yaml:"quotaCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota#service_code ServicequotasServiceQuota#service_code}.
+	ServiceCode *string `json:"serviceCode" yaml:"serviceCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicequotas_service_quota#value ServicequotasServiceQuota#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }

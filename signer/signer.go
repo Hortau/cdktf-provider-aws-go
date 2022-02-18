@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/signer/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job.html aws_signer_signing_job}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job aws_signer_signing_job}.
 type DataAwsSignerSigningJob interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	CompletedAt() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedAt() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -46,10 +46,15 @@ type DataAwsSignerSigningJob interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -97,8 +102,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJob) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJob) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSignerSigningJob) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -347,7 +352,7 @@ func (j *jsiiProxy_DataAwsSignerSigningJob) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job.html aws_signer_signing_job} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job aws_signer_signing_job} Data Source.
 func NewDataAwsSignerSigningJob(scope constructs.Construct, id *string, config *DataAwsSignerSigningJobConfig) DataAwsSignerSigningJob {
 	_init_.Initialize()
 
@@ -362,7 +367,7 @@ func NewDataAwsSignerSigningJob(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job.html aws_signer_signing_job} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job aws_signer_signing_job} Data Source.
 func NewDataAwsSignerSigningJob_Override(d DataAwsSignerSigningJob, scope constructs.Construct, id *string, config *DataAwsSignerSigningJobConfig) {
 	_init_.Initialize()
 
@@ -373,7 +378,7 @@ func NewDataAwsSignerSigningJob_Override(d DataAwsSignerSigningJob, scope constr
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJob) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsSignerSigningJob) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -453,12 +458,40 @@ func (d *jsiiProxy_DataAwsSignerSigningJob) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJob) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningJob) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJob) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -495,12 +528,54 @@ func (d *jsiiProxy_DataAwsSignerSigningJob) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJob) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJob) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningJob) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJob) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -640,15 +715,15 @@ func (d *jsiiProxy_DataAwsSignerSigningJob) ToTerraform() interface{} {
 // AWS Signer.
 type DataAwsSignerSigningJobConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job.html#job_id DataAwsSignerSigningJob#job_id}.
-	JobId *string `json:"jobId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_job#job_id DataAwsSignerSigningJob#job_id}.
+	JobId *string `json:"jobId" yaml:"jobId"`
 }
 
 type DataAwsSignerSigningJobRevocationRecord interface {
@@ -660,12 +735,19 @@ type DataAwsSignerSigningJobRevocationRecord interface {
 	RevokedBy() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -724,8 +806,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -734,15 +816,25 @@ func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsSignerSigningJobRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobRevocationRecord {
+func NewDataAwsSignerSigningJobRevocationRecord(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsSignerSigningJobRevocationRecord {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsSignerSigningJobRevocationRecord{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -750,12 +842,12 @@ func NewDataAwsSignerSigningJobRevocationRecord(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewDataAwsSignerSigningJobRevocationRecord_Override(d DataAwsSignerSigningJobRevocationRecord, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsSignerSigningJobRevocationRecord_Override(d DataAwsSignerSigningJobRevocationRecord, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -776,7 +868,7 @@ func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -784,13 +876,49 @@ func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -827,12 +955,54 @@ func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobRevocationRecord) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -858,15 +1028,22 @@ type DataAwsSignerSigningJobSignedObject interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	S3() interface{}
+	S3() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -885,8 +1062,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) ComplexComputedListIndex
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) S3() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) S3() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"s3",
@@ -905,8 +1082,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -915,15 +1092,25 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) TerraformResource() cdkt
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsSignerSigningJobSignedObject(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSignedObject {
+func NewDataAwsSignerSigningJobSignedObject(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsSignerSigningJobSignedObject {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsSignerSigningJobSignedObject{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObject",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -931,12 +1118,12 @@ func NewDataAwsSignerSigningJobSignedObject(terraformResource cdktf.ITerraformRe
 }
 
 // Experimental.
-func NewDataAwsSignerSigningJobSignedObject_Override(d DataAwsSignerSigningJobSignedObject, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsSignerSigningJobSignedObject_Override(d DataAwsSignerSigningJobSignedObject, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObject",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -957,7 +1144,7 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -965,13 +1152,49 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) SetTerraformResource(val
 	)
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObject) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1008,12 +1231,54 @@ func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObject) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1043,12 +1308,19 @@ type DataAwsSignerSigningJobSignedObjectS3 interface {
 	Key() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1097,8 +1369,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1107,15 +1379,25 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSignedObjectS3 {
+func NewDataAwsSignerSigningJobSignedObjectS3(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsSignerSigningJobSignedObjectS3 {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsSignerSigningJobSignedObjectS3{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObjectS3",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1123,12 +1405,12 @@ func NewDataAwsSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewDataAwsSignerSigningJobSignedObjectS3_Override(d DataAwsSignerSigningJobSignedObjectS3, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsSignerSigningJobSignedObjectS3_Override(d DataAwsSignerSigningJobSignedObjectS3, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSignedObjectS3",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1149,7 +1431,7 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1157,13 +1439,49 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1200,12 +1518,54 @@ func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSignedObjectS3) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1231,15 +1591,22 @@ type DataAwsSignerSigningJobSource interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	S3() interface{}
+	S3() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1258,8 +1625,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSource) ComplexComputedListIndex() *st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSource) S3() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSignerSigningJobSource) S3() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"s3",
@@ -1278,8 +1645,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSource) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSource) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsSignerSigningJobSource) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1288,15 +1655,25 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSource) TerraformResource() cdktf.ITer
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSource) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsSignerSigningJobSource(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSource {
+func NewDataAwsSignerSigningJobSource(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsSignerSigningJobSource {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsSignerSigningJobSource{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSource",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1304,12 +1681,12 @@ func NewDataAwsSignerSigningJobSource(terraformResource cdktf.ITerraformResource
 }
 
 // Experimental.
-func NewDataAwsSignerSigningJobSource_Override(d DataAwsSignerSigningJobSource, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsSignerSigningJobSource_Override(d DataAwsSignerSigningJobSource, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSource",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1330,7 +1707,7 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSource) SetTerraformAttribute(val *str
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSource) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsSignerSigningJobSource) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1338,13 +1715,49 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSource) SetTerraformResource(val cdktf
 	)
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSource) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1381,12 +1794,54 @@ func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSource) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1416,13 +1871,20 @@ type DataAwsSignerSigningJobSourceS3 interface {
 	Key() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1471,8 +1933,8 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) TerraformAttribute() *string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1491,15 +1953,25 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) Version() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsSignerSigningJobSourceS3(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningJobSourceS3 {
+func NewDataAwsSignerSigningJobSourceS3(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsSignerSigningJobSourceS3 {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsSignerSigningJobSourceS3{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSourceS3",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1507,12 +1979,12 @@ func NewDataAwsSignerSigningJobSourceS3(terraformResource cdktf.ITerraformResour
 }
 
 // Experimental.
-func NewDataAwsSignerSigningJobSourceS3_Override(d DataAwsSignerSigningJobSourceS3, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsSignerSigningJobSourceS3_Override(d DataAwsSignerSigningJobSourceS3, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningJobSourceS3",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1533,7 +2005,7 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) SetTerraformAttribute(val *s
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1541,13 +2013,49 @@ func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) SetTerraformResource(val cdk
 	)
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningJobSourceS3) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1584,12 +2092,54 @@ func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1611,14 +2161,14 @@ func (d *jsiiProxy_DataAwsSignerSigningJobSourceS3) InterpolationForAttribute(pr
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile.html aws_signer_signing_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile aws_signer_signing_profile}.
 type DataAwsSignerSigningProfile interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1636,19 +2186,24 @@ type DataAwsSignerSigningProfile interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Version() *string
 	VersionArn() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1696,8 +2251,8 @@ func (j *jsiiProxy_DataAwsSignerSigningProfile) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSignerSigningProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1836,8 +2391,8 @@ func (j *jsiiProxy_DataAwsSignerSigningProfile) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfile) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSignerSigningProfile) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1846,8 +2401,8 @@ func (j *jsiiProxy_DataAwsSignerSigningProfile) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfile) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSignerSigningProfile) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1906,7 +2461,7 @@ func (j *jsiiProxy_DataAwsSignerSigningProfile) VersionArn() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile.html aws_signer_signing_profile} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile aws_signer_signing_profile} Data Source.
 func NewDataAwsSignerSigningProfile(scope constructs.Construct, id *string, config *DataAwsSignerSigningProfileConfig) DataAwsSignerSigningProfile {
 	_init_.Initialize()
 
@@ -1921,7 +2476,7 @@ func NewDataAwsSignerSigningProfile(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile.html aws_signer_signing_profile} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile aws_signer_signing_profile} Data Source.
 func NewDataAwsSignerSigningProfile_Override(d DataAwsSignerSigningProfile, scope constructs.Construct, id *string, config *DataAwsSignerSigningProfileConfig) {
 	_init_.Initialize()
 
@@ -1932,7 +2487,7 @@ func NewDataAwsSignerSigningProfile_Override(d DataAwsSignerSigningProfile, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsSignerSigningProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1972,7 +2527,7 @@ func (j *jsiiProxy_DataAwsSignerSigningProfile) SetProvider(val cdktf.TerraformP
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfile) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsSignerSigningProfile) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2020,12 +2575,40 @@ func (d *jsiiProxy_DataAwsSignerSigningProfile) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2062,12 +2645,54 @@ func (d *jsiiProxy_DataAwsSignerSigningProfile) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2202,17 +2827,17 @@ func (d *jsiiProxy_DataAwsSignerSigningProfile) ToTerraform() interface{} {
 // AWS Signer.
 type DataAwsSignerSigningProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile.html#name DataAwsSignerSigningProfile#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile.html#tags DataAwsSignerSigningProfile#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile#name DataAwsSignerSigningProfile#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/signer_signing_profile#tags DataAwsSignerSigningProfile#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsSignerSigningProfileRevocationRecord interface {
@@ -2224,12 +2849,19 @@ type DataAwsSignerSigningProfileRevocationRecord interface {
 	RevokedBy() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2288,8 +2920,8 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2298,15 +2930,25 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsSignerSigningProfileRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningProfileRevocationRecord {
+func NewDataAwsSignerSigningProfileRevocationRecord(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsSignerSigningProfileRevocationRecord {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsSignerSigningProfileRevocationRecord{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningProfileRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2314,12 +2956,12 @@ func NewDataAwsSignerSigningProfileRevocationRecord(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewDataAwsSignerSigningProfileRevocationRecord_Override(d DataAwsSignerSigningProfileRevocationRecord, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsSignerSigningProfileRevocationRecord_Override(d DataAwsSignerSigningProfileRevocationRecord, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningProfileRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2340,7 +2982,7 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2348,13 +2990,49 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2391,12 +3069,54 @@ func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileRevocationRecord) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2424,14 +3144,21 @@ type DataAwsSignerSigningProfileSignatureValidityPeriod interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	Value() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2460,8 +3187,8 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2490,15 +3217,25 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) Value() *
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsSignerSigningProfileSignatureValidityPeriod(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsSignerSigningProfileSignatureValidityPeriod {
+func NewDataAwsSignerSigningProfileSignatureValidityPeriod(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsSignerSigningProfileSignatureValidityPeriod {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2506,12 +3243,12 @@ func NewDataAwsSignerSigningProfileSignatureValidityPeriod(terraformResource cdk
 }
 
 // Experimental.
-func NewDataAwsSignerSigningProfileSignatureValidityPeriod_Override(d DataAwsSignerSigningProfileSignatureValidityPeriod, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsSignerSigningProfileSignatureValidityPeriod_Override(d DataAwsSignerSigningProfileSignatureValidityPeriod, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.DataAwsSignerSigningProfileSignatureValidityPeriod",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2532,7 +3269,7 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2540,13 +3277,49 @@ func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) SetTerraf
 	)
 }
 
+func (j *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2583,12 +3356,54 @@ func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetNumber
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2610,14 +3425,14 @@ func (d *jsiiProxy_DataAwsSignerSigningProfileSignatureValidityPeriod) Interpola
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html aws_signer_signing_job}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job aws_signer_signing_job}.
 type SignerSigningJob interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	CompletedAt() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedAt() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2654,10 +3469,15 @@ type SignerSigningJob interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDestination(value *SignerSigningJobDestination)
@@ -2707,8 +3527,8 @@ func (j *jsiiProxy_SignerSigningJob) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJob) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningJob) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3017,7 +3837,7 @@ func (j *jsiiProxy_SignerSigningJob) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html aws_signer_signing_job} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job aws_signer_signing_job} Resource.
 func NewSignerSigningJob(scope constructs.Construct, id *string, config *SignerSigningJobConfig) SignerSigningJob {
 	_init_.Initialize()
 
@@ -3032,7 +3852,7 @@ func NewSignerSigningJob(scope constructs.Construct, id *string, config *SignerS
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html aws_signer_signing_job} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job aws_signer_signing_job} Resource.
 func NewSignerSigningJob_Override(s SignerSigningJob, scope constructs.Construct, id *string, config *SignerSigningJobConfig) {
 	_init_.Initialize()
 
@@ -3043,7 +3863,7 @@ func NewSignerSigningJob_Override(s SignerSigningJob, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJob) SetCount(val interface{}) {
+func (j *jsiiProxy_SignerSigningJob) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3131,12 +3951,40 @@ func (s *jsiiProxy_SignerSigningJob) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJob) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJob) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJob) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3173,12 +4021,54 @@ func (s *jsiiProxy_SignerSigningJob) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJob) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJob) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJob) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJob) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3329,32 +4219,32 @@ func (s *jsiiProxy_SignerSigningJob) ToTerraform() interface{} {
 // AWS Signer.
 type SignerSigningJobConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#destination SignerSigningJob#destination}
-	Destination *SignerSigningJobDestination `json:"destination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#profile_name SignerSigningJob#profile_name}.
-	ProfileName *string `json:"profileName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#destination SignerSigningJob#destination}
+	Destination *SignerSigningJobDestination `json:"destination" yaml:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#profile_name SignerSigningJob#profile_name}.
+	ProfileName *string `json:"profileName" yaml:"profileName"`
 	// source block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#source SignerSigningJob#source}
-	Source *SignerSigningJobSource `json:"source"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#ignore_signing_job_failure SignerSigningJob#ignore_signing_job_failure}.
-	IgnoreSigningJobFailure interface{} `json:"ignoreSigningJobFailure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#source SignerSigningJob#source}
+	Source *SignerSigningJobSource `json:"source" yaml:"source"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#ignore_signing_job_failure SignerSigningJob#ignore_signing_job_failure}.
+	IgnoreSigningJobFailure interface{} `json:"ignoreSigningJobFailure" yaml:"ignoreSigningJobFailure"`
 }
 
 type SignerSigningJobDestination struct {
 	// s3 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#s3 SignerSigningJob#s3}
-	S3 *SignerSigningJobDestinationS3 `json:"s3"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#s3 SignerSigningJob#s3}
+	S3 *SignerSigningJobDestinationS3 `json:"s3" yaml:"s3"`
 }
 
 type SignerSigningJobDestinationOutputReference interface {
@@ -3367,12 +4257,17 @@ type SignerSigningJobDestinationOutputReference interface {
 	S3Input() *SignerSigningJobDestinationS3
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3(value *SignerSigningJobDestinationS3)
@@ -3433,8 +4328,8 @@ func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3443,7 +4338,7 @@ func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) TerraformResource
 	return returns
 }
 
-func NewSignerSigningJobDestinationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobDestinationOutputReference {
+func NewSignerSigningJobDestinationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SignerSigningJobDestinationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobDestinationOutputReference{}
@@ -3457,7 +4352,7 @@ func NewSignerSigningJobDestinationOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewSignerSigningJobDestinationOutputReference_Override(s SignerSigningJobDestinationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSignerSigningJobDestinationOutputReference_Override(s SignerSigningJobDestinationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3491,7 +4386,7 @@ func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3500,12 +4395,40 @@ func (j *jsiiProxy_SignerSigningJobDestinationOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3542,12 +4465,54 @@ func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3592,10 +4557,10 @@ func (s *jsiiProxy_SignerSigningJobDestinationOutputReference) PutS3(value *Sign
 }
 
 type SignerSigningJobDestinationS3 struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#bucket SignerSigningJob#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#prefix SignerSigningJob#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#bucket SignerSigningJob#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#prefix SignerSigningJob#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type SignerSigningJobDestinationS3OutputReference interface {
@@ -3612,12 +4577,17 @@ type SignerSigningJobDestinationS3OutputReference interface {
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPrefix()
@@ -3698,8 +4668,8 @@ func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3708,7 +4678,7 @@ func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) TerraformResour
 	return returns
 }
 
-func NewSignerSigningJobDestinationS3OutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobDestinationS3OutputReference {
+func NewSignerSigningJobDestinationS3OutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SignerSigningJobDestinationS3OutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobDestinationS3OutputReference{}
@@ -3722,7 +4692,7 @@ func NewSignerSigningJobDestinationS3OutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewSignerSigningJobDestinationS3OutputReference_Override(s SignerSigningJobDestinationS3OutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSignerSigningJobDestinationS3OutputReference_Override(s SignerSigningJobDestinationS3OutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3772,7 +4742,7 @@ func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3781,12 +4751,40 @@ func (j *jsiiProxy_SignerSigningJobDestinationS3OutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3823,12 +4821,54 @@ func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobDestinationS3OutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3881,12 +4921,19 @@ type SignerSigningJobRevocationRecord interface {
 	RevokedBy() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -3945,8 +4992,8 @@ func (j *jsiiProxy_SignerSigningJobRevocationRecord) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobRevocationRecord) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningJobRevocationRecord) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3955,15 +5002,25 @@ func (j *jsiiProxy_SignerSigningJobRevocationRecord) TerraformResource() cdktf.I
 	return returns
 }
 
+func (j *jsiiProxy_SignerSigningJobRevocationRecord) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewSignerSigningJobRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningJobRevocationRecord {
+func NewSignerSigningJobRevocationRecord(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) SignerSigningJobRevocationRecord {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobRevocationRecord{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningJobRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -3971,12 +5028,12 @@ func NewSignerSigningJobRevocationRecord(terraformResource cdktf.ITerraformResou
 }
 
 // Experimental.
-func NewSignerSigningJobRevocationRecord_Override(s SignerSigningJobRevocationRecord, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewSignerSigningJobRevocationRecord_Override(s SignerSigningJobRevocationRecord, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningJobRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		s,
 	)
 }
@@ -3997,7 +5054,7 @@ func (j *jsiiProxy_SignerSigningJobRevocationRecord) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJobRevocationRecord) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningJobRevocationRecord) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4005,13 +5062,49 @@ func (j *jsiiProxy_SignerSigningJobRevocationRecord) SetTerraformResource(val cd
 	)
 }
 
+func (j *jsiiProxy_SignerSigningJobRevocationRecord) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4048,12 +5141,54 @@ func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobRevocationRecord) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4079,15 +5214,22 @@ type SignerSigningJobSignedObject interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	S3() interface{}
+	S3() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4106,8 +5248,8 @@ func (j *jsiiProxy_SignerSigningJobSignedObject) ComplexComputedListIndex() *str
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobSignedObject) S3() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningJobSignedObject) S3() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"s3",
@@ -4126,8 +5268,8 @@ func (j *jsiiProxy_SignerSigningJobSignedObject) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobSignedObject) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningJobSignedObject) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4136,15 +5278,25 @@ func (j *jsiiProxy_SignerSigningJobSignedObject) TerraformResource() cdktf.ITerr
 	return returns
 }
 
+func (j *jsiiProxy_SignerSigningJobSignedObject) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewSignerSigningJobSignedObject(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningJobSignedObject {
+func NewSignerSigningJobSignedObject(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) SignerSigningJobSignedObject {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobSignedObject{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningJobSignedObject",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4152,12 +5304,12 @@ func NewSignerSigningJobSignedObject(terraformResource cdktf.ITerraformResource,
 }
 
 // Experimental.
-func NewSignerSigningJobSignedObject_Override(s SignerSigningJobSignedObject, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewSignerSigningJobSignedObject_Override(s SignerSigningJobSignedObject, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningJobSignedObject",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		s,
 	)
 }
@@ -4178,7 +5330,7 @@ func (j *jsiiProxy_SignerSigningJobSignedObject) SetTerraformAttribute(val *stri
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJobSignedObject) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningJobSignedObject) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4186,13 +5338,49 @@ func (j *jsiiProxy_SignerSigningJobSignedObject) SetTerraformResource(val cdktf.
 	)
 }
 
+func (j *jsiiProxy_SignerSigningJobSignedObject) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (s *jsiiProxy_SignerSigningJobSignedObject) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningJobSignedObject) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObject) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObject) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4229,12 +5417,54 @@ func (s *jsiiProxy_SignerSigningJobSignedObject) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObject) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObject) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJobSignedObject) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObject) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4264,12 +5494,19 @@ type SignerSigningJobSignedObjectS3 interface {
 	Key() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4318,8 +5555,8 @@ func (j *jsiiProxy_SignerSigningJobSignedObjectS3) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobSignedObjectS3) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningJobSignedObjectS3) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4328,15 +5565,25 @@ func (j *jsiiProxy_SignerSigningJobSignedObjectS3) TerraformResource() cdktf.ITe
 	return returns
 }
 
+func (j *jsiiProxy_SignerSigningJobSignedObjectS3) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningJobSignedObjectS3 {
+func NewSignerSigningJobSignedObjectS3(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) SignerSigningJobSignedObjectS3 {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobSignedObjectS3{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningJobSignedObjectS3",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4344,12 +5591,12 @@ func NewSignerSigningJobSignedObjectS3(terraformResource cdktf.ITerraformResourc
 }
 
 // Experimental.
-func NewSignerSigningJobSignedObjectS3_Override(s SignerSigningJobSignedObjectS3, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewSignerSigningJobSignedObjectS3_Override(s SignerSigningJobSignedObjectS3, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningJobSignedObjectS3",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		s,
 	)
 }
@@ -4370,7 +5617,7 @@ func (j *jsiiProxy_SignerSigningJobSignedObjectS3) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJobSignedObjectS3) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningJobSignedObjectS3) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4378,13 +5625,49 @@ func (j *jsiiProxy_SignerSigningJobSignedObjectS3) SetTerraformResource(val cdkt
 	)
 }
 
+func (j *jsiiProxy_SignerSigningJobSignedObjectS3) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4421,12 +5704,54 @@ func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSignedObjectS3) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4451,8 +5776,8 @@ func (s *jsiiProxy_SignerSigningJobSignedObjectS3) InterpolationForAttribute(pro
 type SignerSigningJobSource struct {
 	// s3 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#s3 SignerSigningJob#s3}
-	S3 *SignerSigningJobSourceS3 `json:"s3"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#s3 SignerSigningJob#s3}
+	S3 *SignerSigningJobSourceS3 `json:"s3" yaml:"s3"`
 }
 
 type SignerSigningJobSourceOutputReference interface {
@@ -4465,12 +5790,17 @@ type SignerSigningJobSourceOutputReference interface {
 	S3Input() *SignerSigningJobSourceS3
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3(value *SignerSigningJobSourceS3)
@@ -4531,8 +5861,8 @@ func (j *jsiiProxy_SignerSigningJobSourceOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobSourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningJobSourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4541,7 +5871,7 @@ func (j *jsiiProxy_SignerSigningJobSourceOutputReference) TerraformResource() cd
 	return returns
 }
 
-func NewSignerSigningJobSourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobSourceOutputReference {
+func NewSignerSigningJobSourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SignerSigningJobSourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobSourceOutputReference{}
@@ -4555,7 +5885,7 @@ func NewSignerSigningJobSourceOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewSignerSigningJobSourceOutputReference_Override(s SignerSigningJobSourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSignerSigningJobSourceOutputReference_Override(s SignerSigningJobSourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4589,7 +5919,7 @@ func (j *jsiiProxy_SignerSigningJobSourceOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJobSourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningJobSourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4598,12 +5928,40 @@ func (j *jsiiProxy_SignerSigningJobSourceOutputReference) SetTerraformResource(v
 }
 
 // Experimental.
-func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4640,12 +5998,54 @@ func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4690,12 +6090,12 @@ func (s *jsiiProxy_SignerSigningJobSourceOutputReference) PutS3(value *SignerSig
 }
 
 type SignerSigningJobSourceS3 struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#bucket SignerSigningJob#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#key SignerSigningJob#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job.html#version SignerSigningJob#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#bucket SignerSigningJob#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#key SignerSigningJob#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_job#version SignerSigningJob#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type SignerSigningJobSourceS3OutputReference interface {
@@ -4712,15 +6112,20 @@ type SignerSigningJobSourceS3OutputReference interface {
 	KeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -4800,8 +6205,8 @@ func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4830,7 +6235,7 @@ func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) VersionInput() *stri
 	return returns
 }
 
-func NewSignerSigningJobSourceS3OutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningJobSourceS3OutputReference {
+func NewSignerSigningJobSourceS3OutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SignerSigningJobSourceS3OutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningJobSourceS3OutputReference{}
@@ -4844,7 +6249,7 @@ func NewSignerSigningJobSourceS3OutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewSignerSigningJobSourceS3OutputReference_Override(s SignerSigningJobSourceS3OutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSignerSigningJobSourceS3OutputReference_Override(s SignerSigningJobSourceS3OutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4894,7 +6299,7 @@ func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4911,12 +6316,40 @@ func (j *jsiiProxy_SignerSigningJobSourceS3OutputReference) SetVersion(val *stri
 }
 
 // Experimental.
-func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4953,12 +6386,54 @@ func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4994,14 +6469,14 @@ func (s *jsiiProxy_SignerSigningJobSourceS3OutputReference) InterpolationForAttr
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html aws_signer_signing_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile aws_signer_signing_profile}.
 type SignerSigningProfile interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5026,22 +6501,27 @@ type SignerSigningProfile interface {
 	SignatureValidityPeriod() SignerSigningProfileSignatureValidityPeriodOutputReference
 	SignatureValidityPeriodInput() *SignerSigningProfileSignatureValidityPeriod
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Version() *string
 	VersionArn() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutSignatureValidityPeriod(value *SignerSigningProfileSignatureValidityPeriod)
@@ -5093,8 +6573,8 @@ func (j *jsiiProxy_SignerSigningProfile) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5283,8 +6763,8 @@ func (j *jsiiProxy_SignerSigningProfile) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfile) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningProfile) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5293,8 +6773,8 @@ func (j *jsiiProxy_SignerSigningProfile) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfile) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningProfile) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5303,8 +6783,8 @@ func (j *jsiiProxy_SignerSigningProfile) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfile) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningProfile) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5313,8 +6793,8 @@ func (j *jsiiProxy_SignerSigningProfile) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfile) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningProfile) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5373,7 +6853,7 @@ func (j *jsiiProxy_SignerSigningProfile) VersionArn() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html aws_signer_signing_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile aws_signer_signing_profile} Resource.
 func NewSignerSigningProfile(scope constructs.Construct, id *string, config *SignerSigningProfileConfig) SignerSigningProfile {
 	_init_.Initialize()
 
@@ -5388,7 +6868,7 @@ func NewSignerSigningProfile(scope constructs.Construct, id *string, config *Sig
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html aws_signer_signing_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile aws_signer_signing_profile} Resource.
 func NewSignerSigningProfile_Override(s SignerSigningProfile, scope constructs.Construct, id *string, config *SignerSigningProfileConfig) {
 	_init_.Initialize()
 
@@ -5399,7 +6879,7 @@ func NewSignerSigningProfile_Override(s SignerSigningProfile, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_SignerSigningProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_SignerSigningProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5455,7 +6935,7 @@ func (j *jsiiProxy_SignerSigningProfile) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_SignerSigningProfile) SetTags(val interface{}) {
+func (j *jsiiProxy_SignerSigningProfile) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5463,7 +6943,7 @@ func (j *jsiiProxy_SignerSigningProfile) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SignerSigningProfile) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SignerSigningProfile) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5511,12 +6991,40 @@ func (s *jsiiProxy_SignerSigningProfile) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5553,12 +7061,54 @@ func (s *jsiiProxy_SignerSigningProfile) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5720,30 +7270,30 @@ func (s *jsiiProxy_SignerSigningProfile) ToTerraform() interface{} {
 // AWS Signer.
 type SignerSigningProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#platform_id SignerSigningProfile#platform_id}.
-	PlatformId *string `json:"platformId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#name SignerSigningProfile#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#name_prefix SignerSigningProfile#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#platform_id SignerSigningProfile#platform_id}.
+	PlatformId *string `json:"platformId" yaml:"platformId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#name SignerSigningProfile#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#name_prefix SignerSigningProfile#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 	// signature_validity_period block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#signature_validity_period SignerSigningProfile#signature_validity_period}
-	SignatureValidityPeriod *SignerSigningProfileSignatureValidityPeriod `json:"signatureValidityPeriod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#tags SignerSigningProfile#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#tags_all SignerSigningProfile#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#signature_validity_period SignerSigningProfile#signature_validity_period}
+	SignatureValidityPeriod *SignerSigningProfileSignatureValidityPeriod `json:"signatureValidityPeriod" yaml:"signatureValidityPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#tags SignerSigningProfile#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#tags_all SignerSigningProfile#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html aws_signer_signing_profile_permission}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission aws_signer_signing_profile_permission}.
 type SignerSigningProfilePermission interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -5751,8 +7301,8 @@ type SignerSigningProfilePermission interface {
 	ActionInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5783,10 +7333,15 @@ type SignerSigningProfilePermission interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5844,8 +7399,8 @@ func (j *jsiiProxy_SignerSigningProfilePermission) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfilePermission) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SignerSigningProfilePermission) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6064,7 +7619,7 @@ func (j *jsiiProxy_SignerSigningProfilePermission) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html aws_signer_signing_profile_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission aws_signer_signing_profile_permission} Resource.
 func NewSignerSigningProfilePermission(scope constructs.Construct, id *string, config *SignerSigningProfilePermissionConfig) SignerSigningProfilePermission {
 	_init_.Initialize()
 
@@ -6079,7 +7634,7 @@ func NewSignerSigningProfilePermission(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html aws_signer_signing_profile_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission aws_signer_signing_profile_permission} Resource.
 func NewSignerSigningProfilePermission_Override(s SignerSigningProfilePermission, scope constructs.Construct, id *string, config *SignerSigningProfilePermissionConfig) {
 	_init_.Initialize()
 
@@ -6098,7 +7653,7 @@ func (j *jsiiProxy_SignerSigningProfilePermission) SetAction(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SignerSigningProfilePermission) SetCount(val interface{}) {
+func (j *jsiiProxy_SignerSigningProfilePermission) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6210,12 +7765,40 @@ func (s *jsiiProxy_SignerSigningProfilePermission) AddOverride(path *string, val
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningProfilePermission) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningProfilePermission) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfilePermission) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6252,12 +7835,54 @@ func (s *jsiiProxy_SignerSigningProfilePermission) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningProfilePermission) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfilePermission) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningProfilePermission) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfilePermission) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6382,25 +8007,25 @@ func (s *jsiiProxy_SignerSigningProfilePermission) ToTerraform() interface{} {
 // AWS Signer.
 type SignerSigningProfilePermissionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html#action SignerSigningProfilePermission#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html#principal SignerSigningProfilePermission#principal}.
-	Principal *string `json:"principal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html#profile_name SignerSigningProfilePermission#profile_name}.
-	ProfileName *string `json:"profileName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html#profile_version SignerSigningProfilePermission#profile_version}.
-	ProfileVersion *string `json:"profileVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html#statement_id SignerSigningProfilePermission#statement_id}.
-	StatementId *string `json:"statementId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission.html#statement_id_prefix SignerSigningProfilePermission#statement_id_prefix}.
-	StatementIdPrefix *string `json:"statementIdPrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission#action SignerSigningProfilePermission#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission#principal SignerSigningProfilePermission#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission#profile_name SignerSigningProfilePermission#profile_name}.
+	ProfileName *string `json:"profileName" yaml:"profileName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission#profile_version SignerSigningProfilePermission#profile_version}.
+	ProfileVersion *string `json:"profileVersion" yaml:"profileVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission#statement_id SignerSigningProfilePermission#statement_id}.
+	StatementId *string `json:"statementId" yaml:"statementId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile_permission#statement_id_prefix SignerSigningProfilePermission#statement_id_prefix}.
+	StatementIdPrefix *string `json:"statementIdPrefix" yaml:"statementIdPrefix"`
 }
 
 type SignerSigningProfileRevocationRecord interface {
@@ -6412,12 +8037,19 @@ type SignerSigningProfileRevocationRecord interface {
 	RevokedBy() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -6476,8 +8108,8 @@ func (j *jsiiProxy_SignerSigningProfileRevocationRecord) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfileRevocationRecord) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningProfileRevocationRecord) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6486,15 +8118,25 @@ func (j *jsiiProxy_SignerSigningProfileRevocationRecord) TerraformResource() cdk
 	return returns
 }
 
+func (j *jsiiProxy_SignerSigningProfileRevocationRecord) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewSignerSigningProfileRevocationRecord(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SignerSigningProfileRevocationRecord {
+func NewSignerSigningProfileRevocationRecord(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) SignerSigningProfileRevocationRecord {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningProfileRevocationRecord{}
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningProfileRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -6502,12 +8144,12 @@ func NewSignerSigningProfileRevocationRecord(terraformResource cdktf.ITerraformR
 }
 
 // Experimental.
-func NewSignerSigningProfileRevocationRecord_Override(s SignerSigningProfileRevocationRecord, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewSignerSigningProfileRevocationRecord_Override(s SignerSigningProfileRevocationRecord, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.signer.SignerSigningProfileRevocationRecord",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		s,
 	)
 }
@@ -6528,7 +8170,7 @@ func (j *jsiiProxy_SignerSigningProfileRevocationRecord) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_SignerSigningProfileRevocationRecord) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningProfileRevocationRecord) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6536,13 +8178,49 @@ func (j *jsiiProxy_SignerSigningProfileRevocationRecord) SetTerraformResource(va
 	)
 }
 
+func (j *jsiiProxy_SignerSigningProfileRevocationRecord) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6579,12 +8257,54 @@ func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileRevocationRecord) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6607,10 +8327,10 @@ func (s *jsiiProxy_SignerSigningProfileRevocationRecord) InterpolationForAttribu
 }
 
 type SignerSigningProfileSignatureValidityPeriod struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#type SignerSigningProfile#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile.html#value SignerSigningProfile#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#type SignerSigningProfile#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/signer_signing_profile#value SignerSigningProfile#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SignerSigningProfileSignatureValidityPeriodOutputReference interface {
@@ -6621,18 +8341,23 @@ type SignerSigningProfileSignatureValidityPeriodOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6672,8 +8397,8 @@ func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6722,7 +8447,7 @@ func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) V
 	return returns
 }
 
-func NewSignerSigningProfileSignatureValidityPeriodOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SignerSigningProfileSignatureValidityPeriodOutputReference {
+func NewSignerSigningProfileSignatureValidityPeriodOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SignerSigningProfileSignatureValidityPeriodOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference{}
@@ -6736,7 +8461,7 @@ func NewSignerSigningProfileSignatureValidityPeriodOutputReference(terraformReso
 	return &j
 }
 
-func NewSignerSigningProfileSignatureValidityPeriodOutputReference_Override(s SignerSigningProfileSignatureValidityPeriodOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSignerSigningProfileSignatureValidityPeriodOutputReference_Override(s SignerSigningProfileSignatureValidityPeriodOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6770,7 +8495,7 @@ func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6795,12 +8520,40 @@ func (j *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) S
 }
 
 // Experimental.
-func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6837,12 +8590,54 @@ func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) G
 }
 
 // Experimental.
+func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SignerSigningProfileSignatureValidityPeriodOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

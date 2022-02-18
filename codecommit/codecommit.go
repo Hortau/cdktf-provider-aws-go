@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/codecommit/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template aws_codecommit_approval_rule_template}.
 type CodecommitApprovalRuleTemplate interface {
 	cdktf.TerraformResource
 	ApprovalRuleTemplateId() *string
@@ -18,8 +18,8 @@ type CodecommitApprovalRuleTemplate interface {
 	Content() *string
 	SetContent(val *string)
 	ContentInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -45,10 +45,15 @@ type CodecommitApprovalRuleTemplate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -114,8 +119,8 @@ func (j *jsiiProxy_CodecommitApprovalRuleTemplate) ContentInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -314,7 +319,7 @@ func (j *jsiiProxy_CodecommitApprovalRuleTemplate) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template aws_codecommit_approval_rule_template} Resource.
 func NewCodecommitApprovalRuleTemplate(scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateConfig) CodecommitApprovalRuleTemplate {
 	_init_.Initialize()
 
@@ -329,7 +334,7 @@ func NewCodecommitApprovalRuleTemplate(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template aws_codecommit_approval_rule_template} Resource.
 func NewCodecommitApprovalRuleTemplate_Override(c CodecommitApprovalRuleTemplate, scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateConfig) {
 	_init_.Initialize()
 
@@ -348,7 +353,7 @@ func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetContent(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetCount(val interface{}) {
+func (j *jsiiProxy_CodecommitApprovalRuleTemplate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -436,12 +441,40 @@ func (c *jsiiProxy_CodecommitApprovalRuleTemplate) AddOverride(path *string, val
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -478,12 +511,54 @@ func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -589,7 +664,7 @@ func (c *jsiiProxy_CodecommitApprovalRuleTemplate) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html aws_codecommit_approval_rule_template_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association aws_codecommit_approval_rule_template_association}.
 type CodecommitApprovalRuleTemplateAssociation interface {
 	cdktf.TerraformResource
 	ApprovalRuleTemplateName() *string
@@ -597,8 +672,8 @@ type CodecommitApprovalRuleTemplateAssociation interface {
 	ApprovalRuleTemplateNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -617,10 +692,15 @@ type CodecommitApprovalRuleTemplateAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -675,8 +755,8 @@ func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ConstructNodeMetad
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -815,7 +895,7 @@ func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) TerraformResourceT
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html aws_codecommit_approval_rule_template_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association aws_codecommit_approval_rule_template_association} Resource.
 func NewCodecommitApprovalRuleTemplateAssociation(scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateAssociationConfig) CodecommitApprovalRuleTemplateAssociation {
 	_init_.Initialize()
 
@@ -830,7 +910,7 @@ func NewCodecommitApprovalRuleTemplateAssociation(scope constructs.Construct, id
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html aws_codecommit_approval_rule_template_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association aws_codecommit_approval_rule_template_association} Resource.
 func NewCodecommitApprovalRuleTemplateAssociation_Override(c CodecommitApprovalRuleTemplateAssociation, scope constructs.Construct, id *string, config *CodecommitApprovalRuleTemplateAssociationConfig) {
 	_init_.Initialize()
 
@@ -849,7 +929,7 @@ func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetApprovalRuleTem
 	)
 }
 
-func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -929,12 +1009,40 @@ func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) AddOverride(path *
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -971,12 +1079,54 @@ func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetNumberAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1077,38 +1227,38 @@ func (c *jsiiProxy_CodecommitApprovalRuleTemplateAssociation) ToTerraform() inte
 // AWS CodeCommit.
 type CodecommitApprovalRuleTemplateAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html#approval_rule_template_name CodecommitApprovalRuleTemplateAssociation#approval_rule_template_name}.
-	ApprovalRuleTemplateName *string `json:"approvalRuleTemplateName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association.html#repository_name CodecommitApprovalRuleTemplateAssociation#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association#approval_rule_template_name CodecommitApprovalRuleTemplateAssociation#approval_rule_template_name}.
+	ApprovalRuleTemplateName *string `json:"approvalRuleTemplateName" yaml:"approvalRuleTemplateName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template_association#repository_name CodecommitApprovalRuleTemplateAssociation#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
 }
 
 // AWS CodeCommit.
 type CodecommitApprovalRuleTemplateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html#content CodecommitApprovalRuleTemplate#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html#name CodecommitApprovalRuleTemplate#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template.html#description CodecommitApprovalRuleTemplate#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template#content CodecommitApprovalRuleTemplate#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template#name CodecommitApprovalRuleTemplate#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_approval_rule_template#description CodecommitApprovalRuleTemplate#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html aws_codecommit_repository}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository aws_codecommit_repository}.
 type CodecommitRepository interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1116,8 +1266,8 @@ type CodecommitRepository interface {
 	CloneUrlHttp() *string
 	CloneUrlSsh() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultBranch() *string
 	SetDefaultBranch(val *string)
 	DefaultBranchInput() *string
@@ -1139,20 +1289,25 @@ type CodecommitRepository interface {
 	RepositoryName() *string
 	SetRepositoryName(val *string)
 	RepositoryNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDefaultBranch()
@@ -1221,8 +1376,8 @@ func (j *jsiiProxy_CodecommitRepository) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitRepository) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitRepository) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1381,8 +1536,8 @@ func (j *jsiiProxy_CodecommitRepository) RepositoryNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitRepository) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitRepository) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1391,8 +1546,8 @@ func (j *jsiiProxy_CodecommitRepository) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitRepository) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitRepository) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1401,8 +1556,8 @@ func (j *jsiiProxy_CodecommitRepository) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitRepository) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitRepository) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1411,8 +1566,8 @@ func (j *jsiiProxy_CodecommitRepository) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitRepository) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitRepository) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1451,7 +1606,7 @@ func (j *jsiiProxy_CodecommitRepository) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html aws_codecommit_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository aws_codecommit_repository} Resource.
 func NewCodecommitRepository(scope constructs.Construct, id *string, config *CodecommitRepositoryConfig) CodecommitRepository {
 	_init_.Initialize()
 
@@ -1466,7 +1621,7 @@ func NewCodecommitRepository(scope constructs.Construct, id *string, config *Cod
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html aws_codecommit_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository aws_codecommit_repository} Resource.
 func NewCodecommitRepository_Override(c CodecommitRepository, scope constructs.Construct, id *string, config *CodecommitRepositoryConfig) {
 	_init_.Initialize()
 
@@ -1477,7 +1632,7 @@ func NewCodecommitRepository_Override(c CodecommitRepository, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_CodecommitRepository) SetCount(val interface{}) {
+func (j *jsiiProxy_CodecommitRepository) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1533,7 +1688,7 @@ func (j *jsiiProxy_CodecommitRepository) SetRepositoryName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodecommitRepository) SetTags(val interface{}) {
+func (j *jsiiProxy_CodecommitRepository) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1541,7 +1696,7 @@ func (j *jsiiProxy_CodecommitRepository) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodecommitRepository) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodecommitRepository) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1589,12 +1744,40 @@ func (c *jsiiProxy_CodecommitRepository) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitRepository) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitRepository) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitRepository) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1631,12 +1814,54 @@ func (c *jsiiProxy_CodecommitRepository) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitRepository) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitRepository) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitRepository) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitRepository) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1769,33 +1994,33 @@ func (c *jsiiProxy_CodecommitRepository) ToTerraform() interface{} {
 // AWS CodeCommit.
 type CodecommitRepositoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html#repository_name CodecommitRepository#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html#default_branch CodecommitRepository#default_branch}.
-	DefaultBranch *string `json:"defaultBranch"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html#description CodecommitRepository#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html#tags CodecommitRepository#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository.html#tags_all CodecommitRepository#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository#repository_name CodecommitRepository#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository#default_branch CodecommitRepository#default_branch}.
+	DefaultBranch *string `json:"defaultBranch" yaml:"defaultBranch"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository#description CodecommitRepository#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository#tags CodecommitRepository#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_repository#tags_all CodecommitRepository#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html aws_codecommit_trigger}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger aws_codecommit_trigger}.
 type CodecommitTrigger interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConfigurationId() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1813,14 +2038,19 @@ type CodecommitTrigger interface {
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Trigger() *[]*CodecommitTriggerTrigger
-	SetTrigger(val *[]*CodecommitTriggerTrigger)
-	TriggerInput() *[]*CodecommitTriggerTrigger
+	Trigger() interface{}
+	SetTrigger(val interface{})
+	TriggerInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1865,8 +2095,8 @@ func (j *jsiiProxy_CodecommitTrigger) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitTrigger) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodecommitTrigger) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2005,8 +2235,8 @@ func (j *jsiiProxy_CodecommitTrigger) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitTrigger) Trigger() *[]*CodecommitTriggerTrigger {
-	var returns *[]*CodecommitTriggerTrigger
+func (j *jsiiProxy_CodecommitTrigger) Trigger() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"trigger",
@@ -2015,8 +2245,8 @@ func (j *jsiiProxy_CodecommitTrigger) Trigger() *[]*CodecommitTriggerTrigger {
 	return returns
 }
 
-func (j *jsiiProxy_CodecommitTrigger) TriggerInput() *[]*CodecommitTriggerTrigger {
-	var returns *[]*CodecommitTriggerTrigger
+func (j *jsiiProxy_CodecommitTrigger) TriggerInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"triggerInput",
@@ -2025,7 +2255,7 @@ func (j *jsiiProxy_CodecommitTrigger) TriggerInput() *[]*CodecommitTriggerTrigge
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html aws_codecommit_trigger} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger aws_codecommit_trigger} Resource.
 func NewCodecommitTrigger(scope constructs.Construct, id *string, config *CodecommitTriggerConfig) CodecommitTrigger {
 	_init_.Initialize()
 
@@ -2040,7 +2270,7 @@ func NewCodecommitTrigger(scope constructs.Construct, id *string, config *Codeco
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html aws_codecommit_trigger} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger aws_codecommit_trigger} Resource.
 func NewCodecommitTrigger_Override(c CodecommitTrigger, scope constructs.Construct, id *string, config *CodecommitTriggerConfig) {
 	_init_.Initialize()
 
@@ -2051,7 +2281,7 @@ func NewCodecommitTrigger_Override(c CodecommitTrigger, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_CodecommitTrigger) SetCount(val interface{}) {
+func (j *jsiiProxy_CodecommitTrigger) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2091,7 +2321,7 @@ func (j *jsiiProxy_CodecommitTrigger) SetRepositoryName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodecommitTrigger) SetTrigger(val *[]*CodecommitTriggerTrigger) {
+func (j *jsiiProxy_CodecommitTrigger) SetTrigger(val interface{}) {
 	_jsii_.Set(
 		j,
 		"trigger",
@@ -2139,12 +2369,40 @@ func (c *jsiiProxy_CodecommitTrigger) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitTrigger) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitTrigger) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitTrigger) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2181,12 +2439,54 @@ func (c *jsiiProxy_CodecommitTrigger) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (c *jsiiProxy_CodecommitTrigger) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitTrigger) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodecommitTrigger) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodecommitTrigger) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2287,43 +2587,43 @@ func (c *jsiiProxy_CodecommitTrigger) ToTerraform() interface{} {
 // AWS CodeCommit.
 type CodecommitTriggerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#repository_name CodecommitTrigger#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger#repository_name CodecommitTrigger#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
 	// trigger block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#trigger CodecommitTrigger#trigger}
-	Trigger *[]*CodecommitTriggerTrigger `json:"trigger"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger#trigger CodecommitTrigger#trigger}
+	Trigger interface{} `json:"trigger" yaml:"trigger"`
 }
 
 type CodecommitTriggerTrigger struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#destination_arn CodecommitTrigger#destination_arn}.
-	DestinationArn *string `json:"destinationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#events CodecommitTrigger#events}.
-	Events *[]*string `json:"events"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#name CodecommitTrigger#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#branches CodecommitTrigger#branches}.
-	Branches *[]*string `json:"branches"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger.html#custom_data CodecommitTrigger#custom_data}.
-	CustomData *string `json:"customData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger#destination_arn CodecommitTrigger#destination_arn}.
+	DestinationArn *string `json:"destinationArn" yaml:"destinationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger#events CodecommitTrigger#events}.
+	Events *[]*string `json:"events" yaml:"events"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger#name CodecommitTrigger#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger#branches CodecommitTrigger#branches}.
+	Branches *[]*string `json:"branches" yaml:"branches"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codecommit_trigger#custom_data CodecommitTrigger#custom_data}.
+	CustomData *string `json:"customData" yaml:"customData"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template aws_codecommit_approval_rule_template}.
 type DataAwsCodecommitApprovalRuleTemplate interface {
 	cdktf.TerraformDataSource
 	ApprovalRuleTemplateId() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
 	Content() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2347,10 +2647,15 @@ type DataAwsCodecommitApprovalRuleTemplate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2405,8 +2710,8 @@ func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Content() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2595,7 +2900,7 @@ func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template aws_codecommit_approval_rule_template} Data Source.
 func NewDataAwsCodecommitApprovalRuleTemplate(scope constructs.Construct, id *string, config *DataAwsCodecommitApprovalRuleTemplateConfig) DataAwsCodecommitApprovalRuleTemplate {
 	_init_.Initialize()
 
@@ -2610,7 +2915,7 @@ func NewDataAwsCodecommitApprovalRuleTemplate(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html aws_codecommit_approval_rule_template} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template aws_codecommit_approval_rule_template} Data Source.
 func NewDataAwsCodecommitApprovalRuleTemplate_Override(d DataAwsCodecommitApprovalRuleTemplate, scope constructs.Construct, id *string, config *DataAwsCodecommitApprovalRuleTemplateConfig) {
 	_init_.Initialize()
 
@@ -2621,7 +2926,7 @@ func NewDataAwsCodecommitApprovalRuleTemplate_Override(d DataAwsCodecommitApprov
 	)
 }
 
-func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2701,12 +3006,40 @@ func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) AddOverride(path *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2743,12 +3076,54 @@ func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2849,18 +3224,18 @@ func (d *jsiiProxy_DataAwsCodecommitApprovalRuleTemplate) ToTerraform() interfac
 // AWS CodeCommit.
 type DataAwsCodecommitApprovalRuleTemplateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template.html#name DataAwsCodecommitApprovalRuleTemplate#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codecommit_approval_rule_template#name DataAwsCodecommitApprovalRuleTemplate#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository.html aws_codecommit_repository}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository aws_codecommit_repository}.
 type DataAwsCodecommitRepository interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -2868,8 +3243,8 @@ type DataAwsCodecommitRepository interface {
 	CloneUrlHttp() *string
 	CloneUrlSsh() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2889,10 +3264,15 @@ type DataAwsCodecommitRepository interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2957,8 +3337,8 @@ func (j *jsiiProxy_DataAwsCodecommitRepository) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCodecommitRepository) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCodecommitRepository) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3107,7 +3487,7 @@ func (j *jsiiProxy_DataAwsCodecommitRepository) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository.html aws_codecommit_repository} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository aws_codecommit_repository} Data Source.
 func NewDataAwsCodecommitRepository(scope constructs.Construct, id *string, config *DataAwsCodecommitRepositoryConfig) DataAwsCodecommitRepository {
 	_init_.Initialize()
 
@@ -3122,7 +3502,7 @@ func NewDataAwsCodecommitRepository(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository.html aws_codecommit_repository} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository aws_codecommit_repository} Data Source.
 func NewDataAwsCodecommitRepository_Override(d DataAwsCodecommitRepository, scope constructs.Construct, id *string, config *DataAwsCodecommitRepositoryConfig) {
 	_init_.Initialize()
 
@@ -3133,7 +3513,7 @@ func NewDataAwsCodecommitRepository_Override(d DataAwsCodecommitRepository, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsCodecommitRepository) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCodecommitRepository) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3213,12 +3593,40 @@ func (d *jsiiProxy_DataAwsCodecommitRepository) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodecommitRepository) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodecommitRepository) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitRepository) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3255,12 +3663,54 @@ func (d *jsiiProxy_DataAwsCodecommitRepository) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCodecommitRepository) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitRepository) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCodecommitRepository) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCodecommitRepository) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3361,13 +3811,13 @@ func (d *jsiiProxy_DataAwsCodecommitRepository) ToTerraform() interface{} {
 // AWS CodeCommit.
 type DataAwsCodecommitRepositoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository.html#repository_name DataAwsCodecommitRepository#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/codecommit_repository#repository_name DataAwsCodecommitRepository#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
 }

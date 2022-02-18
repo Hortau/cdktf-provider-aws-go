@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/appstream/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html aws_appstream_directory_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config aws_appstream_directory_config}.
 type AppstreamDirectoryConfig interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -40,10 +40,15 @@ type AppstreamDirectoryConfig interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutServiceAccountCredentials(value *AppstreamDirectoryConfigServiceAccountCredentials)
@@ -79,8 +84,8 @@ func (j *jsiiProxy_AppstreamDirectoryConfig) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamDirectoryConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamDirectoryConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -269,7 +274,7 @@ func (j *jsiiProxy_AppstreamDirectoryConfig) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html aws_appstream_directory_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config aws_appstream_directory_config} Resource.
 func NewAppstreamDirectoryConfig(scope constructs.Construct, id *string, config *AppstreamDirectoryConfigConfig) AppstreamDirectoryConfig {
 	_init_.Initialize()
 
@@ -284,7 +289,7 @@ func NewAppstreamDirectoryConfig(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html aws_appstream_directory_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config aws_appstream_directory_config} Resource.
 func NewAppstreamDirectoryConfig_Override(a AppstreamDirectoryConfig, scope constructs.Construct, id *string, config *AppstreamDirectoryConfigConfig) {
 	_init_.Initialize()
 
@@ -295,7 +300,7 @@ func NewAppstreamDirectoryConfig_Override(a AppstreamDirectoryConfig, scope cons
 	)
 }
 
-func (j *jsiiProxy_AppstreamDirectoryConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_AppstreamDirectoryConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -383,12 +388,40 @@ func (a *jsiiProxy_AppstreamDirectoryConfig) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamDirectoryConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -425,12 +458,54 @@ func (a *jsiiProxy_AppstreamDirectoryConfig) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamDirectoryConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -539,28 +614,28 @@ func (a *jsiiProxy_AppstreamDirectoryConfig) ToTerraform() interface{} {
 // AppStream.
 type AppstreamDirectoryConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#directory_name AppstreamDirectoryConfig#directory_name}.
-	DirectoryName *string `json:"directoryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#organizational_unit_distinguished_names AppstreamDirectoryConfig#organizational_unit_distinguished_names}.
-	OrganizationalUnitDistinguishedNames *[]*string `json:"organizationalUnitDistinguishedNames"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config#directory_name AppstreamDirectoryConfig#directory_name}.
+	DirectoryName *string `json:"directoryName" yaml:"directoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config#organizational_unit_distinguished_names AppstreamDirectoryConfig#organizational_unit_distinguished_names}.
+	OrganizationalUnitDistinguishedNames *[]*string `json:"organizationalUnitDistinguishedNames" yaml:"organizationalUnitDistinguishedNames"`
 	// service_account_credentials block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#service_account_credentials AppstreamDirectoryConfig#service_account_credentials}
-	ServiceAccountCredentials *AppstreamDirectoryConfigServiceAccountCredentials `json:"serviceAccountCredentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config#service_account_credentials AppstreamDirectoryConfig#service_account_credentials}
+	ServiceAccountCredentials *AppstreamDirectoryConfigServiceAccountCredentials `json:"serviceAccountCredentials" yaml:"serviceAccountCredentials"`
 }
 
 type AppstreamDirectoryConfigServiceAccountCredentials struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#account_name AppstreamDirectoryConfig#account_name}.
-	AccountName *string `json:"accountName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config.html#account_password AppstreamDirectoryConfig#account_password}.
-	AccountPassword *string `json:"accountPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config#account_name AppstreamDirectoryConfig#account_name}.
+	AccountName *string `json:"accountName" yaml:"accountName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_directory_config#account_password AppstreamDirectoryConfig#account_password}.
+	AccountPassword *string `json:"accountPassword" yaml:"accountPassword"`
 }
 
 type AppstreamDirectoryConfigServiceAccountCredentialsOutputReference interface {
@@ -577,12 +652,17 @@ type AppstreamDirectoryConfigServiceAccountCredentialsOutputReference interface 
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -662,8 +742,8 @@ func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -672,7 +752,7 @@ func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputRefere
 	return returns
 }
 
-func NewAppstreamDirectoryConfigServiceAccountCredentialsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamDirectoryConfigServiceAccountCredentialsOutputReference {
+func NewAppstreamDirectoryConfigServiceAccountCredentialsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AppstreamDirectoryConfigServiceAccountCredentialsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference{}
@@ -686,7 +766,7 @@ func NewAppstreamDirectoryConfigServiceAccountCredentialsOutputReference(terrafo
 	return &j
 }
 
-func NewAppstreamDirectoryConfigServiceAccountCredentialsOutputReference_Override(a AppstreamDirectoryConfigServiceAccountCredentialsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAppstreamDirectoryConfigServiceAccountCredentialsOutputReference_Override(a AppstreamDirectoryConfigServiceAccountCredentialsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -736,7 +816,7 @@ func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputRefere
 	)
 }
 
-func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -745,12 +825,40 @@ func (j *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputRefere
 }
 
 // Experimental.
-func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -787,12 +895,54 @@ func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputRefere
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -828,7 +978,7 @@ func (a *jsiiProxy_AppstreamDirectoryConfigServiceAccountCredentialsOutputRefere
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html aws_appstream_fleet}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet aws_appstream_fleet}.
 type AppstreamFleet interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -836,8 +986,8 @@ type AppstreamFleet interface {
 	ComputeCapacity() AppstreamFleetComputeCapacityOutputReference
 	ComputeCapacityInput() *AppstreamFleetComputeCapacity
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -892,22 +1042,27 @@ type AppstreamFleet interface {
 	StreamView() *string
 	SetStreamView(val *string)
 	StreamViewInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcConfig() AppstreamFleetVpcConfigOutputReference
 	VpcConfigInput() *AppstreamFleetVpcConfig
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutComputeCapacity(value *AppstreamFleetComputeCapacity)
@@ -990,8 +1145,8 @@ func (j *jsiiProxy_AppstreamFleet) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamFleet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1380,8 +1535,8 @@ func (j *jsiiProxy_AppstreamFleet) StreamViewInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamFleet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1390,8 +1545,8 @@ func (j *jsiiProxy_AppstreamFleet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleet) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamFleet) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1400,8 +1555,8 @@ func (j *jsiiProxy_AppstreamFleet) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleet) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamFleet) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1410,8 +1565,8 @@ func (j *jsiiProxy_AppstreamFleet) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamFleet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1470,7 +1625,7 @@ func (j *jsiiProxy_AppstreamFleet) VpcConfigInput() *AppstreamFleetVpcConfig {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html aws_appstream_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet aws_appstream_fleet} Resource.
 func NewAppstreamFleet(scope constructs.Construct, id *string, config *AppstreamFleetConfig) AppstreamFleet {
 	_init_.Initialize()
 
@@ -1485,7 +1640,7 @@ func NewAppstreamFleet(scope constructs.Construct, id *string, config *Appstream
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html aws_appstream_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet aws_appstream_fleet} Resource.
 func NewAppstreamFleet_Override(a AppstreamFleet, scope constructs.Construct, id *string, config *AppstreamFleetConfig) {
 	_init_.Initialize()
 
@@ -1496,7 +1651,7 @@ func NewAppstreamFleet_Override(a AppstreamFleet, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_AppstreamFleet) SetCount(val interface{}) {
+func (j *jsiiProxy_AppstreamFleet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1632,7 +1787,7 @@ func (j *jsiiProxy_AppstreamFleet) SetStreamView(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppstreamFleet) SetTags(val interface{}) {
+func (j *jsiiProxy_AppstreamFleet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1640,7 +1795,7 @@ func (j *jsiiProxy_AppstreamFleet) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppstreamFleet) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppstreamFleet) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1688,12 +1843,40 @@ func (a *jsiiProxy_AppstreamFleet) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamFleet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamFleet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1730,12 +1913,54 @@ func (a *jsiiProxy_AppstreamFleet) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamFleet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamFleet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1978,27 +2203,35 @@ func (a *jsiiProxy_AppstreamFleet) ToTerraform() interface{} {
 }
 
 type AppstreamFleetComputeCapacity struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#desired_instances AppstreamFleet#desired_instances}.
-	DesiredInstances *float64 `json:"desiredInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#desired_instances AppstreamFleet#desired_instances}.
+	DesiredInstances *float64 `json:"desiredInstances" yaml:"desiredInstances"`
 }
 
 type AppstreamFleetComputeCapacityOutputReference interface {
 	cdktf.ComplexObject
+	Available() *float64
 	DesiredInstances() *float64
 	SetDesiredInstances(val *float64)
 	DesiredInstancesInput() *float64
 	InternalValue() *AppstreamFleetComputeCapacity
 	SetInternalValue(val *AppstreamFleetComputeCapacity)
+	InUse() *float64
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	Running() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2006,6 +2239,16 @@ type AppstreamFleetComputeCapacityOutputReference interface {
 // The jsii proxy struct for AppstreamFleetComputeCapacityOutputReference
 type jsiiProxy_AppstreamFleetComputeCapacityOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) Available() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"available",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) DesiredInstances() *float64 {
@@ -2038,11 +2281,31 @@ func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) InternalValue()
 	return returns
 }
 
+func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) InUse() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"inUse",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) IsSingleItem() *bool {
 	var returns *bool
 	_jsii_.Get(
 		j,
 		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) Running() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"running",
 		&returns,
 	)
 	return returns
@@ -2058,8 +2321,8 @@ func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2068,7 +2331,7 @@ func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) TerraformResour
 	return returns
 }
 
-func NewAppstreamFleetComputeCapacityOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamFleetComputeCapacityOutputReference {
+func NewAppstreamFleetComputeCapacityOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AppstreamFleetComputeCapacityOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AppstreamFleetComputeCapacityOutputReference{}
@@ -2082,7 +2345,7 @@ func NewAppstreamFleetComputeCapacityOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewAppstreamFleetComputeCapacityOutputReference_Override(a AppstreamFleetComputeCapacityOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAppstreamFleetComputeCapacityOutputReference_Override(a AppstreamFleetComputeCapacityOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2124,7 +2387,7 @@ func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2133,12 +2396,40 @@ func (j *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2175,12 +2466,54 @@ func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2219,62 +2552,62 @@ func (a *jsiiProxy_AppstreamFleetComputeCapacityOutputReference) InterpolationFo
 // AppStream.
 type AppstreamFleetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// compute_capacity block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#compute_capacity AppstreamFleet#compute_capacity}
-	ComputeCapacity *AppstreamFleetComputeCapacity `json:"computeCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#instance_type AppstreamFleet#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#name AppstreamFleet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#description AppstreamFleet#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#disconnect_timeout_in_seconds AppstreamFleet#disconnect_timeout_in_seconds}.
-	DisconnectTimeoutInSeconds *float64 `json:"disconnectTimeoutInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#display_name AppstreamFleet#display_name}.
-	DisplayName *string `json:"displayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#compute_capacity AppstreamFleet#compute_capacity}
+	ComputeCapacity *AppstreamFleetComputeCapacity `json:"computeCapacity" yaml:"computeCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#instance_type AppstreamFleet#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#name AppstreamFleet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#description AppstreamFleet#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#disconnect_timeout_in_seconds AppstreamFleet#disconnect_timeout_in_seconds}.
+	DisconnectTimeoutInSeconds *float64 `json:"disconnectTimeoutInSeconds" yaml:"disconnectTimeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#display_name AppstreamFleet#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
 	// domain_join_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#domain_join_info AppstreamFleet#domain_join_info}
-	DomainJoinInfo *AppstreamFleetDomainJoinInfo `json:"domainJoinInfo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#enable_default_internet_access AppstreamFleet#enable_default_internet_access}.
-	EnableDefaultInternetAccess interface{} `json:"enableDefaultInternetAccess"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#fleet_type AppstreamFleet#fleet_type}.
-	FleetType *string `json:"fleetType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#iam_role_arn AppstreamFleet#iam_role_arn}.
-	IamRoleArn *string `json:"iamRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#idle_disconnect_timeout_in_seconds AppstreamFleet#idle_disconnect_timeout_in_seconds}.
-	IdleDisconnectTimeoutInSeconds *float64 `json:"idleDisconnectTimeoutInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#image_arn AppstreamFleet#image_arn}.
-	ImageArn *string `json:"imageArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#image_name AppstreamFleet#image_name}.
-	ImageName *string `json:"imageName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#max_user_duration_in_seconds AppstreamFleet#max_user_duration_in_seconds}.
-	MaxUserDurationInSeconds *float64 `json:"maxUserDurationInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#stream_view AppstreamFleet#stream_view}.
-	StreamView *string `json:"streamView"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#tags AppstreamFleet#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#tags_all AppstreamFleet#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#domain_join_info AppstreamFleet#domain_join_info}
+	DomainJoinInfo *AppstreamFleetDomainJoinInfo `json:"domainJoinInfo" yaml:"domainJoinInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#enable_default_internet_access AppstreamFleet#enable_default_internet_access}.
+	EnableDefaultInternetAccess interface{} `json:"enableDefaultInternetAccess" yaml:"enableDefaultInternetAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#fleet_type AppstreamFleet#fleet_type}.
+	FleetType *string `json:"fleetType" yaml:"fleetType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#iam_role_arn AppstreamFleet#iam_role_arn}.
+	IamRoleArn *string `json:"iamRoleArn" yaml:"iamRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#idle_disconnect_timeout_in_seconds AppstreamFleet#idle_disconnect_timeout_in_seconds}.
+	IdleDisconnectTimeoutInSeconds *float64 `json:"idleDisconnectTimeoutInSeconds" yaml:"idleDisconnectTimeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#image_arn AppstreamFleet#image_arn}.
+	ImageArn *string `json:"imageArn" yaml:"imageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#image_name AppstreamFleet#image_name}.
+	ImageName *string `json:"imageName" yaml:"imageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#max_user_duration_in_seconds AppstreamFleet#max_user_duration_in_seconds}.
+	MaxUserDurationInSeconds *float64 `json:"maxUserDurationInSeconds" yaml:"maxUserDurationInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#stream_view AppstreamFleet#stream_view}.
+	StreamView *string `json:"streamView" yaml:"streamView"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#tags AppstreamFleet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#tags_all AppstreamFleet#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// vpc_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#vpc_config AppstreamFleet#vpc_config}
-	VpcConfig *AppstreamFleetVpcConfig `json:"vpcConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#vpc_config AppstreamFleet#vpc_config}
+	VpcConfig *AppstreamFleetVpcConfig `json:"vpcConfig" yaml:"vpcConfig"`
 }
 
 type AppstreamFleetDomainJoinInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#directory_name AppstreamFleet#directory_name}.
-	DirectoryName *string `json:"directoryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#organizational_unit_distinguished_name AppstreamFleet#organizational_unit_distinguished_name}.
-	OrganizationalUnitDistinguishedName *string `json:"organizationalUnitDistinguishedName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#directory_name AppstreamFleet#directory_name}.
+	DirectoryName *string `json:"directoryName" yaml:"directoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#organizational_unit_distinguished_name AppstreamFleet#organizational_unit_distinguished_name}.
+	OrganizationalUnitDistinguishedName *string `json:"organizationalUnitDistinguishedName" yaml:"organizationalUnitDistinguishedName"`
 }
 
 type AppstreamFleetDomainJoinInfoOutputReference interface {
@@ -2291,12 +2624,17 @@ type AppstreamFleetDomainJoinInfoOutputReference interface {
 	OrganizationalUnitDistinguishedNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDirectoryName()
@@ -2378,8 +2716,8 @@ func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2388,7 +2726,7 @@ func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) TerraformResourc
 	return returns
 }
 
-func NewAppstreamFleetDomainJoinInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamFleetDomainJoinInfoOutputReference {
+func NewAppstreamFleetDomainJoinInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AppstreamFleetDomainJoinInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference{}
@@ -2402,7 +2740,7 @@ func NewAppstreamFleetDomainJoinInfoOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewAppstreamFleetDomainJoinInfoOutputReference_Override(a AppstreamFleetDomainJoinInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAppstreamFleetDomainJoinInfoOutputReference_Override(a AppstreamFleetDomainJoinInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2452,7 +2790,7 @@ func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2461,12 +2799,40 @@ func (j *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2503,12 +2869,54 @@ func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2560,13 +2968,13 @@ func (a *jsiiProxy_AppstreamFleetDomainJoinInfoOutputReference) ResetOrganizatio
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html aws_appstream_fleet_stack_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association aws_appstream_fleet_stack_association}.
 type AppstreamFleetStackAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FleetName() *string
@@ -2588,10 +2996,15 @@ type AppstreamFleetStackAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2626,8 +3039,8 @@ func (j *jsiiProxy_AppstreamFleetStackAssociation) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleetStackAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamFleetStackAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2786,7 +3199,7 @@ func (j *jsiiProxy_AppstreamFleetStackAssociation) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html aws_appstream_fleet_stack_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association aws_appstream_fleet_stack_association} Resource.
 func NewAppstreamFleetStackAssociation(scope constructs.Construct, id *string, config *AppstreamFleetStackAssociationConfig) AppstreamFleetStackAssociation {
 	_init_.Initialize()
 
@@ -2801,7 +3214,7 @@ func NewAppstreamFleetStackAssociation(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html aws_appstream_fleet_stack_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association aws_appstream_fleet_stack_association} Resource.
 func NewAppstreamFleetStackAssociation_Override(a AppstreamFleetStackAssociation, scope constructs.Construct, id *string, config *AppstreamFleetStackAssociationConfig) {
 	_init_.Initialize()
 
@@ -2812,7 +3225,7 @@ func NewAppstreamFleetStackAssociation_Override(a AppstreamFleetStackAssociation
 	)
 }
 
-func (j *jsiiProxy_AppstreamFleetStackAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_AppstreamFleetStackAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2900,12 +3313,40 @@ func (a *jsiiProxy_AppstreamFleetStackAssociation) AddOverride(path *string, val
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamFleetStackAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2942,12 +3383,54 @@ func (a *jsiiProxy_AppstreamFleetStackAssociation) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamFleetStackAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetStackAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3048,24 +3531,24 @@ func (a *jsiiProxy_AppstreamFleetStackAssociation) ToTerraform() interface{} {
 // AppStream.
 type AppstreamFleetStackAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html#fleet_name AppstreamFleetStackAssociation#fleet_name}.
-	FleetName *string `json:"fleetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association.html#stack_name AppstreamFleetStackAssociation#stack_name}.
-	StackName *string `json:"stackName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association#fleet_name AppstreamFleetStackAssociation#fleet_name}.
+	FleetName *string `json:"fleetName" yaml:"fleetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet_stack_association#stack_name AppstreamFleetStackAssociation#stack_name}.
+	StackName *string `json:"stackName" yaml:"stackName"`
 }
 
 type AppstreamFleetVpcConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#security_group_ids AppstreamFleet#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet.html#subnet_ids AppstreamFleet#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#security_group_ids AppstreamFleet#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_fleet#subnet_ids AppstreamFleet#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
 }
 
 type AppstreamFleetVpcConfigOutputReference interface {
@@ -3082,12 +3565,17 @@ type AppstreamFleetVpcConfigOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSecurityGroupIds()
@@ -3169,8 +3657,8 @@ func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3179,7 +3667,7 @@ func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewAppstreamFleetVpcConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamFleetVpcConfigOutputReference {
+func NewAppstreamFleetVpcConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AppstreamFleetVpcConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AppstreamFleetVpcConfigOutputReference{}
@@ -3193,7 +3681,7 @@ func NewAppstreamFleetVpcConfigOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewAppstreamFleetVpcConfigOutputReference_Override(a AppstreamFleetVpcConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAppstreamFleetVpcConfigOutputReference_Override(a AppstreamFleetVpcConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3243,7 +3731,7 @@ func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3252,12 +3740,40 @@ func (j *jsiiProxy_AppstreamFleetVpcConfigOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3294,12 +3810,54 @@ func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3351,20 +3909,20 @@ func (a *jsiiProxy_AppstreamFleetVpcConfigOutputReference) ResetSubnetIds() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html aws_appstream_image_builder}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder aws_appstream_image_builder}.
 type AppstreamImageBuilder interface {
 	cdktf.TerraformResource
-	AccessEndpoint() *[]*AppstreamImageBuilderAccessEndpoint
-	SetAccessEndpoint(val *[]*AppstreamImageBuilderAccessEndpoint)
-	AccessEndpointInput() *[]*AppstreamImageBuilderAccessEndpoint
+	AccessEndpoint() interface{}
+	SetAccessEndpoint(val interface{})
+	AccessEndpointInput() interface{}
 	AppstreamAgentVersion() *string
 	SetAppstreamAgentVersion(val *string)
 	AppstreamAgentVersionInput() *string
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -3404,22 +3962,27 @@ type AppstreamImageBuilder interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	State() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcConfig() AppstreamImageBuilderVpcConfigOutputReference
 	VpcConfigInput() *AppstreamImageBuilderVpcConfig
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDomainJoinInfo(value *AppstreamImageBuilderDomainJoinInfo)
@@ -3448,8 +4011,8 @@ type jsiiProxy_AppstreamImageBuilder struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) AccessEndpoint() *[]*AppstreamImageBuilderAccessEndpoint {
-	var returns *[]*AppstreamImageBuilderAccessEndpoint
+func (j *jsiiProxy_AppstreamImageBuilder) AccessEndpoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"accessEndpoint",
@@ -3458,8 +4021,8 @@ func (j *jsiiProxy_AppstreamImageBuilder) AccessEndpoint() *[]*AppstreamImageBui
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) AccessEndpointInput() *[]*AppstreamImageBuilderAccessEndpoint {
-	var returns *[]*AppstreamImageBuilderAccessEndpoint
+func (j *jsiiProxy_AppstreamImageBuilder) AccessEndpointInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"accessEndpointInput",
@@ -3518,8 +4081,8 @@ func (j *jsiiProxy_AppstreamImageBuilder) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamImageBuilder) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3808,8 +4371,8 @@ func (j *jsiiProxy_AppstreamImageBuilder) State() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamImageBuilder) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3818,8 +4381,8 @@ func (j *jsiiProxy_AppstreamImageBuilder) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamImageBuilder) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3828,8 +4391,8 @@ func (j *jsiiProxy_AppstreamImageBuilder) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamImageBuilder) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3838,8 +4401,8 @@ func (j *jsiiProxy_AppstreamImageBuilder) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamImageBuilder) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3898,7 +4461,7 @@ func (j *jsiiProxy_AppstreamImageBuilder) VpcConfigInput() *AppstreamImageBuilde
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html aws_appstream_image_builder} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder aws_appstream_image_builder} Resource.
 func NewAppstreamImageBuilder(scope constructs.Construct, id *string, config *AppstreamImageBuilderConfig) AppstreamImageBuilder {
 	_init_.Initialize()
 
@@ -3913,7 +4476,7 @@ func NewAppstreamImageBuilder(scope constructs.Construct, id *string, config *Ap
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html aws_appstream_image_builder} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder aws_appstream_image_builder} Resource.
 func NewAppstreamImageBuilder_Override(a AppstreamImageBuilder, scope constructs.Construct, id *string, config *AppstreamImageBuilderConfig) {
 	_init_.Initialize()
 
@@ -3924,7 +4487,7 @@ func NewAppstreamImageBuilder_Override(a AppstreamImageBuilder, scope constructs
 	)
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) SetAccessEndpoint(val *[]*AppstreamImageBuilderAccessEndpoint) {
+func (j *jsiiProxy_AppstreamImageBuilder) SetAccessEndpoint(val interface{}) {
 	_jsii_.Set(
 		j,
 		"accessEndpoint",
@@ -3940,7 +4503,7 @@ func (j *jsiiProxy_AppstreamImageBuilder) SetAppstreamAgentVersion(val *string) 
 	)
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) SetCount(val interface{}) {
+func (j *jsiiProxy_AppstreamImageBuilder) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4036,7 +4599,7 @@ func (j *jsiiProxy_AppstreamImageBuilder) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) SetTags(val interface{}) {
+func (j *jsiiProxy_AppstreamImageBuilder) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4044,7 +4607,7 @@ func (j *jsiiProxy_AppstreamImageBuilder) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppstreamImageBuilder) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppstreamImageBuilder) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4092,12 +4655,40 @@ func (a *jsiiProxy_AppstreamImageBuilder) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamImageBuilder) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamImageBuilder) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilder) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4134,12 +4725,54 @@ func (a *jsiiProxy_AppstreamImageBuilder) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamImageBuilder) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilder) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamImageBuilder) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilder) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4350,63 +4983,63 @@ func (a *jsiiProxy_AppstreamImageBuilder) ToTerraform() interface{} {
 }
 
 type AppstreamImageBuilderAccessEndpoint struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#endpoint_type AppstreamImageBuilder#endpoint_type}.
-	EndpointType *string `json:"endpointType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#vpce_id AppstreamImageBuilder#vpce_id}.
-	VpceId *string `json:"vpceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#endpoint_type AppstreamImageBuilder#endpoint_type}.
+	EndpointType *string `json:"endpointType" yaml:"endpointType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#vpce_id AppstreamImageBuilder#vpce_id}.
+	VpceId *string `json:"vpceId" yaml:"vpceId"`
 }
 
 // AppStream.
 type AppstreamImageBuilderConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#instance_type AppstreamImageBuilder#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#name AppstreamImageBuilder#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#instance_type AppstreamImageBuilder#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#name AppstreamImageBuilder#name}.
+	Name *string `json:"name" yaml:"name"`
 	// access_endpoint block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#access_endpoint AppstreamImageBuilder#access_endpoint}
-	AccessEndpoint *[]*AppstreamImageBuilderAccessEndpoint `json:"accessEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#appstream_agent_version AppstreamImageBuilder#appstream_agent_version}.
-	AppstreamAgentVersion *string `json:"appstreamAgentVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#description AppstreamImageBuilder#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#display_name AppstreamImageBuilder#display_name}.
-	DisplayName *string `json:"displayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#access_endpoint AppstreamImageBuilder#access_endpoint}
+	AccessEndpoint interface{} `json:"accessEndpoint" yaml:"accessEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#appstream_agent_version AppstreamImageBuilder#appstream_agent_version}.
+	AppstreamAgentVersion *string `json:"appstreamAgentVersion" yaml:"appstreamAgentVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#description AppstreamImageBuilder#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#display_name AppstreamImageBuilder#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
 	// domain_join_info block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#domain_join_info AppstreamImageBuilder#domain_join_info}
-	DomainJoinInfo *AppstreamImageBuilderDomainJoinInfo `json:"domainJoinInfo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#enable_default_internet_access AppstreamImageBuilder#enable_default_internet_access}.
-	EnableDefaultInternetAccess interface{} `json:"enableDefaultInternetAccess"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#iam_role_arn AppstreamImageBuilder#iam_role_arn}.
-	IamRoleArn *string `json:"iamRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#image_arn AppstreamImageBuilder#image_arn}.
-	ImageArn *string `json:"imageArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#image_name AppstreamImageBuilder#image_name}.
-	ImageName *string `json:"imageName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#tags AppstreamImageBuilder#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#tags_all AppstreamImageBuilder#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#domain_join_info AppstreamImageBuilder#domain_join_info}
+	DomainJoinInfo *AppstreamImageBuilderDomainJoinInfo `json:"domainJoinInfo" yaml:"domainJoinInfo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#enable_default_internet_access AppstreamImageBuilder#enable_default_internet_access}.
+	EnableDefaultInternetAccess interface{} `json:"enableDefaultInternetAccess" yaml:"enableDefaultInternetAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#iam_role_arn AppstreamImageBuilder#iam_role_arn}.
+	IamRoleArn *string `json:"iamRoleArn" yaml:"iamRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#image_arn AppstreamImageBuilder#image_arn}.
+	ImageArn *string `json:"imageArn" yaml:"imageArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#image_name AppstreamImageBuilder#image_name}.
+	ImageName *string `json:"imageName" yaml:"imageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#tags AppstreamImageBuilder#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#tags_all AppstreamImageBuilder#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// vpc_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#vpc_config AppstreamImageBuilder#vpc_config}
-	VpcConfig *AppstreamImageBuilderVpcConfig `json:"vpcConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#vpc_config AppstreamImageBuilder#vpc_config}
+	VpcConfig *AppstreamImageBuilderVpcConfig `json:"vpcConfig" yaml:"vpcConfig"`
 }
 
 type AppstreamImageBuilderDomainJoinInfo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#directory_name AppstreamImageBuilder#directory_name}.
-	DirectoryName *string `json:"directoryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#organizational_unit_distinguished_name AppstreamImageBuilder#organizational_unit_distinguished_name}.
-	OrganizationalUnitDistinguishedName *string `json:"organizationalUnitDistinguishedName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#directory_name AppstreamImageBuilder#directory_name}.
+	DirectoryName *string `json:"directoryName" yaml:"directoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#organizational_unit_distinguished_name AppstreamImageBuilder#organizational_unit_distinguished_name}.
+	OrganizationalUnitDistinguishedName *string `json:"organizationalUnitDistinguishedName" yaml:"organizationalUnitDistinguishedName"`
 }
 
 type AppstreamImageBuilderDomainJoinInfoOutputReference interface {
@@ -4423,12 +5056,17 @@ type AppstreamImageBuilderDomainJoinInfoOutputReference interface {
 	OrganizationalUnitDistinguishedNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDirectoryName()
@@ -4510,8 +5148,8 @@ func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4520,7 +5158,7 @@ func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) Terraform
 	return returns
 }
 
-func NewAppstreamImageBuilderDomainJoinInfoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamImageBuilderDomainJoinInfoOutputReference {
+func NewAppstreamImageBuilderDomainJoinInfoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AppstreamImageBuilderDomainJoinInfoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference{}
@@ -4534,7 +5172,7 @@ func NewAppstreamImageBuilderDomainJoinInfoOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewAppstreamImageBuilderDomainJoinInfoOutputReference_Override(a AppstreamImageBuilderDomainJoinInfoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAppstreamImageBuilderDomainJoinInfoOutputReference_Override(a AppstreamImageBuilderDomainJoinInfoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4584,7 +5222,7 @@ func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4593,12 +5231,40 @@ func (j *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) SetTerraf
 }
 
 // Experimental.
-func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4635,12 +5301,54 @@ func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetNumber
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4693,10 +5401,10 @@ func (a *jsiiProxy_AppstreamImageBuilderDomainJoinInfoOutputReference) ResetOrga
 }
 
 type AppstreamImageBuilderVpcConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#security_group_ids AppstreamImageBuilder#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder.html#subnet_ids AppstreamImageBuilder#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#security_group_ids AppstreamImageBuilder#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_image_builder#subnet_ids AppstreamImageBuilder#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
 }
 
 type AppstreamImageBuilderVpcConfigOutputReference interface {
@@ -4713,12 +5421,17 @@ type AppstreamImageBuilderVpcConfigOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSecurityGroupIds()
@@ -4800,8 +5513,8 @@ func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4810,7 +5523,7 @@ func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) TerraformResou
 	return returns
 }
 
-func NewAppstreamImageBuilderVpcConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamImageBuilderVpcConfigOutputReference {
+func NewAppstreamImageBuilderVpcConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AppstreamImageBuilderVpcConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference{}
@@ -4824,7 +5537,7 @@ func NewAppstreamImageBuilderVpcConfigOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewAppstreamImageBuilderVpcConfigOutputReference_Override(a AppstreamImageBuilderVpcConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAppstreamImageBuilderVpcConfigOutputReference_Override(a AppstreamImageBuilderVpcConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4874,7 +5587,7 @@ func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4883,12 +5596,40 @@ func (j *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4925,12 +5666,54 @@ func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4982,19 +5765,19 @@ func (a *jsiiProxy_AppstreamImageBuilderVpcConfigOutputReference) ResetSubnetIds
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html aws_appstream_stack}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack aws_appstream_stack}.
 type AppstreamStack interface {
 	cdktf.TerraformResource
-	AccessEndpoints() *[]*AppstreamStackAccessEndpoints
-	SetAccessEndpoints(val *[]*AppstreamStackAccessEndpoints)
-	AccessEndpointsInput() *[]*AppstreamStackAccessEndpoints
+	AccessEndpoints() interface{}
+	SetAccessEndpoints(val interface{})
+	AccessEndpointsInput() interface{}
 	ApplicationSettings() AppstreamStackApplicationSettingsOutputReference
 	ApplicationSettingsInput() *AppstreamStackApplicationSettings
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -5025,26 +5808,31 @@ type AppstreamStack interface {
 	RedirectUrl() *string
 	SetRedirectUrl(val *string)
 	RedirectUrlInput() *string
-	StorageConnectors() *[]*AppstreamStackStorageConnectors
-	SetStorageConnectors(val *[]*AppstreamStackStorageConnectors)
-	StorageConnectorsInput() *[]*AppstreamStackStorageConnectors
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	StorageConnectors() interface{}
+	SetStorageConnectors(val interface{})
+	StorageConnectorsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	UserSettings() *[]*AppstreamStackUserSettings
-	SetUserSettings(val *[]*AppstreamStackUserSettings)
-	UserSettingsInput() *[]*AppstreamStackUserSettings
+	UserSettings() interface{}
+	SetUserSettings(val interface{})
+	UserSettingsInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutApplicationSettings(value *AppstreamStackApplicationSettings)
@@ -5071,8 +5859,8 @@ type jsiiProxy_AppstreamStack struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_AppstreamStack) AccessEndpoints() *[]*AppstreamStackAccessEndpoints {
-	var returns *[]*AppstreamStackAccessEndpoints
+func (j *jsiiProxy_AppstreamStack) AccessEndpoints() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"accessEndpoints",
@@ -5081,8 +5869,8 @@ func (j *jsiiProxy_AppstreamStack) AccessEndpoints() *[]*AppstreamStackAccessEnd
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) AccessEndpointsInput() *[]*AppstreamStackAccessEndpoints {
-	var returns *[]*AppstreamStackAccessEndpoints
+func (j *jsiiProxy_AppstreamStack) AccessEndpointsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"accessEndpointsInput",
@@ -5141,8 +5929,8 @@ func (j *jsiiProxy_AppstreamStack) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamStack) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5361,8 +6149,8 @@ func (j *jsiiProxy_AppstreamStack) RedirectUrlInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) StorageConnectors() *[]*AppstreamStackStorageConnectors {
-	var returns *[]*AppstreamStackStorageConnectors
+func (j *jsiiProxy_AppstreamStack) StorageConnectors() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"storageConnectors",
@@ -5371,8 +6159,8 @@ func (j *jsiiProxy_AppstreamStack) StorageConnectors() *[]*AppstreamStackStorage
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) StorageConnectorsInput() *[]*AppstreamStackStorageConnectors {
-	var returns *[]*AppstreamStackStorageConnectors
+func (j *jsiiProxy_AppstreamStack) StorageConnectorsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"storageConnectorsInput",
@@ -5381,8 +6169,8 @@ func (j *jsiiProxy_AppstreamStack) StorageConnectorsInput() *[]*AppstreamStackSt
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamStack) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5391,8 +6179,8 @@ func (j *jsiiProxy_AppstreamStack) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamStack) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5401,8 +6189,8 @@ func (j *jsiiProxy_AppstreamStack) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamStack) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5411,8 +6199,8 @@ func (j *jsiiProxy_AppstreamStack) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamStack) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5451,8 +6239,8 @@ func (j *jsiiProxy_AppstreamStack) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) UserSettings() *[]*AppstreamStackUserSettings {
-	var returns *[]*AppstreamStackUserSettings
+func (j *jsiiProxy_AppstreamStack) UserSettings() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"userSettings",
@@ -5461,8 +6249,8 @@ func (j *jsiiProxy_AppstreamStack) UserSettings() *[]*AppstreamStackUserSettings
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStack) UserSettingsInput() *[]*AppstreamStackUserSettings {
-	var returns *[]*AppstreamStackUserSettings
+func (j *jsiiProxy_AppstreamStack) UserSettingsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"userSettingsInput",
@@ -5471,7 +6259,7 @@ func (j *jsiiProxy_AppstreamStack) UserSettingsInput() *[]*AppstreamStackUserSet
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html aws_appstream_stack} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack aws_appstream_stack} Resource.
 func NewAppstreamStack(scope constructs.Construct, id *string, config *AppstreamStackConfig) AppstreamStack {
 	_init_.Initialize()
 
@@ -5486,7 +6274,7 @@ func NewAppstreamStack(scope constructs.Construct, id *string, config *Appstream
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html aws_appstream_stack} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack aws_appstream_stack} Resource.
 func NewAppstreamStack_Override(a AppstreamStack, scope constructs.Construct, id *string, config *AppstreamStackConfig) {
 	_init_.Initialize()
 
@@ -5497,7 +6285,7 @@ func NewAppstreamStack_Override(a AppstreamStack, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_AppstreamStack) SetAccessEndpoints(val *[]*AppstreamStackAccessEndpoints) {
+func (j *jsiiProxy_AppstreamStack) SetAccessEndpoints(val interface{}) {
 	_jsii_.Set(
 		j,
 		"accessEndpoints",
@@ -5505,7 +6293,7 @@ func (j *jsiiProxy_AppstreamStack) SetAccessEndpoints(val *[]*AppstreamStackAcce
 	)
 }
 
-func (j *jsiiProxy_AppstreamStack) SetCount(val interface{}) {
+func (j *jsiiProxy_AppstreamStack) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5585,7 +6373,7 @@ func (j *jsiiProxy_AppstreamStack) SetRedirectUrl(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppstreamStack) SetStorageConnectors(val *[]*AppstreamStackStorageConnectors) {
+func (j *jsiiProxy_AppstreamStack) SetStorageConnectors(val interface{}) {
 	_jsii_.Set(
 		j,
 		"storageConnectors",
@@ -5593,7 +6381,7 @@ func (j *jsiiProxy_AppstreamStack) SetStorageConnectors(val *[]*AppstreamStackSt
 	)
 }
 
-func (j *jsiiProxy_AppstreamStack) SetTags(val interface{}) {
+func (j *jsiiProxy_AppstreamStack) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5601,7 +6389,7 @@ func (j *jsiiProxy_AppstreamStack) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppstreamStack) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AppstreamStack) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5609,7 +6397,7 @@ func (j *jsiiProxy_AppstreamStack) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AppstreamStack) SetUserSettings(val *[]*AppstreamStackUserSettings) {
+func (j *jsiiProxy_AppstreamStack) SetUserSettings(val interface{}) {
 	_jsii_.Set(
 		j,
 		"userSettings",
@@ -5657,12 +6445,40 @@ func (a *jsiiProxy_AppstreamStack) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamStack) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamStack) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamStack) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5699,12 +6515,54 @@ func (a *jsiiProxy_AppstreamStack) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamStack) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamStack) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamStack) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamStack) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5899,17 +6757,17 @@ func (a *jsiiProxy_AppstreamStack) ToTerraform() interface{} {
 }
 
 type AppstreamStackAccessEndpoints struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#endpoint_type AppstreamStack#endpoint_type}.
-	EndpointType *string `json:"endpointType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#vpce_id AppstreamStack#vpce_id}.
-	VpceId *string `json:"vpceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#endpoint_type AppstreamStack#endpoint_type}.
+	EndpointType *string `json:"endpointType" yaml:"endpointType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#vpce_id AppstreamStack#vpce_id}.
+	VpceId *string `json:"vpceId" yaml:"vpceId"`
 }
 
 type AppstreamStackApplicationSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#enabled AppstreamStack#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#settings_group AppstreamStack#settings_group}.
-	SettingsGroup *string `json:"settingsGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#enabled AppstreamStack#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#settings_group AppstreamStack#settings_group}.
+	SettingsGroup *string `json:"settingsGroup" yaml:"settingsGroup"`
 }
 
 type AppstreamStackApplicationSettingsOutputReference interface {
@@ -5926,12 +6784,17 @@ type AppstreamStackApplicationSettingsOutputReference interface {
 	SettingsGroupInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
@@ -6013,8 +6876,8 @@ func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6023,7 +6886,7 @@ func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) TerraformRe
 	return returns
 }
 
-func NewAppstreamStackApplicationSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AppstreamStackApplicationSettingsOutputReference {
+func NewAppstreamStackApplicationSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AppstreamStackApplicationSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AppstreamStackApplicationSettingsOutputReference{}
@@ -6037,7 +6900,7 @@ func NewAppstreamStackApplicationSettingsOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewAppstreamStackApplicationSettingsOutputReference_Override(a AppstreamStackApplicationSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAppstreamStackApplicationSettingsOutputReference_Override(a AppstreamStackApplicationSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6087,7 +6950,7 @@ func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6096,12 +6959,40 @@ func (j *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6138,12 +7029,54 @@ func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6198,64 +7131,64 @@ func (a *jsiiProxy_AppstreamStackApplicationSettingsOutputReference) ResetSettin
 // AppStream.
 type AppstreamStackConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#name AppstreamStack#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#name AppstreamStack#name}.
+	Name *string `json:"name" yaml:"name"`
 	// access_endpoints block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#access_endpoints AppstreamStack#access_endpoints}
-	AccessEndpoints *[]*AppstreamStackAccessEndpoints `json:"accessEndpoints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#access_endpoints AppstreamStack#access_endpoints}
+	AccessEndpoints interface{} `json:"accessEndpoints" yaml:"accessEndpoints"`
 	// application_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#application_settings AppstreamStack#application_settings}
-	ApplicationSettings *AppstreamStackApplicationSettings `json:"applicationSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#description AppstreamStack#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#display_name AppstreamStack#display_name}.
-	DisplayName *string `json:"displayName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#embed_host_domains AppstreamStack#embed_host_domains}.
-	EmbedHostDomains *[]*string `json:"embedHostDomains"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#feedback_url AppstreamStack#feedback_url}.
-	FeedbackUrl *string `json:"feedbackUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#redirect_url AppstreamStack#redirect_url}.
-	RedirectUrl *string `json:"redirectUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#application_settings AppstreamStack#application_settings}
+	ApplicationSettings *AppstreamStackApplicationSettings `json:"applicationSettings" yaml:"applicationSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#description AppstreamStack#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#display_name AppstreamStack#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#embed_host_domains AppstreamStack#embed_host_domains}.
+	EmbedHostDomains *[]*string `json:"embedHostDomains" yaml:"embedHostDomains"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#feedback_url AppstreamStack#feedback_url}.
+	FeedbackUrl *string `json:"feedbackUrl" yaml:"feedbackUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#redirect_url AppstreamStack#redirect_url}.
+	RedirectUrl *string `json:"redirectUrl" yaml:"redirectUrl"`
 	// storage_connectors block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#storage_connectors AppstreamStack#storage_connectors}
-	StorageConnectors *[]*AppstreamStackStorageConnectors `json:"storageConnectors"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#tags AppstreamStack#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#tags_all AppstreamStack#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#storage_connectors AppstreamStack#storage_connectors}
+	StorageConnectors interface{} `json:"storageConnectors" yaml:"storageConnectors"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#tags AppstreamStack#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#tags_all AppstreamStack#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// user_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#user_settings AppstreamStack#user_settings}
-	UserSettings *[]*AppstreamStackUserSettings `json:"userSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#user_settings AppstreamStack#user_settings}
+	UserSettings interface{} `json:"userSettings" yaml:"userSettings"`
 }
 
 type AppstreamStackStorageConnectors struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#connector_type AppstreamStack#connector_type}.
-	ConnectorType *string `json:"connectorType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#domains AppstreamStack#domains}.
-	Domains *[]*string `json:"domains"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#resource_identifier AppstreamStack#resource_identifier}.
-	ResourceIdentifier *string `json:"resourceIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#connector_type AppstreamStack#connector_type}.
+	ConnectorType *string `json:"connectorType" yaml:"connectorType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#domains AppstreamStack#domains}.
+	Domains *[]*string `json:"domains" yaml:"domains"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#resource_identifier AppstreamStack#resource_identifier}.
+	ResourceIdentifier *string `json:"resourceIdentifier" yaml:"resourceIdentifier"`
 }
 
 type AppstreamStackUserSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#action AppstreamStack#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack.html#permission AppstreamStack#permission}.
-	Permission *string `json:"permission"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#action AppstreamStack#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_stack#permission AppstreamStack#permission}.
+	Permission *string `json:"permission" yaml:"permission"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html aws_appstream_user}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_user aws_appstream_user}.
 type AppstreamUser interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -6264,8 +7197,8 @@ type AppstreamUser interface {
 	AuthenticationTypeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -6297,10 +7230,15 @@ type AppstreamUser interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEnabled()
@@ -6369,8 +7307,8 @@ func (j *jsiiProxy_AppstreamUser) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamUser) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamUser) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6599,7 +7537,7 @@ func (j *jsiiProxy_AppstreamUser) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html aws_appstream_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user aws_appstream_user} Resource.
 func NewAppstreamUser(scope constructs.Construct, id *string, config *AppstreamUserConfig) AppstreamUser {
 	_init_.Initialize()
 
@@ -6614,7 +7552,7 @@ func NewAppstreamUser(scope constructs.Construct, id *string, config *AppstreamU
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html aws_appstream_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user aws_appstream_user} Resource.
 func NewAppstreamUser_Override(a AppstreamUser, scope constructs.Construct, id *string, config *AppstreamUserConfig) {
 	_init_.Initialize()
 
@@ -6633,7 +7571,7 @@ func (j *jsiiProxy_AppstreamUser) SetAuthenticationType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppstreamUser) SetCount(val interface{}) {
+func (j *jsiiProxy_AppstreamUser) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6745,12 +7683,40 @@ func (a *jsiiProxy_AppstreamUser) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6787,12 +7753,54 @@ func (a *jsiiProxy_AppstreamUser) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6925,28 +7933,28 @@ func (a *jsiiProxy_AppstreamUser) ToTerraform() interface{} {
 // AppStream.
 type AppstreamUserConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#authentication_type AppstreamUser#authentication_type}.
-	AuthenticationType *string `json:"authenticationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#user_name AppstreamUser#user_name}.
-	UserName *string `json:"userName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#enabled AppstreamUser#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#first_name AppstreamUser#first_name}.
-	FirstName *string `json:"firstName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#last_name AppstreamUser#last_name}.
-	LastName *string `json:"lastName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user.html#send_email_notification AppstreamUser#send_email_notification}.
-	SendEmailNotification interface{} `json:"sendEmailNotification"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user#authentication_type AppstreamUser#authentication_type}.
+	AuthenticationType *string `json:"authenticationType" yaml:"authenticationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user#user_name AppstreamUser#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user#enabled AppstreamUser#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user#first_name AppstreamUser#first_name}.
+	FirstName *string `json:"firstName" yaml:"firstName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user#last_name AppstreamUser#last_name}.
+	LastName *string `json:"lastName" yaml:"lastName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user#send_email_notification AppstreamUser#send_email_notification}.
+	SendEmailNotification interface{} `json:"sendEmailNotification" yaml:"sendEmailNotification"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html aws_appstream_user_stack_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association aws_appstream_user_stack_association}.
 type AppstreamUserStackAssociation interface {
 	cdktf.TerraformResource
 	AuthenticationType() *string
@@ -6954,8 +7962,8 @@ type AppstreamUserStackAssociation interface {
 	AuthenticationTypeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6980,10 +7988,15 @@ type AppstreamUserStackAssociation interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7039,8 +8052,8 @@ func (j *jsiiProxy_AppstreamUserStackAssociation) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_AppstreamUserStackAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AppstreamUserStackAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7219,7 +8232,7 @@ func (j *jsiiProxy_AppstreamUserStackAssociation) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html aws_appstream_user_stack_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association aws_appstream_user_stack_association} Resource.
 func NewAppstreamUserStackAssociation(scope constructs.Construct, id *string, config *AppstreamUserStackAssociationConfig) AppstreamUserStackAssociation {
 	_init_.Initialize()
 
@@ -7234,7 +8247,7 @@ func NewAppstreamUserStackAssociation(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html aws_appstream_user_stack_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association aws_appstream_user_stack_association} Resource.
 func NewAppstreamUserStackAssociation_Override(a AppstreamUserStackAssociation, scope constructs.Construct, id *string, config *AppstreamUserStackAssociationConfig) {
 	_init_.Initialize()
 
@@ -7253,7 +8266,7 @@ func (j *jsiiProxy_AppstreamUserStackAssociation) SetAuthenticationType(val *str
 	)
 }
 
-func (j *jsiiProxy_AppstreamUserStackAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_AppstreamUserStackAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7349,12 +8362,40 @@ func (a *jsiiProxy_AppstreamUserStackAssociation) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamUserStackAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7391,12 +8432,54 @@ func (a *jsiiProxy_AppstreamUserStackAssociation) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AppstreamUserStackAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AppstreamUserStackAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7505,19 +8588,19 @@ func (a *jsiiProxy_AppstreamUserStackAssociation) ToTerraform() interface{} {
 // AppStream.
 type AppstreamUserStackAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#authentication_type AppstreamUserStackAssociation#authentication_type}.
-	AuthenticationType *string `json:"authenticationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#stack_name AppstreamUserStackAssociation#stack_name}.
-	StackName *string `json:"stackName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#user_name AppstreamUserStackAssociation#user_name}.
-	UserName *string `json:"userName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association.html#send_email_notification AppstreamUserStackAssociation#send_email_notification}.
-	SendEmailNotification interface{} `json:"sendEmailNotification"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association#authentication_type AppstreamUserStackAssociation#authentication_type}.
+	AuthenticationType *string `json:"authenticationType" yaml:"authenticationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association#stack_name AppstreamUserStackAssociation#stack_name}.
+	StackName *string `json:"stackName" yaml:"stackName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association#user_name AppstreamUserStackAssociation#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/appstream_user_stack_association#send_email_notification AppstreamUserStackAssociation#send_email_notification}.
+	SendEmailNotification interface{} `json:"sendEmailNotification" yaml:"sendEmailNotification"`
 }

@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/ecr/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token.html aws_ecr_authorization_token}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token aws_ecr_authorization_token}.
 type DataAwsEcrAuthorizationToken interface {
 	cdktf.TerraformDataSource
 	AuthorizationToken() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExpiresAt() *string
@@ -39,10 +39,15 @@ type DataAwsEcrAuthorizationToken interface {
 	TerraformResourceType() *string
 	UserName() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -88,8 +93,8 @@ func (j *jsiiProxy_DataAwsEcrAuthorizationToken) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrAuthorizationToken) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcrAuthorizationToken) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -268,7 +273,7 @@ func (j *jsiiProxy_DataAwsEcrAuthorizationToken) UserName() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token.html aws_ecr_authorization_token} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token aws_ecr_authorization_token} Data Source.
 func NewDataAwsEcrAuthorizationToken(scope constructs.Construct, id *string, config *DataAwsEcrAuthorizationTokenConfig) DataAwsEcrAuthorizationToken {
 	_init_.Initialize()
 
@@ -283,7 +288,7 @@ func NewDataAwsEcrAuthorizationToken(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token.html aws_ecr_authorization_token} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token aws_ecr_authorization_token} Data Source.
 func NewDataAwsEcrAuthorizationToken_Override(d DataAwsEcrAuthorizationToken, scope constructs.Construct, id *string, config *DataAwsEcrAuthorizationTokenConfig) {
 	_init_.Initialize()
 
@@ -294,7 +299,7 @@ func NewDataAwsEcrAuthorizationToken_Override(d DataAwsEcrAuthorizationToken, sc
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcrAuthorizationToken) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEcrAuthorizationToken) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -374,12 +379,40 @@ func (d *jsiiProxy_DataAwsEcrAuthorizationToken) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -416,12 +449,54 @@ func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrAuthorizationToken) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -530,24 +605,24 @@ func (d *jsiiProxy_DataAwsEcrAuthorizationToken) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type DataAwsEcrAuthorizationTokenConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token.html#registry_id DataAwsEcrAuthorizationToken#registry_id}.
-	RegistryId *string `json:"registryId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_authorization_token#registry_id DataAwsEcrAuthorizationToken#registry_id}.
+	RegistryId *string `json:"registryId" yaml:"registryId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecr_image.html aws_ecr_image}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecr_image aws_ecr_image}.
 type DataAwsEcrImage interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -578,10 +653,15 @@ type DataAwsEcrImage interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetImageDigest()
@@ -619,8 +699,8 @@ func (j *jsiiProxy_DataAwsEcrImage) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrImage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcrImage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -849,7 +929,7 @@ func (j *jsiiProxy_DataAwsEcrImage) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_image.html aws_ecr_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_image aws_ecr_image} Data Source.
 func NewDataAwsEcrImage(scope constructs.Construct, id *string, config *DataAwsEcrImageConfig) DataAwsEcrImage {
 	_init_.Initialize()
 
@@ -864,7 +944,7 @@ func NewDataAwsEcrImage(scope constructs.Construct, id *string, config *DataAwsE
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_image.html aws_ecr_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_image aws_ecr_image} Data Source.
 func NewDataAwsEcrImage_Override(d DataAwsEcrImage, scope constructs.Construct, id *string, config *DataAwsEcrImageConfig) {
 	_init_.Initialize()
 
@@ -875,7 +955,7 @@ func NewDataAwsEcrImage_Override(d DataAwsEcrImage, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcrImage) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEcrImage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -979,12 +1059,40 @@ func (d *jsiiProxy_DataAwsEcrImage) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrImage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrImage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrImage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1021,12 +1129,54 @@ func (d *jsiiProxy_DataAwsEcrImage) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrImage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrImage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrImage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrImage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1151,31 +1301,31 @@ func (d *jsiiProxy_DataAwsEcrImage) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type DataAwsEcrImageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image.html#repository_name DataAwsEcrImage#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image.html#image_digest DataAwsEcrImage#image_digest}.
-	ImageDigest *string `json:"imageDigest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image.html#image_tag DataAwsEcrImage#image_tag}.
-	ImageTag *string `json:"imageTag"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image.html#registry_id DataAwsEcrImage#registry_id}.
-	RegistryId *string `json:"registryId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image#repository_name DataAwsEcrImage#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image#image_digest DataAwsEcrImage#image_digest}.
+	ImageDigest *string `json:"imageDigest" yaml:"imageDigest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image#image_tag DataAwsEcrImage#image_tag}.
+	ImageTag *string `json:"imageTag" yaml:"imageTag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_image#registry_id DataAwsEcrImage#registry_id}.
+	RegistryId *string `json:"registryId" yaml:"registryId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository.html aws_ecr_repository}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository aws_ecr_repository}.
 type DataAwsEcrRepository interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1195,18 +1345,23 @@ type DataAwsEcrRepository interface {
 	SetRegistryId(val *string)
 	RegistryIdInput() *string
 	RepositoryUrl() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	EncryptionConfiguration(index *string) DataAwsEcrRepositoryEncryptionConfiguration
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	ImageScanningConfiguration(index *string) DataAwsEcrRepositoryImageScanningConfiguration
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
@@ -1254,8 +1409,8 @@ func (j *jsiiProxy_DataAwsEcrRepository) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrRepository) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcrRepository) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1404,8 +1559,8 @@ func (j *jsiiProxy_DataAwsEcrRepository) RepositoryUrl() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrRepository) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcrRepository) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1414,8 +1569,8 @@ func (j *jsiiProxy_DataAwsEcrRepository) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrRepository) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcrRepository) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1454,7 +1609,7 @@ func (j *jsiiProxy_DataAwsEcrRepository) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository.html aws_ecr_repository} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository aws_ecr_repository} Data Source.
 func NewDataAwsEcrRepository(scope constructs.Construct, id *string, config *DataAwsEcrRepositoryConfig) DataAwsEcrRepository {
 	_init_.Initialize()
 
@@ -1469,7 +1624,7 @@ func NewDataAwsEcrRepository(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository.html aws_ecr_repository} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository aws_ecr_repository} Data Source.
 func NewDataAwsEcrRepository_Override(d DataAwsEcrRepository, scope constructs.Construct, id *string, config *DataAwsEcrRepositoryConfig) {
 	_init_.Initialize()
 
@@ -1480,7 +1635,7 @@ func NewDataAwsEcrRepository_Override(d DataAwsEcrRepository, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcrRepository) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEcrRepository) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1528,7 +1683,7 @@ func (j *jsiiProxy_DataAwsEcrRepository) SetRegistryId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcrRepository) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsEcrRepository) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1589,12 +1744,40 @@ func (d *jsiiProxy_DataAwsEcrRepository) EncryptionConfiguration(index *string) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrRepository) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrRepository) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepository) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1631,12 +1814,54 @@ func (d *jsiiProxy_DataAwsEcrRepository) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrRepository) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepository) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrRepository) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepository) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1766,19 +1991,19 @@ func (d *jsiiProxy_DataAwsEcrRepository) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type DataAwsEcrRepositoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository.html#name DataAwsEcrRepository#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository.html#registry_id DataAwsEcrRepository#registry_id}.
-	RegistryId *string `json:"registryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository.html#tags DataAwsEcrRepository#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository#name DataAwsEcrRepository#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository#registry_id DataAwsEcrRepository#registry_id}.
+	RegistryId *string `json:"registryId" yaml:"registryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecr_repository#tags DataAwsEcrRepository#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsEcrRepositoryEncryptionConfiguration interface {
@@ -1789,12 +2014,19 @@ type DataAwsEcrRepositoryEncryptionConfiguration interface {
 	KmsKey() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1843,8 +2075,8 @@ func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1853,15 +2085,25 @@ func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsEcrRepositoryEncryptionConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsEcrRepositoryEncryptionConfiguration {
+func NewDataAwsEcrRepositoryEncryptionConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsEcrRepositoryEncryptionConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.ecr.DataAwsEcrRepositoryEncryptionConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1869,12 +2111,12 @@ func NewDataAwsEcrRepositoryEncryptionConfiguration(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewDataAwsEcrRepositoryEncryptionConfiguration_Override(d DataAwsEcrRepositoryEncryptionConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsEcrRepositoryEncryptionConfiguration_Override(d DataAwsEcrRepositoryEncryptionConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.ecr.DataAwsEcrRepositoryEncryptionConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1895,7 +2137,7 @@ func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1903,13 +2145,49 @@ func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1946,12 +2224,54 @@ func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryEncryptionConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1977,15 +2297,22 @@ type DataAwsEcrRepositoryImageScanningConfiguration interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ScanOnPush() interface{}
+	ScanOnPush() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2004,8 +2331,8 @@ func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) ComplexComput
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) ScanOnPush() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) ScanOnPush() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"scanOnPush",
@@ -2024,8 +2351,8 @@ func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2034,15 +2361,25 @@ func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) TerraformReso
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsEcrRepositoryImageScanningConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsEcrRepositoryImageScanningConfiguration {
+func NewDataAwsEcrRepositoryImageScanningConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsEcrRepositoryImageScanningConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.ecr.DataAwsEcrRepositoryImageScanningConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2050,12 +2387,12 @@ func NewDataAwsEcrRepositoryImageScanningConfiguration(terraformResource cdktf.I
 }
 
 // Experimental.
-func NewDataAwsEcrRepositoryImageScanningConfiguration_Override(d DataAwsEcrRepositoryImageScanningConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsEcrRepositoryImageScanningConfiguration_Override(d DataAwsEcrRepositoryImageScanningConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.ecr.DataAwsEcrRepositoryImageScanningConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2076,7 +2413,7 @@ func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2084,13 +2421,49 @@ func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) SetTerraformR
 	)
 }
 
+func (j *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2127,12 +2500,54 @@ func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2154,13 +2569,13 @@ func (d *jsiiProxy_DataAwsEcrRepositoryImageScanningConfiguration) Interpolation
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy.html aws_ecr_lifecycle_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy aws_ecr_lifecycle_policy}.
 type EcrLifecyclePolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2183,10 +2598,15 @@ type EcrLifecyclePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2221,8 +2641,8 @@ func (j *jsiiProxy_EcrLifecyclePolicy) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_EcrLifecyclePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrLifecyclePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2391,7 +2811,7 @@ func (j *jsiiProxy_EcrLifecyclePolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy.html aws_ecr_lifecycle_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy aws_ecr_lifecycle_policy} Resource.
 func NewEcrLifecyclePolicy(scope constructs.Construct, id *string, config *EcrLifecyclePolicyConfig) EcrLifecyclePolicy {
 	_init_.Initialize()
 
@@ -2406,7 +2826,7 @@ func NewEcrLifecyclePolicy(scope constructs.Construct, id *string, config *EcrLi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy.html aws_ecr_lifecycle_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy aws_ecr_lifecycle_policy} Resource.
 func NewEcrLifecyclePolicy_Override(e EcrLifecyclePolicy, scope constructs.Construct, id *string, config *EcrLifecyclePolicyConfig) {
 	_init_.Initialize()
 
@@ -2417,7 +2837,7 @@ func NewEcrLifecyclePolicy_Override(e EcrLifecyclePolicy, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_EcrLifecyclePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_EcrLifecyclePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2505,12 +2925,40 @@ func (e *jsiiProxy_EcrLifecyclePolicy) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrLifecyclePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrLifecyclePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrLifecyclePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2547,12 +2995,54 @@ func (e *jsiiProxy_EcrLifecyclePolicy) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrLifecyclePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrLifecyclePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrLifecyclePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrLifecyclePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2653,26 +3143,613 @@ func (e *jsiiProxy_EcrLifecyclePolicy) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type EcrLifecyclePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy.html#policy EcrLifecyclePolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy.html#repository EcrLifecyclePolicy#repository}.
-	Repository *string `json:"repository"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy#policy EcrLifecyclePolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_lifecycle_policy#repository EcrLifecyclePolicy#repository}.
+	Repository *string `json:"repository" yaml:"repository"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy.html aws_ecr_registry_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_pull_through_cache_rule aws_ecr_pull_through_cache_rule}.
+type EcrPullThroughCacheRule interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	EcrRepositoryPrefix() *string
+	SetEcrRepositoryPrefix(val *string)
+	EcrRepositoryPrefixInput() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RegistryId() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	UpstreamRegistryUrl() *string
+	SetUpstreamRegistryUrl(val *string)
+	UpstreamRegistryUrlInput() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for EcrPullThroughCacheRule
+type jsiiProxy_EcrPullThroughCacheRule struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) EcrRepositoryPrefix() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ecrRepositoryPrefix",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) EcrRepositoryPrefixInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ecrRepositoryPrefixInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) RegistryId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"registryId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) UpstreamRegistryUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"upstreamRegistryUrl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) UpstreamRegistryUrlInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"upstreamRegistryUrlInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_pull_through_cache_rule aws_ecr_pull_through_cache_rule} Resource.
+func NewEcrPullThroughCacheRule(scope constructs.Construct, id *string, config *EcrPullThroughCacheRuleConfig) EcrPullThroughCacheRule {
+	_init_.Initialize()
+
+	j := jsiiProxy_EcrPullThroughCacheRule{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ecr.EcrPullThroughCacheRule",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_pull_through_cache_rule aws_ecr_pull_through_cache_rule} Resource.
+func NewEcrPullThroughCacheRule_Override(e EcrPullThroughCacheRule, scope constructs.Construct, id *string, config *EcrPullThroughCacheRuleConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ecr.EcrPullThroughCacheRule",
+		[]interface{}{scope, id, config},
+		e,
+	)
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) SetEcrRepositoryPrefix(val *string) {
+	_jsii_.Set(
+		j,
+		"ecrRepositoryPrefix",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrPullThroughCacheRule) SetUpstreamRegistryUrl(val *string) {
+	_jsii_.Set(
+		j,
+		"upstreamRegistryUrl",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func EcrPullThroughCacheRule_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ecr.EcrPullThroughCacheRule",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func EcrPullThroughCacheRule_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ecr.EcrPullThroughCacheRule",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		e,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		e,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EcrPullThroughCacheRule) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (e *jsiiProxy_EcrPullThroughCacheRule) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (e *jsiiProxy_EcrPullThroughCacheRule) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS EC2 Container Registry.
+type EcrPullThroughCacheRuleConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_pull_through_cache_rule#ecr_repository_prefix EcrPullThroughCacheRule#ecr_repository_prefix}.
+	EcrRepositoryPrefix *string `json:"ecrRepositoryPrefix" yaml:"ecrRepositoryPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_pull_through_cache_rule#upstream_registry_url EcrPullThroughCacheRule#upstream_registry_url}.
+	UpstreamRegistryUrl *string `json:"upstreamRegistryUrl" yaml:"upstreamRegistryUrl"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy aws_ecr_registry_policy}.
 type EcrRegistryPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2692,10 +3769,15 @@ type EcrRegistryPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2730,8 +3812,8 @@ func (j *jsiiProxy_EcrRegistryPolicy) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_EcrRegistryPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrRegistryPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2880,7 +3962,7 @@ func (j *jsiiProxy_EcrRegistryPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy.html aws_ecr_registry_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy aws_ecr_registry_policy} Resource.
 func NewEcrRegistryPolicy(scope constructs.Construct, id *string, config *EcrRegistryPolicyConfig) EcrRegistryPolicy {
 	_init_.Initialize()
 
@@ -2895,7 +3977,7 @@ func NewEcrRegistryPolicy(scope constructs.Construct, id *string, config *EcrReg
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy.html aws_ecr_registry_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy aws_ecr_registry_policy} Resource.
 func NewEcrRegistryPolicy_Override(e EcrRegistryPolicy, scope constructs.Construct, id *string, config *EcrRegistryPolicyConfig) {
 	_init_.Initialize()
 
@@ -2906,7 +3988,7 @@ func NewEcrRegistryPolicy_Override(e EcrRegistryPolicy, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_EcrRegistryPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_EcrRegistryPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2986,12 +4068,40 @@ func (e *jsiiProxy_EcrRegistryPolicy) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRegistryPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRegistryPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3028,12 +4138,54 @@ func (e *jsiiProxy_EcrRegistryPolicy) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRegistryPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRegistryPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3134,24 +4286,638 @@ func (e *jsiiProxy_EcrRegistryPolicy) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type EcrRegistryPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy.html#policy EcrRegistryPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_policy#policy EcrRegistryPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html aws_ecr_replication_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration aws_ecr_registry_scanning_configuration}.
+type EcrRegistryScanningConfiguration interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RegistryId() *string
+	Rule() interface{}
+	SetRule(val interface{})
+	RuleInput() interface{}
+	ScanType() *string
+	SetScanType(val *string)
+	ScanTypeInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetRule()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for EcrRegistryScanningConfiguration
+type jsiiProxy_EcrRegistryScanningConfiguration struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) RegistryId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"registryId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) Rule() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rule",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) RuleInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ruleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) ScanType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"scanType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) ScanTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"scanTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration aws_ecr_registry_scanning_configuration} Resource.
+func NewEcrRegistryScanningConfiguration(scope constructs.Construct, id *string, config *EcrRegistryScanningConfigurationConfig) EcrRegistryScanningConfiguration {
+	_init_.Initialize()
+
+	j := jsiiProxy_EcrRegistryScanningConfiguration{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ecr.EcrRegistryScanningConfiguration",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration aws_ecr_registry_scanning_configuration} Resource.
+func NewEcrRegistryScanningConfiguration_Override(e EcrRegistryScanningConfiguration, scope constructs.Construct, id *string, config *EcrRegistryScanningConfigurationConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ecr.EcrRegistryScanningConfiguration",
+		[]interface{}{scope, id, config},
+		e,
+	)
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) SetRule(val interface{}) {
+	_jsii_.Set(
+		j,
+		"rule",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrRegistryScanningConfiguration) SetScanType(val *string) {
+	_jsii_.Set(
+		j,
+		"scanType",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func EcrRegistryScanningConfiguration_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ecr.EcrRegistryScanningConfiguration",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func EcrRegistryScanningConfiguration_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ecr.EcrRegistryScanningConfiguration",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		e,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		e,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) ResetRule() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetRule",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (e *jsiiProxy_EcrRegistryScanningConfiguration) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS EC2 Container Registry.
+type EcrRegistryScanningConfigurationConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration#scan_type EcrRegistryScanningConfiguration#scan_type}.
+	ScanType *string `json:"scanType" yaml:"scanType"`
+	// rule block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration#rule EcrRegistryScanningConfiguration#rule}
+	Rule interface{} `json:"rule" yaml:"rule"`
+}
+
+type EcrRegistryScanningConfigurationRule struct {
+	// repository_filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration#repository_filter EcrRegistryScanningConfiguration#repository_filter}
+	RepositoryFilter interface{} `json:"repositoryFilter" yaml:"repositoryFilter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration#scan_frequency EcrRegistryScanningConfiguration#scan_frequency}.
+	ScanFrequency *string `json:"scanFrequency" yaml:"scanFrequency"`
+}
+
+type EcrRegistryScanningConfigurationRuleRepositoryFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration#filter EcrRegistryScanningConfiguration#filter}.
+	Filter *string `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_registry_scanning_configuration#filter_type EcrRegistryScanningConfiguration#filter_type}.
+	FilterType *string `json:"filterType" yaml:"filterType"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration aws_ecr_replication_configuration}.
 type EcrReplicationConfiguration interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3170,10 +4936,15 @@ type EcrReplicationConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutReplicationConfiguration(value *EcrReplicationConfigurationReplicationConfiguration)
@@ -3210,8 +4981,8 @@ func (j *jsiiProxy_EcrReplicationConfiguration) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_EcrReplicationConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrReplicationConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3360,7 +5131,7 @@ func (j *jsiiProxy_EcrReplicationConfiguration) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html aws_ecr_replication_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration aws_ecr_replication_configuration} Resource.
 func NewEcrReplicationConfiguration(scope constructs.Construct, id *string, config *EcrReplicationConfigurationConfig) EcrReplicationConfiguration {
 	_init_.Initialize()
 
@@ -3375,7 +5146,7 @@ func NewEcrReplicationConfiguration(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html aws_ecr_replication_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration aws_ecr_replication_configuration} Resource.
 func NewEcrReplicationConfiguration_Override(e EcrReplicationConfiguration, scope constructs.Construct, id *string, config *EcrReplicationConfigurationConfig) {
 	_init_.Initialize()
 
@@ -3386,7 +5157,7 @@ func NewEcrReplicationConfiguration_Override(e EcrReplicationConfiguration, scop
 	)
 }
 
-func (j *jsiiProxy_EcrReplicationConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_EcrReplicationConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3458,12 +5229,40 @@ func (e *jsiiProxy_EcrReplicationConfiguration) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrReplicationConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrReplicationConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrReplicationConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3500,12 +5299,54 @@ func (e *jsiiProxy_EcrReplicationConfiguration) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrReplicationConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrReplicationConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrReplicationConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrReplicationConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3622,24 +5463,24 @@ func (e *jsiiProxy_EcrReplicationConfiguration) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type EcrReplicationConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// replication_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html#replication_configuration EcrReplicationConfiguration#replication_configuration}
-	ReplicationConfiguration *EcrReplicationConfigurationReplicationConfiguration `json:"replicationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#replication_configuration EcrReplicationConfiguration#replication_configuration}
+	ReplicationConfiguration *EcrReplicationConfigurationReplicationConfiguration `json:"replicationConfiguration" yaml:"replicationConfiguration"`
 }
 
 type EcrReplicationConfigurationReplicationConfiguration struct {
 	// rule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html#rule EcrReplicationConfiguration#rule}
-	Rule *EcrReplicationConfigurationReplicationConfigurationRule `json:"rule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#rule EcrReplicationConfiguration#rule}
+	Rule interface{} `json:"rule" yaml:"rule"`
 }
 
 type EcrReplicationConfigurationReplicationConfigurationOutputReference interface {
@@ -3648,19 +5489,24 @@ type EcrReplicationConfigurationReplicationConfigurationOutputReference interfac
 	SetInternalValue(val *EcrReplicationConfigurationReplicationConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Rule() EcrReplicationConfigurationReplicationConfigurationRuleOutputReference
-	RuleInput() *EcrReplicationConfigurationReplicationConfigurationRule
+	Rule() interface{}
+	SetRule(val interface{})
+	RuleInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
-	PutRule(value *EcrReplicationConfigurationReplicationConfigurationRule)
 }
 
 // The jsii proxy struct for EcrReplicationConfigurationReplicationConfigurationOutputReference
@@ -3688,8 +5534,8 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) Rule() EcrReplicationConfigurationReplicationConfigurationRuleOutputReference {
-	var returns EcrReplicationConfigurationReplicationConfigurationRuleOutputReference
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) Rule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rule",
@@ -3698,8 +5544,8 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) RuleInput() *EcrReplicationConfigurationReplicationConfigurationRule {
-	var returns *EcrReplicationConfigurationReplicationConfigurationRule
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) RuleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ruleInput",
@@ -3718,8 +5564,8 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3728,7 +5574,7 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 	return returns
 }
 
-func NewEcrReplicationConfigurationReplicationConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcrReplicationConfigurationReplicationConfigurationOutputReference {
+func NewEcrReplicationConfigurationReplicationConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcrReplicationConfigurationReplicationConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference{}
@@ -3742,7 +5588,7 @@ func NewEcrReplicationConfigurationReplicationConfigurationOutputReference(terra
 	return &j
 }
 
-func NewEcrReplicationConfigurationReplicationConfigurationOutputReference_Override(e EcrReplicationConfigurationReplicationConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcrReplicationConfigurationReplicationConfigurationOutputReference_Override(e EcrReplicationConfigurationReplicationConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3768,6 +5614,14 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 	)
 }
 
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) SetRule(val interface{}) {
+	_jsii_.Set(
+		j,
+		"rule",
+		val,
+	)
+}
+
 func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) SetTerraformAttribute(val *string) {
 	_jsii_.Set(
 		j,
@@ -3776,7 +5630,7 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 	)
 }
 
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3785,12 +5639,40 @@ func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 }
 
 // Experimental.
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3827,12 +5709,54 @@ func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3868,275 +5792,44 @@ func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputRefe
 	return returns
 }
 
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationOutputReference) PutRule(value *EcrReplicationConfigurationReplicationConfigurationRule) {
-	_jsii_.InvokeVoid(
-		e,
-		"putRule",
-		[]interface{}{value},
-	)
-}
-
 type EcrReplicationConfigurationReplicationConfigurationRule struct {
 	// destination block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html#destination EcrReplicationConfiguration#destination}
-	Destination *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination `json:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#destination EcrReplicationConfiguration#destination}
+	Destination interface{} `json:"destination" yaml:"destination"`
+	// repository_filter block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#repository_filter EcrReplicationConfiguration#repository_filter}
+	RepositoryFilter interface{} `json:"repositoryFilter" yaml:"repositoryFilter"`
 }
 
 type EcrReplicationConfigurationReplicationConfigurationRuleDestination struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html#region EcrReplicationConfiguration#region}.
-	Region *string `json:"region"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration.html#registry_id EcrReplicationConfiguration#registry_id}.
-	RegistryId *string `json:"registryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#region EcrReplicationConfiguration#region}.
+	Region *string `json:"region" yaml:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#registry_id EcrReplicationConfiguration#registry_id}.
+	RegistryId *string `json:"registryId" yaml:"registryId"`
 }
 
-type EcrReplicationConfigurationReplicationConfigurationRuleOutputReference interface {
-	cdktf.ComplexObject
-	Destination() *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination
-	SetDestination(val *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination)
-	DestinationInput() *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination
-	InternalValue() *EcrReplicationConfigurationReplicationConfigurationRule
-	SetInternalValue(val *EcrReplicationConfigurationReplicationConfigurationRule)
-	IsSingleItem() *bool
-	SetIsSingleItem(val *bool)
-	TerraformAttribute() *string
-	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
-	GetListAttribute(terraformAttribute *string) *[]*string
-	GetNumberAttribute(terraformAttribute *string) *float64
-	GetStringAttribute(terraformAttribute *string) *string
-	InterpolationAsList() cdktf.IResolvable
-	InterpolationForAttribute(property *string) cdktf.IResolvable
+type EcrReplicationConfigurationReplicationConfigurationRuleRepositoryFilter struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#filter EcrReplicationConfiguration#filter}.
+	Filter *string `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_replication_configuration#filter_type EcrReplicationConfiguration#filter_type}.
+	FilterType *string `json:"filterType" yaml:"filterType"`
 }
 
-// The jsii proxy struct for EcrReplicationConfigurationReplicationConfigurationRuleOutputReference
-type jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference struct {
-	internal.Type__cdktfComplexObject
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) Destination() *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination {
-	var returns *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination
-	_jsii_.Get(
-		j,
-		"destination",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) DestinationInput() *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination {
-	var returns *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination
-	_jsii_.Get(
-		j,
-		"destinationInput",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) InternalValue() *EcrReplicationConfigurationReplicationConfigurationRule {
-	var returns *EcrReplicationConfigurationReplicationConfigurationRule
-	_jsii_.Get(
-		j,
-		"internalValue",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) IsSingleItem() *bool {
-	var returns *bool
-	_jsii_.Get(
-		j,
-		"isSingleItem",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) TerraformAttribute() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"terraformAttribute",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
-	_jsii_.Get(
-		j,
-		"terraformResource",
-		&returns,
-	)
-	return returns
-}
-
-func NewEcrReplicationConfigurationReplicationConfigurationRuleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcrReplicationConfigurationReplicationConfigurationRuleOutputReference {
-	_init_.Initialize()
-
-	j := jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference{}
-
-	_jsii_.Create(
-		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		&j,
-	)
-
-	return &j
-}
-
-func NewEcrReplicationConfigurationReplicationConfigurationRuleOutputReference_Override(e EcrReplicationConfigurationReplicationConfigurationRuleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
-	_init_.Initialize()
-
-	_jsii_.Create(
-		"hashicorp_aws.ecr.EcrReplicationConfigurationReplicationConfigurationRuleOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
-		e,
-	)
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) SetDestination(val *[]*EcrReplicationConfigurationReplicationConfigurationRuleDestination) {
-	_jsii_.Set(
-		j,
-		"destination",
-		val,
-	)
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) SetInternalValue(val *EcrReplicationConfigurationReplicationConfigurationRule) {
-	_jsii_.Set(
-		j,
-		"internalValue",
-		val,
-	)
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) SetIsSingleItem(val *bool) {
-	_jsii_.Set(
-		j,
-		"isSingleItem",
-		val,
-	)
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) SetTerraformAttribute(val *string) {
-	_jsii_.Set(
-		j,
-		"terraformAttribute",
-		val,
-	)
-}
-
-func (j *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
-	_jsii_.Set(
-		j,
-		"terraformResource",
-		val,
-	)
-}
-
-// Experimental.
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
-
-	_jsii_.Invoke(
-		e,
-		"getBooleanAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		e,
-		"getListAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
-	var returns *float64
-
-	_jsii_.Invoke(
-		e,
-		"getNumberAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
-	var returns *string
-
-	_jsii_.Invoke(
-		e,
-		"getStringAttribute",
-		[]interface{}{terraformAttribute},
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) InterpolationAsList() cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		e,
-		"interpolationAsList",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
-// Experimental.
-func (e *jsiiProxy_EcrReplicationConfigurationReplicationConfigurationRuleOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
-	var returns cdktf.IResolvable
-
-	_jsii_.Invoke(
-		e,
-		"interpolationForAttribute",
-		[]interface{}{property},
-		&returns,
-	)
-
-	return returns
-}
-
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html aws_ecr_repository}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository aws_ecr_repository}.
 type EcrRepository interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	EncryptionConfiguration() *[]*EcrRepositoryEncryptionConfiguration
-	SetEncryptionConfiguration(val *[]*EcrRepositoryEncryptionConfiguration)
-	EncryptionConfigurationInput() *[]*EcrRepositoryEncryptionConfiguration
+	EncryptionConfiguration() interface{}
+	SetEncryptionConfiguration(val interface{})
+	EncryptionConfigurationInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -4156,22 +5849,27 @@ type EcrRepository interface {
 	RawOverrides() interface{}
 	RegistryId() *string
 	RepositoryUrl() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() EcrRepositoryTimeoutsOutputReference
 	TimeoutsInput() *EcrRepositoryTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutImageScanningConfiguration(value *EcrRepositoryImageScanningConfiguration)
@@ -4224,8 +5922,8 @@ func (j *jsiiProxy_EcrRepository) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepository) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrRepository) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4244,8 +5942,8 @@ func (j *jsiiProxy_EcrRepository) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepository) EncryptionConfiguration() *[]*EcrRepositoryEncryptionConfiguration {
-	var returns *[]*EcrRepositoryEncryptionConfiguration
+func (j *jsiiProxy_EcrRepository) EncryptionConfiguration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"encryptionConfiguration",
@@ -4254,8 +5952,8 @@ func (j *jsiiProxy_EcrRepository) EncryptionConfiguration() *[]*EcrRepositoryEnc
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepository) EncryptionConfigurationInput() *[]*EcrRepositoryEncryptionConfiguration {
-	var returns *[]*EcrRepositoryEncryptionConfiguration
+func (j *jsiiProxy_EcrRepository) EncryptionConfigurationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"encryptionConfigurationInput",
@@ -4414,8 +6112,8 @@ func (j *jsiiProxy_EcrRepository) RepositoryUrl() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepository) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrRepository) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4424,8 +6122,8 @@ func (j *jsiiProxy_EcrRepository) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepository) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrRepository) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4434,8 +6132,8 @@ func (j *jsiiProxy_EcrRepository) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepository) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrRepository) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4444,8 +6142,8 @@ func (j *jsiiProxy_EcrRepository) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepository) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrRepository) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4504,7 +6202,7 @@ func (j *jsiiProxy_EcrRepository) TimeoutsInput() *EcrRepositoryTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html aws_ecr_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository aws_ecr_repository} Resource.
 func NewEcrRepository(scope constructs.Construct, id *string, config *EcrRepositoryConfig) EcrRepository {
 	_init_.Initialize()
 
@@ -4519,7 +6217,7 @@ func NewEcrRepository(scope constructs.Construct, id *string, config *EcrReposit
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html aws_ecr_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository aws_ecr_repository} Resource.
 func NewEcrRepository_Override(e EcrRepository, scope constructs.Construct, id *string, config *EcrRepositoryConfig) {
 	_init_.Initialize()
 
@@ -4530,7 +6228,7 @@ func NewEcrRepository_Override(e EcrRepository, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_EcrRepository) SetCount(val interface{}) {
+func (j *jsiiProxy_EcrRepository) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4546,7 +6244,7 @@ func (j *jsiiProxy_EcrRepository) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_EcrRepository) SetEncryptionConfiguration(val *[]*EcrRepositoryEncryptionConfiguration) {
+func (j *jsiiProxy_EcrRepository) SetEncryptionConfiguration(val interface{}) {
 	_jsii_.Set(
 		j,
 		"encryptionConfiguration",
@@ -4586,7 +6284,7 @@ func (j *jsiiProxy_EcrRepository) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_EcrRepository) SetTags(val interface{}) {
+func (j *jsiiProxy_EcrRepository) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4594,7 +6292,7 @@ func (j *jsiiProxy_EcrRepository) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EcrRepository) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EcrRepository) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4642,12 +6340,40 @@ func (e *jsiiProxy_EcrRepository) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRepository) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRepository) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepository) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4684,12 +6410,54 @@ func (e *jsiiProxy_EcrRepository) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRepository) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepository) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRepository) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepository) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4854,45 +6622,45 @@ func (e *jsiiProxy_EcrRepository) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type EcrRepositoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#name EcrRepository#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#name EcrRepository#name}.
+	Name *string `json:"name" yaml:"name"`
 	// encryption_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#encryption_configuration EcrRepository#encryption_configuration}
-	EncryptionConfiguration *[]*EcrRepositoryEncryptionConfiguration `json:"encryptionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#encryption_configuration EcrRepository#encryption_configuration}
+	EncryptionConfiguration interface{} `json:"encryptionConfiguration" yaml:"encryptionConfiguration"`
 	// image_scanning_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#image_scanning_configuration EcrRepository#image_scanning_configuration}
-	ImageScanningConfiguration *EcrRepositoryImageScanningConfiguration `json:"imageScanningConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#image_tag_mutability EcrRepository#image_tag_mutability}.
-	ImageTagMutability *string `json:"imageTagMutability"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#tags EcrRepository#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#tags_all EcrRepository#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#image_scanning_configuration EcrRepository#image_scanning_configuration}
+	ImageScanningConfiguration *EcrRepositoryImageScanningConfiguration `json:"imageScanningConfiguration" yaml:"imageScanningConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#image_tag_mutability EcrRepository#image_tag_mutability}.
+	ImageTagMutability *string `json:"imageTagMutability" yaml:"imageTagMutability"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#tags EcrRepository#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#tags_all EcrRepository#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#timeouts EcrRepository#timeouts}
-	Timeouts *EcrRepositoryTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#timeouts EcrRepository#timeouts}
+	Timeouts *EcrRepositoryTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type EcrRepositoryEncryptionConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#encryption_type EcrRepository#encryption_type}.
-	EncryptionType *string `json:"encryptionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#kms_key EcrRepository#kms_key}.
-	KmsKey *string `json:"kmsKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#encryption_type EcrRepository#encryption_type}.
+	EncryptionType *string `json:"encryptionType" yaml:"encryptionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#kms_key EcrRepository#kms_key}.
+	KmsKey *string `json:"kmsKey" yaml:"kmsKey"`
 }
 
 type EcrRepositoryImageScanningConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#scan_on_push EcrRepository#scan_on_push}.
-	ScanOnPush interface{} `json:"scanOnPush"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#scan_on_push EcrRepository#scan_on_push}.
+	ScanOnPush interface{} `json:"scanOnPush" yaml:"scanOnPush"`
 }
 
 type EcrRepositoryImageScanningConfigurationOutputReference interface {
@@ -4906,12 +6674,17 @@ type EcrRepositoryImageScanningConfigurationOutputReference interface {
 	ScanOnPushInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -4971,8 +6744,8 @@ func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4981,7 +6754,7 @@ func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) Terra
 	return returns
 }
 
-func NewEcrRepositoryImageScanningConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcrRepositoryImageScanningConfigurationOutputReference {
+func NewEcrRepositoryImageScanningConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcrRepositoryImageScanningConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference{}
@@ -4995,7 +6768,7 @@ func NewEcrRepositoryImageScanningConfigurationOutputReference(terraformResource
 	return &j
 }
 
-func NewEcrRepositoryImageScanningConfigurationOutputReference_Override(e EcrRepositoryImageScanningConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcrRepositoryImageScanningConfigurationOutputReference_Override(e EcrRepositoryImageScanningConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5037,7 +6810,7 @@ func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5046,12 +6819,40 @@ func (j *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) SetTe
 }
 
 // Experimental.
-func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5088,12 +6889,54 @@ func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetNu
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5129,13 +6972,13 @@ func (e *jsiiProxy_EcrRepositoryImageScanningConfigurationOutputReference) Inter
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy.html aws_ecr_repository_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy aws_ecr_repository_policy}.
 type EcrRepositoryPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5158,10 +7001,15 @@ type EcrRepositoryPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5196,8 +7044,8 @@ func (j *jsiiProxy_EcrRepositoryPolicy) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepositoryPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrRepositoryPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5366,7 +7214,7 @@ func (j *jsiiProxy_EcrRepositoryPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy.html aws_ecr_repository_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy aws_ecr_repository_policy} Resource.
 func NewEcrRepositoryPolicy(scope constructs.Construct, id *string, config *EcrRepositoryPolicyConfig) EcrRepositoryPolicy {
 	_init_.Initialize()
 
@@ -5381,7 +7229,7 @@ func NewEcrRepositoryPolicy(scope constructs.Construct, id *string, config *EcrR
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy.html aws_ecr_repository_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy aws_ecr_repository_policy} Resource.
 func NewEcrRepositoryPolicy_Override(e EcrRepositoryPolicy, scope constructs.Construct, id *string, config *EcrRepositoryPolicyConfig) {
 	_init_.Initialize()
 
@@ -5392,7 +7240,7 @@ func NewEcrRepositoryPolicy_Override(e EcrRepositoryPolicy, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_EcrRepositoryPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_EcrRepositoryPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5480,12 +7328,40 @@ func (e *jsiiProxy_EcrRepositoryPolicy) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRepositoryPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRepositoryPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5522,12 +7398,54 @@ func (e *jsiiProxy_EcrRepositoryPolicy) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRepositoryPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRepositoryPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5628,22 +7546,22 @@ func (e *jsiiProxy_EcrRepositoryPolicy) ToTerraform() interface{} {
 // AWS EC2 Container Registry.
 type EcrRepositoryPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy.html#policy EcrRepositoryPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy.html#repository EcrRepositoryPolicy#repository}.
-	Repository *string `json:"repository"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy#policy EcrRepositoryPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository_policy#repository EcrRepositoryPolicy#repository}.
+	Repository *string `json:"repository" yaml:"repository"`
 }
 
 type EcrRepositoryTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository.html#delete EcrRepository#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecr_repository#delete EcrRepository#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type EcrRepositoryTimeoutsOutputReference interface {
@@ -5657,12 +7575,17 @@ type EcrRepositoryTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -5723,8 +7646,8 @@ func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5733,7 +7656,7 @@ func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) TerraformResource() cdk
 	return returns
 }
 
-func NewEcrRepositoryTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcrRepositoryTimeoutsOutputReference {
+func NewEcrRepositoryTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcrRepositoryTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcrRepositoryTimeoutsOutputReference{}
@@ -5747,7 +7670,7 @@ func NewEcrRepositoryTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewEcrRepositoryTimeoutsOutputReference_Override(e EcrRepositoryTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcrRepositoryTimeoutsOutputReference_Override(e EcrRepositoryTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5789,7 +7712,7 @@ func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5798,12 +7721,40 @@ func (j *jsiiProxy_EcrRepositoryTimeoutsOutputReference) SetTerraformResource(va
 }
 
 // Experimental.
-func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5840,12 +7791,54 @@ func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5889,7 +7882,7 @@ func (e *jsiiProxy_EcrRepositoryTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html aws_ecrpublic_repository}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository aws_ecrpublic_repository}.
 type EcrpublicRepository interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -5897,8 +7890,8 @@ type EcrpublicRepository interface {
 	CatalogDataInput() *EcrpublicRepositoryCatalogData
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ForceDestroy() interface{}
@@ -5924,10 +7917,15 @@ type EcrpublicRepository interface {
 	Timeouts() EcrpublicRepositoryTimeoutsOutputReference
 	TimeoutsInput() *EcrpublicRepositoryTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCatalogData(value *EcrpublicRepositoryCatalogData)
@@ -5997,8 +7995,8 @@ func (j *jsiiProxy_EcrpublicRepository) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_EcrpublicRepository) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcrpublicRepository) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6197,7 +8195,7 @@ func (j *jsiiProxy_EcrpublicRepository) TimeoutsInput() *EcrpublicRepositoryTime
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html aws_ecrpublic_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository aws_ecrpublic_repository} Resource.
 func NewEcrpublicRepository(scope constructs.Construct, id *string, config *EcrpublicRepositoryConfig) EcrpublicRepository {
 	_init_.Initialize()
 
@@ -6212,7 +8210,7 @@ func NewEcrpublicRepository(scope constructs.Construct, id *string, config *Ecrp
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html aws_ecrpublic_repository} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository aws_ecrpublic_repository} Resource.
 func NewEcrpublicRepository_Override(e EcrpublicRepository, scope constructs.Construct, id *string, config *EcrpublicRepositoryConfig) {
 	_init_.Initialize()
 
@@ -6223,7 +8221,7 @@ func NewEcrpublicRepository_Override(e EcrpublicRepository, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_EcrpublicRepository) SetCount(val interface{}) {
+func (j *jsiiProxy_EcrpublicRepository) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6311,12 +8309,40 @@ func (e *jsiiProxy_EcrpublicRepository) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrpublicRepository) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrpublicRepository) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepository) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6353,12 +8379,54 @@ func (e *jsiiProxy_EcrpublicRepository) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrpublicRepository) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepository) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrpublicRepository) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepository) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6497,18 +8565,18 @@ func (e *jsiiProxy_EcrpublicRepository) ToTerraform() interface{} {
 }
 
 type EcrpublicRepositoryCatalogData struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#about_text EcrpublicRepository#about_text}.
-	AboutText *string `json:"aboutText"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#architectures EcrpublicRepository#architectures}.
-	Architectures *[]*string `json:"architectures"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#description EcrpublicRepository#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#logo_image_blob EcrpublicRepository#logo_image_blob}.
-	LogoImageBlob *string `json:"logoImageBlob"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#operating_systems EcrpublicRepository#operating_systems}.
-	OperatingSystems *[]*string `json:"operatingSystems"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#usage_text EcrpublicRepository#usage_text}.
-	UsageText *string `json:"usageText"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#about_text EcrpublicRepository#about_text}.
+	AboutText *string `json:"aboutText" yaml:"aboutText"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#architectures EcrpublicRepository#architectures}.
+	Architectures *[]*string `json:"architectures" yaml:"architectures"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#description EcrpublicRepository#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#logo_image_blob EcrpublicRepository#logo_image_blob}.
+	LogoImageBlob *string `json:"logoImageBlob" yaml:"logoImageBlob"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#operating_systems EcrpublicRepository#operating_systems}.
+	OperatingSystems *[]*string `json:"operatingSystems" yaml:"operatingSystems"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#usage_text EcrpublicRepository#usage_text}.
+	UsageText *string `json:"usageText" yaml:"usageText"`
 }
 
 type EcrpublicRepositoryCatalogDataOutputReference interface {
@@ -6534,15 +8602,20 @@ type EcrpublicRepositoryCatalogDataOutputReference interface {
 	OperatingSystemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UsageText() *string
 	SetUsageText(val *string)
 	UsageTextInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAboutText()
@@ -6688,8 +8761,8 @@ func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6718,7 +8791,7 @@ func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) UsageTextInput
 	return returns
 }
 
-func NewEcrpublicRepositoryCatalogDataOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcrpublicRepositoryCatalogDataOutputReference {
+func NewEcrpublicRepositoryCatalogDataOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcrpublicRepositoryCatalogDataOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference{}
@@ -6732,7 +8805,7 @@ func NewEcrpublicRepositoryCatalogDataOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewEcrpublicRepositoryCatalogDataOutputReference_Override(e EcrpublicRepositoryCatalogDataOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcrpublicRepositoryCatalogDataOutputReference_Override(e EcrpublicRepositoryCatalogDataOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6806,7 +8879,7 @@ func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6823,12 +8896,40 @@ func (j *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) SetUsageText(v
 }
 
 // Experimental.
-func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6865,12 +8966,54 @@ func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6957,30 +9100,617 @@ func (e *jsiiProxy_EcrpublicRepositoryCatalogDataOutputReference) ResetUsageText
 // AWS EC2 Container Registry.
 type EcrpublicRepositoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#repository_name EcrpublicRepository#repository_name}.
-	RepositoryName *string `json:"repositoryName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#repository_name EcrpublicRepository#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
 	// catalog_data block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#catalog_data EcrpublicRepository#catalog_data}
-	CatalogData *EcrpublicRepositoryCatalogData `json:"catalogData"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#force_destroy EcrpublicRepository#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#catalog_data EcrpublicRepository#catalog_data}
+	CatalogData *EcrpublicRepositoryCatalogData `json:"catalogData" yaml:"catalogData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#force_destroy EcrpublicRepository#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#timeouts EcrpublicRepository#timeouts}
-	Timeouts *EcrpublicRepositoryTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#timeouts EcrpublicRepository#timeouts}
+	Timeouts *EcrpublicRepositoryTimeouts `json:"timeouts" yaml:"timeouts"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository_policy aws_ecrpublic_repository_policy}.
+type EcrpublicRepositoryPolicy interface {
+	cdktf.TerraformResource
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Policy() *string
+	SetPolicy(val *string)
+	PolicyInput() *string
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	RegistryId() *string
+	RepositoryName() *string
+	SetRepositoryName(val *string)
+	RepositoryNameInput() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for EcrpublicRepositoryPolicy
+type jsiiProxy_EcrpublicRepositoryPolicy struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) Policy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) PolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) RegistryId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"registryId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) RepositoryName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"repositoryName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) RepositoryNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"repositoryNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository_policy aws_ecrpublic_repository_policy} Resource.
+func NewEcrpublicRepositoryPolicy(scope constructs.Construct, id *string, config *EcrpublicRepositoryPolicyConfig) EcrpublicRepositoryPolicy {
+	_init_.Initialize()
+
+	j := jsiiProxy_EcrpublicRepositoryPolicy{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ecr.EcrpublicRepositoryPolicy",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository_policy aws_ecrpublic_repository_policy} Resource.
+func NewEcrpublicRepositoryPolicy_Override(e EcrpublicRepositoryPolicy, scope constructs.Construct, id *string, config *EcrpublicRepositoryPolicyConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ecr.EcrpublicRepositoryPolicy",
+		[]interface{}{scope, id, config},
+		e,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) SetPolicy(val *string) {
+	_jsii_.Set(
+		j,
+		"policy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcrpublicRepositoryPolicy) SetRepositoryName(val *string) {
+	_jsii_.Set(
+		j,
+		"repositoryName",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func EcrpublicRepositoryPolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ecr.EcrpublicRepositoryPolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func EcrpublicRepositoryPolicy_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ecr.EcrpublicRepositoryPolicy",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		e,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		e,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryPolicy) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS EC2 Container Registry.
+type EcrpublicRepositoryPolicyConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository_policy#policy EcrpublicRepositoryPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository_policy#repository_name EcrpublicRepositoryPolicy#repository_name}.
+	RepositoryName *string `json:"repositoryName" yaml:"repositoryName"`
 }
 
 type EcrpublicRepositoryTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository.html#delete EcrpublicRepository#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecrpublic_repository#delete EcrpublicRepository#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type EcrpublicRepositoryTimeoutsOutputReference interface {
@@ -6994,12 +9724,17 @@ type EcrpublicRepositoryTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -7060,8 +9795,8 @@ func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7070,7 +9805,7 @@ func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) TerraformResource
 	return returns
 }
 
-func NewEcrpublicRepositoryTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcrpublicRepositoryTimeoutsOutputReference {
+func NewEcrpublicRepositoryTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcrpublicRepositoryTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference{}
@@ -7084,7 +9819,7 @@ func NewEcrpublicRepositoryTimeoutsOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewEcrpublicRepositoryTimeoutsOutputReference_Override(e EcrpublicRepositoryTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcrpublicRepositoryTimeoutsOutputReference_Override(e EcrpublicRepositoryTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7126,7 +9861,7 @@ func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7135,12 +9870,40 @@ func (j *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7177,12 +9940,54 @@ func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcrpublicRepositoryTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

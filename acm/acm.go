@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/acm/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html aws_acm_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate aws_acm_certificate}.
 type AcmCertificate interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -24,8 +24,8 @@ type AcmCertificate interface {
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -49,12 +49,12 @@ type AcmCertificate interface {
 	SubjectAlternativeNames() *[]*string
 	SetSubjectAlternativeNames(val *[]*string)
 	SubjectAlternativeNamesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -64,10 +64,15 @@ type AcmCertificate interface {
 	ValidationMethodInput() *string
 	AddOverride(path *string, value interface{})
 	DomainValidationOptions(index *string) AcmCertificateDomainValidationOptions
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutOptions(value *AcmCertificateOptions)
@@ -183,8 +188,8 @@ func (j *jsiiProxy_AcmCertificate) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -363,8 +368,8 @@ func (j *jsiiProxy_AcmCertificate) SubjectAlternativeNamesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificate) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmCertificate) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -373,8 +378,8 @@ func (j *jsiiProxy_AcmCertificate) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificate) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmCertificate) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -383,8 +388,8 @@ func (j *jsiiProxy_AcmCertificate) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificate) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmCertificate) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -393,8 +398,8 @@ func (j *jsiiProxy_AcmCertificate) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificate) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmCertificate) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -463,7 +468,7 @@ func (j *jsiiProxy_AcmCertificate) ValidationMethodInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html aws_acm_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate aws_acm_certificate} Resource.
 func NewAcmCertificate(scope constructs.Construct, id *string, config *AcmCertificateConfig) AcmCertificate {
 	_init_.Initialize()
 
@@ -478,7 +483,7 @@ func NewAcmCertificate(scope constructs.Construct, id *string, config *AcmCertif
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html aws_acm_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate aws_acm_certificate} Resource.
 func NewAcmCertificate_Override(a AcmCertificate, scope constructs.Construct, id *string, config *AcmCertificateConfig) {
 	_init_.Initialize()
 
@@ -513,7 +518,7 @@ func (j *jsiiProxy_AcmCertificate) SetCertificateChain(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AcmCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_AcmCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -569,7 +574,7 @@ func (j *jsiiProxy_AcmCertificate) SetSubjectAlternativeNames(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_AcmCertificate) SetTags(val interface{}) {
+func (j *jsiiProxy_AcmCertificate) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -577,7 +582,7 @@ func (j *jsiiProxy_AcmCertificate) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AcmCertificate) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AcmCertificate) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -646,12 +651,40 @@ func (a *jsiiProxy_AcmCertificate) DomainValidationOptions(index *string) AcmCer
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -688,12 +721,54 @@ func (a *jsiiProxy_AcmCertificate) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -882,35 +957,35 @@ func (a *jsiiProxy_AcmCertificate) ToTerraform() interface{} {
 // Amazon Certificate Manager.
 type AcmCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#certificate_authority_arn AcmCertificate#certificate_authority_arn}.
-	CertificateAuthorityArn *string `json:"certificateAuthorityArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#certificate_body AcmCertificate#certificate_body}.
-	CertificateBody *string `json:"certificateBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#certificate_chain AcmCertificate#certificate_chain}.
-	CertificateChain *string `json:"certificateChain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#domain_name AcmCertificate#domain_name}.
-	DomainName *string `json:"domainName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#certificate_authority_arn AcmCertificate#certificate_authority_arn}.
+	CertificateAuthorityArn *string `json:"certificateAuthorityArn" yaml:"certificateAuthorityArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#certificate_body AcmCertificate#certificate_body}.
+	CertificateBody *string `json:"certificateBody" yaml:"certificateBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#certificate_chain AcmCertificate#certificate_chain}.
+	CertificateChain *string `json:"certificateChain" yaml:"certificateChain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#domain_name AcmCertificate#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
 	// options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#options AcmCertificate#options}
-	Options *AcmCertificateOptions `json:"options"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#private_key AcmCertificate#private_key}.
-	PrivateKey *string `json:"privateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#subject_alternative_names AcmCertificate#subject_alternative_names}.
-	SubjectAlternativeNames *[]*string `json:"subjectAlternativeNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#tags AcmCertificate#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#tags_all AcmCertificate#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#validation_method AcmCertificate#validation_method}.
-	ValidationMethod *string `json:"validationMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#options AcmCertificate#options}
+	Options *AcmCertificateOptions `json:"options" yaml:"options"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#private_key AcmCertificate#private_key}.
+	PrivateKey *string `json:"privateKey" yaml:"privateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#subject_alternative_names AcmCertificate#subject_alternative_names}.
+	SubjectAlternativeNames *[]*string `json:"subjectAlternativeNames" yaml:"subjectAlternativeNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#tags AcmCertificate#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#tags_all AcmCertificate#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#validation_method AcmCertificate#validation_method}.
+	ValidationMethod *string `json:"validationMethod" yaml:"validationMethod"`
 }
 
 type AcmCertificateDomainValidationOptions interface {
@@ -923,12 +998,19 @@ type AcmCertificateDomainValidationOptions interface {
 	ResourceRecordValue() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -997,8 +1079,8 @@ func (j *jsiiProxy_AcmCertificateDomainValidationOptions) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificateDomainValidationOptions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmCertificateDomainValidationOptions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1007,15 +1089,25 @@ func (j *jsiiProxy_AcmCertificateDomainValidationOptions) TerraformResource() cd
 	return returns
 }
 
+func (j *jsiiProxy_AcmCertificateDomainValidationOptions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewAcmCertificateDomainValidationOptions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) AcmCertificateDomainValidationOptions {
+func NewAcmCertificateDomainValidationOptions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) AcmCertificateDomainValidationOptions {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmCertificateDomainValidationOptions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.acm.AcmCertificateDomainValidationOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1023,12 +1115,12 @@ func NewAcmCertificateDomainValidationOptions(terraformResource cdktf.ITerraform
 }
 
 // Experimental.
-func NewAcmCertificateDomainValidationOptions_Override(a AcmCertificateDomainValidationOptions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewAcmCertificateDomainValidationOptions_Override(a AcmCertificateDomainValidationOptions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.acm.AcmCertificateDomainValidationOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		a,
 	)
 }
@@ -1049,7 +1141,7 @@ func (j *jsiiProxy_AcmCertificateDomainValidationOptions) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_AcmCertificateDomainValidationOptions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmCertificateDomainValidationOptions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1057,13 +1149,49 @@ func (j *jsiiProxy_AcmCertificateDomainValidationOptions) SetTerraformResource(v
 	)
 }
 
+func (j *jsiiProxy_AcmCertificateDomainValidationOptions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1100,12 +1228,54 @@ func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateDomainValidationOptions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1128,8 +1298,8 @@ func (a *jsiiProxy_AcmCertificateDomainValidationOptions) InterpolationForAttrib
 }
 
 type AcmCertificateOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate.html#certificate_transparency_logging_preference AcmCertificate#certificate_transparency_logging_preference}.
-	CertificateTransparencyLoggingPreference *string `json:"certificateTransparencyLoggingPreference"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate#certificate_transparency_logging_preference AcmCertificate#certificate_transparency_logging_preference}.
+	CertificateTransparencyLoggingPreference *string `json:"certificateTransparencyLoggingPreference" yaml:"certificateTransparencyLoggingPreference"`
 }
 
 type AcmCertificateOptionsOutputReference interface {
@@ -1143,12 +1313,17 @@ type AcmCertificateOptionsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCertificateTransparencyLoggingPreference()
@@ -1209,8 +1384,8 @@ func (j *jsiiProxy_AcmCertificateOptionsOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificateOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmCertificateOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1219,7 +1394,7 @@ func (j *jsiiProxy_AcmCertificateOptionsOutputReference) TerraformResource() cdk
 	return returns
 }
 
-func NewAcmCertificateOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmCertificateOptionsOutputReference {
+func NewAcmCertificateOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmCertificateOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmCertificateOptionsOutputReference{}
@@ -1233,7 +1408,7 @@ func NewAcmCertificateOptionsOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewAcmCertificateOptionsOutputReference_Override(a AcmCertificateOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmCertificateOptionsOutputReference_Override(a AcmCertificateOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1275,7 +1450,7 @@ func (j *jsiiProxy_AcmCertificateOptionsOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_AcmCertificateOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmCertificateOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1284,12 +1459,40 @@ func (j *jsiiProxy_AcmCertificateOptionsOutputReference) SetTerraformResource(va
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1326,12 +1529,54 @@ func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1375,7 +1620,7 @@ func (a *jsiiProxy_AcmCertificateOptionsOutputReference) ResetCertificateTranspa
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html aws_acm_certificate_validation}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation aws_acm_certificate_validation}.
 type AcmCertificateValidation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -1383,8 +1628,8 @@ type AcmCertificateValidation interface {
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1405,10 +1650,15 @@ type AcmCertificateValidation interface {
 	SetValidationRecordFqdns(val *[]*string)
 	ValidationRecordFqdnsInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *AcmCertificateValidationTimeouts)
@@ -1466,8 +1716,8 @@ func (j *jsiiProxy_AcmCertificateValidation) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificateValidation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmCertificateValidation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1626,7 +1876,7 @@ func (j *jsiiProxy_AcmCertificateValidation) ValidationRecordFqdnsInput() *[]*st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html aws_acm_certificate_validation} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation aws_acm_certificate_validation} Resource.
 func NewAcmCertificateValidation(scope constructs.Construct, id *string, config *AcmCertificateValidationConfig) AcmCertificateValidation {
 	_init_.Initialize()
 
@@ -1641,7 +1891,7 @@ func NewAcmCertificateValidation(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html aws_acm_certificate_validation} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation aws_acm_certificate_validation} Resource.
 func NewAcmCertificateValidation_Override(a AcmCertificateValidation, scope constructs.Construct, id *string, config *AcmCertificateValidationConfig) {
 	_init_.Initialize()
 
@@ -1660,7 +1910,7 @@ func (j *jsiiProxy_AcmCertificateValidation) SetCertificateArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AcmCertificateValidation) SetCount(val interface{}) {
+func (j *jsiiProxy_AcmCertificateValidation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1740,12 +1990,40 @@ func (a *jsiiProxy_AcmCertificateValidation) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmCertificateValidation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmCertificateValidation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateValidation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1782,12 +2060,54 @@ func (a *jsiiProxy_AcmCertificateValidation) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmCertificateValidation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateValidation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmCertificateValidation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateValidation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1912,26 +2232,26 @@ func (a *jsiiProxy_AcmCertificateValidation) ToTerraform() interface{} {
 // Amazon Certificate Manager.
 type AcmCertificateValidationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html#certificate_arn AcmCertificateValidation#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation#certificate_arn AcmCertificateValidation#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html#timeouts AcmCertificateValidation#timeouts}
-	Timeouts *AcmCertificateValidationTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html#validation_record_fqdns AcmCertificateValidation#validation_record_fqdns}.
-	ValidationRecordFqdns *[]*string `json:"validationRecordFqdns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation#timeouts AcmCertificateValidation#timeouts}
+	Timeouts *AcmCertificateValidationTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation#validation_record_fqdns AcmCertificateValidation#validation_record_fqdns}.
+	ValidationRecordFqdns *[]*string `json:"validationRecordFqdns" yaml:"validationRecordFqdns"`
 }
 
 type AcmCertificateValidationTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation.html#create AcmCertificateValidation#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acm_certificate_validation#create AcmCertificateValidation#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type AcmCertificateValidationTimeoutsOutputReference interface {
@@ -1945,12 +2265,17 @@ type AcmCertificateValidationTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2011,8 +2336,8 @@ func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2021,7 +2346,7 @@ func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) TerraformRes
 	return returns
 }
 
-func NewAcmCertificateValidationTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmCertificateValidationTimeoutsOutputReference {
+func NewAcmCertificateValidationTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmCertificateValidationTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmCertificateValidationTimeoutsOutputReference{}
@@ -2035,7 +2360,7 @@ func NewAcmCertificateValidationTimeoutsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewAcmCertificateValidationTimeoutsOutputReference_Override(a AcmCertificateValidationTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmCertificateValidationTimeoutsOutputReference_Override(a AcmCertificateValidationTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2077,7 +2402,7 @@ func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2086,12 +2411,40 @@ func (j *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2128,12 +2481,54 @@ func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2177,7 +2572,7 @@ func (a *jsiiProxy_AcmCertificateValidationTimeoutsOutputReference) ResetCreate(
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html aws_acmpca_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate aws_acmpca_certificate}.
 type AcmpcaCertificate interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2191,8 +2586,8 @@ type AcmpcaCertificate interface {
 	SetCertificateSigningRequest(val *string)
 	CertificateSigningRequestInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2216,10 +2611,15 @@ type AcmpcaCertificate interface {
 	Validity() AcmpcaCertificateValidityOutputReference
 	ValidityInput() *AcmpcaCertificateValidity
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutValidity(value *AcmpcaCertificateValidity)
@@ -2326,8 +2726,8 @@ func (j *jsiiProxy_AcmpcaCertificate) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmpcaCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2506,7 +2906,7 @@ func (j *jsiiProxy_AcmpcaCertificate) ValidityInput() *AcmpcaCertificateValidity
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html aws_acmpca_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate aws_acmpca_certificate} Resource.
 func NewAcmpcaCertificate(scope constructs.Construct, id *string, config *AcmpcaCertificateConfig) AcmpcaCertificate {
 	_init_.Initialize()
 
@@ -2521,7 +2921,7 @@ func NewAcmpcaCertificate(scope constructs.Construct, id *string, config *Acmpca
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html aws_acmpca_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate aws_acmpca_certificate} Resource.
 func NewAcmpcaCertificate_Override(a AcmpcaCertificate, scope constructs.Construct, id *string, config *AcmpcaCertificateConfig) {
 	_init_.Initialize()
 
@@ -2548,7 +2948,7 @@ func (j *jsiiProxy_AcmpcaCertificate) SetCertificateSigningRequest(val *string) 
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_AcmpcaCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2636,12 +3036,40 @@ func (a *jsiiProxy_AcmpcaCertificate) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2678,12 +3106,54 @@ func (a *jsiiProxy_AcmpcaCertificate) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2797,7 +3267,7 @@ func (a *jsiiProxy_AcmpcaCertificate) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html aws_acmpca_certificate_authority}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority aws_acmpca_certificate_authority}.
 type AcmpcaCertificateAuthority interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2808,8 +3278,8 @@ type AcmpcaCertificateAuthority interface {
 	CertificateChain() *string
 	CertificateSigningRequest() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -2833,12 +3303,12 @@ type AcmpcaCertificateAuthority interface {
 	RevocationConfigurationInput() *AcmpcaCertificateAuthorityRevocationConfiguration
 	Serial() *string
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2848,10 +3318,15 @@ type AcmpcaCertificateAuthority interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCertificateAuthorityConfiguration(value *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration)
@@ -2956,8 +3431,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmpcaCertificateAuthority) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3146,8 +3621,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmpcaCertificateAuthority) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3156,8 +3631,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3166,8 +3641,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3176,8 +3651,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmpcaCertificateAuthority) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3256,7 +3731,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html aws_acmpca_certificate_authority} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority aws_acmpca_certificate_authority} Resource.
 func NewAcmpcaCertificateAuthority(scope constructs.Construct, id *string, config *AcmpcaCertificateAuthorityConfig) AcmpcaCertificateAuthority {
 	_init_.Initialize()
 
@@ -3271,7 +3746,7 @@ func NewAcmpcaCertificateAuthority(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html aws_acmpca_certificate_authority} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority aws_acmpca_certificate_authority} Resource.
 func NewAcmpcaCertificateAuthority_Override(a AcmpcaCertificateAuthority, scope constructs.Construct, id *string, config *AcmpcaCertificateAuthorityConfig) {
 	_init_.Initialize()
 
@@ -3282,7 +3757,7 @@ func NewAcmpcaCertificateAuthority_Override(a AcmpcaCertificateAuthority, scope 
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) SetCount(val interface{}) {
+func (j *jsiiProxy_AcmpcaCertificateAuthority) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3330,7 +3805,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) SetProvider(val cdktf.TerraformPr
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) SetTags(val interface{}) {
+func (j *jsiiProxy_AcmpcaCertificateAuthority) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3338,7 +3813,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthority) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthority) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AcmpcaCertificateAuthority) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3394,12 +3869,40 @@ func (a *jsiiProxy_AcmpcaCertificateAuthority) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthority) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthority) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthority) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3436,12 +3939,54 @@ func (a *jsiiProxy_AcmpcaCertificateAuthority) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthority) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthority) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthority) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthority) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3619,7 +4164,7 @@ func (a *jsiiProxy_AcmpcaCertificateAuthority) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate.html aws_acmpca_certificate_authority_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate aws_acmpca_certificate_authority_certificate}.
 type AcmpcaCertificateAuthorityCertificate interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -3633,8 +4178,8 @@ type AcmpcaCertificateAuthorityCertificate interface {
 	CertificateChainInput() *string
 	CertificateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3650,10 +4195,15 @@ type AcmpcaCertificateAuthorityCertificate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCertificateChain()
@@ -3749,8 +4299,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3869,7 +4419,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate.html aws_acmpca_certificate_authority_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate aws_acmpca_certificate_authority_certificate} Resource.
 func NewAcmpcaCertificateAuthorityCertificate(scope constructs.Construct, id *string, config *AcmpcaCertificateAuthorityCertificateConfig) AcmpcaCertificateAuthorityCertificate {
 	_init_.Initialize()
 
@@ -3884,7 +4434,7 @@ func NewAcmpcaCertificateAuthorityCertificate(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate.html aws_acmpca_certificate_authority_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate aws_acmpca_certificate_authority_certificate} Resource.
 func NewAcmpcaCertificateAuthorityCertificate_Override(a AcmpcaCertificateAuthorityCertificate, scope constructs.Construct, id *string, config *AcmpcaCertificateAuthorityCertificateConfig) {
 	_init_.Initialize()
 
@@ -3919,7 +4469,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) SetCertificateChain(va
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3991,12 +4541,40 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) AddOverride(path *stri
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4033,12 +4611,54 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4145,14 +4765,14 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificate) ToTerraform() interfac
 }
 
 type AcmpcaCertificateAuthorityCertificateAuthorityConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#key_algorithm AcmpcaCertificateAuthority#key_algorithm}.
-	KeyAlgorithm *string `json:"keyAlgorithm"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#signing_algorithm AcmpcaCertificateAuthority#signing_algorithm}.
-	SigningAlgorithm *string `json:"signingAlgorithm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#key_algorithm AcmpcaCertificateAuthority#key_algorithm}.
+	KeyAlgorithm *string `json:"keyAlgorithm" yaml:"keyAlgorithm"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#signing_algorithm AcmpcaCertificateAuthority#signing_algorithm}.
+	SigningAlgorithm *string `json:"signingAlgorithm" yaml:"signingAlgorithm"`
 	// subject block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#subject AcmpcaCertificateAuthority#subject}
-	Subject *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject `json:"subject"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#subject AcmpcaCertificateAuthority#subject}
+	Subject *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject `json:"subject" yaml:"subject"`
 }
 
 type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference interface {
@@ -4171,12 +4791,17 @@ type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference 
 	SubjectInput() *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutSubject(value *AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject)
@@ -4277,8 +4902,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOu
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4287,7 +4912,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOu
 	return returns
 }
 
-func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference {
+func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference{}
@@ -4301,7 +4926,7 @@ func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReferen
 	return &j
 }
 
-func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference_Override(a AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference_Override(a AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4351,7 +4976,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOu
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4360,12 +4985,40 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOu
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4402,12 +5055,54 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOu
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4452,32 +5147,32 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationOu
 }
 
 type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubject struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#common_name AcmpcaCertificateAuthority#common_name}.
-	CommonName *string `json:"commonName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#country AcmpcaCertificateAuthority#country}.
-	Country *string `json:"country"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#distinguished_name_qualifier AcmpcaCertificateAuthority#distinguished_name_qualifier}.
-	DistinguishedNameQualifier *string `json:"distinguishedNameQualifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#generation_qualifier AcmpcaCertificateAuthority#generation_qualifier}.
-	GenerationQualifier *string `json:"generationQualifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#given_name AcmpcaCertificateAuthority#given_name}.
-	GivenName *string `json:"givenName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#initials AcmpcaCertificateAuthority#initials}.
-	Initials *string `json:"initials"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#locality AcmpcaCertificateAuthority#locality}.
-	Locality *string `json:"locality"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#organization AcmpcaCertificateAuthority#organization}.
-	Organization *string `json:"organization"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#organizational_unit AcmpcaCertificateAuthority#organizational_unit}.
-	OrganizationalUnit *string `json:"organizationalUnit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#pseudonym AcmpcaCertificateAuthority#pseudonym}.
-	Pseudonym *string `json:"pseudonym"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#state AcmpcaCertificateAuthority#state}.
-	State *string `json:"state"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#surname AcmpcaCertificateAuthority#surname}.
-	Surname *string `json:"surname"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#title AcmpcaCertificateAuthority#title}.
-	Title *string `json:"title"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#common_name AcmpcaCertificateAuthority#common_name}.
+	CommonName *string `json:"commonName" yaml:"commonName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#country AcmpcaCertificateAuthority#country}.
+	Country *string `json:"country" yaml:"country"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#distinguished_name_qualifier AcmpcaCertificateAuthority#distinguished_name_qualifier}.
+	DistinguishedNameQualifier *string `json:"distinguishedNameQualifier" yaml:"distinguishedNameQualifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#generation_qualifier AcmpcaCertificateAuthority#generation_qualifier}.
+	GenerationQualifier *string `json:"generationQualifier" yaml:"generationQualifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#given_name AcmpcaCertificateAuthority#given_name}.
+	GivenName *string `json:"givenName" yaml:"givenName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#initials AcmpcaCertificateAuthority#initials}.
+	Initials *string `json:"initials" yaml:"initials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#locality AcmpcaCertificateAuthority#locality}.
+	Locality *string `json:"locality" yaml:"locality"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#organization AcmpcaCertificateAuthority#organization}.
+	Organization *string `json:"organization" yaml:"organization"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#organizational_unit AcmpcaCertificateAuthority#organizational_unit}.
+	OrganizationalUnit *string `json:"organizationalUnit" yaml:"organizationalUnit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#pseudonym AcmpcaCertificateAuthority#pseudonym}.
+	Pseudonym *string `json:"pseudonym" yaml:"pseudonym"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#state AcmpcaCertificateAuthority#state}.
+	State *string `json:"state" yaml:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#surname AcmpcaCertificateAuthority#surname}.
+	Surname *string `json:"surname" yaml:"surname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#title AcmpcaCertificateAuthority#title}.
+	Title *string `json:"title" yaml:"title"`
 }
 
 type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference interface {
@@ -4524,15 +5219,20 @@ type AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputRef
 	SurnameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Title() *string
 	SetTitle(val *string)
 	TitleInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCommonName()
@@ -4825,8 +5525,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4855,7 +5555,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 	return returns
 }
 
-func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference {
+func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference{}
@@ -4869,7 +5569,7 @@ func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutput
 	return &j
 }
 
-func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference_Override(a AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference_Override(a AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4999,7 +5699,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5016,12 +5716,40 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5058,12 +5786,54 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSubjectOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5206,73 +5976,73 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityCertificateAuthorityConfigurationSu
 // Amazon Certificate Manager.
 type AcmpcaCertificateAuthorityCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate.html#certificate AcmpcaCertificateAuthorityCertificate#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate.html#certificate_authority_arn AcmpcaCertificateAuthorityCertificate#certificate_authority_arn}.
-	CertificateAuthorityArn *string `json:"certificateAuthorityArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate.html#certificate_chain AcmpcaCertificateAuthorityCertificate#certificate_chain}.
-	CertificateChain *string `json:"certificateChain"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate#certificate AcmpcaCertificateAuthorityCertificate#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate#certificate_authority_arn AcmpcaCertificateAuthorityCertificate#certificate_authority_arn}.
+	CertificateAuthorityArn *string `json:"certificateAuthorityArn" yaml:"certificateAuthorityArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority_certificate#certificate_chain AcmpcaCertificateAuthorityCertificate#certificate_chain}.
+	CertificateChain *string `json:"certificateChain" yaml:"certificateChain"`
 }
 
 // Amazon Certificate Manager.
 type AcmpcaCertificateAuthorityConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// certificate_authority_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#certificate_authority_configuration AcmpcaCertificateAuthority#certificate_authority_configuration}
-	CertificateAuthorityConfiguration *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration `json:"certificateAuthorityConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#enabled AcmpcaCertificateAuthority#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#permanent_deletion_time_in_days AcmpcaCertificateAuthority#permanent_deletion_time_in_days}.
-	PermanentDeletionTimeInDays *float64 `json:"permanentDeletionTimeInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#certificate_authority_configuration AcmpcaCertificateAuthority#certificate_authority_configuration}
+	CertificateAuthorityConfiguration *AcmpcaCertificateAuthorityCertificateAuthorityConfiguration `json:"certificateAuthorityConfiguration" yaml:"certificateAuthorityConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#enabled AcmpcaCertificateAuthority#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#permanent_deletion_time_in_days AcmpcaCertificateAuthority#permanent_deletion_time_in_days}.
+	PermanentDeletionTimeInDays *float64 `json:"permanentDeletionTimeInDays" yaml:"permanentDeletionTimeInDays"`
 	// revocation_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#revocation_configuration AcmpcaCertificateAuthority#revocation_configuration}
-	RevocationConfiguration *AcmpcaCertificateAuthorityRevocationConfiguration `json:"revocationConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#tags AcmpcaCertificateAuthority#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#tags_all AcmpcaCertificateAuthority#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#revocation_configuration AcmpcaCertificateAuthority#revocation_configuration}
+	RevocationConfiguration *AcmpcaCertificateAuthorityRevocationConfiguration `json:"revocationConfiguration" yaml:"revocationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#tags AcmpcaCertificateAuthority#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#tags_all AcmpcaCertificateAuthority#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#timeouts AcmpcaCertificateAuthority#timeouts}
-	Timeouts *AcmpcaCertificateAuthorityTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#type AcmpcaCertificateAuthority#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#timeouts AcmpcaCertificateAuthority#timeouts}
+	Timeouts *AcmpcaCertificateAuthorityTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#type AcmpcaCertificateAuthority#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type AcmpcaCertificateAuthorityRevocationConfiguration struct {
 	// crl_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#crl_configuration AcmpcaCertificateAuthority#crl_configuration}
-	CrlConfiguration *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration `json:"crlConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#crl_configuration AcmpcaCertificateAuthority#crl_configuration}
+	CrlConfiguration *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration `json:"crlConfiguration" yaml:"crlConfiguration"`
 }
 
 type AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#expiration_in_days AcmpcaCertificateAuthority#expiration_in_days}.
-	ExpirationInDays *float64 `json:"expirationInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#custom_cname AcmpcaCertificateAuthority#custom_cname}.
-	CustomCname *string `json:"customCname"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#enabled AcmpcaCertificateAuthority#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#s3_bucket_name AcmpcaCertificateAuthority#s3_bucket_name}.
-	S3BucketName *string `json:"s3BucketName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#s3_object_acl AcmpcaCertificateAuthority#s3_object_acl}.
-	S3ObjectAcl *string `json:"s3ObjectAcl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#expiration_in_days AcmpcaCertificateAuthority#expiration_in_days}.
+	ExpirationInDays *float64 `json:"expirationInDays" yaml:"expirationInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#custom_cname AcmpcaCertificateAuthority#custom_cname}.
+	CustomCname *string `json:"customCname" yaml:"customCname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#enabled AcmpcaCertificateAuthority#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#s3_bucket_name AcmpcaCertificateAuthority#s3_bucket_name}.
+	S3BucketName *string `json:"s3BucketName" yaml:"s3BucketName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#s3_object_acl AcmpcaCertificateAuthority#s3_object_acl}.
+	S3ObjectAcl *string `json:"s3ObjectAcl" yaml:"s3ObjectAcl"`
 }
 
 type AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference interface {
@@ -5298,12 +6068,17 @@ type AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputRefe
 	S3ObjectAclInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCustomCname()
@@ -5447,8 +6222,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5457,7 +6232,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 	return returns
 }
 
-func NewAcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference {
+func NewAcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference{}
@@ -5471,7 +6246,7 @@ func NewAcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputR
 	return &j
 }
 
-func NewAcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference_Override(a AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference_Override(a AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5545,7 +6320,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5554,12 +6329,40 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5596,12 +6399,54 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigura
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationCrlConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5679,12 +6524,17 @@ type AcmpcaCertificateAuthorityRevocationConfigurationOutputReference interface 
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCrlConfiguration(value *AcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration)
@@ -5746,8 +6596,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5756,7 +6606,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 	return returns
 }
 
-func NewAcmpcaCertificateAuthorityRevocationConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityRevocationConfigurationOutputReference {
+func NewAcmpcaCertificateAuthorityRevocationConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityRevocationConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference{}
@@ -5770,7 +6620,7 @@ func NewAcmpcaCertificateAuthorityRevocationConfigurationOutputReference(terrafo
 	return &j
 }
 
-func NewAcmpcaCertificateAuthorityRevocationConfigurationOutputReference_Override(a AcmpcaCertificateAuthorityRevocationConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmpcaCertificateAuthorityRevocationConfigurationOutputReference_Override(a AcmpcaCertificateAuthorityRevocationConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5804,7 +6654,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5813,12 +6663,40 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5855,12 +6733,54 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5913,8 +6833,8 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityRevocationConfigurationOutputRefere
 }
 
 type AcmpcaCertificateAuthorityTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority.html#create AcmpcaCertificateAuthority#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate_authority#create AcmpcaCertificateAuthority#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type AcmpcaCertificateAuthorityTimeoutsOutputReference interface {
@@ -5928,12 +6848,17 @@ type AcmpcaCertificateAuthorityTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -5994,8 +6919,8 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6004,7 +6929,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) TerraformR
 	return returns
 }
 
-func NewAcmpcaCertificateAuthorityTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityTimeoutsOutputReference {
+func NewAcmpcaCertificateAuthorityTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateAuthorityTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference{}
@@ -6018,7 +6943,7 @@ func NewAcmpcaCertificateAuthorityTimeoutsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewAcmpcaCertificateAuthorityTimeoutsOutputReference_Override(a AcmpcaCertificateAuthorityTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmpcaCertificateAuthorityTimeoutsOutputReference_Override(a AcmpcaCertificateAuthorityTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6060,7 +6985,7 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6069,12 +6994,40 @@ func (j *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6111,12 +7064,54 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6163,32 +7158,32 @@ func (a *jsiiProxy_AcmpcaCertificateAuthorityTimeoutsOutputReference) ResetCreat
 // Amazon Certificate Manager.
 type AcmpcaCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html#certificate_authority_arn AcmpcaCertificate#certificate_authority_arn}.
-	CertificateAuthorityArn *string `json:"certificateAuthorityArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html#certificate_signing_request AcmpcaCertificate#certificate_signing_request}.
-	CertificateSigningRequest *string `json:"certificateSigningRequest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html#signing_algorithm AcmpcaCertificate#signing_algorithm}.
-	SigningAlgorithm *string `json:"signingAlgorithm"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate#certificate_authority_arn AcmpcaCertificate#certificate_authority_arn}.
+	CertificateAuthorityArn *string `json:"certificateAuthorityArn" yaml:"certificateAuthorityArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate#certificate_signing_request AcmpcaCertificate#certificate_signing_request}.
+	CertificateSigningRequest *string `json:"certificateSigningRequest" yaml:"certificateSigningRequest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate#signing_algorithm AcmpcaCertificate#signing_algorithm}.
+	SigningAlgorithm *string `json:"signingAlgorithm" yaml:"signingAlgorithm"`
 	// validity block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html#validity AcmpcaCertificate#validity}
-	Validity *AcmpcaCertificateValidity `json:"validity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html#template_arn AcmpcaCertificate#template_arn}.
-	TemplateArn *string `json:"templateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate#validity AcmpcaCertificate#validity}
+	Validity *AcmpcaCertificateValidity `json:"validity" yaml:"validity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate#template_arn AcmpcaCertificate#template_arn}.
+	TemplateArn *string `json:"templateArn" yaml:"templateArn"`
 }
 
 type AcmpcaCertificateValidity struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html#type AcmpcaCertificate#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate.html#value AcmpcaCertificate#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate#type AcmpcaCertificate#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/acmpca_certificate#value AcmpcaCertificate#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type AcmpcaCertificateValidityOutputReference interface {
@@ -6199,18 +7194,23 @@ type AcmpcaCertificateValidityOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -6250,8 +7250,8 @@ func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6300,7 +7300,7 @@ func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) ValueInput() *strin
 	return returns
 }
 
-func NewAcmpcaCertificateValidityOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateValidityOutputReference {
+func NewAcmpcaCertificateValidityOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AcmpcaCertificateValidityOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AcmpcaCertificateValidityOutputReference{}
@@ -6314,7 +7314,7 @@ func NewAcmpcaCertificateValidityOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewAcmpcaCertificateValidityOutputReference_Override(a AcmpcaCertificateValidityOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAcmpcaCertificateValidityOutputReference_Override(a AcmpcaCertificateValidityOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6348,7 +7348,7 @@ func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6373,12 +7373,40 @@ func (j *jsiiProxy_AcmpcaCertificateValidityOutputReference) SetValue(val *strin
 }
 
 // Experimental.
-func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6415,12 +7443,54 @@ func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6456,14 +7526,14 @@ func (a *jsiiProxy_AcmpcaCertificateValidityOutputReference) InterpolationForAtt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html aws_acm_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate aws_acm_certificate}.
 type DataAwsAcmCertificate interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -6488,9 +7558,9 @@ type DataAwsAcmCertificate interface {
 	Statuses() *[]*string
 	SetStatuses(val *[]*string)
 	StatusesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -6498,10 +7568,15 @@ type DataAwsAcmCertificate interface {
 	SetTypes(val *[]*string)
 	TypesInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKeyTypes()
@@ -6551,8 +7626,8 @@ func (j *jsiiProxy_DataAwsAcmCertificate) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAcmCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6731,8 +7806,8 @@ func (j *jsiiProxy_DataAwsAcmCertificate) StatusesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmCertificate) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAcmCertificate) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6741,8 +7816,8 @@ func (j *jsiiProxy_DataAwsAcmCertificate) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmCertificate) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAcmCertificate) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6801,7 +7876,7 @@ func (j *jsiiProxy_DataAwsAcmCertificate) TypesInput() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html aws_acm_certificate} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate aws_acm_certificate} Data Source.
 func NewDataAwsAcmCertificate(scope constructs.Construct, id *string, config *DataAwsAcmCertificateConfig) DataAwsAcmCertificate {
 	_init_.Initialize()
 
@@ -6816,7 +7891,7 @@ func NewDataAwsAcmCertificate(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html aws_acm_certificate} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate aws_acm_certificate} Data Source.
 func NewDataAwsAcmCertificate_Override(d DataAwsAcmCertificate, scope constructs.Construct, id *string, config *DataAwsAcmCertificateConfig) {
 	_init_.Initialize()
 
@@ -6827,7 +7902,7 @@ func NewDataAwsAcmCertificate_Override(d DataAwsAcmCertificate, scope constructs
 	)
 }
 
-func (j *jsiiProxy_DataAwsAcmCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAcmCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6891,7 +7966,7 @@ func (j *jsiiProxy_DataAwsAcmCertificate) SetStatuses(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAcmCertificate) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsAcmCertificate) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6947,12 +8022,40 @@ func (d *jsiiProxy_DataAwsAcmCertificate) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAcmCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAcmCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6989,12 +8092,54 @@ func (d *jsiiProxy_DataAwsAcmCertificate) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAcmCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAcmCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7135,28 +8280,28 @@ func (d *jsiiProxy_DataAwsAcmCertificate) ToTerraform() interface{} {
 // Amazon Certificate Manager.
 type DataAwsAcmCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html#domain DataAwsAcmCertificate#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html#key_types DataAwsAcmCertificate#key_types}.
-	KeyTypes *[]*string `json:"keyTypes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html#most_recent DataAwsAcmCertificate#most_recent}.
-	MostRecent interface{} `json:"mostRecent"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html#statuses DataAwsAcmCertificate#statuses}.
-	Statuses *[]*string `json:"statuses"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html#tags DataAwsAcmCertificate#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate.html#types DataAwsAcmCertificate#types}.
-	Types *[]*string `json:"types"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate#domain DataAwsAcmCertificate#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate#key_types DataAwsAcmCertificate#key_types}.
+	KeyTypes *[]*string `json:"keyTypes" yaml:"keyTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate#most_recent DataAwsAcmCertificate#most_recent}.
+	MostRecent interface{} `json:"mostRecent" yaml:"mostRecent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate#statuses DataAwsAcmCertificate#statuses}.
+	Statuses *[]*string `json:"statuses" yaml:"statuses"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate#tags DataAwsAcmCertificate#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acm_certificate#types DataAwsAcmCertificate#types}.
+	Types *[]*string `json:"types" yaml:"types"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate.html aws_acmpca_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate aws_acmpca_certificate}.
 type DataAwsAcmpcaCertificate interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -7169,8 +8314,8 @@ type DataAwsAcmpcaCertificate interface {
 	CertificateAuthorityArnInput() *string
 	CertificateChain() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7186,10 +8331,15 @@ type DataAwsAcmpcaCertificate interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7284,8 +8434,8 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificate) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAcmpcaCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7404,7 +8554,7 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificate) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate.html aws_acmpca_certificate} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate aws_acmpca_certificate} Data Source.
 func NewDataAwsAcmpcaCertificate(scope constructs.Construct, id *string, config *DataAwsAcmpcaCertificateConfig) DataAwsAcmpcaCertificate {
 	_init_.Initialize()
 
@@ -7419,7 +8569,7 @@ func NewDataAwsAcmpcaCertificate(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate.html aws_acmpca_certificate} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate aws_acmpca_certificate} Data Source.
 func NewDataAwsAcmpcaCertificate_Override(d DataAwsAcmpcaCertificate, scope constructs.Construct, id *string, config *DataAwsAcmpcaCertificateConfig) {
 	_init_.Initialize()
 
@@ -7446,7 +8596,7 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificate) SetCertificateAuthorityArn(val *str
 	)
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAcmpcaCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7518,12 +8668,40 @@ func (d *jsiiProxy_DataAwsAcmpcaCertificate) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7560,12 +8738,54 @@ func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7663,7 +8883,7 @@ func (d *jsiiProxy_DataAwsAcmpcaCertificate) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html aws_acmpca_certificate_authority}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority aws_acmpca_certificate_authority}.
 type DataAwsAcmpcaCertificateAuthority interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -7674,8 +8894,8 @@ type DataAwsAcmpcaCertificateAuthority interface {
 	CertificateChain() *string
 	CertificateSigningRequest() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7689,23 +8909,28 @@ type DataAwsAcmpcaCertificateAuthority interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RevocationConfiguration() *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration
-	SetRevocationConfiguration(val *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration)
-	RevocationConfigurationInput() *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration
+	RevocationConfiguration() interface{}
+	SetRevocationConfiguration(val interface{})
+	RevocationConfigurationInput() interface{}
 	Serial() *string
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Type() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7792,8 +9017,8 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7902,8 +9127,8 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) RawOverrides() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) RevocationConfiguration() *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration {
-	var returns *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) RevocationConfiguration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"revocationConfiguration",
@@ -7912,8 +9137,8 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) RevocationConfiguration() 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) RevocationConfigurationInput() *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration {
-	var returns *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) RevocationConfigurationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"revocationConfigurationInput",
@@ -7942,8 +9167,8 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7952,8 +9177,8 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8002,7 +9227,7 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) Type() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html aws_acmpca_certificate_authority} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority aws_acmpca_certificate_authority} Data Source.
 func NewDataAwsAcmpcaCertificateAuthority(scope constructs.Construct, id *string, config *DataAwsAcmpcaCertificateAuthorityConfig) DataAwsAcmpcaCertificateAuthority {
 	_init_.Initialize()
 
@@ -8017,7 +9242,7 @@ func NewDataAwsAcmpcaCertificateAuthority(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html aws_acmpca_certificate_authority} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority aws_acmpca_certificate_authority} Data Source.
 func NewDataAwsAcmpcaCertificateAuthority_Override(d DataAwsAcmpcaCertificateAuthority, scope constructs.Construct, id *string, config *DataAwsAcmpcaCertificateAuthorityConfig) {
 	_init_.Initialize()
 
@@ -8036,7 +9261,7 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8068,7 +9293,7 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetProvider(val cdktf.Terr
 	)
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetRevocationConfiguration(val *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration) {
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetRevocationConfiguration(val interface{}) {
 	_jsii_.Set(
 		j,
 		"revocationConfiguration",
@@ -8076,7 +9301,7 @@ func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetRevocationConfiguration
 	)
 }
 
-func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsAcmpcaCertificateAuthority) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8124,12 +9349,40 @@ func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) AddOverride(path *string, 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8166,12 +9419,54 @@ func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8288,28 +9583,28 @@ func (d *jsiiProxy_DataAwsAcmpcaCertificateAuthority) ToTerraform() interface{} 
 // Amazon Certificate Manager.
 type DataAwsAcmpcaCertificateAuthorityConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html#arn DataAwsAcmpcaCertificateAuthority#arn}.
-	Arn *string `json:"arn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority#arn DataAwsAcmpcaCertificateAuthority#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 	// revocation_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html#revocation_configuration DataAwsAcmpcaCertificateAuthority#revocation_configuration}
-	RevocationConfiguration *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfiguration `json:"revocationConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html#tags DataAwsAcmpcaCertificateAuthority#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority#revocation_configuration DataAwsAcmpcaCertificateAuthority#revocation_configuration}
+	RevocationConfiguration interface{} `json:"revocationConfiguration" yaml:"revocationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority#tags DataAwsAcmpcaCertificateAuthority#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsAcmpcaCertificateAuthorityRevocationConfiguration struct {
 	// crl_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority.html#crl_configuration DataAwsAcmpcaCertificateAuthority#crl_configuration}
-	CrlConfiguration *[]*DataAwsAcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration `json:"crlConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate_authority#crl_configuration DataAwsAcmpcaCertificateAuthority#crl_configuration}
+	CrlConfiguration interface{} `json:"crlConfiguration" yaml:"crlConfiguration"`
 }
 
 type DataAwsAcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration struct {
@@ -8318,15 +9613,15 @@ type DataAwsAcmpcaCertificateAuthorityRevocationConfigurationCrlConfiguration st
 // Amazon Certificate Manager.
 type DataAwsAcmpcaCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate.html#arn DataAwsAcmpcaCertificate#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate.html#certificate_authority_arn DataAwsAcmpcaCertificate#certificate_authority_arn}.
-	CertificateAuthorityArn *string `json:"certificateAuthorityArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate#arn DataAwsAcmpcaCertificate#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/acmpca_certificate#certificate_authority_arn DataAwsAcmpcaCertificate#certificate_authority_arn}.
+	CertificateAuthorityArn *string `json:"certificateAuthorityArn" yaml:"certificateAuthorityArn"`
 }

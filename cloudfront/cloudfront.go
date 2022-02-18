@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/cloudfront/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html aws_cloudfront_cache_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy aws_cloudfront_cache_policy}.
 type CloudfrontCachePolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -17,8 +17,8 @@ type CloudfrontCachePolicy interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultTtl() *float64
 	SetDefaultTtl(val *float64)
 	DefaultTtlInput() *float64
@@ -49,10 +49,15 @@ type CloudfrontCachePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutParametersInCacheKeyAndForwardedToOrigin(value *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin)
@@ -112,8 +117,8 @@ func (j *jsiiProxy_CloudfrontCachePolicy) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontCachePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -342,7 +347,7 @@ func (j *jsiiProxy_CloudfrontCachePolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html aws_cloudfront_cache_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy aws_cloudfront_cache_policy} Resource.
 func NewCloudfrontCachePolicy(scope constructs.Construct, id *string, config *CloudfrontCachePolicyConfig) CloudfrontCachePolicy {
 	_init_.Initialize()
 
@@ -357,7 +362,7 @@ func NewCloudfrontCachePolicy(scope constructs.Construct, id *string, config *Cl
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html aws_cloudfront_cache_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy aws_cloudfront_cache_policy} Resource.
 func NewCloudfrontCachePolicy_Override(c CloudfrontCachePolicy, scope constructs.Construct, id *string, config *CloudfrontCachePolicyConfig) {
 	_init_.Initialize()
 
@@ -376,7 +381,7 @@ func (j *jsiiProxy_CloudfrontCachePolicy) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontCachePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -480,12 +485,40 @@ func (c *jsiiProxy_CloudfrontCachePolicy) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -522,12 +555,54 @@ func (c *jsiiProxy_CloudfrontCachePolicy) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -668,60 +743,60 @@ func (c *jsiiProxy_CloudfrontCachePolicy) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontCachePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#name CloudfrontCachePolicy#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#name CloudfrontCachePolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 	// parameters_in_cache_key_and_forwarded_to_origin block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#parameters_in_cache_key_and_forwarded_to_origin CloudfrontCachePolicy#parameters_in_cache_key_and_forwarded_to_origin}
-	ParametersInCacheKeyAndForwardedToOrigin *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin `json:"parametersInCacheKeyAndForwardedToOrigin"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#comment CloudfrontCachePolicy#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#default_ttl CloudfrontCachePolicy#default_ttl}.
-	DefaultTtl *float64 `json:"defaultTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#max_ttl CloudfrontCachePolicy#max_ttl}.
-	MaxTtl *float64 `json:"maxTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#min_ttl CloudfrontCachePolicy#min_ttl}.
-	MinTtl *float64 `json:"minTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#parameters_in_cache_key_and_forwarded_to_origin CloudfrontCachePolicy#parameters_in_cache_key_and_forwarded_to_origin}
+	ParametersInCacheKeyAndForwardedToOrigin *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin `json:"parametersInCacheKeyAndForwardedToOrigin" yaml:"parametersInCacheKeyAndForwardedToOrigin"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#comment CloudfrontCachePolicy#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#default_ttl CloudfrontCachePolicy#default_ttl}.
+	DefaultTtl *float64 `json:"defaultTtl" yaml:"defaultTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#max_ttl CloudfrontCachePolicy#max_ttl}.
+	MaxTtl *float64 `json:"maxTtl" yaml:"maxTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#min_ttl CloudfrontCachePolicy#min_ttl}.
+	MinTtl *float64 `json:"minTtl" yaml:"minTtl"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin struct {
 	// cookies_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#cookies_config CloudfrontCachePolicy#cookies_config}
-	CookiesConfig *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig `json:"cookiesConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#cookies_config CloudfrontCachePolicy#cookies_config}
+	CookiesConfig *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig `json:"cookiesConfig" yaml:"cookiesConfig"`
 	// headers_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#headers_config CloudfrontCachePolicy#headers_config}
-	HeadersConfig *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig `json:"headersConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#headers_config CloudfrontCachePolicy#headers_config}
+	HeadersConfig *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig `json:"headersConfig" yaml:"headersConfig"`
 	// query_strings_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#query_strings_config CloudfrontCachePolicy#query_strings_config}
-	QueryStringsConfig *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig `json:"queryStringsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#enable_accept_encoding_brotli CloudfrontCachePolicy#enable_accept_encoding_brotli}.
-	EnableAcceptEncodingBrotli interface{} `json:"enableAcceptEncodingBrotli"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#enable_accept_encoding_gzip CloudfrontCachePolicy#enable_accept_encoding_gzip}.
-	EnableAcceptEncodingGzip interface{} `json:"enableAcceptEncodingGzip"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#query_strings_config CloudfrontCachePolicy#query_strings_config}
+	QueryStringsConfig *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig `json:"queryStringsConfig" yaml:"queryStringsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#enable_accept_encoding_brotli CloudfrontCachePolicy#enable_accept_encoding_brotli}.
+	EnableAcceptEncodingBrotli interface{} `json:"enableAcceptEncodingBrotli" yaml:"enableAcceptEncodingBrotli"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#enable_accept_encoding_gzip CloudfrontCachePolicy#enable_accept_encoding_gzip}.
+	EnableAcceptEncodingGzip interface{} `json:"enableAcceptEncodingGzip" yaml:"enableAcceptEncodingGzip"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#cookie_behavior CloudfrontCachePolicy#cookie_behavior}.
-	CookieBehavior *string `json:"cookieBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#cookie_behavior CloudfrontCachePolicy#cookie_behavior}.
+	CookieBehavior *string `json:"cookieBehavior" yaml:"cookieBehavior"`
 	// cookies block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#cookies CloudfrontCachePolicy#cookies}
-	Cookies *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies `json:"cookies"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#cookies CloudfrontCachePolicy#cookies}
+	Cookies *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies `json:"cookies" yaml:"cookies"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#items CloudfrontCachePolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#items CloudfrontCachePolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference interface {
@@ -735,12 +810,17 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigC
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -801,8 +881,8 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -811,7 +891,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference{}
@@ -825,7 +905,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConf
 	return &j
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -867,7 +947,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -876,12 +956,40 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -918,12 +1026,54 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -980,12 +1130,17 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigO
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCookies(value *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies)
@@ -1067,8 +1222,8 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1077,7 +1232,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference{}
@@ -1091,7 +1246,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConf
 	return &j
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1133,7 +1288,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1142,12 +1297,40 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1184,12 +1367,54 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1242,17 +1467,17 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#header_behavior CloudfrontCachePolicy#header_behavior}.
-	HeaderBehavior *string `json:"headerBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#header_behavior CloudfrontCachePolicy#header_behavior}.
+	HeaderBehavior *string `json:"headerBehavior" yaml:"headerBehavior"`
 	// headers block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#headers CloudfrontCachePolicy#headers}
-	Headers *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders `json:"headers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#headers CloudfrontCachePolicy#headers}
+	Headers *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders `json:"headers" yaml:"headers"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#items CloudfrontCachePolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#items CloudfrontCachePolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference interface {
@@ -1266,12 +1491,17 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigH
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -1332,8 +1562,8 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1342,7 +1572,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference{}
@@ -1356,7 +1586,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConf
 	return &j
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1398,7 +1628,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1407,12 +1637,40 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1449,12 +1707,54 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1511,12 +1811,17 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigO
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutHeaders(value *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders)
@@ -1599,8 +1904,8 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1609,7 +1914,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference{}
@@ -1623,7 +1928,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConf
 	return &j
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1665,7 +1970,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1674,12 +1979,40 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1716,12 +2049,54 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1801,12 +2176,17 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReferenc
 	QueryStringsConfigInput() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCookiesConfig(value *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig)
@@ -1951,8 +2331,8 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1961,7 +2341,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference{}
@@ -1975,7 +2355,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputRefer
 	return &j
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2025,7 +2405,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2034,12 +2414,40 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2076,12 +2484,54 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2158,12 +2608,12 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#query_string_behavior CloudfrontCachePolicy#query_string_behavior}.
-	QueryStringBehavior *string `json:"queryStringBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#query_string_behavior CloudfrontCachePolicy#query_string_behavior}.
+	QueryStringBehavior *string `json:"queryStringBehavior" yaml:"queryStringBehavior"`
 	// query_strings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#query_strings CloudfrontCachePolicy#query_strings}
-	QueryStrings *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings `json:"queryStrings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#query_strings CloudfrontCachePolicy#query_strings}
+	QueryStrings *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings `json:"queryStrings" yaml:"queryStrings"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference interface {
@@ -2179,12 +2629,17 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsCo
 	QueryStringsInput() *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutQueryStrings(value *CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings)
@@ -2266,8 +2721,8 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2276,7 +2731,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference{}
@@ -2290,7 +2745,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryString
 	return &j
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2332,7 +2787,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2341,12 +2796,40 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2383,12 +2866,54 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2441,8 +2966,8 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy.html#items CloudfrontCachePolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_cache_policy#items CloudfrontCachePolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference interface {
@@ -2456,12 +2981,17 @@ type CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsCo
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -2522,8 +3052,8 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2532,7 +3062,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	return returns
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference{}
@@ -2546,7 +3076,7 @@ func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryString
 	return &j
 }
 
-func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference_Override(c CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2588,7 +3118,7 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2597,12 +3127,40 @@ func (j *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2639,12 +3197,54 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2688,7 +3288,7 @@ func (c *jsiiProxy_CloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html aws_cloudfront_distribution}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution aws_cloudfront_distribution}.
 type CloudfrontDistribution interface {
 	cdktf.TerraformResource
 	Aliases() *[]*string
@@ -2701,11 +3301,11 @@ type CloudfrontDistribution interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	CustomErrorResponse() *[]*CloudfrontDistributionCustomErrorResponse
-	SetCustomErrorResponse(val *[]*CloudfrontDistributionCustomErrorResponse)
-	CustomErrorResponseInput() *[]*CloudfrontDistributionCustomErrorResponse
+	Count() *float64
+	SetCount(val *float64)
+	CustomErrorResponse() interface{}
+	SetCustomErrorResponse(val interface{})
+	CustomErrorResponseInput() interface{}
 	DefaultCacheBehavior() CloudfrontDistributionDefaultCacheBehaviorOutputReference
 	DefaultCacheBehaviorInput() *CloudfrontDistributionDefaultCacheBehavior
 	DefaultRootObject() *string
@@ -2735,15 +3335,15 @@ type CloudfrontDistribution interface {
 	LoggingConfig() CloudfrontDistributionLoggingConfigOutputReference
 	LoggingConfigInput() *CloudfrontDistributionLoggingConfig
 	Node() constructs.Node
-	OrderedCacheBehavior() *[]*CloudfrontDistributionOrderedCacheBehavior
-	SetOrderedCacheBehavior(val *[]*CloudfrontDistributionOrderedCacheBehavior)
-	OrderedCacheBehaviorInput() *[]*CloudfrontDistributionOrderedCacheBehavior
-	Origin() *[]*CloudfrontDistributionOrigin
-	SetOrigin(val *[]*CloudfrontDistributionOrigin)
-	OriginGroup() *[]*CloudfrontDistributionOriginGroup
-	SetOriginGroup(val *[]*CloudfrontDistributionOriginGroup)
-	OriginGroupInput() *[]*CloudfrontDistributionOriginGroup
-	OriginInput() *[]*CloudfrontDistributionOrigin
+	OrderedCacheBehavior() interface{}
+	SetOrderedCacheBehavior(val interface{})
+	OrderedCacheBehaviorInput() interface{}
+	Origin() interface{}
+	SetOrigin(val interface{})
+	OriginGroup() interface{}
+	SetOriginGroup(val interface{})
+	OriginGroupInput() interface{}
+	OriginInput() interface{}
 	PriceClass() *string
 	SetPriceClass(val *string)
 	PriceClassInput() *string
@@ -2756,12 +3356,12 @@ type CloudfrontDistribution interface {
 	SetRetainOnDelete(val interface{})
 	RetainOnDeleteInput() interface{}
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2774,10 +3374,15 @@ type CloudfrontDistribution interface {
 	SetWebAclId(val *string)
 	WebAclIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDefaultCacheBehavior(value *CloudfrontDistributionDefaultCacheBehavior)
@@ -2893,8 +3498,8 @@ func (j *jsiiProxy_CloudfrontDistribution) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistribution) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2903,8 +3508,8 @@ func (j *jsiiProxy_CloudfrontDistribution) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) CustomErrorResponse() *[]*CloudfrontDistributionCustomErrorResponse {
-	var returns *[]*CloudfrontDistributionCustomErrorResponse
+func (j *jsiiProxy_CloudfrontDistribution) CustomErrorResponse() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customErrorResponse",
@@ -2913,8 +3518,8 @@ func (j *jsiiProxy_CloudfrontDistribution) CustomErrorResponse() *[]*CloudfrontD
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) CustomErrorResponseInput() *[]*CloudfrontDistributionCustomErrorResponse {
-	var returns *[]*CloudfrontDistributionCustomErrorResponse
+func (j *jsiiProxy_CloudfrontDistribution) CustomErrorResponseInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customErrorResponseInput",
@@ -3153,8 +3758,8 @@ func (j *jsiiProxy_CloudfrontDistribution) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) OrderedCacheBehavior() *[]*CloudfrontDistributionOrderedCacheBehavior {
-	var returns *[]*CloudfrontDistributionOrderedCacheBehavior
+func (j *jsiiProxy_CloudfrontDistribution) OrderedCacheBehavior() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"orderedCacheBehavior",
@@ -3163,8 +3768,8 @@ func (j *jsiiProxy_CloudfrontDistribution) OrderedCacheBehavior() *[]*Cloudfront
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) OrderedCacheBehaviorInput() *[]*CloudfrontDistributionOrderedCacheBehavior {
-	var returns *[]*CloudfrontDistributionOrderedCacheBehavior
+func (j *jsiiProxy_CloudfrontDistribution) OrderedCacheBehaviorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"orderedCacheBehaviorInput",
@@ -3173,8 +3778,8 @@ func (j *jsiiProxy_CloudfrontDistribution) OrderedCacheBehaviorInput() *[]*Cloud
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) Origin() *[]*CloudfrontDistributionOrigin {
-	var returns *[]*CloudfrontDistributionOrigin
+func (j *jsiiProxy_CloudfrontDistribution) Origin() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"origin",
@@ -3183,8 +3788,8 @@ func (j *jsiiProxy_CloudfrontDistribution) Origin() *[]*CloudfrontDistributionOr
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) OriginGroup() *[]*CloudfrontDistributionOriginGroup {
-	var returns *[]*CloudfrontDistributionOriginGroup
+func (j *jsiiProxy_CloudfrontDistribution) OriginGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"originGroup",
@@ -3193,8 +3798,8 @@ func (j *jsiiProxy_CloudfrontDistribution) OriginGroup() *[]*CloudfrontDistribut
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) OriginGroupInput() *[]*CloudfrontDistributionOriginGroup {
-	var returns *[]*CloudfrontDistributionOriginGroup
+func (j *jsiiProxy_CloudfrontDistribution) OriginGroupInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"originGroupInput",
@@ -3203,8 +3808,8 @@ func (j *jsiiProxy_CloudfrontDistribution) OriginGroupInput() *[]*CloudfrontDist
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) OriginInput() *[]*CloudfrontDistributionOrigin {
-	var returns *[]*CloudfrontDistributionOrigin
+func (j *jsiiProxy_CloudfrontDistribution) OriginInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"originInput",
@@ -3303,8 +3908,8 @@ func (j *jsiiProxy_CloudfrontDistribution) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistribution) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3313,8 +3918,8 @@ func (j *jsiiProxy_CloudfrontDistribution) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistribution) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3323,8 +3928,8 @@ func (j *jsiiProxy_CloudfrontDistribution) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistribution) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3333,8 +3938,8 @@ func (j *jsiiProxy_CloudfrontDistribution) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistribution) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3433,7 +4038,7 @@ func (j *jsiiProxy_CloudfrontDistribution) WebAclIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html aws_cloudfront_distribution} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution aws_cloudfront_distribution} Resource.
 func NewCloudfrontDistribution(scope constructs.Construct, id *string, config *CloudfrontDistributionConfig) CloudfrontDistribution {
 	_init_.Initialize()
 
@@ -3448,7 +4053,7 @@ func NewCloudfrontDistribution(scope constructs.Construct, id *string, config *C
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html aws_cloudfront_distribution} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution aws_cloudfront_distribution} Resource.
 func NewCloudfrontDistribution_Override(c CloudfrontDistribution, scope constructs.Construct, id *string, config *CloudfrontDistributionConfig) {
 	_init_.Initialize()
 
@@ -3475,7 +4080,7 @@ func (j *jsiiProxy_CloudfrontDistribution) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontDistribution) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3483,7 +4088,7 @@ func (j *jsiiProxy_CloudfrontDistribution) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) SetCustomErrorResponse(val *[]*CloudfrontDistributionCustomErrorResponse) {
+func (j *jsiiProxy_CloudfrontDistribution) SetCustomErrorResponse(val interface{}) {
 	_jsii_.Set(
 		j,
 		"customErrorResponse",
@@ -3539,7 +4144,7 @@ func (j *jsiiProxy_CloudfrontDistribution) SetLifecycle(val *cdktf.TerraformReso
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) SetOrderedCacheBehavior(val *[]*CloudfrontDistributionOrderedCacheBehavior) {
+func (j *jsiiProxy_CloudfrontDistribution) SetOrderedCacheBehavior(val interface{}) {
 	_jsii_.Set(
 		j,
 		"orderedCacheBehavior",
@@ -3547,7 +4152,7 @@ func (j *jsiiProxy_CloudfrontDistribution) SetOrderedCacheBehavior(val *[]*Cloud
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) SetOrigin(val *[]*CloudfrontDistributionOrigin) {
+func (j *jsiiProxy_CloudfrontDistribution) SetOrigin(val interface{}) {
 	_jsii_.Set(
 		j,
 		"origin",
@@ -3555,7 +4160,7 @@ func (j *jsiiProxy_CloudfrontDistribution) SetOrigin(val *[]*CloudfrontDistribut
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) SetOriginGroup(val *[]*CloudfrontDistributionOriginGroup) {
+func (j *jsiiProxy_CloudfrontDistribution) SetOriginGroup(val interface{}) {
 	_jsii_.Set(
 		j,
 		"originGroup",
@@ -3587,7 +4192,7 @@ func (j *jsiiProxy_CloudfrontDistribution) SetRetainOnDelete(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudfrontDistribution) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3595,7 +4200,7 @@ func (j *jsiiProxy_CloudfrontDistribution) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistribution) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudfrontDistribution) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3659,12 +4264,40 @@ func (c *jsiiProxy_CloudfrontDistribution) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistribution) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistribution) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistribution) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3701,12 +4334,54 @@ func (c *jsiiProxy_CloudfrontDistribution) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistribution) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistribution) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistribution) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistribution) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3985,147 +4660,147 @@ func (c *jsiiProxy_CloudfrontDistribution) TrustedSigners(index *string) Cloudfr
 // AWS CloudFront.
 type CloudfrontDistributionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// default_cache_behavior block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#default_cache_behavior CloudfrontDistribution#default_cache_behavior}
-	DefaultCacheBehavior *CloudfrontDistributionDefaultCacheBehavior `json:"defaultCacheBehavior"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#enabled CloudfrontDistribution#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#default_cache_behavior CloudfrontDistribution#default_cache_behavior}
+	DefaultCacheBehavior *CloudfrontDistributionDefaultCacheBehavior `json:"defaultCacheBehavior" yaml:"defaultCacheBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#enabled CloudfrontDistribution#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 	// origin block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin CloudfrontDistribution#origin}
-	Origin *[]*CloudfrontDistributionOrigin `json:"origin"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin CloudfrontDistribution#origin}
+	Origin interface{} `json:"origin" yaml:"origin"`
 	// restrictions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#restrictions CloudfrontDistribution#restrictions}
-	Restrictions *CloudfrontDistributionRestrictions `json:"restrictions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#restrictions CloudfrontDistribution#restrictions}
+	Restrictions *CloudfrontDistributionRestrictions `json:"restrictions" yaml:"restrictions"`
 	// viewer_certificate block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#viewer_certificate CloudfrontDistribution#viewer_certificate}
-	ViewerCertificate *CloudfrontDistributionViewerCertificate `json:"viewerCertificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#aliases CloudfrontDistribution#aliases}.
-	Aliases *[]*string `json:"aliases"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#comment CloudfrontDistribution#comment}.
-	Comment *string `json:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#viewer_certificate CloudfrontDistribution#viewer_certificate}
+	ViewerCertificate *CloudfrontDistributionViewerCertificate `json:"viewerCertificate" yaml:"viewerCertificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#aliases CloudfrontDistribution#aliases}.
+	Aliases *[]*string `json:"aliases" yaml:"aliases"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#comment CloudfrontDistribution#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
 	// custom_error_response block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#custom_error_response CloudfrontDistribution#custom_error_response}
-	CustomErrorResponse *[]*CloudfrontDistributionCustomErrorResponse `json:"customErrorResponse"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#default_root_object CloudfrontDistribution#default_root_object}.
-	DefaultRootObject *string `json:"defaultRootObject"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#http_version CloudfrontDistribution#http_version}.
-	HttpVersion *string `json:"httpVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#is_ipv6_enabled CloudfrontDistribution#is_ipv6_enabled}.
-	IsIpv6Enabled interface{} `json:"isIpv6Enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#custom_error_response CloudfrontDistribution#custom_error_response}
+	CustomErrorResponse interface{} `json:"customErrorResponse" yaml:"customErrorResponse"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#default_root_object CloudfrontDistribution#default_root_object}.
+	DefaultRootObject *string `json:"defaultRootObject" yaml:"defaultRootObject"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#http_version CloudfrontDistribution#http_version}.
+	HttpVersion *string `json:"httpVersion" yaml:"httpVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#is_ipv6_enabled CloudfrontDistribution#is_ipv6_enabled}.
+	IsIpv6Enabled interface{} `json:"isIpv6Enabled" yaml:"isIpv6Enabled"`
 	// logging_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#logging_config CloudfrontDistribution#logging_config}
-	LoggingConfig *CloudfrontDistributionLoggingConfig `json:"loggingConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#logging_config CloudfrontDistribution#logging_config}
+	LoggingConfig *CloudfrontDistributionLoggingConfig `json:"loggingConfig" yaml:"loggingConfig"`
 	// ordered_cache_behavior block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#ordered_cache_behavior CloudfrontDistribution#ordered_cache_behavior}
-	OrderedCacheBehavior *[]*CloudfrontDistributionOrderedCacheBehavior `json:"orderedCacheBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#ordered_cache_behavior CloudfrontDistribution#ordered_cache_behavior}
+	OrderedCacheBehavior interface{} `json:"orderedCacheBehavior" yaml:"orderedCacheBehavior"`
 	// origin_group block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_group CloudfrontDistribution#origin_group}
-	OriginGroup *[]*CloudfrontDistributionOriginGroup `json:"originGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#price_class CloudfrontDistribution#price_class}.
-	PriceClass *string `json:"priceClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#retain_on_delete CloudfrontDistribution#retain_on_delete}.
-	RetainOnDelete interface{} `json:"retainOnDelete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#tags CloudfrontDistribution#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#tags_all CloudfrontDistribution#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#wait_for_deployment CloudfrontDistribution#wait_for_deployment}.
-	WaitForDeployment interface{} `json:"waitForDeployment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#web_acl_id CloudfrontDistribution#web_acl_id}.
-	WebAclId *string `json:"webAclId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_group CloudfrontDistribution#origin_group}
+	OriginGroup interface{} `json:"originGroup" yaml:"originGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#price_class CloudfrontDistribution#price_class}.
+	PriceClass *string `json:"priceClass" yaml:"priceClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#retain_on_delete CloudfrontDistribution#retain_on_delete}.
+	RetainOnDelete interface{} `json:"retainOnDelete" yaml:"retainOnDelete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#tags CloudfrontDistribution#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#tags_all CloudfrontDistribution#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#wait_for_deployment CloudfrontDistribution#wait_for_deployment}.
+	WaitForDeployment interface{} `json:"waitForDeployment" yaml:"waitForDeployment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#web_acl_id CloudfrontDistribution#web_acl_id}.
+	WebAclId *string `json:"webAclId" yaml:"webAclId"`
 }
 
 type CloudfrontDistributionCustomErrorResponse struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#error_code CloudfrontDistribution#error_code}.
-	ErrorCode *float64 `json:"errorCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#error_caching_min_ttl CloudfrontDistribution#error_caching_min_ttl}.
-	ErrorCachingMinTtl *float64 `json:"errorCachingMinTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#response_code CloudfrontDistribution#response_code}.
-	ResponseCode *float64 `json:"responseCode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#response_page_path CloudfrontDistribution#response_page_path}.
-	ResponsePagePath *string `json:"responsePagePath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#error_code CloudfrontDistribution#error_code}.
+	ErrorCode *float64 `json:"errorCode" yaml:"errorCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#error_caching_min_ttl CloudfrontDistribution#error_caching_min_ttl}.
+	ErrorCachingMinTtl *float64 `json:"errorCachingMinTtl" yaml:"errorCachingMinTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#response_code CloudfrontDistribution#response_code}.
+	ResponseCode *float64 `json:"responseCode" yaml:"responseCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#response_page_path CloudfrontDistribution#response_page_path}.
+	ResponsePagePath *string `json:"responsePagePath" yaml:"responsePagePath"`
 }
 
 type CloudfrontDistributionDefaultCacheBehavior struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#allowed_methods CloudfrontDistribution#allowed_methods}.
-	AllowedMethods *[]*string `json:"allowedMethods"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#cached_methods CloudfrontDistribution#cached_methods}.
-	CachedMethods *[]*string `json:"cachedMethods"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#target_origin_id CloudfrontDistribution#target_origin_id}.
-	TargetOriginId *string `json:"targetOriginId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#viewer_protocol_policy CloudfrontDistribution#viewer_protocol_policy}.
-	ViewerProtocolPolicy *string `json:"viewerProtocolPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#cache_policy_id CloudfrontDistribution#cache_policy_id}.
-	CachePolicyId *string `json:"cachePolicyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#compress CloudfrontDistribution#compress}.
-	Compress interface{} `json:"compress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#default_ttl CloudfrontDistribution#default_ttl}.
-	DefaultTtl *float64 `json:"defaultTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#field_level_encryption_id CloudfrontDistribution#field_level_encryption_id}.
-	FieldLevelEncryptionId *string `json:"fieldLevelEncryptionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#allowed_methods CloudfrontDistribution#allowed_methods}.
+	AllowedMethods *[]*string `json:"allowedMethods" yaml:"allowedMethods"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#cached_methods CloudfrontDistribution#cached_methods}.
+	CachedMethods *[]*string `json:"cachedMethods" yaml:"cachedMethods"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#target_origin_id CloudfrontDistribution#target_origin_id}.
+	TargetOriginId *string `json:"targetOriginId" yaml:"targetOriginId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#viewer_protocol_policy CloudfrontDistribution#viewer_protocol_policy}.
+	ViewerProtocolPolicy *string `json:"viewerProtocolPolicy" yaml:"viewerProtocolPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#cache_policy_id CloudfrontDistribution#cache_policy_id}.
+	CachePolicyId *string `json:"cachePolicyId" yaml:"cachePolicyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#compress CloudfrontDistribution#compress}.
+	Compress interface{} `json:"compress" yaml:"compress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#default_ttl CloudfrontDistribution#default_ttl}.
+	DefaultTtl *float64 `json:"defaultTtl" yaml:"defaultTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#field_level_encryption_id CloudfrontDistribution#field_level_encryption_id}.
+	FieldLevelEncryptionId *string `json:"fieldLevelEncryptionId" yaml:"fieldLevelEncryptionId"`
 	// forwarded_values block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#forwarded_values CloudfrontDistribution#forwarded_values}
-	ForwardedValues *CloudfrontDistributionDefaultCacheBehaviorForwardedValues `json:"forwardedValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#forwarded_values CloudfrontDistribution#forwarded_values}
+	ForwardedValues *CloudfrontDistributionDefaultCacheBehaviorForwardedValues `json:"forwardedValues" yaml:"forwardedValues"`
 	// function_association block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#function_association CloudfrontDistribution#function_association}
-	FunctionAssociation *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation `json:"functionAssociation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#function_association CloudfrontDistribution#function_association}
+	FunctionAssociation interface{} `json:"functionAssociation" yaml:"functionAssociation"`
 	// lambda_function_association block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#lambda_function_association CloudfrontDistribution#lambda_function_association}
-	LambdaFunctionAssociation *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation `json:"lambdaFunctionAssociation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#max_ttl CloudfrontDistribution#max_ttl}.
-	MaxTtl *float64 `json:"maxTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#min_ttl CloudfrontDistribution#min_ttl}.
-	MinTtl *float64 `json:"minTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_request_policy_id CloudfrontDistribution#origin_request_policy_id}.
-	OriginRequestPolicyId *string `json:"originRequestPolicyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#realtime_log_config_arn CloudfrontDistribution#realtime_log_config_arn}.
-	RealtimeLogConfigArn *string `json:"realtimeLogConfigArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#response_headers_policy_id CloudfrontDistribution#response_headers_policy_id}.
-	ResponseHeadersPolicyId *string `json:"responseHeadersPolicyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#smooth_streaming CloudfrontDistribution#smooth_streaming}.
-	SmoothStreaming interface{} `json:"smoothStreaming"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#trusted_key_groups CloudfrontDistribution#trusted_key_groups}.
-	TrustedKeyGroups *[]*string `json:"trustedKeyGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#trusted_signers CloudfrontDistribution#trusted_signers}.
-	TrustedSigners *[]*string `json:"trustedSigners"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#lambda_function_association CloudfrontDistribution#lambda_function_association}
+	LambdaFunctionAssociation interface{} `json:"lambdaFunctionAssociation" yaml:"lambdaFunctionAssociation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#max_ttl CloudfrontDistribution#max_ttl}.
+	MaxTtl *float64 `json:"maxTtl" yaml:"maxTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#min_ttl CloudfrontDistribution#min_ttl}.
+	MinTtl *float64 `json:"minTtl" yaml:"minTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_request_policy_id CloudfrontDistribution#origin_request_policy_id}.
+	OriginRequestPolicyId *string `json:"originRequestPolicyId" yaml:"originRequestPolicyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#realtime_log_config_arn CloudfrontDistribution#realtime_log_config_arn}.
+	RealtimeLogConfigArn *string `json:"realtimeLogConfigArn" yaml:"realtimeLogConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#response_headers_policy_id CloudfrontDistribution#response_headers_policy_id}.
+	ResponseHeadersPolicyId *string `json:"responseHeadersPolicyId" yaml:"responseHeadersPolicyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#smooth_streaming CloudfrontDistribution#smooth_streaming}.
+	SmoothStreaming interface{} `json:"smoothStreaming" yaml:"smoothStreaming"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#trusted_key_groups CloudfrontDistribution#trusted_key_groups}.
+	TrustedKeyGroups *[]*string `json:"trustedKeyGroups" yaml:"trustedKeyGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#trusted_signers CloudfrontDistribution#trusted_signers}.
+	TrustedSigners *[]*string `json:"trustedSigners" yaml:"trustedSigners"`
 }
 
 type CloudfrontDistributionDefaultCacheBehaviorForwardedValues struct {
 	// cookies block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#cookies CloudfrontDistribution#cookies}
-	Cookies *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies `json:"cookies"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#query_string CloudfrontDistribution#query_string}.
-	QueryString interface{} `json:"queryString"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#headers CloudfrontDistribution#headers}.
-	Headers *[]*string `json:"headers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#query_string_cache_keys CloudfrontDistribution#query_string_cache_keys}.
-	QueryStringCacheKeys *[]*string `json:"queryStringCacheKeys"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#cookies CloudfrontDistribution#cookies}
+	Cookies *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies `json:"cookies" yaml:"cookies"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#query_string CloudfrontDistribution#query_string}.
+	QueryString interface{} `json:"queryString" yaml:"queryString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#headers CloudfrontDistribution#headers}.
+	Headers *[]*string `json:"headers" yaml:"headers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#query_string_cache_keys CloudfrontDistribution#query_string_cache_keys}.
+	QueryStringCacheKeys *[]*string `json:"queryStringCacheKeys" yaml:"queryStringCacheKeys"`
 }
 
 type CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#forward CloudfrontDistribution#forward}.
-	Forward *string `json:"forward"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#whitelisted_names CloudfrontDistribution#whitelisted_names}.
-	WhitelistedNames *[]*string `json:"whitelistedNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#forward CloudfrontDistribution#forward}.
+	Forward *string `json:"forward" yaml:"forward"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#whitelisted_names CloudfrontDistribution#whitelisted_names}.
+	WhitelistedNames *[]*string `json:"whitelistedNames" yaml:"whitelistedNames"`
 }
 
 type CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference interface {
@@ -4139,15 +4814,20 @@ type CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputRefer
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WhitelistedNames() *[]*string
 	SetWhitelistedNames(val *[]*string)
 	WhitelistedNamesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetWhitelistedNames()
@@ -4208,8 +4888,8 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCook
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4238,7 +4918,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCook
 	return returns
 }
 
-func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference {
+func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference{}
@@ -4252,7 +4932,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputRe
 	return &j
 }
 
-func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference_Override(c CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference_Override(c CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4294,7 +4974,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCook
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4311,12 +4991,40 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCook
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4353,12 +5061,54 @@ func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCook
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4421,12 +5171,17 @@ type CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference in
 	QueryStringInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCookies(value *CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies)
@@ -4549,8 +5304,8 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4559,7 +5314,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 	return returns
 }
 
-func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference {
+func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference{}
@@ -4573,7 +5328,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference
 	return &j
 }
 
-func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference_Override(c CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference_Override(c CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4631,7 +5386,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4640,12 +5395,40 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4682,12 +5465,54 @@ func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4748,19 +5573,19 @@ func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutp
 }
 
 type CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#event_type CloudfrontDistribution#event_type}.
-	EventType *string `json:"eventType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#function_arn CloudfrontDistribution#function_arn}.
-	FunctionArn *string `json:"functionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#event_type CloudfrontDistribution#event_type}.
+	EventType *string `json:"eventType" yaml:"eventType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#function_arn CloudfrontDistribution#function_arn}.
+	FunctionArn *string `json:"functionArn" yaml:"functionArn"`
 }
 
 type CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#event_type CloudfrontDistribution#event_type}.
-	EventType *string `json:"eventType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#lambda_arn CloudfrontDistribution#lambda_arn}.
-	LambdaArn *string `json:"lambdaArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#include_body CloudfrontDistribution#include_body}.
-	IncludeBody interface{} `json:"includeBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#event_type CloudfrontDistribution#event_type}.
+	EventType *string `json:"eventType" yaml:"eventType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#lambda_arn CloudfrontDistribution#lambda_arn}.
+	LambdaArn *string `json:"lambdaArn" yaml:"lambdaArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#include_body CloudfrontDistribution#include_body}.
+	IncludeBody interface{} `json:"includeBody" yaml:"includeBody"`
 }
 
 type CloudfrontDistributionDefaultCacheBehaviorOutputReference interface {
@@ -4785,16 +5610,16 @@ type CloudfrontDistributionDefaultCacheBehaviorOutputReference interface {
 	FieldLevelEncryptionIdInput() *string
 	ForwardedValues() CloudfrontDistributionDefaultCacheBehaviorForwardedValuesOutputReference
 	ForwardedValuesInput() *CloudfrontDistributionDefaultCacheBehaviorForwardedValues
-	FunctionAssociation() *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation
-	SetFunctionAssociation(val *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation)
-	FunctionAssociationInput() *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation
+	FunctionAssociation() interface{}
+	SetFunctionAssociation(val interface{})
+	FunctionAssociationInput() interface{}
 	InternalValue() *CloudfrontDistributionDefaultCacheBehavior
 	SetInternalValue(val *CloudfrontDistributionDefaultCacheBehavior)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	LambdaFunctionAssociation() *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation
-	SetLambdaFunctionAssociation(val *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation)
-	LambdaFunctionAssociationInput() *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation
+	LambdaFunctionAssociation() interface{}
+	SetLambdaFunctionAssociation(val interface{})
+	LambdaFunctionAssociationInput() interface{}
 	MaxTtl() *float64
 	SetMaxTtl(val *float64)
 	MaxTtlInput() *float64
@@ -4818,8 +5643,8 @@ type CloudfrontDistributionDefaultCacheBehaviorOutputReference interface {
 	TargetOriginIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TrustedKeyGroups() *[]*string
 	SetTrustedKeyGroups(val *[]*string)
 	TrustedKeyGroupsInput() *[]*string
@@ -4829,10 +5654,15 @@ type CloudfrontDistributionDefaultCacheBehaviorOutputReference interface {
 	ViewerProtocolPolicy() *string
 	SetViewerProtocolPolicy(val *string)
 	ViewerProtocolPolicyInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutForwardedValues(value *CloudfrontDistributionDefaultCacheBehaviorForwardedValues)
@@ -4998,8 +5828,8 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Fo
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) FunctionAssociation() *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation {
-	var returns *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) FunctionAssociation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"functionAssociation",
@@ -5008,8 +5838,8 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Fu
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) FunctionAssociationInput() *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation {
-	var returns *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) FunctionAssociationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"functionAssociationInput",
@@ -5038,8 +5868,8 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Is
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) LambdaFunctionAssociation() *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation {
-	var returns *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) LambdaFunctionAssociation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lambdaFunctionAssociation",
@@ -5048,8 +5878,8 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) La
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) LambdaFunctionAssociationInput() *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation {
-	var returns *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) LambdaFunctionAssociationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lambdaFunctionAssociationInput",
@@ -5208,8 +6038,8 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5278,7 +6108,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Vi
 	return returns
 }
 
-func NewCloudfrontDistributionDefaultCacheBehaviorOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionDefaultCacheBehaviorOutputReference {
+func NewCloudfrontDistributionDefaultCacheBehaviorOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionDefaultCacheBehaviorOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference{}
@@ -5292,7 +6122,7 @@ func NewCloudfrontDistributionDefaultCacheBehaviorOutputReference(terraformResou
 	return &j
 }
 
-func NewCloudfrontDistributionDefaultCacheBehaviorOutputReference_Override(c CloudfrontDistributionDefaultCacheBehaviorOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionDefaultCacheBehaviorOutputReference_Override(c CloudfrontDistributionDefaultCacheBehaviorOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5350,7 +6180,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) SetFunctionAssociation(val *[]*CloudfrontDistributionDefaultCacheBehaviorFunctionAssociation) {
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) SetFunctionAssociation(val interface{}) {
 	_jsii_.Set(
 		j,
 		"functionAssociation",
@@ -5374,7 +6204,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) SetLambdaFunctionAssociation(val *[]*CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation) {
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) SetLambdaFunctionAssociation(val interface{}) {
 	_jsii_.Set(
 		j,
 		"lambdaFunctionAssociation",
@@ -5446,7 +6276,7 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5479,12 +6309,40 @@ func (j *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Se
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5521,12 +6379,54 @@ func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Ge
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5691,12 +6591,12 @@ func (c *jsiiProxy_CloudfrontDistributionDefaultCacheBehaviorOutputReference) Re
 }
 
 type CloudfrontDistributionLoggingConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#bucket CloudfrontDistribution#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#include_cookies CloudfrontDistribution#include_cookies}.
-	IncludeCookies interface{} `json:"includeCookies"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#prefix CloudfrontDistribution#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#bucket CloudfrontDistribution#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#include_cookies CloudfrontDistribution#include_cookies}.
+	IncludeCookies interface{} `json:"includeCookies" yaml:"includeCookies"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#prefix CloudfrontDistribution#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }
 
 type CloudfrontDistributionLoggingConfigOutputReference interface {
@@ -5716,12 +6616,17 @@ type CloudfrontDistributionLoggingConfigOutputReference interface {
 	PrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIncludeCookies()
@@ -5823,8 +6728,8 @@ func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5833,7 +6738,7 @@ func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) Terraform
 	return returns
 }
 
-func NewCloudfrontDistributionLoggingConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionLoggingConfigOutputReference {
+func NewCloudfrontDistributionLoggingConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionLoggingConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference{}
@@ -5847,7 +6752,7 @@ func NewCloudfrontDistributionLoggingConfigOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewCloudfrontDistributionLoggingConfigOutputReference_Override(c CloudfrontDistributionLoggingConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionLoggingConfigOutputReference_Override(c CloudfrontDistributionLoggingConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5905,7 +6810,7 @@ func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5914,12 +6819,40 @@ func (j *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) SetTerraf
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5956,12 +6889,54 @@ func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetNumber
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6014,72 +6989,72 @@ func (c *jsiiProxy_CloudfrontDistributionLoggingConfigOutputReference) ResetPref
 }
 
 type CloudfrontDistributionOrderedCacheBehavior struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#allowed_methods CloudfrontDistribution#allowed_methods}.
-	AllowedMethods *[]*string `json:"allowedMethods"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#cached_methods CloudfrontDistribution#cached_methods}.
-	CachedMethods *[]*string `json:"cachedMethods"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#path_pattern CloudfrontDistribution#path_pattern}.
-	PathPattern *string `json:"pathPattern"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#target_origin_id CloudfrontDistribution#target_origin_id}.
-	TargetOriginId *string `json:"targetOriginId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#viewer_protocol_policy CloudfrontDistribution#viewer_protocol_policy}.
-	ViewerProtocolPolicy *string `json:"viewerProtocolPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#cache_policy_id CloudfrontDistribution#cache_policy_id}.
-	CachePolicyId *string `json:"cachePolicyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#compress CloudfrontDistribution#compress}.
-	Compress interface{} `json:"compress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#default_ttl CloudfrontDistribution#default_ttl}.
-	DefaultTtl *float64 `json:"defaultTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#field_level_encryption_id CloudfrontDistribution#field_level_encryption_id}.
-	FieldLevelEncryptionId *string `json:"fieldLevelEncryptionId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#allowed_methods CloudfrontDistribution#allowed_methods}.
+	AllowedMethods *[]*string `json:"allowedMethods" yaml:"allowedMethods"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#cached_methods CloudfrontDistribution#cached_methods}.
+	CachedMethods *[]*string `json:"cachedMethods" yaml:"cachedMethods"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#path_pattern CloudfrontDistribution#path_pattern}.
+	PathPattern *string `json:"pathPattern" yaml:"pathPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#target_origin_id CloudfrontDistribution#target_origin_id}.
+	TargetOriginId *string `json:"targetOriginId" yaml:"targetOriginId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#viewer_protocol_policy CloudfrontDistribution#viewer_protocol_policy}.
+	ViewerProtocolPolicy *string `json:"viewerProtocolPolicy" yaml:"viewerProtocolPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#cache_policy_id CloudfrontDistribution#cache_policy_id}.
+	CachePolicyId *string `json:"cachePolicyId" yaml:"cachePolicyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#compress CloudfrontDistribution#compress}.
+	Compress interface{} `json:"compress" yaml:"compress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#default_ttl CloudfrontDistribution#default_ttl}.
+	DefaultTtl *float64 `json:"defaultTtl" yaml:"defaultTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#field_level_encryption_id CloudfrontDistribution#field_level_encryption_id}.
+	FieldLevelEncryptionId *string `json:"fieldLevelEncryptionId" yaml:"fieldLevelEncryptionId"`
 	// forwarded_values block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#forwarded_values CloudfrontDistribution#forwarded_values}
-	ForwardedValues *CloudfrontDistributionOrderedCacheBehaviorForwardedValues `json:"forwardedValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#forwarded_values CloudfrontDistribution#forwarded_values}
+	ForwardedValues *CloudfrontDistributionOrderedCacheBehaviorForwardedValues `json:"forwardedValues" yaml:"forwardedValues"`
 	// function_association block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#function_association CloudfrontDistribution#function_association}
-	FunctionAssociation *[]*CloudfrontDistributionOrderedCacheBehaviorFunctionAssociation `json:"functionAssociation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#function_association CloudfrontDistribution#function_association}
+	FunctionAssociation interface{} `json:"functionAssociation" yaml:"functionAssociation"`
 	// lambda_function_association block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#lambda_function_association CloudfrontDistribution#lambda_function_association}
-	LambdaFunctionAssociation *[]*CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation `json:"lambdaFunctionAssociation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#max_ttl CloudfrontDistribution#max_ttl}.
-	MaxTtl *float64 `json:"maxTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#min_ttl CloudfrontDistribution#min_ttl}.
-	MinTtl *float64 `json:"minTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_request_policy_id CloudfrontDistribution#origin_request_policy_id}.
-	OriginRequestPolicyId *string `json:"originRequestPolicyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#realtime_log_config_arn CloudfrontDistribution#realtime_log_config_arn}.
-	RealtimeLogConfigArn *string `json:"realtimeLogConfigArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#response_headers_policy_id CloudfrontDistribution#response_headers_policy_id}.
-	ResponseHeadersPolicyId *string `json:"responseHeadersPolicyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#smooth_streaming CloudfrontDistribution#smooth_streaming}.
-	SmoothStreaming interface{} `json:"smoothStreaming"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#trusted_key_groups CloudfrontDistribution#trusted_key_groups}.
-	TrustedKeyGroups *[]*string `json:"trustedKeyGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#trusted_signers CloudfrontDistribution#trusted_signers}.
-	TrustedSigners *[]*string `json:"trustedSigners"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#lambda_function_association CloudfrontDistribution#lambda_function_association}
+	LambdaFunctionAssociation interface{} `json:"lambdaFunctionAssociation" yaml:"lambdaFunctionAssociation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#max_ttl CloudfrontDistribution#max_ttl}.
+	MaxTtl *float64 `json:"maxTtl" yaml:"maxTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#min_ttl CloudfrontDistribution#min_ttl}.
+	MinTtl *float64 `json:"minTtl" yaml:"minTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_request_policy_id CloudfrontDistribution#origin_request_policy_id}.
+	OriginRequestPolicyId *string `json:"originRequestPolicyId" yaml:"originRequestPolicyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#realtime_log_config_arn CloudfrontDistribution#realtime_log_config_arn}.
+	RealtimeLogConfigArn *string `json:"realtimeLogConfigArn" yaml:"realtimeLogConfigArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#response_headers_policy_id CloudfrontDistribution#response_headers_policy_id}.
+	ResponseHeadersPolicyId *string `json:"responseHeadersPolicyId" yaml:"responseHeadersPolicyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#smooth_streaming CloudfrontDistribution#smooth_streaming}.
+	SmoothStreaming interface{} `json:"smoothStreaming" yaml:"smoothStreaming"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#trusted_key_groups CloudfrontDistribution#trusted_key_groups}.
+	TrustedKeyGroups *[]*string `json:"trustedKeyGroups" yaml:"trustedKeyGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#trusted_signers CloudfrontDistribution#trusted_signers}.
+	TrustedSigners *[]*string `json:"trustedSigners" yaml:"trustedSigners"`
 }
 
 type CloudfrontDistributionOrderedCacheBehaviorForwardedValues struct {
 	// cookies block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#cookies CloudfrontDistribution#cookies}
-	Cookies *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies `json:"cookies"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#query_string CloudfrontDistribution#query_string}.
-	QueryString interface{} `json:"queryString"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#headers CloudfrontDistribution#headers}.
-	Headers *[]*string `json:"headers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#query_string_cache_keys CloudfrontDistribution#query_string_cache_keys}.
-	QueryStringCacheKeys *[]*string `json:"queryStringCacheKeys"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#cookies CloudfrontDistribution#cookies}
+	Cookies *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies `json:"cookies" yaml:"cookies"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#query_string CloudfrontDistribution#query_string}.
+	QueryString interface{} `json:"queryString" yaml:"queryString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#headers CloudfrontDistribution#headers}.
+	Headers *[]*string `json:"headers" yaml:"headers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#query_string_cache_keys CloudfrontDistribution#query_string_cache_keys}.
+	QueryStringCacheKeys *[]*string `json:"queryStringCacheKeys" yaml:"queryStringCacheKeys"`
 }
 
 type CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#forward CloudfrontDistribution#forward}.
-	Forward *string `json:"forward"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#whitelisted_names CloudfrontDistribution#whitelisted_names}.
-	WhitelistedNames *[]*string `json:"whitelistedNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#forward CloudfrontDistribution#forward}.
+	Forward *string `json:"forward" yaml:"forward"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#whitelisted_names CloudfrontDistribution#whitelisted_names}.
+	WhitelistedNames *[]*string `json:"whitelistedNames" yaml:"whitelistedNames"`
 }
 
 type CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference interface {
@@ -6093,15 +7068,20 @@ type CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputRefer
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WhitelistedNames() *[]*string
 	SetWhitelistedNames(val *[]*string)
 	WhitelistedNamesInput() *[]*string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetWhitelistedNames()
@@ -6162,8 +7142,8 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCook
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6192,7 +7172,7 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCook
 	return returns
 }
 
-func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference {
+func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference{}
@@ -6206,7 +7186,7 @@ func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputRe
 	return &j
 }
 
-func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference_Override(c CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference_Override(c CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6248,7 +7228,7 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCook
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6265,12 +7245,40 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCook
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6307,12 +7315,54 @@ func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCook
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6375,12 +7425,17 @@ type CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference in
 	QueryStringInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCookies(value *CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies)
@@ -6503,8 +7558,8 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6513,7 +7568,7 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 	return returns
 }
 
-func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference {
+func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference{}
@@ -6527,7 +7582,7 @@ func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference
 	return &j
 }
 
-func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference_Override(c CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference_Override(c CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6585,7 +7640,7 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6594,12 +7649,40 @@ func (j *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6636,12 +7719,54 @@ func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6702,70 +7827,70 @@ func (c *jsiiProxy_CloudfrontDistributionOrderedCacheBehaviorForwardedValuesOutp
 }
 
 type CloudfrontDistributionOrderedCacheBehaviorFunctionAssociation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#event_type CloudfrontDistribution#event_type}.
-	EventType *string `json:"eventType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#function_arn CloudfrontDistribution#function_arn}.
-	FunctionArn *string `json:"functionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#event_type CloudfrontDistribution#event_type}.
+	EventType *string `json:"eventType" yaml:"eventType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#function_arn CloudfrontDistribution#function_arn}.
+	FunctionArn *string `json:"functionArn" yaml:"functionArn"`
 }
 
 type CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#event_type CloudfrontDistribution#event_type}.
-	EventType *string `json:"eventType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#lambda_arn CloudfrontDistribution#lambda_arn}.
-	LambdaArn *string `json:"lambdaArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#include_body CloudfrontDistribution#include_body}.
-	IncludeBody interface{} `json:"includeBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#event_type CloudfrontDistribution#event_type}.
+	EventType *string `json:"eventType" yaml:"eventType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#lambda_arn CloudfrontDistribution#lambda_arn}.
+	LambdaArn *string `json:"lambdaArn" yaml:"lambdaArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#include_body CloudfrontDistribution#include_body}.
+	IncludeBody interface{} `json:"includeBody" yaml:"includeBody"`
 }
 
 type CloudfrontDistributionOrigin struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#domain_name CloudfrontDistribution#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_id CloudfrontDistribution#origin_id}.
-	OriginId *string `json:"originId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#connection_attempts CloudfrontDistribution#connection_attempts}.
-	ConnectionAttempts *float64 `json:"connectionAttempts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#connection_timeout CloudfrontDistribution#connection_timeout}.
-	ConnectionTimeout *float64 `json:"connectionTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#domain_name CloudfrontDistribution#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_id CloudfrontDistribution#origin_id}.
+	OriginId *string `json:"originId" yaml:"originId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#connection_attempts CloudfrontDistribution#connection_attempts}.
+	ConnectionAttempts *float64 `json:"connectionAttempts" yaml:"connectionAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#connection_timeout CloudfrontDistribution#connection_timeout}.
+	ConnectionTimeout *float64 `json:"connectionTimeout" yaml:"connectionTimeout"`
 	// custom_header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#custom_header CloudfrontDistribution#custom_header}
-	CustomHeader *[]*CloudfrontDistributionOriginCustomHeader `json:"customHeader"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#custom_header CloudfrontDistribution#custom_header}
+	CustomHeader interface{} `json:"customHeader" yaml:"customHeader"`
 	// custom_origin_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#custom_origin_config CloudfrontDistribution#custom_origin_config}
-	CustomOriginConfig *CloudfrontDistributionOriginCustomOriginConfig `json:"customOriginConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_path CloudfrontDistribution#origin_path}.
-	OriginPath *string `json:"originPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#custom_origin_config CloudfrontDistribution#custom_origin_config}
+	CustomOriginConfig *CloudfrontDistributionOriginCustomOriginConfig `json:"customOriginConfig" yaml:"customOriginConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_path CloudfrontDistribution#origin_path}.
+	OriginPath *string `json:"originPath" yaml:"originPath"`
 	// origin_shield block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_shield CloudfrontDistribution#origin_shield}
-	OriginShield *CloudfrontDistributionOriginOriginShield `json:"originShield"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_shield CloudfrontDistribution#origin_shield}
+	OriginShield *CloudfrontDistributionOriginOriginShield `json:"originShield" yaml:"originShield"`
 	// s3_origin_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#s3_origin_config CloudfrontDistribution#s3_origin_config}
-	S3OriginConfig *CloudfrontDistributionOriginS3OriginConfig `json:"s3OriginConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#s3_origin_config CloudfrontDistribution#s3_origin_config}
+	S3OriginConfig *CloudfrontDistributionOriginS3OriginConfig `json:"s3OriginConfig" yaml:"s3OriginConfig"`
 }
 
 type CloudfrontDistributionOriginCustomHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#name CloudfrontDistribution#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#value CloudfrontDistribution#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#name CloudfrontDistribution#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#value CloudfrontDistribution#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudfrontDistributionOriginCustomOriginConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#http_port CloudfrontDistribution#http_port}.
-	HttpPort *float64 `json:"httpPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#https_port CloudfrontDistribution#https_port}.
-	HttpsPort *float64 `json:"httpsPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_protocol_policy CloudfrontDistribution#origin_protocol_policy}.
-	OriginProtocolPolicy *string `json:"originProtocolPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_ssl_protocols CloudfrontDistribution#origin_ssl_protocols}.
-	OriginSslProtocols *[]*string `json:"originSslProtocols"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_keepalive_timeout CloudfrontDistribution#origin_keepalive_timeout}.
-	OriginKeepaliveTimeout *float64 `json:"originKeepaliveTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_read_timeout CloudfrontDistribution#origin_read_timeout}.
-	OriginReadTimeout *float64 `json:"originReadTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#http_port CloudfrontDistribution#http_port}.
+	HttpPort *float64 `json:"httpPort" yaml:"httpPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#https_port CloudfrontDistribution#https_port}.
+	HttpsPort *float64 `json:"httpsPort" yaml:"httpsPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_protocol_policy CloudfrontDistribution#origin_protocol_policy}.
+	OriginProtocolPolicy *string `json:"originProtocolPolicy" yaml:"originProtocolPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_ssl_protocols CloudfrontDistribution#origin_ssl_protocols}.
+	OriginSslProtocols *[]*string `json:"originSslProtocols" yaml:"originSslProtocols"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_keepalive_timeout CloudfrontDistribution#origin_keepalive_timeout}.
+	OriginKeepaliveTimeout *float64 `json:"originKeepaliveTimeout" yaml:"originKeepaliveTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_read_timeout CloudfrontDistribution#origin_read_timeout}.
+	OriginReadTimeout *float64 `json:"originReadTimeout" yaml:"originReadTimeout"`
 }
 
 type CloudfrontDistributionOriginCustomOriginConfigOutputReference interface {
@@ -6794,12 +7919,17 @@ type CloudfrontDistributionOriginCustomOriginConfigOutputReference interface {
 	OriginSslProtocolsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetOriginKeepaliveTimeout()
@@ -6961,8 +8091,8 @@ func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6971,7 +8101,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 	return returns
 }
 
-func NewCloudfrontDistributionOriginCustomOriginConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginCustomOriginConfigOutputReference {
+func NewCloudfrontDistributionOriginCustomOriginConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginCustomOriginConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference{}
@@ -6985,7 +8115,7 @@ func NewCloudfrontDistributionOriginCustomOriginConfigOutputReference(terraformR
 	return &j
 }
 
-func NewCloudfrontDistributionOriginCustomOriginConfigOutputReference_Override(c CloudfrontDistributionOriginCustomOriginConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionOriginCustomOriginConfigOutputReference_Override(c CloudfrontDistributionOriginCustomOriginConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7067,7 +8197,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7076,12 +8206,40 @@ func (j *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7118,12 +8276,54 @@ func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7178,19 +8378,19 @@ func (c *jsiiProxy_CloudfrontDistributionOriginCustomOriginConfigOutputReference
 type CloudfrontDistributionOriginGroup struct {
 	// failover_criteria block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#failover_criteria CloudfrontDistribution#failover_criteria}
-	FailoverCriteria *CloudfrontDistributionOriginGroupFailoverCriteria `json:"failoverCriteria"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#failover_criteria CloudfrontDistribution#failover_criteria}
+	FailoverCriteria *CloudfrontDistributionOriginGroupFailoverCriteria `json:"failoverCriteria" yaml:"failoverCriteria"`
 	// member block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#member CloudfrontDistribution#member}
-	Member *[]*CloudfrontDistributionOriginGroupMember `json:"member"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_id CloudfrontDistribution#origin_id}.
-	OriginId *string `json:"originId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#member CloudfrontDistribution#member}
+	Member interface{} `json:"member" yaml:"member"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_id CloudfrontDistribution#origin_id}.
+	OriginId *string `json:"originId" yaml:"originId"`
 }
 
 type CloudfrontDistributionOriginGroupFailoverCriteria struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#status_codes CloudfrontDistribution#status_codes}.
-	StatusCodes *[]*float64 `json:"statusCodes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#status_codes CloudfrontDistribution#status_codes}.
+	StatusCodes *[]*float64 `json:"statusCodes" yaml:"statusCodes"`
 }
 
 type CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference interface {
@@ -7204,12 +8404,17 @@ type CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference interface 
 	StatusCodesInput() *[]*float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7269,8 +8474,8 @@ func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7279,7 +8484,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputRefere
 	return returns
 }
 
-func NewCloudfrontDistributionOriginGroupFailoverCriteriaOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference {
+func NewCloudfrontDistributionOriginGroupFailoverCriteriaOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference{}
@@ -7293,7 +8498,7 @@ func NewCloudfrontDistributionOriginGroupFailoverCriteriaOutputReference(terrafo
 	return &j
 }
 
-func NewCloudfrontDistributionOriginGroupFailoverCriteriaOutputReference_Override(c CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionOriginGroupFailoverCriteriaOutputReference_Override(c CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7335,7 +8540,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputRefere
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7344,12 +8549,40 @@ func (j *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputRefere
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7386,12 +8619,54 @@ func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputRefere
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7428,15 +8703,15 @@ func (c *jsiiProxy_CloudfrontDistributionOriginGroupFailoverCriteriaOutputRefere
 }
 
 type CloudfrontDistributionOriginGroupMember struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_id CloudfrontDistribution#origin_id}.
-	OriginId *string `json:"originId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_id CloudfrontDistribution#origin_id}.
+	OriginId *string `json:"originId" yaml:"originId"`
 }
 
 type CloudfrontDistributionOriginOriginShield struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#enabled CloudfrontDistribution#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_shield_region CloudfrontDistribution#origin_shield_region}.
-	OriginShieldRegion *string `json:"originShieldRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#enabled CloudfrontDistribution#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_shield_region CloudfrontDistribution#origin_shield_region}.
+	OriginShieldRegion *string `json:"originShieldRegion" yaml:"originShieldRegion"`
 }
 
 type CloudfrontDistributionOriginOriginShieldOutputReference interface {
@@ -7453,12 +8728,17 @@ type CloudfrontDistributionOriginOriginShieldOutputReference interface {
 	OriginShieldRegionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7538,8 +8818,8 @@ func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7548,7 +8828,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) Terr
 	return returns
 }
 
-func NewCloudfrontDistributionOriginOriginShieldOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginOriginShieldOutputReference {
+func NewCloudfrontDistributionOriginOriginShieldOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginOriginShieldOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference{}
@@ -7562,7 +8842,7 @@ func NewCloudfrontDistributionOriginOriginShieldOutputReference(terraformResourc
 	return &j
 }
 
-func NewCloudfrontDistributionOriginOriginShieldOutputReference_Override(c CloudfrontDistributionOriginOriginShieldOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionOriginOriginShieldOutputReference_Override(c CloudfrontDistributionOriginOriginShieldOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7612,7 +8892,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7621,12 +8901,40 @@ func (j *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) SetT
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7663,12 +8971,54 @@ func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetN
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7705,8 +9055,8 @@ func (c *jsiiProxy_CloudfrontDistributionOriginOriginShieldOutputReference) Inte
 }
 
 type CloudfrontDistributionOriginS3OriginConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#origin_access_identity CloudfrontDistribution#origin_access_identity}.
-	OriginAccessIdentity *string `json:"originAccessIdentity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#origin_access_identity CloudfrontDistribution#origin_access_identity}.
+	OriginAccessIdentity *string `json:"originAccessIdentity" yaml:"originAccessIdentity"`
 }
 
 type CloudfrontDistributionOriginS3OriginConfigOutputReference interface {
@@ -7720,12 +9070,17 @@ type CloudfrontDistributionOriginS3OriginConfigOutputReference interface {
 	OriginAccessIdentityInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7785,8 +9140,8 @@ func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7795,7 +9150,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) Te
 	return returns
 }
 
-func NewCloudfrontDistributionOriginS3OriginConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginS3OriginConfigOutputReference {
+func NewCloudfrontDistributionOriginS3OriginConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionOriginS3OriginConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference{}
@@ -7809,7 +9164,7 @@ func NewCloudfrontDistributionOriginS3OriginConfigOutputReference(terraformResou
 	return &j
 }
 
-func NewCloudfrontDistributionOriginS3OriginConfigOutputReference_Override(c CloudfrontDistributionOriginS3OriginConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionOriginS3OriginConfigOutputReference_Override(c CloudfrontDistributionOriginS3OriginConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7851,7 +9206,7 @@ func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7860,12 +9215,40 @@ func (j *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) Se
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7902,12 +9285,54 @@ func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) Ge
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7946,15 +9371,15 @@ func (c *jsiiProxy_CloudfrontDistributionOriginS3OriginConfigOutputReference) In
 type CloudfrontDistributionRestrictions struct {
 	// geo_restriction block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#geo_restriction CloudfrontDistribution#geo_restriction}
-	GeoRestriction *CloudfrontDistributionRestrictionsGeoRestriction `json:"geoRestriction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#geo_restriction CloudfrontDistribution#geo_restriction}
+	GeoRestriction *CloudfrontDistributionRestrictionsGeoRestriction `json:"geoRestriction" yaml:"geoRestriction"`
 }
 
 type CloudfrontDistributionRestrictionsGeoRestriction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#restriction_type CloudfrontDistribution#restriction_type}.
-	RestrictionType *string `json:"restrictionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#locations CloudfrontDistribution#locations}.
-	Locations *[]*string `json:"locations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#restriction_type CloudfrontDistribution#restriction_type}.
+	RestrictionType *string `json:"restrictionType" yaml:"restrictionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#locations CloudfrontDistribution#locations}.
+	Locations *[]*string `json:"locations" yaml:"locations"`
 }
 
 type CloudfrontDistributionRestrictionsGeoRestrictionOutputReference interface {
@@ -7971,12 +9396,17 @@ type CloudfrontDistributionRestrictionsGeoRestrictionOutputReference interface {
 	RestrictionTypeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLocations()
@@ -8057,8 +9487,8 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8067,7 +9497,7 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReferen
 	return returns
 }
 
-func NewCloudfrontDistributionRestrictionsGeoRestrictionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionRestrictionsGeoRestrictionOutputReference {
+func NewCloudfrontDistributionRestrictionsGeoRestrictionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionRestrictionsGeoRestrictionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference{}
@@ -8081,7 +9511,7 @@ func NewCloudfrontDistributionRestrictionsGeoRestrictionOutputReference(terrafor
 	return &j
 }
 
-func NewCloudfrontDistributionRestrictionsGeoRestrictionOutputReference_Override(c CloudfrontDistributionRestrictionsGeoRestrictionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionRestrictionsGeoRestrictionOutputReference_Override(c CloudfrontDistributionRestrictionsGeoRestrictionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8131,7 +9561,7 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReferen
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8140,12 +9570,40 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReferen
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8182,12 +9640,54 @@ func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReferen
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsGeoRestrictionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8241,12 +9741,17 @@ type CloudfrontDistributionRestrictionsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutGeoRestriction(value *CloudfrontDistributionRestrictionsGeoRestriction)
@@ -8307,8 +9812,8 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8317,7 +9822,7 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) TerraformR
 	return returns
 }
 
-func NewCloudfrontDistributionRestrictionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionRestrictionsOutputReference {
+func NewCloudfrontDistributionRestrictionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionRestrictionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionRestrictionsOutputReference{}
@@ -8331,7 +9836,7 @@ func NewCloudfrontDistributionRestrictionsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewCloudfrontDistributionRestrictionsOutputReference_Override(c CloudfrontDistributionRestrictionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionRestrictionsOutputReference_Override(c CloudfrontDistributionRestrictionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8365,7 +9870,7 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8374,12 +9879,40 @@ func (j *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8416,12 +9949,54 @@ func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionRestrictionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8469,16 +10044,23 @@ type CloudfrontDistributionTrustedKeyGroups interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
-	Items() interface{}
+	Enabled() cdktf.IResolvable
+	Items() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -8497,8 +10079,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) ComplexComputedListIn
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -8507,8 +10089,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) Enabled() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) Items() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) Items() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"items",
@@ -8527,8 +10109,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8537,15 +10119,25 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) TerraformResource() c
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewCloudfrontDistributionTrustedKeyGroups(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) CloudfrontDistributionTrustedKeyGroups {
+func NewCloudfrontDistributionTrustedKeyGroups(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) CloudfrontDistributionTrustedKeyGroups {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionTrustedKeyGroups{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroups",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -8553,12 +10145,12 @@ func NewCloudfrontDistributionTrustedKeyGroups(terraformResource cdktf.ITerrafor
 }
 
 // Experimental.
-func NewCloudfrontDistributionTrustedKeyGroups_Override(c CloudfrontDistributionTrustedKeyGroups, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewCloudfrontDistributionTrustedKeyGroups_Override(c CloudfrontDistributionTrustedKeyGroups, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroups",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		c,
 	)
 }
@@ -8579,7 +10171,7 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8587,13 +10179,49 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) SetTerraformResource(
 	)
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8630,12 +10258,54 @@ func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetNumberAttribute(te
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroups) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8665,12 +10335,19 @@ type CloudfrontDistributionTrustedKeyGroupsItems interface {
 	KeyPairIds() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -8719,8 +10396,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8729,15 +10406,25 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) TerraformResourc
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewCloudfrontDistributionTrustedKeyGroupsItems(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) CloudfrontDistributionTrustedKeyGroupsItems {
+func NewCloudfrontDistributionTrustedKeyGroupsItems(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) CloudfrontDistributionTrustedKeyGroupsItems {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroupsItems",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -8745,12 +10432,12 @@ func NewCloudfrontDistributionTrustedKeyGroupsItems(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewCloudfrontDistributionTrustedKeyGroupsItems_Override(c CloudfrontDistributionTrustedKeyGroupsItems, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewCloudfrontDistributionTrustedKeyGroupsItems_Override(c CloudfrontDistributionTrustedKeyGroupsItems, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedKeyGroupsItems",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		c,
 	)
 }
@@ -8771,7 +10458,7 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8779,13 +10466,49 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8822,12 +10545,54 @@ func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetNumberAttribu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedKeyGroupsItems) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8853,16 +10618,23 @@ type CloudfrontDistributionTrustedSigners interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
-	Items() interface{}
+	Enabled() cdktf.IResolvable
+	Items() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -8881,8 +10653,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) ComplexComputedListInde
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -8891,8 +10663,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) Enabled() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) Items() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) Items() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"items",
@@ -8911,8 +10683,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8921,15 +10693,25 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) TerraformResource() cdk
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewCloudfrontDistributionTrustedSigners(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) CloudfrontDistributionTrustedSigners {
+func NewCloudfrontDistributionTrustedSigners(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) CloudfrontDistributionTrustedSigners {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionTrustedSigners{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSigners",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -8937,12 +10719,12 @@ func NewCloudfrontDistributionTrustedSigners(terraformResource cdktf.ITerraformR
 }
 
 // Experimental.
-func NewCloudfrontDistributionTrustedSigners_Override(c CloudfrontDistributionTrustedSigners, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewCloudfrontDistributionTrustedSigners_Override(c CloudfrontDistributionTrustedSigners, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSigners",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		c,
 	)
 }
@@ -8963,7 +10745,7 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8971,13 +10753,49 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) SetTerraformResource(va
 	)
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedSigners) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9014,12 +10832,54 @@ func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSigners) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9049,12 +10909,19 @@ type CloudfrontDistributionTrustedSignersItems interface {
 	KeyPairIds() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -9103,8 +10970,8 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9113,15 +10980,25 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) TerraformResource(
 	return returns
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewCloudfrontDistributionTrustedSignersItems(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) CloudfrontDistributionTrustedSignersItems {
+func NewCloudfrontDistributionTrustedSignersItems(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) CloudfrontDistributionTrustedSignersItems {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionTrustedSignersItems{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSignersItems",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -9129,12 +11006,12 @@ func NewCloudfrontDistributionTrustedSignersItems(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewCloudfrontDistributionTrustedSignersItems_Override(c CloudfrontDistributionTrustedSignersItems, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewCloudfrontDistributionTrustedSignersItems_Override(c CloudfrontDistributionTrustedSignersItems, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.CloudfrontDistributionTrustedSignersItems",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		c,
 	)
 }
@@ -9155,7 +11032,7 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9163,13 +11040,49 @@ func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_CloudfrontDistributionTrustedSignersItems) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9206,12 +11119,54 @@ func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetNumberAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9234,16 +11189,16 @@ func (c *jsiiProxy_CloudfrontDistributionTrustedSignersItems) InterpolationForAt
 }
 
 type CloudfrontDistributionViewerCertificate struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#acm_certificate_arn CloudfrontDistribution#acm_certificate_arn}.
-	AcmCertificateArn *string `json:"acmCertificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#cloudfront_default_certificate CloudfrontDistribution#cloudfront_default_certificate}.
-	CloudfrontDefaultCertificate interface{} `json:"cloudfrontDefaultCertificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#iam_certificate_id CloudfrontDistribution#iam_certificate_id}.
-	IamCertificateId *string `json:"iamCertificateId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#minimum_protocol_version CloudfrontDistribution#minimum_protocol_version}.
-	MinimumProtocolVersion *string `json:"minimumProtocolVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution.html#ssl_support_method CloudfrontDistribution#ssl_support_method}.
-	SslSupportMethod *string `json:"sslSupportMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#acm_certificate_arn CloudfrontDistribution#acm_certificate_arn}.
+	AcmCertificateArn *string `json:"acmCertificateArn" yaml:"acmCertificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#cloudfront_default_certificate CloudfrontDistribution#cloudfront_default_certificate}.
+	CloudfrontDefaultCertificate interface{} `json:"cloudfrontDefaultCertificate" yaml:"cloudfrontDefaultCertificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#iam_certificate_id CloudfrontDistribution#iam_certificate_id}.
+	IamCertificateId *string `json:"iamCertificateId" yaml:"iamCertificateId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#minimum_protocol_version CloudfrontDistribution#minimum_protocol_version}.
+	MinimumProtocolVersion *string `json:"minimumProtocolVersion" yaml:"minimumProtocolVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_distribution#ssl_support_method CloudfrontDistribution#ssl_support_method}.
+	SslSupportMethod *string `json:"sslSupportMethod" yaml:"sslSupportMethod"`
 }
 
 type CloudfrontDistributionViewerCertificateOutputReference interface {
@@ -9269,12 +11224,17 @@ type CloudfrontDistributionViewerCertificateOutputReference interface {
 	SslSupportMethodInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAcmCertificateArn()
@@ -9419,8 +11379,8 @@ func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9429,7 +11389,7 @@ func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) Terra
 	return returns
 }
 
-func NewCloudfrontDistributionViewerCertificateOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionViewerCertificateOutputReference {
+func NewCloudfrontDistributionViewerCertificateOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontDistributionViewerCertificateOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference{}
@@ -9443,7 +11403,7 @@ func NewCloudfrontDistributionViewerCertificateOutputReference(terraformResource
 	return &j
 }
 
-func NewCloudfrontDistributionViewerCertificateOutputReference_Override(c CloudfrontDistributionViewerCertificateOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontDistributionViewerCertificateOutputReference_Override(c CloudfrontDistributionViewerCertificateOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9517,7 +11477,7 @@ func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9526,12 +11486,40 @@ func (j *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) SetTe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9568,12 +11556,54 @@ func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetNu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9649,7 +11679,7 @@ func (c *jsiiProxy_CloudfrontDistributionViewerCertificateOutputReference) Reset
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html aws_cloudfront_field_level_encryption_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config aws_cloudfront_field_level_encryption_config}.
 type CloudfrontFieldLevelEncryptionConfig interface {
 	cdktf.TerraformResource
 	CallerReference() *string
@@ -9660,8 +11690,8 @@ type CloudfrontFieldLevelEncryptionConfig interface {
 	ConstructNodeMetadata() *map[string]interface{}
 	ContentTypeProfileConfig() CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference
 	ContentTypeProfileConfigInput() *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -9680,10 +11710,15 @@ type CloudfrontFieldLevelEncryptionConfig interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutContentTypeProfileConfig(value *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig)
@@ -9771,8 +11806,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ContentTypeProfileConfi
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9921,7 +11956,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) TerraformResourceType()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html aws_cloudfront_field_level_encryption_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config aws_cloudfront_field_level_encryption_config} Resource.
 func NewCloudfrontFieldLevelEncryptionConfig(scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionConfigConfig) CloudfrontFieldLevelEncryptionConfig {
 	_init_.Initialize()
 
@@ -9936,7 +11971,7 @@ func NewCloudfrontFieldLevelEncryptionConfig(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html aws_cloudfront_field_level_encryption_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config aws_cloudfront_field_level_encryption_config} Resource.
 func NewCloudfrontFieldLevelEncryptionConfig_Override(c CloudfrontFieldLevelEncryptionConfig, scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionConfigConfig) {
 	_init_.Initialize()
 
@@ -9955,7 +11990,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetComment(val *string)
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10027,12 +12062,40 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) AddOverride(path *strin
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10069,12 +12132,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10199,48 +12304,48 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfig) ToTerraform() interface
 // AWS CloudFront.
 type CloudfrontFieldLevelEncryptionConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// content_type_profile_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#content_type_profile_config CloudfrontFieldLevelEncryptionConfig#content_type_profile_config}
-	ContentTypeProfileConfig *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig `json:"contentTypeProfileConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#content_type_profile_config CloudfrontFieldLevelEncryptionConfig#content_type_profile_config}
+	ContentTypeProfileConfig *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig `json:"contentTypeProfileConfig" yaml:"contentTypeProfileConfig"`
 	// query_arg_profile_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#query_arg_profile_config CloudfrontFieldLevelEncryptionConfig#query_arg_profile_config}
-	QueryArgProfileConfig *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig `json:"queryArgProfileConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#comment CloudfrontFieldLevelEncryptionConfig#comment}.
-	Comment *string `json:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#query_arg_profile_config CloudfrontFieldLevelEncryptionConfig#query_arg_profile_config}
+	QueryArgProfileConfig *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig `json:"queryArgProfileConfig" yaml:"queryArgProfileConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#comment CloudfrontFieldLevelEncryptionConfig#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
 }
 
 type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfig struct {
 	// content_type_profiles block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#content_type_profiles CloudfrontFieldLevelEncryptionConfig#content_type_profiles}
-	ContentTypeProfiles *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles `json:"contentTypeProfiles"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#forward_when_content_type_is_unknown CloudfrontFieldLevelEncryptionConfig#forward_when_content_type_is_unknown}.
-	ForwardWhenContentTypeIsUnknown interface{} `json:"forwardWhenContentTypeIsUnknown"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#content_type_profiles CloudfrontFieldLevelEncryptionConfig#content_type_profiles}
+	ContentTypeProfiles *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles `json:"contentTypeProfiles" yaml:"contentTypeProfiles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#forward_when_content_type_is_unknown CloudfrontFieldLevelEncryptionConfig#forward_when_content_type_is_unknown}.
+	ForwardWhenContentTypeIsUnknown interface{} `json:"forwardWhenContentTypeIsUnknown" yaml:"forwardWhenContentTypeIsUnknown"`
 }
 
 type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles struct {
 	// items block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#items CloudfrontFieldLevelEncryptionConfig#items}
-	Items *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#items CloudfrontFieldLevelEncryptionConfig#items}
+	Items interface{} `json:"items" yaml:"items"`
 }
 
 type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#content_type CloudfrontFieldLevelEncryptionConfig#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#format CloudfrontFieldLevelEncryptionConfig#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#profile_id CloudfrontFieldLevelEncryptionConfig#profile_id}.
-	ProfileId *string `json:"profileId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#content_type CloudfrontFieldLevelEncryptionConfig#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#format CloudfrontFieldLevelEncryptionConfig#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#profile_id CloudfrontFieldLevelEncryptionConfig#profile_id}.
+	ProfileId *string `json:"profileId" yaml:"profileId"`
 }
 
 type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference interface {
@@ -10249,17 +12354,22 @@ type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProf
 	SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Items() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
-	SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems)
-	ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
+	Items() interface{}
+	SetItems(val interface{})
+	ItemsInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10289,8 +12399,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) Items() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems {
-	var returns *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) Items() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"items",
@@ -10299,8 +12409,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems {
-	var returns *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) ItemsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"itemsInput",
@@ -10319,8 +12429,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10329,7 +12439,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 	return returns
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference {
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference{}
@@ -10343,7 +12453,7 @@ func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeP
 	return &j
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10369,7 +12479,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItems) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetItems(val interface{}) {
 	_jsii_.Set(
 		j,
 		"items",
@@ -10385,7 +12495,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10394,12 +12504,40 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10436,12 +12574,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigC
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10490,12 +12670,17 @@ type CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutContentTypeProfiles(value *CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles)
@@ -10576,8 +12761,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigO
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10586,7 +12771,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigO
 	return returns
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference {
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference{}
@@ -10600,7 +12785,7 @@ func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputRefere
 	return &j
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10642,7 +12827,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigO
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10651,12 +12836,40 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigO
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10693,12 +12906,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigO
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10743,12 +12998,12 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigContentTypeProfileConfigO
 }
 
 type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#forward_when_query_arg_profile_is_unknown CloudfrontFieldLevelEncryptionConfig#forward_when_query_arg_profile_is_unknown}.
-	ForwardWhenQueryArgProfileIsUnknown interface{} `json:"forwardWhenQueryArgProfileIsUnknown"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#forward_when_query_arg_profile_is_unknown CloudfrontFieldLevelEncryptionConfig#forward_when_query_arg_profile_is_unknown}.
+	ForwardWhenQueryArgProfileIsUnknown interface{} `json:"forwardWhenQueryArgProfileIsUnknown" yaml:"forwardWhenQueryArgProfileIsUnknown"`
 	// query_arg_profiles block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#query_arg_profiles CloudfrontFieldLevelEncryptionConfig#query_arg_profiles}
-	QueryArgProfiles *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles `json:"queryArgProfiles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#query_arg_profiles CloudfrontFieldLevelEncryptionConfig#query_arg_profiles}
+	QueryArgProfiles *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles `json:"queryArgProfiles" yaml:"queryArgProfiles"`
 }
 
 type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference interface {
@@ -10764,12 +13019,17 @@ type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference in
 	QueryArgProfilesInput() *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutQueryArgProfiles(value *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles)
@@ -10851,8 +13111,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutp
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10861,7 +13121,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutp
 	return returns
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference {
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference{}
@@ -10875,7 +13135,7 @@ func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference
 	return &j
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10917,7 +13177,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutp
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10926,12 +13186,40 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutp
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10968,12 +13256,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutp
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11028,15 +13358,15 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigOutp
 type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles struct {
 	// items block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#items CloudfrontFieldLevelEncryptionConfig#items}
-	Items *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#items CloudfrontFieldLevelEncryptionConfig#items}
+	Items interface{} `json:"items" yaml:"items"`
 }
 
 type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#profile_id CloudfrontFieldLevelEncryptionConfig#profile_id}.
-	ProfileId *string `json:"profileId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config.html#query_arg CloudfrontFieldLevelEncryptionConfig#query_arg}.
-	QueryArg *string `json:"queryArg"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#profile_id CloudfrontFieldLevelEncryptionConfig#profile_id}.
+	ProfileId *string `json:"profileId" yaml:"profileId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_config#query_arg CloudfrontFieldLevelEncryptionConfig#query_arg}.
+	QueryArg *string `json:"queryArg" yaml:"queryArg"`
 }
 
 type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference interface {
@@ -11045,17 +13375,22 @@ type CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOu
 	SetInternalValue(val *CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfiles)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Items() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
-	SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems)
-	ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
+	Items() interface{}
+	SetItems(val interface{})
+	ItemsInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -11086,8 +13421,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) Items() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems {
-	var returns *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) Items() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"items",
@@ -11096,8 +13431,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) ItemsInput() *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems {
-	var returns *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) ItemsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"itemsInput",
@@ -11116,8 +13451,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11126,7 +13461,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 	return returns
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference {
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference{}
@@ -11140,7 +13475,7 @@ func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfile
 	return &j
 }
 
-func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference_Override(c CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11166,7 +13501,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetItems(val *[]*CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItems) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetItems(val interface{}) {
 	_jsii_.Set(
 		j,
 		"items",
@@ -11182,7 +13517,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11191,12 +13526,40 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11233,12 +13596,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11282,7 +13687,7 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionConfigQueryArgProfileConfigQuer
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html aws_cloudfront_field_level_encryption_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile aws_cloudfront_field_level_encryption_profile}.
 type CloudfrontFieldLevelEncryptionProfile interface {
 	cdktf.TerraformResource
 	CallerReference() *string
@@ -11291,8 +13696,8 @@ type CloudfrontFieldLevelEncryptionProfile interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EncryptionEntities() CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference
@@ -11314,10 +13719,15 @@ type CloudfrontFieldLevelEncryptionProfile interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEncryptionEntities(value *CloudfrontFieldLevelEncryptionProfileEncryptionEntities)
@@ -11384,8 +13794,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11554,7 +13964,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) TerraformResourceType(
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html aws_cloudfront_field_level_encryption_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile aws_cloudfront_field_level_encryption_profile} Resource.
 func NewCloudfrontFieldLevelEncryptionProfile(scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionProfileConfig) CloudfrontFieldLevelEncryptionProfile {
 	_init_.Initialize()
 
@@ -11569,7 +13979,7 @@ func NewCloudfrontFieldLevelEncryptionProfile(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html aws_cloudfront_field_level_encryption_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile aws_cloudfront_field_level_encryption_profile} Resource.
 func NewCloudfrontFieldLevelEncryptionProfile_Override(c CloudfrontFieldLevelEncryptionProfile, scope constructs.Construct, id *string, config *CloudfrontFieldLevelEncryptionProfileConfig) {
 	_init_.Initialize()
 
@@ -11588,7 +13998,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetComment(val *string
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11668,12 +14078,40 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) AddOverride(path *stri
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11710,12 +14148,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11832,44 +14312,44 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfile) ToTerraform() interfac
 // AWS CloudFront.
 type CloudfrontFieldLevelEncryptionProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// encryption_entities block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#encryption_entities CloudfrontFieldLevelEncryptionProfile#encryption_entities}
-	EncryptionEntities *CloudfrontFieldLevelEncryptionProfileEncryptionEntities `json:"encryptionEntities"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#name CloudfrontFieldLevelEncryptionProfile#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#comment CloudfrontFieldLevelEncryptionProfile#comment}.
-	Comment *string `json:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#encryption_entities CloudfrontFieldLevelEncryptionProfile#encryption_entities}
+	EncryptionEntities *CloudfrontFieldLevelEncryptionProfileEncryptionEntities `json:"encryptionEntities" yaml:"encryptionEntities"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#name CloudfrontFieldLevelEncryptionProfile#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#comment CloudfrontFieldLevelEncryptionProfile#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
 }
 
 type CloudfrontFieldLevelEncryptionProfileEncryptionEntities struct {
 	// items block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#items CloudfrontFieldLevelEncryptionProfile#items}
-	Items *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#items CloudfrontFieldLevelEncryptionProfile#items}
+	Items interface{} `json:"items" yaml:"items"`
 }
 
 type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems struct {
 	// field_patterns block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#field_patterns CloudfrontFieldLevelEncryptionProfile#field_patterns}
-	FieldPatterns *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns `json:"fieldPatterns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#provider_id CloudfrontFieldLevelEncryptionProfile#provider_id}.
-	ProviderId *string `json:"providerId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#public_key_id CloudfrontFieldLevelEncryptionProfile#public_key_id}.
-	PublicKeyId *string `json:"publicKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#field_patterns CloudfrontFieldLevelEncryptionProfile#field_patterns}
+	FieldPatterns *CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns `json:"fieldPatterns" yaml:"fieldPatterns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#provider_id CloudfrontFieldLevelEncryptionProfile#provider_id}.
+	ProviderId *string `json:"providerId" yaml:"providerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#public_key_id CloudfrontFieldLevelEncryptionProfile#public_key_id}.
+	PublicKeyId *string `json:"publicKeyId" yaml:"publicKeyId"`
 }
 
 type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatterns struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile.html#items CloudfrontFieldLevelEncryptionProfile#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_field_level_encryption_profile#items CloudfrontFieldLevelEncryptionProfile#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference interface {
@@ -11883,12 +14363,17 @@ type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOu
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -11949,8 +14434,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsF
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11959,7 +14444,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsF
 	return returns
 }
 
-func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference {
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference{}
@@ -11973,7 +14458,7 @@ func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPattern
 	return &j
 }
 
-func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference_Override(c CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference_Override(c CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12015,7 +14500,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsF
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12024,12 +14509,40 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsF
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12066,12 +14579,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsF
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItemsFieldPatternsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12121,17 +14676,22 @@ type CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference inte
 	SetInternalValue(val *CloudfrontFieldLevelEncryptionProfileEncryptionEntities)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Items() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
-	SetItems(val *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems)
-	ItemsInput() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
+	Items() interface{}
+	SetItems(val interface{})
+	ItemsInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -12162,8 +14722,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) Items() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems {
-	var returns *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) Items() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"items",
@@ -12172,8 +14732,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) ItemsInput() *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems {
-	var returns *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) ItemsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"itemsInput",
@@ -12192,8 +14752,8 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12202,7 +14762,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 	return returns
 }
 
-func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference {
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference{}
@@ -12216,7 +14776,7 @@ func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference(t
 	return &j
 }
 
-func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference_Override(c CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference_Override(c CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12242,7 +14802,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetItems(val *[]*CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesItems) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetItems(val interface{}) {
 	_jsii_.Set(
 		j,
 		"items",
@@ -12258,7 +14818,7 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12267,12 +14827,40 @@ func (j *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12309,12 +14897,54 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12358,7 +14988,7 @@ func (c *jsiiProxy_CloudfrontFieldLevelEncryptionProfileEncryptionEntitiesOutput
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html aws_cloudfront_function}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function aws_cloudfront_function}.
 type CloudfrontFunction interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -12370,8 +15000,8 @@ type CloudfrontFunction interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -12399,10 +15029,15 @@ type CloudfrontFunction interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetComment()
@@ -12489,8 +15124,8 @@ func (j *jsiiProxy_CloudfrontFunction) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontFunction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontFunction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12699,7 +15334,7 @@ func (j *jsiiProxy_CloudfrontFunction) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html aws_cloudfront_function} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function aws_cloudfront_function} Resource.
 func NewCloudfrontFunction(scope constructs.Construct, id *string, config *CloudfrontFunctionConfig) CloudfrontFunction {
 	_init_.Initialize()
 
@@ -12714,7 +15349,7 @@ func NewCloudfrontFunction(scope constructs.Construct, id *string, config *Cloud
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html aws_cloudfront_function} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function aws_cloudfront_function} Resource.
 func NewCloudfrontFunction_Override(c CloudfrontFunction, scope constructs.Construct, id *string, config *CloudfrontFunctionConfig) {
 	_init_.Initialize()
 
@@ -12741,7 +15376,7 @@ func (j *jsiiProxy_CloudfrontFunction) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontFunction) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontFunction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12837,12 +15472,40 @@ func (c *jsiiProxy_CloudfrontFunction) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFunction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFunction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFunction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12879,12 +15542,54 @@ func (c *jsiiProxy_CloudfrontFunction) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontFunction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFunction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontFunction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontFunction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13001,26 +15706,26 @@ func (c *jsiiProxy_CloudfrontFunction) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontFunctionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html#code CloudfrontFunction#code}.
-	Code *string `json:"code"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html#name CloudfrontFunction#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html#runtime CloudfrontFunction#runtime}.
-	Runtime *string `json:"runtime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html#comment CloudfrontFunction#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function.html#publish CloudfrontFunction#publish}.
-	Publish interface{} `json:"publish"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function#code CloudfrontFunction#code}.
+	Code *string `json:"code" yaml:"code"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function#name CloudfrontFunction#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function#runtime CloudfrontFunction#runtime}.
+	Runtime *string `json:"runtime" yaml:"runtime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function#comment CloudfrontFunction#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_function#publish CloudfrontFunction#publish}.
+	Publish interface{} `json:"publish" yaml:"publish"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group.html aws_cloudfront_key_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group aws_cloudfront_key_group}.
 type CloudfrontKeyGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -13028,8 +15733,8 @@ type CloudfrontKeyGroup interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -13052,10 +15757,15 @@ type CloudfrontKeyGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetComment()
@@ -13111,8 +15821,8 @@ func (j *jsiiProxy_CloudfrontKeyGroup) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontKeyGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontKeyGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13281,7 +15991,7 @@ func (j *jsiiProxy_CloudfrontKeyGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group.html aws_cloudfront_key_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group aws_cloudfront_key_group} Resource.
 func NewCloudfrontKeyGroup(scope constructs.Construct, id *string, config *CloudfrontKeyGroupConfig) CloudfrontKeyGroup {
 	_init_.Initialize()
 
@@ -13296,7 +16006,7 @@ func NewCloudfrontKeyGroup(scope constructs.Construct, id *string, config *Cloud
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group.html aws_cloudfront_key_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group aws_cloudfront_key_group} Resource.
 func NewCloudfrontKeyGroup_Override(c CloudfrontKeyGroup, scope constructs.Construct, id *string, config *CloudfrontKeyGroupConfig) {
 	_init_.Initialize()
 
@@ -13315,7 +16025,7 @@ func (j *jsiiProxy_CloudfrontKeyGroup) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontKeyGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontKeyGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13403,12 +16113,40 @@ func (c *jsiiProxy_CloudfrontKeyGroup) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontKeyGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontKeyGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontKeyGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13445,12 +16183,54 @@ func (c *jsiiProxy_CloudfrontKeyGroup) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontKeyGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontKeyGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontKeyGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontKeyGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13559,28 +16339,28 @@ func (c *jsiiProxy_CloudfrontKeyGroup) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontKeyGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group.html#items CloudfrontKeyGroup#items}.
-	Items *[]*string `json:"items"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group.html#name CloudfrontKeyGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group.html#comment CloudfrontKeyGroup#comment}.
-	Comment *string `json:"comment"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group#items CloudfrontKeyGroup#items}.
+	Items *[]*string `json:"items" yaml:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group#name CloudfrontKeyGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_key_group#comment CloudfrontKeyGroup#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription.html aws_cloudfront_monitoring_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription aws_cloudfront_monitoring_subscription}.
 type CloudfrontMonitoringSubscription interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DistributionId() *string
@@ -13601,10 +16381,15 @@ type CloudfrontMonitoringSubscription interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutMonitoringSubscription(value *CloudfrontMonitoringSubscriptionMonitoringSubscription)
@@ -13640,8 +16425,8 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscription) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontMonitoringSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontMonitoringSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13800,7 +16585,7 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscription) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription.html aws_cloudfront_monitoring_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription aws_cloudfront_monitoring_subscription} Resource.
 func NewCloudfrontMonitoringSubscription(scope constructs.Construct, id *string, config *CloudfrontMonitoringSubscriptionConfig) CloudfrontMonitoringSubscription {
 	_init_.Initialize()
 
@@ -13815,7 +16600,7 @@ func NewCloudfrontMonitoringSubscription(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription.html aws_cloudfront_monitoring_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription aws_cloudfront_monitoring_subscription} Resource.
 func NewCloudfrontMonitoringSubscription_Override(c CloudfrontMonitoringSubscription, scope constructs.Construct, id *string, config *CloudfrontMonitoringSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -13826,7 +16611,7 @@ func NewCloudfrontMonitoringSubscription_Override(c CloudfrontMonitoringSubscrip
 	)
 }
 
-func (j *jsiiProxy_CloudfrontMonitoringSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontMonitoringSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13906,12 +16691,40 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscription) AddOverride(path *string, v
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13948,12 +16761,54 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14062,26 +16917,26 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscription) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontMonitoringSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription.html#distribution_id CloudfrontMonitoringSubscription#distribution_id}.
-	DistributionId *string `json:"distributionId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription#distribution_id CloudfrontMonitoringSubscription#distribution_id}.
+	DistributionId *string `json:"distributionId" yaml:"distributionId"`
 	// monitoring_subscription block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription.html#monitoring_subscription CloudfrontMonitoringSubscription#monitoring_subscription}
-	MonitoringSubscription *CloudfrontMonitoringSubscriptionMonitoringSubscription `json:"monitoringSubscription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription#monitoring_subscription CloudfrontMonitoringSubscription#monitoring_subscription}
+	MonitoringSubscription *CloudfrontMonitoringSubscriptionMonitoringSubscription `json:"monitoringSubscription" yaml:"monitoringSubscription"`
 }
 
 type CloudfrontMonitoringSubscriptionMonitoringSubscription struct {
 	// realtime_metrics_subscription_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription.html#realtime_metrics_subscription_config CloudfrontMonitoringSubscription#realtime_metrics_subscription_config}
-	RealtimeMetricsSubscriptionConfig *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig `json:"realtimeMetricsSubscriptionConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription#realtime_metrics_subscription_config CloudfrontMonitoringSubscription#realtime_metrics_subscription_config}
+	RealtimeMetricsSubscriptionConfig *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig `json:"realtimeMetricsSubscriptionConfig" yaml:"realtimeMetricsSubscriptionConfig"`
 }
 
 type CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference interface {
@@ -14094,12 +16949,17 @@ type CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference inter
 	RealtimeMetricsSubscriptionConfigInput() *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRealtimeMetricsSubscriptionConfig(value *CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig)
@@ -14160,8 +17020,8 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputR
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14170,7 +17030,7 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputR
 	return returns
 }
 
-func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference {
+func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference{}
@@ -14184,7 +17044,7 @@ func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference(te
 	return &j
 }
 
-func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference_Override(c CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference_Override(c CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14218,7 +17078,7 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputR
 	)
 }
 
-func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14227,12 +17087,40 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputR
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14269,12 +17157,54 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputR
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14319,8 +17249,8 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionOutputR
 }
 
 type CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription.html#realtime_metrics_subscription_status CloudfrontMonitoringSubscription#realtime_metrics_subscription_status}.
-	RealtimeMetricsSubscriptionStatus *string `json:"realtimeMetricsSubscriptionStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_monitoring_subscription#realtime_metrics_subscription_status CloudfrontMonitoringSubscription#realtime_metrics_subscription_status}.
+	RealtimeMetricsSubscriptionStatus *string `json:"realtimeMetricsSubscriptionStatus" yaml:"realtimeMetricsSubscriptionStatus"`
 }
 
 type CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference interface {
@@ -14334,12 +17264,17 @@ type CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscr
 	RealtimeMetricsSubscriptionStatusInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -14399,8 +17334,8 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtim
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14409,7 +17344,7 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtim
 	return returns
 }
 
-func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference {
+func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference{}
@@ -14423,7 +17358,7 @@ func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSub
 	return &j
 }
 
-func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference_Override(c CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference_Override(c CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14465,7 +17400,7 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtim
 	)
 }
 
-func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14474,12 +17409,40 @@ func (j *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtim
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14516,12 +17479,54 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtim
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14557,7 +17562,7 @@ func (c *jsiiProxy_CloudfrontMonitoringSubscriptionMonitoringSubscriptionRealtim
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity.html aws_cloudfront_origin_access_identity}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity aws_cloudfront_origin_access_identity}.
 type CloudfrontOriginAccessIdentity interface {
 	cdktf.TerraformResource
 	CallerReference() *string
@@ -14567,8 +17572,8 @@ type CloudfrontOriginAccessIdentity interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -14587,10 +17592,15 @@ type CloudfrontOriginAccessIdentity interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetComment()
@@ -14666,8 +17676,8 @@ func (j *jsiiProxy_CloudfrontOriginAccessIdentity) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginAccessIdentity) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontOriginAccessIdentity) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14816,7 +17826,7 @@ func (j *jsiiProxy_CloudfrontOriginAccessIdentity) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity.html aws_cloudfront_origin_access_identity} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity aws_cloudfront_origin_access_identity} Resource.
 func NewCloudfrontOriginAccessIdentity(scope constructs.Construct, id *string, config *CloudfrontOriginAccessIdentityConfig) CloudfrontOriginAccessIdentity {
 	_init_.Initialize()
 
@@ -14831,7 +17841,7 @@ func NewCloudfrontOriginAccessIdentity(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity.html aws_cloudfront_origin_access_identity} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity aws_cloudfront_origin_access_identity} Resource.
 func NewCloudfrontOriginAccessIdentity_Override(c CloudfrontOriginAccessIdentity, scope constructs.Construct, id *string, config *CloudfrontOriginAccessIdentityConfig) {
 	_init_.Initialize()
 
@@ -14850,7 +17860,7 @@ func (j *jsiiProxy_CloudfrontOriginAccessIdentity) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginAccessIdentity) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontOriginAccessIdentity) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14922,12 +17932,40 @@ func (c *jsiiProxy_CloudfrontOriginAccessIdentity) AddOverride(path *string, val
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14964,12 +18002,54 @@ func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginAccessIdentity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15078,18 +18158,18 @@ func (c *jsiiProxy_CloudfrontOriginAccessIdentity) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontOriginAccessIdentityConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity.html#comment CloudfrontOriginAccessIdentity#comment}.
-	Comment *string `json:"comment"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity#comment CloudfrontOriginAccessIdentity#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html aws_cloudfront_origin_request_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy aws_cloudfront_origin_request_policy}.
 type CloudfrontOriginRequestPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -15099,8 +18179,8 @@ type CloudfrontOriginRequestPolicy interface {
 	ConstructNodeMetadata() *map[string]interface{}
 	CookiesConfig() CloudfrontOriginRequestPolicyCookiesConfigOutputReference
 	CookiesConfigInput() *CloudfrontOriginRequestPolicyCookiesConfig
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -15124,10 +18204,15 @@ type CloudfrontOriginRequestPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCookiesConfig(value *CloudfrontOriginRequestPolicyCookiesConfig)
@@ -15206,8 +18291,8 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicy) CookiesConfigInput() *Cloudfro
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontOriginRequestPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15396,7 +18481,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicy) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html aws_cloudfront_origin_request_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy aws_cloudfront_origin_request_policy} Resource.
 func NewCloudfrontOriginRequestPolicy(scope constructs.Construct, id *string, config *CloudfrontOriginRequestPolicyConfig) CloudfrontOriginRequestPolicy {
 	_init_.Initialize()
 
@@ -15411,7 +18496,7 @@ func NewCloudfrontOriginRequestPolicy(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html aws_cloudfront_origin_request_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy aws_cloudfront_origin_request_policy} Resource.
 func NewCloudfrontOriginRequestPolicy_Override(c CloudfrontOriginRequestPolicy, scope constructs.Construct, id *string, config *CloudfrontOriginRequestPolicyConfig) {
 	_init_.Initialize()
 
@@ -15430,7 +18515,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicy) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontOriginRequestPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15510,12 +18595,40 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicy) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15552,12 +18665,54 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15690,43 +18845,43 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicy) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontOriginRequestPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// cookies_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#cookies_config CloudfrontOriginRequestPolicy#cookies_config}
-	CookiesConfig *CloudfrontOriginRequestPolicyCookiesConfig `json:"cookiesConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#cookies_config CloudfrontOriginRequestPolicy#cookies_config}
+	CookiesConfig *CloudfrontOriginRequestPolicyCookiesConfig `json:"cookiesConfig" yaml:"cookiesConfig"`
 	// headers_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#headers_config CloudfrontOriginRequestPolicy#headers_config}
-	HeadersConfig *CloudfrontOriginRequestPolicyHeadersConfig `json:"headersConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#name CloudfrontOriginRequestPolicy#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#headers_config CloudfrontOriginRequestPolicy#headers_config}
+	HeadersConfig *CloudfrontOriginRequestPolicyHeadersConfig `json:"headersConfig" yaml:"headersConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#name CloudfrontOriginRequestPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 	// query_strings_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#query_strings_config CloudfrontOriginRequestPolicy#query_strings_config}
-	QueryStringsConfig *CloudfrontOriginRequestPolicyQueryStringsConfig `json:"queryStringsConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#comment CloudfrontOriginRequestPolicy#comment}.
-	Comment *string `json:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#query_strings_config CloudfrontOriginRequestPolicy#query_strings_config}
+	QueryStringsConfig *CloudfrontOriginRequestPolicyQueryStringsConfig `json:"queryStringsConfig" yaml:"queryStringsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#comment CloudfrontOriginRequestPolicy#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
 }
 
 type CloudfrontOriginRequestPolicyCookiesConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#cookie_behavior CloudfrontOriginRequestPolicy#cookie_behavior}.
-	CookieBehavior *string `json:"cookieBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#cookie_behavior CloudfrontOriginRequestPolicy#cookie_behavior}.
+	CookieBehavior *string `json:"cookieBehavior" yaml:"cookieBehavior"`
 	// cookies block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#cookies CloudfrontOriginRequestPolicy#cookies}
-	Cookies *CloudfrontOriginRequestPolicyCookiesConfigCookies `json:"cookies"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#cookies CloudfrontOriginRequestPolicy#cookies}
+	Cookies *CloudfrontOriginRequestPolicyCookiesConfigCookies `json:"cookies" yaml:"cookies"`
 }
 
 type CloudfrontOriginRequestPolicyCookiesConfigCookies struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#items CloudfrontOriginRequestPolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#items CloudfrontOriginRequestPolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference interface {
@@ -15740,12 +18895,17 @@ type CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference interface 
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -15806,8 +18966,8 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15816,7 +18976,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputRefere
 	return returns
 }
 
-func NewCloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference {
+func NewCloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference{}
@@ -15830,7 +18990,7 @@ func NewCloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference(terrafo
 	return &j
 }
 
-func NewCloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference_Override(c CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference_Override(c CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15872,7 +19032,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputRefere
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15881,12 +19041,40 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputRefere
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15923,12 +19111,54 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputRefere
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigCookiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15985,12 +19215,17 @@ type CloudfrontOriginRequestPolicyCookiesConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCookies(value *CloudfrontOriginRequestPolicyCookiesConfigCookies)
@@ -16072,8 +19307,8 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16082,7 +19317,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Te
 	return returns
 }
 
-func NewCloudfrontOriginRequestPolicyCookiesConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyCookiesConfigOutputReference {
+func NewCloudfrontOriginRequestPolicyCookiesConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyCookiesConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference{}
@@ -16096,7 +19331,7 @@ func NewCloudfrontOriginRequestPolicyCookiesConfigOutputReference(terraformResou
 	return &j
 }
 
-func NewCloudfrontOriginRequestPolicyCookiesConfigOutputReference_Override(c CloudfrontOriginRequestPolicyCookiesConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontOriginRequestPolicyCookiesConfigOutputReference_Override(c CloudfrontOriginRequestPolicyCookiesConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16138,7 +19373,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16147,12 +19382,40 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Se
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16189,12 +19452,54 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Ge
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16247,17 +19552,17 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyCookiesConfigOutputReference) Re
 }
 
 type CloudfrontOriginRequestPolicyHeadersConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#header_behavior CloudfrontOriginRequestPolicy#header_behavior}.
-	HeaderBehavior *string `json:"headerBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#header_behavior CloudfrontOriginRequestPolicy#header_behavior}.
+	HeaderBehavior *string `json:"headerBehavior" yaml:"headerBehavior"`
 	// headers block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#headers CloudfrontOriginRequestPolicy#headers}
-	Headers *CloudfrontOriginRequestPolicyHeadersConfigHeaders `json:"headers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#headers CloudfrontOriginRequestPolicy#headers}
+	Headers *CloudfrontOriginRequestPolicyHeadersConfigHeaders `json:"headers" yaml:"headers"`
 }
 
 type CloudfrontOriginRequestPolicyHeadersConfigHeaders struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#items CloudfrontOriginRequestPolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#items CloudfrontOriginRequestPolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference interface {
@@ -16271,12 +19576,17 @@ type CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference interface 
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -16337,8 +19647,8 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16347,7 +19657,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputRefere
 	return returns
 }
 
-func NewCloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference {
+func NewCloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference{}
@@ -16361,7 +19671,7 @@ func NewCloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference(terrafo
 	return &j
 }
 
-func NewCloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference_Override(c CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference_Override(c CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16403,7 +19713,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputRefere
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16412,12 +19722,40 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputRefere
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16454,12 +19792,54 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputRefere
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigHeadersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16516,12 +19896,17 @@ type CloudfrontOriginRequestPolicyHeadersConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutHeaders(value *CloudfrontOriginRequestPolicyHeadersConfigHeaders)
@@ -16604,8 +19989,8 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16614,7 +19999,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) Te
 	return returns
 }
 
-func NewCloudfrontOriginRequestPolicyHeadersConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyHeadersConfigOutputReference {
+func NewCloudfrontOriginRequestPolicyHeadersConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyHeadersConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference{}
@@ -16628,7 +20013,7 @@ func NewCloudfrontOriginRequestPolicyHeadersConfigOutputReference(terraformResou
 	return &j
 }
 
-func NewCloudfrontOriginRequestPolicyHeadersConfigOutputReference_Override(c CloudfrontOriginRequestPolicyHeadersConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontOriginRequestPolicyHeadersConfigOutputReference_Override(c CloudfrontOriginRequestPolicyHeadersConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16670,7 +20055,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16679,12 +20064,40 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) Se
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16721,12 +20134,54 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) Ge
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16787,12 +20242,12 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyHeadersConfigOutputReference) Re
 }
 
 type CloudfrontOriginRequestPolicyQueryStringsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#query_string_behavior CloudfrontOriginRequestPolicy#query_string_behavior}.
-	QueryStringBehavior *string `json:"queryStringBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#query_string_behavior CloudfrontOriginRequestPolicy#query_string_behavior}.
+	QueryStringBehavior *string `json:"queryStringBehavior" yaml:"queryStringBehavior"`
 	// query_strings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#query_strings CloudfrontOriginRequestPolicy#query_strings}
-	QueryStrings *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings `json:"queryStrings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#query_strings CloudfrontOriginRequestPolicy#query_strings}
+	QueryStrings *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings `json:"queryStrings" yaml:"queryStrings"`
 }
 
 type CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference interface {
@@ -16808,12 +20263,17 @@ type CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference interface {
 	QueryStringsInput() *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutQueryStrings(value *CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings)
@@ -16895,8 +20355,8 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16905,7 +20365,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReferenc
 	return returns
 }
 
-func NewCloudfrontOriginRequestPolicyQueryStringsConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference {
+func NewCloudfrontOriginRequestPolicyQueryStringsConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference{}
@@ -16919,7 +20379,7 @@ func NewCloudfrontOriginRequestPolicyQueryStringsConfigOutputReference(terraform
 	return &j
 }
 
-func NewCloudfrontOriginRequestPolicyQueryStringsConfigOutputReference_Override(c CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontOriginRequestPolicyQueryStringsConfigOutputReference_Override(c CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16961,7 +20421,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16970,12 +20430,40 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReferenc
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17012,12 +20500,54 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReferenc
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17070,8 +20600,8 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigOutputReferenc
 }
 
 type CloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy.html#items CloudfrontOriginRequestPolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_request_policy#items CloudfrontOriginRequestPolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference interface {
@@ -17085,12 +20615,17 @@ type CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference 
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -17151,8 +20686,8 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOu
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -17161,7 +20696,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOu
 	return returns
 }
 
-func NewCloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference {
+func NewCloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference{}
@@ -17175,7 +20710,7 @@ func NewCloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReferen
 	return &j
 }
 
-func NewCloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference_Override(c CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference_Override(c CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -17217,7 +20752,7 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOu
 	)
 }
 
-func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -17226,12 +20761,40 @@ func (j *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOu
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17268,12 +20831,54 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17317,7 +20922,7 @@ func (c *jsiiProxy_CloudfrontOriginRequestPolicyQueryStringsConfigQueryStringsOu
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key.html aws_cloudfront_public_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key aws_cloudfront_public_key}.
 type CloudfrontPublicKey interface {
 	cdktf.TerraformResource
 	CallerReference() *string
@@ -17326,8 +20931,8 @@ type CloudfrontPublicKey interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EncodedKey() *string
@@ -17353,10 +20958,15 @@ type CloudfrontPublicKey interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetComment()
@@ -17424,8 +21034,8 @@ func (j *jsiiProxy_CloudfrontPublicKey) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontPublicKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontPublicKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17614,7 +21224,7 @@ func (j *jsiiProxy_CloudfrontPublicKey) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key.html aws_cloudfront_public_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key aws_cloudfront_public_key} Resource.
 func NewCloudfrontPublicKey(scope constructs.Construct, id *string, config *CloudfrontPublicKeyConfig) CloudfrontPublicKey {
 	_init_.Initialize()
 
@@ -17629,7 +21239,7 @@ func NewCloudfrontPublicKey(scope constructs.Construct, id *string, config *Clou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key.html aws_cloudfront_public_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key aws_cloudfront_public_key} Resource.
 func NewCloudfrontPublicKey_Override(c CloudfrontPublicKey, scope constructs.Construct, id *string, config *CloudfrontPublicKeyConfig) {
 	_init_.Initialize()
 
@@ -17648,7 +21258,7 @@ func (j *jsiiProxy_CloudfrontPublicKey) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontPublicKey) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontPublicKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17744,12 +21354,40 @@ func (c *jsiiProxy_CloudfrontPublicKey) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontPublicKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontPublicKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontPublicKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17786,12 +21424,54 @@ func (c *jsiiProxy_CloudfrontPublicKey) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontPublicKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontPublicKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontPublicKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontPublicKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17916,31 +21596,31 @@ func (c *jsiiProxy_CloudfrontPublicKey) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontPublicKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key.html#encoded_key CloudfrontPublicKey#encoded_key}.
-	EncodedKey *string `json:"encodedKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key.html#comment CloudfrontPublicKey#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key.html#name CloudfrontPublicKey#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key.html#name_prefix CloudfrontPublicKey#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key#encoded_key CloudfrontPublicKey#encoded_key}.
+	EncodedKey *string `json:"encodedKey" yaml:"encodedKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key#comment CloudfrontPublicKey#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key#name CloudfrontPublicKey#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_public_key#name_prefix CloudfrontPublicKey#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html aws_cloudfront_realtime_log_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config aws_cloudfront_realtime_log_config}.
 type CloudfrontRealtimeLogConfig interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Endpoint() CloudfrontRealtimeLogConfigEndpointOutputReference
@@ -17967,10 +21647,15 @@ type CloudfrontRealtimeLogConfig interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEndpoint(value *CloudfrontRealtimeLogConfigEndpoint)
@@ -18016,8 +21701,8 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfig) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontRealtimeLogConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontRealtimeLogConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18216,7 +21901,7 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfig) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html aws_cloudfront_realtime_log_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config aws_cloudfront_realtime_log_config} Resource.
 func NewCloudfrontRealtimeLogConfig(scope constructs.Construct, id *string, config *CloudfrontRealtimeLogConfigConfig) CloudfrontRealtimeLogConfig {
 	_init_.Initialize()
 
@@ -18231,7 +21916,7 @@ func NewCloudfrontRealtimeLogConfig(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html aws_cloudfront_realtime_log_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config aws_cloudfront_realtime_log_config} Resource.
 func NewCloudfrontRealtimeLogConfig_Override(c CloudfrontRealtimeLogConfig, scope constructs.Construct, id *string, config *CloudfrontRealtimeLogConfigConfig) {
 	_init_.Initialize()
 
@@ -18242,7 +21927,7 @@ func NewCloudfrontRealtimeLogConfig_Override(c CloudfrontRealtimeLogConfig, scop
 	)
 }
 
-func (j *jsiiProxy_CloudfrontRealtimeLogConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontRealtimeLogConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18338,12 +22023,40 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfig) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18380,12 +22093,54 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18494,39 +22249,39 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfig) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontRealtimeLogConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// endpoint block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#endpoint CloudfrontRealtimeLogConfig#endpoint}
-	Endpoint *CloudfrontRealtimeLogConfigEndpoint `json:"endpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#fields CloudfrontRealtimeLogConfig#fields}.
-	Fields *[]*string `json:"fields"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#name CloudfrontRealtimeLogConfig#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#sampling_rate CloudfrontRealtimeLogConfig#sampling_rate}.
-	SamplingRate *float64 `json:"samplingRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#endpoint CloudfrontRealtimeLogConfig#endpoint}
+	Endpoint *CloudfrontRealtimeLogConfigEndpoint `json:"endpoint" yaml:"endpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#fields CloudfrontRealtimeLogConfig#fields}.
+	Fields *[]*string `json:"fields" yaml:"fields"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#name CloudfrontRealtimeLogConfig#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#sampling_rate CloudfrontRealtimeLogConfig#sampling_rate}.
+	SamplingRate *float64 `json:"samplingRate" yaml:"samplingRate"`
 }
 
 type CloudfrontRealtimeLogConfigEndpoint struct {
 	// kinesis_stream_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#kinesis_stream_config CloudfrontRealtimeLogConfig#kinesis_stream_config}
-	KinesisStreamConfig *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig `json:"kinesisStreamConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#stream_type CloudfrontRealtimeLogConfig#stream_type}.
-	StreamType *string `json:"streamType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#kinesis_stream_config CloudfrontRealtimeLogConfig#kinesis_stream_config}
+	KinesisStreamConfig *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig `json:"kinesisStreamConfig" yaml:"kinesisStreamConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#stream_type CloudfrontRealtimeLogConfig#stream_type}.
+	StreamType *string `json:"streamType" yaml:"streamType"`
 }
 
 type CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#role_arn CloudfrontRealtimeLogConfig#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config.html#stream_arn CloudfrontRealtimeLogConfig#stream_arn}.
-	StreamArn *string `json:"streamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#role_arn CloudfrontRealtimeLogConfig#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_realtime_log_config#stream_arn CloudfrontRealtimeLogConfig#stream_arn}.
+	StreamArn *string `json:"streamArn" yaml:"streamArn"`
 }
 
 type CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference interface {
@@ -18543,12 +22298,17 @@ type CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference inter
 	StreamArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -18628,8 +22388,8 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputR
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18638,7 +22398,7 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputR
 	return returns
 }
 
-func NewCloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference {
+func NewCloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference{}
@@ -18652,7 +22412,7 @@ func NewCloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference(te
 	return &j
 }
 
-func NewCloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference_Override(c CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference_Override(c CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18702,7 +22462,7 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputR
 	)
 }
 
-func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18711,12 +22471,40 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputR
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18753,12 +22541,54 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputR
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointKinesisStreamConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18807,12 +22637,17 @@ type CloudfrontRealtimeLogConfigEndpointOutputReference interface {
 	StreamTypeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutKinesisStreamConfig(value *CloudfrontRealtimeLogConfigEndpointKinesisStreamConfig)
@@ -18893,8 +22728,8 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -18903,7 +22738,7 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) Terraform
 	return returns
 }
 
-func NewCloudfrontRealtimeLogConfigEndpointOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontRealtimeLogConfigEndpointOutputReference {
+func NewCloudfrontRealtimeLogConfigEndpointOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontRealtimeLogConfigEndpointOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference{}
@@ -18917,7 +22752,7 @@ func NewCloudfrontRealtimeLogConfigEndpointOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewCloudfrontRealtimeLogConfigEndpointOutputReference_Override(c CloudfrontRealtimeLogConfigEndpointOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontRealtimeLogConfigEndpointOutputReference_Override(c CloudfrontRealtimeLogConfigEndpointOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -18959,7 +22794,7 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -18968,12 +22803,40 @@ func (j *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) SetTerraf
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19010,12 +22873,54 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetNumber
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19059,7 +22964,7 @@ func (c *jsiiProxy_CloudfrontRealtimeLogConfigEndpointOutputReference) PutKinesi
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html aws_cloudfront_response_headers_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy aws_cloudfront_response_headers_policy}.
 type CloudfrontResponseHeadersPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -19069,8 +22974,8 @@ type CloudfrontResponseHeadersPolicy interface {
 	ConstructNodeMetadata() *map[string]interface{}
 	CorsConfig() CloudfrontResponseHeadersPolicyCorsConfigOutputReference
 	CorsConfigInput() *CloudfrontResponseHeadersPolicyCorsConfig
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomHeadersConfig() CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference
 	CustomHeadersConfigInput() *CloudfrontResponseHeadersPolicyCustomHeadersConfig
 	DependsOn() *[]*string
@@ -19096,10 +23001,15 @@ type CloudfrontResponseHeadersPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCorsConfig(value *CloudfrontResponseHeadersPolicyCorsConfig)
@@ -19182,8 +23092,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicy) CorsConfigInput() *Cloudfron
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19382,7 +23292,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicy) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html aws_cloudfront_response_headers_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy aws_cloudfront_response_headers_policy} Resource.
 func NewCloudfrontResponseHeadersPolicy(scope constructs.Construct, id *string, config *CloudfrontResponseHeadersPolicyConfig) CloudfrontResponseHeadersPolicy {
 	_init_.Initialize()
 
@@ -19397,7 +23307,7 @@ func NewCloudfrontResponseHeadersPolicy(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html aws_cloudfront_response_headers_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy aws_cloudfront_response_headers_policy} Resource.
 func NewCloudfrontResponseHeadersPolicy_Override(c CloudfrontResponseHeadersPolicy, scope constructs.Construct, id *string, config *CloudfrontResponseHeadersPolicyConfig) {
 	_init_.Initialize()
 
@@ -19416,7 +23326,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicy) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19504,12 +23414,40 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) AddOverride(path *string, va
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19546,12 +23484,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19716,61 +23696,61 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicy) ToTerraform() interface{} {
 // AWS CloudFront.
 type CloudfrontResponseHeadersPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#name CloudfrontResponseHeadersPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#comment CloudfrontResponseHeadersPolicy#comment}.
-	Comment *string `json:"comment"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#name CloudfrontResponseHeadersPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#comment CloudfrontResponseHeadersPolicy#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
 	// cors_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#cors_config CloudfrontResponseHeadersPolicy#cors_config}
-	CorsConfig *CloudfrontResponseHeadersPolicyCorsConfig `json:"corsConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#cors_config CloudfrontResponseHeadersPolicy#cors_config}
+	CorsConfig *CloudfrontResponseHeadersPolicyCorsConfig `json:"corsConfig" yaml:"corsConfig"`
 	// custom_headers_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#custom_headers_config CloudfrontResponseHeadersPolicy#custom_headers_config}
-	CustomHeadersConfig *CloudfrontResponseHeadersPolicyCustomHeadersConfig `json:"customHeadersConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#etag CloudfrontResponseHeadersPolicy#etag}.
-	Etag *string `json:"etag"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#custom_headers_config CloudfrontResponseHeadersPolicy#custom_headers_config}
+	CustomHeadersConfig *CloudfrontResponseHeadersPolicyCustomHeadersConfig `json:"customHeadersConfig" yaml:"customHeadersConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#etag CloudfrontResponseHeadersPolicy#etag}.
+	Etag *string `json:"etag" yaml:"etag"`
 	// security_headers_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#security_headers_config CloudfrontResponseHeadersPolicy#security_headers_config}
-	SecurityHeadersConfig *CloudfrontResponseHeadersPolicySecurityHeadersConfig `json:"securityHeadersConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#security_headers_config CloudfrontResponseHeadersPolicy#security_headers_config}
+	SecurityHeadersConfig *CloudfrontResponseHeadersPolicySecurityHeadersConfig `json:"securityHeadersConfig" yaml:"securityHeadersConfig"`
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#access_control_allow_credentials CloudfrontResponseHeadersPolicy#access_control_allow_credentials}.
-	AccessControlAllowCredentials interface{} `json:"accessControlAllowCredentials"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#access_control_allow_credentials CloudfrontResponseHeadersPolicy#access_control_allow_credentials}.
+	AccessControlAllowCredentials interface{} `json:"accessControlAllowCredentials" yaml:"accessControlAllowCredentials"`
 	// access_control_allow_headers block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#access_control_allow_headers CloudfrontResponseHeadersPolicy#access_control_allow_headers}
-	AccessControlAllowHeaders *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders `json:"accessControlAllowHeaders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#access_control_allow_headers CloudfrontResponseHeadersPolicy#access_control_allow_headers}
+	AccessControlAllowHeaders *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders `json:"accessControlAllowHeaders" yaml:"accessControlAllowHeaders"`
 	// access_control_allow_methods block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#access_control_allow_methods CloudfrontResponseHeadersPolicy#access_control_allow_methods}
-	AccessControlAllowMethods *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods `json:"accessControlAllowMethods"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#access_control_allow_methods CloudfrontResponseHeadersPolicy#access_control_allow_methods}
+	AccessControlAllowMethods *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods `json:"accessControlAllowMethods" yaml:"accessControlAllowMethods"`
 	// access_control_allow_origins block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#access_control_allow_origins CloudfrontResponseHeadersPolicy#access_control_allow_origins}
-	AccessControlAllowOrigins *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins `json:"accessControlAllowOrigins"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#origin_override CloudfrontResponseHeadersPolicy#origin_override}.
-	OriginOverride interface{} `json:"originOverride"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#access_control_allow_origins CloudfrontResponseHeadersPolicy#access_control_allow_origins}
+	AccessControlAllowOrigins *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins `json:"accessControlAllowOrigins" yaml:"accessControlAllowOrigins"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#origin_override CloudfrontResponseHeadersPolicy#origin_override}.
+	OriginOverride interface{} `json:"originOverride" yaml:"originOverride"`
 	// access_control_expose_headers block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#access_control_expose_headers CloudfrontResponseHeadersPolicy#access_control_expose_headers}
-	AccessControlExposeHeaders *CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders `json:"accessControlExposeHeaders"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#access_control_max_age_sec CloudfrontResponseHeadersPolicy#access_control_max_age_sec}.
-	AccessControlMaxAgeSec *float64 `json:"accessControlMaxAgeSec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#access_control_expose_headers CloudfrontResponseHeadersPolicy#access_control_expose_headers}
+	AccessControlExposeHeaders *CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders `json:"accessControlExposeHeaders" yaml:"accessControlExposeHeaders"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#access_control_max_age_sec CloudfrontResponseHeadersPolicy#access_control_max_age_sec}.
+	AccessControlMaxAgeSec *float64 `json:"accessControlMaxAgeSec" yaml:"accessControlMaxAgeSec"`
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#items CloudfrontResponseHeadersPolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#items CloudfrontResponseHeadersPolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference interface {
@@ -19784,12 +23764,17 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputRef
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -19850,8 +23835,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHe
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -19860,7 +23845,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHe
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference{}
@@ -19874,7 +23859,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutput
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -19916,7 +23901,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHe
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -19925,12 +23910,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19967,12 +23980,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHe
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeadersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20017,8 +24072,8 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHe
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#items CloudfrontResponseHeadersPolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#items CloudfrontResponseHeadersPolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference interface {
@@ -20032,12 +24087,17 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputRef
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -20098,8 +24158,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMe
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20108,7 +24168,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMe
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference{}
@@ -20122,7 +24182,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutput
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20164,7 +24224,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMe
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20173,12 +24233,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20215,12 +24303,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMe
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethodsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20265,8 +24395,8 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMe
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#items CloudfrontResponseHeadersPolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#items CloudfrontResponseHeadersPolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference interface {
@@ -20280,12 +24410,17 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputRef
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -20346,8 +24481,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOr
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20356,7 +24491,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOr
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference{}
@@ -20370,7 +24505,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutput
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20412,7 +24547,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOr
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20421,12 +24556,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOr
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20463,12 +24626,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOriginsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20513,8 +24718,8 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOr
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#items CloudfrontResponseHeadersPolicy#items}.
-	Items *[]*string `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#items CloudfrontResponseHeadersPolicy#items}.
+	Items *[]*string `json:"items" yaml:"items"`
 }
 
 type CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference interface {
@@ -20528,12 +24733,17 @@ type CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputRe
 	ItemsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -20594,8 +24804,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeH
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20604,7 +24814,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeH
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference{}
@@ -20618,7 +24828,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutpu
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -20660,7 +24870,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeH
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -20669,12 +24879,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeH
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20711,12 +24949,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeH
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeadersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20785,12 +25065,17 @@ type CloudfrontResponseHeadersPolicyCorsConfigOutputReference interface {
 	OriginOverrideInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAccessControlAllowHeaders(value *CloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders)
@@ -20976,8 +25261,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -20986,7 +25271,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Ter
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigOutputReference {
+func NewCloudfrontResponseHeadersPolicyCorsConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCorsConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference{}
@@ -21000,7 +25285,7 @@ func NewCloudfrontResponseHeadersPolicyCorsConfigOutputReference(terraformResour
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicyCorsConfigOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicyCorsConfigOutputReference_Override(c CloudfrontResponseHeadersPolicyCorsConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21058,7 +25343,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21067,12 +25352,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Set
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21109,12 +25422,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Get
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21201,17 +25556,17 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCorsConfigOutputReference) Res
 type CloudfrontResponseHeadersPolicyCustomHeadersConfig struct {
 	// items block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#items CloudfrontResponseHeadersPolicy#items}
-	Items *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems `json:"items"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#items CloudfrontResponseHeadersPolicy#items}
+	Items interface{} `json:"items" yaml:"items"`
 }
 
 type CloudfrontResponseHeadersPolicyCustomHeadersConfigItems struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#header CloudfrontResponseHeadersPolicy#header}.
-	Header *string `json:"header"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#override CloudfrontResponseHeadersPolicy#override}.
-	Override interface{} `json:"override"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#value CloudfrontResponseHeadersPolicy#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#header CloudfrontResponseHeadersPolicy#header}.
+	Header *string `json:"header" yaml:"header"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#override CloudfrontResponseHeadersPolicy#override}.
+	Override interface{} `json:"override" yaml:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#value CloudfrontResponseHeadersPolicy#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference interface {
@@ -21220,17 +25575,22 @@ type CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference interface
 	SetInternalValue(val *CloudfrontResponseHeadersPolicyCustomHeadersConfig)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Items() *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems
-	SetItems(val *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems)
-	ItemsInput() *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems
+	Items() interface{}
+	SetItems(val interface{})
+	ItemsInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetItems()
@@ -21261,8 +25621,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) Items() *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems {
-	var returns *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) Items() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"items",
@@ -21271,8 +25631,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) ItemsInput() *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems {
-	var returns *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) ItemsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"itemsInput",
@@ -21291,8 +25651,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21301,7 +25661,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference {
+func NewCloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference{}
@@ -21315,7 +25675,7 @@ func NewCloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference(terraf
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference_Override(c CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference_Override(c CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21341,7 +25701,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) SetItems(val *[]*CloudfrontResponseHeadersPolicyCustomHeadersConfigItems) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) SetItems(val interface{}) {
 	_jsii_.Set(
 		j,
 		"items",
@@ -21357,7 +25717,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21366,12 +25726,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21408,12 +25796,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21460,35 +25890,35 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicyCustomHeadersConfigOutputRefer
 type CloudfrontResponseHeadersPolicySecurityHeadersConfig struct {
 	// content_security_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#content_security_policy CloudfrontResponseHeadersPolicy#content_security_policy}
-	ContentSecurityPolicy *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy `json:"contentSecurityPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#content_security_policy CloudfrontResponseHeadersPolicy#content_security_policy}
+	ContentSecurityPolicy *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy `json:"contentSecurityPolicy" yaml:"contentSecurityPolicy"`
 	// content_type_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#content_type_options CloudfrontResponseHeadersPolicy#content_type_options}
-	ContentTypeOptions *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions `json:"contentTypeOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#content_type_options CloudfrontResponseHeadersPolicy#content_type_options}
+	ContentTypeOptions *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions `json:"contentTypeOptions" yaml:"contentTypeOptions"`
 	// frame_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#frame_options CloudfrontResponseHeadersPolicy#frame_options}
-	FrameOptions *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions `json:"frameOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#frame_options CloudfrontResponseHeadersPolicy#frame_options}
+	FrameOptions *CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions `json:"frameOptions" yaml:"frameOptions"`
 	// referrer_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#referrer_policy CloudfrontResponseHeadersPolicy#referrer_policy}
-	ReferrerPolicy *CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy `json:"referrerPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#referrer_policy CloudfrontResponseHeadersPolicy#referrer_policy}
+	ReferrerPolicy *CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy `json:"referrerPolicy" yaml:"referrerPolicy"`
 	// strict_transport_security block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#strict_transport_security CloudfrontResponseHeadersPolicy#strict_transport_security}
-	StrictTransportSecurity *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity `json:"strictTransportSecurity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#strict_transport_security CloudfrontResponseHeadersPolicy#strict_transport_security}
+	StrictTransportSecurity *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity `json:"strictTransportSecurity" yaml:"strictTransportSecurity"`
 	// xss_protection block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#xss_protection CloudfrontResponseHeadersPolicy#xss_protection}
-	XssProtection *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection `json:"xssProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#xss_protection CloudfrontResponseHeadersPolicy#xss_protection}
+	XssProtection *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection `json:"xssProtection" yaml:"xssProtection"`
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#content_security_policy CloudfrontResponseHeadersPolicy#content_security_policy}.
-	ContentSecurityPolicy *string `json:"contentSecurityPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#override CloudfrontResponseHeadersPolicy#override}.
-	Override interface{} `json:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#content_security_policy CloudfrontResponseHeadersPolicy#content_security_policy}.
+	ContentSecurityPolicy *string `json:"contentSecurityPolicy" yaml:"contentSecurityPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#override CloudfrontResponseHeadersPolicy#override}.
+	Override interface{} `json:"override" yaml:"override"`
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference interface {
@@ -21505,12 +25935,17 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOu
 	OverrideInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -21590,8 +26025,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21600,7 +26035,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference{}
@@ -21614,7 +26049,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolic
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21664,7 +26099,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21673,12 +26108,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21715,12 +26178,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21757,8 +26262,8 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSe
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#override CloudfrontResponseHeadersPolicy#override}.
-	Override interface{} `json:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#override CloudfrontResponseHeadersPolicy#override}.
+	Override interface{} `json:"override" yaml:"override"`
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference interface {
@@ -21772,12 +26277,17 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutpu
 	OverrideInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -21837,8 +26347,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTy
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -21847,7 +26357,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTy
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference{}
@@ -21861,7 +26371,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOu
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -21903,7 +26413,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTy
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -21912,12 +26422,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTy
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21954,12 +26492,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTy
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21996,10 +26576,10 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigContentTy
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#frame_option CloudfrontResponseHeadersPolicy#frame_option}.
-	FrameOption *string `json:"frameOption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#override CloudfrontResponseHeadersPolicy#override}.
-	Override interface{} `json:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#frame_option CloudfrontResponseHeadersPolicy#frame_option}.
+	FrameOption *string `json:"frameOption" yaml:"frameOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#override CloudfrontResponseHeadersPolicy#override}.
+	Override interface{} `json:"override" yaml:"override"`
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference interface {
@@ -22016,12 +26596,17 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputRefer
 	OverrideInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -22101,8 +26686,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOpti
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22111,7 +26696,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOpti
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference{}
@@ -22125,7 +26710,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputRe
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22175,7 +26760,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOpti
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22184,12 +26769,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOpti
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22226,12 +26839,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOpti
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22285,14 +26940,19 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference interfa
 	StrictTransportSecurityInput() *CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	XssProtection() CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference
 	XssProtectionInput() *CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutContentSecurityPolicy(value *CloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy)
@@ -22444,8 +27104,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputRef
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22474,7 +27134,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputRef
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference{}
@@ -22488,7 +27148,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference(terr
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22522,7 +27182,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputRef
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22531,12 +27191,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputRef
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22573,12 +27261,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputRef
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22711,10 +27441,10 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigOutputRef
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#override CloudfrontResponseHeadersPolicy#override}.
-	Override interface{} `json:"override"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#referrer_policy CloudfrontResponseHeadersPolicy#referrer_policy}.
-	ReferrerPolicy *string `json:"referrerPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#override CloudfrontResponseHeadersPolicy#override}.
+	Override interface{} `json:"override" yaml:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#referrer_policy CloudfrontResponseHeadersPolicy#referrer_policy}.
+	ReferrerPolicy *string `json:"referrerPolicy" yaml:"referrerPolicy"`
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference interface {
@@ -22731,12 +27461,17 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputRef
 	ReferrerPolicyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -22816,8 +27551,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerP
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22826,7 +27561,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerP
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference{}
@@ -22840,7 +27575,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutput
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22890,7 +27625,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerP
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22899,12 +27634,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerP
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22941,12 +27704,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerP
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22983,14 +27788,14 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerP
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#access_control_max_age_sec CloudfrontResponseHeadersPolicy#access_control_max_age_sec}.
-	AccessControlMaxAgeSec *float64 `json:"accessControlMaxAgeSec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#override CloudfrontResponseHeadersPolicy#override}.
-	Override interface{} `json:"override"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#include_subdomains CloudfrontResponseHeadersPolicy#include_subdomains}.
-	IncludeSubdomains interface{} `json:"includeSubdomains"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#preload CloudfrontResponseHeadersPolicy#preload}.
-	Preload interface{} `json:"preload"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#access_control_max_age_sec CloudfrontResponseHeadersPolicy#access_control_max_age_sec}.
+	AccessControlMaxAgeSec *float64 `json:"accessControlMaxAgeSec" yaml:"accessControlMaxAgeSec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#override CloudfrontResponseHeadersPolicy#override}.
+	Override interface{} `json:"override" yaml:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#include_subdomains CloudfrontResponseHeadersPolicy#include_subdomains}.
+	IncludeSubdomains interface{} `json:"includeSubdomains" yaml:"includeSubdomains"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#preload CloudfrontResponseHeadersPolicy#preload}.
+	Preload interface{} `json:"preload" yaml:"preload"`
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference interface {
@@ -23013,12 +27818,17 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity
 	PreloadInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIncludeSubdomains()
@@ -23140,8 +27950,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23150,7 +27960,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference{}
@@ -23164,7 +27974,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecur
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23230,7 +28040,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23239,12 +28049,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23281,12 +28119,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurityOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23339,14 +28219,14 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTra
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#override CloudfrontResponseHeadersPolicy#override}.
-	Override interface{} `json:"override"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#protection CloudfrontResponseHeadersPolicy#protection}.
-	Protection interface{} `json:"protection"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#mode_block CloudfrontResponseHeadersPolicy#mode_block}.
-	ModeBlock interface{} `json:"modeBlock"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy.html#report_uri CloudfrontResponseHeadersPolicy#report_uri}.
-	ReportUri *string `json:"reportUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#override CloudfrontResponseHeadersPolicy#override}.
+	Override interface{} `json:"override" yaml:"override"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#protection CloudfrontResponseHeadersPolicy#protection}.
+	Protection interface{} `json:"protection" yaml:"protection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#mode_block CloudfrontResponseHeadersPolicy#mode_block}.
+	ModeBlock interface{} `json:"modeBlock" yaml:"modeBlock"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudfront_response_headers_policy#report_uri CloudfrontResponseHeadersPolicy#report_uri}.
+	ReportUri *string `json:"reportUri" yaml:"reportUri"`
 }
 
 type CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference interface {
@@ -23369,12 +28249,17 @@ type CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputRefe
 	ReportUriInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetModeBlock()
@@ -23496,8 +28381,8 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtec
 	return returns
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23506,7 +28391,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtec
 	return returns
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference{}
@@ -23520,7 +28405,7 @@ func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputR
 	return &j
 }
 
-func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference_Override(c CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23586,7 +28471,7 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtec
 	)
 }
 
-func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23595,12 +28480,40 @@ func (j *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtec
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23637,12 +28550,54 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtec
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtectionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23694,14 +28649,14 @@ func (c *jsiiProxy_CloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtec
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy.html aws_cloudfront_cache_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy aws_cloudfront_cache_policy}.
 type DataAwsCloudfrontCachePolicy interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	Comment() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultTtl() *float64
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -23726,10 +28681,15 @@ type DataAwsCloudfrontCachePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ParametersInCacheKeyAndForwardedToOrigin(index *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin
@@ -23777,8 +28737,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicy) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -23967,7 +28927,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicy) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy.html aws_cloudfront_cache_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy aws_cloudfront_cache_policy} Data Source.
 func NewDataAwsCloudfrontCachePolicy(scope constructs.Construct, id *string, config *DataAwsCloudfrontCachePolicyConfig) DataAwsCloudfrontCachePolicy {
 	_init_.Initialize()
 
@@ -23982,7 +28942,7 @@ func NewDataAwsCloudfrontCachePolicy(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy.html aws_cloudfront_cache_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy aws_cloudfront_cache_policy} Data Source.
 func NewDataAwsCloudfrontCachePolicy_Override(d DataAwsCloudfrontCachePolicy, scope constructs.Construct, id *string, config *DataAwsCloudfrontCachePolicyConfig) {
 	_init_.Initialize()
 
@@ -23993,7 +28953,7 @@ func NewDataAwsCloudfrontCachePolicy_Override(d DataAwsCloudfrontCachePolicy, sc
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -24081,12 +29041,40 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24123,12 +29111,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24258,36 +29288,43 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicy) ToTerraform() interface{} {
 // AWS CloudFront.
 type DataAwsCloudfrontCachePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy.html#id DataAwsCloudfrontCachePolicy#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy.html#name DataAwsCloudfrontCachePolicy#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy#id DataAwsCloudfrontCachePolicy#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_cache_policy#name DataAwsCloudfrontCachePolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	CookiesConfig() interface{}
-	EnableAcceptEncodingBrotli() interface{}
-	EnableAcceptEncodingGzip() interface{}
-	HeadersConfig() interface{}
-	QueryStringsConfig() interface{}
+	CookiesConfig() cdktf.IResolvable
+	EnableAcceptEncodingBrotli() cdktf.IResolvable
+	EnableAcceptEncodingGzip() cdktf.IResolvable
+	HeadersConfig() cdktf.IResolvable
+	QueryStringsConfig() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -24306,8 +29343,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) CookiesConfig() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) CookiesConfig() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"cookiesConfig",
@@ -24316,8 +29353,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) EnableAcceptEncodingBrotli() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) EnableAcceptEncodingBrotli() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableAcceptEncodingBrotli",
@@ -24326,8 +29363,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) EnableAcceptEncodingGzip() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) EnableAcceptEncodingGzip() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableAcceptEncodingGzip",
@@ -24336,8 +29373,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) HeadersConfig() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) HeadersConfig() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"headersConfig",
@@ -24346,8 +29383,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) QueryStringsConfig() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) QueryStringsConfig() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"queryStringsConfig",
@@ -24366,8 +29403,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24376,15 +29413,25 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -24392,12 +29439,12 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin(ter
 }
 
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -24418,7 +29465,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24426,13 +29473,49 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24469,12 +29552,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOrigin) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24501,15 +29626,22 @@ type DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookies
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	CookieBehavior() *string
-	Cookies() interface{}
+	Cookies() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -24538,8 +29670,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) Cookies() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) Cookies() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"cookies",
@@ -24558,8 +29690,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24568,15 +29700,25 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -24584,12 +29726,12 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCook
 }
 
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -24610,7 +29752,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24618,13 +29760,49 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24661,12 +29839,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24695,12 +29915,19 @@ type DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookies
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -24739,8 +29966,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24749,15 +29976,25 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -24765,12 +30002,12 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCook
 }
 
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -24791,7 +30028,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24799,13 +30036,49 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24842,12 +30115,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookies) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24874,15 +30189,22 @@ type DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeaders
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	HeaderBehavior() *string
-	Headers() interface{}
+	Headers() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -24911,8 +30233,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) Headers() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) Headers() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"headers",
@@ -24931,8 +30253,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -24941,15 +30263,25 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -24957,12 +30289,12 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHead
 }
 
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -24983,7 +30315,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -24991,13 +30323,49 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25034,12 +30402,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25068,12 +30478,19 @@ type DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeaders
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -25112,8 +30529,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -25122,15 +30539,25 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -25138,12 +30565,12 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHead
 }
 
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -25164,7 +30591,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -25172,13 +30599,49 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25215,12 +30678,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeaders) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25247,15 +30752,22 @@ type DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuerySt
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	QueryStringBehavior() *string
-	QueryStrings() interface{}
+	QueryStrings() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -25284,8 +30796,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) QueryStrings() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) QueryStrings() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"queryStrings",
@@ -25304,8 +30816,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -25314,15 +30826,25 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -25330,12 +30852,12 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuer
 }
 
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -25356,7 +30878,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -25364,13 +30886,49 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25407,12 +30965,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25441,12 +31041,19 @@ type DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuerySt
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -25485,8 +31092,8 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -25495,15 +31102,25 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -25511,12 +31128,12 @@ func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQuer
 }
 
 // Experimental.
-func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings_Override(d DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -25537,7 +31154,7 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -25545,13 +31162,49 @@ func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25588,12 +31241,54 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStrings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25615,18 +31310,19 @@ func (d *jsiiProxy_DataAwsCloudfrontCachePolicyParametersInCacheKeyAndForwardedT
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution.html aws_cloudfront_distribution}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution aws_cloudfront_distribution}.
 type DataAwsCloudfrontDistribution interface {
 	cdktf.TerraformDataSource
+	Aliases() *[]*string
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	Etag() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
@@ -25643,17 +31339,22 @@ type DataAwsCloudfrontDistribution interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -25667,6 +31368,16 @@ type DataAwsCloudfrontDistribution interface {
 // The jsii proxy struct for DataAwsCloudfrontDistribution
 type jsiiProxy_DataAwsCloudfrontDistribution struct {
 	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontDistribution) Aliases() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"aliases",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DataAwsCloudfrontDistribution) Arn() *string {
@@ -25699,8 +31410,8 @@ func (j *jsiiProxy_DataAwsCloudfrontDistribution) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontDistribution) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontDistribution) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -25729,8 +31440,8 @@ func (j *jsiiProxy_DataAwsCloudfrontDistribution) DomainName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontDistribution) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontDistribution) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -25869,8 +31580,8 @@ func (j *jsiiProxy_DataAwsCloudfrontDistribution) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontDistribution) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontDistribution) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -25879,8 +31590,8 @@ func (j *jsiiProxy_DataAwsCloudfrontDistribution) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontDistribution) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontDistribution) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -25919,7 +31630,7 @@ func (j *jsiiProxy_DataAwsCloudfrontDistribution) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution.html aws_cloudfront_distribution} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution aws_cloudfront_distribution} Data Source.
 func NewDataAwsCloudfrontDistribution(scope constructs.Construct, id *string, config *DataAwsCloudfrontDistributionConfig) DataAwsCloudfrontDistribution {
 	_init_.Initialize()
 
@@ -25934,7 +31645,7 @@ func NewDataAwsCloudfrontDistribution(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution.html aws_cloudfront_distribution} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution aws_cloudfront_distribution} Data Source.
 func NewDataAwsCloudfrontDistribution_Override(d DataAwsCloudfrontDistribution, scope constructs.Construct, id *string, config *DataAwsCloudfrontDistributionConfig) {
 	_init_.Initialize()
 
@@ -25945,7 +31656,7 @@ func NewDataAwsCloudfrontDistribution_Override(d DataAwsCloudfrontDistribution, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontDistribution) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudfrontDistribution) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -25985,7 +31696,7 @@ func (j *jsiiProxy_DataAwsCloudfrontDistribution) SetProvider(val cdktf.Terrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontDistribution) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudfrontDistribution) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -26033,12 +31744,40 @@ func (d *jsiiProxy_DataAwsCloudfrontDistribution) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26075,12 +31814,54 @@ func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontDistribution) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26189,20 +31970,20 @@ func (d *jsiiProxy_DataAwsCloudfrontDistribution) ToTerraform() interface{} {
 // AWS CloudFront.
 type DataAwsCloudfrontDistributionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution.html#id DataAwsCloudfrontDistribution#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution.html#tags DataAwsCloudfrontDistribution#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution#id DataAwsCloudfrontDistribution#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_distribution#tags DataAwsCloudfrontDistribution#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function.html aws_cloudfront_function}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function aws_cloudfront_function}.
 type DataAwsCloudfrontFunction interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -26210,8 +31991,8 @@ type DataAwsCloudfrontFunction interface {
 	Code() *string
 	Comment() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -26237,10 +32018,15 @@ type DataAwsCloudfrontFunction interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -26305,8 +32091,8 @@ func (j *jsiiProxy_DataAwsCloudfrontFunction) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontFunction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontFunction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -26505,7 +32291,7 @@ func (j *jsiiProxy_DataAwsCloudfrontFunction) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function.html aws_cloudfront_function} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function aws_cloudfront_function} Data Source.
 func NewDataAwsCloudfrontFunction(scope constructs.Construct, id *string, config *DataAwsCloudfrontFunctionConfig) DataAwsCloudfrontFunction {
 	_init_.Initialize()
 
@@ -26520,7 +32306,7 @@ func NewDataAwsCloudfrontFunction(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function.html aws_cloudfront_function} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function aws_cloudfront_function} Data Source.
 func NewDataAwsCloudfrontFunction_Override(d DataAwsCloudfrontFunction, scope constructs.Construct, id *string, config *DataAwsCloudfrontFunctionConfig) {
 	_init_.Initialize()
 
@@ -26531,7 +32317,7 @@ func NewDataAwsCloudfrontFunction_Override(d DataAwsCloudfrontFunction, scope co
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontFunction) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudfrontFunction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -26619,12 +32405,40 @@ func (d *jsiiProxy_DataAwsCloudfrontFunction) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontFunction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontFunction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontFunction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26661,12 +32475,54 @@ func (d *jsiiProxy_DataAwsCloudfrontFunction) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontFunction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontFunction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontFunction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontFunction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -26767,26 +32623,26 @@ func (d *jsiiProxy_DataAwsCloudfrontFunction) ToTerraform() interface{} {
 // AWS CloudFront.
 type DataAwsCloudfrontFunctionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function.html#name DataAwsCloudfrontFunction#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function.html#stage DataAwsCloudfrontFunction#stage}.
-	Stage *string `json:"stage"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function#name DataAwsCloudfrontFunction#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_function#stage DataAwsCloudfrontFunction#stage}.
+	Stage *string `json:"stage" yaml:"stage"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id.html aws_cloudfront_log_delivery_canonical_user_id}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id aws_cloudfront_log_delivery_canonical_user_id}.
 type DataAwsCloudfrontLogDeliveryCanonicalUserId interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -26805,10 +32661,15 @@ type DataAwsCloudfrontLogDeliveryCanonicalUserId interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -26844,8 +32705,8 @@ func (j *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) ConstructNodeMet
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -26984,7 +32845,7 @@ func (j *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) TerraformResourc
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id.html aws_cloudfront_log_delivery_canonical_user_id} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id aws_cloudfront_log_delivery_canonical_user_id} Data Source.
 func NewDataAwsCloudfrontLogDeliveryCanonicalUserId(scope constructs.Construct, id *string, config *DataAwsCloudfrontLogDeliveryCanonicalUserIdConfig) DataAwsCloudfrontLogDeliveryCanonicalUserId {
 	_init_.Initialize()
 
@@ -26999,7 +32860,7 @@ func NewDataAwsCloudfrontLogDeliveryCanonicalUserId(scope constructs.Construct, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id.html aws_cloudfront_log_delivery_canonical_user_id} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id aws_cloudfront_log_delivery_canonical_user_id} Data Source.
 func NewDataAwsCloudfrontLogDeliveryCanonicalUserId_Override(d DataAwsCloudfrontLogDeliveryCanonicalUserId, scope constructs.Construct, id *string, config *DataAwsCloudfrontLogDeliveryCanonicalUserIdConfig) {
 	_init_.Initialize()
 
@@ -27010,7 +32871,7 @@ func NewDataAwsCloudfrontLogDeliveryCanonicalUserId_Override(d DataAwsCloudfront
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -27090,12 +32951,40 @@ func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) AddOverride(path
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27132,12 +33021,54 @@ func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27246,25 +33177,623 @@ func (d *jsiiProxy_DataAwsCloudfrontLogDeliveryCanonicalUserId) ToTerraform() in
 // AWS CloudFront.
 type DataAwsCloudfrontLogDeliveryCanonicalUserIdConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id.html#region DataAwsCloudfrontLogDeliveryCanonicalUserId#region}.
-	Region *string `json:"region"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_log_delivery_canonical_user_id#region DataAwsCloudfrontLogDeliveryCanonicalUserId#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy.html aws_cloudfront_origin_request_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_access_identity aws_cloudfront_origin_access_identity}.
+type DataAwsCloudfrontOriginAccessIdentity interface {
+	cdktf.TerraformDataSource
+	CallerReference() *string
+	CdktfStack() cdktf.TerraformStack
+	CloudfrontAccessIdentityPath() *string
+	Comment() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Etag() *string
+	Fqn() *string
+	FriendlyUniqueId() *string
+	IamArn() *string
+	Id() *string
+	SetId(val *string)
+	IdInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	S3CanonicalUserId() *string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DataAwsCloudfrontOriginAccessIdentity
+type jsiiProxy_DataAwsCloudfrontOriginAccessIdentity struct {
+	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) CallerReference() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"callerReference",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) CloudfrontAccessIdentityPath() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"cloudfrontAccessIdentityPath",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Comment() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"comment",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Etag() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"etag",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) IamArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"iamArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) IdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) S3CanonicalUserId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"s3CanonicalUserId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_access_identity aws_cloudfront_origin_access_identity} Data Source.
+func NewDataAwsCloudfrontOriginAccessIdentity(scope constructs.Construct, id *string, config *DataAwsCloudfrontOriginAccessIdentityConfig) DataAwsCloudfrontOriginAccessIdentity {
+	_init_.Initialize()
+
+	j := jsiiProxy_DataAwsCloudfrontOriginAccessIdentity{}
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginAccessIdentity",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_access_identity aws_cloudfront_origin_access_identity} Data Source.
+func NewDataAwsCloudfrontOriginAccessIdentity_Override(d DataAwsCloudfrontOriginAccessIdentity, scope constructs.Construct, id *string, config *DataAwsCloudfrontOriginAccessIdentityConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginAccessIdentity",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) SetId(val *string) {
+	_jsii_.Set(
+		j,
+		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DataAwsCloudfrontOriginAccessIdentity_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginAccessIdentity",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DataAwsCloudfrontOriginAccessIdentity_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginAccessIdentity",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginAccessIdentity) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS CloudFront.
+type DataAwsCloudfrontOriginAccessIdentityConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_access_identity#id DataAwsCloudfrontOriginAccessIdentity#id}.
+	Id *string `json:"id" yaml:"id"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy aws_cloudfront_origin_request_policy}.
 type DataAwsCloudfrontOriginRequestPolicy interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	Comment() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -27287,10 +33816,15 @@ type DataAwsCloudfrontOriginRequestPolicy interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	CookiesConfig(index *string) DataAwsCloudfrontOriginRequestPolicyCookiesConfig
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	HeadersConfig(index *string) DataAwsCloudfrontOriginRequestPolicyHeadersConfig
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
@@ -27339,8 +33873,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) ConstructNodeMetadata()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -27499,7 +34033,7 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) TerraformResourceType()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy.html aws_cloudfront_origin_request_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy aws_cloudfront_origin_request_policy} Data Source.
 func NewDataAwsCloudfrontOriginRequestPolicy(scope constructs.Construct, id *string, config *DataAwsCloudfrontOriginRequestPolicyConfig) DataAwsCloudfrontOriginRequestPolicy {
 	_init_.Initialize()
 
@@ -27514,7 +34048,7 @@ func NewDataAwsCloudfrontOriginRequestPolicy(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy.html aws_cloudfront_origin_request_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy aws_cloudfront_origin_request_policy} Data Source.
 func NewDataAwsCloudfrontOriginRequestPolicy_Override(d DataAwsCloudfrontOriginRequestPolicy, scope constructs.Construct, id *string, config *DataAwsCloudfrontOriginRequestPolicyConfig) {
 	_init_.Initialize()
 
@@ -27525,7 +34059,7 @@ func NewDataAwsCloudfrontOriginRequestPolicy_Override(d DataAwsCloudfrontOriginR
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -27626,12 +34160,40 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) CookiesConfig(index *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27668,12 +34230,54 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27816,17 +34420,17 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicy) ToTerraform() interface
 // AWS CloudFront.
 type DataAwsCloudfrontOriginRequestPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy.html#id DataAwsCloudfrontOriginRequestPolicy#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy.html#name DataAwsCloudfrontOriginRequestPolicy#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy#id DataAwsCloudfrontOriginRequestPolicy#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_origin_request_policy#name DataAwsCloudfrontOriginRequestPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type DataAwsCloudfrontOriginRequestPolicyCookiesConfig interface {
@@ -27834,15 +34438,22 @@ type DataAwsCloudfrontOriginRequestPolicyCookiesConfig interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	CookieBehavior() *string
-	Cookies() interface{}
+	Cookies() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -27871,8 +34482,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) CookieBeha
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) Cookies() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) Cookies() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"cookies",
@@ -27891,8 +34502,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -27901,15 +34512,25 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) TerraformR
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontOriginRequestPolicyCookiesConfig {
+func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontOriginRequestPolicyCookiesConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -27917,12 +34538,12 @@ func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfig(terraformResource cdkt
 }
 
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfig_Override(d DataAwsCloudfrontOriginRequestPolicyCookiesConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfig_Override(d DataAwsCloudfrontOriginRequestPolicyCookiesConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -27943,7 +34564,7 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -27951,13 +34572,49 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) SetTerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -27994,12 +34651,54 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetNumberA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28028,12 +34727,19 @@ type DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies interface {
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -28072,8 +34778,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) Ter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28082,15 +34788,25 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) Ter
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies {
+func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -28098,12 +34814,12 @@ func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies(terraformResour
 }
 
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies_Override(d DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies_Override(d DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -28124,7 +34840,7 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) Set
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28132,13 +34848,49 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) Set
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28175,12 +34927,54 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) Get
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyCookiesConfigCookies) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28207,15 +35001,22 @@ type DataAwsCloudfrontOriginRequestPolicyHeadersConfig interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	HeaderBehavior() *string
-	Headers() interface{}
+	Headers() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -28244,8 +35045,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) HeaderBeha
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) Headers() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) Headers() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"headers",
@@ -28264,8 +35065,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28274,15 +35075,25 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) TerraformR
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontOriginRequestPolicyHeadersConfig {
+func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontOriginRequestPolicyHeadersConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -28290,12 +35101,12 @@ func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfig(terraformResource cdkt
 }
 
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfig_Override(d DataAwsCloudfrontOriginRequestPolicyHeadersConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfig_Override(d DataAwsCloudfrontOriginRequestPolicyHeadersConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -28316,7 +35127,7 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28324,13 +35135,49 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) SetTerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28367,12 +35214,54 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetNumberA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28401,12 +35290,19 @@ type DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders interface {
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -28445,8 +35341,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) Ter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28455,15 +35351,25 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) Ter
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders {
+func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -28471,12 +35377,12 @@ func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders(terraformResour
 }
 
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders_Override(d DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders_Override(d DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -28497,7 +35403,7 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) Set
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28505,13 +35411,49 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) Set
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28548,12 +35490,54 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) Get
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyHeadersConfigHeaders) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28580,15 +35564,22 @@ type DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	QueryStringBehavior() *string
-	QueryStrings() interface{}
+	QueryStrings() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -28617,8 +35608,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) Query
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) QueryStrings() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) QueryStrings() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"queryStrings",
@@ -28637,8 +35628,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) Terra
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28647,15 +35638,25 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) Terra
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig {
+func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -28663,12 +35664,12 @@ func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfig(terraformResource
 }
 
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfig_Override(d DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfig_Override(d DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -28689,7 +35690,7 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) SetTe
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28697,13 +35698,49 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) SetTe
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28740,12 +35777,54 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetNu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28774,12 +35853,19 @@ type DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings interfac
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -28818,8 +35904,8 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQuerySt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -28828,15 +35914,25 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQuerySt
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings {
+func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -28844,12 +35940,12 @@ func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings(terra
 }
 
 // Experimental.
-func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings_Override(d DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings_Override(d DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -28870,7 +35966,7 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQuerySt
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -28878,13 +35974,49 @@ func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQuerySt
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28921,12 +36053,54 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQuerySt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQueryStrings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -28948,14 +36122,14 @@ func (d *jsiiProxy_DataAwsCloudfrontOriginRequestPolicyQueryStringsConfigQuerySt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy.html aws_cloudfront_response_headers_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy aws_cloudfront_response_headers_policy}.
 type DataAwsCloudfrontResponseHeadersPolicy interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	Comment() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Etag() *string
@@ -28977,10 +36151,15 @@ type DataAwsCloudfrontResponseHeadersPolicy interface {
 	AddOverride(path *string, value interface{})
 	CorsConfig(index *string) DataAwsCloudfrontResponseHeadersPolicyCorsConfig
 	CustomHeadersConfig(index *string) DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -29027,8 +36206,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) ConstructNodeMetadata
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -29177,7 +36356,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) TerraformResourceType
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy.html aws_cloudfront_response_headers_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy aws_cloudfront_response_headers_policy} Data Source.
 func NewDataAwsCloudfrontResponseHeadersPolicy(scope constructs.Construct, id *string, config *DataAwsCloudfrontResponseHeadersPolicyConfig) DataAwsCloudfrontResponseHeadersPolicy {
 	_init_.Initialize()
 
@@ -29192,7 +36371,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicy(scope constructs.Construct, id *s
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy.html aws_cloudfront_response_headers_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy aws_cloudfront_response_headers_policy} Data Source.
 func NewDataAwsCloudfrontResponseHeadersPolicy_Override(d DataAwsCloudfrontResponseHeadersPolicy, scope constructs.Construct, id *string, config *DataAwsCloudfrontResponseHeadersPolicyConfig) {
 	_init_.Initialize()
 
@@ -29203,7 +36382,7 @@ func NewDataAwsCloudfrontResponseHeadersPolicy_Override(d DataAwsCloudfrontRespo
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -29309,12 +36488,40 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) CustomHeadersConfig(i
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29351,12 +36558,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetNumberAttribute(te
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29478,36 +36727,43 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicy) ToTerraform() interfa
 // AWS CloudFront.
 type DataAwsCloudfrontResponseHeadersPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy.html#name DataAwsCloudfrontResponseHeadersPolicy#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudfront_response_headers_policy#name DataAwsCloudfrontResponseHeadersPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type DataAwsCloudfrontResponseHeadersPolicyCorsConfig interface {
 	cdktf.ComplexComputedList
-	AccessControlAllowCredentials() interface{}
-	AccessControlAllowHeaders() interface{}
-	AccessControlAllowMethods() interface{}
-	AccessControlAllowOrigins() interface{}
-	AccessControlExposeHeaders() interface{}
+	AccessControlAllowCredentials() cdktf.IResolvable
+	AccessControlAllowHeaders() cdktf.IResolvable
+	AccessControlAllowMethods() cdktf.IResolvable
+	AccessControlAllowOrigins() cdktf.IResolvable
+	AccessControlExposeHeaders() cdktf.IResolvable
 	AccessControlMaxAgeSec() *float64
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	OriginOverride() interface{}
+	OriginOverride() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -29516,8 +36772,8 @@ type jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowCredentials() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowCredentials() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"accessControlAllowCredentials",
@@ -29526,8 +36782,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessContr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowHeaders() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowHeaders() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"accessControlAllowHeaders",
@@ -29536,8 +36792,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessContr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowMethods() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowMethods() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"accessControlAllowMethods",
@@ -29546,8 +36802,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessContr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowOrigins() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlAllowOrigins() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"accessControlAllowOrigins",
@@ -29556,8 +36812,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessContr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlExposeHeaders() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) AccessControlExposeHeaders() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"accessControlExposeHeaders",
@@ -29586,8 +36842,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) ComplexComp
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) OriginOverride() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) OriginOverride() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"originOverride",
@@ -29606,8 +36862,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29616,15 +36872,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) TerraformRe
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCorsConfig {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicyCorsConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -29632,12 +36898,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfig(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfig_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfig_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -29658,7 +36924,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29666,13 +36932,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29709,12 +37011,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29743,12 +37087,19 @@ type DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders i
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -29787,8 +37138,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29797,15 +37148,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -29813,12 +37174,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeader
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -29839,7 +37200,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -29847,13 +37208,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29890,12 +37287,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowHeaders) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -29924,12 +37363,19 @@ type DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods i
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -29968,8 +37414,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -29978,15 +37424,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -29994,12 +37450,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethod
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -30020,7 +37476,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30028,13 +37484,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30071,12 +37563,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowMethods) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30105,12 +37639,19 @@ type DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins i
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -30149,8 +37690,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30159,15 +37700,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -30175,12 +37726,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigin
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -30201,7 +37752,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30209,13 +37760,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30252,12 +37839,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlAllowOrigins) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30286,12 +37915,19 @@ type DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders 
 	Items() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -30330,8 +37966,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30340,15 +37976,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -30356,12 +38002,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeade
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders_Override(d DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -30382,7 +38028,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30390,13 +38036,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30433,12 +38115,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControl
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCorsConfigAccessControlExposeHeaders) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30464,15 +38188,22 @@ type DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Items() interface{}
+	Items() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -30491,8 +38222,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Co
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Items() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Items() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"items",
@@ -30511,8 +38242,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Te
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30521,15 +38252,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Te
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig {
+func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -30537,12 +38278,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig(terraformResou
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig_Override(d DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig_Override(d DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -30563,7 +38304,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Se
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30571,13 +38312,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Se
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30614,12 +38391,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) Ge
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30646,16 +38465,23 @@ type DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems interface {
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	Header() *string
-	Override() interface{}
+	Override() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -30684,8 +38510,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItem
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) Override() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) Override() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"override",
@@ -30704,8 +38530,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItem
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30724,15 +38550,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItem
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems {
+func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -30740,12 +38576,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems(terraform
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems_Override(d DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems_Override(d DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -30766,7 +38602,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItem
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -30774,13 +38610,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItem
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30817,12 +38689,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItem
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicyCustomHeadersConfigItems) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -30848,20 +38762,27 @@ type DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ContentSecurityPolicy() interface{}
-	ContentTypeOptions() interface{}
-	FrameOptions() interface{}
-	ReferrerPolicy() interface{}
-	StrictTransportSecurity() interface{}
+	ContentSecurityPolicy() cdktf.IResolvable
+	ContentTypeOptions() cdktf.IResolvable
+	FrameOptions() cdktf.IResolvable
+	ReferrerPolicy() cdktf.IResolvable
+	StrictTransportSecurity() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	XssProtection() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	XssProtection() cdktf.IResolvable
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -30880,8 +38801,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) ContentSecurityPolicy() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) ContentSecurityPolicy() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"contentSecurityPolicy",
@@ -30890,8 +38811,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) ContentTypeOptions() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) ContentTypeOptions() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"contentTypeOptions",
@@ -30900,8 +38821,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) FrameOptions() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) FrameOptions() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"frameOptions",
@@ -30910,8 +38831,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) ReferrerPolicy() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) ReferrerPolicy() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"referrerPolicy",
@@ -30920,8 +38841,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) StrictTransportSecurity() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) StrictTransportSecurity() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"strictTransportSecurity",
@@ -30940,8 +38861,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -30950,8 +38871,18 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) XssProtection() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) XssProtection() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"xssProtection",
@@ -30961,14 +38892,14 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -30976,12 +38907,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig(terraformRes
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -31002,7 +38933,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31010,13 +38941,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31053,12 +39020,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31085,15 +39094,22 @@ type DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityP
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	ContentSecurityPolicy() *string
-	Override() interface{}
+	Override() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -31122,8 +39138,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) Override() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) Override() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"override",
@@ -31142,8 +39158,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31152,15 +39168,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -31168,12 +39194,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecuri
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -31194,7 +39220,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31202,13 +39228,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31245,12 +39307,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentSecurityPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31276,15 +39380,22 @@ type DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptio
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Override() interface{}
+	Override() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -31303,8 +39414,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) Override() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) Override() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"override",
@@ -31323,8 +39434,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31333,15 +39444,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -31349,12 +39470,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOp
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -31375,7 +39496,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31383,13 +39504,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31426,12 +39583,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigCo
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigContentTypeOptions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31458,15 +39657,22 @@ type DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions int
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
 	FrameOption() *string
-	Override() interface{}
+	Override() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -31495,8 +39701,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) Override() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) Override() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"override",
@@ -31515,8 +39721,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31525,15 +39731,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFr
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -31541,12 +39757,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions(
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -31567,7 +39783,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFr
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31575,13 +39791,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFr
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31618,12 +39870,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigFrameOptions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31649,16 +39943,23 @@ type DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy i
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Override() interface{}
+	Override() cdktf.IResolvable
 	ReferrerPolicy() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -31677,8 +39978,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigRe
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) Override() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) Override() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"override",
@@ -31707,8 +40008,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigRe
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31717,15 +40018,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigRe
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -31733,12 +40044,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolic
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -31759,7 +40070,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigRe
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31767,13 +40078,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigRe
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31810,12 +40157,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigRe
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigReferrerPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -31842,17 +40231,24 @@ type DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportS
 	AccessControlMaxAgeSec() *float64
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	IncludeSubdomains() interface{}
-	Override() interface{}
-	Preload() interface{}
+	IncludeSubdomains() cdktf.IResolvable
+	Override() cdktf.IResolvable
+	Preload() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -31881,8 +40277,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) IncludeSubdomains() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) IncludeSubdomains() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"includeSubdomains",
@@ -31891,8 +40287,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) Override() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) Override() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"override",
@@ -31901,8 +40297,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) Preload() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) Preload() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"preload",
@@ -31921,8 +40317,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -31931,15 +40327,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -31947,12 +40353,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTranspo
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -31973,7 +40379,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -31981,13 +40387,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32024,12 +40466,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigSt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigStrictTransportSecurity) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32055,18 +40539,25 @@ type DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection in
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ModeBlock() interface{}
-	Override() interface{}
-	Protection() interface{}
+	ModeBlock() cdktf.IResolvable
+	Override() cdktf.IResolvable
+	Protection() cdktf.IResolvable
 	ReportUri() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -32085,8 +40576,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) ModeBlock() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) ModeBlock() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"modeBlock",
@@ -32095,8 +40586,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) Override() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) Override() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"override",
@@ -32105,8 +40596,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) Protection() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) Protection() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"protection",
@@ -32135,8 +40626,8 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -32145,15 +40636,25 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection{}
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -32161,12 +40662,12 @@ func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection
 }
 
 // Experimental.
-func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection_Override(d DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.cloudfront.DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -32187,7 +40688,7 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -32195,13 +40696,49 @@ func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 	)
 }
 
+func (j *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -32238,12 +40775,54 @@ func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXs
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudfrontResponseHeadersPolicySecurityHeadersConfigXssProtection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

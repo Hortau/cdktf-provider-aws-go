@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/macie/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association.html aws_macie_member_account_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association aws_macie_member_account_association}.
 type MacieMemberAccountAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -34,10 +34,15 @@ type MacieMemberAccountAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -72,8 +77,8 @@ func (j *jsiiProxy_MacieMemberAccountAssociation) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_MacieMemberAccountAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MacieMemberAccountAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -212,7 +217,7 @@ func (j *jsiiProxy_MacieMemberAccountAssociation) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association.html aws_macie_member_account_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association aws_macie_member_account_association} Resource.
 func NewMacieMemberAccountAssociation(scope constructs.Construct, id *string, config *MacieMemberAccountAssociationConfig) MacieMemberAccountAssociation {
 	_init_.Initialize()
 
@@ -227,7 +232,7 @@ func NewMacieMemberAccountAssociation(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association.html aws_macie_member_account_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association aws_macie_member_account_association} Resource.
 func NewMacieMemberAccountAssociation_Override(m MacieMemberAccountAssociation, scope constructs.Construct, id *string, config *MacieMemberAccountAssociationConfig) {
 	_init_.Initialize()
 
@@ -238,7 +243,7 @@ func NewMacieMemberAccountAssociation_Override(m MacieMemberAccountAssociation, 
 	)
 }
 
-func (j *jsiiProxy_MacieMemberAccountAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_MacieMemberAccountAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -318,12 +323,40 @@ func (m *jsiiProxy_MacieMemberAccountAssociation) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (m *jsiiProxy_MacieMemberAccountAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MacieMemberAccountAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieMemberAccountAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -360,12 +393,54 @@ func (m *jsiiProxy_MacieMemberAccountAssociation) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (m *jsiiProxy_MacieMemberAccountAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieMemberAccountAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MacieMemberAccountAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieMemberAccountAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -466,18 +541,18 @@ func (m *jsiiProxy_MacieMemberAccountAssociation) ToTerraform() interface{} {
 // AWS Macie.
 type MacieMemberAccountAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association.html#member_account_id MacieMemberAccountAssociation#member_account_id}.
-	MemberAccountId *string `json:"memberAccountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_member_account_association#member_account_id MacieMemberAccountAssociation#member_account_id}.
+	MemberAccountId *string `json:"memberAccountId" yaml:"memberAccountId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html aws_macie_s3_bucket_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association aws_macie_s3_bucket_association}.
 type MacieS3BucketAssociation interface {
 	cdktf.TerraformResource
 	BucketName() *string
@@ -487,8 +562,8 @@ type MacieS3BucketAssociation interface {
 	ClassificationType() MacieS3BucketAssociationClassificationTypeOutputReference
 	ClassificationTypeInput() *MacieS3BucketAssociationClassificationType
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -510,10 +585,15 @@ type MacieS3BucketAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutClassificationType(value *MacieS3BucketAssociationClassificationType)
@@ -592,8 +672,8 @@ func (j *jsiiProxy_MacieS3BucketAssociation) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_MacieS3BucketAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MacieS3BucketAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -752,7 +832,7 @@ func (j *jsiiProxy_MacieS3BucketAssociation) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html aws_macie_s3_bucket_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association aws_macie_s3_bucket_association} Resource.
 func NewMacieS3BucketAssociation(scope constructs.Construct, id *string, config *MacieS3BucketAssociationConfig) MacieS3BucketAssociation {
 	_init_.Initialize()
 
@@ -767,7 +847,7 @@ func NewMacieS3BucketAssociation(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html aws_macie_s3_bucket_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association aws_macie_s3_bucket_association} Resource.
 func NewMacieS3BucketAssociation_Override(m MacieS3BucketAssociation, scope constructs.Construct, id *string, config *MacieS3BucketAssociationConfig) {
 	_init_.Initialize()
 
@@ -786,7 +866,7 @@ func (j *jsiiProxy_MacieS3BucketAssociation) SetBucketName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MacieS3BucketAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_MacieS3BucketAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -874,12 +954,40 @@ func (m *jsiiProxy_MacieS3BucketAssociation) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MacieS3BucketAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -916,12 +1024,54 @@ func (m *jsiiProxy_MacieS3BucketAssociation) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MacieS3BucketAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1052,10 +1202,10 @@ func (m *jsiiProxy_MacieS3BucketAssociation) ToTerraform() interface{} {
 }
 
 type MacieS3BucketAssociationClassificationType struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html#continuous MacieS3BucketAssociation#continuous}.
-	Continuous *string `json:"continuous"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html#one_time MacieS3BucketAssociation#one_time}.
-	OneTime *string `json:"oneTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association#continuous MacieS3BucketAssociation#continuous}.
+	Continuous *string `json:"continuous" yaml:"continuous"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association#one_time MacieS3BucketAssociation#one_time}.
+	OneTime *string `json:"oneTime" yaml:"oneTime"`
 }
 
 type MacieS3BucketAssociationClassificationTypeOutputReference interface {
@@ -1072,12 +1222,17 @@ type MacieS3BucketAssociationClassificationTypeOutputReference interface {
 	OneTimeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetContinuous()
@@ -1159,8 +1314,8 @@ func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1169,7 +1324,7 @@ func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Te
 	return returns
 }
 
-func NewMacieS3BucketAssociationClassificationTypeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MacieS3BucketAssociationClassificationTypeOutputReference {
+func NewMacieS3BucketAssociationClassificationTypeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MacieS3BucketAssociationClassificationTypeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference{}
@@ -1183,7 +1338,7 @@ func NewMacieS3BucketAssociationClassificationTypeOutputReference(terraformResou
 	return &j
 }
 
-func NewMacieS3BucketAssociationClassificationTypeOutputReference_Override(m MacieS3BucketAssociationClassificationTypeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMacieS3BucketAssociationClassificationTypeOutputReference_Override(m MacieS3BucketAssociationClassificationTypeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1233,7 +1388,7 @@ func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1242,12 +1397,40 @@ func (j *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Se
 }
 
 // Experimental.
-func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1284,12 +1467,54 @@ func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Ge
 }
 
 // Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1344,21 +1569,21 @@ func (m *jsiiProxy_MacieS3BucketAssociationClassificationTypeOutputReference) Re
 // AWS Macie.
 type MacieS3BucketAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html#bucket_name MacieS3BucketAssociation#bucket_name}.
-	BucketName *string `json:"bucketName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association#bucket_name MacieS3BucketAssociation#bucket_name}.
+	BucketName *string `json:"bucketName" yaml:"bucketName"`
 	// classification_type block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html#classification_type MacieS3BucketAssociation#classification_type}
-	ClassificationType *MacieS3BucketAssociationClassificationType `json:"classificationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html#member_account_id MacieS3BucketAssociation#member_account_id}.
-	MemberAccountId *string `json:"memberAccountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association.html#prefix MacieS3BucketAssociation#prefix}.
-	Prefix *string `json:"prefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association#classification_type MacieS3BucketAssociation#classification_type}
+	ClassificationType *MacieS3BucketAssociationClassificationType `json:"classificationType" yaml:"classificationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association#member_account_id MacieS3BucketAssociation#member_account_id}.
+	MemberAccountId *string `json:"memberAccountId" yaml:"memberAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/macie_s3_bucket_association#prefix MacieS3BucketAssociation#prefix}.
+	Prefix *string `json:"prefix" yaml:"prefix"`
 }

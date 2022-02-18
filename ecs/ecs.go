@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/ecs/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster.html aws_ecs_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster aws_ecs_cluster}.
 type DataAwsEcsCluster interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -18,8 +18,8 @@ type DataAwsEcsCluster interface {
 	SetClusterName(val *string)
 	ClusterNameInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -39,10 +39,15 @@ type DataAwsEcsCluster interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -108,8 +113,8 @@ func (j *jsiiProxy_DataAwsEcsCluster) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcsCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcsCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -268,7 +273,7 @@ func (j *jsiiProxy_DataAwsEcsCluster) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster.html aws_ecs_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster aws_ecs_cluster} Data Source.
 func NewDataAwsEcsCluster(scope constructs.Construct, id *string, config *DataAwsEcsClusterConfig) DataAwsEcsCluster {
 	_init_.Initialize()
 
@@ -283,7 +288,7 @@ func NewDataAwsEcsCluster(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster.html aws_ecs_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster aws_ecs_cluster} Data Source.
 func NewDataAwsEcsCluster_Override(d DataAwsEcsCluster, scope constructs.Construct, id *string, config *DataAwsEcsClusterConfig) {
 	_init_.Initialize()
 
@@ -302,7 +307,7 @@ func (j *jsiiProxy_DataAwsEcsCluster) SetClusterName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcsCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEcsCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -374,12 +379,40 @@ func (d *jsiiProxy_DataAwsEcsCluster) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -416,12 +449,54 @@ func (d *jsiiProxy_DataAwsEcsCluster) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -535,15 +610,15 @@ func (d *jsiiProxy_DataAwsEcsCluster) ToTerraform() interface{} {
 // AWS EC2 Container Service.
 type DataAwsEcsClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster.html#cluster_name DataAwsEcsCluster#cluster_name}.
-	ClusterName *string `json:"clusterName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_cluster#cluster_name DataAwsEcsCluster#cluster_name}.
+	ClusterName *string `json:"clusterName" yaml:"clusterName"`
 }
 
 type DataAwsEcsClusterSetting interface {
@@ -553,13 +628,20 @@ type DataAwsEcsClusterSetting interface {
 	Name() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -598,8 +680,8 @@ func (j *jsiiProxy_DataAwsEcsClusterSetting) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcsClusterSetting) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsEcsClusterSetting) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -618,15 +700,25 @@ func (j *jsiiProxy_DataAwsEcsClusterSetting) Value() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsEcsClusterSetting) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsEcsClusterSetting(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsEcsClusterSetting {
+func NewDataAwsEcsClusterSetting(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsEcsClusterSetting {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsEcsClusterSetting{}
 
 	_jsii_.Create(
 		"hashicorp_aws.ecs.DataAwsEcsClusterSetting",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -634,12 +726,12 @@ func NewDataAwsEcsClusterSetting(terraformResource cdktf.ITerraformResource, ter
 }
 
 // Experimental.
-func NewDataAwsEcsClusterSetting_Override(d DataAwsEcsClusterSetting, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsEcsClusterSetting_Override(d DataAwsEcsClusterSetting, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.ecs.DataAwsEcsClusterSetting",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -660,7 +752,7 @@ func (j *jsiiProxy_DataAwsEcsClusterSetting) SetTerraformAttribute(val *string) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcsClusterSetting) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsEcsClusterSetting) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -668,13 +760,49 @@ func (j *jsiiProxy_DataAwsEcsClusterSetting) SetTerraformResource(val cdktf.ITer
 	)
 }
 
+func (j *jsiiProxy_DataAwsEcsClusterSetting) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsEcsClusterSetting) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsEcsClusterSetting) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsClusterSetting) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsClusterSetting) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -711,12 +839,54 @@ func (d *jsiiProxy_DataAwsEcsClusterSetting) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsClusterSetting) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsClusterSetting) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsClusterSetting) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsClusterSetting) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -738,7 +908,7 @@ func (d *jsiiProxy_DataAwsEcsClusterSetting) InterpolationForAttribute(property 
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition.html aws_ecs_container_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition aws_ecs_container_definition}.
 type DataAwsEcsContainerDefinition interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
@@ -746,12 +916,12 @@ type DataAwsEcsContainerDefinition interface {
 	ContainerName() *string
 	SetContainerName(val *string)
 	ContainerNameInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Cpu() *float64
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	DisableNetworking() interface{}
+	DisableNetworking() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -772,12 +942,17 @@ type DataAwsEcsContainerDefinition interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
-	DockerLabels(key *string) *string
-	Environment(key *string) *string
+	DockerLabels(key *string) interface{}
+	Environment(key *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -832,8 +1007,8 @@ func (j *jsiiProxy_DataAwsEcsContainerDefinition) ContainerNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcsContainerDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcsContainerDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -862,8 +1037,8 @@ func (j *jsiiProxy_DataAwsEcsContainerDefinition) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcsContainerDefinition) DisableNetworking() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcsContainerDefinition) DisableNetworking() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"disableNetworking",
@@ -1032,7 +1207,7 @@ func (j *jsiiProxy_DataAwsEcsContainerDefinition) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition.html aws_ecs_container_definition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition aws_ecs_container_definition} Data Source.
 func NewDataAwsEcsContainerDefinition(scope constructs.Construct, id *string, config *DataAwsEcsContainerDefinitionConfig) DataAwsEcsContainerDefinition {
 	_init_.Initialize()
 
@@ -1047,7 +1222,7 @@ func NewDataAwsEcsContainerDefinition(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition.html aws_ecs_container_definition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition aws_ecs_container_definition} Data Source.
 func NewDataAwsEcsContainerDefinition_Override(d DataAwsEcsContainerDefinition, scope constructs.Construct, id *string, config *DataAwsEcsContainerDefinitionConfig) {
 	_init_.Initialize()
 
@@ -1066,7 +1241,7 @@ func (j *jsiiProxy_DataAwsEcsContainerDefinition) SetContainerName(val *string) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcsContainerDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEcsContainerDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1145,8 +1320,8 @@ func (d *jsiiProxy_DataAwsEcsContainerDefinition) AddOverride(path *string, valu
 	)
 }
 
-func (d *jsiiProxy_DataAwsEcsContainerDefinition) DockerLabels(key *string) *string {
-	var returns *string
+func (d *jsiiProxy_DataAwsEcsContainerDefinition) DockerLabels(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		d,
@@ -1158,13 +1333,27 @@ func (d *jsiiProxy_DataAwsEcsContainerDefinition) DockerLabels(key *string) *str
 	return returns
 }
 
-func (d *jsiiProxy_DataAwsEcsContainerDefinition) Environment(key *string) *string {
-	var returns *string
+func (d *jsiiProxy_DataAwsEcsContainerDefinition) Environment(key *string) interface{} {
+	var returns interface{}
 
 	_jsii_.Invoke(
 		d,
 		"environment",
 		[]interface{}{key},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
 		&returns,
 	)
 
@@ -1178,6 +1367,20 @@ func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetBooleanAttribute(terraformA
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1214,12 +1417,54 @@ func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsContainerDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1320,20 +1565,20 @@ func (d *jsiiProxy_DataAwsEcsContainerDefinition) ToTerraform() interface{} {
 // AWS EC2 Container Service.
 type DataAwsEcsContainerDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition.html#container_name DataAwsEcsContainerDefinition#container_name}.
-	ContainerName *string `json:"containerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition.html#task_definition DataAwsEcsContainerDefinition#task_definition}.
-	TaskDefinition *string `json:"taskDefinition"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition#container_name DataAwsEcsContainerDefinition#container_name}.
+	ContainerName *string `json:"containerName" yaml:"containerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_container_definition#task_definition DataAwsEcsContainerDefinition#task_definition}.
+	TaskDefinition *string `json:"taskDefinition" yaml:"taskDefinition"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_service.html aws_ecs_service}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_service aws_ecs_service}.
 type DataAwsEcsService interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -1342,8 +1587,8 @@ type DataAwsEcsService interface {
 	SetClusterArn(val *string)
 	ClusterArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DesiredCount() *float64
@@ -1366,10 +1611,15 @@ type DataAwsEcsService interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1434,8 +1684,8 @@ func (j *jsiiProxy_DataAwsEcsService) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcsService) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcsService) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1614,7 +1864,7 @@ func (j *jsiiProxy_DataAwsEcsService) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_service.html aws_ecs_service} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_service aws_ecs_service} Data Source.
 func NewDataAwsEcsService(scope constructs.Construct, id *string, config *DataAwsEcsServiceConfig) DataAwsEcsService {
 	_init_.Initialize()
 
@@ -1629,7 +1879,7 @@ func NewDataAwsEcsService(scope constructs.Construct, id *string, config *DataAw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_service.html aws_ecs_service} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_service aws_ecs_service} Data Source.
 func NewDataAwsEcsService_Override(d DataAwsEcsService, scope constructs.Construct, id *string, config *DataAwsEcsServiceConfig) {
 	_init_.Initialize()
 
@@ -1648,7 +1898,7 @@ func (j *jsiiProxy_DataAwsEcsService) SetClusterArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcsService) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEcsService) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1728,12 +1978,40 @@ func (d *jsiiProxy_DataAwsEcsService) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsService) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsService) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsService) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1770,12 +2048,54 @@ func (d *jsiiProxy_DataAwsEcsService) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsService) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsService) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsService) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsService) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1876,26 +2196,27 @@ func (d *jsiiProxy_DataAwsEcsService) ToTerraform() interface{} {
 // AWS EC2 Container Service.
 type DataAwsEcsServiceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_service.html#cluster_arn DataAwsEcsService#cluster_arn}.
-	ClusterArn *string `json:"clusterArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_service.html#service_name DataAwsEcsService#service_name}.
-	ServiceName *string `json:"serviceName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_service#cluster_arn DataAwsEcsService#cluster_arn}.
+	ClusterArn *string `json:"clusterArn" yaml:"clusterArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_service#service_name DataAwsEcsService#service_name}.
+	ServiceName *string `json:"serviceName" yaml:"serviceName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition.html aws_ecs_task_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition aws_ecs_task_definition}.
 type DataAwsEcsTaskDefinition interface {
 	cdktf.TerraformDataSource
+	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Family() *string
@@ -1919,10 +2240,15 @@ type DataAwsEcsTaskDefinition interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1935,6 +2261,16 @@ type DataAwsEcsTaskDefinition interface {
 // The jsii proxy struct for DataAwsEcsTaskDefinition
 type jsiiProxy_DataAwsEcsTaskDefinition struct {
 	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAwsEcsTaskDefinition) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DataAwsEcsTaskDefinition) CdktfStack() cdktf.TerraformStack {
@@ -1957,8 +2293,8 @@ func (j *jsiiProxy_DataAwsEcsTaskDefinition) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsEcsTaskDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsEcsTaskDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2147,7 +2483,7 @@ func (j *jsiiProxy_DataAwsEcsTaskDefinition) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition.html aws_ecs_task_definition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition aws_ecs_task_definition} Data Source.
 func NewDataAwsEcsTaskDefinition(scope constructs.Construct, id *string, config *DataAwsEcsTaskDefinitionConfig) DataAwsEcsTaskDefinition {
 	_init_.Initialize()
 
@@ -2162,7 +2498,7 @@ func NewDataAwsEcsTaskDefinition(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition.html aws_ecs_task_definition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition aws_ecs_task_definition} Data Source.
 func NewDataAwsEcsTaskDefinition_Override(d DataAwsEcsTaskDefinition, scope constructs.Construct, id *string, config *DataAwsEcsTaskDefinitionConfig) {
 	_init_.Initialize()
 
@@ -2173,7 +2509,7 @@ func NewDataAwsEcsTaskDefinition_Override(d DataAwsEcsTaskDefinition, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsEcsTaskDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsEcsTaskDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2253,12 +2589,40 @@ func (d *jsiiProxy_DataAwsEcsTaskDefinition) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2295,12 +2659,54 @@ func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsEcsTaskDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2401,24 +2807,24 @@ func (d *jsiiProxy_DataAwsEcsTaskDefinition) ToTerraform() interface{} {
 // AWS EC2 Container Service.
 type DataAwsEcsTaskDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition.html#task_definition DataAwsEcsTaskDefinition#task_definition}.
-	TaskDefinition *string `json:"taskDefinition"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ecs_task_definition#task_definition DataAwsEcsTaskDefinition#task_definition}.
+	TaskDefinition *string `json:"taskDefinition" yaml:"taskDefinition"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default.html aws_ecs_account_setting_default}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default aws_ecs_account_setting_default}.
 type EcsAccountSettingDefault interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2441,10 +2847,15 @@ type EcsAccountSettingDefault interface {
 	SetValue(val *string)
 	ValueInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2479,8 +2890,8 @@ func (j *jsiiProxy_EcsAccountSettingDefault) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_EcsAccountSettingDefault) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsAccountSettingDefault) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2649,7 +3060,7 @@ func (j *jsiiProxy_EcsAccountSettingDefault) ValueInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default.html aws_ecs_account_setting_default} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default aws_ecs_account_setting_default} Resource.
 func NewEcsAccountSettingDefault(scope constructs.Construct, id *string, config *EcsAccountSettingDefaultConfig) EcsAccountSettingDefault {
 	_init_.Initialize()
 
@@ -2664,7 +3075,7 @@ func NewEcsAccountSettingDefault(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default.html aws_ecs_account_setting_default} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default aws_ecs_account_setting_default} Resource.
 func NewEcsAccountSettingDefault_Override(e EcsAccountSettingDefault, scope constructs.Construct, id *string, config *EcsAccountSettingDefaultConfig) {
 	_init_.Initialize()
 
@@ -2675,7 +3086,7 @@ func NewEcsAccountSettingDefault_Override(e EcsAccountSettingDefault, scope cons
 	)
 }
 
-func (j *jsiiProxy_EcsAccountSettingDefault) SetCount(val interface{}) {
+func (j *jsiiProxy_EcsAccountSettingDefault) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2763,12 +3174,40 @@ func (e *jsiiProxy_EcsAccountSettingDefault) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsAccountSettingDefault) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsAccountSettingDefault) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsAccountSettingDefault) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2805,12 +3244,54 @@ func (e *jsiiProxy_EcsAccountSettingDefault) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsAccountSettingDefault) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsAccountSettingDefault) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsAccountSettingDefault) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsAccountSettingDefault) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2911,20 +3392,20 @@ func (e *jsiiProxy_EcsAccountSettingDefault) ToTerraform() interface{} {
 // AWS EC2 Container Service.
 type EcsAccountSettingDefaultConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default.html#name EcsAccountSettingDefault#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default.html#value EcsAccountSettingDefault#value}.
-	Value *string `json:"value"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default#name EcsAccountSettingDefault#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_account_setting_default#value EcsAccountSettingDefault#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html aws_ecs_capacity_provider}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider aws_ecs_capacity_provider}.
 type EcsCapacityProvider interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2932,8 +3413,8 @@ type EcsCapacityProvider interface {
 	AutoScalingGroupProviderInput() *EcsCapacityProviderAutoScalingGroupProvider
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2948,20 +3429,25 @@ type EcsCapacityProvider interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAutoScalingGroupProvider(value *EcsCapacityProviderAutoScalingGroupProvider)
@@ -3029,8 +3515,8 @@ func (j *jsiiProxy_EcsCapacityProvider) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCapacityProvider) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3139,8 +3625,8 @@ func (j *jsiiProxy_EcsCapacityProvider) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCapacityProvider) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3149,8 +3635,8 @@ func (j *jsiiProxy_EcsCapacityProvider) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCapacityProvider) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3159,8 +3645,8 @@ func (j *jsiiProxy_EcsCapacityProvider) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCapacityProvider) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3169,8 +3655,8 @@ func (j *jsiiProxy_EcsCapacityProvider) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCapacityProvider) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3209,7 +3695,7 @@ func (j *jsiiProxy_EcsCapacityProvider) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html aws_ecs_capacity_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider aws_ecs_capacity_provider} Resource.
 func NewEcsCapacityProvider(scope constructs.Construct, id *string, config *EcsCapacityProviderConfig) EcsCapacityProvider {
 	_init_.Initialize()
 
@@ -3224,7 +3710,7 @@ func NewEcsCapacityProvider(scope constructs.Construct, id *string, config *EcsC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html aws_ecs_capacity_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider aws_ecs_capacity_provider} Resource.
 func NewEcsCapacityProvider_Override(e EcsCapacityProvider, scope constructs.Construct, id *string, config *EcsCapacityProviderConfig) {
 	_init_.Initialize()
 
@@ -3235,7 +3721,7 @@ func NewEcsCapacityProvider_Override(e EcsCapacityProvider, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) SetCount(val interface{}) {
+func (j *jsiiProxy_EcsCapacityProvider) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3275,7 +3761,7 @@ func (j *jsiiProxy_EcsCapacityProvider) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) SetTags(val interface{}) {
+func (j *jsiiProxy_EcsCapacityProvider) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3283,7 +3769,7 @@ func (j *jsiiProxy_EcsCapacityProvider) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EcsCapacityProvider) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EcsCapacityProvider) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3331,12 +3817,40 @@ func (e *jsiiProxy_EcsCapacityProvider) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsCapacityProvider) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsCapacityProvider) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProvider) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3373,12 +3887,54 @@ func (e *jsiiProxy_EcsCapacityProvider) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsCapacityProvider) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProvider) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsCapacityProvider) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProvider) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3501,27 +4057,27 @@ func (e *jsiiProxy_EcsCapacityProvider) ToTerraform() interface{} {
 }
 
 type EcsCapacityProviderAutoScalingGroupProvider struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#auto_scaling_group_arn EcsCapacityProvider#auto_scaling_group_arn}.
-	AutoScalingGroupArn *string `json:"autoScalingGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#auto_scaling_group_arn EcsCapacityProvider#auto_scaling_group_arn}.
+	AutoScalingGroupArn *string `json:"autoScalingGroupArn" yaml:"autoScalingGroupArn"`
 	// managed_scaling block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#managed_scaling EcsCapacityProvider#managed_scaling}
-	ManagedScaling *EcsCapacityProviderAutoScalingGroupProviderManagedScaling `json:"managedScaling"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#managed_termination_protection EcsCapacityProvider#managed_termination_protection}.
-	ManagedTerminationProtection *string `json:"managedTerminationProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#managed_scaling EcsCapacityProvider#managed_scaling}
+	ManagedScaling *EcsCapacityProviderAutoScalingGroupProviderManagedScaling `json:"managedScaling" yaml:"managedScaling"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#managed_termination_protection EcsCapacityProvider#managed_termination_protection}.
+	ManagedTerminationProtection *string `json:"managedTerminationProtection" yaml:"managedTerminationProtection"`
 }
 
 type EcsCapacityProviderAutoScalingGroupProviderManagedScaling struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#instance_warmup_period EcsCapacityProvider#instance_warmup_period}.
-	InstanceWarmupPeriod *float64 `json:"instanceWarmupPeriod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#maximum_scaling_step_size EcsCapacityProvider#maximum_scaling_step_size}.
-	MaximumScalingStepSize *float64 `json:"maximumScalingStepSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#minimum_scaling_step_size EcsCapacityProvider#minimum_scaling_step_size}.
-	MinimumScalingStepSize *float64 `json:"minimumScalingStepSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#status EcsCapacityProvider#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#target_capacity EcsCapacityProvider#target_capacity}.
-	TargetCapacity *float64 `json:"targetCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#instance_warmup_period EcsCapacityProvider#instance_warmup_period}.
+	InstanceWarmupPeriod *float64 `json:"instanceWarmupPeriod" yaml:"instanceWarmupPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#maximum_scaling_step_size EcsCapacityProvider#maximum_scaling_step_size}.
+	MaximumScalingStepSize *float64 `json:"maximumScalingStepSize" yaml:"maximumScalingStepSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#minimum_scaling_step_size EcsCapacityProvider#minimum_scaling_step_size}.
+	MinimumScalingStepSize *float64 `json:"minimumScalingStepSize" yaml:"minimumScalingStepSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#status EcsCapacityProvider#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#target_capacity EcsCapacityProvider#target_capacity}.
+	TargetCapacity *float64 `json:"targetCapacity" yaml:"targetCapacity"`
 }
 
 type EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference interface {
@@ -3547,12 +4103,17 @@ type EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference in
 	TargetCapacityInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInstanceWarmupPeriod()
@@ -3697,8 +4258,8 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutp
 	return returns
 }
 
-func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3707,7 +4268,7 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutp
 	return returns
 }
 
-func NewEcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference {
+func NewEcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference{}
@@ -3721,7 +4282,7 @@ func NewEcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference
 	return &j
 }
 
-func NewEcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference_Override(e EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference_Override(e EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3795,7 +4356,7 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutp
 	)
 }
 
-func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3804,12 +4365,40 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutp
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3846,12 +4435,54 @@ func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutp
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderManagedScalingOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3943,12 +4574,17 @@ type EcsCapacityProviderAutoScalingGroupProviderOutputReference interface {
 	ManagedTerminationProtectionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutManagedScaling(value *EcsCapacityProviderAutoScalingGroupProviderManagedScaling)
@@ -4051,8 +4687,8 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4061,7 +4697,7 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) T
 	return returns
 }
 
-func NewEcsCapacityProviderAutoScalingGroupProviderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsCapacityProviderAutoScalingGroupProviderOutputReference {
+func NewEcsCapacityProviderAutoScalingGroupProviderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsCapacityProviderAutoScalingGroupProviderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference{}
@@ -4075,7 +4711,7 @@ func NewEcsCapacityProviderAutoScalingGroupProviderOutputReference(terraformReso
 	return &j
 }
 
-func NewEcsCapacityProviderAutoScalingGroupProviderOutputReference_Override(e EcsCapacityProviderAutoScalingGroupProviderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsCapacityProviderAutoScalingGroupProviderOutputReference_Override(e EcsCapacityProviderAutoScalingGroupProviderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4125,7 +4761,7 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4134,12 +4770,40 @@ func (j *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) S
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4176,12 +4840,54 @@ func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) G
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4244,26 +4950,26 @@ func (e *jsiiProxy_EcsCapacityProviderAutoScalingGroupProviderOutputReference) R
 // AWS EC2 Container Service.
 type EcsCapacityProviderConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// auto_scaling_group_provider block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#auto_scaling_group_provider EcsCapacityProvider#auto_scaling_group_provider}
-	AutoScalingGroupProvider *EcsCapacityProviderAutoScalingGroupProvider `json:"autoScalingGroupProvider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#name EcsCapacityProvider#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#tags EcsCapacityProvider#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider.html#tags_all EcsCapacityProvider#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#auto_scaling_group_provider EcsCapacityProvider#auto_scaling_group_provider}
+	AutoScalingGroupProvider *EcsCapacityProviderAutoScalingGroupProvider `json:"autoScalingGroupProvider" yaml:"autoScalingGroupProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#name EcsCapacityProvider#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#tags EcsCapacityProvider#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_capacity_provider#tags_all EcsCapacityProvider#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html aws_ecs_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster aws_ecs_cluster}.
 type EcsCluster interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -4274,11 +4980,11 @@ type EcsCluster interface {
 	Configuration() EcsClusterConfigurationOutputReference
 	ConfigurationInput() *EcsClusterConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DefaultCapacityProviderStrategy() *[]*EcsClusterDefaultCapacityProviderStrategy
-	SetDefaultCapacityProviderStrategy(val *[]*EcsClusterDefaultCapacityProviderStrategy)
-	DefaultCapacityProviderStrategyInput() *[]*EcsClusterDefaultCapacityProviderStrategy
+	Count() *float64
+	SetCount(val *float64)
+	DefaultCapacityProviderStrategy() interface{}
+	SetDefaultCapacityProviderStrategy(val interface{})
+	DefaultCapacityProviderStrategyInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4293,23 +4999,28 @@ type EcsCluster interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Setting() *[]*EcsClusterSetting
-	SetSetting(val *[]*EcsClusterSetting)
-	SettingInput() *[]*EcsClusterSetting
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Setting() interface{}
+	SetSetting(val interface{})
+	SettingInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutConfiguration(value *EcsClusterConfiguration)
@@ -4401,8 +5112,8 @@ func (j *jsiiProxy_EcsCluster) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4411,8 +5122,8 @@ func (j *jsiiProxy_EcsCluster) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) DefaultCapacityProviderStrategy() *[]*EcsClusterDefaultCapacityProviderStrategy {
-	var returns *[]*EcsClusterDefaultCapacityProviderStrategy
+func (j *jsiiProxy_EcsCluster) DefaultCapacityProviderStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"defaultCapacityProviderStrategy",
@@ -4421,8 +5132,8 @@ func (j *jsiiProxy_EcsCluster) DefaultCapacityProviderStrategy() *[]*EcsClusterD
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) DefaultCapacityProviderStrategyInput() *[]*EcsClusterDefaultCapacityProviderStrategy {
-	var returns *[]*EcsClusterDefaultCapacityProviderStrategy
+func (j *jsiiProxy_EcsCluster) DefaultCapacityProviderStrategyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"defaultCapacityProviderStrategyInput",
@@ -4531,8 +5242,8 @@ func (j *jsiiProxy_EcsCluster) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) Setting() *[]*EcsClusterSetting {
-	var returns *[]*EcsClusterSetting
+func (j *jsiiProxy_EcsCluster) Setting() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"setting",
@@ -4541,8 +5252,8 @@ func (j *jsiiProxy_EcsCluster) Setting() *[]*EcsClusterSetting {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) SettingInput() *[]*EcsClusterSetting {
-	var returns *[]*EcsClusterSetting
+func (j *jsiiProxy_EcsCluster) SettingInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"settingInput",
@@ -4551,8 +5262,8 @@ func (j *jsiiProxy_EcsCluster) SettingInput() *[]*EcsClusterSetting {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4561,8 +5272,8 @@ func (j *jsiiProxy_EcsCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCluster) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4571,8 +5282,8 @@ func (j *jsiiProxy_EcsCluster) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCluster) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4581,8 +5292,8 @@ func (j *jsiiProxy_EcsCluster) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4621,7 +5332,7 @@ func (j *jsiiProxy_EcsCluster) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html aws_ecs_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster aws_ecs_cluster} Resource.
 func NewEcsCluster(scope constructs.Construct, id *string, config *EcsClusterConfig) EcsCluster {
 	_init_.Initialize()
 
@@ -4636,7 +5347,7 @@ func NewEcsCluster(scope constructs.Construct, id *string, config *EcsClusterCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html aws_ecs_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster aws_ecs_cluster} Resource.
 func NewEcsCluster_Override(e EcsCluster, scope constructs.Construct, id *string, config *EcsClusterConfig) {
 	_init_.Initialize()
 
@@ -4655,7 +5366,7 @@ func (j *jsiiProxy_EcsCluster) SetCapacityProviders(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_EcsCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_EcsCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4663,7 +5374,7 @@ func (j *jsiiProxy_EcsCluster) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EcsCluster) SetDefaultCapacityProviderStrategy(val *[]*EcsClusterDefaultCapacityProviderStrategy) {
+func (j *jsiiProxy_EcsCluster) SetDefaultCapacityProviderStrategy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"defaultCapacityProviderStrategy",
@@ -4703,7 +5414,7 @@ func (j *jsiiProxy_EcsCluster) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_EcsCluster) SetSetting(val *[]*EcsClusterSetting) {
+func (j *jsiiProxy_EcsCluster) SetSetting(val interface{}) {
 	_jsii_.Set(
 		j,
 		"setting",
@@ -4711,7 +5422,7 @@ func (j *jsiiProxy_EcsCluster) SetSetting(val *[]*EcsClusterSetting) {
 	)
 }
 
-func (j *jsiiProxy_EcsCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_EcsCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4719,7 +5430,7 @@ func (j *jsiiProxy_EcsCluster) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EcsCluster) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EcsCluster) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4767,12 +5478,40 @@ func (e *jsiiProxy_EcsCluster) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4809,12 +5548,54 @@ func (e *jsiiProxy_EcsCluster) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4968,67 +5749,705 @@ func (e *jsiiProxy_EcsCluster) ToTerraform() interface{} {
 	return returns
 }
 
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers aws_ecs_cluster_capacity_providers}.
+type EcsClusterCapacityProviders interface {
+	cdktf.TerraformResource
+	CapacityProviders() *[]*string
+	SetCapacityProviders(val *[]*string)
+	CapacityProvidersInput() *[]*string
+	CdktfStack() cdktf.TerraformStack
+	ClusterName() *string
+	SetClusterName(val *string)
+	ClusterNameInput() *string
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DefaultCapacityProviderStrategy() interface{}
+	SetDefaultCapacityProviderStrategy(val interface{})
+	DefaultCapacityProviderStrategyInput() interface{}
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetCapacityProviders()
+	ResetDefaultCapacityProviderStrategy()
+	ResetOverrideLogicalId()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for EcsClusterCapacityProviders
+type jsiiProxy_EcsClusterCapacityProviders struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) CapacityProviders() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"capacityProviders",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) CapacityProvidersInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"capacityProvidersInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) ClusterName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clusterName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) ClusterNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clusterNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) DefaultCapacityProviderStrategy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"defaultCapacityProviderStrategy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) DefaultCapacityProviderStrategyInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"defaultCapacityProviderStrategyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers aws_ecs_cluster_capacity_providers} Resource.
+func NewEcsClusterCapacityProviders(scope constructs.Construct, id *string, config *EcsClusterCapacityProvidersConfig) EcsClusterCapacityProviders {
+	_init_.Initialize()
+
+	j := jsiiProxy_EcsClusterCapacityProviders{}
+
+	_jsii_.Create(
+		"hashicorp_aws.ecs.EcsClusterCapacityProviders",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers aws_ecs_cluster_capacity_providers} Resource.
+func NewEcsClusterCapacityProviders_Override(e EcsClusterCapacityProviders, scope constructs.Construct, id *string, config *EcsClusterCapacityProvidersConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.ecs.EcsClusterCapacityProviders",
+		[]interface{}{scope, id, config},
+		e,
+	)
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) SetCapacityProviders(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"capacityProviders",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) SetClusterName(val *string) {
+	_jsii_.Set(
+		j,
+		"clusterName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) SetDefaultCapacityProviderStrategy(val interface{}) {
+	_jsii_.Set(
+		j,
+		"defaultCapacityProviderStrategy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcsClusterCapacityProviders) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func EcsClusterCapacityProviders_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.ecs.EcsClusterCapacityProviders",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func EcsClusterCapacityProviders_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.ecs.EcsClusterCapacityProviders",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		e,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		e,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		e,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (e *jsiiProxy_EcsClusterCapacityProviders) ResetCapacityProviders() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetCapacityProviders",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EcsClusterCapacityProviders) ResetDefaultCapacityProviderStrategy() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetDefaultCapacityProviderStrategy",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EcsClusterCapacityProviders) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (e *jsiiProxy_EcsClusterCapacityProviders) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (e *jsiiProxy_EcsClusterCapacityProviders) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		e,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS EC2 Container Service.
+type EcsClusterCapacityProvidersConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers#cluster_name EcsClusterCapacityProviders#cluster_name}.
+	ClusterName *string `json:"clusterName" yaml:"clusterName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers#capacity_providers EcsClusterCapacityProviders#capacity_providers}.
+	CapacityProviders *[]*string `json:"capacityProviders" yaml:"capacityProviders"`
+	// default_capacity_provider_strategy block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers#default_capacity_provider_strategy EcsClusterCapacityProviders#default_capacity_provider_strategy}
+	DefaultCapacityProviderStrategy interface{} `json:"defaultCapacityProviderStrategy" yaml:"defaultCapacityProviderStrategy"`
+}
+
+type EcsClusterCapacityProvidersDefaultCapacityProviderStrategy struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers#capacity_provider EcsClusterCapacityProviders#capacity_provider}.
+	CapacityProvider *string `json:"capacityProvider" yaml:"capacityProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers#base EcsClusterCapacityProviders#base}.
+	Base *float64 `json:"base" yaml:"base"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster_capacity_providers#weight EcsClusterCapacityProviders#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
+}
+
 // AWS EC2 Container Service.
 type EcsClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#name EcsCluster#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#capacity_providers EcsCluster#capacity_providers}.
-	CapacityProviders *[]*string `json:"capacityProviders"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#name EcsCluster#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#capacity_providers EcsCluster#capacity_providers}.
+	CapacityProviders *[]*string `json:"capacityProviders" yaml:"capacityProviders"`
 	// configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#configuration EcsCluster#configuration}
-	Configuration *EcsClusterConfiguration `json:"configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#configuration EcsCluster#configuration}
+	Configuration *EcsClusterConfiguration `json:"configuration" yaml:"configuration"`
 	// default_capacity_provider_strategy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#default_capacity_provider_strategy EcsCluster#default_capacity_provider_strategy}
-	DefaultCapacityProviderStrategy *[]*EcsClusterDefaultCapacityProviderStrategy `json:"defaultCapacityProviderStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#default_capacity_provider_strategy EcsCluster#default_capacity_provider_strategy}
+	DefaultCapacityProviderStrategy interface{} `json:"defaultCapacityProviderStrategy" yaml:"defaultCapacityProviderStrategy"`
 	// setting block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#setting EcsCluster#setting}
-	Setting *[]*EcsClusterSetting `json:"setting"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#tags EcsCluster#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#tags_all EcsCluster#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#setting EcsCluster#setting}
+	Setting interface{} `json:"setting" yaml:"setting"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#tags EcsCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#tags_all EcsCluster#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type EcsClusterConfiguration struct {
 	// execute_command_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#execute_command_configuration EcsCluster#execute_command_configuration}
-	ExecuteCommandConfiguration *EcsClusterConfigurationExecuteCommandConfiguration `json:"executeCommandConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#execute_command_configuration EcsCluster#execute_command_configuration}
+	ExecuteCommandConfiguration *EcsClusterConfigurationExecuteCommandConfiguration `json:"executeCommandConfiguration" yaml:"executeCommandConfiguration"`
 }
 
 type EcsClusterConfigurationExecuteCommandConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#kms_key_id EcsCluster#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#kms_key_id EcsCluster#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
 	// log_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#log_configuration EcsCluster#log_configuration}
-	LogConfiguration *EcsClusterConfigurationExecuteCommandConfigurationLogConfiguration `json:"logConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#logging EcsCluster#logging}.
-	Logging *string `json:"logging"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#log_configuration EcsCluster#log_configuration}
+	LogConfiguration *EcsClusterConfigurationExecuteCommandConfigurationLogConfiguration `json:"logConfiguration" yaml:"logConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#logging EcsCluster#logging}.
+	Logging *string `json:"logging" yaml:"logging"`
 }
 
 type EcsClusterConfigurationExecuteCommandConfigurationLogConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#cloud_watch_encryption_enabled EcsCluster#cloud_watch_encryption_enabled}.
-	CloudWatchEncryptionEnabled interface{} `json:"cloudWatchEncryptionEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#cloud_watch_log_group_name EcsCluster#cloud_watch_log_group_name}.
-	CloudWatchLogGroupName *string `json:"cloudWatchLogGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#s3_bucket_encryption_enabled EcsCluster#s3_bucket_encryption_enabled}.
-	S3BucketEncryptionEnabled interface{} `json:"s3BucketEncryptionEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#s3_bucket_name EcsCluster#s3_bucket_name}.
-	S3BucketName *string `json:"s3BucketName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#s3_key_prefix EcsCluster#s3_key_prefix}.
-	S3KeyPrefix *string `json:"s3KeyPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#cloud_watch_encryption_enabled EcsCluster#cloud_watch_encryption_enabled}.
+	CloudWatchEncryptionEnabled interface{} `json:"cloudWatchEncryptionEnabled" yaml:"cloudWatchEncryptionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#cloud_watch_log_group_name EcsCluster#cloud_watch_log_group_name}.
+	CloudWatchLogGroupName *string `json:"cloudWatchLogGroupName" yaml:"cloudWatchLogGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#s3_bucket_encryption_enabled EcsCluster#s3_bucket_encryption_enabled}.
+	S3BucketEncryptionEnabled interface{} `json:"s3BucketEncryptionEnabled" yaml:"s3BucketEncryptionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#s3_bucket_name EcsCluster#s3_bucket_name}.
+	S3BucketName *string `json:"s3BucketName" yaml:"s3BucketName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#s3_key_prefix EcsCluster#s3_key_prefix}.
+	S3KeyPrefix *string `json:"s3KeyPrefix" yaml:"s3KeyPrefix"`
 }
 
 type EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference interface {
@@ -5054,12 +6473,17 @@ type EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputRef
 	S3KeyPrefixInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCloudWatchEncryptionEnabled()
@@ -5204,8 +6628,8 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigur
 	return returns
 }
 
-func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5214,7 +6638,7 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigur
 	return returns
 }
 
-func NewEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference {
+func NewEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference{}
@@ -5228,7 +6652,7 @@ func NewEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutput
 	return &j
 }
 
-func NewEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference_Override(e EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference_Override(e EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5302,7 +6726,7 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigur
 	)
 }
 
-func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5311,12 +6735,40 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigur
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5353,12 +6805,54 @@ func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigur
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationLogConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5450,12 +6944,17 @@ type EcsClusterConfigurationExecuteCommandConfigurationOutputReference interface
 	LoggingInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutLogConfiguration(value *EcsClusterConfigurationExecuteCommandConfigurationLogConfiguration)
@@ -5559,8 +7058,8 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5569,7 +7068,7 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputRefer
 	return returns
 }
 
-func NewEcsClusterConfigurationExecuteCommandConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsClusterConfigurationExecuteCommandConfigurationOutputReference {
+func NewEcsClusterConfigurationExecuteCommandConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsClusterConfigurationExecuteCommandConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference{}
@@ -5583,7 +7082,7 @@ func NewEcsClusterConfigurationExecuteCommandConfigurationOutputReference(terraf
 	return &j
 }
 
-func NewEcsClusterConfigurationExecuteCommandConfigurationOutputReference_Override(e EcsClusterConfigurationExecuteCommandConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsClusterConfigurationExecuteCommandConfigurationOutputReference_Override(e EcsClusterConfigurationExecuteCommandConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5633,7 +7132,7 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputRefer
 	)
 }
 
-func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5642,12 +7141,40 @@ func (j *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputRefer
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5684,12 +7211,54 @@ func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputRefer
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationExecuteCommandConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5767,12 +7336,17 @@ type EcsClusterConfigurationOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutExecuteCommandConfiguration(value *EcsClusterConfigurationExecuteCommandConfiguration)
@@ -5834,8 +7408,8 @@ func (j *jsiiProxy_EcsClusterConfigurationOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_EcsClusterConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsClusterConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5844,7 +7418,7 @@ func (j *jsiiProxy_EcsClusterConfigurationOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewEcsClusterConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsClusterConfigurationOutputReference {
+func NewEcsClusterConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsClusterConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsClusterConfigurationOutputReference{}
@@ -5858,7 +7432,7 @@ func NewEcsClusterConfigurationOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewEcsClusterConfigurationOutputReference_Override(e EcsClusterConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsClusterConfigurationOutputReference_Override(e EcsClusterConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5892,7 +7466,7 @@ func (j *jsiiProxy_EcsClusterConfigurationOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_EcsClusterConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsClusterConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5901,12 +7475,40 @@ func (j *jsiiProxy_EcsClusterConfigurationOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5943,12 +7545,54 @@ func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsClusterConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6001,34 +7645,34 @@ func (e *jsiiProxy_EcsClusterConfigurationOutputReference) ResetExecuteCommandCo
 }
 
 type EcsClusterDefaultCapacityProviderStrategy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#capacity_provider EcsCluster#capacity_provider}.
-	CapacityProvider *string `json:"capacityProvider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#base EcsCluster#base}.
-	Base *float64 `json:"base"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#weight EcsCluster#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#capacity_provider EcsCluster#capacity_provider}.
+	CapacityProvider *string `json:"capacityProvider" yaml:"capacityProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#base EcsCluster#base}.
+	Base *float64 `json:"base" yaml:"base"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#weight EcsCluster#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
 type EcsClusterSetting struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#name EcsCluster#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster.html#value EcsCluster#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#name EcsCluster#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_cluster#value EcsCluster#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html aws_ecs_service}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_service aws_ecs_service}.
 type EcsService interface {
 	cdktf.TerraformResource
-	CapacityProviderStrategy() *[]*EcsServiceCapacityProviderStrategy
-	SetCapacityProviderStrategy(val *[]*EcsServiceCapacityProviderStrategy)
-	CapacityProviderStrategyInput() *[]*EcsServiceCapacityProviderStrategy
+	CapacityProviderStrategy() interface{}
+	SetCapacityProviderStrategy(val interface{})
+	CapacityProviderStrategyInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	Cluster() *string
 	SetCluster(val *string)
 	ClusterInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentCircuitBreaker() EcsServiceDeploymentCircuitBreakerOutputReference
@@ -6067,21 +7711,21 @@ type EcsService interface {
 	LaunchTypeInput() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	LoadBalancer() *[]*EcsServiceLoadBalancer
-	SetLoadBalancer(val *[]*EcsServiceLoadBalancer)
-	LoadBalancerInput() *[]*EcsServiceLoadBalancer
+	LoadBalancer() interface{}
+	SetLoadBalancer(val interface{})
+	LoadBalancerInput() interface{}
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
 	NetworkConfiguration() EcsServiceNetworkConfigurationOutputReference
 	NetworkConfigurationInput() *EcsServiceNetworkConfiguration
 	Node() constructs.Node
-	OrderedPlacementStrategy() *[]*EcsServiceOrderedPlacementStrategy
-	SetOrderedPlacementStrategy(val *[]*EcsServiceOrderedPlacementStrategy)
-	OrderedPlacementStrategyInput() *[]*EcsServiceOrderedPlacementStrategy
-	PlacementConstraints() *[]*EcsServicePlacementConstraints
-	SetPlacementConstraints(val *[]*EcsServicePlacementConstraints)
-	PlacementConstraintsInput() *[]*EcsServicePlacementConstraints
+	OrderedPlacementStrategy() interface{}
+	SetOrderedPlacementStrategy(val interface{})
+	OrderedPlacementStrategyInput() interface{}
+	PlacementConstraints() interface{}
+	SetPlacementConstraints(val interface{})
+	PlacementConstraintsInput() interface{}
 	PlatformVersion() *string
 	SetPlatformVersion(val *string)
 	PlatformVersionInput() *string
@@ -6096,12 +7740,12 @@ type EcsService interface {
 	SchedulingStrategyInput() *string
 	ServiceRegistries() EcsServiceServiceRegistriesOutputReference
 	ServiceRegistriesInput() *EcsServiceServiceRegistries
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TaskDefinition() *string
 	SetTaskDefinition(val *string)
 	TaskDefinitionInput() *string
@@ -6114,10 +7758,15 @@ type EcsService interface {
 	SetWaitForSteadyState(val interface{})
 	WaitForSteadyStateInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDeploymentCircuitBreaker(value *EcsServiceDeploymentCircuitBreaker)
@@ -6163,8 +7812,8 @@ type jsiiProxy_EcsService struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_EcsService) CapacityProviderStrategy() *[]*EcsServiceCapacityProviderStrategy {
-	var returns *[]*EcsServiceCapacityProviderStrategy
+func (j *jsiiProxy_EcsService) CapacityProviderStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"capacityProviderStrategy",
@@ -6173,8 +7822,8 @@ func (j *jsiiProxy_EcsService) CapacityProviderStrategy() *[]*EcsServiceCapacity
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) CapacityProviderStrategyInput() *[]*EcsServiceCapacityProviderStrategy {
-	var returns *[]*EcsServiceCapacityProviderStrategy
+func (j *jsiiProxy_EcsService) CapacityProviderStrategyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"capacityProviderStrategyInput",
@@ -6223,8 +7872,8 @@ func (j *jsiiProxy_EcsService) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsService) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6503,8 +8152,8 @@ func (j *jsiiProxy_EcsService) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) LoadBalancer() *[]*EcsServiceLoadBalancer {
-	var returns *[]*EcsServiceLoadBalancer
+func (j *jsiiProxy_EcsService) LoadBalancer() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"loadBalancer",
@@ -6513,8 +8162,8 @@ func (j *jsiiProxy_EcsService) LoadBalancer() *[]*EcsServiceLoadBalancer {
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) LoadBalancerInput() *[]*EcsServiceLoadBalancer {
-	var returns *[]*EcsServiceLoadBalancer
+func (j *jsiiProxy_EcsService) LoadBalancerInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"loadBalancerInput",
@@ -6573,8 +8222,8 @@ func (j *jsiiProxy_EcsService) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) OrderedPlacementStrategy() *[]*EcsServiceOrderedPlacementStrategy {
-	var returns *[]*EcsServiceOrderedPlacementStrategy
+func (j *jsiiProxy_EcsService) OrderedPlacementStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"orderedPlacementStrategy",
@@ -6583,8 +8232,8 @@ func (j *jsiiProxy_EcsService) OrderedPlacementStrategy() *[]*EcsServiceOrderedP
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) OrderedPlacementStrategyInput() *[]*EcsServiceOrderedPlacementStrategy {
-	var returns *[]*EcsServiceOrderedPlacementStrategy
+func (j *jsiiProxy_EcsService) OrderedPlacementStrategyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"orderedPlacementStrategyInput",
@@ -6593,8 +8242,8 @@ func (j *jsiiProxy_EcsService) OrderedPlacementStrategyInput() *[]*EcsServiceOrd
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) PlacementConstraints() *[]*EcsServicePlacementConstraints {
-	var returns *[]*EcsServicePlacementConstraints
+func (j *jsiiProxy_EcsService) PlacementConstraints() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"placementConstraints",
@@ -6603,8 +8252,8 @@ func (j *jsiiProxy_EcsService) PlacementConstraints() *[]*EcsServicePlacementCon
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) PlacementConstraintsInput() *[]*EcsServicePlacementConstraints {
-	var returns *[]*EcsServicePlacementConstraints
+func (j *jsiiProxy_EcsService) PlacementConstraintsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"placementConstraintsInput",
@@ -6713,8 +8362,8 @@ func (j *jsiiProxy_EcsService) ServiceRegistriesInput() *EcsServiceServiceRegist
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsService) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6723,8 +8372,8 @@ func (j *jsiiProxy_EcsService) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsService) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6733,8 +8382,8 @@ func (j *jsiiProxy_EcsService) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsService) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6743,8 +8392,8 @@ func (j *jsiiProxy_EcsService) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsService) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsService) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6843,7 +8492,7 @@ func (j *jsiiProxy_EcsService) WaitForSteadyStateInput() interface{} {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html aws_ecs_service} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_service aws_ecs_service} Resource.
 func NewEcsService(scope constructs.Construct, id *string, config *EcsServiceConfig) EcsService {
 	_init_.Initialize()
 
@@ -6858,7 +8507,7 @@ func NewEcsService(scope constructs.Construct, id *string, config *EcsServiceCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html aws_ecs_service} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_service aws_ecs_service} Resource.
 func NewEcsService_Override(e EcsService, scope constructs.Construct, id *string, config *EcsServiceConfig) {
 	_init_.Initialize()
 
@@ -6869,7 +8518,7 @@ func NewEcsService_Override(e EcsService, scope constructs.Construct, id *string
 	)
 }
 
-func (j *jsiiProxy_EcsService) SetCapacityProviderStrategy(val *[]*EcsServiceCapacityProviderStrategy) {
+func (j *jsiiProxy_EcsService) SetCapacityProviderStrategy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"capacityProviderStrategy",
@@ -6885,7 +8534,7 @@ func (j *jsiiProxy_EcsService) SetCluster(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsService) SetCount(val interface{}) {
+func (j *jsiiProxy_EcsService) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6981,7 +8630,7 @@ func (j *jsiiProxy_EcsService) SetLifecycle(val *cdktf.TerraformResourceLifecycl
 	)
 }
 
-func (j *jsiiProxy_EcsService) SetLoadBalancer(val *[]*EcsServiceLoadBalancer) {
+func (j *jsiiProxy_EcsService) SetLoadBalancer(val interface{}) {
 	_jsii_.Set(
 		j,
 		"loadBalancer",
@@ -6997,7 +8646,7 @@ func (j *jsiiProxy_EcsService) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsService) SetOrderedPlacementStrategy(val *[]*EcsServiceOrderedPlacementStrategy) {
+func (j *jsiiProxy_EcsService) SetOrderedPlacementStrategy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"orderedPlacementStrategy",
@@ -7005,7 +8654,7 @@ func (j *jsiiProxy_EcsService) SetOrderedPlacementStrategy(val *[]*EcsServiceOrd
 	)
 }
 
-func (j *jsiiProxy_EcsService) SetPlacementConstraints(val *[]*EcsServicePlacementConstraints) {
+func (j *jsiiProxy_EcsService) SetPlacementConstraints(val interface{}) {
 	_jsii_.Set(
 		j,
 		"placementConstraints",
@@ -7045,7 +8694,7 @@ func (j *jsiiProxy_EcsService) SetSchedulingStrategy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsService) SetTags(val interface{}) {
+func (j *jsiiProxy_EcsService) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7053,7 +8702,7 @@ func (j *jsiiProxy_EcsService) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EcsService) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EcsService) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7117,12 +8766,40 @@ func (e *jsiiProxy_EcsService) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsService) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsService) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsService) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7159,12 +8836,54 @@ func (e *jsiiProxy_EcsService) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsService) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsService) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsService) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsService) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7511,103 +9230,103 @@ func (e *jsiiProxy_EcsService) ToTerraform() interface{} {
 }
 
 type EcsServiceCapacityProviderStrategy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#capacity_provider EcsService#capacity_provider}.
-	CapacityProvider *string `json:"capacityProvider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#base EcsService#base}.
-	Base *float64 `json:"base"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#weight EcsService#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#capacity_provider EcsService#capacity_provider}.
+	CapacityProvider *string `json:"capacityProvider" yaml:"capacityProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#base EcsService#base}.
+	Base *float64 `json:"base" yaml:"base"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#weight EcsService#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
 // AWS EC2 Container Service.
 type EcsServiceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#name EcsService#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#name EcsService#name}.
+	Name *string `json:"name" yaml:"name"`
 	// capacity_provider_strategy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#capacity_provider_strategy EcsService#capacity_provider_strategy}
-	CapacityProviderStrategy *[]*EcsServiceCapacityProviderStrategy `json:"capacityProviderStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#cluster EcsService#cluster}.
-	Cluster *string `json:"cluster"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#capacity_provider_strategy EcsService#capacity_provider_strategy}
+	CapacityProviderStrategy interface{} `json:"capacityProviderStrategy" yaml:"capacityProviderStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#cluster EcsService#cluster}.
+	Cluster *string `json:"cluster" yaml:"cluster"`
 	// deployment_circuit_breaker block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#deployment_circuit_breaker EcsService#deployment_circuit_breaker}
-	DeploymentCircuitBreaker *EcsServiceDeploymentCircuitBreaker `json:"deploymentCircuitBreaker"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#deployment_circuit_breaker EcsService#deployment_circuit_breaker}
+	DeploymentCircuitBreaker *EcsServiceDeploymentCircuitBreaker `json:"deploymentCircuitBreaker" yaml:"deploymentCircuitBreaker"`
 	// deployment_controller block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#deployment_controller EcsService#deployment_controller}
-	DeploymentController *EcsServiceDeploymentController `json:"deploymentController"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#deployment_maximum_percent EcsService#deployment_maximum_percent}.
-	DeploymentMaximumPercent *float64 `json:"deploymentMaximumPercent"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#deployment_minimum_healthy_percent EcsService#deployment_minimum_healthy_percent}.
-	DeploymentMinimumHealthyPercent *float64 `json:"deploymentMinimumHealthyPercent"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#desired_count EcsService#desired_count}.
-	DesiredCount *float64 `json:"desiredCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#enable_ecs_managed_tags EcsService#enable_ecs_managed_tags}.
-	EnableEcsManagedTags interface{} `json:"enableEcsManagedTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#enable_execute_command EcsService#enable_execute_command}.
-	EnableExecuteCommand interface{} `json:"enableExecuteCommand"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#force_new_deployment EcsService#force_new_deployment}.
-	ForceNewDeployment interface{} `json:"forceNewDeployment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#health_check_grace_period_seconds EcsService#health_check_grace_period_seconds}.
-	HealthCheckGracePeriodSeconds *float64 `json:"healthCheckGracePeriodSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#iam_role EcsService#iam_role}.
-	IamRole *string `json:"iamRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#launch_type EcsService#launch_type}.
-	LaunchType *string `json:"launchType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#deployment_controller EcsService#deployment_controller}
+	DeploymentController *EcsServiceDeploymentController `json:"deploymentController" yaml:"deploymentController"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#deployment_maximum_percent EcsService#deployment_maximum_percent}.
+	DeploymentMaximumPercent *float64 `json:"deploymentMaximumPercent" yaml:"deploymentMaximumPercent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#deployment_minimum_healthy_percent EcsService#deployment_minimum_healthy_percent}.
+	DeploymentMinimumHealthyPercent *float64 `json:"deploymentMinimumHealthyPercent" yaml:"deploymentMinimumHealthyPercent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#desired_count EcsService#desired_count}.
+	DesiredCount *float64 `json:"desiredCount" yaml:"desiredCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#enable_ecs_managed_tags EcsService#enable_ecs_managed_tags}.
+	EnableEcsManagedTags interface{} `json:"enableEcsManagedTags" yaml:"enableEcsManagedTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#enable_execute_command EcsService#enable_execute_command}.
+	EnableExecuteCommand interface{} `json:"enableExecuteCommand" yaml:"enableExecuteCommand"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#force_new_deployment EcsService#force_new_deployment}.
+	ForceNewDeployment interface{} `json:"forceNewDeployment" yaml:"forceNewDeployment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#health_check_grace_period_seconds EcsService#health_check_grace_period_seconds}.
+	HealthCheckGracePeriodSeconds *float64 `json:"healthCheckGracePeriodSeconds" yaml:"healthCheckGracePeriodSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#iam_role EcsService#iam_role}.
+	IamRole *string `json:"iamRole" yaml:"iamRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#launch_type EcsService#launch_type}.
+	LaunchType *string `json:"launchType" yaml:"launchType"`
 	// load_balancer block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#load_balancer EcsService#load_balancer}
-	LoadBalancer *[]*EcsServiceLoadBalancer `json:"loadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#load_balancer EcsService#load_balancer}
+	LoadBalancer interface{} `json:"loadBalancer" yaml:"loadBalancer"`
 	// network_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#network_configuration EcsService#network_configuration}
-	NetworkConfiguration *EcsServiceNetworkConfiguration `json:"networkConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#network_configuration EcsService#network_configuration}
+	NetworkConfiguration *EcsServiceNetworkConfiguration `json:"networkConfiguration" yaml:"networkConfiguration"`
 	// ordered_placement_strategy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#ordered_placement_strategy EcsService#ordered_placement_strategy}
-	OrderedPlacementStrategy *[]*EcsServiceOrderedPlacementStrategy `json:"orderedPlacementStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#ordered_placement_strategy EcsService#ordered_placement_strategy}
+	OrderedPlacementStrategy interface{} `json:"orderedPlacementStrategy" yaml:"orderedPlacementStrategy"`
 	// placement_constraints block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#placement_constraints EcsService#placement_constraints}
-	PlacementConstraints *[]*EcsServicePlacementConstraints `json:"placementConstraints"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#platform_version EcsService#platform_version}.
-	PlatformVersion *string `json:"platformVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#propagate_tags EcsService#propagate_tags}.
-	PropagateTags *string `json:"propagateTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#scheduling_strategy EcsService#scheduling_strategy}.
-	SchedulingStrategy *string `json:"schedulingStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#placement_constraints EcsService#placement_constraints}
+	PlacementConstraints interface{} `json:"placementConstraints" yaml:"placementConstraints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#platform_version EcsService#platform_version}.
+	PlatformVersion *string `json:"platformVersion" yaml:"platformVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#propagate_tags EcsService#propagate_tags}.
+	PropagateTags *string `json:"propagateTags" yaml:"propagateTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#scheduling_strategy EcsService#scheduling_strategy}.
+	SchedulingStrategy *string `json:"schedulingStrategy" yaml:"schedulingStrategy"`
 	// service_registries block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#service_registries EcsService#service_registries}
-	ServiceRegistries *EcsServiceServiceRegistries `json:"serviceRegistries"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#tags EcsService#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#tags_all EcsService#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#task_definition EcsService#task_definition}.
-	TaskDefinition *string `json:"taskDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#service_registries EcsService#service_registries}
+	ServiceRegistries *EcsServiceServiceRegistries `json:"serviceRegistries" yaml:"serviceRegistries"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#tags EcsService#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#tags_all EcsService#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#task_definition EcsService#task_definition}.
+	TaskDefinition *string `json:"taskDefinition" yaml:"taskDefinition"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#timeouts EcsService#timeouts}
-	Timeouts *EcsServiceTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#wait_for_steady_state EcsService#wait_for_steady_state}.
-	WaitForSteadyState interface{} `json:"waitForSteadyState"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#timeouts EcsService#timeouts}
+	Timeouts *EcsServiceTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#wait_for_steady_state EcsService#wait_for_steady_state}.
+	WaitForSteadyState interface{} `json:"waitForSteadyState" yaml:"waitForSteadyState"`
 }
 
 type EcsServiceDeploymentCircuitBreaker struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#enable EcsService#enable}.
-	Enable interface{} `json:"enable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#rollback EcsService#rollback}.
-	Rollback interface{} `json:"rollback"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#enable EcsService#enable}.
+	Enable interface{} `json:"enable" yaml:"enable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#rollback EcsService#rollback}.
+	Rollback interface{} `json:"rollback" yaml:"rollback"`
 }
 
 type EcsServiceDeploymentCircuitBreakerOutputReference interface {
@@ -7624,12 +9343,17 @@ type EcsServiceDeploymentCircuitBreakerOutputReference interface {
 	RollbackInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7709,8 +9433,8 @@ func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7719,7 +9443,7 @@ func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) TerraformR
 	return returns
 }
 
-func NewEcsServiceDeploymentCircuitBreakerOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsServiceDeploymentCircuitBreakerOutputReference {
+func NewEcsServiceDeploymentCircuitBreakerOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsServiceDeploymentCircuitBreakerOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference{}
@@ -7733,7 +9457,7 @@ func NewEcsServiceDeploymentCircuitBreakerOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewEcsServiceDeploymentCircuitBreakerOutputReference_Override(e EcsServiceDeploymentCircuitBreakerOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsServiceDeploymentCircuitBreakerOutputReference_Override(e EcsServiceDeploymentCircuitBreakerOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7783,7 +9507,7 @@ func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7792,12 +9516,40 @@ func (j *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7834,12 +9586,54 @@ func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetNumberA
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7876,8 +9670,8 @@ func (e *jsiiProxy_EcsServiceDeploymentCircuitBreakerOutputReference) Interpolat
 }
 
 type EcsServiceDeploymentController struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#type EcsService#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#type EcsService#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type EcsServiceDeploymentControllerOutputReference interface {
@@ -7888,15 +9682,20 @@ type EcsServiceDeploymentControllerOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetType()
@@ -7937,8 +9736,8 @@ func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7967,7 +9766,7 @@ func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) TypeInput() *s
 	return returns
 }
 
-func NewEcsServiceDeploymentControllerOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsServiceDeploymentControllerOutputReference {
+func NewEcsServiceDeploymentControllerOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsServiceDeploymentControllerOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsServiceDeploymentControllerOutputReference{}
@@ -7981,7 +9780,7 @@ func NewEcsServiceDeploymentControllerOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewEcsServiceDeploymentControllerOutputReference_Override(e EcsServiceDeploymentControllerOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsServiceDeploymentControllerOutputReference_Override(e EcsServiceDeploymentControllerOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8015,7 +9814,7 @@ func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8032,12 +9831,40 @@ func (j *jsiiProxy_EcsServiceDeploymentControllerOutputReference) SetType(val *s
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8074,12 +9901,54 @@ func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8124,23 +9993,23 @@ func (e *jsiiProxy_EcsServiceDeploymentControllerOutputReference) ResetType() {
 }
 
 type EcsServiceLoadBalancer struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#container_name EcsService#container_name}.
-	ContainerName *string `json:"containerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#container_port EcsService#container_port}.
-	ContainerPort *float64 `json:"containerPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#elb_name EcsService#elb_name}.
-	ElbName *string `json:"elbName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#target_group_arn EcsService#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#container_name EcsService#container_name}.
+	ContainerName *string `json:"containerName" yaml:"containerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#container_port EcsService#container_port}.
+	ContainerPort *float64 `json:"containerPort" yaml:"containerPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#elb_name EcsService#elb_name}.
+	ElbName *string `json:"elbName" yaml:"elbName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#target_group_arn EcsService#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
 }
 
 type EcsServiceNetworkConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#subnets EcsService#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#assign_public_ip EcsService#assign_public_ip}.
-	AssignPublicIp interface{} `json:"assignPublicIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#security_groups EcsService#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#subnets EcsService#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#assign_public_ip EcsService#assign_public_ip}.
+	AssignPublicIp interface{} `json:"assignPublicIp" yaml:"assignPublicIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#security_groups EcsService#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 }
 
 type EcsServiceNetworkConfigurationOutputReference interface {
@@ -8160,12 +10029,17 @@ type EcsServiceNetworkConfigurationOutputReference interface {
 	SubnetsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAssignPublicIp()
@@ -8267,8 +10141,8 @@ func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8277,7 +10151,7 @@ func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) TerraformResou
 	return returns
 }
 
-func NewEcsServiceNetworkConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsServiceNetworkConfigurationOutputReference {
+func NewEcsServiceNetworkConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsServiceNetworkConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsServiceNetworkConfigurationOutputReference{}
@@ -8291,7 +10165,7 @@ func NewEcsServiceNetworkConfigurationOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewEcsServiceNetworkConfigurationOutputReference_Override(e EcsServiceNetworkConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsServiceNetworkConfigurationOutputReference_Override(e EcsServiceNetworkConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8349,7 +10223,7 @@ func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8358,12 +10232,40 @@ func (j *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8400,12 +10302,54 @@ func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8458,28 +10402,28 @@ func (e *jsiiProxy_EcsServiceNetworkConfigurationOutputReference) ResetSecurityG
 }
 
 type EcsServiceOrderedPlacementStrategy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#type EcsService#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#field EcsService#field}.
-	Field *string `json:"field"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#type EcsService#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#field EcsService#field}.
+	Field *string `json:"field" yaml:"field"`
 }
 
 type EcsServicePlacementConstraints struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#type EcsService#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#expression EcsService#expression}.
-	Expression *string `json:"expression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#type EcsService#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#expression EcsService#expression}.
+	Expression *string `json:"expression" yaml:"expression"`
 }
 
 type EcsServiceServiceRegistries struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#registry_arn EcsService#registry_arn}.
-	RegistryArn *string `json:"registryArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#container_name EcsService#container_name}.
-	ContainerName *string `json:"containerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#container_port EcsService#container_port}.
-	ContainerPort *float64 `json:"containerPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#port EcsService#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#registry_arn EcsService#registry_arn}.
+	RegistryArn *string `json:"registryArn" yaml:"registryArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#container_name EcsService#container_name}.
+	ContainerName *string `json:"containerName" yaml:"containerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#container_port EcsService#container_port}.
+	ContainerPort *float64 `json:"containerPort" yaml:"containerPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#port EcsService#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type EcsServiceServiceRegistriesOutputReference interface {
@@ -8502,12 +10446,17 @@ type EcsServiceServiceRegistriesOutputReference interface {
 	RegistryArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetContainerName()
@@ -8630,8 +10579,8 @@ func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8640,7 +10589,7 @@ func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) TerraformResource
 	return returns
 }
 
-func NewEcsServiceServiceRegistriesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsServiceServiceRegistriesOutputReference {
+func NewEcsServiceServiceRegistriesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsServiceServiceRegistriesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsServiceServiceRegistriesOutputReference{}
@@ -8654,7 +10603,7 @@ func NewEcsServiceServiceRegistriesOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewEcsServiceServiceRegistriesOutputReference_Override(e EcsServiceServiceRegistriesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsServiceServiceRegistriesOutputReference_Override(e EcsServiceServiceRegistriesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8720,7 +10669,7 @@ func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8729,12 +10678,40 @@ func (j *jsiiProxy_EcsServiceServiceRegistriesOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8771,12 +10748,54 @@ func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8837,8 +10856,8 @@ func (e *jsiiProxy_EcsServiceServiceRegistriesOutputReference) ResetPort() {
 }
 
 type EcsServiceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service.html#delete EcsService#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_service#delete EcsService#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type EcsServiceTimeoutsOutputReference interface {
@@ -8852,12 +10871,17 @@ type EcsServiceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -8918,8 +10942,8 @@ func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) TerraformAttribute() *stri
 	return returns
 }
 
-func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8928,7 +10952,7 @@ func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) TerraformResource() cdktf.
 	return returns
 }
 
-func NewEcsServiceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsServiceTimeoutsOutputReference {
+func NewEcsServiceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsServiceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsServiceTimeoutsOutputReference{}
@@ -8942,7 +10966,7 @@ func NewEcsServiceTimeoutsOutputReference(terraformResource cdktf.ITerraformReso
 	return &j
 }
 
-func NewEcsServiceTimeoutsOutputReference_Override(e EcsServiceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsServiceTimeoutsOutputReference_Override(e EcsServiceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8984,7 +11008,7 @@ func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) SetTerraformAttribute(val 
 	)
 }
 
-func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8993,12 +11017,40 @@ func (j *jsiiProxy_EcsServiceTimeoutsOutputReference) SetTerraformResource(val c
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9035,12 +11087,54 @@ func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9084,13 +11178,13 @@ func (e *jsiiProxy_EcsServiceTimeoutsOutputReference) ResetDelete() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag.html aws_ecs_tag}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag aws_ecs_tag}.
 type EcsTag interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9115,10 +11209,15 @@ type EcsTag interface {
 	SetValue(val *string)
 	ValueInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -9153,8 +11252,8 @@ func (j *jsiiProxy_EcsTag) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTag) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTag) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9333,7 +11432,7 @@ func (j *jsiiProxy_EcsTag) ValueInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag.html aws_ecs_tag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag aws_ecs_tag} Resource.
 func NewEcsTag(scope constructs.Construct, id *string, config *EcsTagConfig) EcsTag {
 	_init_.Initialize()
 
@@ -9348,7 +11447,7 @@ func NewEcsTag(scope constructs.Construct, id *string, config *EcsTagConfig) Ecs
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag.html aws_ecs_tag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag aws_ecs_tag} Resource.
 func NewEcsTag_Override(e EcsTag, scope constructs.Construct, id *string, config *EcsTagConfig) {
 	_init_.Initialize()
 
@@ -9359,7 +11458,7 @@ func NewEcsTag_Override(e EcsTag, scope constructs.Construct, id *string, config
 	)
 }
 
-func (j *jsiiProxy_EcsTag) SetCount(val interface{}) {
+func (j *jsiiProxy_EcsTag) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9455,12 +11554,40 @@ func (e *jsiiProxy_EcsTag) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTag) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTag) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTag) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9497,12 +11624,54 @@ func (e *jsiiProxy_EcsTag) GetNumberAttribute(terraformAttribute *string) *float
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTag) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTag) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTag) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTag) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9603,22 +11772,22 @@ func (e *jsiiProxy_EcsTag) ToTerraform() interface{} {
 // AWS EC2 Container Service.
 type EcsTagConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag.html#key EcsTag#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag.html#resource_arn EcsTag#resource_arn}.
-	ResourceArn *string `json:"resourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag.html#value EcsTag#value}.
-	Value *string `json:"value"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag#key EcsTag#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag#resource_arn EcsTag#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_tag#value EcsTag#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html aws_ecs_task_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition aws_ecs_task_definition}.
 type EcsTaskDefinition interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -9627,8 +11796,8 @@ type EcsTaskDefinition interface {
 	ContainerDefinitions() *string
 	SetContainerDefinitions(val *string)
 	ContainerDefinitionsInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Cpu() *string
 	SetCpu(val *string)
 	CpuInput() *string
@@ -9645,9 +11814,9 @@ type EcsTaskDefinition interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	InferenceAccelerator() *[]*EcsTaskDefinitionInferenceAccelerator
-	SetInferenceAccelerator(val *[]*EcsTaskDefinitionInferenceAccelerator)
-	InferenceAcceleratorInput() *[]*EcsTaskDefinitionInferenceAccelerator
+	InferenceAccelerator() interface{}
+	SetInferenceAccelerator(val interface{})
+	InferenceAcceleratorInput() interface{}
 	IpcMode() *string
 	SetIpcMode(val *string)
 	IpcModeInput() *string
@@ -9663,9 +11832,9 @@ type EcsTaskDefinition interface {
 	PidMode() *string
 	SetPidMode(val *string)
 	PidModeInput() *string
-	PlacementConstraints() *[]*EcsTaskDefinitionPlacementConstraints
-	SetPlacementConstraints(val *[]*EcsTaskDefinitionPlacementConstraints)
-	PlacementConstraintsInput() *[]*EcsTaskDefinitionPlacementConstraints
+	PlacementConstraints() interface{}
+	SetPlacementConstraints(val interface{})
+	PlacementConstraintsInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	ProxyConfiguration() EcsTaskDefinitionProxyConfigurationOutputReference
@@ -9677,26 +11846,34 @@ type EcsTaskDefinition interface {
 	Revision() *float64
 	RuntimePlatform() EcsTaskDefinitionRuntimePlatformOutputReference
 	RuntimePlatformInput() *EcsTaskDefinitionRuntimePlatform
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	SkipDestroy() interface{}
+	SetSkipDestroy(val interface{})
+	SkipDestroyInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TaskRoleArn() *string
 	SetTaskRoleArn(val *string)
 	TaskRoleArnInput() *string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Volume() *[]*EcsTaskDefinitionVolume
-	SetVolume(val *[]*EcsTaskDefinitionVolume)
-	VolumeInput() *[]*EcsTaskDefinitionVolume
+	Volume() interface{}
+	SetVolume(val interface{})
+	VolumeInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEphemeralStorage(value *EcsTaskDefinitionEphemeralStorage)
@@ -9715,6 +11892,7 @@ type EcsTaskDefinition interface {
 	ResetProxyConfiguration()
 	ResetRequiresCompatibilities()
 	ResetRuntimePlatform()
+	ResetSkipDestroy()
 	ResetTags()
 	ResetTagsAll()
 	ResetTaskRoleArn()
@@ -9780,8 +11958,8 @@ func (j *jsiiProxy_EcsTaskDefinition) ContainerDefinitionsInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9910,8 +12088,8 @@ func (j *jsiiProxy_EcsTaskDefinition) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) InferenceAccelerator() *[]*EcsTaskDefinitionInferenceAccelerator {
-	var returns *[]*EcsTaskDefinitionInferenceAccelerator
+func (j *jsiiProxy_EcsTaskDefinition) InferenceAccelerator() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"inferenceAccelerator",
@@ -9920,8 +12098,8 @@ func (j *jsiiProxy_EcsTaskDefinition) InferenceAccelerator() *[]*EcsTaskDefiniti
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) InferenceAcceleratorInput() *[]*EcsTaskDefinitionInferenceAccelerator {
-	var returns *[]*EcsTaskDefinitionInferenceAccelerator
+func (j *jsiiProxy_EcsTaskDefinition) InferenceAcceleratorInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"inferenceAcceleratorInput",
@@ -10030,8 +12208,8 @@ func (j *jsiiProxy_EcsTaskDefinition) PidModeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) PlacementConstraints() *[]*EcsTaskDefinitionPlacementConstraints {
-	var returns *[]*EcsTaskDefinitionPlacementConstraints
+func (j *jsiiProxy_EcsTaskDefinition) PlacementConstraints() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"placementConstraints",
@@ -10040,8 +12218,8 @@ func (j *jsiiProxy_EcsTaskDefinition) PlacementConstraints() *[]*EcsTaskDefiniti
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) PlacementConstraintsInput() *[]*EcsTaskDefinitionPlacementConstraints {
-	var returns *[]*EcsTaskDefinitionPlacementConstraints
+func (j *jsiiProxy_EcsTaskDefinition) PlacementConstraintsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"placementConstraintsInput",
@@ -10140,8 +12318,28 @@ func (j *jsiiProxy_EcsTaskDefinition) RuntimePlatformInput() *EcsTaskDefinitionR
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) Tags() interface{} {
+func (j *jsiiProxy_EcsTaskDefinition) SkipDestroy() interface{} {
 	var returns interface{}
+	_jsii_.Get(
+		j,
+		"skipDestroy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsTaskDefinition) SkipDestroyInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"skipDestroyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EcsTaskDefinition) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10150,8 +12348,8 @@ func (j *jsiiProxy_EcsTaskDefinition) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinition) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10160,8 +12358,8 @@ func (j *jsiiProxy_EcsTaskDefinition) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinition) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10170,8 +12368,8 @@ func (j *jsiiProxy_EcsTaskDefinition) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinition) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10230,8 +12428,8 @@ func (j *jsiiProxy_EcsTaskDefinition) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) Volume() *[]*EcsTaskDefinitionVolume {
-	var returns *[]*EcsTaskDefinitionVolume
+func (j *jsiiProxy_EcsTaskDefinition) Volume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"volume",
@@ -10240,8 +12438,8 @@ func (j *jsiiProxy_EcsTaskDefinition) Volume() *[]*EcsTaskDefinitionVolume {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) VolumeInput() *[]*EcsTaskDefinitionVolume {
-	var returns *[]*EcsTaskDefinitionVolume
+func (j *jsiiProxy_EcsTaskDefinition) VolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"volumeInput",
@@ -10250,7 +12448,7 @@ func (j *jsiiProxy_EcsTaskDefinition) VolumeInput() *[]*EcsTaskDefinitionVolume 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html aws_ecs_task_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition aws_ecs_task_definition} Resource.
 func NewEcsTaskDefinition(scope constructs.Construct, id *string, config *EcsTaskDefinitionConfig) EcsTaskDefinition {
 	_init_.Initialize()
 
@@ -10265,7 +12463,7 @@ func NewEcsTaskDefinition(scope constructs.Construct, id *string, config *EcsTas
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html aws_ecs_task_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition aws_ecs_task_definition} Resource.
 func NewEcsTaskDefinition_Override(e EcsTaskDefinition, scope constructs.Construct, id *string, config *EcsTaskDefinitionConfig) {
 	_init_.Initialize()
 
@@ -10284,7 +12482,7 @@ func (j *jsiiProxy_EcsTaskDefinition) SetContainerDefinitions(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_EcsTaskDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10324,7 +12522,7 @@ func (j *jsiiProxy_EcsTaskDefinition) SetFamily(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) SetInferenceAccelerator(val *[]*EcsTaskDefinitionInferenceAccelerator) {
+func (j *jsiiProxy_EcsTaskDefinition) SetInferenceAccelerator(val interface{}) {
 	_jsii_.Set(
 		j,
 		"inferenceAccelerator",
@@ -10372,7 +12570,7 @@ func (j *jsiiProxy_EcsTaskDefinition) SetPidMode(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) SetPlacementConstraints(val *[]*EcsTaskDefinitionPlacementConstraints) {
+func (j *jsiiProxy_EcsTaskDefinition) SetPlacementConstraints(val interface{}) {
 	_jsii_.Set(
 		j,
 		"placementConstraints",
@@ -10396,7 +12594,15 @@ func (j *jsiiProxy_EcsTaskDefinition) SetRequiresCompatibilities(val *[]*string)
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) SetTags(val interface{}) {
+func (j *jsiiProxy_EcsTaskDefinition) SetSkipDestroy(val interface{}) {
+	_jsii_.Set(
+		j,
+		"skipDestroy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EcsTaskDefinition) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10404,7 +12610,7 @@ func (j *jsiiProxy_EcsTaskDefinition) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EcsTaskDefinition) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10420,7 +12626,7 @@ func (j *jsiiProxy_EcsTaskDefinition) SetTaskRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinition) SetVolume(val *[]*EcsTaskDefinitionVolume) {
+func (j *jsiiProxy_EcsTaskDefinition) SetVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"volume",
@@ -10468,12 +12674,40 @@ func (e *jsiiProxy_EcsTaskDefinition) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10510,12 +12744,54 @@ func (e *jsiiProxy_EcsTaskDefinition) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10677,6 +12953,14 @@ func (e *jsiiProxy_EcsTaskDefinition) ResetRuntimePlatform() {
 	)
 }
 
+func (e *jsiiProxy_EcsTaskDefinition) ResetSkipDestroy() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetSkipDestroy",
+		nil, // no parameters
+	)
+}
+
 func (e *jsiiProxy_EcsTaskDefinition) ResetTags() {
 	_jsii_.InvokeVoid(
 		e,
@@ -10768,66 +13052,68 @@ func (e *jsiiProxy_EcsTaskDefinition) ToTerraform() interface{} {
 // AWS EC2 Container Service.
 type EcsTaskDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#container_definitions EcsTaskDefinition#container_definitions}.
-	ContainerDefinitions *string `json:"containerDefinitions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#family EcsTaskDefinition#family}.
-	Family *string `json:"family"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#cpu EcsTaskDefinition#cpu}.
-	Cpu *string `json:"cpu"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#container_definitions EcsTaskDefinition#container_definitions}.
+	ContainerDefinitions *string `json:"containerDefinitions" yaml:"containerDefinitions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#family EcsTaskDefinition#family}.
+	Family *string `json:"family" yaml:"family"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#cpu EcsTaskDefinition#cpu}.
+	Cpu *string `json:"cpu" yaml:"cpu"`
 	// ephemeral_storage block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#ephemeral_storage EcsTaskDefinition#ephemeral_storage}
-	EphemeralStorage *EcsTaskDefinitionEphemeralStorage `json:"ephemeralStorage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#execution_role_arn EcsTaskDefinition#execution_role_arn}.
-	ExecutionRoleArn *string `json:"executionRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#ephemeral_storage EcsTaskDefinition#ephemeral_storage}
+	EphemeralStorage *EcsTaskDefinitionEphemeralStorage `json:"ephemeralStorage" yaml:"ephemeralStorage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#execution_role_arn EcsTaskDefinition#execution_role_arn}.
+	ExecutionRoleArn *string `json:"executionRoleArn" yaml:"executionRoleArn"`
 	// inference_accelerator block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#inference_accelerator EcsTaskDefinition#inference_accelerator}
-	InferenceAccelerator *[]*EcsTaskDefinitionInferenceAccelerator `json:"inferenceAccelerator"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#ipc_mode EcsTaskDefinition#ipc_mode}.
-	IpcMode *string `json:"ipcMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#memory EcsTaskDefinition#memory}.
-	Memory *string `json:"memory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#network_mode EcsTaskDefinition#network_mode}.
-	NetworkMode *string `json:"networkMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#pid_mode EcsTaskDefinition#pid_mode}.
-	PidMode *string `json:"pidMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#inference_accelerator EcsTaskDefinition#inference_accelerator}
+	InferenceAccelerator interface{} `json:"inferenceAccelerator" yaml:"inferenceAccelerator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#ipc_mode EcsTaskDefinition#ipc_mode}.
+	IpcMode *string `json:"ipcMode" yaml:"ipcMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#memory EcsTaskDefinition#memory}.
+	Memory *string `json:"memory" yaml:"memory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#network_mode EcsTaskDefinition#network_mode}.
+	NetworkMode *string `json:"networkMode" yaml:"networkMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#pid_mode EcsTaskDefinition#pid_mode}.
+	PidMode *string `json:"pidMode" yaml:"pidMode"`
 	// placement_constraints block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#placement_constraints EcsTaskDefinition#placement_constraints}
-	PlacementConstraints *[]*EcsTaskDefinitionPlacementConstraints `json:"placementConstraints"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#placement_constraints EcsTaskDefinition#placement_constraints}
+	PlacementConstraints interface{} `json:"placementConstraints" yaml:"placementConstraints"`
 	// proxy_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#proxy_configuration EcsTaskDefinition#proxy_configuration}
-	ProxyConfiguration *EcsTaskDefinitionProxyConfiguration `json:"proxyConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#requires_compatibilities EcsTaskDefinition#requires_compatibilities}.
-	RequiresCompatibilities *[]*string `json:"requiresCompatibilities"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#proxy_configuration EcsTaskDefinition#proxy_configuration}
+	ProxyConfiguration *EcsTaskDefinitionProxyConfiguration `json:"proxyConfiguration" yaml:"proxyConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#requires_compatibilities EcsTaskDefinition#requires_compatibilities}.
+	RequiresCompatibilities *[]*string `json:"requiresCompatibilities" yaml:"requiresCompatibilities"`
 	// runtime_platform block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#runtime_platform EcsTaskDefinition#runtime_platform}
-	RuntimePlatform *EcsTaskDefinitionRuntimePlatform `json:"runtimePlatform"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#tags EcsTaskDefinition#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#tags_all EcsTaskDefinition#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#task_role_arn EcsTaskDefinition#task_role_arn}.
-	TaskRoleArn *string `json:"taskRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#runtime_platform EcsTaskDefinition#runtime_platform}
+	RuntimePlatform *EcsTaskDefinitionRuntimePlatform `json:"runtimePlatform" yaml:"runtimePlatform"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#skip_destroy EcsTaskDefinition#skip_destroy}.
+	SkipDestroy interface{} `json:"skipDestroy" yaml:"skipDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#tags EcsTaskDefinition#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#tags_all EcsTaskDefinition#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#task_role_arn EcsTaskDefinition#task_role_arn}.
+	TaskRoleArn *string `json:"taskRoleArn" yaml:"taskRoleArn"`
 	// volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#volume EcsTaskDefinition#volume}
-	Volume *[]*EcsTaskDefinitionVolume `json:"volume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#volume EcsTaskDefinition#volume}
+	Volume interface{} `json:"volume" yaml:"volume"`
 }
 
 type EcsTaskDefinitionEphemeralStorage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#size_in_gib EcsTaskDefinition#size_in_gib}.
-	SizeInGib *float64 `json:"sizeInGib"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#size_in_gib EcsTaskDefinition#size_in_gib}.
+	SizeInGib *float64 `json:"sizeInGib" yaml:"sizeInGib"`
 }
 
 type EcsTaskDefinitionEphemeralStorageOutputReference interface {
@@ -10841,12 +13127,17 @@ type EcsTaskDefinitionEphemeralStorageOutputReference interface {
 	SizeInGibInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10906,8 +13197,8 @@ func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10916,7 +13207,7 @@ func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) TerraformRe
 	return returns
 }
 
-func NewEcsTaskDefinitionEphemeralStorageOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionEphemeralStorageOutputReference {
+func NewEcsTaskDefinitionEphemeralStorageOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionEphemeralStorageOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference{}
@@ -10930,7 +13221,7 @@ func NewEcsTaskDefinitionEphemeralStorageOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewEcsTaskDefinitionEphemeralStorageOutputReference_Override(e EcsTaskDefinitionEphemeralStorageOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionEphemeralStorageOutputReference_Override(e EcsTaskDefinitionEphemeralStorageOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10972,7 +13263,7 @@ func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10981,12 +13272,40 @@ func (j *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11023,12 +13342,54 @@ func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11065,26 +13426,26 @@ func (e *jsiiProxy_EcsTaskDefinitionEphemeralStorageOutputReference) Interpolati
 }
 
 type EcsTaskDefinitionInferenceAccelerator struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#device_name EcsTaskDefinition#device_name}.
-	DeviceName *string `json:"deviceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#device_type EcsTaskDefinition#device_type}.
-	DeviceType *string `json:"deviceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#device_name EcsTaskDefinition#device_name}.
+	DeviceName *string `json:"deviceName" yaml:"deviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#device_type EcsTaskDefinition#device_type}.
+	DeviceType *string `json:"deviceType" yaml:"deviceType"`
 }
 
 type EcsTaskDefinitionPlacementConstraints struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#type EcsTaskDefinition#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#expression EcsTaskDefinition#expression}.
-	Expression *string `json:"expression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#type EcsTaskDefinition#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#expression EcsTaskDefinition#expression}.
+	Expression *string `json:"expression" yaml:"expression"`
 }
 
 type EcsTaskDefinitionProxyConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#container_name EcsTaskDefinition#container_name}.
-	ContainerName *string `json:"containerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#properties EcsTaskDefinition#properties}.
-	Properties interface{} `json:"properties"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#type EcsTaskDefinition#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#container_name EcsTaskDefinition#container_name}.
+	ContainerName *string `json:"containerName" yaml:"containerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#properties EcsTaskDefinition#properties}.
+	Properties *map[string]*string `json:"properties" yaml:"properties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#type EcsTaskDefinition#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type EcsTaskDefinitionProxyConfigurationOutputReference interface {
@@ -11096,20 +13457,25 @@ type EcsTaskDefinitionProxyConfigurationOutputReference interface {
 	SetInternalValue(val *EcsTaskDefinitionProxyConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Properties() interface{}
-	SetProperties(val interface{})
-	PropertiesInput() interface{}
+	Properties() *map[string]*string
+	SetProperties(val *map[string]*string)
+	PropertiesInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetProperties()
@@ -11161,8 +13527,8 @@ func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) IsSingleI
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) Properties() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) Properties() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"properties",
@@ -11171,8 +13537,8 @@ func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) Propertie
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) PropertiesInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) PropertiesInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"propertiesInput",
@@ -11191,8 +13557,8 @@ func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11221,7 +13587,7 @@ func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) TypeInput
 	return returns
 }
 
-func NewEcsTaskDefinitionProxyConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionProxyConfigurationOutputReference {
+func NewEcsTaskDefinitionProxyConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionProxyConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference{}
@@ -11235,7 +13601,7 @@ func NewEcsTaskDefinitionProxyConfigurationOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewEcsTaskDefinitionProxyConfigurationOutputReference_Override(e EcsTaskDefinitionProxyConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionProxyConfigurationOutputReference_Override(e EcsTaskDefinitionProxyConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11269,7 +13635,7 @@ func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) SetIsSing
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) SetProperties(val interface{}) {
+func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) SetProperties(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"properties",
@@ -11285,7 +13651,7 @@ func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11302,12 +13668,40 @@ func (j *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) SetType(v
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11344,12 +13738,54 @@ func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetNumber
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11402,10 +13838,10 @@ func (e *jsiiProxy_EcsTaskDefinitionProxyConfigurationOutputReference) ResetType
 }
 
 type EcsTaskDefinitionRuntimePlatform struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#cpu_architecture EcsTaskDefinition#cpu_architecture}.
-	CpuArchitecture *string `json:"cpuArchitecture"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#operating_system_family EcsTaskDefinition#operating_system_family}.
-	OperatingSystemFamily *string `json:"operatingSystemFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#cpu_architecture EcsTaskDefinition#cpu_architecture}.
+	CpuArchitecture *string `json:"cpuArchitecture" yaml:"cpuArchitecture"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#operating_system_family EcsTaskDefinition#operating_system_family}.
+	OperatingSystemFamily *string `json:"operatingSystemFamily" yaml:"operatingSystemFamily"`
 }
 
 type EcsTaskDefinitionRuntimePlatformOutputReference interface {
@@ -11422,12 +13858,17 @@ type EcsTaskDefinitionRuntimePlatformOutputReference interface {
 	OperatingSystemFamilyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCpuArchitecture()
@@ -11509,8 +13950,8 @@ func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11519,7 +13960,7 @@ func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) TerraformRes
 	return returns
 }
 
-func NewEcsTaskDefinitionRuntimePlatformOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionRuntimePlatformOutputReference {
+func NewEcsTaskDefinitionRuntimePlatformOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionRuntimePlatformOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference{}
@@ -11533,7 +13974,7 @@ func NewEcsTaskDefinitionRuntimePlatformOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewEcsTaskDefinitionRuntimePlatformOutputReference_Override(e EcsTaskDefinitionRuntimePlatformOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionRuntimePlatformOutputReference_Override(e EcsTaskDefinitionRuntimePlatformOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11583,7 +14024,7 @@ func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11592,12 +14033,40 @@ func (j *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) SetTerraform
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11634,12 +14103,54 @@ func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11692,35 +14203,35 @@ func (e *jsiiProxy_EcsTaskDefinitionRuntimePlatformOutputReference) ResetOperati
 }
 
 type EcsTaskDefinitionVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#name EcsTaskDefinition#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#name EcsTaskDefinition#name}.
+	Name *string `json:"name" yaml:"name"`
 	// docker_volume_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#docker_volume_configuration EcsTaskDefinition#docker_volume_configuration}
-	DockerVolumeConfiguration *EcsTaskDefinitionVolumeDockerVolumeConfiguration `json:"dockerVolumeConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#docker_volume_configuration EcsTaskDefinition#docker_volume_configuration}
+	DockerVolumeConfiguration *EcsTaskDefinitionVolumeDockerVolumeConfiguration `json:"dockerVolumeConfiguration" yaml:"dockerVolumeConfiguration"`
 	// efs_volume_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#efs_volume_configuration EcsTaskDefinition#efs_volume_configuration}
-	EfsVolumeConfiguration *EcsTaskDefinitionVolumeEfsVolumeConfiguration `json:"efsVolumeConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#efs_volume_configuration EcsTaskDefinition#efs_volume_configuration}
+	EfsVolumeConfiguration *EcsTaskDefinitionVolumeEfsVolumeConfiguration `json:"efsVolumeConfiguration" yaml:"efsVolumeConfiguration"`
 	// fsx_windows_file_server_volume_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#fsx_windows_file_server_volume_configuration EcsTaskDefinition#fsx_windows_file_server_volume_configuration}
-	FsxWindowsFileServerVolumeConfiguration *EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration `json:"fsxWindowsFileServerVolumeConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#host_path EcsTaskDefinition#host_path}.
-	HostPath *string `json:"hostPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#fsx_windows_file_server_volume_configuration EcsTaskDefinition#fsx_windows_file_server_volume_configuration}
+	FsxWindowsFileServerVolumeConfiguration *EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration `json:"fsxWindowsFileServerVolumeConfiguration" yaml:"fsxWindowsFileServerVolumeConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#host_path EcsTaskDefinition#host_path}.
+	HostPath *string `json:"hostPath" yaml:"hostPath"`
 }
 
 type EcsTaskDefinitionVolumeDockerVolumeConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#autoprovision EcsTaskDefinition#autoprovision}.
-	Autoprovision interface{} `json:"autoprovision"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#driver EcsTaskDefinition#driver}.
-	Driver *string `json:"driver"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#driver_opts EcsTaskDefinition#driver_opts}.
-	DriverOpts interface{} `json:"driverOpts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#labels EcsTaskDefinition#labels}.
-	Labels interface{} `json:"labels"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#scope EcsTaskDefinition#scope}.
-	Scope *string `json:"scope"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#autoprovision EcsTaskDefinition#autoprovision}.
+	Autoprovision interface{} `json:"autoprovision" yaml:"autoprovision"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#driver EcsTaskDefinition#driver}.
+	Driver *string `json:"driver" yaml:"driver"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#driver_opts EcsTaskDefinition#driver_opts}.
+	DriverOpts *map[string]*string `json:"driverOpts" yaml:"driverOpts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#labels EcsTaskDefinition#labels}.
+	Labels *map[string]*string `json:"labels" yaml:"labels"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#scope EcsTaskDefinition#scope}.
+	Scope *string `json:"scope" yaml:"scope"`
 }
 
 type EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference interface {
@@ -11731,27 +14242,32 @@ type EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference interface {
 	Driver() *string
 	SetDriver(val *string)
 	DriverInput() *string
-	DriverOpts() interface{}
-	SetDriverOpts(val interface{})
-	DriverOptsInput() interface{}
+	DriverOpts() *map[string]*string
+	SetDriverOpts(val *map[string]*string)
+	DriverOptsInput() *map[string]*string
 	InternalValue() *EcsTaskDefinitionVolumeDockerVolumeConfiguration
 	SetInternalValue(val *EcsTaskDefinitionVolumeDockerVolumeConfiguration)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Labels() interface{}
-	SetLabels(val interface{})
-	LabelsInput() interface{}
+	Labels() *map[string]*string
+	SetLabels(val *map[string]*string)
+	LabelsInput() *map[string]*string
 	Scope() *string
 	SetScope(val *string)
 	ScopeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAutoprovision()
@@ -11806,8 +14322,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) DriverOpts() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) DriverOpts() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"driverOpts",
@@ -11816,8 +14332,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) DriverOptsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) DriverOptsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"driverOptsInput",
@@ -11846,8 +14362,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) Labels() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) Labels() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"labels",
@@ -11856,8 +14372,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) LabelsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) LabelsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"labelsInput",
@@ -11896,8 +14412,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11906,7 +14422,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	return returns
 }
 
-func NewEcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference {
+func NewEcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference{}
@@ -11920,7 +14436,7 @@ func NewEcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference(terrafor
 	return &j
 }
 
-func NewEcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference_Override(e EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference_Override(e EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11946,7 +14462,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) SetDriverOpts(val interface{}) {
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) SetDriverOpts(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"driverOpts",
@@ -11970,7 +14486,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) SetLabels(val interface{}) {
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) SetLabels(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"labels",
@@ -11994,7 +14510,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12003,12 +14519,40 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12045,12 +14589,54 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12127,25 +14713,25 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeDockerVolumeConfigurationOutputReferen
 }
 
 type EcsTaskDefinitionVolumeEfsVolumeConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#file_system_id EcsTaskDefinition#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#file_system_id EcsTaskDefinition#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
 	// authorization_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#authorization_config EcsTaskDefinition#authorization_config}
-	AuthorizationConfig *EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig `json:"authorizationConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#root_directory EcsTaskDefinition#root_directory}.
-	RootDirectory *string `json:"rootDirectory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#transit_encryption EcsTaskDefinition#transit_encryption}.
-	TransitEncryption *string `json:"transitEncryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#transit_encryption_port EcsTaskDefinition#transit_encryption_port}.
-	TransitEncryptionPort *float64 `json:"transitEncryptionPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#authorization_config EcsTaskDefinition#authorization_config}
+	AuthorizationConfig *EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig `json:"authorizationConfig" yaml:"authorizationConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#root_directory EcsTaskDefinition#root_directory}.
+	RootDirectory *string `json:"rootDirectory" yaml:"rootDirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#transit_encryption EcsTaskDefinition#transit_encryption}.
+	TransitEncryption *string `json:"transitEncryption" yaml:"transitEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#transit_encryption_port EcsTaskDefinition#transit_encryption_port}.
+	TransitEncryptionPort *float64 `json:"transitEncryptionPort" yaml:"transitEncryptionPort"`
 }
 
 type EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#access_point_id EcsTaskDefinition#access_point_id}.
-	AccessPointId *string `json:"accessPointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#iam EcsTaskDefinition#iam}.
-	Iam *string `json:"iam"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#access_point_id EcsTaskDefinition#access_point_id}.
+	AccessPointId *string `json:"accessPointId" yaml:"accessPointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#iam EcsTaskDefinition#iam}.
+	Iam *string `json:"iam" yaml:"iam"`
 }
 
 type EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference interface {
@@ -12162,12 +14748,17 @@ type EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputRefer
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAccessPointId()
@@ -12249,8 +14840,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationCon
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12259,7 +14850,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationCon
 	return returns
 }
 
-func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference {
+func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference{}
@@ -12273,7 +14864,7 @@ func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputRe
 	return &j
 }
 
-func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference_Override(e EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference_Override(e EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12323,7 +14914,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationCon
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12332,12 +14923,40 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationCon
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12374,12 +14993,54 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationCon
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12447,18 +15108,23 @@ type EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference interface {
 	RootDirectoryInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TransitEncryption() *string
 	SetTransitEncryption(val *string)
 	TransitEncryptionInput() *string
 	TransitEncryptionPort() *float64
 	SetTransitEncryptionPort(val *float64)
 	TransitEncryptionPortInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAuthorizationConfig(value *EcsTaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfig)
@@ -12563,8 +15229,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12613,7 +15279,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference)
 	return returns
 }
 
-func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference {
+func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference{}
@@ -12627,7 +15293,7 @@ func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference(terraformRe
 	return &j
 }
 
-func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference_Override(e EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference_Override(e EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12677,7 +15343,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference)
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12702,12 +15368,40 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference)
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12744,12 +15438,54 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference)
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12828,19 +15564,19 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeEfsVolumeConfigurationOutputReference)
 type EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguration struct {
 	// authorization_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#authorization_config EcsTaskDefinition#authorization_config}
-	AuthorizationConfig *EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfig `json:"authorizationConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#file_system_id EcsTaskDefinition#file_system_id}.
-	FileSystemId *string `json:"fileSystemId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#root_directory EcsTaskDefinition#root_directory}.
-	RootDirectory *string `json:"rootDirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#authorization_config EcsTaskDefinition#authorization_config}
+	AuthorizationConfig *EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfig `json:"authorizationConfig" yaml:"authorizationConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#file_system_id EcsTaskDefinition#file_system_id}.
+	FileSystemId *string `json:"fileSystemId" yaml:"fileSystemId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#root_directory EcsTaskDefinition#root_directory}.
+	RootDirectory *string `json:"rootDirectory" yaml:"rootDirectory"`
 }
 
 type EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#credentials_parameter EcsTaskDefinition#credentials_parameter}.
-	CredentialsParameter *string `json:"credentialsParameter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition.html#domain EcsTaskDefinition#domain}.
-	Domain *string `json:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#credentials_parameter EcsTaskDefinition#credentials_parameter}.
+	CredentialsParameter *string `json:"credentialsParameter" yaml:"credentialsParameter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_definition#domain EcsTaskDefinition#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
 }
 
 type EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference interface {
@@ -12857,12 +15593,17 @@ type EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorization
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -12942,8 +15683,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12952,7 +15693,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 	return returns
 }
 
-func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference {
+func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference{}
@@ -12966,7 +15707,7 @@ func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizat
 	return &j
 }
 
-func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference_Override(e EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference_Override(e EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13016,7 +15757,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13025,12 +15766,40 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13067,12 +15836,54 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13124,12 +15935,17 @@ type EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReferen
 	RootDirectoryInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutAuthorizationConfig(value *EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfig)
@@ -13230,8 +16046,8 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13240,7 +16056,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 	return returns
 }
 
-func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference {
+func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference{}
@@ -13254,7 +16070,7 @@ func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputRefe
 	return &j
 }
 
-func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference_Override(e EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference_Override(e EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13304,7 +16120,7 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 	)
 }
 
-func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13313,12 +16129,40 @@ func (j *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13355,12 +16199,54 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13404,20 +16290,20 @@ func (e *jsiiProxy_EcsTaskDefinitionVolumeFsxWindowsFileServerVolumeConfiguratio
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html aws_ecs_task_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set aws_ecs_task_set}.
 type EcsTaskSet interface {
 	cdktf.TerraformResource
 	Arn() *string
-	CapacityProviderStrategy() *[]*EcsTaskSetCapacityProviderStrategy
-	SetCapacityProviderStrategy(val *[]*EcsTaskSetCapacityProviderStrategy)
-	CapacityProviderStrategyInput() *[]*EcsTaskSetCapacityProviderStrategy
+	CapacityProviderStrategy() interface{}
+	SetCapacityProviderStrategy(val interface{})
+	CapacityProviderStrategyInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	Cluster() *string
 	SetCluster(val *string)
 	ClusterInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExternalId() *string
@@ -13434,9 +16320,9 @@ type EcsTaskSet interface {
 	LaunchTypeInput() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	LoadBalancer() *[]*EcsTaskSetLoadBalancer
-	SetLoadBalancer(val *[]*EcsTaskSetLoadBalancer)
-	LoadBalancerInput() *[]*EcsTaskSetLoadBalancer
+	LoadBalancer() interface{}
+	SetLoadBalancer(val interface{})
+	LoadBalancerInput() interface{}
 	NetworkConfiguration() EcsTaskSetNetworkConfigurationOutputReference
 	NetworkConfigurationInput() *EcsTaskSetNetworkConfiguration
 	Node() constructs.Node
@@ -13455,12 +16341,12 @@ type EcsTaskSet interface {
 	ServiceRegistriesInput() *EcsTaskSetServiceRegistries
 	StabilityStatus() *string
 	Status() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TaskDefinition() *string
 	SetTaskDefinition(val *string)
 	TaskDefinitionInput() *string
@@ -13475,10 +16361,15 @@ type EcsTaskSet interface {
 	SetWaitUntilStableTimeout(val *string)
 	WaitUntilStableTimeoutInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutNetworkConfiguration(value *EcsTaskSetNetworkConfiguration)
@@ -13519,8 +16410,8 @@ func (j *jsiiProxy_EcsTaskSet) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) CapacityProviderStrategy() *[]*EcsTaskSetCapacityProviderStrategy {
-	var returns *[]*EcsTaskSetCapacityProviderStrategy
+func (j *jsiiProxy_EcsTaskSet) CapacityProviderStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"capacityProviderStrategy",
@@ -13529,8 +16420,8 @@ func (j *jsiiProxy_EcsTaskSet) CapacityProviderStrategy() *[]*EcsTaskSetCapacity
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) CapacityProviderStrategyInput() *[]*EcsTaskSetCapacityProviderStrategy {
-	var returns *[]*EcsTaskSetCapacityProviderStrategy
+func (j *jsiiProxy_EcsTaskSet) CapacityProviderStrategyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"capacityProviderStrategyInput",
@@ -13579,8 +16470,8 @@ func (j *jsiiProxy_EcsTaskSet) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13699,8 +16590,8 @@ func (j *jsiiProxy_EcsTaskSet) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) LoadBalancer() *[]*EcsTaskSetLoadBalancer {
-	var returns *[]*EcsTaskSetLoadBalancer
+func (j *jsiiProxy_EcsTaskSet) LoadBalancer() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"loadBalancer",
@@ -13709,8 +16600,8 @@ func (j *jsiiProxy_EcsTaskSet) LoadBalancer() *[]*EcsTaskSetLoadBalancer {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) LoadBalancerInput() *[]*EcsTaskSetLoadBalancer {
-	var returns *[]*EcsTaskSetLoadBalancer
+func (j *jsiiProxy_EcsTaskSet) LoadBalancerInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"loadBalancerInput",
@@ -13869,8 +16760,8 @@ func (j *jsiiProxy_EcsTaskSet) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskSet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -13879,8 +16770,8 @@ func (j *jsiiProxy_EcsTaskSet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskSet) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -13889,8 +16780,8 @@ func (j *jsiiProxy_EcsTaskSet) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskSet) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -13899,8 +16790,8 @@ func (j *jsiiProxy_EcsTaskSet) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_EcsTaskSet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14009,7 +16900,7 @@ func (j *jsiiProxy_EcsTaskSet) WaitUntilStableTimeoutInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html aws_ecs_task_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set aws_ecs_task_set} Resource.
 func NewEcsTaskSet(scope constructs.Construct, id *string, config *EcsTaskSetConfig) EcsTaskSet {
 	_init_.Initialize()
 
@@ -14024,7 +16915,7 @@ func NewEcsTaskSet(scope constructs.Construct, id *string, config *EcsTaskSetCon
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html aws_ecs_task_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set aws_ecs_task_set} Resource.
 func NewEcsTaskSet_Override(e EcsTaskSet, scope constructs.Construct, id *string, config *EcsTaskSetConfig) {
 	_init_.Initialize()
 
@@ -14035,7 +16926,7 @@ func NewEcsTaskSet_Override(e EcsTaskSet, scope constructs.Construct, id *string
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSet) SetCapacityProviderStrategy(val *[]*EcsTaskSetCapacityProviderStrategy) {
+func (j *jsiiProxy_EcsTaskSet) SetCapacityProviderStrategy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"capacityProviderStrategy",
@@ -14051,7 +16942,7 @@ func (j *jsiiProxy_EcsTaskSet) SetCluster(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSet) SetCount(val interface{}) {
+func (j *jsiiProxy_EcsTaskSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14099,7 +16990,7 @@ func (j *jsiiProxy_EcsTaskSet) SetLifecycle(val *cdktf.TerraformResourceLifecycl
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSet) SetLoadBalancer(val *[]*EcsTaskSetLoadBalancer) {
+func (j *jsiiProxy_EcsTaskSet) SetLoadBalancer(val interface{}) {
 	_jsii_.Set(
 		j,
 		"loadBalancer",
@@ -14131,7 +17022,7 @@ func (j *jsiiProxy_EcsTaskSet) SetService(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSet) SetTags(val interface{}) {
+func (j *jsiiProxy_EcsTaskSet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14139,7 +17030,7 @@ func (j *jsiiProxy_EcsTaskSet) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSet) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_EcsTaskSet) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -14211,12 +17102,40 @@ func (e *jsiiProxy_EcsTaskSet) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14253,12 +17172,54 @@ func (e *jsiiProxy_EcsTaskSet) GetNumberAttribute(terraformAttribute *string) *f
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14485,86 +17446,86 @@ func (e *jsiiProxy_EcsTaskSet) ToTerraform() interface{} {
 }
 
 type EcsTaskSetCapacityProviderStrategy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#capacity_provider EcsTaskSet#capacity_provider}.
-	CapacityProvider *string `json:"capacityProvider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#weight EcsTaskSet#weight}.
-	Weight *float64 `json:"weight"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#base EcsTaskSet#base}.
-	Base *float64 `json:"base"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#capacity_provider EcsTaskSet#capacity_provider}.
+	CapacityProvider *string `json:"capacityProvider" yaml:"capacityProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#weight EcsTaskSet#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#base EcsTaskSet#base}.
+	Base *float64 `json:"base" yaml:"base"`
 }
 
 // AWS EC2 Container Service.
 type EcsTaskSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#cluster EcsTaskSet#cluster}.
-	Cluster *string `json:"cluster"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#service EcsTaskSet#service}.
-	Service *string `json:"service"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#task_definition EcsTaskSet#task_definition}.
-	TaskDefinition *string `json:"taskDefinition"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#cluster EcsTaskSet#cluster}.
+	Cluster *string `json:"cluster" yaml:"cluster"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#service EcsTaskSet#service}.
+	Service *string `json:"service" yaml:"service"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#task_definition EcsTaskSet#task_definition}.
+	TaskDefinition *string `json:"taskDefinition" yaml:"taskDefinition"`
 	// capacity_provider_strategy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#capacity_provider_strategy EcsTaskSet#capacity_provider_strategy}
-	CapacityProviderStrategy *[]*EcsTaskSetCapacityProviderStrategy `json:"capacityProviderStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#external_id EcsTaskSet#external_id}.
-	ExternalId *string `json:"externalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#force_delete EcsTaskSet#force_delete}.
-	ForceDelete interface{} `json:"forceDelete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#launch_type EcsTaskSet#launch_type}.
-	LaunchType *string `json:"launchType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#capacity_provider_strategy EcsTaskSet#capacity_provider_strategy}
+	CapacityProviderStrategy interface{} `json:"capacityProviderStrategy" yaml:"capacityProviderStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#external_id EcsTaskSet#external_id}.
+	ExternalId *string `json:"externalId" yaml:"externalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#force_delete EcsTaskSet#force_delete}.
+	ForceDelete interface{} `json:"forceDelete" yaml:"forceDelete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#launch_type EcsTaskSet#launch_type}.
+	LaunchType *string `json:"launchType" yaml:"launchType"`
 	// load_balancer block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#load_balancer EcsTaskSet#load_balancer}
-	LoadBalancer *[]*EcsTaskSetLoadBalancer `json:"loadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#load_balancer EcsTaskSet#load_balancer}
+	LoadBalancer interface{} `json:"loadBalancer" yaml:"loadBalancer"`
 	// network_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#network_configuration EcsTaskSet#network_configuration}
-	NetworkConfiguration *EcsTaskSetNetworkConfiguration `json:"networkConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#platform_version EcsTaskSet#platform_version}.
-	PlatformVersion *string `json:"platformVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#network_configuration EcsTaskSet#network_configuration}
+	NetworkConfiguration *EcsTaskSetNetworkConfiguration `json:"networkConfiguration" yaml:"networkConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#platform_version EcsTaskSet#platform_version}.
+	PlatformVersion *string `json:"platformVersion" yaml:"platformVersion"`
 	// scale block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#scale EcsTaskSet#scale}
-	Scale *EcsTaskSetScale `json:"scale"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#scale EcsTaskSet#scale}
+	Scale *EcsTaskSetScale `json:"scale" yaml:"scale"`
 	// service_registries block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#service_registries EcsTaskSet#service_registries}
-	ServiceRegistries *EcsTaskSetServiceRegistries `json:"serviceRegistries"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#tags EcsTaskSet#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#tags_all EcsTaskSet#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#wait_until_stable EcsTaskSet#wait_until_stable}.
-	WaitUntilStable interface{} `json:"waitUntilStable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#wait_until_stable_timeout EcsTaskSet#wait_until_stable_timeout}.
-	WaitUntilStableTimeout *string `json:"waitUntilStableTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#service_registries EcsTaskSet#service_registries}
+	ServiceRegistries *EcsTaskSetServiceRegistries `json:"serviceRegistries" yaml:"serviceRegistries"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#tags EcsTaskSet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#tags_all EcsTaskSet#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#wait_until_stable EcsTaskSet#wait_until_stable}.
+	WaitUntilStable interface{} `json:"waitUntilStable" yaml:"waitUntilStable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#wait_until_stable_timeout EcsTaskSet#wait_until_stable_timeout}.
+	WaitUntilStableTimeout *string `json:"waitUntilStableTimeout" yaml:"waitUntilStableTimeout"`
 }
 
 type EcsTaskSetLoadBalancer struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#container_name EcsTaskSet#container_name}.
-	ContainerName *string `json:"containerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#container_port EcsTaskSet#container_port}.
-	ContainerPort *float64 `json:"containerPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#load_balancer_name EcsTaskSet#load_balancer_name}.
-	LoadBalancerName *string `json:"loadBalancerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#target_group_arn EcsTaskSet#target_group_arn}.
-	TargetGroupArn *string `json:"targetGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#container_name EcsTaskSet#container_name}.
+	ContainerName *string `json:"containerName" yaml:"containerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#container_port EcsTaskSet#container_port}.
+	ContainerPort *float64 `json:"containerPort" yaml:"containerPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#load_balancer_name EcsTaskSet#load_balancer_name}.
+	LoadBalancerName *string `json:"loadBalancerName" yaml:"loadBalancerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#target_group_arn EcsTaskSet#target_group_arn}.
+	TargetGroupArn *string `json:"targetGroupArn" yaml:"targetGroupArn"`
 }
 
 type EcsTaskSetNetworkConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#subnets EcsTaskSet#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#assign_public_ip EcsTaskSet#assign_public_ip}.
-	AssignPublicIp interface{} `json:"assignPublicIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#security_groups EcsTaskSet#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#subnets EcsTaskSet#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#assign_public_ip EcsTaskSet#assign_public_ip}.
+	AssignPublicIp interface{} `json:"assignPublicIp" yaml:"assignPublicIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#security_groups EcsTaskSet#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 }
 
 type EcsTaskSetNetworkConfigurationOutputReference interface {
@@ -14584,12 +17545,17 @@ type EcsTaskSetNetworkConfigurationOutputReference interface {
 	SubnetsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAssignPublicIp()
@@ -14691,8 +17657,8 @@ func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14701,7 +17667,7 @@ func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) TerraformResou
 	return returns
 }
 
-func NewEcsTaskSetNetworkConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskSetNetworkConfigurationOutputReference {
+func NewEcsTaskSetNetworkConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskSetNetworkConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference{}
@@ -14715,7 +17681,7 @@ func NewEcsTaskSetNetworkConfigurationOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewEcsTaskSetNetworkConfigurationOutputReference_Override(e EcsTaskSetNetworkConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskSetNetworkConfigurationOutputReference_Override(e EcsTaskSetNetworkConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14773,7 +17739,7 @@ func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14782,12 +17748,40 @@ func (j *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14824,12 +17818,54 @@ func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14882,10 +17918,10 @@ func (e *jsiiProxy_EcsTaskSetNetworkConfigurationOutputReference) ResetSecurityG
 }
 
 type EcsTaskSetScale struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#unit EcsTaskSet#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#value EcsTaskSet#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#unit EcsTaskSet#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#value EcsTaskSet#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type EcsTaskSetScaleOutputReference interface {
@@ -14896,18 +17932,23 @@ type EcsTaskSetScaleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetUnit()
@@ -14949,8 +17990,8 @@ func (j *jsiiProxy_EcsTaskSetScaleOutputReference) TerraformAttribute() *string 
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSetScaleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskSetScaleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14999,7 +18040,7 @@ func (j *jsiiProxy_EcsTaskSetScaleOutputReference) ValueInput() *float64 {
 	return returns
 }
 
-func NewEcsTaskSetScaleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskSetScaleOutputReference {
+func NewEcsTaskSetScaleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskSetScaleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskSetScaleOutputReference{}
@@ -15013,7 +18054,7 @@ func NewEcsTaskSetScaleOutputReference(terraformResource cdktf.ITerraformResourc
 	return &j
 }
 
-func NewEcsTaskSetScaleOutputReference_Override(e EcsTaskSetScaleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskSetScaleOutputReference_Override(e EcsTaskSetScaleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15047,7 +18088,7 @@ func (j *jsiiProxy_EcsTaskSetScaleOutputReference) SetTerraformAttribute(val *st
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSetScaleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskSetScaleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15072,12 +18113,40 @@ func (j *jsiiProxy_EcsTaskSetScaleOutputReference) SetValue(val *float64) {
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15114,12 +18183,54 @@ func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetScaleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15172,14 +18283,14 @@ func (e *jsiiProxy_EcsTaskSetScaleOutputReference) ResetValue() {
 }
 
 type EcsTaskSetServiceRegistries struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#registry_arn EcsTaskSet#registry_arn}.
-	RegistryArn *string `json:"registryArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#container_name EcsTaskSet#container_name}.
-	ContainerName *string `json:"containerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#container_port EcsTaskSet#container_port}.
-	ContainerPort *float64 `json:"containerPort"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set.html#port EcsTaskSet#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#registry_arn EcsTaskSet#registry_arn}.
+	RegistryArn *string `json:"registryArn" yaml:"registryArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#container_name EcsTaskSet#container_name}.
+	ContainerName *string `json:"containerName" yaml:"containerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#container_port EcsTaskSet#container_port}.
+	ContainerPort *float64 `json:"containerPort" yaml:"containerPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ecs_task_set#port EcsTaskSet#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type EcsTaskSetServiceRegistriesOutputReference interface {
@@ -15202,12 +18313,17 @@ type EcsTaskSetServiceRegistriesOutputReference interface {
 	RegistryArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetContainerName()
@@ -15330,8 +18446,8 @@ func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15340,7 +18456,7 @@ func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) TerraformResource
 	return returns
 }
 
-func NewEcsTaskSetServiceRegistriesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) EcsTaskSetServiceRegistriesOutputReference {
+func NewEcsTaskSetServiceRegistriesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) EcsTaskSetServiceRegistriesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_EcsTaskSetServiceRegistriesOutputReference{}
@@ -15354,7 +18470,7 @@ func NewEcsTaskSetServiceRegistriesOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewEcsTaskSetServiceRegistriesOutputReference_Override(e EcsTaskSetServiceRegistriesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewEcsTaskSetServiceRegistriesOutputReference_Override(e EcsTaskSetServiceRegistriesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15420,7 +18536,7 @@ func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15429,12 +18545,40 @@ func (j *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15471,12 +18615,54 @@ func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_EcsTaskSetServiceRegistriesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

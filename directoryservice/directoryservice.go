@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/directoryservice/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory.html aws_directory_service_directory}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory aws_directory_service_directory}.
 type DataAwsDirectoryServiceDirectory interface {
 	cdktf.TerraformDataSource
 	AccessUrl() *string
 	Alias() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -26,7 +26,7 @@ type DataAwsDirectoryServiceDirectory interface {
 	DirectoryIdInput() *string
 	DnsIpAddresses() *[]*string
 	Edition() *string
-	EnableSso() interface{}
+	EnableSso() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -40,19 +40,24 @@ type DataAwsDirectoryServiceDirectory interface {
 	SecurityGroupId() *string
 	ShortName() *string
 	Size() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Type() *string
 	AddOverride(path *string, value interface{})
 	ConnectSettings(index *string) DataAwsDirectoryServiceDirectoryConnectSettings
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -109,8 +114,8 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -179,8 +184,8 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Edition() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) EnableSso() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) EnableSso() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableSso",
@@ -299,8 +304,8 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Size() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -309,8 +314,8 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -359,7 +364,7 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) Type() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory.html aws_directory_service_directory} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory aws_directory_service_directory} Data Source.
 func NewDataAwsDirectoryServiceDirectory(scope constructs.Construct, id *string, config *DataAwsDirectoryServiceDirectoryConfig) DataAwsDirectoryServiceDirectory {
 	_init_.Initialize()
 
@@ -374,7 +379,7 @@ func NewDataAwsDirectoryServiceDirectory(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory.html aws_directory_service_directory} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory aws_directory_service_directory} Data Source.
 func NewDataAwsDirectoryServiceDirectory_Override(d DataAwsDirectoryServiceDirectory, scope constructs.Construct, id *string, config *DataAwsDirectoryServiceDirectoryConfig) {
 	_init_.Initialize()
 
@@ -385,7 +390,7 @@ func NewDataAwsDirectoryServiceDirectory_Override(d DataAwsDirectoryServiceDirec
 	)
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -425,7 +430,7 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) SetProvider(val cdktf.Terra
 	)
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectory) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -486,12 +491,40 @@ func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) ConnectSettings(index *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -528,12 +561,54 @@ func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -655,17 +730,17 @@ func (d *jsiiProxy_DataAwsDirectoryServiceDirectory) VpcSettings(index *string) 
 // AWS Directory Service.
 type DataAwsDirectoryServiceDirectoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory.html#directory_id DataAwsDirectoryServiceDirectory#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory.html#tags DataAwsDirectoryServiceDirectory#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory#directory_id DataAwsDirectoryServiceDirectory#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/directory_service_directory#tags DataAwsDirectoryServiceDirectory#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsDirectoryServiceDirectoryConnectSettings interface {
@@ -679,13 +754,20 @@ type DataAwsDirectoryServiceDirectoryConnectSettings interface {
 	SubnetIds() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -764,8 +846,8 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -784,15 +866,25 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) VpcId() *str
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsDirectoryServiceDirectoryConnectSettings(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDirectoryServiceDirectoryConnectSettings {
+func NewDataAwsDirectoryServiceDirectoryConnectSettings(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDirectoryServiceDirectoryConnectSettings {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings{}
 
 	_jsii_.Create(
 		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryConnectSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -800,12 +892,12 @@ func NewDataAwsDirectoryServiceDirectoryConnectSettings(terraformResource cdktf.
 }
 
 // Experimental.
-func NewDataAwsDirectoryServiceDirectoryConnectSettings_Override(d DataAwsDirectoryServiceDirectoryConnectSettings, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDirectoryServiceDirectoryConnectSettings_Override(d DataAwsDirectoryServiceDirectoryConnectSettings, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryConnectSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -826,7 +918,7 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -834,13 +926,49 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) SetTerraform
 	)
 }
 
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -877,12 +1005,54 @@ func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryConnectSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -912,13 +1082,20 @@ type DataAwsDirectoryServiceDirectoryVpcSettings interface {
 	SubnetIds() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -967,8 +1144,8 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -987,15 +1164,25 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) VpcId() *string 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsDirectoryServiceDirectoryVpcSettings(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDirectoryServiceDirectoryVpcSettings {
+func NewDataAwsDirectoryServiceDirectoryVpcSettings(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDirectoryServiceDirectoryVpcSettings {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings{}
 
 	_jsii_.Create(
 		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryVpcSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1003,12 +1190,12 @@ func NewDataAwsDirectoryServiceDirectoryVpcSettings(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewDataAwsDirectoryServiceDirectoryVpcSettings_Override(d DataAwsDirectoryServiceDirectoryVpcSettings, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDirectoryServiceDirectoryVpcSettings_Override(d DataAwsDirectoryServiceDirectoryVpcSettings, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.directoryservice.DataAwsDirectoryServiceDirectoryVpcSettings",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1029,7 +1216,7 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1037,13 +1224,49 @@ func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1080,12 +1303,54 @@ func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1107,13 +1372,13 @@ func (d *jsiiProxy_DataAwsDirectoryServiceDirectoryVpcSettings) InterpolationFor
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder.html aws_directory_service_conditional_forwarder}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder aws_directory_service_conditional_forwarder}.
 type DirectoryServiceConditionalForwarder interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DirectoryId() *string
@@ -1138,10 +1403,15 @@ type DirectoryServiceConditionalForwarder interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1176,8 +1446,8 @@ func (j *jsiiProxy_DirectoryServiceConditionalForwarder) ConstructNodeMetadata()
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceConditionalForwarder) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DirectoryServiceConditionalForwarder) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1356,7 +1626,7 @@ func (j *jsiiProxy_DirectoryServiceConditionalForwarder) TerraformResourceType()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder.html aws_directory_service_conditional_forwarder} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder aws_directory_service_conditional_forwarder} Resource.
 func NewDirectoryServiceConditionalForwarder(scope constructs.Construct, id *string, config *DirectoryServiceConditionalForwarderConfig) DirectoryServiceConditionalForwarder {
 	_init_.Initialize()
 
@@ -1371,7 +1641,7 @@ func NewDirectoryServiceConditionalForwarder(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder.html aws_directory_service_conditional_forwarder} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder aws_directory_service_conditional_forwarder} Resource.
 func NewDirectoryServiceConditionalForwarder_Override(d DirectoryServiceConditionalForwarder, scope constructs.Construct, id *string, config *DirectoryServiceConditionalForwarderConfig) {
 	_init_.Initialize()
 
@@ -1382,7 +1652,7 @@ func NewDirectoryServiceConditionalForwarder_Override(d DirectoryServiceConditio
 	)
 }
 
-func (j *jsiiProxy_DirectoryServiceConditionalForwarder) SetCount(val interface{}) {
+func (j *jsiiProxy_DirectoryServiceConditionalForwarder) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1478,12 +1748,40 @@ func (d *jsiiProxy_DirectoryServiceConditionalForwarder) AddOverride(path *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1520,12 +1818,54 @@ func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceConditionalForwarder) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1626,22 +1966,22 @@ func (d *jsiiProxy_DirectoryServiceConditionalForwarder) ToTerraform() interface
 // AWS Directory Service.
 type DirectoryServiceConditionalForwarderConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder.html#directory_id DirectoryServiceConditionalForwarder#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder.html#dns_ips DirectoryServiceConditionalForwarder#dns_ips}.
-	DnsIps *[]*string `json:"dnsIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder.html#remote_domain_name DirectoryServiceConditionalForwarder#remote_domain_name}.
-	RemoteDomainName *string `json:"remoteDomainName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder#directory_id DirectoryServiceConditionalForwarder#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder#dns_ips DirectoryServiceConditionalForwarder#dns_ips}.
+	DnsIps *[]*string `json:"dnsIps" yaml:"dnsIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_conditional_forwarder#remote_domain_name DirectoryServiceConditionalForwarder#remote_domain_name}.
+	RemoteDomainName *string `json:"remoteDomainName" yaml:"remoteDomainName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html aws_directory_service_directory}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory aws_directory_service_directory}.
 type DirectoryServiceDirectory interface {
 	cdktf.TerraformResource
 	AccessUrl() *string
@@ -1652,8 +1992,8 @@ type DirectoryServiceDirectory interface {
 	ConnectSettings() DirectoryServiceDirectoryConnectSettingsOutputReference
 	ConnectSettingsInput() *DirectoryServiceDirectoryConnectSettings
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1688,12 +2028,12 @@ type DirectoryServiceDirectory interface {
 	Size() *string
 	SetSize(val *string)
 	SizeInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1703,10 +2043,15 @@ type DirectoryServiceDirectory interface {
 	VpcSettings() DirectoryServiceDirectoryVpcSettingsOutputReference
 	VpcSettingsInput() *DirectoryServiceDirectoryVpcSettings
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutConnectSettings(value *DirectoryServiceDirectoryConnectSettings)
@@ -1804,8 +2149,8 @@ func (j *jsiiProxy_DirectoryServiceDirectory) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DirectoryServiceDirectory) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2054,8 +2399,8 @@ func (j *jsiiProxy_DirectoryServiceDirectory) SizeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DirectoryServiceDirectory) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2064,8 +2409,8 @@ func (j *jsiiProxy_DirectoryServiceDirectory) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DirectoryServiceDirectory) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2074,8 +2419,8 @@ func (j *jsiiProxy_DirectoryServiceDirectory) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DirectoryServiceDirectory) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2084,8 +2429,8 @@ func (j *jsiiProxy_DirectoryServiceDirectory) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DirectoryServiceDirectory) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2164,7 +2509,7 @@ func (j *jsiiProxy_DirectoryServiceDirectory) VpcSettingsInput() *DirectoryServi
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html aws_directory_service_directory} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory aws_directory_service_directory} Resource.
 func NewDirectoryServiceDirectory(scope constructs.Construct, id *string, config *DirectoryServiceDirectoryConfig) DirectoryServiceDirectory {
 	_init_.Initialize()
 
@@ -2179,7 +2524,7 @@ func NewDirectoryServiceDirectory(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html aws_directory_service_directory} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory aws_directory_service_directory} Resource.
 func NewDirectoryServiceDirectory_Override(d DirectoryServiceDirectory, scope constructs.Construct, id *string, config *DirectoryServiceDirectoryConfig) {
 	_init_.Initialize()
 
@@ -2198,7 +2543,7 @@ func (j *jsiiProxy_DirectoryServiceDirectory) SetAlias(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) SetCount(val interface{}) {
+func (j *jsiiProxy_DirectoryServiceDirectory) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2286,7 +2631,7 @@ func (j *jsiiProxy_DirectoryServiceDirectory) SetSize(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) SetTags(val interface{}) {
+func (j *jsiiProxy_DirectoryServiceDirectory) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2294,7 +2639,7 @@ func (j *jsiiProxy_DirectoryServiceDirectory) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectory) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DirectoryServiceDirectory) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2350,12 +2695,40 @@ func (d *jsiiProxy_DirectoryServiceDirectory) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectory) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceDirectory) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectory) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2392,12 +2765,54 @@ func (d *jsiiProxy_DirectoryServiceDirectory) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectory) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectory) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceDirectory) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectory) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2602,58 +3017,60 @@ func (d *jsiiProxy_DirectoryServiceDirectory) ToTerraform() interface{} {
 // AWS Directory Service.
 type DirectoryServiceDirectoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#name DirectoryServiceDirectory#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#password DirectoryServiceDirectory#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#alias DirectoryServiceDirectory#alias}.
-	Alias *string `json:"alias"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#name DirectoryServiceDirectory#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#password DirectoryServiceDirectory#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#alias DirectoryServiceDirectory#alias}.
+	Alias *string `json:"alias" yaml:"alias"`
 	// connect_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#connect_settings DirectoryServiceDirectory#connect_settings}
-	ConnectSettings *DirectoryServiceDirectoryConnectSettings `json:"connectSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#description DirectoryServiceDirectory#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#edition DirectoryServiceDirectory#edition}.
-	Edition *string `json:"edition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#enable_sso DirectoryServiceDirectory#enable_sso}.
-	EnableSso interface{} `json:"enableSso"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#short_name DirectoryServiceDirectory#short_name}.
-	ShortName *string `json:"shortName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#size DirectoryServiceDirectory#size}.
-	Size *string `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#tags DirectoryServiceDirectory#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#tags_all DirectoryServiceDirectory#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#type DirectoryServiceDirectory#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#connect_settings DirectoryServiceDirectory#connect_settings}
+	ConnectSettings *DirectoryServiceDirectoryConnectSettings `json:"connectSettings" yaml:"connectSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#description DirectoryServiceDirectory#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#edition DirectoryServiceDirectory#edition}.
+	Edition *string `json:"edition" yaml:"edition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#enable_sso DirectoryServiceDirectory#enable_sso}.
+	EnableSso interface{} `json:"enableSso" yaml:"enableSso"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#short_name DirectoryServiceDirectory#short_name}.
+	ShortName *string `json:"shortName" yaml:"shortName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#size DirectoryServiceDirectory#size}.
+	Size *string `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#tags DirectoryServiceDirectory#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#tags_all DirectoryServiceDirectory#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#type DirectoryServiceDirectory#type}.
+	Type *string `json:"type" yaml:"type"`
 	// vpc_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#vpc_settings DirectoryServiceDirectory#vpc_settings}
-	VpcSettings *DirectoryServiceDirectoryVpcSettings `json:"vpcSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#vpc_settings DirectoryServiceDirectory#vpc_settings}
+	VpcSettings *DirectoryServiceDirectoryVpcSettings `json:"vpcSettings" yaml:"vpcSettings"`
 }
 
 type DirectoryServiceDirectoryConnectSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#customer_dns_ips DirectoryServiceDirectory#customer_dns_ips}.
-	CustomerDnsIps *[]*string `json:"customerDnsIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#customer_username DirectoryServiceDirectory#customer_username}.
-	CustomerUsername *string `json:"customerUsername"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#subnet_ids DirectoryServiceDirectory#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#vpc_id DirectoryServiceDirectory#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#customer_dns_ips DirectoryServiceDirectory#customer_dns_ips}.
+	CustomerDnsIps *[]*string `json:"customerDnsIps" yaml:"customerDnsIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#customer_username DirectoryServiceDirectory#customer_username}.
+	CustomerUsername *string `json:"customerUsername" yaml:"customerUsername"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#subnet_ids DirectoryServiceDirectory#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#vpc_id DirectoryServiceDirectory#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type DirectoryServiceDirectoryConnectSettingsOutputReference interface {
 	cdktf.ComplexObject
+	AvailabilityZones() *[]*string
+	ConnectIps() *[]*string
 	CustomerDnsIps() *[]*string
 	SetCustomerDnsIps(val *[]*string)
 	CustomerDnsIpsInput() *[]*string
@@ -2669,15 +3086,20 @@ type DirectoryServiceDirectoryConnectSettingsOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
 	SetVpcId(val *string)
 	VpcIdInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2685,6 +3107,26 @@ type DirectoryServiceDirectoryConnectSettingsOutputReference interface {
 // The jsii proxy struct for DirectoryServiceDirectoryConnectSettingsOutputReference
 type jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) AvailabilityZones() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"availabilityZones",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) ConnectIps() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"connectIps",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) CustomerDnsIps() *[]*string {
@@ -2777,8 +3219,8 @@ func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2807,7 +3249,7 @@ func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) VpcI
 	return returns
 }
 
-func NewDirectoryServiceDirectoryConnectSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DirectoryServiceDirectoryConnectSettingsOutputReference {
+func NewDirectoryServiceDirectoryConnectSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DirectoryServiceDirectoryConnectSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference{}
@@ -2821,7 +3263,7 @@ func NewDirectoryServiceDirectoryConnectSettingsOutputReference(terraformResourc
 	return &j
 }
 
-func NewDirectoryServiceDirectoryConnectSettingsOutputReference_Override(d DirectoryServiceDirectoryConnectSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDirectoryServiceDirectoryConnectSettingsOutputReference_Override(d DirectoryServiceDirectoryConnectSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2879,7 +3321,7 @@ func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2896,12 +3338,40 @@ func (j *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) SetV
 }
 
 // Experimental.
-func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2938,12 +3408,54 @@ func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetN
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2980,14 +3492,15 @@ func (d *jsiiProxy_DirectoryServiceDirectoryConnectSettingsOutputReference) Inte
 }
 
 type DirectoryServiceDirectoryVpcSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#subnet_ids DirectoryServiceDirectory#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory.html#vpc_id DirectoryServiceDirectory#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#subnet_ids DirectoryServiceDirectory#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_directory#vpc_id DirectoryServiceDirectory#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type DirectoryServiceDirectoryVpcSettingsOutputReference interface {
 	cdktf.ComplexObject
+	AvailabilityZones() *[]*string
 	InternalValue() *DirectoryServiceDirectoryVpcSettings
 	SetInternalValue(val *DirectoryServiceDirectoryVpcSettings)
 	IsSingleItem() *bool
@@ -2997,15 +3510,20 @@ type DirectoryServiceDirectoryVpcSettingsOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
 	SetVpcId(val *string)
 	VpcIdInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3013,6 +3531,16 @@ type DirectoryServiceDirectoryVpcSettingsOutputReference interface {
 // The jsii proxy struct for DirectoryServiceDirectoryVpcSettingsOutputReference
 type jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) AvailabilityZones() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"availabilityZones",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) InternalValue() *DirectoryServiceDirectoryVpcSettings {
@@ -3065,8 +3593,8 @@ func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3095,7 +3623,7 @@ func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) VpcIdInp
 	return returns
 }
 
-func NewDirectoryServiceDirectoryVpcSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DirectoryServiceDirectoryVpcSettingsOutputReference {
+func NewDirectoryServiceDirectoryVpcSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DirectoryServiceDirectoryVpcSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference{}
@@ -3109,7 +3637,7 @@ func NewDirectoryServiceDirectoryVpcSettingsOutputReference(terraformResource cd
 	return &j
 }
 
-func NewDirectoryServiceDirectoryVpcSettingsOutputReference_Override(d DirectoryServiceDirectoryVpcSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDirectoryServiceDirectoryVpcSettingsOutputReference_Override(d DirectoryServiceDirectoryVpcSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3151,7 +3679,7 @@ func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3168,12 +3696,40 @@ func (j *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) SetVpcId
 }
 
 // Experimental.
-func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3210,12 +3766,54 @@ func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetNumbe
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3251,13 +3849,13 @@ func (d *jsiiProxy_DirectoryServiceDirectoryVpcSettingsOutputReference) Interpol
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription.html aws_directory_service_log_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription aws_directory_service_log_subscription}.
 type DirectoryServiceLogSubscription interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DirectoryId() *string
@@ -3279,10 +3877,15 @@ type DirectoryServiceLogSubscription interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3317,8 +3920,8 @@ func (j *jsiiProxy_DirectoryServiceLogSubscription) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DirectoryServiceLogSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DirectoryServiceLogSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3477,7 +4080,7 @@ func (j *jsiiProxy_DirectoryServiceLogSubscription) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription.html aws_directory_service_log_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription aws_directory_service_log_subscription} Resource.
 func NewDirectoryServiceLogSubscription(scope constructs.Construct, id *string, config *DirectoryServiceLogSubscriptionConfig) DirectoryServiceLogSubscription {
 	_init_.Initialize()
 
@@ -3492,7 +4095,7 @@ func NewDirectoryServiceLogSubscription(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription.html aws_directory_service_log_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription aws_directory_service_log_subscription} Resource.
 func NewDirectoryServiceLogSubscription_Override(d DirectoryServiceLogSubscription, scope constructs.Construct, id *string, config *DirectoryServiceLogSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -3503,7 +4106,7 @@ func NewDirectoryServiceLogSubscription_Override(d DirectoryServiceLogSubscripti
 	)
 }
 
-func (j *jsiiProxy_DirectoryServiceLogSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_DirectoryServiceLogSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3591,12 +4194,40 @@ func (d *jsiiProxy_DirectoryServiceLogSubscription) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceLogSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceLogSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceLogSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3633,12 +4264,54 @@ func (d *jsiiProxy_DirectoryServiceLogSubscription) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DirectoryServiceLogSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceLogSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DirectoryServiceLogSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DirectoryServiceLogSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3739,15 +4412,15 @@ func (d *jsiiProxy_DirectoryServiceLogSubscription) ToTerraform() interface{} {
 // AWS Directory Service.
 type DirectoryServiceLogSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription.html#directory_id DirectoryServiceLogSubscription#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription.html#log_group_name DirectoryServiceLogSubscription#log_group_name}.
-	LogGroupName *string `json:"logGroupName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription#directory_id DirectoryServiceLogSubscription#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/directory_service_log_subscription#log_group_name DirectoryServiceLogSubscription#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
 }

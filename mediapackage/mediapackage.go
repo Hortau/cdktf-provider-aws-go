@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/mediapackage/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel.html aws_media_package_channel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel aws_media_package_channel}.
 type MediaPackageChannel interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -18,8 +18,8 @@ type MediaPackageChannel interface {
 	SetChannelId(val *string)
 	ChannelIdInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -34,20 +34,25 @@ type MediaPackageChannel interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	HlsIngest(index *string) MediaPackageChannelHlsIngest
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
@@ -116,8 +121,8 @@ func (j *jsiiProxy_MediaPackageChannel) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaPackageChannel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -226,8 +231,8 @@ func (j *jsiiProxy_MediaPackageChannel) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannel) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaPackageChannel) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -236,8 +241,8 @@ func (j *jsiiProxy_MediaPackageChannel) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannel) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaPackageChannel) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -246,8 +251,8 @@ func (j *jsiiProxy_MediaPackageChannel) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannel) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaPackageChannel) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -256,8 +261,8 @@ func (j *jsiiProxy_MediaPackageChannel) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannel) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaPackageChannel) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -296,7 +301,7 @@ func (j *jsiiProxy_MediaPackageChannel) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel.html aws_media_package_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel aws_media_package_channel} Resource.
 func NewMediaPackageChannel(scope constructs.Construct, id *string, config *MediaPackageChannelConfig) MediaPackageChannel {
 	_init_.Initialize()
 
@@ -311,7 +316,7 @@ func NewMediaPackageChannel(scope constructs.Construct, id *string, config *Medi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel.html aws_media_package_channel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel aws_media_package_channel} Resource.
 func NewMediaPackageChannel_Override(m MediaPackageChannel, scope constructs.Construct, id *string, config *MediaPackageChannelConfig) {
 	_init_.Initialize()
 
@@ -330,7 +335,7 @@ func (j *jsiiProxy_MediaPackageChannel) SetChannelId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MediaPackageChannel) SetCount(val interface{}) {
+func (j *jsiiProxy_MediaPackageChannel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -370,7 +375,7 @@ func (j *jsiiProxy_MediaPackageChannel) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_MediaPackageChannel) SetTags(val interface{}) {
+func (j *jsiiProxy_MediaPackageChannel) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -378,7 +383,7 @@ func (j *jsiiProxy_MediaPackageChannel) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_MediaPackageChannel) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_MediaPackageChannel) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -426,12 +431,40 @@ func (m *jsiiProxy_MediaPackageChannel) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaPackageChannel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaPackageChannel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -468,12 +501,54 @@ func (m *jsiiProxy_MediaPackageChannel) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaPackageChannel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaPackageChannel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -611,36 +686,43 @@ func (m *jsiiProxy_MediaPackageChannel) ToTerraform() interface{} {
 // Media Package.
 type MediaPackageChannelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel.html#channel_id MediaPackageChannel#channel_id}.
-	ChannelId *string `json:"channelId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel.html#description MediaPackageChannel#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel.html#tags MediaPackageChannel#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel.html#tags_all MediaPackageChannel#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel#channel_id MediaPackageChannel#channel_id}.
+	ChannelId *string `json:"channelId" yaml:"channelId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel#description MediaPackageChannel#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel#tags MediaPackageChannel#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_package_channel#tags_all MediaPackageChannel#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type MediaPackageChannelHlsIngest interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	IngestEndpoints() interface{}
+	IngestEndpoints() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -659,8 +741,8 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngest) ComplexComputedListIndex() *str
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannelHlsIngest) IngestEndpoints() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaPackageChannelHlsIngest) IngestEndpoints() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"ingestEndpoints",
@@ -679,8 +761,8 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngest) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannelHlsIngest) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MediaPackageChannelHlsIngest) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -689,15 +771,25 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngest) TerraformResource() cdktf.ITerr
 	return returns
 }
 
+func (j *jsiiProxy_MediaPackageChannelHlsIngest) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewMediaPackageChannelHlsIngest(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) MediaPackageChannelHlsIngest {
+func NewMediaPackageChannelHlsIngest(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) MediaPackageChannelHlsIngest {
 	_init_.Initialize()
 
 	j := jsiiProxy_MediaPackageChannelHlsIngest{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngest",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -705,12 +797,12 @@ func NewMediaPackageChannelHlsIngest(terraformResource cdktf.ITerraformResource,
 }
 
 // Experimental.
-func NewMediaPackageChannelHlsIngest_Override(m MediaPackageChannelHlsIngest, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewMediaPackageChannelHlsIngest_Override(m MediaPackageChannelHlsIngest, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngest",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		m,
 	)
 }
@@ -731,7 +823,7 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngest) SetTerraformAttribute(val *stri
 	)
 }
 
-func (j *jsiiProxy_MediaPackageChannelHlsIngest) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MediaPackageChannelHlsIngest) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -739,13 +831,49 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngest) SetTerraformResource(val cdktf.
 	)
 }
 
+func (j *jsiiProxy_MediaPackageChannelHlsIngest) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -782,12 +910,54 @@ func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngest) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -816,14 +986,21 @@ type MediaPackageChannelHlsIngestIngestEndpoints interface {
 	Password() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Url() *string
 	Username() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -862,8 +1039,8 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -892,15 +1069,25 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) Username() *stri
 	return returns
 }
 
+func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewMediaPackageChannelHlsIngestIngestEndpoints(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) MediaPackageChannelHlsIngestIngestEndpoints {
+func NewMediaPackageChannelHlsIngestIngestEndpoints(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) MediaPackageChannelHlsIngestIngestEndpoints {
 	_init_.Initialize()
 
 	j := jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngestIngestEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -908,12 +1095,12 @@ func NewMediaPackageChannelHlsIngestIngestEndpoints(terraformResource cdktf.ITer
 }
 
 // Experimental.
-func NewMediaPackageChannelHlsIngestIngestEndpoints_Override(m MediaPackageChannelHlsIngestIngestEndpoints, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewMediaPackageChannelHlsIngestIngestEndpoints_Override(m MediaPackageChannelHlsIngestIngestEndpoints, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mediapackage.MediaPackageChannelHlsIngestIngestEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		m,
 	)
 }
@@ -934,7 +1121,7 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -942,13 +1129,49 @@ func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) SetTerraformReso
 	)
 }
 
+func (j *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -985,12 +1208,54 @@ func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetNumberAttribu
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaPackageChannelHlsIngestIngestEndpoints) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

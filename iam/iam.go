@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/iam/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_account_alias.html aws_iam_account_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_account_alias aws_iam_account_alias}.
 type DataAwsIamAccountAlias interface {
 	cdktf.TerraformDataSource
 	AccountAlias() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -32,10 +32,15 @@ type DataAwsIamAccountAlias interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -80,8 +85,8 @@ func (j *jsiiProxy_DataAwsIamAccountAlias) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamAccountAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamAccountAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -200,7 +205,7 @@ func (j *jsiiProxy_DataAwsIamAccountAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_account_alias.html aws_iam_account_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_account_alias aws_iam_account_alias} Data Source.
 func NewDataAwsIamAccountAlias(scope constructs.Construct, id *string, config *DataAwsIamAccountAliasConfig) DataAwsIamAccountAlias {
 	_init_.Initialize()
 
@@ -215,7 +220,7 @@ func NewDataAwsIamAccountAlias(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_account_alias.html aws_iam_account_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_account_alias aws_iam_account_alias} Data Source.
 func NewDataAwsIamAccountAlias_Override(d DataAwsIamAccountAlias, scope constructs.Construct, id *string, config *DataAwsIamAccountAliasConfig) {
 	_init_.Initialize()
 
@@ -226,7 +231,7 @@ func NewDataAwsIamAccountAlias_Override(d DataAwsIamAccountAlias, scope construc
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamAccountAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamAccountAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -298,12 +303,40 @@ func (d *jsiiProxy_DataAwsIamAccountAlias) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamAccountAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamAccountAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamAccountAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -340,12 +373,54 @@ func (d *jsiiProxy_DataAwsIamAccountAlias) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamAccountAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamAccountAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamAccountAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamAccountAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -446,23 +521,23 @@ func (d *jsiiProxy_DataAwsIamAccountAlias) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamAccountAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_group.html aws_iam_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_group aws_iam_group}.
 type DataAwsIamGroup interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -483,10 +558,15 @@ type DataAwsIamGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -532,8 +612,8 @@ func (j *jsiiProxy_DataAwsIamGroup) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -692,7 +772,7 @@ func (j *jsiiProxy_DataAwsIamGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_group.html aws_iam_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_group aws_iam_group} Data Source.
 func NewDataAwsIamGroup(scope constructs.Construct, id *string, config *DataAwsIamGroupConfig) DataAwsIamGroup {
 	_init_.Initialize()
 
@@ -707,7 +787,7 @@ func NewDataAwsIamGroup(scope constructs.Construct, id *string, config *DataAwsI
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_group.html aws_iam_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_group aws_iam_group} Data Source.
 func NewDataAwsIamGroup_Override(d DataAwsIamGroup, scope constructs.Construct, id *string, config *DataAwsIamGroupConfig) {
 	_init_.Initialize()
 
@@ -718,7 +798,7 @@ func NewDataAwsIamGroup_Override(d DataAwsIamGroup, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -798,12 +878,40 @@ func (d *jsiiProxy_DataAwsIamGroup) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -840,12 +948,54 @@ func (d *jsiiProxy_DataAwsIamGroup) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -959,15 +1109,15 @@ func (d *jsiiProxy_DataAwsIamGroup) Users(index *string) DataAwsIamGroupUsers {
 // AWS Identity and Access Management.
 type DataAwsIamGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_group.html#group_name DataAwsIamGroup#group_name}.
-	GroupName *string `json:"groupName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_group#group_name DataAwsIamGroup#group_name}.
+	GroupName *string `json:"groupName" yaml:"groupName"`
 }
 
 type DataAwsIamGroupUsers interface {
@@ -978,14 +1128,21 @@ type DataAwsIamGroupUsers interface {
 	Path() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserId() *string
 	UserName() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1034,8 +1191,8 @@ func (j *jsiiProxy_DataAwsIamGroupUsers) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamGroupUsers) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsIamGroupUsers) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1064,15 +1221,25 @@ func (j *jsiiProxy_DataAwsIamGroupUsers) UserName() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsIamGroupUsers) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsIamGroupUsers(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsIamGroupUsers {
+func NewDataAwsIamGroupUsers(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsIamGroupUsers {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsIamGroupUsers{}
 
 	_jsii_.Create(
 		"hashicorp_aws.iam.DataAwsIamGroupUsers",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1080,12 +1247,12 @@ func NewDataAwsIamGroupUsers(terraformResource cdktf.ITerraformResource, terrafo
 }
 
 // Experimental.
-func NewDataAwsIamGroupUsers_Override(d DataAwsIamGroupUsers, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsIamGroupUsers_Override(d DataAwsIamGroupUsers, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.iam.DataAwsIamGroupUsers",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1106,7 +1273,7 @@ func (j *jsiiProxy_DataAwsIamGroupUsers) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamGroupUsers) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsIamGroupUsers) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1114,13 +1281,49 @@ func (j *jsiiProxy_DataAwsIamGroupUsers) SetTerraformResource(val cdktf.ITerrafo
 	)
 }
 
+func (j *jsiiProxy_DataAwsIamGroupUsers) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsIamGroupUsers) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsIamGroupUsers) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamGroupUsers) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamGroupUsers) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1157,12 +1360,54 @@ func (d *jsiiProxy_DataAwsIamGroupUsers) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamGroupUsers) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamGroupUsers) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamGroupUsers) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamGroupUsers) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1184,14 +1429,14 @@ func (d *jsiiProxy_DataAwsIamGroupUsers) InterpolationForAttribute(property *str
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile.html aws_iam_instance_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile aws_iam_instance_profile}.
 type DataAwsIamInstanceProfile interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -1215,10 +1460,15 @@ type DataAwsIamInstanceProfile interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1263,8 +1513,8 @@ func (j *jsiiProxy_DataAwsIamInstanceProfile) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamInstanceProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamInstanceProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1453,7 +1703,7 @@ func (j *jsiiProxy_DataAwsIamInstanceProfile) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile.html aws_iam_instance_profile} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile aws_iam_instance_profile} Data Source.
 func NewDataAwsIamInstanceProfile(scope constructs.Construct, id *string, config *DataAwsIamInstanceProfileConfig) DataAwsIamInstanceProfile {
 	_init_.Initialize()
 
@@ -1468,7 +1718,7 @@ func NewDataAwsIamInstanceProfile(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile.html aws_iam_instance_profile} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile aws_iam_instance_profile} Data Source.
 func NewDataAwsIamInstanceProfile_Override(d DataAwsIamInstanceProfile, scope constructs.Construct, id *string, config *DataAwsIamInstanceProfileConfig) {
 	_init_.Initialize()
 
@@ -1479,7 +1729,7 @@ func NewDataAwsIamInstanceProfile_Override(d DataAwsIamInstanceProfile, scope co
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamInstanceProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamInstanceProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1559,12 +1809,40 @@ func (d *jsiiProxy_DataAwsIamInstanceProfile) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamInstanceProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamInstanceProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamInstanceProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1601,12 +1879,54 @@ func (d *jsiiProxy_DataAwsIamInstanceProfile) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamInstanceProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamInstanceProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamInstanceProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamInstanceProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1707,25 +2027,25 @@ func (d *jsiiProxy_DataAwsIamInstanceProfile) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamInstanceProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile.html#name DataAwsIamInstanceProfile#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_instance_profile#name DataAwsIamInstanceProfile#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_policy.html aws_iam_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_policy aws_iam_policy}.
 type DataAwsIamPolicy interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1747,17 +2067,22 @@ type DataAwsIamPolicy interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -1805,8 +2130,8 @@ func (j *jsiiProxy_DataAwsIamPolicy) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1975,8 +2300,8 @@ func (j *jsiiProxy_DataAwsIamPolicy) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamPolicy) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamPolicy) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1985,8 +2310,8 @@ func (j *jsiiProxy_DataAwsIamPolicy) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamPolicy) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamPolicy) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2025,7 +2350,7 @@ func (j *jsiiProxy_DataAwsIamPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy.html aws_iam_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy aws_iam_policy} Data Source.
 func NewDataAwsIamPolicy(scope constructs.Construct, id *string, config *DataAwsIamPolicyConfig) DataAwsIamPolicy {
 	_init_.Initialize()
 
@@ -2040,7 +2365,7 @@ func NewDataAwsIamPolicy(scope constructs.Construct, id *string, config *DataAws
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy.html aws_iam_policy} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy aws_iam_policy} Data Source.
 func NewDataAwsIamPolicy_Override(d DataAwsIamPolicy, scope constructs.Construct, id *string, config *DataAwsIamPolicyConfig) {
 	_init_.Initialize()
 
@@ -2051,7 +2376,7 @@ func NewDataAwsIamPolicy_Override(d DataAwsIamPolicy, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2099,7 +2424,7 @@ func (j *jsiiProxy_DataAwsIamPolicy) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamPolicy) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsIamPolicy) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2147,12 +2472,40 @@ func (d *jsiiProxy_DataAwsIamPolicy) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2189,12 +2542,54 @@ func (d *jsiiProxy_DataAwsIamPolicy) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2319,28 +2714,28 @@ func (d *jsiiProxy_DataAwsIamPolicy) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy.html#name DataAwsIamPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy.html#path_prefix DataAwsIamPolicy#path_prefix}.
-	PathPrefix *string `json:"pathPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy.html#tags DataAwsIamPolicy#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy#name DataAwsIamPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy#path_prefix DataAwsIamPolicy#path_prefix}.
+	PathPrefix *string `json:"pathPrefix" yaml:"pathPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy#tags DataAwsIamPolicy#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html aws_iam_policy_document}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document aws_iam_policy_document}.
 type DataAwsIamPolicyDocument interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2368,9 +2763,9 @@ type DataAwsIamPolicyDocument interface {
 	SourcePolicyDocuments() *[]*string
 	SetSourcePolicyDocuments(val *[]*string)
 	SourcePolicyDocumentsInput() *[]*string
-	Statement() *[]*DataAwsIamPolicyDocumentStatement
-	SetStatement(val *[]*DataAwsIamPolicyDocumentStatement)
-	StatementInput() *[]*DataAwsIamPolicyDocumentStatement
+	Statement() interface{}
+	SetStatement(val interface{})
+	StatementInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2378,10 +2773,15 @@ type DataAwsIamPolicyDocument interface {
 	SetVersion(val *string)
 	VersionInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideJson()
@@ -2423,8 +2823,8 @@ func (j *jsiiProxy_DataAwsIamPolicyDocument) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamPolicyDocument) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamPolicyDocument) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2623,8 +3023,8 @@ func (j *jsiiProxy_DataAwsIamPolicyDocument) SourcePolicyDocumentsInput() *[]*st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamPolicyDocument) Statement() *[]*DataAwsIamPolicyDocumentStatement {
-	var returns *[]*DataAwsIamPolicyDocumentStatement
+func (j *jsiiProxy_DataAwsIamPolicyDocument) Statement() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"statement",
@@ -2633,8 +3033,8 @@ func (j *jsiiProxy_DataAwsIamPolicyDocument) Statement() *[]*DataAwsIamPolicyDoc
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamPolicyDocument) StatementInput() *[]*DataAwsIamPolicyDocumentStatement {
-	var returns *[]*DataAwsIamPolicyDocumentStatement
+func (j *jsiiProxy_DataAwsIamPolicyDocument) StatementInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"statementInput",
@@ -2693,7 +3093,7 @@ func (j *jsiiProxy_DataAwsIamPolicyDocument) VersionInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html aws_iam_policy_document} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document aws_iam_policy_document} Data Source.
 func NewDataAwsIamPolicyDocument(scope constructs.Construct, id *string, config *DataAwsIamPolicyDocumentConfig) DataAwsIamPolicyDocument {
 	_init_.Initialize()
 
@@ -2708,7 +3108,7 @@ func NewDataAwsIamPolicyDocument(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html aws_iam_policy_document} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document aws_iam_policy_document} Data Source.
 func NewDataAwsIamPolicyDocument_Override(d DataAwsIamPolicyDocument, scope constructs.Construct, id *string, config *DataAwsIamPolicyDocumentConfig) {
 	_init_.Initialize()
 
@@ -2719,7 +3119,7 @@ func NewDataAwsIamPolicyDocument_Override(d DataAwsIamPolicyDocument, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamPolicyDocument) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamPolicyDocument) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2791,7 +3191,7 @@ func (j *jsiiProxy_DataAwsIamPolicyDocument) SetSourcePolicyDocuments(val *[]*st
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamPolicyDocument) SetStatement(val *[]*DataAwsIamPolicyDocumentStatement) {
+func (j *jsiiProxy_DataAwsIamPolicyDocument) SetStatement(val interface{}) {
 	_jsii_.Set(
 		j,
 		"statement",
@@ -2847,12 +3247,40 @@ func (d *jsiiProxy_DataAwsIamPolicyDocument) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamPolicyDocument) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamPolicyDocument) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamPolicyDocument) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2889,12 +3317,54 @@ func (d *jsiiProxy_DataAwsIamPolicyDocument) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamPolicyDocument) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamPolicyDocument) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamPolicyDocument) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamPolicyDocument) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3051,90 +3521,90 @@ func (d *jsiiProxy_DataAwsIamPolicyDocument) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamPolicyDocumentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#override_json DataAwsIamPolicyDocument#override_json}.
-	OverrideJson *string `json:"overrideJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#override_policy_documents DataAwsIamPolicyDocument#override_policy_documents}.
-	OverridePolicyDocuments *[]*string `json:"overridePolicyDocuments"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#policy_id DataAwsIamPolicyDocument#policy_id}.
-	PolicyId *string `json:"policyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#source_json DataAwsIamPolicyDocument#source_json}.
-	SourceJson *string `json:"sourceJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#source_policy_documents DataAwsIamPolicyDocument#source_policy_documents}.
-	SourcePolicyDocuments *[]*string `json:"sourcePolicyDocuments"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#override_json DataAwsIamPolicyDocument#override_json}.
+	OverrideJson *string `json:"overrideJson" yaml:"overrideJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#override_policy_documents DataAwsIamPolicyDocument#override_policy_documents}.
+	OverridePolicyDocuments *[]*string `json:"overridePolicyDocuments" yaml:"overridePolicyDocuments"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#policy_id DataAwsIamPolicyDocument#policy_id}.
+	PolicyId *string `json:"policyId" yaml:"policyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#source_json DataAwsIamPolicyDocument#source_json}.
+	SourceJson *string `json:"sourceJson" yaml:"sourceJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#source_policy_documents DataAwsIamPolicyDocument#source_policy_documents}.
+	SourcePolicyDocuments *[]*string `json:"sourcePolicyDocuments" yaml:"sourcePolicyDocuments"`
 	// statement block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#statement DataAwsIamPolicyDocument#statement}
-	Statement *[]*DataAwsIamPolicyDocumentStatement `json:"statement"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#version DataAwsIamPolicyDocument#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#statement DataAwsIamPolicyDocument#statement}
+	Statement interface{} `json:"statement" yaml:"statement"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#version DataAwsIamPolicyDocument#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type DataAwsIamPolicyDocumentStatement struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#actions DataAwsIamPolicyDocument#actions}.
-	Actions *[]*string `json:"actions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#actions DataAwsIamPolicyDocument#actions}.
+	Actions *[]*string `json:"actions" yaml:"actions"`
 	// condition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#condition DataAwsIamPolicyDocument#condition}
-	Condition *[]*DataAwsIamPolicyDocumentStatementCondition `json:"condition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#effect DataAwsIamPolicyDocument#effect}.
-	Effect *string `json:"effect"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#not_actions DataAwsIamPolicyDocument#not_actions}.
-	NotActions *[]*string `json:"notActions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#condition DataAwsIamPolicyDocument#condition}
+	Condition interface{} `json:"condition" yaml:"condition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#effect DataAwsIamPolicyDocument#effect}.
+	Effect *string `json:"effect" yaml:"effect"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#not_actions DataAwsIamPolicyDocument#not_actions}.
+	NotActions *[]*string `json:"notActions" yaml:"notActions"`
 	// not_principals block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#not_principals DataAwsIamPolicyDocument#not_principals}
-	NotPrincipals *[]*DataAwsIamPolicyDocumentStatementNotPrincipals `json:"notPrincipals"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#not_resources DataAwsIamPolicyDocument#not_resources}.
-	NotResources *[]*string `json:"notResources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#not_principals DataAwsIamPolicyDocument#not_principals}
+	NotPrincipals interface{} `json:"notPrincipals" yaml:"notPrincipals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#not_resources DataAwsIamPolicyDocument#not_resources}.
+	NotResources *[]*string `json:"notResources" yaml:"notResources"`
 	// principals block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#principals DataAwsIamPolicyDocument#principals}
-	Principals *[]*DataAwsIamPolicyDocumentStatementPrincipals `json:"principals"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#resources DataAwsIamPolicyDocument#resources}.
-	Resources *[]*string `json:"resources"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#sid DataAwsIamPolicyDocument#sid}.
-	Sid *string `json:"sid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#principals DataAwsIamPolicyDocument#principals}
+	Principals interface{} `json:"principals" yaml:"principals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#resources DataAwsIamPolicyDocument#resources}.
+	Resources *[]*string `json:"resources" yaml:"resources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#sid DataAwsIamPolicyDocument#sid}.
+	Sid *string `json:"sid" yaml:"sid"`
 }
 
 type DataAwsIamPolicyDocumentStatementCondition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#test DataAwsIamPolicyDocument#test}.
-	Test *string `json:"test"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#values DataAwsIamPolicyDocument#values}.
-	Values *[]*string `json:"values"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#variable DataAwsIamPolicyDocument#variable}.
-	Variable *string `json:"variable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#test DataAwsIamPolicyDocument#test}.
+	Test *string `json:"test" yaml:"test"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#values DataAwsIamPolicyDocument#values}.
+	Values *[]*string `json:"values" yaml:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#variable DataAwsIamPolicyDocument#variable}.
+	Variable *string `json:"variable" yaml:"variable"`
 }
 
 type DataAwsIamPolicyDocumentStatementNotPrincipals struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#identifiers DataAwsIamPolicyDocument#identifiers}.
-	Identifiers *[]*string `json:"identifiers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#type DataAwsIamPolicyDocument#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#identifiers DataAwsIamPolicyDocument#identifiers}.
+	Identifiers *[]*string `json:"identifiers" yaml:"identifiers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#type DataAwsIamPolicyDocument#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type DataAwsIamPolicyDocumentStatementPrincipals struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#identifiers DataAwsIamPolicyDocument#identifiers}.
-	Identifiers *[]*string `json:"identifiers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document.html#type DataAwsIamPolicyDocument#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#identifiers DataAwsIamPolicyDocument#identifiers}.
+	Identifiers *[]*string `json:"identifiers" yaml:"identifiers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_policy_document#type DataAwsIamPolicyDocument#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_role.html aws_iam_role}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_role aws_iam_role}.
 type DataAwsIamRole interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	AssumeRolePolicy() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -3154,18 +3624,23 @@ type DataAwsIamRole interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UniqueId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3221,8 +3696,8 @@ func (j *jsiiProxy_DataAwsIamRole) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamRole) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamRole) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3381,8 +3856,8 @@ func (j *jsiiProxy_DataAwsIamRole) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamRole) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamRole) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3391,8 +3866,8 @@ func (j *jsiiProxy_DataAwsIamRole) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamRole) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamRole) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3441,7 +3916,7 @@ func (j *jsiiProxy_DataAwsIamRole) UniqueId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_role.html aws_iam_role} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_role aws_iam_role} Data Source.
 func NewDataAwsIamRole(scope constructs.Construct, id *string, config *DataAwsIamRoleConfig) DataAwsIamRole {
 	_init_.Initialize()
 
@@ -3456,7 +3931,7 @@ func NewDataAwsIamRole(scope constructs.Construct, id *string, config *DataAwsIa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_role.html aws_iam_role} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_role aws_iam_role} Data Source.
 func NewDataAwsIamRole_Override(d DataAwsIamRole, scope constructs.Construct, id *string, config *DataAwsIamRoleConfig) {
 	_init_.Initialize()
 
@@ -3467,7 +3942,7 @@ func NewDataAwsIamRole_Override(d DataAwsIamRole, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamRole) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamRole) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3507,7 +3982,7 @@ func (j *jsiiProxy_DataAwsIamRole) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamRole) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsIamRole) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3555,12 +4030,40 @@ func (d *jsiiProxy_DataAwsIamRole) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamRole) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamRole) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamRole) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3597,12 +4100,54 @@ func (d *jsiiProxy_DataAwsIamRole) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamRole) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamRole) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamRole) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamRole) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3711,27 +4256,27 @@ func (d *jsiiProxy_DataAwsIamRole) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamRoleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_role.html#name DataAwsIamRole#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_role.html#tags DataAwsIamRole#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_role#name DataAwsIamRole#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_role#tags DataAwsIamRole#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_roles.html aws_iam_roles}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_roles aws_iam_roles}.
 type DataAwsIamRoles interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3754,10 +4299,15 @@ type DataAwsIamRoles interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetNameRegex()
@@ -3804,8 +4354,8 @@ func (j *jsiiProxy_DataAwsIamRoles) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamRoles) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamRoles) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3974,7 +4524,7 @@ func (j *jsiiProxy_DataAwsIamRoles) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_roles.html aws_iam_roles} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_roles aws_iam_roles} Data Source.
 func NewDataAwsIamRoles(scope constructs.Construct, id *string, config *DataAwsIamRolesConfig) DataAwsIamRoles {
 	_init_.Initialize()
 
@@ -3989,7 +4539,7 @@ func NewDataAwsIamRoles(scope constructs.Construct, id *string, config *DataAwsI
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_roles.html aws_iam_roles} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_roles aws_iam_roles} Data Source.
 func NewDataAwsIamRoles_Override(d DataAwsIamRoles, scope constructs.Construct, id *string, config *DataAwsIamRolesConfig) {
 	_init_.Initialize()
 
@@ -4000,7 +4550,7 @@ func NewDataAwsIamRoles_Override(d DataAwsIamRoles, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamRoles) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamRoles) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4088,12 +4638,40 @@ func (d *jsiiProxy_DataAwsIamRoles) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamRoles) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamRoles) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamRoles) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4130,12 +4708,54 @@ func (d *jsiiProxy_DataAwsIamRoles) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamRoles) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamRoles) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamRoles) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamRoles) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4252,20 +4872,20 @@ func (d *jsiiProxy_DataAwsIamRoles) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamRolesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_roles.html#name_regex DataAwsIamRoles#name_regex}.
-	NameRegex *string `json:"nameRegex"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_roles.html#path_prefix DataAwsIamRoles#path_prefix}.
-	PathPrefix *string `json:"pathPrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_roles#name_regex DataAwsIamRoles#name_regex}.
+	NameRegex *string `json:"nameRegex" yaml:"nameRegex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_roles#path_prefix DataAwsIamRoles#path_prefix}.
+	PathPrefix *string `json:"pathPrefix" yaml:"pathPrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate.html aws_iam_server_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate aws_iam_server_certificate}.
 type DataAwsIamServerCertificate interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -4273,8 +4893,8 @@ type DataAwsIamServerCertificate interface {
 	CertificateBody() *string
 	CertificateChain() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ExpirationDate() *string
@@ -4305,10 +4925,15 @@ type DataAwsIamServerCertificate interface {
 	TerraformResourceType() *string
 	UploadDate() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetLatest()
@@ -4377,8 +5002,8 @@ func (j *jsiiProxy_DataAwsIamServerCertificate) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamServerCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamServerCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4607,7 +5232,7 @@ func (j *jsiiProxy_DataAwsIamServerCertificate) UploadDate() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate.html aws_iam_server_certificate} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate aws_iam_server_certificate} Data Source.
 func NewDataAwsIamServerCertificate(scope constructs.Construct, id *string, config *DataAwsIamServerCertificateConfig) DataAwsIamServerCertificate {
 	_init_.Initialize()
 
@@ -4622,7 +5247,7 @@ func NewDataAwsIamServerCertificate(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate.html aws_iam_server_certificate} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate aws_iam_server_certificate} Data Source.
 func NewDataAwsIamServerCertificate_Override(d DataAwsIamServerCertificate, scope constructs.Construct, id *string, config *DataAwsIamServerCertificateConfig) {
 	_init_.Initialize()
 
@@ -4633,7 +5258,7 @@ func NewDataAwsIamServerCertificate_Override(d DataAwsIamServerCertificate, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamServerCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamServerCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4737,12 +5362,40 @@ func (d *jsiiProxy_DataAwsIamServerCertificate) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamServerCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamServerCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamServerCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4779,12 +5432,54 @@ func (d *jsiiProxy_DataAwsIamServerCertificate) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamServerCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamServerCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamServerCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamServerCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4917,24 +5612,24 @@ func (d *jsiiProxy_DataAwsIamServerCertificate) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamServerCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate.html#latest DataAwsIamServerCertificate#latest}.
-	Latest interface{} `json:"latest"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate.html#name DataAwsIamServerCertificate#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate.html#name_prefix DataAwsIamServerCertificate#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate.html#path_prefix DataAwsIamServerCertificate#path_prefix}.
-	PathPrefix *string `json:"pathPrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate#latest DataAwsIamServerCertificate#latest}.
+	Latest interface{} `json:"latest" yaml:"latest"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate#name DataAwsIamServerCertificate#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate#name_prefix DataAwsIamServerCertificate#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_server_certificate#path_prefix DataAwsIamServerCertificate#path_prefix}.
+	PathPrefix *string `json:"pathPrefix" yaml:"pathPrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context.html aws_iam_session_context}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context aws_iam_session_context}.
 type DataAwsIamSessionContext interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -4942,8 +5637,8 @@ type DataAwsIamSessionContext interface {
 	ArnInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4963,10 +5658,15 @@ type DataAwsIamSessionContext interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5021,8 +5721,8 @@ func (j *jsiiProxy_DataAwsIamSessionContext) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamSessionContext) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamSessionContext) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5181,7 +5881,7 @@ func (j *jsiiProxy_DataAwsIamSessionContext) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context.html aws_iam_session_context} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context aws_iam_session_context} Data Source.
 func NewDataAwsIamSessionContext(scope constructs.Construct, id *string, config *DataAwsIamSessionContextConfig) DataAwsIamSessionContext {
 	_init_.Initialize()
 
@@ -5196,7 +5896,7 @@ func NewDataAwsIamSessionContext(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context.html aws_iam_session_context} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context aws_iam_session_context} Data Source.
 func NewDataAwsIamSessionContext_Override(d DataAwsIamSessionContext, scope constructs.Construct, id *string, config *DataAwsIamSessionContextConfig) {
 	_init_.Initialize()
 
@@ -5215,7 +5915,7 @@ func (j *jsiiProxy_DataAwsIamSessionContext) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamSessionContext) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamSessionContext) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5287,12 +5987,40 @@ func (d *jsiiProxy_DataAwsIamSessionContext) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamSessionContext) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamSessionContext) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamSessionContext) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5329,12 +6057,54 @@ func (d *jsiiProxy_DataAwsIamSessionContext) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamSessionContext) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamSessionContext) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamSessionContext) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamSessionContext) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5435,25 +6205,25 @@ func (d *jsiiProxy_DataAwsIamSessionContext) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamSessionContextConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context.html#arn DataAwsIamSessionContext#arn}.
-	Arn *string `json:"arn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_session_context#arn DataAwsIamSessionContext#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_user.html aws_iam_user}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_user aws_iam_user}.
 type DataAwsIamUser interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5467,9 +6237,9 @@ type DataAwsIamUser interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5478,10 +6248,15 @@ type DataAwsIamUser interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5527,8 +6302,8 @@ func (j *jsiiProxy_DataAwsIamUser) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamUser) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamUser) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5637,8 +6412,8 @@ func (j *jsiiProxy_DataAwsIamUser) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamUser) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamUser) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5647,8 +6422,8 @@ func (j *jsiiProxy_DataAwsIamUser) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamUser) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamUser) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5717,7 +6492,7 @@ func (j *jsiiProxy_DataAwsIamUser) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user.html aws_iam_user} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user aws_iam_user} Data Source.
 func NewDataAwsIamUser(scope constructs.Construct, id *string, config *DataAwsIamUserConfig) DataAwsIamUser {
 	_init_.Initialize()
 
@@ -5732,7 +6507,7 @@ func NewDataAwsIamUser(scope constructs.Construct, id *string, config *DataAwsIa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user.html aws_iam_user} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user aws_iam_user} Data Source.
 func NewDataAwsIamUser_Override(d DataAwsIamUser, scope constructs.Construct, id *string, config *DataAwsIamUserConfig) {
 	_init_.Initialize()
 
@@ -5743,7 +6518,7 @@ func NewDataAwsIamUser_Override(d DataAwsIamUser, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamUser) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamUser) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5775,7 +6550,7 @@ func (j *jsiiProxy_DataAwsIamUser) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamUser) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsIamUser) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5831,12 +6606,40 @@ func (d *jsiiProxy_DataAwsIamUser) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5873,12 +6676,54 @@ func (d *jsiiProxy_DataAwsIamUser) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5987,26 +6832,26 @@ func (d *jsiiProxy_DataAwsIamUser) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamUserConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user.html#user_name DataAwsIamUser#user_name}.
-	UserName *string `json:"userName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user.html#tags DataAwsIamUser#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user#user_name DataAwsIamUser#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user#tags DataAwsIamUser#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key.html aws_iam_user_ssh_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key aws_iam_user_ssh_key}.
 type DataAwsIamUserSshKey interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Encoding() *string
@@ -6034,10 +6879,15 @@ type DataAwsIamUserSshKey interface {
 	SetUsername(val *string)
 	UsernameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6072,8 +6922,8 @@ func (j *jsiiProxy_DataAwsIamUserSshKey) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamUserSshKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamUserSshKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6282,7 +7132,7 @@ func (j *jsiiProxy_DataAwsIamUserSshKey) UsernameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key.html aws_iam_user_ssh_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key aws_iam_user_ssh_key} Data Source.
 func NewDataAwsIamUserSshKey(scope constructs.Construct, id *string, config *DataAwsIamUserSshKeyConfig) DataAwsIamUserSshKey {
 	_init_.Initialize()
 
@@ -6297,7 +7147,7 @@ func NewDataAwsIamUserSshKey(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key.html aws_iam_user_ssh_key} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key aws_iam_user_ssh_key} Data Source.
 func NewDataAwsIamUserSshKey_Override(d DataAwsIamUserSshKey, scope constructs.Construct, id *string, config *DataAwsIamUserSshKeyConfig) {
 	_init_.Initialize()
 
@@ -6308,7 +7158,7 @@ func NewDataAwsIamUserSshKey_Override(d DataAwsIamUserSshKey, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamUserSshKey) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamUserSshKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6404,12 +7254,40 @@ func (d *jsiiProxy_DataAwsIamUserSshKey) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamUserSshKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamUserSshKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUserSshKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6446,12 +7324,54 @@ func (d *jsiiProxy_DataAwsIamUserSshKey) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamUserSshKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUserSshKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamUserSshKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUserSshKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6552,29 +7472,29 @@ func (d *jsiiProxy_DataAwsIamUserSshKey) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamUserSshKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key.html#encoding DataAwsIamUserSshKey#encoding}.
-	Encoding *string `json:"encoding"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key.html#ssh_public_key_id DataAwsIamUserSshKey#ssh_public_key_id}.
-	SshPublicKeyId *string `json:"sshPublicKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key.html#username DataAwsIamUserSshKey#username}.
-	Username *string `json:"username"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key#encoding DataAwsIamUserSshKey#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key#ssh_public_key_id DataAwsIamUserSshKey#ssh_public_key_id}.
+	SshPublicKeyId *string `json:"sshPublicKeyId" yaml:"sshPublicKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_user_ssh_key#username DataAwsIamUserSshKey#username}.
+	Username *string `json:"username" yaml:"username"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_users.html aws_iam_users}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/iam_users aws_iam_users}.
 type DataAwsIamUsers interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6597,10 +7517,15 @@ type DataAwsIamUsers interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetNameRegex()
@@ -6647,8 +7572,8 @@ func (j *jsiiProxy_DataAwsIamUsers) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsIamUsers) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsIamUsers) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6817,7 +7742,7 @@ func (j *jsiiProxy_DataAwsIamUsers) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_users.html aws_iam_users} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_users aws_iam_users} Data Source.
 func NewDataAwsIamUsers(scope constructs.Construct, id *string, config *DataAwsIamUsersConfig) DataAwsIamUsers {
 	_init_.Initialize()
 
@@ -6832,7 +7757,7 @@ func NewDataAwsIamUsers(scope constructs.Construct, id *string, config *DataAwsI
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_users.html aws_iam_users} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/iam_users aws_iam_users} Data Source.
 func NewDataAwsIamUsers_Override(d DataAwsIamUsers, scope constructs.Construct, id *string, config *DataAwsIamUsersConfig) {
 	_init_.Initialize()
 
@@ -6843,7 +7768,7 @@ func NewDataAwsIamUsers_Override(d DataAwsIamUsers, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_DataAwsIamUsers) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsIamUsers) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6931,12 +7856,40 @@ func (d *jsiiProxy_DataAwsIamUsers) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamUsers) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamUsers) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUsers) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6973,12 +7926,54 @@ func (d *jsiiProxy_DataAwsIamUsers) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsIamUsers) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUsers) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsIamUsers) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsIamUsers) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7095,26 +8090,26 @@ func (d *jsiiProxy_DataAwsIamUsers) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type DataAwsIamUsersConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_users.html#name_regex DataAwsIamUsers#name_regex}.
-	NameRegex *string `json:"nameRegex"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_users.html#path_prefix DataAwsIamUsers#path_prefix}.
-	PathPrefix *string `json:"pathPrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_users#name_regex DataAwsIamUsers#name_regex}.
+	NameRegex *string `json:"nameRegex" yaml:"nameRegex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/iam_users#path_prefix DataAwsIamUsers#path_prefix}.
+	PathPrefix *string `json:"pathPrefix" yaml:"pathPrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key.html aws_iam_access_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key aws_iam_access_key}.
 type IamAccessKey interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -7145,10 +8140,15 @@ type IamAccessKey interface {
 	SetUser(val *string)
 	UserInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7185,8 +8185,8 @@ func (j *jsiiProxy_IamAccessKey) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_IamAccessKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamAccessKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7425,7 +8425,7 @@ func (j *jsiiProxy_IamAccessKey) UserInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key.html aws_iam_access_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key aws_iam_access_key} Resource.
 func NewIamAccessKey(scope constructs.Construct, id *string, config *IamAccessKeyConfig) IamAccessKey {
 	_init_.Initialize()
 
@@ -7440,7 +8440,7 @@ func NewIamAccessKey(scope constructs.Construct, id *string, config *IamAccessKe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key.html aws_iam_access_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key aws_iam_access_key} Resource.
 func NewIamAccessKey_Override(i IamAccessKey, scope constructs.Construct, id *string, config *IamAccessKeyConfig) {
 	_init_.Initialize()
 
@@ -7451,7 +8451,7 @@ func NewIamAccessKey_Override(i IamAccessKey, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_IamAccessKey) SetCount(val interface{}) {
+func (j *jsiiProxy_IamAccessKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7547,12 +8547,40 @@ func (i *jsiiProxy_IamAccessKey) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamAccessKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamAccessKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccessKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7589,12 +8617,54 @@ func (i *jsiiProxy_IamAccessKey) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (i *jsiiProxy_IamAccessKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccessKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamAccessKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccessKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7711,22 +8781,22 @@ func (i *jsiiProxy_IamAccessKey) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamAccessKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key.html#user IamAccessKey#user}.
-	User *string `json:"user"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key.html#pgp_key IamAccessKey#pgp_key}.
-	PgpKey *string `json:"pgpKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key.html#status IamAccessKey#status}.
-	Status *string `json:"status"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key#user IamAccessKey#user}.
+	User *string `json:"user" yaml:"user"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key#pgp_key IamAccessKey#pgp_key}.
+	PgpKey *string `json:"pgpKey" yaml:"pgpKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_access_key#status IamAccessKey#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias.html aws_iam_account_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias aws_iam_account_alias}.
 type IamAccountAlias interface {
 	cdktf.TerraformResource
 	AccountAlias() *string
@@ -7734,8 +8804,8 @@ type IamAccountAlias interface {
 	AccountAliasInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7751,10 +8821,15 @@ type IamAccountAlias interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7809,8 +8884,8 @@ func (j *jsiiProxy_IamAccountAlias) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_IamAccountAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamAccountAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7929,7 +9004,7 @@ func (j *jsiiProxy_IamAccountAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias.html aws_iam_account_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias aws_iam_account_alias} Resource.
 func NewIamAccountAlias(scope constructs.Construct, id *string, config *IamAccountAliasConfig) IamAccountAlias {
 	_init_.Initialize()
 
@@ -7944,7 +9019,7 @@ func NewIamAccountAlias(scope constructs.Construct, id *string, config *IamAccou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias.html aws_iam_account_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias aws_iam_account_alias} Resource.
 func NewIamAccountAlias_Override(i IamAccountAlias, scope constructs.Construct, id *string, config *IamAccountAliasConfig) {
 	_init_.Initialize()
 
@@ -7963,7 +9038,7 @@ func (j *jsiiProxy_IamAccountAlias) SetAccountAlias(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IamAccountAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_IamAccountAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8035,12 +9110,40 @@ func (i *jsiiProxy_IamAccountAlias) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (i *jsiiProxy_IamAccountAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamAccountAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccountAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8077,12 +9180,54 @@ func (i *jsiiProxy_IamAccountAlias) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (i *jsiiProxy_IamAccountAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccountAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamAccountAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccountAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8183,18 +9328,18 @@ func (i *jsiiProxy_IamAccountAlias) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamAccountAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias.html#account_alias IamAccountAlias#account_alias}.
-	AccountAlias *string `json:"accountAlias"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_alias#account_alias IamAccountAlias#account_alias}.
+	AccountAlias *string `json:"accountAlias" yaml:"accountAlias"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html aws_iam_account_password_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy aws_iam_account_password_policy}.
 type IamAccountPasswordPolicy interface {
 	cdktf.TerraformResource
 	AllowUsersToChangePassword() interface{}
@@ -8202,11 +9347,11 @@ type IamAccountPasswordPolicy interface {
 	AllowUsersToChangePasswordInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	ExpirePasswords() interface{}
+	ExpirePasswords() cdktf.IResolvable
 	Fqn() *string
 	FriendlyUniqueId() *string
 	HardExpiry() interface{}
@@ -8244,10 +9389,15 @@ type IamAccountPasswordPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllowUsersToChangePassword()
@@ -8311,8 +9461,8 @@ func (j *jsiiProxy_IamAccountPasswordPolicy) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_IamAccountPasswordPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamAccountPasswordPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8331,8 +9481,8 @@ func (j *jsiiProxy_IamAccountPasswordPolicy) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_IamAccountPasswordPolicy) ExpirePasswords() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamAccountPasswordPolicy) ExpirePasswords() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"expirePasswords",
@@ -8601,7 +9751,7 @@ func (j *jsiiProxy_IamAccountPasswordPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html aws_iam_account_password_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy aws_iam_account_password_policy} Resource.
 func NewIamAccountPasswordPolicy(scope constructs.Construct, id *string, config *IamAccountPasswordPolicyConfig) IamAccountPasswordPolicy {
 	_init_.Initialize()
 
@@ -8616,7 +9766,7 @@ func NewIamAccountPasswordPolicy(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html aws_iam_account_password_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy aws_iam_account_password_policy} Resource.
 func NewIamAccountPasswordPolicy_Override(i IamAccountPasswordPolicy, scope constructs.Construct, id *string, config *IamAccountPasswordPolicyConfig) {
 	_init_.Initialize()
 
@@ -8635,7 +9785,7 @@ func (j *jsiiProxy_IamAccountPasswordPolicy) SetAllowUsersToChangePassword(val i
 	)
 }
 
-func (j *jsiiProxy_IamAccountPasswordPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_IamAccountPasswordPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8771,12 +9921,40 @@ func (i *jsiiProxy_IamAccountPasswordPolicy) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (i *jsiiProxy_IamAccountPasswordPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamAccountPasswordPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccountPasswordPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8813,12 +9991,54 @@ func (i *jsiiProxy_IamAccountPasswordPolicy) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (i *jsiiProxy_IamAccountPasswordPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccountPasswordPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamAccountPasswordPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamAccountPasswordPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8991,41 +10211,41 @@ func (i *jsiiProxy_IamAccountPasswordPolicy) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamAccountPasswordPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#allow_users_to_change_password IamAccountPasswordPolicy#allow_users_to_change_password}.
-	AllowUsersToChangePassword interface{} `json:"allowUsersToChangePassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#hard_expiry IamAccountPasswordPolicy#hard_expiry}.
-	HardExpiry interface{} `json:"hardExpiry"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#max_password_age IamAccountPasswordPolicy#max_password_age}.
-	MaxPasswordAge *float64 `json:"maxPasswordAge"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#minimum_password_length IamAccountPasswordPolicy#minimum_password_length}.
-	MinimumPasswordLength *float64 `json:"minimumPasswordLength"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#password_reuse_prevention IamAccountPasswordPolicy#password_reuse_prevention}.
-	PasswordReusePrevention *float64 `json:"passwordReusePrevention"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#require_lowercase_characters IamAccountPasswordPolicy#require_lowercase_characters}.
-	RequireLowercaseCharacters interface{} `json:"requireLowercaseCharacters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#require_numbers IamAccountPasswordPolicy#require_numbers}.
-	RequireNumbers interface{} `json:"requireNumbers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#require_symbols IamAccountPasswordPolicy#require_symbols}.
-	RequireSymbols interface{} `json:"requireSymbols"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy.html#require_uppercase_characters IamAccountPasswordPolicy#require_uppercase_characters}.
-	RequireUppercaseCharacters interface{} `json:"requireUppercaseCharacters"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#allow_users_to_change_password IamAccountPasswordPolicy#allow_users_to_change_password}.
+	AllowUsersToChangePassword interface{} `json:"allowUsersToChangePassword" yaml:"allowUsersToChangePassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#hard_expiry IamAccountPasswordPolicy#hard_expiry}.
+	HardExpiry interface{} `json:"hardExpiry" yaml:"hardExpiry"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#max_password_age IamAccountPasswordPolicy#max_password_age}.
+	MaxPasswordAge *float64 `json:"maxPasswordAge" yaml:"maxPasswordAge"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#minimum_password_length IamAccountPasswordPolicy#minimum_password_length}.
+	MinimumPasswordLength *float64 `json:"minimumPasswordLength" yaml:"minimumPasswordLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#password_reuse_prevention IamAccountPasswordPolicy#password_reuse_prevention}.
+	PasswordReusePrevention *float64 `json:"passwordReusePrevention" yaml:"passwordReusePrevention"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#require_lowercase_characters IamAccountPasswordPolicy#require_lowercase_characters}.
+	RequireLowercaseCharacters interface{} `json:"requireLowercaseCharacters" yaml:"requireLowercaseCharacters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#require_numbers IamAccountPasswordPolicy#require_numbers}.
+	RequireNumbers interface{} `json:"requireNumbers" yaml:"requireNumbers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#require_symbols IamAccountPasswordPolicy#require_symbols}.
+	RequireSymbols interface{} `json:"requireSymbols" yaml:"requireSymbols"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_account_password_policy#require_uppercase_characters IamAccountPasswordPolicy#require_uppercase_characters}.
+	RequireUppercaseCharacters interface{} `json:"requireUppercaseCharacters" yaml:"requireUppercaseCharacters"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group.html aws_iam_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group aws_iam_group}.
 type IamGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9048,10 +10268,15 @@ type IamGroup interface {
 	TerraformResourceType() *string
 	UniqueId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -9097,8 +10322,8 @@ func (j *jsiiProxy_IamGroup) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9267,7 +10492,7 @@ func (j *jsiiProxy_IamGroup) UniqueId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group.html aws_iam_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group aws_iam_group} Resource.
 func NewIamGroup(scope constructs.Construct, id *string, config *IamGroupConfig) IamGroup {
 	_init_.Initialize()
 
@@ -9282,7 +10507,7 @@ func NewIamGroup(scope constructs.Construct, id *string, config *IamGroupConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group.html aws_iam_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group aws_iam_group} Resource.
 func NewIamGroup_Override(i IamGroup, scope constructs.Construct, id *string, config *IamGroupConfig) {
 	_init_.Initialize()
 
@@ -9293,7 +10518,7 @@ func NewIamGroup_Override(i IamGroup, scope constructs.Construct, id *string, co
 	)
 }
 
-func (j *jsiiProxy_IamGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_IamGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9381,12 +10606,40 @@ func (i *jsiiProxy_IamGroup) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9423,12 +10676,54 @@ func (i *jsiiProxy_IamGroup) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9537,26 +10832,26 @@ func (i *jsiiProxy_IamGroup) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group.html#name IamGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group.html#path IamGroup#path}.
-	Path *string `json:"path"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group#name IamGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group#path IamGroup#path}.
+	Path *string `json:"path" yaml:"path"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership.html aws_iam_group_membership}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership aws_iam_group_membership}.
 type IamGroupMembership interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9581,10 +10876,15 @@ type IamGroupMembership interface {
 	SetUsers(val *[]*string)
 	UsersInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -9619,8 +10919,8 @@ func (j *jsiiProxy_IamGroupMembership) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_IamGroupMembership) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamGroupMembership) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9799,7 +11099,7 @@ func (j *jsiiProxy_IamGroupMembership) UsersInput() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership.html aws_iam_group_membership} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership aws_iam_group_membership} Resource.
 func NewIamGroupMembership(scope constructs.Construct, id *string, config *IamGroupMembershipConfig) IamGroupMembership {
 	_init_.Initialize()
 
@@ -9814,7 +11114,7 @@ func NewIamGroupMembership(scope constructs.Construct, id *string, config *IamGr
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership.html aws_iam_group_membership} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership aws_iam_group_membership} Resource.
 func NewIamGroupMembership_Override(i IamGroupMembership, scope constructs.Construct, id *string, config *IamGroupMembershipConfig) {
 	_init_.Initialize()
 
@@ -9825,7 +11125,7 @@ func NewIamGroupMembership_Override(i IamGroupMembership, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_IamGroupMembership) SetCount(val interface{}) {
+func (j *jsiiProxy_IamGroupMembership) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9921,12 +11221,40 @@ func (i *jsiiProxy_IamGroupMembership) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroupMembership) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroupMembership) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupMembership) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9963,12 +11291,54 @@ func (i *jsiiProxy_IamGroupMembership) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroupMembership) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupMembership) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroupMembership) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupMembership) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10069,28 +11439,28 @@ func (i *jsiiProxy_IamGroupMembership) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamGroupMembershipConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership.html#group IamGroupMembership#group}.
-	Group *string `json:"group"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership.html#name IamGroupMembership#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership.html#users IamGroupMembership#users}.
-	Users *[]*string `json:"users"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership#group IamGroupMembership#group}.
+	Group *string `json:"group" yaml:"group"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership#name IamGroupMembership#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_membership#users IamGroupMembership#users}.
+	Users *[]*string `json:"users" yaml:"users"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy.html aws_iam_group_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy aws_iam_group_policy}.
 type IamGroupPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10118,10 +11488,15 @@ type IamGroupPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -10158,8 +11533,8 @@ func (j *jsiiProxy_IamGroupPolicy) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_IamGroupPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamGroupPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10358,7 +11733,7 @@ func (j *jsiiProxy_IamGroupPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy.html aws_iam_group_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy aws_iam_group_policy} Resource.
 func NewIamGroupPolicy(scope constructs.Construct, id *string, config *IamGroupPolicyConfig) IamGroupPolicy {
 	_init_.Initialize()
 
@@ -10373,7 +11748,7 @@ func NewIamGroupPolicy(scope constructs.Construct, id *string, config *IamGroupP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy.html aws_iam_group_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy aws_iam_group_policy} Resource.
 func NewIamGroupPolicy_Override(i IamGroupPolicy, scope constructs.Construct, id *string, config *IamGroupPolicyConfig) {
 	_init_.Initialize()
 
@@ -10384,7 +11759,7 @@ func NewIamGroupPolicy_Override(i IamGroupPolicy, scope constructs.Construct, id
 	)
 }
 
-func (j *jsiiProxy_IamGroupPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_IamGroupPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10488,12 +11863,40 @@ func (i *jsiiProxy_IamGroupPolicy) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroupPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroupPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10530,12 +11933,54 @@ func (i *jsiiProxy_IamGroupPolicy) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroupPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroupPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10649,13 +12094,13 @@ func (i *jsiiProxy_IamGroupPolicy) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment.html aws_iam_group_policy_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment aws_iam_group_policy_attachment}.
 type IamGroupPolicyAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10677,10 +12122,15 @@ type IamGroupPolicyAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -10715,8 +12165,8 @@ func (j *jsiiProxy_IamGroupPolicyAttachment) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_IamGroupPolicyAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamGroupPolicyAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10875,7 +12325,7 @@ func (j *jsiiProxy_IamGroupPolicyAttachment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment.html aws_iam_group_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment aws_iam_group_policy_attachment} Resource.
 func NewIamGroupPolicyAttachment(scope constructs.Construct, id *string, config *IamGroupPolicyAttachmentConfig) IamGroupPolicyAttachment {
 	_init_.Initialize()
 
@@ -10890,7 +12340,7 @@ func NewIamGroupPolicyAttachment(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment.html aws_iam_group_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment aws_iam_group_policy_attachment} Resource.
 func NewIamGroupPolicyAttachment_Override(i IamGroupPolicyAttachment, scope constructs.Construct, id *string, config *IamGroupPolicyAttachmentConfig) {
 	_init_.Initialize()
 
@@ -10901,7 +12351,7 @@ func NewIamGroupPolicyAttachment_Override(i IamGroupPolicyAttachment, scope cons
 	)
 }
 
-func (j *jsiiProxy_IamGroupPolicyAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_IamGroupPolicyAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10989,12 +12439,40 @@ func (i *jsiiProxy_IamGroupPolicyAttachment) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroupPolicyAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroupPolicyAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupPolicyAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11031,12 +12509,54 @@ func (i *jsiiProxy_IamGroupPolicyAttachment) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (i *jsiiProxy_IamGroupPolicyAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupPolicyAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamGroupPolicyAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamGroupPolicyAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11137,47 +12657,47 @@ func (i *jsiiProxy_IamGroupPolicyAttachment) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamGroupPolicyAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment.html#group IamGroupPolicyAttachment#group}.
-	Group *string `json:"group"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment.html#policy_arn IamGroupPolicyAttachment#policy_arn}.
-	PolicyArn *string `json:"policyArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment#group IamGroupPolicyAttachment#group}.
+	Group *string `json:"group" yaml:"group"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy_attachment#policy_arn IamGroupPolicyAttachment#policy_arn}.
+	PolicyArn *string `json:"policyArn" yaml:"policyArn"`
 }
 
 // AWS Identity and Access Management.
 type IamGroupPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy.html#group IamGroupPolicy#group}.
-	Group *string `json:"group"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy.html#policy IamGroupPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy.html#name IamGroupPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy.html#name_prefix IamGroupPolicy#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy#group IamGroupPolicy#group}.
+	Group *string `json:"group" yaml:"group"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy#policy IamGroupPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy#name IamGroupPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_group_policy#name_prefix IamGroupPolicy#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html aws_iam_instance_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile aws_iam_instance_profile}.
 type IamInstanceProfile interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -11202,21 +12722,26 @@ type IamInstanceProfile interface {
 	Role() *string
 	SetRole(val *string)
 	RoleInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UniqueId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -11267,8 +12792,8 @@ func (j *jsiiProxy_IamInstanceProfile) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_IamInstanceProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamInstanceProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11447,8 +12972,8 @@ func (j *jsiiProxy_IamInstanceProfile) RoleInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_IamInstanceProfile) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamInstanceProfile) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -11457,8 +12982,8 @@ func (j *jsiiProxy_IamInstanceProfile) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamInstanceProfile) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamInstanceProfile) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -11467,8 +12992,8 @@ func (j *jsiiProxy_IamInstanceProfile) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamInstanceProfile) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamInstanceProfile) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -11477,8 +13002,8 @@ func (j *jsiiProxy_IamInstanceProfile) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamInstanceProfile) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamInstanceProfile) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -11527,7 +13052,7 @@ func (j *jsiiProxy_IamInstanceProfile) UniqueId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html aws_iam_instance_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile aws_iam_instance_profile} Resource.
 func NewIamInstanceProfile(scope constructs.Construct, id *string, config *IamInstanceProfileConfig) IamInstanceProfile {
 	_init_.Initialize()
 
@@ -11542,7 +13067,7 @@ func NewIamInstanceProfile(scope constructs.Construct, id *string, config *IamIn
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html aws_iam_instance_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile aws_iam_instance_profile} Resource.
 func NewIamInstanceProfile_Override(i IamInstanceProfile, scope constructs.Construct, id *string, config *IamInstanceProfileConfig) {
 	_init_.Initialize()
 
@@ -11553,7 +13078,7 @@ func NewIamInstanceProfile_Override(i IamInstanceProfile, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_IamInstanceProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_IamInstanceProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11617,7 +13142,7 @@ func (j *jsiiProxy_IamInstanceProfile) SetRole(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IamInstanceProfile) SetTags(val interface{}) {
+func (j *jsiiProxy_IamInstanceProfile) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -11625,7 +13150,7 @@ func (j *jsiiProxy_IamInstanceProfile) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamInstanceProfile) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_IamInstanceProfile) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -11673,12 +13198,40 @@ func (i *jsiiProxy_IamInstanceProfile) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (i *jsiiProxy_IamInstanceProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamInstanceProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamInstanceProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11715,12 +13268,54 @@ func (i *jsiiProxy_IamInstanceProfile) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (i *jsiiProxy_IamInstanceProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamInstanceProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamInstanceProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamInstanceProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11869,28 +13464,28 @@ func (i *jsiiProxy_IamInstanceProfile) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamInstanceProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html#name IamInstanceProfile#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html#name_prefix IamInstanceProfile#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html#path IamInstanceProfile#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html#role IamInstanceProfile#role}.
-	Role *string `json:"role"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html#tags IamInstanceProfile#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile.html#tags_all IamInstanceProfile#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile#name IamInstanceProfile#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile#name_prefix IamInstanceProfile#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile#path IamInstanceProfile#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile#role IamInstanceProfile#role}.
+	Role *string `json:"role" yaml:"role"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile#tags IamInstanceProfile#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_instance_profile#tags_all IamInstanceProfile#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html aws_iam_openid_connect_provider}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider aws_iam_openid_connect_provider}.
 type IamOpenidConnectProvider interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -11899,8 +13494,8 @@ type IamOpenidConnectProvider interface {
 	SetClientIdList(val *[]*string)
 	ClientIdListInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -11912,12 +13507,12 @@ type IamOpenidConnectProvider interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -11928,10 +13523,15 @@ type IamOpenidConnectProvider interface {
 	SetUrl(val *string)
 	UrlInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -11998,8 +13598,8 @@ func (j *jsiiProxy_IamOpenidConnectProvider) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamOpenidConnectProvider) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12088,8 +13688,8 @@ func (j *jsiiProxy_IamOpenidConnectProvider) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamOpenidConnectProvider) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -12098,8 +13698,8 @@ func (j *jsiiProxy_IamOpenidConnectProvider) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamOpenidConnectProvider) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -12108,8 +13708,8 @@ func (j *jsiiProxy_IamOpenidConnectProvider) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamOpenidConnectProvider) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -12118,8 +13718,8 @@ func (j *jsiiProxy_IamOpenidConnectProvider) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamOpenidConnectProvider) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -12198,7 +13798,7 @@ func (j *jsiiProxy_IamOpenidConnectProvider) UrlInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html aws_iam_openid_connect_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider aws_iam_openid_connect_provider} Resource.
 func NewIamOpenidConnectProvider(scope constructs.Construct, id *string, config *IamOpenidConnectProviderConfig) IamOpenidConnectProvider {
 	_init_.Initialize()
 
@@ -12213,7 +13813,7 @@ func NewIamOpenidConnectProvider(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html aws_iam_openid_connect_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider aws_iam_openid_connect_provider} Resource.
 func NewIamOpenidConnectProvider_Override(i IamOpenidConnectProvider, scope constructs.Construct, id *string, config *IamOpenidConnectProviderConfig) {
 	_init_.Initialize()
 
@@ -12232,7 +13832,7 @@ func (j *jsiiProxy_IamOpenidConnectProvider) SetClientIdList(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) SetCount(val interface{}) {
+func (j *jsiiProxy_IamOpenidConnectProvider) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12264,7 +13864,7 @@ func (j *jsiiProxy_IamOpenidConnectProvider) SetProvider(val cdktf.TerraformProv
 	)
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) SetTags(val interface{}) {
+func (j *jsiiProxy_IamOpenidConnectProvider) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -12272,7 +13872,7 @@ func (j *jsiiProxy_IamOpenidConnectProvider) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamOpenidConnectProvider) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_IamOpenidConnectProvider) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -12336,12 +13936,40 @@ func (i *jsiiProxy_IamOpenidConnectProvider) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (i *jsiiProxy_IamOpenidConnectProvider) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamOpenidConnectProvider) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamOpenidConnectProvider) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12378,12 +14006,54 @@ func (i *jsiiProxy_IamOpenidConnectProvider) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (i *jsiiProxy_IamOpenidConnectProvider) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamOpenidConnectProvider) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamOpenidConnectProvider) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamOpenidConnectProvider) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12500,33 +14170,33 @@ func (i *jsiiProxy_IamOpenidConnectProvider) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamOpenidConnectProviderConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html#client_id_list IamOpenidConnectProvider#client_id_list}.
-	ClientIdList *[]*string `json:"clientIdList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html#thumbprint_list IamOpenidConnectProvider#thumbprint_list}.
-	ThumbprintList *[]*string `json:"thumbprintList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html#url IamOpenidConnectProvider#url}.
-	Url *string `json:"url"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html#tags IamOpenidConnectProvider#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider.html#tags_all IamOpenidConnectProvider#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider#client_id_list IamOpenidConnectProvider#client_id_list}.
+	ClientIdList *[]*string `json:"clientIdList" yaml:"clientIdList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider#thumbprint_list IamOpenidConnectProvider#thumbprint_list}.
+	ThumbprintList *[]*string `json:"thumbprintList" yaml:"thumbprintList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider#url IamOpenidConnectProvider#url}.
+	Url *string `json:"url" yaml:"url"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider#tags IamOpenidConnectProvider#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_openid_connect_provider#tags_all IamOpenidConnectProvider#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html aws_iam_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_policy aws_iam_policy}.
 type IamPolicy interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -12554,20 +14224,25 @@ type IamPolicy interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -12618,8 +14293,8 @@ func (j *jsiiProxy_IamPolicy) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12818,8 +14493,8 @@ func (j *jsiiProxy_IamPolicy) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamPolicy) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamPolicy) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -12828,8 +14503,8 @@ func (j *jsiiProxy_IamPolicy) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamPolicy) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamPolicy) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -12838,8 +14513,8 @@ func (j *jsiiProxy_IamPolicy) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamPolicy) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamPolicy) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -12848,8 +14523,8 @@ func (j *jsiiProxy_IamPolicy) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamPolicy) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamPolicy) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -12888,7 +14563,7 @@ func (j *jsiiProxy_IamPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html aws_iam_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy aws_iam_policy} Resource.
 func NewIamPolicy(scope constructs.Construct, id *string, config *IamPolicyConfig) IamPolicy {
 	_init_.Initialize()
 
@@ -12903,7 +14578,7 @@ func NewIamPolicy(scope constructs.Construct, id *string, config *IamPolicyConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html aws_iam_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy aws_iam_policy} Resource.
 func NewIamPolicy_Override(i IamPolicy, scope constructs.Construct, id *string, config *IamPolicyConfig) {
 	_init_.Initialize()
 
@@ -12914,7 +14589,7 @@ func NewIamPolicy_Override(i IamPolicy, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_IamPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_IamPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12986,7 +14661,7 @@ func (j *jsiiProxy_IamPolicy) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_IamPolicy) SetTags(val interface{}) {
+func (j *jsiiProxy_IamPolicy) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -12994,7 +14669,7 @@ func (j *jsiiProxy_IamPolicy) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamPolicy) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_IamPolicy) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -13042,12 +14717,40 @@ func (i *jsiiProxy_IamPolicy) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13084,12 +14787,54 @@ func (i *jsiiProxy_IamPolicy) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (i *jsiiProxy_IamPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13235,13 +14980,13 @@ func (i *jsiiProxy_IamPolicy) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html aws_iam_policy_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment aws_iam_policy_attachment}.
 type IamPolicyAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13272,10 +15017,15 @@ type IamPolicyAttachment interface {
 	SetUsers(val *[]*string)
 	UsersInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetGroups()
@@ -13313,8 +15063,8 @@ func (j *jsiiProxy_IamPolicyAttachment) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_IamPolicyAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamPolicyAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13533,7 +15283,7 @@ func (j *jsiiProxy_IamPolicyAttachment) UsersInput() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html aws_iam_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment aws_iam_policy_attachment} Resource.
 func NewIamPolicyAttachment(scope constructs.Construct, id *string, config *IamPolicyAttachmentConfig) IamPolicyAttachment {
 	_init_.Initialize()
 
@@ -13548,7 +15298,7 @@ func NewIamPolicyAttachment(scope constructs.Construct, id *string, config *IamP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html aws_iam_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment aws_iam_policy_attachment} Resource.
 func NewIamPolicyAttachment_Override(i IamPolicyAttachment, scope constructs.Construct, id *string, config *IamPolicyAttachmentConfig) {
 	_init_.Initialize()
 
@@ -13559,7 +15309,7 @@ func NewIamPolicyAttachment_Override(i IamPolicyAttachment, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_IamPolicyAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_IamPolicyAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13671,12 +15421,40 @@ func (i *jsiiProxy_IamPolicyAttachment) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (i *jsiiProxy_IamPolicyAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamPolicyAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamPolicyAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13713,12 +15491,54 @@ func (i *jsiiProxy_IamPolicyAttachment) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (i *jsiiProxy_IamPolicyAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamPolicyAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamPolicyAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamPolicyAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13843,52 +15663,52 @@ func (i *jsiiProxy_IamPolicyAttachment) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamPolicyAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html#name IamPolicyAttachment#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html#policy_arn IamPolicyAttachment#policy_arn}.
-	PolicyArn *string `json:"policyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html#groups IamPolicyAttachment#groups}.
-	Groups *[]*string `json:"groups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html#roles IamPolicyAttachment#roles}.
-	Roles *[]*string `json:"roles"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment.html#users IamPolicyAttachment#users}.
-	Users *[]*string `json:"users"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment#name IamPolicyAttachment#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment#policy_arn IamPolicyAttachment#policy_arn}.
+	PolicyArn *string `json:"policyArn" yaml:"policyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment#groups IamPolicyAttachment#groups}.
+	Groups *[]*string `json:"groups" yaml:"groups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment#roles IamPolicyAttachment#roles}.
+	Roles *[]*string `json:"roles" yaml:"roles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy_attachment#users IamPolicyAttachment#users}.
+	Users *[]*string `json:"users" yaml:"users"`
 }
 
 // AWS Identity and Access Management.
 type IamPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html#policy IamPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html#description IamPolicy#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html#name IamPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html#name_prefix IamPolicy#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html#path IamPolicy#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html#tags IamPolicy#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy.html#tags_all IamPolicy#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy#policy IamPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy#description IamPolicy#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy#name IamPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy#name_prefix IamPolicy#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy#path IamPolicy#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy#tags IamPolicy#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_policy#tags_all IamPolicy#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html aws_iam_role}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_role aws_iam_role}.
 type IamRole interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -13897,8 +15717,8 @@ type IamRole interface {
 	AssumeRolePolicyInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -13911,9 +15731,9 @@ type IamRole interface {
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
-	InlinePolicy() *[]*IamRoleInlinePolicy
-	SetInlinePolicy(val *[]*IamRoleInlinePolicy)
-	InlinePolicyInput() *[]*IamRoleInlinePolicy
+	InlinePolicy() interface{}
+	SetInlinePolicy(val interface{})
+	InlinePolicyInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	ManagedPolicyArns() *[]*string
@@ -13938,21 +15758,26 @@ type IamRole interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UniqueId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -14028,8 +15853,8 @@ func (j *jsiiProxy_IamRole) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamRole) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamRole) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14128,8 +15953,8 @@ func (j *jsiiProxy_IamRole) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_IamRole) InlinePolicy() *[]*IamRoleInlinePolicy {
-	var returns *[]*IamRoleInlinePolicy
+func (j *jsiiProxy_IamRole) InlinePolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"inlinePolicy",
@@ -14138,8 +15963,8 @@ func (j *jsiiProxy_IamRole) InlinePolicy() *[]*IamRoleInlinePolicy {
 	return returns
 }
 
-func (j *jsiiProxy_IamRole) InlinePolicyInput() *[]*IamRoleInlinePolicy {
-	var returns *[]*IamRoleInlinePolicy
+func (j *jsiiProxy_IamRole) InlinePolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"inlinePolicyInput",
@@ -14308,8 +16133,8 @@ func (j *jsiiProxy_IamRole) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamRole) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamRole) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -14318,8 +16143,8 @@ func (j *jsiiProxy_IamRole) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamRole) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamRole) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -14328,8 +16153,8 @@ func (j *jsiiProxy_IamRole) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamRole) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamRole) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -14338,8 +16163,8 @@ func (j *jsiiProxy_IamRole) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamRole) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamRole) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -14388,7 +16213,7 @@ func (j *jsiiProxy_IamRole) UniqueId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html aws_iam_role} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role aws_iam_role} Resource.
 func NewIamRole(scope constructs.Construct, id *string, config *IamRoleConfig) IamRole {
 	_init_.Initialize()
 
@@ -14403,7 +16228,7 @@ func NewIamRole(scope constructs.Construct, id *string, config *IamRoleConfig) I
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html aws_iam_role} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role aws_iam_role} Resource.
 func NewIamRole_Override(i IamRole, scope constructs.Construct, id *string, config *IamRoleConfig) {
 	_init_.Initialize()
 
@@ -14422,7 +16247,7 @@ func (j *jsiiProxy_IamRole) SetAssumeRolePolicy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IamRole) SetCount(val interface{}) {
+func (j *jsiiProxy_IamRole) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14454,7 +16279,7 @@ func (j *jsiiProxy_IamRole) SetForceDetachPolicies(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamRole) SetInlinePolicy(val *[]*IamRoleInlinePolicy) {
+func (j *jsiiProxy_IamRole) SetInlinePolicy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"inlinePolicy",
@@ -14526,7 +16351,7 @@ func (j *jsiiProxy_IamRole) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_IamRole) SetTags(val interface{}) {
+func (j *jsiiProxy_IamRole) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -14534,7 +16359,7 @@ func (j *jsiiProxy_IamRole) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamRole) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_IamRole) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -14582,12 +16407,40 @@ func (i *jsiiProxy_IamRole) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamRole) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamRole) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRole) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14624,12 +16477,54 @@ func (i *jsiiProxy_IamRole) GetNumberAttribute(terraformAttribute *string) *floa
 }
 
 // Experimental.
+func (i *jsiiProxy_IamRole) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRole) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamRole) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRole) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14818,55 +16713,55 @@ func (i *jsiiProxy_IamRole) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamRoleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#assume_role_policy IamRole#assume_role_policy}.
-	AssumeRolePolicy *string `json:"assumeRolePolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#description IamRole#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#force_detach_policies IamRole#force_detach_policies}.
-	ForceDetachPolicies interface{} `json:"forceDetachPolicies"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#assume_role_policy IamRole#assume_role_policy}.
+	AssumeRolePolicy *string `json:"assumeRolePolicy" yaml:"assumeRolePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#description IamRole#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#force_detach_policies IamRole#force_detach_policies}.
+	ForceDetachPolicies interface{} `json:"forceDetachPolicies" yaml:"forceDetachPolicies"`
 	// inline_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#inline_policy IamRole#inline_policy}
-	InlinePolicy *[]*IamRoleInlinePolicy `json:"inlinePolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#managed_policy_arns IamRole#managed_policy_arns}.
-	ManagedPolicyArns *[]*string `json:"managedPolicyArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#max_session_duration IamRole#max_session_duration}.
-	MaxSessionDuration *float64 `json:"maxSessionDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#name IamRole#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#name_prefix IamRole#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#path IamRole#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#permissions_boundary IamRole#permissions_boundary}.
-	PermissionsBoundary *string `json:"permissionsBoundary"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#tags IamRole#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#tags_all IamRole#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#inline_policy IamRole#inline_policy}
+	InlinePolicy interface{} `json:"inlinePolicy" yaml:"inlinePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#managed_policy_arns IamRole#managed_policy_arns}.
+	ManagedPolicyArns *[]*string `json:"managedPolicyArns" yaml:"managedPolicyArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#max_session_duration IamRole#max_session_duration}.
+	MaxSessionDuration *float64 `json:"maxSessionDuration" yaml:"maxSessionDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#name IamRole#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#name_prefix IamRole#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#path IamRole#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#permissions_boundary IamRole#permissions_boundary}.
+	PermissionsBoundary *string `json:"permissionsBoundary" yaml:"permissionsBoundary"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#tags IamRole#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#tags_all IamRole#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type IamRoleInlinePolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#name IamRole#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role.html#policy IamRole#policy}.
-	Policy *string `json:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#name IamRole#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role#policy IamRole#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html aws_iam_role_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy aws_iam_role_policy}.
 type IamRolePolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -14894,10 +16789,15 @@ type IamRolePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -14934,8 +16834,8 @@ func (j *jsiiProxy_IamRolePolicy) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_IamRolePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamRolePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15134,7 +17034,7 @@ func (j *jsiiProxy_IamRolePolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html aws_iam_role_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy aws_iam_role_policy} Resource.
 func NewIamRolePolicy(scope constructs.Construct, id *string, config *IamRolePolicyConfig) IamRolePolicy {
 	_init_.Initialize()
 
@@ -15149,7 +17049,7 @@ func NewIamRolePolicy(scope constructs.Construct, id *string, config *IamRolePol
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html aws_iam_role_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy aws_iam_role_policy} Resource.
 func NewIamRolePolicy_Override(i IamRolePolicy, scope constructs.Construct, id *string, config *IamRolePolicyConfig) {
 	_init_.Initialize()
 
@@ -15160,7 +17060,7 @@ func NewIamRolePolicy_Override(i IamRolePolicy, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_IamRolePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_IamRolePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15264,12 +17164,40 @@ func (i *jsiiProxy_IamRolePolicy) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamRolePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamRolePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRolePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15306,12 +17234,54 @@ func (i *jsiiProxy_IamRolePolicy) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (i *jsiiProxy_IamRolePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRolePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamRolePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRolePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15425,13 +17395,13 @@ func (i *jsiiProxy_IamRolePolicy) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment.html aws_iam_role_policy_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment aws_iam_role_policy_attachment}.
 type IamRolePolicyAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -15453,10 +17423,15 @@ type IamRolePolicyAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -15491,8 +17466,8 @@ func (j *jsiiProxy_IamRolePolicyAttachment) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_IamRolePolicyAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamRolePolicyAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15651,7 +17626,7 @@ func (j *jsiiProxy_IamRolePolicyAttachment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment.html aws_iam_role_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment aws_iam_role_policy_attachment} Resource.
 func NewIamRolePolicyAttachment(scope constructs.Construct, id *string, config *IamRolePolicyAttachmentConfig) IamRolePolicyAttachment {
 	_init_.Initialize()
 
@@ -15666,7 +17641,7 @@ func NewIamRolePolicyAttachment(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment.html aws_iam_role_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment aws_iam_role_policy_attachment} Resource.
 func NewIamRolePolicyAttachment_Override(i IamRolePolicyAttachment, scope constructs.Construct, id *string, config *IamRolePolicyAttachmentConfig) {
 	_init_.Initialize()
 
@@ -15677,7 +17652,7 @@ func NewIamRolePolicyAttachment_Override(i IamRolePolicyAttachment, scope constr
 	)
 }
 
-func (j *jsiiProxy_IamRolePolicyAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_IamRolePolicyAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15765,12 +17740,40 @@ func (i *jsiiProxy_IamRolePolicyAttachment) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (i *jsiiProxy_IamRolePolicyAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamRolePolicyAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRolePolicyAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15807,12 +17810,54 @@ func (i *jsiiProxy_IamRolePolicyAttachment) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (i *jsiiProxy_IamRolePolicyAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRolePolicyAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamRolePolicyAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamRolePolicyAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15913,47 +17958,47 @@ func (i *jsiiProxy_IamRolePolicyAttachment) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamRolePolicyAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment.html#policy_arn IamRolePolicyAttachment#policy_arn}.
-	PolicyArn *string `json:"policyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment.html#role IamRolePolicyAttachment#role}.
-	Role *string `json:"role"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment#policy_arn IamRolePolicyAttachment#policy_arn}.
+	PolicyArn *string `json:"policyArn" yaml:"policyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy_attachment#role IamRolePolicyAttachment#role}.
+	Role *string `json:"role" yaml:"role"`
 }
 
 // AWS Identity and Access Management.
 type IamRolePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html#policy IamRolePolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html#role IamRolePolicy#role}.
-	Role *string `json:"role"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html#name IamRolePolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy.html#name_prefix IamRolePolicy#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy#policy IamRolePolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy#role IamRolePolicy#role}.
+	Role *string `json:"role" yaml:"role"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy#name IamRolePolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_role_policy#name_prefix IamRolePolicy#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider.html aws_iam_saml_provider}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider aws_iam_saml_provider}.
 type IamSamlProvider interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -15971,21 +18016,26 @@ type IamSamlProvider interface {
 	SamlMetadataDocument() *string
 	SetSamlMetadataDocument(val *string)
 	SamlMetadataDocumentInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	ValidUntil() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -16032,8 +18082,8 @@ func (j *jsiiProxy_IamSamlProvider) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_IamSamlProvider) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamSamlProvider) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16162,8 +18212,8 @@ func (j *jsiiProxy_IamSamlProvider) SamlMetadataDocumentInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_IamSamlProvider) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamSamlProvider) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -16172,8 +18222,8 @@ func (j *jsiiProxy_IamSamlProvider) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamSamlProvider) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamSamlProvider) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -16182,8 +18232,8 @@ func (j *jsiiProxy_IamSamlProvider) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamSamlProvider) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamSamlProvider) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -16192,8 +18242,8 @@ func (j *jsiiProxy_IamSamlProvider) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamSamlProvider) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamSamlProvider) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -16242,7 +18292,7 @@ func (j *jsiiProxy_IamSamlProvider) ValidUntil() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider.html aws_iam_saml_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider aws_iam_saml_provider} Resource.
 func NewIamSamlProvider(scope constructs.Construct, id *string, config *IamSamlProviderConfig) IamSamlProvider {
 	_init_.Initialize()
 
@@ -16257,7 +18307,7 @@ func NewIamSamlProvider(scope constructs.Construct, id *string, config *IamSamlP
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider.html aws_iam_saml_provider} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider aws_iam_saml_provider} Resource.
 func NewIamSamlProvider_Override(i IamSamlProvider, scope constructs.Construct, id *string, config *IamSamlProviderConfig) {
 	_init_.Initialize()
 
@@ -16268,7 +18318,7 @@ func NewIamSamlProvider_Override(i IamSamlProvider, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_IamSamlProvider) SetCount(val interface{}) {
+func (j *jsiiProxy_IamSamlProvider) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -16316,7 +18366,7 @@ func (j *jsiiProxy_IamSamlProvider) SetSamlMetadataDocument(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IamSamlProvider) SetTags(val interface{}) {
+func (j *jsiiProxy_IamSamlProvider) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -16324,7 +18374,7 @@ func (j *jsiiProxy_IamSamlProvider) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamSamlProvider) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_IamSamlProvider) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -16372,12 +18422,40 @@ func (i *jsiiProxy_IamSamlProvider) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (i *jsiiProxy_IamSamlProvider) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamSamlProvider) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamSamlProvider) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16414,12 +18492,54 @@ func (i *jsiiProxy_IamSamlProvider) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (i *jsiiProxy_IamSamlProvider) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamSamlProvider) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamSamlProvider) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamSamlProvider) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16536,24 +18656,24 @@ func (i *jsiiProxy_IamSamlProvider) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamSamlProviderConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider.html#name IamSamlProvider#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider.html#saml_metadata_document IamSamlProvider#saml_metadata_document}.
-	SamlMetadataDocument *string `json:"samlMetadataDocument"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider.html#tags IamSamlProvider#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider.html#tags_all IamSamlProvider#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider#name IamSamlProvider#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider#saml_metadata_document IamSamlProvider#saml_metadata_document}.
+	SamlMetadataDocument *string `json:"samlMetadataDocument" yaml:"samlMetadataDocument"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider#tags IamSamlProvider#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_saml_provider#tags_all IamSamlProvider#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html aws_iam_server_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate aws_iam_server_certificate}.
 type IamServerCertificate interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -16565,8 +18685,8 @@ type IamServerCertificate interface {
 	SetCertificateChain(val *string)
 	CertificateChainInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Expiration() *string
@@ -16591,21 +18711,26 @@ type IamServerCertificate interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UploadDate() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCertificateChain()
@@ -16696,8 +18821,8 @@ func (j *jsiiProxy_IamServerCertificate) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_IamServerCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamServerCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16876,8 +19001,8 @@ func (j *jsiiProxy_IamServerCertificate) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamServerCertificate) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamServerCertificate) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -16886,8 +19011,8 @@ func (j *jsiiProxy_IamServerCertificate) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamServerCertificate) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamServerCertificate) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -16896,8 +19021,8 @@ func (j *jsiiProxy_IamServerCertificate) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamServerCertificate) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamServerCertificate) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -16906,8 +19031,8 @@ func (j *jsiiProxy_IamServerCertificate) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamServerCertificate) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamServerCertificate) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -16956,7 +19081,7 @@ func (j *jsiiProxy_IamServerCertificate) UploadDate() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html aws_iam_server_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate aws_iam_server_certificate} Resource.
 func NewIamServerCertificate(scope constructs.Construct, id *string, config *IamServerCertificateConfig) IamServerCertificate {
 	_init_.Initialize()
 
@@ -16971,7 +19096,7 @@ func NewIamServerCertificate(scope constructs.Construct, id *string, config *Iam
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html aws_iam_server_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate aws_iam_server_certificate} Resource.
 func NewIamServerCertificate_Override(i IamServerCertificate, scope constructs.Construct, id *string, config *IamServerCertificateConfig) {
 	_init_.Initialize()
 
@@ -16998,7 +19123,7 @@ func (j *jsiiProxy_IamServerCertificate) SetCertificateChain(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IamServerCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_IamServerCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17062,7 +19187,7 @@ func (j *jsiiProxy_IamServerCertificate) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_IamServerCertificate) SetTags(val interface{}) {
+func (j *jsiiProxy_IamServerCertificate) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -17070,7 +19195,7 @@ func (j *jsiiProxy_IamServerCertificate) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamServerCertificate) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_IamServerCertificate) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -17118,12 +19243,40 @@ func (i *jsiiProxy_IamServerCertificate) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (i *jsiiProxy_IamServerCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamServerCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamServerCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17160,12 +19313,54 @@ func (i *jsiiProxy_IamServerCertificate) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (i *jsiiProxy_IamServerCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamServerCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamServerCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamServerCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17314,32 +19509,32 @@ func (i *jsiiProxy_IamServerCertificate) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamServerCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#certificate_body IamServerCertificate#certificate_body}.
-	CertificateBody *string `json:"certificateBody"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#private_key IamServerCertificate#private_key}.
-	PrivateKey *string `json:"privateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#certificate_chain IamServerCertificate#certificate_chain}.
-	CertificateChain *string `json:"certificateChain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#name IamServerCertificate#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#name_prefix IamServerCertificate#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#path IamServerCertificate#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#tags IamServerCertificate#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate.html#tags_all IamServerCertificate#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#certificate_body IamServerCertificate#certificate_body}.
+	CertificateBody *string `json:"certificateBody" yaml:"certificateBody"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#private_key IamServerCertificate#private_key}.
+	PrivateKey *string `json:"privateKey" yaml:"privateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#certificate_chain IamServerCertificate#certificate_chain}.
+	CertificateChain *string `json:"certificateChain" yaml:"certificateChain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#name IamServerCertificate#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#name_prefix IamServerCertificate#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#path IamServerCertificate#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#tags IamServerCertificate#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_server_certificate#tags_all IamServerCertificate#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role.html aws_iam_service_linked_role}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role aws_iam_service_linked_role}.
 type IamServiceLinkedRole interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -17348,8 +19543,8 @@ type IamServiceLinkedRole interface {
 	AwsServiceNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreateDate() *string
 	CustomSuffix() *string
 	SetCustomSuffix(val *string)
@@ -17370,20 +19565,33 @@ type IamServiceLinkedRole interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UniqueId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCustomSuffix()
 	ResetDescription()
 	ResetOverrideLogicalId()
+	ResetTags()
+	ResetTagsAll()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
 	ToString() *string
@@ -17445,8 +19653,8 @@ func (j *jsiiProxy_IamServiceLinkedRole) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_IamServiceLinkedRole) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamServiceLinkedRole) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17605,6 +19813,46 @@ func (j *jsiiProxy_IamServiceLinkedRole) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_IamServiceLinkedRole) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IamServiceLinkedRole) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IamServiceLinkedRole) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IamServiceLinkedRole) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_IamServiceLinkedRole) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -17645,7 +19893,7 @@ func (j *jsiiProxy_IamServiceLinkedRole) UniqueId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role.html aws_iam_service_linked_role} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role aws_iam_service_linked_role} Resource.
 func NewIamServiceLinkedRole(scope constructs.Construct, id *string, config *IamServiceLinkedRoleConfig) IamServiceLinkedRole {
 	_init_.Initialize()
 
@@ -17660,7 +19908,7 @@ func NewIamServiceLinkedRole(scope constructs.Construct, id *string, config *Iam
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role.html aws_iam_service_linked_role} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role aws_iam_service_linked_role} Resource.
 func NewIamServiceLinkedRole_Override(i IamServiceLinkedRole, scope constructs.Construct, id *string, config *IamServiceLinkedRoleConfig) {
 	_init_.Initialize()
 
@@ -17679,7 +19927,7 @@ func (j *jsiiProxy_IamServiceLinkedRole) SetAwsServiceName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IamServiceLinkedRole) SetCount(val interface{}) {
+func (j *jsiiProxy_IamServiceLinkedRole) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17727,6 +19975,22 @@ func (j *jsiiProxy_IamServiceLinkedRole) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
+func (j *jsiiProxy_IamServiceLinkedRole) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IamServiceLinkedRole) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
 // Checks if `x` is a construct.
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
@@ -17767,12 +20031,40 @@ func (i *jsiiProxy_IamServiceLinkedRole) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (i *jsiiProxy_IamServiceLinkedRole) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamServiceLinkedRole) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamServiceLinkedRole) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17809,12 +20101,54 @@ func (i *jsiiProxy_IamServiceLinkedRole) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (i *jsiiProxy_IamServiceLinkedRole) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamServiceLinkedRole) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamServiceLinkedRole) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamServiceLinkedRole) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17868,6 +20202,22 @@ func (i *jsiiProxy_IamServiceLinkedRole) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		i,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IamServiceLinkedRole) ResetTags() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IamServiceLinkedRole) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetTagsAll",
 		nil, // no parameters
 	)
 }
@@ -17931,29 +20281,33 @@ func (i *jsiiProxy_IamServiceLinkedRole) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamServiceLinkedRoleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role.html#aws_service_name IamServiceLinkedRole#aws_service_name}.
-	AwsServiceName *string `json:"awsServiceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role.html#custom_suffix IamServiceLinkedRole#custom_suffix}.
-	CustomSuffix *string `json:"customSuffix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role.html#description IamServiceLinkedRole#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role#aws_service_name IamServiceLinkedRole#aws_service_name}.
+	AwsServiceName *string `json:"awsServiceName" yaml:"awsServiceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role#custom_suffix IamServiceLinkedRole#custom_suffix}.
+	CustomSuffix *string `json:"customSuffix" yaml:"customSuffix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role#description IamServiceLinkedRole#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role#tags IamServiceLinkedRole#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_service_linked_role#tags_all IamServiceLinkedRole#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html aws_iam_user}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user aws_iam_user}.
 type IamUser interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	ForceDestroy() interface{}
@@ -17977,21 +20331,26 @@ type IamUser interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UniqueId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetForceDestroy()
@@ -18041,8 +20400,8 @@ func (j *jsiiProxy_IamUser) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamUser) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUser) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18211,8 +20570,8 @@ func (j *jsiiProxy_IamUser) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamUser) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUser) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -18221,8 +20580,8 @@ func (j *jsiiProxy_IamUser) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamUser) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUser) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -18231,8 +20590,8 @@ func (j *jsiiProxy_IamUser) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamUser) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUser) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -18241,8 +20600,8 @@ func (j *jsiiProxy_IamUser) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_IamUser) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUser) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -18291,7 +20650,7 @@ func (j *jsiiProxy_IamUser) UniqueId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html aws_iam_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user aws_iam_user} Resource.
 func NewIamUser(scope constructs.Construct, id *string, config *IamUserConfig) IamUser {
 	_init_.Initialize()
 
@@ -18306,7 +20665,7 @@ func NewIamUser(scope constructs.Construct, id *string, config *IamUserConfig) I
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html aws_iam_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user aws_iam_user} Resource.
 func NewIamUser_Override(i IamUser, scope constructs.Construct, id *string, config *IamUserConfig) {
 	_init_.Initialize()
 
@@ -18317,7 +20676,7 @@ func NewIamUser_Override(i IamUser, scope constructs.Construct, id *string, conf
 	)
 }
 
-func (j *jsiiProxy_IamUser) SetCount(val interface{}) {
+func (j *jsiiProxy_IamUser) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18381,7 +20740,7 @@ func (j *jsiiProxy_IamUser) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_IamUser) SetTags(val interface{}) {
+func (j *jsiiProxy_IamUser) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -18389,7 +20748,7 @@ func (j *jsiiProxy_IamUser) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_IamUser) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_IamUser) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -18437,12 +20796,40 @@ func (i *jsiiProxy_IamUser) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18479,12 +20866,54 @@ func (i *jsiiProxy_IamUser) GetNumberAttribute(terraformAttribute *string) *floa
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18625,36 +21054,36 @@ func (i *jsiiProxy_IamUser) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamUserConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html#name IamUser#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user#name IamUser#name}.
+	Name *string `json:"name" yaml:"name"`
 	// Delete user even if it has non-Terraform-managed IAM access keys, login profile or MFA devices.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html#force_destroy IamUser#force_destroy}
-	ForceDestroy interface{} `json:"forceDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html#path IamUser#path}.
-	Path *string `json:"path"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html#permissions_boundary IamUser#permissions_boundary}.
-	PermissionsBoundary *string `json:"permissionsBoundary"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html#tags IamUser#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user.html#tags_all IamUser#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user#force_destroy IamUser#force_destroy}
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user#path IamUser#path}.
+	Path *string `json:"path" yaml:"path"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user#permissions_boundary IamUser#permissions_boundary}.
+	PermissionsBoundary *string `json:"permissionsBoundary" yaml:"permissionsBoundary"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user#tags IamUser#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user#tags_all IamUser#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership.html aws_iam_user_group_membership}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership aws_iam_user_group_membership}.
 type IamUserGroupMembership interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -18676,10 +21105,15 @@ type IamUserGroupMembership interface {
 	SetUser(val *string)
 	UserInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -18714,8 +21148,8 @@ func (j *jsiiProxy_IamUserGroupMembership) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_IamUserGroupMembership) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUserGroupMembership) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18874,7 +21308,7 @@ func (j *jsiiProxy_IamUserGroupMembership) UserInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership.html aws_iam_user_group_membership} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership aws_iam_user_group_membership} Resource.
 func NewIamUserGroupMembership(scope constructs.Construct, id *string, config *IamUserGroupMembershipConfig) IamUserGroupMembership {
 	_init_.Initialize()
 
@@ -18889,7 +21323,7 @@ func NewIamUserGroupMembership(scope constructs.Construct, id *string, config *I
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership.html aws_iam_user_group_membership} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership aws_iam_user_group_membership} Resource.
 func NewIamUserGroupMembership_Override(i IamUserGroupMembership, scope constructs.Construct, id *string, config *IamUserGroupMembershipConfig) {
 	_init_.Initialize()
 
@@ -18900,7 +21334,7 @@ func NewIamUserGroupMembership_Override(i IamUserGroupMembership, scope construc
 	)
 }
 
-func (j *jsiiProxy_IamUserGroupMembership) SetCount(val interface{}) {
+func (j *jsiiProxy_IamUserGroupMembership) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18988,12 +21422,40 @@ func (i *jsiiProxy_IamUserGroupMembership) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserGroupMembership) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserGroupMembership) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserGroupMembership) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19030,12 +21492,54 @@ func (i *jsiiProxy_IamUserGroupMembership) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserGroupMembership) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserGroupMembership) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserGroupMembership) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserGroupMembership) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19136,26 +21640,26 @@ func (i *jsiiProxy_IamUserGroupMembership) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamUserGroupMembershipConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership.html#groups IamUserGroupMembership#groups}.
-	Groups *[]*string `json:"groups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership.html#user IamUserGroupMembership#user}.
-	User *string `json:"user"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership#groups IamUserGroupMembership#groups}.
+	Groups *[]*string `json:"groups" yaml:"groups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_group_membership#user IamUserGroupMembership#user}.
+	User *string `json:"user" yaml:"user"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile.html aws_iam_user_login_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile aws_iam_user_login_profile}.
 type IamUserLoginProfile interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EncryptedPassword() *string
@@ -19185,10 +21689,15 @@ type IamUserLoginProfile interface {
 	SetUser(val *string)
 	UserInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -19225,8 +21734,8 @@ func (j *jsiiProxy_IamUserLoginProfile) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_IamUserLoginProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUserLoginProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19445,7 +21954,7 @@ func (j *jsiiProxy_IamUserLoginProfile) UserInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile.html aws_iam_user_login_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile aws_iam_user_login_profile} Resource.
 func NewIamUserLoginProfile(scope constructs.Construct, id *string, config *IamUserLoginProfileConfig) IamUserLoginProfile {
 	_init_.Initialize()
 
@@ -19460,7 +21969,7 @@ func NewIamUserLoginProfile(scope constructs.Construct, id *string, config *IamU
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile.html aws_iam_user_login_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile aws_iam_user_login_profile} Resource.
 func NewIamUserLoginProfile_Override(i IamUserLoginProfile, scope constructs.Construct, id *string, config *IamUserLoginProfileConfig) {
 	_init_.Initialize()
 
@@ -19471,7 +21980,7 @@ func NewIamUserLoginProfile_Override(i IamUserLoginProfile, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_IamUserLoginProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_IamUserLoginProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19575,12 +22084,40 @@ func (i *jsiiProxy_IamUserLoginProfile) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserLoginProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserLoginProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserLoginProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19617,12 +22154,54 @@ func (i *jsiiProxy_IamUserLoginProfile) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserLoginProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserLoginProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserLoginProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserLoginProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19739,30 +22318,30 @@ func (i *jsiiProxy_IamUserLoginProfile) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamUserLoginProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile.html#pgp_key IamUserLoginProfile#pgp_key}.
-	PgpKey *string `json:"pgpKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile.html#user IamUserLoginProfile#user}.
-	User *string `json:"user"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile.html#password_length IamUserLoginProfile#password_length}.
-	PasswordLength *float64 `json:"passwordLength"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile.html#password_reset_required IamUserLoginProfile#password_reset_required}.
-	PasswordResetRequired interface{} `json:"passwordResetRequired"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile#pgp_key IamUserLoginProfile#pgp_key}.
+	PgpKey *string `json:"pgpKey" yaml:"pgpKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile#user IamUserLoginProfile#user}.
+	User *string `json:"user" yaml:"user"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile#password_length IamUserLoginProfile#password_length}.
+	PasswordLength *float64 `json:"passwordLength" yaml:"passwordLength"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_login_profile#password_reset_required IamUserLoginProfile#password_reset_required}.
+	PasswordResetRequired interface{} `json:"passwordResetRequired" yaml:"passwordResetRequired"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy.html aws_iam_user_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy aws_iam_user_policy}.
 type IamUserPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -19790,10 +22369,15 @@ type IamUserPolicy interface {
 	SetUser(val *string)
 	UserInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -19830,8 +22414,8 @@ func (j *jsiiProxy_IamUserPolicy) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_IamUserPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUserPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20030,7 +22614,7 @@ func (j *jsiiProxy_IamUserPolicy) UserInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy.html aws_iam_user_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy aws_iam_user_policy} Resource.
 func NewIamUserPolicy(scope constructs.Construct, id *string, config *IamUserPolicyConfig) IamUserPolicy {
 	_init_.Initialize()
 
@@ -20045,7 +22629,7 @@ func NewIamUserPolicy(scope constructs.Construct, id *string, config *IamUserPol
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy.html aws_iam_user_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy aws_iam_user_policy} Resource.
 func NewIamUserPolicy_Override(i IamUserPolicy, scope constructs.Construct, id *string, config *IamUserPolicyConfig) {
 	_init_.Initialize()
 
@@ -20056,7 +22640,7 @@ func NewIamUserPolicy_Override(i IamUserPolicy, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_IamUserPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_IamUserPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20160,12 +22744,40 @@ func (i *jsiiProxy_IamUserPolicy) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20202,12 +22814,54 @@ func (i *jsiiProxy_IamUserPolicy) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20321,13 +22975,13 @@ func (i *jsiiProxy_IamUserPolicy) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment.html aws_iam_user_policy_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment aws_iam_user_policy_attachment}.
 type IamUserPolicyAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -20349,10 +23003,15 @@ type IamUserPolicyAttachment interface {
 	SetUser(val *string)
 	UserInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -20387,8 +23046,8 @@ func (j *jsiiProxy_IamUserPolicyAttachment) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_IamUserPolicyAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUserPolicyAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20547,7 +23206,7 @@ func (j *jsiiProxy_IamUserPolicyAttachment) UserInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment.html aws_iam_user_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment aws_iam_user_policy_attachment} Resource.
 func NewIamUserPolicyAttachment(scope constructs.Construct, id *string, config *IamUserPolicyAttachmentConfig) IamUserPolicyAttachment {
 	_init_.Initialize()
 
@@ -20562,7 +23221,7 @@ func NewIamUserPolicyAttachment(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment.html aws_iam_user_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment aws_iam_user_policy_attachment} Resource.
 func NewIamUserPolicyAttachment_Override(i IamUserPolicyAttachment, scope constructs.Construct, id *string, config *IamUserPolicyAttachmentConfig) {
 	_init_.Initialize()
 
@@ -20573,7 +23232,7 @@ func NewIamUserPolicyAttachment_Override(i IamUserPolicyAttachment, scope constr
 	)
 }
 
-func (j *jsiiProxy_IamUserPolicyAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_IamUserPolicyAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20661,12 +23320,40 @@ func (i *jsiiProxy_IamUserPolicyAttachment) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserPolicyAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserPolicyAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserPolicyAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20703,12 +23390,54 @@ func (i *jsiiProxy_IamUserPolicyAttachment) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserPolicyAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserPolicyAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserPolicyAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserPolicyAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20809,46 +23538,46 @@ func (i *jsiiProxy_IamUserPolicyAttachment) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamUserPolicyAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment.html#policy_arn IamUserPolicyAttachment#policy_arn}.
-	PolicyArn *string `json:"policyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment.html#user IamUserPolicyAttachment#user}.
-	User *string `json:"user"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment#policy_arn IamUserPolicyAttachment#policy_arn}.
+	PolicyArn *string `json:"policyArn" yaml:"policyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy_attachment#user IamUserPolicyAttachment#user}.
+	User *string `json:"user" yaml:"user"`
 }
 
 // AWS Identity and Access Management.
 type IamUserPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy.html#policy IamUserPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy.html#user IamUserPolicy#user}.
-	User *string `json:"user"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy.html#name IamUserPolicy#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy.html#name_prefix IamUserPolicy#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy#policy IamUserPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy#user IamUserPolicy#user}.
+	User *string `json:"user" yaml:"user"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy#name IamUserPolicy#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_policy#name_prefix IamUserPolicy#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key.html aws_iam_user_ssh_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key aws_iam_user_ssh_key}.
 type IamUserSshKey interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Encoding() *string
@@ -20878,10 +23607,15 @@ type IamUserSshKey interface {
 	SetUsername(val *string)
 	UsernameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -20917,8 +23651,8 @@ func (j *jsiiProxy_IamUserSshKey) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_IamUserSshKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_IamUserSshKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -21137,7 +23871,7 @@ func (j *jsiiProxy_IamUserSshKey) UsernameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key.html aws_iam_user_ssh_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key aws_iam_user_ssh_key} Resource.
 func NewIamUserSshKey(scope constructs.Construct, id *string, config *IamUserSshKeyConfig) IamUserSshKey {
 	_init_.Initialize()
 
@@ -21152,7 +23886,7 @@ func NewIamUserSshKey(scope constructs.Construct, id *string, config *IamUserSsh
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key.html aws_iam_user_ssh_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key aws_iam_user_ssh_key} Resource.
 func NewIamUserSshKey_Override(i IamUserSshKey, scope constructs.Construct, id *string, config *IamUserSshKeyConfig) {
 	_init_.Initialize()
 
@@ -21163,7 +23897,7 @@ func NewIamUserSshKey_Override(i IamUserSshKey, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_IamUserSshKey) SetCount(val interface{}) {
+func (j *jsiiProxy_IamUserSshKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -21267,12 +24001,40 @@ func (i *jsiiProxy_IamUserSshKey) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserSshKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		i,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserSshKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		i,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserSshKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		i,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21309,12 +24071,54 @@ func (i *jsiiProxy_IamUserSshKey) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (i *jsiiProxy_IamUserSshKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserSshKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		i,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (i *jsiiProxy_IamUserSshKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		i,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (i *jsiiProxy_IamUserSshKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		i,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21423,19 +24227,19 @@ func (i *jsiiProxy_IamUserSshKey) ToTerraform() interface{} {
 // AWS Identity and Access Management.
 type IamUserSshKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key.html#encoding IamUserSshKey#encoding}.
-	Encoding *string `json:"encoding"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key.html#public_key IamUserSshKey#public_key}.
-	PublicKey *string `json:"publicKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key.html#username IamUserSshKey#username}.
-	Username *string `json:"username"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key.html#status IamUserSshKey#status}.
-	Status *string `json:"status"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key#encoding IamUserSshKey#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key#public_key IamUserSshKey#public_key}.
+	PublicKey *string `json:"publicKey" yaml:"publicKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key#username IamUserSshKey#username}.
+	Username *string `json:"username" yaml:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/iam_user_ssh_key#status IamUserSshKey#status}.
+	Status *string `json:"status" yaml:"status"`
 }

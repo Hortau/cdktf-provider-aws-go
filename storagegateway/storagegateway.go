@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/storagegateway/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk.html aws_storagegateway_local_disk}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk aws_storagegateway_local_disk}.
 type DataAwsStoragegatewayLocalDisk interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DiskId() *string
@@ -41,10 +41,15 @@ type DataAwsStoragegatewayLocalDisk interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDiskNode()
@@ -81,8 +86,8 @@ func (j *jsiiProxy_DataAwsStoragegatewayLocalDisk) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsStoragegatewayLocalDisk) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsStoragegatewayLocalDisk) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -271,7 +276,7 @@ func (j *jsiiProxy_DataAwsStoragegatewayLocalDisk) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk.html aws_storagegateway_local_disk} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk aws_storagegateway_local_disk} Data Source.
 func NewDataAwsStoragegatewayLocalDisk(scope constructs.Construct, id *string, config *DataAwsStoragegatewayLocalDiskConfig) DataAwsStoragegatewayLocalDisk {
 	_init_.Initialize()
 
@@ -286,7 +291,7 @@ func NewDataAwsStoragegatewayLocalDisk(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk.html aws_storagegateway_local_disk} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk aws_storagegateway_local_disk} Data Source.
 func NewDataAwsStoragegatewayLocalDisk_Override(d DataAwsStoragegatewayLocalDisk, scope constructs.Construct, id *string, config *DataAwsStoragegatewayLocalDiskConfig) {
 	_init_.Initialize()
 
@@ -297,7 +302,7 @@ func NewDataAwsStoragegatewayLocalDisk_Override(d DataAwsStoragegatewayLocalDisk
 	)
 }
 
-func (j *jsiiProxy_DataAwsStoragegatewayLocalDisk) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsStoragegatewayLocalDisk) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -393,12 +398,40 @@ func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) AddOverride(path *string, val
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -435,12 +468,54 @@ func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -557,28 +632,28 @@ func (d *jsiiProxy_DataAwsStoragegatewayLocalDisk) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type DataAwsStoragegatewayLocalDiskConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk.html#gateway_arn DataAwsStoragegatewayLocalDisk#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk.html#disk_node DataAwsStoragegatewayLocalDisk#disk_node}.
-	DiskNode *string `json:"diskNode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk.html#disk_path DataAwsStoragegatewayLocalDisk#disk_path}.
-	DiskPath *string `json:"diskPath"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk#gateway_arn DataAwsStoragegatewayLocalDisk#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk#disk_node DataAwsStoragegatewayLocalDisk#disk_node}.
+	DiskNode *string `json:"diskNode" yaml:"diskNode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/storagegateway_local_disk#disk_path DataAwsStoragegatewayLocalDisk#disk_path}.
+	DiskPath *string `json:"diskPath" yaml:"diskPath"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache.html aws_storagegateway_cache}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache aws_storagegateway_cache}.
 type StoragegatewayCache interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DiskId() *string
@@ -600,10 +675,15 @@ type StoragegatewayCache interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -638,8 +718,8 @@ func (j *jsiiProxy_StoragegatewayCache) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayCache) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayCache) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -798,7 +878,7 @@ func (j *jsiiProxy_StoragegatewayCache) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache.html aws_storagegateway_cache} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache aws_storagegateway_cache} Resource.
 func NewStoragegatewayCache(scope constructs.Construct, id *string, config *StoragegatewayCacheConfig) StoragegatewayCache {
 	_init_.Initialize()
 
@@ -813,7 +893,7 @@ func NewStoragegatewayCache(scope constructs.Construct, id *string, config *Stor
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache.html aws_storagegateway_cache} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache aws_storagegateway_cache} Resource.
 func NewStoragegatewayCache_Override(s StoragegatewayCache, scope constructs.Construct, id *string, config *StoragegatewayCacheConfig) {
 	_init_.Initialize()
 
@@ -824,7 +904,7 @@ func NewStoragegatewayCache_Override(s StoragegatewayCache, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayCache) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayCache) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -912,12 +992,40 @@ func (s *jsiiProxy_StoragegatewayCache) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayCache) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayCache) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayCache) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -954,12 +1062,54 @@ func (s *jsiiProxy_StoragegatewayCache) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayCache) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayCache) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayCache) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayCache) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1060,28 +1210,28 @@ func (s *jsiiProxy_StoragegatewayCache) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type StoragegatewayCacheConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache.html#disk_id StoragegatewayCache#disk_id}.
-	DiskId *string `json:"diskId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache.html#gateway_arn StoragegatewayCache#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache#disk_id StoragegatewayCache#disk_id}.
+	DiskId *string `json:"diskId" yaml:"diskId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cache#gateway_arn StoragegatewayCache#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html aws_storagegateway_cached_iscsi_volume}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume aws_storagegateway_cached_iscsi_volume}.
 type StoragegatewayCachedIscsiVolume interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
-	ChapEnabled() interface{}
+	ChapEnabled() cdktf.IResolvable
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1113,12 +1263,12 @@ type StoragegatewayCachedIscsiVolume interface {
 	SourceVolumeArn() *string
 	SetSourceVolumeArn(val *string)
 	SourceVolumeArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetArn() *string
 	TargetName() *string
 	SetTargetName(val *string)
@@ -1132,10 +1282,15 @@ type StoragegatewayCachedIscsiVolume interface {
 	SetVolumeSizeInBytes(val *float64)
 	VolumeSizeInBytesInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKmsEncrypted()
@@ -1176,8 +1331,8 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) CdktfStack() cdktf.Terraform
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) ChapEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) ChapEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"chapEnabled",
@@ -1196,8 +1351,8 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1426,8 +1581,8 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SourceVolumeArnInput() *stri
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1436,8 +1591,8 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1446,8 +1601,8 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1456,8 +1611,8 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1566,7 +1721,7 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) VolumeSizeInBytesInput() *fl
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html aws_storagegateway_cached_iscsi_volume} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume aws_storagegateway_cached_iscsi_volume} Resource.
 func NewStoragegatewayCachedIscsiVolume(scope constructs.Construct, id *string, config *StoragegatewayCachedIscsiVolumeConfig) StoragegatewayCachedIscsiVolume {
 	_init_.Initialize()
 
@@ -1581,7 +1736,7 @@ func NewStoragegatewayCachedIscsiVolume(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html aws_storagegateway_cached_iscsi_volume} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume aws_storagegateway_cached_iscsi_volume} Resource.
 func NewStoragegatewayCachedIscsiVolume_Override(s StoragegatewayCachedIscsiVolume, scope constructs.Construct, id *string, config *StoragegatewayCachedIscsiVolumeConfig) {
 	_init_.Initialize()
 
@@ -1592,7 +1747,7 @@ func NewStoragegatewayCachedIscsiVolume_Override(s StoragegatewayCachedIscsiVolu
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1672,7 +1827,7 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetSourceVolumeArn(val *stri
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetTags(val interface{}) {
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1680,7 +1835,7 @@ func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_StoragegatewayCachedIscsiVolume) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1744,12 +1899,40 @@ func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) AddOverride(path *string, va
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1786,12 +1969,54 @@ func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1940,36 +2165,36 @@ func (s *jsiiProxy_StoragegatewayCachedIscsiVolume) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type StoragegatewayCachedIscsiVolumeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#gateway_arn StoragegatewayCachedIscsiVolume#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#network_interface_id StoragegatewayCachedIscsiVolume#network_interface_id}.
-	NetworkInterfaceId *string `json:"networkInterfaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#target_name StoragegatewayCachedIscsiVolume#target_name}.
-	TargetName *string `json:"targetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#volume_size_in_bytes StoragegatewayCachedIscsiVolume#volume_size_in_bytes}.
-	VolumeSizeInBytes *float64 `json:"volumeSizeInBytes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#kms_encrypted StoragegatewayCachedIscsiVolume#kms_encrypted}.
-	KmsEncrypted interface{} `json:"kmsEncrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#kms_key StoragegatewayCachedIscsiVolume#kms_key}.
-	KmsKey *string `json:"kmsKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#snapshot_id StoragegatewayCachedIscsiVolume#snapshot_id}.
-	SnapshotId *string `json:"snapshotId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#source_volume_arn StoragegatewayCachedIscsiVolume#source_volume_arn}.
-	SourceVolumeArn *string `json:"sourceVolumeArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#tags StoragegatewayCachedIscsiVolume#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume.html#tags_all StoragegatewayCachedIscsiVolume#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#gateway_arn StoragegatewayCachedIscsiVolume#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#network_interface_id StoragegatewayCachedIscsiVolume#network_interface_id}.
+	NetworkInterfaceId *string `json:"networkInterfaceId" yaml:"networkInterfaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#target_name StoragegatewayCachedIscsiVolume#target_name}.
+	TargetName *string `json:"targetName" yaml:"targetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#volume_size_in_bytes StoragegatewayCachedIscsiVolume#volume_size_in_bytes}.
+	VolumeSizeInBytes *float64 `json:"volumeSizeInBytes" yaml:"volumeSizeInBytes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#kms_encrypted StoragegatewayCachedIscsiVolume#kms_encrypted}.
+	KmsEncrypted interface{} `json:"kmsEncrypted" yaml:"kmsEncrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#kms_key StoragegatewayCachedIscsiVolume#kms_key}.
+	KmsKey *string `json:"kmsKey" yaml:"kmsKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#snapshot_id StoragegatewayCachedIscsiVolume#snapshot_id}.
+	SnapshotId *string `json:"snapshotId" yaml:"snapshotId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#source_volume_arn StoragegatewayCachedIscsiVolume#source_volume_arn}.
+	SourceVolumeArn *string `json:"sourceVolumeArn" yaml:"sourceVolumeArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#tags StoragegatewayCachedIscsiVolume#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_cached_iscsi_volume#tags_all StoragegatewayCachedIscsiVolume#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html aws_storagegateway_file_system_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association aws_storagegateway_file_system_association}.
 type StoragegatewayFileSystemAssociation interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1980,8 +2205,8 @@ type StoragegatewayFileSystemAssociation interface {
 	CacheAttributesInput() *StoragegatewayFileSystemAssociationCacheAttributes
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2002,12 +2227,12 @@ type StoragegatewayFileSystemAssociation interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2015,10 +2240,15 @@ type StoragegatewayFileSystemAssociation interface {
 	SetUsername(val *string)
 	UsernameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCacheAttributes(value *StoragegatewayFileSystemAssociationCacheAttributes)
@@ -2108,8 +2338,8 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2258,8 +2488,8 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) RawOverrides() interface
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2268,8 +2498,8 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2278,8 +2508,8 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2288,8 +2518,8 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsAllInput() interface
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2348,7 +2578,7 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) UsernameInput() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html aws_storagegateway_file_system_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association aws_storagegateway_file_system_association} Resource.
 func NewStoragegatewayFileSystemAssociation(scope constructs.Construct, id *string, config *StoragegatewayFileSystemAssociationConfig) StoragegatewayFileSystemAssociation {
 	_init_.Initialize()
 
@@ -2363,7 +2593,7 @@ func NewStoragegatewayFileSystemAssociation(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html aws_storagegateway_file_system_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association aws_storagegateway_file_system_association} Resource.
 func NewStoragegatewayFileSystemAssociation_Override(s StoragegatewayFileSystemAssociation, scope constructs.Construct, id *string, config *StoragegatewayFileSystemAssociationConfig) {
 	_init_.Initialize()
 
@@ -2382,7 +2612,7 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetAuditDestinationArn(v
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2438,7 +2668,7 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetProvider(val cdktf.Te
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetTags(val interface{}) {
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2446,7 +2676,7 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetTags(val interface{})
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_StoragegatewayFileSystemAssociation) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2502,12 +2732,40 @@ func (s *jsiiProxy_StoragegatewayFileSystemAssociation) AddOverride(path *string
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2544,12 +2802,54 @@ func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2688,8 +2988,8 @@ func (s *jsiiProxy_StoragegatewayFileSystemAssociation) ToTerraform() interface{
 }
 
 type StoragegatewayFileSystemAssociationCacheAttributes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#cache_stale_timeout_in_seconds StoragegatewayFileSystemAssociation#cache_stale_timeout_in_seconds}.
-	CacheStaleTimeoutInSeconds *float64 `json:"cacheStaleTimeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#cache_stale_timeout_in_seconds StoragegatewayFileSystemAssociation#cache_stale_timeout_in_seconds}.
+	CacheStaleTimeoutInSeconds *float64 `json:"cacheStaleTimeoutInSeconds" yaml:"cacheStaleTimeoutInSeconds"`
 }
 
 type StoragegatewayFileSystemAssociationCacheAttributesOutputReference interface {
@@ -2703,12 +3003,17 @@ type StoragegatewayFileSystemAssociationCacheAttributesOutputReference interface
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCacheStaleTimeoutInSeconds()
@@ -2769,8 +3074,8 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2779,7 +3084,7 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 	return returns
 }
 
-func NewStoragegatewayFileSystemAssociationCacheAttributesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewayFileSystemAssociationCacheAttributesOutputReference {
+func NewStoragegatewayFileSystemAssociationCacheAttributesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewayFileSystemAssociationCacheAttributesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference{}
@@ -2793,7 +3098,7 @@ func NewStoragegatewayFileSystemAssociationCacheAttributesOutputReference(terraf
 	return &j
 }
 
-func NewStoragegatewayFileSystemAssociationCacheAttributesOutputReference_Override(s StoragegatewayFileSystemAssociationCacheAttributesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewayFileSystemAssociationCacheAttributesOutputReference_Override(s StoragegatewayFileSystemAssociationCacheAttributesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2835,7 +3140,7 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2844,12 +3149,40 @@ func (j *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2886,12 +3219,54 @@ func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2938,34 +3313,34 @@ func (s *jsiiProxy_StoragegatewayFileSystemAssociationCacheAttributesOutputRefer
 // AWS Storage Gateway.
 type StoragegatewayFileSystemAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#gateway_arn StoragegatewayFileSystemAssociation#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#location_arn StoragegatewayFileSystemAssociation#location_arn}.
-	LocationArn *string `json:"locationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#password StoragegatewayFileSystemAssociation#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#username StoragegatewayFileSystemAssociation#username}.
-	Username *string `json:"username"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#audit_destination_arn StoragegatewayFileSystemAssociation#audit_destination_arn}.
-	AuditDestinationArn *string `json:"auditDestinationArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#gateway_arn StoragegatewayFileSystemAssociation#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#location_arn StoragegatewayFileSystemAssociation#location_arn}.
+	LocationArn *string `json:"locationArn" yaml:"locationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#password StoragegatewayFileSystemAssociation#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#username StoragegatewayFileSystemAssociation#username}.
+	Username *string `json:"username" yaml:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#audit_destination_arn StoragegatewayFileSystemAssociation#audit_destination_arn}.
+	AuditDestinationArn *string `json:"auditDestinationArn" yaml:"auditDestinationArn"`
 	// cache_attributes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#cache_attributes StoragegatewayFileSystemAssociation#cache_attributes}
-	CacheAttributes *StoragegatewayFileSystemAssociationCacheAttributes `json:"cacheAttributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#tags StoragegatewayFileSystemAssociation#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association.html#tags_all StoragegatewayFileSystemAssociation#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#cache_attributes StoragegatewayFileSystemAssociation#cache_attributes}
+	CacheAttributes *StoragegatewayFileSystemAssociationCacheAttributes `json:"cacheAttributes" yaml:"cacheAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#tags StoragegatewayFileSystemAssociation#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_file_system_association#tags_all StoragegatewayFileSystemAssociation#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html aws_storagegateway_gateway}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway aws_storagegateway_gateway}.
 type StoragegatewayGateway interface {
 	cdktf.TerraformResource
 	ActivationKey() *string
@@ -2983,8 +3358,8 @@ type StoragegatewayGateway interface {
 	SetCloudwatchLogGroupArn(val *string)
 	CloudwatchLogGroupArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Ec2InstanceId() *string
@@ -3029,12 +3404,12 @@ type StoragegatewayGateway interface {
 	SmbSecurityStrategy() *string
 	SetSmbSecurityStrategy(val *string)
 	SmbSecurityStrategyInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TapeDriveType() *string
 	SetTapeDriveType(val *string)
 	TapeDriveTypeInput() *string
@@ -3045,10 +3420,15 @@ type StoragegatewayGateway interface {
 	TimeoutsInput() *StoragegatewayGatewayTimeouts
 	AddOverride(path *string, value interface{})
 	GatewayNetworkInterface(index *string) StoragegatewayGatewayGatewayNetworkInterface
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutSmbActiveDirectorySettings(value *StoragegatewayGatewaySmbActiveDirectorySettings)
@@ -3191,8 +3571,8 @@ func (j *jsiiProxy_StoragegatewayGateway) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayGateway) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3521,8 +3901,8 @@ func (j *jsiiProxy_StoragegatewayGateway) SmbSecurityStrategyInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayGateway) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3531,8 +3911,8 @@ func (j *jsiiProxy_StoragegatewayGateway) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayGateway) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3541,8 +3921,8 @@ func (j *jsiiProxy_StoragegatewayGateway) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayGateway) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3551,8 +3931,8 @@ func (j *jsiiProxy_StoragegatewayGateway) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayGateway) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3631,7 +4011,7 @@ func (j *jsiiProxy_StoragegatewayGateway) TimeoutsInput() *StoragegatewayGateway
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html aws_storagegateway_gateway} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway aws_storagegateway_gateway} Resource.
 func NewStoragegatewayGateway(scope constructs.Construct, id *string, config *StoragegatewayGatewayConfig) StoragegatewayGateway {
 	_init_.Initialize()
 
@@ -3646,7 +4026,7 @@ func NewStoragegatewayGateway(scope constructs.Construct, id *string, config *St
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html aws_storagegateway_gateway} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway aws_storagegateway_gateway} Resource.
 func NewStoragegatewayGateway_Override(s StoragegatewayGateway, scope constructs.Construct, id *string, config *StoragegatewayGatewayConfig) {
 	_init_.Initialize()
 
@@ -3689,7 +4069,7 @@ func (j *jsiiProxy_StoragegatewayGateway) SetCloudwatchLogGroupArn(val *string) 
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayGateway) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3793,7 +4173,7 @@ func (j *jsiiProxy_StoragegatewayGateway) SetSmbSecurityStrategy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) SetTags(val interface{}) {
+func (j *jsiiProxy_StoragegatewayGateway) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3801,7 +4181,7 @@ func (j *jsiiProxy_StoragegatewayGateway) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayGateway) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_StoragegatewayGateway) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3870,12 +4250,40 @@ func (s *jsiiProxy_StoragegatewayGateway) GatewayNetworkInterface(index *string)
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayGateway) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayGateway) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGateway) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3912,12 +4320,54 @@ func (s *jsiiProxy_StoragegatewayGateway) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayGateway) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGateway) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayGateway) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGateway) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4162,53 +4612,53 @@ func (s *jsiiProxy_StoragegatewayGateway) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type StoragegatewayGatewayConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#gateway_name StoragegatewayGateway#gateway_name}.
-	GatewayName *string `json:"gatewayName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#gateway_timezone StoragegatewayGateway#gateway_timezone}.
-	GatewayTimezone *string `json:"gatewayTimezone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#activation_key StoragegatewayGateway#activation_key}.
-	ActivationKey *string `json:"activationKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#average_download_rate_limit_in_bits_per_sec StoragegatewayGateway#average_download_rate_limit_in_bits_per_sec}.
-	AverageDownloadRateLimitInBitsPerSec *float64 `json:"averageDownloadRateLimitInBitsPerSec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#average_upload_rate_limit_in_bits_per_sec StoragegatewayGateway#average_upload_rate_limit_in_bits_per_sec}.
-	AverageUploadRateLimitInBitsPerSec *float64 `json:"averageUploadRateLimitInBitsPerSec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#cloudwatch_log_group_arn StoragegatewayGateway#cloudwatch_log_group_arn}.
-	CloudwatchLogGroupArn *string `json:"cloudwatchLogGroupArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#gateway_ip_address StoragegatewayGateway#gateway_ip_address}.
-	GatewayIpAddress *string `json:"gatewayIpAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#gateway_type StoragegatewayGateway#gateway_type}.
-	GatewayType *string `json:"gatewayType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#gateway_vpc_endpoint StoragegatewayGateway#gateway_vpc_endpoint}.
-	GatewayVpcEndpoint *string `json:"gatewayVpcEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#medium_changer_type StoragegatewayGateway#medium_changer_type}.
-	MediumChangerType *string `json:"mediumChangerType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#gateway_name StoragegatewayGateway#gateway_name}.
+	GatewayName *string `json:"gatewayName" yaml:"gatewayName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#gateway_timezone StoragegatewayGateway#gateway_timezone}.
+	GatewayTimezone *string `json:"gatewayTimezone" yaml:"gatewayTimezone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#activation_key StoragegatewayGateway#activation_key}.
+	ActivationKey *string `json:"activationKey" yaml:"activationKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#average_download_rate_limit_in_bits_per_sec StoragegatewayGateway#average_download_rate_limit_in_bits_per_sec}.
+	AverageDownloadRateLimitInBitsPerSec *float64 `json:"averageDownloadRateLimitInBitsPerSec" yaml:"averageDownloadRateLimitInBitsPerSec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#average_upload_rate_limit_in_bits_per_sec StoragegatewayGateway#average_upload_rate_limit_in_bits_per_sec}.
+	AverageUploadRateLimitInBitsPerSec *float64 `json:"averageUploadRateLimitInBitsPerSec" yaml:"averageUploadRateLimitInBitsPerSec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#cloudwatch_log_group_arn StoragegatewayGateway#cloudwatch_log_group_arn}.
+	CloudwatchLogGroupArn *string `json:"cloudwatchLogGroupArn" yaml:"cloudwatchLogGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#gateway_ip_address StoragegatewayGateway#gateway_ip_address}.
+	GatewayIpAddress *string `json:"gatewayIpAddress" yaml:"gatewayIpAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#gateway_type StoragegatewayGateway#gateway_type}.
+	GatewayType *string `json:"gatewayType" yaml:"gatewayType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#gateway_vpc_endpoint StoragegatewayGateway#gateway_vpc_endpoint}.
+	GatewayVpcEndpoint *string `json:"gatewayVpcEndpoint" yaml:"gatewayVpcEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#medium_changer_type StoragegatewayGateway#medium_changer_type}.
+	MediumChangerType *string `json:"mediumChangerType" yaml:"mediumChangerType"`
 	// smb_active_directory_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#smb_active_directory_settings StoragegatewayGateway#smb_active_directory_settings}
-	SmbActiveDirectorySettings *StoragegatewayGatewaySmbActiveDirectorySettings `json:"smbActiveDirectorySettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#smb_file_share_visibility StoragegatewayGateway#smb_file_share_visibility}.
-	SmbFileShareVisibility interface{} `json:"smbFileShareVisibility"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#smb_guest_password StoragegatewayGateway#smb_guest_password}.
-	SmbGuestPassword *string `json:"smbGuestPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#smb_security_strategy StoragegatewayGateway#smb_security_strategy}.
-	SmbSecurityStrategy *string `json:"smbSecurityStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#tags StoragegatewayGateway#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#tags_all StoragegatewayGateway#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#tape_drive_type StoragegatewayGateway#tape_drive_type}.
-	TapeDriveType *string `json:"tapeDriveType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#smb_active_directory_settings StoragegatewayGateway#smb_active_directory_settings}
+	SmbActiveDirectorySettings *StoragegatewayGatewaySmbActiveDirectorySettings `json:"smbActiveDirectorySettings" yaml:"smbActiveDirectorySettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#smb_file_share_visibility StoragegatewayGateway#smb_file_share_visibility}.
+	SmbFileShareVisibility interface{} `json:"smbFileShareVisibility" yaml:"smbFileShareVisibility"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#smb_guest_password StoragegatewayGateway#smb_guest_password}.
+	SmbGuestPassword *string `json:"smbGuestPassword" yaml:"smbGuestPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#smb_security_strategy StoragegatewayGateway#smb_security_strategy}.
+	SmbSecurityStrategy *string `json:"smbSecurityStrategy" yaml:"smbSecurityStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#tags StoragegatewayGateway#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#tags_all StoragegatewayGateway#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#tape_drive_type StoragegatewayGateway#tape_drive_type}.
+	TapeDriveType *string `json:"tapeDriveType" yaml:"tapeDriveType"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#timeouts StoragegatewayGateway#timeouts}
-	Timeouts *StoragegatewayGatewayTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#timeouts StoragegatewayGateway#timeouts}
+	Timeouts *StoragegatewayGatewayTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type StoragegatewayGatewayGatewayNetworkInterface interface {
@@ -4218,12 +4668,19 @@ type StoragegatewayGatewayGatewayNetworkInterface interface {
 	Ipv4Address() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4262,8 +4719,8 @@ func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4272,15 +4729,25 @@ func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) TerraformResour
 	return returns
 }
 
+func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewStoragegatewayGatewayGatewayNetworkInterface(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) StoragegatewayGatewayGatewayNetworkInterface {
+func NewStoragegatewayGatewayGatewayNetworkInterface(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) StoragegatewayGatewayGatewayNetworkInterface {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface{}
 
 	_jsii_.Create(
 		"hashicorp_aws.storagegateway.StoragegatewayGatewayGatewayNetworkInterface",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4288,12 +4755,12 @@ func NewStoragegatewayGatewayGatewayNetworkInterface(terraformResource cdktf.ITe
 }
 
 // Experimental.
-func NewStoragegatewayGatewayGatewayNetworkInterface_Override(s StoragegatewayGatewayGatewayNetworkInterface, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewStoragegatewayGatewayGatewayNetworkInterface_Override(s StoragegatewayGatewayGatewayNetworkInterface, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.storagegateway.StoragegatewayGatewayGatewayNetworkInterface",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		s,
 	)
 }
@@ -4314,7 +4781,7 @@ func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4322,13 +4789,49 @@ func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) SetTerraformRes
 	)
 }
 
+func (j *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4365,12 +4868,54 @@ func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetNumberAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4393,22 +4938,23 @@ func (s *jsiiProxy_StoragegatewayGatewayGatewayNetworkInterface) InterpolationFo
 }
 
 type StoragegatewayGatewaySmbActiveDirectorySettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#domain_name StoragegatewayGateway#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#password StoragegatewayGateway#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#username StoragegatewayGateway#username}.
-	Username *string `json:"username"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#domain_controllers StoragegatewayGateway#domain_controllers}.
-	DomainControllers *[]*string `json:"domainControllers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#organizational_unit StoragegatewayGateway#organizational_unit}.
-	OrganizationalUnit *string `json:"organizationalUnit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#timeout_in_seconds StoragegatewayGateway#timeout_in_seconds}.
-	TimeoutInSeconds *float64 `json:"timeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#domain_name StoragegatewayGateway#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#password StoragegatewayGateway#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#username StoragegatewayGateway#username}.
+	Username *string `json:"username" yaml:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#domain_controllers StoragegatewayGateway#domain_controllers}.
+	DomainControllers *[]*string `json:"domainControllers" yaml:"domainControllers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#organizational_unit StoragegatewayGateway#organizational_unit}.
+	OrganizationalUnit *string `json:"organizationalUnit" yaml:"organizationalUnit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#timeout_in_seconds StoragegatewayGateway#timeout_in_seconds}.
+	TimeoutInSeconds *float64 `json:"timeoutInSeconds" yaml:"timeoutInSeconds"`
 }
 
 type StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference interface {
 	cdktf.ComplexObject
+	ActiveDirectoryStatus() *string
 	DomainControllers() *[]*string
 	SetDomainControllers(val *[]*string)
 	DomainControllersInput() *[]*string
@@ -4427,18 +4973,23 @@ type StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference interface {
 	PasswordInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeoutInSeconds() *float64
 	SetTimeoutInSeconds(val *float64)
 	TimeoutInSecondsInput() *float64
 	Username() *string
 	SetUsername(val *string)
 	UsernameInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDomainControllers()
@@ -4449,6 +5000,16 @@ type StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference interface {
 // The jsii proxy struct for StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference
 type jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) ActiveDirectoryStatus() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"activeDirectoryStatus",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) DomainControllers() *[]*string {
@@ -4561,8 +5122,8 @@ func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4611,7 +5172,7 @@ func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 	return returns
 }
 
-func NewStoragegatewayGatewaySmbActiveDirectorySettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference {
+func NewStoragegatewayGatewaySmbActiveDirectorySettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference{}
@@ -4625,7 +5186,7 @@ func NewStoragegatewayGatewaySmbActiveDirectorySettingsOutputReference(terraform
 	return &j
 }
 
-func NewStoragegatewayGatewaySmbActiveDirectorySettingsOutputReference_Override(s StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewayGatewaySmbActiveDirectorySettingsOutputReference_Override(s StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4691,7 +5252,7 @@ func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4716,12 +5277,40 @@ func (j *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4758,12 +5347,54 @@ func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4824,8 +5455,8 @@ func (s *jsiiProxy_StoragegatewayGatewaySmbActiveDirectorySettingsOutputReferenc
 }
 
 type StoragegatewayGatewayTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway.html#create StoragegatewayGateway#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_gateway#create StoragegatewayGateway#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type StoragegatewayGatewayTimeoutsOutputReference interface {
@@ -4839,12 +5470,17 @@ type StoragegatewayGatewayTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -4905,8 +5541,8 @@ func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4915,7 +5551,7 @@ func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) TerraformResour
 	return returns
 }
 
-func NewStoragegatewayGatewayTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewayGatewayTimeoutsOutputReference {
+func NewStoragegatewayGatewayTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewayGatewayTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference{}
@@ -4929,7 +5565,7 @@ func NewStoragegatewayGatewayTimeoutsOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewStoragegatewayGatewayTimeoutsOutputReference_Override(s StoragegatewayGatewayTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewayGatewayTimeoutsOutputReference_Override(s StoragegatewayGatewayTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4971,7 +5607,7 @@ func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4980,12 +5616,40 @@ func (j *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5022,12 +5686,54 @@ func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5071,7 +5777,7 @@ func (s *jsiiProxy_StoragegatewayGatewayTimeoutsOutputReference) ResetCreate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html aws_storagegateway_nfs_file_share}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share aws_storagegateway_nfs_file_share}.
 type StoragegatewayNfsFileShare interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -5085,8 +5791,8 @@ type StoragegatewayNfsFileShare interface {
 	SetClientList(val *[]*string)
 	ClientListInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultStorageClass() *string
 	SetDefaultStorageClass(val *string)
 	DefaultStorageClassInput() *string
@@ -5141,22 +5847,27 @@ type StoragegatewayNfsFileShare interface {
 	Squash() *string
 	SetSquash(val *string)
 	SquashInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() StoragegatewayNfsFileShareTimeoutsOutputReference
 	TimeoutsInput() *StoragegatewayNfsFileShareTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCacheAttributes(value *StoragegatewayNfsFileShareCacheAttributes)
@@ -5280,8 +5991,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayNfsFileShare) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5670,8 +6381,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) SquashInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayNfsFileShare) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5680,8 +6391,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5690,8 +6401,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5700,8 +6411,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayNfsFileShare) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5760,7 +6471,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) TimeoutsInput() *StoragegatewayNf
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html aws_storagegateway_nfs_file_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share aws_storagegateway_nfs_file_share} Resource.
 func NewStoragegatewayNfsFileShare(scope constructs.Construct, id *string, config *StoragegatewayNfsFileShareConfig) StoragegatewayNfsFileShare {
 	_init_.Initialize()
 
@@ -5775,7 +6486,7 @@ func NewStoragegatewayNfsFileShare(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html aws_storagegateway_nfs_file_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share aws_storagegateway_nfs_file_share} Resource.
 func NewStoragegatewayNfsFileShare_Override(s StoragegatewayNfsFileShare, scope constructs.Construct, id *string, config *StoragegatewayNfsFileShareConfig) {
 	_init_.Initialize()
 
@@ -5802,7 +6513,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) SetClientList(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayNfsFileShare) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5938,7 +6649,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) SetSquash(val *string) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) SetTags(val interface{}) {
+func (j *jsiiProxy_StoragegatewayNfsFileShare) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5946,7 +6657,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShare) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShare) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_StoragegatewayNfsFileShare) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5994,12 +6705,40 @@ func (s *jsiiProxy_StoragegatewayNfsFileShare) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShare) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayNfsFileShare) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShare) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6036,12 +6775,54 @@ func (s *jsiiProxy_StoragegatewayNfsFileShare) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShare) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShare) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayNfsFileShare) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShare) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6292,8 +7073,8 @@ func (s *jsiiProxy_StoragegatewayNfsFileShare) ToTerraform() interface{} {
 }
 
 type StoragegatewayNfsFileShareCacheAttributes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#cache_stale_timeout_in_seconds StoragegatewayNfsFileShare#cache_stale_timeout_in_seconds}.
-	CacheStaleTimeoutInSeconds *float64 `json:"cacheStaleTimeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#cache_stale_timeout_in_seconds StoragegatewayNfsFileShare#cache_stale_timeout_in_seconds}.
+	CacheStaleTimeoutInSeconds *float64 `json:"cacheStaleTimeoutInSeconds" yaml:"cacheStaleTimeoutInSeconds"`
 }
 
 type StoragegatewayNfsFileShareCacheAttributesOutputReference interface {
@@ -6307,12 +7088,17 @@ type StoragegatewayNfsFileShareCacheAttributesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCacheStaleTimeoutInSeconds()
@@ -6373,8 +7159,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6383,7 +7169,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Ter
 	return returns
 }
 
-func NewStoragegatewayNfsFileShareCacheAttributesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewayNfsFileShareCacheAttributesOutputReference {
+func NewStoragegatewayNfsFileShareCacheAttributesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewayNfsFileShareCacheAttributesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference{}
@@ -6397,7 +7183,7 @@ func NewStoragegatewayNfsFileShareCacheAttributesOutputReference(terraformResour
 	return &j
 }
 
-func NewStoragegatewayNfsFileShareCacheAttributesOutputReference_Override(s StoragegatewayNfsFileShareCacheAttributesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewayNfsFileShareCacheAttributesOutputReference_Override(s StoragegatewayNfsFileShareCacheAttributesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6439,7 +7225,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6448,12 +7234,40 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Set
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6490,12 +7304,54 @@ func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Get
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6542,70 +7398,70 @@ func (s *jsiiProxy_StoragegatewayNfsFileShareCacheAttributesOutputReference) Res
 // AWS Storage Gateway.
 type StoragegatewayNfsFileShareConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#client_list StoragegatewayNfsFileShare#client_list}.
-	ClientList *[]*string `json:"clientList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#gateway_arn StoragegatewayNfsFileShare#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#location_arn StoragegatewayNfsFileShare#location_arn}.
-	LocationArn *string `json:"locationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#role_arn StoragegatewayNfsFileShare#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#audit_destination_arn StoragegatewayNfsFileShare#audit_destination_arn}.
-	AuditDestinationArn *string `json:"auditDestinationArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#client_list StoragegatewayNfsFileShare#client_list}.
+	ClientList *[]*string `json:"clientList" yaml:"clientList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#gateway_arn StoragegatewayNfsFileShare#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#location_arn StoragegatewayNfsFileShare#location_arn}.
+	LocationArn *string `json:"locationArn" yaml:"locationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#role_arn StoragegatewayNfsFileShare#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#audit_destination_arn StoragegatewayNfsFileShare#audit_destination_arn}.
+	AuditDestinationArn *string `json:"auditDestinationArn" yaml:"auditDestinationArn"`
 	// cache_attributes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#cache_attributes StoragegatewayNfsFileShare#cache_attributes}
-	CacheAttributes *StoragegatewayNfsFileShareCacheAttributes `json:"cacheAttributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#default_storage_class StoragegatewayNfsFileShare#default_storage_class}.
-	DefaultStorageClass *string `json:"defaultStorageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#file_share_name StoragegatewayNfsFileShare#file_share_name}.
-	FileShareName *string `json:"fileShareName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#guess_mime_type_enabled StoragegatewayNfsFileShare#guess_mime_type_enabled}.
-	GuessMimeTypeEnabled interface{} `json:"guessMimeTypeEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#kms_encrypted StoragegatewayNfsFileShare#kms_encrypted}.
-	KmsEncrypted interface{} `json:"kmsEncrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#kms_key_arn StoragegatewayNfsFileShare#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#cache_attributes StoragegatewayNfsFileShare#cache_attributes}
+	CacheAttributes *StoragegatewayNfsFileShareCacheAttributes `json:"cacheAttributes" yaml:"cacheAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#default_storage_class StoragegatewayNfsFileShare#default_storage_class}.
+	DefaultStorageClass *string `json:"defaultStorageClass" yaml:"defaultStorageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#file_share_name StoragegatewayNfsFileShare#file_share_name}.
+	FileShareName *string `json:"fileShareName" yaml:"fileShareName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#guess_mime_type_enabled StoragegatewayNfsFileShare#guess_mime_type_enabled}.
+	GuessMimeTypeEnabled interface{} `json:"guessMimeTypeEnabled" yaml:"guessMimeTypeEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#kms_encrypted StoragegatewayNfsFileShare#kms_encrypted}.
+	KmsEncrypted interface{} `json:"kmsEncrypted" yaml:"kmsEncrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#kms_key_arn StoragegatewayNfsFileShare#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 	// nfs_file_share_defaults block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#nfs_file_share_defaults StoragegatewayNfsFileShare#nfs_file_share_defaults}
-	NfsFileShareDefaults *StoragegatewayNfsFileShareNfsFileShareDefaults `json:"nfsFileShareDefaults"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#notification_policy StoragegatewayNfsFileShare#notification_policy}.
-	NotificationPolicy *string `json:"notificationPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#object_acl StoragegatewayNfsFileShare#object_acl}.
-	ObjectAcl *string `json:"objectAcl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#read_only StoragegatewayNfsFileShare#read_only}.
-	ReadOnly interface{} `json:"readOnly"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#requester_pays StoragegatewayNfsFileShare#requester_pays}.
-	RequesterPays interface{} `json:"requesterPays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#squash StoragegatewayNfsFileShare#squash}.
-	Squash *string `json:"squash"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#tags StoragegatewayNfsFileShare#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#tags_all StoragegatewayNfsFileShare#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#nfs_file_share_defaults StoragegatewayNfsFileShare#nfs_file_share_defaults}
+	NfsFileShareDefaults *StoragegatewayNfsFileShareNfsFileShareDefaults `json:"nfsFileShareDefaults" yaml:"nfsFileShareDefaults"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#notification_policy StoragegatewayNfsFileShare#notification_policy}.
+	NotificationPolicy *string `json:"notificationPolicy" yaml:"notificationPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#object_acl StoragegatewayNfsFileShare#object_acl}.
+	ObjectAcl *string `json:"objectAcl" yaml:"objectAcl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#read_only StoragegatewayNfsFileShare#read_only}.
+	ReadOnly interface{} `json:"readOnly" yaml:"readOnly"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#requester_pays StoragegatewayNfsFileShare#requester_pays}.
+	RequesterPays interface{} `json:"requesterPays" yaml:"requesterPays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#squash StoragegatewayNfsFileShare#squash}.
+	Squash *string `json:"squash" yaml:"squash"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#tags StoragegatewayNfsFileShare#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#tags_all StoragegatewayNfsFileShare#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#timeouts StoragegatewayNfsFileShare#timeouts}
-	Timeouts *StoragegatewayNfsFileShareTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#timeouts StoragegatewayNfsFileShare#timeouts}
+	Timeouts *StoragegatewayNfsFileShareTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type StoragegatewayNfsFileShareNfsFileShareDefaults struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#directory_mode StoragegatewayNfsFileShare#directory_mode}.
-	DirectoryMode *string `json:"directoryMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#file_mode StoragegatewayNfsFileShare#file_mode}.
-	FileMode *string `json:"fileMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#group_id StoragegatewayNfsFileShare#group_id}.
-	GroupId *string `json:"groupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#owner_id StoragegatewayNfsFileShare#owner_id}.
-	OwnerId *string `json:"ownerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#directory_mode StoragegatewayNfsFileShare#directory_mode}.
+	DirectoryMode *string `json:"directoryMode" yaml:"directoryMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#file_mode StoragegatewayNfsFileShare#file_mode}.
+	FileMode *string `json:"fileMode" yaml:"fileMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#group_id StoragegatewayNfsFileShare#group_id}.
+	GroupId *string `json:"groupId" yaml:"groupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#owner_id StoragegatewayNfsFileShare#owner_id}.
+	OwnerId *string `json:"ownerId" yaml:"ownerId"`
 }
 
 type StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference interface {
@@ -6628,12 +7484,17 @@ type StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference interface {
 	OwnerIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDirectoryMode()
@@ -6757,8 +7618,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6767,7 +7628,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 	return returns
 }
 
-func NewStoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference {
+func NewStoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference{}
@@ -6781,7 +7642,7 @@ func NewStoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference(terraformR
 	return &j
 }
 
-func NewStoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference_Override(s StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference_Override(s StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6847,7 +7708,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6856,12 +7717,40 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6898,12 +7787,54 @@ func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6972,12 +7903,12 @@ func (s *jsiiProxy_StoragegatewayNfsFileShareNfsFileShareDefaultsOutputReference
 }
 
 type StoragegatewayNfsFileShareTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#create StoragegatewayNfsFileShare#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#delete StoragegatewayNfsFileShare#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share.html#update StoragegatewayNfsFileShare#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#create StoragegatewayNfsFileShare#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#delete StoragegatewayNfsFileShare#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_nfs_file_share#update StoragegatewayNfsFileShare#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type StoragegatewayNfsFileShareTimeoutsOutputReference interface {
@@ -6994,15 +7925,20 @@ type StoragegatewayNfsFileShareTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7085,8 +8021,8 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7115,7 +8051,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) UpdateInpu
 	return returns
 }
 
-func NewStoragegatewayNfsFileShareTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewayNfsFileShareTimeoutsOutputReference {
+func NewStoragegatewayNfsFileShareTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewayNfsFileShareTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference{}
@@ -7129,7 +8065,7 @@ func NewStoragegatewayNfsFileShareTimeoutsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewStoragegatewayNfsFileShareTimeoutsOutputReference_Override(s StoragegatewayNfsFileShareTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewayNfsFileShareTimeoutsOutputReference_Override(s StoragegatewayNfsFileShareTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7179,7 +8115,7 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7196,12 +8132,40 @@ func (j *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) SetUpdate(
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7238,12 +8202,54 @@ func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7303,7 +8309,7 @@ func (s *jsiiProxy_StoragegatewayNfsFileShareTimeoutsOutputReference) ResetUpdat
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html aws_storagegateway_smb_file_share}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share aws_storagegateway_smb_file_share}.
 type StoragegatewaySmbFileShare interface {
 	cdktf.TerraformResource
 	AccessBasedEnumeration() interface{}
@@ -7329,8 +8335,8 @@ type StoragegatewaySmbFileShare interface {
 	CaseSensitivityInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DefaultStorageClass() *string
 	SetDefaultStorageClass(val *string)
 	DefaultStorageClassInput() *string
@@ -7389,12 +8395,12 @@ type StoragegatewaySmbFileShare interface {
 	SmbAclEnabled() interface{}
 	SetSmbAclEnabled(val interface{})
 	SmbAclEnabledInput() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7407,10 +8413,15 @@ type StoragegatewaySmbFileShare interface {
 	SetVpcEndpointDnsName(val *string)
 	VpcEndpointDnsNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCacheAttributes(value *StoragegatewaySmbFileShareCacheAttributes)
@@ -7621,8 +8632,8 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewaySmbFileShare) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8031,8 +9042,8 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) SmbAclEnabledInput() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewaySmbFileShare) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8041,8 +9052,8 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8051,8 +9062,8 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8061,8 +9072,8 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewaySmbFileShare) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8161,7 +9172,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) VpcEndpointDnsNameInput() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html aws_storagegateway_smb_file_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share aws_storagegateway_smb_file_share} Resource.
 func NewStoragegatewaySmbFileShare(scope constructs.Construct, id *string, config *StoragegatewaySmbFileShareConfig) StoragegatewaySmbFileShare {
 	_init_.Initialize()
 
@@ -8176,7 +9187,7 @@ func NewStoragegatewaySmbFileShare(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html aws_storagegateway_smb_file_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share aws_storagegateway_smb_file_share} Resource.
 func NewStoragegatewaySmbFileShare_Override(s StoragegatewaySmbFileShare, scope constructs.Construct, id *string, config *StoragegatewaySmbFileShareConfig) {
 	_init_.Initialize()
 
@@ -8235,7 +9246,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) SetCaseSensitivity(val *string) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewaySmbFileShare) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8387,7 +9398,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) SetSmbAclEnabled(val interface{})
 	)
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) SetTags(val interface{}) {
+func (j *jsiiProxy_StoragegatewaySmbFileShare) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8395,7 +9406,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShare) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShare) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_StoragegatewaySmbFileShare) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8459,12 +9470,40 @@ func (s *jsiiProxy_StoragegatewaySmbFileShare) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShare) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewaySmbFileShare) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShare) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8501,12 +9540,54 @@ func (s *jsiiProxy_StoragegatewaySmbFileShare) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShare) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShare) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewaySmbFileShare) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShare) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8813,8 +9894,8 @@ func (s *jsiiProxy_StoragegatewaySmbFileShare) ToTerraform() interface{} {
 }
 
 type StoragegatewaySmbFileShareCacheAttributes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#cache_stale_timeout_in_seconds StoragegatewaySmbFileShare#cache_stale_timeout_in_seconds}.
-	CacheStaleTimeoutInSeconds *float64 `json:"cacheStaleTimeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#cache_stale_timeout_in_seconds StoragegatewaySmbFileShare#cache_stale_timeout_in_seconds}.
+	CacheStaleTimeoutInSeconds *float64 `json:"cacheStaleTimeoutInSeconds" yaml:"cacheStaleTimeoutInSeconds"`
 }
 
 type StoragegatewaySmbFileShareCacheAttributesOutputReference interface {
@@ -8828,12 +9909,17 @@ type StoragegatewaySmbFileShareCacheAttributesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCacheStaleTimeoutInSeconds()
@@ -8894,8 +9980,8 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8904,7 +9990,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Ter
 	return returns
 }
 
-func NewStoragegatewaySmbFileShareCacheAttributesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewaySmbFileShareCacheAttributesOutputReference {
+func NewStoragegatewaySmbFileShareCacheAttributesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewaySmbFileShareCacheAttributesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference{}
@@ -8918,7 +10004,7 @@ func NewStoragegatewaySmbFileShareCacheAttributesOutputReference(terraformResour
 	return &j
 }
 
-func NewStoragegatewaySmbFileShareCacheAttributesOutputReference_Override(s StoragegatewaySmbFileShareCacheAttributesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewaySmbFileShareCacheAttributesOutputReference_Override(s StoragegatewaySmbFileShareCacheAttributesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8960,7 +10046,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8969,12 +10055,40 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Set
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9011,12 +10125,54 @@ func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Get
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9063,80 +10219,80 @@ func (s *jsiiProxy_StoragegatewaySmbFileShareCacheAttributesOutputReference) Res
 // AWS Storage Gateway.
 type StoragegatewaySmbFileShareConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#gateway_arn StoragegatewaySmbFileShare#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#location_arn StoragegatewaySmbFileShare#location_arn}.
-	LocationArn *string `json:"locationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#role_arn StoragegatewaySmbFileShare#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#access_based_enumeration StoragegatewaySmbFileShare#access_based_enumeration}.
-	AccessBasedEnumeration interface{} `json:"accessBasedEnumeration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#admin_user_list StoragegatewaySmbFileShare#admin_user_list}.
-	AdminUserList *[]*string `json:"adminUserList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#audit_destination_arn StoragegatewaySmbFileShare#audit_destination_arn}.
-	AuditDestinationArn *string `json:"auditDestinationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#authentication StoragegatewaySmbFileShare#authentication}.
-	Authentication *string `json:"authentication"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#bucket_region StoragegatewaySmbFileShare#bucket_region}.
-	BucketRegion *string `json:"bucketRegion"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#gateway_arn StoragegatewaySmbFileShare#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#location_arn StoragegatewaySmbFileShare#location_arn}.
+	LocationArn *string `json:"locationArn" yaml:"locationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#role_arn StoragegatewaySmbFileShare#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#access_based_enumeration StoragegatewaySmbFileShare#access_based_enumeration}.
+	AccessBasedEnumeration interface{} `json:"accessBasedEnumeration" yaml:"accessBasedEnumeration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#admin_user_list StoragegatewaySmbFileShare#admin_user_list}.
+	AdminUserList *[]*string `json:"adminUserList" yaml:"adminUserList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#audit_destination_arn StoragegatewaySmbFileShare#audit_destination_arn}.
+	AuditDestinationArn *string `json:"auditDestinationArn" yaml:"auditDestinationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#authentication StoragegatewaySmbFileShare#authentication}.
+	Authentication *string `json:"authentication" yaml:"authentication"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#bucket_region StoragegatewaySmbFileShare#bucket_region}.
+	BucketRegion *string `json:"bucketRegion" yaml:"bucketRegion"`
 	// cache_attributes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#cache_attributes StoragegatewaySmbFileShare#cache_attributes}
-	CacheAttributes *StoragegatewaySmbFileShareCacheAttributes `json:"cacheAttributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#case_sensitivity StoragegatewaySmbFileShare#case_sensitivity}.
-	CaseSensitivity *string `json:"caseSensitivity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#default_storage_class StoragegatewaySmbFileShare#default_storage_class}.
-	DefaultStorageClass *string `json:"defaultStorageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#file_share_name StoragegatewaySmbFileShare#file_share_name}.
-	FileShareName *string `json:"fileShareName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#guess_mime_type_enabled StoragegatewaySmbFileShare#guess_mime_type_enabled}.
-	GuessMimeTypeEnabled interface{} `json:"guessMimeTypeEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#invalid_user_list StoragegatewaySmbFileShare#invalid_user_list}.
-	InvalidUserList *[]*string `json:"invalidUserList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#kms_encrypted StoragegatewaySmbFileShare#kms_encrypted}.
-	KmsEncrypted interface{} `json:"kmsEncrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#kms_key_arn StoragegatewaySmbFileShare#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#notification_policy StoragegatewaySmbFileShare#notification_policy}.
-	NotificationPolicy *string `json:"notificationPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#object_acl StoragegatewaySmbFileShare#object_acl}.
-	ObjectAcl *string `json:"objectAcl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#oplocks_enabled StoragegatewaySmbFileShare#oplocks_enabled}.
-	OplocksEnabled interface{} `json:"oplocksEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#read_only StoragegatewaySmbFileShare#read_only}.
-	ReadOnly interface{} `json:"readOnly"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#requester_pays StoragegatewaySmbFileShare#requester_pays}.
-	RequesterPays interface{} `json:"requesterPays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#smb_acl_enabled StoragegatewaySmbFileShare#smb_acl_enabled}.
-	SmbAclEnabled interface{} `json:"smbAclEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#tags StoragegatewaySmbFileShare#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#tags_all StoragegatewaySmbFileShare#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#cache_attributes StoragegatewaySmbFileShare#cache_attributes}
+	CacheAttributes *StoragegatewaySmbFileShareCacheAttributes `json:"cacheAttributes" yaml:"cacheAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#case_sensitivity StoragegatewaySmbFileShare#case_sensitivity}.
+	CaseSensitivity *string `json:"caseSensitivity" yaml:"caseSensitivity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#default_storage_class StoragegatewaySmbFileShare#default_storage_class}.
+	DefaultStorageClass *string `json:"defaultStorageClass" yaml:"defaultStorageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#file_share_name StoragegatewaySmbFileShare#file_share_name}.
+	FileShareName *string `json:"fileShareName" yaml:"fileShareName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#guess_mime_type_enabled StoragegatewaySmbFileShare#guess_mime_type_enabled}.
+	GuessMimeTypeEnabled interface{} `json:"guessMimeTypeEnabled" yaml:"guessMimeTypeEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#invalid_user_list StoragegatewaySmbFileShare#invalid_user_list}.
+	InvalidUserList *[]*string `json:"invalidUserList" yaml:"invalidUserList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#kms_encrypted StoragegatewaySmbFileShare#kms_encrypted}.
+	KmsEncrypted interface{} `json:"kmsEncrypted" yaml:"kmsEncrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#kms_key_arn StoragegatewaySmbFileShare#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#notification_policy StoragegatewaySmbFileShare#notification_policy}.
+	NotificationPolicy *string `json:"notificationPolicy" yaml:"notificationPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#object_acl StoragegatewaySmbFileShare#object_acl}.
+	ObjectAcl *string `json:"objectAcl" yaml:"objectAcl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#oplocks_enabled StoragegatewaySmbFileShare#oplocks_enabled}.
+	OplocksEnabled interface{} `json:"oplocksEnabled" yaml:"oplocksEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#read_only StoragegatewaySmbFileShare#read_only}.
+	ReadOnly interface{} `json:"readOnly" yaml:"readOnly"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#requester_pays StoragegatewaySmbFileShare#requester_pays}.
+	RequesterPays interface{} `json:"requesterPays" yaml:"requesterPays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#smb_acl_enabled StoragegatewaySmbFileShare#smb_acl_enabled}.
+	SmbAclEnabled interface{} `json:"smbAclEnabled" yaml:"smbAclEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#tags StoragegatewaySmbFileShare#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#tags_all StoragegatewaySmbFileShare#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#timeouts StoragegatewaySmbFileShare#timeouts}
-	Timeouts *StoragegatewaySmbFileShareTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#valid_user_list StoragegatewaySmbFileShare#valid_user_list}.
-	ValidUserList *[]*string `json:"validUserList"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#vpc_endpoint_dns_name StoragegatewaySmbFileShare#vpc_endpoint_dns_name}.
-	VpcEndpointDnsName *string `json:"vpcEndpointDnsName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#timeouts StoragegatewaySmbFileShare#timeouts}
+	Timeouts *StoragegatewaySmbFileShareTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#valid_user_list StoragegatewaySmbFileShare#valid_user_list}.
+	ValidUserList *[]*string `json:"validUserList" yaml:"validUserList"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#vpc_endpoint_dns_name StoragegatewaySmbFileShare#vpc_endpoint_dns_name}.
+	VpcEndpointDnsName *string `json:"vpcEndpointDnsName" yaml:"vpcEndpointDnsName"`
 }
 
 type StoragegatewaySmbFileShareTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#create StoragegatewaySmbFileShare#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#delete StoragegatewaySmbFileShare#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share.html#update StoragegatewaySmbFileShare#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#create StoragegatewaySmbFileShare#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#delete StoragegatewaySmbFileShare#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_smb_file_share#update StoragegatewaySmbFileShare#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type StoragegatewaySmbFileShareTimeoutsOutputReference interface {
@@ -9153,15 +10309,20 @@ type StoragegatewaySmbFileShareTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -9244,8 +10405,8 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9274,7 +10435,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) UpdateInpu
 	return returns
 }
 
-func NewStoragegatewaySmbFileShareTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) StoragegatewaySmbFileShareTimeoutsOutputReference {
+func NewStoragegatewaySmbFileShareTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) StoragegatewaySmbFileShareTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference{}
@@ -9288,7 +10449,7 @@ func NewStoragegatewaySmbFileShareTimeoutsOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewStoragegatewaySmbFileShareTimeoutsOutputReference_Override(s StoragegatewaySmbFileShareTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewStoragegatewaySmbFileShareTimeoutsOutputReference_Override(s StoragegatewaySmbFileShareTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9338,7 +10499,7 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9355,12 +10516,40 @@ func (j *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) SetUpdate(
 }
 
 // Experimental.
-func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9397,12 +10586,54 @@ func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetNumberA
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9462,15 +10693,15 @@ func (s *jsiiProxy_StoragegatewaySmbFileShareTimeoutsOutputReference) ResetUpdat
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html aws_storagegateway_stored_iscsi_volume}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume aws_storagegateway_stored_iscsi_volume}.
 type StoragegatewayStoredIscsiVolume interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
-	ChapEnabled() interface{}
+	ChapEnabled() cdktf.IResolvable
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DiskId() *string
@@ -9505,12 +10736,12 @@ type StoragegatewayStoredIscsiVolume interface {
 	SnapshotId() *string
 	SetSnapshotId(val *string)
 	SnapshotIdInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetArn() *string
 	TargetName() *string
 	SetTargetName(val *string)
@@ -9524,10 +10755,15 @@ type StoragegatewayStoredIscsiVolume interface {
 	VolumeStatus() *string
 	VolumeType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetKmsEncrypted()
@@ -9567,8 +10803,8 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) CdktfStack() cdktf.Terraform
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) ChapEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) ChapEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"chapEnabled",
@@ -9587,8 +10823,8 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9837,8 +11073,8 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SnapshotIdInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9847,8 +11083,8 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9857,8 +11093,8 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9867,8 +11103,8 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9987,7 +11223,7 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) VolumeType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html aws_storagegateway_stored_iscsi_volume} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume aws_storagegateway_stored_iscsi_volume} Resource.
 func NewStoragegatewayStoredIscsiVolume(scope constructs.Construct, id *string, config *StoragegatewayStoredIscsiVolumeConfig) StoragegatewayStoredIscsiVolume {
 	_init_.Initialize()
 
@@ -10002,7 +11238,7 @@ func NewStoragegatewayStoredIscsiVolume(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html aws_storagegateway_stored_iscsi_volume} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume aws_storagegateway_stored_iscsi_volume} Resource.
 func NewStoragegatewayStoredIscsiVolume_Override(s StoragegatewayStoredIscsiVolume, scope constructs.Construct, id *string, config *StoragegatewayStoredIscsiVolumeConfig) {
 	_init_.Initialize()
 
@@ -10013,7 +11249,7 @@ func NewStoragegatewayStoredIscsiVolume_Override(s StoragegatewayStoredIscsiVolu
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10101,7 +11337,7 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetSnapshotId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetTags(val interface{}) {
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10109,7 +11345,7 @@ func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_StoragegatewayStoredIscsiVolume) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10165,12 +11401,40 @@ func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) AddOverride(path *string, va
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10207,12 +11471,54 @@ func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10353,43 +11659,43 @@ func (s *jsiiProxy_StoragegatewayStoredIscsiVolume) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type StoragegatewayStoredIscsiVolumeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#disk_id StoragegatewayStoredIscsiVolume#disk_id}.
-	DiskId *string `json:"diskId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#gateway_arn StoragegatewayStoredIscsiVolume#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#network_interface_id StoragegatewayStoredIscsiVolume#network_interface_id}.
-	NetworkInterfaceId *string `json:"networkInterfaceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#preserve_existing_data StoragegatewayStoredIscsiVolume#preserve_existing_data}.
-	PreserveExistingData interface{} `json:"preserveExistingData"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#target_name StoragegatewayStoredIscsiVolume#target_name}.
-	TargetName *string `json:"targetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#kms_encrypted StoragegatewayStoredIscsiVolume#kms_encrypted}.
-	KmsEncrypted interface{} `json:"kmsEncrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#kms_key StoragegatewayStoredIscsiVolume#kms_key}.
-	KmsKey *string `json:"kmsKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#snapshot_id StoragegatewayStoredIscsiVolume#snapshot_id}.
-	SnapshotId *string `json:"snapshotId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#tags StoragegatewayStoredIscsiVolume#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume.html#tags_all StoragegatewayStoredIscsiVolume#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#disk_id StoragegatewayStoredIscsiVolume#disk_id}.
+	DiskId *string `json:"diskId" yaml:"diskId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#gateway_arn StoragegatewayStoredIscsiVolume#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#network_interface_id StoragegatewayStoredIscsiVolume#network_interface_id}.
+	NetworkInterfaceId *string `json:"networkInterfaceId" yaml:"networkInterfaceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#preserve_existing_data StoragegatewayStoredIscsiVolume#preserve_existing_data}.
+	PreserveExistingData interface{} `json:"preserveExistingData" yaml:"preserveExistingData"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#target_name StoragegatewayStoredIscsiVolume#target_name}.
+	TargetName *string `json:"targetName" yaml:"targetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#kms_encrypted StoragegatewayStoredIscsiVolume#kms_encrypted}.
+	KmsEncrypted interface{} `json:"kmsEncrypted" yaml:"kmsEncrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#kms_key StoragegatewayStoredIscsiVolume#kms_key}.
+	KmsKey *string `json:"kmsKey" yaml:"kmsKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#snapshot_id StoragegatewayStoredIscsiVolume#snapshot_id}.
+	SnapshotId *string `json:"snapshotId" yaml:"snapshotId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#tags StoragegatewayStoredIscsiVolume#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_stored_iscsi_volume#tags_all StoragegatewayStoredIscsiVolume#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html aws_storagegateway_tape_pool}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool aws_storagegateway_tape_pool}.
 type StoragegatewayTapePool interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10413,20 +11719,25 @@ type StoragegatewayTapePool interface {
 	StorageClass() *string
 	SetStorageClass(val *string)
 	StorageClassInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -10475,8 +11786,8 @@ func (j *jsiiProxy_StoragegatewayTapePool) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayTapePool) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10645,8 +11956,8 @@ func (j *jsiiProxy_StoragegatewayTapePool) StorageClassInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayTapePool) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10655,8 +11966,8 @@ func (j *jsiiProxy_StoragegatewayTapePool) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayTapePool) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10665,8 +11976,8 @@ func (j *jsiiProxy_StoragegatewayTapePool) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayTapePool) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10675,8 +11986,8 @@ func (j *jsiiProxy_StoragegatewayTapePool) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayTapePool) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10715,7 +12026,7 @@ func (j *jsiiProxy_StoragegatewayTapePool) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html aws_storagegateway_tape_pool} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool aws_storagegateway_tape_pool} Resource.
 func NewStoragegatewayTapePool(scope constructs.Construct, id *string, config *StoragegatewayTapePoolConfig) StoragegatewayTapePool {
 	_init_.Initialize()
 
@@ -10730,7 +12041,7 @@ func NewStoragegatewayTapePool(scope constructs.Construct, id *string, config *S
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html aws_storagegateway_tape_pool} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool aws_storagegateway_tape_pool} Resource.
 func NewStoragegatewayTapePool_Override(s StoragegatewayTapePool, scope constructs.Construct, id *string, config *StoragegatewayTapePoolConfig) {
 	_init_.Initialize()
 
@@ -10741,7 +12052,7 @@ func NewStoragegatewayTapePool_Override(s StoragegatewayTapePool, scope construc
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayTapePool) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10805,7 +12116,7 @@ func (j *jsiiProxy_StoragegatewayTapePool) SetStorageClass(val *string) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) SetTags(val interface{}) {
+func (j *jsiiProxy_StoragegatewayTapePool) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10813,7 +12124,7 @@ func (j *jsiiProxy_StoragegatewayTapePool) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayTapePool) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_StoragegatewayTapePool) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10861,12 +12172,40 @@ func (s *jsiiProxy_StoragegatewayTapePool) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayTapePool) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayTapePool) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayTapePool) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10903,12 +12242,54 @@ func (s *jsiiProxy_StoragegatewayTapePool) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayTapePool) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayTapePool) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayTapePool) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayTapePool) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11041,34 +12422,34 @@ func (s *jsiiProxy_StoragegatewayTapePool) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type StoragegatewayTapePoolConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html#pool_name StoragegatewayTapePool#pool_name}.
-	PoolName *string `json:"poolName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html#storage_class StoragegatewayTapePool#storage_class}.
-	StorageClass *string `json:"storageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html#retention_lock_time_in_days StoragegatewayTapePool#retention_lock_time_in_days}.
-	RetentionLockTimeInDays *float64 `json:"retentionLockTimeInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html#retention_lock_type StoragegatewayTapePool#retention_lock_type}.
-	RetentionLockType *string `json:"retentionLockType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html#tags StoragegatewayTapePool#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool.html#tags_all StoragegatewayTapePool#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool#pool_name StoragegatewayTapePool#pool_name}.
+	PoolName *string `json:"poolName" yaml:"poolName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool#storage_class StoragegatewayTapePool#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool#retention_lock_time_in_days StoragegatewayTapePool#retention_lock_time_in_days}.
+	RetentionLockTimeInDays *float64 `json:"retentionLockTimeInDays" yaml:"retentionLockTimeInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool#retention_lock_type StoragegatewayTapePool#retention_lock_type}.
+	RetentionLockType *string `json:"retentionLockType" yaml:"retentionLockType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool#tags StoragegatewayTapePool#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_tape_pool#tags_all StoragegatewayTapePool#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer.html aws_storagegateway_upload_buffer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer aws_storagegateway_upload_buffer}.
 type StoragegatewayUploadBuffer interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DiskId() *string
@@ -11093,10 +12474,15 @@ type StoragegatewayUploadBuffer interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDiskId()
@@ -11133,8 +12519,8 @@ func (j *jsiiProxy_StoragegatewayUploadBuffer) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayUploadBuffer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayUploadBuffer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11313,7 +12699,7 @@ func (j *jsiiProxy_StoragegatewayUploadBuffer) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer.html aws_storagegateway_upload_buffer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer aws_storagegateway_upload_buffer} Resource.
 func NewStoragegatewayUploadBuffer(scope constructs.Construct, id *string, config *StoragegatewayUploadBufferConfig) StoragegatewayUploadBuffer {
 	_init_.Initialize()
 
@@ -11328,7 +12714,7 @@ func NewStoragegatewayUploadBuffer(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer.html aws_storagegateway_upload_buffer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer aws_storagegateway_upload_buffer} Resource.
 func NewStoragegatewayUploadBuffer_Override(s StoragegatewayUploadBuffer, scope constructs.Construct, id *string, config *StoragegatewayUploadBufferConfig) {
 	_init_.Initialize()
 
@@ -11339,7 +12725,7 @@ func NewStoragegatewayUploadBuffer_Override(s StoragegatewayUploadBuffer, scope 
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayUploadBuffer) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayUploadBuffer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11435,12 +12821,40 @@ func (s *jsiiProxy_StoragegatewayUploadBuffer) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayUploadBuffer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayUploadBuffer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayUploadBuffer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11477,12 +12891,54 @@ func (s *jsiiProxy_StoragegatewayUploadBuffer) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayUploadBuffer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayUploadBuffer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayUploadBuffer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayUploadBuffer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11599,28 +13055,28 @@ func (s *jsiiProxy_StoragegatewayUploadBuffer) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type StoragegatewayUploadBufferConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer.html#gateway_arn StoragegatewayUploadBuffer#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer.html#disk_id StoragegatewayUploadBuffer#disk_id}.
-	DiskId *string `json:"diskId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer.html#disk_path StoragegatewayUploadBuffer#disk_path}.
-	DiskPath *string `json:"diskPath"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer#gateway_arn StoragegatewayUploadBuffer#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer#disk_id StoragegatewayUploadBuffer#disk_id}.
+	DiskId *string `json:"diskId" yaml:"diskId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_upload_buffer#disk_path StoragegatewayUploadBuffer#disk_path}.
+	DiskPath *string `json:"diskPath" yaml:"diskPath"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage.html aws_storagegateway_working_storage}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage aws_storagegateway_working_storage}.
 type StoragegatewayWorkingStorage interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DiskId() *string
@@ -11642,10 +13098,15 @@ type StoragegatewayWorkingStorage interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -11680,8 +13141,8 @@ func (j *jsiiProxy_StoragegatewayWorkingStorage) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_StoragegatewayWorkingStorage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_StoragegatewayWorkingStorage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11840,7 +13301,7 @@ func (j *jsiiProxy_StoragegatewayWorkingStorage) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage.html aws_storagegateway_working_storage} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage aws_storagegateway_working_storage} Resource.
 func NewStoragegatewayWorkingStorage(scope constructs.Construct, id *string, config *StoragegatewayWorkingStorageConfig) StoragegatewayWorkingStorage {
 	_init_.Initialize()
 
@@ -11855,7 +13316,7 @@ func NewStoragegatewayWorkingStorage(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage.html aws_storagegateway_working_storage} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage aws_storagegateway_working_storage} Resource.
 func NewStoragegatewayWorkingStorage_Override(s StoragegatewayWorkingStorage, scope constructs.Construct, id *string, config *StoragegatewayWorkingStorageConfig) {
 	_init_.Initialize()
 
@@ -11866,7 +13327,7 @@ func NewStoragegatewayWorkingStorage_Override(s StoragegatewayWorkingStorage, sc
 	)
 }
 
-func (j *jsiiProxy_StoragegatewayWorkingStorage) SetCount(val interface{}) {
+func (j *jsiiProxy_StoragegatewayWorkingStorage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11954,12 +13415,40 @@ func (s *jsiiProxy_StoragegatewayWorkingStorage) AddOverride(path *string, value
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayWorkingStorage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayWorkingStorage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayWorkingStorage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11996,12 +13485,54 @@ func (s *jsiiProxy_StoragegatewayWorkingStorage) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_StoragegatewayWorkingStorage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayWorkingStorage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_StoragegatewayWorkingStorage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_StoragegatewayWorkingStorage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12102,15 +13633,15 @@ func (s *jsiiProxy_StoragegatewayWorkingStorage) ToTerraform() interface{} {
 // AWS Storage Gateway.
 type StoragegatewayWorkingStorageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage.html#disk_id StoragegatewayWorkingStorage#disk_id}.
-	DiskId *string `json:"diskId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage.html#gateway_arn StoragegatewayWorkingStorage#gateway_arn}.
-	GatewayArn *string `json:"gatewayArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage#disk_id StoragegatewayWorkingStorage#disk_id}.
+	DiskId *string `json:"diskId" yaml:"diskId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/storagegateway_working_storage#gateway_arn StoragegatewayWorkingStorage#gateway_arn}.
+	GatewayArn *string `json:"gatewayArn" yaml:"gatewayArn"`
 }

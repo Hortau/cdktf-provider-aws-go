@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/dms/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html aws_dms_certificate}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate aws_dms_certificate}.
 type DmsCertificate interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -24,8 +24,8 @@ type DmsCertificate interface {
 	SetCertificateWallet(val *string)
 	CertificateWalletInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37,20 +37,25 @@ type DmsCertificate interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCertificatePem()
@@ -159,8 +164,8 @@ func (j *jsiiProxy_DmsCertificate) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_DmsCertificate) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsCertificate) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -249,8 +254,8 @@ func (j *jsiiProxy_DmsCertificate) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsCertificate) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsCertificate) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -259,8 +264,8 @@ func (j *jsiiProxy_DmsCertificate) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsCertificate) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsCertificate) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -269,8 +274,8 @@ func (j *jsiiProxy_DmsCertificate) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsCertificate) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsCertificate) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -279,8 +284,8 @@ func (j *jsiiProxy_DmsCertificate) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsCertificate) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsCertificate) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -319,7 +324,7 @@ func (j *jsiiProxy_DmsCertificate) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html aws_dms_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate aws_dms_certificate} Resource.
 func NewDmsCertificate(scope constructs.Construct, id *string, config *DmsCertificateConfig) DmsCertificate {
 	_init_.Initialize()
 
@@ -334,7 +339,7 @@ func NewDmsCertificate(scope constructs.Construct, id *string, config *DmsCertif
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html aws_dms_certificate} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate aws_dms_certificate} Resource.
 func NewDmsCertificate_Override(d DmsCertificate, scope constructs.Construct, id *string, config *DmsCertificateConfig) {
 	_init_.Initialize()
 
@@ -369,7 +374,7 @@ func (j *jsiiProxy_DmsCertificate) SetCertificateWallet(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DmsCertificate) SetCount(val interface{}) {
+func (j *jsiiProxy_DmsCertificate) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -401,7 +406,7 @@ func (j *jsiiProxy_DmsCertificate) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DmsCertificate) SetTags(val interface{}) {
+func (j *jsiiProxy_DmsCertificate) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -409,7 +414,7 @@ func (j *jsiiProxy_DmsCertificate) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DmsCertificate) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DmsCertificate) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -457,12 +462,40 @@ func (d *jsiiProxy_DmsCertificate) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsCertificate) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsCertificate) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsCertificate) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -499,12 +532,54 @@ func (d *jsiiProxy_DmsCertificate) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsCertificate) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsCertificate) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsCertificate) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsCertificate) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -637,26 +712,26 @@ func (d *jsiiProxy_DmsCertificate) ToTerraform() interface{} {
 // AWS Database Migration Service.
 type DmsCertificateConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html#certificate_id DmsCertificate#certificate_id}.
-	CertificateId *string `json:"certificateId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html#certificate_pem DmsCertificate#certificate_pem}.
-	CertificatePem *string `json:"certificatePem"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html#certificate_wallet DmsCertificate#certificate_wallet}.
-	CertificateWallet *string `json:"certificateWallet"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html#tags DmsCertificate#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate.html#tags_all DmsCertificate#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate#certificate_id DmsCertificate#certificate_id}.
+	CertificateId *string `json:"certificateId" yaml:"certificateId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate#certificate_pem DmsCertificate#certificate_pem}.
+	CertificatePem *string `json:"certificatePem" yaml:"certificatePem"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate#certificate_wallet DmsCertificate#certificate_wallet}.
+	CertificateWallet *string `json:"certificateWallet" yaml:"certificateWallet"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate#tags DmsCertificate#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_certificate#tags_all DmsCertificate#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html aws_dms_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint aws_dms_endpoint}.
 type DmsEndpoint interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -664,8 +739,8 @@ type DmsEndpoint interface {
 	SetCertificateArn(val *string)
 	CertificateArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
@@ -712,6 +787,12 @@ type DmsEndpoint interface {
 	RawOverrides() interface{}
 	S3Settings() DmsEndpointS3SettingsOutputReference
 	S3SettingsInput() *DmsEndpointS3Settings
+	SecretsManagerAccessRoleArn() *string
+	SetSecretsManagerAccessRoleArn(val *string)
+	SecretsManagerAccessRoleArnInput() *string
+	SecretsManagerArn() *string
+	SetSecretsManagerArn(val *string)
+	SecretsManagerArnInput() *string
 	ServerName() *string
 	SetServerName(val *string)
 	ServerNameInput() *string
@@ -721,12 +802,12 @@ type DmsEndpoint interface {
 	SslMode() *string
 	SetSslMode(val *string)
 	SslModeInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -734,10 +815,15 @@ type DmsEndpoint interface {
 	SetUsername(val *string)
 	UsernameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutElasticsearchSettings(value *DmsEndpointElasticsearchSettings)
@@ -757,6 +843,8 @@ type DmsEndpoint interface {
 	ResetPassword()
 	ResetPort()
 	ResetS3Settings()
+	ResetSecretsManagerAccessRoleArn()
+	ResetSecretsManagerArn()
 	ResetServerName()
 	ResetServiceAccessRole()
 	ResetSslMode()
@@ -814,8 +902,8 @@ func (j *jsiiProxy_DmsEndpoint) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1174,6 +1262,46 @@ func (j *jsiiProxy_DmsEndpoint) S3SettingsInput() *DmsEndpointS3Settings {
 	return returns
 }
 
+func (j *jsiiProxy_DmsEndpoint) SecretsManagerAccessRoleArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secretsManagerAccessRoleArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DmsEndpoint) SecretsManagerAccessRoleArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secretsManagerAccessRoleArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DmsEndpoint) SecretsManagerArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secretsManagerArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DmsEndpoint) SecretsManagerArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secretsManagerArnInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DmsEndpoint) ServerName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1234,8 +1362,8 @@ func (j *jsiiProxy_DmsEndpoint) SslModeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpoint) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEndpoint) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1244,8 +1372,8 @@ func (j *jsiiProxy_DmsEndpoint) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpoint) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEndpoint) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1254,8 +1382,8 @@ func (j *jsiiProxy_DmsEndpoint) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpoint) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEndpoint) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1264,8 +1392,8 @@ func (j *jsiiProxy_DmsEndpoint) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpoint) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEndpoint) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1324,7 +1452,7 @@ func (j *jsiiProxy_DmsEndpoint) UsernameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html aws_dms_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint aws_dms_endpoint} Resource.
 func NewDmsEndpoint(scope constructs.Construct, id *string, config *DmsEndpointConfig) DmsEndpoint {
 	_init_.Initialize()
 
@@ -1339,7 +1467,7 @@ func NewDmsEndpoint(scope constructs.Construct, id *string, config *DmsEndpointC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html aws_dms_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint aws_dms_endpoint} Resource.
 func NewDmsEndpoint_Override(d DmsEndpoint, scope constructs.Construct, id *string, config *DmsEndpointConfig) {
 	_init_.Initialize()
 
@@ -1358,7 +1486,7 @@ func (j *jsiiProxy_DmsEndpoint) SetCertificateArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DmsEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_DmsEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1454,6 +1582,22 @@ func (j *jsiiProxy_DmsEndpoint) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
+func (j *jsiiProxy_DmsEndpoint) SetSecretsManagerAccessRoleArn(val *string) {
+	_jsii_.Set(
+		j,
+		"secretsManagerAccessRoleArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DmsEndpoint) SetSecretsManagerArn(val *string) {
+	_jsii_.Set(
+		j,
+		"secretsManagerArn",
+		val,
+	)
+}
+
 func (j *jsiiProxy_DmsEndpoint) SetServerName(val *string) {
 	_jsii_.Set(
 		j,
@@ -1478,7 +1622,7 @@ func (j *jsiiProxy_DmsEndpoint) SetSslMode(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DmsEndpoint) SetTags(val interface{}) {
+func (j *jsiiProxy_DmsEndpoint) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1486,7 +1630,7 @@ func (j *jsiiProxy_DmsEndpoint) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DmsEndpoint) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DmsEndpoint) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1542,12 +1686,40 @@ func (d *jsiiProxy_DmsEndpoint) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1584,12 +1756,54 @@ func (d *jsiiProxy_DmsEndpoint) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1759,6 +1973,22 @@ func (d *jsiiProxy_DmsEndpoint) ResetS3Settings() {
 	)
 }
 
+func (d *jsiiProxy_DmsEndpoint) ResetSecretsManagerAccessRoleArn() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSecretsManagerAccessRoleArn",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DmsEndpoint) ResetSecretsManagerArn() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSecretsManagerArn",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DmsEndpoint) ResetServerName() {
 	_jsii_.InvokeVoid(
 		d,
@@ -1866,74 +2096,78 @@ func (d *jsiiProxy_DmsEndpoint) ToTerraform() interface{} {
 // AWS Database Migration Service.
 type DmsEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#endpoint_id DmsEndpoint#endpoint_id}.
-	EndpointId *string `json:"endpointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#endpoint_type DmsEndpoint#endpoint_type}.
-	EndpointType *string `json:"endpointType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#engine_name DmsEndpoint#engine_name}.
-	EngineName *string `json:"engineName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#certificate_arn DmsEndpoint#certificate_arn}.
-	CertificateArn *string `json:"certificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#database_name DmsEndpoint#database_name}.
-	DatabaseName *string `json:"databaseName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#endpoint_id DmsEndpoint#endpoint_id}.
+	EndpointId *string `json:"endpointId" yaml:"endpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#endpoint_type DmsEndpoint#endpoint_type}.
+	EndpointType *string `json:"endpointType" yaml:"endpointType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#engine_name DmsEndpoint#engine_name}.
+	EngineName *string `json:"engineName" yaml:"engineName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#certificate_arn DmsEndpoint#certificate_arn}.
+	CertificateArn *string `json:"certificateArn" yaml:"certificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#database_name DmsEndpoint#database_name}.
+	DatabaseName *string `json:"databaseName" yaml:"databaseName"`
 	// elasticsearch_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#elasticsearch_settings DmsEndpoint#elasticsearch_settings}
-	ElasticsearchSettings *DmsEndpointElasticsearchSettings `json:"elasticsearchSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#extra_connection_attributes DmsEndpoint#extra_connection_attributes}.
-	ExtraConnectionAttributes *string `json:"extraConnectionAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#elasticsearch_settings DmsEndpoint#elasticsearch_settings}
+	ElasticsearchSettings *DmsEndpointElasticsearchSettings `json:"elasticsearchSettings" yaml:"elasticsearchSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#extra_connection_attributes DmsEndpoint#extra_connection_attributes}.
+	ExtraConnectionAttributes *string `json:"extraConnectionAttributes" yaml:"extraConnectionAttributes"`
 	// kafka_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#kafka_settings DmsEndpoint#kafka_settings}
-	KafkaSettings *DmsEndpointKafkaSettings `json:"kafkaSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#kafka_settings DmsEndpoint#kafka_settings}
+	KafkaSettings *DmsEndpointKafkaSettings `json:"kafkaSettings" yaml:"kafkaSettings"`
 	// kinesis_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#kinesis_settings DmsEndpoint#kinesis_settings}
-	KinesisSettings *DmsEndpointKinesisSettings `json:"kinesisSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#kms_key_arn DmsEndpoint#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#kinesis_settings DmsEndpoint#kinesis_settings}
+	KinesisSettings *DmsEndpointKinesisSettings `json:"kinesisSettings" yaml:"kinesisSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#kms_key_arn DmsEndpoint#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 	// mongodb_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#mongodb_settings DmsEndpoint#mongodb_settings}
-	MongodbSettings *DmsEndpointMongodbSettings `json:"mongodbSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#password DmsEndpoint#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#port DmsEndpoint#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#mongodb_settings DmsEndpoint#mongodb_settings}
+	MongodbSettings *DmsEndpointMongodbSettings `json:"mongodbSettings" yaml:"mongodbSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#password DmsEndpoint#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#port DmsEndpoint#port}.
+	Port *float64 `json:"port" yaml:"port"`
 	// s3_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#s3_settings DmsEndpoint#s3_settings}
-	S3Settings *DmsEndpointS3Settings `json:"s3Settings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#server_name DmsEndpoint#server_name}.
-	ServerName *string `json:"serverName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#service_access_role DmsEndpoint#service_access_role}.
-	ServiceAccessRole *string `json:"serviceAccessRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#ssl_mode DmsEndpoint#ssl_mode}.
-	SslMode *string `json:"sslMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#tags DmsEndpoint#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#tags_all DmsEndpoint#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#username DmsEndpoint#username}.
-	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#s3_settings DmsEndpoint#s3_settings}
+	S3Settings *DmsEndpointS3Settings `json:"s3Settings" yaml:"s3Settings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#secrets_manager_access_role_arn DmsEndpoint#secrets_manager_access_role_arn}.
+	SecretsManagerAccessRoleArn *string `json:"secretsManagerAccessRoleArn" yaml:"secretsManagerAccessRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#secrets_manager_arn DmsEndpoint#secrets_manager_arn}.
+	SecretsManagerArn *string `json:"secretsManagerArn" yaml:"secretsManagerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#server_name DmsEndpoint#server_name}.
+	ServerName *string `json:"serverName" yaml:"serverName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#service_access_role DmsEndpoint#service_access_role}.
+	ServiceAccessRole *string `json:"serviceAccessRole" yaml:"serviceAccessRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#ssl_mode DmsEndpoint#ssl_mode}.
+	SslMode *string `json:"sslMode" yaml:"sslMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#tags DmsEndpoint#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#tags_all DmsEndpoint#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#username DmsEndpoint#username}.
+	Username *string `json:"username" yaml:"username"`
 }
 
 type DmsEndpointElasticsearchSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#endpoint_uri DmsEndpoint#endpoint_uri}.
-	EndpointUri *string `json:"endpointUri"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#service_access_role_arn DmsEndpoint#service_access_role_arn}.
-	ServiceAccessRoleArn *string `json:"serviceAccessRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#error_retry_duration DmsEndpoint#error_retry_duration}.
-	ErrorRetryDuration *float64 `json:"errorRetryDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#full_load_error_percentage DmsEndpoint#full_load_error_percentage}.
-	FullLoadErrorPercentage *float64 `json:"fullLoadErrorPercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#endpoint_uri DmsEndpoint#endpoint_uri}.
+	EndpointUri *string `json:"endpointUri" yaml:"endpointUri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#service_access_role_arn DmsEndpoint#service_access_role_arn}.
+	ServiceAccessRoleArn *string `json:"serviceAccessRoleArn" yaml:"serviceAccessRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#error_retry_duration DmsEndpoint#error_retry_duration}.
+	ErrorRetryDuration *float64 `json:"errorRetryDuration" yaml:"errorRetryDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#full_load_error_percentage DmsEndpoint#full_load_error_percentage}.
+	FullLoadErrorPercentage *float64 `json:"fullLoadErrorPercentage" yaml:"fullLoadErrorPercentage"`
 }
 
 type DmsEndpointElasticsearchSettingsOutputReference interface {
@@ -1956,12 +2190,17 @@ type DmsEndpointElasticsearchSettingsOutputReference interface {
 	ServiceAccessRoleArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetErrorRetryDuration()
@@ -2083,8 +2322,8 @@ func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2093,7 +2332,7 @@ func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) TerraformRes
 	return returns
 }
 
-func NewDmsEndpointElasticsearchSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DmsEndpointElasticsearchSettingsOutputReference {
+func NewDmsEndpointElasticsearchSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DmsEndpointElasticsearchSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference{}
@@ -2107,7 +2346,7 @@ func NewDmsEndpointElasticsearchSettingsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewDmsEndpointElasticsearchSettingsOutputReference_Override(d DmsEndpointElasticsearchSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDmsEndpointElasticsearchSettingsOutputReference_Override(d DmsEndpointElasticsearchSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2173,7 +2412,7 @@ func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2182,12 +2421,40 @@ func (j *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) SetTerraform
 }
 
 // Experimental.
-func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2224,12 +2491,54 @@ func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2282,42 +2591,42 @@ func (d *jsiiProxy_DmsEndpointElasticsearchSettingsOutputReference) ResetFullLoa
 }
 
 type DmsEndpointKafkaSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#broker DmsEndpoint#broker}.
-	Broker *string `json:"broker"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_control_details DmsEndpoint#include_control_details}.
-	IncludeControlDetails interface{} `json:"includeControlDetails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_null_and_empty DmsEndpoint#include_null_and_empty}.
-	IncludeNullAndEmpty interface{} `json:"includeNullAndEmpty"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_partition_value DmsEndpoint#include_partition_value}.
-	IncludePartitionValue interface{} `json:"includePartitionValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_table_alter_operations DmsEndpoint#include_table_alter_operations}.
-	IncludeTableAlterOperations interface{} `json:"includeTableAlterOperations"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_transaction_details DmsEndpoint#include_transaction_details}.
-	IncludeTransactionDetails interface{} `json:"includeTransactionDetails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#message_format DmsEndpoint#message_format}.
-	MessageFormat *string `json:"messageFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#message_max_bytes DmsEndpoint#message_max_bytes}.
-	MessageMaxBytes *float64 `json:"messageMaxBytes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#no_hex_prefix DmsEndpoint#no_hex_prefix}.
-	NoHexPrefix interface{} `json:"noHexPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#partition_include_schema_table DmsEndpoint#partition_include_schema_table}.
-	PartitionIncludeSchemaTable interface{} `json:"partitionIncludeSchemaTable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#sasl_password DmsEndpoint#sasl_password}.
-	SaslPassword *string `json:"saslPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#sasl_username DmsEndpoint#sasl_username}.
-	SaslUsername *string `json:"saslUsername"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#security_protocol DmsEndpoint#security_protocol}.
-	SecurityProtocol *string `json:"securityProtocol"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#ssl_ca_certificate_arn DmsEndpoint#ssl_ca_certificate_arn}.
-	SslCaCertificateArn *string `json:"sslCaCertificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#ssl_client_certificate_arn DmsEndpoint#ssl_client_certificate_arn}.
-	SslClientCertificateArn *string `json:"sslClientCertificateArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#ssl_client_key_arn DmsEndpoint#ssl_client_key_arn}.
-	SslClientKeyArn *string `json:"sslClientKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#ssl_client_key_password DmsEndpoint#ssl_client_key_password}.
-	SslClientKeyPassword *string `json:"sslClientKeyPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#topic DmsEndpoint#topic}.
-	Topic *string `json:"topic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#broker DmsEndpoint#broker}.
+	Broker *string `json:"broker" yaml:"broker"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_control_details DmsEndpoint#include_control_details}.
+	IncludeControlDetails interface{} `json:"includeControlDetails" yaml:"includeControlDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_null_and_empty DmsEndpoint#include_null_and_empty}.
+	IncludeNullAndEmpty interface{} `json:"includeNullAndEmpty" yaml:"includeNullAndEmpty"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_partition_value DmsEndpoint#include_partition_value}.
+	IncludePartitionValue interface{} `json:"includePartitionValue" yaml:"includePartitionValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_table_alter_operations DmsEndpoint#include_table_alter_operations}.
+	IncludeTableAlterOperations interface{} `json:"includeTableAlterOperations" yaml:"includeTableAlterOperations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_transaction_details DmsEndpoint#include_transaction_details}.
+	IncludeTransactionDetails interface{} `json:"includeTransactionDetails" yaml:"includeTransactionDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#message_format DmsEndpoint#message_format}.
+	MessageFormat *string `json:"messageFormat" yaml:"messageFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#message_max_bytes DmsEndpoint#message_max_bytes}.
+	MessageMaxBytes *float64 `json:"messageMaxBytes" yaml:"messageMaxBytes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#no_hex_prefix DmsEndpoint#no_hex_prefix}.
+	NoHexPrefix interface{} `json:"noHexPrefix" yaml:"noHexPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#partition_include_schema_table DmsEndpoint#partition_include_schema_table}.
+	PartitionIncludeSchemaTable interface{} `json:"partitionIncludeSchemaTable" yaml:"partitionIncludeSchemaTable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#sasl_password DmsEndpoint#sasl_password}.
+	SaslPassword *string `json:"saslPassword" yaml:"saslPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#sasl_username DmsEndpoint#sasl_username}.
+	SaslUsername *string `json:"saslUsername" yaml:"saslUsername"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#security_protocol DmsEndpoint#security_protocol}.
+	SecurityProtocol *string `json:"securityProtocol" yaml:"securityProtocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#ssl_ca_certificate_arn DmsEndpoint#ssl_ca_certificate_arn}.
+	SslCaCertificateArn *string `json:"sslCaCertificateArn" yaml:"sslCaCertificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#ssl_client_certificate_arn DmsEndpoint#ssl_client_certificate_arn}.
+	SslClientCertificateArn *string `json:"sslClientCertificateArn" yaml:"sslClientCertificateArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#ssl_client_key_arn DmsEndpoint#ssl_client_key_arn}.
+	SslClientKeyArn *string `json:"sslClientKeyArn" yaml:"sslClientKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#ssl_client_key_password DmsEndpoint#ssl_client_key_password}.
+	SslClientKeyPassword *string `json:"sslClientKeyPassword" yaml:"sslClientKeyPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#topic DmsEndpoint#topic}.
+	Topic *string `json:"topic" yaml:"topic"`
 }
 
 type DmsEndpointKafkaSettingsOutputReference interface {
@@ -2379,15 +2688,20 @@ type DmsEndpointKafkaSettingsOutputReference interface {
 	SslClientKeyPasswordInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Topic() *string
 	SetTopic(val *string)
 	TopicInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIncludeControlDetails()
@@ -2784,8 +3098,8 @@ func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2814,7 +3128,7 @@ func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) TopicInput() *string
 	return returns
 }
 
-func NewDmsEndpointKafkaSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DmsEndpointKafkaSettingsOutputReference {
+func NewDmsEndpointKafkaSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DmsEndpointKafkaSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DmsEndpointKafkaSettingsOutputReference{}
@@ -2828,7 +3142,7 @@ func NewDmsEndpointKafkaSettingsOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewDmsEndpointKafkaSettingsOutputReference_Override(d DmsEndpointKafkaSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDmsEndpointKafkaSettingsOutputReference_Override(d DmsEndpointKafkaSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2998,7 +3312,7 @@ func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3015,12 +3329,40 @@ func (j *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) SetTopic(val *string
 }
 
 // Experimental.
-func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3057,12 +3399,54 @@ func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3235,24 +3619,24 @@ func (d *jsiiProxy_DmsEndpointKafkaSettingsOutputReference) ResetTopic() {
 }
 
 type DmsEndpointKinesisSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_control_details DmsEndpoint#include_control_details}.
-	IncludeControlDetails interface{} `json:"includeControlDetails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_null_and_empty DmsEndpoint#include_null_and_empty}.
-	IncludeNullAndEmpty interface{} `json:"includeNullAndEmpty"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_partition_value DmsEndpoint#include_partition_value}.
-	IncludePartitionValue interface{} `json:"includePartitionValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_table_alter_operations DmsEndpoint#include_table_alter_operations}.
-	IncludeTableAlterOperations interface{} `json:"includeTableAlterOperations"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#include_transaction_details DmsEndpoint#include_transaction_details}.
-	IncludeTransactionDetails interface{} `json:"includeTransactionDetails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#message_format DmsEndpoint#message_format}.
-	MessageFormat *string `json:"messageFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#partition_include_schema_table DmsEndpoint#partition_include_schema_table}.
-	PartitionIncludeSchemaTable interface{} `json:"partitionIncludeSchemaTable"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#service_access_role_arn DmsEndpoint#service_access_role_arn}.
-	ServiceAccessRoleArn *string `json:"serviceAccessRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#stream_arn DmsEndpoint#stream_arn}.
-	StreamArn *string `json:"streamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_control_details DmsEndpoint#include_control_details}.
+	IncludeControlDetails interface{} `json:"includeControlDetails" yaml:"includeControlDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_null_and_empty DmsEndpoint#include_null_and_empty}.
+	IncludeNullAndEmpty interface{} `json:"includeNullAndEmpty" yaml:"includeNullAndEmpty"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_partition_value DmsEndpoint#include_partition_value}.
+	IncludePartitionValue interface{} `json:"includePartitionValue" yaml:"includePartitionValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_table_alter_operations DmsEndpoint#include_table_alter_operations}.
+	IncludeTableAlterOperations interface{} `json:"includeTableAlterOperations" yaml:"includeTableAlterOperations"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#include_transaction_details DmsEndpoint#include_transaction_details}.
+	IncludeTransactionDetails interface{} `json:"includeTransactionDetails" yaml:"includeTransactionDetails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#message_format DmsEndpoint#message_format}.
+	MessageFormat *string `json:"messageFormat" yaml:"messageFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#partition_include_schema_table DmsEndpoint#partition_include_schema_table}.
+	PartitionIncludeSchemaTable interface{} `json:"partitionIncludeSchemaTable" yaml:"partitionIncludeSchemaTable"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#service_access_role_arn DmsEndpoint#service_access_role_arn}.
+	ServiceAccessRoleArn *string `json:"serviceAccessRoleArn" yaml:"serviceAccessRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#stream_arn DmsEndpoint#stream_arn}.
+	StreamArn *string `json:"streamArn" yaml:"streamArn"`
 }
 
 type DmsEndpointKinesisSettingsOutputReference interface {
@@ -3290,12 +3674,17 @@ type DmsEndpointKinesisSettingsOutputReference interface {
 	StreamArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetIncludeControlDetails()
@@ -3524,8 +3913,8 @@ func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3534,7 +3923,7 @@ func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) TerraformResource(
 	return returns
 }
 
-func NewDmsEndpointKinesisSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DmsEndpointKinesisSettingsOutputReference {
+func NewDmsEndpointKinesisSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DmsEndpointKinesisSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DmsEndpointKinesisSettingsOutputReference{}
@@ -3548,7 +3937,7 @@ func NewDmsEndpointKinesisSettingsOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewDmsEndpointKinesisSettingsOutputReference_Override(d DmsEndpointKinesisSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDmsEndpointKinesisSettingsOutputReference_Override(d DmsEndpointKinesisSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3654,7 +4043,7 @@ func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3663,12 +4052,40 @@ func (j *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) SetTerraformResour
 }
 
 // Experimental.
-func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3705,12 +4122,54 @@ func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3819,18 +4278,18 @@ func (d *jsiiProxy_DmsEndpointKinesisSettingsOutputReference) ResetStreamArn() {
 }
 
 type DmsEndpointMongodbSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#auth_mechanism DmsEndpoint#auth_mechanism}.
-	AuthMechanism *string `json:"authMechanism"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#auth_source DmsEndpoint#auth_source}.
-	AuthSource *string `json:"authSource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#auth_type DmsEndpoint#auth_type}.
-	AuthType *string `json:"authType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#docs_to_investigate DmsEndpoint#docs_to_investigate}.
-	DocsToInvestigate *string `json:"docsToInvestigate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#extract_doc_id DmsEndpoint#extract_doc_id}.
-	ExtractDocId *string `json:"extractDocId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#nesting_level DmsEndpoint#nesting_level}.
-	NestingLevel *string `json:"nestingLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#auth_mechanism DmsEndpoint#auth_mechanism}.
+	AuthMechanism *string `json:"authMechanism" yaml:"authMechanism"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#auth_source DmsEndpoint#auth_source}.
+	AuthSource *string `json:"authSource" yaml:"authSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#auth_type DmsEndpoint#auth_type}.
+	AuthType *string `json:"authType" yaml:"authType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#docs_to_investigate DmsEndpoint#docs_to_investigate}.
+	DocsToInvestigate *string `json:"docsToInvestigate" yaml:"docsToInvestigate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#extract_doc_id DmsEndpoint#extract_doc_id}.
+	ExtractDocId *string `json:"extractDocId" yaml:"extractDocId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#nesting_level DmsEndpoint#nesting_level}.
+	NestingLevel *string `json:"nestingLevel" yaml:"nestingLevel"`
 }
 
 type DmsEndpointMongodbSettingsOutputReference interface {
@@ -3859,12 +4318,17 @@ type DmsEndpointMongodbSettingsOutputReference interface {
 	NestingLevelInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAuthMechanism()
@@ -4030,8 +4494,8 @@ func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4040,7 +4504,7 @@ func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) TerraformResource(
 	return returns
 }
 
-func NewDmsEndpointMongodbSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DmsEndpointMongodbSettingsOutputReference {
+func NewDmsEndpointMongodbSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DmsEndpointMongodbSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DmsEndpointMongodbSettingsOutputReference{}
@@ -4054,7 +4518,7 @@ func NewDmsEndpointMongodbSettingsOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewDmsEndpointMongodbSettingsOutputReference_Override(d DmsEndpointMongodbSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDmsEndpointMongodbSettingsOutputReference_Override(d DmsEndpointMongodbSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4136,7 +4600,7 @@ func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4145,12 +4609,40 @@ func (j *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) SetTerraformResour
 }
 
 // Experimental.
-func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4187,12 +4679,54 @@ func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4277,32 +4811,32 @@ func (d *jsiiProxy_DmsEndpointMongodbSettingsOutputReference) ResetNestingLevel(
 }
 
 type DmsEndpointS3Settings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#bucket_folder DmsEndpoint#bucket_folder}.
-	BucketFolder *string `json:"bucketFolder"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#bucket_name DmsEndpoint#bucket_name}.
-	BucketName *string `json:"bucketName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#compression_type DmsEndpoint#compression_type}.
-	CompressionType *string `json:"compressionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#csv_delimiter DmsEndpoint#csv_delimiter}.
-	CsvDelimiter *string `json:"csvDelimiter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#csv_row_delimiter DmsEndpoint#csv_row_delimiter}.
-	CsvRowDelimiter *string `json:"csvRowDelimiter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#data_format DmsEndpoint#data_format}.
-	DataFormat *string `json:"dataFormat"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#date_partition_enabled DmsEndpoint#date_partition_enabled}.
-	DatePartitionEnabled interface{} `json:"datePartitionEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#encryption_mode DmsEndpoint#encryption_mode}.
-	EncryptionMode *string `json:"encryptionMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#external_table_definition DmsEndpoint#external_table_definition}.
-	ExternalTableDefinition *string `json:"externalTableDefinition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#parquet_timestamp_in_millisecond DmsEndpoint#parquet_timestamp_in_millisecond}.
-	ParquetTimestampInMillisecond interface{} `json:"parquetTimestampInMillisecond"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#parquet_version DmsEndpoint#parquet_version}.
-	ParquetVersion *string `json:"parquetVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#server_side_encryption_kms_key_id DmsEndpoint#server_side_encryption_kms_key_id}.
-	ServerSideEncryptionKmsKeyId *string `json:"serverSideEncryptionKmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint.html#service_access_role_arn DmsEndpoint#service_access_role_arn}.
-	ServiceAccessRoleArn *string `json:"serviceAccessRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#bucket_folder DmsEndpoint#bucket_folder}.
+	BucketFolder *string `json:"bucketFolder" yaml:"bucketFolder"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#bucket_name DmsEndpoint#bucket_name}.
+	BucketName *string `json:"bucketName" yaml:"bucketName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#compression_type DmsEndpoint#compression_type}.
+	CompressionType *string `json:"compressionType" yaml:"compressionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#csv_delimiter DmsEndpoint#csv_delimiter}.
+	CsvDelimiter *string `json:"csvDelimiter" yaml:"csvDelimiter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#csv_row_delimiter DmsEndpoint#csv_row_delimiter}.
+	CsvRowDelimiter *string `json:"csvRowDelimiter" yaml:"csvRowDelimiter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#data_format DmsEndpoint#data_format}.
+	DataFormat *string `json:"dataFormat" yaml:"dataFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#date_partition_enabled DmsEndpoint#date_partition_enabled}.
+	DatePartitionEnabled interface{} `json:"datePartitionEnabled" yaml:"datePartitionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#encryption_mode DmsEndpoint#encryption_mode}.
+	EncryptionMode *string `json:"encryptionMode" yaml:"encryptionMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#external_table_definition DmsEndpoint#external_table_definition}.
+	ExternalTableDefinition *string `json:"externalTableDefinition" yaml:"externalTableDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#parquet_timestamp_in_millisecond DmsEndpoint#parquet_timestamp_in_millisecond}.
+	ParquetTimestampInMillisecond interface{} `json:"parquetTimestampInMillisecond" yaml:"parquetTimestampInMillisecond"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#parquet_version DmsEndpoint#parquet_version}.
+	ParquetVersion *string `json:"parquetVersion" yaml:"parquetVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#server_side_encryption_kms_key_id DmsEndpoint#server_side_encryption_kms_key_id}.
+	ServerSideEncryptionKmsKeyId *string `json:"serverSideEncryptionKmsKeyId" yaml:"serverSideEncryptionKmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_endpoint#service_access_role_arn DmsEndpoint#service_access_role_arn}.
+	ServiceAccessRoleArn *string `json:"serviceAccessRoleArn" yaml:"serviceAccessRoleArn"`
 }
 
 type DmsEndpointS3SettingsOutputReference interface {
@@ -4352,12 +4886,17 @@ type DmsEndpointS3SettingsOutputReference interface {
 	ServiceAccessRoleArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBucketFolder()
@@ -4670,8 +5209,8 @@ func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4680,7 +5219,7 @@ func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) TerraformResource() cdk
 	return returns
 }
 
-func NewDmsEndpointS3SettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DmsEndpointS3SettingsOutputReference {
+func NewDmsEndpointS3SettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DmsEndpointS3SettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DmsEndpointS3SettingsOutputReference{}
@@ -4694,7 +5233,7 @@ func NewDmsEndpointS3SettingsOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewDmsEndpointS3SettingsOutputReference_Override(d DmsEndpointS3SettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDmsEndpointS3SettingsOutputReference_Override(d DmsEndpointS3SettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4832,7 +5371,7 @@ func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4841,12 +5380,40 @@ func (j *jsiiProxy_DmsEndpointS3SettingsOutputReference) SetTerraformResource(va
 }
 
 // Experimental.
-func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4883,12 +5450,54 @@ func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5028,14 +5637,14 @@ func (d *jsiiProxy_DmsEndpointS3SettingsOutputReference) ResetServiceAccessRoleA
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html aws_dms_event_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription aws_dms_event_subscription}.
 type DmsEventSubscription interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -5065,22 +5674,27 @@ type DmsEventSubscription interface {
 	SourceType() *string
 	SetSourceType(val *string)
 	SourceTypeInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() DmsEventSubscriptionTimeoutsOutputReference
 	TimeoutsInput() *DmsEventSubscriptionTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DmsEventSubscriptionTimeouts)
@@ -5132,8 +5746,8 @@ func (j *jsiiProxy_DmsEventSubscription) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DmsEventSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEventSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5342,8 +5956,8 @@ func (j *jsiiProxy_DmsEventSubscription) SourceTypeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEventSubscription) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEventSubscription) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5352,8 +5966,8 @@ func (j *jsiiProxy_DmsEventSubscription) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEventSubscription) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEventSubscription) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5362,8 +5976,8 @@ func (j *jsiiProxy_DmsEventSubscription) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEventSubscription) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEventSubscription) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5372,8 +5986,8 @@ func (j *jsiiProxy_DmsEventSubscription) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsEventSubscription) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsEventSubscription) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5432,7 +6046,7 @@ func (j *jsiiProxy_DmsEventSubscription) TimeoutsInput() *DmsEventSubscriptionTi
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html aws_dms_event_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription aws_dms_event_subscription} Resource.
 func NewDmsEventSubscription(scope constructs.Construct, id *string, config *DmsEventSubscriptionConfig) DmsEventSubscription {
 	_init_.Initialize()
 
@@ -5447,7 +6061,7 @@ func NewDmsEventSubscription(scope constructs.Construct, id *string, config *Dms
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html aws_dms_event_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription aws_dms_event_subscription} Resource.
 func NewDmsEventSubscription_Override(d DmsEventSubscription, scope constructs.Construct, id *string, config *DmsEventSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -5458,7 +6072,7 @@ func NewDmsEventSubscription_Override(d DmsEventSubscription, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DmsEventSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_DmsEventSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5538,7 +6152,7 @@ func (j *jsiiProxy_DmsEventSubscription) SetSourceType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DmsEventSubscription) SetTags(val interface{}) {
+func (j *jsiiProxy_DmsEventSubscription) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5546,7 +6160,7 @@ func (j *jsiiProxy_DmsEventSubscription) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DmsEventSubscription) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DmsEventSubscription) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5594,12 +6208,40 @@ func (d *jsiiProxy_DmsEventSubscription) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEventSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEventSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEventSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5636,12 +6278,54 @@ func (d *jsiiProxy_DmsEventSubscription) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEventSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEventSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEventSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEventSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5798,42 +6482,42 @@ func (d *jsiiProxy_DmsEventSubscription) ToTerraform() interface{} {
 // AWS Database Migration Service.
 type DmsEventSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#event_categories DmsEventSubscription#event_categories}.
-	EventCategories *[]*string `json:"eventCategories"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#name DmsEventSubscription#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#sns_topic_arn DmsEventSubscription#sns_topic_arn}.
-	SnsTopicArn *string `json:"snsTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#enabled DmsEventSubscription#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#source_ids DmsEventSubscription#source_ids}.
-	SourceIds *[]*string `json:"sourceIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#source_type DmsEventSubscription#source_type}.
-	SourceType *string `json:"sourceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#tags DmsEventSubscription#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#tags_all DmsEventSubscription#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#event_categories DmsEventSubscription#event_categories}.
+	EventCategories *[]*string `json:"eventCategories" yaml:"eventCategories"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#name DmsEventSubscription#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#sns_topic_arn DmsEventSubscription#sns_topic_arn}.
+	SnsTopicArn *string `json:"snsTopicArn" yaml:"snsTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#enabled DmsEventSubscription#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#source_ids DmsEventSubscription#source_ids}.
+	SourceIds *[]*string `json:"sourceIds" yaml:"sourceIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#source_type DmsEventSubscription#source_type}.
+	SourceType *string `json:"sourceType" yaml:"sourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#tags DmsEventSubscription#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#tags_all DmsEventSubscription#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#timeouts DmsEventSubscription#timeouts}
-	Timeouts *DmsEventSubscriptionTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#timeouts DmsEventSubscription#timeouts}
+	Timeouts *DmsEventSubscriptionTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DmsEventSubscriptionTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#create DmsEventSubscription#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#delete DmsEventSubscription#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription.html#update DmsEventSubscription#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#create DmsEventSubscription#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#delete DmsEventSubscription#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_event_subscription#update DmsEventSubscription#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DmsEventSubscriptionTimeoutsOutputReference interface {
@@ -5850,15 +6534,20 @@ type DmsEventSubscriptionTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -5941,8 +6630,8 @@ func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5971,7 +6660,7 @@ func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) UpdateInput() *s
 	return returns
 }
 
-func NewDmsEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DmsEventSubscriptionTimeoutsOutputReference {
+func NewDmsEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DmsEventSubscriptionTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference{}
@@ -5985,7 +6674,7 @@ func NewDmsEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewDmsEventSubscriptionTimeoutsOutputReference_Override(d DmsEventSubscriptionTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDmsEventSubscriptionTimeoutsOutputReference_Override(d DmsEventSubscriptionTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6035,7 +6724,7 @@ func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6052,12 +6741,40 @@ func (j *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) SetUpdate(val *s
 }
 
 // Experimental.
-func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6094,12 +6811,54 @@ func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6159,7 +6918,7 @@ func (d *jsiiProxy_DmsEventSubscriptionTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html aws_dms_replication_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance aws_dms_replication_instance}.
 type DmsReplicationInstance interface {
 	cdktf.TerraformResource
 	AllocatedStorage() *float64
@@ -6179,8 +6938,8 @@ type DmsReplicationInstance interface {
 	AvailabilityZoneInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EngineVersion() *string
@@ -6219,12 +6978,12 @@ type DmsReplicationInstance interface {
 	ReplicationSubnetGroupId() *string
 	SetReplicationSubnetGroupId(val *string)
 	ReplicationSubnetGroupIdInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -6234,10 +6993,15 @@ type DmsReplicationInstance interface {
 	SetVpcSecurityGroupIds(val *[]*string)
 	VpcSecurityGroupIdsInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DmsReplicationInstanceTimeouts)
@@ -6388,8 +7152,8 @@ func (j *jsiiProxy_DmsReplicationInstance) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6668,8 +7432,8 @@ func (j *jsiiProxy_DmsReplicationInstance) ReplicationSubnetGroupIdInput() *stri
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationInstance) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6678,8 +7442,8 @@ func (j *jsiiProxy_DmsReplicationInstance) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationInstance) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6688,8 +7452,8 @@ func (j *jsiiProxy_DmsReplicationInstance) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationInstance) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6698,8 +7462,8 @@ func (j *jsiiProxy_DmsReplicationInstance) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationInstance) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6778,7 +7542,7 @@ func (j *jsiiProxy_DmsReplicationInstance) VpcSecurityGroupIdsInput() *[]*string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html aws_dms_replication_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance aws_dms_replication_instance} Resource.
 func NewDmsReplicationInstance(scope constructs.Construct, id *string, config *DmsReplicationInstanceConfig) DmsReplicationInstance {
 	_init_.Initialize()
 
@@ -6793,7 +7557,7 @@ func NewDmsReplicationInstance(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html aws_dms_replication_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance aws_dms_replication_instance} Resource.
 func NewDmsReplicationInstance_Override(d DmsReplicationInstance, scope constructs.Construct, id *string, config *DmsReplicationInstanceConfig) {
 	_init_.Initialize()
 
@@ -6844,7 +7608,7 @@ func (j *jsiiProxy_DmsReplicationInstance) SetAvailabilityZone(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_DmsReplicationInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6940,7 +7704,7 @@ func (j *jsiiProxy_DmsReplicationInstance) SetReplicationSubnetGroupId(val *stri
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) SetTags(val interface{}) {
+func (j *jsiiProxy_DmsReplicationInstance) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6948,7 +7712,7 @@ func (j *jsiiProxy_DmsReplicationInstance) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationInstance) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DmsReplicationInstance) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7004,12 +7768,40 @@ func (d *jsiiProxy_DmsReplicationInstance) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsReplicationInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsReplicationInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7046,12 +7838,54 @@ func (d *jsiiProxy_DmsReplicationInstance) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsReplicationInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsReplicationInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7280,58 +8114,58 @@ func (d *jsiiProxy_DmsReplicationInstance) ToTerraform() interface{} {
 // AWS Database Migration Service.
 type DmsReplicationInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#replication_instance_class DmsReplicationInstance#replication_instance_class}.
-	ReplicationInstanceClass *string `json:"replicationInstanceClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#replication_instance_id DmsReplicationInstance#replication_instance_id}.
-	ReplicationInstanceId *string `json:"replicationInstanceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#allocated_storage DmsReplicationInstance#allocated_storage}.
-	AllocatedStorage *float64 `json:"allocatedStorage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#allow_major_version_upgrade DmsReplicationInstance#allow_major_version_upgrade}.
-	AllowMajorVersionUpgrade interface{} `json:"allowMajorVersionUpgrade"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#apply_immediately DmsReplicationInstance#apply_immediately}.
-	ApplyImmediately interface{} `json:"applyImmediately"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#auto_minor_version_upgrade DmsReplicationInstance#auto_minor_version_upgrade}.
-	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#availability_zone DmsReplicationInstance#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#engine_version DmsReplicationInstance#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#kms_key_arn DmsReplicationInstance#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#multi_az DmsReplicationInstance#multi_az}.
-	MultiAz interface{} `json:"multiAz"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#preferred_maintenance_window DmsReplicationInstance#preferred_maintenance_window}.
-	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#publicly_accessible DmsReplicationInstance#publicly_accessible}.
-	PubliclyAccessible interface{} `json:"publiclyAccessible"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#replication_subnet_group_id DmsReplicationInstance#replication_subnet_group_id}.
-	ReplicationSubnetGroupId *string `json:"replicationSubnetGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#tags DmsReplicationInstance#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#tags_all DmsReplicationInstance#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#replication_instance_class DmsReplicationInstance#replication_instance_class}.
+	ReplicationInstanceClass *string `json:"replicationInstanceClass" yaml:"replicationInstanceClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#replication_instance_id DmsReplicationInstance#replication_instance_id}.
+	ReplicationInstanceId *string `json:"replicationInstanceId" yaml:"replicationInstanceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#allocated_storage DmsReplicationInstance#allocated_storage}.
+	AllocatedStorage *float64 `json:"allocatedStorage" yaml:"allocatedStorage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#allow_major_version_upgrade DmsReplicationInstance#allow_major_version_upgrade}.
+	AllowMajorVersionUpgrade interface{} `json:"allowMajorVersionUpgrade" yaml:"allowMajorVersionUpgrade"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#apply_immediately DmsReplicationInstance#apply_immediately}.
+	ApplyImmediately interface{} `json:"applyImmediately" yaml:"applyImmediately"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#auto_minor_version_upgrade DmsReplicationInstance#auto_minor_version_upgrade}.
+	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade" yaml:"autoMinorVersionUpgrade"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#availability_zone DmsReplicationInstance#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#engine_version DmsReplicationInstance#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#kms_key_arn DmsReplicationInstance#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#multi_az DmsReplicationInstance#multi_az}.
+	MultiAz interface{} `json:"multiAz" yaml:"multiAz"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#preferred_maintenance_window DmsReplicationInstance#preferred_maintenance_window}.
+	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow" yaml:"preferredMaintenanceWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#publicly_accessible DmsReplicationInstance#publicly_accessible}.
+	PubliclyAccessible interface{} `json:"publiclyAccessible" yaml:"publiclyAccessible"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#replication_subnet_group_id DmsReplicationInstance#replication_subnet_group_id}.
+	ReplicationSubnetGroupId *string `json:"replicationSubnetGroupId" yaml:"replicationSubnetGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#tags DmsReplicationInstance#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#tags_all DmsReplicationInstance#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#timeouts DmsReplicationInstance#timeouts}
-	Timeouts *DmsReplicationInstanceTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#vpc_security_group_ids DmsReplicationInstance#vpc_security_group_ids}.
-	VpcSecurityGroupIds *[]*string `json:"vpcSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#timeouts DmsReplicationInstance#timeouts}
+	Timeouts *DmsReplicationInstanceTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#vpc_security_group_ids DmsReplicationInstance#vpc_security_group_ids}.
+	VpcSecurityGroupIds *[]*string `json:"vpcSecurityGroupIds" yaml:"vpcSecurityGroupIds"`
 }
 
 type DmsReplicationInstanceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#create DmsReplicationInstance#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#delete DmsReplicationInstance#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance.html#update DmsReplicationInstance#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#create DmsReplicationInstance#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#delete DmsReplicationInstance#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_instance#update DmsReplicationInstance#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DmsReplicationInstanceTimeoutsOutputReference interface {
@@ -7348,15 +8182,20 @@ type DmsReplicationInstanceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7439,8 +8278,8 @@ func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7469,7 +8308,7 @@ func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) UpdateInput() 
 	return returns
 }
 
-func NewDmsReplicationInstanceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DmsReplicationInstanceTimeoutsOutputReference {
+func NewDmsReplicationInstanceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DmsReplicationInstanceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference{}
@@ -7483,7 +8322,7 @@ func NewDmsReplicationInstanceTimeoutsOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewDmsReplicationInstanceTimeoutsOutputReference_Override(d DmsReplicationInstanceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDmsReplicationInstanceTimeoutsOutputReference_Override(d DmsReplicationInstanceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7533,7 +8372,7 @@ func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7550,12 +8389,40 @@ func (j *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) SetUpdate(val 
 }
 
 // Experimental.
-func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7592,12 +8459,54 @@ func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7657,13 +8566,13 @@ func (d *jsiiProxy_DmsReplicationInstanceTimeoutsOutputReference) ResetUpdate() 
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html aws_dms_replication_subnet_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group aws_dms_replication_subnet_group}.
 type DmsReplicationSubnetGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7685,21 +8594,26 @@ type DmsReplicationSubnetGroup interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	VpcId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7736,8 +8650,8 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationSubnetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7896,8 +8810,8 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationSubnetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7906,8 +8820,8 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7916,8 +8830,8 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7926,8 +8840,8 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationSubnetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7976,7 +8890,7 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html aws_dms_replication_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group aws_dms_replication_subnet_group} Resource.
 func NewDmsReplicationSubnetGroup(scope constructs.Construct, id *string, config *DmsReplicationSubnetGroupConfig) DmsReplicationSubnetGroup {
 	_init_.Initialize()
 
@@ -7991,7 +8905,7 @@ func NewDmsReplicationSubnetGroup(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html aws_dms_replication_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group aws_dms_replication_subnet_group} Resource.
 func NewDmsReplicationSubnetGroup_Override(d DmsReplicationSubnetGroup, scope constructs.Construct, id *string, config *DmsReplicationSubnetGroupConfig) {
 	_init_.Initialize()
 
@@ -8002,7 +8916,7 @@ func NewDmsReplicationSubnetGroup_Override(d DmsReplicationSubnetGroup, scope co
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DmsReplicationSubnetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8058,7 +8972,7 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_DmsReplicationSubnetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8066,7 +8980,7 @@ func (j *jsiiProxy_DmsReplicationSubnetGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationSubnetGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DmsReplicationSubnetGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8114,12 +9028,40 @@ func (d *jsiiProxy_DmsReplicationSubnetGroup) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsReplicationSubnetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsReplicationSubnetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationSubnetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8156,12 +9098,54 @@ func (d *jsiiProxy_DmsReplicationSubnetGroup) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsReplicationSubnetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationSubnetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsReplicationSubnetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationSubnetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8278,26 +9262,26 @@ func (d *jsiiProxy_DmsReplicationSubnetGroup) ToTerraform() interface{} {
 // AWS Database Migration Service.
 type DmsReplicationSubnetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html#replication_subnet_group_description DmsReplicationSubnetGroup#replication_subnet_group_description}.
-	ReplicationSubnetGroupDescription *string `json:"replicationSubnetGroupDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html#replication_subnet_group_id DmsReplicationSubnetGroup#replication_subnet_group_id}.
-	ReplicationSubnetGroupId *string `json:"replicationSubnetGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html#subnet_ids DmsReplicationSubnetGroup#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html#tags DmsReplicationSubnetGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group.html#tags_all DmsReplicationSubnetGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group#replication_subnet_group_description DmsReplicationSubnetGroup#replication_subnet_group_description}.
+	ReplicationSubnetGroupDescription *string `json:"replicationSubnetGroupDescription" yaml:"replicationSubnetGroupDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group#replication_subnet_group_id DmsReplicationSubnetGroup#replication_subnet_group_id}.
+	ReplicationSubnetGroupId *string `json:"replicationSubnetGroupId" yaml:"replicationSubnetGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group#subnet_ids DmsReplicationSubnetGroup#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group#tags DmsReplicationSubnetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_subnet_group#tags_all DmsReplicationSubnetGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html aws_dms_replication_task}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task aws_dms_replication_task}.
 type DmsReplicationTask interface {
 	cdktf.TerraformResource
 	CdcStartPosition() *string
@@ -8308,8 +9292,8 @@ type DmsReplicationTask interface {
 	CdcStartTimeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8340,12 +9324,12 @@ type DmsReplicationTask interface {
 	TableMappings() *string
 	SetTableMappings(val *string)
 	TableMappingsInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetEndpointArn() *string
 	SetTargetEndpointArn(val *string)
 	TargetEndpointArnInput() *string
@@ -8353,10 +9337,15 @@ type DmsReplicationTask interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetCdcStartPosition()
@@ -8436,8 +9425,8 @@ func (j *jsiiProxy_DmsReplicationTask) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationTask) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationTask) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8656,8 +9645,8 @@ func (j *jsiiProxy_DmsReplicationTask) TableMappingsInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationTask) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationTask) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8666,8 +9655,8 @@ func (j *jsiiProxy_DmsReplicationTask) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationTask) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationTask) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8676,8 +9665,8 @@ func (j *jsiiProxy_DmsReplicationTask) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationTask) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationTask) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8686,8 +9675,8 @@ func (j *jsiiProxy_DmsReplicationTask) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DmsReplicationTask) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DmsReplicationTask) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8746,7 +9735,7 @@ func (j *jsiiProxy_DmsReplicationTask) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html aws_dms_replication_task} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task aws_dms_replication_task} Resource.
 func NewDmsReplicationTask(scope constructs.Construct, id *string, config *DmsReplicationTaskConfig) DmsReplicationTask {
 	_init_.Initialize()
 
@@ -8761,7 +9750,7 @@ func NewDmsReplicationTask(scope constructs.Construct, id *string, config *DmsRe
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html aws_dms_replication_task} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task aws_dms_replication_task} Resource.
 func NewDmsReplicationTask_Override(d DmsReplicationTask, scope constructs.Construct, id *string, config *DmsReplicationTaskConfig) {
 	_init_.Initialize()
 
@@ -8788,7 +9777,7 @@ func (j *jsiiProxy_DmsReplicationTask) SetCdcStartTime(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationTask) SetCount(val interface{}) {
+func (j *jsiiProxy_DmsReplicationTask) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8868,7 +9857,7 @@ func (j *jsiiProxy_DmsReplicationTask) SetTableMappings(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationTask) SetTags(val interface{}) {
+func (j *jsiiProxy_DmsReplicationTask) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8876,7 +9865,7 @@ func (j *jsiiProxy_DmsReplicationTask) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DmsReplicationTask) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DmsReplicationTask) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8932,12 +9921,40 @@ func (d *jsiiProxy_DmsReplicationTask) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsReplicationTask) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsReplicationTask) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationTask) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8974,12 +9991,54 @@ func (d *jsiiProxy_DmsReplicationTask) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DmsReplicationTask) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationTask) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DmsReplicationTask) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DmsReplicationTask) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9120,33 +10179,33 @@ func (d *jsiiProxy_DmsReplicationTask) ToTerraform() interface{} {
 // AWS Database Migration Service.
 type DmsReplicationTaskConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#migration_type DmsReplicationTask#migration_type}.
-	MigrationType *string `json:"migrationType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#replication_instance_arn DmsReplicationTask#replication_instance_arn}.
-	ReplicationInstanceArn *string `json:"replicationInstanceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#replication_task_id DmsReplicationTask#replication_task_id}.
-	ReplicationTaskId *string `json:"replicationTaskId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#source_endpoint_arn DmsReplicationTask#source_endpoint_arn}.
-	SourceEndpointArn *string `json:"sourceEndpointArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#table_mappings DmsReplicationTask#table_mappings}.
-	TableMappings *string `json:"tableMappings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#target_endpoint_arn DmsReplicationTask#target_endpoint_arn}.
-	TargetEndpointArn *string `json:"targetEndpointArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#cdc_start_position DmsReplicationTask#cdc_start_position}.
-	CdcStartPosition *string `json:"cdcStartPosition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#cdc_start_time DmsReplicationTask#cdc_start_time}.
-	CdcStartTime *string `json:"cdcStartTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#replication_task_settings DmsReplicationTask#replication_task_settings}.
-	ReplicationTaskSettings *string `json:"replicationTaskSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#tags DmsReplicationTask#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task.html#tags_all DmsReplicationTask#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#migration_type DmsReplicationTask#migration_type}.
+	MigrationType *string `json:"migrationType" yaml:"migrationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#replication_instance_arn DmsReplicationTask#replication_instance_arn}.
+	ReplicationInstanceArn *string `json:"replicationInstanceArn" yaml:"replicationInstanceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#replication_task_id DmsReplicationTask#replication_task_id}.
+	ReplicationTaskId *string `json:"replicationTaskId" yaml:"replicationTaskId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#source_endpoint_arn DmsReplicationTask#source_endpoint_arn}.
+	SourceEndpointArn *string `json:"sourceEndpointArn" yaml:"sourceEndpointArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#table_mappings DmsReplicationTask#table_mappings}.
+	TableMappings *string `json:"tableMappings" yaml:"tableMappings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#target_endpoint_arn DmsReplicationTask#target_endpoint_arn}.
+	TargetEndpointArn *string `json:"targetEndpointArn" yaml:"targetEndpointArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#cdc_start_position DmsReplicationTask#cdc_start_position}.
+	CdcStartPosition *string `json:"cdcStartPosition" yaml:"cdcStartPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#cdc_start_time DmsReplicationTask#cdc_start_time}.
+	CdcStartTime *string `json:"cdcStartTime" yaml:"cdcStartTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#replication_task_settings DmsReplicationTask#replication_task_settings}.
+	ReplicationTaskSettings *string `json:"replicationTaskSettings" yaml:"replicationTaskSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#tags DmsReplicationTask#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dms_replication_task#tags_all DmsReplicationTask#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

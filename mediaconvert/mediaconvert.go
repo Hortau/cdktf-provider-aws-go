@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/mediaconvert/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html aws_media_convert_queue}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue aws_media_convert_queue}.
 type MediaConvertQueue interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -42,20 +42,25 @@ type MediaConvertQueue interface {
 	Status() *string
 	SetStatus(val *string)
 	StatusInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutReservationPlanSettings(value *MediaConvertQueueReservationPlanSettings)
@@ -107,8 +112,8 @@ func (j *jsiiProxy_MediaConvertQueue) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_MediaConvertQueue) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaConvertQueue) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -297,8 +302,8 @@ func (j *jsiiProxy_MediaConvertQueue) StatusInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MediaConvertQueue) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaConvertQueue) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -307,8 +312,8 @@ func (j *jsiiProxy_MediaConvertQueue) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaConvertQueue) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaConvertQueue) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -317,8 +322,8 @@ func (j *jsiiProxy_MediaConvertQueue) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaConvertQueue) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaConvertQueue) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -327,8 +332,8 @@ func (j *jsiiProxy_MediaConvertQueue) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaConvertQueue) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaConvertQueue) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -367,7 +372,7 @@ func (j *jsiiProxy_MediaConvertQueue) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html aws_media_convert_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue aws_media_convert_queue} Resource.
 func NewMediaConvertQueue(scope constructs.Construct, id *string, config *MediaConvertQueueConfig) MediaConvertQueue {
 	_init_.Initialize()
 
@@ -382,7 +387,7 @@ func NewMediaConvertQueue(scope constructs.Construct, id *string, config *MediaC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html aws_media_convert_queue} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue aws_media_convert_queue} Resource.
 func NewMediaConvertQueue_Override(m MediaConvertQueue, scope constructs.Construct, id *string, config *MediaConvertQueueConfig) {
 	_init_.Initialize()
 
@@ -393,7 +398,7 @@ func NewMediaConvertQueue_Override(m MediaConvertQueue, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_MediaConvertQueue) SetCount(val interface{}) {
+func (j *jsiiProxy_MediaConvertQueue) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -457,7 +462,7 @@ func (j *jsiiProxy_MediaConvertQueue) SetStatus(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MediaConvertQueue) SetTags(val interface{}) {
+func (j *jsiiProxy_MediaConvertQueue) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -465,7 +470,7 @@ func (j *jsiiProxy_MediaConvertQueue) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_MediaConvertQueue) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_MediaConvertQueue) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -513,12 +518,40 @@ func (m *jsiiProxy_MediaConvertQueue) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaConvertQueue) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaConvertQueue) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaConvertQueue) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -555,12 +588,54 @@ func (m *jsiiProxy_MediaConvertQueue) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaConvertQueue) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaConvertQueue) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaConvertQueue) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaConvertQueue) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -717,38 +792,38 @@ func (m *jsiiProxy_MediaConvertQueue) ToTerraform() interface{} {
 // AWS MediaConvert.
 type MediaConvertQueueConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#name MediaConvertQueue#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#description MediaConvertQueue#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#pricing_plan MediaConvertQueue#pricing_plan}.
-	PricingPlan *string `json:"pricingPlan"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#name MediaConvertQueue#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#description MediaConvertQueue#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#pricing_plan MediaConvertQueue#pricing_plan}.
+	PricingPlan *string `json:"pricingPlan" yaml:"pricingPlan"`
 	// reservation_plan_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#reservation_plan_settings MediaConvertQueue#reservation_plan_settings}
-	ReservationPlanSettings *MediaConvertQueueReservationPlanSettings `json:"reservationPlanSettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#status MediaConvertQueue#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#tags MediaConvertQueue#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#tags_all MediaConvertQueue#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#reservation_plan_settings MediaConvertQueue#reservation_plan_settings}
+	ReservationPlanSettings *MediaConvertQueueReservationPlanSettings `json:"reservationPlanSettings" yaml:"reservationPlanSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#status MediaConvertQueue#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#tags MediaConvertQueue#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#tags_all MediaConvertQueue#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type MediaConvertQueueReservationPlanSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#commitment MediaConvertQueue#commitment}.
-	Commitment *string `json:"commitment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#renewal_type MediaConvertQueue#renewal_type}.
-	RenewalType *string `json:"renewalType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue.html#reserved_slots MediaConvertQueue#reserved_slots}.
-	ReservedSlots *float64 `json:"reservedSlots"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#commitment MediaConvertQueue#commitment}.
+	Commitment *string `json:"commitment" yaml:"commitment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#renewal_type MediaConvertQueue#renewal_type}.
+	RenewalType *string `json:"renewalType" yaml:"renewalType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_convert_queue#reserved_slots MediaConvertQueue#reserved_slots}.
+	ReservedSlots *float64 `json:"reservedSlots" yaml:"reservedSlots"`
 }
 
 type MediaConvertQueueReservationPlanSettingsOutputReference interface {
@@ -768,12 +843,17 @@ type MediaConvertQueueReservationPlanSettingsOutputReference interface {
 	ReservedSlotsInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -873,8 +953,8 @@ func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -883,7 +963,7 @@ func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) Terr
 	return returns
 }
 
-func NewMediaConvertQueueReservationPlanSettingsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MediaConvertQueueReservationPlanSettingsOutputReference {
+func NewMediaConvertQueueReservationPlanSettingsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MediaConvertQueueReservationPlanSettingsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference{}
@@ -897,7 +977,7 @@ func NewMediaConvertQueueReservationPlanSettingsOutputReference(terraformResourc
 	return &j
 }
 
-func NewMediaConvertQueueReservationPlanSettingsOutputReference_Override(m MediaConvertQueueReservationPlanSettingsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMediaConvertQueueReservationPlanSettingsOutputReference_Override(m MediaConvertQueueReservationPlanSettingsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -955,7 +1035,7 @@ func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -964,12 +1044,40 @@ func (j *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) SetT
 }
 
 // Experimental.
-func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1006,12 +1114,54 @@ func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetN
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaConvertQueueReservationPlanSettingsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

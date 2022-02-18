@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/datasync/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html aws_datasync_agent}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent aws_datasync_agent}.
 type DatasyncAgent interface {
 	cdktf.TerraformResource
 	ActivationKey() *string
@@ -18,8 +18,8 @@ type DatasyncAgent interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -46,12 +46,12 @@ type DatasyncAgent interface {
 	SubnetArns() *[]*string
 	SetSubnetArns(val *[]*string)
 	SubnetArnsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -61,10 +61,15 @@ type DatasyncAgent interface {
 	SetVpcEndpointId(val *string)
 	VpcEndpointIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DatasyncAgentTimeouts)
@@ -140,8 +145,8 @@ func (j *jsiiProxy_DatasyncAgent) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncAgent) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncAgent) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -330,8 +335,8 @@ func (j *jsiiProxy_DatasyncAgent) SubnetArnsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncAgent) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncAgent) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -340,8 +345,8 @@ func (j *jsiiProxy_DatasyncAgent) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncAgent) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncAgent) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -350,8 +355,8 @@ func (j *jsiiProxy_DatasyncAgent) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncAgent) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncAgent) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -360,8 +365,8 @@ func (j *jsiiProxy_DatasyncAgent) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncAgent) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncAgent) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -440,7 +445,7 @@ func (j *jsiiProxy_DatasyncAgent) VpcEndpointIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html aws_datasync_agent} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent aws_datasync_agent} Resource.
 func NewDatasyncAgent(scope constructs.Construct, id *string, config *DatasyncAgentConfig) DatasyncAgent {
 	_init_.Initialize()
 
@@ -455,7 +460,7 @@ func NewDatasyncAgent(scope constructs.Construct, id *string, config *DatasyncAg
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html aws_datasync_agent} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent aws_datasync_agent} Resource.
 func NewDatasyncAgent_Override(d DatasyncAgent, scope constructs.Construct, id *string, config *DatasyncAgentConfig) {
 	_init_.Initialize()
 
@@ -474,7 +479,7 @@ func (j *jsiiProxy_DatasyncAgent) SetActivationKey(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncAgent) SetCount(val interface{}) {
+func (j *jsiiProxy_DatasyncAgent) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -546,7 +551,7 @@ func (j *jsiiProxy_DatasyncAgent) SetSubnetArns(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncAgent) SetTags(val interface{}) {
+func (j *jsiiProxy_DatasyncAgent) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -554,7 +559,7 @@ func (j *jsiiProxy_DatasyncAgent) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncAgent) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DatasyncAgent) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -610,12 +615,40 @@ func (d *jsiiProxy_DatasyncAgent) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncAgent) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncAgent) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncAgent) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -652,12 +685,54 @@ func (d *jsiiProxy_DatasyncAgent) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncAgent) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncAgent) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncAgent) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncAgent) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -846,40 +921,40 @@ func (d *jsiiProxy_DatasyncAgent) ToTerraform() interface{} {
 // AWS DataSync.
 type DatasyncAgentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#activation_key DatasyncAgent#activation_key}.
-	ActivationKey *string `json:"activationKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#ip_address DatasyncAgent#ip_address}.
-	IpAddress *string `json:"ipAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#name DatasyncAgent#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#private_link_endpoint DatasyncAgent#private_link_endpoint}.
-	PrivateLinkEndpoint *string `json:"privateLinkEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#security_group_arns DatasyncAgent#security_group_arns}.
-	SecurityGroupArns *[]*string `json:"securityGroupArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#subnet_arns DatasyncAgent#subnet_arns}.
-	SubnetArns *[]*string `json:"subnetArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#tags DatasyncAgent#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#tags_all DatasyncAgent#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#activation_key DatasyncAgent#activation_key}.
+	ActivationKey *string `json:"activationKey" yaml:"activationKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#ip_address DatasyncAgent#ip_address}.
+	IpAddress *string `json:"ipAddress" yaml:"ipAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#name DatasyncAgent#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#private_link_endpoint DatasyncAgent#private_link_endpoint}.
+	PrivateLinkEndpoint *string `json:"privateLinkEndpoint" yaml:"privateLinkEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#security_group_arns DatasyncAgent#security_group_arns}.
+	SecurityGroupArns *[]*string `json:"securityGroupArns" yaml:"securityGroupArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#subnet_arns DatasyncAgent#subnet_arns}.
+	SubnetArns *[]*string `json:"subnetArns" yaml:"subnetArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#tags DatasyncAgent#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#tags_all DatasyncAgent#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#timeouts DatasyncAgent#timeouts}
-	Timeouts *DatasyncAgentTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#vpc_endpoint_id DatasyncAgent#vpc_endpoint_id}.
-	VpcEndpointId *string `json:"vpcEndpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#timeouts DatasyncAgent#timeouts}
+	Timeouts *DatasyncAgentTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#vpc_endpoint_id DatasyncAgent#vpc_endpoint_id}.
+	VpcEndpointId *string `json:"vpcEndpointId" yaml:"vpcEndpointId"`
 }
 
 type DatasyncAgentTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent.html#create DatasyncAgent#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_agent#create DatasyncAgent#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type DatasyncAgentTimeoutsOutputReference interface {
@@ -893,12 +968,17 @@ type DatasyncAgentTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -959,8 +1039,8 @@ func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -969,7 +1049,7 @@ func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) TerraformResource() cdk
 	return returns
 }
 
-func NewDatasyncAgentTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncAgentTimeoutsOutputReference {
+func NewDatasyncAgentTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncAgentTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncAgentTimeoutsOutputReference{}
@@ -983,7 +1063,7 @@ func NewDatasyncAgentTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewDatasyncAgentTimeoutsOutputReference_Override(d DatasyncAgentTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncAgentTimeoutsOutputReference_Override(d DatasyncAgentTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1025,7 +1105,7 @@ func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1034,12 +1114,40 @@ func (j *jsiiProxy_DatasyncAgentTimeoutsOutputReference) SetTerraformResource(va
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1076,12 +1184,54 @@ func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1125,14 +1275,14 @@ func (d *jsiiProxy_DatasyncAgentTimeoutsOutputReference) ResetCreate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html aws_datasync_location_efs}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs aws_datasync_location_efs}.
 type DatasyncLocationEfs interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Ec2Config() DatasyncLocationEfsEc2ConfigOutputReference
@@ -1152,21 +1302,26 @@ type DatasyncLocationEfs interface {
 	Subdirectory() *string
 	SetSubdirectory(val *string)
 	SubdirectoryInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Uri() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEc2Config(value *DatasyncLocationEfsEc2Config)
@@ -1215,8 +1370,8 @@ func (j *jsiiProxy_DatasyncLocationEfs) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationEfs) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1365,8 +1520,8 @@ func (j *jsiiProxy_DatasyncLocationEfs) SubdirectoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationEfs) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1375,8 +1530,8 @@ func (j *jsiiProxy_DatasyncLocationEfs) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationEfs) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1385,8 +1540,8 @@ func (j *jsiiProxy_DatasyncLocationEfs) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationEfs) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1395,8 +1550,8 @@ func (j *jsiiProxy_DatasyncLocationEfs) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationEfs) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1445,7 +1600,7 @@ func (j *jsiiProxy_DatasyncLocationEfs) Uri() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html aws_datasync_location_efs} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs aws_datasync_location_efs} Resource.
 func NewDatasyncLocationEfs(scope constructs.Construct, id *string, config *DatasyncLocationEfsConfig) DatasyncLocationEfs {
 	_init_.Initialize()
 
@@ -1460,7 +1615,7 @@ func NewDatasyncLocationEfs(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html aws_datasync_location_efs} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs aws_datasync_location_efs} Resource.
 func NewDatasyncLocationEfs_Override(d DatasyncLocationEfs, scope constructs.Construct, id *string, config *DatasyncLocationEfsConfig) {
 	_init_.Initialize()
 
@@ -1471,7 +1626,7 @@ func NewDatasyncLocationEfs_Override(d DatasyncLocationEfs, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) SetCount(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationEfs) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1519,7 +1674,7 @@ func (j *jsiiProxy_DatasyncLocationEfs) SetSubdirectory(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) SetTags(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationEfs) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1527,7 +1682,7 @@ func (j *jsiiProxy_DatasyncLocationEfs) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationEfs) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationEfs) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1575,12 +1730,40 @@ func (d *jsiiProxy_DatasyncLocationEfs) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationEfs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationEfs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationEfs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1617,12 +1800,54 @@ func (d *jsiiProxy_DatasyncLocationEfs) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationEfs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationEfs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationEfs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationEfs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1755,32 +1980,32 @@ func (d *jsiiProxy_DatasyncLocationEfs) ToTerraform() interface{} {
 // AWS DataSync.
 type DatasyncLocationEfsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// ec2_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html#ec2_config DatasyncLocationEfs#ec2_config}
-	Ec2Config *DatasyncLocationEfsEc2Config `json:"ec2Config"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html#efs_file_system_arn DatasyncLocationEfs#efs_file_system_arn}.
-	EfsFileSystemArn *string `json:"efsFileSystemArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html#subdirectory DatasyncLocationEfs#subdirectory}.
-	Subdirectory *string `json:"subdirectory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html#tags DatasyncLocationEfs#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html#tags_all DatasyncLocationEfs#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs#ec2_config DatasyncLocationEfs#ec2_config}
+	Ec2Config *DatasyncLocationEfsEc2Config `json:"ec2Config" yaml:"ec2Config"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs#efs_file_system_arn DatasyncLocationEfs#efs_file_system_arn}.
+	EfsFileSystemArn *string `json:"efsFileSystemArn" yaml:"efsFileSystemArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs#subdirectory DatasyncLocationEfs#subdirectory}.
+	Subdirectory *string `json:"subdirectory" yaml:"subdirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs#tags DatasyncLocationEfs#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs#tags_all DatasyncLocationEfs#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type DatasyncLocationEfsEc2Config struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html#security_group_arns DatasyncLocationEfs#security_group_arns}.
-	SecurityGroupArns *[]*string `json:"securityGroupArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs.html#subnet_arn DatasyncLocationEfs#subnet_arn}.
-	SubnetArn *string `json:"subnetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs#security_group_arns DatasyncLocationEfs#security_group_arns}.
+	SecurityGroupArns *[]*string `json:"securityGroupArns" yaml:"securityGroupArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_efs#subnet_arn DatasyncLocationEfs#subnet_arn}.
+	SubnetArn *string `json:"subnetArn" yaml:"subnetArn"`
 }
 
 type DatasyncLocationEfsEc2ConfigOutputReference interface {
@@ -1797,12 +2022,17 @@ type DatasyncLocationEfsEc2ConfigOutputReference interface {
 	SubnetArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1882,8 +2112,8 @@ func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1892,7 +2122,7 @@ func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) TerraformResourc
 	return returns
 }
 
-func NewDatasyncLocationEfsEc2ConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncLocationEfsEc2ConfigOutputReference {
+func NewDatasyncLocationEfsEc2ConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncLocationEfsEc2ConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference{}
@@ -1906,7 +2136,7 @@ func NewDatasyncLocationEfsEc2ConfigOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewDatasyncLocationEfsEc2ConfigOutputReference_Override(d DatasyncLocationEfsEc2ConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncLocationEfsEc2ConfigOutputReference_Override(d DatasyncLocationEfsEc2ConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1956,7 +2186,7 @@ func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1965,12 +2195,40 @@ func (j *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2007,12 +2265,54 @@ func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2048,14 +2348,749 @@ func (d *jsiiProxy_DatasyncLocationEfsEc2ConfigOutputReference) InterpolationFor
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html aws_datasync_location_fsx_windows_file_system}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system aws_datasync_location_fsx_lustre_file_system}.
+type DatasyncLocationFsxLustreFileSystem interface {
+	cdktf.TerraformResource
+	Arn() *string
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	CreationTime() *string
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	FsxFilesystemArn() *string
+	SetFsxFilesystemArn(val *string)
+	FsxFilesystemArnInput() *string
+	Id() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	RawOverrides() interface{}
+	SecurityGroupArns() *[]*string
+	SetSecurityGroupArns(val *[]*string)
+	SecurityGroupArnsInput() *[]*string
+	Subdirectory() *string
+	SetSubdirectory(val *string)
+	SubdirectoryInput() *string
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Uri() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	ResetOverrideLogicalId()
+	ResetSubdirectory()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DatasyncLocationFsxLustreFileSystem
+type jsiiProxy_DatasyncLocationFsxLustreFileSystem struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) CreationTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"creationTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) FsxFilesystemArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fsxFilesystemArn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) FsxFilesystemArnInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fsxFilesystemArnInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SecurityGroupArns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"securityGroupArns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SecurityGroupArnsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"securityGroupArnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Subdirectory() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subdirectory",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SubdirectoryInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subdirectoryInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) Uri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"uri",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system aws_datasync_location_fsx_lustre_file_system} Resource.
+func NewDatasyncLocationFsxLustreFileSystem(scope constructs.Construct, id *string, config *DatasyncLocationFsxLustreFileSystemConfig) DatasyncLocationFsxLustreFileSystem {
+	_init_.Initialize()
+
+	j := jsiiProxy_DatasyncLocationFsxLustreFileSystem{}
+
+	_jsii_.Create(
+		"hashicorp_aws.datasync.DatasyncLocationFsxLustreFileSystem",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system aws_datasync_location_fsx_lustre_file_system} Resource.
+func NewDatasyncLocationFsxLustreFileSystem_Override(d DatasyncLocationFsxLustreFileSystem, scope constructs.Construct, id *string, config *DatasyncLocationFsxLustreFileSystemConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.datasync.DatasyncLocationFsxLustreFileSystem",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetFsxFilesystemArn(val *string) {
+	_jsii_.Set(
+		j,
+		"fsxFilesystemArn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetSecurityGroupArns(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"securityGroupArns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetSubdirectory(val *string) {
+	_jsii_.Set(
+		j,
+		"subdirectory",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DatasyncLocationFsxLustreFileSystem_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.datasync.DatasyncLocationFsxLustreFileSystem",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DatasyncLocationFsxLustreFileSystem_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.datasync.DatasyncLocationFsxLustreFileSystem",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ResetSubdirectory() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSubdirectory",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxLustreFileSystem) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS DataSync.
+type DatasyncLocationFsxLustreFileSystemConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system#fsx_filesystem_arn DatasyncLocationFsxLustreFileSystem#fsx_filesystem_arn}.
+	FsxFilesystemArn *string `json:"fsxFilesystemArn" yaml:"fsxFilesystemArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system#security_group_arns DatasyncLocationFsxLustreFileSystem#security_group_arns}.
+	SecurityGroupArns *[]*string `json:"securityGroupArns" yaml:"securityGroupArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system#subdirectory DatasyncLocationFsxLustreFileSystem#subdirectory}.
+	Subdirectory *string `json:"subdirectory" yaml:"subdirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system#tags DatasyncLocationFsxLustreFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_lustre_file_system#tags_all DatasyncLocationFsxLustreFileSystem#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system aws_datasync_location_fsx_windows_file_system}.
 type DatasyncLocationFsxWindowsFileSystem interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreationTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2083,12 +3118,12 @@ type DatasyncLocationFsxWindowsFileSystem interface {
 	Subdirectory() *string
 	SetSubdirectory(val *string)
 	SubdirectoryInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2097,10 +3132,15 @@ type DatasyncLocationFsxWindowsFileSystem interface {
 	SetUser(val *string)
 	UserInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDomain()
@@ -2149,8 +3189,8 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) ConstructNodeMetadata()
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2349,8 +3389,8 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SubdirectoryInput() *st
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2359,8 +3399,8 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2369,8 +3409,8 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2379,8 +3419,8 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsAllInput() interfac
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2449,7 +3489,7 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) UserInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html aws_datasync_location_fsx_windows_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system aws_datasync_location_fsx_windows_file_system} Resource.
 func NewDatasyncLocationFsxWindowsFileSystem(scope constructs.Construct, id *string, config *DatasyncLocationFsxWindowsFileSystemConfig) DatasyncLocationFsxWindowsFileSystem {
 	_init_.Initialize()
 
@@ -2464,7 +3504,7 @@ func NewDatasyncLocationFsxWindowsFileSystem(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html aws_datasync_location_fsx_windows_file_system} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system aws_datasync_location_fsx_windows_file_system} Resource.
 func NewDatasyncLocationFsxWindowsFileSystem_Override(d DatasyncLocationFsxWindowsFileSystem, scope constructs.Construct, id *string, config *DatasyncLocationFsxWindowsFileSystemConfig) {
 	_init_.Initialize()
 
@@ -2475,7 +3515,7 @@ func NewDatasyncLocationFsxWindowsFileSystem_Override(d DatasyncLocationFsxWindo
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetCount(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2547,7 +3587,7 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetSubdirectory(val *st
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetTags(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2555,7 +3595,7 @@ func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetTags(val interface{}
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2611,12 +3651,40 @@ func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) AddOverride(path *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2653,12 +3721,54 @@ func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2791,39 +3901,1517 @@ func (d *jsiiProxy_DatasyncLocationFsxWindowsFileSystem) ToTerraform() interface
 // AWS DataSync.
 type DatasyncLocationFsxWindowsFileSystemConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#fsx_filesystem_arn DatasyncLocationFsxWindowsFileSystem#fsx_filesystem_arn}.
-	FsxFilesystemArn *string `json:"fsxFilesystemArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#password DatasyncLocationFsxWindowsFileSystem#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#security_group_arns DatasyncLocationFsxWindowsFileSystem#security_group_arns}.
-	SecurityGroupArns *[]*string `json:"securityGroupArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#user DatasyncLocationFsxWindowsFileSystem#user}.
-	User *string `json:"user"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#domain DatasyncLocationFsxWindowsFileSystem#domain}.
-	Domain *string `json:"domain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#subdirectory DatasyncLocationFsxWindowsFileSystem#subdirectory}.
-	Subdirectory *string `json:"subdirectory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#tags DatasyncLocationFsxWindowsFileSystem#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system.html#tags_all DatasyncLocationFsxWindowsFileSystem#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#fsx_filesystem_arn DatasyncLocationFsxWindowsFileSystem#fsx_filesystem_arn}.
+	FsxFilesystemArn *string `json:"fsxFilesystemArn" yaml:"fsxFilesystemArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#password DatasyncLocationFsxWindowsFileSystem#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#security_group_arns DatasyncLocationFsxWindowsFileSystem#security_group_arns}.
+	SecurityGroupArns *[]*string `json:"securityGroupArns" yaml:"securityGroupArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#user DatasyncLocationFsxWindowsFileSystem#user}.
+	User *string `json:"user" yaml:"user"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#domain DatasyncLocationFsxWindowsFileSystem#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#subdirectory DatasyncLocationFsxWindowsFileSystem#subdirectory}.
+	Subdirectory *string `json:"subdirectory" yaml:"subdirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#tags DatasyncLocationFsxWindowsFileSystem#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_fsx_windows_file_system#tags_all DatasyncLocationFsxWindowsFileSystem#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html aws_datasync_location_nfs}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs aws_datasync_location_hdfs}.
+type DatasyncLocationHdfs interface {
+	cdktf.TerraformResource
+	AgentArns() *[]*string
+	SetAgentArns(val *[]*string)
+	AgentArnsInput() *[]*string
+	Arn() *string
+	AuthenticationType() *string
+	SetAuthenticationType(val *string)
+	AuthenticationTypeInput() *string
+	BlockSize() *float64
+	SetBlockSize(val *float64)
+	BlockSizeInput() *float64
+	CdktfStack() cdktf.TerraformStack
+	ConstructNodeMetadata() *map[string]interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DependsOn() *[]*string
+	SetDependsOn(val *[]*string)
+	Fqn() *string
+	FriendlyUniqueId() *string
+	Id() *string
+	KerberosKeytab() *string
+	SetKerberosKeytab(val *string)
+	KerberosKeytabInput() *string
+	KerberosKrb5Conf() *string
+	SetKerberosKrb5Conf(val *string)
+	KerberosKrb5ConfInput() *string
+	KerberosPrincipal() *string
+	SetKerberosPrincipal(val *string)
+	KerberosPrincipalInput() *string
+	KmsKeyProviderUri() *string
+	SetKmsKeyProviderUri(val *string)
+	KmsKeyProviderUriInput() *string
+	Lifecycle() *cdktf.TerraformResourceLifecycle
+	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	NameNode() interface{}
+	SetNameNode(val interface{})
+	NameNodeInput() interface{}
+	Node() constructs.Node
+	Provider() cdktf.TerraformProvider
+	SetProvider(val cdktf.TerraformProvider)
+	QopConfiguration() DatasyncLocationHdfsQopConfigurationOutputReference
+	QopConfigurationInput() *DatasyncLocationHdfsQopConfiguration
+	RawOverrides() interface{}
+	ReplicationFactor() *float64
+	SetReplicationFactor(val *float64)
+	ReplicationFactorInput() *float64
+	SimpleUser() *string
+	SetSimpleUser(val *string)
+	SimpleUserInput() *string
+	Subdirectory() *string
+	SetSubdirectory(val *string)
+	SubdirectoryInput() *string
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
+	TerraformMetaArguments() *map[string]interface{}
+	TerraformResourceType() *string
+	Uri() *string
+	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
+	OverrideLogicalId(newLogicalId *string)
+	PutQopConfiguration(value *DatasyncLocationHdfsQopConfiguration)
+	ResetAuthenticationType()
+	ResetBlockSize()
+	ResetKerberosKeytab()
+	ResetKerberosKrb5Conf()
+	ResetKerberosPrincipal()
+	ResetKmsKeyProviderUri()
+	ResetOverrideLogicalId()
+	ResetQopConfiguration()
+	ResetReplicationFactor()
+	ResetSimpleUser()
+	ResetSubdirectory()
+	ResetTags()
+	ResetTagsAll()
+	SynthesizeAttributes() *map[string]interface{}
+	ToMetadata() interface{}
+	ToString() *string
+	ToTerraform() interface{}
+}
+
+// The jsii proxy struct for DatasyncLocationHdfs
+type jsiiProxy_DatasyncLocationHdfs struct {
+	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) AgentArns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"agentArns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) AgentArnsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"agentArnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) AuthenticationType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) AuthenticationTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) BlockSize() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"blockSize",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) BlockSizeInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"blockSizeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) CdktfStack() cdktf.TerraformStack {
+	var returns cdktf.TerraformStack
+	_jsii_.Get(
+		j,
+		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) ConstructNodeMetadata() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Count() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) DependsOn() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Fqn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) FriendlyUniqueId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Id() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KerberosKeytab() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kerberosKeytab",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KerberosKeytabInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kerberosKeytabInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KerberosKrb5Conf() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kerberosKrb5Conf",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KerberosKrb5ConfInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kerberosKrb5ConfInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KerberosPrincipal() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kerberosPrincipal",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KerberosPrincipalInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kerberosPrincipalInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KmsKeyProviderUri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kmsKeyProviderUri",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) KmsKeyProviderUriInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kmsKeyProviderUriInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Lifecycle() *cdktf.TerraformResourceLifecycle {
+	var returns *cdktf.TerraformResourceLifecycle
+	_jsii_.Get(
+		j,
+		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) NameNode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"nameNode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) NameNodeInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"nameNodeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Provider() cdktf.TerraformProvider {
+	var returns cdktf.TerraformProvider
+	_jsii_.Get(
+		j,
+		"provider",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) QopConfiguration() DatasyncLocationHdfsQopConfigurationOutputReference {
+	var returns DatasyncLocationHdfsQopConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"qopConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) QopConfigurationInput() *DatasyncLocationHdfsQopConfiguration {
+	var returns *DatasyncLocationHdfsQopConfiguration
+	_jsii_.Get(
+		j,
+		"qopConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) RawOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) ReplicationFactor() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"replicationFactor",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) ReplicationFactorInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"replicationFactorInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SimpleUser() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"simpleUser",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SimpleUserInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"simpleUserInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Subdirectory() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subdirectory",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SubdirectoryInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subdirectoryInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) TagsAll() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAll",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsAllInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
+	var returns *cdktf.TerraformProviderGeneratorMetadata
+	_jsii_.Get(
+		j,
+		"terraformGeneratorMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) TerraformMetaArguments() *map[string]interface{} {
+	var returns *map[string]interface{}
+	_jsii_.Get(
+		j,
+		"terraformMetaArguments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) TerraformResourceType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformResourceType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) Uri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"uri",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs aws_datasync_location_hdfs} Resource.
+func NewDatasyncLocationHdfs(scope constructs.Construct, id *string, config *DatasyncLocationHdfsConfig) DatasyncLocationHdfs {
+	_init_.Initialize()
+
+	j := jsiiProxy_DatasyncLocationHdfs{}
+
+	_jsii_.Create(
+		"hashicorp_aws.datasync.DatasyncLocationHdfs",
+		[]interface{}{scope, id, config},
+		&j,
+	)
+
+	return &j
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs aws_datasync_location_hdfs} Resource.
+func NewDatasyncLocationHdfs_Override(d DatasyncLocationHdfs, scope constructs.Construct, id *string, config *DatasyncLocationHdfsConfig) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.datasync.DatasyncLocationHdfs",
+		[]interface{}{scope, id, config},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetAgentArns(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"agentArns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetAuthenticationType(val *string) {
+	_jsii_.Set(
+		j,
+		"authenticationType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetBlockSize(val *float64) {
+	_jsii_.Set(
+		j,
+		"blockSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetCount(val *float64) {
+	_jsii_.Set(
+		j,
+		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetDependsOn(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetKerberosKeytab(val *string) {
+	_jsii_.Set(
+		j,
+		"kerberosKeytab",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetKerberosKrb5Conf(val *string) {
+	_jsii_.Set(
+		j,
+		"kerberosKrb5Conf",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetKerberosPrincipal(val *string) {
+	_jsii_.Set(
+		j,
+		"kerberosPrincipal",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetKmsKeyProviderUri(val *string) {
+	_jsii_.Set(
+		j,
+		"kmsKeyProviderUri",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
+	_jsii_.Set(
+		j,
+		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetNameNode(val interface{}) {
+	_jsii_.Set(
+		j,
+		"nameNode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetProvider(val cdktf.TerraformProvider) {
+	_jsii_.Set(
+		j,
+		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetReplicationFactor(val *float64) {
+	_jsii_.Set(
+		j,
+		"replicationFactor",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetSimpleUser(val *string) {
+	_jsii_.Set(
+		j,
+		"simpleUser",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetSubdirectory(val *string) {
+	_jsii_.Set(
+		j,
+		"subdirectory",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetTags(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfs) SetTagsAll(val *map[string]*string) {
+	_jsii_.Set(
+		j,
+		"tagsAll",
+		val,
+	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func DatasyncLocationHdfs_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"hashicorp_aws.datasync.DatasyncLocationHdfs",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
+}
+
+func DatasyncLocationHdfs_TfResourceType() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"hashicorp_aws.datasync.DatasyncLocationHdfs",
+		"tfResourceType",
+		&returns,
+	)
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) AddOverride(path *string, value interface{}) {
+	_jsii_.InvokeVoid(
+		d,
+		"addOverride",
+		[]interface{}{path, value},
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Overrides the auto-generated logical ID with a specific ID.
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) OverrideLogicalId(newLogicalId *string) {
+	_jsii_.InvokeVoid(
+		d,
+		"overrideLogicalId",
+		[]interface{}{newLogicalId},
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) PutQopConfiguration(value *DatasyncLocationHdfsQopConfiguration) {
+	_jsii_.InvokeVoid(
+		d,
+		"putQopConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetAuthenticationType() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetAuthenticationType",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetBlockSize() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetBlockSize",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetKerberosKeytab() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetKerberosKeytab",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetKerberosKrb5Conf() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetKerberosKrb5Conf",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetKerberosPrincipal() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetKerberosPrincipal",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetKmsKeyProviderUri() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetKmsKeyProviderUri",
+		nil, // no parameters
+	)
+}
+
+// Resets a previously passed logical Id to use the auto-generated logical id again.
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetOverrideLogicalId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetQopConfiguration() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetQopConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetReplicationFactor() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetReplicationFactor",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetSimpleUser() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSimpleUser",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetSubdirectory() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetSubdirectory",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) ResetTagsAll() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTagsAll",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfs) SynthesizeAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) ToMetadata() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toMetadata",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Returns a string representation of this construct.
+func (d *jsiiProxy_DatasyncLocationHdfs) ToString() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"toString",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Adds this resource to the terraform JSON output.
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfs) ToTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		d,
+		"toTerraform",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// AWS DataSync.
+type DatasyncLocationHdfsConfig struct {
+	// Experimental.
+	Count *float64 `json:"count" yaml:"count"`
+	// Experimental.
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
+	// Experimental.
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
+	// Experimental.
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#agent_arns DatasyncLocationHdfs#agent_arns}.
+	AgentArns *[]*string `json:"agentArns" yaml:"agentArns"`
+	// name_node block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#name_node DatasyncLocationHdfs#name_node}
+	NameNode interface{} `json:"nameNode" yaml:"nameNode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#authentication_type DatasyncLocationHdfs#authentication_type}.
+	AuthenticationType *string `json:"authenticationType" yaml:"authenticationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#block_size DatasyncLocationHdfs#block_size}.
+	BlockSize *float64 `json:"blockSize" yaml:"blockSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#kerberos_keytab DatasyncLocationHdfs#kerberos_keytab}.
+	KerberosKeytab *string `json:"kerberosKeytab" yaml:"kerberosKeytab"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#kerberos_krb5_conf DatasyncLocationHdfs#kerberos_krb5_conf}.
+	KerberosKrb5Conf *string `json:"kerberosKrb5Conf" yaml:"kerberosKrb5Conf"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#kerberos_principal DatasyncLocationHdfs#kerberos_principal}.
+	KerberosPrincipal *string `json:"kerberosPrincipal" yaml:"kerberosPrincipal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#kms_key_provider_uri DatasyncLocationHdfs#kms_key_provider_uri}.
+	KmsKeyProviderUri *string `json:"kmsKeyProviderUri" yaml:"kmsKeyProviderUri"`
+	// qop_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#qop_configuration DatasyncLocationHdfs#qop_configuration}
+	QopConfiguration *DatasyncLocationHdfsQopConfiguration `json:"qopConfiguration" yaml:"qopConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#replication_factor DatasyncLocationHdfs#replication_factor}.
+	ReplicationFactor *float64 `json:"replicationFactor" yaml:"replicationFactor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#simple_user DatasyncLocationHdfs#simple_user}.
+	SimpleUser *string `json:"simpleUser" yaml:"simpleUser"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#subdirectory DatasyncLocationHdfs#subdirectory}.
+	Subdirectory *string `json:"subdirectory" yaml:"subdirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#tags DatasyncLocationHdfs#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#tags_all DatasyncLocationHdfs#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+}
+
+type DatasyncLocationHdfsNameNode struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#hostname DatasyncLocationHdfs#hostname}.
+	Hostname *string `json:"hostname" yaml:"hostname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#port DatasyncLocationHdfs#port}.
+	Port *float64 `json:"port" yaml:"port"`
+}
+
+type DatasyncLocationHdfsQopConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#data_transfer_protection DatasyncLocationHdfs#data_transfer_protection}.
+	DataTransferProtection *string `json:"dataTransferProtection" yaml:"dataTransferProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_hdfs#rpc_protection DatasyncLocationHdfs#rpc_protection}.
+	RpcProtection *string `json:"rpcProtection" yaml:"rpcProtection"`
+}
+
+type DatasyncLocationHdfsQopConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	DataTransferProtection() *string
+	SetDataTransferProtection(val *string)
+	DataTransferProtectionInput() *string
+	InternalValue() *DatasyncLocationHdfsQopConfiguration
+	SetInternalValue(val *DatasyncLocationHdfsQopConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	RpcProtection() *string
+	SetRpcProtection(val *string)
+	RpcProtectionInput() *string
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetDataTransferProtection()
+	ResetRpcProtection()
+}
+
+// The jsii proxy struct for DatasyncLocationHdfsQopConfigurationOutputReference
+type jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) DataTransferProtection() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataTransferProtection",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) DataTransferProtectionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dataTransferProtectionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) InternalValue() *DatasyncLocationHdfsQopConfiguration {
+	var returns *DatasyncLocationHdfsQopConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) RpcProtection() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rpcProtection",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) RpcProtectionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"rpcProtectionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewDatasyncLocationHdfsQopConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncLocationHdfsQopConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.datasync.DatasyncLocationHdfsQopConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewDatasyncLocationHdfsQopConfigurationOutputReference_Override(d DatasyncLocationHdfsQopConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.datasync.DatasyncLocationHdfsQopConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		d,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) SetDataTransferProtection(val *string) {
+	_jsii_.Set(
+		j,
+		"dataTransferProtection",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) SetInternalValue(val *DatasyncLocationHdfsQopConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) SetRpcProtection(val *string) {
+	_jsii_.Set(
+		j,
+		"rpcProtection",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		d,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) ResetDataTransferProtection() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetDataTransferProtection",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DatasyncLocationHdfsQopConfigurationOutputReference) ResetRpcProtection() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetRpcProtection",
+		nil, // no parameters
+	)
+}
+
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs aws_datasync_location_nfs}.
 type DatasyncLocationNfs interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2845,21 +5433,26 @@ type DatasyncLocationNfs interface {
 	Subdirectory() *string
 	SetSubdirectory(val *string)
 	SubdirectoryInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Uri() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutMountOptions(value *DatasyncLocationNfsMountOptions)
@@ -2909,8 +5502,8 @@ func (j *jsiiProxy_DatasyncLocationNfs) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationNfs) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3079,8 +5672,8 @@ func (j *jsiiProxy_DatasyncLocationNfs) SubdirectoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationNfs) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3089,8 +5682,8 @@ func (j *jsiiProxy_DatasyncLocationNfs) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationNfs) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3099,8 +5692,8 @@ func (j *jsiiProxy_DatasyncLocationNfs) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationNfs) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3109,8 +5702,8 @@ func (j *jsiiProxy_DatasyncLocationNfs) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationNfs) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3159,7 +5752,7 @@ func (j *jsiiProxy_DatasyncLocationNfs) Uri() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html aws_datasync_location_nfs} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs aws_datasync_location_nfs} Resource.
 func NewDatasyncLocationNfs(scope constructs.Construct, id *string, config *DatasyncLocationNfsConfig) DatasyncLocationNfs {
 	_init_.Initialize()
 
@@ -3174,7 +5767,7 @@ func NewDatasyncLocationNfs(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html aws_datasync_location_nfs} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs aws_datasync_location_nfs} Resource.
 func NewDatasyncLocationNfs_Override(d DatasyncLocationNfs, scope constructs.Construct, id *string, config *DatasyncLocationNfsConfig) {
 	_init_.Initialize()
 
@@ -3185,7 +5778,7 @@ func NewDatasyncLocationNfs_Override(d DatasyncLocationNfs, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) SetCount(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationNfs) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3233,7 +5826,7 @@ func (j *jsiiProxy_DatasyncLocationNfs) SetSubdirectory(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) SetTags(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationNfs) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3241,7 +5834,7 @@ func (j *jsiiProxy_DatasyncLocationNfs) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationNfs) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationNfs) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3289,12 +5882,40 @@ func (d *jsiiProxy_DatasyncLocationNfs) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationNfs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationNfs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3331,12 +5952,54 @@ func (d *jsiiProxy_DatasyncLocationNfs) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationNfs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationNfs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3477,34 +6140,34 @@ func (d *jsiiProxy_DatasyncLocationNfs) ToTerraform() interface{} {
 // AWS DataSync.
 type DatasyncLocationNfsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// on_prem_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#on_prem_config DatasyncLocationNfs#on_prem_config}
-	OnPremConfig *DatasyncLocationNfsOnPremConfig `json:"onPremConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#server_hostname DatasyncLocationNfs#server_hostname}.
-	ServerHostname *string `json:"serverHostname"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#subdirectory DatasyncLocationNfs#subdirectory}.
-	Subdirectory *string `json:"subdirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#on_prem_config DatasyncLocationNfs#on_prem_config}
+	OnPremConfig *DatasyncLocationNfsOnPremConfig `json:"onPremConfig" yaml:"onPremConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#server_hostname DatasyncLocationNfs#server_hostname}.
+	ServerHostname *string `json:"serverHostname" yaml:"serverHostname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#subdirectory DatasyncLocationNfs#subdirectory}.
+	Subdirectory *string `json:"subdirectory" yaml:"subdirectory"`
 	// mount_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#mount_options DatasyncLocationNfs#mount_options}
-	MountOptions *DatasyncLocationNfsMountOptions `json:"mountOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#tags DatasyncLocationNfs#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#tags_all DatasyncLocationNfs#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#mount_options DatasyncLocationNfs#mount_options}
+	MountOptions *DatasyncLocationNfsMountOptions `json:"mountOptions" yaml:"mountOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#tags DatasyncLocationNfs#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#tags_all DatasyncLocationNfs#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type DatasyncLocationNfsMountOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#version DatasyncLocationNfs#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#version DatasyncLocationNfs#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type DatasyncLocationNfsMountOptionsOutputReference interface {
@@ -3515,15 +6178,20 @@ type DatasyncLocationNfsMountOptionsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetVersion()
@@ -3564,8 +6232,8 @@ func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3594,7 +6262,7 @@ func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) VersionInput(
 	return returns
 }
 
-func NewDatasyncLocationNfsMountOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncLocationNfsMountOptionsOutputReference {
+func NewDatasyncLocationNfsMountOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncLocationNfsMountOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference{}
@@ -3608,7 +6276,7 @@ func NewDatasyncLocationNfsMountOptionsOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewDatasyncLocationNfsMountOptionsOutputReference_Override(d DatasyncLocationNfsMountOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncLocationNfsMountOptionsOutputReference_Override(d DatasyncLocationNfsMountOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3642,7 +6310,7 @@ func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3659,12 +6327,40 @@ func (j *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) SetVersion(va
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3701,12 +6397,54 @@ func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3751,8 +6489,8 @@ func (d *jsiiProxy_DatasyncLocationNfsMountOptionsOutputReference) ResetVersion(
 }
 
 type DatasyncLocationNfsOnPremConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs.html#agent_arns DatasyncLocationNfs#agent_arns}.
-	AgentArns *[]*string `json:"agentArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_nfs#agent_arns DatasyncLocationNfs#agent_arns}.
+	AgentArns *[]*string `json:"agentArns" yaml:"agentArns"`
 }
 
 type DatasyncLocationNfsOnPremConfigOutputReference interface {
@@ -3766,12 +6504,17 @@ type DatasyncLocationNfsOnPremConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3831,8 +6574,8 @@ func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3841,7 +6584,7 @@ func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) TerraformReso
 	return returns
 }
 
-func NewDatasyncLocationNfsOnPremConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncLocationNfsOnPremConfigOutputReference {
+func NewDatasyncLocationNfsOnPremConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncLocationNfsOnPremConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference{}
@@ -3855,7 +6598,7 @@ func NewDatasyncLocationNfsOnPremConfigOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewDatasyncLocationNfsOnPremConfigOutputReference_Override(d DatasyncLocationNfsOnPremConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncLocationNfsOnPremConfigOutputReference_Override(d DatasyncLocationNfsOnPremConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3897,7 +6640,7 @@ func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3906,12 +6649,40 @@ func (j *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3948,12 +6719,54 @@ func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3989,7 +6802,7 @@ func (d *jsiiProxy_DatasyncLocationNfsOnPremConfigOutputReference) Interpolation
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html aws_datasync_location_s3}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3 aws_datasync_location_s3}.
 type DatasyncLocationS3 interface {
 	cdktf.TerraformResource
 	AgentArns() *[]*string
@@ -3998,8 +6811,8 @@ type DatasyncLocationS3 interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4022,21 +6835,26 @@ type DatasyncLocationS3 interface {
 	Subdirectory() *string
 	SetSubdirectory(val *string)
 	SubdirectoryInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Uri() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutS3Config(value *DatasyncLocationS3S3Config)
@@ -4106,8 +6924,8 @@ func (j *jsiiProxy_DatasyncLocationS3) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationS3) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4276,8 +7094,8 @@ func (j *jsiiProxy_DatasyncLocationS3) SubdirectoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationS3) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4286,8 +7104,8 @@ func (j *jsiiProxy_DatasyncLocationS3) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationS3) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4296,8 +7114,8 @@ func (j *jsiiProxy_DatasyncLocationS3) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationS3) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4306,8 +7124,8 @@ func (j *jsiiProxy_DatasyncLocationS3) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationS3) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4356,7 +7174,7 @@ func (j *jsiiProxy_DatasyncLocationS3) Uri() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html aws_datasync_location_s3} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3 aws_datasync_location_s3} Resource.
 func NewDatasyncLocationS3(scope constructs.Construct, id *string, config *DatasyncLocationS3Config) DatasyncLocationS3 {
 	_init_.Initialize()
 
@@ -4371,7 +7189,7 @@ func NewDatasyncLocationS3(scope constructs.Construct, id *string, config *Datas
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html aws_datasync_location_s3} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3 aws_datasync_location_s3} Resource.
 func NewDatasyncLocationS3_Override(d DatasyncLocationS3, scope constructs.Construct, id *string, config *DatasyncLocationS3Config) {
 	_init_.Initialize()
 
@@ -4390,7 +7208,7 @@ func (j *jsiiProxy_DatasyncLocationS3) SetAgentArns(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) SetCount(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationS3) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4446,7 +7264,7 @@ func (j *jsiiProxy_DatasyncLocationS3) SetSubdirectory(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) SetTags(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationS3) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4454,7 +7272,7 @@ func (j *jsiiProxy_DatasyncLocationS3) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationS3) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationS3) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4502,12 +7320,40 @@ func (d *jsiiProxy_DatasyncLocationS3) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationS3) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationS3) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationS3) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4544,12 +7390,54 @@ func (d *jsiiProxy_DatasyncLocationS3) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationS3) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationS3) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationS3) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationS3) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4690,34 +7578,34 @@ func (d *jsiiProxy_DatasyncLocationS3) ToTerraform() interface{} {
 // AWS DataSync.
 type DatasyncLocationS3Config struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#s3_bucket_arn DatasyncLocationS3#s3_bucket_arn}.
-	S3BucketArn *string `json:"s3BucketArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#s3_bucket_arn DatasyncLocationS3#s3_bucket_arn}.
+	S3BucketArn *string `json:"s3BucketArn" yaml:"s3BucketArn"`
 	// s3_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#s3_config DatasyncLocationS3#s3_config}
-	S3Config *DatasyncLocationS3S3Config `json:"s3Config"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#subdirectory DatasyncLocationS3#subdirectory}.
-	Subdirectory *string `json:"subdirectory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#agent_arns DatasyncLocationS3#agent_arns}.
-	AgentArns *[]*string `json:"agentArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#s3_storage_class DatasyncLocationS3#s3_storage_class}.
-	S3StorageClass *string `json:"s3StorageClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#tags DatasyncLocationS3#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#tags_all DatasyncLocationS3#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#s3_config DatasyncLocationS3#s3_config}
+	S3Config *DatasyncLocationS3S3Config `json:"s3Config" yaml:"s3Config"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#subdirectory DatasyncLocationS3#subdirectory}.
+	Subdirectory *string `json:"subdirectory" yaml:"subdirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#agent_arns DatasyncLocationS3#agent_arns}.
+	AgentArns *[]*string `json:"agentArns" yaml:"agentArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#s3_storage_class DatasyncLocationS3#s3_storage_class}.
+	S3StorageClass *string `json:"s3StorageClass" yaml:"s3StorageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#tags DatasyncLocationS3#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#tags_all DatasyncLocationS3#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type DatasyncLocationS3S3Config struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3.html#bucket_access_role_arn DatasyncLocationS3#bucket_access_role_arn}.
-	BucketAccessRoleArn *string `json:"bucketAccessRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_s3#bucket_access_role_arn DatasyncLocationS3#bucket_access_role_arn}.
+	BucketAccessRoleArn *string `json:"bucketAccessRoleArn" yaml:"bucketAccessRoleArn"`
 }
 
 type DatasyncLocationS3S3ConfigOutputReference interface {
@@ -4731,12 +7619,17 @@ type DatasyncLocationS3S3ConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -4796,8 +7689,8 @@ func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4806,7 +7699,7 @@ func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) TerraformResource(
 	return returns
 }
 
-func NewDatasyncLocationS3S3ConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncLocationS3S3ConfigOutputReference {
+func NewDatasyncLocationS3S3ConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncLocationS3S3ConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncLocationS3S3ConfigOutputReference{}
@@ -4820,7 +7713,7 @@ func NewDatasyncLocationS3S3ConfigOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewDatasyncLocationS3S3ConfigOutputReference_Override(d DatasyncLocationS3S3ConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncLocationS3S3ConfigOutputReference_Override(d DatasyncLocationS3S3ConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4862,7 +7755,7 @@ func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4871,12 +7764,40 @@ func (j *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) SetTerraformResour
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4913,12 +7834,54 @@ func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4954,7 +7917,7 @@ func (d *jsiiProxy_DatasyncLocationS3S3ConfigOutputReference) InterpolationForAt
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html aws_datasync_location_smb}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb aws_datasync_location_smb}.
 type DatasyncLocationSmb interface {
 	cdktf.TerraformResource
 	AgentArns() *[]*string
@@ -4963,8 +7926,8 @@ type DatasyncLocationSmb interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domain() *string
@@ -4990,12 +7953,12 @@ type DatasyncLocationSmb interface {
 	Subdirectory() *string
 	SetSubdirectory(val *string)
 	SubdirectoryInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5004,10 +7967,15 @@ type DatasyncLocationSmb interface {
 	SetUser(val *string)
 	UserInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutMountOptions(value *DatasyncLocationSmbMountOptions)
@@ -5077,8 +8045,8 @@ func (j *jsiiProxy_DatasyncLocationSmb) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationSmb) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5267,8 +8235,8 @@ func (j *jsiiProxy_DatasyncLocationSmb) SubdirectoryInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationSmb) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5277,8 +8245,8 @@ func (j *jsiiProxy_DatasyncLocationSmb) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationSmb) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5287,8 +8255,8 @@ func (j *jsiiProxy_DatasyncLocationSmb) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationSmb) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5297,8 +8265,8 @@ func (j *jsiiProxy_DatasyncLocationSmb) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncLocationSmb) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5367,7 +8335,7 @@ func (j *jsiiProxy_DatasyncLocationSmb) UserInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html aws_datasync_location_smb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb aws_datasync_location_smb} Resource.
 func NewDatasyncLocationSmb(scope constructs.Construct, id *string, config *DatasyncLocationSmbConfig) DatasyncLocationSmb {
 	_init_.Initialize()
 
@@ -5382,7 +8350,7 @@ func NewDatasyncLocationSmb(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html aws_datasync_location_smb} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb aws_datasync_location_smb} Resource.
 func NewDatasyncLocationSmb_Override(d DatasyncLocationSmb, scope constructs.Construct, id *string, config *DatasyncLocationSmbConfig) {
 	_init_.Initialize()
 
@@ -5401,7 +8369,7 @@ func (j *jsiiProxy_DatasyncLocationSmb) SetAgentArns(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) SetCount(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationSmb) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5465,7 +8433,7 @@ func (j *jsiiProxy_DatasyncLocationSmb) SetSubdirectory(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) SetTags(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationSmb) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5473,7 +8441,7 @@ func (j *jsiiProxy_DatasyncLocationSmb) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationSmb) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DatasyncLocationSmb) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5529,12 +8497,40 @@ func (d *jsiiProxy_DatasyncLocationSmb) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationSmb) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationSmb) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationSmb) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5571,12 +8567,54 @@ func (d *jsiiProxy_DatasyncLocationSmb) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationSmb) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationSmb) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationSmb) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationSmb) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5717,38 +8755,38 @@ func (d *jsiiProxy_DatasyncLocationSmb) ToTerraform() interface{} {
 // AWS DataSync.
 type DatasyncLocationSmbConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#agent_arns DatasyncLocationSmb#agent_arns}.
-	AgentArns *[]*string `json:"agentArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#password DatasyncLocationSmb#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#server_hostname DatasyncLocationSmb#server_hostname}.
-	ServerHostname *string `json:"serverHostname"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#subdirectory DatasyncLocationSmb#subdirectory}.
-	Subdirectory *string `json:"subdirectory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#user DatasyncLocationSmb#user}.
-	User *string `json:"user"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#domain DatasyncLocationSmb#domain}.
-	Domain *string `json:"domain"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#agent_arns DatasyncLocationSmb#agent_arns}.
+	AgentArns *[]*string `json:"agentArns" yaml:"agentArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#password DatasyncLocationSmb#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#server_hostname DatasyncLocationSmb#server_hostname}.
+	ServerHostname *string `json:"serverHostname" yaml:"serverHostname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#subdirectory DatasyncLocationSmb#subdirectory}.
+	Subdirectory *string `json:"subdirectory" yaml:"subdirectory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#user DatasyncLocationSmb#user}.
+	User *string `json:"user" yaml:"user"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#domain DatasyncLocationSmb#domain}.
+	Domain *string `json:"domain" yaml:"domain"`
 	// mount_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#mount_options DatasyncLocationSmb#mount_options}
-	MountOptions *DatasyncLocationSmbMountOptions `json:"mountOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#tags DatasyncLocationSmb#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#tags_all DatasyncLocationSmb#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#mount_options DatasyncLocationSmb#mount_options}
+	MountOptions *DatasyncLocationSmbMountOptions `json:"mountOptions" yaml:"mountOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#tags DatasyncLocationSmb#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#tags_all DatasyncLocationSmb#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type DatasyncLocationSmbMountOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb.html#version DatasyncLocationSmb#version}.
-	Version *string `json:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_location_smb#version DatasyncLocationSmb#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type DatasyncLocationSmbMountOptionsOutputReference interface {
@@ -5759,15 +8797,20 @@ type DatasyncLocationSmbMountOptionsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetVersion()
@@ -5808,8 +8851,8 @@ func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5838,7 +8881,7 @@ func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) VersionInput(
 	return returns
 }
 
-func NewDatasyncLocationSmbMountOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncLocationSmbMountOptionsOutputReference {
+func NewDatasyncLocationSmbMountOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncLocationSmbMountOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference{}
@@ -5852,7 +8895,7 @@ func NewDatasyncLocationSmbMountOptionsOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewDatasyncLocationSmbMountOptionsOutputReference_Override(d DatasyncLocationSmbMountOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncLocationSmbMountOptionsOutputReference_Override(d DatasyncLocationSmbMountOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5886,7 +8929,7 @@ func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5903,12 +8946,40 @@ func (j *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) SetVersion(va
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5945,12 +9016,54 @@ func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5994,7 +9107,7 @@ func (d *jsiiProxy_DatasyncLocationSmbMountOptionsOutputReference) ResetVersion(
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html aws_datasync_task}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/datasync_task aws_datasync_task}.
 type DatasyncTask interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -6003,8 +9116,8 @@ type DatasyncTask interface {
 	SetCloudwatchLogGroupArn(val *string)
 	CloudwatchLogGroupArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationLocationArn() *string
@@ -6031,22 +9144,27 @@ type DatasyncTask interface {
 	SourceLocationArn() *string
 	SetSourceLocationArn(val *string)
 	SourceLocationArnInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() DatasyncTaskTimeoutsOutputReference
 	TimeoutsInput() *DatasyncTaskTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutExcludes(value *DatasyncTaskExcludes)
@@ -6123,8 +9241,8 @@ func (j *jsiiProxy_DatasyncTask) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTask) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncTask) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6333,8 +9451,8 @@ func (j *jsiiProxy_DatasyncTask) SourceLocationArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTask) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncTask) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6343,8 +9461,8 @@ func (j *jsiiProxy_DatasyncTask) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTask) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncTask) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6353,8 +9471,8 @@ func (j *jsiiProxy_DatasyncTask) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTask) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncTask) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6363,8 +9481,8 @@ func (j *jsiiProxy_DatasyncTask) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTask) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DatasyncTask) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6423,7 +9541,7 @@ func (j *jsiiProxy_DatasyncTask) TimeoutsInput() *DatasyncTaskTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html aws_datasync_task} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_task aws_datasync_task} Resource.
 func NewDatasyncTask(scope constructs.Construct, id *string, config *DatasyncTaskConfig) DatasyncTask {
 	_init_.Initialize()
 
@@ -6438,7 +9556,7 @@ func NewDatasyncTask(scope constructs.Construct, id *string, config *DatasyncTas
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html aws_datasync_task} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/datasync_task aws_datasync_task} Resource.
 func NewDatasyncTask_Override(d DatasyncTask, scope constructs.Construct, id *string, config *DatasyncTaskConfig) {
 	_init_.Initialize()
 
@@ -6457,7 +9575,7 @@ func (j *jsiiProxy_DatasyncTask) SetCloudwatchLogGroupArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncTask) SetCount(val interface{}) {
+func (j *jsiiProxy_DatasyncTask) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6513,7 +9631,7 @@ func (j *jsiiProxy_DatasyncTask) SetSourceLocationArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncTask) SetTags(val interface{}) {
+func (j *jsiiProxy_DatasyncTask) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6521,7 +9639,7 @@ func (j *jsiiProxy_DatasyncTask) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DatasyncTask) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DatasyncTask) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6569,12 +9687,40 @@ func (d *jsiiProxy_DatasyncTask) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncTask) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncTask) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTask) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6611,12 +9757,54 @@ func (d *jsiiProxy_DatasyncTask) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncTask) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTask) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncTask) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTask) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6813,48 +10001,48 @@ func (d *jsiiProxy_DatasyncTask) ToTerraform() interface{} {
 // AWS DataSync.
 type DatasyncTaskConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#destination_location_arn DatasyncTask#destination_location_arn}.
-	DestinationLocationArn *string `json:"destinationLocationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#source_location_arn DatasyncTask#source_location_arn}.
-	SourceLocationArn *string `json:"sourceLocationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#cloudwatch_log_group_arn DatasyncTask#cloudwatch_log_group_arn}.
-	CloudwatchLogGroupArn *string `json:"cloudwatchLogGroupArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#destination_location_arn DatasyncTask#destination_location_arn}.
+	DestinationLocationArn *string `json:"destinationLocationArn" yaml:"destinationLocationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#source_location_arn DatasyncTask#source_location_arn}.
+	SourceLocationArn *string `json:"sourceLocationArn" yaml:"sourceLocationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#cloudwatch_log_group_arn DatasyncTask#cloudwatch_log_group_arn}.
+	CloudwatchLogGroupArn *string `json:"cloudwatchLogGroupArn" yaml:"cloudwatchLogGroupArn"`
 	// excludes block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#excludes DatasyncTask#excludes}
-	Excludes *DatasyncTaskExcludes `json:"excludes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#name DatasyncTask#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#excludes DatasyncTask#excludes}
+	Excludes *DatasyncTaskExcludes `json:"excludes" yaml:"excludes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#name DatasyncTask#name}.
+	Name *string `json:"name" yaml:"name"`
 	// options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#options DatasyncTask#options}
-	Options *DatasyncTaskOptions `json:"options"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#options DatasyncTask#options}
+	Options *DatasyncTaskOptions `json:"options" yaml:"options"`
 	// schedule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#schedule DatasyncTask#schedule}
-	Schedule *DatasyncTaskSchedule `json:"schedule"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#tags DatasyncTask#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#tags_all DatasyncTask#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#schedule DatasyncTask#schedule}
+	Schedule *DatasyncTaskSchedule `json:"schedule" yaml:"schedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#tags DatasyncTask#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#tags_all DatasyncTask#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#timeouts DatasyncTask#timeouts}
-	Timeouts *DatasyncTaskTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#timeouts DatasyncTask#timeouts}
+	Timeouts *DatasyncTaskTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DatasyncTaskExcludes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#filter_type DatasyncTask#filter_type}.
-	FilterType *string `json:"filterType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#value DatasyncTask#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#filter_type DatasyncTask#filter_type}.
+	FilterType *string `json:"filterType" yaml:"filterType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#value DatasyncTask#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type DatasyncTaskExcludesOutputReference interface {
@@ -6868,15 +10056,20 @@ type DatasyncTaskExcludesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetFilterType()
@@ -6938,8 +10131,8 @@ func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6968,7 +10161,7 @@ func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) ValueInput() *string {
 	return returns
 }
 
-func NewDatasyncTaskExcludesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncTaskExcludesOutputReference {
+func NewDatasyncTaskExcludesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncTaskExcludesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncTaskExcludesOutputReference{}
@@ -6982,7 +10175,7 @@ func NewDatasyncTaskExcludesOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewDatasyncTaskExcludesOutputReference_Override(d DatasyncTaskExcludesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncTaskExcludesOutputReference_Override(d DatasyncTaskExcludesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7024,7 +10217,7 @@ func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7041,12 +10234,40 @@ func (j *jsiiProxy_DatasyncTaskExcludesOutputReference) SetValue(val *string) {
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7083,12 +10304,54 @@ func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7141,32 +10404,32 @@ func (d *jsiiProxy_DatasyncTaskExcludesOutputReference) ResetValue() {
 }
 
 type DatasyncTaskOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#atime DatasyncTask#atime}.
-	Atime *string `json:"atime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#bytes_per_second DatasyncTask#bytes_per_second}.
-	BytesPerSecond *float64 `json:"bytesPerSecond"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#gid DatasyncTask#gid}.
-	Gid *string `json:"gid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#log_level DatasyncTask#log_level}.
-	LogLevel *string `json:"logLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#mtime DatasyncTask#mtime}.
-	Mtime *string `json:"mtime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#overwrite_mode DatasyncTask#overwrite_mode}.
-	OverwriteMode *string `json:"overwriteMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#posix_permissions DatasyncTask#posix_permissions}.
-	PosixPermissions *string `json:"posixPermissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#preserve_deleted_files DatasyncTask#preserve_deleted_files}.
-	PreserveDeletedFiles *string `json:"preserveDeletedFiles"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#preserve_devices DatasyncTask#preserve_devices}.
-	PreserveDevices *string `json:"preserveDevices"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#task_queueing DatasyncTask#task_queueing}.
-	TaskQueueing *string `json:"taskQueueing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#transfer_mode DatasyncTask#transfer_mode}.
-	TransferMode *string `json:"transferMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#uid DatasyncTask#uid}.
-	Uid *string `json:"uid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#verify_mode DatasyncTask#verify_mode}.
-	VerifyMode *string `json:"verifyMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#atime DatasyncTask#atime}.
+	Atime *string `json:"atime" yaml:"atime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#bytes_per_second DatasyncTask#bytes_per_second}.
+	BytesPerSecond *float64 `json:"bytesPerSecond" yaml:"bytesPerSecond"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#gid DatasyncTask#gid}.
+	Gid *string `json:"gid" yaml:"gid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#log_level DatasyncTask#log_level}.
+	LogLevel *string `json:"logLevel" yaml:"logLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#mtime DatasyncTask#mtime}.
+	Mtime *string `json:"mtime" yaml:"mtime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#overwrite_mode DatasyncTask#overwrite_mode}.
+	OverwriteMode *string `json:"overwriteMode" yaml:"overwriteMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#posix_permissions DatasyncTask#posix_permissions}.
+	PosixPermissions *string `json:"posixPermissions" yaml:"posixPermissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#preserve_deleted_files DatasyncTask#preserve_deleted_files}.
+	PreserveDeletedFiles *string `json:"preserveDeletedFiles" yaml:"preserveDeletedFiles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#preserve_devices DatasyncTask#preserve_devices}.
+	PreserveDevices *string `json:"preserveDevices" yaml:"preserveDevices"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#task_queueing DatasyncTask#task_queueing}.
+	TaskQueueing *string `json:"taskQueueing" yaml:"taskQueueing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#transfer_mode DatasyncTask#transfer_mode}.
+	TransferMode *string `json:"transferMode" yaml:"transferMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#uid DatasyncTask#uid}.
+	Uid *string `json:"uid" yaml:"uid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#verify_mode DatasyncTask#verify_mode}.
+	VerifyMode *string `json:"verifyMode" yaml:"verifyMode"`
 }
 
 type DatasyncTaskOptionsOutputReference interface {
@@ -7207,8 +10470,8 @@ type DatasyncTaskOptionsOutputReference interface {
 	TaskQueueingInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TransferMode() *string
 	SetTransferMode(val *string)
 	TransferModeInput() *string
@@ -7218,10 +10481,15 @@ type DatasyncTaskOptionsOutputReference interface {
 	VerifyMode() *string
 	SetVerifyMode(val *string)
 	VerifyModeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAtime()
@@ -7474,8 +10742,8 @@ func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7544,7 +10812,7 @@ func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) VerifyModeInput() *string
 	return returns
 }
 
-func NewDatasyncTaskOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncTaskOptionsOutputReference {
+func NewDatasyncTaskOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncTaskOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncTaskOptionsOutputReference{}
@@ -7558,7 +10826,7 @@ func NewDatasyncTaskOptionsOutputReference(terraformResource cdktf.ITerraformRes
 	return &j
 }
 
-func NewDatasyncTaskOptionsOutputReference_Override(d DatasyncTaskOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncTaskOptionsOutputReference_Override(d DatasyncTaskOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7672,7 +10940,7 @@ func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7705,12 +10973,40 @@ func (j *jsiiProxy_DatasyncTaskOptionsOutputReference) SetVerifyMode(val *string
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7747,12 +11043,54 @@ func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7893,8 +11231,8 @@ func (d *jsiiProxy_DatasyncTaskOptionsOutputReference) ResetVerifyMode() {
 }
 
 type DatasyncTaskSchedule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#schedule_expression DatasyncTask#schedule_expression}.
-	ScheduleExpression *string `json:"scheduleExpression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#schedule_expression DatasyncTask#schedule_expression}.
+	ScheduleExpression *string `json:"scheduleExpression" yaml:"scheduleExpression"`
 }
 
 type DatasyncTaskScheduleOutputReference interface {
@@ -7908,12 +11246,17 @@ type DatasyncTaskScheduleOutputReference interface {
 	ScheduleExpressionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7973,8 +11316,8 @@ func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7983,7 +11326,7 @@ func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) TerraformResource() cdkt
 	return returns
 }
 
-func NewDatasyncTaskScheduleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncTaskScheduleOutputReference {
+func NewDatasyncTaskScheduleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncTaskScheduleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncTaskScheduleOutputReference{}
@@ -7997,7 +11340,7 @@ func NewDatasyncTaskScheduleOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewDatasyncTaskScheduleOutputReference_Override(d DatasyncTaskScheduleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncTaskScheduleOutputReference_Override(d DatasyncTaskScheduleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8039,7 +11382,7 @@ func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8048,12 +11391,40 @@ func (j *jsiiProxy_DatasyncTaskScheduleOutputReference) SetTerraformResource(val
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8090,12 +11461,54 @@ func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8132,8 +11545,8 @@ func (d *jsiiProxy_DatasyncTaskScheduleOutputReference) InterpolationForAttribut
 }
 
 type DatasyncTaskTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task.html#create DatasyncTask#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/datasync_task#create DatasyncTask#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type DatasyncTaskTimeoutsOutputReference interface {
@@ -8147,12 +11560,17 @@ type DatasyncTaskTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -8213,8 +11631,8 @@ func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8223,7 +11641,7 @@ func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) TerraformResource() cdkt
 	return returns
 }
 
-func NewDatasyncTaskTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DatasyncTaskTimeoutsOutputReference {
+func NewDatasyncTaskTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DatasyncTaskTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DatasyncTaskTimeoutsOutputReference{}
@@ -8237,7 +11655,7 @@ func NewDatasyncTaskTimeoutsOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewDatasyncTaskTimeoutsOutputReference_Override(d DatasyncTaskTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDatasyncTaskTimeoutsOutputReference_Override(d DatasyncTaskTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8279,7 +11697,7 @@ func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8288,12 +11706,40 @@ func (j *jsiiProxy_DatasyncTaskTimeoutsOutputReference) SetTerraformResource(val
 }
 
 // Experimental.
-func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8330,12 +11776,54 @@ func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DatasyncTaskTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/neptune/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version.html aws_neptune_engine_version}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version aws_neptune_engine_version}.
 type DataAwsNeptuneEngineVersion interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -39,8 +39,8 @@ type DataAwsNeptuneEngineVersion interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	SupportedTimezones() *[]*string
-	SupportsLogExportsToCloudwatch() interface{}
-	SupportsReadReplica() interface{}
+	SupportsLogExportsToCloudwatch() cdktf.IResolvable
+	SupportsReadReplica() cdktf.IResolvable
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -50,10 +50,15 @@ type DataAwsNeptuneEngineVersion interface {
 	VersionDescription() *string
 	VersionInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEngine()
@@ -92,8 +97,8 @@ func (j *jsiiProxy_DataAwsNeptuneEngineVersion) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneEngineVersion) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneEngineVersion) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -272,8 +277,8 @@ func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SupportedTimezones() *[]*string 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SupportsLogExportsToCloudwatch() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SupportsLogExportsToCloudwatch() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"supportsLogExportsToCloudwatch",
@@ -282,8 +287,8 @@ func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SupportsLogExportsToCloudwatch()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SupportsReadReplica() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SupportsReadReplica() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"supportsReadReplica",
@@ -362,7 +367,7 @@ func (j *jsiiProxy_DataAwsNeptuneEngineVersion) VersionInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version.html aws_neptune_engine_version} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version aws_neptune_engine_version} Data Source.
 func NewDataAwsNeptuneEngineVersion(scope constructs.Construct, id *string, config *DataAwsNeptuneEngineVersionConfig) DataAwsNeptuneEngineVersion {
 	_init_.Initialize()
 
@@ -377,7 +382,7 @@ func NewDataAwsNeptuneEngineVersion(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version.html aws_neptune_engine_version} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version aws_neptune_engine_version} Data Source.
 func NewDataAwsNeptuneEngineVersion_Override(d DataAwsNeptuneEngineVersion, scope constructs.Construct, id *string, config *DataAwsNeptuneEngineVersionConfig) {
 	_init_.Initialize()
 
@@ -388,7 +393,7 @@ func NewDataAwsNeptuneEngineVersion_Override(d DataAwsNeptuneEngineVersion, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsNeptuneEngineVersion) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -492,12 +497,40 @@ func (d *jsiiProxy_DataAwsNeptuneEngineVersion) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -534,12 +567,54 @@ func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsNeptuneEngineVersion) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -672,31 +747,31 @@ func (d *jsiiProxy_DataAwsNeptuneEngineVersion) ToTerraform() interface{} {
 // AWS Neptune.
 type DataAwsNeptuneEngineVersionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version.html#engine DataAwsNeptuneEngineVersion#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version.html#parameter_group_family DataAwsNeptuneEngineVersion#parameter_group_family}.
-	ParameterGroupFamily *string `json:"parameterGroupFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version.html#preferred_versions DataAwsNeptuneEngineVersion#preferred_versions}.
-	PreferredVersions *[]*string `json:"preferredVersions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version.html#version DataAwsNeptuneEngineVersion#version}.
-	Version *string `json:"version"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version#engine DataAwsNeptuneEngineVersion#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version#parameter_group_family DataAwsNeptuneEngineVersion#parameter_group_family}.
+	ParameterGroupFamily *string `json:"parameterGroupFamily" yaml:"parameterGroupFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version#preferred_versions DataAwsNeptuneEngineVersion#preferred_versions}.
+	PreferredVersions *[]*string `json:"preferredVersions" yaml:"preferredVersions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_engine_version#version DataAwsNeptuneEngineVersion#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html aws_neptune_orderable_db_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance aws_neptune_orderable_db_instance}.
 type DataAwsNeptuneOrderableDbInstance interface {
 	cdktf.TerraformDataSource
 	AvailabilityZones() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -722,7 +797,7 @@ type DataAwsNeptuneOrderableDbInstance interface {
 	MinIopsPerDbInstance() *float64
 	MinIopsPerGib() *float64
 	MinStorageSize() *float64
-	MultiAzCapable() interface{}
+	MultiAzCapable() cdktf.IResolvable
 	Node() constructs.Node
 	PreferredInstanceClasses() *[]*string
 	SetPreferredInstanceClasses(val *[]*string)
@@ -730,13 +805,13 @@ type DataAwsNeptuneOrderableDbInstance interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	ReadReplicaCapable() interface{}
+	ReadReplicaCapable() cdktf.IResolvable
 	StorageType() *string
-	SupportsEnhancedMonitoring() interface{}
-	SupportsIamDatabaseAuthentication() interface{}
-	SupportsIops() interface{}
-	SupportsPerformanceInsights() interface{}
-	SupportsStorageEncryption() interface{}
+	SupportsEnhancedMonitoring() cdktf.IResolvable
+	SupportsIamDatabaseAuthentication() cdktf.IResolvable
+	SupportsIops() cdktf.IResolvable
+	SupportsPerformanceInsights() cdktf.IResolvable
+	SupportsStorageEncryption() cdktf.IResolvable
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -744,10 +819,15 @@ type DataAwsNeptuneOrderableDbInstance interface {
 	SetVpc(val interface{})
 	VpcInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEngine()
@@ -798,8 +878,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -998,8 +1078,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) MinStorageSize() *float64 
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) MultiAzCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) MultiAzCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"multiAzCapable",
@@ -1058,8 +1138,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) RawOverrides() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) ReadReplicaCapable() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) ReadReplicaCapable() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"readReplicaCapable",
@@ -1078,8 +1158,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) StorageType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsEnhancedMonitoring() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsEnhancedMonitoring() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"supportsEnhancedMonitoring",
@@ -1088,8 +1168,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsEnhancedMonitoring
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsIamDatabaseAuthentication() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsIamDatabaseAuthentication() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"supportsIamDatabaseAuthentication",
@@ -1098,8 +1178,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsIamDatabaseAuthent
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsIops() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsIops() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"supportsIops",
@@ -1108,8 +1188,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsIops() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsPerformanceInsights() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsPerformanceInsights() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"supportsPerformanceInsights",
@@ -1118,8 +1198,8 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsPerformanceInsight
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsStorageEncryption() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SupportsStorageEncryption() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"supportsStorageEncryption",
@@ -1178,7 +1258,7 @@ func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) VpcInput() interface{} {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html aws_neptune_orderable_db_instance} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance aws_neptune_orderable_db_instance} Data Source.
 func NewDataAwsNeptuneOrderableDbInstance(scope constructs.Construct, id *string, config *DataAwsNeptuneOrderableDbInstanceConfig) DataAwsNeptuneOrderableDbInstance {
 	_init_.Initialize()
 
@@ -1193,7 +1273,7 @@ func NewDataAwsNeptuneOrderableDbInstance(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html aws_neptune_orderable_db_instance} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance aws_neptune_orderable_db_instance} Data Source.
 func NewDataAwsNeptuneOrderableDbInstance_Override(d DataAwsNeptuneOrderableDbInstance, scope constructs.Construct, id *string, config *DataAwsNeptuneOrderableDbInstanceConfig) {
 	_init_.Initialize()
 
@@ -1204,7 +1284,7 @@ func NewDataAwsNeptuneOrderableDbInstance_Override(d DataAwsNeptuneOrderableDbIn
 	)
 }
 
-func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsNeptuneOrderableDbInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1324,12 +1404,40 @@ func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) AddOverride(path *string, 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1366,12 +1474,54 @@ func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1520,28 +1670,28 @@ func (d *jsiiProxy_DataAwsNeptuneOrderableDbInstance) ToTerraform() interface{} 
 // AWS Neptune.
 type DataAwsNeptuneOrderableDbInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html#engine DataAwsNeptuneOrderableDbInstance#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html#engine_version DataAwsNeptuneOrderableDbInstance#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html#instance_class DataAwsNeptuneOrderableDbInstance#instance_class}.
-	InstanceClass *string `json:"instanceClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html#license_model DataAwsNeptuneOrderableDbInstance#license_model}.
-	LicenseModel *string `json:"licenseModel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html#preferred_instance_classes DataAwsNeptuneOrderableDbInstance#preferred_instance_classes}.
-	PreferredInstanceClasses *[]*string `json:"preferredInstanceClasses"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance.html#vpc DataAwsNeptuneOrderableDbInstance#vpc}.
-	Vpc interface{} `json:"vpc"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance#engine DataAwsNeptuneOrderableDbInstance#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance#engine_version DataAwsNeptuneOrderableDbInstance#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance#instance_class DataAwsNeptuneOrderableDbInstance#instance_class}.
+	InstanceClass *string `json:"instanceClass" yaml:"instanceClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance#license_model DataAwsNeptuneOrderableDbInstance#license_model}.
+	LicenseModel *string `json:"licenseModel" yaml:"licenseModel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance#preferred_instance_classes DataAwsNeptuneOrderableDbInstance#preferred_instance_classes}.
+	PreferredInstanceClasses *[]*string `json:"preferredInstanceClasses" yaml:"preferredInstanceClasses"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/neptune_orderable_db_instance#vpc DataAwsNeptuneOrderableDbInstance#vpc}.
+	Vpc interface{} `json:"vpc" yaml:"vpc"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html aws_neptune_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster aws_neptune_cluster}.
 type NeptuneCluster interface {
 	cdktf.TerraformResource
 	ApplyImmediately() interface{}
@@ -1567,8 +1717,8 @@ type NeptuneCluster interface {
 	CopyTagsToSnapshot() interface{}
 	SetCopyTagsToSnapshot(val interface{})
 	CopyTagsToSnapshotInput() interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeletionProtection() interface{}
 	SetDeletionProtection(val interface{})
 	DeletionProtectionInput() interface{}
@@ -1634,12 +1784,12 @@ type NeptuneCluster interface {
 	StorageEncrypted() interface{}
 	SetStorageEncrypted(val interface{})
 	StorageEncryptedInput() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1649,10 +1799,15 @@ type NeptuneCluster interface {
 	SetVpcSecurityGroupIds(val *[]*string)
 	VpcSecurityGroupIdsInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *NeptuneClusterTimeouts)
@@ -1865,8 +2020,8 @@ func (j *jsiiProxy_NeptuneCluster) CopyTagsToSnapshotInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2325,8 +2480,8 @@ func (j *jsiiProxy_NeptuneCluster) StorageEncryptedInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2335,8 +2490,8 @@ func (j *jsiiProxy_NeptuneCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneCluster) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneCluster) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2345,8 +2500,8 @@ func (j *jsiiProxy_NeptuneCluster) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneCluster) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneCluster) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2355,8 +2510,8 @@ func (j *jsiiProxy_NeptuneCluster) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2435,7 +2590,7 @@ func (j *jsiiProxy_NeptuneCluster) VpcSecurityGroupIdsInput() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html aws_neptune_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster aws_neptune_cluster} Resource.
 func NewNeptuneCluster(scope constructs.Construct, id *string, config *NeptuneClusterConfig) NeptuneCluster {
 	_init_.Initialize()
 
@@ -2450,7 +2605,7 @@ func NewNeptuneCluster(scope constructs.Construct, id *string, config *NeptuneCl
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html aws_neptune_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster aws_neptune_cluster} Resource.
 func NewNeptuneCluster_Override(n NeptuneCluster, scope constructs.Construct, id *string, config *NeptuneClusterConfig) {
 	_init_.Initialize()
 
@@ -2509,7 +2664,7 @@ func (j *jsiiProxy_NeptuneCluster) SetCopyTagsToSnapshot(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2677,7 +2832,7 @@ func (j *jsiiProxy_NeptuneCluster) SetStorageEncrypted(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_NeptuneCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2685,7 +2840,7 @@ func (j *jsiiProxy_NeptuneCluster) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneCluster) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_NeptuneCluster) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2741,12 +2896,40 @@ func (n *jsiiProxy_NeptuneCluster) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2783,12 +2966,54 @@ func (n *jsiiProxy_NeptuneCluster) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3113,72 +3338,72 @@ func (n *jsiiProxy_NeptuneCluster) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#apply_immediately NeptuneCluster#apply_immediately}.
-	ApplyImmediately interface{} `json:"applyImmediately"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#availability_zones NeptuneCluster#availability_zones}.
-	AvailabilityZones *[]*string `json:"availabilityZones"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#backup_retention_period NeptuneCluster#backup_retention_period}.
-	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#cluster_identifier NeptuneCluster#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#cluster_identifier_prefix NeptuneCluster#cluster_identifier_prefix}.
-	ClusterIdentifierPrefix *string `json:"clusterIdentifierPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#copy_tags_to_snapshot NeptuneCluster#copy_tags_to_snapshot}.
-	CopyTagsToSnapshot interface{} `json:"copyTagsToSnapshot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#deletion_protection NeptuneCluster#deletion_protection}.
-	DeletionProtection interface{} `json:"deletionProtection"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#enable_cloudwatch_logs_exports NeptuneCluster#enable_cloudwatch_logs_exports}.
-	EnableCloudwatchLogsExports *[]*string `json:"enableCloudwatchLogsExports"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#engine NeptuneCluster#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#engine_version NeptuneCluster#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#final_snapshot_identifier NeptuneCluster#final_snapshot_identifier}.
-	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#iam_database_authentication_enabled NeptuneCluster#iam_database_authentication_enabled}.
-	IamDatabaseAuthenticationEnabled interface{} `json:"iamDatabaseAuthenticationEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#iam_roles NeptuneCluster#iam_roles}.
-	IamRoles *[]*string `json:"iamRoles"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#kms_key_arn NeptuneCluster#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#neptune_cluster_parameter_group_name NeptuneCluster#neptune_cluster_parameter_group_name}.
-	NeptuneClusterParameterGroupName *string `json:"neptuneClusterParameterGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#neptune_subnet_group_name NeptuneCluster#neptune_subnet_group_name}.
-	NeptuneSubnetGroupName *string `json:"neptuneSubnetGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#port NeptuneCluster#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#preferred_backup_window NeptuneCluster#preferred_backup_window}.
-	PreferredBackupWindow *string `json:"preferredBackupWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#preferred_maintenance_window NeptuneCluster#preferred_maintenance_window}.
-	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#replication_source_identifier NeptuneCluster#replication_source_identifier}.
-	ReplicationSourceIdentifier *string `json:"replicationSourceIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#skip_final_snapshot NeptuneCluster#skip_final_snapshot}.
-	SkipFinalSnapshot interface{} `json:"skipFinalSnapshot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#snapshot_identifier NeptuneCluster#snapshot_identifier}.
-	SnapshotIdentifier *string `json:"snapshotIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#storage_encrypted NeptuneCluster#storage_encrypted}.
-	StorageEncrypted interface{} `json:"storageEncrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#tags NeptuneCluster#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#tags_all NeptuneCluster#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#apply_immediately NeptuneCluster#apply_immediately}.
+	ApplyImmediately interface{} `json:"applyImmediately" yaml:"applyImmediately"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#availability_zones NeptuneCluster#availability_zones}.
+	AvailabilityZones *[]*string `json:"availabilityZones" yaml:"availabilityZones"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#backup_retention_period NeptuneCluster#backup_retention_period}.
+	BackupRetentionPeriod *float64 `json:"backupRetentionPeriod" yaml:"backupRetentionPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#cluster_identifier NeptuneCluster#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#cluster_identifier_prefix NeptuneCluster#cluster_identifier_prefix}.
+	ClusterIdentifierPrefix *string `json:"clusterIdentifierPrefix" yaml:"clusterIdentifierPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#copy_tags_to_snapshot NeptuneCluster#copy_tags_to_snapshot}.
+	CopyTagsToSnapshot interface{} `json:"copyTagsToSnapshot" yaml:"copyTagsToSnapshot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#deletion_protection NeptuneCluster#deletion_protection}.
+	DeletionProtection interface{} `json:"deletionProtection" yaml:"deletionProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#enable_cloudwatch_logs_exports NeptuneCluster#enable_cloudwatch_logs_exports}.
+	EnableCloudwatchLogsExports *[]*string `json:"enableCloudwatchLogsExports" yaml:"enableCloudwatchLogsExports"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#engine NeptuneCluster#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#engine_version NeptuneCluster#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#final_snapshot_identifier NeptuneCluster#final_snapshot_identifier}.
+	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier" yaml:"finalSnapshotIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#iam_database_authentication_enabled NeptuneCluster#iam_database_authentication_enabled}.
+	IamDatabaseAuthenticationEnabled interface{} `json:"iamDatabaseAuthenticationEnabled" yaml:"iamDatabaseAuthenticationEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#iam_roles NeptuneCluster#iam_roles}.
+	IamRoles *[]*string `json:"iamRoles" yaml:"iamRoles"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#kms_key_arn NeptuneCluster#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#neptune_cluster_parameter_group_name NeptuneCluster#neptune_cluster_parameter_group_name}.
+	NeptuneClusterParameterGroupName *string `json:"neptuneClusterParameterGroupName" yaml:"neptuneClusterParameterGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#neptune_subnet_group_name NeptuneCluster#neptune_subnet_group_name}.
+	NeptuneSubnetGroupName *string `json:"neptuneSubnetGroupName" yaml:"neptuneSubnetGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#port NeptuneCluster#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#preferred_backup_window NeptuneCluster#preferred_backup_window}.
+	PreferredBackupWindow *string `json:"preferredBackupWindow" yaml:"preferredBackupWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#preferred_maintenance_window NeptuneCluster#preferred_maintenance_window}.
+	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow" yaml:"preferredMaintenanceWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#replication_source_identifier NeptuneCluster#replication_source_identifier}.
+	ReplicationSourceIdentifier *string `json:"replicationSourceIdentifier" yaml:"replicationSourceIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#skip_final_snapshot NeptuneCluster#skip_final_snapshot}.
+	SkipFinalSnapshot interface{} `json:"skipFinalSnapshot" yaml:"skipFinalSnapshot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#snapshot_identifier NeptuneCluster#snapshot_identifier}.
+	SnapshotIdentifier *string `json:"snapshotIdentifier" yaml:"snapshotIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#storage_encrypted NeptuneCluster#storage_encrypted}.
+	StorageEncrypted interface{} `json:"storageEncrypted" yaml:"storageEncrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#tags NeptuneCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#tags_all NeptuneCluster#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#timeouts NeptuneCluster#timeouts}
-	Timeouts *NeptuneClusterTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#vpc_security_group_ids NeptuneCluster#vpc_security_group_ids}.
-	VpcSecurityGroupIds *[]*string `json:"vpcSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#timeouts NeptuneCluster#timeouts}
+	Timeouts *NeptuneClusterTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#vpc_security_group_ids NeptuneCluster#vpc_security_group_ids}.
+	VpcSecurityGroupIds *[]*string `json:"vpcSecurityGroupIds" yaml:"vpcSecurityGroupIds"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html aws_neptune_cluster_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint aws_neptune_cluster_endpoint}.
 type NeptuneClusterEndpoint interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3190,8 +3415,8 @@ type NeptuneClusterEndpoint interface {
 	SetClusterIdentifier(val *string)
 	ClusterIdentifierInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Endpoint() *string
@@ -3213,20 +3438,25 @@ type NeptuneClusterEndpoint interface {
 	StaticMembers() *[]*string
 	SetStaticMembers(val *[]*string)
 	StaticMembersInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetExcludedMembers()
@@ -3315,8 +3545,8 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3475,8 +3705,8 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) StaticMembersInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterEndpoint) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3485,8 +3715,8 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterEndpoint) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3495,8 +3725,8 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterEndpoint) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3505,8 +3735,8 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterEndpoint) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3545,7 +3775,7 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html aws_neptune_cluster_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint aws_neptune_cluster_endpoint} Resource.
 func NewNeptuneClusterEndpoint(scope constructs.Construct, id *string, config *NeptuneClusterEndpointConfig) NeptuneClusterEndpoint {
 	_init_.Initialize()
 
@@ -3560,7 +3790,7 @@ func NewNeptuneClusterEndpoint(scope constructs.Construct, id *string, config *N
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html aws_neptune_cluster_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint aws_neptune_cluster_endpoint} Resource.
 func NewNeptuneClusterEndpoint_Override(n NeptuneClusterEndpoint, scope constructs.Construct, id *string, config *NeptuneClusterEndpointConfig) {
 	_init_.Initialize()
 
@@ -3587,7 +3817,7 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) SetClusterIdentifier(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3643,7 +3873,7 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) SetStaticMembers(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) SetTags(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterEndpoint) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3651,7 +3881,7 @@ func (j *jsiiProxy_NeptuneClusterEndpoint) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterEndpoint) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterEndpoint) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3699,12 +3929,40 @@ func (n *jsiiProxy_NeptuneClusterEndpoint) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3741,12 +3999,54 @@ func (n *jsiiProxy_NeptuneClusterEndpoint) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3879,30 +4179,30 @@ func (n *jsiiProxy_NeptuneClusterEndpoint) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneClusterEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html#cluster_endpoint_identifier NeptuneClusterEndpoint#cluster_endpoint_identifier}.
-	ClusterEndpointIdentifier *string `json:"clusterEndpointIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html#cluster_identifier NeptuneClusterEndpoint#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html#endpoint_type NeptuneClusterEndpoint#endpoint_type}.
-	EndpointType *string `json:"endpointType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html#excluded_members NeptuneClusterEndpoint#excluded_members}.
-	ExcludedMembers *[]*string `json:"excludedMembers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html#static_members NeptuneClusterEndpoint#static_members}.
-	StaticMembers *[]*string `json:"staticMembers"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html#tags NeptuneClusterEndpoint#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint.html#tags_all NeptuneClusterEndpoint#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint#cluster_endpoint_identifier NeptuneClusterEndpoint#cluster_endpoint_identifier}.
+	ClusterEndpointIdentifier *string `json:"clusterEndpointIdentifier" yaml:"clusterEndpointIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint#cluster_identifier NeptuneClusterEndpoint#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint#endpoint_type NeptuneClusterEndpoint#endpoint_type}.
+	EndpointType *string `json:"endpointType" yaml:"endpointType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint#excluded_members NeptuneClusterEndpoint#excluded_members}.
+	ExcludedMembers *[]*string `json:"excludedMembers" yaml:"excludedMembers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint#static_members NeptuneClusterEndpoint#static_members}.
+	StaticMembers *[]*string `json:"staticMembers" yaml:"staticMembers"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint#tags NeptuneClusterEndpoint#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_endpoint#tags_all NeptuneClusterEndpoint#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html aws_neptune_cluster_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance aws_neptune_cluster_instance}.
 type NeptuneClusterInstance interface {
 	cdktf.TerraformResource
 	Address() *string
@@ -3921,8 +4221,8 @@ type NeptuneClusterInstance interface {
 	SetClusterIdentifier(val *string)
 	ClusterIdentifierInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DbiResourceId() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -3973,24 +4273,29 @@ type NeptuneClusterInstance interface {
 	SetPubliclyAccessible(val interface{})
 	PubliclyAccessibleInput() interface{}
 	RawOverrides() interface{}
-	StorageEncrypted() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	StorageEncrypted() cdktf.IResolvable
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() NeptuneClusterInstanceTimeoutsOutputReference
 	TimeoutsInput() *NeptuneClusterInstanceTimeouts
-	Writer() interface{}
+	Writer() cdktf.IResolvable
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *NeptuneClusterInstanceTimeouts)
@@ -4143,8 +4448,8 @@ func (j *jsiiProxy_NeptuneClusterInstance) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4503,8 +4808,8 @@ func (j *jsiiProxy_NeptuneClusterInstance) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) StorageEncrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterInstance) StorageEncrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"storageEncrypted",
@@ -4513,8 +4818,8 @@ func (j *jsiiProxy_NeptuneClusterInstance) StorageEncrypted() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterInstance) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4523,8 +4828,8 @@ func (j *jsiiProxy_NeptuneClusterInstance) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterInstance) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4533,8 +4838,8 @@ func (j *jsiiProxy_NeptuneClusterInstance) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterInstance) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4543,8 +4848,8 @@ func (j *jsiiProxy_NeptuneClusterInstance) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterInstance) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4603,8 +4908,8 @@ func (j *jsiiProxy_NeptuneClusterInstance) TimeoutsInput() *NeptuneClusterInstan
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) Writer() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterInstance) Writer() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"writer",
@@ -4613,7 +4918,7 @@ func (j *jsiiProxy_NeptuneClusterInstance) Writer() interface{} {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html aws_neptune_cluster_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance aws_neptune_cluster_instance} Resource.
 func NewNeptuneClusterInstance(scope constructs.Construct, id *string, config *NeptuneClusterInstanceConfig) NeptuneClusterInstance {
 	_init_.Initialize()
 
@@ -4628,7 +4933,7 @@ func NewNeptuneClusterInstance(scope constructs.Construct, id *string, config *N
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html aws_neptune_cluster_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance aws_neptune_cluster_instance} Resource.
 func NewNeptuneClusterInstance_Override(n NeptuneClusterInstance, scope constructs.Construct, id *string, config *NeptuneClusterInstanceConfig) {
 	_init_.Initialize()
 
@@ -4671,7 +4976,7 @@ func (j *jsiiProxy_NeptuneClusterInstance) SetClusterIdentifier(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4799,7 +5104,7 @@ func (j *jsiiProxy_NeptuneClusterInstance) SetPubliclyAccessible(val interface{}
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) SetTags(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterInstance) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4807,7 +5112,7 @@ func (j *jsiiProxy_NeptuneClusterInstance) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterInstance) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterInstance) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4855,12 +5160,40 @@ func (n *jsiiProxy_NeptuneClusterInstance) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4897,12 +5230,54 @@ func (n *jsiiProxy_NeptuneClusterInstance) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5147,62 +5522,62 @@ func (n *jsiiProxy_NeptuneClusterInstance) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneClusterInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#cluster_identifier NeptuneClusterInstance#cluster_identifier}.
-	ClusterIdentifier *string `json:"clusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#instance_class NeptuneClusterInstance#instance_class}.
-	InstanceClass *string `json:"instanceClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#apply_immediately NeptuneClusterInstance#apply_immediately}.
-	ApplyImmediately interface{} `json:"applyImmediately"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#auto_minor_version_upgrade NeptuneClusterInstance#auto_minor_version_upgrade}.
-	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#availability_zone NeptuneClusterInstance#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#engine NeptuneClusterInstance#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#engine_version NeptuneClusterInstance#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#identifier NeptuneClusterInstance#identifier}.
-	Identifier *string `json:"identifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#identifier_prefix NeptuneClusterInstance#identifier_prefix}.
-	IdentifierPrefix *string `json:"identifierPrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#neptune_parameter_group_name NeptuneClusterInstance#neptune_parameter_group_name}.
-	NeptuneParameterGroupName *string `json:"neptuneParameterGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#neptune_subnet_group_name NeptuneClusterInstance#neptune_subnet_group_name}.
-	NeptuneSubnetGroupName *string `json:"neptuneSubnetGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#port NeptuneClusterInstance#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#preferred_backup_window NeptuneClusterInstance#preferred_backup_window}.
-	PreferredBackupWindow *string `json:"preferredBackupWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#preferred_maintenance_window NeptuneClusterInstance#preferred_maintenance_window}.
-	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#promotion_tier NeptuneClusterInstance#promotion_tier}.
-	PromotionTier *float64 `json:"promotionTier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#publicly_accessible NeptuneClusterInstance#publicly_accessible}.
-	PubliclyAccessible interface{} `json:"publiclyAccessible"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#tags NeptuneClusterInstance#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#tags_all NeptuneClusterInstance#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#cluster_identifier NeptuneClusterInstance#cluster_identifier}.
+	ClusterIdentifier *string `json:"clusterIdentifier" yaml:"clusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#instance_class NeptuneClusterInstance#instance_class}.
+	InstanceClass *string `json:"instanceClass" yaml:"instanceClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#apply_immediately NeptuneClusterInstance#apply_immediately}.
+	ApplyImmediately interface{} `json:"applyImmediately" yaml:"applyImmediately"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#auto_minor_version_upgrade NeptuneClusterInstance#auto_minor_version_upgrade}.
+	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade" yaml:"autoMinorVersionUpgrade"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#availability_zone NeptuneClusterInstance#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#engine NeptuneClusterInstance#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#engine_version NeptuneClusterInstance#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#identifier NeptuneClusterInstance#identifier}.
+	Identifier *string `json:"identifier" yaml:"identifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#identifier_prefix NeptuneClusterInstance#identifier_prefix}.
+	IdentifierPrefix *string `json:"identifierPrefix" yaml:"identifierPrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#neptune_parameter_group_name NeptuneClusterInstance#neptune_parameter_group_name}.
+	NeptuneParameterGroupName *string `json:"neptuneParameterGroupName" yaml:"neptuneParameterGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#neptune_subnet_group_name NeptuneClusterInstance#neptune_subnet_group_name}.
+	NeptuneSubnetGroupName *string `json:"neptuneSubnetGroupName" yaml:"neptuneSubnetGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#port NeptuneClusterInstance#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#preferred_backup_window NeptuneClusterInstance#preferred_backup_window}.
+	PreferredBackupWindow *string `json:"preferredBackupWindow" yaml:"preferredBackupWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#preferred_maintenance_window NeptuneClusterInstance#preferred_maintenance_window}.
+	PreferredMaintenanceWindow *string `json:"preferredMaintenanceWindow" yaml:"preferredMaintenanceWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#promotion_tier NeptuneClusterInstance#promotion_tier}.
+	PromotionTier *float64 `json:"promotionTier" yaml:"promotionTier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#publicly_accessible NeptuneClusterInstance#publicly_accessible}.
+	PubliclyAccessible interface{} `json:"publiclyAccessible" yaml:"publiclyAccessible"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#tags NeptuneClusterInstance#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#tags_all NeptuneClusterInstance#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#timeouts NeptuneClusterInstance#timeouts}
-	Timeouts *NeptuneClusterInstanceTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#timeouts NeptuneClusterInstance#timeouts}
+	Timeouts *NeptuneClusterInstanceTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type NeptuneClusterInstanceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#create NeptuneClusterInstance#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#delete NeptuneClusterInstance#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance.html#update NeptuneClusterInstance#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#create NeptuneClusterInstance#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#delete NeptuneClusterInstance#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_instance#update NeptuneClusterInstance#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type NeptuneClusterInstanceTimeoutsOutputReference interface {
@@ -5219,15 +5594,20 @@ type NeptuneClusterInstanceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -5310,8 +5690,8 @@ func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5340,7 +5720,7 @@ func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) UpdateInput() 
 	return returns
 }
 
-func NewNeptuneClusterInstanceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) NeptuneClusterInstanceTimeoutsOutputReference {
+func NewNeptuneClusterInstanceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) NeptuneClusterInstanceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference{}
@@ -5354,7 +5734,7 @@ func NewNeptuneClusterInstanceTimeoutsOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewNeptuneClusterInstanceTimeoutsOutputReference_Override(n NeptuneClusterInstanceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewNeptuneClusterInstanceTimeoutsOutputReference_Override(n NeptuneClusterInstanceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5404,7 +5784,7 @@ func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5421,12 +5801,40 @@ func (j *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) SetUpdate(val 
 }
 
 // Experimental.
-func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5463,12 +5871,54 @@ func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5528,14 +5978,14 @@ func (n *jsiiProxy_NeptuneClusterInstanceTimeoutsOutputReference) ResetUpdate() 
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html aws_neptune_cluster_parameter_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group aws_neptune_cluster_parameter_group}.
 type NeptuneClusterParameterGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -5556,26 +6006,31 @@ type NeptuneClusterParameterGroup interface {
 	SetNamePrefix(val *string)
 	NamePrefixInput() *string
 	Node() constructs.Node
-	Parameter() *[]*NeptuneClusterParameterGroupParameter
-	SetParameter(val *[]*NeptuneClusterParameterGroupParameter)
-	ParameterInput() *[]*NeptuneClusterParameterGroupParameter
+	Parameter() interface{}
+	SetParameter(val interface{})
+	ParameterInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -5626,8 +6081,8 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterParameterGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5776,8 +6231,8 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) Parameter() *[]*NeptuneClusterParameterGroupParameter {
-	var returns *[]*NeptuneClusterParameterGroupParameter
+func (j *jsiiProxy_NeptuneClusterParameterGroup) Parameter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameter",
@@ -5786,8 +6241,8 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) Parameter() *[]*NeptuneClusterP
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) ParameterInput() *[]*NeptuneClusterParameterGroupParameter {
-	var returns *[]*NeptuneClusterParameterGroupParameter
+func (j *jsiiProxy_NeptuneClusterParameterGroup) ParameterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameterInput",
@@ -5816,8 +6271,8 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterParameterGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5826,8 +6281,8 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5836,8 +6291,8 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5846,8 +6301,8 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterParameterGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5886,7 +6341,7 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html aws_neptune_cluster_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group aws_neptune_cluster_parameter_group} Resource.
 func NewNeptuneClusterParameterGroup(scope constructs.Construct, id *string, config *NeptuneClusterParameterGroupConfig) NeptuneClusterParameterGroup {
 	_init_.Initialize()
 
@@ -5901,7 +6356,7 @@ func NewNeptuneClusterParameterGroup(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html aws_neptune_cluster_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group aws_neptune_cluster_parameter_group} Resource.
 func NewNeptuneClusterParameterGroup_Override(n NeptuneClusterParameterGroup, scope constructs.Construct, id *string, config *NeptuneClusterParameterGroupConfig) {
 	_init_.Initialize()
 
@@ -5912,7 +6367,7 @@ func NewNeptuneClusterParameterGroup_Override(n NeptuneClusterParameterGroup, sc
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterParameterGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5968,7 +6423,7 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) SetNamePrefix(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) SetParameter(val *[]*NeptuneClusterParameterGroupParameter) {
+func (j *jsiiProxy_NeptuneClusterParameterGroup) SetParameter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"parameter",
@@ -5984,7 +6439,7 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) SetProvider(val cdktf.Terraform
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterParameterGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5992,7 +6447,7 @@ func (j *jsiiProxy_NeptuneClusterParameterGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterParameterGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterParameterGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6040,12 +6495,40 @@ func (n *jsiiProxy_NeptuneClusterParameterGroup) AddOverride(path *string, value
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterParameterGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterParameterGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterParameterGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6082,12 +6565,54 @@ func (n *jsiiProxy_NeptuneClusterParameterGroup) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterParameterGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterParameterGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterParameterGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterParameterGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6236,49 +6761,49 @@ func (n *jsiiProxy_NeptuneClusterParameterGroup) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneClusterParameterGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#family NeptuneClusterParameterGroup#family}.
-	Family *string `json:"family"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#description NeptuneClusterParameterGroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#name NeptuneClusterParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#name_prefix NeptuneClusterParameterGroup#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#family NeptuneClusterParameterGroup#family}.
+	Family *string `json:"family" yaml:"family"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#description NeptuneClusterParameterGroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#name NeptuneClusterParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#name_prefix NeptuneClusterParameterGroup#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 	// parameter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#parameter NeptuneClusterParameterGroup#parameter}
-	Parameter *[]*NeptuneClusterParameterGroupParameter `json:"parameter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#tags NeptuneClusterParameterGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#tags_all NeptuneClusterParameterGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#parameter NeptuneClusterParameterGroup#parameter}
+	Parameter interface{} `json:"parameter" yaml:"parameter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#tags NeptuneClusterParameterGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#tags_all NeptuneClusterParameterGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type NeptuneClusterParameterGroupParameter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#name NeptuneClusterParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#value NeptuneClusterParameterGroup#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group.html#apply_method NeptuneClusterParameterGroup#apply_method}.
-	ApplyMethod *string `json:"applyMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#name NeptuneClusterParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#value NeptuneClusterParameterGroup#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_parameter_group#apply_method NeptuneClusterParameterGroup#apply_method}.
+	ApplyMethod *string `json:"applyMethod" yaml:"applyMethod"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot.html aws_neptune_cluster_snapshot}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot aws_neptune_cluster_snapshot}.
 type NeptuneClusterSnapshot interface {
 	cdktf.TerraformResource
 	AllocatedStorage() *float64
 	AvailabilityZones() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DbClusterIdentifier() *string
 	SetDbClusterIdentifier(val *string)
 	DbClusterIdentifierInput() *string
@@ -6305,7 +6830,7 @@ type NeptuneClusterSnapshot interface {
 	SnapshotType() *string
 	SourceDbClusterSnapshotArn() *string
 	Status() *string
-	StorageEncrypted() interface{}
+	StorageEncrypted() cdktf.IResolvable
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -6313,10 +6838,15 @@ type NeptuneClusterSnapshot interface {
 	TimeoutsInput() *NeptuneClusterSnapshotTimeouts
 	VpcId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *NeptuneClusterSnapshotTimeouts)
@@ -6373,8 +6903,8 @@ func (j *jsiiProxy_NeptuneClusterSnapshot) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterSnapshot) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterSnapshot) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6593,8 +7123,8 @@ func (j *jsiiProxy_NeptuneClusterSnapshot) Status() *string {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterSnapshot) StorageEncrypted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneClusterSnapshot) StorageEncrypted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"storageEncrypted",
@@ -6663,7 +7193,7 @@ func (j *jsiiProxy_NeptuneClusterSnapshot) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot.html aws_neptune_cluster_snapshot} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot aws_neptune_cluster_snapshot} Resource.
 func NewNeptuneClusterSnapshot(scope constructs.Construct, id *string, config *NeptuneClusterSnapshotConfig) NeptuneClusterSnapshot {
 	_init_.Initialize()
 
@@ -6678,7 +7208,7 @@ func NewNeptuneClusterSnapshot(scope constructs.Construct, id *string, config *N
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot.html aws_neptune_cluster_snapshot} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot aws_neptune_cluster_snapshot} Resource.
 func NewNeptuneClusterSnapshot_Override(n NeptuneClusterSnapshot, scope constructs.Construct, id *string, config *NeptuneClusterSnapshotConfig) {
 	_init_.Initialize()
 
@@ -6689,7 +7219,7 @@ func NewNeptuneClusterSnapshot_Override(n NeptuneClusterSnapshot, scope construc
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterSnapshot) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneClusterSnapshot) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6777,12 +7307,40 @@ func (n *jsiiProxy_NeptuneClusterSnapshot) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshot) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterSnapshot) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshot) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6819,12 +7377,54 @@ func (n *jsiiProxy_NeptuneClusterSnapshot) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshot) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshot) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterSnapshot) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshot) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6941,26 +7541,26 @@ func (n *jsiiProxy_NeptuneClusterSnapshot) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneClusterSnapshotConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot.html#db_cluster_identifier NeptuneClusterSnapshot#db_cluster_identifier}.
-	DbClusterIdentifier *string `json:"dbClusterIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot.html#db_cluster_snapshot_identifier NeptuneClusterSnapshot#db_cluster_snapshot_identifier}.
-	DbClusterSnapshotIdentifier *string `json:"dbClusterSnapshotIdentifier"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot#db_cluster_identifier NeptuneClusterSnapshot#db_cluster_identifier}.
+	DbClusterIdentifier *string `json:"dbClusterIdentifier" yaml:"dbClusterIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot#db_cluster_snapshot_identifier NeptuneClusterSnapshot#db_cluster_snapshot_identifier}.
+	DbClusterSnapshotIdentifier *string `json:"dbClusterSnapshotIdentifier" yaml:"dbClusterSnapshotIdentifier"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot.html#timeouts NeptuneClusterSnapshot#timeouts}
-	Timeouts *NeptuneClusterSnapshotTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot#timeouts NeptuneClusterSnapshot#timeouts}
+	Timeouts *NeptuneClusterSnapshotTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type NeptuneClusterSnapshotTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot.html#create NeptuneClusterSnapshot#create}.
-	Create *string `json:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster_snapshot#create NeptuneClusterSnapshot#create}.
+	Create *string `json:"create" yaml:"create"`
 }
 
 type NeptuneClusterSnapshotTimeoutsOutputReference interface {
@@ -6974,12 +7574,17 @@ type NeptuneClusterSnapshotTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7040,8 +7645,8 @@ func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7050,7 +7655,7 @@ func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) TerraformResou
 	return returns
 }
 
-func NewNeptuneClusterSnapshotTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) NeptuneClusterSnapshotTimeoutsOutputReference {
+func NewNeptuneClusterSnapshotTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) NeptuneClusterSnapshotTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference{}
@@ -7064,7 +7669,7 @@ func NewNeptuneClusterSnapshotTimeoutsOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewNeptuneClusterSnapshotTimeoutsOutputReference_Override(n NeptuneClusterSnapshotTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewNeptuneClusterSnapshotTimeoutsOutputReference_Override(n NeptuneClusterSnapshotTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7106,7 +7711,7 @@ func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7115,12 +7720,40 @@ func (j *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7157,12 +7790,54 @@ func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7207,12 +7882,12 @@ func (n *jsiiProxy_NeptuneClusterSnapshotTimeoutsOutputReference) ResetCreate() 
 }
 
 type NeptuneClusterTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#create NeptuneCluster#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#delete NeptuneCluster#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster.html#update NeptuneCluster#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#create NeptuneCluster#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#delete NeptuneCluster#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_cluster#update NeptuneCluster#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type NeptuneClusterTimeoutsOutputReference interface {
@@ -7229,15 +7904,20 @@ type NeptuneClusterTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7320,8 +8000,8 @@ func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) TerraformAttribute() *
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7350,7 +8030,7 @@ func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) UpdateInput() *string 
 	return returns
 }
 
-func NewNeptuneClusterTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) NeptuneClusterTimeoutsOutputReference {
+func NewNeptuneClusterTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) NeptuneClusterTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_NeptuneClusterTimeoutsOutputReference{}
@@ -7364,7 +8044,7 @@ func NewNeptuneClusterTimeoutsOutputReference(terraformResource cdktf.ITerraform
 	return &j
 }
 
-func NewNeptuneClusterTimeoutsOutputReference_Override(n NeptuneClusterTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewNeptuneClusterTimeoutsOutputReference_Override(n NeptuneClusterTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7414,7 +8094,7 @@ func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) SetTerraformAttribute(
 	)
 }
 
-func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7431,12 +8111,40 @@ func (j *jsiiProxy_NeptuneClusterTimeoutsOutputReference) SetUpdate(val *string)
 }
 
 // Experimental.
-func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7473,12 +8181,54 @@ func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7538,14 +8288,14 @@ func (n *jsiiProxy_NeptuneClusterTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html aws_neptune_event_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription aws_neptune_event_subscription}.
 type NeptuneEventSubscription interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerAwsId() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -7579,22 +8329,27 @@ type NeptuneEventSubscription interface {
 	SourceType() *string
 	SetSourceType(val *string)
 	SourceTypeInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() NeptuneEventSubscriptionTimeoutsOutputReference
 	TimeoutsInput() *NeptuneEventSubscriptionTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *NeptuneEventSubscriptionTimeouts)
@@ -7649,8 +8404,8 @@ func (j *jsiiProxy_NeptuneEventSubscription) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneEventSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7889,8 +8644,8 @@ func (j *jsiiProxy_NeptuneEventSubscription) SourceTypeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneEventSubscription) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7899,8 +8654,8 @@ func (j *jsiiProxy_NeptuneEventSubscription) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneEventSubscription) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7909,8 +8664,8 @@ func (j *jsiiProxy_NeptuneEventSubscription) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneEventSubscription) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7919,8 +8674,8 @@ func (j *jsiiProxy_NeptuneEventSubscription) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneEventSubscription) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7979,7 +8734,7 @@ func (j *jsiiProxy_NeptuneEventSubscription) TimeoutsInput() *NeptuneEventSubscr
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html aws_neptune_event_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription aws_neptune_event_subscription} Resource.
 func NewNeptuneEventSubscription(scope constructs.Construct, id *string, config *NeptuneEventSubscriptionConfig) NeptuneEventSubscription {
 	_init_.Initialize()
 
@@ -7994,7 +8749,7 @@ func NewNeptuneEventSubscription(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html aws_neptune_event_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription aws_neptune_event_subscription} Resource.
 func NewNeptuneEventSubscription_Override(n NeptuneEventSubscription, scope constructs.Construct, id *string, config *NeptuneEventSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -8005,7 +8760,7 @@ func NewNeptuneEventSubscription_Override(n NeptuneEventSubscription, scope cons
 	)
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneEventSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8093,7 +8848,7 @@ func (j *jsiiProxy_NeptuneEventSubscription) SetSourceType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) SetTags(val interface{}) {
+func (j *jsiiProxy_NeptuneEventSubscription) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8101,7 +8856,7 @@ func (j *jsiiProxy_NeptuneEventSubscription) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneEventSubscription) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_NeptuneEventSubscription) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8149,12 +8904,40 @@ func (n *jsiiProxy_NeptuneEventSubscription) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneEventSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneEventSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneEventSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8191,12 +8974,54 @@ func (n *jsiiProxy_NeptuneEventSubscription) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneEventSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneEventSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneEventSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneEventSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8377,44 +9202,44 @@ func (n *jsiiProxy_NeptuneEventSubscription) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneEventSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#sns_topic_arn NeptuneEventSubscription#sns_topic_arn}.
-	SnsTopicArn *string `json:"snsTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#enabled NeptuneEventSubscription#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#event_categories NeptuneEventSubscription#event_categories}.
-	EventCategories *[]*string `json:"eventCategories"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#name NeptuneEventSubscription#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#name_prefix NeptuneEventSubscription#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#source_ids NeptuneEventSubscription#source_ids}.
-	SourceIds *[]*string `json:"sourceIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#source_type NeptuneEventSubscription#source_type}.
-	SourceType *string `json:"sourceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#tags NeptuneEventSubscription#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#tags_all NeptuneEventSubscription#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#sns_topic_arn NeptuneEventSubscription#sns_topic_arn}.
+	SnsTopicArn *string `json:"snsTopicArn" yaml:"snsTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#enabled NeptuneEventSubscription#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#event_categories NeptuneEventSubscription#event_categories}.
+	EventCategories *[]*string `json:"eventCategories" yaml:"eventCategories"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#name NeptuneEventSubscription#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#name_prefix NeptuneEventSubscription#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#source_ids NeptuneEventSubscription#source_ids}.
+	SourceIds *[]*string `json:"sourceIds" yaml:"sourceIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#source_type NeptuneEventSubscription#source_type}.
+	SourceType *string `json:"sourceType" yaml:"sourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#tags NeptuneEventSubscription#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#tags_all NeptuneEventSubscription#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#timeouts NeptuneEventSubscription#timeouts}
-	Timeouts *NeptuneEventSubscriptionTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#timeouts NeptuneEventSubscription#timeouts}
+	Timeouts *NeptuneEventSubscriptionTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type NeptuneEventSubscriptionTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#create NeptuneEventSubscription#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#delete NeptuneEventSubscription#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription.html#update NeptuneEventSubscription#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#create NeptuneEventSubscription#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#delete NeptuneEventSubscription#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_event_subscription#update NeptuneEventSubscription#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type NeptuneEventSubscriptionTimeoutsOutputReference interface {
@@ -8431,15 +9256,20 @@ type NeptuneEventSubscriptionTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -8522,8 +9352,8 @@ func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8552,7 +9382,7 @@ func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) UpdateInput(
 	return returns
 }
 
-func NewNeptuneEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) NeptuneEventSubscriptionTimeoutsOutputReference {
+func NewNeptuneEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) NeptuneEventSubscriptionTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference{}
@@ -8566,7 +9396,7 @@ func NewNeptuneEventSubscriptionTimeoutsOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewNeptuneEventSubscriptionTimeoutsOutputReference_Override(n NeptuneEventSubscriptionTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewNeptuneEventSubscriptionTimeoutsOutputReference_Override(n NeptuneEventSubscriptionTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8616,7 +9446,7 @@ func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8633,12 +9463,40 @@ func (j *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) SetUpdate(va
 }
 
 // Experimental.
-func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8675,12 +9533,54 @@ func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8740,14 +9640,14 @@ func (n *jsiiProxy_NeptuneEventSubscriptionTimeoutsOutputReference) ResetUpdate(
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html aws_neptune_parameter_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group aws_neptune_parameter_group}.
 type NeptuneParameterGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -8765,26 +9665,31 @@ type NeptuneParameterGroup interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameter() *[]*NeptuneParameterGroupParameter
-	SetParameter(val *[]*NeptuneParameterGroupParameter)
-	ParameterInput() *[]*NeptuneParameterGroupParameter
+	Parameter() interface{}
+	SetParameter(val interface{})
+	ParameterInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -8833,8 +9738,8 @@ func (j *jsiiProxy_NeptuneParameterGroup) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneParameterGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8963,8 +9868,8 @@ func (j *jsiiProxy_NeptuneParameterGroup) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) Parameter() *[]*NeptuneParameterGroupParameter {
-	var returns *[]*NeptuneParameterGroupParameter
+func (j *jsiiProxy_NeptuneParameterGroup) Parameter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameter",
@@ -8973,8 +9878,8 @@ func (j *jsiiProxy_NeptuneParameterGroup) Parameter() *[]*NeptuneParameterGroupP
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) ParameterInput() *[]*NeptuneParameterGroupParameter {
-	var returns *[]*NeptuneParameterGroupParameter
+func (j *jsiiProxy_NeptuneParameterGroup) ParameterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameterInput",
@@ -9003,8 +9908,8 @@ func (j *jsiiProxy_NeptuneParameterGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneParameterGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9013,8 +9918,8 @@ func (j *jsiiProxy_NeptuneParameterGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneParameterGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9023,8 +9928,8 @@ func (j *jsiiProxy_NeptuneParameterGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneParameterGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9033,8 +9938,8 @@ func (j *jsiiProxy_NeptuneParameterGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneParameterGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9073,7 +9978,7 @@ func (j *jsiiProxy_NeptuneParameterGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html aws_neptune_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group aws_neptune_parameter_group} Resource.
 func NewNeptuneParameterGroup(scope constructs.Construct, id *string, config *NeptuneParameterGroupConfig) NeptuneParameterGroup {
 	_init_.Initialize()
 
@@ -9088,7 +9993,7 @@ func NewNeptuneParameterGroup(scope constructs.Construct, id *string, config *Ne
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html aws_neptune_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group aws_neptune_parameter_group} Resource.
 func NewNeptuneParameterGroup_Override(n NeptuneParameterGroup, scope constructs.Construct, id *string, config *NeptuneParameterGroupConfig) {
 	_init_.Initialize()
 
@@ -9099,7 +10004,7 @@ func NewNeptuneParameterGroup_Override(n NeptuneParameterGroup, scope constructs
 	)
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneParameterGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9147,7 +10052,7 @@ func (j *jsiiProxy_NeptuneParameterGroup) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) SetParameter(val *[]*NeptuneParameterGroupParameter) {
+func (j *jsiiProxy_NeptuneParameterGroup) SetParameter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"parameter",
@@ -9163,7 +10068,7 @@ func (j *jsiiProxy_NeptuneParameterGroup) SetProvider(val cdktf.TerraformProvide
 	)
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_NeptuneParameterGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9171,7 +10076,7 @@ func (j *jsiiProxy_NeptuneParameterGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneParameterGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_NeptuneParameterGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9219,12 +10124,40 @@ func (n *jsiiProxy_NeptuneParameterGroup) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneParameterGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneParameterGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneParameterGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9261,12 +10194,54 @@ func (n *jsiiProxy_NeptuneParameterGroup) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneParameterGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneParameterGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneParameterGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneParameterGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9399,46 +10374,46 @@ func (n *jsiiProxy_NeptuneParameterGroup) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneParameterGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#family NeptuneParameterGroup#family}.
-	Family *string `json:"family"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#name NeptuneParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#description NeptuneParameterGroup#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#family NeptuneParameterGroup#family}.
+	Family *string `json:"family" yaml:"family"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#name NeptuneParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#description NeptuneParameterGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 	// parameter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#parameter NeptuneParameterGroup#parameter}
-	Parameter *[]*NeptuneParameterGroupParameter `json:"parameter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#tags NeptuneParameterGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#tags_all NeptuneParameterGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#parameter NeptuneParameterGroup#parameter}
+	Parameter interface{} `json:"parameter" yaml:"parameter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#tags NeptuneParameterGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#tags_all NeptuneParameterGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type NeptuneParameterGroupParameter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#name NeptuneParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#value NeptuneParameterGroup#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group.html#apply_method NeptuneParameterGroup#apply_method}.
-	ApplyMethod *string `json:"applyMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#name NeptuneParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#value NeptuneParameterGroup#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_parameter_group#apply_method NeptuneParameterGroup#apply_method}.
+	ApplyMethod *string `json:"applyMethod" yaml:"applyMethod"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html aws_neptune_subnet_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group aws_neptune_subnet_group}.
 type NeptuneSubnetGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -9462,20 +10437,25 @@ type NeptuneSubnetGroup interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -9525,8 +10505,8 @@ func (j *jsiiProxy_NeptuneSubnetGroup) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneSubnetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9695,8 +10675,8 @@ func (j *jsiiProxy_NeptuneSubnetGroup) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneSubnetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9705,8 +10685,8 @@ func (j *jsiiProxy_NeptuneSubnetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneSubnetGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9715,8 +10695,8 @@ func (j *jsiiProxy_NeptuneSubnetGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneSubnetGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9725,8 +10705,8 @@ func (j *jsiiProxy_NeptuneSubnetGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_NeptuneSubnetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9765,7 +10745,7 @@ func (j *jsiiProxy_NeptuneSubnetGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html aws_neptune_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group aws_neptune_subnet_group} Resource.
 func NewNeptuneSubnetGroup(scope constructs.Construct, id *string, config *NeptuneSubnetGroupConfig) NeptuneSubnetGroup {
 	_init_.Initialize()
 
@@ -9780,7 +10760,7 @@ func NewNeptuneSubnetGroup(scope constructs.Construct, id *string, config *Neptu
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html aws_neptune_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group aws_neptune_subnet_group} Resource.
 func NewNeptuneSubnetGroup_Override(n NeptuneSubnetGroup, scope constructs.Construct, id *string, config *NeptuneSubnetGroupConfig) {
 	_init_.Initialize()
 
@@ -9791,7 +10771,7 @@ func NewNeptuneSubnetGroup_Override(n NeptuneSubnetGroup, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_NeptuneSubnetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9855,7 +10835,7 @@ func (j *jsiiProxy_NeptuneSubnetGroup) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_NeptuneSubnetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9863,7 +10843,7 @@ func (j *jsiiProxy_NeptuneSubnetGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_NeptuneSubnetGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_NeptuneSubnetGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9911,12 +10891,40 @@ func (n *jsiiProxy_NeptuneSubnetGroup) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneSubnetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		n,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneSubnetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		n,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneSubnetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		n,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9953,12 +10961,54 @@ func (n *jsiiProxy_NeptuneSubnetGroup) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (n *jsiiProxy_NeptuneSubnetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneSubnetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		n,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (n *jsiiProxy_NeptuneSubnetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		n,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (n *jsiiProxy_NeptuneSubnetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		n,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10099,23 +11149,23 @@ func (n *jsiiProxy_NeptuneSubnetGroup) ToTerraform() interface{} {
 // AWS Neptune.
 type NeptuneSubnetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html#subnet_ids NeptuneSubnetGroup#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html#description NeptuneSubnetGroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html#name NeptuneSubnetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html#name_prefix NeptuneSubnetGroup#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html#tags NeptuneSubnetGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group.html#tags_all NeptuneSubnetGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group#subnet_ids NeptuneSubnetGroup#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group#description NeptuneSubnetGroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group#name NeptuneSubnetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group#name_prefix NeptuneSubnetGroup#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group#tags NeptuneSubnetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/neptune_subnet_group#tags_all NeptuneSubnetGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

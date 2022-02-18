@@ -9,12 +9,12 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/opsworks/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html aws_opsworks_application}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application aws_opsworks_application}.
 type OpsworksApplication interface {
 	cdktf.TerraformResource
-	AppSource() *[]*OpsworksApplicationAppSource
-	SetAppSource(val *[]*OpsworksApplicationAppSource)
-	AppSourceInput() *[]*OpsworksApplicationAppSource
+	AppSource() interface{}
+	SetAppSource(val interface{})
+	AppSourceInput() interface{}
 	AutoBundleOnDeploy() *string
 	SetAutoBundleOnDeploy(val *string)
 	AutoBundleOnDeployInput() *string
@@ -23,8 +23,8 @@ type OpsworksApplication interface {
 	AwsFlowRubySettingsInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DataSourceArn() *string
 	SetDataSourceArn(val *string)
 	DataSourceArnInput() *string
@@ -48,9 +48,9 @@ type OpsworksApplication interface {
 	EnableSsl() interface{}
 	SetEnableSsl(val interface{})
 	EnableSslInput() interface{}
-	Environment() *[]*OpsworksApplicationEnvironment
-	SetEnvironment(val *[]*OpsworksApplicationEnvironment)
-	EnvironmentInput() *[]*OpsworksApplicationEnvironment
+	Environment() interface{}
+	SetEnvironment(val interface{})
+	EnvironmentInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -69,9 +69,9 @@ type OpsworksApplication interface {
 	ShortName() *string
 	SetShortName(val *string)
 	ShortNameInput() *string
-	SslConfiguration() *[]*OpsworksApplicationSslConfiguration
-	SetSslConfiguration(val *[]*OpsworksApplicationSslConfiguration)
-	SslConfigurationInput() *[]*OpsworksApplicationSslConfiguration
+	SslConfiguration() interface{}
+	SetSslConfiguration(val interface{})
+	SslConfigurationInput() interface{}
 	StackId() *string
 	SetStackId(val *string)
 	StackIdInput() *string
@@ -82,10 +82,15 @@ type OpsworksApplication interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAppSource()
@@ -114,8 +119,8 @@ type jsiiProxy_OpsworksApplication struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_OpsworksApplication) AppSource() *[]*OpsworksApplicationAppSource {
-	var returns *[]*OpsworksApplicationAppSource
+func (j *jsiiProxy_OpsworksApplication) AppSource() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"appSource",
@@ -124,8 +129,8 @@ func (j *jsiiProxy_OpsworksApplication) AppSource() *[]*OpsworksApplicationAppSo
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksApplication) AppSourceInput() *[]*OpsworksApplicationAppSource {
-	var returns *[]*OpsworksApplicationAppSource
+func (j *jsiiProxy_OpsworksApplication) AppSourceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"appSourceInput",
@@ -194,8 +199,8 @@ func (j *jsiiProxy_OpsworksApplication) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksApplication) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksApplication) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -354,8 +359,8 @@ func (j *jsiiProxy_OpsworksApplication) EnableSslInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksApplication) Environment() *[]*OpsworksApplicationEnvironment {
-	var returns *[]*OpsworksApplicationEnvironment
+func (j *jsiiProxy_OpsworksApplication) Environment() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"environment",
@@ -364,8 +369,8 @@ func (j *jsiiProxy_OpsworksApplication) Environment() *[]*OpsworksApplicationEnv
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksApplication) EnvironmentInput() *[]*OpsworksApplicationEnvironment {
-	var returns *[]*OpsworksApplicationEnvironment
+func (j *jsiiProxy_OpsworksApplication) EnvironmentInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"environmentInput",
@@ -504,8 +509,8 @@ func (j *jsiiProxy_OpsworksApplication) ShortNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksApplication) SslConfiguration() *[]*OpsworksApplicationSslConfiguration {
-	var returns *[]*OpsworksApplicationSslConfiguration
+func (j *jsiiProxy_OpsworksApplication) SslConfiguration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sslConfiguration",
@@ -514,8 +519,8 @@ func (j *jsiiProxy_OpsworksApplication) SslConfiguration() *[]*OpsworksApplicati
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksApplication) SslConfigurationInput() *[]*OpsworksApplicationSslConfiguration {
-	var returns *[]*OpsworksApplicationSslConfiguration
+func (j *jsiiProxy_OpsworksApplication) SslConfigurationInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sslConfigurationInput",
@@ -594,7 +599,7 @@ func (j *jsiiProxy_OpsworksApplication) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html aws_opsworks_application} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application aws_opsworks_application} Resource.
 func NewOpsworksApplication(scope constructs.Construct, id *string, config *OpsworksApplicationConfig) OpsworksApplication {
 	_init_.Initialize()
 
@@ -609,7 +614,7 @@ func NewOpsworksApplication(scope constructs.Construct, id *string, config *Opsw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html aws_opsworks_application} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application aws_opsworks_application} Resource.
 func NewOpsworksApplication_Override(o OpsworksApplication, scope constructs.Construct, id *string, config *OpsworksApplicationConfig) {
 	_init_.Initialize()
 
@@ -620,7 +625,7 @@ func NewOpsworksApplication_Override(o OpsworksApplication, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_OpsworksApplication) SetAppSource(val *[]*OpsworksApplicationAppSource) {
+func (j *jsiiProxy_OpsworksApplication) SetAppSource(val interface{}) {
 	_jsii_.Set(
 		j,
 		"appSource",
@@ -644,7 +649,7 @@ func (j *jsiiProxy_OpsworksApplication) SetAwsFlowRubySettings(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksApplication) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksApplication) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -716,7 +721,7 @@ func (j *jsiiProxy_OpsworksApplication) SetEnableSsl(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksApplication) SetEnvironment(val *[]*OpsworksApplicationEnvironment) {
+func (j *jsiiProxy_OpsworksApplication) SetEnvironment(val interface{}) {
 	_jsii_.Set(
 		j,
 		"environment",
@@ -764,7 +769,7 @@ func (j *jsiiProxy_OpsworksApplication) SetShortName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksApplication) SetSslConfiguration(val *[]*OpsworksApplicationSslConfiguration) {
+func (j *jsiiProxy_OpsworksApplication) SetSslConfiguration(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sslConfiguration",
@@ -828,12 +833,40 @@ func (o *jsiiProxy_OpsworksApplication) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksApplication) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksApplication) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksApplication) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -870,12 +903,54 @@ func (o *jsiiProxy_OpsworksApplication) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksApplication) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksApplication) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksApplication) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksApplication) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1086,91 +1161,91 @@ func (o *jsiiProxy_OpsworksApplication) ToTerraform() interface{} {
 }
 
 type OpsworksApplicationAppSource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#type OpsworksApplication#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#password OpsworksApplication#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#revision OpsworksApplication#revision}.
-	Revision *string `json:"revision"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#ssh_key OpsworksApplication#ssh_key}.
-	SshKey *string `json:"sshKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#url OpsworksApplication#url}.
-	Url *string `json:"url"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#username OpsworksApplication#username}.
-	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#type OpsworksApplication#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#password OpsworksApplication#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#revision OpsworksApplication#revision}.
+	Revision *string `json:"revision" yaml:"revision"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#ssh_key OpsworksApplication#ssh_key}.
+	SshKey *string `json:"sshKey" yaml:"sshKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#url OpsworksApplication#url}.
+	Url *string `json:"url" yaml:"url"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#username OpsworksApplication#username}.
+	Username *string `json:"username" yaml:"username"`
 }
 
 // AWS OpsWorks.
 type OpsworksApplicationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#name OpsworksApplication#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#stack_id OpsworksApplication#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#type OpsworksApplication#type}.
-	Type *string `json:"type"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#name OpsworksApplication#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#stack_id OpsworksApplication#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#type OpsworksApplication#type}.
+	Type *string `json:"type" yaml:"type"`
 	// app_source block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#app_source OpsworksApplication#app_source}
-	AppSource *[]*OpsworksApplicationAppSource `json:"appSource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#auto_bundle_on_deploy OpsworksApplication#auto_bundle_on_deploy}.
-	AutoBundleOnDeploy *string `json:"autoBundleOnDeploy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#aws_flow_ruby_settings OpsworksApplication#aws_flow_ruby_settings}.
-	AwsFlowRubySettings *string `json:"awsFlowRubySettings"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#data_source_arn OpsworksApplication#data_source_arn}.
-	DataSourceArn *string `json:"dataSourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#data_source_database_name OpsworksApplication#data_source_database_name}.
-	DataSourceDatabaseName *string `json:"dataSourceDatabaseName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#data_source_type OpsworksApplication#data_source_type}.
-	DataSourceType *string `json:"dataSourceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#description OpsworksApplication#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#document_root OpsworksApplication#document_root}.
-	DocumentRoot *string `json:"documentRoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#domains OpsworksApplication#domains}.
-	Domains *[]*string `json:"domains"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#enable_ssl OpsworksApplication#enable_ssl}.
-	EnableSsl interface{} `json:"enableSsl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#app_source OpsworksApplication#app_source}
+	AppSource interface{} `json:"appSource" yaml:"appSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#auto_bundle_on_deploy OpsworksApplication#auto_bundle_on_deploy}.
+	AutoBundleOnDeploy *string `json:"autoBundleOnDeploy" yaml:"autoBundleOnDeploy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#aws_flow_ruby_settings OpsworksApplication#aws_flow_ruby_settings}.
+	AwsFlowRubySettings *string `json:"awsFlowRubySettings" yaml:"awsFlowRubySettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#data_source_arn OpsworksApplication#data_source_arn}.
+	DataSourceArn *string `json:"dataSourceArn" yaml:"dataSourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#data_source_database_name OpsworksApplication#data_source_database_name}.
+	DataSourceDatabaseName *string `json:"dataSourceDatabaseName" yaml:"dataSourceDatabaseName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#data_source_type OpsworksApplication#data_source_type}.
+	DataSourceType *string `json:"dataSourceType" yaml:"dataSourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#description OpsworksApplication#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#document_root OpsworksApplication#document_root}.
+	DocumentRoot *string `json:"documentRoot" yaml:"documentRoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#domains OpsworksApplication#domains}.
+	Domains *[]*string `json:"domains" yaml:"domains"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#enable_ssl OpsworksApplication#enable_ssl}.
+	EnableSsl interface{} `json:"enableSsl" yaml:"enableSsl"`
 	// environment block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#environment OpsworksApplication#environment}
-	Environment *[]*OpsworksApplicationEnvironment `json:"environment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#rails_env OpsworksApplication#rails_env}.
-	RailsEnv *string `json:"railsEnv"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#short_name OpsworksApplication#short_name}.
-	ShortName *string `json:"shortName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#environment OpsworksApplication#environment}
+	Environment interface{} `json:"environment" yaml:"environment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#rails_env OpsworksApplication#rails_env}.
+	RailsEnv *string `json:"railsEnv" yaml:"railsEnv"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#short_name OpsworksApplication#short_name}.
+	ShortName *string `json:"shortName" yaml:"shortName"`
 	// ssl_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#ssl_configuration OpsworksApplication#ssl_configuration}
-	SslConfiguration *[]*OpsworksApplicationSslConfiguration `json:"sslConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#ssl_configuration OpsworksApplication#ssl_configuration}
+	SslConfiguration interface{} `json:"sslConfiguration" yaml:"sslConfiguration"`
 }
 
 type OpsworksApplicationEnvironment struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#key OpsworksApplication#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#value OpsworksApplication#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#secure OpsworksApplication#secure}.
-	Secure interface{} `json:"secure"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#key OpsworksApplication#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#value OpsworksApplication#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#secure OpsworksApplication#secure}.
+	Secure interface{} `json:"secure" yaml:"secure"`
 }
 
 type OpsworksApplicationSslConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#certificate OpsworksApplication#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#private_key OpsworksApplication#private_key}.
-	PrivateKey *string `json:"privateKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application.html#chain OpsworksApplication#chain}.
-	Chain *string `json:"chain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#certificate OpsworksApplication#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#private_key OpsworksApplication#private_key}.
+	PrivateKey *string `json:"privateKey" yaml:"privateKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_application#chain OpsworksApplication#chain}.
+	Chain *string `json:"chain" yaml:"chain"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html aws_opsworks_custom_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer aws_opsworks_custom_layer}.
 type OpsworksCustomLayer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1184,9 +1259,11 @@ type OpsworksCustomLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksCustomLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksCustomLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -1216,9 +1293,9 @@ type OpsworksCustomLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksCustomLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksCustomLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksCustomLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -1249,12 +1326,12 @@ type OpsworksCustomLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -1262,15 +1339,22 @@ type OpsworksCustomLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksCustomLayerCloudwatchConfiguration)
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -1380,6 +1464,26 @@ func (j *jsiiProxy_OpsworksCustomLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksCustomLayer) CloudwatchConfiguration() OpsworksCustomLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksCustomLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayer) CloudwatchConfigurationInput() *OpsworksCustomLayerCloudwatchConfiguration {
+	var returns *OpsworksCustomLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksCustomLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -1390,8 +1494,8 @@ func (j *jsiiProxy_OpsworksCustomLayer) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksCustomLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1590,8 +1694,8 @@ func (j *jsiiProxy_OpsworksCustomLayer) DrainElbOnShutdownInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) EbsVolume() *[]*OpsworksCustomLayerEbsVolume {
-	var returns *[]*OpsworksCustomLayerEbsVolume
+func (j *jsiiProxy_OpsworksCustomLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -1600,8 +1704,8 @@ func (j *jsiiProxy_OpsworksCustomLayer) EbsVolume() *[]*OpsworksCustomLayerEbsVo
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) EbsVolumeInput() *[]*OpsworksCustomLayerEbsVolume {
-	var returns *[]*OpsworksCustomLayerEbsVolume
+func (j *jsiiProxy_OpsworksCustomLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -1820,8 +1924,8 @@ func (j *jsiiProxy_OpsworksCustomLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksCustomLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1830,8 +1934,8 @@ func (j *jsiiProxy_OpsworksCustomLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksCustomLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1840,8 +1944,8 @@ func (j *jsiiProxy_OpsworksCustomLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksCustomLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1850,8 +1954,8 @@ func (j *jsiiProxy_OpsworksCustomLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksCustomLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1910,7 +2014,7 @@ func (j *jsiiProxy_OpsworksCustomLayer) UseEbsOptimizedInstancesInput() interfac
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html aws_opsworks_custom_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer aws_opsworks_custom_layer} Resource.
 func NewOpsworksCustomLayer(scope constructs.Construct, id *string, config *OpsworksCustomLayerConfig) OpsworksCustomLayer {
 	_init_.Initialize()
 
@@ -1925,7 +2029,7 @@ func NewOpsworksCustomLayer(scope constructs.Construct, id *string, config *Opsw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html aws_opsworks_custom_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer aws_opsworks_custom_layer} Resource.
 func NewOpsworksCustomLayer_Override(o OpsworksCustomLayer, scope constructs.Construct, id *string, config *OpsworksCustomLayerConfig) {
 	_init_.Initialize()
 
@@ -1960,7 +2064,7 @@ func (j *jsiiProxy_OpsworksCustomLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksCustomLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2048,7 +2152,7 @@ func (j *jsiiProxy_OpsworksCustomLayer) SetDrainElbOnShutdown(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) SetEbsVolume(val *[]*OpsworksCustomLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksCustomLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -2128,7 +2232,7 @@ func (j *jsiiProxy_OpsworksCustomLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksCustomLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2136,7 +2240,7 @@ func (j *jsiiProxy_OpsworksCustomLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksCustomLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksCustomLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2192,12 +2296,40 @@ func (o *jsiiProxy_OpsworksCustomLayer) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksCustomLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksCustomLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2234,12 +2366,54 @@ func (o *jsiiProxy_OpsworksCustomLayer) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksCustomLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksCustomLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2271,6 +2445,14 @@ func (o *jsiiProxy_OpsworksCustomLayer) OverrideLogicalId(newLogicalId *string) 
 	)
 }
 
+func (o *jsiiProxy_OpsworksCustomLayer) PutCloudwatchConfiguration(value *OpsworksCustomLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksCustomLayer) ResetAutoAssignElasticIps() {
 	_jsii_.InvokeVoid(
 		o,
@@ -2291,6 +2473,14 @@ func (o *jsiiProxy_OpsworksCustomLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksCustomLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -2497,84 +2687,480 @@ func (o *jsiiProxy_OpsworksCustomLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksCustomLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#enabled OpsworksCustomLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#log_streams OpsworksCustomLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksCustomLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#file OpsworksCustomLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#log_group_name OpsworksCustomLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#batch_count OpsworksCustomLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#batch_size OpsworksCustomLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#buffer_duration OpsworksCustomLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#datetime_format OpsworksCustomLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#encoding OpsworksCustomLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#file_fingerprint_lines OpsworksCustomLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#initial_position OpsworksCustomLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#multiline_start_pattern OpsworksCustomLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#time_zone OpsworksCustomLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksCustomLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksCustomLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksCustomLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksCustomLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksCustomLayerCloudwatchConfiguration {
+	var returns *OpsworksCustomLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksCustomLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksCustomLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksCustomLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksCustomLayerCloudwatchConfigurationOutputReference_Override(o OpsworksCustomLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksCustomLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksCustomLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksCustomLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksCustomLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#name OpsworksCustomLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#short_name OpsworksCustomLayer#short_name}.
-	ShortName *string `json:"shortName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#stack_id OpsworksCustomLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#auto_assign_elastic_ips OpsworksCustomLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#auto_assign_public_ips OpsworksCustomLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#auto_healing OpsworksCustomLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_configure_recipes OpsworksCustomLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_deploy_recipes OpsworksCustomLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_instance_profile_arn OpsworksCustomLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_json OpsworksCustomLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_security_group_ids OpsworksCustomLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_setup_recipes OpsworksCustomLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_shutdown_recipes OpsworksCustomLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#custom_undeploy_recipes OpsworksCustomLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#drain_elb_on_shutdown OpsworksCustomLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#name OpsworksCustomLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#short_name OpsworksCustomLayer#short_name}.
+	ShortName *string `json:"shortName" yaml:"shortName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#stack_id OpsworksCustomLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#auto_assign_elastic_ips OpsworksCustomLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#auto_assign_public_ips OpsworksCustomLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#auto_healing OpsworksCustomLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#cloudwatch_configuration OpsworksCustomLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksCustomLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_configure_recipes OpsworksCustomLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_deploy_recipes OpsworksCustomLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_instance_profile_arn OpsworksCustomLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_json OpsworksCustomLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_security_group_ids OpsworksCustomLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_setup_recipes OpsworksCustomLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_shutdown_recipes OpsworksCustomLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#custom_undeploy_recipes OpsworksCustomLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#drain_elb_on_shutdown OpsworksCustomLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#ebs_volume OpsworksCustomLayer#ebs_volume}
-	EbsVolume *[]*OpsworksCustomLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#elastic_load_balancer OpsworksCustomLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#install_updates_on_boot OpsworksCustomLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#instance_shutdown_timeout OpsworksCustomLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#system_packages OpsworksCustomLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#tags OpsworksCustomLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#tags_all OpsworksCustomLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#use_ebs_optimized_instances OpsworksCustomLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#ebs_volume OpsworksCustomLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#elastic_load_balancer OpsworksCustomLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#install_updates_on_boot OpsworksCustomLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#instance_shutdown_timeout OpsworksCustomLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#system_packages OpsworksCustomLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#tags OpsworksCustomLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#tags_all OpsworksCustomLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#use_ebs_optimized_instances OpsworksCustomLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksCustomLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#mount_point OpsworksCustomLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#number_of_disks OpsworksCustomLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#size OpsworksCustomLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#encrypted OpsworksCustomLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#iops OpsworksCustomLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#raid_level OpsworksCustomLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer.html#type OpsworksCustomLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#mount_point OpsworksCustomLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#number_of_disks OpsworksCustomLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#size OpsworksCustomLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#encrypted OpsworksCustomLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#iops OpsworksCustomLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#raid_level OpsworksCustomLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_custom_layer#type OpsworksCustomLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html aws_opsworks_ganglia_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer aws_opsworks_ganglia_layer}.
 type OpsworksGangliaLayer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2588,9 +3174,11 @@ type OpsworksGangliaLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksGangliaLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksGangliaLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -2620,9 +3208,9 @@ type OpsworksGangliaLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksGangliaLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksGangliaLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksGangliaLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -2653,12 +3241,12 @@ type OpsworksGangliaLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2672,15 +3260,22 @@ type OpsworksGangliaLayer interface {
 	SetUsername(val *string)
 	UsernameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksGangliaLayerCloudwatchConfiguration)
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -2793,6 +3388,26 @@ func (j *jsiiProxy_OpsworksGangliaLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksGangliaLayer) CloudwatchConfiguration() OpsworksGangliaLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksGangliaLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayer) CloudwatchConfigurationInput() *OpsworksGangliaLayerCloudwatchConfiguration {
+	var returns *OpsworksGangliaLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksGangliaLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -2803,8 +3418,8 @@ func (j *jsiiProxy_OpsworksGangliaLayer) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksGangliaLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3003,8 +3618,8 @@ func (j *jsiiProxy_OpsworksGangliaLayer) DrainElbOnShutdownInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) EbsVolume() *[]*OpsworksGangliaLayerEbsVolume {
-	var returns *[]*OpsworksGangliaLayerEbsVolume
+func (j *jsiiProxy_OpsworksGangliaLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -3013,8 +3628,8 @@ func (j *jsiiProxy_OpsworksGangliaLayer) EbsVolume() *[]*OpsworksGangliaLayerEbs
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) EbsVolumeInput() *[]*OpsworksGangliaLayerEbsVolume {
-	var returns *[]*OpsworksGangliaLayerEbsVolume
+func (j *jsiiProxy_OpsworksGangliaLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -3233,8 +3848,8 @@ func (j *jsiiProxy_OpsworksGangliaLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksGangliaLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3243,8 +3858,8 @@ func (j *jsiiProxy_OpsworksGangliaLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksGangliaLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -3253,8 +3868,8 @@ func (j *jsiiProxy_OpsworksGangliaLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksGangliaLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3263,8 +3878,8 @@ func (j *jsiiProxy_OpsworksGangliaLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksGangliaLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3363,7 +3978,7 @@ func (j *jsiiProxy_OpsworksGangliaLayer) UsernameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html aws_opsworks_ganglia_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer aws_opsworks_ganglia_layer} Resource.
 func NewOpsworksGangliaLayer(scope constructs.Construct, id *string, config *OpsworksGangliaLayerConfig) OpsworksGangliaLayer {
 	_init_.Initialize()
 
@@ -3378,7 +3993,7 @@ func NewOpsworksGangliaLayer(scope constructs.Construct, id *string, config *Ops
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html aws_opsworks_ganglia_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer aws_opsworks_ganglia_layer} Resource.
 func NewOpsworksGangliaLayer_Override(o OpsworksGangliaLayer, scope constructs.Construct, id *string, config *OpsworksGangliaLayerConfig) {
 	_init_.Initialize()
 
@@ -3413,7 +4028,7 @@ func (j *jsiiProxy_OpsworksGangliaLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksGangliaLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3501,7 +4116,7 @@ func (j *jsiiProxy_OpsworksGangliaLayer) SetDrainElbOnShutdown(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) SetEbsVolume(val *[]*OpsworksGangliaLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksGangliaLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -3581,7 +4196,7 @@ func (j *jsiiProxy_OpsworksGangliaLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksGangliaLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3589,7 +4204,7 @@ func (j *jsiiProxy_OpsworksGangliaLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksGangliaLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksGangliaLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3661,12 +4276,40 @@ func (o *jsiiProxy_OpsworksGangliaLayer) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksGangliaLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3703,12 +4346,54 @@ func (o *jsiiProxy_OpsworksGangliaLayer) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksGangliaLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3740,6 +4425,14 @@ func (o *jsiiProxy_OpsworksGangliaLayer) OverrideLogicalId(newLogicalId *string)
 	)
 }
 
+func (o *jsiiProxy_OpsworksGangliaLayer) PutCloudwatchConfiguration(value *OpsworksGangliaLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksGangliaLayer) ResetAutoAssignElasticIps() {
 	_jsii_.InvokeVoid(
 		o,
@@ -3760,6 +4453,14 @@ func (o *jsiiProxy_OpsworksGangliaLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksGangliaLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -3990,88 +4691,484 @@ func (o *jsiiProxy_OpsworksGangliaLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksGangliaLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#enabled OpsworksGangliaLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#log_streams OpsworksGangliaLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksGangliaLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#file OpsworksGangliaLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#log_group_name OpsworksGangliaLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#batch_count OpsworksGangliaLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#batch_size OpsworksGangliaLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#buffer_duration OpsworksGangliaLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#datetime_format OpsworksGangliaLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#encoding OpsworksGangliaLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#file_fingerprint_lines OpsworksGangliaLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#initial_position OpsworksGangliaLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#multiline_start_pattern OpsworksGangliaLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#time_zone OpsworksGangliaLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksGangliaLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksGangliaLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksGangliaLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksGangliaLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksGangliaLayerCloudwatchConfiguration {
+	var returns *OpsworksGangliaLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksGangliaLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksGangliaLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksGangliaLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksGangliaLayerCloudwatchConfigurationOutputReference_Override(o OpsworksGangliaLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksGangliaLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksGangliaLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksGangliaLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksGangliaLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#password OpsworksGangliaLayer#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#stack_id OpsworksGangliaLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#auto_assign_elastic_ips OpsworksGangliaLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#auto_assign_public_ips OpsworksGangliaLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#auto_healing OpsworksGangliaLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_configure_recipes OpsworksGangliaLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_deploy_recipes OpsworksGangliaLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_instance_profile_arn OpsworksGangliaLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_json OpsworksGangliaLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_security_group_ids OpsworksGangliaLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_setup_recipes OpsworksGangliaLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_shutdown_recipes OpsworksGangliaLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#custom_undeploy_recipes OpsworksGangliaLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#drain_elb_on_shutdown OpsworksGangliaLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#password OpsworksGangliaLayer#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#stack_id OpsworksGangliaLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#auto_assign_elastic_ips OpsworksGangliaLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#auto_assign_public_ips OpsworksGangliaLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#auto_healing OpsworksGangliaLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#cloudwatch_configuration OpsworksGangliaLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksGangliaLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_configure_recipes OpsworksGangliaLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_deploy_recipes OpsworksGangliaLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_instance_profile_arn OpsworksGangliaLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_json OpsworksGangliaLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_security_group_ids OpsworksGangliaLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_setup_recipes OpsworksGangliaLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_shutdown_recipes OpsworksGangliaLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#custom_undeploy_recipes OpsworksGangliaLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#drain_elb_on_shutdown OpsworksGangliaLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#ebs_volume OpsworksGangliaLayer#ebs_volume}
-	EbsVolume *[]*OpsworksGangliaLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#elastic_load_balancer OpsworksGangliaLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#install_updates_on_boot OpsworksGangliaLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#instance_shutdown_timeout OpsworksGangliaLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#name OpsworksGangliaLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#system_packages OpsworksGangliaLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#tags OpsworksGangliaLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#tags_all OpsworksGangliaLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#url OpsworksGangliaLayer#url}.
-	Url *string `json:"url"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#use_ebs_optimized_instances OpsworksGangliaLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#username OpsworksGangliaLayer#username}.
-	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#ebs_volume OpsworksGangliaLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#elastic_load_balancer OpsworksGangliaLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#install_updates_on_boot OpsworksGangliaLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#instance_shutdown_timeout OpsworksGangliaLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#name OpsworksGangliaLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#system_packages OpsworksGangliaLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#tags OpsworksGangliaLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#tags_all OpsworksGangliaLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#url OpsworksGangliaLayer#url}.
+	Url *string `json:"url" yaml:"url"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#use_ebs_optimized_instances OpsworksGangliaLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#username OpsworksGangliaLayer#username}.
+	Username *string `json:"username" yaml:"username"`
 }
 
 type OpsworksGangliaLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#mount_point OpsworksGangliaLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#number_of_disks OpsworksGangliaLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#size OpsworksGangliaLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#encrypted OpsworksGangliaLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#iops OpsworksGangliaLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#raid_level OpsworksGangliaLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer.html#type OpsworksGangliaLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#mount_point OpsworksGangliaLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#number_of_disks OpsworksGangliaLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#size OpsworksGangliaLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#encrypted OpsworksGangliaLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#iops OpsworksGangliaLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#raid_level OpsworksGangliaLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_ganglia_layer#type OpsworksGangliaLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html aws_opsworks_haproxy_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer aws_opsworks_haproxy_layer}.
 type OpsworksHaproxyLayer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -4085,9 +5182,11 @@ type OpsworksHaproxyLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksHaproxyLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksHaproxyLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -4117,9 +5216,9 @@ type OpsworksHaproxyLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksHaproxyLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksHaproxyLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksHaproxyLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -4165,12 +5264,12 @@ type OpsworksHaproxyLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -4178,15 +5277,22 @@ type OpsworksHaproxyLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksHaproxyLayerCloudwatchConfiguration)
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -4302,6 +5408,26 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksHaproxyLayer) CloudwatchConfiguration() OpsworksHaproxyLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksHaproxyLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayer) CloudwatchConfigurationInput() *OpsworksHaproxyLayerCloudwatchConfiguration {
+	var returns *OpsworksHaproxyLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksHaproxyLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -4312,8 +5438,8 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksHaproxyLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4512,8 +5638,8 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) DrainElbOnShutdownInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) EbsVolume() *[]*OpsworksHaproxyLayerEbsVolume {
-	var returns *[]*OpsworksHaproxyLayerEbsVolume
+func (j *jsiiProxy_OpsworksHaproxyLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -4522,8 +5648,8 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) EbsVolume() *[]*OpsworksHaproxyLayerEbs
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) EbsVolumeInput() *[]*OpsworksHaproxyLayerEbsVolume {
-	var returns *[]*OpsworksHaproxyLayerEbsVolume
+func (j *jsiiProxy_OpsworksHaproxyLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -4842,8 +5968,8 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksHaproxyLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4852,8 +5978,8 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksHaproxyLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4862,8 +5988,8 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksHaproxyLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4872,8 +5998,8 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksHaproxyLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4932,7 +6058,7 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) UseEbsOptimizedInstancesInput() interfa
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html aws_opsworks_haproxy_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer aws_opsworks_haproxy_layer} Resource.
 func NewOpsworksHaproxyLayer(scope constructs.Construct, id *string, config *OpsworksHaproxyLayerConfig) OpsworksHaproxyLayer {
 	_init_.Initialize()
 
@@ -4947,7 +6073,7 @@ func NewOpsworksHaproxyLayer(scope constructs.Construct, id *string, config *Ops
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html aws_opsworks_haproxy_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer aws_opsworks_haproxy_layer} Resource.
 func NewOpsworksHaproxyLayer_Override(o OpsworksHaproxyLayer, scope constructs.Construct, id *string, config *OpsworksHaproxyLayerConfig) {
 	_init_.Initialize()
 
@@ -4982,7 +6108,7 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksHaproxyLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5070,7 +6196,7 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) SetDrainElbOnShutdown(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) SetEbsVolume(val *[]*OpsworksHaproxyLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksHaproxyLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -5190,7 +6316,7 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksHaproxyLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5198,7 +6324,7 @@ func (j *jsiiProxy_OpsworksHaproxyLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksHaproxyLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksHaproxyLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5254,12 +6380,40 @@ func (o *jsiiProxy_OpsworksHaproxyLayer) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksHaproxyLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5296,12 +6450,54 @@ func (o *jsiiProxy_OpsworksHaproxyLayer) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksHaproxyLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5333,6 +6529,14 @@ func (o *jsiiProxy_OpsworksHaproxyLayer) OverrideLogicalId(newLogicalId *string)
 	)
 }
 
+func (o *jsiiProxy_OpsworksHaproxyLayer) PutCloudwatchConfiguration(value *OpsworksHaproxyLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksHaproxyLayer) ResetAutoAssignElasticIps() {
 	_jsii_.InvokeVoid(
 		o,
@@ -5353,6 +6557,14 @@ func (o *jsiiProxy_OpsworksHaproxyLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksHaproxyLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -5607,94 +6819,490 @@ func (o *jsiiProxy_OpsworksHaproxyLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksHaproxyLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#enabled OpsworksHaproxyLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#log_streams OpsworksHaproxyLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksHaproxyLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#file OpsworksHaproxyLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#log_group_name OpsworksHaproxyLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#batch_count OpsworksHaproxyLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#batch_size OpsworksHaproxyLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#buffer_duration OpsworksHaproxyLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#datetime_format OpsworksHaproxyLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#encoding OpsworksHaproxyLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#file_fingerprint_lines OpsworksHaproxyLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#initial_position OpsworksHaproxyLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#multiline_start_pattern OpsworksHaproxyLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#time_zone OpsworksHaproxyLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksHaproxyLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksHaproxyLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksHaproxyLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksHaproxyLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksHaproxyLayerCloudwatchConfiguration {
+	var returns *OpsworksHaproxyLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksHaproxyLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksHaproxyLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksHaproxyLayerCloudwatchConfigurationOutputReference_Override(o OpsworksHaproxyLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksHaproxyLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksHaproxyLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksHaproxyLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksHaproxyLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#stack_id OpsworksHaproxyLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#stats_password OpsworksHaproxyLayer#stats_password}.
-	StatsPassword *string `json:"statsPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#auto_assign_elastic_ips OpsworksHaproxyLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#auto_assign_public_ips OpsworksHaproxyLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#auto_healing OpsworksHaproxyLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_configure_recipes OpsworksHaproxyLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_deploy_recipes OpsworksHaproxyLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_instance_profile_arn OpsworksHaproxyLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_json OpsworksHaproxyLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_security_group_ids OpsworksHaproxyLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_setup_recipes OpsworksHaproxyLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_shutdown_recipes OpsworksHaproxyLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#custom_undeploy_recipes OpsworksHaproxyLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#drain_elb_on_shutdown OpsworksHaproxyLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#stack_id OpsworksHaproxyLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#stats_password OpsworksHaproxyLayer#stats_password}.
+	StatsPassword *string `json:"statsPassword" yaml:"statsPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#auto_assign_elastic_ips OpsworksHaproxyLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#auto_assign_public_ips OpsworksHaproxyLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#auto_healing OpsworksHaproxyLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#cloudwatch_configuration OpsworksHaproxyLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksHaproxyLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_configure_recipes OpsworksHaproxyLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_deploy_recipes OpsworksHaproxyLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_instance_profile_arn OpsworksHaproxyLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_json OpsworksHaproxyLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_security_group_ids OpsworksHaproxyLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_setup_recipes OpsworksHaproxyLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_shutdown_recipes OpsworksHaproxyLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#custom_undeploy_recipes OpsworksHaproxyLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#drain_elb_on_shutdown OpsworksHaproxyLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#ebs_volume OpsworksHaproxyLayer#ebs_volume}
-	EbsVolume *[]*OpsworksHaproxyLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#elastic_load_balancer OpsworksHaproxyLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#healthcheck_method OpsworksHaproxyLayer#healthcheck_method}.
-	HealthcheckMethod *string `json:"healthcheckMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#healthcheck_url OpsworksHaproxyLayer#healthcheck_url}.
-	HealthcheckUrl *string `json:"healthcheckUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#install_updates_on_boot OpsworksHaproxyLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#instance_shutdown_timeout OpsworksHaproxyLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#name OpsworksHaproxyLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#stats_enabled OpsworksHaproxyLayer#stats_enabled}.
-	StatsEnabled interface{} `json:"statsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#stats_url OpsworksHaproxyLayer#stats_url}.
-	StatsUrl *string `json:"statsUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#stats_user OpsworksHaproxyLayer#stats_user}.
-	StatsUser *string `json:"statsUser"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#system_packages OpsworksHaproxyLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#tags OpsworksHaproxyLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#tags_all OpsworksHaproxyLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#use_ebs_optimized_instances OpsworksHaproxyLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#ebs_volume OpsworksHaproxyLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#elastic_load_balancer OpsworksHaproxyLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#healthcheck_method OpsworksHaproxyLayer#healthcheck_method}.
+	HealthcheckMethod *string `json:"healthcheckMethod" yaml:"healthcheckMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#healthcheck_url OpsworksHaproxyLayer#healthcheck_url}.
+	HealthcheckUrl *string `json:"healthcheckUrl" yaml:"healthcheckUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#install_updates_on_boot OpsworksHaproxyLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#instance_shutdown_timeout OpsworksHaproxyLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#name OpsworksHaproxyLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#stats_enabled OpsworksHaproxyLayer#stats_enabled}.
+	StatsEnabled interface{} `json:"statsEnabled" yaml:"statsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#stats_url OpsworksHaproxyLayer#stats_url}.
+	StatsUrl *string `json:"statsUrl" yaml:"statsUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#stats_user OpsworksHaproxyLayer#stats_user}.
+	StatsUser *string `json:"statsUser" yaml:"statsUser"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#system_packages OpsworksHaproxyLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#tags OpsworksHaproxyLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#tags_all OpsworksHaproxyLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#use_ebs_optimized_instances OpsworksHaproxyLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksHaproxyLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#mount_point OpsworksHaproxyLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#number_of_disks OpsworksHaproxyLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#size OpsworksHaproxyLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#encrypted OpsworksHaproxyLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#iops OpsworksHaproxyLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#raid_level OpsworksHaproxyLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer.html#type OpsworksHaproxyLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#mount_point OpsworksHaproxyLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#number_of_disks OpsworksHaproxyLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#size OpsworksHaproxyLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#encrypted OpsworksHaproxyLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#iops OpsworksHaproxyLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#raid_level OpsworksHaproxyLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_haproxy_layer#type OpsworksHaproxyLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html aws_opsworks_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance aws_opsworks_instance}.
 type OpsworksInstance interface {
 	cdktf.TerraformResource
 	AgentVersion() *string
@@ -5714,8 +7322,8 @@ type OpsworksInstance interface {
 	AvailabilityZoneInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedAt() *string
 	SetCreatedAt(val *string)
 	CreatedAtInput() *string
@@ -5727,9 +7335,9 @@ type OpsworksInstance interface {
 	DeleteEipInput() interface{}
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	EbsBlockDevice() *[]*OpsworksInstanceEbsBlockDevice
-	SetEbsBlockDevice(val *[]*OpsworksInstanceEbsBlockDevice)
-	EbsBlockDeviceInput() *[]*OpsworksInstanceEbsBlockDevice
+	EbsBlockDevice() interface{}
+	SetEbsBlockDevice(val interface{})
+	EbsBlockDeviceInput() interface{}
 	EbsOptimized() interface{}
 	SetEbsOptimized(val interface{})
 	EbsOptimizedInput() interface{}
@@ -5740,9 +7348,9 @@ type OpsworksInstance interface {
 	ElasticIp() *string
 	SetElasticIp(val *string)
 	ElasticIpInput() *string
-	EphemeralBlockDevice() *[]*OpsworksInstanceEphemeralBlockDevice
-	SetEphemeralBlockDevice(val *[]*OpsworksInstanceEphemeralBlockDevice)
-	EphemeralBlockDeviceInput() *[]*OpsworksInstanceEphemeralBlockDevice
+	EphemeralBlockDevice() interface{}
+	SetEphemeralBlockDevice(val interface{})
+	EphemeralBlockDeviceInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Hostname() *string
@@ -5806,9 +7414,9 @@ type OpsworksInstance interface {
 	ReportedOsVersion() *string
 	SetReportedOsVersion(val *string)
 	ReportedOsVersionInput() *string
-	RootBlockDevice() *[]*OpsworksInstanceRootBlockDevice
-	SetRootBlockDevice(val *[]*OpsworksInstanceRootBlockDevice)
-	RootBlockDeviceInput() *[]*OpsworksInstanceRootBlockDevice
+	RootBlockDevice() interface{}
+	SetRootBlockDevice(val interface{})
+	RootBlockDeviceInput() interface{}
 	RootDeviceType() *string
 	SetRootDeviceType(val *string)
 	RootDeviceTypeInput() *string
@@ -5851,10 +7459,15 @@ type OpsworksInstance interface {
 	SetVirtualizationType(val *string)
 	VirtualizationTypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *OpsworksInstanceTimeouts)
@@ -6033,8 +7646,8 @@ func (j *jsiiProxy_OpsworksInstance) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6113,8 +7726,8 @@ func (j *jsiiProxy_OpsworksInstance) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstance) EbsBlockDevice() *[]*OpsworksInstanceEbsBlockDevice {
-	var returns *[]*OpsworksInstanceEbsBlockDevice
+func (j *jsiiProxy_OpsworksInstance) EbsBlockDevice() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsBlockDevice",
@@ -6123,8 +7736,8 @@ func (j *jsiiProxy_OpsworksInstance) EbsBlockDevice() *[]*OpsworksInstanceEbsBlo
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstance) EbsBlockDeviceInput() *[]*OpsworksInstanceEbsBlockDevice {
-	var returns *[]*OpsworksInstanceEbsBlockDevice
+func (j *jsiiProxy_OpsworksInstance) EbsBlockDeviceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsBlockDeviceInput",
@@ -6203,8 +7816,8 @@ func (j *jsiiProxy_OpsworksInstance) ElasticIpInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstance) EphemeralBlockDevice() *[]*OpsworksInstanceEphemeralBlockDevice {
-	var returns *[]*OpsworksInstanceEphemeralBlockDevice
+func (j *jsiiProxy_OpsworksInstance) EphemeralBlockDevice() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ephemeralBlockDevice",
@@ -6213,8 +7826,8 @@ func (j *jsiiProxy_OpsworksInstance) EphemeralBlockDevice() *[]*OpsworksInstance
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstance) EphemeralBlockDeviceInput() *[]*OpsworksInstanceEphemeralBlockDevice {
-	var returns *[]*OpsworksInstanceEphemeralBlockDevice
+func (j *jsiiProxy_OpsworksInstance) EphemeralBlockDeviceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ephemeralBlockDeviceInput",
@@ -6653,8 +8266,8 @@ func (j *jsiiProxy_OpsworksInstance) ReportedOsVersionInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstance) RootBlockDevice() *[]*OpsworksInstanceRootBlockDevice {
-	var returns *[]*OpsworksInstanceRootBlockDevice
+func (j *jsiiProxy_OpsworksInstance) RootBlockDevice() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rootBlockDevice",
@@ -6663,8 +8276,8 @@ func (j *jsiiProxy_OpsworksInstance) RootBlockDevice() *[]*OpsworksInstanceRootB
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstance) RootBlockDeviceInput() *[]*OpsworksInstanceRootBlockDevice {
-	var returns *[]*OpsworksInstanceRootBlockDevice
+func (j *jsiiProxy_OpsworksInstance) RootBlockDeviceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rootBlockDeviceInput",
@@ -6963,7 +8576,7 @@ func (j *jsiiProxy_OpsworksInstance) VirtualizationTypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html aws_opsworks_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance aws_opsworks_instance} Resource.
 func NewOpsworksInstance(scope constructs.Construct, id *string, config *OpsworksInstanceConfig) OpsworksInstance {
 	_init_.Initialize()
 
@@ -6978,7 +8591,7 @@ func NewOpsworksInstance(scope constructs.Construct, id *string, config *Opswork
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html aws_opsworks_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance aws_opsworks_instance} Resource.
 func NewOpsworksInstance_Override(o OpsworksInstance, scope constructs.Construct, id *string, config *OpsworksInstanceConfig) {
 	_init_.Initialize()
 
@@ -7029,7 +8642,7 @@ func (j *jsiiProxy_OpsworksInstance) SetAvailabilityZone(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7069,7 +8682,7 @@ func (j *jsiiProxy_OpsworksInstance) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksInstance) SetEbsBlockDevice(val *[]*OpsworksInstanceEbsBlockDevice) {
+func (j *jsiiProxy_OpsworksInstance) SetEbsBlockDevice(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsBlockDevice",
@@ -7101,7 +8714,7 @@ func (j *jsiiProxy_OpsworksInstance) SetElasticIp(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksInstance) SetEphemeralBlockDevice(val *[]*OpsworksInstanceEphemeralBlockDevice) {
+func (j *jsiiProxy_OpsworksInstance) SetEphemeralBlockDevice(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ephemeralBlockDevice",
@@ -7269,7 +8882,7 @@ func (j *jsiiProxy_OpsworksInstance) SetReportedOsVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksInstance) SetRootBlockDevice(val *[]*OpsworksInstanceRootBlockDevice) {
+func (j *jsiiProxy_OpsworksInstance) SetRootBlockDevice(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rootBlockDevice",
@@ -7413,12 +9026,40 @@ func (o *jsiiProxy_OpsworksInstance) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7455,12 +9096,54 @@ func (o *jsiiProxy_OpsworksInstance) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7913,153 +9596,153 @@ func (o *jsiiProxy_OpsworksInstance) ToTerraform() interface{} {
 // AWS OpsWorks.
 type OpsworksInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#layer_ids OpsworksInstance#layer_ids}.
-	LayerIds *[]*string `json:"layerIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#stack_id OpsworksInstance#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#agent_version OpsworksInstance#agent_version}.
-	AgentVersion *string `json:"agentVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ami_id OpsworksInstance#ami_id}.
-	AmiId *string `json:"amiId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#architecture OpsworksInstance#architecture}.
-	Architecture *string `json:"architecture"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#auto_scaling_type OpsworksInstance#auto_scaling_type}.
-	AutoScalingType *string `json:"autoScalingType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#availability_zone OpsworksInstance#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#created_at OpsworksInstance#created_at}.
-	CreatedAt *string `json:"createdAt"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#delete_ebs OpsworksInstance#delete_ebs}.
-	DeleteEbs interface{} `json:"deleteEbs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#delete_eip OpsworksInstance#delete_eip}.
-	DeleteEip interface{} `json:"deleteEip"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#layer_ids OpsworksInstance#layer_ids}.
+	LayerIds *[]*string `json:"layerIds" yaml:"layerIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#stack_id OpsworksInstance#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#agent_version OpsworksInstance#agent_version}.
+	AgentVersion *string `json:"agentVersion" yaml:"agentVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ami_id OpsworksInstance#ami_id}.
+	AmiId *string `json:"amiId" yaml:"amiId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#architecture OpsworksInstance#architecture}.
+	Architecture *string `json:"architecture" yaml:"architecture"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#auto_scaling_type OpsworksInstance#auto_scaling_type}.
+	AutoScalingType *string `json:"autoScalingType" yaml:"autoScalingType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#availability_zone OpsworksInstance#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#created_at OpsworksInstance#created_at}.
+	CreatedAt *string `json:"createdAt" yaml:"createdAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#delete_ebs OpsworksInstance#delete_ebs}.
+	DeleteEbs interface{} `json:"deleteEbs" yaml:"deleteEbs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#delete_eip OpsworksInstance#delete_eip}.
+	DeleteEip interface{} `json:"deleteEip" yaml:"deleteEip"`
 	// ebs_block_device block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ebs_block_device OpsworksInstance#ebs_block_device}
-	EbsBlockDevice *[]*OpsworksInstanceEbsBlockDevice `json:"ebsBlockDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ebs_optimized OpsworksInstance#ebs_optimized}.
-	EbsOptimized interface{} `json:"ebsOptimized"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ecs_cluster_arn OpsworksInstance#ecs_cluster_arn}.
-	EcsClusterArn *string `json:"ecsClusterArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#elastic_ip OpsworksInstance#elastic_ip}.
-	ElasticIp *string `json:"elasticIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ebs_block_device OpsworksInstance#ebs_block_device}
+	EbsBlockDevice interface{} `json:"ebsBlockDevice" yaml:"ebsBlockDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ebs_optimized OpsworksInstance#ebs_optimized}.
+	EbsOptimized interface{} `json:"ebsOptimized" yaml:"ebsOptimized"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ecs_cluster_arn OpsworksInstance#ecs_cluster_arn}.
+	EcsClusterArn *string `json:"ecsClusterArn" yaml:"ecsClusterArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#elastic_ip OpsworksInstance#elastic_ip}.
+	ElasticIp *string `json:"elasticIp" yaml:"elasticIp"`
 	// ephemeral_block_device block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ephemeral_block_device OpsworksInstance#ephemeral_block_device}
-	EphemeralBlockDevice *[]*OpsworksInstanceEphemeralBlockDevice `json:"ephemeralBlockDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#hostname OpsworksInstance#hostname}.
-	Hostname *string `json:"hostname"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#infrastructure_class OpsworksInstance#infrastructure_class}.
-	InfrastructureClass *string `json:"infrastructureClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#install_updates_on_boot OpsworksInstance#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#instance_profile_arn OpsworksInstance#instance_profile_arn}.
-	InstanceProfileArn *string `json:"instanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#instance_type OpsworksInstance#instance_type}.
-	InstanceType *string `json:"instanceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#last_service_error_id OpsworksInstance#last_service_error_id}.
-	LastServiceErrorId *string `json:"lastServiceErrorId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#os OpsworksInstance#os}.
-	Os *string `json:"os"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#platform OpsworksInstance#platform}.
-	Platform *string `json:"platform"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#private_dns OpsworksInstance#private_dns}.
-	PrivateDns *string `json:"privateDns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#private_ip OpsworksInstance#private_ip}.
-	PrivateIp *string `json:"privateIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#public_dns OpsworksInstance#public_dns}.
-	PublicDns *string `json:"publicDns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#public_ip OpsworksInstance#public_ip}.
-	PublicIp *string `json:"publicIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#registered_by OpsworksInstance#registered_by}.
-	RegisteredBy *string `json:"registeredBy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#reported_agent_version OpsworksInstance#reported_agent_version}.
-	ReportedAgentVersion *string `json:"reportedAgentVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#reported_os_family OpsworksInstance#reported_os_family}.
-	ReportedOsFamily *string `json:"reportedOsFamily"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#reported_os_name OpsworksInstance#reported_os_name}.
-	ReportedOsName *string `json:"reportedOsName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#reported_os_version OpsworksInstance#reported_os_version}.
-	ReportedOsVersion *string `json:"reportedOsVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ephemeral_block_device OpsworksInstance#ephemeral_block_device}
+	EphemeralBlockDevice interface{} `json:"ephemeralBlockDevice" yaml:"ephemeralBlockDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#hostname OpsworksInstance#hostname}.
+	Hostname *string `json:"hostname" yaml:"hostname"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#infrastructure_class OpsworksInstance#infrastructure_class}.
+	InfrastructureClass *string `json:"infrastructureClass" yaml:"infrastructureClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#install_updates_on_boot OpsworksInstance#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#instance_profile_arn OpsworksInstance#instance_profile_arn}.
+	InstanceProfileArn *string `json:"instanceProfileArn" yaml:"instanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#instance_type OpsworksInstance#instance_type}.
+	InstanceType *string `json:"instanceType" yaml:"instanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#last_service_error_id OpsworksInstance#last_service_error_id}.
+	LastServiceErrorId *string `json:"lastServiceErrorId" yaml:"lastServiceErrorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#os OpsworksInstance#os}.
+	Os *string `json:"os" yaml:"os"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#platform OpsworksInstance#platform}.
+	Platform *string `json:"platform" yaml:"platform"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#private_dns OpsworksInstance#private_dns}.
+	PrivateDns *string `json:"privateDns" yaml:"privateDns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#private_ip OpsworksInstance#private_ip}.
+	PrivateIp *string `json:"privateIp" yaml:"privateIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#public_dns OpsworksInstance#public_dns}.
+	PublicDns *string `json:"publicDns" yaml:"publicDns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#public_ip OpsworksInstance#public_ip}.
+	PublicIp *string `json:"publicIp" yaml:"publicIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#registered_by OpsworksInstance#registered_by}.
+	RegisteredBy *string `json:"registeredBy" yaml:"registeredBy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#reported_agent_version OpsworksInstance#reported_agent_version}.
+	ReportedAgentVersion *string `json:"reportedAgentVersion" yaml:"reportedAgentVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#reported_os_family OpsworksInstance#reported_os_family}.
+	ReportedOsFamily *string `json:"reportedOsFamily" yaml:"reportedOsFamily"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#reported_os_name OpsworksInstance#reported_os_name}.
+	ReportedOsName *string `json:"reportedOsName" yaml:"reportedOsName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#reported_os_version OpsworksInstance#reported_os_version}.
+	ReportedOsVersion *string `json:"reportedOsVersion" yaml:"reportedOsVersion"`
 	// root_block_device block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#root_block_device OpsworksInstance#root_block_device}
-	RootBlockDevice *[]*OpsworksInstanceRootBlockDevice `json:"rootBlockDevice"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#root_device_type OpsworksInstance#root_device_type}.
-	RootDeviceType *string `json:"rootDeviceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#root_device_volume_id OpsworksInstance#root_device_volume_id}.
-	RootDeviceVolumeId *string `json:"rootDeviceVolumeId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#security_group_ids OpsworksInstance#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ssh_host_dsa_key_fingerprint OpsworksInstance#ssh_host_dsa_key_fingerprint}.
-	SshHostDsaKeyFingerprint *string `json:"sshHostDsaKeyFingerprint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ssh_host_rsa_key_fingerprint OpsworksInstance#ssh_host_rsa_key_fingerprint}.
-	SshHostRsaKeyFingerprint *string `json:"sshHostRsaKeyFingerprint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#ssh_key_name OpsworksInstance#ssh_key_name}.
-	SshKeyName *string `json:"sshKeyName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#state OpsworksInstance#state}.
-	State *string `json:"state"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#status OpsworksInstance#status}.
-	Status *string `json:"status"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#subnet_id OpsworksInstance#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#tenancy OpsworksInstance#tenancy}.
-	Tenancy *string `json:"tenancy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#root_block_device OpsworksInstance#root_block_device}
+	RootBlockDevice interface{} `json:"rootBlockDevice" yaml:"rootBlockDevice"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#root_device_type OpsworksInstance#root_device_type}.
+	RootDeviceType *string `json:"rootDeviceType" yaml:"rootDeviceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#root_device_volume_id OpsworksInstance#root_device_volume_id}.
+	RootDeviceVolumeId *string `json:"rootDeviceVolumeId" yaml:"rootDeviceVolumeId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#security_group_ids OpsworksInstance#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ssh_host_dsa_key_fingerprint OpsworksInstance#ssh_host_dsa_key_fingerprint}.
+	SshHostDsaKeyFingerprint *string `json:"sshHostDsaKeyFingerprint" yaml:"sshHostDsaKeyFingerprint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ssh_host_rsa_key_fingerprint OpsworksInstance#ssh_host_rsa_key_fingerprint}.
+	SshHostRsaKeyFingerprint *string `json:"sshHostRsaKeyFingerprint" yaml:"sshHostRsaKeyFingerprint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#ssh_key_name OpsworksInstance#ssh_key_name}.
+	SshKeyName *string `json:"sshKeyName" yaml:"sshKeyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#state OpsworksInstance#state}.
+	State *string `json:"state" yaml:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#status OpsworksInstance#status}.
+	Status *string `json:"status" yaml:"status"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#subnet_id OpsworksInstance#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#tenancy OpsworksInstance#tenancy}.
+	Tenancy *string `json:"tenancy" yaml:"tenancy"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#timeouts OpsworksInstance#timeouts}
-	Timeouts *OpsworksInstanceTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#virtualization_type OpsworksInstance#virtualization_type}.
-	VirtualizationType *string `json:"virtualizationType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#timeouts OpsworksInstance#timeouts}
+	Timeouts *OpsworksInstanceTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#virtualization_type OpsworksInstance#virtualization_type}.
+	VirtualizationType *string `json:"virtualizationType" yaml:"virtualizationType"`
 }
 
 type OpsworksInstanceEbsBlockDevice struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#device_name OpsworksInstance#device_name}.
-	DeviceName *string `json:"deviceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#delete_on_termination OpsworksInstance#delete_on_termination}.
-	DeleteOnTermination interface{} `json:"deleteOnTermination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#iops OpsworksInstance#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#snapshot_id OpsworksInstance#snapshot_id}.
-	SnapshotId *string `json:"snapshotId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#volume_size OpsworksInstance#volume_size}.
-	VolumeSize *float64 `json:"volumeSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#volume_type OpsworksInstance#volume_type}.
-	VolumeType *string `json:"volumeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#device_name OpsworksInstance#device_name}.
+	DeviceName *string `json:"deviceName" yaml:"deviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#delete_on_termination OpsworksInstance#delete_on_termination}.
+	DeleteOnTermination interface{} `json:"deleteOnTermination" yaml:"deleteOnTermination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#iops OpsworksInstance#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#snapshot_id OpsworksInstance#snapshot_id}.
+	SnapshotId *string `json:"snapshotId" yaml:"snapshotId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#volume_size OpsworksInstance#volume_size}.
+	VolumeSize *float64 `json:"volumeSize" yaml:"volumeSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#volume_type OpsworksInstance#volume_type}.
+	VolumeType *string `json:"volumeType" yaml:"volumeType"`
 }
 
 type OpsworksInstanceEphemeralBlockDevice struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#device_name OpsworksInstance#device_name}.
-	DeviceName *string `json:"deviceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#virtual_name OpsworksInstance#virtual_name}.
-	VirtualName *string `json:"virtualName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#device_name OpsworksInstance#device_name}.
+	DeviceName *string `json:"deviceName" yaml:"deviceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#virtual_name OpsworksInstance#virtual_name}.
+	VirtualName *string `json:"virtualName" yaml:"virtualName"`
 }
 
 type OpsworksInstanceRootBlockDevice struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#delete_on_termination OpsworksInstance#delete_on_termination}.
-	DeleteOnTermination interface{} `json:"deleteOnTermination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#iops OpsworksInstance#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#volume_size OpsworksInstance#volume_size}.
-	VolumeSize *float64 `json:"volumeSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#volume_type OpsworksInstance#volume_type}.
-	VolumeType *string `json:"volumeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#delete_on_termination OpsworksInstance#delete_on_termination}.
+	DeleteOnTermination interface{} `json:"deleteOnTermination" yaml:"deleteOnTermination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#iops OpsworksInstance#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#volume_size OpsworksInstance#volume_size}.
+	VolumeSize *float64 `json:"volumeSize" yaml:"volumeSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#volume_type OpsworksInstance#volume_type}.
+	VolumeType *string `json:"volumeType" yaml:"volumeType"`
 }
 
 type OpsworksInstanceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#create OpsworksInstance#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#delete OpsworksInstance#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance.html#update OpsworksInstance#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#create OpsworksInstance#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#delete OpsworksInstance#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_instance#update OpsworksInstance#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type OpsworksInstanceTimeoutsOutputReference interface {
@@ -8076,15 +9759,20 @@ type OpsworksInstanceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -8167,8 +9855,8 @@ func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8197,7 +9885,7 @@ func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) UpdateInput() *strin
 	return returns
 }
 
-func NewOpsworksInstanceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) OpsworksInstanceTimeoutsOutputReference {
+func NewOpsworksInstanceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksInstanceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_OpsworksInstanceTimeoutsOutputReference{}
@@ -8211,7 +9899,7 @@ func NewOpsworksInstanceTimeoutsOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewOpsworksInstanceTimeoutsOutputReference_Override(o OpsworksInstanceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewOpsworksInstanceTimeoutsOutputReference_Override(o OpsworksInstanceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8261,7 +9949,7 @@ func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8278,12 +9966,40 @@ func (j *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) SetUpdate(val *strin
 }
 
 // Experimental.
-func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8320,12 +10036,54 @@ func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8385,7 +10143,7 @@ func (o *jsiiProxy_OpsworksInstanceTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html aws_opsworks_java_app_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer aws_opsworks_java_app_layer}.
 type OpsworksJavaAppLayer interface {
 	cdktf.TerraformResource
 	AppServer() *string
@@ -8405,9 +10163,11 @@ type OpsworksJavaAppLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksJavaAppLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksJavaAppLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -8437,9 +10197,9 @@ type OpsworksJavaAppLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksJavaAppLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksJavaAppLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksJavaAppLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -8476,12 +10236,12 @@ type OpsworksJavaAppLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -8489,17 +10249,24 @@ type OpsworksJavaAppLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksJavaAppLayerCloudwatchConfiguration)
 	ResetAppServer()
 	ResetAppServerVersion()
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -8653,6 +10420,26 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksJavaAppLayer) CloudwatchConfiguration() OpsworksJavaAppLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksJavaAppLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayer) CloudwatchConfigurationInput() *OpsworksJavaAppLayerCloudwatchConfiguration {
+	var returns *OpsworksJavaAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksJavaAppLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -8663,8 +10450,8 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksJavaAppLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8863,8 +10650,8 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) DrainElbOnShutdownInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) EbsVolume() *[]*OpsworksJavaAppLayerEbsVolume {
-	var returns *[]*OpsworksJavaAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksJavaAppLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -8873,8 +10660,8 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) EbsVolume() *[]*OpsworksJavaAppLayerEbs
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) EbsVolumeInput() *[]*OpsworksJavaAppLayerEbsVolume {
-	var returns *[]*OpsworksJavaAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksJavaAppLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -9133,8 +10920,8 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksJavaAppLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9143,8 +10930,8 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksJavaAppLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9153,8 +10940,8 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksJavaAppLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9163,8 +10950,8 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksJavaAppLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9223,7 +11010,7 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) UseEbsOptimizedInstancesInput() interfa
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html aws_opsworks_java_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer aws_opsworks_java_app_layer} Resource.
 func NewOpsworksJavaAppLayer(scope constructs.Construct, id *string, config *OpsworksJavaAppLayerConfig) OpsworksJavaAppLayer {
 	_init_.Initialize()
 
@@ -9238,7 +11025,7 @@ func NewOpsworksJavaAppLayer(scope constructs.Construct, id *string, config *Ops
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html aws_opsworks_java_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer aws_opsworks_java_app_layer} Resource.
 func NewOpsworksJavaAppLayer_Override(o OpsworksJavaAppLayer, scope constructs.Construct, id *string, config *OpsworksJavaAppLayerConfig) {
 	_init_.Initialize()
 
@@ -9289,7 +11076,7 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksJavaAppLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9377,7 +11164,7 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) SetDrainElbOnShutdown(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) SetEbsVolume(val *[]*OpsworksJavaAppLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksJavaAppLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -9473,7 +11260,7 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksJavaAppLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9481,7 +11268,7 @@ func (j *jsiiProxy_OpsworksJavaAppLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksJavaAppLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksJavaAppLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9537,12 +11324,40 @@ func (o *jsiiProxy_OpsworksJavaAppLayer) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksJavaAppLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9579,12 +11394,54 @@ func (o *jsiiProxy_OpsworksJavaAppLayer) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksJavaAppLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9613,6 +11470,14 @@ func (o *jsiiProxy_OpsworksJavaAppLayer) OverrideLogicalId(newLogicalId *string)
 		o,
 		"overrideLogicalId",
 		[]interface{}{newLogicalId},
+	)
+}
+
+func (o *jsiiProxy_OpsworksJavaAppLayer) PutCloudwatchConfiguration(value *OpsworksJavaAppLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
 	)
 }
 
@@ -9652,6 +11517,14 @@ func (o *jsiiProxy_OpsworksJavaAppLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksJavaAppLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -9890,92 +11763,488 @@ func (o *jsiiProxy_OpsworksJavaAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksJavaAppLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#enabled OpsworksJavaAppLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#log_streams OpsworksJavaAppLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksJavaAppLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#file OpsworksJavaAppLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#log_group_name OpsworksJavaAppLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#batch_count OpsworksJavaAppLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#batch_size OpsworksJavaAppLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#buffer_duration OpsworksJavaAppLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#datetime_format OpsworksJavaAppLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#encoding OpsworksJavaAppLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#file_fingerprint_lines OpsworksJavaAppLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#initial_position OpsworksJavaAppLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#multiline_start_pattern OpsworksJavaAppLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#time_zone OpsworksJavaAppLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksJavaAppLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksJavaAppLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksJavaAppLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksJavaAppLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksJavaAppLayerCloudwatchConfiguration {
+	var returns *OpsworksJavaAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksJavaAppLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksJavaAppLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksJavaAppLayerCloudwatchConfigurationOutputReference_Override(o OpsworksJavaAppLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksJavaAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksJavaAppLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksJavaAppLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksJavaAppLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#stack_id OpsworksJavaAppLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#app_server OpsworksJavaAppLayer#app_server}.
-	AppServer *string `json:"appServer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#app_server_version OpsworksJavaAppLayer#app_server_version}.
-	AppServerVersion *string `json:"appServerVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#auto_assign_elastic_ips OpsworksJavaAppLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#auto_assign_public_ips OpsworksJavaAppLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#auto_healing OpsworksJavaAppLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_configure_recipes OpsworksJavaAppLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_deploy_recipes OpsworksJavaAppLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_instance_profile_arn OpsworksJavaAppLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_json OpsworksJavaAppLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_security_group_ids OpsworksJavaAppLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_setup_recipes OpsworksJavaAppLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_shutdown_recipes OpsworksJavaAppLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#custom_undeploy_recipes OpsworksJavaAppLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#drain_elb_on_shutdown OpsworksJavaAppLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#stack_id OpsworksJavaAppLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#app_server OpsworksJavaAppLayer#app_server}.
+	AppServer *string `json:"appServer" yaml:"appServer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#app_server_version OpsworksJavaAppLayer#app_server_version}.
+	AppServerVersion *string `json:"appServerVersion" yaml:"appServerVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#auto_assign_elastic_ips OpsworksJavaAppLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#auto_assign_public_ips OpsworksJavaAppLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#auto_healing OpsworksJavaAppLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#cloudwatch_configuration OpsworksJavaAppLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksJavaAppLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_configure_recipes OpsworksJavaAppLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_deploy_recipes OpsworksJavaAppLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_instance_profile_arn OpsworksJavaAppLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_json OpsworksJavaAppLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_security_group_ids OpsworksJavaAppLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_setup_recipes OpsworksJavaAppLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_shutdown_recipes OpsworksJavaAppLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#custom_undeploy_recipes OpsworksJavaAppLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#drain_elb_on_shutdown OpsworksJavaAppLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#ebs_volume OpsworksJavaAppLayer#ebs_volume}
-	EbsVolume *[]*OpsworksJavaAppLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#elastic_load_balancer OpsworksJavaAppLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#install_updates_on_boot OpsworksJavaAppLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#instance_shutdown_timeout OpsworksJavaAppLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#jvm_options OpsworksJavaAppLayer#jvm_options}.
-	JvmOptions *string `json:"jvmOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#jvm_type OpsworksJavaAppLayer#jvm_type}.
-	JvmType *string `json:"jvmType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#jvm_version OpsworksJavaAppLayer#jvm_version}.
-	JvmVersion *string `json:"jvmVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#name OpsworksJavaAppLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#system_packages OpsworksJavaAppLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#tags OpsworksJavaAppLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#tags_all OpsworksJavaAppLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#use_ebs_optimized_instances OpsworksJavaAppLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#ebs_volume OpsworksJavaAppLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#elastic_load_balancer OpsworksJavaAppLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#install_updates_on_boot OpsworksJavaAppLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#instance_shutdown_timeout OpsworksJavaAppLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#jvm_options OpsworksJavaAppLayer#jvm_options}.
+	JvmOptions *string `json:"jvmOptions" yaml:"jvmOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#jvm_type OpsworksJavaAppLayer#jvm_type}.
+	JvmType *string `json:"jvmType" yaml:"jvmType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#jvm_version OpsworksJavaAppLayer#jvm_version}.
+	JvmVersion *string `json:"jvmVersion" yaml:"jvmVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#name OpsworksJavaAppLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#system_packages OpsworksJavaAppLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#tags OpsworksJavaAppLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#tags_all OpsworksJavaAppLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#use_ebs_optimized_instances OpsworksJavaAppLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksJavaAppLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#mount_point OpsworksJavaAppLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#number_of_disks OpsworksJavaAppLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#size OpsworksJavaAppLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#encrypted OpsworksJavaAppLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#iops OpsworksJavaAppLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#raid_level OpsworksJavaAppLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer.html#type OpsworksJavaAppLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#mount_point OpsworksJavaAppLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#number_of_disks OpsworksJavaAppLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#size OpsworksJavaAppLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#encrypted OpsworksJavaAppLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#iops OpsworksJavaAppLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#raid_level OpsworksJavaAppLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_java_app_layer#type OpsworksJavaAppLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html aws_opsworks_memcached_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer aws_opsworks_memcached_layer}.
 type OpsworksMemcachedLayer interface {
 	cdktf.TerraformResource
 	AllocatedMemory() *float64
@@ -9992,9 +12261,11 @@ type OpsworksMemcachedLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksMemcachedLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksMemcachedLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -10024,9 +12295,9 @@ type OpsworksMemcachedLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksMemcachedLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksMemcachedLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksMemcachedLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -10054,12 +12325,12 @@ type OpsworksMemcachedLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -10067,16 +12338,23 @@ type OpsworksMemcachedLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksMemcachedLayerCloudwatchConfiguration)
 	ResetAllocatedMemory()
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -10207,6 +12485,26 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksMemcachedLayer) CloudwatchConfiguration() OpsworksMemcachedLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksMemcachedLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayer) CloudwatchConfigurationInput() *OpsworksMemcachedLayerCloudwatchConfiguration {
+	var returns *OpsworksMemcachedLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksMemcachedLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -10217,8 +12515,8 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMemcachedLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10417,8 +12715,8 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) DrainElbOnShutdownInput() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) EbsVolume() *[]*OpsworksMemcachedLayerEbsVolume {
-	var returns *[]*OpsworksMemcachedLayerEbsVolume
+func (j *jsiiProxy_OpsworksMemcachedLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -10427,8 +12725,8 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) EbsVolume() *[]*OpsworksMemcachedLaye
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) EbsVolumeInput() *[]*OpsworksMemcachedLayerEbsVolume {
-	var returns *[]*OpsworksMemcachedLayerEbsVolume
+func (j *jsiiProxy_OpsworksMemcachedLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -10627,8 +12925,8 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMemcachedLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10637,8 +12935,8 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMemcachedLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10647,8 +12945,8 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMemcachedLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10657,8 +12955,8 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMemcachedLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10717,7 +13015,7 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) UseEbsOptimizedInstancesInput() inter
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html aws_opsworks_memcached_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer aws_opsworks_memcached_layer} Resource.
 func NewOpsworksMemcachedLayer(scope constructs.Construct, id *string, config *OpsworksMemcachedLayerConfig) OpsworksMemcachedLayer {
 	_init_.Initialize()
 
@@ -10732,7 +13030,7 @@ func NewOpsworksMemcachedLayer(scope constructs.Construct, id *string, config *O
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html aws_opsworks_memcached_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer aws_opsworks_memcached_layer} Resource.
 func NewOpsworksMemcachedLayer_Override(o OpsworksMemcachedLayer, scope constructs.Construct, id *string, config *OpsworksMemcachedLayerConfig) {
 	_init_.Initialize()
 
@@ -10775,7 +13073,7 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksMemcachedLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10863,7 +13161,7 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) SetDrainElbOnShutdown(val interface{}
 	)
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) SetEbsVolume(val *[]*OpsworksMemcachedLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksMemcachedLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -10935,7 +13233,7 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksMemcachedLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10943,7 +13241,7 @@ func (j *jsiiProxy_OpsworksMemcachedLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksMemcachedLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksMemcachedLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10999,12 +13297,40 @@ func (o *jsiiProxy_OpsworksMemcachedLayer) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksMemcachedLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11041,12 +13367,54 @@ func (o *jsiiProxy_OpsworksMemcachedLayer) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksMemcachedLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11078,6 +13446,14 @@ func (o *jsiiProxy_OpsworksMemcachedLayer) OverrideLogicalId(newLogicalId *strin
 	)
 }
 
+func (o *jsiiProxy_OpsworksMemcachedLayer) PutCloudwatchConfiguration(value *OpsworksMemcachedLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksMemcachedLayer) ResetAllocatedMemory() {
 	_jsii_.InvokeVoid(
 		o,
@@ -11106,6 +13482,14 @@ func (o *jsiiProxy_OpsworksMemcachedLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksMemcachedLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -11320,84 +13704,480 @@ func (o *jsiiProxy_OpsworksMemcachedLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksMemcachedLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#enabled OpsworksMemcachedLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#log_streams OpsworksMemcachedLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksMemcachedLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#file OpsworksMemcachedLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#log_group_name OpsworksMemcachedLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#batch_count OpsworksMemcachedLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#batch_size OpsworksMemcachedLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#buffer_duration OpsworksMemcachedLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#datetime_format OpsworksMemcachedLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#encoding OpsworksMemcachedLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#file_fingerprint_lines OpsworksMemcachedLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#initial_position OpsworksMemcachedLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#multiline_start_pattern OpsworksMemcachedLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#time_zone OpsworksMemcachedLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksMemcachedLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksMemcachedLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksMemcachedLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksMemcachedLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksMemcachedLayerCloudwatchConfiguration {
+	var returns *OpsworksMemcachedLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksMemcachedLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksMemcachedLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksMemcachedLayerCloudwatchConfigurationOutputReference_Override(o OpsworksMemcachedLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksMemcachedLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksMemcachedLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksMemcachedLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksMemcachedLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#stack_id OpsworksMemcachedLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#allocated_memory OpsworksMemcachedLayer#allocated_memory}.
-	AllocatedMemory *float64 `json:"allocatedMemory"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#auto_assign_elastic_ips OpsworksMemcachedLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#auto_assign_public_ips OpsworksMemcachedLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#auto_healing OpsworksMemcachedLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_configure_recipes OpsworksMemcachedLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_deploy_recipes OpsworksMemcachedLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_instance_profile_arn OpsworksMemcachedLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_json OpsworksMemcachedLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_security_group_ids OpsworksMemcachedLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_setup_recipes OpsworksMemcachedLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_shutdown_recipes OpsworksMemcachedLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#custom_undeploy_recipes OpsworksMemcachedLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#drain_elb_on_shutdown OpsworksMemcachedLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#stack_id OpsworksMemcachedLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#allocated_memory OpsworksMemcachedLayer#allocated_memory}.
+	AllocatedMemory *float64 `json:"allocatedMemory" yaml:"allocatedMemory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#auto_assign_elastic_ips OpsworksMemcachedLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#auto_assign_public_ips OpsworksMemcachedLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#auto_healing OpsworksMemcachedLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#cloudwatch_configuration OpsworksMemcachedLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksMemcachedLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_configure_recipes OpsworksMemcachedLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_deploy_recipes OpsworksMemcachedLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_instance_profile_arn OpsworksMemcachedLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_json OpsworksMemcachedLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_security_group_ids OpsworksMemcachedLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_setup_recipes OpsworksMemcachedLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_shutdown_recipes OpsworksMemcachedLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#custom_undeploy_recipes OpsworksMemcachedLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#drain_elb_on_shutdown OpsworksMemcachedLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#ebs_volume OpsworksMemcachedLayer#ebs_volume}
-	EbsVolume *[]*OpsworksMemcachedLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#elastic_load_balancer OpsworksMemcachedLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#install_updates_on_boot OpsworksMemcachedLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#instance_shutdown_timeout OpsworksMemcachedLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#name OpsworksMemcachedLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#system_packages OpsworksMemcachedLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#tags OpsworksMemcachedLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#tags_all OpsworksMemcachedLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#use_ebs_optimized_instances OpsworksMemcachedLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#ebs_volume OpsworksMemcachedLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#elastic_load_balancer OpsworksMemcachedLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#install_updates_on_boot OpsworksMemcachedLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#instance_shutdown_timeout OpsworksMemcachedLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#name OpsworksMemcachedLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#system_packages OpsworksMemcachedLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#tags OpsworksMemcachedLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#tags_all OpsworksMemcachedLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#use_ebs_optimized_instances OpsworksMemcachedLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksMemcachedLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#mount_point OpsworksMemcachedLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#number_of_disks OpsworksMemcachedLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#size OpsworksMemcachedLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#encrypted OpsworksMemcachedLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#iops OpsworksMemcachedLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#raid_level OpsworksMemcachedLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer.html#type OpsworksMemcachedLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#mount_point OpsworksMemcachedLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#number_of_disks OpsworksMemcachedLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#size OpsworksMemcachedLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#encrypted OpsworksMemcachedLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#iops OpsworksMemcachedLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#raid_level OpsworksMemcachedLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_memcached_layer#type OpsworksMemcachedLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html aws_opsworks_mysql_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer aws_opsworks_mysql_layer}.
 type OpsworksMysqlLayer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -11411,9 +14191,11 @@ type OpsworksMysqlLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksMysqlLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksMysqlLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -11443,9 +14225,9 @@ type OpsworksMysqlLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksMysqlLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksMysqlLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksMysqlLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -11479,12 +14261,12 @@ type OpsworksMysqlLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -11492,15 +14274,22 @@ type OpsworksMysqlLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksMysqlLayerCloudwatchConfiguration)
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -11613,6 +14402,26 @@ func (j *jsiiProxy_OpsworksMysqlLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksMysqlLayer) CloudwatchConfiguration() OpsworksMysqlLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksMysqlLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayer) CloudwatchConfigurationInput() *OpsworksMysqlLayerCloudwatchConfiguration {
+	var returns *OpsworksMysqlLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksMysqlLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -11623,8 +14432,8 @@ func (j *jsiiProxy_OpsworksMysqlLayer) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMysqlLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11823,8 +14632,8 @@ func (j *jsiiProxy_OpsworksMysqlLayer) DrainElbOnShutdownInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) EbsVolume() *[]*OpsworksMysqlLayerEbsVolume {
-	var returns *[]*OpsworksMysqlLayerEbsVolume
+func (j *jsiiProxy_OpsworksMysqlLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -11833,8 +14642,8 @@ func (j *jsiiProxy_OpsworksMysqlLayer) EbsVolume() *[]*OpsworksMysqlLayerEbsVolu
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) EbsVolumeInput() *[]*OpsworksMysqlLayerEbsVolume {
-	var returns *[]*OpsworksMysqlLayerEbsVolume
+func (j *jsiiProxy_OpsworksMysqlLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -12073,8 +14882,8 @@ func (j *jsiiProxy_OpsworksMysqlLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMysqlLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -12083,8 +14892,8 @@ func (j *jsiiProxy_OpsworksMysqlLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMysqlLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -12093,8 +14902,8 @@ func (j *jsiiProxy_OpsworksMysqlLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMysqlLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -12103,8 +14912,8 @@ func (j *jsiiProxy_OpsworksMysqlLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksMysqlLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -12163,7 +14972,7 @@ func (j *jsiiProxy_OpsworksMysqlLayer) UseEbsOptimizedInstancesInput() interface
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html aws_opsworks_mysql_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer aws_opsworks_mysql_layer} Resource.
 func NewOpsworksMysqlLayer(scope constructs.Construct, id *string, config *OpsworksMysqlLayerConfig) OpsworksMysqlLayer {
 	_init_.Initialize()
 
@@ -12178,7 +14987,7 @@ func NewOpsworksMysqlLayer(scope constructs.Construct, id *string, config *Opswo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html aws_opsworks_mysql_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer aws_opsworks_mysql_layer} Resource.
 func NewOpsworksMysqlLayer_Override(o OpsworksMysqlLayer, scope constructs.Construct, id *string, config *OpsworksMysqlLayerConfig) {
 	_init_.Initialize()
 
@@ -12213,7 +15022,7 @@ func (j *jsiiProxy_OpsworksMysqlLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksMysqlLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12301,7 +15110,7 @@ func (j *jsiiProxy_OpsworksMysqlLayer) SetDrainElbOnShutdown(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) SetEbsVolume(val *[]*OpsworksMysqlLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksMysqlLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -12389,7 +15198,7 @@ func (j *jsiiProxy_OpsworksMysqlLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksMysqlLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -12397,7 +15206,7 @@ func (j *jsiiProxy_OpsworksMysqlLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksMysqlLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksMysqlLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -12453,12 +15262,40 @@ func (o *jsiiProxy_OpsworksMysqlLayer) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksMysqlLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12495,12 +15332,54 @@ func (o *jsiiProxy_OpsworksMysqlLayer) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksMysqlLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12532,6 +15411,14 @@ func (o *jsiiProxy_OpsworksMysqlLayer) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (o *jsiiProxy_OpsworksMysqlLayer) PutCloudwatchConfiguration(value *OpsworksMysqlLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksMysqlLayer) ResetAutoAssignElasticIps() {
 	_jsii_.InvokeVoid(
 		o,
@@ -12552,6 +15439,14 @@ func (o *jsiiProxy_OpsworksMysqlLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksMysqlLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -12782,86 +15677,482 @@ func (o *jsiiProxy_OpsworksMysqlLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksMysqlLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#enabled OpsworksMysqlLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#log_streams OpsworksMysqlLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksMysqlLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#file OpsworksMysqlLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#log_group_name OpsworksMysqlLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#batch_count OpsworksMysqlLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#batch_size OpsworksMysqlLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#buffer_duration OpsworksMysqlLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#datetime_format OpsworksMysqlLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#encoding OpsworksMysqlLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#file_fingerprint_lines OpsworksMysqlLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#initial_position OpsworksMysqlLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#multiline_start_pattern OpsworksMysqlLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#time_zone OpsworksMysqlLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksMysqlLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksMysqlLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksMysqlLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksMysqlLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksMysqlLayerCloudwatchConfiguration {
+	var returns *OpsworksMysqlLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksMysqlLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksMysqlLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksMysqlLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksMysqlLayerCloudwatchConfigurationOutputReference_Override(o OpsworksMysqlLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksMysqlLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksMysqlLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksMysqlLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksMysqlLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#stack_id OpsworksMysqlLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#auto_assign_elastic_ips OpsworksMysqlLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#auto_assign_public_ips OpsworksMysqlLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#auto_healing OpsworksMysqlLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_configure_recipes OpsworksMysqlLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_deploy_recipes OpsworksMysqlLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_instance_profile_arn OpsworksMysqlLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_json OpsworksMysqlLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_security_group_ids OpsworksMysqlLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_setup_recipes OpsworksMysqlLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_shutdown_recipes OpsworksMysqlLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#custom_undeploy_recipes OpsworksMysqlLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#drain_elb_on_shutdown OpsworksMysqlLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#stack_id OpsworksMysqlLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#auto_assign_elastic_ips OpsworksMysqlLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#auto_assign_public_ips OpsworksMysqlLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#auto_healing OpsworksMysqlLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#cloudwatch_configuration OpsworksMysqlLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksMysqlLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_configure_recipes OpsworksMysqlLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_deploy_recipes OpsworksMysqlLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_instance_profile_arn OpsworksMysqlLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_json OpsworksMysqlLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_security_group_ids OpsworksMysqlLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_setup_recipes OpsworksMysqlLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_shutdown_recipes OpsworksMysqlLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#custom_undeploy_recipes OpsworksMysqlLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#drain_elb_on_shutdown OpsworksMysqlLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#ebs_volume OpsworksMysqlLayer#ebs_volume}
-	EbsVolume *[]*OpsworksMysqlLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#elastic_load_balancer OpsworksMysqlLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#install_updates_on_boot OpsworksMysqlLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#instance_shutdown_timeout OpsworksMysqlLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#name OpsworksMysqlLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#root_password OpsworksMysqlLayer#root_password}.
-	RootPassword *string `json:"rootPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#root_password_on_all_instances OpsworksMysqlLayer#root_password_on_all_instances}.
-	RootPasswordOnAllInstances interface{} `json:"rootPasswordOnAllInstances"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#system_packages OpsworksMysqlLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#tags OpsworksMysqlLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#tags_all OpsworksMysqlLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#use_ebs_optimized_instances OpsworksMysqlLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#ebs_volume OpsworksMysqlLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#elastic_load_balancer OpsworksMysqlLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#install_updates_on_boot OpsworksMysqlLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#instance_shutdown_timeout OpsworksMysqlLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#name OpsworksMysqlLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#root_password OpsworksMysqlLayer#root_password}.
+	RootPassword *string `json:"rootPassword" yaml:"rootPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#root_password_on_all_instances OpsworksMysqlLayer#root_password_on_all_instances}.
+	RootPasswordOnAllInstances interface{} `json:"rootPasswordOnAllInstances" yaml:"rootPasswordOnAllInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#system_packages OpsworksMysqlLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#tags OpsworksMysqlLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#tags_all OpsworksMysqlLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#use_ebs_optimized_instances OpsworksMysqlLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksMysqlLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#mount_point OpsworksMysqlLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#number_of_disks OpsworksMysqlLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#size OpsworksMysqlLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#encrypted OpsworksMysqlLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#iops OpsworksMysqlLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#raid_level OpsworksMysqlLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer.html#type OpsworksMysqlLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#mount_point OpsworksMysqlLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#number_of_disks OpsworksMysqlLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#size OpsworksMysqlLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#encrypted OpsworksMysqlLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#iops OpsworksMysqlLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#raid_level OpsworksMysqlLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_mysql_layer#type OpsworksMysqlLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html aws_opsworks_nodejs_app_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer aws_opsworks_nodejs_app_layer}.
 type OpsworksNodejsAppLayer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -12875,9 +16166,11 @@ type OpsworksNodejsAppLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksNodejsAppLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -12907,9 +16200,9 @@ type OpsworksNodejsAppLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksNodejsAppLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksNodejsAppLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksNodejsAppLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -12940,12 +16233,12 @@ type OpsworksNodejsAppLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -12953,15 +16246,22 @@ type OpsworksNodejsAppLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksNodejsAppLayerCloudwatchConfiguration)
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -13073,6 +16373,26 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksNodejsAppLayer) CloudwatchConfiguration() OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayer) CloudwatchConfigurationInput() *OpsworksNodejsAppLayerCloudwatchConfiguration {
+	var returns *OpsworksNodejsAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksNodejsAppLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -13083,8 +16403,8 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksNodejsAppLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13283,8 +16603,8 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) DrainElbOnShutdownInput() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) EbsVolume() *[]*OpsworksNodejsAppLayerEbsVolume {
-	var returns *[]*OpsworksNodejsAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksNodejsAppLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -13293,8 +16613,8 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) EbsVolume() *[]*OpsworksNodejsAppLaye
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) EbsVolumeInput() *[]*OpsworksNodejsAppLayerEbsVolume {
-	var returns *[]*OpsworksNodejsAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksNodejsAppLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -13513,8 +16833,8 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksNodejsAppLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -13523,8 +16843,8 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -13533,8 +16853,8 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -13543,8 +16863,8 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksNodejsAppLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -13603,7 +16923,7 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) UseEbsOptimizedInstancesInput() inter
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html aws_opsworks_nodejs_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer aws_opsworks_nodejs_app_layer} Resource.
 func NewOpsworksNodejsAppLayer(scope constructs.Construct, id *string, config *OpsworksNodejsAppLayerConfig) OpsworksNodejsAppLayer {
 	_init_.Initialize()
 
@@ -13618,7 +16938,7 @@ func NewOpsworksNodejsAppLayer(scope constructs.Construct, id *string, config *O
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html aws_opsworks_nodejs_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer aws_opsworks_nodejs_app_layer} Resource.
 func NewOpsworksNodejsAppLayer_Override(o OpsworksNodejsAppLayer, scope constructs.Construct, id *string, config *OpsworksNodejsAppLayerConfig) {
 	_init_.Initialize()
 
@@ -13653,7 +16973,7 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksNodejsAppLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13741,7 +17061,7 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) SetDrainElbOnShutdown(val interface{}
 	)
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) SetEbsVolume(val *[]*OpsworksNodejsAppLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksNodejsAppLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -13821,7 +17141,7 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksNodejsAppLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -13829,7 +17149,7 @@ func (j *jsiiProxy_OpsworksNodejsAppLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksNodejsAppLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksNodejsAppLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -13885,12 +17205,40 @@ func (o *jsiiProxy_OpsworksNodejsAppLayer) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksNodejsAppLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13927,12 +17275,54 @@ func (o *jsiiProxy_OpsworksNodejsAppLayer) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksNodejsAppLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13964,6 +17354,14 @@ func (o *jsiiProxy_OpsworksNodejsAppLayer) OverrideLogicalId(newLogicalId *strin
 	)
 }
 
+func (o *jsiiProxy_OpsworksNodejsAppLayer) PutCloudwatchConfiguration(value *OpsworksNodejsAppLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksNodejsAppLayer) ResetAutoAssignElasticIps() {
 	_jsii_.InvokeVoid(
 		o,
@@ -13984,6 +17382,14 @@ func (o *jsiiProxy_OpsworksNodejsAppLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksNodejsAppLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -14206,84 +17612,480 @@ func (o *jsiiProxy_OpsworksNodejsAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksNodejsAppLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#enabled OpsworksNodejsAppLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#log_streams OpsworksNodejsAppLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksNodejsAppLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#file OpsworksNodejsAppLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#log_group_name OpsworksNodejsAppLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#batch_count OpsworksNodejsAppLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#batch_size OpsworksNodejsAppLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#buffer_duration OpsworksNodejsAppLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#datetime_format OpsworksNodejsAppLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#encoding OpsworksNodejsAppLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#file_fingerprint_lines OpsworksNodejsAppLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#initial_position OpsworksNodejsAppLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#multiline_start_pattern OpsworksNodejsAppLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#time_zone OpsworksNodejsAppLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksNodejsAppLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksNodejsAppLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksNodejsAppLayerCloudwatchConfiguration {
+	var returns *OpsworksNodejsAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksNodejsAppLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksNodejsAppLayerCloudwatchConfigurationOutputReference_Override(o OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksNodejsAppLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksNodejsAppLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksNodejsAppLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#stack_id OpsworksNodejsAppLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#auto_assign_elastic_ips OpsworksNodejsAppLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#auto_assign_public_ips OpsworksNodejsAppLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#auto_healing OpsworksNodejsAppLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_configure_recipes OpsworksNodejsAppLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_deploy_recipes OpsworksNodejsAppLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_instance_profile_arn OpsworksNodejsAppLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_json OpsworksNodejsAppLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_security_group_ids OpsworksNodejsAppLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_setup_recipes OpsworksNodejsAppLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_shutdown_recipes OpsworksNodejsAppLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#custom_undeploy_recipes OpsworksNodejsAppLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#drain_elb_on_shutdown OpsworksNodejsAppLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#stack_id OpsworksNodejsAppLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#auto_assign_elastic_ips OpsworksNodejsAppLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#auto_assign_public_ips OpsworksNodejsAppLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#auto_healing OpsworksNodejsAppLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#cloudwatch_configuration OpsworksNodejsAppLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksNodejsAppLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_configure_recipes OpsworksNodejsAppLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_deploy_recipes OpsworksNodejsAppLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_instance_profile_arn OpsworksNodejsAppLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_json OpsworksNodejsAppLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_security_group_ids OpsworksNodejsAppLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_setup_recipes OpsworksNodejsAppLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_shutdown_recipes OpsworksNodejsAppLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#custom_undeploy_recipes OpsworksNodejsAppLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#drain_elb_on_shutdown OpsworksNodejsAppLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#ebs_volume OpsworksNodejsAppLayer#ebs_volume}
-	EbsVolume *[]*OpsworksNodejsAppLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#elastic_load_balancer OpsworksNodejsAppLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#install_updates_on_boot OpsworksNodejsAppLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#instance_shutdown_timeout OpsworksNodejsAppLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#name OpsworksNodejsAppLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#nodejs_version OpsworksNodejsAppLayer#nodejs_version}.
-	NodejsVersion *string `json:"nodejsVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#system_packages OpsworksNodejsAppLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#tags OpsworksNodejsAppLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#tags_all OpsworksNodejsAppLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#use_ebs_optimized_instances OpsworksNodejsAppLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#ebs_volume OpsworksNodejsAppLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#elastic_load_balancer OpsworksNodejsAppLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#install_updates_on_boot OpsworksNodejsAppLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#instance_shutdown_timeout OpsworksNodejsAppLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#name OpsworksNodejsAppLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#nodejs_version OpsworksNodejsAppLayer#nodejs_version}.
+	NodejsVersion *string `json:"nodejsVersion" yaml:"nodejsVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#system_packages OpsworksNodejsAppLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#tags OpsworksNodejsAppLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#tags_all OpsworksNodejsAppLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#use_ebs_optimized_instances OpsworksNodejsAppLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksNodejsAppLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#mount_point OpsworksNodejsAppLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#number_of_disks OpsworksNodejsAppLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#size OpsworksNodejsAppLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#encrypted OpsworksNodejsAppLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#iops OpsworksNodejsAppLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#raid_level OpsworksNodejsAppLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer.html#type OpsworksNodejsAppLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#mount_point OpsworksNodejsAppLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#number_of_disks OpsworksNodejsAppLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#size OpsworksNodejsAppLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#encrypted OpsworksNodejsAppLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#iops OpsworksNodejsAppLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#raid_level OpsworksNodejsAppLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_nodejs_app_layer#type OpsworksNodejsAppLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html aws_opsworks_permission}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission aws_opsworks_permission}.
 type OpsworksPermission interface {
 	cdktf.TerraformResource
 	AllowSsh() interface{}
@@ -14294,8 +18096,8 @@ type OpsworksPermission interface {
 	AllowSudoInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -14320,10 +18122,15 @@ type OpsworksPermission interface {
 	SetUserArn(val *string)
 	UserArnInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllowSsh()
@@ -14402,8 +18209,8 @@ func (j *jsiiProxy_OpsworksPermission) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPermission) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksPermission) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14582,7 +18389,7 @@ func (j *jsiiProxy_OpsworksPermission) UserArnInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html aws_opsworks_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission aws_opsworks_permission} Resource.
 func NewOpsworksPermission(scope constructs.Construct, id *string, config *OpsworksPermissionConfig) OpsworksPermission {
 	_init_.Initialize()
 
@@ -14597,7 +18404,7 @@ func NewOpsworksPermission(scope constructs.Construct, id *string, config *Opswo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html aws_opsworks_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission aws_opsworks_permission} Resource.
 func NewOpsworksPermission_Override(o OpsworksPermission, scope constructs.Construct, id *string, config *OpsworksPermissionConfig) {
 	_init_.Initialize()
 
@@ -14624,7 +18431,7 @@ func (j *jsiiProxy_OpsworksPermission) SetAllowSudo(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksPermission) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksPermission) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14720,12 +18527,40 @@ func (o *jsiiProxy_OpsworksPermission) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksPermission) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksPermission) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPermission) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14762,12 +18597,54 @@ func (o *jsiiProxy_OpsworksPermission) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksPermission) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPermission) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksPermission) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPermission) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14900,26 +18777,26 @@ func (o *jsiiProxy_OpsworksPermission) ToTerraform() interface{} {
 // AWS OpsWorks.
 type OpsworksPermissionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html#user_arn OpsworksPermission#user_arn}.
-	UserArn *string `json:"userArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html#allow_ssh OpsworksPermission#allow_ssh}.
-	AllowSsh interface{} `json:"allowSsh"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html#allow_sudo OpsworksPermission#allow_sudo}.
-	AllowSudo interface{} `json:"allowSudo"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html#level OpsworksPermission#level}.
-	Level *string `json:"level"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission.html#stack_id OpsworksPermission#stack_id}.
-	StackId *string `json:"stackId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission#user_arn OpsworksPermission#user_arn}.
+	UserArn *string `json:"userArn" yaml:"userArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission#allow_ssh OpsworksPermission#allow_ssh}.
+	AllowSsh interface{} `json:"allowSsh" yaml:"allowSsh"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission#allow_sudo OpsworksPermission#allow_sudo}.
+	AllowSudo interface{} `json:"allowSudo" yaml:"allowSudo"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission#level OpsworksPermission#level}.
+	Level *string `json:"level" yaml:"level"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_permission#stack_id OpsworksPermission#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html aws_opsworks_php_app_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer aws_opsworks_php_app_layer}.
 type OpsworksPhpAppLayer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -14933,9 +18810,11 @@ type OpsworksPhpAppLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksPhpAppLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksPhpAppLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -14965,9 +18844,9 @@ type OpsworksPhpAppLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksPhpAppLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksPhpAppLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksPhpAppLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -14995,12 +18874,12 @@ type OpsworksPhpAppLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -15008,15 +18887,22 @@ type OpsworksPhpAppLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksPhpAppLayerCloudwatchConfiguration)
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -15127,6 +19013,26 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksPhpAppLayer) CloudwatchConfiguration() OpsworksPhpAppLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksPhpAppLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayer) CloudwatchConfigurationInput() *OpsworksPhpAppLayerCloudwatchConfiguration {
+	var returns *OpsworksPhpAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksPhpAppLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -15137,8 +19043,8 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksPhpAppLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15337,8 +19243,8 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) DrainElbOnShutdownInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) EbsVolume() *[]*OpsworksPhpAppLayerEbsVolume {
-	var returns *[]*OpsworksPhpAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksPhpAppLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -15347,8 +19253,8 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) EbsVolume() *[]*OpsworksPhpAppLayerEbsVo
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) EbsVolumeInput() *[]*OpsworksPhpAppLayerEbsVolume {
-	var returns *[]*OpsworksPhpAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksPhpAppLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -15547,8 +19453,8 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksPhpAppLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -15557,8 +19463,8 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksPhpAppLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -15567,8 +19473,8 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksPhpAppLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -15577,8 +19483,8 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksPhpAppLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -15637,7 +19543,7 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) UseEbsOptimizedInstancesInput() interfac
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html aws_opsworks_php_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer aws_opsworks_php_app_layer} Resource.
 func NewOpsworksPhpAppLayer(scope constructs.Construct, id *string, config *OpsworksPhpAppLayerConfig) OpsworksPhpAppLayer {
 	_init_.Initialize()
 
@@ -15652,7 +19558,7 @@ func NewOpsworksPhpAppLayer(scope constructs.Construct, id *string, config *Opsw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html aws_opsworks_php_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer aws_opsworks_php_app_layer} Resource.
 func NewOpsworksPhpAppLayer_Override(o OpsworksPhpAppLayer, scope constructs.Construct, id *string, config *OpsworksPhpAppLayerConfig) {
 	_init_.Initialize()
 
@@ -15687,7 +19593,7 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksPhpAppLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15775,7 +19681,7 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) SetDrainElbOnShutdown(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) SetEbsVolume(val *[]*OpsworksPhpAppLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksPhpAppLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -15847,7 +19753,7 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksPhpAppLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -15855,7 +19761,7 @@ func (j *jsiiProxy_OpsworksPhpAppLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksPhpAppLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksPhpAppLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -15911,12 +19817,40 @@ func (o *jsiiProxy_OpsworksPhpAppLayer) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksPhpAppLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15953,12 +19887,54 @@ func (o *jsiiProxy_OpsworksPhpAppLayer) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksPhpAppLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15990,6 +19966,14 @@ func (o *jsiiProxy_OpsworksPhpAppLayer) OverrideLogicalId(newLogicalId *string) 
 	)
 }
 
+func (o *jsiiProxy_OpsworksPhpAppLayer) PutCloudwatchConfiguration(value *OpsworksPhpAppLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksPhpAppLayer) ResetAutoAssignElasticIps() {
 	_jsii_.InvokeVoid(
 		o,
@@ -16010,6 +19994,14 @@ func (o *jsiiProxy_OpsworksPhpAppLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksPhpAppLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -16224,82 +20216,478 @@ func (o *jsiiProxy_OpsworksPhpAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksPhpAppLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#enabled OpsworksPhpAppLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#log_streams OpsworksPhpAppLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksPhpAppLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#file OpsworksPhpAppLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#log_group_name OpsworksPhpAppLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#batch_count OpsworksPhpAppLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#batch_size OpsworksPhpAppLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#buffer_duration OpsworksPhpAppLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#datetime_format OpsworksPhpAppLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#encoding OpsworksPhpAppLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#file_fingerprint_lines OpsworksPhpAppLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#initial_position OpsworksPhpAppLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#multiline_start_pattern OpsworksPhpAppLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#time_zone OpsworksPhpAppLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksPhpAppLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksPhpAppLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksPhpAppLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksPhpAppLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksPhpAppLayerCloudwatchConfiguration {
+	var returns *OpsworksPhpAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksPhpAppLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksPhpAppLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksPhpAppLayerCloudwatchConfigurationOutputReference_Override(o OpsworksPhpAppLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksPhpAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksPhpAppLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksPhpAppLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksPhpAppLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#stack_id OpsworksPhpAppLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#auto_assign_elastic_ips OpsworksPhpAppLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#auto_assign_public_ips OpsworksPhpAppLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#auto_healing OpsworksPhpAppLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_configure_recipes OpsworksPhpAppLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_deploy_recipes OpsworksPhpAppLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_instance_profile_arn OpsworksPhpAppLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_json OpsworksPhpAppLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_security_group_ids OpsworksPhpAppLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_setup_recipes OpsworksPhpAppLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_shutdown_recipes OpsworksPhpAppLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#custom_undeploy_recipes OpsworksPhpAppLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#drain_elb_on_shutdown OpsworksPhpAppLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#stack_id OpsworksPhpAppLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#auto_assign_elastic_ips OpsworksPhpAppLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#auto_assign_public_ips OpsworksPhpAppLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#auto_healing OpsworksPhpAppLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#cloudwatch_configuration OpsworksPhpAppLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksPhpAppLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_configure_recipes OpsworksPhpAppLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_deploy_recipes OpsworksPhpAppLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_instance_profile_arn OpsworksPhpAppLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_json OpsworksPhpAppLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_security_group_ids OpsworksPhpAppLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_setup_recipes OpsworksPhpAppLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_shutdown_recipes OpsworksPhpAppLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#custom_undeploy_recipes OpsworksPhpAppLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#drain_elb_on_shutdown OpsworksPhpAppLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#ebs_volume OpsworksPhpAppLayer#ebs_volume}
-	EbsVolume *[]*OpsworksPhpAppLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#elastic_load_balancer OpsworksPhpAppLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#install_updates_on_boot OpsworksPhpAppLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#instance_shutdown_timeout OpsworksPhpAppLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#name OpsworksPhpAppLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#system_packages OpsworksPhpAppLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#tags OpsworksPhpAppLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#tags_all OpsworksPhpAppLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#use_ebs_optimized_instances OpsworksPhpAppLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#ebs_volume OpsworksPhpAppLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#elastic_load_balancer OpsworksPhpAppLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#install_updates_on_boot OpsworksPhpAppLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#instance_shutdown_timeout OpsworksPhpAppLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#name OpsworksPhpAppLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#system_packages OpsworksPhpAppLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#tags OpsworksPhpAppLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#tags_all OpsworksPhpAppLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#use_ebs_optimized_instances OpsworksPhpAppLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksPhpAppLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#mount_point OpsworksPhpAppLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#number_of_disks OpsworksPhpAppLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#size OpsworksPhpAppLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#encrypted OpsworksPhpAppLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#iops OpsworksPhpAppLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#raid_level OpsworksPhpAppLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer.html#type OpsworksPhpAppLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#mount_point OpsworksPhpAppLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#number_of_disks OpsworksPhpAppLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#size OpsworksPhpAppLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#encrypted OpsworksPhpAppLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#iops OpsworksPhpAppLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#raid_level OpsworksPhpAppLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_php_app_layer#type OpsworksPhpAppLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html aws_opsworks_rails_app_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer aws_opsworks_rails_app_layer}.
 type OpsworksRailsAppLayer interface {
 	cdktf.TerraformResource
 	AppServer() *string
@@ -16319,9 +20707,11 @@ type OpsworksRailsAppLayer interface {
 	SetBundlerVersion(val *string)
 	BundlerVersionInput() *string
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksRailsAppLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksRailsAppLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -16351,9 +20741,9 @@ type OpsworksRailsAppLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksRailsAppLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksRailsAppLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksRailsAppLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -16393,12 +20783,12 @@ type OpsworksRailsAppLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -16406,17 +20796,24 @@ type OpsworksRailsAppLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksRailsAppLayerCloudwatchConfiguration)
 	ResetAppServer()
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
 	ResetBundlerVersion()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -16571,6 +20968,26 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksRailsAppLayer) CloudwatchConfiguration() OpsworksRailsAppLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksRailsAppLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayer) CloudwatchConfigurationInput() *OpsworksRailsAppLayerCloudwatchConfiguration {
+	var returns *OpsworksRailsAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksRailsAppLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -16581,8 +20998,8 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksRailsAppLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16781,8 +21198,8 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) DrainElbOnShutdownInput() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) EbsVolume() *[]*OpsworksRailsAppLayerEbsVolume {
-	var returns *[]*OpsworksRailsAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksRailsAppLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -16791,8 +21208,8 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) EbsVolume() *[]*OpsworksRailsAppLayerE
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) EbsVolumeInput() *[]*OpsworksRailsAppLayerEbsVolume {
-	var returns *[]*OpsworksRailsAppLayerEbsVolume
+func (j *jsiiProxy_OpsworksRailsAppLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -17071,8 +21488,8 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksRailsAppLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -17081,8 +21498,8 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksRailsAppLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -17091,8 +21508,8 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksRailsAppLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -17101,8 +21518,8 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksRailsAppLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -17161,7 +21578,7 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) UseEbsOptimizedInstancesInput() interf
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html aws_opsworks_rails_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer aws_opsworks_rails_app_layer} Resource.
 func NewOpsworksRailsAppLayer(scope constructs.Construct, id *string, config *OpsworksRailsAppLayerConfig) OpsworksRailsAppLayer {
 	_init_.Initialize()
 
@@ -17176,7 +21593,7 @@ func NewOpsworksRailsAppLayer(scope constructs.Construct, id *string, config *Op
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html aws_opsworks_rails_app_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer aws_opsworks_rails_app_layer} Resource.
 func NewOpsworksRailsAppLayer_Override(o OpsworksRailsAppLayer, scope constructs.Construct, id *string, config *OpsworksRailsAppLayerConfig) {
 	_init_.Initialize()
 
@@ -17227,7 +21644,7 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) SetBundlerVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksRailsAppLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17315,7 +21732,7 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) SetDrainElbOnShutdown(val interface{})
 	)
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) SetEbsVolume(val *[]*OpsworksRailsAppLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksRailsAppLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -17419,7 +21836,7 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksRailsAppLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -17427,7 +21844,7 @@ func (j *jsiiProxy_OpsworksRailsAppLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksRailsAppLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksRailsAppLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -17483,12 +21900,40 @@ func (o *jsiiProxy_OpsworksRailsAppLayer) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksRailsAppLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17525,12 +21970,54 @@ func (o *jsiiProxy_OpsworksRailsAppLayer) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksRailsAppLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17559,6 +22046,14 @@ func (o *jsiiProxy_OpsworksRailsAppLayer) OverrideLogicalId(newLogicalId *string
 		o,
 		"overrideLogicalId",
 		[]interface{}{newLogicalId},
+	)
+}
+
+func (o *jsiiProxy_OpsworksRailsAppLayer) PutCloudwatchConfiguration(value *OpsworksRailsAppLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
 	)
 }
 
@@ -17598,6 +22093,14 @@ func (o *jsiiProxy_OpsworksRailsAppLayer) ResetBundlerVersion() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetBundlerVersion",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksRailsAppLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -17844,100 +22347,496 @@ func (o *jsiiProxy_OpsworksRailsAppLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksRailsAppLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#enabled OpsworksRailsAppLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#log_streams OpsworksRailsAppLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksRailsAppLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#file OpsworksRailsAppLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#log_group_name OpsworksRailsAppLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#batch_count OpsworksRailsAppLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#batch_size OpsworksRailsAppLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#buffer_duration OpsworksRailsAppLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#datetime_format OpsworksRailsAppLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#encoding OpsworksRailsAppLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#file_fingerprint_lines OpsworksRailsAppLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#initial_position OpsworksRailsAppLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#multiline_start_pattern OpsworksRailsAppLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#time_zone OpsworksRailsAppLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksRailsAppLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksRailsAppLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksRailsAppLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksRailsAppLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksRailsAppLayerCloudwatchConfiguration {
+	var returns *OpsworksRailsAppLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksRailsAppLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksRailsAppLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksRailsAppLayerCloudwatchConfigurationOutputReference_Override(o OpsworksRailsAppLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksRailsAppLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksRailsAppLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksRailsAppLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksRailsAppLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#stack_id OpsworksRailsAppLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#app_server OpsworksRailsAppLayer#app_server}.
-	AppServer *string `json:"appServer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#auto_assign_elastic_ips OpsworksRailsAppLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#auto_assign_public_ips OpsworksRailsAppLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#auto_healing OpsworksRailsAppLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#bundler_version OpsworksRailsAppLayer#bundler_version}.
-	BundlerVersion *string `json:"bundlerVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_configure_recipes OpsworksRailsAppLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_deploy_recipes OpsworksRailsAppLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_instance_profile_arn OpsworksRailsAppLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_json OpsworksRailsAppLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_security_group_ids OpsworksRailsAppLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_setup_recipes OpsworksRailsAppLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_shutdown_recipes OpsworksRailsAppLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#custom_undeploy_recipes OpsworksRailsAppLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#drain_elb_on_shutdown OpsworksRailsAppLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#stack_id OpsworksRailsAppLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#app_server OpsworksRailsAppLayer#app_server}.
+	AppServer *string `json:"appServer" yaml:"appServer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#auto_assign_elastic_ips OpsworksRailsAppLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#auto_assign_public_ips OpsworksRailsAppLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#auto_healing OpsworksRailsAppLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#bundler_version OpsworksRailsAppLayer#bundler_version}.
+	BundlerVersion *string `json:"bundlerVersion" yaml:"bundlerVersion"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#cloudwatch_configuration OpsworksRailsAppLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksRailsAppLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_configure_recipes OpsworksRailsAppLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_deploy_recipes OpsworksRailsAppLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_instance_profile_arn OpsworksRailsAppLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_json OpsworksRailsAppLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_security_group_ids OpsworksRailsAppLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_setup_recipes OpsworksRailsAppLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_shutdown_recipes OpsworksRailsAppLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#custom_undeploy_recipes OpsworksRailsAppLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#drain_elb_on_shutdown OpsworksRailsAppLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#ebs_volume OpsworksRailsAppLayer#ebs_volume}
-	EbsVolume *[]*OpsworksRailsAppLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#elastic_load_balancer OpsworksRailsAppLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#install_updates_on_boot OpsworksRailsAppLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#instance_shutdown_timeout OpsworksRailsAppLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#manage_bundler OpsworksRailsAppLayer#manage_bundler}.
-	ManageBundler interface{} `json:"manageBundler"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#name OpsworksRailsAppLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#passenger_version OpsworksRailsAppLayer#passenger_version}.
-	PassengerVersion *string `json:"passengerVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#rubygems_version OpsworksRailsAppLayer#rubygems_version}.
-	RubygemsVersion *string `json:"rubygemsVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#ruby_version OpsworksRailsAppLayer#ruby_version}.
-	RubyVersion *string `json:"rubyVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#system_packages OpsworksRailsAppLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#tags OpsworksRailsAppLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#tags_all OpsworksRailsAppLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#use_ebs_optimized_instances OpsworksRailsAppLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#ebs_volume OpsworksRailsAppLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#elastic_load_balancer OpsworksRailsAppLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#install_updates_on_boot OpsworksRailsAppLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#instance_shutdown_timeout OpsworksRailsAppLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#manage_bundler OpsworksRailsAppLayer#manage_bundler}.
+	ManageBundler interface{} `json:"manageBundler" yaml:"manageBundler"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#name OpsworksRailsAppLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#passenger_version OpsworksRailsAppLayer#passenger_version}.
+	PassengerVersion *string `json:"passengerVersion" yaml:"passengerVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#rubygems_version OpsworksRailsAppLayer#rubygems_version}.
+	RubygemsVersion *string `json:"rubygemsVersion" yaml:"rubygemsVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#ruby_version OpsworksRailsAppLayer#ruby_version}.
+	RubyVersion *string `json:"rubyVersion" yaml:"rubyVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#system_packages OpsworksRailsAppLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#tags OpsworksRailsAppLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#tags_all OpsworksRailsAppLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#use_ebs_optimized_instances OpsworksRailsAppLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksRailsAppLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#mount_point OpsworksRailsAppLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#number_of_disks OpsworksRailsAppLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#size OpsworksRailsAppLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#encrypted OpsworksRailsAppLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#iops OpsworksRailsAppLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#raid_level OpsworksRailsAppLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer.html#type OpsworksRailsAppLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#mount_point OpsworksRailsAppLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#number_of_disks OpsworksRailsAppLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#size OpsworksRailsAppLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#encrypted OpsworksRailsAppLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#iops OpsworksRailsAppLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#raid_level OpsworksRailsAppLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rails_app_layer#type OpsworksRailsAppLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance.html aws_opsworks_rds_db_instance}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance aws_opsworks_rds_db_instance}.
 type OpsworksRdsDbInstance interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DbPassword() *string
 	SetDbPassword(val *string)
 	DbPasswordInput() *string
@@ -17965,10 +22864,15 @@ type OpsworksRdsDbInstance interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -18003,8 +22907,8 @@ func (j *jsiiProxy_OpsworksRdsDbInstance) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksRdsDbInstance) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksRdsDbInstance) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18203,7 +23107,7 @@ func (j *jsiiProxy_OpsworksRdsDbInstance) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance.html aws_opsworks_rds_db_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance aws_opsworks_rds_db_instance} Resource.
 func NewOpsworksRdsDbInstance(scope constructs.Construct, id *string, config *OpsworksRdsDbInstanceConfig) OpsworksRdsDbInstance {
 	_init_.Initialize()
 
@@ -18218,7 +23122,7 @@ func NewOpsworksRdsDbInstance(scope constructs.Construct, id *string, config *Op
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance.html aws_opsworks_rds_db_instance} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance aws_opsworks_rds_db_instance} Resource.
 func NewOpsworksRdsDbInstance_Override(o OpsworksRdsDbInstance, scope constructs.Construct, id *string, config *OpsworksRdsDbInstanceConfig) {
 	_init_.Initialize()
 
@@ -18229,7 +23133,7 @@ func NewOpsworksRdsDbInstance_Override(o OpsworksRdsDbInstance, scope constructs
 	)
 }
 
-func (j *jsiiProxy_OpsworksRdsDbInstance) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksRdsDbInstance) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18333,12 +23237,40 @@ func (o *jsiiProxy_OpsworksRdsDbInstance) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksRdsDbInstance) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksRdsDbInstance) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRdsDbInstance) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18375,12 +23307,54 @@ func (o *jsiiProxy_OpsworksRdsDbInstance) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksRdsDbInstance) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRdsDbInstance) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksRdsDbInstance) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksRdsDbInstance) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18481,24 +23455,24 @@ func (o *jsiiProxy_OpsworksRdsDbInstance) ToTerraform() interface{} {
 // AWS OpsWorks.
 type OpsworksRdsDbInstanceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance.html#db_password OpsworksRdsDbInstance#db_password}.
-	DbPassword *string `json:"dbPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance.html#db_user OpsworksRdsDbInstance#db_user}.
-	DbUser *string `json:"dbUser"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance.html#rds_db_instance_arn OpsworksRdsDbInstance#rds_db_instance_arn}.
-	RdsDbInstanceArn *string `json:"rdsDbInstanceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance.html#stack_id OpsworksRdsDbInstance#stack_id}.
-	StackId *string `json:"stackId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance#db_password OpsworksRdsDbInstance#db_password}.
+	DbPassword *string `json:"dbPassword" yaml:"dbPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance#db_user OpsworksRdsDbInstance#db_user}.
+	DbUser *string `json:"dbUser" yaml:"dbUser"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance#rds_db_instance_arn OpsworksRdsDbInstance#rds_db_instance_arn}.
+	RdsDbInstanceArn *string `json:"rdsDbInstanceArn" yaml:"rdsDbInstanceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_rds_db_instance#stack_id OpsworksRdsDbInstance#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html aws_opsworks_stack}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack aws_opsworks_stack}.
 type OpsworksStack interface {
 	cdktf.TerraformResource
 	AgentVersion() *string
@@ -18519,11 +23493,11 @@ type OpsworksStack interface {
 	SetConfigurationManagerVersion(val *string)
 	ConfigurationManagerVersionInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	CustomCookbooksSource() *[]*OpsworksStackCustomCookbooksSource
-	SetCustomCookbooksSource(val *[]*OpsworksStackCustomCookbooksSource)
-	CustomCookbooksSourceInput() *[]*OpsworksStackCustomCookbooksSource
+	Count() *float64
+	SetCount(val *float64)
+	CustomCookbooksSource() interface{}
+	SetCustomCookbooksSource(val interface{})
+	CustomCookbooksSourceInput() interface{}
 	CustomJson() *string
 	SetCustomJson(val *string)
 	CustomJsonInput() *string
@@ -18572,12 +23546,12 @@ type OpsworksStack interface {
 	SetServiceRoleArn(val *string)
 	ServiceRoleArnInput() *string
 	StackEndpoint() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -18591,10 +23565,15 @@ type OpsworksStack interface {
 	SetVpcId(val *string)
 	VpcIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAgentVersion()
@@ -18758,8 +23737,8 @@ func (j *jsiiProxy_OpsworksStack) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStack) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStack) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18768,8 +23747,8 @@ func (j *jsiiProxy_OpsworksStack) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStack) CustomCookbooksSource() *[]*OpsworksStackCustomCookbooksSource {
-	var returns *[]*OpsworksStackCustomCookbooksSource
+func (j *jsiiProxy_OpsworksStack) CustomCookbooksSource() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customCookbooksSource",
@@ -18778,8 +23757,8 @@ func (j *jsiiProxy_OpsworksStack) CustomCookbooksSource() *[]*OpsworksStackCusto
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStack) CustomCookbooksSourceInput() *[]*OpsworksStackCustomCookbooksSource {
-	var returns *[]*OpsworksStackCustomCookbooksSource
+func (j *jsiiProxy_OpsworksStack) CustomCookbooksSourceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"customCookbooksSourceInput",
@@ -19118,8 +24097,8 @@ func (j *jsiiProxy_OpsworksStack) StackEndpoint() *string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStack) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStack) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -19128,8 +24107,8 @@ func (j *jsiiProxy_OpsworksStack) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStack) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStack) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -19138,8 +24117,8 @@ func (j *jsiiProxy_OpsworksStack) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStack) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStack) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -19148,8 +24127,8 @@ func (j *jsiiProxy_OpsworksStack) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStack) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStack) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -19248,7 +24227,7 @@ func (j *jsiiProxy_OpsworksStack) VpcIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html aws_opsworks_stack} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack aws_opsworks_stack} Resource.
 func NewOpsworksStack(scope constructs.Construct, id *string, config *OpsworksStackConfig) OpsworksStack {
 	_init_.Initialize()
 
@@ -19263,7 +24242,7 @@ func NewOpsworksStack(scope constructs.Construct, id *string, config *OpsworksSt
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html aws_opsworks_stack} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack aws_opsworks_stack} Resource.
 func NewOpsworksStack_Override(o OpsworksStack, scope constructs.Construct, id *string, config *OpsworksStackConfig) {
 	_init_.Initialize()
 
@@ -19314,7 +24293,7 @@ func (j *jsiiProxy_OpsworksStack) SetConfigurationManagerVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksStack) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksStack) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19322,7 +24301,7 @@ func (j *jsiiProxy_OpsworksStack) SetCount(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksStack) SetCustomCookbooksSource(val *[]*OpsworksStackCustomCookbooksSource) {
+func (j *jsiiProxy_OpsworksStack) SetCustomCookbooksSource(val interface{}) {
 	_jsii_.Set(
 		j,
 		"customCookbooksSource",
@@ -19450,7 +24429,7 @@ func (j *jsiiProxy_OpsworksStack) SetServiceRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksStack) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksStack) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -19458,7 +24437,7 @@ func (j *jsiiProxy_OpsworksStack) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksStack) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksStack) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -19530,12 +24509,40 @@ func (o *jsiiProxy_OpsworksStack) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksStack) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksStack) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStack) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19572,12 +24579,54 @@ func (o *jsiiProxy_OpsworksStack) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksStack) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStack) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksStack) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStack) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19830,79 +24879,79 @@ func (o *jsiiProxy_OpsworksStack) ToTerraform() interface{} {
 // AWS OpsWorks.
 type OpsworksStackConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#default_instance_profile_arn OpsworksStack#default_instance_profile_arn}.
-	DefaultInstanceProfileArn *string `json:"defaultInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#name OpsworksStack#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#region OpsworksStack#region}.
-	Region *string `json:"region"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#service_role_arn OpsworksStack#service_role_arn}.
-	ServiceRoleArn *string `json:"serviceRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#agent_version OpsworksStack#agent_version}.
-	AgentVersion *string `json:"agentVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#berkshelf_version OpsworksStack#berkshelf_version}.
-	BerkshelfVersion *string `json:"berkshelfVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#color OpsworksStack#color}.
-	Color *string `json:"color"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#configuration_manager_name OpsworksStack#configuration_manager_name}.
-	ConfigurationManagerName *string `json:"configurationManagerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#configuration_manager_version OpsworksStack#configuration_manager_version}.
-	ConfigurationManagerVersion *string `json:"configurationManagerVersion"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#default_instance_profile_arn OpsworksStack#default_instance_profile_arn}.
+	DefaultInstanceProfileArn *string `json:"defaultInstanceProfileArn" yaml:"defaultInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#name OpsworksStack#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#region OpsworksStack#region}.
+	Region *string `json:"region" yaml:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#service_role_arn OpsworksStack#service_role_arn}.
+	ServiceRoleArn *string `json:"serviceRoleArn" yaml:"serviceRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#agent_version OpsworksStack#agent_version}.
+	AgentVersion *string `json:"agentVersion" yaml:"agentVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#berkshelf_version OpsworksStack#berkshelf_version}.
+	BerkshelfVersion *string `json:"berkshelfVersion" yaml:"berkshelfVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#color OpsworksStack#color}.
+	Color *string `json:"color" yaml:"color"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#configuration_manager_name OpsworksStack#configuration_manager_name}.
+	ConfigurationManagerName *string `json:"configurationManagerName" yaml:"configurationManagerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#configuration_manager_version OpsworksStack#configuration_manager_version}.
+	ConfigurationManagerVersion *string `json:"configurationManagerVersion" yaml:"configurationManagerVersion"`
 	// custom_cookbooks_source block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#custom_cookbooks_source OpsworksStack#custom_cookbooks_source}
-	CustomCookbooksSource *[]*OpsworksStackCustomCookbooksSource `json:"customCookbooksSource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#custom_json OpsworksStack#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#default_availability_zone OpsworksStack#default_availability_zone}.
-	DefaultAvailabilityZone *string `json:"defaultAvailabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#default_os OpsworksStack#default_os}.
-	DefaultOs *string `json:"defaultOs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#default_root_device_type OpsworksStack#default_root_device_type}.
-	DefaultRootDeviceType *string `json:"defaultRootDeviceType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#default_ssh_key_name OpsworksStack#default_ssh_key_name}.
-	DefaultSshKeyName *string `json:"defaultSshKeyName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#default_subnet_id OpsworksStack#default_subnet_id}.
-	DefaultSubnetId *string `json:"defaultSubnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#hostname_theme OpsworksStack#hostname_theme}.
-	HostnameTheme *string `json:"hostnameTheme"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#manage_berkshelf OpsworksStack#manage_berkshelf}.
-	ManageBerkshelf interface{} `json:"manageBerkshelf"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#tags OpsworksStack#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#tags_all OpsworksStack#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#use_custom_cookbooks OpsworksStack#use_custom_cookbooks}.
-	UseCustomCookbooks interface{} `json:"useCustomCookbooks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#use_opsworks_security_groups OpsworksStack#use_opsworks_security_groups}.
-	UseOpsworksSecurityGroups interface{} `json:"useOpsworksSecurityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#vpc_id OpsworksStack#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#custom_cookbooks_source OpsworksStack#custom_cookbooks_source}
+	CustomCookbooksSource interface{} `json:"customCookbooksSource" yaml:"customCookbooksSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#custom_json OpsworksStack#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#default_availability_zone OpsworksStack#default_availability_zone}.
+	DefaultAvailabilityZone *string `json:"defaultAvailabilityZone" yaml:"defaultAvailabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#default_os OpsworksStack#default_os}.
+	DefaultOs *string `json:"defaultOs" yaml:"defaultOs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#default_root_device_type OpsworksStack#default_root_device_type}.
+	DefaultRootDeviceType *string `json:"defaultRootDeviceType" yaml:"defaultRootDeviceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#default_ssh_key_name OpsworksStack#default_ssh_key_name}.
+	DefaultSshKeyName *string `json:"defaultSshKeyName" yaml:"defaultSshKeyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#default_subnet_id OpsworksStack#default_subnet_id}.
+	DefaultSubnetId *string `json:"defaultSubnetId" yaml:"defaultSubnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#hostname_theme OpsworksStack#hostname_theme}.
+	HostnameTheme *string `json:"hostnameTheme" yaml:"hostnameTheme"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#manage_berkshelf OpsworksStack#manage_berkshelf}.
+	ManageBerkshelf interface{} `json:"manageBerkshelf" yaml:"manageBerkshelf"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#tags OpsworksStack#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#tags_all OpsworksStack#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#use_custom_cookbooks OpsworksStack#use_custom_cookbooks}.
+	UseCustomCookbooks interface{} `json:"useCustomCookbooks" yaml:"useCustomCookbooks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#use_opsworks_security_groups OpsworksStack#use_opsworks_security_groups}.
+	UseOpsworksSecurityGroups interface{} `json:"useOpsworksSecurityGroups" yaml:"useOpsworksSecurityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#vpc_id OpsworksStack#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type OpsworksStackCustomCookbooksSource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#type OpsworksStack#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#url OpsworksStack#url}.
-	Url *string `json:"url"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#password OpsworksStack#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#revision OpsworksStack#revision}.
-	Revision *string `json:"revision"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#ssh_key OpsworksStack#ssh_key}.
-	SshKey *string `json:"sshKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack.html#username OpsworksStack#username}.
-	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#type OpsworksStack#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#url OpsworksStack#url}.
+	Url *string `json:"url" yaml:"url"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#password OpsworksStack#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#revision OpsworksStack#revision}.
+	Revision *string `json:"revision" yaml:"revision"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#ssh_key OpsworksStack#ssh_key}.
+	SshKey *string `json:"sshKey" yaml:"sshKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_stack#username OpsworksStack#username}.
+	Username *string `json:"username" yaml:"username"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html aws_opsworks_static_web_layer}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer aws_opsworks_static_web_layer}.
 type OpsworksStaticWebLayer interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -19916,9 +24965,11 @@ type OpsworksStaticWebLayer interface {
 	SetAutoHealing(val interface{})
 	AutoHealingInput() interface{}
 	CdktfStack() cdktf.TerraformStack
+	CloudwatchConfiguration() OpsworksStaticWebLayerCloudwatchConfigurationOutputReference
+	CloudwatchConfigurationInput() *OpsworksStaticWebLayerCloudwatchConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomConfigureRecipes() *[]*string
 	SetCustomConfigureRecipes(val *[]*string)
 	CustomConfigureRecipesInput() *[]*string
@@ -19948,9 +24999,9 @@ type OpsworksStaticWebLayer interface {
 	DrainElbOnShutdown() interface{}
 	SetDrainElbOnShutdown(val interface{})
 	DrainElbOnShutdownInput() interface{}
-	EbsVolume() *[]*OpsworksStaticWebLayerEbsVolume
-	SetEbsVolume(val *[]*OpsworksStaticWebLayerEbsVolume)
-	EbsVolumeInput() *[]*OpsworksStaticWebLayerEbsVolume
+	EbsVolume() interface{}
+	SetEbsVolume(val interface{})
+	EbsVolumeInput() interface{}
 	ElasticLoadBalancer() *string
 	SetElasticLoadBalancer(val *string)
 	ElasticLoadBalancerInput() *string
@@ -19978,12 +25029,12 @@ type OpsworksStaticWebLayer interface {
 	SystemPackages() *[]*string
 	SetSystemPackages(val *[]*string)
 	SystemPackagesInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -19991,15 +25042,22 @@ type OpsworksStaticWebLayer interface {
 	SetUseEbsOptimizedInstances(val interface{})
 	UseEbsOptimizedInstancesInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
+	PutCloudwatchConfiguration(value *OpsworksStaticWebLayerCloudwatchConfiguration)
 	ResetAutoAssignElasticIps()
 	ResetAutoAssignPublicIps()
 	ResetAutoHealing()
+	ResetCloudwatchConfiguration()
 	ResetCustomConfigureRecipes()
 	ResetCustomDeployRecipes()
 	ResetCustomInstanceProfileArn()
@@ -20110,6 +25168,26 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_OpsworksStaticWebLayer) CloudwatchConfiguration() OpsworksStaticWebLayerCloudwatchConfigurationOutputReference {
+	var returns OpsworksStaticWebLayerCloudwatchConfigurationOutputReference
+	_jsii_.Get(
+		j,
+		"cloudwatchConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayer) CloudwatchConfigurationInput() *OpsworksStaticWebLayerCloudwatchConfiguration {
+	var returns *OpsworksStaticWebLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"cloudwatchConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OpsworksStaticWebLayer) ConstructNodeMetadata() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -20120,8 +25198,8 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStaticWebLayer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20320,8 +25398,8 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) DrainElbOnShutdownInput() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) EbsVolume() *[]*OpsworksStaticWebLayerEbsVolume {
-	var returns *[]*OpsworksStaticWebLayerEbsVolume
+func (j *jsiiProxy_OpsworksStaticWebLayer) EbsVolume() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolume",
@@ -20330,8 +25408,8 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) EbsVolume() *[]*OpsworksStaticWebLaye
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) EbsVolumeInput() *[]*OpsworksStaticWebLayerEbsVolume {
-	var returns *[]*OpsworksStaticWebLayerEbsVolume
+func (j *jsiiProxy_OpsworksStaticWebLayer) EbsVolumeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ebsVolumeInput",
@@ -20530,8 +25608,8 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) SystemPackagesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStaticWebLayer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -20540,8 +25618,8 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStaticWebLayer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -20550,8 +25628,8 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStaticWebLayer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -20560,8 +25638,8 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksStaticWebLayer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -20620,7 +25698,7 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) UseEbsOptimizedInstancesInput() inter
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html aws_opsworks_static_web_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer aws_opsworks_static_web_layer} Resource.
 func NewOpsworksStaticWebLayer(scope constructs.Construct, id *string, config *OpsworksStaticWebLayerConfig) OpsworksStaticWebLayer {
 	_init_.Initialize()
 
@@ -20635,7 +25713,7 @@ func NewOpsworksStaticWebLayer(scope constructs.Construct, id *string, config *O
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html aws_opsworks_static_web_layer} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer aws_opsworks_static_web_layer} Resource.
 func NewOpsworksStaticWebLayer_Override(o OpsworksStaticWebLayer, scope constructs.Construct, id *string, config *OpsworksStaticWebLayerConfig) {
 	_init_.Initialize()
 
@@ -20670,7 +25748,7 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) SetAutoHealing(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksStaticWebLayer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20758,7 +25836,7 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) SetDrainElbOnShutdown(val interface{}
 	)
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) SetEbsVolume(val *[]*OpsworksStaticWebLayerEbsVolume) {
+func (j *jsiiProxy_OpsworksStaticWebLayer) SetEbsVolume(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ebsVolume",
@@ -20830,7 +25908,7 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) SetSystemPackages(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) SetTags(val interface{}) {
+func (j *jsiiProxy_OpsworksStaticWebLayer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -20838,7 +25916,7 @@ func (j *jsiiProxy_OpsworksStaticWebLayer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_OpsworksStaticWebLayer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_OpsworksStaticWebLayer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -20894,12 +25972,40 @@ func (o *jsiiProxy_OpsworksStaticWebLayer) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksStaticWebLayer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20936,12 +26042,54 @@ func (o *jsiiProxy_OpsworksStaticWebLayer) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksStaticWebLayer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20973,6 +26121,14 @@ func (o *jsiiProxy_OpsworksStaticWebLayer) OverrideLogicalId(newLogicalId *strin
 	)
 }
 
+func (o *jsiiProxy_OpsworksStaticWebLayer) PutCloudwatchConfiguration(value *OpsworksStaticWebLayerCloudwatchConfiguration) {
+	_jsii_.InvokeVoid(
+		o,
+		"putCloudwatchConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OpsworksStaticWebLayer) ResetAutoAssignElasticIps() {
 	_jsii_.InvokeVoid(
 		o,
@@ -20993,6 +26149,14 @@ func (o *jsiiProxy_OpsworksStaticWebLayer) ResetAutoHealing() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetAutoHealing",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksStaticWebLayer) ResetCloudwatchConfiguration() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCloudwatchConfiguration",
 		nil, // no parameters
 	)
 }
@@ -21207,82 +26371,478 @@ func (o *jsiiProxy_OpsworksStaticWebLayer) ToTerraform() interface{} {
 	return returns
 }
 
+type OpsworksStaticWebLayerCloudwatchConfiguration struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#enabled OpsworksStaticWebLayer#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// log_streams block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#log_streams OpsworksStaticWebLayer#log_streams}
+	LogStreams interface{} `json:"logStreams" yaml:"logStreams"`
+}
+
+type OpsworksStaticWebLayerCloudwatchConfigurationLogStreams struct {
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#file OpsworksStaticWebLayer#file}.
+	File *string `json:"file" yaml:"file"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#log_group_name OpsworksStaticWebLayer#log_group_name}.
+	LogGroupName *string `json:"logGroupName" yaml:"logGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#batch_count OpsworksStaticWebLayer#batch_count}.
+	BatchCount *float64 `json:"batchCount" yaml:"batchCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#batch_size OpsworksStaticWebLayer#batch_size}.
+	BatchSize *float64 `json:"batchSize" yaml:"batchSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#buffer_duration OpsworksStaticWebLayer#buffer_duration}.
+	BufferDuration *float64 `json:"bufferDuration" yaml:"bufferDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#datetime_format OpsworksStaticWebLayer#datetime_format}.
+	DatetimeFormat *string `json:"datetimeFormat" yaml:"datetimeFormat"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#encoding OpsworksStaticWebLayer#encoding}.
+	Encoding *string `json:"encoding" yaml:"encoding"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#file_fingerprint_lines OpsworksStaticWebLayer#file_fingerprint_lines}.
+	FileFingerprintLines *string `json:"fileFingerprintLines" yaml:"fileFingerprintLines"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#initial_position OpsworksStaticWebLayer#initial_position}.
+	InitialPosition *string `json:"initialPosition" yaml:"initialPosition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#multiline_start_pattern OpsworksStaticWebLayer#multiline_start_pattern}.
+	MultilineStartPattern *string `json:"multilineStartPattern" yaml:"multilineStartPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#time_zone OpsworksStaticWebLayer#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
+}
+
+type OpsworksStaticWebLayerCloudwatchConfigurationOutputReference interface {
+	cdktf.ComplexObject
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
+	InternalValue() *OpsworksStaticWebLayerCloudwatchConfiguration
+	SetInternalValue(val *OpsworksStaticWebLayerCloudwatchConfiguration)
+	IsSingleItem() *bool
+	SetIsSingleItem(val *bool)
+	LogStreams() interface{}
+	SetLogStreams(val interface{})
+	LogStreamsInput() interface{}
+	TerraformAttribute() *string
+	SetTerraformAttribute(val *string)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
+	GetListAttribute(terraformAttribute *string) *[]*string
+	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
+	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
+	InterpolationAsList() cdktf.IResolvable
+	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEnabled()
+	ResetLogStreams()
+}
+
+// The jsii proxy struct for OpsworksStaticWebLayerCloudwatchConfigurationOutputReference
+type jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference struct {
+	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) InternalValue() *OpsworksStaticWebLayerCloudwatchConfiguration {
+	var returns *OpsworksStaticWebLayerCloudwatchConfiguration
+	_jsii_.Get(
+		j,
+		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) IsSingleItem() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"isSingleItem",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) LogStreams() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreams",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) LogStreamsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) TerraformAttribute() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"terraformAttribute",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
+	_jsii_.Get(
+		j,
+		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func NewOpsworksStaticWebLayerCloudwatchConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) OpsworksStaticWebLayerCloudwatchConfigurationOutputReference {
+	_init_.Initialize()
+
+	j := jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference{}
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		&j,
+	)
+
+	return &j
+}
+
+func NewOpsworksStaticWebLayerCloudwatchConfigurationOutputReference_Override(o OpsworksStaticWebLayerCloudwatchConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
+	_init_.Initialize()
+
+	_jsii_.Create(
+		"hashicorp_aws.opsworks.OpsworksStaticWebLayerCloudwatchConfigurationOutputReference",
+		[]interface{}{terraformResource, terraformAttribute, isSingleItem},
+		o,
+	)
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) SetEnabled(val interface{}) {
+	_jsii_.Set(
+		j,
+		"enabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) SetInternalValue(val *OpsworksStaticWebLayerCloudwatchConfiguration) {
+	_jsii_.Set(
+		j,
+		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) SetIsSingleItem(val *bool) {
+	_jsii_.Set(
+		j,
+		"isSingleItem",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) SetLogStreams(val interface{}) {
+	_jsii_.Set(
+		j,
+		"logStreams",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) SetTerraformAttribute(val *string) {
+	_jsii_.Set(
+		j,
+		"terraformAttribute",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
+	_jsii_.Set(
+		j,
+		"terraformResource",
+		val,
+	)
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetListAttribute(terraformAttribute *string) *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"getListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetNumberAttribute(terraformAttribute *string) *float64 {
+	var returns *float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) InterpolationAsList() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationAsList",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) InterpolationForAttribute(property *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
+
+	_jsii_.Invoke(
+		o,
+		"interpolationForAttribute",
+		[]interface{}{property},
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OpsworksStaticWebLayerCloudwatchConfigurationOutputReference) ResetLogStreams() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetLogStreams",
+		nil, // no parameters
+	)
+}
+
 // AWS OpsWorks.
 type OpsworksStaticWebLayerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#stack_id OpsworksStaticWebLayer#stack_id}.
-	StackId *string `json:"stackId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#auto_assign_elastic_ips OpsworksStaticWebLayer#auto_assign_elastic_ips}.
-	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#auto_assign_public_ips OpsworksStaticWebLayer#auto_assign_public_ips}.
-	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#auto_healing OpsworksStaticWebLayer#auto_healing}.
-	AutoHealing interface{} `json:"autoHealing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_configure_recipes OpsworksStaticWebLayer#custom_configure_recipes}.
-	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_deploy_recipes OpsworksStaticWebLayer#custom_deploy_recipes}.
-	CustomDeployRecipes *[]*string `json:"customDeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_instance_profile_arn OpsworksStaticWebLayer#custom_instance_profile_arn}.
-	CustomInstanceProfileArn *string `json:"customInstanceProfileArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_json OpsworksStaticWebLayer#custom_json}.
-	CustomJson *string `json:"customJson"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_security_group_ids OpsworksStaticWebLayer#custom_security_group_ids}.
-	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_setup_recipes OpsworksStaticWebLayer#custom_setup_recipes}.
-	CustomSetupRecipes *[]*string `json:"customSetupRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_shutdown_recipes OpsworksStaticWebLayer#custom_shutdown_recipes}.
-	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#custom_undeploy_recipes OpsworksStaticWebLayer#custom_undeploy_recipes}.
-	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#drain_elb_on_shutdown OpsworksStaticWebLayer#drain_elb_on_shutdown}.
-	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#stack_id OpsworksStaticWebLayer#stack_id}.
+	StackId *string `json:"stackId" yaml:"stackId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#auto_assign_elastic_ips OpsworksStaticWebLayer#auto_assign_elastic_ips}.
+	AutoAssignElasticIps interface{} `json:"autoAssignElasticIps" yaml:"autoAssignElasticIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#auto_assign_public_ips OpsworksStaticWebLayer#auto_assign_public_ips}.
+	AutoAssignPublicIps interface{} `json:"autoAssignPublicIps" yaml:"autoAssignPublicIps"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#auto_healing OpsworksStaticWebLayer#auto_healing}.
+	AutoHealing interface{} `json:"autoHealing" yaml:"autoHealing"`
+	// cloudwatch_configuration block.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#cloudwatch_configuration OpsworksStaticWebLayer#cloudwatch_configuration}
+	CloudwatchConfiguration *OpsworksStaticWebLayerCloudwatchConfiguration `json:"cloudwatchConfiguration" yaml:"cloudwatchConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_configure_recipes OpsworksStaticWebLayer#custom_configure_recipes}.
+	CustomConfigureRecipes *[]*string `json:"customConfigureRecipes" yaml:"customConfigureRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_deploy_recipes OpsworksStaticWebLayer#custom_deploy_recipes}.
+	CustomDeployRecipes *[]*string `json:"customDeployRecipes" yaml:"customDeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_instance_profile_arn OpsworksStaticWebLayer#custom_instance_profile_arn}.
+	CustomInstanceProfileArn *string `json:"customInstanceProfileArn" yaml:"customInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_json OpsworksStaticWebLayer#custom_json}.
+	CustomJson *string `json:"customJson" yaml:"customJson"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_security_group_ids OpsworksStaticWebLayer#custom_security_group_ids}.
+	CustomSecurityGroupIds *[]*string `json:"customSecurityGroupIds" yaml:"customSecurityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_setup_recipes OpsworksStaticWebLayer#custom_setup_recipes}.
+	CustomSetupRecipes *[]*string `json:"customSetupRecipes" yaml:"customSetupRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_shutdown_recipes OpsworksStaticWebLayer#custom_shutdown_recipes}.
+	CustomShutdownRecipes *[]*string `json:"customShutdownRecipes" yaml:"customShutdownRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#custom_undeploy_recipes OpsworksStaticWebLayer#custom_undeploy_recipes}.
+	CustomUndeployRecipes *[]*string `json:"customUndeployRecipes" yaml:"customUndeployRecipes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#drain_elb_on_shutdown OpsworksStaticWebLayer#drain_elb_on_shutdown}.
+	DrainElbOnShutdown interface{} `json:"drainElbOnShutdown" yaml:"drainElbOnShutdown"`
 	// ebs_volume block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#ebs_volume OpsworksStaticWebLayer#ebs_volume}
-	EbsVolume *[]*OpsworksStaticWebLayerEbsVolume `json:"ebsVolume"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#elastic_load_balancer OpsworksStaticWebLayer#elastic_load_balancer}.
-	ElasticLoadBalancer *string `json:"elasticLoadBalancer"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#install_updates_on_boot OpsworksStaticWebLayer#install_updates_on_boot}.
-	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#instance_shutdown_timeout OpsworksStaticWebLayer#instance_shutdown_timeout}.
-	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#name OpsworksStaticWebLayer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#system_packages OpsworksStaticWebLayer#system_packages}.
-	SystemPackages *[]*string `json:"systemPackages"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#tags OpsworksStaticWebLayer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#tags_all OpsworksStaticWebLayer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#use_ebs_optimized_instances OpsworksStaticWebLayer#use_ebs_optimized_instances}.
-	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#ebs_volume OpsworksStaticWebLayer#ebs_volume}
+	EbsVolume interface{} `json:"ebsVolume" yaml:"ebsVolume"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#elastic_load_balancer OpsworksStaticWebLayer#elastic_load_balancer}.
+	ElasticLoadBalancer *string `json:"elasticLoadBalancer" yaml:"elasticLoadBalancer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#install_updates_on_boot OpsworksStaticWebLayer#install_updates_on_boot}.
+	InstallUpdatesOnBoot interface{} `json:"installUpdatesOnBoot" yaml:"installUpdatesOnBoot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#instance_shutdown_timeout OpsworksStaticWebLayer#instance_shutdown_timeout}.
+	InstanceShutdownTimeout *float64 `json:"instanceShutdownTimeout" yaml:"instanceShutdownTimeout"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#name OpsworksStaticWebLayer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#system_packages OpsworksStaticWebLayer#system_packages}.
+	SystemPackages *[]*string `json:"systemPackages" yaml:"systemPackages"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#tags OpsworksStaticWebLayer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#tags_all OpsworksStaticWebLayer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#use_ebs_optimized_instances OpsworksStaticWebLayer#use_ebs_optimized_instances}.
+	UseEbsOptimizedInstances interface{} `json:"useEbsOptimizedInstances" yaml:"useEbsOptimizedInstances"`
 }
 
 type OpsworksStaticWebLayerEbsVolume struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#mount_point OpsworksStaticWebLayer#mount_point}.
-	MountPoint *string `json:"mountPoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#number_of_disks OpsworksStaticWebLayer#number_of_disks}.
-	NumberOfDisks *float64 `json:"numberOfDisks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#size OpsworksStaticWebLayer#size}.
-	Size *float64 `json:"size"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#encrypted OpsworksStaticWebLayer#encrypted}.
-	Encrypted interface{} `json:"encrypted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#iops OpsworksStaticWebLayer#iops}.
-	Iops *float64 `json:"iops"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#raid_level OpsworksStaticWebLayer#raid_level}.
-	RaidLevel *string `json:"raidLevel"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer.html#type OpsworksStaticWebLayer#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#mount_point OpsworksStaticWebLayer#mount_point}.
+	MountPoint *string `json:"mountPoint" yaml:"mountPoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#number_of_disks OpsworksStaticWebLayer#number_of_disks}.
+	NumberOfDisks *float64 `json:"numberOfDisks" yaml:"numberOfDisks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#size OpsworksStaticWebLayer#size}.
+	Size *float64 `json:"size" yaml:"size"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#encrypted OpsworksStaticWebLayer#encrypted}.
+	Encrypted interface{} `json:"encrypted" yaml:"encrypted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#iops OpsworksStaticWebLayer#iops}.
+	Iops *float64 `json:"iops" yaml:"iops"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#raid_level OpsworksStaticWebLayer#raid_level}.
+	RaidLevel *string `json:"raidLevel" yaml:"raidLevel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_static_web_layer#type OpsworksStaticWebLayer#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile.html aws_opsworks_user_profile}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile aws_opsworks_user_profile}.
 type OpsworksUserProfile interface {
 	cdktf.TerraformResource
 	AllowSelfManagement() interface{}
@@ -21290,8 +26850,8 @@ type OpsworksUserProfile interface {
 	AllowSelfManagementInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -21316,10 +26876,15 @@ type OpsworksUserProfile interface {
 	SetUserArn(val *string)
 	UserArnInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAllowSelfManagement()
@@ -21376,8 +26941,8 @@ func (j *jsiiProxy_OpsworksUserProfile) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_OpsworksUserProfile) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_OpsworksUserProfile) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -21556,7 +27121,7 @@ func (j *jsiiProxy_OpsworksUserProfile) UserArnInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile.html aws_opsworks_user_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile aws_opsworks_user_profile} Resource.
 func NewOpsworksUserProfile(scope constructs.Construct, id *string, config *OpsworksUserProfileConfig) OpsworksUserProfile {
 	_init_.Initialize()
 
@@ -21571,7 +27136,7 @@ func NewOpsworksUserProfile(scope constructs.Construct, id *string, config *Opsw
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile.html aws_opsworks_user_profile} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile aws_opsworks_user_profile} Resource.
 func NewOpsworksUserProfile_Override(o OpsworksUserProfile, scope constructs.Construct, id *string, config *OpsworksUserProfileConfig) {
 	_init_.Initialize()
 
@@ -21590,7 +27155,7 @@ func (j *jsiiProxy_OpsworksUserProfile) SetAllowSelfManagement(val interface{}) 
 	)
 }
 
-func (j *jsiiProxy_OpsworksUserProfile) SetCount(val interface{}) {
+func (j *jsiiProxy_OpsworksUserProfile) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -21686,12 +27251,40 @@ func (o *jsiiProxy_OpsworksUserProfile) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksUserProfile) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		o,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksUserProfile) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		o,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksUserProfile) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		o,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21728,12 +27321,54 @@ func (o *jsiiProxy_OpsworksUserProfile) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (o *jsiiProxy_OpsworksUserProfile) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksUserProfile) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		o,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (o *jsiiProxy_OpsworksUserProfile) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		o,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (o *jsiiProxy_OpsworksUserProfile) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		o,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21850,19 +27485,19 @@ func (o *jsiiProxy_OpsworksUserProfile) ToTerraform() interface{} {
 // AWS OpsWorks.
 type OpsworksUserProfileConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile.html#ssh_username OpsworksUserProfile#ssh_username}.
-	SshUsername *string `json:"sshUsername"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile.html#user_arn OpsworksUserProfile#user_arn}.
-	UserArn *string `json:"userArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile.html#allow_self_management OpsworksUserProfile#allow_self_management}.
-	AllowSelfManagement interface{} `json:"allowSelfManagement"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile.html#ssh_public_key OpsworksUserProfile#ssh_public_key}.
-	SshPublicKey *string `json:"sshPublicKey"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile#ssh_username OpsworksUserProfile#ssh_username}.
+	SshUsername *string `json:"sshUsername" yaml:"sshUsername"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile#user_arn OpsworksUserProfile#user_arn}.
+	UserArn *string `json:"userArn" yaml:"userArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile#allow_self_management OpsworksUserProfile#allow_self_management}.
+	AllowSelfManagement interface{} `json:"allowSelfManagement" yaml:"allowSelfManagement"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/opsworks_user_profile#ssh_public_key OpsworksUserProfile#ssh_public_key}.
+	SshPublicKey *string `json:"sshPublicKey" yaml:"sshPublicKey"`
 }

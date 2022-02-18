@@ -9,17 +9,17 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/codepipeline/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html aws_codepipeline}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codepipeline aws_codepipeline}.
 type Codepipeline interface {
 	cdktf.TerraformResource
 	Arn() *string
-	ArtifactStore() *[]*CodepipelineArtifactStore
-	SetArtifactStore(val *[]*CodepipelineArtifactStore)
-	ArtifactStoreInput() *[]*CodepipelineArtifactStore
+	ArtifactStore() interface{}
+	SetArtifactStore(val interface{})
+	ArtifactStoreInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -37,23 +37,28 @@ type Codepipeline interface {
 	RoleArn() *string
 	SetRoleArn(val *string)
 	RoleArnInput() *string
-	Stage() *[]*CodepipelineStage
-	SetStage(val *[]*CodepipelineStage)
-	StageInput() *[]*CodepipelineStage
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Stage() interface{}
+	SetStage(val interface{})
+	StageInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -80,8 +85,8 @@ func (j *jsiiProxy_Codepipeline) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) ArtifactStore() *[]*CodepipelineArtifactStore {
-	var returns *[]*CodepipelineArtifactStore
+func (j *jsiiProxy_Codepipeline) ArtifactStore() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"artifactStore",
@@ -90,8 +95,8 @@ func (j *jsiiProxy_Codepipeline) ArtifactStore() *[]*CodepipelineArtifactStore {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) ArtifactStoreInput() *[]*CodepipelineArtifactStore {
-	var returns *[]*CodepipelineArtifactStore
+func (j *jsiiProxy_Codepipeline) ArtifactStoreInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"artifactStoreInput",
@@ -120,8 +125,8 @@ func (j *jsiiProxy_Codepipeline) ConstructNodeMetadata() *map[string]interface{}
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Codepipeline) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -250,8 +255,8 @@ func (j *jsiiProxy_Codepipeline) RoleArnInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) Stage() *[]*CodepipelineStage {
-	var returns *[]*CodepipelineStage
+func (j *jsiiProxy_Codepipeline) Stage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"stage",
@@ -260,8 +265,8 @@ func (j *jsiiProxy_Codepipeline) Stage() *[]*CodepipelineStage {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) StageInput() *[]*CodepipelineStage {
-	var returns *[]*CodepipelineStage
+func (j *jsiiProxy_Codepipeline) StageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"stageInput",
@@ -270,8 +275,8 @@ func (j *jsiiProxy_Codepipeline) StageInput() *[]*CodepipelineStage {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Codepipeline) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -280,8 +285,8 @@ func (j *jsiiProxy_Codepipeline) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Codepipeline) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -290,8 +295,8 @@ func (j *jsiiProxy_Codepipeline) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Codepipeline) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -300,8 +305,8 @@ func (j *jsiiProxy_Codepipeline) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Codepipeline) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Codepipeline) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -340,7 +345,7 @@ func (j *jsiiProxy_Codepipeline) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html aws_codepipeline} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline aws_codepipeline} Resource.
 func NewCodepipeline(scope constructs.Construct, id *string, config *CodepipelineConfig) Codepipeline {
 	_init_.Initialize()
 
@@ -355,7 +360,7 @@ func NewCodepipeline(scope constructs.Construct, id *string, config *Codepipelin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html aws_codepipeline} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline aws_codepipeline} Resource.
 func NewCodepipeline_Override(c Codepipeline, scope constructs.Construct, id *string, config *CodepipelineConfig) {
 	_init_.Initialize()
 
@@ -366,7 +371,7 @@ func NewCodepipeline_Override(c Codepipeline, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_Codepipeline) SetArtifactStore(val *[]*CodepipelineArtifactStore) {
+func (j *jsiiProxy_Codepipeline) SetArtifactStore(val interface{}) {
 	_jsii_.Set(
 		j,
 		"artifactStore",
@@ -374,7 +379,7 @@ func (j *jsiiProxy_Codepipeline) SetArtifactStore(val *[]*CodepipelineArtifactSt
 	)
 }
 
-func (j *jsiiProxy_Codepipeline) SetCount(val interface{}) {
+func (j *jsiiProxy_Codepipeline) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -422,7 +427,7 @@ func (j *jsiiProxy_Codepipeline) SetRoleArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Codepipeline) SetStage(val *[]*CodepipelineStage) {
+func (j *jsiiProxy_Codepipeline) SetStage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"stage",
@@ -430,7 +435,7 @@ func (j *jsiiProxy_Codepipeline) SetStage(val *[]*CodepipelineStage) {
 	)
 }
 
-func (j *jsiiProxy_Codepipeline) SetTags(val interface{}) {
+func (j *jsiiProxy_Codepipeline) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -438,7 +443,7 @@ func (j *jsiiProxy_Codepipeline) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Codepipeline) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Codepipeline) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -486,12 +491,40 @@ func (c *jsiiProxy_Codepipeline) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (c *jsiiProxy_Codepipeline) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_Codepipeline) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_Codepipeline) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -528,12 +561,54 @@ func (c *jsiiProxy_Codepipeline) GetNumberAttribute(terraformAttribute *string) 
 }
 
 // Experimental.
+func (c *jsiiProxy_Codepipeline) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_Codepipeline) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_Codepipeline) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_Codepipeline) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -648,23 +723,23 @@ func (c *jsiiProxy_Codepipeline) ToTerraform() interface{} {
 }
 
 type CodepipelineArtifactStore struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#location Codepipeline#location}.
-	Location *string `json:"location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#type Codepipeline#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#location Codepipeline#location}.
+	Location *string `json:"location" yaml:"location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#type Codepipeline#type}.
+	Type *string `json:"type" yaml:"type"`
 	// encryption_key block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#encryption_key Codepipeline#encryption_key}
-	EncryptionKey *CodepipelineArtifactStoreEncryptionKey `json:"encryptionKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#region Codepipeline#region}.
-	Region *string `json:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#encryption_key Codepipeline#encryption_key}
+	EncryptionKey *CodepipelineArtifactStoreEncryptionKey `json:"encryptionKey" yaml:"encryptionKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#region Codepipeline#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
 type CodepipelineArtifactStoreEncryptionKey struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#id Codepipeline#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#type Codepipeline#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#id Codepipeline#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#type Codepipeline#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type CodepipelineArtifactStoreEncryptionKeyOutputReference interface {
@@ -678,15 +753,20 @@ type CodepipelineArtifactStoreEncryptionKeyOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -746,8 +826,8 @@ func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -776,7 +856,7 @@ func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) TypeIn
 	return returns
 }
 
-func NewCodepipelineArtifactStoreEncryptionKeyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodepipelineArtifactStoreEncryptionKeyOutputReference {
+func NewCodepipelineArtifactStoreEncryptionKeyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodepipelineArtifactStoreEncryptionKeyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference{}
@@ -790,7 +870,7 @@ func NewCodepipelineArtifactStoreEncryptionKeyOutputReference(terraformResource 
 	return &j
 }
 
-func NewCodepipelineArtifactStoreEncryptionKeyOutputReference_Override(c CodepipelineArtifactStoreEncryptionKeyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodepipelineArtifactStoreEncryptionKeyOutputReference_Override(c CodepipelineArtifactStoreEncryptionKeyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -832,7 +912,7 @@ func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -849,12 +929,40 @@ func (j *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) SetTyp
 }
 
 // Experimental.
-func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -891,12 +999,54 @@ func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetNum
 }
 
 // Experimental.
+func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -935,70 +1085,71 @@ func (c *jsiiProxy_CodepipelineArtifactStoreEncryptionKeyOutputReference) Interp
 // AWS CodePipeline.
 type CodepipelineConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// artifact_store block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#artifact_store Codepipeline#artifact_store}
-	ArtifactStore *[]*CodepipelineArtifactStore `json:"artifactStore"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#name Codepipeline#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#role_arn Codepipeline#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#artifact_store Codepipeline#artifact_store}
+	ArtifactStore interface{} `json:"artifactStore" yaml:"artifactStore"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#name Codepipeline#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#role_arn Codepipeline#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 	// stage block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#stage Codepipeline#stage}
-	Stage *[]*CodepipelineStage `json:"stage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#tags Codepipeline#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#tags_all Codepipeline#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#stage Codepipeline#stage}
+	Stage interface{} `json:"stage" yaml:"stage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#tags Codepipeline#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#tags_all Codepipeline#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type CodepipelineStage struct {
 	// action block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#action Codepipeline#action}
-	Action *[]*CodepipelineStageAction `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#name Codepipeline#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#action Codepipeline#action}
+	Action interface{} `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#name Codepipeline#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type CodepipelineStageAction struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#category Codepipeline#category}.
-	Category *string `json:"category"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#name Codepipeline#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#owner Codepipeline#owner}.
-	Owner *string `json:"owner"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#provider Codepipeline#provider}.
-	Provider *string `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#version Codepipeline#version}.
-	Version *string `json:"version"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#configuration Codepipeline#configuration}.
-	Configuration interface{} `json:"configuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#input_artifacts Codepipeline#input_artifacts}.
-	InputArtifacts *[]*string `json:"inputArtifacts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#namespace Codepipeline#namespace}.
-	Namespace *string `json:"namespace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#output_artifacts Codepipeline#output_artifacts}.
-	OutputArtifacts *[]*string `json:"outputArtifacts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#region Codepipeline#region}.
-	Region *string `json:"region"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#role_arn Codepipeline#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline.html#run_order Codepipeline#run_order}.
-	RunOrder *float64 `json:"runOrder"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#category Codepipeline#category}.
+	Category *string `json:"category" yaml:"category"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#name Codepipeline#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#owner Codepipeline#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#provider Codepipeline#provider}.
+	Provider *string `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#version Codepipeline#version}.
+	Version *string `json:"version" yaml:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#configuration Codepipeline#configuration}.
+	Configuration *map[string]*string `json:"configuration" yaml:"configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#input_artifacts Codepipeline#input_artifacts}.
+	InputArtifacts *[]*string `json:"inputArtifacts" yaml:"inputArtifacts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#namespace Codepipeline#namespace}.
+	Namespace *string `json:"namespace" yaml:"namespace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#output_artifacts Codepipeline#output_artifacts}.
+	OutputArtifacts *[]*string `json:"outputArtifacts" yaml:"outputArtifacts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#region Codepipeline#region}.
+	Region *string `json:"region" yaml:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#role_arn Codepipeline#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline#run_order Codepipeline#run_order}.
+	RunOrder *float64 `json:"runOrder" yaml:"runOrder"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html aws_codepipeline_webhook}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook aws_codepipeline_webhook}.
 type CodepipelineWebhook interface {
 	cdktf.TerraformResource
+	Arn() *string
 	Authentication() *string
 	SetAuthentication(val *string)
 	AuthenticationConfiguration() CodepipelineWebhookAuthenticationConfigurationOutputReference
@@ -1006,13 +1157,13 @@ type CodepipelineWebhook interface {
 	AuthenticationInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filter() *[]*CodepipelineWebhookFilter
-	SetFilter(val *[]*CodepipelineWebhookFilter)
-	FilterInput() *[]*CodepipelineWebhookFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -1025,12 +1176,12 @@ type CodepipelineWebhook interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TargetAction() *string
 	SetTargetAction(val *string)
 	TargetActionInput() *string
@@ -1042,10 +1193,15 @@ type CodepipelineWebhook interface {
 	TerraformResourceType() *string
 	Url() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAuthenticationConfiguration(value *CodepipelineWebhookAuthenticationConfiguration)
@@ -1062,6 +1218,16 @@ type CodepipelineWebhook interface {
 // The jsii proxy struct for CodepipelineWebhook
 type jsiiProxy_CodepipelineWebhook struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_CodepipelineWebhook) Arn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"arn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CodepipelineWebhook) Authentication() *string {
@@ -1124,8 +1290,8 @@ func (j *jsiiProxy_CodepipelineWebhook) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodepipelineWebhook) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1144,8 +1310,8 @@ func (j *jsiiProxy_CodepipelineWebhook) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) Filter() *[]*CodepipelineWebhookFilter {
-	var returns *[]*CodepipelineWebhookFilter
+func (j *jsiiProxy_CodepipelineWebhook) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -1154,8 +1320,8 @@ func (j *jsiiProxy_CodepipelineWebhook) Filter() *[]*CodepipelineWebhookFilter {
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) FilterInput() *[]*CodepipelineWebhookFilter {
-	var returns *[]*CodepipelineWebhookFilter
+func (j *jsiiProxy_CodepipelineWebhook) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -1254,8 +1420,8 @@ func (j *jsiiProxy_CodepipelineWebhook) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodepipelineWebhook) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1264,8 +1430,8 @@ func (j *jsiiProxy_CodepipelineWebhook) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodepipelineWebhook) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1274,8 +1440,8 @@ func (j *jsiiProxy_CodepipelineWebhook) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodepipelineWebhook) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1284,8 +1450,8 @@ func (j *jsiiProxy_CodepipelineWebhook) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CodepipelineWebhook) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1374,7 +1540,7 @@ func (j *jsiiProxy_CodepipelineWebhook) Url() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html aws_codepipeline_webhook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook aws_codepipeline_webhook} Resource.
 func NewCodepipelineWebhook(scope constructs.Construct, id *string, config *CodepipelineWebhookConfig) CodepipelineWebhook {
 	_init_.Initialize()
 
@@ -1389,7 +1555,7 @@ func NewCodepipelineWebhook(scope constructs.Construct, id *string, config *Code
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html aws_codepipeline_webhook} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook aws_codepipeline_webhook} Resource.
 func NewCodepipelineWebhook_Override(c CodepipelineWebhook, scope constructs.Construct, id *string, config *CodepipelineWebhookConfig) {
 	_init_.Initialize()
 
@@ -1408,7 +1574,7 @@ func (j *jsiiProxy_CodepipelineWebhook) SetAuthentication(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) SetCount(val interface{}) {
+func (j *jsiiProxy_CodepipelineWebhook) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1424,7 +1590,7 @@ func (j *jsiiProxy_CodepipelineWebhook) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) SetFilter(val *[]*CodepipelineWebhookFilter) {
+func (j *jsiiProxy_CodepipelineWebhook) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -1456,7 +1622,7 @@ func (j *jsiiProxy_CodepipelineWebhook) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) SetTags(val interface{}) {
+func (j *jsiiProxy_CodepipelineWebhook) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1464,7 +1630,7 @@ func (j *jsiiProxy_CodepipelineWebhook) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CodepipelineWebhook) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CodepipelineWebhook) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1528,12 +1694,40 @@ func (c *jsiiProxy_CodepipelineWebhook) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CodepipelineWebhook) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodepipelineWebhook) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineWebhook) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1570,12 +1764,54 @@ func (c *jsiiProxy_CodepipelineWebhook) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CodepipelineWebhook) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineWebhook) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodepipelineWebhook) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineWebhook) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1706,10 +1942,10 @@ func (c *jsiiProxy_CodepipelineWebhook) ToTerraform() interface{} {
 }
 
 type CodepipelineWebhookAuthenticationConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#allowed_ip_range CodepipelineWebhook#allowed_ip_range}.
-	AllowedIpRange *string `json:"allowedIpRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#secret_token CodepipelineWebhook#secret_token}.
-	SecretToken *string `json:"secretToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#allowed_ip_range CodepipelineWebhook#allowed_ip_range}.
+	AllowedIpRange *string `json:"allowedIpRange" yaml:"allowedIpRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#secret_token CodepipelineWebhook#secret_token}.
+	SecretToken *string `json:"secretToken" yaml:"secretToken"`
 }
 
 type CodepipelineWebhookAuthenticationConfigurationOutputReference interface {
@@ -1726,12 +1962,17 @@ type CodepipelineWebhookAuthenticationConfigurationOutputReference interface {
 	SecretTokenInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAllowedIpRange()
@@ -1813,8 +2054,8 @@ func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1823,7 +2064,7 @@ func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 	return returns
 }
 
-func NewCodepipelineWebhookAuthenticationConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CodepipelineWebhookAuthenticationConfigurationOutputReference {
+func NewCodepipelineWebhookAuthenticationConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CodepipelineWebhookAuthenticationConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference{}
@@ -1837,7 +2078,7 @@ func NewCodepipelineWebhookAuthenticationConfigurationOutputReference(terraformR
 	return &j
 }
 
-func NewCodepipelineWebhookAuthenticationConfigurationOutputReference_Override(c CodepipelineWebhookAuthenticationConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCodepipelineWebhookAuthenticationConfigurationOutputReference_Override(c CodepipelineWebhookAuthenticationConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1887,7 +2128,7 @@ func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 	)
 }
 
-func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1896,12 +2137,40 @@ func (j *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 }
 
 // Experimental.
-func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1938,12 +2207,54 @@ func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 }
 
 // Experimental.
+func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1998,38 +2309,38 @@ func (c *jsiiProxy_CodepipelineWebhookAuthenticationConfigurationOutputReference
 // AWS CodePipeline.
 type CodepipelineWebhookConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#authentication CodepipelineWebhook#authentication}.
-	Authentication *string `json:"authentication"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#authentication CodepipelineWebhook#authentication}.
+	Authentication *string `json:"authentication" yaml:"authentication"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#filter CodepipelineWebhook#filter}
-	Filter *[]*CodepipelineWebhookFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#name CodepipelineWebhook#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#target_action CodepipelineWebhook#target_action}.
-	TargetAction *string `json:"targetAction"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#target_pipeline CodepipelineWebhook#target_pipeline}.
-	TargetPipeline *string `json:"targetPipeline"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#filter CodepipelineWebhook#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#name CodepipelineWebhook#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#target_action CodepipelineWebhook#target_action}.
+	TargetAction *string `json:"targetAction" yaml:"targetAction"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#target_pipeline CodepipelineWebhook#target_pipeline}.
+	TargetPipeline *string `json:"targetPipeline" yaml:"targetPipeline"`
 	// authentication_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#authentication_configuration CodepipelineWebhook#authentication_configuration}
-	AuthenticationConfiguration *CodepipelineWebhookAuthenticationConfiguration `json:"authenticationConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#tags CodepipelineWebhook#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#tags_all CodepipelineWebhook#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#authentication_configuration CodepipelineWebhook#authentication_configuration}
+	AuthenticationConfiguration *CodepipelineWebhookAuthenticationConfiguration `json:"authenticationConfiguration" yaml:"authenticationConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#tags CodepipelineWebhook#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#tags_all CodepipelineWebhook#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type CodepipelineWebhookFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#json_path CodepipelineWebhook#json_path}.
-	JsonPath *string `json:"jsonPath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook.html#match_equals CodepipelineWebhook#match_equals}.
-	MatchEquals *string `json:"matchEquals"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#json_path CodepipelineWebhook#json_path}.
+	JsonPath *string `json:"jsonPath" yaml:"jsonPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/codepipeline_webhook#match_equals CodepipelineWebhook#match_equals}.
+	MatchEquals *string `json:"matchEquals" yaml:"matchEquals"`
 }

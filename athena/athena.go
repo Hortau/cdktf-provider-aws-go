@@ -1,15 +1,15 @@
 package athena
 
 import (
-	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/hortau/cdktf-provider-aws-go/jsii"
+	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 
+	"github.com/hortau/cdktf-provider-aws-go/athena/internal"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
-	"github.com/hortau/cdktf-provider-aws-go/athena/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html aws_athena_database}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/athena_database aws_athena_database}.
 type AthenaDatabase interface {
 	cdktf.TerraformResource
 	Bucket() *string
@@ -17,8 +17,8 @@ type AthenaDatabase interface {
 	BucketInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EncryptionConfiguration() AthenaDatabaseEncryptionConfigurationOutputReference
@@ -42,10 +42,15 @@ type AthenaDatabase interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutEncryptionConfiguration(value *AthenaDatabaseEncryptionConfiguration)
@@ -103,8 +108,8 @@ func (j *jsiiProxy_AthenaDatabase) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_AthenaDatabase) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AthenaDatabase) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -283,7 +288,8 @@ func (j *jsiiProxy_AthenaDatabase) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html aws_athena_database} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_database aws_athena_database} Resource.
 func NewAthenaDatabase(scope constructs.Construct, id *string, config *AthenaDatabaseConfig) AthenaDatabase {
 	_init_.Initialize()
 
@@ -298,7 +304,7 @@ func NewAthenaDatabase(scope constructs.Construct, id *string, config *AthenaDat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html aws_athena_database} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_database aws_athena_database} Resource.
 func NewAthenaDatabase_Override(a AthenaDatabase, scope constructs.Construct, id *string, config *AthenaDatabaseConfig) {
 	_init_.Initialize()
 
@@ -317,7 +323,7 @@ func (j *jsiiProxy_AthenaDatabase) SetBucket(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AthenaDatabase) SetCount(val interface{}) {
+func (j *jsiiProxy_AthenaDatabase) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -405,12 +411,40 @@ func (a *jsiiProxy_AthenaDatabase) AddOverride(path *string, value interface{}) 
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaDatabase) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaDatabase) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaDatabase) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -447,12 +481,54 @@ func (a *jsiiProxy_AthenaDatabase) GetNumberAttribute(terraformAttribute *string
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaDatabase) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaDatabase) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaDatabase) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaDatabase) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -577,30 +653,30 @@ func (a *jsiiProxy_AthenaDatabase) ToTerraform() interface{} {
 // Amazon Athena.
 type AthenaDatabaseConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html#bucket AthenaDatabase#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html#name AthenaDatabase#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database#bucket AthenaDatabase#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database#name AthenaDatabase#name}.
+	Name *string `json:"name" yaml:"name"`
 	// encryption_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html#encryption_configuration AthenaDatabase#encryption_configuration}
-	EncryptionConfiguration *AthenaDatabaseEncryptionConfiguration `json:"encryptionConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html#force_destroy AthenaDatabase#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database#encryption_configuration AthenaDatabase#encryption_configuration}
+	EncryptionConfiguration *AthenaDatabaseEncryptionConfiguration `json:"encryptionConfiguration" yaml:"encryptionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database#force_destroy AthenaDatabase#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
 }
 
 type AthenaDatabaseEncryptionConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html#encryption_option AthenaDatabase#encryption_option}.
-	EncryptionOption *string `json:"encryptionOption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database.html#kms_key AthenaDatabase#kms_key}.
-	KmsKey *string `json:"kmsKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database#encryption_option AthenaDatabase#encryption_option}.
+	EncryptionOption *string `json:"encryptionOption" yaml:"encryptionOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_database#kms_key AthenaDatabase#kms_key}.
+	KmsKey *string `json:"kmsKey" yaml:"kmsKey"`
 }
 
 type AthenaDatabaseEncryptionConfigurationOutputReference interface {
@@ -617,12 +693,17 @@ type AthenaDatabaseEncryptionConfigurationOutputReference interface {
 	KmsKeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKey()
@@ -703,8 +784,8 @@ func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -713,7 +794,8 @@ func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) Terrafo
 	return returns
 }
 
-func NewAthenaDatabaseEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaDatabaseEncryptionConfigurationOutputReference {
+
+func NewAthenaDatabaseEncryptionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AthenaDatabaseEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference{}
@@ -727,7 +809,7 @@ func NewAthenaDatabaseEncryptionConfigurationOutputReference(terraformResource c
 	return &j
 }
 
-func NewAthenaDatabaseEncryptionConfigurationOutputReference_Override(a AthenaDatabaseEncryptionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAthenaDatabaseEncryptionConfigurationOutputReference_Override(a AthenaDatabaseEncryptionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -777,7 +859,7 @@ func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -786,12 +868,40 @@ func (j *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) SetTerr
 }
 
 // Experimental.
-func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -828,12 +938,54 @@ func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetNumb
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -877,13 +1029,13 @@ func (a *jsiiProxy_AthenaDatabaseEncryptionConfigurationOutputReference) ResetKm
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html aws_athena_named_query}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query aws_athena_named_query}.
 type AthenaNamedQuery interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Database() *string
 	SetDatabase(val *string)
 	DatabaseInput() *string
@@ -914,10 +1066,15 @@ type AthenaNamedQuery interface {
 	SetWorkgroup(val *string)
 	WorkgroupInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -954,8 +1111,8 @@ func (j *jsiiProxy_AthenaNamedQuery) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_AthenaNamedQuery) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AthenaNamedQuery) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1174,7 +1331,8 @@ func (j *jsiiProxy_AthenaNamedQuery) WorkgroupInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html aws_athena_named_query} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query aws_athena_named_query} Resource.
 func NewAthenaNamedQuery(scope constructs.Construct, id *string, config *AthenaNamedQueryConfig) AthenaNamedQuery {
 	_init_.Initialize()
 
@@ -1189,7 +1347,7 @@ func NewAthenaNamedQuery(scope constructs.Construct, id *string, config *AthenaN
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html aws_athena_named_query} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query aws_athena_named_query} Resource.
 func NewAthenaNamedQuery_Override(a AthenaNamedQuery, scope constructs.Construct, id *string, config *AthenaNamedQueryConfig) {
 	_init_.Initialize()
 
@@ -1200,7 +1358,7 @@ func NewAthenaNamedQuery_Override(a AthenaNamedQuery, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_AthenaNamedQuery) SetCount(val interface{}) {
+func (j *jsiiProxy_AthenaNamedQuery) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1312,12 +1470,40 @@ func (a *jsiiProxy_AthenaNamedQuery) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaNamedQuery) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaNamedQuery) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaNamedQuery) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1354,12 +1540,54 @@ func (a *jsiiProxy_AthenaNamedQuery) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaNamedQuery) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaNamedQuery) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaNamedQuery) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaNamedQuery) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1476,26 +1704,26 @@ func (a *jsiiProxy_AthenaNamedQuery) ToTerraform() interface{} {
 // Amazon Athena.
 type AthenaNamedQueryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html#database AthenaNamedQuery#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html#name AthenaNamedQuery#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html#query AthenaNamedQuery#query}.
-	Query *string `json:"query"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html#description AthenaNamedQuery#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query.html#workgroup AthenaNamedQuery#workgroup}.
-	Workgroup *string `json:"workgroup"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query#database AthenaNamedQuery#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query#name AthenaNamedQuery#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query#query AthenaNamedQuery#query}.
+	Query *string `json:"query" yaml:"query"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query#description AthenaNamedQuery#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_named_query#workgroup AthenaNamedQuery#workgroup}.
+	Workgroup *string `json:"workgroup" yaml:"workgroup"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html aws_athena_workgroup}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup aws_athena_workgroup}.
 type AthenaWorkgroup interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1503,8 +1731,8 @@ type AthenaWorkgroup interface {
 	Configuration() AthenaWorkgroupConfigurationOutputReference
 	ConfigurationInput() *AthenaWorkgroupConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1528,20 +1756,25 @@ type AthenaWorkgroup interface {
 	State() *string
 	SetState(val *string)
 	StateInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutConfiguration(value *AthenaWorkgroupConfiguration)
@@ -1613,8 +1846,8 @@ func (j *jsiiProxy_AthenaWorkgroup) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AthenaWorkgroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1783,8 +2016,8 @@ func (j *jsiiProxy_AthenaWorkgroup) StateInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AthenaWorkgroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1793,8 +2026,8 @@ func (j *jsiiProxy_AthenaWorkgroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AthenaWorkgroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1803,8 +2036,8 @@ func (j *jsiiProxy_AthenaWorkgroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AthenaWorkgroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1813,8 +2046,8 @@ func (j *jsiiProxy_AthenaWorkgroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_AthenaWorkgroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1853,7 +2086,8 @@ func (j *jsiiProxy_AthenaWorkgroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html aws_athena_workgroup} Resource.
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup aws_athena_workgroup} Resource.
 func NewAthenaWorkgroup(scope constructs.Construct, id *string, config *AthenaWorkgroupConfig) AthenaWorkgroup {
 	_init_.Initialize()
 
@@ -1868,7 +2102,7 @@ func NewAthenaWorkgroup(scope constructs.Construct, id *string, config *AthenaWo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html aws_athena_workgroup} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup aws_athena_workgroup} Resource.
 func NewAthenaWorkgroup_Override(a AthenaWorkgroup, scope constructs.Construct, id *string, config *AthenaWorkgroupConfig) {
 	_init_.Initialize()
 
@@ -1879,7 +2113,7 @@ func NewAthenaWorkgroup_Override(a AthenaWorkgroup, scope constructs.Construct, 
 	)
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) SetCount(val interface{}) {
+func (j *jsiiProxy_AthenaWorkgroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1943,7 +2177,7 @@ func (j *jsiiProxy_AthenaWorkgroup) SetState(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) SetTags(val interface{}) {
+func (j *jsiiProxy_AthenaWorkgroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1951,7 +2185,7 @@ func (j *jsiiProxy_AthenaWorkgroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_AthenaWorkgroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_AthenaWorkgroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1999,12 +2233,40 @@ func (a *jsiiProxy_AthenaWorkgroup) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaWorkgroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaWorkgroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2041,12 +2303,54 @@ func (a *jsiiProxy_AthenaWorkgroup) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaWorkgroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaWorkgroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2203,57 +2507,58 @@ func (a *jsiiProxy_AthenaWorkgroup) ToTerraform() interface{} {
 // Amazon Athena.
 type AthenaWorkgroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#name AthenaWorkgroup#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#name AthenaWorkgroup#name}.
+	Name *string `json:"name" yaml:"name"`
 	// configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#configuration AthenaWorkgroup#configuration}
-	Configuration *AthenaWorkgroupConfiguration `json:"configuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#description AthenaWorkgroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#force_destroy AthenaWorkgroup#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#state AthenaWorkgroup#state}.
-	State *string `json:"state"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#tags AthenaWorkgroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#tags_all AthenaWorkgroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#configuration AthenaWorkgroup#configuration}
+	Configuration *AthenaWorkgroupConfiguration `json:"configuration" yaml:"configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#description AthenaWorkgroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#force_destroy AthenaWorkgroup#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#state AthenaWorkgroup#state}.
+	State *string `json:"state" yaml:"state"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#tags AthenaWorkgroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#tags_all AthenaWorkgroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type AthenaWorkgroupConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#bytes_scanned_cutoff_per_query AthenaWorkgroup#bytes_scanned_cutoff_per_query}.
-	BytesScannedCutoffPerQuery *float64 `json:"bytesScannedCutoffPerQuery"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#enforce_workgroup_configuration AthenaWorkgroup#enforce_workgroup_configuration}.
-	EnforceWorkgroupConfiguration interface{} `json:"enforceWorkgroupConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#bytes_scanned_cutoff_per_query AthenaWorkgroup#bytes_scanned_cutoff_per_query}.
+	BytesScannedCutoffPerQuery *float64 `json:"bytesScannedCutoffPerQuery" yaml:"bytesScannedCutoffPerQuery"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#enforce_workgroup_configuration AthenaWorkgroup#enforce_workgroup_configuration}.
+	EnforceWorkgroupConfiguration interface{} `json:"enforceWorkgroupConfiguration" yaml:"enforceWorkgroupConfiguration"`
 	// engine_version block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#engine_version AthenaWorkgroup#engine_version}
-	EngineVersion *AthenaWorkgroupConfigurationEngineVersion `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#publish_cloudwatch_metrics_enabled AthenaWorkgroup#publish_cloudwatch_metrics_enabled}.
-	PublishCloudwatchMetricsEnabled interface{} `json:"publishCloudwatchMetricsEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#requester_pays_enabled AthenaWorkgroup#requester_pays_enabled}.
-	RequesterPaysEnabled interface{} `json:"requesterPaysEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#engine_version AthenaWorkgroup#engine_version}
+	EngineVersion *AthenaWorkgroupConfigurationEngineVersion `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#publish_cloudwatch_metrics_enabled AthenaWorkgroup#publish_cloudwatch_metrics_enabled}.
+	PublishCloudwatchMetricsEnabled interface{} `json:"publishCloudwatchMetricsEnabled" yaml:"publishCloudwatchMetricsEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#requester_pays_enabled AthenaWorkgroup#requester_pays_enabled}.
+	RequesterPaysEnabled interface{} `json:"requesterPaysEnabled" yaml:"requesterPaysEnabled"`
 	// result_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#result_configuration AthenaWorkgroup#result_configuration}
-	ResultConfiguration *AthenaWorkgroupConfigurationResultConfiguration `json:"resultConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#result_configuration AthenaWorkgroup#result_configuration}
+	ResultConfiguration *AthenaWorkgroupConfigurationResultConfiguration `json:"resultConfiguration" yaml:"resultConfiguration"`
 }
 
 type AthenaWorkgroupConfigurationEngineVersion struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#selected_engine_version AthenaWorkgroup#selected_engine_version}.
-	SelectedEngineVersion *string `json:"selectedEngineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#selected_engine_version AthenaWorkgroup#selected_engine_version}.
+	SelectedEngineVersion *string `json:"selectedEngineVersion" yaml:"selectedEngineVersion"`
 }
 
 type AthenaWorkgroupConfigurationEngineVersionOutputReference interface {
 	cdktf.ComplexObject
+	EffectiveEngineVersion() *string
 	InternalValue() *AthenaWorkgroupConfigurationEngineVersion
 	SetInternalValue(val *AthenaWorkgroupConfigurationEngineVersion)
 	IsSingleItem() *bool
@@ -2263,12 +2568,17 @@ type AthenaWorkgroupConfigurationEngineVersionOutputReference interface {
 	SelectedEngineVersionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSelectedEngineVersion()
@@ -2277,6 +2587,16 @@ type AthenaWorkgroupConfigurationEngineVersionOutputReference interface {
 // The jsii proxy struct for AthenaWorkgroupConfigurationEngineVersionOutputReference
 type jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) EffectiveEngineVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"effectiveEngineVersion",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) InternalValue() *AthenaWorkgroupConfigurationEngineVersion {
@@ -2329,8 +2649,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2339,7 +2659,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) Ter
 	return returns
 }
 
-func NewAthenaWorkgroupConfigurationEngineVersionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationEngineVersionOutputReference {
+
+func NewAthenaWorkgroupConfigurationEngineVersionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationEngineVersionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference{}
@@ -2353,7 +2674,7 @@ func NewAthenaWorkgroupConfigurationEngineVersionOutputReference(terraformResour
 	return &j
 }
 
-func NewAthenaWorkgroupConfigurationEngineVersionOutputReference_Override(a AthenaWorkgroupConfigurationEngineVersionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAthenaWorkgroupConfigurationEngineVersionOutputReference_Override(a AthenaWorkgroupConfigurationEngineVersionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2395,7 +2716,7 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2404,12 +2725,40 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) Set
 }
 
 // Experimental.
-func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2446,12 +2795,54 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) Get
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationEngineVersionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2519,12 +2910,17 @@ type AthenaWorkgroupConfigurationOutputReference interface {
 	ResultConfigurationInput() *AthenaWorkgroupConfigurationResultConfiguration
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutEngineVersion(value *AthenaWorkgroupConfigurationEngineVersion)
@@ -2692,8 +3088,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2702,7 +3098,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) TerraformResourc
 	return returns
 }
 
-func NewAthenaWorkgroupConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationOutputReference {
+
+func NewAthenaWorkgroupConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaWorkgroupConfigurationOutputReference{}
@@ -2716,7 +3113,7 @@ func NewAthenaWorkgroupConfigurationOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewAthenaWorkgroupConfigurationOutputReference_Override(a AthenaWorkgroupConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAthenaWorkgroupConfigurationOutputReference_Override(a AthenaWorkgroupConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2782,7 +3179,7 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2791,12 +3188,40 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2833,12 +3258,54 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2941,17 +3408,17 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationOutputReference) ResetResultConfi
 type AthenaWorkgroupConfigurationResultConfiguration struct {
 	// encryption_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#encryption_configuration AthenaWorkgroup#encryption_configuration}
-	EncryptionConfiguration *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration `json:"encryptionConfiguration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#output_location AthenaWorkgroup#output_location}.
-	OutputLocation *string `json:"outputLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#encryption_configuration AthenaWorkgroup#encryption_configuration}
+	EncryptionConfiguration *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration `json:"encryptionConfiguration" yaml:"encryptionConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#output_location AthenaWorkgroup#output_location}.
+	OutputLocation *string `json:"outputLocation" yaml:"outputLocation"`
 }
 
 type AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#encryption_option AthenaWorkgroup#encryption_option}.
-	EncryptionOption *string `json:"encryptionOption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup.html#kms_key_arn AthenaWorkgroup#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#encryption_option AthenaWorkgroup#encryption_option}.
+	EncryptionOption *string `json:"encryptionOption" yaml:"encryptionOption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/athena_workgroup#kms_key_arn AthenaWorkgroup#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 }
 
 type AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference interface {
@@ -2968,12 +3435,17 @@ type AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutpu
 	KmsKeyArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEncryptionOption()
@@ -3055,8 +3527,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3065,7 +3537,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 	return returns
 }
 
-func NewAthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference {
+
+func NewAthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference{}
@@ -3079,7 +3552,7 @@ func NewAthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOu
 	return &j
 }
 
-func NewAthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference_Override(a AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference_Override(a AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3129,7 +3602,7 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 	)
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3138,12 +3611,40 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 }
 
 // Experimental.
-func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3180,12 +3681,54 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConf
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationEncryptionConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3250,12 +3793,17 @@ type AthenaWorkgroupConfigurationResultConfigurationOutputReference interface {
 	OutputLocationInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutEncryptionConfiguration(value *AthenaWorkgroupConfigurationResultConfigurationEncryptionConfiguration)
@@ -3338,8 +3886,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3348,7 +3896,8 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 	return returns
 }
 
-func NewAthenaWorkgroupConfigurationResultConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationResultConfigurationOutputReference {
+
+func NewAthenaWorkgroupConfigurationResultConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) AthenaWorkgroupConfigurationResultConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference{}
@@ -3362,7 +3911,7 @@ func NewAthenaWorkgroupConfigurationResultConfigurationOutputReference(terraform
 	return &j
 }
 
-func NewAthenaWorkgroupConfigurationResultConfigurationOutputReference_Override(a AthenaWorkgroupConfigurationResultConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewAthenaWorkgroupConfigurationResultConfigurationOutputReference_Override(a AthenaWorkgroupConfigurationResultConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3404,7 +3953,7 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3413,12 +3962,40 @@ func (j *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 }
 
 // Experimental.
-func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		a,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		a,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		a,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3455,12 +4032,54 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 }
 
 // Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		a,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		a,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		a,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3519,3 +4138,4 @@ func (a *jsiiProxy_AthenaWorkgroupConfigurationResultConfigurationOutputReferenc
 		nil, // no parameters
 	)
 }
+

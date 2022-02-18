@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/route53/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set.html aws_route53_delegation_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set aws_route53_delegation_set}.
 type DataAwsRoute53DelegationSet interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CallerReference() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -36,10 +36,15 @@ type DataAwsRoute53DelegationSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -94,8 +99,8 @@ func (j *jsiiProxy_DataAwsRoute53DelegationSet) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53DelegationSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53DelegationSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -234,7 +239,7 @@ func (j *jsiiProxy_DataAwsRoute53DelegationSet) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set.html aws_route53_delegation_set} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set aws_route53_delegation_set} Data Source.
 func NewDataAwsRoute53DelegationSet(scope constructs.Construct, id *string, config *DataAwsRoute53DelegationSetConfig) DataAwsRoute53DelegationSet {
 	_init_.Initialize()
 
@@ -249,7 +254,7 @@ func NewDataAwsRoute53DelegationSet(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set.html aws_route53_delegation_set} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set aws_route53_delegation_set} Data Source.
 func NewDataAwsRoute53DelegationSet_Override(d DataAwsRoute53DelegationSet, scope constructs.Construct, id *string, config *DataAwsRoute53DelegationSetConfig) {
 	_init_.Initialize()
 
@@ -260,7 +265,7 @@ func NewDataAwsRoute53DelegationSet_Override(d DataAwsRoute53DelegationSet, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53DelegationSet) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRoute53DelegationSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -340,12 +345,40 @@ func (d *jsiiProxy_DataAwsRoute53DelegationSet) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -382,12 +415,54 @@ func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53DelegationSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -488,31 +563,31 @@ func (d *jsiiProxy_DataAwsRoute53DelegationSet) ToTerraform() interface{} {
 // AWS Route 53.
 type DataAwsRoute53DelegationSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set.html#id DataAwsRoute53DelegationSet#id}.
-	Id *string `json:"id"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_delegation_set#id DataAwsRoute53DelegationSet#id}.
+	Id *string `json:"id" yaml:"id"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint.html aws_route53_resolver_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint aws_route53_resolver_endpoint}.
 type DataAwsRoute53ResolverEndpoint interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Direction() *string
-	Filter() *[]*DataAwsRoute53ResolverEndpointFilter
-	SetFilter(val *[]*DataAwsRoute53ResolverEndpointFilter)
-	FilterInput() *[]*DataAwsRoute53ResolverEndpointFilter
+	Filter() interface{}
+	SetFilter(val interface{})
+	FilterInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -533,10 +608,15 @@ type DataAwsRoute53ResolverEndpoint interface {
 	TerraformResourceType() *string
 	VpcId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetFilter()
@@ -583,8 +663,8 @@ func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -613,8 +693,8 @@ func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) Direction() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) Filter() *[]*DataAwsRoute53ResolverEndpointFilter {
-	var returns *[]*DataAwsRoute53ResolverEndpointFilter
+func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) Filter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filter",
@@ -623,8 +703,8 @@ func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) Filter() *[]*DataAwsRoute53Re
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) FilterInput() *[]*DataAwsRoute53ResolverEndpointFilter {
-	var returns *[]*DataAwsRoute53ResolverEndpointFilter
+func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) FilterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filterInput",
@@ -793,7 +873,7 @@ func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) VpcId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint.html aws_route53_resolver_endpoint} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint aws_route53_resolver_endpoint} Data Source.
 func NewDataAwsRoute53ResolverEndpoint(scope constructs.Construct, id *string, config *DataAwsRoute53ResolverEndpointConfig) DataAwsRoute53ResolverEndpoint {
 	_init_.Initialize()
 
@@ -808,7 +888,7 @@ func NewDataAwsRoute53ResolverEndpoint(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint.html aws_route53_resolver_endpoint} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint aws_route53_resolver_endpoint} Data Source.
 func NewDataAwsRoute53ResolverEndpoint_Override(d DataAwsRoute53ResolverEndpoint, scope constructs.Construct, id *string, config *DataAwsRoute53ResolverEndpointConfig) {
 	_init_.Initialize()
 
@@ -819,7 +899,7 @@ func NewDataAwsRoute53ResolverEndpoint_Override(d DataAwsRoute53ResolverEndpoint
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -835,7 +915,7 @@ func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) SetDependsOn(val *[]*string) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) SetFilter(val *[]*DataAwsRoute53ResolverEndpointFilter) {
+func (j *jsiiProxy_DataAwsRoute53ResolverEndpoint) SetFilter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filter",
@@ -907,12 +987,40 @@ func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) AddOverride(path *string, val
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -949,12 +1057,54 @@ func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1071,36 +1221,36 @@ func (d *jsiiProxy_DataAwsRoute53ResolverEndpoint) ToTerraform() interface{} {
 // AWS Route 53.
 type DataAwsRoute53ResolverEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// filter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint.html#filter DataAwsRoute53ResolverEndpoint#filter}
-	Filter *[]*DataAwsRoute53ResolverEndpointFilter `json:"filter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint.html#resolver_endpoint_id DataAwsRoute53ResolverEndpoint#resolver_endpoint_id}.
-	ResolverEndpointId *string `json:"resolverEndpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint#filter DataAwsRoute53ResolverEndpoint#filter}
+	Filter interface{} `json:"filter" yaml:"filter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint#resolver_endpoint_id DataAwsRoute53ResolverEndpoint#resolver_endpoint_id}.
+	ResolverEndpointId *string `json:"resolverEndpointId" yaml:"resolverEndpointId"`
 }
 
 type DataAwsRoute53ResolverEndpointFilter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint.html#name DataAwsRoute53ResolverEndpoint#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint.html#values DataAwsRoute53ResolverEndpoint#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint#name DataAwsRoute53ResolverEndpoint#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_endpoint#values DataAwsRoute53ResolverEndpoint#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html aws_route53_resolver_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule aws_route53_resolver_rule}.
 type DataAwsRoute53ResolverRule interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -1129,17 +1279,22 @@ type DataAwsRoute53ResolverRule interface {
 	SetRuleType(val *string)
 	RuleTypeInput() *string
 	ShareStatus() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDomainName()
@@ -1190,8 +1345,8 @@ func (j *jsiiProxy_DataAwsRoute53ResolverRule) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53ResolverRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1400,8 +1555,8 @@ func (j *jsiiProxy_DataAwsRoute53ResolverRule) ShareStatus() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53ResolverRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1410,8 +1565,8 @@ func (j *jsiiProxy_DataAwsRoute53ResolverRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53ResolverRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1450,7 +1605,7 @@ func (j *jsiiProxy_DataAwsRoute53ResolverRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html aws_route53_resolver_rule} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule aws_route53_resolver_rule} Data Source.
 func NewDataAwsRoute53ResolverRule(scope constructs.Construct, id *string, config *DataAwsRoute53ResolverRuleConfig) DataAwsRoute53ResolverRule {
 	_init_.Initialize()
 
@@ -1465,7 +1620,7 @@ func NewDataAwsRoute53ResolverRule(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html aws_route53_resolver_rule} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule aws_route53_resolver_rule} Data Source.
 func NewDataAwsRoute53ResolverRule_Override(d DataAwsRoute53ResolverRule, scope constructs.Construct, id *string, config *DataAwsRoute53ResolverRuleConfig) {
 	_init_.Initialize()
 
@@ -1476,7 +1631,7 @@ func NewDataAwsRoute53ResolverRule_Override(d DataAwsRoute53ResolverRule, scope 
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverRule) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRoute53ResolverRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1548,7 +1703,7 @@ func (j *jsiiProxy_DataAwsRoute53ResolverRule) SetRuleType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverRule) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsRoute53ResolverRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1596,12 +1751,40 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRule) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1638,12 +1821,54 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1792,34 +2017,34 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRule) ToTerraform() interface{} {
 // AWS Route 53.
 type DataAwsRoute53ResolverRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html#domain_name DataAwsRoute53ResolverRule#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html#name DataAwsRoute53ResolverRule#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html#resolver_endpoint_id DataAwsRoute53ResolverRule#resolver_endpoint_id}.
-	ResolverEndpointId *string `json:"resolverEndpointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html#resolver_rule_id DataAwsRoute53ResolverRule#resolver_rule_id}.
-	ResolverRuleId *string `json:"resolverRuleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html#rule_type DataAwsRoute53ResolverRule#rule_type}.
-	RuleType *string `json:"ruleType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule.html#tags DataAwsRoute53ResolverRule#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule#domain_name DataAwsRoute53ResolverRule#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule#name DataAwsRoute53ResolverRule#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule#resolver_endpoint_id DataAwsRoute53ResolverRule#resolver_endpoint_id}.
+	ResolverEndpointId *string `json:"resolverEndpointId" yaml:"resolverEndpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule#resolver_rule_id DataAwsRoute53ResolverRule#resolver_rule_id}.
+	ResolverRuleId *string `json:"resolverRuleId" yaml:"resolverRuleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule#rule_type DataAwsRoute53ResolverRule#rule_type}.
+	RuleType *string `json:"ruleType" yaml:"ruleType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rule#tags DataAwsRoute53ResolverRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules.html aws_route53_resolver_rules}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules aws_route53_resolver_rules}.
 type DataAwsRoute53ResolverRules interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1848,10 +2073,15 @@ type DataAwsRoute53ResolverRules interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1890,8 +2120,8 @@ func (j *jsiiProxy_DataAwsRoute53ResolverRules) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverRules) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53ResolverRules) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2100,7 +2330,7 @@ func (j *jsiiProxy_DataAwsRoute53ResolverRules) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules.html aws_route53_resolver_rules} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules aws_route53_resolver_rules} Data Source.
 func NewDataAwsRoute53ResolverRules(scope constructs.Construct, id *string, config *DataAwsRoute53ResolverRulesConfig) DataAwsRoute53ResolverRules {
 	_init_.Initialize()
 
@@ -2115,7 +2345,7 @@ func NewDataAwsRoute53ResolverRules(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules.html aws_route53_resolver_rules} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules aws_route53_resolver_rules} Data Source.
 func NewDataAwsRoute53ResolverRules_Override(d DataAwsRoute53ResolverRules, scope constructs.Construct, id *string, config *DataAwsRoute53ResolverRulesConfig) {
 	_init_.Initialize()
 
@@ -2126,7 +2356,7 @@ func NewDataAwsRoute53ResolverRules_Override(d DataAwsRoute53ResolverRules, scop
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53ResolverRules) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRoute53ResolverRules) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2230,12 +2460,40 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRules) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2272,12 +2530,54 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53ResolverRules) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2410,24 +2710,24 @@ func (d *jsiiProxy_DataAwsRoute53ResolverRules) ToTerraform() interface{} {
 // AWS Route 53.
 type DataAwsRoute53ResolverRulesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules.html#owner_id DataAwsRoute53ResolverRules#owner_id}.
-	OwnerId *string `json:"ownerId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules.html#resolver_endpoint_id DataAwsRoute53ResolverRules#resolver_endpoint_id}.
-	ResolverEndpointId *string `json:"resolverEndpointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules.html#rule_type DataAwsRoute53ResolverRules#rule_type}.
-	RuleType *string `json:"ruleType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules.html#share_status DataAwsRoute53ResolverRules#share_status}.
-	ShareStatus *string `json:"shareStatus"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules#owner_id DataAwsRoute53ResolverRules#owner_id}.
+	OwnerId *string `json:"ownerId" yaml:"ownerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules#resolver_endpoint_id DataAwsRoute53ResolverRules#resolver_endpoint_id}.
+	ResolverEndpointId *string `json:"resolverEndpointId" yaml:"resolverEndpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules#rule_type DataAwsRoute53ResolverRules#rule_type}.
+	RuleType *string `json:"ruleType" yaml:"ruleType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_resolver_rules#share_status DataAwsRoute53ResolverRules#share_status}.
+	ShareStatus *string `json:"shareStatus" yaml:"shareStatus"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html aws_route53_zone}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/route53_zone aws_route53_zone}.
 type DataAwsRoute53Zone interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -2435,8 +2735,8 @@ type DataAwsRoute53Zone interface {
 	CdktfStack() cdktf.TerraformStack
 	Comment() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2460,9 +2760,9 @@ type DataAwsRoute53Zone interface {
 	ResourceRecordSetCount() *float64
 	SetResourceRecordSetCount(val *float64)
 	ResourceRecordSetCountInput() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -2473,10 +2773,15 @@ type DataAwsRoute53Zone interface {
 	SetZoneId(val *string)
 	ZoneIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -2547,8 +2852,8 @@ func (j *jsiiProxy_DataAwsRoute53Zone) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53Zone) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53Zone) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2727,8 +3032,8 @@ func (j *jsiiProxy_DataAwsRoute53Zone) ResourceRecordSetCountInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53Zone) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53Zone) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2737,8 +3042,8 @@ func (j *jsiiProxy_DataAwsRoute53Zone) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsRoute53Zone) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsRoute53Zone) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2817,7 +3122,7 @@ func (j *jsiiProxy_DataAwsRoute53Zone) ZoneIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html aws_route53_zone} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_zone aws_route53_zone} Data Source.
 func NewDataAwsRoute53Zone(scope constructs.Construct, id *string, config *DataAwsRoute53ZoneConfig) DataAwsRoute53Zone {
 	_init_.Initialize()
 
@@ -2832,7 +3137,7 @@ func NewDataAwsRoute53Zone(scope constructs.Construct, id *string, config *DataA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html aws_route53_zone} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/route53_zone aws_route53_zone} Data Source.
 func NewDataAwsRoute53Zone_Override(d DataAwsRoute53Zone, scope constructs.Construct, id *string, config *DataAwsRoute53ZoneConfig) {
 	_init_.Initialize()
 
@@ -2843,7 +3148,7 @@ func NewDataAwsRoute53Zone_Override(d DataAwsRoute53Zone, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53Zone) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsRoute53Zone) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2899,7 +3204,7 @@ func (j *jsiiProxy_DataAwsRoute53Zone) SetResourceRecordSetCount(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsRoute53Zone) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsRoute53Zone) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2963,12 +3268,40 @@ func (d *jsiiProxy_DataAwsRoute53Zone) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53Zone) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53Zone) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53Zone) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3005,12 +3338,54 @@ func (d *jsiiProxy_DataAwsRoute53Zone) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsRoute53Zone) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53Zone) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsRoute53Zone) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsRoute53Zone) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3159,35 +3534,35 @@ func (d *jsiiProxy_DataAwsRoute53Zone) ToTerraform() interface{} {
 // AWS Route 53.
 type DataAwsRoute53ZoneConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html#name DataAwsRoute53Zone#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html#private_zone DataAwsRoute53Zone#private_zone}.
-	PrivateZone interface{} `json:"privateZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html#resource_record_set_count DataAwsRoute53Zone#resource_record_set_count}.
-	ResourceRecordSetCount *float64 `json:"resourceRecordSetCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html#tags DataAwsRoute53Zone#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html#vpc_id DataAwsRoute53Zone#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone.html#zone_id DataAwsRoute53Zone#zone_id}.
-	ZoneId *string `json:"zoneId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone#name DataAwsRoute53Zone#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone#private_zone DataAwsRoute53Zone#private_zone}.
+	PrivateZone interface{} `json:"privateZone" yaml:"privateZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone#resource_record_set_count DataAwsRoute53Zone#resource_record_set_count}.
+	ResourceRecordSetCount *float64 `json:"resourceRecordSetCount" yaml:"resourceRecordSetCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone#tags DataAwsRoute53Zone#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone#vpc_id DataAwsRoute53Zone#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/route53_zone#zone_id DataAwsRoute53Zone#zone_id}.
+	ZoneId *string `json:"zoneId" yaml:"zoneId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set.html aws_route53_delegation_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set aws_route53_delegation_set}.
 type Route53DelegationSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3207,10 +3582,15 @@ type Route53DelegationSet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3256,8 +3636,8 @@ func (j *jsiiProxy_Route53DelegationSet) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_Route53DelegationSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53DelegationSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3406,7 +3786,7 @@ func (j *jsiiProxy_Route53DelegationSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set.html aws_route53_delegation_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set aws_route53_delegation_set} Resource.
 func NewRoute53DelegationSet(scope constructs.Construct, id *string, config *Route53DelegationSetConfig) Route53DelegationSet {
 	_init_.Initialize()
 
@@ -3421,7 +3801,7 @@ func NewRoute53DelegationSet(scope constructs.Construct, id *string, config *Rou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set.html aws_route53_delegation_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set aws_route53_delegation_set} Resource.
 func NewRoute53DelegationSet_Override(r Route53DelegationSet, scope constructs.Construct, id *string, config *Route53DelegationSetConfig) {
 	_init_.Initialize()
 
@@ -3432,7 +3812,7 @@ func NewRoute53DelegationSet_Override(r Route53DelegationSet, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_Route53DelegationSet) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53DelegationSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3512,12 +3892,40 @@ func (r *jsiiProxy_Route53DelegationSet) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53DelegationSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53DelegationSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53DelegationSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3554,12 +3962,54 @@ func (r *jsiiProxy_Route53DelegationSet) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53DelegationSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53DelegationSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53DelegationSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53DelegationSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3668,18 +4118,18 @@ func (r *jsiiProxy_Route53DelegationSet) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53DelegationSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set.html#reference_name Route53DelegationSet#reference_name}.
-	ReferenceName *string `json:"referenceName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_delegation_set#reference_name Route53DelegationSet#reference_name}.
+	ReferenceName *string `json:"referenceName" yaml:"referenceName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html aws_route53_health_check}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check aws_route53_health_check}.
 type Route53HealthCheck interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3697,8 +4147,8 @@ type Route53HealthCheck interface {
 	SetCloudwatchAlarmRegion(val *string)
 	CloudwatchAlarmRegionInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Disabled() interface{}
@@ -3755,12 +4205,12 @@ type Route53HealthCheck interface {
 	SearchString() *string
 	SetSearchString(val *string)
 	SearchStringInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -3768,10 +4218,15 @@ type Route53HealthCheck interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetChildHealthchecks()
@@ -3917,8 +4372,8 @@ func (j *jsiiProxy_Route53HealthCheck) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_Route53HealthCheck) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53HealthCheck) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4307,8 +4762,8 @@ func (j *jsiiProxy_Route53HealthCheck) SearchStringInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53HealthCheck) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53HealthCheck) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4317,8 +4772,8 @@ func (j *jsiiProxy_Route53HealthCheck) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53HealthCheck) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53HealthCheck) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4327,8 +4782,8 @@ func (j *jsiiProxy_Route53HealthCheck) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53HealthCheck) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53HealthCheck) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4337,8 +4792,8 @@ func (j *jsiiProxy_Route53HealthCheck) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53HealthCheck) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53HealthCheck) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4397,7 +4852,7 @@ func (j *jsiiProxy_Route53HealthCheck) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html aws_route53_health_check} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check aws_route53_health_check} Resource.
 func NewRoute53HealthCheck(scope constructs.Construct, id *string, config *Route53HealthCheckConfig) Route53HealthCheck {
 	_init_.Initialize()
 
@@ -4412,7 +4867,7 @@ func NewRoute53HealthCheck(scope constructs.Construct, id *string, config *Route
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html aws_route53_health_check} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check aws_route53_health_check} Resource.
 func NewRoute53HealthCheck_Override(r Route53HealthCheck, scope constructs.Construct, id *string, config *Route53HealthCheckConfig) {
 	_init_.Initialize()
 
@@ -4455,7 +4910,7 @@ func (j *jsiiProxy_Route53HealthCheck) SetCloudwatchAlarmRegion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53HealthCheck) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53HealthCheck) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4607,7 +5062,7 @@ func (j *jsiiProxy_Route53HealthCheck) SetSearchString(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53HealthCheck) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53HealthCheck) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4615,7 +5070,7 @@ func (j *jsiiProxy_Route53HealthCheck) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53HealthCheck) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53HealthCheck) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4671,12 +5126,40 @@ func (r *jsiiProxy_Route53HealthCheck) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53HealthCheck) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53HealthCheck) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53HealthCheck) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4713,12 +5196,54 @@ func (r *jsiiProxy_Route53HealthCheck) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53HealthCheck) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53HealthCheck) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53HealthCheck) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53HealthCheck) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4987,66 +5512,66 @@ func (r *jsiiProxy_Route53HealthCheck) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53HealthCheckConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#type Route53HealthCheck#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#child_healthchecks Route53HealthCheck#child_healthchecks}.
-	ChildHealthchecks *[]*string `json:"childHealthchecks"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#child_health_threshold Route53HealthCheck#child_health_threshold}.
-	ChildHealthThreshold *float64 `json:"childHealthThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#cloudwatch_alarm_name Route53HealthCheck#cloudwatch_alarm_name}.
-	CloudwatchAlarmName *string `json:"cloudwatchAlarmName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#cloudwatch_alarm_region Route53HealthCheck#cloudwatch_alarm_region}.
-	CloudwatchAlarmRegion *string `json:"cloudwatchAlarmRegion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#disabled Route53HealthCheck#disabled}.
-	Disabled interface{} `json:"disabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#enable_sni Route53HealthCheck#enable_sni}.
-	EnableSni interface{} `json:"enableSni"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#failure_threshold Route53HealthCheck#failure_threshold}.
-	FailureThreshold *float64 `json:"failureThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#fqdn Route53HealthCheck#fqdn}.
-	Fqdn *string `json:"fqdn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#insufficient_data_health_status Route53HealthCheck#insufficient_data_health_status}.
-	InsufficientDataHealthStatus *string `json:"insufficientDataHealthStatus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#invert_healthcheck Route53HealthCheck#invert_healthcheck}.
-	InvertHealthcheck interface{} `json:"invertHealthcheck"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#ip_address Route53HealthCheck#ip_address}.
-	IpAddress *string `json:"ipAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#measure_latency Route53HealthCheck#measure_latency}.
-	MeasureLatency interface{} `json:"measureLatency"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#port Route53HealthCheck#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#reference_name Route53HealthCheck#reference_name}.
-	ReferenceName *string `json:"referenceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#regions Route53HealthCheck#regions}.
-	Regions *[]*string `json:"regions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#request_interval Route53HealthCheck#request_interval}.
-	RequestInterval *float64 `json:"requestInterval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#resource_path Route53HealthCheck#resource_path}.
-	ResourcePath *string `json:"resourcePath"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#routing_control_arn Route53HealthCheck#routing_control_arn}.
-	RoutingControlArn *string `json:"routingControlArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#search_string Route53HealthCheck#search_string}.
-	SearchString *string `json:"searchString"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#tags Route53HealthCheck#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check.html#tags_all Route53HealthCheck#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#type Route53HealthCheck#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#child_healthchecks Route53HealthCheck#child_healthchecks}.
+	ChildHealthchecks *[]*string `json:"childHealthchecks" yaml:"childHealthchecks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#child_health_threshold Route53HealthCheck#child_health_threshold}.
+	ChildHealthThreshold *float64 `json:"childHealthThreshold" yaml:"childHealthThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#cloudwatch_alarm_name Route53HealthCheck#cloudwatch_alarm_name}.
+	CloudwatchAlarmName *string `json:"cloudwatchAlarmName" yaml:"cloudwatchAlarmName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#cloudwatch_alarm_region Route53HealthCheck#cloudwatch_alarm_region}.
+	CloudwatchAlarmRegion *string `json:"cloudwatchAlarmRegion" yaml:"cloudwatchAlarmRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#disabled Route53HealthCheck#disabled}.
+	Disabled interface{} `json:"disabled" yaml:"disabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#enable_sni Route53HealthCheck#enable_sni}.
+	EnableSni interface{} `json:"enableSni" yaml:"enableSni"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#failure_threshold Route53HealthCheck#failure_threshold}.
+	FailureThreshold *float64 `json:"failureThreshold" yaml:"failureThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#fqdn Route53HealthCheck#fqdn}.
+	Fqdn *string `json:"fqdn" yaml:"fqdn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#insufficient_data_health_status Route53HealthCheck#insufficient_data_health_status}.
+	InsufficientDataHealthStatus *string `json:"insufficientDataHealthStatus" yaml:"insufficientDataHealthStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#invert_healthcheck Route53HealthCheck#invert_healthcheck}.
+	InvertHealthcheck interface{} `json:"invertHealthcheck" yaml:"invertHealthcheck"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#ip_address Route53HealthCheck#ip_address}.
+	IpAddress *string `json:"ipAddress" yaml:"ipAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#measure_latency Route53HealthCheck#measure_latency}.
+	MeasureLatency interface{} `json:"measureLatency" yaml:"measureLatency"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#port Route53HealthCheck#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#reference_name Route53HealthCheck#reference_name}.
+	ReferenceName *string `json:"referenceName" yaml:"referenceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#regions Route53HealthCheck#regions}.
+	Regions *[]*string `json:"regions" yaml:"regions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#request_interval Route53HealthCheck#request_interval}.
+	RequestInterval *float64 `json:"requestInterval" yaml:"requestInterval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#resource_path Route53HealthCheck#resource_path}.
+	ResourcePath *string `json:"resourcePath" yaml:"resourcePath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#routing_control_arn Route53HealthCheck#routing_control_arn}.
+	RoutingControlArn *string `json:"routingControlArn" yaml:"routingControlArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#search_string Route53HealthCheck#search_string}.
+	SearchString *string `json:"searchString" yaml:"searchString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#tags Route53HealthCheck#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_health_check#tags_all Route53HealthCheck#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec.html aws_route53_hosted_zone_dnssec}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec aws_route53_hosted_zone_dnssec}.
 type Route53HostedZoneDnssec interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5068,10 +5593,15 @@ type Route53HostedZoneDnssec interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5107,8 +5637,8 @@ func (j *jsiiProxy_Route53HostedZoneDnssec) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_Route53HostedZoneDnssec) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53HostedZoneDnssec) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5267,7 +5797,7 @@ func (j *jsiiProxy_Route53HostedZoneDnssec) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec.html aws_route53_hosted_zone_dnssec} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec aws_route53_hosted_zone_dnssec} Resource.
 func NewRoute53HostedZoneDnssec(scope constructs.Construct, id *string, config *Route53HostedZoneDnssecConfig) Route53HostedZoneDnssec {
 	_init_.Initialize()
 
@@ -5282,7 +5812,7 @@ func NewRoute53HostedZoneDnssec(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec.html aws_route53_hosted_zone_dnssec} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec aws_route53_hosted_zone_dnssec} Resource.
 func NewRoute53HostedZoneDnssec_Override(r Route53HostedZoneDnssec, scope constructs.Construct, id *string, config *Route53HostedZoneDnssecConfig) {
 	_init_.Initialize()
 
@@ -5293,7 +5823,7 @@ func NewRoute53HostedZoneDnssec_Override(r Route53HostedZoneDnssec, scope constr
 	)
 }
 
-func (j *jsiiProxy_Route53HostedZoneDnssec) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53HostedZoneDnssec) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5381,12 +5911,40 @@ func (r *jsiiProxy_Route53HostedZoneDnssec) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53HostedZoneDnssec) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53HostedZoneDnssec) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53HostedZoneDnssec) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5423,12 +5981,54 @@ func (r *jsiiProxy_Route53HostedZoneDnssec) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53HostedZoneDnssec) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53HostedZoneDnssec) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53HostedZoneDnssec) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53HostedZoneDnssec) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5537,26 +6137,26 @@ func (r *jsiiProxy_Route53HostedZoneDnssec) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53HostedZoneDnssecConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec.html#hosted_zone_id Route53HostedZoneDnssec#hosted_zone_id}.
-	HostedZoneId *string `json:"hostedZoneId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec.html#signing_status Route53HostedZoneDnssec#signing_status}.
-	SigningStatus *string `json:"signingStatus"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec#hosted_zone_id Route53HostedZoneDnssec#hosted_zone_id}.
+	HostedZoneId *string `json:"hostedZoneId" yaml:"hostedZoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_hosted_zone_dnssec#signing_status Route53HostedZoneDnssec#signing_status}.
+	SigningStatus *string `json:"signingStatus" yaml:"signingStatus"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key.html aws_route53_key_signing_key}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key aws_route53_key_signing_key}.
 type Route53KeySigningKey interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DigestAlgorithmMnemonic() *string
@@ -5594,10 +6194,15 @@ type Route53KeySigningKey interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -5633,8 +6238,8 @@ func (j *jsiiProxy_Route53KeySigningKey) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_Route53KeySigningKey) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53KeySigningKey) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5933,7 +6538,7 @@ func (j *jsiiProxy_Route53KeySigningKey) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key.html aws_route53_key_signing_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key aws_route53_key_signing_key} Resource.
 func NewRoute53KeySigningKey(scope constructs.Construct, id *string, config *Route53KeySigningKeyConfig) Route53KeySigningKey {
 	_init_.Initialize()
 
@@ -5948,7 +6553,7 @@ func NewRoute53KeySigningKey(scope constructs.Construct, id *string, config *Rou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key.html aws_route53_key_signing_key} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key aws_route53_key_signing_key} Resource.
 func NewRoute53KeySigningKey_Override(r Route53KeySigningKey, scope constructs.Construct, id *string, config *Route53KeySigningKeyConfig) {
 	_init_.Initialize()
 
@@ -5959,7 +6564,7 @@ func NewRoute53KeySigningKey_Override(r Route53KeySigningKey, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_Route53KeySigningKey) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53KeySigningKey) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6063,12 +6668,40 @@ func (r *jsiiProxy_Route53KeySigningKey) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53KeySigningKey) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53KeySigningKey) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53KeySigningKey) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6105,12 +6738,54 @@ func (r *jsiiProxy_Route53KeySigningKey) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53KeySigningKey) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53KeySigningKey) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53KeySigningKey) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53KeySigningKey) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6219,24 +6894,24 @@ func (r *jsiiProxy_Route53KeySigningKey) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53KeySigningKeyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key.html#hosted_zone_id Route53KeySigningKey#hosted_zone_id}.
-	HostedZoneId *string `json:"hostedZoneId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key.html#key_management_service_arn Route53KeySigningKey#key_management_service_arn}.
-	KeyManagementServiceArn *string `json:"keyManagementServiceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key.html#name Route53KeySigningKey#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key.html#status Route53KeySigningKey#status}.
-	Status *string `json:"status"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key#hosted_zone_id Route53KeySigningKey#hosted_zone_id}.
+	HostedZoneId *string `json:"hostedZoneId" yaml:"hostedZoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key#key_management_service_arn Route53KeySigningKey#key_management_service_arn}.
+	KeyManagementServiceArn *string `json:"keyManagementServiceArn" yaml:"keyManagementServiceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key#name Route53KeySigningKey#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_key_signing_key#status Route53KeySigningKey#status}.
+	Status *string `json:"status" yaml:"status"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log.html aws_route53_query_log}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log aws_route53_query_log}.
 type Route53QueryLog interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -6245,8 +6920,8 @@ type Route53QueryLog interface {
 	SetCloudwatchLogGroupArn(val *string)
 	CloudwatchLogGroupArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6265,10 +6940,15 @@ type Route53QueryLog interface {
 	SetZoneId(val *string)
 	ZoneIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6333,8 +7013,8 @@ func (j *jsiiProxy_Route53QueryLog) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_Route53QueryLog) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53QueryLog) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6473,7 +7153,7 @@ func (j *jsiiProxy_Route53QueryLog) ZoneIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log.html aws_route53_query_log} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log aws_route53_query_log} Resource.
 func NewRoute53QueryLog(scope constructs.Construct, id *string, config *Route53QueryLogConfig) Route53QueryLog {
 	_init_.Initialize()
 
@@ -6488,7 +7168,7 @@ func NewRoute53QueryLog(scope constructs.Construct, id *string, config *Route53Q
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log.html aws_route53_query_log} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log aws_route53_query_log} Resource.
 func NewRoute53QueryLog_Override(r Route53QueryLog, scope constructs.Construct, id *string, config *Route53QueryLogConfig) {
 	_init_.Initialize()
 
@@ -6507,7 +7187,7 @@ func (j *jsiiProxy_Route53QueryLog) SetCloudwatchLogGroupArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53QueryLog) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53QueryLog) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6587,12 +7267,40 @@ func (r *jsiiProxy_Route53QueryLog) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53QueryLog) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53QueryLog) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53QueryLog) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6629,12 +7337,54 @@ func (r *jsiiProxy_Route53QueryLog) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53QueryLog) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53QueryLog) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53QueryLog) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53QueryLog) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6735,50 +7485,50 @@ func (r *jsiiProxy_Route53QueryLog) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53QueryLogConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log.html#cloudwatch_log_group_arn Route53QueryLog#cloudwatch_log_group_arn}.
-	CloudwatchLogGroupArn *string `json:"cloudwatchLogGroupArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log.html#zone_id Route53QueryLog#zone_id}.
-	ZoneId *string `json:"zoneId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log#cloudwatch_log_group_arn Route53QueryLog#cloudwatch_log_group_arn}.
+	CloudwatchLogGroupArn *string `json:"cloudwatchLogGroupArn" yaml:"cloudwatchLogGroupArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_query_log#zone_id Route53QueryLog#zone_id}.
+	ZoneId *string `json:"zoneId" yaml:"zoneId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html aws_route53_record}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_record aws_route53_record}.
 type Route53Record interface {
 	cdktf.TerraformResource
-	Alias() *[]*Route53RecordAlias
-	SetAlias(val *[]*Route53RecordAlias)
-	AliasInput() *[]*Route53RecordAlias
+	Alias() interface{}
+	SetAlias(val interface{})
+	AliasInput() interface{}
 	AllowOverwrite() interface{}
 	SetAllowOverwrite(val interface{})
 	AllowOverwriteInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	FailoverRoutingPolicy() *[]*Route53RecordFailoverRoutingPolicy
-	SetFailoverRoutingPolicy(val *[]*Route53RecordFailoverRoutingPolicy)
-	FailoverRoutingPolicyInput() *[]*Route53RecordFailoverRoutingPolicy
+	FailoverRoutingPolicy() interface{}
+	SetFailoverRoutingPolicy(val interface{})
+	FailoverRoutingPolicyInput() interface{}
 	Fqdn() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
-	GeolocationRoutingPolicy() *[]*Route53RecordGeolocationRoutingPolicy
-	SetGeolocationRoutingPolicy(val *[]*Route53RecordGeolocationRoutingPolicy)
-	GeolocationRoutingPolicyInput() *[]*Route53RecordGeolocationRoutingPolicy
+	GeolocationRoutingPolicy() interface{}
+	SetGeolocationRoutingPolicy(val interface{})
+	GeolocationRoutingPolicyInput() interface{}
 	HealthCheckId() *string
 	SetHealthCheckId(val *string)
 	HealthCheckIdInput() *string
 	Id() *string
-	LatencyRoutingPolicy() *[]*Route53RecordLatencyRoutingPolicy
-	SetLatencyRoutingPolicy(val *[]*Route53RecordLatencyRoutingPolicy)
-	LatencyRoutingPolicyInput() *[]*Route53RecordLatencyRoutingPolicy
+	LatencyRoutingPolicy() interface{}
+	SetLatencyRoutingPolicy(val interface{})
+	LatencyRoutingPolicyInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	MultivalueAnswerRoutingPolicy() interface{}
@@ -6806,17 +7556,22 @@ type Route53Record interface {
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	WeightedRoutingPolicy() *[]*Route53RecordWeightedRoutingPolicy
-	SetWeightedRoutingPolicy(val *[]*Route53RecordWeightedRoutingPolicy)
-	WeightedRoutingPolicyInput() *[]*Route53RecordWeightedRoutingPolicy
+	WeightedRoutingPolicy() interface{}
+	SetWeightedRoutingPolicy(val interface{})
+	WeightedRoutingPolicyInput() interface{}
 	ZoneId() *string
 	SetZoneId(val *string)
 	ZoneIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAlias()
@@ -6842,8 +7597,8 @@ type jsiiProxy_Route53Record struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_Route53Record) Alias() *[]*Route53RecordAlias {
-	var returns *[]*Route53RecordAlias
+func (j *jsiiProxy_Route53Record) Alias() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"alias",
@@ -6852,8 +7607,8 @@ func (j *jsiiProxy_Route53Record) Alias() *[]*Route53RecordAlias {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) AliasInput() *[]*Route53RecordAlias {
-	var returns *[]*Route53RecordAlias
+func (j *jsiiProxy_Route53Record) AliasInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"aliasInput",
@@ -6902,8 +7657,8 @@ func (j *jsiiProxy_Route53Record) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53Record) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6922,8 +7677,8 @@ func (j *jsiiProxy_Route53Record) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) FailoverRoutingPolicy() *[]*Route53RecordFailoverRoutingPolicy {
-	var returns *[]*Route53RecordFailoverRoutingPolicy
+func (j *jsiiProxy_Route53Record) FailoverRoutingPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"failoverRoutingPolicy",
@@ -6932,8 +7687,8 @@ func (j *jsiiProxy_Route53Record) FailoverRoutingPolicy() *[]*Route53RecordFailo
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) FailoverRoutingPolicyInput() *[]*Route53RecordFailoverRoutingPolicy {
-	var returns *[]*Route53RecordFailoverRoutingPolicy
+func (j *jsiiProxy_Route53Record) FailoverRoutingPolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"failoverRoutingPolicyInput",
@@ -6972,8 +7727,8 @@ func (j *jsiiProxy_Route53Record) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) GeolocationRoutingPolicy() *[]*Route53RecordGeolocationRoutingPolicy {
-	var returns *[]*Route53RecordGeolocationRoutingPolicy
+func (j *jsiiProxy_Route53Record) GeolocationRoutingPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"geolocationRoutingPolicy",
@@ -6982,8 +7737,8 @@ func (j *jsiiProxy_Route53Record) GeolocationRoutingPolicy() *[]*Route53RecordGe
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) GeolocationRoutingPolicyInput() *[]*Route53RecordGeolocationRoutingPolicy {
-	var returns *[]*Route53RecordGeolocationRoutingPolicy
+func (j *jsiiProxy_Route53Record) GeolocationRoutingPolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"geolocationRoutingPolicyInput",
@@ -7022,8 +7777,8 @@ func (j *jsiiProxy_Route53Record) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) LatencyRoutingPolicy() *[]*Route53RecordLatencyRoutingPolicy {
-	var returns *[]*Route53RecordLatencyRoutingPolicy
+func (j *jsiiProxy_Route53Record) LatencyRoutingPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"latencyRoutingPolicy",
@@ -7032,8 +7787,8 @@ func (j *jsiiProxy_Route53Record) LatencyRoutingPolicy() *[]*Route53RecordLatenc
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) LatencyRoutingPolicyInput() *[]*Route53RecordLatencyRoutingPolicy {
-	var returns *[]*Route53RecordLatencyRoutingPolicy
+func (j *jsiiProxy_Route53Record) LatencyRoutingPolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"latencyRoutingPolicyInput",
@@ -7232,8 +7987,8 @@ func (j *jsiiProxy_Route53Record) TypeInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) WeightedRoutingPolicy() *[]*Route53RecordWeightedRoutingPolicy {
-	var returns *[]*Route53RecordWeightedRoutingPolicy
+func (j *jsiiProxy_Route53Record) WeightedRoutingPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"weightedRoutingPolicy",
@@ -7242,8 +7997,8 @@ func (j *jsiiProxy_Route53Record) WeightedRoutingPolicy() *[]*Route53RecordWeigh
 	return returns
 }
 
-func (j *jsiiProxy_Route53Record) WeightedRoutingPolicyInput() *[]*Route53RecordWeightedRoutingPolicy {
-	var returns *[]*Route53RecordWeightedRoutingPolicy
+func (j *jsiiProxy_Route53Record) WeightedRoutingPolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"weightedRoutingPolicyInput",
@@ -7272,7 +8027,7 @@ func (j *jsiiProxy_Route53Record) ZoneIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html aws_route53_record} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_record aws_route53_record} Resource.
 func NewRoute53Record(scope constructs.Construct, id *string, config *Route53RecordConfig) Route53Record {
 	_init_.Initialize()
 
@@ -7287,7 +8042,7 @@ func NewRoute53Record(scope constructs.Construct, id *string, config *Route53Rec
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html aws_route53_record} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_record aws_route53_record} Resource.
 func NewRoute53Record_Override(r Route53Record, scope constructs.Construct, id *string, config *Route53RecordConfig) {
 	_init_.Initialize()
 
@@ -7298,7 +8053,7 @@ func NewRoute53Record_Override(r Route53Record, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_Route53Record) SetAlias(val *[]*Route53RecordAlias) {
+func (j *jsiiProxy_Route53Record) SetAlias(val interface{}) {
 	_jsii_.Set(
 		j,
 		"alias",
@@ -7314,7 +8069,7 @@ func (j *jsiiProxy_Route53Record) SetAllowOverwrite(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53Record) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53Record) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7330,7 +8085,7 @@ func (j *jsiiProxy_Route53Record) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Route53Record) SetFailoverRoutingPolicy(val *[]*Route53RecordFailoverRoutingPolicy) {
+func (j *jsiiProxy_Route53Record) SetFailoverRoutingPolicy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"failoverRoutingPolicy",
@@ -7338,7 +8093,7 @@ func (j *jsiiProxy_Route53Record) SetFailoverRoutingPolicy(val *[]*Route53Record
 	)
 }
 
-func (j *jsiiProxy_Route53Record) SetGeolocationRoutingPolicy(val *[]*Route53RecordGeolocationRoutingPolicy) {
+func (j *jsiiProxy_Route53Record) SetGeolocationRoutingPolicy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"geolocationRoutingPolicy",
@@ -7354,7 +8109,7 @@ func (j *jsiiProxy_Route53Record) SetHealthCheckId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53Record) SetLatencyRoutingPolicy(val *[]*Route53RecordLatencyRoutingPolicy) {
+func (j *jsiiProxy_Route53Record) SetLatencyRoutingPolicy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"latencyRoutingPolicy",
@@ -7426,7 +8181,7 @@ func (j *jsiiProxy_Route53Record) SetType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53Record) SetWeightedRoutingPolicy(val *[]*Route53RecordWeightedRoutingPolicy) {
+func (j *jsiiProxy_Route53Record) SetWeightedRoutingPolicy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"weightedRoutingPolicy",
@@ -7482,12 +8237,40 @@ func (r *jsiiProxy_Route53Record) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53Record) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53Record) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53Record) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7524,12 +8307,54 @@ func (r *jsiiProxy_Route53Record) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53Record) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53Record) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53Record) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53Record) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7716,96 +8541,96 @@ func (r *jsiiProxy_Route53Record) ToTerraform() interface{} {
 }
 
 type Route53RecordAlias struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#evaluate_target_health Route53Record#evaluate_target_health}.
-	EvaluateTargetHealth interface{} `json:"evaluateTargetHealth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#name Route53Record#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#zone_id Route53Record#zone_id}.
-	ZoneId *string `json:"zoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#evaluate_target_health Route53Record#evaluate_target_health}.
+	EvaluateTargetHealth interface{} `json:"evaluateTargetHealth" yaml:"evaluateTargetHealth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#name Route53Record#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#zone_id Route53Record#zone_id}.
+	ZoneId *string `json:"zoneId" yaml:"zoneId"`
 }
 
 // AWS Route 53.
 type Route53RecordConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#name Route53Record#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#type Route53Record#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#zone_id Route53Record#zone_id}.
-	ZoneId *string `json:"zoneId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#name Route53Record#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#type Route53Record#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#zone_id Route53Record#zone_id}.
+	ZoneId *string `json:"zoneId" yaml:"zoneId"`
 	// alias block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#alias Route53Record#alias}
-	Alias *[]*Route53RecordAlias `json:"alias"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#allow_overwrite Route53Record#allow_overwrite}.
-	AllowOverwrite interface{} `json:"allowOverwrite"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#alias Route53Record#alias}
+	Alias interface{} `json:"alias" yaml:"alias"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#allow_overwrite Route53Record#allow_overwrite}.
+	AllowOverwrite interface{} `json:"allowOverwrite" yaml:"allowOverwrite"`
 	// failover_routing_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#failover_routing_policy Route53Record#failover_routing_policy}
-	FailoverRoutingPolicy *[]*Route53RecordFailoverRoutingPolicy `json:"failoverRoutingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#failover_routing_policy Route53Record#failover_routing_policy}
+	FailoverRoutingPolicy interface{} `json:"failoverRoutingPolicy" yaml:"failoverRoutingPolicy"`
 	// geolocation_routing_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#geolocation_routing_policy Route53Record#geolocation_routing_policy}
-	GeolocationRoutingPolicy *[]*Route53RecordGeolocationRoutingPolicy `json:"geolocationRoutingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#health_check_id Route53Record#health_check_id}.
-	HealthCheckId *string `json:"healthCheckId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#geolocation_routing_policy Route53Record#geolocation_routing_policy}
+	GeolocationRoutingPolicy interface{} `json:"geolocationRoutingPolicy" yaml:"geolocationRoutingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#health_check_id Route53Record#health_check_id}.
+	HealthCheckId *string `json:"healthCheckId" yaml:"healthCheckId"`
 	// latency_routing_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#latency_routing_policy Route53Record#latency_routing_policy}
-	LatencyRoutingPolicy *[]*Route53RecordLatencyRoutingPolicy `json:"latencyRoutingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#multivalue_answer_routing_policy Route53Record#multivalue_answer_routing_policy}.
-	MultivalueAnswerRoutingPolicy interface{} `json:"multivalueAnswerRoutingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#records Route53Record#records}.
-	Records *[]*string `json:"records"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#set_identifier Route53Record#set_identifier}.
-	SetIdentifier *string `json:"setIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#ttl Route53Record#ttl}.
-	Ttl *float64 `json:"ttl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#latency_routing_policy Route53Record#latency_routing_policy}
+	LatencyRoutingPolicy interface{} `json:"latencyRoutingPolicy" yaml:"latencyRoutingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#multivalue_answer_routing_policy Route53Record#multivalue_answer_routing_policy}.
+	MultivalueAnswerRoutingPolicy interface{} `json:"multivalueAnswerRoutingPolicy" yaml:"multivalueAnswerRoutingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#records Route53Record#records}.
+	Records *[]*string `json:"records" yaml:"records"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#set_identifier Route53Record#set_identifier}.
+	SetIdentifier *string `json:"setIdentifier" yaml:"setIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#ttl Route53Record#ttl}.
+	Ttl *float64 `json:"ttl" yaml:"ttl"`
 	// weighted_routing_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#weighted_routing_policy Route53Record#weighted_routing_policy}
-	WeightedRoutingPolicy *[]*Route53RecordWeightedRoutingPolicy `json:"weightedRoutingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#weighted_routing_policy Route53Record#weighted_routing_policy}
+	WeightedRoutingPolicy interface{} `json:"weightedRoutingPolicy" yaml:"weightedRoutingPolicy"`
 }
 
 type Route53RecordFailoverRoutingPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#type Route53Record#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#type Route53Record#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type Route53RecordGeolocationRoutingPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#continent Route53Record#continent}.
-	Continent *string `json:"continent"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#country Route53Record#country}.
-	Country *string `json:"country"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#subdivision Route53Record#subdivision}.
-	Subdivision *string `json:"subdivision"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#continent Route53Record#continent}.
+	Continent *string `json:"continent" yaml:"continent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#country Route53Record#country}.
+	Country *string `json:"country" yaml:"country"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#subdivision Route53Record#subdivision}.
+	Subdivision *string `json:"subdivision" yaml:"subdivision"`
 }
 
 type Route53RecordLatencyRoutingPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#region Route53Record#region}.
-	Region *string `json:"region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#region Route53Record#region}.
+	Region *string `json:"region" yaml:"region"`
 }
 
 type Route53RecordWeightedRoutingPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record.html#weight Route53Record#weight}.
-	Weight *float64 `json:"weight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_record#weight Route53Record#weight}.
+	Weight *float64 `json:"weight" yaml:"weight"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster.html aws_route53recoverycontrolconfig_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster aws_route53recoverycontrolconfig_cluster}.
 type Route53RecoverycontrolconfigCluster interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -7826,10 +8651,15 @@ type Route53RecoverycontrolconfigCluster interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	ClusterEndpoints(index *string) Route53RecoverycontrolconfigClusterClusterEndpoints
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -7874,8 +8704,8 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigCluster) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoverycontrolconfigCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8024,7 +8854,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigCluster) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster.html aws_route53recoverycontrolconfig_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster aws_route53recoverycontrolconfig_cluster} Resource.
 func NewRoute53RecoverycontrolconfigCluster(scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigClusterConfig) Route53RecoverycontrolconfigCluster {
 	_init_.Initialize()
 
@@ -8039,7 +8869,7 @@ func NewRoute53RecoverycontrolconfigCluster(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster.html aws_route53recoverycontrolconfig_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster aws_route53recoverycontrolconfig_cluster} Resource.
 func NewRoute53RecoverycontrolconfigCluster_Override(r Route53RecoverycontrolconfigCluster, scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigClusterConfig) {
 	_init_.Initialize()
 
@@ -8050,7 +8880,7 @@ func NewRoute53RecoverycontrolconfigCluster_Override(r Route53Recoverycontrolcon
 	)
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoverycontrolconfigCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8143,12 +8973,40 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) ClusterEndpoints(index *
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8185,12 +9043,54 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8296,12 +9196,19 @@ type Route53RecoverycontrolconfigClusterClusterEndpoints interface {
 	Region() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -8350,8 +9257,8 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8360,15 +9267,25 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) Terrafor
 	return returns
 }
 
+func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewRoute53RecoverycontrolconfigClusterClusterEndpoints(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) Route53RecoverycontrolconfigClusterClusterEndpoints {
+func NewRoute53RecoverycontrolconfigClusterClusterEndpoints(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) Route53RecoverycontrolconfigClusterClusterEndpoints {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints{}
 
 	_jsii_.Create(
 		"hashicorp_aws.route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -8376,12 +9293,12 @@ func NewRoute53RecoverycontrolconfigClusterClusterEndpoints(terraformResource cd
 }
 
 // Experimental.
-func NewRoute53RecoverycontrolconfigClusterClusterEndpoints_Override(r Route53RecoverycontrolconfigClusterClusterEndpoints, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewRoute53RecoverycontrolconfigClusterClusterEndpoints_Override(r Route53RecoverycontrolconfigClusterClusterEndpoints, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.route53.Route53RecoverycontrolconfigClusterClusterEndpoints",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		r,
 	)
 }
@@ -8402,7 +9319,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) SetTerra
 	)
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8410,13 +9327,49 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) SetTerra
 	)
 }
 
+func (j *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8453,12 +9406,54 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetNumbe
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8483,18 +9478,18 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigClusterClusterEndpoints) Interpol
 // AWS Route 53.
 type Route53RecoverycontrolconfigClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster.html#name Route53RecoverycontrolconfigCluster#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_cluster#name Route53RecoverycontrolconfigCluster#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel.html aws_route53recoverycontrolconfig_control_panel}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel aws_route53recoverycontrolconfig_control_panel}.
 type Route53RecoverycontrolconfigControlPanel interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -8503,9 +9498,9 @@ type Route53RecoverycontrolconfigControlPanel interface {
 	SetClusterArn(val *string)
 	ClusterArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
-	DefaultControlPanel() interface{}
+	Count() *float64
+	SetCount(val *float64)
+	DefaultControlPanel() cdktf.IResolvable
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8526,10 +9521,15 @@ type Route53RecoverycontrolconfigControlPanel interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -8594,8 +9594,8 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) ConstructNodeMetada
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8604,8 +9604,8 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) Count() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) DefaultControlPanel() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) DefaultControlPanel() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"defaultControlPanel",
@@ -8764,7 +9764,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) TerraformResourceTy
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel.html aws_route53recoverycontrolconfig_control_panel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel aws_route53recoverycontrolconfig_control_panel} Resource.
 func NewRoute53RecoverycontrolconfigControlPanel(scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigControlPanelConfig) Route53RecoverycontrolconfigControlPanel {
 	_init_.Initialize()
 
@@ -8779,7 +9779,7 @@ func NewRoute53RecoverycontrolconfigControlPanel(scope constructs.Construct, id 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel.html aws_route53recoverycontrolconfig_control_panel} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel aws_route53recoverycontrolconfig_control_panel} Resource.
 func NewRoute53RecoverycontrolconfigControlPanel_Override(r Route53RecoverycontrolconfigControlPanel, scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigControlPanelConfig) {
 	_init_.Initialize()
 
@@ -8798,7 +9798,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) SetClusterArn(val *
 	)
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoverycontrolconfigControlPanel) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8878,12 +9878,40 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) AddOverride(path *s
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8920,12 +9948,54 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetNumberAttribute(
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9026,20 +10096,20 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigControlPanel) ToTerraform() inter
 // AWS Route 53.
 type Route53RecoverycontrolconfigControlPanelConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel.html#cluster_arn Route53RecoverycontrolconfigControlPanel#cluster_arn}.
-	ClusterArn *string `json:"clusterArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel.html#name Route53RecoverycontrolconfigControlPanel#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel#cluster_arn Route53RecoverycontrolconfigControlPanel#cluster_arn}.
+	ClusterArn *string `json:"clusterArn" yaml:"clusterArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_control_panel#name Route53RecoverycontrolconfigControlPanel#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control.html aws_route53recoverycontrolconfig_routing_control}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control aws_route53recoverycontrolconfig_routing_control}.
 type Route53RecoverycontrolconfigRoutingControl interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -9051,8 +10121,8 @@ type Route53RecoverycontrolconfigRoutingControl interface {
 	ControlPanelArn() *string
 	SetControlPanelArn(val *string)
 	ControlPanelArnInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9072,10 +10142,15 @@ type Route53RecoverycontrolconfigRoutingControl interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetControlPanelArn()
@@ -9161,8 +10236,8 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) ControlPanelArnIn
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9311,7 +10386,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) TerraformResource
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control.html aws_route53recoverycontrolconfig_routing_control} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control aws_route53recoverycontrolconfig_routing_control} Resource.
 func NewRoute53RecoverycontrolconfigRoutingControl(scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigRoutingControlConfig) Route53RecoverycontrolconfigRoutingControl {
 	_init_.Initialize()
 
@@ -9326,7 +10401,7 @@ func NewRoute53RecoverycontrolconfigRoutingControl(scope constructs.Construct, i
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control.html aws_route53recoverycontrolconfig_routing_control} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control aws_route53recoverycontrolconfig_routing_control} Resource.
 func NewRoute53RecoverycontrolconfigRoutingControl_Override(r Route53RecoverycontrolconfigRoutingControl, scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigRoutingControlConfig) {
 	_init_.Initialize()
 
@@ -9353,7 +10428,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) SetControlPanelAr
 	)
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9433,12 +10508,40 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) AddOverride(path 
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9475,12 +10578,54 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetNumberAttribut
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9589,22 +10734,22 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigRoutingControl) ToTerraform() int
 // AWS Route 53.
 type Route53RecoverycontrolconfigRoutingControlConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control.html#cluster_arn Route53RecoverycontrolconfigRoutingControl#cluster_arn}.
-	ClusterArn *string `json:"clusterArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control.html#name Route53RecoverycontrolconfigRoutingControl#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control.html#control_panel_arn Route53RecoverycontrolconfigRoutingControl#control_panel_arn}.
-	ControlPanelArn *string `json:"controlPanelArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control#cluster_arn Route53RecoverycontrolconfigRoutingControl#cluster_arn}.
+	ClusterArn *string `json:"clusterArn" yaml:"clusterArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control#name Route53RecoverycontrolconfigRoutingControl#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_routing_control#control_panel_arn Route53RecoverycontrolconfigRoutingControl#control_panel_arn}.
+	ControlPanelArn *string `json:"controlPanelArn" yaml:"controlPanelArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html aws_route53recoverycontrolconfig_safety_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule aws_route53recoverycontrolconfig_safety_rule}.
 type Route53RecoverycontrolconfigSafetyRule interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -9616,8 +10761,8 @@ type Route53RecoverycontrolconfigSafetyRule interface {
 	ControlPanelArn() *string
 	SetControlPanelArn(val *string)
 	ControlPanelArnInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9648,10 +10793,15 @@ type Route53RecoverycontrolconfigSafetyRule interface {
 	SetWaitPeriodMs(val *float64)
 	WaitPeriodMsInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutRuleConfig(value *Route53RecoverycontrolconfigSafetyRuleRuleConfig)
@@ -9740,8 +10890,8 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) ControlPanelArnInput(
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9970,7 +11120,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) WaitPeriodMsInput() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html aws_route53recoverycontrolconfig_safety_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule aws_route53recoverycontrolconfig_safety_rule} Resource.
 func NewRoute53RecoverycontrolconfigSafetyRule(scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigSafetyRuleConfig) Route53RecoverycontrolconfigSafetyRule {
 	_init_.Initialize()
 
@@ -9985,7 +11135,7 @@ func NewRoute53RecoverycontrolconfigSafetyRule(scope constructs.Construct, id *s
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html aws_route53recoverycontrolconfig_safety_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule aws_route53recoverycontrolconfig_safety_rule} Resource.
 func NewRoute53RecoverycontrolconfigSafetyRule_Override(r Route53RecoverycontrolconfigSafetyRule, scope constructs.Construct, id *string, config *Route53RecoverycontrolconfigSafetyRuleConfig) {
 	_init_.Initialize()
 
@@ -10012,7 +11162,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) SetControlPanelArn(va
 	)
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10116,12 +11266,40 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) AddOverride(path *str
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10158,12 +11336,54 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetNumberAttribute(te
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10296,38 +11516,38 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRule) ToTerraform() interfa
 // AWS Route 53.
 type Route53RecoverycontrolconfigSafetyRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#control_panel_arn Route53RecoverycontrolconfigSafetyRule#control_panel_arn}.
-	ControlPanelArn *string `json:"controlPanelArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#name Route53RecoverycontrolconfigSafetyRule#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#control_panel_arn Route53RecoverycontrolconfigSafetyRule#control_panel_arn}.
+	ControlPanelArn *string `json:"controlPanelArn" yaml:"controlPanelArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#name Route53RecoverycontrolconfigSafetyRule#name}.
+	Name *string `json:"name" yaml:"name"`
 	// rule_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#rule_config Route53RecoverycontrolconfigSafetyRule#rule_config}
-	RuleConfig *Route53RecoverycontrolconfigSafetyRuleRuleConfig `json:"ruleConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#wait_period_ms Route53RecoverycontrolconfigSafetyRule#wait_period_ms}.
-	WaitPeriodMs *float64 `json:"waitPeriodMs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#asserted_controls Route53RecoverycontrolconfigSafetyRule#asserted_controls}.
-	AssertedControls *[]*string `json:"assertedControls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#gating_controls Route53RecoverycontrolconfigSafetyRule#gating_controls}.
-	GatingControls *[]*string `json:"gatingControls"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#target_controls Route53RecoverycontrolconfigSafetyRule#target_controls}.
-	TargetControls *[]*string `json:"targetControls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#rule_config Route53RecoverycontrolconfigSafetyRule#rule_config}
+	RuleConfig *Route53RecoverycontrolconfigSafetyRuleRuleConfig `json:"ruleConfig" yaml:"ruleConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#wait_period_ms Route53RecoverycontrolconfigSafetyRule#wait_period_ms}.
+	WaitPeriodMs *float64 `json:"waitPeriodMs" yaml:"waitPeriodMs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#asserted_controls Route53RecoverycontrolconfigSafetyRule#asserted_controls}.
+	AssertedControls *[]*string `json:"assertedControls" yaml:"assertedControls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#gating_controls Route53RecoverycontrolconfigSafetyRule#gating_controls}.
+	GatingControls *[]*string `json:"gatingControls" yaml:"gatingControls"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#target_controls Route53RecoverycontrolconfigSafetyRule#target_controls}.
+	TargetControls *[]*string `json:"targetControls" yaml:"targetControls"`
 }
 
 type Route53RecoverycontrolconfigSafetyRuleRuleConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#inverted Route53RecoverycontrolconfigSafetyRule#inverted}.
-	Inverted interface{} `json:"inverted"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#threshold Route53RecoverycontrolconfigSafetyRule#threshold}.
-	Threshold *float64 `json:"threshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule.html#type Route53RecoverycontrolconfigSafetyRule#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#inverted Route53RecoverycontrolconfigSafetyRule#inverted}.
+	Inverted interface{} `json:"inverted" yaml:"inverted"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#threshold Route53RecoverycontrolconfigSafetyRule#threshold}.
+	Threshold *float64 `json:"threshold" yaml:"threshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoverycontrolconfig_safety_rule#type Route53RecoverycontrolconfigSafetyRule#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference interface {
@@ -10341,18 +11561,23 @@ type Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Threshold() *float64
 	SetThreshold(val *float64)
 	ThresholdInput() *float64
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -10412,8 +11637,8 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10462,7 +11687,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReferen
 	return returns
 }
 
-func NewRoute53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference {
+func NewRoute53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference{}
@@ -10476,7 +11701,7 @@ func NewRoute53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference(terrafor
 	return &j
 }
 
-func NewRoute53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference_Override(r Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference_Override(r Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10518,7 +11743,7 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReferen
 	)
 }
 
-func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10543,12 +11768,40 @@ func (j *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReferen
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10585,12 +11838,54 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReferen
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10626,7 +11921,7 @@ func (r *jsiiProxy_Route53RecoverycontrolconfigSafetyRuleRuleConfigOutputReferen
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html aws_route53recoveryreadiness_cell}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell aws_route53recoveryreadiness_cell}.
 type Route53RecoveryreadinessCell interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -10638,8 +11933,8 @@ type Route53RecoveryreadinessCell interface {
 	SetCells(val *[]*string)
 	CellsInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10652,22 +11947,27 @@ type Route53RecoveryreadinessCell interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() Route53RecoveryreadinessCellTimeoutsOutputReference
 	TimeoutsInput() *Route53RecoveryreadinessCellTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Route53RecoveryreadinessCellTimeouts)
@@ -10757,8 +12057,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessCell) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10857,8 +12157,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessCell) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10867,8 +12167,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10877,8 +12177,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10887,8 +12187,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessCell) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10947,7 +12247,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) TimeoutsInput() *Route53Recover
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html aws_route53recoveryreadiness_cell} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell aws_route53recoveryreadiness_cell} Resource.
 func NewRoute53RecoveryreadinessCell(scope constructs.Construct, id *string, config *Route53RecoveryreadinessCellConfig) Route53RecoveryreadinessCell {
 	_init_.Initialize()
 
@@ -10962,7 +12262,7 @@ func NewRoute53RecoveryreadinessCell(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html aws_route53recoveryreadiness_cell} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell aws_route53recoveryreadiness_cell} Resource.
 func NewRoute53RecoveryreadinessCell_Override(r Route53RecoveryreadinessCell, scope constructs.Construct, id *string, config *Route53RecoveryreadinessCellConfig) {
 	_init_.Initialize()
 
@@ -10989,7 +12289,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) SetCells(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessCell) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11021,7 +12321,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) SetProvider(val cdktf.Terraform
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessCell) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -11029,7 +12329,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessCell) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCell) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessCell) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -11077,12 +12377,40 @@ func (r *jsiiProxy_Route53RecoveryreadinessCell) AddOverride(path *string, value
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCell) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessCell) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCell) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11119,12 +12447,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessCell) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCell) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCell) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessCell) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCell) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11265,30 +12635,30 @@ func (r *jsiiProxy_Route53RecoveryreadinessCell) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53RecoveryreadinessCellConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html#cell_name Route53RecoveryreadinessCell#cell_name}.
-	CellName *string `json:"cellName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html#cells Route53RecoveryreadinessCell#cells}.
-	Cells *[]*string `json:"cells"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html#tags Route53RecoveryreadinessCell#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html#tags_all Route53RecoveryreadinessCell#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell#cell_name Route53RecoveryreadinessCell#cell_name}.
+	CellName *string `json:"cellName" yaml:"cellName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell#cells Route53RecoveryreadinessCell#cells}.
+	Cells *[]*string `json:"cells" yaml:"cells"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell#tags Route53RecoveryreadinessCell#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell#tags_all Route53RecoveryreadinessCell#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html#timeouts Route53RecoveryreadinessCell#timeouts}
-	Timeouts *Route53RecoveryreadinessCellTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell#timeouts Route53RecoveryreadinessCell#timeouts}
+	Timeouts *Route53RecoveryreadinessCellTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Route53RecoveryreadinessCellTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell.html#delete Route53RecoveryreadinessCell#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_cell#delete Route53RecoveryreadinessCell#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type Route53RecoveryreadinessCellTimeoutsOutputReference interface {
@@ -11302,12 +12672,17 @@ type Route53RecoveryreadinessCellTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -11368,8 +12743,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11378,7 +12753,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) Terrafor
 	return returns
 }
 
-func NewRoute53RecoveryreadinessCellTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessCellTimeoutsOutputReference {
+func NewRoute53RecoveryreadinessCellTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessCellTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference{}
@@ -11392,7 +12767,7 @@ func NewRoute53RecoveryreadinessCellTimeoutsOutputReference(terraformResource cd
 	return &j
 }
 
-func NewRoute53RecoveryreadinessCellTimeoutsOutputReference_Override(r Route53RecoveryreadinessCellTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessCellTimeoutsOutputReference_Override(r Route53RecoveryreadinessCellTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11434,7 +12809,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11443,12 +12818,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) SetTerra
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11485,12 +12888,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetNumbe
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11534,14 +12979,14 @@ func (r *jsiiProxy_Route53RecoveryreadinessCellTimeoutsOutputReference) ResetDel
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html aws_route53recoveryreadiness_readiness_check}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check aws_route53recoveryreadiness_readiness_check}.
 type Route53RecoveryreadinessReadinessCheck interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -11559,22 +13004,27 @@ type Route53RecoveryreadinessReadinessCheck interface {
 	ResourceSetName() *string
 	SetResourceSetName(val *string)
 	ResourceSetNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 	TimeoutsInput() *Route53RecoveryreadinessReadinessCheckTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Route53RecoveryreadinessReadinessCheckTimeouts)
@@ -11623,8 +13073,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) ConstructNodeMetadata
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11753,8 +13203,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) ResourceSetNameInput(
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -11763,8 +13213,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -11773,8 +13223,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsAll() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -11783,8 +13233,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsAllInput() interf
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -11843,7 +13293,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) TimeoutsInput() *Rout
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html aws_route53recoveryreadiness_readiness_check} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check aws_route53recoveryreadiness_readiness_check} Resource.
 func NewRoute53RecoveryreadinessReadinessCheck(scope constructs.Construct, id *string, config *Route53RecoveryreadinessReadinessCheckConfig) Route53RecoveryreadinessReadinessCheck {
 	_init_.Initialize()
 
@@ -11858,7 +13308,7 @@ func NewRoute53RecoveryreadinessReadinessCheck(scope constructs.Construct, id *s
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html aws_route53recoveryreadiness_readiness_check} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check aws_route53recoveryreadiness_readiness_check} Resource.
 func NewRoute53RecoveryreadinessReadinessCheck_Override(r Route53RecoveryreadinessReadinessCheck, scope constructs.Construct, id *string, config *Route53RecoveryreadinessReadinessCheckConfig) {
 	_init_.Initialize()
 
@@ -11869,7 +13319,7 @@ func NewRoute53RecoveryreadinessReadinessCheck_Override(r Route53Recoveryreadine
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11917,7 +13367,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetResourceSetName(va
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -11925,7 +13375,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetTags(val interface
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheck) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -11973,12 +13423,40 @@ func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) AddOverride(path *str
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12015,12 +13493,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetNumberAttribute(te
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12153,30 +13673,30 @@ func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheck) ToTerraform() interfa
 // AWS Route 53.
 type Route53RecoveryreadinessReadinessCheckConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html#readiness_check_name Route53RecoveryreadinessReadinessCheck#readiness_check_name}.
-	ReadinessCheckName *string `json:"readinessCheckName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html#resource_set_name Route53RecoveryreadinessReadinessCheck#resource_set_name}.
-	ResourceSetName *string `json:"resourceSetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html#tags Route53RecoveryreadinessReadinessCheck#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html#tags_all Route53RecoveryreadinessReadinessCheck#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check#readiness_check_name Route53RecoveryreadinessReadinessCheck#readiness_check_name}.
+	ReadinessCheckName *string `json:"readinessCheckName" yaml:"readinessCheckName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check#resource_set_name Route53RecoveryreadinessReadinessCheck#resource_set_name}.
+	ResourceSetName *string `json:"resourceSetName" yaml:"resourceSetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check#tags Route53RecoveryreadinessReadinessCheck#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check#tags_all Route53RecoveryreadinessReadinessCheck#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html#timeouts Route53RecoveryreadinessReadinessCheck#timeouts}
-	Timeouts *Route53RecoveryreadinessReadinessCheckTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check#timeouts Route53RecoveryreadinessReadinessCheck#timeouts}
+	Timeouts *Route53RecoveryreadinessReadinessCheckTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Route53RecoveryreadinessReadinessCheckTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check.html#delete Route53RecoveryreadinessReadinessCheck#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_readiness_check#delete Route53RecoveryreadinessReadinessCheck#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference interface {
@@ -12190,12 +13710,17 @@ type Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -12256,8 +13781,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -12266,7 +13791,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 	return returns
 }
 
-func NewRoute53RecoveryreadinessReadinessCheckTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference {
+func NewRoute53RecoveryreadinessReadinessCheckTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference{}
@@ -12280,7 +13805,7 @@ func NewRoute53RecoveryreadinessReadinessCheckTimeoutsOutputReference(terraformR
 	return &j
 }
 
-func NewRoute53RecoveryreadinessReadinessCheckTimeoutsOutputReference_Override(r Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessReadinessCheckTimeoutsOutputReference_Override(r Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -12322,7 +13847,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -12331,12 +13856,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12373,12 +13926,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12422,7 +14017,7 @@ func (r *jsiiProxy_Route53RecoveryreadinessReadinessCheckTimeoutsOutputReference
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html aws_route53recoveryreadiness_recovery_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group aws_route53recoveryreadiness_recovery_group}.
 type Route53RecoveryreadinessRecoveryGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -12431,8 +14026,8 @@ type Route53RecoveryreadinessRecoveryGroup interface {
 	SetCells(val *[]*string)
 	CellsInput() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -12447,22 +14042,27 @@ type Route53RecoveryreadinessRecoveryGroup interface {
 	RecoveryGroupName() *string
 	SetRecoveryGroupName(val *string)
 	RecoveryGroupNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference
 	TimeoutsInput() *Route53RecoveryreadinessRecoveryGroupTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Route53RecoveryreadinessRecoveryGroupTimeouts)
@@ -12532,8 +14132,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) ConstructNodeMetadata(
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12642,8 +14242,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) RecoveryGroupNameInput
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -12652,8 +14252,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -12662,8 +14262,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsAll() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -12672,8 +14272,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsAllInput() interfa
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -12732,7 +14332,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) TimeoutsInput() *Route
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html aws_route53recoveryreadiness_recovery_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group aws_route53recoveryreadiness_recovery_group} Resource.
 func NewRoute53RecoveryreadinessRecoveryGroup(scope constructs.Construct, id *string, config *Route53RecoveryreadinessRecoveryGroupConfig) Route53RecoveryreadinessRecoveryGroup {
 	_init_.Initialize()
 
@@ -12747,7 +14347,7 @@ func NewRoute53RecoveryreadinessRecoveryGroup(scope constructs.Construct, id *st
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html aws_route53recoveryreadiness_recovery_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group aws_route53recoveryreadiness_recovery_group} Resource.
 func NewRoute53RecoveryreadinessRecoveryGroup_Override(r Route53RecoveryreadinessRecoveryGroup, scope constructs.Construct, id *string, config *Route53RecoveryreadinessRecoveryGroupConfig) {
 	_init_.Initialize()
 
@@ -12766,7 +14366,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetCells(val *[]*strin
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12806,7 +14406,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetRecoveryGroupName(v
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -12814,7 +14414,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetTags(val interface{
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -12862,12 +14462,40 @@ func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) AddOverride(path *stri
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12904,12 +14532,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetNumberAttribute(ter
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13050,30 +14720,30 @@ func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroup) ToTerraform() interfac
 // AWS Route 53.
 type Route53RecoveryreadinessRecoveryGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html#recovery_group_name Route53RecoveryreadinessRecoveryGroup#recovery_group_name}.
-	RecoveryGroupName *string `json:"recoveryGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html#cells Route53RecoveryreadinessRecoveryGroup#cells}.
-	Cells *[]*string `json:"cells"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html#tags Route53RecoveryreadinessRecoveryGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html#tags_all Route53RecoveryreadinessRecoveryGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group#recovery_group_name Route53RecoveryreadinessRecoveryGroup#recovery_group_name}.
+	RecoveryGroupName *string `json:"recoveryGroupName" yaml:"recoveryGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group#cells Route53RecoveryreadinessRecoveryGroup#cells}.
+	Cells *[]*string `json:"cells" yaml:"cells"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group#tags Route53RecoveryreadinessRecoveryGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group#tags_all Route53RecoveryreadinessRecoveryGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html#timeouts Route53RecoveryreadinessRecoveryGroup#timeouts}
-	Timeouts *Route53RecoveryreadinessRecoveryGroupTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group#timeouts Route53RecoveryreadinessRecoveryGroup#timeouts}
+	Timeouts *Route53RecoveryreadinessRecoveryGroupTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Route53RecoveryreadinessRecoveryGroupTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group.html#delete Route53RecoveryreadinessRecoveryGroup#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_recovery_group#delete Route53RecoveryreadinessRecoveryGroup#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference interface {
@@ -13087,12 +14757,17 @@ type Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -13153,8 +14828,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13163,7 +14838,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 	return returns
 }
 
-func NewRoute53RecoveryreadinessRecoveryGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference {
+func NewRoute53RecoveryreadinessRecoveryGroupTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference{}
@@ -13177,7 +14852,7 @@ func NewRoute53RecoveryreadinessRecoveryGroupTimeoutsOutputReference(terraformRe
 	return &j
 }
 
-func NewRoute53RecoveryreadinessRecoveryGroupTimeoutsOutputReference_Override(r Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessRecoveryGroupTimeoutsOutputReference_Override(r Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13219,7 +14894,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13228,12 +14903,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13270,12 +14973,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13319,14 +15064,14 @@ func (r *jsiiProxy_Route53RecoveryreadinessRecoveryGroupTimeoutsOutputReference)
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html aws_route53recoveryreadiness_resource_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set aws_route53recoveryreadiness_resource_set}.
 type Route53RecoveryreadinessResourceSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13338,31 +15083,36 @@ type Route53RecoveryreadinessResourceSet interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Resources() *[]*Route53RecoveryreadinessResourceSetResources
-	SetResources(val *[]*Route53RecoveryreadinessResourceSetResources)
+	Resources() interface{}
+	SetResources(val interface{})
 	ResourceSetName() *string
 	SetResourceSetName(val *string)
 	ResourceSetNameInput() *string
 	ResourceSetType() *string
 	SetResourceSetType(val *string)
 	ResourceSetTypeInput() *string
-	ResourcesInput() *[]*Route53RecoveryreadinessResourceSetResources
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	ResourcesInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() Route53RecoveryreadinessResourceSetTimeoutsOutputReference
 	TimeoutsInput() *Route53RecoveryreadinessResourceSetTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Route53RecoveryreadinessResourceSetTimeouts)
@@ -13411,8 +15161,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13501,8 +15251,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) RawOverrides() interface
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) Resources() *[]*Route53RecoveryreadinessResourceSetResources {
-	var returns *[]*Route53RecoveryreadinessResourceSetResources
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) Resources() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resources",
@@ -13551,8 +15301,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) ResourceSetTypeInput() *
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) ResourcesInput() *[]*Route53RecoveryreadinessResourceSetResources {
-	var returns *[]*Route53RecoveryreadinessResourceSetResources
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) ResourcesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourcesInput",
@@ -13561,8 +15311,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) ResourcesInput() *[]*Rou
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -13571,8 +15321,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -13581,8 +15331,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -13591,8 +15341,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsAllInput() interface
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -13651,7 +15401,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) TimeoutsInput() *Route53
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html aws_route53recoveryreadiness_resource_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set aws_route53recoveryreadiness_resource_set} Resource.
 func NewRoute53RecoveryreadinessResourceSet(scope constructs.Construct, id *string, config *Route53RecoveryreadinessResourceSetConfig) Route53RecoveryreadinessResourceSet {
 	_init_.Initialize()
 
@@ -13666,7 +15416,7 @@ func NewRoute53RecoveryreadinessResourceSet(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html aws_route53recoveryreadiness_resource_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set aws_route53recoveryreadiness_resource_set} Resource.
 func NewRoute53RecoveryreadinessResourceSet_Override(r Route53RecoveryreadinessResourceSet, scope constructs.Construct, id *string, config *Route53RecoveryreadinessResourceSetConfig) {
 	_init_.Initialize()
 
@@ -13677,7 +15427,7 @@ func NewRoute53RecoveryreadinessResourceSet_Override(r Route53RecoveryreadinessR
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13709,7 +15459,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetProvider(val cdktf.Te
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetResources(val *[]*Route53RecoveryreadinessResourceSetResources) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetResources(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resources",
@@ -13733,7 +15483,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetResourceSetType(val *
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -13741,7 +15491,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetTags(val interface{})
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSet) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -13789,12 +15539,40 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) AddOverride(path *string
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13831,12 +15609,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13969,55 +15789,55 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSet) ToTerraform() interface{
 // AWS Route 53.
 type Route53RecoveryreadinessResourceSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// resources block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#resources Route53RecoveryreadinessResourceSet#resources}
-	Resources *[]*Route53RecoveryreadinessResourceSetResources `json:"resources"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#resource_set_name Route53RecoveryreadinessResourceSet#resource_set_name}.
-	ResourceSetName *string `json:"resourceSetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#resource_set_type Route53RecoveryreadinessResourceSet#resource_set_type}.
-	ResourceSetType *string `json:"resourceSetType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#tags Route53RecoveryreadinessResourceSet#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#tags_all Route53RecoveryreadinessResourceSet#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#resources Route53RecoveryreadinessResourceSet#resources}
+	Resources interface{} `json:"resources" yaml:"resources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#resource_set_name Route53RecoveryreadinessResourceSet#resource_set_name}.
+	ResourceSetName *string `json:"resourceSetName" yaml:"resourceSetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#resource_set_type Route53RecoveryreadinessResourceSet#resource_set_type}.
+	ResourceSetType *string `json:"resourceSetType" yaml:"resourceSetType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#tags Route53RecoveryreadinessResourceSet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#tags_all Route53RecoveryreadinessResourceSet#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#timeouts Route53RecoveryreadinessResourceSet#timeouts}
-	Timeouts *Route53RecoveryreadinessResourceSetTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#timeouts Route53RecoveryreadinessResourceSet#timeouts}
+	Timeouts *Route53RecoveryreadinessResourceSetTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Route53RecoveryreadinessResourceSetResources struct {
 	// dns_target_resource block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#dns_target_resource Route53RecoveryreadinessResourceSet#dns_target_resource}
-	DnsTargetResource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResource `json:"dnsTargetResource"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#readiness_scopes Route53RecoveryreadinessResourceSet#readiness_scopes}.
-	ReadinessScopes *[]*string `json:"readinessScopes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#resource_arn Route53RecoveryreadinessResourceSet#resource_arn}.
-	ResourceArn *string `json:"resourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#dns_target_resource Route53RecoveryreadinessResourceSet#dns_target_resource}
+	DnsTargetResource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResource `json:"dnsTargetResource" yaml:"dnsTargetResource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#readiness_scopes Route53RecoveryreadinessResourceSet#readiness_scopes}.
+	ReadinessScopes *[]*string `json:"readinessScopes" yaml:"readinessScopes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#resource_arn Route53RecoveryreadinessResourceSet#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
 }
 
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#domain_name Route53RecoveryreadinessResourceSet#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#hosted_zone_arn Route53RecoveryreadinessResourceSet#hosted_zone_arn}.
-	HostedZoneArn *string `json:"hostedZoneArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#record_set_id Route53RecoveryreadinessResourceSet#record_set_id}.
-	RecordSetId *string `json:"recordSetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#record_type Route53RecoveryreadinessResourceSet#record_type}.
-	RecordType *string `json:"recordType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#domain_name Route53RecoveryreadinessResourceSet#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#hosted_zone_arn Route53RecoveryreadinessResourceSet#hosted_zone_arn}.
+	HostedZoneArn *string `json:"hostedZoneArn" yaml:"hostedZoneArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#record_set_id Route53RecoveryreadinessResourceSet#record_set_id}.
+	RecordSetId *string `json:"recordSetId" yaml:"recordSetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#record_type Route53RecoveryreadinessResourceSet#record_type}.
+	RecordType *string `json:"recordType" yaml:"recordType"`
 	// target_resource block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#target_resource Route53RecoveryreadinessResourceSet#target_resource}
-	TargetResource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource `json:"targetResource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#target_resource Route53RecoveryreadinessResourceSet#target_resource}
+	TargetResource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource `json:"targetResource" yaml:"targetResource"`
 }
 
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference interface {
@@ -14042,12 +15862,17 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReferenc
 	TargetResourceInput() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutTargetResource(value *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource)
@@ -14192,8 +16017,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14202,7 +16027,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference{}
@@ -14216,7 +16041,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputRefer
 	return &j
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14282,7 +16107,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14291,12 +16116,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14333,12 +16186,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14417,17 +16312,17 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource struct {
 	// nlb_resource block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#nlb_resource Route53RecoveryreadinessResourceSet#nlb_resource}
-	NlbResource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource `json:"nlbResource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#nlb_resource Route53RecoveryreadinessResourceSet#nlb_resource}
+	NlbResource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource `json:"nlbResource" yaml:"nlbResource"`
 	// r53_resource block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#r53_resource Route53RecoveryreadinessResourceSet#r53_resource}
-	R53Resource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource `json:"r53Resource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#r53_resource Route53RecoveryreadinessResourceSet#r53_resource}
+	R53Resource *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource `json:"r53Resource" yaml:"r53Resource"`
 }
 
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#arn Route53RecoveryreadinessResourceSet#arn}.
-	Arn *string `json:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#arn Route53RecoveryreadinessResourceSet#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 }
 
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference interface {
@@ -14441,12 +16336,17 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetArn()
@@ -14507,8 +16407,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14517,7 +16417,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference{}
@@ -14531,7 +16431,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	return &j
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14573,7 +16473,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14582,12 +16482,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14624,12 +16552,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14685,12 +16655,17 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
 	R53ResourceInput() *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutNlbResource(value *Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceNlbResource)
@@ -14774,8 +16749,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -14784,7 +16759,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference{}
@@ -14798,7 +16773,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	return &j
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -14832,7 +16807,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -14841,12 +16816,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14883,12 +16886,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14957,10 +17002,10 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53Resource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#domain_name Route53RecoveryreadinessResourceSet#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#record_set_id Route53RecoveryreadinessResourceSet#record_set_id}.
-	RecordSetId *string `json:"recordSetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#domain_name Route53RecoveryreadinessResourceSet#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#record_set_id Route53RecoveryreadinessResourceSet#record_set_id}.
+	RecordSetId *string `json:"recordSetId" yaml:"recordSetId"`
 }
 
 type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference interface {
@@ -14977,12 +17022,17 @@ type Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResource
 	RecordSetIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDomainName()
@@ -15064,8 +17114,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15074,7 +17124,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	return returns
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference{}
@@ -15088,7 +17138,7 @@ func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResou
 	return &j
 }
 
-func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference_Override(r Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15138,7 +17188,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15147,12 +17197,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15189,12 +17267,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResourceTargetResourceR53ResourceOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15247,8 +17367,8 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetResourcesDnsTargetResource
 }
 
 type Route53RecoveryreadinessResourceSetTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set.html#delete Route53RecoveryreadinessResourceSet#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53recoveryreadiness_resource_set#delete Route53RecoveryreadinessResourceSet#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type Route53RecoveryreadinessResourceSetTimeoutsOutputReference interface {
@@ -15262,12 +17382,17 @@ type Route53RecoveryreadinessResourceSetTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDelete()
@@ -15328,8 +17453,8 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -15338,7 +17463,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) T
 	return returns
 }
 
-func NewRoute53RecoveryreadinessResourceSetTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetTimeoutsOutputReference {
+func NewRoute53RecoveryreadinessResourceSetTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53RecoveryreadinessResourceSetTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference{}
@@ -15352,7 +17477,7 @@ func NewRoute53RecoveryreadinessResourceSetTimeoutsOutputReference(terraformReso
 	return &j
 }
 
-func NewRoute53RecoveryreadinessResourceSetTimeoutsOutputReference_Override(r Route53RecoveryreadinessResourceSetTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53RecoveryreadinessResourceSetTimeoutsOutputReference_Override(r Route53RecoveryreadinessResourceSetTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -15394,7 +17519,7 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -15403,12 +17528,40 @@ func (j *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) S
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15445,12 +17598,54 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) G
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15494,14 +17689,14 @@ func (r *jsiiProxy_Route53RecoveryreadinessResourceSetTimeoutsOutputReference) R
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config.html aws_route53_resolver_dnssec_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config aws_route53_resolver_dnssec_config}.
 type Route53ResolverDnssecConfig interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -15522,10 +17717,15 @@ type Route53ResolverDnssecConfig interface {
 	TerraformResourceType() *string
 	ValidationStatus() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -15570,8 +17770,8 @@ func (j *jsiiProxy_Route53ResolverDnssecConfig) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverDnssecConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverDnssecConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -15730,7 +17930,7 @@ func (j *jsiiProxy_Route53ResolverDnssecConfig) ValidationStatus() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config.html aws_route53_resolver_dnssec_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config aws_route53_resolver_dnssec_config} Resource.
 func NewRoute53ResolverDnssecConfig(scope constructs.Construct, id *string, config *Route53ResolverDnssecConfigConfig) Route53ResolverDnssecConfig {
 	_init_.Initialize()
 
@@ -15745,7 +17945,7 @@ func NewRoute53ResolverDnssecConfig(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config.html aws_route53_resolver_dnssec_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config aws_route53_resolver_dnssec_config} Resource.
 func NewRoute53ResolverDnssecConfig_Override(r Route53ResolverDnssecConfig, scope constructs.Construct, id *string, config *Route53ResolverDnssecConfigConfig) {
 	_init_.Initialize()
 
@@ -15756,7 +17956,7 @@ func NewRoute53ResolverDnssecConfig_Override(r Route53ResolverDnssecConfig, scop
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverDnssecConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverDnssecConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -15836,12 +18036,40 @@ func (r *jsiiProxy_Route53ResolverDnssecConfig) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverDnssecConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverDnssecConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverDnssecConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15878,12 +18106,54 @@ func (r *jsiiProxy_Route53ResolverDnssecConfig) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverDnssecConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverDnssecConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverDnssecConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverDnssecConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -15984,25 +18254,25 @@ func (r *jsiiProxy_Route53ResolverDnssecConfig) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53ResolverDnssecConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config.html#resource_id Route53ResolverDnssecConfig#resource_id}.
-	ResourceId *string `json:"resourceId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_dnssec_config#resource_id Route53ResolverDnssecConfig#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html aws_route53_resolver_endpoint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint aws_route53_resolver_endpoint}.
 type Route53ResolverEndpoint interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Direction() *string
@@ -16012,9 +18282,9 @@ type Route53ResolverEndpoint interface {
 	FriendlyUniqueId() *string
 	HostVpcId() *string
 	Id() *string
-	IpAddress() *[]*Route53ResolverEndpointIpAddress
-	SetIpAddress(val *[]*Route53ResolverEndpointIpAddress)
-	IpAddressInput() *[]*Route53ResolverEndpointIpAddress
+	IpAddress() interface{}
+	SetIpAddress(val interface{})
+	IpAddressInput() interface{}
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	Name() *string
@@ -16027,22 +18297,27 @@ type Route53ResolverEndpoint interface {
 	SecurityGroupIds() *[]*string
 	SetSecurityGroupIds(val *[]*string)
 	SecurityGroupIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() Route53ResolverEndpointTimeoutsOutputReference
 	TimeoutsInput() *Route53ResolverEndpointTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Route53ResolverEndpointTimeouts)
@@ -16092,8 +18367,8 @@ func (j *jsiiProxy_Route53ResolverEndpoint) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverEndpoint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -16172,8 +18447,8 @@ func (j *jsiiProxy_Route53ResolverEndpoint) Id() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) IpAddress() *[]*Route53ResolverEndpointIpAddress {
-	var returns *[]*Route53ResolverEndpointIpAddress
+func (j *jsiiProxy_Route53ResolverEndpoint) IpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ipAddress",
@@ -16182,8 +18457,8 @@ func (j *jsiiProxy_Route53ResolverEndpoint) IpAddress() *[]*Route53ResolverEndpo
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) IpAddressInput() *[]*Route53ResolverEndpointIpAddress {
-	var returns *[]*Route53ResolverEndpointIpAddress
+func (j *jsiiProxy_Route53ResolverEndpoint) IpAddressInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"ipAddressInput",
@@ -16272,8 +18547,8 @@ func (j *jsiiProxy_Route53ResolverEndpoint) SecurityGroupIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverEndpoint) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -16282,8 +18557,8 @@ func (j *jsiiProxy_Route53ResolverEndpoint) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverEndpoint) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -16292,8 +18567,8 @@ func (j *jsiiProxy_Route53ResolverEndpoint) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverEndpoint) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -16302,8 +18577,8 @@ func (j *jsiiProxy_Route53ResolverEndpoint) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverEndpoint) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -16362,7 +18637,7 @@ func (j *jsiiProxy_Route53ResolverEndpoint) TimeoutsInput() *Route53ResolverEndp
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html aws_route53_resolver_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint aws_route53_resolver_endpoint} Resource.
 func NewRoute53ResolverEndpoint(scope constructs.Construct, id *string, config *Route53ResolverEndpointConfig) Route53ResolverEndpoint {
 	_init_.Initialize()
 
@@ -16377,7 +18652,7 @@ func NewRoute53ResolverEndpoint(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html aws_route53_resolver_endpoint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint aws_route53_resolver_endpoint} Resource.
 func NewRoute53ResolverEndpoint_Override(r Route53ResolverEndpoint, scope constructs.Construct, id *string, config *Route53ResolverEndpointConfig) {
 	_init_.Initialize()
 
@@ -16388,7 +18663,7 @@ func NewRoute53ResolverEndpoint_Override(r Route53ResolverEndpoint, scope constr
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverEndpoint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -16412,7 +18687,7 @@ func (j *jsiiProxy_Route53ResolverEndpoint) SetDirection(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) SetIpAddress(val *[]*Route53ResolverEndpointIpAddress) {
+func (j *jsiiProxy_Route53ResolverEndpoint) SetIpAddress(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ipAddress",
@@ -16452,7 +18727,7 @@ func (j *jsiiProxy_Route53ResolverEndpoint) SetSecurityGroupIds(val *[]*string) 
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53ResolverEndpoint) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -16460,7 +18735,7 @@ func (j *jsiiProxy_Route53ResolverEndpoint) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverEndpoint) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53ResolverEndpoint) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -16508,12 +18783,40 @@ func (r *jsiiProxy_Route53ResolverEndpoint) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverEndpoint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverEndpoint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverEndpoint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16550,12 +18853,54 @@ func (r *jsiiProxy_Route53ResolverEndpoint) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverEndpoint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverEndpoint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverEndpoint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverEndpoint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16696,47 +19041,47 @@ func (r *jsiiProxy_Route53ResolverEndpoint) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53ResolverEndpointConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#direction Route53ResolverEndpoint#direction}.
-	Direction *string `json:"direction"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#direction Route53ResolverEndpoint#direction}.
+	Direction *string `json:"direction" yaml:"direction"`
 	// ip_address block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#ip_address Route53ResolverEndpoint#ip_address}
-	IpAddress *[]*Route53ResolverEndpointIpAddress `json:"ipAddress"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#security_group_ids Route53ResolverEndpoint#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#name Route53ResolverEndpoint#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#tags Route53ResolverEndpoint#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#tags_all Route53ResolverEndpoint#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#ip_address Route53ResolverEndpoint#ip_address}
+	IpAddress interface{} `json:"ipAddress" yaml:"ipAddress"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#security_group_ids Route53ResolverEndpoint#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#name Route53ResolverEndpoint#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#tags Route53ResolverEndpoint#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#tags_all Route53ResolverEndpoint#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#timeouts Route53ResolverEndpoint#timeouts}
-	Timeouts *Route53ResolverEndpointTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#timeouts Route53ResolverEndpoint#timeouts}
+	Timeouts *Route53ResolverEndpointTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Route53ResolverEndpointIpAddress struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#subnet_id Route53ResolverEndpoint#subnet_id}.
-	SubnetId *string `json:"subnetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#ip Route53ResolverEndpoint#ip}.
-	Ip *string `json:"ip"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#subnet_id Route53ResolverEndpoint#subnet_id}.
+	SubnetId *string `json:"subnetId" yaml:"subnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#ip Route53ResolverEndpoint#ip}.
+	Ip *string `json:"ip" yaml:"ip"`
 }
 
 type Route53ResolverEndpointTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#create Route53ResolverEndpoint#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#delete Route53ResolverEndpoint#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint.html#update Route53ResolverEndpoint#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#create Route53ResolverEndpoint#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#delete Route53ResolverEndpoint#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_endpoint#update Route53ResolverEndpoint#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type Route53ResolverEndpointTimeoutsOutputReference interface {
@@ -16753,15 +19098,20 @@ type Route53ResolverEndpointTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -16844,8 +19194,8 @@ func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -16874,7 +19224,7 @@ func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) UpdateInput()
 	return returns
 }
 
-func NewRoute53ResolverEndpointTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53ResolverEndpointTimeoutsOutputReference {
+func NewRoute53ResolverEndpointTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53ResolverEndpointTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference{}
@@ -16888,7 +19238,7 @@ func NewRoute53ResolverEndpointTimeoutsOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewRoute53ResolverEndpointTimeoutsOutputReference_Override(r Route53ResolverEndpointTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53ResolverEndpointTimeoutsOutputReference_Override(r Route53ResolverEndpointTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -16938,7 +19288,7 @@ func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -16955,12 +19305,40 @@ func (j *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) SetUpdate(val
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -16997,12 +19375,54 @@ func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17062,13 +19482,13 @@ func (r *jsiiProxy_Route53ResolverEndpointTimeoutsOutputReference) ResetUpdate()
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config.html aws_route53_resolver_firewall_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config aws_route53_resolver_firewall_config}.
 type Route53ResolverFirewallConfig interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FirewallFailOpen() *string
@@ -17091,10 +19511,15 @@ type Route53ResolverFirewallConfig interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetFirewallFailOpen()
@@ -17130,8 +19555,8 @@ func (j *jsiiProxy_Route53ResolverFirewallConfig) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17300,7 +19725,7 @@ func (j *jsiiProxy_Route53ResolverFirewallConfig) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config.html aws_route53_resolver_firewall_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config aws_route53_resolver_firewall_config} Resource.
 func NewRoute53ResolverFirewallConfig(scope constructs.Construct, id *string, config *Route53ResolverFirewallConfigConfig) Route53ResolverFirewallConfig {
 	_init_.Initialize()
 
@@ -17315,7 +19740,7 @@ func NewRoute53ResolverFirewallConfig(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config.html aws_route53_resolver_firewall_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config aws_route53_resolver_firewall_config} Resource.
 func NewRoute53ResolverFirewallConfig_Override(r Route53ResolverFirewallConfig, scope constructs.Construct, id *string, config *Route53ResolverFirewallConfigConfig) {
 	_init_.Initialize()
 
@@ -17326,7 +19751,7 @@ func NewRoute53ResolverFirewallConfig_Override(r Route53ResolverFirewallConfig, 
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17414,12 +19839,40 @@ func (r *jsiiProxy_Route53ResolverFirewallConfig) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17456,12 +19909,54 @@ func (r *jsiiProxy_Route53ResolverFirewallConfig) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -17570,27 +20065,27 @@ func (r *jsiiProxy_Route53ResolverFirewallConfig) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53ResolverFirewallConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config.html#resource_id Route53ResolverFirewallConfig#resource_id}.
-	ResourceId *string `json:"resourceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config.html#firewall_fail_open Route53ResolverFirewallConfig#firewall_fail_open}.
-	FirewallFailOpen *string `json:"firewallFailOpen"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config#resource_id Route53ResolverFirewallConfig#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_config#firewall_fail_open Route53ResolverFirewallConfig#firewall_fail_open}.
+	FirewallFailOpen *string `json:"firewallFailOpen" yaml:"firewallFailOpen"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list.html aws_route53_resolver_firewall_domain_list}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list aws_route53_resolver_firewall_domain_list}.
 type Route53ResolverFirewallDomainList interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Domains() *[]*string
@@ -17608,20 +20103,25 @@ type Route53ResolverFirewallDomainList interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDomains()
@@ -17669,8 +20169,8 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -17799,8 +20299,8 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) RawOverrides() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -17809,8 +20309,8 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -17819,8 +20319,8 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -17829,8 +20329,8 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsAllInput() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -17869,7 +20369,7 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) TerraformResourceType() *s
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list.html aws_route53_resolver_firewall_domain_list} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list aws_route53_resolver_firewall_domain_list} Resource.
 func NewRoute53ResolverFirewallDomainList(scope constructs.Construct, id *string, config *Route53ResolverFirewallDomainListConfig) Route53ResolverFirewallDomainList {
 	_init_.Initialize()
 
@@ -17884,7 +20384,7 @@ func NewRoute53ResolverFirewallDomainList(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list.html aws_route53_resolver_firewall_domain_list} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list aws_route53_resolver_firewall_domain_list} Resource.
 func NewRoute53ResolverFirewallDomainList_Override(r Route53ResolverFirewallDomainList, scope constructs.Construct, id *string, config *Route53ResolverFirewallDomainListConfig) {
 	_init_.Initialize()
 
@@ -17895,7 +20395,7 @@ func NewRoute53ResolverFirewallDomainList_Override(r Route53ResolverFirewallDoma
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -17943,7 +20443,7 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetProvider(val cdktf.Terr
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -17951,7 +20451,7 @@ func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallDomainList) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -17999,12 +20499,40 @@ func (r *jsiiProxy_Route53ResolverFirewallDomainList) AddOverride(path *string, 
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18041,12 +20569,54 @@ func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallDomainList) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18171,24 +20741,24 @@ func (r *jsiiProxy_Route53ResolverFirewallDomainList) ToTerraform() interface{} 
 // AWS Route 53.
 type Route53ResolverFirewallDomainListConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list.html#name Route53ResolverFirewallDomainList#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list.html#domains Route53ResolverFirewallDomainList#domains}.
-	Domains *[]*string `json:"domains"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list.html#tags Route53ResolverFirewallDomainList#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list.html#tags_all Route53ResolverFirewallDomainList#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list#name Route53ResolverFirewallDomainList#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list#domains Route53ResolverFirewallDomainList#domains}.
+	Domains *[]*string `json:"domains" yaml:"domains"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list#tags Route53ResolverFirewallDomainList#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_domain_list#tags_all Route53ResolverFirewallDomainList#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html aws_route53_resolver_firewall_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule aws_route53_resolver_firewall_rule}.
 type Route53ResolverFirewallRule interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -18208,8 +20778,8 @@ type Route53ResolverFirewallRule interface {
 	BlockResponseInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FirewallDomainListId() *string
@@ -18237,10 +20807,15 @@ type Route53ResolverFirewallRule interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBlockOverrideDnsType()
@@ -18379,8 +20954,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRule) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -18579,7 +21154,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRule) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html aws_route53_resolver_firewall_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule aws_route53_resolver_firewall_rule} Resource.
 func NewRoute53ResolverFirewallRule(scope constructs.Construct, id *string, config *Route53ResolverFirewallRuleConfig) Route53ResolverFirewallRule {
 	_init_.Initialize()
 
@@ -18594,7 +21169,7 @@ func NewRoute53ResolverFirewallRule(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html aws_route53_resolver_firewall_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule aws_route53_resolver_firewall_rule} Resource.
 func NewRoute53ResolverFirewallRule_Override(r Route53ResolverFirewallRule, scope constructs.Construct, id *string, config *Route53ResolverFirewallRuleConfig) {
 	_init_.Initialize()
 
@@ -18645,7 +21220,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRule) SetBlockResponse(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRule) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -18749,12 +21324,40 @@ func (r *jsiiProxy_Route53ResolverFirewallRule) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18791,12 +21394,54 @@ func (r *jsiiProxy_Route53ResolverFirewallRule) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -18929,41 +21574,41 @@ func (r *jsiiProxy_Route53ResolverFirewallRule) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53ResolverFirewallRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#action Route53ResolverFirewallRule#action}.
-	Action *string `json:"action"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#firewall_domain_list_id Route53ResolverFirewallRule#firewall_domain_list_id}.
-	FirewallDomainListId *string `json:"firewallDomainListId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#firewall_rule_group_id Route53ResolverFirewallRule#firewall_rule_group_id}.
-	FirewallRuleGroupId *string `json:"firewallRuleGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#name Route53ResolverFirewallRule#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#priority Route53ResolverFirewallRule#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#block_override_dns_type Route53ResolverFirewallRule#block_override_dns_type}.
-	BlockOverrideDnsType *string `json:"blockOverrideDnsType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#block_override_domain Route53ResolverFirewallRule#block_override_domain}.
-	BlockOverrideDomain *string `json:"blockOverrideDomain"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#block_override_ttl Route53ResolverFirewallRule#block_override_ttl}.
-	BlockOverrideTtl *float64 `json:"blockOverrideTtl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule.html#block_response Route53ResolverFirewallRule#block_response}.
-	BlockResponse *string `json:"blockResponse"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#action Route53ResolverFirewallRule#action}.
+	Action *string `json:"action" yaml:"action"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#firewall_domain_list_id Route53ResolverFirewallRule#firewall_domain_list_id}.
+	FirewallDomainListId *string `json:"firewallDomainListId" yaml:"firewallDomainListId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#firewall_rule_group_id Route53ResolverFirewallRule#firewall_rule_group_id}.
+	FirewallRuleGroupId *string `json:"firewallRuleGroupId" yaml:"firewallRuleGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#name Route53ResolverFirewallRule#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#priority Route53ResolverFirewallRule#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#block_override_dns_type Route53ResolverFirewallRule#block_override_dns_type}.
+	BlockOverrideDnsType *string `json:"blockOverrideDnsType" yaml:"blockOverrideDnsType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#block_override_domain Route53ResolverFirewallRule#block_override_domain}.
+	BlockOverrideDomain *string `json:"blockOverrideDomain" yaml:"blockOverrideDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#block_override_ttl Route53ResolverFirewallRule#block_override_ttl}.
+	BlockOverrideTtl *float64 `json:"blockOverrideTtl" yaml:"blockOverrideTtl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule#block_response Route53ResolverFirewallRule#block_response}.
+	BlockResponse *string `json:"blockResponse" yaml:"blockResponse"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group.html aws_route53_resolver_firewall_rule_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group aws_route53_resolver_firewall_rule_group}.
 type Route53ResolverFirewallRuleGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -18980,20 +21625,25 @@ type Route53ResolverFirewallRuleGroup interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	ShareStatus() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -19040,8 +21690,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19170,8 +21820,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) ShareStatus() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -19180,8 +21830,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -19190,8 +21840,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -19200,8 +21850,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsAllInput() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -19240,7 +21890,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group.html aws_route53_resolver_firewall_rule_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group aws_route53_resolver_firewall_rule_group} Resource.
 func NewRoute53ResolverFirewallRuleGroup(scope constructs.Construct, id *string, config *Route53ResolverFirewallRuleGroupConfig) Route53ResolverFirewallRuleGroup {
 	_init_.Initialize()
 
@@ -19255,7 +21905,7 @@ func NewRoute53ResolverFirewallRuleGroup(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group.html aws_route53_resolver_firewall_rule_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group aws_route53_resolver_firewall_rule_group} Resource.
 func NewRoute53ResolverFirewallRuleGroup_Override(r Route53ResolverFirewallRuleGroup, scope constructs.Construct, id *string, config *Route53ResolverFirewallRuleGroupConfig) {
 	_init_.Initialize()
 
@@ -19266,7 +21916,7 @@ func NewRoute53ResolverFirewallRuleGroup_Override(r Route53ResolverFirewallRuleG
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19306,7 +21956,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetProvider(val cdktf.Terra
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -19314,7 +21964,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -19362,12 +22012,40 @@ func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) AddOverride(path *string, v
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19404,12 +22082,54 @@ func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -19523,14 +22243,14 @@ func (r *jsiiProxy_Route53ResolverFirewallRuleGroup) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html aws_route53_resolver_firewall_rule_group_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association aws_route53_resolver_firewall_rule_group_association}.
 type Route53ResolverFirewallRuleGroupAssociation interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	FirewallRuleGroupId() *string
@@ -19554,12 +22274,12 @@ type Route53ResolverFirewallRuleGroupAssociation interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -19567,10 +22287,15 @@ type Route53ResolverFirewallRuleGroupAssociation interface {
 	SetVpcId(val *string)
 	VpcIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetMutationProtection()
@@ -19618,8 +22343,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) ConstructNodeMet
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -19788,8 +22513,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) RawOverrides() i
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -19798,8 +22523,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) Tags() interface
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -19808,8 +22533,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsAll() interf
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -19818,8 +22543,8 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsAllInput() i
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -19878,7 +22603,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) VpcIdInput() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html aws_route53_resolver_firewall_rule_group_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association aws_route53_resolver_firewall_rule_group_association} Resource.
 func NewRoute53ResolverFirewallRuleGroupAssociation(scope constructs.Construct, id *string, config *Route53ResolverFirewallRuleGroupAssociationConfig) Route53ResolverFirewallRuleGroupAssociation {
 	_init_.Initialize()
 
@@ -19893,7 +22618,7 @@ func NewRoute53ResolverFirewallRuleGroupAssociation(scope constructs.Construct, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html aws_route53_resolver_firewall_rule_group_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association aws_route53_resolver_firewall_rule_group_association} Resource.
 func NewRoute53ResolverFirewallRuleGroupAssociation_Override(r Route53ResolverFirewallRuleGroupAssociation, scope constructs.Construct, id *string, config *Route53ResolverFirewallRuleGroupAssociationConfig) {
 	_init_.Initialize()
 
@@ -19904,7 +22629,7 @@ func NewRoute53ResolverFirewallRuleGroupAssociation_Override(r Route53ResolverFi
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -19968,7 +22693,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetProvider(val 
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -19976,7 +22701,7 @@ func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetTags(val inte
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -20032,12 +22757,40 @@ func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) AddOverride(path
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20074,12 +22827,54 @@ func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetNumberAttribu
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20204,55 +22999,55 @@ func (r *jsiiProxy_Route53ResolverFirewallRuleGroupAssociation) ToTerraform() in
 // AWS Route 53.
 type Route53ResolverFirewallRuleGroupAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html#firewall_rule_group_id Route53ResolverFirewallRuleGroupAssociation#firewall_rule_group_id}.
-	FirewallRuleGroupId *string `json:"firewallRuleGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html#name Route53ResolverFirewallRuleGroupAssociation#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html#priority Route53ResolverFirewallRuleGroupAssociation#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html#vpc_id Route53ResolverFirewallRuleGroupAssociation#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html#mutation_protection Route53ResolverFirewallRuleGroupAssociation#mutation_protection}.
-	MutationProtection *string `json:"mutationProtection"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html#tags Route53ResolverFirewallRuleGroupAssociation#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association.html#tags_all Route53ResolverFirewallRuleGroupAssociation#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association#firewall_rule_group_id Route53ResolverFirewallRuleGroupAssociation#firewall_rule_group_id}.
+	FirewallRuleGroupId *string `json:"firewallRuleGroupId" yaml:"firewallRuleGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association#name Route53ResolverFirewallRuleGroupAssociation#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association#priority Route53ResolverFirewallRuleGroupAssociation#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association#vpc_id Route53ResolverFirewallRuleGroupAssociation#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association#mutation_protection Route53ResolverFirewallRuleGroupAssociation#mutation_protection}.
+	MutationProtection *string `json:"mutationProtection" yaml:"mutationProtection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association#tags Route53ResolverFirewallRuleGroupAssociation#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group_association#tags_all Route53ResolverFirewallRuleGroupAssociation#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 // AWS Route 53.
 type Route53ResolverFirewallRuleGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group.html#name Route53ResolverFirewallRuleGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group.html#tags Route53ResolverFirewallRuleGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group.html#tags_all Route53ResolverFirewallRuleGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group#name Route53ResolverFirewallRuleGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group#tags Route53ResolverFirewallRuleGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_firewall_rule_group#tags_all Route53ResolverFirewallRuleGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config.html aws_route53_resolver_query_log_config}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config aws_route53_resolver_query_log_config}.
 type Route53ResolverQueryLogConfig interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DestinationArn() *string
@@ -20272,20 +23067,25 @@ type Route53ResolverQueryLogConfig interface {
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
 	ShareStatus() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -20332,8 +23132,8 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -20482,8 +23282,8 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) ShareStatus() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -20492,8 +23292,8 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -20502,8 +23302,8 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -20512,8 +23312,8 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -20552,7 +23352,7 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config.html aws_route53_resolver_query_log_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config aws_route53_resolver_query_log_config} Resource.
 func NewRoute53ResolverQueryLogConfig(scope constructs.Construct, id *string, config *Route53ResolverQueryLogConfigConfig) Route53ResolverQueryLogConfig {
 	_init_.Initialize()
 
@@ -20567,7 +23367,7 @@ func NewRoute53ResolverQueryLogConfig(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config.html aws_route53_resolver_query_log_config} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config aws_route53_resolver_query_log_config} Resource.
 func NewRoute53ResolverQueryLogConfig_Override(r Route53ResolverQueryLogConfig, scope constructs.Construct, id *string, config *Route53ResolverQueryLogConfigConfig) {
 	_init_.Initialize()
 
@@ -20578,7 +23378,7 @@ func NewRoute53ResolverQueryLogConfig_Override(r Route53ResolverQueryLogConfig, 
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -20626,7 +23426,7 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetProvider(val cdktf.Terrafor
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -20634,7 +23434,7 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53ResolverQueryLogConfig) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -20682,12 +23482,40 @@ func (r *jsiiProxy_Route53ResolverQueryLogConfig) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20724,12 +23552,54 @@ func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfig) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -20843,13 +23713,13 @@ func (r *jsiiProxy_Route53ResolverQueryLogConfig) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association.html aws_route53_resolver_query_log_config_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association aws_route53_resolver_query_log_config_association}.
 type Route53ResolverQueryLogConfigAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -20871,10 +23741,15 @@ type Route53ResolverQueryLogConfigAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -20909,8 +23784,8 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfigAssociation) ConstructNodeMetada
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfigAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverQueryLogConfigAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -21069,7 +23944,7 @@ func (j *jsiiProxy_Route53ResolverQueryLogConfigAssociation) TerraformResourceTy
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association.html aws_route53_resolver_query_log_config_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association aws_route53_resolver_query_log_config_association} Resource.
 func NewRoute53ResolverQueryLogConfigAssociation(scope constructs.Construct, id *string, config *Route53ResolverQueryLogConfigAssociationConfig) Route53ResolverQueryLogConfigAssociation {
 	_init_.Initialize()
 
@@ -21084,7 +23959,7 @@ func NewRoute53ResolverQueryLogConfigAssociation(scope constructs.Construct, id 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association.html aws_route53_resolver_query_log_config_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association aws_route53_resolver_query_log_config_association} Resource.
 func NewRoute53ResolverQueryLogConfigAssociation_Override(r Route53ResolverQueryLogConfigAssociation, scope constructs.Construct, id *string, config *Route53ResolverQueryLogConfigAssociationConfig) {
 	_init_.Initialize()
 
@@ -21095,7 +23970,7 @@ func NewRoute53ResolverQueryLogConfigAssociation_Override(r Route53ResolverQuery
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverQueryLogConfigAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverQueryLogConfigAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -21183,12 +24058,40 @@ func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) AddOverride(path *s
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21225,12 +24128,54 @@ func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetNumberAttribute(
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21331,47 +24276,47 @@ func (r *jsiiProxy_Route53ResolverQueryLogConfigAssociation) ToTerraform() inter
 // AWS Route 53.
 type Route53ResolverQueryLogConfigAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association.html#resolver_query_log_config_id Route53ResolverQueryLogConfigAssociation#resolver_query_log_config_id}.
-	ResolverQueryLogConfigId *string `json:"resolverQueryLogConfigId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association.html#resource_id Route53ResolverQueryLogConfigAssociation#resource_id}.
-	ResourceId *string `json:"resourceId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association#resolver_query_log_config_id Route53ResolverQueryLogConfigAssociation#resolver_query_log_config_id}.
+	ResolverQueryLogConfigId *string `json:"resolverQueryLogConfigId" yaml:"resolverQueryLogConfigId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config_association#resource_id Route53ResolverQueryLogConfigAssociation#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
 }
 
 // AWS Route 53.
 type Route53ResolverQueryLogConfigConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config.html#destination_arn Route53ResolverQueryLogConfig#destination_arn}.
-	DestinationArn *string `json:"destinationArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config.html#name Route53ResolverQueryLogConfig#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config.html#tags Route53ResolverQueryLogConfig#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config.html#tags_all Route53ResolverQueryLogConfig#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config#destination_arn Route53ResolverQueryLogConfig#destination_arn}.
+	DestinationArn *string `json:"destinationArn" yaml:"destinationArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config#name Route53ResolverQueryLogConfig#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config#tags Route53ResolverQueryLogConfig#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_query_log_config#tags_all Route53ResolverQueryLogConfig#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html aws_route53_resolver_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule aws_route53_resolver_rule}.
 type Route53ResolverRule interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DomainName() *string
@@ -21397,25 +24342,30 @@ type Route53ResolverRule interface {
 	SetRuleType(val *string)
 	RuleTypeInput() *string
 	ShareStatus() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
-	TargetIp() *[]*Route53ResolverRuleTargetIp
-	SetTargetIp(val *[]*Route53ResolverRuleTargetIp)
-	TargetIpInput() *[]*Route53ResolverRuleTargetIp
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
+	TargetIp() interface{}
+	SetTargetIp(val interface{})
+	TargetIpInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() Route53ResolverRuleTimeoutsOutputReference
 	TimeoutsInput() *Route53ResolverRuleTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Route53ResolverRuleTimeouts)
@@ -21467,8 +24417,8 @@ func (j *jsiiProxy_Route53ResolverRule) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -21657,8 +24607,8 @@ func (j *jsiiProxy_Route53ResolverRule) ShareStatus() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -21667,8 +24617,8 @@ func (j *jsiiProxy_Route53ResolverRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -21677,8 +24627,8 @@ func (j *jsiiProxy_Route53ResolverRule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -21687,8 +24637,8 @@ func (j *jsiiProxy_Route53ResolverRule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -21697,8 +24647,8 @@ func (j *jsiiProxy_Route53ResolverRule) TagsInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRule) TargetIp() *[]*Route53ResolverRuleTargetIp {
-	var returns *[]*Route53ResolverRuleTargetIp
+func (j *jsiiProxy_Route53ResolverRule) TargetIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetIp",
@@ -21707,8 +24657,8 @@ func (j *jsiiProxy_Route53ResolverRule) TargetIp() *[]*Route53ResolverRuleTarget
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRule) TargetIpInput() *[]*Route53ResolverRuleTargetIp {
-	var returns *[]*Route53ResolverRuleTargetIp
+func (j *jsiiProxy_Route53ResolverRule) TargetIpInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"targetIpInput",
@@ -21767,7 +24717,7 @@ func (j *jsiiProxy_Route53ResolverRule) TimeoutsInput() *Route53ResolverRuleTime
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html aws_route53_resolver_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule aws_route53_resolver_rule} Resource.
 func NewRoute53ResolverRule(scope constructs.Construct, id *string, config *Route53ResolverRuleConfig) Route53ResolverRule {
 	_init_.Initialize()
 
@@ -21782,7 +24732,7 @@ func NewRoute53ResolverRule(scope constructs.Construct, id *string, config *Rout
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html aws_route53_resolver_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule aws_route53_resolver_rule} Resource.
 func NewRoute53ResolverRule_Override(r Route53ResolverRule, scope constructs.Construct, id *string, config *Route53ResolverRuleConfig) {
 	_init_.Initialize()
 
@@ -21793,7 +24743,7 @@ func NewRoute53ResolverRule_Override(r Route53ResolverRule, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverRule) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -21857,7 +24807,7 @@ func (j *jsiiProxy_Route53ResolverRule) SetRuleType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverRule) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53ResolverRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -21865,7 +24815,7 @@ func (j *jsiiProxy_Route53ResolverRule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53ResolverRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -21873,7 +24823,7 @@ func (j *jsiiProxy_Route53ResolverRule) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverRule) SetTargetIp(val *[]*Route53ResolverRuleTargetIp) {
+func (j *jsiiProxy_Route53ResolverRule) SetTargetIp(val interface{}) {
 	_jsii_.Set(
 		j,
 		"targetIp",
@@ -21921,12 +24871,40 @@ func (r *jsiiProxy_Route53ResolverRule) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -21963,12 +24941,54 @@ func (r *jsiiProxy_Route53ResolverRule) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22122,13 +25142,13 @@ func (r *jsiiProxy_Route53ResolverRule) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html aws_route53_resolver_rule_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association aws_route53_resolver_rule_association}.
 type Route53ResolverRuleAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -22155,10 +25175,15 @@ type Route53ResolverRuleAssociation interface {
 	SetVpcId(val *string)
 	VpcIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *Route53ResolverRuleAssociationTimeouts)
@@ -22196,8 +25221,8 @@ func (j *jsiiProxy_Route53ResolverRuleAssociation) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRuleAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ResolverRuleAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -22396,7 +25421,7 @@ func (j *jsiiProxy_Route53ResolverRuleAssociation) VpcIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html aws_route53_resolver_rule_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association aws_route53_resolver_rule_association} Resource.
 func NewRoute53ResolverRuleAssociation(scope constructs.Construct, id *string, config *Route53ResolverRuleAssociationConfig) Route53ResolverRuleAssociation {
 	_init_.Initialize()
 
@@ -22411,7 +25436,7 @@ func NewRoute53ResolverRuleAssociation(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html aws_route53_resolver_rule_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association aws_route53_resolver_rule_association} Resource.
 func NewRoute53ResolverRuleAssociation_Override(r Route53ResolverRuleAssociation, scope constructs.Construct, id *string, config *Route53ResolverRuleAssociationConfig) {
 	_init_.Initialize()
 
@@ -22422,7 +25447,7 @@ func NewRoute53ResolverRuleAssociation_Override(r Route53ResolverRuleAssociation
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverRuleAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ResolverRuleAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -22518,12 +25543,40 @@ func (r *jsiiProxy_Route53ResolverRuleAssociation) AddOverride(path *string, val
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverRuleAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22560,12 +25613,54 @@ func (r *jsiiProxy_Route53ResolverRuleAssociation) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverRuleAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22690,30 +25785,30 @@ func (r *jsiiProxy_Route53ResolverRuleAssociation) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53ResolverRuleAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html#resolver_rule_id Route53ResolverRuleAssociation#resolver_rule_id}.
-	ResolverRuleId *string `json:"resolverRuleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html#vpc_id Route53ResolverRuleAssociation#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html#name Route53ResolverRuleAssociation#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association#resolver_rule_id Route53ResolverRuleAssociation#resolver_rule_id}.
+	ResolverRuleId *string `json:"resolverRuleId" yaml:"resolverRuleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association#vpc_id Route53ResolverRuleAssociation#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association#name Route53ResolverRuleAssociation#name}.
+	Name *string `json:"name" yaml:"name"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html#timeouts Route53ResolverRuleAssociation#timeouts}
-	Timeouts *Route53ResolverRuleAssociationTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association#timeouts Route53ResolverRuleAssociation#timeouts}
+	Timeouts *Route53ResolverRuleAssociationTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Route53ResolverRuleAssociationTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html#create Route53ResolverRuleAssociation#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association.html#delete Route53ResolverRuleAssociation#delete}.
-	Delete *string `json:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association#create Route53ResolverRuleAssociation#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule_association#delete Route53ResolverRuleAssociation#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
 }
 
 type Route53ResolverRuleAssociationTimeoutsOutputReference interface {
@@ -22730,12 +25825,17 @@ type Route53ResolverRuleAssociationTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -22817,8 +25917,8 @@ func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -22827,7 +25927,7 @@ func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) Terraf
 	return returns
 }
 
-func NewRoute53ResolverRuleAssociationTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53ResolverRuleAssociationTimeoutsOutputReference {
+func NewRoute53ResolverRuleAssociationTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53ResolverRuleAssociationTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference{}
@@ -22841,7 +25941,7 @@ func NewRoute53ResolverRuleAssociationTimeoutsOutputReference(terraformResource 
 	return &j
 }
 
-func NewRoute53ResolverRuleAssociationTimeoutsOutputReference_Override(r Route53ResolverRuleAssociationTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53ResolverRuleAssociationTimeoutsOutputReference_Override(r Route53ResolverRuleAssociationTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -22891,7 +25991,7 @@ func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -22900,12 +26000,40 @@ func (j *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) SetTer
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -22942,12 +26070,54 @@ func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetNum
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23002,49 +26172,49 @@ func (r *jsiiProxy_Route53ResolverRuleAssociationTimeoutsOutputReference) ResetD
 // AWS Route 53.
 type Route53ResolverRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#domain_name Route53ResolverRule#domain_name}.
-	DomainName *string `json:"domainName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#rule_type Route53ResolverRule#rule_type}.
-	RuleType *string `json:"ruleType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#name Route53ResolverRule#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#resolver_endpoint_id Route53ResolverRule#resolver_endpoint_id}.
-	ResolverEndpointId *string `json:"resolverEndpointId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#tags Route53ResolverRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#tags_all Route53ResolverRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#domain_name Route53ResolverRule#domain_name}.
+	DomainName *string `json:"domainName" yaml:"domainName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#rule_type Route53ResolverRule#rule_type}.
+	RuleType *string `json:"ruleType" yaml:"ruleType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#name Route53ResolverRule#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#resolver_endpoint_id Route53ResolverRule#resolver_endpoint_id}.
+	ResolverEndpointId *string `json:"resolverEndpointId" yaml:"resolverEndpointId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#tags Route53ResolverRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#tags_all Route53ResolverRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// target_ip block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#target_ip Route53ResolverRule#target_ip}
-	TargetIp *[]*Route53ResolverRuleTargetIp `json:"targetIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#target_ip Route53ResolverRule#target_ip}
+	TargetIp interface{} `json:"targetIp" yaml:"targetIp"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#timeouts Route53ResolverRule#timeouts}
-	Timeouts *Route53ResolverRuleTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#timeouts Route53ResolverRule#timeouts}
+	Timeouts *Route53ResolverRuleTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type Route53ResolverRuleTargetIp struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#ip Route53ResolverRule#ip}.
-	Ip *string `json:"ip"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#port Route53ResolverRule#port}.
-	Port *float64 `json:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#ip Route53ResolverRule#ip}.
+	Ip *string `json:"ip" yaml:"ip"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#port Route53ResolverRule#port}.
+	Port *float64 `json:"port" yaml:"port"`
 }
 
 type Route53ResolverRuleTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#create Route53ResolverRule#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#delete Route53ResolverRule#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule.html#update Route53ResolverRule#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#create Route53ResolverRule#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#delete Route53ResolverRule#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_resolver_rule#update Route53ResolverRule#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type Route53ResolverRuleTimeoutsOutputReference interface {
@@ -23061,15 +26231,20 @@ type Route53ResolverRuleTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -23152,8 +26327,8 @@ func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -23182,7 +26357,7 @@ func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) UpdateInput() *st
 	return returns
 }
 
-func NewRoute53ResolverRuleTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) Route53ResolverRuleTimeoutsOutputReference {
+func NewRoute53ResolverRuleTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) Route53ResolverRuleTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_Route53ResolverRuleTimeoutsOutputReference{}
@@ -23196,7 +26371,7 @@ func NewRoute53ResolverRuleTimeoutsOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewRoute53ResolverRuleTimeoutsOutputReference_Override(r Route53ResolverRuleTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewRoute53ResolverRuleTimeoutsOutputReference_Override(r Route53ResolverRuleTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -23246,7 +26421,7 @@ func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -23263,12 +26438,40 @@ func (j *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) SetUpdate(val *st
 }
 
 // Experimental.
-func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23305,12 +26508,54 @@ func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23370,13 +26615,13 @@ func (r *jsiiProxy_Route53ResolverRuleTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization.html aws_route53_vpc_association_authorization}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization aws_route53_vpc_association_authorization}.
 type Route53VpcAssociationAuthorization interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -23401,10 +26646,15 @@ type Route53VpcAssociationAuthorization interface {
 	SetZoneId(val *string)
 	ZoneIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -23440,8 +26690,8 @@ func (j *jsiiProxy_Route53VpcAssociationAuthorization) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_Route53VpcAssociationAuthorization) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53VpcAssociationAuthorization) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -23620,7 +26870,7 @@ func (j *jsiiProxy_Route53VpcAssociationAuthorization) ZoneIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization.html aws_route53_vpc_association_authorization} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization aws_route53_vpc_association_authorization} Resource.
 func NewRoute53VpcAssociationAuthorization(scope constructs.Construct, id *string, config *Route53VpcAssociationAuthorizationConfig) Route53VpcAssociationAuthorization {
 	_init_.Initialize()
 
@@ -23635,7 +26885,7 @@ func NewRoute53VpcAssociationAuthorization(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization.html aws_route53_vpc_association_authorization} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization aws_route53_vpc_association_authorization} Resource.
 func NewRoute53VpcAssociationAuthorization_Override(r Route53VpcAssociationAuthorization, scope constructs.Construct, id *string, config *Route53VpcAssociationAuthorizationConfig) {
 	_init_.Initialize()
 
@@ -23646,7 +26896,7 @@ func NewRoute53VpcAssociationAuthorization_Override(r Route53VpcAssociationAutho
 	)
 }
 
-func (j *jsiiProxy_Route53VpcAssociationAuthorization) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53VpcAssociationAuthorization) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -23742,12 +26992,40 @@ func (r *jsiiProxy_Route53VpcAssociationAuthorization) AddOverride(path *string,
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23784,12 +27062,54 @@ func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53VpcAssociationAuthorization) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -23898,22 +27218,22 @@ func (r *jsiiProxy_Route53VpcAssociationAuthorization) ToTerraform() interface{}
 // AWS Route 53.
 type Route53VpcAssociationAuthorizationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization.html#vpc_id Route53VpcAssociationAuthorization#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization.html#zone_id Route53VpcAssociationAuthorization#zone_id}.
-	ZoneId *string `json:"zoneId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization.html#vpc_region Route53VpcAssociationAuthorization#vpc_region}.
-	VpcRegion *string `json:"vpcRegion"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization#vpc_id Route53VpcAssociationAuthorization#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization#zone_id Route53VpcAssociationAuthorization#zone_id}.
+	ZoneId *string `json:"zoneId" yaml:"zoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_vpc_association_authorization#vpc_region Route53VpcAssociationAuthorization#vpc_region}.
+	VpcRegion *string `json:"vpcRegion" yaml:"vpcRegion"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html aws_route53_zone}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_zone aws_route53_zone}.
 type Route53Zone interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -23922,8 +27242,8 @@ type Route53Zone interface {
 	SetComment(val *string)
 	CommentInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DelegationSetId() *string
 	SetDelegationSetId(val *string)
 	DelegationSetIdInput() *string
@@ -23945,24 +27265,29 @@ type Route53Zone interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	Vpc() *[]*Route53ZoneVpc
-	SetVpc(val *[]*Route53ZoneVpc)
-	VpcInput() *[]*Route53ZoneVpc
+	Vpc() interface{}
+	SetVpc(val interface{})
+	VpcInput() interface{}
 	ZoneId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetComment()
@@ -24033,8 +27358,8 @@ func (j *jsiiProxy_Route53Zone) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_Route53Zone) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53Zone) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -24193,8 +27518,8 @@ func (j *jsiiProxy_Route53Zone) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Zone) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53Zone) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -24203,8 +27528,8 @@ func (j *jsiiProxy_Route53Zone) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Zone) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53Zone) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -24213,8 +27538,8 @@ func (j *jsiiProxy_Route53Zone) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Zone) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53Zone) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -24223,8 +27548,8 @@ func (j *jsiiProxy_Route53Zone) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Zone) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53Zone) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -24263,8 +27588,8 @@ func (j *jsiiProxy_Route53Zone) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Zone) Vpc() *[]*Route53ZoneVpc {
-	var returns *[]*Route53ZoneVpc
+func (j *jsiiProxy_Route53Zone) Vpc() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"vpc",
@@ -24273,8 +27598,8 @@ func (j *jsiiProxy_Route53Zone) Vpc() *[]*Route53ZoneVpc {
 	return returns
 }
 
-func (j *jsiiProxy_Route53Zone) VpcInput() *[]*Route53ZoneVpc {
-	var returns *[]*Route53ZoneVpc
+func (j *jsiiProxy_Route53Zone) VpcInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"vpcInput",
@@ -24293,7 +27618,7 @@ func (j *jsiiProxy_Route53Zone) ZoneId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html aws_route53_zone} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone aws_route53_zone} Resource.
 func NewRoute53Zone(scope constructs.Construct, id *string, config *Route53ZoneConfig) Route53Zone {
 	_init_.Initialize()
 
@@ -24308,7 +27633,7 @@ func NewRoute53Zone(scope constructs.Construct, id *string, config *Route53ZoneC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html aws_route53_zone} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone aws_route53_zone} Resource.
 func NewRoute53Zone_Override(r Route53Zone, scope constructs.Construct, id *string, config *Route53ZoneConfig) {
 	_init_.Initialize()
 
@@ -24327,7 +27652,7 @@ func (j *jsiiProxy_Route53Zone) SetComment(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route53Zone) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53Zone) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -24383,7 +27708,7 @@ func (j *jsiiProxy_Route53Zone) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_Route53Zone) SetTags(val interface{}) {
+func (j *jsiiProxy_Route53Zone) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -24391,7 +27716,7 @@ func (j *jsiiProxy_Route53Zone) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53Zone) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_Route53Zone) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -24399,7 +27724,7 @@ func (j *jsiiProxy_Route53Zone) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Route53Zone) SetVpc(val *[]*Route53ZoneVpc) {
+func (j *jsiiProxy_Route53Zone) SetVpc(val interface{}) {
 	_jsii_.Set(
 		j,
 		"vpc",
@@ -24447,12 +27772,40 @@ func (r *jsiiProxy_Route53Zone) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53Zone) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53Zone) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53Zone) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24489,12 +27842,54 @@ func (r *jsiiProxy_Route53Zone) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53Zone) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53Zone) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53Zone) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53Zone) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -24640,13 +28035,13 @@ func (r *jsiiProxy_Route53Zone) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association.html aws_route53_zone_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association aws_route53_zone_association}.
 type Route53ZoneAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -24672,10 +28067,15 @@ type Route53ZoneAssociation interface {
 	SetZoneId(val *string)
 	ZoneIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -24711,8 +28111,8 @@ func (j *jsiiProxy_Route53ZoneAssociation) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_Route53ZoneAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_Route53ZoneAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -24901,7 +28301,7 @@ func (j *jsiiProxy_Route53ZoneAssociation) ZoneIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association.html aws_route53_zone_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association aws_route53_zone_association} Resource.
 func NewRoute53ZoneAssociation(scope constructs.Construct, id *string, config *Route53ZoneAssociationConfig) Route53ZoneAssociation {
 	_init_.Initialize()
 
@@ -24916,7 +28316,7 @@ func NewRoute53ZoneAssociation(scope constructs.Construct, id *string, config *R
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association.html aws_route53_zone_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association aws_route53_zone_association} Resource.
 func NewRoute53ZoneAssociation_Override(r Route53ZoneAssociation, scope constructs.Construct, id *string, config *Route53ZoneAssociationConfig) {
 	_init_.Initialize()
 
@@ -24927,7 +28327,7 @@ func NewRoute53ZoneAssociation_Override(r Route53ZoneAssociation, scope construc
 	)
 }
 
-func (j *jsiiProxy_Route53ZoneAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_Route53ZoneAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -25023,12 +28423,40 @@ func (r *jsiiProxy_Route53ZoneAssociation) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ZoneAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ZoneAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		r,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ZoneAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		r,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25065,12 +28493,54 @@ func (r *jsiiProxy_Route53ZoneAssociation) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (r *jsiiProxy_Route53ZoneAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ZoneAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		r,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (r *jsiiProxy_Route53ZoneAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		r,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (r *jsiiProxy_Route53ZoneAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		r,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -25179,52 +28649,52 @@ func (r *jsiiProxy_Route53ZoneAssociation) ToTerraform() interface{} {
 // AWS Route 53.
 type Route53ZoneAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association.html#vpc_id Route53ZoneAssociation#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association.html#zone_id Route53ZoneAssociation#zone_id}.
-	ZoneId *string `json:"zoneId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association.html#vpc_region Route53ZoneAssociation#vpc_region}.
-	VpcRegion *string `json:"vpcRegion"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association#vpc_id Route53ZoneAssociation#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association#zone_id Route53ZoneAssociation#zone_id}.
+	ZoneId *string `json:"zoneId" yaml:"zoneId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone_association#vpc_region Route53ZoneAssociation#vpc_region}.
+	VpcRegion *string `json:"vpcRegion" yaml:"vpcRegion"`
 }
 
 // AWS Route 53.
 type Route53ZoneConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#name Route53Zone#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#comment Route53Zone#comment}.
-	Comment *string `json:"comment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#delegation_set_id Route53Zone#delegation_set_id}.
-	DelegationSetId *string `json:"delegationSetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#force_destroy Route53Zone#force_destroy}.
-	ForceDestroy interface{} `json:"forceDestroy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#tags Route53Zone#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#tags_all Route53Zone#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#name Route53Zone#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#comment Route53Zone#comment}.
+	Comment *string `json:"comment" yaml:"comment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#delegation_set_id Route53Zone#delegation_set_id}.
+	DelegationSetId *string `json:"delegationSetId" yaml:"delegationSetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#force_destroy Route53Zone#force_destroy}.
+	ForceDestroy interface{} `json:"forceDestroy" yaml:"forceDestroy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#tags Route53Zone#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#tags_all Route53Zone#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// vpc block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#vpc Route53Zone#vpc}
-	Vpc *[]*Route53ZoneVpc `json:"vpc"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#vpc Route53Zone#vpc}
+	Vpc interface{} `json:"vpc" yaml:"vpc"`
 }
 
 type Route53ZoneVpc struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#vpc_id Route53Zone#vpc_id}.
-	VpcId *string `json:"vpcId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone.html#vpc_region Route53Zone#vpc_region}.
-	VpcRegion *string `json:"vpcRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#vpc_id Route53Zone#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/route53_zone#vpc_region Route53Zone#vpc_region}.
+	VpcRegion *string `json:"vpcRegion" yaml:"vpcRegion"`
 }

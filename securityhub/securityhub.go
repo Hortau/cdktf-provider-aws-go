@@ -9,13 +9,13 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/securityhub/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account.html aws_securityhub_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account aws_securityhub_account}.
 type SecurityhubAccount interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -31,10 +31,15 @@ type SecurityhubAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -69,8 +74,8 @@ func (j *jsiiProxy_SecurityhubAccount) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -189,7 +194,7 @@ func (j *jsiiProxy_SecurityhubAccount) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account.html aws_securityhub_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account aws_securityhub_account} Resource.
 func NewSecurityhubAccount(scope constructs.Construct, id *string, config *SecurityhubAccountConfig) SecurityhubAccount {
 	_init_.Initialize()
 
@@ -204,7 +209,7 @@ func NewSecurityhubAccount(scope constructs.Construct, id *string, config *Secur
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account.html aws_securityhub_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_account aws_securityhub_account} Resource.
 func NewSecurityhubAccount_Override(s SecurityhubAccount, scope constructs.Construct, id *string, config *SecurityhubAccountConfig) {
 	_init_.Initialize()
 
@@ -215,7 +220,7 @@ func NewSecurityhubAccount_Override(s SecurityhubAccount, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_SecurityhubAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -287,12 +292,40 @@ func (s *jsiiProxy_SecurityhubAccount) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -329,12 +362,54 @@ func (s *jsiiProxy_SecurityhubAccount) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -435,23 +510,23 @@ func (s *jsiiProxy_SecurityhubAccount) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html aws_securityhub_action_target}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target aws_securityhub_action_target}.
 type SecurityhubActionTarget interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -476,10 +551,15 @@ type SecurityhubActionTarget interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -524,8 +604,8 @@ func (j *jsiiProxy_SecurityhubActionTarget) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubActionTarget) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubActionTarget) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -704,7 +784,7 @@ func (j *jsiiProxy_SecurityhubActionTarget) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html aws_securityhub_action_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target aws_securityhub_action_target} Resource.
 func NewSecurityhubActionTarget(scope constructs.Construct, id *string, config *SecurityhubActionTargetConfig) SecurityhubActionTarget {
 	_init_.Initialize()
 
@@ -719,7 +799,7 @@ func NewSecurityhubActionTarget(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html aws_securityhub_action_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target aws_securityhub_action_target} Resource.
 func NewSecurityhubActionTarget_Override(s SecurityhubActionTarget, scope constructs.Construct, id *string, config *SecurityhubActionTargetConfig) {
 	_init_.Initialize()
 
@@ -730,7 +810,7 @@ func NewSecurityhubActionTarget_Override(s SecurityhubActionTarget, scope constr
 	)
 }
 
-func (j *jsiiProxy_SecurityhubActionTarget) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubActionTarget) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -826,12 +906,40 @@ func (s *jsiiProxy_SecurityhubActionTarget) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubActionTarget) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubActionTarget) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubActionTarget) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -868,12 +976,54 @@ func (s *jsiiProxy_SecurityhubActionTarget) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubActionTarget) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubActionTarget) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubActionTarget) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubActionTarget) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -974,28 +1124,28 @@ func (s *jsiiProxy_SecurityhubActionTarget) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubActionTargetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html#description SecurityhubActionTarget#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html#identifier SecurityhubActionTarget#identifier}.
-	Identifier *string `json:"identifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target.html#name SecurityhubActionTarget#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target#description SecurityhubActionTarget#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target#identifier SecurityhubActionTarget#identifier}.
+	Identifier *string `json:"identifier" yaml:"identifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_action_target#name SecurityhubActionTarget#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html aws_securityhub_finding_aggregator}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator aws_securityhub_finding_aggregator}.
 type SecurityhubFindingAggregator interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1017,10 +1167,15 @@ type SecurityhubFindingAggregator interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1056,8 +1211,8 @@ func (j *jsiiProxy_SecurityhubFindingAggregator) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubFindingAggregator) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubFindingAggregator) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1216,7 +1371,7 @@ func (j *jsiiProxy_SecurityhubFindingAggregator) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html aws_securityhub_finding_aggregator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator aws_securityhub_finding_aggregator} Resource.
 func NewSecurityhubFindingAggregator(scope constructs.Construct, id *string, config *SecurityhubFindingAggregatorConfig) SecurityhubFindingAggregator {
 	_init_.Initialize()
 
@@ -1231,7 +1386,7 @@ func NewSecurityhubFindingAggregator(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html aws_securityhub_finding_aggregator} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator aws_securityhub_finding_aggregator} Resource.
 func NewSecurityhubFindingAggregator_Override(s SecurityhubFindingAggregator, scope constructs.Construct, id *string, config *SecurityhubFindingAggregatorConfig) {
 	_init_.Initialize()
 
@@ -1242,7 +1397,7 @@ func NewSecurityhubFindingAggregator_Override(s SecurityhubFindingAggregator, sc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubFindingAggregator) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubFindingAggregator) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1330,12 +1485,40 @@ func (s *jsiiProxy_SecurityhubFindingAggregator) AddOverride(path *string, value
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubFindingAggregator) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1372,12 +1555,54 @@ func (s *jsiiProxy_SecurityhubFindingAggregator) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubFindingAggregator) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubFindingAggregator) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1486,27 +1711,27 @@ func (s *jsiiProxy_SecurityhubFindingAggregator) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubFindingAggregatorConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html#linking_mode SecurityhubFindingAggregator#linking_mode}.
-	LinkingMode *string `json:"linkingMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator.html#specified_regions SecurityhubFindingAggregator#specified_regions}.
-	SpecifiedRegions *[]*string `json:"specifiedRegions"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator#linking_mode SecurityhubFindingAggregator#linking_mode}.
+	LinkingMode *string `json:"linkingMode" yaml:"linkingMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_finding_aggregator#specified_regions SecurityhubFindingAggregator#specified_regions}.
+	SpecifiedRegions *[]*string `json:"specifiedRegions" yaml:"specifiedRegions"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html aws_securityhub_insight}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight aws_securityhub_insight}.
 type SecurityhubInsight interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Filters() SecurityhubInsightFiltersOutputReference
@@ -1530,10 +1755,15 @@ type SecurityhubInsight interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutFilters(value *SecurityhubInsightFilters)
@@ -1579,8 +1809,8 @@ func (j *jsiiProxy_SecurityhubInsight) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsight) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubInsight) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1759,7 +1989,7 @@ func (j *jsiiProxy_SecurityhubInsight) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html aws_securityhub_insight} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight aws_securityhub_insight} Resource.
 func NewSecurityhubInsight(scope constructs.Construct, id *string, config *SecurityhubInsightConfig) SecurityhubInsight {
 	_init_.Initialize()
 
@@ -1774,7 +2004,7 @@ func NewSecurityhubInsight(scope constructs.Construct, id *string, config *Secur
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html aws_securityhub_insight} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight aws_securityhub_insight} Resource.
 func NewSecurityhubInsight_Override(s SecurityhubInsight, scope constructs.Construct, id *string, config *SecurityhubInsightConfig) {
 	_init_.Initialize()
 
@@ -1785,7 +2015,7 @@ func NewSecurityhubInsight_Override(s SecurityhubInsight, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsight) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubInsight) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1873,12 +2103,40 @@ func (s *jsiiProxy_SecurityhubInsight) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsight) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsight) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsight) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1915,12 +2173,54 @@ func (s *jsiiProxy_SecurityhubInsight) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsight) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsight) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsight) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsight) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2029,424 +2329,424 @@ func (s *jsiiProxy_SecurityhubInsight) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubInsightConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// filters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#filters SecurityhubInsight#filters}
-	Filters *SecurityhubInsightFilters `json:"filters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#group_by_attribute SecurityhubInsight#group_by_attribute}.
-	GroupByAttribute *string `json:"groupByAttribute"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#name SecurityhubInsight#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#filters SecurityhubInsight#filters}
+	Filters *SecurityhubInsightFilters `json:"filters" yaml:"filters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#group_by_attribute SecurityhubInsight#group_by_attribute}.
+	GroupByAttribute *string `json:"groupByAttribute" yaml:"groupByAttribute"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#name SecurityhubInsight#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 type SecurityhubInsightFilters struct {
 	// aws_account_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#aws_account_id SecurityhubInsight#aws_account_id}
-	AwsAccountId *[]*SecurityhubInsightFiltersAwsAccountId `json:"awsAccountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#aws_account_id SecurityhubInsight#aws_account_id}
+	AwsAccountId interface{} `json:"awsAccountId" yaml:"awsAccountId"`
 	// company_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#company_name SecurityhubInsight#company_name}
-	CompanyName *[]*SecurityhubInsightFiltersCompanyName `json:"companyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#company_name SecurityhubInsight#company_name}
+	CompanyName interface{} `json:"companyName" yaml:"companyName"`
 	// compliance_status block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#compliance_status SecurityhubInsight#compliance_status}
-	ComplianceStatus *[]*SecurityhubInsightFiltersComplianceStatus `json:"complianceStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#compliance_status SecurityhubInsight#compliance_status}
+	ComplianceStatus interface{} `json:"complianceStatus" yaml:"complianceStatus"`
 	// confidence block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#confidence SecurityhubInsight#confidence}
-	Confidence *[]*SecurityhubInsightFiltersConfidence `json:"confidence"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#confidence SecurityhubInsight#confidence}
+	Confidence interface{} `json:"confidence" yaml:"confidence"`
 	// created_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#created_at SecurityhubInsight#created_at}
-	CreatedAt *[]*SecurityhubInsightFiltersCreatedAt `json:"createdAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#created_at SecurityhubInsight#created_at}
+	CreatedAt interface{} `json:"createdAt" yaml:"createdAt"`
 	// criticality block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#criticality SecurityhubInsight#criticality}
-	Criticality *[]*SecurityhubInsightFiltersCriticality `json:"criticality"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#criticality SecurityhubInsight#criticality}
+	Criticality interface{} `json:"criticality" yaml:"criticality"`
 	// description block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#description SecurityhubInsight#description}
-	Description *[]*SecurityhubInsightFiltersDescription `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#description SecurityhubInsight#description}
+	Description interface{} `json:"description" yaml:"description"`
 	// finding_provider_fields_confidence block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#finding_provider_fields_confidence SecurityhubInsight#finding_provider_fields_confidence}
-	FindingProviderFieldsConfidence *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence `json:"findingProviderFieldsConfidence"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#finding_provider_fields_confidence SecurityhubInsight#finding_provider_fields_confidence}
+	FindingProviderFieldsConfidence interface{} `json:"findingProviderFieldsConfidence" yaml:"findingProviderFieldsConfidence"`
 	// finding_provider_fields_criticality block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#finding_provider_fields_criticality SecurityhubInsight#finding_provider_fields_criticality}
-	FindingProviderFieldsCriticality *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality `json:"findingProviderFieldsCriticality"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#finding_provider_fields_criticality SecurityhubInsight#finding_provider_fields_criticality}
+	FindingProviderFieldsCriticality interface{} `json:"findingProviderFieldsCriticality" yaml:"findingProviderFieldsCriticality"`
 	// finding_provider_fields_related_findings_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#finding_provider_fields_related_findings_id SecurityhubInsight#finding_provider_fields_related_findings_id}
-	FindingProviderFieldsRelatedFindingsId *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId `json:"findingProviderFieldsRelatedFindingsId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#finding_provider_fields_related_findings_id SecurityhubInsight#finding_provider_fields_related_findings_id}
+	FindingProviderFieldsRelatedFindingsId interface{} `json:"findingProviderFieldsRelatedFindingsId" yaml:"findingProviderFieldsRelatedFindingsId"`
 	// finding_provider_fields_related_findings_product_arn block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#finding_provider_fields_related_findings_product_arn SecurityhubInsight#finding_provider_fields_related_findings_product_arn}
-	FindingProviderFieldsRelatedFindingsProductArn *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn `json:"findingProviderFieldsRelatedFindingsProductArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#finding_provider_fields_related_findings_product_arn SecurityhubInsight#finding_provider_fields_related_findings_product_arn}
+	FindingProviderFieldsRelatedFindingsProductArn interface{} `json:"findingProviderFieldsRelatedFindingsProductArn" yaml:"findingProviderFieldsRelatedFindingsProductArn"`
 	// finding_provider_fields_severity_label block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#finding_provider_fields_severity_label SecurityhubInsight#finding_provider_fields_severity_label}
-	FindingProviderFieldsSeverityLabel *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel `json:"findingProviderFieldsSeverityLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#finding_provider_fields_severity_label SecurityhubInsight#finding_provider_fields_severity_label}
+	FindingProviderFieldsSeverityLabel interface{} `json:"findingProviderFieldsSeverityLabel" yaml:"findingProviderFieldsSeverityLabel"`
 	// finding_provider_fields_severity_original block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#finding_provider_fields_severity_original SecurityhubInsight#finding_provider_fields_severity_original}
-	FindingProviderFieldsSeverityOriginal *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal `json:"findingProviderFieldsSeverityOriginal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#finding_provider_fields_severity_original SecurityhubInsight#finding_provider_fields_severity_original}
+	FindingProviderFieldsSeverityOriginal interface{} `json:"findingProviderFieldsSeverityOriginal" yaml:"findingProviderFieldsSeverityOriginal"`
 	// finding_provider_fields_types block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#finding_provider_fields_types SecurityhubInsight#finding_provider_fields_types}
-	FindingProviderFieldsTypes *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes `json:"findingProviderFieldsTypes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#finding_provider_fields_types SecurityhubInsight#finding_provider_fields_types}
+	FindingProviderFieldsTypes interface{} `json:"findingProviderFieldsTypes" yaml:"findingProviderFieldsTypes"`
 	// first_observed_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#first_observed_at SecurityhubInsight#first_observed_at}
-	FirstObservedAt *[]*SecurityhubInsightFiltersFirstObservedAt `json:"firstObservedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#first_observed_at SecurityhubInsight#first_observed_at}
+	FirstObservedAt interface{} `json:"firstObservedAt" yaml:"firstObservedAt"`
 	// generator_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#generator_id SecurityhubInsight#generator_id}
-	GeneratorId *[]*SecurityhubInsightFiltersGeneratorId `json:"generatorId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#generator_id SecurityhubInsight#generator_id}
+	GeneratorId interface{} `json:"generatorId" yaml:"generatorId"`
 	// id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#id SecurityhubInsight#id}
-	Id *[]*SecurityhubInsightFiltersId `json:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#id SecurityhubInsight#id}
+	Id interface{} `json:"id" yaml:"id"`
 	// keyword block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#keyword SecurityhubInsight#keyword}
-	Keyword *[]*SecurityhubInsightFiltersKeyword `json:"keyword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#keyword SecurityhubInsight#keyword}
+	Keyword interface{} `json:"keyword" yaml:"keyword"`
 	// last_observed_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#last_observed_at SecurityhubInsight#last_observed_at}
-	LastObservedAt *[]*SecurityhubInsightFiltersLastObservedAt `json:"lastObservedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#last_observed_at SecurityhubInsight#last_observed_at}
+	LastObservedAt interface{} `json:"lastObservedAt" yaml:"lastObservedAt"`
 	// malware_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#malware_name SecurityhubInsight#malware_name}
-	MalwareName *[]*SecurityhubInsightFiltersMalwareName `json:"malwareName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#malware_name SecurityhubInsight#malware_name}
+	MalwareName interface{} `json:"malwareName" yaml:"malwareName"`
 	// malware_path block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#malware_path SecurityhubInsight#malware_path}
-	MalwarePath *[]*SecurityhubInsightFiltersMalwarePath `json:"malwarePath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#malware_path SecurityhubInsight#malware_path}
+	MalwarePath interface{} `json:"malwarePath" yaml:"malwarePath"`
 	// malware_state block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#malware_state SecurityhubInsight#malware_state}
-	MalwareState *[]*SecurityhubInsightFiltersMalwareState `json:"malwareState"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#malware_state SecurityhubInsight#malware_state}
+	MalwareState interface{} `json:"malwareState" yaml:"malwareState"`
 	// malware_type block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#malware_type SecurityhubInsight#malware_type}
-	MalwareType *[]*SecurityhubInsightFiltersMalwareType `json:"malwareType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#malware_type SecurityhubInsight#malware_type}
+	MalwareType interface{} `json:"malwareType" yaml:"malwareType"`
 	// network_destination_domain block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_destination_domain SecurityhubInsight#network_destination_domain}
-	NetworkDestinationDomain *[]*SecurityhubInsightFiltersNetworkDestinationDomain `json:"networkDestinationDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_destination_domain SecurityhubInsight#network_destination_domain}
+	NetworkDestinationDomain interface{} `json:"networkDestinationDomain" yaml:"networkDestinationDomain"`
 	// network_destination_ipv4 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_destination_ipv4 SecurityhubInsight#network_destination_ipv4}
-	NetworkDestinationIpv4 *[]*SecurityhubInsightFiltersNetworkDestinationIpv4 `json:"networkDestinationIpv4"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_destination_ipv4 SecurityhubInsight#network_destination_ipv4}
+	NetworkDestinationIpv4 interface{} `json:"networkDestinationIpv4" yaml:"networkDestinationIpv4"`
 	// network_destination_ipv6 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_destination_ipv6 SecurityhubInsight#network_destination_ipv6}
-	NetworkDestinationIpv6 *[]*SecurityhubInsightFiltersNetworkDestinationIpv6 `json:"networkDestinationIpv6"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_destination_ipv6 SecurityhubInsight#network_destination_ipv6}
+	NetworkDestinationIpv6 interface{} `json:"networkDestinationIpv6" yaml:"networkDestinationIpv6"`
 	// network_destination_port block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_destination_port SecurityhubInsight#network_destination_port}
-	NetworkDestinationPort *[]*SecurityhubInsightFiltersNetworkDestinationPort `json:"networkDestinationPort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_destination_port SecurityhubInsight#network_destination_port}
+	NetworkDestinationPort interface{} `json:"networkDestinationPort" yaml:"networkDestinationPort"`
 	// network_direction block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_direction SecurityhubInsight#network_direction}
-	NetworkDirection *[]*SecurityhubInsightFiltersNetworkDirection `json:"networkDirection"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_direction SecurityhubInsight#network_direction}
+	NetworkDirection interface{} `json:"networkDirection" yaml:"networkDirection"`
 	// network_protocol block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_protocol SecurityhubInsight#network_protocol}
-	NetworkProtocol *[]*SecurityhubInsightFiltersNetworkProtocol `json:"networkProtocol"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_protocol SecurityhubInsight#network_protocol}
+	NetworkProtocol interface{} `json:"networkProtocol" yaml:"networkProtocol"`
 	// network_source_domain block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_source_domain SecurityhubInsight#network_source_domain}
-	NetworkSourceDomain *[]*SecurityhubInsightFiltersNetworkSourceDomain `json:"networkSourceDomain"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_source_domain SecurityhubInsight#network_source_domain}
+	NetworkSourceDomain interface{} `json:"networkSourceDomain" yaml:"networkSourceDomain"`
 	// network_source_ipv4 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_source_ipv4 SecurityhubInsight#network_source_ipv4}
-	NetworkSourceIpv4 *[]*SecurityhubInsightFiltersNetworkSourceIpv4 `json:"networkSourceIpv4"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_source_ipv4 SecurityhubInsight#network_source_ipv4}
+	NetworkSourceIpv4 interface{} `json:"networkSourceIpv4" yaml:"networkSourceIpv4"`
 	// network_source_ipv6 block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_source_ipv6 SecurityhubInsight#network_source_ipv6}
-	NetworkSourceIpv6 *[]*SecurityhubInsightFiltersNetworkSourceIpv6 `json:"networkSourceIpv6"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_source_ipv6 SecurityhubInsight#network_source_ipv6}
+	NetworkSourceIpv6 interface{} `json:"networkSourceIpv6" yaml:"networkSourceIpv6"`
 	// network_source_mac block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_source_mac SecurityhubInsight#network_source_mac}
-	NetworkSourceMac *[]*SecurityhubInsightFiltersNetworkSourceMac `json:"networkSourceMac"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_source_mac SecurityhubInsight#network_source_mac}
+	NetworkSourceMac interface{} `json:"networkSourceMac" yaml:"networkSourceMac"`
 	// network_source_port block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#network_source_port SecurityhubInsight#network_source_port}
-	NetworkSourcePort *[]*SecurityhubInsightFiltersNetworkSourcePort `json:"networkSourcePort"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#network_source_port SecurityhubInsight#network_source_port}
+	NetworkSourcePort interface{} `json:"networkSourcePort" yaml:"networkSourcePort"`
 	// note_text block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#note_text SecurityhubInsight#note_text}
-	NoteText *[]*SecurityhubInsightFiltersNoteText `json:"noteText"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#note_text SecurityhubInsight#note_text}
+	NoteText interface{} `json:"noteText" yaml:"noteText"`
 	// note_updated_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#note_updated_at SecurityhubInsight#note_updated_at}
-	NoteUpdatedAt *[]*SecurityhubInsightFiltersNoteUpdatedAt `json:"noteUpdatedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#note_updated_at SecurityhubInsight#note_updated_at}
+	NoteUpdatedAt interface{} `json:"noteUpdatedAt" yaml:"noteUpdatedAt"`
 	// note_updated_by block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#note_updated_by SecurityhubInsight#note_updated_by}
-	NoteUpdatedBy *[]*SecurityhubInsightFiltersNoteUpdatedBy `json:"noteUpdatedBy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#note_updated_by SecurityhubInsight#note_updated_by}
+	NoteUpdatedBy interface{} `json:"noteUpdatedBy" yaml:"noteUpdatedBy"`
 	// process_launched_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#process_launched_at SecurityhubInsight#process_launched_at}
-	ProcessLaunchedAt *[]*SecurityhubInsightFiltersProcessLaunchedAt `json:"processLaunchedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#process_launched_at SecurityhubInsight#process_launched_at}
+	ProcessLaunchedAt interface{} `json:"processLaunchedAt" yaml:"processLaunchedAt"`
 	// process_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#process_name SecurityhubInsight#process_name}
-	ProcessName *[]*SecurityhubInsightFiltersProcessName `json:"processName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#process_name SecurityhubInsight#process_name}
+	ProcessName interface{} `json:"processName" yaml:"processName"`
 	// process_parent_pid block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#process_parent_pid SecurityhubInsight#process_parent_pid}
-	ProcessParentPid *[]*SecurityhubInsightFiltersProcessParentPid `json:"processParentPid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#process_parent_pid SecurityhubInsight#process_parent_pid}
+	ProcessParentPid interface{} `json:"processParentPid" yaml:"processParentPid"`
 	// process_path block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#process_path SecurityhubInsight#process_path}
-	ProcessPath *[]*SecurityhubInsightFiltersProcessPath `json:"processPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#process_path SecurityhubInsight#process_path}
+	ProcessPath interface{} `json:"processPath" yaml:"processPath"`
 	// process_pid block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#process_pid SecurityhubInsight#process_pid}
-	ProcessPid *[]*SecurityhubInsightFiltersProcessPid `json:"processPid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#process_pid SecurityhubInsight#process_pid}
+	ProcessPid interface{} `json:"processPid" yaml:"processPid"`
 	// process_terminated_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#process_terminated_at SecurityhubInsight#process_terminated_at}
-	ProcessTerminatedAt *[]*SecurityhubInsightFiltersProcessTerminatedAt `json:"processTerminatedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#process_terminated_at SecurityhubInsight#process_terminated_at}
+	ProcessTerminatedAt interface{} `json:"processTerminatedAt" yaml:"processTerminatedAt"`
 	// product_arn block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#product_arn SecurityhubInsight#product_arn}
-	ProductArn *[]*SecurityhubInsightFiltersProductArn `json:"productArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#product_arn SecurityhubInsight#product_arn}
+	ProductArn interface{} `json:"productArn" yaml:"productArn"`
 	// product_fields block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#product_fields SecurityhubInsight#product_fields}
-	ProductFields *[]*SecurityhubInsightFiltersProductFields `json:"productFields"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#product_fields SecurityhubInsight#product_fields}
+	ProductFields interface{} `json:"productFields" yaml:"productFields"`
 	// product_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#product_name SecurityhubInsight#product_name}
-	ProductName *[]*SecurityhubInsightFiltersProductName `json:"productName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#product_name SecurityhubInsight#product_name}
+	ProductName interface{} `json:"productName" yaml:"productName"`
 	// recommendation_text block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#recommendation_text SecurityhubInsight#recommendation_text}
-	RecommendationText *[]*SecurityhubInsightFiltersRecommendationText `json:"recommendationText"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#recommendation_text SecurityhubInsight#recommendation_text}
+	RecommendationText interface{} `json:"recommendationText" yaml:"recommendationText"`
 	// record_state block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#record_state SecurityhubInsight#record_state}
-	RecordState *[]*SecurityhubInsightFiltersRecordState `json:"recordState"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#record_state SecurityhubInsight#record_state}
+	RecordState interface{} `json:"recordState" yaml:"recordState"`
 	// related_findings_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#related_findings_id SecurityhubInsight#related_findings_id}
-	RelatedFindingsId *[]*SecurityhubInsightFiltersRelatedFindingsId `json:"relatedFindingsId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#related_findings_id SecurityhubInsight#related_findings_id}
+	RelatedFindingsId interface{} `json:"relatedFindingsId" yaml:"relatedFindingsId"`
 	// related_findings_product_arn block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#related_findings_product_arn SecurityhubInsight#related_findings_product_arn}
-	RelatedFindingsProductArn *[]*SecurityhubInsightFiltersRelatedFindingsProductArn `json:"relatedFindingsProductArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#related_findings_product_arn SecurityhubInsight#related_findings_product_arn}
+	RelatedFindingsProductArn interface{} `json:"relatedFindingsProductArn" yaml:"relatedFindingsProductArn"`
 	// resource_aws_ec2_instance_iam_instance_profile_arn block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_iam_instance_profile_arn SecurityhubInsight#resource_aws_ec2_instance_iam_instance_profile_arn}
-	ResourceAwsEc2InstanceIamInstanceProfileArn *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn `json:"resourceAwsEc2InstanceIamInstanceProfileArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_iam_instance_profile_arn SecurityhubInsight#resource_aws_ec2_instance_iam_instance_profile_arn}
+	ResourceAwsEc2InstanceIamInstanceProfileArn interface{} `json:"resourceAwsEc2InstanceIamInstanceProfileArn" yaml:"resourceAwsEc2InstanceIamInstanceProfileArn"`
 	// resource_aws_ec2_instance_image_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_image_id SecurityhubInsight#resource_aws_ec2_instance_image_id}
-	ResourceAwsEc2InstanceImageId *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId `json:"resourceAwsEc2InstanceImageId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_image_id SecurityhubInsight#resource_aws_ec2_instance_image_id}
+	ResourceAwsEc2InstanceImageId interface{} `json:"resourceAwsEc2InstanceImageId" yaml:"resourceAwsEc2InstanceImageId"`
 	// resource_aws_ec2_instance_ipv4_addresses block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_ipv4_addresses SecurityhubInsight#resource_aws_ec2_instance_ipv4_addresses}
-	ResourceAwsEc2InstanceIpv4Addresses *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses `json:"resourceAwsEc2InstanceIpv4Addresses"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_ipv4_addresses SecurityhubInsight#resource_aws_ec2_instance_ipv4_addresses}
+	ResourceAwsEc2InstanceIpv4Addresses interface{} `json:"resourceAwsEc2InstanceIpv4Addresses" yaml:"resourceAwsEc2InstanceIpv4Addresses"`
 	// resource_aws_ec2_instance_ipv6_addresses block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_ipv6_addresses SecurityhubInsight#resource_aws_ec2_instance_ipv6_addresses}
-	ResourceAwsEc2InstanceIpv6Addresses *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses `json:"resourceAwsEc2InstanceIpv6Addresses"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_ipv6_addresses SecurityhubInsight#resource_aws_ec2_instance_ipv6_addresses}
+	ResourceAwsEc2InstanceIpv6Addresses interface{} `json:"resourceAwsEc2InstanceIpv6Addresses" yaml:"resourceAwsEc2InstanceIpv6Addresses"`
 	// resource_aws_ec2_instance_key_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_key_name SecurityhubInsight#resource_aws_ec2_instance_key_name}
-	ResourceAwsEc2InstanceKeyName *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName `json:"resourceAwsEc2InstanceKeyName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_key_name SecurityhubInsight#resource_aws_ec2_instance_key_name}
+	ResourceAwsEc2InstanceKeyName interface{} `json:"resourceAwsEc2InstanceKeyName" yaml:"resourceAwsEc2InstanceKeyName"`
 	// resource_aws_ec2_instance_launched_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_launched_at SecurityhubInsight#resource_aws_ec2_instance_launched_at}
-	ResourceAwsEc2InstanceLaunchedAt *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt `json:"resourceAwsEc2InstanceLaunchedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_launched_at SecurityhubInsight#resource_aws_ec2_instance_launched_at}
+	ResourceAwsEc2InstanceLaunchedAt interface{} `json:"resourceAwsEc2InstanceLaunchedAt" yaml:"resourceAwsEc2InstanceLaunchedAt"`
 	// resource_aws_ec2_instance_subnet_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_subnet_id SecurityhubInsight#resource_aws_ec2_instance_subnet_id}
-	ResourceAwsEc2InstanceSubnetId *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId `json:"resourceAwsEc2InstanceSubnetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_subnet_id SecurityhubInsight#resource_aws_ec2_instance_subnet_id}
+	ResourceAwsEc2InstanceSubnetId interface{} `json:"resourceAwsEc2InstanceSubnetId" yaml:"resourceAwsEc2InstanceSubnetId"`
 	// resource_aws_ec2_instance_type block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_type SecurityhubInsight#resource_aws_ec2_instance_type}
-	ResourceAwsEc2InstanceType *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType `json:"resourceAwsEc2InstanceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_type SecurityhubInsight#resource_aws_ec2_instance_type}
+	ResourceAwsEc2InstanceType interface{} `json:"resourceAwsEc2InstanceType" yaml:"resourceAwsEc2InstanceType"`
 	// resource_aws_ec2_instance_vpc_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_ec2_instance_vpc_id SecurityhubInsight#resource_aws_ec2_instance_vpc_id}
-	ResourceAwsEc2InstanceVpcId *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId `json:"resourceAwsEc2InstanceVpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_ec2_instance_vpc_id SecurityhubInsight#resource_aws_ec2_instance_vpc_id}
+	ResourceAwsEc2InstanceVpcId interface{} `json:"resourceAwsEc2InstanceVpcId" yaml:"resourceAwsEc2InstanceVpcId"`
 	// resource_aws_iam_access_key_created_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_iam_access_key_created_at SecurityhubInsight#resource_aws_iam_access_key_created_at}
-	ResourceAwsIamAccessKeyCreatedAt *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt `json:"resourceAwsIamAccessKeyCreatedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_iam_access_key_created_at SecurityhubInsight#resource_aws_iam_access_key_created_at}
+	ResourceAwsIamAccessKeyCreatedAt interface{} `json:"resourceAwsIamAccessKeyCreatedAt" yaml:"resourceAwsIamAccessKeyCreatedAt"`
 	// resource_aws_iam_access_key_status block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_iam_access_key_status SecurityhubInsight#resource_aws_iam_access_key_status}
-	ResourceAwsIamAccessKeyStatus *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus `json:"resourceAwsIamAccessKeyStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_iam_access_key_status SecurityhubInsight#resource_aws_iam_access_key_status}
+	ResourceAwsIamAccessKeyStatus interface{} `json:"resourceAwsIamAccessKeyStatus" yaml:"resourceAwsIamAccessKeyStatus"`
 	// resource_aws_iam_access_key_user_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_iam_access_key_user_name SecurityhubInsight#resource_aws_iam_access_key_user_name}
-	ResourceAwsIamAccessKeyUserName *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName `json:"resourceAwsIamAccessKeyUserName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_iam_access_key_user_name SecurityhubInsight#resource_aws_iam_access_key_user_name}
+	ResourceAwsIamAccessKeyUserName interface{} `json:"resourceAwsIamAccessKeyUserName" yaml:"resourceAwsIamAccessKeyUserName"`
 	// resource_aws_s3_bucket_owner_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_s3_bucket_owner_id SecurityhubInsight#resource_aws_s3_bucket_owner_id}
-	ResourceAwsS3BucketOwnerId *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId `json:"resourceAwsS3BucketOwnerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_s3_bucket_owner_id SecurityhubInsight#resource_aws_s3_bucket_owner_id}
+	ResourceAwsS3BucketOwnerId interface{} `json:"resourceAwsS3BucketOwnerId" yaml:"resourceAwsS3BucketOwnerId"`
 	// resource_aws_s3_bucket_owner_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_aws_s3_bucket_owner_name SecurityhubInsight#resource_aws_s3_bucket_owner_name}
-	ResourceAwsS3BucketOwnerName *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName `json:"resourceAwsS3BucketOwnerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_aws_s3_bucket_owner_name SecurityhubInsight#resource_aws_s3_bucket_owner_name}
+	ResourceAwsS3BucketOwnerName interface{} `json:"resourceAwsS3BucketOwnerName" yaml:"resourceAwsS3BucketOwnerName"`
 	// resource_container_image_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_container_image_id SecurityhubInsight#resource_container_image_id}
-	ResourceContainerImageId *[]*SecurityhubInsightFiltersResourceContainerImageId `json:"resourceContainerImageId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_container_image_id SecurityhubInsight#resource_container_image_id}
+	ResourceContainerImageId interface{} `json:"resourceContainerImageId" yaml:"resourceContainerImageId"`
 	// resource_container_image_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_container_image_name SecurityhubInsight#resource_container_image_name}
-	ResourceContainerImageName *[]*SecurityhubInsightFiltersResourceContainerImageName `json:"resourceContainerImageName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_container_image_name SecurityhubInsight#resource_container_image_name}
+	ResourceContainerImageName interface{} `json:"resourceContainerImageName" yaml:"resourceContainerImageName"`
 	// resource_container_launched_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_container_launched_at SecurityhubInsight#resource_container_launched_at}
-	ResourceContainerLaunchedAt *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt `json:"resourceContainerLaunchedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_container_launched_at SecurityhubInsight#resource_container_launched_at}
+	ResourceContainerLaunchedAt interface{} `json:"resourceContainerLaunchedAt" yaml:"resourceContainerLaunchedAt"`
 	// resource_container_name block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_container_name SecurityhubInsight#resource_container_name}
-	ResourceContainerName *[]*SecurityhubInsightFiltersResourceContainerName `json:"resourceContainerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_container_name SecurityhubInsight#resource_container_name}
+	ResourceContainerName interface{} `json:"resourceContainerName" yaml:"resourceContainerName"`
 	// resource_details_other block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_details_other SecurityhubInsight#resource_details_other}
-	ResourceDetailsOther *[]*SecurityhubInsightFiltersResourceDetailsOther `json:"resourceDetailsOther"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_details_other SecurityhubInsight#resource_details_other}
+	ResourceDetailsOther interface{} `json:"resourceDetailsOther" yaml:"resourceDetailsOther"`
 	// resource_id block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_id SecurityhubInsight#resource_id}
-	ResourceId *[]*SecurityhubInsightFiltersResourceId `json:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_id SecurityhubInsight#resource_id}
+	ResourceId interface{} `json:"resourceId" yaml:"resourceId"`
 	// resource_partition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_partition SecurityhubInsight#resource_partition}
-	ResourcePartition *[]*SecurityhubInsightFiltersResourcePartition `json:"resourcePartition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_partition SecurityhubInsight#resource_partition}
+	ResourcePartition interface{} `json:"resourcePartition" yaml:"resourcePartition"`
 	// resource_region block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_region SecurityhubInsight#resource_region}
-	ResourceRegion *[]*SecurityhubInsightFiltersResourceRegion `json:"resourceRegion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_region SecurityhubInsight#resource_region}
+	ResourceRegion interface{} `json:"resourceRegion" yaml:"resourceRegion"`
 	// resource_tags block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_tags SecurityhubInsight#resource_tags}
-	ResourceTags *[]*SecurityhubInsightFiltersResourceTags `json:"resourceTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_tags SecurityhubInsight#resource_tags}
+	ResourceTags interface{} `json:"resourceTags" yaml:"resourceTags"`
 	// resource_type block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#resource_type SecurityhubInsight#resource_type}
-	ResourceType *[]*SecurityhubInsightFiltersResourceType `json:"resourceType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#resource_type SecurityhubInsight#resource_type}
+	ResourceType interface{} `json:"resourceType" yaml:"resourceType"`
 	// severity_label block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#severity_label SecurityhubInsight#severity_label}
-	SeverityLabel *[]*SecurityhubInsightFiltersSeverityLabel `json:"severityLabel"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#severity_label SecurityhubInsight#severity_label}
+	SeverityLabel interface{} `json:"severityLabel" yaml:"severityLabel"`
 	// source_url block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#source_url SecurityhubInsight#source_url}
-	SourceUrl *[]*SecurityhubInsightFiltersSourceUrl `json:"sourceUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#source_url SecurityhubInsight#source_url}
+	SourceUrl interface{} `json:"sourceUrl" yaml:"sourceUrl"`
 	// threat_intel_indicator_category block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#threat_intel_indicator_category SecurityhubInsight#threat_intel_indicator_category}
-	ThreatIntelIndicatorCategory *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory `json:"threatIntelIndicatorCategory"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#threat_intel_indicator_category SecurityhubInsight#threat_intel_indicator_category}
+	ThreatIntelIndicatorCategory interface{} `json:"threatIntelIndicatorCategory" yaml:"threatIntelIndicatorCategory"`
 	// threat_intel_indicator_last_observed_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#threat_intel_indicator_last_observed_at SecurityhubInsight#threat_intel_indicator_last_observed_at}
-	ThreatIntelIndicatorLastObservedAt *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt `json:"threatIntelIndicatorLastObservedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#threat_intel_indicator_last_observed_at SecurityhubInsight#threat_intel_indicator_last_observed_at}
+	ThreatIntelIndicatorLastObservedAt interface{} `json:"threatIntelIndicatorLastObservedAt" yaml:"threatIntelIndicatorLastObservedAt"`
 	// threat_intel_indicator_source block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#threat_intel_indicator_source SecurityhubInsight#threat_intel_indicator_source}
-	ThreatIntelIndicatorSource *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource `json:"threatIntelIndicatorSource"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#threat_intel_indicator_source SecurityhubInsight#threat_intel_indicator_source}
+	ThreatIntelIndicatorSource interface{} `json:"threatIntelIndicatorSource" yaml:"threatIntelIndicatorSource"`
 	// threat_intel_indicator_source_url block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#threat_intel_indicator_source_url SecurityhubInsight#threat_intel_indicator_source_url}
-	ThreatIntelIndicatorSourceUrl *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl `json:"threatIntelIndicatorSourceUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#threat_intel_indicator_source_url SecurityhubInsight#threat_intel_indicator_source_url}
+	ThreatIntelIndicatorSourceUrl interface{} `json:"threatIntelIndicatorSourceUrl" yaml:"threatIntelIndicatorSourceUrl"`
 	// threat_intel_indicator_type block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#threat_intel_indicator_type SecurityhubInsight#threat_intel_indicator_type}
-	ThreatIntelIndicatorType *[]*SecurityhubInsightFiltersThreatIntelIndicatorType `json:"threatIntelIndicatorType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#threat_intel_indicator_type SecurityhubInsight#threat_intel_indicator_type}
+	ThreatIntelIndicatorType interface{} `json:"threatIntelIndicatorType" yaml:"threatIntelIndicatorType"`
 	// threat_intel_indicator_value block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#threat_intel_indicator_value SecurityhubInsight#threat_intel_indicator_value}
-	ThreatIntelIndicatorValue *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue `json:"threatIntelIndicatorValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#threat_intel_indicator_value SecurityhubInsight#threat_intel_indicator_value}
+	ThreatIntelIndicatorValue interface{} `json:"threatIntelIndicatorValue" yaml:"threatIntelIndicatorValue"`
 	// title block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#title SecurityhubInsight#title}
-	Title *[]*SecurityhubInsightFiltersTitle `json:"title"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#title SecurityhubInsight#title}
+	Title interface{} `json:"title" yaml:"title"`
 	// type block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#type SecurityhubInsight#type}
-	Type *[]*SecurityhubInsightFiltersType `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#type SecurityhubInsight#type}
+	Type interface{} `json:"type" yaml:"type"`
 	// updated_at block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#updated_at SecurityhubInsight#updated_at}
-	UpdatedAt *[]*SecurityhubInsightFiltersUpdatedAt `json:"updatedAt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#updated_at SecurityhubInsight#updated_at}
+	UpdatedAt interface{} `json:"updatedAt" yaml:"updatedAt"`
 	// user_defined_values block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#user_defined_values SecurityhubInsight#user_defined_values}
-	UserDefinedValues *[]*SecurityhubInsightFiltersUserDefinedValues `json:"userDefinedValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#user_defined_values SecurityhubInsight#user_defined_values}
+	UserDefinedValues interface{} `json:"userDefinedValues" yaml:"userDefinedValues"`
 	// verification_state block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#verification_state SecurityhubInsight#verification_state}
-	VerificationState *[]*SecurityhubInsightFiltersVerificationState `json:"verificationState"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#verification_state SecurityhubInsight#verification_state}
+	VerificationState interface{} `json:"verificationState" yaml:"verificationState"`
 	// workflow_status block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#workflow_status SecurityhubInsight#workflow_status}
-	WorkflowStatus *[]*SecurityhubInsightFiltersWorkflowStatus `json:"workflowStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#workflow_status SecurityhubInsight#workflow_status}
+	WorkflowStatus interface{} `json:"workflowStatus" yaml:"workflowStatus"`
 }
 
 type SecurityhubInsightFiltersAwsAccountId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersCompanyName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersComplianceStatus struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersConfidence struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersCreatedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersCreatedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersCreatedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersCreatedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersCreatedAtDateRangeOutputReference interface {
@@ -2457,18 +2757,23 @@ type SecurityhubInsightFiltersCreatedAtDateRangeOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2508,8 +2813,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2558,7 +2863,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) V
 	return returns
 }
 
-func NewSecurityhubInsightFiltersCreatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersCreatedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersCreatedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersCreatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference{}
@@ -2572,7 +2877,7 @@ func NewSecurityhubInsightFiltersCreatedAtDateRangeOutputReference(terraformReso
 	return &j
 }
 
-func NewSecurityhubInsightFiltersCreatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersCreatedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersCreatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersCreatedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2606,7 +2911,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2631,12 +2936,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) S
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2673,12 +3006,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) G
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2715,90 +3090,90 @@ func (s *jsiiProxy_SecurityhubInsightFiltersCreatedAtDateRangeOutputReference) I
 }
 
 type SecurityhubInsightFiltersCriticality struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersDescription struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersFindingProviderFieldsConfidence struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersFindingProviderFieldsCriticality struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersFindingProviderFieldsTypes struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersFirstObservedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersFirstObservedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersFirstObservedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersFirstObservedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference interface {
@@ -2809,18 +3184,23 @@ type SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference interface 
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -2860,8 +3240,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputRefere
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2910,7 +3290,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputRefere
 	return returns
 }
 
-func NewSecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference{}
@@ -2924,7 +3304,7 @@ func NewSecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference(terrafo
 	return &j
 }
 
-func NewSecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2958,7 +3338,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputRefere
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2983,12 +3363,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputRefere
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3025,12 +3433,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputRefere
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3067,40 +3517,40 @@ func (s *jsiiProxy_SecurityhubInsightFiltersFirstObservedAtDateRangeOutputRefere
 }
 
 type SecurityhubInsightFiltersGeneratorId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersKeyword struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersLastObservedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersLastObservedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersLastObservedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersLastObservedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference interface {
@@ -3111,18 +3561,23 @@ type SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3162,8 +3617,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReferen
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3212,7 +3667,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReferen
 	return returns
 }
 
-func NewSecurityhubInsightFiltersLastObservedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersLastObservedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference{}
@@ -3226,7 +3681,7 @@ func NewSecurityhubInsightFiltersLastObservedAtDateRangeOutputReference(terrafor
 	return &j
 }
 
-func NewSecurityhubInsightFiltersLastObservedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersLastObservedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3260,7 +3715,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReferen
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3285,12 +3740,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReferen
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3327,12 +3810,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReferen
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3369,129 +3894,129 @@ func (s *jsiiProxy_SecurityhubInsightFiltersLastObservedAtDateRangeOutputReferen
 }
 
 type SecurityhubInsightFiltersMalwareName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersMalwarePath struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersMalwareState struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersMalwareType struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNetworkDestinationDomain struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNetworkDestinationIpv4 struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#cidr SecurityhubInsight#cidr}.
-	Cidr *string `json:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#cidr SecurityhubInsight#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
 }
 
 type SecurityhubInsightFiltersNetworkDestinationIpv6 struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#cidr SecurityhubInsight#cidr}.
-	Cidr *string `json:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#cidr SecurityhubInsight#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
 }
 
 type SecurityhubInsightFiltersNetworkDestinationPort struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersNetworkDirection struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNetworkProtocol struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNetworkSourceDomain struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNetworkSourceIpv4 struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#cidr SecurityhubInsight#cidr}.
-	Cidr *string `json:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#cidr SecurityhubInsight#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
 }
 
 type SecurityhubInsightFiltersNetworkSourceIpv6 struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#cidr SecurityhubInsight#cidr}.
-	Cidr *string `json:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#cidr SecurityhubInsight#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
 }
 
 type SecurityhubInsightFiltersNetworkSourceMac struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNetworkSourcePort struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersNoteText struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNoteUpdatedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersNoteUpdatedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersNoteUpdatedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersNoteUpdatedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference interface {
@@ -3502,18 +4027,23 @@ type SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3553,8 +4083,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReferenc
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3603,7 +4133,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReferenc
 	return returns
 }
 
-func NewSecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference{}
@@ -3617,7 +4147,7 @@ func NewSecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference(terraform
 	return &j
 }
 
-func NewSecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3651,7 +4181,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReferenc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3676,12 +4206,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3718,12 +4276,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3760,290 +4360,295 @@ func (s *jsiiProxy_SecurityhubInsightFiltersNoteUpdatedAtDateRangeOutputReferenc
 }
 
 type SecurityhubInsightFiltersNoteUpdatedBy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersOutputReference interface {
 	cdktf.ComplexObject
-	AwsAccountId() *[]*SecurityhubInsightFiltersAwsAccountId
-	SetAwsAccountId(val *[]*SecurityhubInsightFiltersAwsAccountId)
-	AwsAccountIdInput() *[]*SecurityhubInsightFiltersAwsAccountId
-	CompanyName() *[]*SecurityhubInsightFiltersCompanyName
-	SetCompanyName(val *[]*SecurityhubInsightFiltersCompanyName)
-	CompanyNameInput() *[]*SecurityhubInsightFiltersCompanyName
-	ComplianceStatus() *[]*SecurityhubInsightFiltersComplianceStatus
-	SetComplianceStatus(val *[]*SecurityhubInsightFiltersComplianceStatus)
-	ComplianceStatusInput() *[]*SecurityhubInsightFiltersComplianceStatus
-	Confidence() *[]*SecurityhubInsightFiltersConfidence
-	SetConfidence(val *[]*SecurityhubInsightFiltersConfidence)
-	ConfidenceInput() *[]*SecurityhubInsightFiltersConfidence
-	CreatedAt() *[]*SecurityhubInsightFiltersCreatedAt
-	SetCreatedAt(val *[]*SecurityhubInsightFiltersCreatedAt)
-	CreatedAtInput() *[]*SecurityhubInsightFiltersCreatedAt
-	Criticality() *[]*SecurityhubInsightFiltersCriticality
-	SetCriticality(val *[]*SecurityhubInsightFiltersCriticality)
-	CriticalityInput() *[]*SecurityhubInsightFiltersCriticality
-	Description() *[]*SecurityhubInsightFiltersDescription
-	SetDescription(val *[]*SecurityhubInsightFiltersDescription)
-	DescriptionInput() *[]*SecurityhubInsightFiltersDescription
-	FindingProviderFieldsConfidence() *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence
-	SetFindingProviderFieldsConfidence(val *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence)
-	FindingProviderFieldsConfidenceInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence
-	FindingProviderFieldsCriticality() *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality
-	SetFindingProviderFieldsCriticality(val *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality)
-	FindingProviderFieldsCriticalityInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality
-	FindingProviderFieldsRelatedFindingsId() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId
-	SetFindingProviderFieldsRelatedFindingsId(val *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId)
-	FindingProviderFieldsRelatedFindingsIdInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId
-	FindingProviderFieldsRelatedFindingsProductArn() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn
-	SetFindingProviderFieldsRelatedFindingsProductArn(val *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn)
-	FindingProviderFieldsRelatedFindingsProductArnInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn
-	FindingProviderFieldsSeverityLabel() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel
-	SetFindingProviderFieldsSeverityLabel(val *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel)
-	FindingProviderFieldsSeverityLabelInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel
-	FindingProviderFieldsSeverityOriginal() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal
-	SetFindingProviderFieldsSeverityOriginal(val *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal)
-	FindingProviderFieldsSeverityOriginalInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal
-	FindingProviderFieldsTypes() *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes
-	SetFindingProviderFieldsTypes(val *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes)
-	FindingProviderFieldsTypesInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes
-	FirstObservedAt() *[]*SecurityhubInsightFiltersFirstObservedAt
-	SetFirstObservedAt(val *[]*SecurityhubInsightFiltersFirstObservedAt)
-	FirstObservedAtInput() *[]*SecurityhubInsightFiltersFirstObservedAt
-	GeneratorId() *[]*SecurityhubInsightFiltersGeneratorId
-	SetGeneratorId(val *[]*SecurityhubInsightFiltersGeneratorId)
-	GeneratorIdInput() *[]*SecurityhubInsightFiltersGeneratorId
-	Id() *[]*SecurityhubInsightFiltersId
-	SetId(val *[]*SecurityhubInsightFiltersId)
-	IdInput() *[]*SecurityhubInsightFiltersId
+	AwsAccountId() interface{}
+	SetAwsAccountId(val interface{})
+	AwsAccountIdInput() interface{}
+	CompanyName() interface{}
+	SetCompanyName(val interface{})
+	CompanyNameInput() interface{}
+	ComplianceStatus() interface{}
+	SetComplianceStatus(val interface{})
+	ComplianceStatusInput() interface{}
+	Confidence() interface{}
+	SetConfidence(val interface{})
+	ConfidenceInput() interface{}
+	CreatedAt() interface{}
+	SetCreatedAt(val interface{})
+	CreatedAtInput() interface{}
+	Criticality() interface{}
+	SetCriticality(val interface{})
+	CriticalityInput() interface{}
+	Description() interface{}
+	SetDescription(val interface{})
+	DescriptionInput() interface{}
+	FindingProviderFieldsConfidence() interface{}
+	SetFindingProviderFieldsConfidence(val interface{})
+	FindingProviderFieldsConfidenceInput() interface{}
+	FindingProviderFieldsCriticality() interface{}
+	SetFindingProviderFieldsCriticality(val interface{})
+	FindingProviderFieldsCriticalityInput() interface{}
+	FindingProviderFieldsRelatedFindingsId() interface{}
+	SetFindingProviderFieldsRelatedFindingsId(val interface{})
+	FindingProviderFieldsRelatedFindingsIdInput() interface{}
+	FindingProviderFieldsRelatedFindingsProductArn() interface{}
+	SetFindingProviderFieldsRelatedFindingsProductArn(val interface{})
+	FindingProviderFieldsRelatedFindingsProductArnInput() interface{}
+	FindingProviderFieldsSeverityLabel() interface{}
+	SetFindingProviderFieldsSeverityLabel(val interface{})
+	FindingProviderFieldsSeverityLabelInput() interface{}
+	FindingProviderFieldsSeverityOriginal() interface{}
+	SetFindingProviderFieldsSeverityOriginal(val interface{})
+	FindingProviderFieldsSeverityOriginalInput() interface{}
+	FindingProviderFieldsTypes() interface{}
+	SetFindingProviderFieldsTypes(val interface{})
+	FindingProviderFieldsTypesInput() interface{}
+	FirstObservedAt() interface{}
+	SetFirstObservedAt(val interface{})
+	FirstObservedAtInput() interface{}
+	GeneratorId() interface{}
+	SetGeneratorId(val interface{})
+	GeneratorIdInput() interface{}
+	Id() interface{}
+	SetId(val interface{})
+	IdInput() interface{}
 	InternalValue() *SecurityhubInsightFilters
 	SetInternalValue(val *SecurityhubInsightFilters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Keyword() *[]*SecurityhubInsightFiltersKeyword
-	SetKeyword(val *[]*SecurityhubInsightFiltersKeyword)
-	KeywordInput() *[]*SecurityhubInsightFiltersKeyword
-	LastObservedAt() *[]*SecurityhubInsightFiltersLastObservedAt
-	SetLastObservedAt(val *[]*SecurityhubInsightFiltersLastObservedAt)
-	LastObservedAtInput() *[]*SecurityhubInsightFiltersLastObservedAt
-	MalwareName() *[]*SecurityhubInsightFiltersMalwareName
-	SetMalwareName(val *[]*SecurityhubInsightFiltersMalwareName)
-	MalwareNameInput() *[]*SecurityhubInsightFiltersMalwareName
-	MalwarePath() *[]*SecurityhubInsightFiltersMalwarePath
-	SetMalwarePath(val *[]*SecurityhubInsightFiltersMalwarePath)
-	MalwarePathInput() *[]*SecurityhubInsightFiltersMalwarePath
-	MalwareState() *[]*SecurityhubInsightFiltersMalwareState
-	SetMalwareState(val *[]*SecurityhubInsightFiltersMalwareState)
-	MalwareStateInput() *[]*SecurityhubInsightFiltersMalwareState
-	MalwareType() *[]*SecurityhubInsightFiltersMalwareType
-	SetMalwareType(val *[]*SecurityhubInsightFiltersMalwareType)
-	MalwareTypeInput() *[]*SecurityhubInsightFiltersMalwareType
-	NetworkDestinationDomain() *[]*SecurityhubInsightFiltersNetworkDestinationDomain
-	SetNetworkDestinationDomain(val *[]*SecurityhubInsightFiltersNetworkDestinationDomain)
-	NetworkDestinationDomainInput() *[]*SecurityhubInsightFiltersNetworkDestinationDomain
-	NetworkDestinationIpv4() *[]*SecurityhubInsightFiltersNetworkDestinationIpv4
-	SetNetworkDestinationIpv4(val *[]*SecurityhubInsightFiltersNetworkDestinationIpv4)
-	NetworkDestinationIpv4Input() *[]*SecurityhubInsightFiltersNetworkDestinationIpv4
-	NetworkDestinationIpv6() *[]*SecurityhubInsightFiltersNetworkDestinationIpv6
-	SetNetworkDestinationIpv6(val *[]*SecurityhubInsightFiltersNetworkDestinationIpv6)
-	NetworkDestinationIpv6Input() *[]*SecurityhubInsightFiltersNetworkDestinationIpv6
-	NetworkDestinationPort() *[]*SecurityhubInsightFiltersNetworkDestinationPort
-	SetNetworkDestinationPort(val *[]*SecurityhubInsightFiltersNetworkDestinationPort)
-	NetworkDestinationPortInput() *[]*SecurityhubInsightFiltersNetworkDestinationPort
-	NetworkDirection() *[]*SecurityhubInsightFiltersNetworkDirection
-	SetNetworkDirection(val *[]*SecurityhubInsightFiltersNetworkDirection)
-	NetworkDirectionInput() *[]*SecurityhubInsightFiltersNetworkDirection
-	NetworkProtocol() *[]*SecurityhubInsightFiltersNetworkProtocol
-	SetNetworkProtocol(val *[]*SecurityhubInsightFiltersNetworkProtocol)
-	NetworkProtocolInput() *[]*SecurityhubInsightFiltersNetworkProtocol
-	NetworkSourceDomain() *[]*SecurityhubInsightFiltersNetworkSourceDomain
-	SetNetworkSourceDomain(val *[]*SecurityhubInsightFiltersNetworkSourceDomain)
-	NetworkSourceDomainInput() *[]*SecurityhubInsightFiltersNetworkSourceDomain
-	NetworkSourceIpv4() *[]*SecurityhubInsightFiltersNetworkSourceIpv4
-	SetNetworkSourceIpv4(val *[]*SecurityhubInsightFiltersNetworkSourceIpv4)
-	NetworkSourceIpv4Input() *[]*SecurityhubInsightFiltersNetworkSourceIpv4
-	NetworkSourceIpv6() *[]*SecurityhubInsightFiltersNetworkSourceIpv6
-	SetNetworkSourceIpv6(val *[]*SecurityhubInsightFiltersNetworkSourceIpv6)
-	NetworkSourceIpv6Input() *[]*SecurityhubInsightFiltersNetworkSourceIpv6
-	NetworkSourceMac() *[]*SecurityhubInsightFiltersNetworkSourceMac
-	SetNetworkSourceMac(val *[]*SecurityhubInsightFiltersNetworkSourceMac)
-	NetworkSourceMacInput() *[]*SecurityhubInsightFiltersNetworkSourceMac
-	NetworkSourcePort() *[]*SecurityhubInsightFiltersNetworkSourcePort
-	SetNetworkSourcePort(val *[]*SecurityhubInsightFiltersNetworkSourcePort)
-	NetworkSourcePortInput() *[]*SecurityhubInsightFiltersNetworkSourcePort
-	NoteText() *[]*SecurityhubInsightFiltersNoteText
-	SetNoteText(val *[]*SecurityhubInsightFiltersNoteText)
-	NoteTextInput() *[]*SecurityhubInsightFiltersNoteText
-	NoteUpdatedAt() *[]*SecurityhubInsightFiltersNoteUpdatedAt
-	SetNoteUpdatedAt(val *[]*SecurityhubInsightFiltersNoteUpdatedAt)
-	NoteUpdatedAtInput() *[]*SecurityhubInsightFiltersNoteUpdatedAt
-	NoteUpdatedBy() *[]*SecurityhubInsightFiltersNoteUpdatedBy
-	SetNoteUpdatedBy(val *[]*SecurityhubInsightFiltersNoteUpdatedBy)
-	NoteUpdatedByInput() *[]*SecurityhubInsightFiltersNoteUpdatedBy
-	ProcessLaunchedAt() *[]*SecurityhubInsightFiltersProcessLaunchedAt
-	SetProcessLaunchedAt(val *[]*SecurityhubInsightFiltersProcessLaunchedAt)
-	ProcessLaunchedAtInput() *[]*SecurityhubInsightFiltersProcessLaunchedAt
-	ProcessName() *[]*SecurityhubInsightFiltersProcessName
-	SetProcessName(val *[]*SecurityhubInsightFiltersProcessName)
-	ProcessNameInput() *[]*SecurityhubInsightFiltersProcessName
-	ProcessParentPid() *[]*SecurityhubInsightFiltersProcessParentPid
-	SetProcessParentPid(val *[]*SecurityhubInsightFiltersProcessParentPid)
-	ProcessParentPidInput() *[]*SecurityhubInsightFiltersProcessParentPid
-	ProcessPath() *[]*SecurityhubInsightFiltersProcessPath
-	SetProcessPath(val *[]*SecurityhubInsightFiltersProcessPath)
-	ProcessPathInput() *[]*SecurityhubInsightFiltersProcessPath
-	ProcessPid() *[]*SecurityhubInsightFiltersProcessPid
-	SetProcessPid(val *[]*SecurityhubInsightFiltersProcessPid)
-	ProcessPidInput() *[]*SecurityhubInsightFiltersProcessPid
-	ProcessTerminatedAt() *[]*SecurityhubInsightFiltersProcessTerminatedAt
-	SetProcessTerminatedAt(val *[]*SecurityhubInsightFiltersProcessTerminatedAt)
-	ProcessTerminatedAtInput() *[]*SecurityhubInsightFiltersProcessTerminatedAt
-	ProductArn() *[]*SecurityhubInsightFiltersProductArn
-	SetProductArn(val *[]*SecurityhubInsightFiltersProductArn)
-	ProductArnInput() *[]*SecurityhubInsightFiltersProductArn
-	ProductFields() *[]*SecurityhubInsightFiltersProductFields
-	SetProductFields(val *[]*SecurityhubInsightFiltersProductFields)
-	ProductFieldsInput() *[]*SecurityhubInsightFiltersProductFields
-	ProductName() *[]*SecurityhubInsightFiltersProductName
-	SetProductName(val *[]*SecurityhubInsightFiltersProductName)
-	ProductNameInput() *[]*SecurityhubInsightFiltersProductName
-	RecommendationText() *[]*SecurityhubInsightFiltersRecommendationText
-	SetRecommendationText(val *[]*SecurityhubInsightFiltersRecommendationText)
-	RecommendationTextInput() *[]*SecurityhubInsightFiltersRecommendationText
-	RecordState() *[]*SecurityhubInsightFiltersRecordState
-	SetRecordState(val *[]*SecurityhubInsightFiltersRecordState)
-	RecordStateInput() *[]*SecurityhubInsightFiltersRecordState
-	RelatedFindingsId() *[]*SecurityhubInsightFiltersRelatedFindingsId
-	SetRelatedFindingsId(val *[]*SecurityhubInsightFiltersRelatedFindingsId)
-	RelatedFindingsIdInput() *[]*SecurityhubInsightFiltersRelatedFindingsId
-	RelatedFindingsProductArn() *[]*SecurityhubInsightFiltersRelatedFindingsProductArn
-	SetRelatedFindingsProductArn(val *[]*SecurityhubInsightFiltersRelatedFindingsProductArn)
-	RelatedFindingsProductArnInput() *[]*SecurityhubInsightFiltersRelatedFindingsProductArn
-	ResourceAwsEc2InstanceIamInstanceProfileArn() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn
-	SetResourceAwsEc2InstanceIamInstanceProfileArn(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn)
-	ResourceAwsEc2InstanceIamInstanceProfileArnInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn
-	ResourceAwsEc2InstanceImageId() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId
-	SetResourceAwsEc2InstanceImageId(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId)
-	ResourceAwsEc2InstanceImageIdInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId
-	ResourceAwsEc2InstanceIpv4Addresses() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses
-	SetResourceAwsEc2InstanceIpv4Addresses(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses)
-	ResourceAwsEc2InstanceIpv4AddressesInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses
-	ResourceAwsEc2InstanceIpv6Addresses() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses
-	SetResourceAwsEc2InstanceIpv6Addresses(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses)
-	ResourceAwsEc2InstanceIpv6AddressesInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses
-	ResourceAwsEc2InstanceKeyName() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName
-	SetResourceAwsEc2InstanceKeyName(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName)
-	ResourceAwsEc2InstanceKeyNameInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName
-	ResourceAwsEc2InstanceLaunchedAt() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt
-	SetResourceAwsEc2InstanceLaunchedAt(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt)
-	ResourceAwsEc2InstanceLaunchedAtInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt
-	ResourceAwsEc2InstanceSubnetId() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId
-	SetResourceAwsEc2InstanceSubnetId(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId)
-	ResourceAwsEc2InstanceSubnetIdInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId
-	ResourceAwsEc2InstanceType() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType
-	SetResourceAwsEc2InstanceType(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType)
-	ResourceAwsEc2InstanceTypeInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType
-	ResourceAwsEc2InstanceVpcId() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId
-	SetResourceAwsEc2InstanceVpcId(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId)
-	ResourceAwsEc2InstanceVpcIdInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId
-	ResourceAwsIamAccessKeyCreatedAt() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt
-	SetResourceAwsIamAccessKeyCreatedAt(val *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt)
-	ResourceAwsIamAccessKeyCreatedAtInput() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt
-	ResourceAwsIamAccessKeyStatus() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus
-	SetResourceAwsIamAccessKeyStatus(val *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus)
-	ResourceAwsIamAccessKeyStatusInput() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus
-	ResourceAwsIamAccessKeyUserName() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName
-	SetResourceAwsIamAccessKeyUserName(val *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName)
-	ResourceAwsIamAccessKeyUserNameInput() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName
-	ResourceAwsS3BucketOwnerId() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId
-	SetResourceAwsS3BucketOwnerId(val *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId)
-	ResourceAwsS3BucketOwnerIdInput() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId
-	ResourceAwsS3BucketOwnerName() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName
-	SetResourceAwsS3BucketOwnerName(val *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName)
-	ResourceAwsS3BucketOwnerNameInput() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName
-	ResourceContainerImageId() *[]*SecurityhubInsightFiltersResourceContainerImageId
-	SetResourceContainerImageId(val *[]*SecurityhubInsightFiltersResourceContainerImageId)
-	ResourceContainerImageIdInput() *[]*SecurityhubInsightFiltersResourceContainerImageId
-	ResourceContainerImageName() *[]*SecurityhubInsightFiltersResourceContainerImageName
-	SetResourceContainerImageName(val *[]*SecurityhubInsightFiltersResourceContainerImageName)
-	ResourceContainerImageNameInput() *[]*SecurityhubInsightFiltersResourceContainerImageName
-	ResourceContainerLaunchedAt() *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt
-	SetResourceContainerLaunchedAt(val *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt)
-	ResourceContainerLaunchedAtInput() *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt
-	ResourceContainerName() *[]*SecurityhubInsightFiltersResourceContainerName
-	SetResourceContainerName(val *[]*SecurityhubInsightFiltersResourceContainerName)
-	ResourceContainerNameInput() *[]*SecurityhubInsightFiltersResourceContainerName
-	ResourceDetailsOther() *[]*SecurityhubInsightFiltersResourceDetailsOther
-	SetResourceDetailsOther(val *[]*SecurityhubInsightFiltersResourceDetailsOther)
-	ResourceDetailsOtherInput() *[]*SecurityhubInsightFiltersResourceDetailsOther
-	ResourceId() *[]*SecurityhubInsightFiltersResourceId
-	SetResourceId(val *[]*SecurityhubInsightFiltersResourceId)
-	ResourceIdInput() *[]*SecurityhubInsightFiltersResourceId
-	ResourcePartition() *[]*SecurityhubInsightFiltersResourcePartition
-	SetResourcePartition(val *[]*SecurityhubInsightFiltersResourcePartition)
-	ResourcePartitionInput() *[]*SecurityhubInsightFiltersResourcePartition
-	ResourceRegion() *[]*SecurityhubInsightFiltersResourceRegion
-	SetResourceRegion(val *[]*SecurityhubInsightFiltersResourceRegion)
-	ResourceRegionInput() *[]*SecurityhubInsightFiltersResourceRegion
-	ResourceTags() *[]*SecurityhubInsightFiltersResourceTags
-	SetResourceTags(val *[]*SecurityhubInsightFiltersResourceTags)
-	ResourceTagsInput() *[]*SecurityhubInsightFiltersResourceTags
-	ResourceType() *[]*SecurityhubInsightFiltersResourceType
-	SetResourceType(val *[]*SecurityhubInsightFiltersResourceType)
-	ResourceTypeInput() *[]*SecurityhubInsightFiltersResourceType
-	SeverityLabel() *[]*SecurityhubInsightFiltersSeverityLabel
-	SetSeverityLabel(val *[]*SecurityhubInsightFiltersSeverityLabel)
-	SeverityLabelInput() *[]*SecurityhubInsightFiltersSeverityLabel
-	SourceUrl() *[]*SecurityhubInsightFiltersSourceUrl
-	SetSourceUrl(val *[]*SecurityhubInsightFiltersSourceUrl)
-	SourceUrlInput() *[]*SecurityhubInsightFiltersSourceUrl
+	Keyword() interface{}
+	SetKeyword(val interface{})
+	KeywordInput() interface{}
+	LastObservedAt() interface{}
+	SetLastObservedAt(val interface{})
+	LastObservedAtInput() interface{}
+	MalwareName() interface{}
+	SetMalwareName(val interface{})
+	MalwareNameInput() interface{}
+	MalwarePath() interface{}
+	SetMalwarePath(val interface{})
+	MalwarePathInput() interface{}
+	MalwareState() interface{}
+	SetMalwareState(val interface{})
+	MalwareStateInput() interface{}
+	MalwareType() interface{}
+	SetMalwareType(val interface{})
+	MalwareTypeInput() interface{}
+	NetworkDestinationDomain() interface{}
+	SetNetworkDestinationDomain(val interface{})
+	NetworkDestinationDomainInput() interface{}
+	NetworkDestinationIpv4() interface{}
+	SetNetworkDestinationIpv4(val interface{})
+	NetworkDestinationIpv4Input() interface{}
+	NetworkDestinationIpv6() interface{}
+	SetNetworkDestinationIpv6(val interface{})
+	NetworkDestinationIpv6Input() interface{}
+	NetworkDestinationPort() interface{}
+	SetNetworkDestinationPort(val interface{})
+	NetworkDestinationPortInput() interface{}
+	NetworkDirection() interface{}
+	SetNetworkDirection(val interface{})
+	NetworkDirectionInput() interface{}
+	NetworkProtocol() interface{}
+	SetNetworkProtocol(val interface{})
+	NetworkProtocolInput() interface{}
+	NetworkSourceDomain() interface{}
+	SetNetworkSourceDomain(val interface{})
+	NetworkSourceDomainInput() interface{}
+	NetworkSourceIpv4() interface{}
+	SetNetworkSourceIpv4(val interface{})
+	NetworkSourceIpv4Input() interface{}
+	NetworkSourceIpv6() interface{}
+	SetNetworkSourceIpv6(val interface{})
+	NetworkSourceIpv6Input() interface{}
+	NetworkSourceMac() interface{}
+	SetNetworkSourceMac(val interface{})
+	NetworkSourceMacInput() interface{}
+	NetworkSourcePort() interface{}
+	SetNetworkSourcePort(val interface{})
+	NetworkSourcePortInput() interface{}
+	NoteText() interface{}
+	SetNoteText(val interface{})
+	NoteTextInput() interface{}
+	NoteUpdatedAt() interface{}
+	SetNoteUpdatedAt(val interface{})
+	NoteUpdatedAtInput() interface{}
+	NoteUpdatedBy() interface{}
+	SetNoteUpdatedBy(val interface{})
+	NoteUpdatedByInput() interface{}
+	ProcessLaunchedAt() interface{}
+	SetProcessLaunchedAt(val interface{})
+	ProcessLaunchedAtInput() interface{}
+	ProcessName() interface{}
+	SetProcessName(val interface{})
+	ProcessNameInput() interface{}
+	ProcessParentPid() interface{}
+	SetProcessParentPid(val interface{})
+	ProcessParentPidInput() interface{}
+	ProcessPath() interface{}
+	SetProcessPath(val interface{})
+	ProcessPathInput() interface{}
+	ProcessPid() interface{}
+	SetProcessPid(val interface{})
+	ProcessPidInput() interface{}
+	ProcessTerminatedAt() interface{}
+	SetProcessTerminatedAt(val interface{})
+	ProcessTerminatedAtInput() interface{}
+	ProductArn() interface{}
+	SetProductArn(val interface{})
+	ProductArnInput() interface{}
+	ProductFields() interface{}
+	SetProductFields(val interface{})
+	ProductFieldsInput() interface{}
+	ProductName() interface{}
+	SetProductName(val interface{})
+	ProductNameInput() interface{}
+	RecommendationText() interface{}
+	SetRecommendationText(val interface{})
+	RecommendationTextInput() interface{}
+	RecordState() interface{}
+	SetRecordState(val interface{})
+	RecordStateInput() interface{}
+	RelatedFindingsId() interface{}
+	SetRelatedFindingsId(val interface{})
+	RelatedFindingsIdInput() interface{}
+	RelatedFindingsProductArn() interface{}
+	SetRelatedFindingsProductArn(val interface{})
+	RelatedFindingsProductArnInput() interface{}
+	ResourceAwsEc2InstanceIamInstanceProfileArn() interface{}
+	SetResourceAwsEc2InstanceIamInstanceProfileArn(val interface{})
+	ResourceAwsEc2InstanceIamInstanceProfileArnInput() interface{}
+	ResourceAwsEc2InstanceImageId() interface{}
+	SetResourceAwsEc2InstanceImageId(val interface{})
+	ResourceAwsEc2InstanceImageIdInput() interface{}
+	ResourceAwsEc2InstanceIpv4Addresses() interface{}
+	SetResourceAwsEc2InstanceIpv4Addresses(val interface{})
+	ResourceAwsEc2InstanceIpv4AddressesInput() interface{}
+	ResourceAwsEc2InstanceIpv6Addresses() interface{}
+	SetResourceAwsEc2InstanceIpv6Addresses(val interface{})
+	ResourceAwsEc2InstanceIpv6AddressesInput() interface{}
+	ResourceAwsEc2InstanceKeyName() interface{}
+	SetResourceAwsEc2InstanceKeyName(val interface{})
+	ResourceAwsEc2InstanceKeyNameInput() interface{}
+	ResourceAwsEc2InstanceLaunchedAt() interface{}
+	SetResourceAwsEc2InstanceLaunchedAt(val interface{})
+	ResourceAwsEc2InstanceLaunchedAtInput() interface{}
+	ResourceAwsEc2InstanceSubnetId() interface{}
+	SetResourceAwsEc2InstanceSubnetId(val interface{})
+	ResourceAwsEc2InstanceSubnetIdInput() interface{}
+	ResourceAwsEc2InstanceType() interface{}
+	SetResourceAwsEc2InstanceType(val interface{})
+	ResourceAwsEc2InstanceTypeInput() interface{}
+	ResourceAwsEc2InstanceVpcId() interface{}
+	SetResourceAwsEc2InstanceVpcId(val interface{})
+	ResourceAwsEc2InstanceVpcIdInput() interface{}
+	ResourceAwsIamAccessKeyCreatedAt() interface{}
+	SetResourceAwsIamAccessKeyCreatedAt(val interface{})
+	ResourceAwsIamAccessKeyCreatedAtInput() interface{}
+	ResourceAwsIamAccessKeyStatus() interface{}
+	SetResourceAwsIamAccessKeyStatus(val interface{})
+	ResourceAwsIamAccessKeyStatusInput() interface{}
+	ResourceAwsIamAccessKeyUserName() interface{}
+	SetResourceAwsIamAccessKeyUserName(val interface{})
+	ResourceAwsIamAccessKeyUserNameInput() interface{}
+	ResourceAwsS3BucketOwnerId() interface{}
+	SetResourceAwsS3BucketOwnerId(val interface{})
+	ResourceAwsS3BucketOwnerIdInput() interface{}
+	ResourceAwsS3BucketOwnerName() interface{}
+	SetResourceAwsS3BucketOwnerName(val interface{})
+	ResourceAwsS3BucketOwnerNameInput() interface{}
+	ResourceContainerImageId() interface{}
+	SetResourceContainerImageId(val interface{})
+	ResourceContainerImageIdInput() interface{}
+	ResourceContainerImageName() interface{}
+	SetResourceContainerImageName(val interface{})
+	ResourceContainerImageNameInput() interface{}
+	ResourceContainerLaunchedAt() interface{}
+	SetResourceContainerLaunchedAt(val interface{})
+	ResourceContainerLaunchedAtInput() interface{}
+	ResourceContainerName() interface{}
+	SetResourceContainerName(val interface{})
+	ResourceContainerNameInput() interface{}
+	ResourceDetailsOther() interface{}
+	SetResourceDetailsOther(val interface{})
+	ResourceDetailsOtherInput() interface{}
+	ResourceId() interface{}
+	SetResourceId(val interface{})
+	ResourceIdInput() interface{}
+	ResourcePartition() interface{}
+	SetResourcePartition(val interface{})
+	ResourcePartitionInput() interface{}
+	ResourceRegion() interface{}
+	SetResourceRegion(val interface{})
+	ResourceRegionInput() interface{}
+	ResourceTags() interface{}
+	SetResourceTags(val interface{})
+	ResourceTagsInput() interface{}
+	ResourceType() interface{}
+	SetResourceType(val interface{})
+	ResourceTypeInput() interface{}
+	SeverityLabel() interface{}
+	SetSeverityLabel(val interface{})
+	SeverityLabelInput() interface{}
+	SourceUrl() interface{}
+	SetSourceUrl(val interface{})
+	SourceUrlInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	ThreatIntelIndicatorCategory() *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory
-	SetThreatIntelIndicatorCategory(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory)
-	ThreatIntelIndicatorCategoryInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory
-	ThreatIntelIndicatorLastObservedAt() *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt
-	SetThreatIntelIndicatorLastObservedAt(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt)
-	ThreatIntelIndicatorLastObservedAtInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt
-	ThreatIntelIndicatorSource() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource
-	SetThreatIntelIndicatorSource(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource)
-	ThreatIntelIndicatorSourceInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource
-	ThreatIntelIndicatorSourceUrl() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl
-	SetThreatIntelIndicatorSourceUrl(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl)
-	ThreatIntelIndicatorSourceUrlInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl
-	ThreatIntelIndicatorType() *[]*SecurityhubInsightFiltersThreatIntelIndicatorType
-	SetThreatIntelIndicatorType(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorType)
-	ThreatIntelIndicatorTypeInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorType
-	ThreatIntelIndicatorValue() *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue
-	SetThreatIntelIndicatorValue(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue)
-	ThreatIntelIndicatorValueInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue
-	Title() *[]*SecurityhubInsightFiltersTitle
-	SetTitle(val *[]*SecurityhubInsightFiltersTitle)
-	TitleInput() *[]*SecurityhubInsightFiltersTitle
-	Type() *[]*SecurityhubInsightFiltersType
-	SetType(val *[]*SecurityhubInsightFiltersType)
-	TypeInput() *[]*SecurityhubInsightFiltersType
-	UpdatedAt() *[]*SecurityhubInsightFiltersUpdatedAt
-	SetUpdatedAt(val *[]*SecurityhubInsightFiltersUpdatedAt)
-	UpdatedAtInput() *[]*SecurityhubInsightFiltersUpdatedAt
-	UserDefinedValues() *[]*SecurityhubInsightFiltersUserDefinedValues
-	SetUserDefinedValues(val *[]*SecurityhubInsightFiltersUserDefinedValues)
-	UserDefinedValuesInput() *[]*SecurityhubInsightFiltersUserDefinedValues
-	VerificationState() *[]*SecurityhubInsightFiltersVerificationState
-	SetVerificationState(val *[]*SecurityhubInsightFiltersVerificationState)
-	VerificationStateInput() *[]*SecurityhubInsightFiltersVerificationState
-	WorkflowStatus() *[]*SecurityhubInsightFiltersWorkflowStatus
-	SetWorkflowStatus(val *[]*SecurityhubInsightFiltersWorkflowStatus)
-	WorkflowStatusInput() *[]*SecurityhubInsightFiltersWorkflowStatus
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	ThreatIntelIndicatorCategory() interface{}
+	SetThreatIntelIndicatorCategory(val interface{})
+	ThreatIntelIndicatorCategoryInput() interface{}
+	ThreatIntelIndicatorLastObservedAt() interface{}
+	SetThreatIntelIndicatorLastObservedAt(val interface{})
+	ThreatIntelIndicatorLastObservedAtInput() interface{}
+	ThreatIntelIndicatorSource() interface{}
+	SetThreatIntelIndicatorSource(val interface{})
+	ThreatIntelIndicatorSourceInput() interface{}
+	ThreatIntelIndicatorSourceUrl() interface{}
+	SetThreatIntelIndicatorSourceUrl(val interface{})
+	ThreatIntelIndicatorSourceUrlInput() interface{}
+	ThreatIntelIndicatorType() interface{}
+	SetThreatIntelIndicatorType(val interface{})
+	ThreatIntelIndicatorTypeInput() interface{}
+	ThreatIntelIndicatorValue() interface{}
+	SetThreatIntelIndicatorValue(val interface{})
+	ThreatIntelIndicatorValueInput() interface{}
+	Title() interface{}
+	SetTitle(val interface{})
+	TitleInput() interface{}
+	Type() interface{}
+	SetType(val interface{})
+	TypeInput() interface{}
+	UpdatedAt() interface{}
+	SetUpdatedAt(val interface{})
+	UpdatedAtInput() interface{}
+	UserDefinedValues() interface{}
+	SetUserDefinedValues(val interface{})
+	UserDefinedValuesInput() interface{}
+	VerificationState() interface{}
+	SetVerificationState(val interface{})
+	VerificationStateInput() interface{}
+	WorkflowStatus() interface{}
+	SetWorkflowStatus(val interface{})
+	WorkflowStatusInput() interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAwsAccountId()
@@ -4141,8 +4746,8 @@ type jsiiProxy_SecurityhubInsightFiltersOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) AwsAccountId() *[]*SecurityhubInsightFiltersAwsAccountId {
-	var returns *[]*SecurityhubInsightFiltersAwsAccountId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) AwsAccountId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"awsAccountId",
@@ -4151,8 +4756,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) AwsAccountId() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) AwsAccountIdInput() *[]*SecurityhubInsightFiltersAwsAccountId {
-	var returns *[]*SecurityhubInsightFiltersAwsAccountId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) AwsAccountIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"awsAccountIdInput",
@@ -4161,8 +4766,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) AwsAccountIdInput()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CompanyName() *[]*SecurityhubInsightFiltersCompanyName {
-	var returns *[]*SecurityhubInsightFiltersCompanyName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CompanyName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"companyName",
@@ -4171,8 +4776,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CompanyName() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CompanyNameInput() *[]*SecurityhubInsightFiltersCompanyName {
-	var returns *[]*SecurityhubInsightFiltersCompanyName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CompanyNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"companyNameInput",
@@ -4181,8 +4786,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CompanyNameInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ComplianceStatus() *[]*SecurityhubInsightFiltersComplianceStatus {
-	var returns *[]*SecurityhubInsightFiltersComplianceStatus
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ComplianceStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"complianceStatus",
@@ -4191,8 +4796,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ComplianceStatus() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ComplianceStatusInput() *[]*SecurityhubInsightFiltersComplianceStatus {
-	var returns *[]*SecurityhubInsightFiltersComplianceStatus
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ComplianceStatusInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"complianceStatusInput",
@@ -4201,8 +4806,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ComplianceStatusInp
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Confidence() *[]*SecurityhubInsightFiltersConfidence {
-	var returns *[]*SecurityhubInsightFiltersConfidence
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Confidence() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"confidence",
@@ -4211,8 +4816,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Confidence() *[]*Se
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ConfidenceInput() *[]*SecurityhubInsightFiltersConfidence {
-	var returns *[]*SecurityhubInsightFiltersConfidence
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ConfidenceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"confidenceInput",
@@ -4221,8 +4826,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ConfidenceInput() *
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CreatedAt() *[]*SecurityhubInsightFiltersCreatedAt {
-	var returns *[]*SecurityhubInsightFiltersCreatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CreatedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"createdAt",
@@ -4231,8 +4836,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CreatedAt() *[]*Sec
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CreatedAtInput() *[]*SecurityhubInsightFiltersCreatedAt {
-	var returns *[]*SecurityhubInsightFiltersCreatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CreatedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"createdAtInput",
@@ -4241,8 +4846,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CreatedAtInput() *[
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Criticality() *[]*SecurityhubInsightFiltersCriticality {
-	var returns *[]*SecurityhubInsightFiltersCriticality
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Criticality() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"criticality",
@@ -4251,8 +4856,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Criticality() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CriticalityInput() *[]*SecurityhubInsightFiltersCriticality {
-	var returns *[]*SecurityhubInsightFiltersCriticality
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CriticalityInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"criticalityInput",
@@ -4261,8 +4866,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) CriticalityInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Description() *[]*SecurityhubInsightFiltersDescription {
-	var returns *[]*SecurityhubInsightFiltersDescription
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Description() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"description",
@@ -4271,8 +4876,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Description() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) DescriptionInput() *[]*SecurityhubInsightFiltersDescription {
-	var returns *[]*SecurityhubInsightFiltersDescription
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) DescriptionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"descriptionInput",
@@ -4281,8 +4886,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) DescriptionInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsConfidence() *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsConfidence() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsConfidence",
@@ -4291,8 +4896,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsConfidenceInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsConfidenceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsConfidenceInput",
@@ -4301,8 +4906,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsCriticality() *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsCriticality() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsCriticality",
@@ -4311,8 +4916,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsCriticalityInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsCriticalityInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsCriticalityInput",
@@ -4321,8 +4926,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsId() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsRelatedFindingsId",
@@ -4331,8 +4936,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsIdInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsRelatedFindingsIdInput",
@@ -4341,8 +4946,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsProductArn() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsProductArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsRelatedFindingsProductArn",
@@ -4351,8 +4956,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsProductArnInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsRelatedFindingsProductArnInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsRelatedFindingsProductArnInput",
@@ -4361,8 +4966,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityLabel() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityLabel() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsSeverityLabel",
@@ -4371,8 +4976,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityLabelInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityLabelInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsSeverityLabelInput",
@@ -4381,8 +4986,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityOriginal() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityOriginal() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsSeverityOriginal",
@@ -4391,8 +4996,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityOriginalInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsSeverityOriginalInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsSeverityOriginalInput",
@@ -4401,8 +5006,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsTypes() *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsTypes",
@@ -4411,8 +5016,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsTypesInput() *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes {
-	var returns *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFieldsTypesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"findingProviderFieldsTypesInput",
@@ -4421,8 +5026,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FindingProviderFiel
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FirstObservedAt() *[]*SecurityhubInsightFiltersFirstObservedAt {
-	var returns *[]*SecurityhubInsightFiltersFirstObservedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FirstObservedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"firstObservedAt",
@@ -4431,8 +5036,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FirstObservedAt() *
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FirstObservedAtInput() *[]*SecurityhubInsightFiltersFirstObservedAt {
-	var returns *[]*SecurityhubInsightFiltersFirstObservedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FirstObservedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"firstObservedAtInput",
@@ -4441,8 +5046,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) FirstObservedAtInpu
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) GeneratorId() *[]*SecurityhubInsightFiltersGeneratorId {
-	var returns *[]*SecurityhubInsightFiltersGeneratorId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) GeneratorId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"generatorId",
@@ -4451,8 +5056,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) GeneratorId() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) GeneratorIdInput() *[]*SecurityhubInsightFiltersGeneratorId {
-	var returns *[]*SecurityhubInsightFiltersGeneratorId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) GeneratorIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"generatorIdInput",
@@ -4461,8 +5066,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) GeneratorIdInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Id() *[]*SecurityhubInsightFiltersId {
-	var returns *[]*SecurityhubInsightFiltersId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Id() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"id",
@@ -4471,8 +5076,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Id() *[]*Securityhu
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) IdInput() *[]*SecurityhubInsightFiltersId {
-	var returns *[]*SecurityhubInsightFiltersId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) IdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"idInput",
@@ -4501,8 +5106,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) IsSingleItem() *boo
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Keyword() *[]*SecurityhubInsightFiltersKeyword {
-	var returns *[]*SecurityhubInsightFiltersKeyword
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Keyword() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"keyword",
@@ -4511,8 +5116,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Keyword() *[]*Secur
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) KeywordInput() *[]*SecurityhubInsightFiltersKeyword {
-	var returns *[]*SecurityhubInsightFiltersKeyword
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) KeywordInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"keywordInput",
@@ -4521,8 +5126,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) KeywordInput() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) LastObservedAt() *[]*SecurityhubInsightFiltersLastObservedAt {
-	var returns *[]*SecurityhubInsightFiltersLastObservedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) LastObservedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lastObservedAt",
@@ -4531,8 +5136,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) LastObservedAt() *[
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) LastObservedAtInput() *[]*SecurityhubInsightFiltersLastObservedAt {
-	var returns *[]*SecurityhubInsightFiltersLastObservedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) LastObservedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"lastObservedAtInput",
@@ -4541,8 +5146,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) LastObservedAtInput
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareName() *[]*SecurityhubInsightFiltersMalwareName {
-	var returns *[]*SecurityhubInsightFiltersMalwareName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwareName",
@@ -4551,8 +5156,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareName() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareNameInput() *[]*SecurityhubInsightFiltersMalwareName {
-	var returns *[]*SecurityhubInsightFiltersMalwareName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwareNameInput",
@@ -4561,8 +5166,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareNameInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwarePath() *[]*SecurityhubInsightFiltersMalwarePath {
-	var returns *[]*SecurityhubInsightFiltersMalwarePath
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwarePath() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwarePath",
@@ -4571,8 +5176,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwarePath() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwarePathInput() *[]*SecurityhubInsightFiltersMalwarePath {
-	var returns *[]*SecurityhubInsightFiltersMalwarePath
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwarePathInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwarePathInput",
@@ -4581,8 +5186,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwarePathInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareState() *[]*SecurityhubInsightFiltersMalwareState {
-	var returns *[]*SecurityhubInsightFiltersMalwareState
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareState() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwareState",
@@ -4591,8 +5196,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareState() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareStateInput() *[]*SecurityhubInsightFiltersMalwareState {
-	var returns *[]*SecurityhubInsightFiltersMalwareState
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareStateInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwareStateInput",
@@ -4601,8 +5206,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareStateInput()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareType() *[]*SecurityhubInsightFiltersMalwareType {
-	var returns *[]*SecurityhubInsightFiltersMalwareType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwareType",
@@ -4611,8 +5216,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareType() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareTypeInput() *[]*SecurityhubInsightFiltersMalwareType {
-	var returns *[]*SecurityhubInsightFiltersMalwareType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareTypeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"malwareTypeInput",
@@ -4621,8 +5226,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) MalwareTypeInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationDomain() *[]*SecurityhubInsightFiltersNetworkDestinationDomain {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationDomain
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationDomain",
@@ -4631,8 +5236,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationD
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationDomainInput() *[]*SecurityhubInsightFiltersNetworkDestinationDomain {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationDomain
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationDomainInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationDomainInput",
@@ -4641,8 +5246,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationD
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv4() *[]*SecurityhubInsightFiltersNetworkDestinationIpv4 {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationIpv4
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv4() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationIpv4",
@@ -4651,8 +5256,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationI
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv4Input() *[]*SecurityhubInsightFiltersNetworkDestinationIpv4 {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationIpv4
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv4Input() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationIpv4Input",
@@ -4661,8 +5266,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationI
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv6() *[]*SecurityhubInsightFiltersNetworkDestinationIpv6 {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationIpv6
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv6() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationIpv6",
@@ -4671,8 +5276,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationI
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv6Input() *[]*SecurityhubInsightFiltersNetworkDestinationIpv6 {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationIpv6
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationIpv6Input() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationIpv6Input",
@@ -4681,8 +5286,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationI
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationPort() *[]*SecurityhubInsightFiltersNetworkDestinationPort {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationPort
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationPort",
@@ -4691,8 +5296,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationP
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationPortInput() *[]*SecurityhubInsightFiltersNetworkDestinationPort {
-	var returns *[]*SecurityhubInsightFiltersNetworkDestinationPort
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationPortInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDestinationPortInput",
@@ -4701,8 +5306,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDestinationP
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDirection() *[]*SecurityhubInsightFiltersNetworkDirection {
-	var returns *[]*SecurityhubInsightFiltersNetworkDirection
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDirection() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDirection",
@@ -4711,8 +5316,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDirection() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDirectionInput() *[]*SecurityhubInsightFiltersNetworkDirection {
-	var returns *[]*SecurityhubInsightFiltersNetworkDirection
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDirectionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkDirectionInput",
@@ -4721,8 +5326,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkDirectionInp
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkProtocol() *[]*SecurityhubInsightFiltersNetworkProtocol {
-	var returns *[]*SecurityhubInsightFiltersNetworkProtocol
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkProtocol() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkProtocol",
@@ -4731,8 +5336,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkProtocol() *
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkProtocolInput() *[]*SecurityhubInsightFiltersNetworkProtocol {
-	var returns *[]*SecurityhubInsightFiltersNetworkProtocol
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkProtocolInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkProtocolInput",
@@ -4741,8 +5346,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkProtocolInpu
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceDomain() *[]*SecurityhubInsightFiltersNetworkSourceDomain {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceDomain
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceDomain",
@@ -4751,8 +5356,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceDomain
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceDomainInput() *[]*SecurityhubInsightFiltersNetworkSourceDomain {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceDomain
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceDomainInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceDomainInput",
@@ -4761,8 +5366,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceDomain
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv4() *[]*SecurityhubInsightFiltersNetworkSourceIpv4 {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceIpv4
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv4() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceIpv4",
@@ -4771,8 +5376,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv4()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv4Input() *[]*SecurityhubInsightFiltersNetworkSourceIpv4 {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceIpv4
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv4Input() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceIpv4Input",
@@ -4781,8 +5386,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv4In
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv6() *[]*SecurityhubInsightFiltersNetworkSourceIpv6 {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceIpv6
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv6() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceIpv6",
@@ -4791,8 +5396,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv6()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv6Input() *[]*SecurityhubInsightFiltersNetworkSourceIpv6 {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceIpv6
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv6Input() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceIpv6Input",
@@ -4801,8 +5406,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceIpv6In
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceMac() *[]*SecurityhubInsightFiltersNetworkSourceMac {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceMac
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceMac() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceMac",
@@ -4811,8 +5416,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceMac() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceMacInput() *[]*SecurityhubInsightFiltersNetworkSourceMac {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourceMac
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceMacInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourceMacInput",
@@ -4821,8 +5426,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourceMacInp
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourcePort() *[]*SecurityhubInsightFiltersNetworkSourcePort {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourcePort
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourcePort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourcePort",
@@ -4831,8 +5436,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourcePort()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourcePortInput() *[]*SecurityhubInsightFiltersNetworkSourcePort {
-	var returns *[]*SecurityhubInsightFiltersNetworkSourcePort
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourcePortInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"networkSourcePortInput",
@@ -4841,8 +5446,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NetworkSourcePortIn
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteText() *[]*SecurityhubInsightFiltersNoteText {
-	var returns *[]*SecurityhubInsightFiltersNoteText
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteText() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"noteText",
@@ -4851,8 +5456,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteText() *[]*Secu
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteTextInput() *[]*SecurityhubInsightFiltersNoteText {
-	var returns *[]*SecurityhubInsightFiltersNoteText
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteTextInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"noteTextInput",
@@ -4861,8 +5466,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteTextInput() *[]
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedAt() *[]*SecurityhubInsightFiltersNoteUpdatedAt {
-	var returns *[]*SecurityhubInsightFiltersNoteUpdatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"noteUpdatedAt",
@@ -4871,8 +5476,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedAt() *[]
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedAtInput() *[]*SecurityhubInsightFiltersNoteUpdatedAt {
-	var returns *[]*SecurityhubInsightFiltersNoteUpdatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"noteUpdatedAtInput",
@@ -4881,8 +5486,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedAtInput(
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedBy() *[]*SecurityhubInsightFiltersNoteUpdatedBy {
-	var returns *[]*SecurityhubInsightFiltersNoteUpdatedBy
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedBy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"noteUpdatedBy",
@@ -4891,8 +5496,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedBy() *[]
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedByInput() *[]*SecurityhubInsightFiltersNoteUpdatedBy {
-	var returns *[]*SecurityhubInsightFiltersNoteUpdatedBy
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedByInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"noteUpdatedByInput",
@@ -4901,8 +5506,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) NoteUpdatedByInput(
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessLaunchedAt() *[]*SecurityhubInsightFiltersProcessLaunchedAt {
-	var returns *[]*SecurityhubInsightFiltersProcessLaunchedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessLaunchedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processLaunchedAt",
@@ -4911,8 +5516,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessLaunchedAt()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessLaunchedAtInput() *[]*SecurityhubInsightFiltersProcessLaunchedAt {
-	var returns *[]*SecurityhubInsightFiltersProcessLaunchedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessLaunchedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processLaunchedAtInput",
@@ -4921,8 +5526,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessLaunchedAtIn
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessName() *[]*SecurityhubInsightFiltersProcessName {
-	var returns *[]*SecurityhubInsightFiltersProcessName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processName",
@@ -4931,8 +5536,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessName() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessNameInput() *[]*SecurityhubInsightFiltersProcessName {
-	var returns *[]*SecurityhubInsightFiltersProcessName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processNameInput",
@@ -4941,8 +5546,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessNameInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessParentPid() *[]*SecurityhubInsightFiltersProcessParentPid {
-	var returns *[]*SecurityhubInsightFiltersProcessParentPid
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessParentPid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processParentPid",
@@ -4951,8 +5556,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessParentPid() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessParentPidInput() *[]*SecurityhubInsightFiltersProcessParentPid {
-	var returns *[]*SecurityhubInsightFiltersProcessParentPid
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessParentPidInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processParentPidInput",
@@ -4961,8 +5566,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessParentPidInp
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPath() *[]*SecurityhubInsightFiltersProcessPath {
-	var returns *[]*SecurityhubInsightFiltersProcessPath
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPath() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processPath",
@@ -4971,8 +5576,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPath() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPathInput() *[]*SecurityhubInsightFiltersProcessPath {
-	var returns *[]*SecurityhubInsightFiltersProcessPath
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPathInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processPathInput",
@@ -4981,8 +5586,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPathInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPid() *[]*SecurityhubInsightFiltersProcessPid {
-	var returns *[]*SecurityhubInsightFiltersProcessPid
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processPid",
@@ -4991,8 +5596,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPid() *[]*Se
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPidInput() *[]*SecurityhubInsightFiltersProcessPid {
-	var returns *[]*SecurityhubInsightFiltersProcessPid
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPidInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processPidInput",
@@ -5001,8 +5606,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessPidInput() *
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessTerminatedAt() *[]*SecurityhubInsightFiltersProcessTerminatedAt {
-	var returns *[]*SecurityhubInsightFiltersProcessTerminatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessTerminatedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processTerminatedAt",
@@ -5011,8 +5616,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessTerminatedAt
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessTerminatedAtInput() *[]*SecurityhubInsightFiltersProcessTerminatedAt {
-	var returns *[]*SecurityhubInsightFiltersProcessTerminatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessTerminatedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"processTerminatedAtInput",
@@ -5021,8 +5626,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProcessTerminatedAt
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductArn() *[]*SecurityhubInsightFiltersProductArn {
-	var returns *[]*SecurityhubInsightFiltersProductArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productArn",
@@ -5031,8 +5636,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductArn() *[]*Se
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductArnInput() *[]*SecurityhubInsightFiltersProductArn {
-	var returns *[]*SecurityhubInsightFiltersProductArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductArnInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productArnInput",
@@ -5041,8 +5646,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductArnInput() *
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductFields() *[]*SecurityhubInsightFiltersProductFields {
-	var returns *[]*SecurityhubInsightFiltersProductFields
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductFields() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productFields",
@@ -5051,8 +5656,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductFields() *[]
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductFieldsInput() *[]*SecurityhubInsightFiltersProductFields {
-	var returns *[]*SecurityhubInsightFiltersProductFields
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductFieldsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productFieldsInput",
@@ -5061,8 +5666,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductFieldsInput(
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductName() *[]*SecurityhubInsightFiltersProductName {
-	var returns *[]*SecurityhubInsightFiltersProductName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productName",
@@ -5071,8 +5676,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductName() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductNameInput() *[]*SecurityhubInsightFiltersProductName {
-	var returns *[]*SecurityhubInsightFiltersProductName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"productNameInput",
@@ -5081,8 +5686,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ProductNameInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecommendationText() *[]*SecurityhubInsightFiltersRecommendationText {
-	var returns *[]*SecurityhubInsightFiltersRecommendationText
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecommendationText() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"recommendationText",
@@ -5091,8 +5696,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecommendationText(
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecommendationTextInput() *[]*SecurityhubInsightFiltersRecommendationText {
-	var returns *[]*SecurityhubInsightFiltersRecommendationText
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecommendationTextInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"recommendationTextInput",
@@ -5101,8 +5706,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecommendationTextI
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecordState() *[]*SecurityhubInsightFiltersRecordState {
-	var returns *[]*SecurityhubInsightFiltersRecordState
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecordState() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"recordState",
@@ -5111,8 +5716,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecordState() *[]*S
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecordStateInput() *[]*SecurityhubInsightFiltersRecordState {
-	var returns *[]*SecurityhubInsightFiltersRecordState
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecordStateInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"recordStateInput",
@@ -5121,8 +5726,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RecordStateInput() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsId() *[]*SecurityhubInsightFiltersRelatedFindingsId {
-	var returns *[]*SecurityhubInsightFiltersRelatedFindingsId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"relatedFindingsId",
@@ -5131,8 +5736,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsId()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsIdInput() *[]*SecurityhubInsightFiltersRelatedFindingsId {
-	var returns *[]*SecurityhubInsightFiltersRelatedFindingsId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"relatedFindingsIdInput",
@@ -5141,8 +5746,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsIdIn
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsProductArn() *[]*SecurityhubInsightFiltersRelatedFindingsProductArn {
-	var returns *[]*SecurityhubInsightFiltersRelatedFindingsProductArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsProductArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"relatedFindingsProductArn",
@@ -5151,8 +5756,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsProd
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsProductArnInput() *[]*SecurityhubInsightFiltersRelatedFindingsProductArn {
-	var returns *[]*SecurityhubInsightFiltersRelatedFindingsProductArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsProductArnInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"relatedFindingsProductArnInput",
@@ -5161,8 +5766,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) RelatedFindingsProd
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIamInstanceProfileArn() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIamInstanceProfileArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceIamInstanceProfileArn",
@@ -5171,8 +5776,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIamInstanceProfileArnInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIamInstanceProfileArnInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceIamInstanceProfileArnInput",
@@ -5181,8 +5786,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceImageId() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceImageId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceImageId",
@@ -5191,8 +5796,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceImageIdInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceImageIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceImageIdInput",
@@ -5201,8 +5806,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv4Addresses() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv4Addresses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceIpv4Addresses",
@@ -5211,8 +5816,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv4AddressesInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv4AddressesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceIpv4AddressesInput",
@@ -5221,8 +5826,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv6Addresses() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv6Addresses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceIpv6Addresses",
@@ -5231,8 +5836,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv6AddressesInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceIpv6AddressesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceIpv6AddressesInput",
@@ -5241,8 +5846,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceKeyName() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceKeyName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceKeyName",
@@ -5251,8 +5856,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceKeyNameInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceKeyNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceKeyNameInput",
@@ -5261,8 +5866,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceLaunchedAt() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceLaunchedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceLaunchedAt",
@@ -5271,8 +5876,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceLaunchedAtInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceLaunchedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceLaunchedAtInput",
@@ -5281,8 +5886,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceSubnetId() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceSubnetId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceSubnetId",
@@ -5291,8 +5896,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceSubnetIdInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceSubnetIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceSubnetIdInput",
@@ -5301,8 +5906,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceType() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceType",
@@ -5311,8 +5916,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceTypeInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceTypeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceTypeInput",
@@ -5321,8 +5926,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceVpcId() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceVpcId",
@@ -5331,8 +5936,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceVpcIdInput() *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2InstanceVpcIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsEc2InstanceVpcIdInput",
@@ -5341,8 +5946,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsEc2Insta
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyCreatedAt() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyCreatedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsIamAccessKeyCreatedAt",
@@ -5351,8 +5956,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAcces
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyCreatedAtInput() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyCreatedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsIamAccessKeyCreatedAtInput",
@@ -5361,8 +5966,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAcces
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyStatus() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsIamAccessKeyStatus",
@@ -5371,8 +5976,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAcces
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyStatusInput() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyStatusInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsIamAccessKeyStatusInput",
@@ -5381,8 +5986,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAcces
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyUserName() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyUserName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsIamAccessKeyUserName",
@@ -5391,8 +5996,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAcces
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyUserNameInput() *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAccessKeyUserNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsIamAccessKeyUserNameInput",
@@ -5401,8 +6006,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsIamAcces
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerId() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsS3BucketOwnerId",
@@ -5411,8 +6016,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3Bucket
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerIdInput() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsS3BucketOwnerIdInput",
@@ -5421,8 +6026,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3Bucket
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerName() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsS3BucketOwnerName",
@@ -5431,8 +6036,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3Bucket
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerNameInput() *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName {
-	var returns *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3BucketOwnerNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceAwsS3BucketOwnerNameInput",
@@ -5441,8 +6046,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceAwsS3Bucket
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageId() *[]*SecurityhubInsightFiltersResourceContainerImageId {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerImageId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerImageId",
@@ -5451,8 +6056,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerIm
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageIdInput() *[]*SecurityhubInsightFiltersResourceContainerImageId {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerImageId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerImageIdInput",
@@ -5461,8 +6066,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerIm
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageName() *[]*SecurityhubInsightFiltersResourceContainerImageName {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerImageName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerImageName",
@@ -5471,8 +6076,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerIm
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageNameInput() *[]*SecurityhubInsightFiltersResourceContainerImageName {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerImageName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerImageNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerImageNameInput",
@@ -5481,8 +6086,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerIm
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerLaunchedAt() *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerLaunchedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerLaunchedAt",
@@ -5491,8 +6096,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerLa
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerLaunchedAtInput() *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerLaunchedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerLaunchedAtInput",
@@ -5501,8 +6106,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerLa
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerName() *[]*SecurityhubInsightFiltersResourceContainerName {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerName",
@@ -5511,8 +6116,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerNa
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerNameInput() *[]*SecurityhubInsightFiltersResourceContainerName {
-	var returns *[]*SecurityhubInsightFiltersResourceContainerName
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerNameInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceContainerNameInput",
@@ -5521,8 +6126,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceContainerNa
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceDetailsOther() *[]*SecurityhubInsightFiltersResourceDetailsOther {
-	var returns *[]*SecurityhubInsightFiltersResourceDetailsOther
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceDetailsOther() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceDetailsOther",
@@ -5531,8 +6136,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceDetailsOthe
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceDetailsOtherInput() *[]*SecurityhubInsightFiltersResourceDetailsOther {
-	var returns *[]*SecurityhubInsightFiltersResourceDetailsOther
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceDetailsOtherInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceDetailsOtherInput",
@@ -5541,8 +6146,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceDetailsOthe
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceId() *[]*SecurityhubInsightFiltersResourceId {
-	var returns *[]*SecurityhubInsightFiltersResourceId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceId",
@@ -5551,8 +6156,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceId() *[]*Se
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceIdInput() *[]*SecurityhubInsightFiltersResourceId {
-	var returns *[]*SecurityhubInsightFiltersResourceId
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceIdInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceIdInput",
@@ -5561,8 +6166,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceIdInput() *
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourcePartition() *[]*SecurityhubInsightFiltersResourcePartition {
-	var returns *[]*SecurityhubInsightFiltersResourcePartition
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourcePartition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourcePartition",
@@ -5571,8 +6176,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourcePartition()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourcePartitionInput() *[]*SecurityhubInsightFiltersResourcePartition {
-	var returns *[]*SecurityhubInsightFiltersResourcePartition
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourcePartitionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourcePartitionInput",
@@ -5581,8 +6186,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourcePartitionIn
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceRegion() *[]*SecurityhubInsightFiltersResourceRegion {
-	var returns *[]*SecurityhubInsightFiltersResourceRegion
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceRegion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceRegion",
@@ -5591,8 +6196,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceRegion() *[
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceRegionInput() *[]*SecurityhubInsightFiltersResourceRegion {
-	var returns *[]*SecurityhubInsightFiltersResourceRegion
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceRegionInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceRegionInput",
@@ -5601,8 +6206,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceRegionInput
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTags() *[]*SecurityhubInsightFiltersResourceTags {
-	var returns *[]*SecurityhubInsightFiltersResourceTags
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceTags",
@@ -5611,8 +6216,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTags() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTagsInput() *[]*SecurityhubInsightFiltersResourceTags {
-	var returns *[]*SecurityhubInsightFiltersResourceTags
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTagsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceTagsInput",
@@ -5621,8 +6226,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTagsInput()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceType() *[]*SecurityhubInsightFiltersResourceType {
-	var returns *[]*SecurityhubInsightFiltersResourceType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceType",
@@ -5631,8 +6236,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceType() *[]*
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTypeInput() *[]*SecurityhubInsightFiltersResourceType {
-	var returns *[]*SecurityhubInsightFiltersResourceType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTypeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"resourceTypeInput",
@@ -5641,8 +6246,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResourceTypeInput()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SeverityLabel() *[]*SecurityhubInsightFiltersSeverityLabel {
-	var returns *[]*SecurityhubInsightFiltersSeverityLabel
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SeverityLabel() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"severityLabel",
@@ -5651,8 +6256,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SeverityLabel() *[]
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SeverityLabelInput() *[]*SecurityhubInsightFiltersSeverityLabel {
-	var returns *[]*SecurityhubInsightFiltersSeverityLabel
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SeverityLabelInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"severityLabelInput",
@@ -5661,8 +6266,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SeverityLabelInput(
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SourceUrl() *[]*SecurityhubInsightFiltersSourceUrl {
-	var returns *[]*SecurityhubInsightFiltersSourceUrl
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SourceUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sourceUrl",
@@ -5671,8 +6276,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SourceUrl() *[]*Sec
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SourceUrlInput() *[]*SecurityhubInsightFiltersSourceUrl {
-	var returns *[]*SecurityhubInsightFiltersSourceUrl
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SourceUrlInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"sourceUrlInput",
@@ -5691,8 +6296,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5701,8 +6306,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TerraformResource()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorCategory() *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorCategory",
@@ -5711,8 +6316,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorCategoryInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorCategoryInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorCategoryInput",
@@ -5721,8 +6326,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorLastObservedAt() *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorLastObservedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorLastObservedAt",
@@ -5731,8 +6336,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorLastObservedAtInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorLastObservedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorLastObservedAtInput",
@@ -5741,8 +6346,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSource() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSource() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorSource",
@@ -5751,8 +6356,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSourceInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSourceInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorSourceInput",
@@ -5761,8 +6366,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSourceUrl() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSourceUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorSourceUrl",
@@ -5771,8 +6376,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSourceUrlInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorSourceUrlInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorSourceUrlInput",
@@ -5781,8 +6386,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorType() *[]*SecurityhubInsightFiltersThreatIntelIndicatorType {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorType",
@@ -5791,8 +6396,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorTypeInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorType {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorTypeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorTypeInput",
@@ -5801,8 +6406,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorValue() *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorValue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorValue",
@@ -5811,8 +6416,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorValueInput() *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue {
-	var returns *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicatorValueInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"threatIntelIndicatorValueInput",
@@ -5821,8 +6426,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) ThreatIntelIndicato
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Title() *[]*SecurityhubInsightFiltersTitle {
-	var returns *[]*SecurityhubInsightFiltersTitle
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Title() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"title",
@@ -5831,8 +6436,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Title() *[]*Securit
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TitleInput() *[]*SecurityhubInsightFiltersTitle {
-	var returns *[]*SecurityhubInsightFiltersTitle
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TitleInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"titleInput",
@@ -5841,8 +6446,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TitleInput() *[]*Se
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Type() *[]*SecurityhubInsightFiltersType {
-	var returns *[]*SecurityhubInsightFiltersType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Type() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"type",
@@ -5851,8 +6456,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) Type() *[]*Security
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TypeInput() *[]*SecurityhubInsightFiltersType {
-	var returns *[]*SecurityhubInsightFiltersType
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TypeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"typeInput",
@@ -5861,8 +6466,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) TypeInput() *[]*Sec
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UpdatedAt() *[]*SecurityhubInsightFiltersUpdatedAt {
-	var returns *[]*SecurityhubInsightFiltersUpdatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UpdatedAt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"updatedAt",
@@ -5871,8 +6476,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UpdatedAt() *[]*Sec
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UpdatedAtInput() *[]*SecurityhubInsightFiltersUpdatedAt {
-	var returns *[]*SecurityhubInsightFiltersUpdatedAt
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UpdatedAtInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"updatedAtInput",
@@ -5881,8 +6486,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UpdatedAtInput() *[
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UserDefinedValues() *[]*SecurityhubInsightFiltersUserDefinedValues {
-	var returns *[]*SecurityhubInsightFiltersUserDefinedValues
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UserDefinedValues() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"userDefinedValues",
@@ -5891,8 +6496,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UserDefinedValues()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UserDefinedValuesInput() *[]*SecurityhubInsightFiltersUserDefinedValues {
-	var returns *[]*SecurityhubInsightFiltersUserDefinedValues
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UserDefinedValuesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"userDefinedValuesInput",
@@ -5901,8 +6506,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) UserDefinedValuesIn
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) VerificationState() *[]*SecurityhubInsightFiltersVerificationState {
-	var returns *[]*SecurityhubInsightFiltersVerificationState
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) VerificationState() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"verificationState",
@@ -5911,8 +6516,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) VerificationState()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) VerificationStateInput() *[]*SecurityhubInsightFiltersVerificationState {
-	var returns *[]*SecurityhubInsightFiltersVerificationState
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) VerificationStateInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"verificationStateInput",
@@ -5921,8 +6526,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) VerificationStateIn
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) WorkflowStatus() *[]*SecurityhubInsightFiltersWorkflowStatus {
-	var returns *[]*SecurityhubInsightFiltersWorkflowStatus
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) WorkflowStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"workflowStatus",
@@ -5931,8 +6536,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) WorkflowStatus() *[
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) WorkflowStatusInput() *[]*SecurityhubInsightFiltersWorkflowStatus {
-	var returns *[]*SecurityhubInsightFiltersWorkflowStatus
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) WorkflowStatusInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"workflowStatusInput",
@@ -5941,7 +6546,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) WorkflowStatusInput
 	return returns
 }
 
-func NewSecurityhubInsightFiltersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersOutputReference {
+func NewSecurityhubInsightFiltersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersOutputReference{}
@@ -5955,7 +6560,7 @@ func NewSecurityhubInsightFiltersOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewSecurityhubInsightFiltersOutputReference_Override(s SecurityhubInsightFiltersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersOutputReference_Override(s SecurityhubInsightFiltersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5965,7 +6570,7 @@ func NewSecurityhubInsightFiltersOutputReference_Override(s SecurityhubInsightFi
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetAwsAccountId(val *[]*SecurityhubInsightFiltersAwsAccountId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetAwsAccountId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"awsAccountId",
@@ -5973,7 +6578,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetAwsAccountId(val
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCompanyName(val *[]*SecurityhubInsightFiltersCompanyName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCompanyName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"companyName",
@@ -5981,7 +6586,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCompanyName(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetComplianceStatus(val *[]*SecurityhubInsightFiltersComplianceStatus) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetComplianceStatus(val interface{}) {
 	_jsii_.Set(
 		j,
 		"complianceStatus",
@@ -5989,7 +6594,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetComplianceStatus
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetConfidence(val *[]*SecurityhubInsightFiltersConfidence) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetConfidence(val interface{}) {
 	_jsii_.Set(
 		j,
 		"confidence",
@@ -5997,7 +6602,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetConfidence(val *
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCreatedAt(val *[]*SecurityhubInsightFiltersCreatedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCreatedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"createdAt",
@@ -6005,7 +6610,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCreatedAt(val *[
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCriticality(val *[]*SecurityhubInsightFiltersCriticality) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCriticality(val interface{}) {
 	_jsii_.Set(
 		j,
 		"criticality",
@@ -6013,7 +6618,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetCriticality(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetDescription(val *[]*SecurityhubInsightFiltersDescription) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetDescription(val interface{}) {
 	_jsii_.Set(
 		j,
 		"description",
@@ -6021,7 +6626,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetDescription(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsConfidence(val *[]*SecurityhubInsightFiltersFindingProviderFieldsConfidence) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsConfidence(val interface{}) {
 	_jsii_.Set(
 		j,
 		"findingProviderFieldsConfidence",
@@ -6029,7 +6634,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderF
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsCriticality(val *[]*SecurityhubInsightFiltersFindingProviderFieldsCriticality) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsCriticality(val interface{}) {
 	_jsii_.Set(
 		j,
 		"findingProviderFieldsCriticality",
@@ -6037,7 +6642,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderF
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsRelatedFindingsId(val *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsRelatedFindingsId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"findingProviderFieldsRelatedFindingsId",
@@ -6045,7 +6650,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderF
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsRelatedFindingsProductArn(val *[]*SecurityhubInsightFiltersFindingProviderFieldsRelatedFindingsProductArn) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsRelatedFindingsProductArn(val interface{}) {
 	_jsii_.Set(
 		j,
 		"findingProviderFieldsRelatedFindingsProductArn",
@@ -6053,7 +6658,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderF
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsSeverityLabel(val *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityLabel) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsSeverityLabel(val interface{}) {
 	_jsii_.Set(
 		j,
 		"findingProviderFieldsSeverityLabel",
@@ -6061,7 +6666,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderF
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsSeverityOriginal(val *[]*SecurityhubInsightFiltersFindingProviderFieldsSeverityOriginal) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsSeverityOriginal(val interface{}) {
 	_jsii_.Set(
 		j,
 		"findingProviderFieldsSeverityOriginal",
@@ -6069,7 +6674,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderF
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsTypes(val *[]*SecurityhubInsightFiltersFindingProviderFieldsTypes) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderFieldsTypes(val interface{}) {
 	_jsii_.Set(
 		j,
 		"findingProviderFieldsTypes",
@@ -6077,7 +6682,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFindingProviderF
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFirstObservedAt(val *[]*SecurityhubInsightFiltersFirstObservedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFirstObservedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"firstObservedAt",
@@ -6085,7 +6690,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetFirstObservedAt(
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetGeneratorId(val *[]*SecurityhubInsightFiltersGeneratorId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetGeneratorId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"generatorId",
@@ -6093,7 +6698,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetGeneratorId(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetId(val *[]*SecurityhubInsightFiltersId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"id",
@@ -6117,7 +6722,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetIsSingleItem(val
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetKeyword(val *[]*SecurityhubInsightFiltersKeyword) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetKeyword(val interface{}) {
 	_jsii_.Set(
 		j,
 		"keyword",
@@ -6125,7 +6730,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetKeyword(val *[]*
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetLastObservedAt(val *[]*SecurityhubInsightFiltersLastObservedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetLastObservedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"lastObservedAt",
@@ -6133,7 +6738,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetLastObservedAt(v
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareName(val *[]*SecurityhubInsightFiltersMalwareName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"malwareName",
@@ -6141,7 +6746,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareName(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwarePath(val *[]*SecurityhubInsightFiltersMalwarePath) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwarePath(val interface{}) {
 	_jsii_.Set(
 		j,
 		"malwarePath",
@@ -6149,7 +6754,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwarePath(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareState(val *[]*SecurityhubInsightFiltersMalwareState) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareState(val interface{}) {
 	_jsii_.Set(
 		j,
 		"malwareState",
@@ -6157,7 +6762,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareState(val
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareType(val *[]*SecurityhubInsightFiltersMalwareType) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"malwareType",
@@ -6165,7 +6770,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetMalwareType(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationDomain(val *[]*SecurityhubInsightFiltersNetworkDestinationDomain) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationDomain(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkDestinationDomain",
@@ -6173,7 +6778,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinati
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationIpv4(val *[]*SecurityhubInsightFiltersNetworkDestinationIpv4) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationIpv4(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkDestinationIpv4",
@@ -6181,7 +6786,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinati
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationIpv6(val *[]*SecurityhubInsightFiltersNetworkDestinationIpv6) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationIpv6(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkDestinationIpv6",
@@ -6189,7 +6794,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinati
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationPort(val *[]*SecurityhubInsightFiltersNetworkDestinationPort) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinationPort(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkDestinationPort",
@@ -6197,7 +6802,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDestinati
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDirection(val *[]*SecurityhubInsightFiltersNetworkDirection) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDirection(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkDirection",
@@ -6205,7 +6810,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkDirection
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkProtocol(val *[]*SecurityhubInsightFiltersNetworkProtocol) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkProtocol(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkProtocol",
@@ -6213,7 +6818,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkProtocol(
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceDomain(val *[]*SecurityhubInsightFiltersNetworkSourceDomain) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceDomain(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkSourceDomain",
@@ -6221,7 +6826,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceDom
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceIpv4(val *[]*SecurityhubInsightFiltersNetworkSourceIpv4) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceIpv4(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkSourceIpv4",
@@ -6229,7 +6834,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceIpv
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceIpv6(val *[]*SecurityhubInsightFiltersNetworkSourceIpv6) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceIpv6(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkSourceIpv6",
@@ -6237,7 +6842,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceIpv
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceMac(val *[]*SecurityhubInsightFiltersNetworkSourceMac) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceMac(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkSourceMac",
@@ -6245,7 +6850,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourceMac
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourcePort(val *[]*SecurityhubInsightFiltersNetworkSourcePort) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourcePort(val interface{}) {
 	_jsii_.Set(
 		j,
 		"networkSourcePort",
@@ -6253,7 +6858,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNetworkSourcePor
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteText(val *[]*SecurityhubInsightFiltersNoteText) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteText(val interface{}) {
 	_jsii_.Set(
 		j,
 		"noteText",
@@ -6261,7 +6866,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteText(val *[]
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteUpdatedAt(val *[]*SecurityhubInsightFiltersNoteUpdatedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteUpdatedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"noteUpdatedAt",
@@ -6269,7 +6874,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteUpdatedAt(va
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteUpdatedBy(val *[]*SecurityhubInsightFiltersNoteUpdatedBy) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteUpdatedBy(val interface{}) {
 	_jsii_.Set(
 		j,
 		"noteUpdatedBy",
@@ -6277,7 +6882,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetNoteUpdatedBy(va
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessLaunchedAt(val *[]*SecurityhubInsightFiltersProcessLaunchedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessLaunchedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"processLaunchedAt",
@@ -6285,7 +6890,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessLaunchedA
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessName(val *[]*SecurityhubInsightFiltersProcessName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"processName",
@@ -6293,7 +6898,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessName(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessParentPid(val *[]*SecurityhubInsightFiltersProcessParentPid) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessParentPid(val interface{}) {
 	_jsii_.Set(
 		j,
 		"processParentPid",
@@ -6301,7 +6906,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessParentPid
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessPath(val *[]*SecurityhubInsightFiltersProcessPath) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessPath(val interface{}) {
 	_jsii_.Set(
 		j,
 		"processPath",
@@ -6309,7 +6914,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessPath(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessPid(val *[]*SecurityhubInsightFiltersProcessPid) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessPid(val interface{}) {
 	_jsii_.Set(
 		j,
 		"processPid",
@@ -6317,7 +6922,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessPid(val *
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessTerminatedAt(val *[]*SecurityhubInsightFiltersProcessTerminatedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessTerminatedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"processTerminatedAt",
@@ -6325,7 +6930,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProcessTerminate
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductArn(val *[]*SecurityhubInsightFiltersProductArn) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductArn(val interface{}) {
 	_jsii_.Set(
 		j,
 		"productArn",
@@ -6333,7 +6938,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductArn(val *
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductFields(val *[]*SecurityhubInsightFiltersProductFields) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductFields(val interface{}) {
 	_jsii_.Set(
 		j,
 		"productFields",
@@ -6341,7 +6946,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductFields(va
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductName(val *[]*SecurityhubInsightFiltersProductName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"productName",
@@ -6349,7 +6954,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetProductName(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRecommendationText(val *[]*SecurityhubInsightFiltersRecommendationText) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRecommendationText(val interface{}) {
 	_jsii_.Set(
 		j,
 		"recommendationText",
@@ -6357,7 +6962,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRecommendationTe
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRecordState(val *[]*SecurityhubInsightFiltersRecordState) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRecordState(val interface{}) {
 	_jsii_.Set(
 		j,
 		"recordState",
@@ -6365,7 +6970,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRecordState(val 
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRelatedFindingsId(val *[]*SecurityhubInsightFiltersRelatedFindingsId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRelatedFindingsId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"relatedFindingsId",
@@ -6373,7 +6978,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRelatedFindingsI
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRelatedFindingsProductArn(val *[]*SecurityhubInsightFiltersRelatedFindingsProductArn) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRelatedFindingsProductArn(val interface{}) {
 	_jsii_.Set(
 		j,
 		"relatedFindingsProductArn",
@@ -6381,7 +6986,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetRelatedFindingsP
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceIamInstanceProfileArn(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceIamInstanceProfileArn(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceIamInstanceProfileArn",
@@ -6389,7 +6994,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceImageId(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceImageId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceImageId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceImageId",
@@ -6397,7 +7002,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceIpv4Addresses(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceIpv4Addresses(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceIpv4Addresses",
@@ -6405,7 +7010,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceIpv6Addresses(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceIpv6Addresses(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceIpv6Addresses",
@@ -6413,7 +7018,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceKeyName(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceKeyName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceKeyName",
@@ -6421,7 +7026,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceLaunchedAt(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceLaunchedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceLaunchedAt",
@@ -6429,7 +7034,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceSubnetId(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceSubnetId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceSubnetId",
@@ -6437,7 +7042,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceType(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceType) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceType",
@@ -6445,7 +7050,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceVpcId(val *[]*SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2InstanceVpcId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsEc2InstanceVpcId",
@@ -6453,7 +7058,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsEc2In
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAccessKeyCreatedAt(val *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAccessKeyCreatedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsIamAccessKeyCreatedAt",
@@ -6461,7 +7066,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAccessKeyStatus(val *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAccessKeyStatus(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsIamAccessKeyStatus",
@@ -6469,7 +7074,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAccessKeyUserName(val *[]*SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAccessKeyUserName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsIamAccessKeyUserName",
@@ -6477,7 +7082,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsIamAc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsS3BucketOwnerId(val *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsS3BucketOwnerId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsS3BucketOwnerId",
@@ -6485,7 +7090,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsS3Buc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsS3BucketOwnerName(val *[]*SecurityhubInsightFiltersResourceAwsS3BucketOwnerName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsS3BucketOwnerName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceAwsS3BucketOwnerName",
@@ -6493,7 +7098,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceAwsS3Buc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerImageId(val *[]*SecurityhubInsightFiltersResourceContainerImageId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerImageId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceContainerImageId",
@@ -6501,7 +7106,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContaine
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerImageName(val *[]*SecurityhubInsightFiltersResourceContainerImageName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerImageName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceContainerImageName",
@@ -6509,7 +7114,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContaine
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerLaunchedAt(val *[]*SecurityhubInsightFiltersResourceContainerLaunchedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerLaunchedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceContainerLaunchedAt",
@@ -6517,7 +7122,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContaine
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerName(val *[]*SecurityhubInsightFiltersResourceContainerName) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContainerName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceContainerName",
@@ -6525,7 +7130,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceContaine
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceDetailsOther(val *[]*SecurityhubInsightFiltersResourceDetailsOther) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceDetailsOther(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceDetailsOther",
@@ -6533,7 +7138,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceDetailsO
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceId(val *[]*SecurityhubInsightFiltersResourceId) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceId",
@@ -6541,7 +7146,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceId(val *
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourcePartition(val *[]*SecurityhubInsightFiltersResourcePartition) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourcePartition(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourcePartition",
@@ -6549,7 +7154,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourcePartitio
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceRegion(val *[]*SecurityhubInsightFiltersResourceRegion) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceRegion(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceRegion",
@@ -6557,7 +7162,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceRegion(v
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceTags(val *[]*SecurityhubInsightFiltersResourceTags) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceTags(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceTags",
@@ -6565,7 +7170,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceTags(val
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceType(val *[]*SecurityhubInsightFiltersResourceType) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceType",
@@ -6573,7 +7178,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetResourceType(val
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetSeverityLabel(val *[]*SecurityhubInsightFiltersSeverityLabel) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetSeverityLabel(val interface{}) {
 	_jsii_.Set(
 		j,
 		"severityLabel",
@@ -6581,7 +7186,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetSeverityLabel(va
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetSourceUrl(val *[]*SecurityhubInsightFiltersSourceUrl) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetSourceUrl(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sourceUrl",
@@ -6597,7 +7202,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6605,7 +7210,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetTerraformResourc
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorCategory(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorCategory) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorCategory(val interface{}) {
 	_jsii_.Set(
 		j,
 		"threatIntelIndicatorCategory",
@@ -6613,7 +7218,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndic
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorLastObservedAt(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorLastObservedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"threatIntelIndicatorLastObservedAt",
@@ -6621,7 +7226,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndic
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorSource(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorSource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorSource(val interface{}) {
 	_jsii_.Set(
 		j,
 		"threatIntelIndicatorSource",
@@ -6629,7 +7234,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndic
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorSourceUrl(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorSourceUrl(val interface{}) {
 	_jsii_.Set(
 		j,
 		"threatIntelIndicatorSourceUrl",
@@ -6637,7 +7242,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndic
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorType(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorType) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"threatIntelIndicatorType",
@@ -6645,7 +7250,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndic
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorValue(val *[]*SecurityhubInsightFiltersThreatIntelIndicatorValue) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndicatorValue(val interface{}) {
 	_jsii_.Set(
 		j,
 		"threatIntelIndicatorValue",
@@ -6653,7 +7258,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetThreatIntelIndic
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetTitle(val *[]*SecurityhubInsightFiltersTitle) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetTitle(val interface{}) {
 	_jsii_.Set(
 		j,
 		"title",
@@ -6661,7 +7266,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetTitle(val *[]*Se
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetType(val *[]*SecurityhubInsightFiltersType) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"type",
@@ -6669,7 +7274,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetType(val *[]*Sec
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetUpdatedAt(val *[]*SecurityhubInsightFiltersUpdatedAt) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetUpdatedAt(val interface{}) {
 	_jsii_.Set(
 		j,
 		"updatedAt",
@@ -6677,7 +7282,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetUpdatedAt(val *[
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetUserDefinedValues(val *[]*SecurityhubInsightFiltersUserDefinedValues) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetUserDefinedValues(val interface{}) {
 	_jsii_.Set(
 		j,
 		"userDefinedValues",
@@ -6685,7 +7290,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetUserDefinedValue
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetVerificationState(val *[]*SecurityhubInsightFiltersVerificationState) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetVerificationState(val interface{}) {
 	_jsii_.Set(
 		j,
 		"verificationState",
@@ -6693,7 +7298,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetVerificationStat
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetWorkflowStatus(val *[]*SecurityhubInsightFiltersWorkflowStatus) {
+func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetWorkflowStatus(val interface{}) {
 	_jsii_.Set(
 		j,
 		"workflowStatus",
@@ -6702,12 +7307,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersOutputReference) SetWorkflowStatus(v
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6744,12 +7377,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7492,19 +8167,19 @@ func (s *jsiiProxy_SecurityhubInsightFiltersOutputReference) ResetWorkflowStatus
 type SecurityhubInsightFiltersProcessLaunchedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersProcessLaunchedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersProcessLaunchedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersProcessLaunchedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference interface {
@@ -7515,18 +8190,23 @@ type SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference interfac
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7566,8 +8246,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7616,7 +8296,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputRefe
 	return returns
 }
 
-func NewSecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference{}
@@ -7630,7 +8310,7 @@ func NewSecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference(terra
 	return &j
 }
 
-func NewSecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7664,7 +8344,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputRefe
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7689,12 +8369,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputRefe
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7731,12 +8439,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputRefe
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7773,53 +8523,53 @@ func (s *jsiiProxy_SecurityhubInsightFiltersProcessLaunchedAtDateRangeOutputRefe
 }
 
 type SecurityhubInsightFiltersProcessName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersProcessParentPid struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersProcessPath struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersProcessPid struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#eq SecurityhubInsight#eq}.
-	Eq *string `json:"eq"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#gte SecurityhubInsight#gte}.
-	Gte *string `json:"gte"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#lte SecurityhubInsight#lte}.
-	Lte *string `json:"lte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#eq SecurityhubInsight#eq}.
+	Eq *string `json:"eq" yaml:"eq"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#gte SecurityhubInsight#gte}.
+	Gte *string `json:"gte" yaml:"gte"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#lte SecurityhubInsight#lte}.
+	Lte *string `json:"lte" yaml:"lte"`
 }
 
 type SecurityhubInsightFiltersProcessTerminatedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersProcessTerminatedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersProcessTerminatedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersProcessTerminatedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference interface {
@@ -7830,18 +8580,23 @@ type SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference interf
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7881,8 +8636,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputRe
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7931,7 +8686,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputRe
 	return returns
 }
 
-func NewSecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference{}
@@ -7945,7 +8700,7 @@ func NewSecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference(ter
 	return &j
 }
 
-func NewSecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7979,7 +8734,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputRe
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8004,12 +8759,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputRe
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8046,12 +8829,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputRe
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8088,103 +8913,103 @@ func (s *jsiiProxy_SecurityhubInsightFiltersProcessTerminatedAtDateRangeOutputRe
 }
 
 type SecurityhubInsightFiltersProductArn struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersProductFields struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#key SecurityhubInsight#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#key SecurityhubInsight#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersProductName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersRecommendationText struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersRecordState struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersRelatedFindingsId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersRelatedFindingsProductArn struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceIamInstanceProfileArn struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceImageId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceIpv4Addresses struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#cidr SecurityhubInsight#cidr}.
-	Cidr *string `json:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#cidr SecurityhubInsight#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceIpv6Addresses struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#cidr SecurityhubInsight#cidr}.
-	Cidr *string `json:"cidr"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#cidr SecurityhubInsight#cidr}.
+	Cidr *string `json:"cidr" yaml:"cidr"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceKeyName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference interface {
@@ -8195,18 +9020,23 @@ type SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputRef
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8246,8 +9076,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDate
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8296,7 +9126,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDate
 	return returns
 }
 
-func NewSecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference{}
@@ -8310,7 +9140,7 @@ func NewSecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutput
 	return &j
 }
 
-func NewSecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8344,7 +9174,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDate
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8369,12 +9199,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDate
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8411,12 +9269,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDate
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8453,42 +9353,42 @@ func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsEc2InstanceLaunchedAtDate
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceSubnetId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceType struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsEc2InstanceVpcId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference interface {
@@ -8499,18 +9399,23 @@ type SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputRef
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8550,8 +9455,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDate
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8600,7 +9505,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDate
 	return returns
 }
 
-func NewSecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference{}
@@ -8614,7 +9519,7 @@ func NewSecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutput
 	return &j
 }
 
-func NewSecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8648,7 +9553,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDate
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8673,12 +9578,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDate
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8715,12 +9648,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDate
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8757,63 +9732,63 @@ func (s *jsiiProxy_SecurityhubInsightFiltersResourceAwsIamAccessKeyCreatedAtDate
 }
 
 type SecurityhubInsightFiltersResourceAwsIamAccessKeyStatus struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsIamAccessKeyUserName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsS3BucketOwnerId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceAwsS3BucketOwnerName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceContainerImageId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceContainerImageName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceContainerLaunchedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference interface {
@@ -8824,18 +9799,23 @@ type SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReferenc
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8875,8 +9855,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8925,7 +9905,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
 	return returns
 }
 
-func NewSecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference{}
@@ -8939,7 +9919,7 @@ func NewSecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputRefer
 	return &j
 }
 
-func NewSecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8973,7 +9953,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8998,12 +9978,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9040,12 +10048,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9082,95 +10132,95 @@ func (s *jsiiProxy_SecurityhubInsightFiltersResourceContainerLaunchedAtDateRange
 }
 
 type SecurityhubInsightFiltersResourceContainerName struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceDetailsOther struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#key SecurityhubInsight#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#key SecurityhubInsight#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceId struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourcePartition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceRegion struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceTags struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#key SecurityhubInsight#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#key SecurityhubInsight#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersResourceType struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersSeverityLabel struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersSourceUrl struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorCategory struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference interface {
@@ -9181,18 +10231,23 @@ type SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputR
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9232,8 +10287,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDa
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9282,7 +10337,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDa
 	return returns
 }
 
-func NewSecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference{}
@@ -9296,7 +10351,7 @@ func NewSecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutp
 	return &j
 }
 
-func NewSecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9330,7 +10385,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDa
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9355,12 +10410,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDa
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9397,12 +10480,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDa
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9439,63 +10564,63 @@ func (s *jsiiProxy_SecurityhubInsightFiltersThreatIntelIndicatorLastObservedAtDa
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorSource struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorSourceUrl struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorType struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersThreatIntelIndicatorValue struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersTitle struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersType struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersUpdatedAt struct {
 	// date_range block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#date_range SecurityhubInsight#date_range}
-	DateRange *SecurityhubInsightFiltersUpdatedAtDateRange `json:"dateRange"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#end SecurityhubInsight#end}.
-	End *string `json:"end"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#start SecurityhubInsight#start}.
-	Start *string `json:"start"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#date_range SecurityhubInsight#date_range}
+	DateRange *SecurityhubInsightFiltersUpdatedAtDateRange `json:"dateRange" yaml:"dateRange"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#end SecurityhubInsight#end}.
+	End *string `json:"end" yaml:"end"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#start SecurityhubInsight#start}.
+	Start *string `json:"start" yaml:"start"`
 }
 
 type SecurityhubInsightFiltersUpdatedAtDateRange struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#unit SecurityhubInsight#unit}.
-	Unit *string `json:"unit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *float64 `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#unit SecurityhubInsight#unit}.
+	Unit *string `json:"unit" yaml:"unit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *float64 `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference interface {
@@ -9506,18 +10631,23 @@ type SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Unit() *string
 	SetUnit(val *string)
 	UnitInput() *string
 	Value() *float64
 	SetValue(val *float64)
 	ValueInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -9557,8 +10687,8 @@ func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) T
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9607,7 +10737,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) V
 	return returns
 }
 
-func NewSecurityhubInsightFiltersUpdatedAtDateRangeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference {
+func NewSecurityhubInsightFiltersUpdatedAtDateRangeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference{}
@@ -9621,7 +10751,7 @@ func NewSecurityhubInsightFiltersUpdatedAtDateRangeOutputReference(terraformReso
 	return &j
 }
 
-func NewSecurityhubInsightFiltersUpdatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSecurityhubInsightFiltersUpdatedAtDateRangeOutputReference_Override(s SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9655,7 +10785,7 @@ func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) S
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9680,12 +10810,40 @@ func (j *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) S
 }
 
 // Experimental.
-func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9722,12 +10880,54 @@ func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) G
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9764,35 +10964,35 @@ func (s *jsiiProxy_SecurityhubInsightFiltersUpdatedAtDateRangeOutputReference) I
 }
 
 type SecurityhubInsightFiltersUserDefinedValues struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#key SecurityhubInsight#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#key SecurityhubInsight#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersVerificationState struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type SecurityhubInsightFiltersWorkflowStatus struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#comparison SecurityhubInsight#comparison}.
-	Comparison *string `json:"comparison"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight.html#value SecurityhubInsight#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#comparison SecurityhubInsight#comparison}.
+	Comparison *string `json:"comparison" yaml:"comparison"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_insight#value SecurityhubInsight#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter.html aws_securityhub_invite_accepter}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter aws_securityhub_invite_accepter}.
 type SecurityhubInviteAccepter interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -9812,10 +11012,15 @@ type SecurityhubInviteAccepter interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -9850,8 +11055,8 @@ func (j *jsiiProxy_SecurityhubInviteAccepter) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubInviteAccepter) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubInviteAccepter) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10000,7 +11205,7 @@ func (j *jsiiProxy_SecurityhubInviteAccepter) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter.html aws_securityhub_invite_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter aws_securityhub_invite_accepter} Resource.
 func NewSecurityhubInviteAccepter(scope constructs.Construct, id *string, config *SecurityhubInviteAccepterConfig) SecurityhubInviteAccepter {
 	_init_.Initialize()
 
@@ -10015,7 +11220,7 @@ func NewSecurityhubInviteAccepter(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter.html aws_securityhub_invite_accepter} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter aws_securityhub_invite_accepter} Resource.
 func NewSecurityhubInviteAccepter_Override(s SecurityhubInviteAccepter, scope constructs.Construct, id *string, config *SecurityhubInviteAccepterConfig) {
 	_init_.Initialize()
 
@@ -10026,7 +11231,7 @@ func NewSecurityhubInviteAccepter_Override(s SecurityhubInviteAccepter, scope co
 	)
 }
 
-func (j *jsiiProxy_SecurityhubInviteAccepter) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubInviteAccepter) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10106,12 +11311,40 @@ func (s *jsiiProxy_SecurityhubInviteAccepter) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInviteAccepter) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInviteAccepter) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInviteAccepter) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10148,12 +11381,54 @@ func (s *jsiiProxy_SecurityhubInviteAccepter) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubInviteAccepter) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInviteAccepter) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubInviteAccepter) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubInviteAccepter) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10254,18 +11529,18 @@ func (s *jsiiProxy_SecurityhubInviteAccepter) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubInviteAccepterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter.html#master_id SecurityhubInviteAccepter#master_id}.
-	MasterId *string `json:"masterId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_invite_accepter#master_id SecurityhubInviteAccepter#master_id}.
+	MasterId *string `json:"masterId" yaml:"masterId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member.html aws_securityhub_member}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member aws_securityhub_member}.
 type SecurityhubMember interface {
 	cdktf.TerraformResource
 	AccountId() *string
@@ -10273,8 +11548,8 @@ type SecurityhubMember interface {
 	AccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Email() *string
@@ -10298,10 +11573,15 @@ type SecurityhubMember interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetInvite()
@@ -10357,8 +11637,8 @@ func (j *jsiiProxy_SecurityhubMember) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubMember) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubMember) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10537,7 +11817,7 @@ func (j *jsiiProxy_SecurityhubMember) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member.html aws_securityhub_member} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member aws_securityhub_member} Resource.
 func NewSecurityhubMember(scope constructs.Construct, id *string, config *SecurityhubMemberConfig) SecurityhubMember {
 	_init_.Initialize()
 
@@ -10552,7 +11832,7 @@ func NewSecurityhubMember(scope constructs.Construct, id *string, config *Securi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member.html aws_securityhub_member} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member aws_securityhub_member} Resource.
 func NewSecurityhubMember_Override(s SecurityhubMember, scope constructs.Construct, id *string, config *SecurityhubMemberConfig) {
 	_init_.Initialize()
 
@@ -10571,7 +11851,7 @@ func (j *jsiiProxy_SecurityhubMember) SetAccountId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SecurityhubMember) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubMember) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10659,12 +11939,40 @@ func (s *jsiiProxy_SecurityhubMember) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubMember) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubMember) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubMember) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10701,12 +12009,54 @@ func (s *jsiiProxy_SecurityhubMember) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubMember) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubMember) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubMember) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubMember) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10815,22 +12165,22 @@ func (s *jsiiProxy_SecurityhubMember) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubMemberConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member.html#account_id SecurityhubMember#account_id}.
-	AccountId *string `json:"accountId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member.html#email SecurityhubMember#email}.
-	Email *string `json:"email"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member.html#invite SecurityhubMember#invite}.
-	Invite interface{} `json:"invite"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member#account_id SecurityhubMember#account_id}.
+	AccountId *string `json:"accountId" yaml:"accountId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member#email SecurityhubMember#email}.
+	Email *string `json:"email" yaml:"email"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_member#invite SecurityhubMember#invite}.
+	Invite interface{} `json:"invite" yaml:"invite"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account.html aws_securityhub_organization_admin_account}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account aws_securityhub_organization_admin_account}.
 type SecurityhubOrganizationAdminAccount interface {
 	cdktf.TerraformResource
 	AdminAccountId() *string
@@ -10838,8 +12188,8 @@ type SecurityhubOrganizationAdminAccount interface {
 	AdminAccountIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -10855,10 +12205,15 @@ type SecurityhubOrganizationAdminAccount interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -10913,8 +12268,8 @@ func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11033,7 +12388,7 @@ func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account.html aws_securityhub_organization_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account aws_securityhub_organization_admin_account} Resource.
 func NewSecurityhubOrganizationAdminAccount(scope constructs.Construct, id *string, config *SecurityhubOrganizationAdminAccountConfig) SecurityhubOrganizationAdminAccount {
 	_init_.Initialize()
 
@@ -11048,7 +12403,7 @@ func NewSecurityhubOrganizationAdminAccount(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account.html aws_securityhub_organization_admin_account} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account aws_securityhub_organization_admin_account} Resource.
 func NewSecurityhubOrganizationAdminAccount_Override(s SecurityhubOrganizationAdminAccount, scope constructs.Construct, id *string, config *SecurityhubOrganizationAdminAccountConfig) {
 	_init_.Initialize()
 
@@ -11067,7 +12422,7 @@ func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) SetAdminAccountId(val *s
 	)
 }
 
-func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubOrganizationAdminAccount) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11139,12 +12494,40 @@ func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) AddOverride(path *string
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11181,12 +12564,54 @@ func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11287,18 +12712,18 @@ func (s *jsiiProxy_SecurityhubOrganizationAdminAccount) ToTerraform() interface{
 // AWS Security Hub.
 type SecurityhubOrganizationAdminAccountConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account.html#admin_account_id SecurityhubOrganizationAdminAccount#admin_account_id}.
-	AdminAccountId *string `json:"adminAccountId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_admin_account#admin_account_id SecurityhubOrganizationAdminAccount#admin_account_id}.
+	AdminAccountId *string `json:"adminAccountId" yaml:"adminAccountId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration.html aws_securityhub_organization_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration aws_securityhub_organization_configuration}.
 type SecurityhubOrganizationConfiguration interface {
 	cdktf.TerraformResource
 	AutoEnable() interface{}
@@ -11306,8 +12731,8 @@ type SecurityhubOrganizationConfiguration interface {
 	AutoEnableInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -11323,10 +12748,15 @@ type SecurityhubOrganizationConfiguration interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -11381,8 +12811,8 @@ func (j *jsiiProxy_SecurityhubOrganizationConfiguration) ConstructNodeMetadata()
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubOrganizationConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubOrganizationConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11501,7 +12931,7 @@ func (j *jsiiProxy_SecurityhubOrganizationConfiguration) TerraformResourceType()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration.html aws_securityhub_organization_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration aws_securityhub_organization_configuration} Resource.
 func NewSecurityhubOrganizationConfiguration(scope constructs.Construct, id *string, config *SecurityhubOrganizationConfigurationConfig) SecurityhubOrganizationConfiguration {
 	_init_.Initialize()
 
@@ -11516,7 +12946,7 @@ func NewSecurityhubOrganizationConfiguration(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration.html aws_securityhub_organization_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration aws_securityhub_organization_configuration} Resource.
 func NewSecurityhubOrganizationConfiguration_Override(s SecurityhubOrganizationConfiguration, scope constructs.Construct, id *string, config *SecurityhubOrganizationConfigurationConfig) {
 	_init_.Initialize()
 
@@ -11535,7 +12965,7 @@ func (j *jsiiProxy_SecurityhubOrganizationConfiguration) SetAutoEnable(val inter
 	)
 }
 
-func (j *jsiiProxy_SecurityhubOrganizationConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubOrganizationConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -11607,12 +13037,40 @@ func (s *jsiiProxy_SecurityhubOrganizationConfiguration) AddOverride(path *strin
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11649,12 +13107,54 @@ func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubOrganizationConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11755,25 +13255,25 @@ func (s *jsiiProxy_SecurityhubOrganizationConfiguration) ToTerraform() interface
 // AWS Security Hub.
 type SecurityhubOrganizationConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration.html#auto_enable SecurityhubOrganizationConfiguration#auto_enable}.
-	AutoEnable interface{} `json:"autoEnable"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_organization_configuration#auto_enable SecurityhubOrganizationConfiguration#auto_enable}.
+	AutoEnable interface{} `json:"autoEnable" yaml:"autoEnable"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription.html aws_securityhub_product_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription aws_securityhub_product_subscription}.
 type SecurityhubProductSubscription interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -11792,10 +13292,15 @@ type SecurityhubProductSubscription interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -11840,8 +13345,8 @@ func (j *jsiiProxy_SecurityhubProductSubscription) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubProductSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubProductSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11980,7 +13485,7 @@ func (j *jsiiProxy_SecurityhubProductSubscription) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription.html aws_securityhub_product_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription aws_securityhub_product_subscription} Resource.
 func NewSecurityhubProductSubscription(scope constructs.Construct, id *string, config *SecurityhubProductSubscriptionConfig) SecurityhubProductSubscription {
 	_init_.Initialize()
 
@@ -11995,7 +13500,7 @@ func NewSecurityhubProductSubscription(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription.html aws_securityhub_product_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription aws_securityhub_product_subscription} Resource.
 func NewSecurityhubProductSubscription_Override(s SecurityhubProductSubscription, scope constructs.Construct, id *string, config *SecurityhubProductSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -12006,7 +13511,7 @@ func NewSecurityhubProductSubscription_Override(s SecurityhubProductSubscription
 	)
 }
 
-func (j *jsiiProxy_SecurityhubProductSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubProductSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12086,12 +13591,40 @@ func (s *jsiiProxy_SecurityhubProductSubscription) AddOverride(path *string, val
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubProductSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubProductSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubProductSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12128,12 +13661,54 @@ func (s *jsiiProxy_SecurityhubProductSubscription) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubProductSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubProductSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubProductSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubProductSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12234,18 +13809,18 @@ func (s *jsiiProxy_SecurityhubProductSubscription) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubProductSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription.html#product_arn SecurityhubProductSubscription#product_arn}.
-	ProductArn *string `json:"productArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_product_subscription#product_arn SecurityhubProductSubscription#product_arn}.
+	ProductArn *string `json:"productArn" yaml:"productArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control.html aws_securityhub_standards_control}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control aws_securityhub_standards_control}.
 type SecurityhubStandardsControl interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -12255,8 +13830,8 @@ type SecurityhubStandardsControl interface {
 	SetControlStatus(val *string)
 	ControlStatusInput() *string
 	ControlStatusUpdatedAt() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -12283,10 +13858,15 @@ type SecurityhubStandardsControl interface {
 	TerraformResourceType() *string
 	Title() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDisabledReason()
@@ -12362,8 +13942,8 @@ func (j *jsiiProxy_SecurityhubStandardsControl) ControlStatusUpdatedAt() *string
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubStandardsControl) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubStandardsControl) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12572,7 +14152,7 @@ func (j *jsiiProxy_SecurityhubStandardsControl) Title() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control.html aws_securityhub_standards_control} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control aws_securityhub_standards_control} Resource.
 func NewSecurityhubStandardsControl(scope constructs.Construct, id *string, config *SecurityhubStandardsControlConfig) SecurityhubStandardsControl {
 	_init_.Initialize()
 
@@ -12587,7 +14167,7 @@ func NewSecurityhubStandardsControl(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control.html aws_securityhub_standards_control} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control aws_securityhub_standards_control} Resource.
 func NewSecurityhubStandardsControl_Override(s SecurityhubStandardsControl, scope constructs.Construct, id *string, config *SecurityhubStandardsControlConfig) {
 	_init_.Initialize()
 
@@ -12606,7 +14186,7 @@ func (j *jsiiProxy_SecurityhubStandardsControl) SetControlStatus(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SecurityhubStandardsControl) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubStandardsControl) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12694,12 +14274,40 @@ func (s *jsiiProxy_SecurityhubStandardsControl) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubStandardsControl) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubStandardsControl) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubStandardsControl) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12736,12 +14344,54 @@ func (s *jsiiProxy_SecurityhubStandardsControl) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubStandardsControl) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubStandardsControl) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubStandardsControl) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubStandardsControl) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12850,28 +14500,28 @@ func (s *jsiiProxy_SecurityhubStandardsControl) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubStandardsControlConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control.html#control_status SecurityhubStandardsControl#control_status}.
-	ControlStatus *string `json:"controlStatus"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control.html#standards_control_arn SecurityhubStandardsControl#standards_control_arn}.
-	StandardsControlArn *string `json:"standardsControlArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control.html#disabled_reason SecurityhubStandardsControl#disabled_reason}.
-	DisabledReason *string `json:"disabledReason"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control#control_status SecurityhubStandardsControl#control_status}.
+	ControlStatus *string `json:"controlStatus" yaml:"controlStatus"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control#standards_control_arn SecurityhubStandardsControl#standards_control_arn}.
+	StandardsControlArn *string `json:"standardsControlArn" yaml:"standardsControlArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_control#disabled_reason SecurityhubStandardsControl#disabled_reason}.
+	DisabledReason *string `json:"disabledReason" yaml:"disabledReason"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription.html aws_securityhub_standards_subscription}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription aws_securityhub_standards_subscription}.
 type SecurityhubStandardsSubscription interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -12890,10 +14540,15 @@ type SecurityhubStandardsSubscription interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -12928,8 +14583,8 @@ func (j *jsiiProxy_SecurityhubStandardsSubscription) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_SecurityhubStandardsSubscription) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SecurityhubStandardsSubscription) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13068,7 +14723,7 @@ func (j *jsiiProxy_SecurityhubStandardsSubscription) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription.html aws_securityhub_standards_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription aws_securityhub_standards_subscription} Resource.
 func NewSecurityhubStandardsSubscription(scope constructs.Construct, id *string, config *SecurityhubStandardsSubscriptionConfig) SecurityhubStandardsSubscription {
 	_init_.Initialize()
 
@@ -13083,7 +14738,7 @@ func NewSecurityhubStandardsSubscription(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription.html aws_securityhub_standards_subscription} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription aws_securityhub_standards_subscription} Resource.
 func NewSecurityhubStandardsSubscription_Override(s SecurityhubStandardsSubscription, scope constructs.Construct, id *string, config *SecurityhubStandardsSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -13094,7 +14749,7 @@ func NewSecurityhubStandardsSubscription_Override(s SecurityhubStandardsSubscrip
 	)
 }
 
-func (j *jsiiProxy_SecurityhubStandardsSubscription) SetCount(val interface{}) {
+func (j *jsiiProxy_SecurityhubStandardsSubscription) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13174,12 +14829,40 @@ func (s *jsiiProxy_SecurityhubStandardsSubscription) AddOverride(path *string, v
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubStandardsSubscription) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubStandardsSubscription) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubStandardsSubscription) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13216,12 +14899,54 @@ func (s *jsiiProxy_SecurityhubStandardsSubscription) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (s *jsiiProxy_SecurityhubStandardsSubscription) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubStandardsSubscription) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SecurityhubStandardsSubscription) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SecurityhubStandardsSubscription) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13322,13 +15047,13 @@ func (s *jsiiProxy_SecurityhubStandardsSubscription) ToTerraform() interface{} {
 // AWS Security Hub.
 type SecurityhubStandardsSubscriptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription.html#standards_arn SecurityhubStandardsSubscription#standards_arn}.
-	StandardsArn *string `json:"standardsArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/securityhub_standards_subscription#standards_arn SecurityhubStandardsSubscription#standards_arn}.
+	StandardsArn *string `json:"standardsArn" yaml:"standardsArn"`
 }

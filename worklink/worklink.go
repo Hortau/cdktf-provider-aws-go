@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/worklink/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html aws_worklink_fleet}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet aws_worklink_fleet}.
 type WorklinkFleet interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -19,8 +19,8 @@ type WorklinkFleet interface {
 	CdktfStack() cdktf.TerraformStack
 	CompanyCode() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -54,10 +54,15 @@ type WorklinkFleet interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutIdentityProvider(value *WorklinkFleetIdentityProvider)
@@ -140,8 +145,8 @@ func (j *jsiiProxy_WorklinkFleet) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_WorklinkFleet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorklinkFleet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -400,7 +405,7 @@ func (j *jsiiProxy_WorklinkFleet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html aws_worklink_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet aws_worklink_fleet} Resource.
 func NewWorklinkFleet(scope constructs.Construct, id *string, config *WorklinkFleetConfig) WorklinkFleet {
 	_init_.Initialize()
 
@@ -415,7 +420,7 @@ func NewWorklinkFleet(scope constructs.Construct, id *string, config *WorklinkFl
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html aws_worklink_fleet} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet aws_worklink_fleet} Resource.
 func NewWorklinkFleet_Override(w WorklinkFleet, scope constructs.Construct, id *string, config *WorklinkFleetConfig) {
 	_init_.Initialize()
 
@@ -434,7 +439,7 @@ func (j *jsiiProxy_WorklinkFleet) SetAuditStreamArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WorklinkFleet) SetCount(val interface{}) {
+func (j *jsiiProxy_WorklinkFleet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -538,12 +543,40 @@ func (w *jsiiProxy_WorklinkFleet) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (w *jsiiProxy_WorklinkFleet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorklinkFleet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -580,12 +613,54 @@ func (w *jsiiProxy_WorklinkFleet) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (w *jsiiProxy_WorklinkFleet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorklinkFleet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -750,38 +825,38 @@ func (w *jsiiProxy_WorklinkFleet) ToTerraform() interface{} {
 // AWS WorkLink.
 type WorklinkFleetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#name WorklinkFleet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#audit_stream_arn WorklinkFleet#audit_stream_arn}.
-	AuditStreamArn *string `json:"auditStreamArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#device_ca_certificate WorklinkFleet#device_ca_certificate}.
-	DeviceCaCertificate *string `json:"deviceCaCertificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#display_name WorklinkFleet#display_name}.
-	DisplayName *string `json:"displayName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#name WorklinkFleet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#audit_stream_arn WorklinkFleet#audit_stream_arn}.
+	AuditStreamArn *string `json:"auditStreamArn" yaml:"auditStreamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#device_ca_certificate WorklinkFleet#device_ca_certificate}.
+	DeviceCaCertificate *string `json:"deviceCaCertificate" yaml:"deviceCaCertificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#display_name WorklinkFleet#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
 	// identity_provider block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#identity_provider WorklinkFleet#identity_provider}
-	IdentityProvider *WorklinkFleetIdentityProvider `json:"identityProvider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#identity_provider WorklinkFleet#identity_provider}
+	IdentityProvider *WorklinkFleetIdentityProvider `json:"identityProvider" yaml:"identityProvider"`
 	// network block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#network WorklinkFleet#network}
-	Network *WorklinkFleetNetwork `json:"network"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#optimize_for_end_user_location WorklinkFleet#optimize_for_end_user_location}.
-	OptimizeForEndUserLocation interface{} `json:"optimizeForEndUserLocation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#network WorklinkFleet#network}
+	Network *WorklinkFleetNetwork `json:"network" yaml:"network"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#optimize_for_end_user_location WorklinkFleet#optimize_for_end_user_location}.
+	OptimizeForEndUserLocation interface{} `json:"optimizeForEndUserLocation" yaml:"optimizeForEndUserLocation"`
 }
 
 type WorklinkFleetIdentityProvider struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#saml_metadata WorklinkFleet#saml_metadata}.
-	SamlMetadata *string `json:"samlMetadata"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#type WorklinkFleet#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#saml_metadata WorklinkFleet#saml_metadata}.
+	SamlMetadata *string `json:"samlMetadata" yaml:"samlMetadata"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#type WorklinkFleet#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type WorklinkFleetIdentityProviderOutputReference interface {
@@ -795,15 +870,20 @@ type WorklinkFleetIdentityProviderOutputReference interface {
 	SamlMetadataInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -863,8 +943,8 @@ func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -893,7 +973,7 @@ func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) TypeInput() *st
 	return returns
 }
 
-func NewWorklinkFleetIdentityProviderOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WorklinkFleetIdentityProviderOutputReference {
+func NewWorklinkFleetIdentityProviderOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WorklinkFleetIdentityProviderOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WorklinkFleetIdentityProviderOutputReference{}
@@ -907,7 +987,7 @@ func NewWorklinkFleetIdentityProviderOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewWorklinkFleetIdentityProviderOutputReference_Override(w WorklinkFleetIdentityProviderOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWorklinkFleetIdentityProviderOutputReference_Override(w WorklinkFleetIdentityProviderOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -949,7 +1029,7 @@ func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -966,12 +1046,40 @@ func (j *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) SetType(val *st
 }
 
 // Experimental.
-func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1008,12 +1116,54 @@ func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1050,12 +1200,12 @@ func (w *jsiiProxy_WorklinkFleetIdentityProviderOutputReference) InterpolationFo
 }
 
 type WorklinkFleetNetwork struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#security_group_ids WorklinkFleet#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#subnet_ids WorklinkFleet#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet.html#vpc_id WorklinkFleet#vpc_id}.
-	VpcId *string `json:"vpcId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#security_group_ids WorklinkFleet#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#subnet_ids WorklinkFleet#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_fleet#vpc_id WorklinkFleet#vpc_id}.
+	VpcId *string `json:"vpcId" yaml:"vpcId"`
 }
 
 type WorklinkFleetNetworkOutputReference interface {
@@ -1072,15 +1222,20 @@ type WorklinkFleetNetworkOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	VpcId() *string
 	SetVpcId(val *string)
 	VpcIdInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1160,8 +1315,8 @@ func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1190,7 +1345,7 @@ func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) VpcIdInput() *string {
 	return returns
 }
 
-func NewWorklinkFleetNetworkOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WorklinkFleetNetworkOutputReference {
+func NewWorklinkFleetNetworkOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WorklinkFleetNetworkOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WorklinkFleetNetworkOutputReference{}
@@ -1204,7 +1359,7 @@ func NewWorklinkFleetNetworkOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewWorklinkFleetNetworkOutputReference_Override(w WorklinkFleetNetworkOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWorklinkFleetNetworkOutputReference_Override(w WorklinkFleetNetworkOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1254,7 +1409,7 @@ func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1271,12 +1426,40 @@ func (j *jsiiProxy_WorklinkFleetNetworkOutputReference) SetVpcId(val *string) {
 }
 
 // Experimental.
-func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1313,12 +1496,54 @@ func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1354,7 +1579,7 @@ func (w *jsiiProxy_WorklinkFleetNetworkOutputReference) InterpolationForAttribut
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association.html aws_worklink_website_certificate_authority_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association aws_worklink_website_certificate_authority_association}.
 type WorklinkWebsiteCertificateAuthorityAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -1362,8 +1587,8 @@ type WorklinkWebsiteCertificateAuthorityAssociation interface {
 	SetCertificate(val *string)
 	CertificateInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DisplayName() *string
@@ -1386,10 +1611,15 @@ type WorklinkWebsiteCertificateAuthorityAssociation interface {
 	TerraformResourceType() *string
 	WebsiteCaId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDisplayName()
@@ -1445,8 +1675,8 @@ func (j *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) ConstructNode
 	return returns
 }
 
-func (j *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1615,7 +1845,7 @@ func (j *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) WebsiteCaId()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association.html aws_worklink_website_certificate_authority_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association aws_worklink_website_certificate_authority_association} Resource.
 func NewWorklinkWebsiteCertificateAuthorityAssociation(scope constructs.Construct, id *string, config *WorklinkWebsiteCertificateAuthorityAssociationConfig) WorklinkWebsiteCertificateAuthorityAssociation {
 	_init_.Initialize()
 
@@ -1630,7 +1860,7 @@ func NewWorklinkWebsiteCertificateAuthorityAssociation(scope constructs.Construc
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association.html aws_worklink_website_certificate_authority_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association aws_worklink_website_certificate_authority_association} Resource.
 func NewWorklinkWebsiteCertificateAuthorityAssociation_Override(w WorklinkWebsiteCertificateAuthorityAssociation, scope constructs.Construct, id *string, config *WorklinkWebsiteCertificateAuthorityAssociationConfig) {
 	_init_.Initialize()
 
@@ -1649,7 +1879,7 @@ func (j *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) SetCertificat
 	)
 }
 
-func (j *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1737,12 +1967,40 @@ func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) AddOverride(p
 }
 
 // Experimental.
+func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1779,12 +2037,54 @@ func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetNumberAttr
 }
 
 // Experimental.
+func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1893,17 +2193,17 @@ func (w *jsiiProxy_WorklinkWebsiteCertificateAuthorityAssociation) ToTerraform()
 // AWS WorkLink.
 type WorklinkWebsiteCertificateAuthorityAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association.html#certificate WorklinkWebsiteCertificateAuthorityAssociation#certificate}.
-	Certificate *string `json:"certificate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association.html#fleet_arn WorklinkWebsiteCertificateAuthorityAssociation#fleet_arn}.
-	FleetArn *string `json:"fleetArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association.html#display_name WorklinkWebsiteCertificateAuthorityAssociation#display_name}.
-	DisplayName *string `json:"displayName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association#certificate WorklinkWebsiteCertificateAuthorityAssociation#certificate}.
+	Certificate *string `json:"certificate" yaml:"certificate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association#fleet_arn WorklinkWebsiteCertificateAuthorityAssociation#fleet_arn}.
+	FleetArn *string `json:"fleetArn" yaml:"fleetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/worklink_website_certificate_authority_association#display_name WorklinkWebsiteCertificateAuthorityAssociation#display_name}.
+	DisplayName *string `json:"displayName" yaml:"displayName"`
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/servicecatalog/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html aws_servicecatalog_constraint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint aws_servicecatalog_constraint}.
 type DataAwsServicecatalogConstraint interface {
 	cdktf.TerraformDataSource
 	AcceptLanguage() *string
@@ -17,8 +17,8 @@ type DataAwsServicecatalogConstraint interface {
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -45,10 +45,15 @@ type DataAwsServicecatalogConstraint interface {
 	TerraformResourceType() *string
 	Type() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -105,8 +110,8 @@ func (j *jsiiProxy_DataAwsServicecatalogConstraint) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogConstraint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogConstraint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -315,7 +320,7 @@ func (j *jsiiProxy_DataAwsServicecatalogConstraint) Type() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html aws_servicecatalog_constraint} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint aws_servicecatalog_constraint} Data Source.
 func NewDataAwsServicecatalogConstraint(scope constructs.Construct, id *string, config *DataAwsServicecatalogConstraintConfig) DataAwsServicecatalogConstraint {
 	_init_.Initialize()
 
@@ -330,7 +335,7 @@ func NewDataAwsServicecatalogConstraint(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html aws_servicecatalog_constraint} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint aws_servicecatalog_constraint} Data Source.
 func NewDataAwsServicecatalogConstraint_Override(d DataAwsServicecatalogConstraint, scope constructs.Construct, id *string, config *DataAwsServicecatalogConstraintConfig) {
 	_init_.Initialize()
 
@@ -349,7 +354,7 @@ func (j *jsiiProxy_DataAwsServicecatalogConstraint) SetAcceptLanguage(val *strin
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogConstraint) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServicecatalogConstraint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -437,12 +442,40 @@ func (d *jsiiProxy_DataAwsServicecatalogConstraint) AddOverride(path *string, va
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -479,12 +512,54 @@ func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogConstraint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -601,22 +676,22 @@ func (d *jsiiProxy_DataAwsServicecatalogConstraint) ToTerraform() interface{} {
 // AWS Service Catalog.
 type DataAwsServicecatalogConstraintConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html#id DataAwsServicecatalogConstraint#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html#accept_language DataAwsServicecatalogConstraint#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint.html#description DataAwsServicecatalogConstraint#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint#id DataAwsServicecatalogConstraint#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint#accept_language DataAwsServicecatalogConstraint#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_constraint#description DataAwsServicecatalogConstraint#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths.html aws_servicecatalog_launch_paths}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths aws_servicecatalog_launch_paths}.
 type DataAwsServicecatalogLaunchPaths interface {
 	cdktf.TerraformDataSource
 	AcceptLanguage() *string
@@ -624,8 +699,8 @@ type DataAwsServicecatalogLaunchPaths interface {
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -644,10 +719,15 @@ type DataAwsServicecatalogLaunchPaths interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -704,8 +784,8 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -844,7 +924,7 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths.html aws_servicecatalog_launch_paths} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths aws_servicecatalog_launch_paths} Data Source.
 func NewDataAwsServicecatalogLaunchPaths(scope constructs.Construct, id *string, config *DataAwsServicecatalogLaunchPathsConfig) DataAwsServicecatalogLaunchPaths {
 	_init_.Initialize()
 
@@ -859,7 +939,7 @@ func NewDataAwsServicecatalogLaunchPaths(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths.html aws_servicecatalog_launch_paths} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths aws_servicecatalog_launch_paths} Data Source.
 func NewDataAwsServicecatalogLaunchPaths_Override(d DataAwsServicecatalogLaunchPaths, scope constructs.Construct, id *string, config *DataAwsServicecatalogLaunchPathsConfig) {
 	_init_.Initialize()
 
@@ -878,7 +958,7 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) SetAcceptLanguage(val *stri
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPaths) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -958,12 +1038,40 @@ func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) AddOverride(path *string, v
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1000,12 +1108,54 @@ func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1127,35 +1277,42 @@ func (d *jsiiProxy_DataAwsServicecatalogLaunchPaths) ToTerraform() interface{} {
 // AWS Service Catalog.
 type DataAwsServicecatalogLaunchPathsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths.html#product_id DataAwsServicecatalogLaunchPaths#product_id}.
-	ProductId *string `json:"productId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths.html#accept_language DataAwsServicecatalogLaunchPaths#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths#product_id DataAwsServicecatalogLaunchPaths#product_id}.
+	ProductId *string `json:"productId" yaml:"productId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_launch_paths#accept_language DataAwsServicecatalogLaunchPaths#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
 }
 
 type DataAwsServicecatalogLaunchPathsSummaries interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ConstraintSummaries() interface{}
+	ConstraintSummaries() cdktf.IResolvable
 	Name() *string
 	PathId() *string
-	Tags() interface{}
+	Tags() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1174,8 +1331,8 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) ComplexComputedLis
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) ConstraintSummaries() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) ConstraintSummaries() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"constraintSummaries",
@@ -1204,8 +1361,8 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) PathId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1224,8 +1381,8 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1234,15 +1391,25 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) TerraformResource(
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsServicecatalogLaunchPathsSummaries(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsServicecatalogLaunchPathsSummaries {
+func NewDataAwsServicecatalogLaunchPathsSummaries(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsServicecatalogLaunchPathsSummaries {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries{}
 
 	_jsii_.Create(
 		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummaries",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1250,12 +1417,12 @@ func NewDataAwsServicecatalogLaunchPathsSummaries(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewDataAwsServicecatalogLaunchPathsSummaries_Override(d DataAwsServicecatalogLaunchPathsSummaries, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsServicecatalogLaunchPathsSummaries_Override(d DataAwsServicecatalogLaunchPathsSummaries, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummaries",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1276,7 +1443,7 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1284,13 +1451,49 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1327,12 +1530,54 @@ func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummaries) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1361,13 +1606,20 @@ type DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries interface {
 	Description() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1406,8 +1658,8 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1426,15 +1678,25 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries {
+func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries{}
 
 	_jsii_.Create(
 		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1442,12 +1704,12 @@ func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries(terraformRe
 }
 
 // Experimental.
-func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries_Override(d DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsServicecatalogLaunchPathsSummariesConstraintSummaries_Override(d DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.servicecatalog.DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1468,7 +1730,7 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1476,13 +1738,49 @@ func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)
 	)
 }
 
+func (j *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1519,12 +1817,54 @@ func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1546,7 +1886,7 @@ func (d *jsiiProxy_DataAwsServicecatalogLaunchPathsSummariesConstraintSummaries)
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio.html aws_servicecatalog_portfolio}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio aws_servicecatalog_portfolio}.
 type DataAwsServicecatalogPortfolio interface {
 	cdktf.TerraformDataSource
 	AcceptLanguage() *string
@@ -1555,8 +1895,8 @@ type DataAwsServicecatalogPortfolio interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -1574,17 +1914,22 @@ type DataAwsServicecatalogPortfolio interface {
 	SetProvider(val cdktf.TerraformProvider)
 	ProviderName() *string
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -1651,8 +1996,8 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolio) ConstructNodeMetadata() *map[
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolio) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogPortfolio) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1791,8 +2136,8 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolio) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolio) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogPortfolio) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1801,8 +2146,8 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolio) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolio) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogPortfolio) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1841,7 +2186,7 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolio) TerraformResourceType() *stri
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio.html aws_servicecatalog_portfolio} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio aws_servicecatalog_portfolio} Data Source.
 func NewDataAwsServicecatalogPortfolio(scope constructs.Construct, id *string, config *DataAwsServicecatalogPortfolioConfig) DataAwsServicecatalogPortfolio {
 	_init_.Initialize()
 
@@ -1856,7 +2201,7 @@ func NewDataAwsServicecatalogPortfolio(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio.html aws_servicecatalog_portfolio} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio aws_servicecatalog_portfolio} Data Source.
 func NewDataAwsServicecatalogPortfolio_Override(d DataAwsServicecatalogPortfolio, scope constructs.Construct, id *string, config *DataAwsServicecatalogPortfolioConfig) {
 	_init_.Initialize()
 
@@ -1875,7 +2220,7 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolio) SetAcceptLanguage(val *string
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolio) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServicecatalogPortfolio) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1915,7 +2260,7 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolio) SetProvider(val cdktf.Terrafo
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolio) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsServicecatalogPortfolio) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1963,12 +2308,40 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolio) AddOverride(path *string, val
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2005,12 +2378,54 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetNumberAttribute(terraformA
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolio) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2127,22 +2542,22 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolio) ToTerraform() interface{} {
 // AWS Service Catalog.
 type DataAwsServicecatalogPortfolioConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio.html#id DataAwsServicecatalogPortfolio#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio.html#accept_language DataAwsServicecatalogPortfolio#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio.html#tags DataAwsServicecatalogPortfolio#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio#id DataAwsServicecatalogPortfolio#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio#accept_language DataAwsServicecatalogPortfolio#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio#tags DataAwsServicecatalogPortfolio#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints.html aws_servicecatalog_portfolio_constraints}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints aws_servicecatalog_portfolio_constraints}.
 type DataAwsServicecatalogPortfolioConstraints interface {
 	cdktf.TerraformDataSource
 	AcceptLanguage() *string
@@ -2150,8 +2565,8 @@ type DataAwsServicecatalogPortfolioConstraints interface {
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2174,10 +2589,15 @@ type DataAwsServicecatalogPortfolioConstraints interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	Details(index *string) DataAwsServicecatalogPortfolioConstraintsDetails
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -2234,8 +2654,8 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) ConstructNodeMetad
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2394,7 +2814,7 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) TerraformResourceT
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints.html aws_servicecatalog_portfolio_constraints} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints aws_servicecatalog_portfolio_constraints} Data Source.
 func NewDataAwsServicecatalogPortfolioConstraints(scope constructs.Construct, id *string, config *DataAwsServicecatalogPortfolioConstraintsConfig) DataAwsServicecatalogPortfolioConstraints {
 	_init_.Initialize()
 
@@ -2409,7 +2829,7 @@ func NewDataAwsServicecatalogPortfolioConstraints(scope constructs.Construct, id
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints.html aws_servicecatalog_portfolio_constraints} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints aws_servicecatalog_portfolio_constraints} Data Source.
 func NewDataAwsServicecatalogPortfolioConstraints_Override(d DataAwsServicecatalogPortfolioConstraints, scope constructs.Construct, id *string, config *DataAwsServicecatalogPortfolioConstraintsConfig) {
 	_init_.Initialize()
 
@@ -2428,7 +2848,7 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) SetAcceptLanguage(
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2529,12 +2949,40 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) Details(index *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2571,12 +3019,54 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2693,19 +3183,19 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraints) ToTerraform() inte
 // AWS Service Catalog.
 type DataAwsServicecatalogPortfolioConstraintsConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints.html#portfolio_id DataAwsServicecatalogPortfolioConstraints#portfolio_id}.
-	PortfolioId *string `json:"portfolioId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints.html#accept_language DataAwsServicecatalogPortfolioConstraints#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints.html#product_id DataAwsServicecatalogPortfolioConstraints#product_id}.
-	ProductId *string `json:"productId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints#portfolio_id DataAwsServicecatalogPortfolioConstraints#portfolio_id}.
+	PortfolioId *string `json:"portfolioId" yaml:"portfolioId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints#accept_language DataAwsServicecatalogPortfolioConstraints#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_portfolio_constraints#product_id DataAwsServicecatalogPortfolioConstraints#product_id}.
+	ProductId *string `json:"productId" yaml:"productId"`
 }
 
 type DataAwsServicecatalogPortfolioConstraintsDetails interface {
@@ -2719,13 +3209,20 @@ type DataAwsServicecatalogPortfolioConstraintsDetails interface {
 	ProductId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2804,8 +3301,8 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2824,15 +3321,25 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) Type() *str
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsServicecatalogPortfolioConstraintsDetails(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsServicecatalogPortfolioConstraintsDetails {
+func NewDataAwsServicecatalogPortfolioConstraintsDetails(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsServicecatalogPortfolioConstraintsDetails {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails{}
 
 	_jsii_.Create(
 		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2840,12 +3347,12 @@ func NewDataAwsServicecatalogPortfolioConstraintsDetails(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsServicecatalogPortfolioConstraintsDetails_Override(d DataAwsServicecatalogPortfolioConstraintsDetails, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsServicecatalogPortfolioConstraintsDetails_Override(d DataAwsServicecatalogPortfolioConstraintsDetails, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.servicecatalog.DataAwsServicecatalogPortfolioConstraintsDetails",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2866,7 +3373,7 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2874,13 +3381,49 @@ func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2917,12 +3460,54 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2944,7 +3529,7 @@ func (d *jsiiProxy_DataAwsServicecatalogPortfolioConstraintsDetails) Interpolati
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product.html aws_servicecatalog_product}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product aws_servicecatalog_product}.
 type DataAwsServicecatalogProduct interface {
 	cdktf.TerraformDataSource
 	AcceptLanguage() *string
@@ -2953,8 +3538,8 @@ type DataAwsServicecatalogProduct interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2962,7 +3547,7 @@ type DataAwsServicecatalogProduct interface {
 	Distributor() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
-	HasDefaultPath() interface{}
+	HasDefaultPath() cdktf.IResolvable
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
@@ -2978,18 +3563,23 @@ type DataAwsServicecatalogProduct interface {
 	SupportDescription() *string
 	SupportEmail() *string
 	SupportUrl() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Type() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -3056,8 +3646,8 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogProduct) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogProduct) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3126,8 +3716,8 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogProduct) HasDefaultPath() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogProduct) HasDefaultPath() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"hasDefaultPath",
@@ -3256,8 +3846,8 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) SupportUrl() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogProduct) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogProduct) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3266,8 +3856,8 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogProduct) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsServicecatalogProduct) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3316,7 +3906,7 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) Type() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product.html aws_servicecatalog_product} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product aws_servicecatalog_product} Data Source.
 func NewDataAwsServicecatalogProduct(scope constructs.Construct, id *string, config *DataAwsServicecatalogProductConfig) DataAwsServicecatalogProduct {
 	_init_.Initialize()
 
@@ -3331,7 +3921,7 @@ func NewDataAwsServicecatalogProduct(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product.html aws_servicecatalog_product} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product aws_servicecatalog_product} Data Source.
 func NewDataAwsServicecatalogProduct_Override(d DataAwsServicecatalogProduct, scope constructs.Construct, id *string, config *DataAwsServicecatalogProductConfig) {
 	_init_.Initialize()
 
@@ -3350,7 +3940,7 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) SetAcceptLanguage(val *string) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogProduct) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsServicecatalogProduct) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3390,7 +3980,7 @@ func (j *jsiiProxy_DataAwsServicecatalogProduct) SetProvider(val cdktf.Terraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsServicecatalogProduct) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsServicecatalogProduct) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3438,12 +4028,40 @@ func (d *jsiiProxy_DataAwsServicecatalogProduct) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogProduct) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogProduct) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogProduct) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3480,12 +4098,54 @@ func (d *jsiiProxy_DataAwsServicecatalogProduct) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogProduct) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogProduct) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsServicecatalogProduct) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsServicecatalogProduct) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3602,22 +4262,22 @@ func (d *jsiiProxy_DataAwsServicecatalogProduct) ToTerraform() interface{} {
 // AWS Service Catalog.
 type DataAwsServicecatalogProductConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product.html#id DataAwsServicecatalogProduct#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product.html#accept_language DataAwsServicecatalogProduct#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product.html#tags DataAwsServicecatalogProduct#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product#id DataAwsServicecatalogProduct#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product#accept_language DataAwsServicecatalogProduct#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/servicecatalog_product#tags DataAwsServicecatalogProduct#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association.html aws_servicecatalog_budget_resource_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association aws_servicecatalog_budget_resource_association}.
 type ServicecatalogBudgetResourceAssociation interface {
 	cdktf.TerraformResource
 	BudgetName() *string
@@ -3625,8 +4285,8 @@ type ServicecatalogBudgetResourceAssociation interface {
 	BudgetNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3645,10 +4305,15 @@ type ServicecatalogBudgetResourceAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3703,8 +4368,8 @@ func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) ConstructNodeMetadat
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3843,7 +4508,7 @@ func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) TerraformResourceTyp
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association.html aws_servicecatalog_budget_resource_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association aws_servicecatalog_budget_resource_association} Resource.
 func NewServicecatalogBudgetResourceAssociation(scope constructs.Construct, id *string, config *ServicecatalogBudgetResourceAssociationConfig) ServicecatalogBudgetResourceAssociation {
 	_init_.Initialize()
 
@@ -3858,7 +4523,7 @@ func NewServicecatalogBudgetResourceAssociation(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association.html aws_servicecatalog_budget_resource_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association aws_servicecatalog_budget_resource_association} Resource.
 func NewServicecatalogBudgetResourceAssociation_Override(s ServicecatalogBudgetResourceAssociation, scope constructs.Construct, id *string, config *ServicecatalogBudgetResourceAssociationConfig) {
 	_init_.Initialize()
 
@@ -3877,7 +4542,7 @@ func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) SetBudgetName(val *s
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogBudgetResourceAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3957,12 +4622,40 @@ func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) AddOverride(path *st
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3999,12 +4692,54 @@ func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetNumberAttribute(t
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4105,20 +4840,20 @@ func (s *jsiiProxy_ServicecatalogBudgetResourceAssociation) ToTerraform() interf
 // AWS Service Catalog.
 type ServicecatalogBudgetResourceAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association.html#budget_name ServicecatalogBudgetResourceAssociation#budget_name}.
-	BudgetName *string `json:"budgetName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association.html#resource_id ServicecatalogBudgetResourceAssociation#resource_id}.
-	ResourceId *string `json:"resourceId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association#budget_name ServicecatalogBudgetResourceAssociation#budget_name}.
+	BudgetName *string `json:"budgetName" yaml:"budgetName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_budget_resource_association#resource_id ServicecatalogBudgetResourceAssociation#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html aws_servicecatalog_constraint}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint aws_servicecatalog_constraint}.
 type ServicecatalogConstraint interface {
 	cdktf.TerraformResource
 	AcceptLanguage() *string
@@ -4126,8 +4861,8 @@ type ServicecatalogConstraint interface {
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -4160,10 +4895,15 @@ type ServicecatalogConstraint interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -4220,8 +4960,8 @@ func (j *jsiiProxy_ServicecatalogConstraint) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogConstraint) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogConstraint) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4460,7 +5200,7 @@ func (j *jsiiProxy_ServicecatalogConstraint) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html aws_servicecatalog_constraint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint aws_servicecatalog_constraint} Resource.
 func NewServicecatalogConstraint(scope constructs.Construct, id *string, config *ServicecatalogConstraintConfig) ServicecatalogConstraint {
 	_init_.Initialize()
 
@@ -4475,7 +5215,7 @@ func NewServicecatalogConstraint(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html aws_servicecatalog_constraint} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint aws_servicecatalog_constraint} Resource.
 func NewServicecatalogConstraint_Override(s ServicecatalogConstraint, scope constructs.Construct, id *string, config *ServicecatalogConstraintConfig) {
 	_init_.Initialize()
 
@@ -4494,7 +5234,7 @@ func (j *jsiiProxy_ServicecatalogConstraint) SetAcceptLanguage(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogConstraint) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogConstraint) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4606,12 +5346,40 @@ func (s *jsiiProxy_ServicecatalogConstraint) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogConstraint) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogConstraint) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogConstraint) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4648,12 +5416,54 @@ func (s *jsiiProxy_ServicecatalogConstraint) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogConstraint) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogConstraint) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogConstraint) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogConstraint) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4770,34 +5580,34 @@ func (s *jsiiProxy_ServicecatalogConstraint) ToTerraform() interface{} {
 // AWS Service Catalog.
 type ServicecatalogConstraintConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html#parameters ServicecatalogConstraint#parameters}.
-	Parameters *string `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html#portfolio_id ServicecatalogConstraint#portfolio_id}.
-	PortfolioId *string `json:"portfolioId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html#product_id ServicecatalogConstraint#product_id}.
-	ProductId *string `json:"productId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html#type ServicecatalogConstraint#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html#accept_language ServicecatalogConstraint#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint.html#description ServicecatalogConstraint#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint#parameters ServicecatalogConstraint#parameters}.
+	Parameters *string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint#portfolio_id ServicecatalogConstraint#portfolio_id}.
+	PortfolioId *string `json:"portfolioId" yaml:"portfolioId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint#product_id ServicecatalogConstraint#product_id}.
+	ProductId *string `json:"productId" yaml:"productId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint#type ServicecatalogConstraint#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint#accept_language ServicecatalogConstraint#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_constraint#description ServicecatalogConstraint#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access.html aws_servicecatalog_organizations_access}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access aws_servicecatalog_organizations_access}.
 type ServicecatalogOrganizationsAccess interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Enabled() interface{}
@@ -4816,10 +5626,15 @@ type ServicecatalogOrganizationsAccess interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4854,8 +5669,8 @@ func (j *jsiiProxy_ServicecatalogOrganizationsAccess) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogOrganizationsAccess) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogOrganizationsAccess) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4994,7 +5809,7 @@ func (j *jsiiProxy_ServicecatalogOrganizationsAccess) TerraformResourceType() *s
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access.html aws_servicecatalog_organizations_access} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access aws_servicecatalog_organizations_access} Resource.
 func NewServicecatalogOrganizationsAccess(scope constructs.Construct, id *string, config *ServicecatalogOrganizationsAccessConfig) ServicecatalogOrganizationsAccess {
 	_init_.Initialize()
 
@@ -5009,7 +5824,7 @@ func NewServicecatalogOrganizationsAccess(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access.html aws_servicecatalog_organizations_access} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access aws_servicecatalog_organizations_access} Resource.
 func NewServicecatalogOrganizationsAccess_Override(s ServicecatalogOrganizationsAccess, scope constructs.Construct, id *string, config *ServicecatalogOrganizationsAccessConfig) {
 	_init_.Initialize()
 
@@ -5020,7 +5835,7 @@ func NewServicecatalogOrganizationsAccess_Override(s ServicecatalogOrganizations
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogOrganizationsAccess) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogOrganizationsAccess) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5100,12 +5915,40 @@ func (s *jsiiProxy_ServicecatalogOrganizationsAccess) AddOverride(path *string, 
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5142,12 +5985,54 @@ func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogOrganizationsAccess) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5248,25 +6133,25 @@ func (s *jsiiProxy_ServicecatalogOrganizationsAccess) ToTerraform() interface{} 
 // AWS Service Catalog.
 type ServicecatalogOrganizationsAccessConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access.html#enabled ServicecatalogOrganizationsAccess#enabled}.
-	Enabled interface{} `json:"enabled"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_organizations_access#enabled ServicecatalogOrganizationsAccess#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html aws_servicecatalog_portfolio}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio aws_servicecatalog_portfolio}.
 type ServicecatalogPortfolio interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -5288,22 +6173,27 @@ type ServicecatalogPortfolio interface {
 	SetProviderName(val *string)
 	ProviderNameInput() *string
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() ServicecatalogPortfolioTimeoutsOutputReference
 	TimeoutsInput() *ServicecatalogPortfolioTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *ServicecatalogPortfolioTimeouts)
@@ -5353,8 +6243,8 @@ func (j *jsiiProxy_ServicecatalogPortfolio) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPortfolio) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5513,8 +6403,8 @@ func (j *jsiiProxy_ServicecatalogPortfolio) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPortfolio) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5523,8 +6413,8 @@ func (j *jsiiProxy_ServicecatalogPortfolio) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPortfolio) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5533,8 +6423,8 @@ func (j *jsiiProxy_ServicecatalogPortfolio) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPortfolio) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5543,8 +6433,8 @@ func (j *jsiiProxy_ServicecatalogPortfolio) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPortfolio) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5603,7 +6493,7 @@ func (j *jsiiProxy_ServicecatalogPortfolio) TimeoutsInput() *ServicecatalogPortf
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html aws_servicecatalog_portfolio} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio aws_servicecatalog_portfolio} Resource.
 func NewServicecatalogPortfolio(scope constructs.Construct, id *string, config *ServicecatalogPortfolioConfig) ServicecatalogPortfolio {
 	_init_.Initialize()
 
@@ -5618,7 +6508,7 @@ func NewServicecatalogPortfolio(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html aws_servicecatalog_portfolio} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio aws_servicecatalog_portfolio} Resource.
 func NewServicecatalogPortfolio_Override(s ServicecatalogPortfolio, scope constructs.Construct, id *string, config *ServicecatalogPortfolioConfig) {
 	_init_.Initialize()
 
@@ -5629,7 +6519,7 @@ func NewServicecatalogPortfolio_Override(s ServicecatalogPortfolio, scope constr
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogPortfolio) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5685,7 +6575,7 @@ func (j *jsiiProxy_ServicecatalogPortfolio) SetProviderName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) SetTags(val interface{}) {
+func (j *jsiiProxy_ServicecatalogPortfolio) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5693,7 +6583,7 @@ func (j *jsiiProxy_ServicecatalogPortfolio) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolio) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ServicecatalogPortfolio) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5741,12 +6631,40 @@ func (s *jsiiProxy_ServicecatalogPortfolio) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolio) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogPortfolio) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolio) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5783,12 +6701,54 @@ func (s *jsiiProxy_ServicecatalogPortfolio) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolio) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolio) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogPortfolio) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolio) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5929,40 +6889,40 @@ func (s *jsiiProxy_ServicecatalogPortfolio) ToTerraform() interface{} {
 // AWS Service Catalog.
 type ServicecatalogPortfolioConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#name ServicecatalogPortfolio#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#provider_name ServicecatalogPortfolio#provider_name}.
-	ProviderName *string `json:"providerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#description ServicecatalogPortfolio#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#tags ServicecatalogPortfolio#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#tags_all ServicecatalogPortfolio#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#name ServicecatalogPortfolio#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#provider_name ServicecatalogPortfolio#provider_name}.
+	ProviderName *string `json:"providerName" yaml:"providerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#description ServicecatalogPortfolio#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#tags ServicecatalogPortfolio#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#tags_all ServicecatalogPortfolio#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#timeouts ServicecatalogPortfolio#timeouts}
-	Timeouts *ServicecatalogPortfolioTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#timeouts ServicecatalogPortfolio#timeouts}
+	Timeouts *ServicecatalogPortfolioTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html aws_servicecatalog_portfolio_share}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share aws_servicecatalog_portfolio_share}.
 type ServicecatalogPortfolioShare interface {
 	cdktf.TerraformResource
-	Accepted() interface{}
+	Accepted() cdktf.IResolvable
 	AcceptLanguage() *string
 	SetAcceptLanguage(val *string)
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -5993,10 +6953,15 @@ type ServicecatalogPortfolioShare interface {
 	SetWaitForAcceptance(val interface{})
 	WaitForAcceptanceInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -6014,8 +6979,8 @@ type jsiiProxy_ServicecatalogPortfolioShare struct {
 	internal.Type__cdktfTerraformResource
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolioShare) Accepted() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPortfolioShare) Accepted() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"accepted",
@@ -6064,8 +7029,8 @@ func (j *jsiiProxy_ServicecatalogPortfolioShare) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolioShare) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPortfolioShare) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6284,7 +7249,7 @@ func (j *jsiiProxy_ServicecatalogPortfolioShare) WaitForAcceptanceInput() interf
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html aws_servicecatalog_portfolio_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share aws_servicecatalog_portfolio_share} Resource.
 func NewServicecatalogPortfolioShare(scope constructs.Construct, id *string, config *ServicecatalogPortfolioShareConfig) ServicecatalogPortfolioShare {
 	_init_.Initialize()
 
@@ -6299,7 +7264,7 @@ func NewServicecatalogPortfolioShare(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html aws_servicecatalog_portfolio_share} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share aws_servicecatalog_portfolio_share} Resource.
 func NewServicecatalogPortfolioShare_Override(s ServicecatalogPortfolioShare, scope constructs.Construct, id *string, config *ServicecatalogPortfolioShareConfig) {
 	_init_.Initialize()
 
@@ -6318,7 +7283,7 @@ func (j *jsiiProxy_ServicecatalogPortfolioShare) SetAcceptLanguage(val *string) 
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolioShare) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogPortfolioShare) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6430,12 +7395,40 @@ func (s *jsiiProxy_ServicecatalogPortfolioShare) AddOverride(path *string, value
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioShare) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogPortfolioShare) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioShare) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6472,12 +7465,54 @@ func (s *jsiiProxy_ServicecatalogPortfolioShare) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioShare) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioShare) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogPortfolioShare) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioShare) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6602,34 +7637,34 @@ func (s *jsiiProxy_ServicecatalogPortfolioShare) ToTerraform() interface{} {
 // AWS Service Catalog.
 type ServicecatalogPortfolioShareConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html#portfolio_id ServicecatalogPortfolioShare#portfolio_id}.
-	PortfolioId *string `json:"portfolioId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html#principal_id ServicecatalogPortfolioShare#principal_id}.
-	PrincipalId *string `json:"principalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html#type ServicecatalogPortfolioShare#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html#accept_language ServicecatalogPortfolioShare#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html#share_tag_options ServicecatalogPortfolioShare#share_tag_options}.
-	ShareTagOptions interface{} `json:"shareTagOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share.html#wait_for_acceptance ServicecatalogPortfolioShare#wait_for_acceptance}.
-	WaitForAcceptance interface{} `json:"waitForAcceptance"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share#portfolio_id ServicecatalogPortfolioShare#portfolio_id}.
+	PortfolioId *string `json:"portfolioId" yaml:"portfolioId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share#principal_id ServicecatalogPortfolioShare#principal_id}.
+	PrincipalId *string `json:"principalId" yaml:"principalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share#type ServicecatalogPortfolioShare#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share#accept_language ServicecatalogPortfolioShare#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share#share_tag_options ServicecatalogPortfolioShare#share_tag_options}.
+	ShareTagOptions interface{} `json:"shareTagOptions" yaml:"shareTagOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio_share#wait_for_acceptance ServicecatalogPortfolioShare#wait_for_acceptance}.
+	WaitForAcceptance interface{} `json:"waitForAcceptance" yaml:"waitForAcceptance"`
 }
 
 type ServicecatalogPortfolioTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#create ServicecatalogPortfolio#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#delete ServicecatalogPortfolio#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio.html#update ServicecatalogPortfolio#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#create ServicecatalogPortfolio#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#delete ServicecatalogPortfolio#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_portfolio#update ServicecatalogPortfolio#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type ServicecatalogPortfolioTimeoutsOutputReference interface {
@@ -6646,15 +7681,20 @@ type ServicecatalogPortfolioTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -6737,8 +7777,8 @@ func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6767,7 +7807,7 @@ func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) UpdateInput()
 	return returns
 }
 
-func NewServicecatalogPortfolioTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogPortfolioTimeoutsOutputReference {
+func NewServicecatalogPortfolioTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServicecatalogPortfolioTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference{}
@@ -6781,7 +7821,7 @@ func NewServicecatalogPortfolioTimeoutsOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewServicecatalogPortfolioTimeoutsOutputReference_Override(s ServicecatalogPortfolioTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServicecatalogPortfolioTimeoutsOutputReference_Override(s ServicecatalogPortfolioTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6831,7 +7871,7 @@ func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6848,12 +7888,40 @@ func (j *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) SetUpdate(val
 }
 
 // Experimental.
-func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6890,12 +7958,54 @@ func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6955,7 +8065,7 @@ func (s *jsiiProxy_ServicecatalogPortfolioTimeoutsOutputReference) ResetUpdate()
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html aws_servicecatalog_principal_portfolio_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association aws_servicecatalog_principal_portfolio_association}.
 type ServicecatalogPrincipalPortfolioAssociation interface {
 	cdktf.TerraformResource
 	AcceptLanguage() *string
@@ -6963,8 +8073,8 @@ type ServicecatalogPrincipalPortfolioAssociation interface {
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6989,10 +8099,15 @@ type ServicecatalogPrincipalPortfolioAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -7049,8 +8164,8 @@ func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) ConstructNodeMet
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7229,7 +8344,7 @@ func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) TerraformResourc
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html aws_servicecatalog_principal_portfolio_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association aws_servicecatalog_principal_portfolio_association} Resource.
 func NewServicecatalogPrincipalPortfolioAssociation(scope constructs.Construct, id *string, config *ServicecatalogPrincipalPortfolioAssociationConfig) ServicecatalogPrincipalPortfolioAssociation {
 	_init_.Initialize()
 
@@ -7244,7 +8359,7 @@ func NewServicecatalogPrincipalPortfolioAssociation(scope constructs.Construct, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html aws_servicecatalog_principal_portfolio_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association aws_servicecatalog_principal_portfolio_association} Resource.
 func NewServicecatalogPrincipalPortfolioAssociation_Override(s ServicecatalogPrincipalPortfolioAssociation, scope constructs.Construct, id *string, config *ServicecatalogPrincipalPortfolioAssociationConfig) {
 	_init_.Initialize()
 
@@ -7263,7 +8378,7 @@ func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) SetAcceptLanguag
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7359,12 +8474,40 @@ func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) AddOverride(path
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7401,12 +8544,54 @@ func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetNumberAttribu
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7523,24 +8708,24 @@ func (s *jsiiProxy_ServicecatalogPrincipalPortfolioAssociation) ToTerraform() in
 // AWS Service Catalog.
 type ServicecatalogPrincipalPortfolioAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html#portfolio_id ServicecatalogPrincipalPortfolioAssociation#portfolio_id}.
-	PortfolioId *string `json:"portfolioId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html#principal_arn ServicecatalogPrincipalPortfolioAssociation#principal_arn}.
-	PrincipalArn *string `json:"principalArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html#accept_language ServicecatalogPrincipalPortfolioAssociation#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association.html#principal_type ServicecatalogPrincipalPortfolioAssociation#principal_type}.
-	PrincipalType *string `json:"principalType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association#portfolio_id ServicecatalogPrincipalPortfolioAssociation#portfolio_id}.
+	PortfolioId *string `json:"portfolioId" yaml:"portfolioId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association#principal_arn ServicecatalogPrincipalPortfolioAssociation#principal_arn}.
+	PrincipalArn *string `json:"principalArn" yaml:"principalArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association#accept_language ServicecatalogPrincipalPortfolioAssociation#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_principal_portfolio_association#principal_type ServicecatalogPrincipalPortfolioAssociation#principal_type}.
+	PrincipalType *string `json:"principalType" yaml:"principalType"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html aws_servicecatalog_product}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product aws_servicecatalog_product}.
 type ServicecatalogProduct interface {
 	cdktf.TerraformResource
 	AcceptLanguage() *string
@@ -7549,8 +8734,8 @@ type ServicecatalogProduct interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -7562,7 +8747,7 @@ type ServicecatalogProduct interface {
 	DistributorInput() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
-	HasDefaultPath() interface{}
+	HasDefaultPath() cdktf.IResolvable
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -7588,12 +8773,12 @@ type ServicecatalogProduct interface {
 	SupportUrl() *string
 	SetSupportUrl(val *string)
 	SupportUrlInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -7601,10 +8786,15 @@ type ServicecatalogProduct interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutProvisioningArtifactParameters(value *ServicecatalogProductProvisioningArtifactParameters)
@@ -7678,8 +8868,8 @@ func (j *jsiiProxy_ServicecatalogProduct) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProduct) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7768,8 +8958,8 @@ func (j *jsiiProxy_ServicecatalogProduct) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) HasDefaultPath() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProduct) HasDefaultPath() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"hasDefaultPath",
@@ -7958,8 +9148,8 @@ func (j *jsiiProxy_ServicecatalogProduct) SupportUrlInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProduct) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7968,8 +9158,8 @@ func (j *jsiiProxy_ServicecatalogProduct) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProduct) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7978,8 +9168,8 @@ func (j *jsiiProxy_ServicecatalogProduct) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProduct) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7988,8 +9178,8 @@ func (j *jsiiProxy_ServicecatalogProduct) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProduct) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8048,7 +9238,7 @@ func (j *jsiiProxy_ServicecatalogProduct) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html aws_servicecatalog_product} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product aws_servicecatalog_product} Resource.
 func NewServicecatalogProduct(scope constructs.Construct, id *string, config *ServicecatalogProductConfig) ServicecatalogProduct {
 	_init_.Initialize()
 
@@ -8063,7 +9253,7 @@ func NewServicecatalogProduct(scope constructs.Construct, id *string, config *Se
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html aws_servicecatalog_product} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product aws_servicecatalog_product} Resource.
 func NewServicecatalogProduct_Override(s ServicecatalogProduct, scope constructs.Construct, id *string, config *ServicecatalogProductConfig) {
 	_init_.Initialize()
 
@@ -8082,7 +9272,7 @@ func (j *jsiiProxy_ServicecatalogProduct) SetAcceptLanguage(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProduct) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8170,7 +9360,7 @@ func (j *jsiiProxy_ServicecatalogProduct) SetSupportUrl(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) SetTags(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProduct) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8178,7 +9368,7 @@ func (j *jsiiProxy_ServicecatalogProduct) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProduct) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProduct) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8234,12 +9424,40 @@ func (s *jsiiProxy_ServicecatalogProduct) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProduct) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProduct) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProduct) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8276,12 +9494,54 @@ func (s *jsiiProxy_ServicecatalogProduct) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProduct) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProduct) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProduct) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProduct) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8454,42 +9714,42 @@ func (s *jsiiProxy_ServicecatalogProduct) ToTerraform() interface{} {
 // AWS Service Catalog.
 type ServicecatalogProductConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#name ServicecatalogProduct#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#owner ServicecatalogProduct#owner}.
-	Owner *string `json:"owner"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#name ServicecatalogProduct#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#owner ServicecatalogProduct#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
 	// provisioning_artifact_parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#provisioning_artifact_parameters ServicecatalogProduct#provisioning_artifact_parameters}
-	ProvisioningArtifactParameters *ServicecatalogProductProvisioningArtifactParameters `json:"provisioningArtifactParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#type ServicecatalogProduct#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#accept_language ServicecatalogProduct#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#description ServicecatalogProduct#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#distributor ServicecatalogProduct#distributor}.
-	Distributor *string `json:"distributor"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#support_description ServicecatalogProduct#support_description}.
-	SupportDescription *string `json:"supportDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#support_email ServicecatalogProduct#support_email}.
-	SupportEmail *string `json:"supportEmail"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#support_url ServicecatalogProduct#support_url}.
-	SupportUrl *string `json:"supportUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#tags ServicecatalogProduct#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#tags_all ServicecatalogProduct#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#provisioning_artifact_parameters ServicecatalogProduct#provisioning_artifact_parameters}
+	ProvisioningArtifactParameters *ServicecatalogProductProvisioningArtifactParameters `json:"provisioningArtifactParameters" yaml:"provisioningArtifactParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#type ServicecatalogProduct#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#accept_language ServicecatalogProduct#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#description ServicecatalogProduct#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#distributor ServicecatalogProduct#distributor}.
+	Distributor *string `json:"distributor" yaml:"distributor"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#support_description ServicecatalogProduct#support_description}.
+	SupportDescription *string `json:"supportDescription" yaml:"supportDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#support_email ServicecatalogProduct#support_email}.
+	SupportEmail *string `json:"supportEmail" yaml:"supportEmail"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#support_url ServicecatalogProduct#support_url}.
+	SupportUrl *string `json:"supportUrl" yaml:"supportUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#tags ServicecatalogProduct#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#tags_all ServicecatalogProduct#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html aws_servicecatalog_product_portfolio_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association aws_servicecatalog_product_portfolio_association}.
 type ServicecatalogProductPortfolioAssociation interface {
 	cdktf.TerraformResource
 	AcceptLanguage() *string
@@ -8497,8 +9757,8 @@ type ServicecatalogProductPortfolioAssociation interface {
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -8523,10 +9783,15 @@ type ServicecatalogProductPortfolioAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -8583,8 +9848,8 @@ func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) ConstructNodeMetad
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8763,7 +10028,7 @@ func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) TerraformResourceT
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html aws_servicecatalog_product_portfolio_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association aws_servicecatalog_product_portfolio_association} Resource.
 func NewServicecatalogProductPortfolioAssociation(scope constructs.Construct, id *string, config *ServicecatalogProductPortfolioAssociationConfig) ServicecatalogProductPortfolioAssociation {
 	_init_.Initialize()
 
@@ -8778,7 +10043,7 @@ func NewServicecatalogProductPortfolioAssociation(scope constructs.Construct, id
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html aws_servicecatalog_product_portfolio_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association aws_servicecatalog_product_portfolio_association} Resource.
 func NewServicecatalogProductPortfolioAssociation_Override(s ServicecatalogProductPortfolioAssociation, scope constructs.Construct, id *string, config *ServicecatalogProductPortfolioAssociationConfig) {
 	_init_.Initialize()
 
@@ -8797,7 +10062,7 @@ func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) SetAcceptLanguage(
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProductPortfolioAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8893,12 +10158,40 @@ func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) AddOverride(path *
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8935,12 +10228,54 @@ func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetNumberAttribute
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9057,36 +10392,36 @@ func (s *jsiiProxy_ServicecatalogProductPortfolioAssociation) ToTerraform() inte
 // AWS Service Catalog.
 type ServicecatalogProductPortfolioAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html#portfolio_id ServicecatalogProductPortfolioAssociation#portfolio_id}.
-	PortfolioId *string `json:"portfolioId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html#product_id ServicecatalogProductPortfolioAssociation#product_id}.
-	ProductId *string `json:"productId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html#accept_language ServicecatalogProductPortfolioAssociation#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association.html#source_portfolio_id ServicecatalogProductPortfolioAssociation#source_portfolio_id}.
-	SourcePortfolioId *string `json:"sourcePortfolioId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association#portfolio_id ServicecatalogProductPortfolioAssociation#portfolio_id}.
+	PortfolioId *string `json:"portfolioId" yaml:"portfolioId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association#product_id ServicecatalogProductPortfolioAssociation#product_id}.
+	ProductId *string `json:"productId" yaml:"productId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association#accept_language ServicecatalogProductPortfolioAssociation#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product_portfolio_association#source_portfolio_id ServicecatalogProductPortfolioAssociation#source_portfolio_id}.
+	SourcePortfolioId *string `json:"sourcePortfolioId" yaml:"sourcePortfolioId"`
 }
 
 type ServicecatalogProductProvisioningArtifactParameters struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#description ServicecatalogProduct#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#disable_template_validation ServicecatalogProduct#disable_template_validation}.
-	DisableTemplateValidation interface{} `json:"disableTemplateValidation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#name ServicecatalogProduct#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#template_physical_id ServicecatalogProduct#template_physical_id}.
-	TemplatePhysicalId *string `json:"templatePhysicalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#template_url ServicecatalogProduct#template_url}.
-	TemplateUrl *string `json:"templateUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product.html#type ServicecatalogProduct#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#description ServicecatalogProduct#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#disable_template_validation ServicecatalogProduct#disable_template_validation}.
+	DisableTemplateValidation interface{} `json:"disableTemplateValidation" yaml:"disableTemplateValidation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#name ServicecatalogProduct#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#template_physical_id ServicecatalogProduct#template_physical_id}.
+	TemplatePhysicalId *string `json:"templatePhysicalId" yaml:"templatePhysicalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#template_url ServicecatalogProduct#template_url}.
+	TemplateUrl *string `json:"templateUrl" yaml:"templateUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_product#type ServicecatalogProduct#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type ServicecatalogProductProvisioningArtifactParametersOutputReference interface {
@@ -9112,15 +10447,20 @@ type ServicecatalogProductProvisioningArtifactParametersOutputReference interfac
 	TemplateUrlInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDescription()
@@ -9266,8 +10606,8 @@ func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9296,7 +10636,7 @@ func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 	return returns
 }
 
-func NewServicecatalogProductProvisioningArtifactParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogProductProvisioningArtifactParametersOutputReference {
+func NewServicecatalogProductProvisioningArtifactParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServicecatalogProductProvisioningArtifactParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference{}
@@ -9310,7 +10650,7 @@ func NewServicecatalogProductProvisioningArtifactParametersOutputReference(terra
 	return &j
 }
 
-func NewServicecatalogProductProvisioningArtifactParametersOutputReference_Override(s ServicecatalogProductProvisioningArtifactParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServicecatalogProductProvisioningArtifactParametersOutputReference_Override(s ServicecatalogProductProvisioningArtifactParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9384,7 +10724,7 @@ func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9401,12 +10741,40 @@ func (j *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 }
 
 // Experimental.
-func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9443,12 +10811,54 @@ func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9532,7 +10942,7 @@ func (s *jsiiProxy_ServicecatalogProductProvisioningArtifactParametersOutputRefe
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html aws_servicecatalog_provisioned_product}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product aws_servicecatalog_provisioned_product}.
 type ServicecatalogProvisionedProduct interface {
 	cdktf.TerraformResource
 	AcceptLanguage() *string
@@ -9542,8 +10952,8 @@ type ServicecatalogProvisionedProduct interface {
 	CdktfStack() cdktf.TerraformStack
 	CloudwatchDashboardNames() *[]*string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -9586,9 +10996,9 @@ type ServicecatalogProvisionedProduct interface {
 	ProvisioningArtifactName() *string
 	SetProvisioningArtifactName(val *string)
 	ProvisioningArtifactNameInput() *string
-	ProvisioningParameters() *[]*ServicecatalogProvisionedProductProvisioningParameters
-	SetProvisioningParameters(val *[]*ServicecatalogProvisionedProductProvisioningParameters)
-	ProvisioningParametersInput() *[]*ServicecatalogProvisionedProductProvisioningParameters
+	ProvisioningParameters() interface{}
+	SetProvisioningParameters(val interface{})
+	ProvisioningParametersInput() interface{}
 	RawOverrides() interface{}
 	RetainPhysicalResources() interface{}
 	SetRetainPhysicalResources(val interface{})
@@ -9597,12 +11007,12 @@ type ServicecatalogProvisionedProduct interface {
 	StackSetProvisioningPreferencesInput() *ServicecatalogProvisionedProductStackSetProvisioningPreferences
 	Status() *string
 	StatusMessage() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -9610,10 +11020,15 @@ type ServicecatalogProvisionedProduct interface {
 	TimeoutsInput() *ServicecatalogProvisionedProductTimeouts
 	Type() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutStackSetProvisioningPreferences(value *ServicecatalogProvisionedProductStackSetProvisioningPreferences)
@@ -9705,8 +11120,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10015,8 +11430,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) ProvisioningArtifactNameInp
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) ProvisioningParameters() *[]*ServicecatalogProvisionedProductProvisioningParameters {
-	var returns *[]*ServicecatalogProvisionedProductProvisioningParameters
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) ProvisioningParameters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"provisioningParameters",
@@ -10025,8 +11440,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) ProvisioningParameters() *[
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) ProvisioningParametersInput() *[]*ServicecatalogProvisionedProductProvisioningParameters {
-	var returns *[]*ServicecatalogProvisionedProductProvisioningParameters
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) ProvisioningParametersInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"provisioningParametersInput",
@@ -10105,8 +11520,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) StatusMessage() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -10115,8 +11530,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -10125,8 +11540,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -10135,8 +11550,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsAllInput() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10205,7 +11620,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) Type() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html aws_servicecatalog_provisioned_product} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product aws_servicecatalog_provisioned_product} Resource.
 func NewServicecatalogProvisionedProduct(scope constructs.Construct, id *string, config *ServicecatalogProvisionedProductConfig) ServicecatalogProvisionedProduct {
 	_init_.Initialize()
 
@@ -10220,7 +11635,7 @@ func NewServicecatalogProvisionedProduct(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html aws_servicecatalog_provisioned_product} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product aws_servicecatalog_provisioned_product} Resource.
 func NewServicecatalogProvisionedProduct_Override(s ServicecatalogProvisionedProduct, scope constructs.Construct, id *string, config *ServicecatalogProvisionedProductConfig) {
 	_init_.Initialize()
 
@@ -10239,7 +11654,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetAcceptLanguage(val *stri
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10343,7 +11758,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetProvisioningArtifactName
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetProvisioningParameters(val *[]*ServicecatalogProvisionedProductProvisioningParameters) {
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetProvisioningParameters(val interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioningParameters",
@@ -10359,7 +11774,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetRetainPhysicalResources(
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetTags(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10367,7 +11782,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProvisionedProduct) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10415,12 +11830,40 @@ func (s *jsiiProxy_ServicecatalogProvisionedProduct) AddOverride(path *string, v
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10457,12 +11900,54 @@ func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProduct) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10699,75 +12184,75 @@ func (s *jsiiProxy_ServicecatalogProvisionedProduct) ToTerraform() interface{} {
 // AWS Service Catalog.
 type ServicecatalogProvisionedProductConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#name ServicecatalogProvisionedProduct#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#accept_language ServicecatalogProvisionedProduct#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#ignore_errors ServicecatalogProvisionedProduct#ignore_errors}.
-	IgnoreErrors interface{} `json:"ignoreErrors"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#notification_arns ServicecatalogProvisionedProduct#notification_arns}.
-	NotificationArns *[]*string `json:"notificationArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#path_id ServicecatalogProvisionedProduct#path_id}.
-	PathId *string `json:"pathId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#path_name ServicecatalogProvisionedProduct#path_name}.
-	PathName *string `json:"pathName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#product_id ServicecatalogProvisionedProduct#product_id}.
-	ProductId *string `json:"productId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#product_name ServicecatalogProvisionedProduct#product_name}.
-	ProductName *string `json:"productName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#provisioning_artifact_id ServicecatalogProvisionedProduct#provisioning_artifact_id}.
-	ProvisioningArtifactId *string `json:"provisioningArtifactId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#provisioning_artifact_name ServicecatalogProvisionedProduct#provisioning_artifact_name}.
-	ProvisioningArtifactName *string `json:"provisioningArtifactName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#name ServicecatalogProvisionedProduct#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#accept_language ServicecatalogProvisionedProduct#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#ignore_errors ServicecatalogProvisionedProduct#ignore_errors}.
+	IgnoreErrors interface{} `json:"ignoreErrors" yaml:"ignoreErrors"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#notification_arns ServicecatalogProvisionedProduct#notification_arns}.
+	NotificationArns *[]*string `json:"notificationArns" yaml:"notificationArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#path_id ServicecatalogProvisionedProduct#path_id}.
+	PathId *string `json:"pathId" yaml:"pathId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#path_name ServicecatalogProvisionedProduct#path_name}.
+	PathName *string `json:"pathName" yaml:"pathName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#product_id ServicecatalogProvisionedProduct#product_id}.
+	ProductId *string `json:"productId" yaml:"productId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#product_name ServicecatalogProvisionedProduct#product_name}.
+	ProductName *string `json:"productName" yaml:"productName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#provisioning_artifact_id ServicecatalogProvisionedProduct#provisioning_artifact_id}.
+	ProvisioningArtifactId *string `json:"provisioningArtifactId" yaml:"provisioningArtifactId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#provisioning_artifact_name ServicecatalogProvisionedProduct#provisioning_artifact_name}.
+	ProvisioningArtifactName *string `json:"provisioningArtifactName" yaml:"provisioningArtifactName"`
 	// provisioning_parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#provisioning_parameters ServicecatalogProvisionedProduct#provisioning_parameters}
-	ProvisioningParameters *[]*ServicecatalogProvisionedProductProvisioningParameters `json:"provisioningParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#retain_physical_resources ServicecatalogProvisionedProduct#retain_physical_resources}.
-	RetainPhysicalResources interface{} `json:"retainPhysicalResources"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#provisioning_parameters ServicecatalogProvisionedProduct#provisioning_parameters}
+	ProvisioningParameters interface{} `json:"provisioningParameters" yaml:"provisioningParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#retain_physical_resources ServicecatalogProvisionedProduct#retain_physical_resources}.
+	RetainPhysicalResources interface{} `json:"retainPhysicalResources" yaml:"retainPhysicalResources"`
 	// stack_set_provisioning_preferences block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#stack_set_provisioning_preferences ServicecatalogProvisionedProduct#stack_set_provisioning_preferences}
-	StackSetProvisioningPreferences *ServicecatalogProvisionedProductStackSetProvisioningPreferences `json:"stackSetProvisioningPreferences"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#tags ServicecatalogProvisionedProduct#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#tags_all ServicecatalogProvisionedProduct#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#stack_set_provisioning_preferences ServicecatalogProvisionedProduct#stack_set_provisioning_preferences}
+	StackSetProvisioningPreferences *ServicecatalogProvisionedProductStackSetProvisioningPreferences `json:"stackSetProvisioningPreferences" yaml:"stackSetProvisioningPreferences"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#tags ServicecatalogProvisionedProduct#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#tags_all ServicecatalogProvisionedProduct#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#timeouts ServicecatalogProvisionedProduct#timeouts}
-	Timeouts *ServicecatalogProvisionedProductTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#timeouts ServicecatalogProvisionedProduct#timeouts}
+	Timeouts *ServicecatalogProvisionedProductTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type ServicecatalogProvisionedProductProvisioningParameters struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#key ServicecatalogProvisionedProduct#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#use_previous_value ServicecatalogProvisionedProduct#use_previous_value}.
-	UsePreviousValue interface{} `json:"usePreviousValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#value ServicecatalogProvisionedProduct#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#key ServicecatalogProvisionedProduct#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#use_previous_value ServicecatalogProvisionedProduct#use_previous_value}.
+	UsePreviousValue interface{} `json:"usePreviousValue" yaml:"usePreviousValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#value ServicecatalogProvisionedProduct#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type ServicecatalogProvisionedProductStackSetProvisioningPreferences struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#accounts ServicecatalogProvisionedProduct#accounts}.
-	Accounts *[]*string `json:"accounts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#failure_tolerance_count ServicecatalogProvisionedProduct#failure_tolerance_count}.
-	FailureToleranceCount *float64 `json:"failureToleranceCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#failure_tolerance_percentage ServicecatalogProvisionedProduct#failure_tolerance_percentage}.
-	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#max_concurrency_count ServicecatalogProvisionedProduct#max_concurrency_count}.
-	MaxConcurrencyCount *float64 `json:"maxConcurrencyCount"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#max_concurrency_percentage ServicecatalogProvisionedProduct#max_concurrency_percentage}.
-	MaxConcurrencyPercentage *float64 `json:"maxConcurrencyPercentage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#regions ServicecatalogProvisionedProduct#regions}.
-	Regions *[]*string `json:"regions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#accounts ServicecatalogProvisionedProduct#accounts}.
+	Accounts *[]*string `json:"accounts" yaml:"accounts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#failure_tolerance_count ServicecatalogProvisionedProduct#failure_tolerance_count}.
+	FailureToleranceCount *float64 `json:"failureToleranceCount" yaml:"failureToleranceCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#failure_tolerance_percentage ServicecatalogProvisionedProduct#failure_tolerance_percentage}.
+	FailureTolerancePercentage *float64 `json:"failureTolerancePercentage" yaml:"failureTolerancePercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#max_concurrency_count ServicecatalogProvisionedProduct#max_concurrency_count}.
+	MaxConcurrencyCount *float64 `json:"maxConcurrencyCount" yaml:"maxConcurrencyCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#max_concurrency_percentage ServicecatalogProvisionedProduct#max_concurrency_percentage}.
+	MaxConcurrencyPercentage *float64 `json:"maxConcurrencyPercentage" yaml:"maxConcurrencyPercentage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#regions ServicecatalogProvisionedProduct#regions}.
+	Regions *[]*string `json:"regions" yaml:"regions"`
 }
 
 type ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference interface {
@@ -10796,12 +12281,17 @@ type ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputRefere
 	RegionsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAccounts()
@@ -10967,8 +12457,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10977,7 +12467,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 	return returns
 }
 
-func NewServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference {
+func NewServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference{}
@@ -10991,7 +12481,7 @@ func NewServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputRef
 	return &j
 }
 
-func NewServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference_Override(s ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference_Override(s ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11073,7 +12563,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11082,12 +12572,40 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 }
 
 // Experimental.
-func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11124,12 +12642,54 @@ func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferencesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11214,12 +12774,12 @@ func (s *jsiiProxy_ServicecatalogProvisionedProductStackSetProvisioningPreferenc
 }
 
 type ServicecatalogProvisionedProductTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#create ServicecatalogProvisionedProduct#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#delete ServicecatalogProvisionedProduct#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product.html#update ServicecatalogProvisionedProduct#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#create ServicecatalogProvisionedProduct#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#delete ServicecatalogProvisionedProduct#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioned_product#update ServicecatalogProvisionedProduct#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type ServicecatalogProvisionedProductTimeoutsOutputReference interface {
@@ -11236,15 +12796,20 @@ type ServicecatalogProvisionedProductTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -11327,8 +12892,8 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11357,7 +12922,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) Upda
 	return returns
 }
 
-func NewServicecatalogProvisionedProductTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogProvisionedProductTimeoutsOutputReference {
+func NewServicecatalogProvisionedProductTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServicecatalogProvisionedProductTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference{}
@@ -11371,7 +12936,7 @@ func NewServicecatalogProvisionedProductTimeoutsOutputReference(terraformResourc
 	return &j
 }
 
-func NewServicecatalogProvisionedProductTimeoutsOutputReference_Override(s ServicecatalogProvisionedProductTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServicecatalogProvisionedProductTimeoutsOutputReference_Override(s ServicecatalogProvisionedProductTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11421,7 +12986,7 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11438,12 +13003,40 @@ func (j *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) SetU
 }
 
 // Experimental.
-func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11480,12 +13073,54 @@ func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetN
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11545,7 +13180,7 @@ func (s *jsiiProxy_ServicecatalogProvisionedProductTimeoutsOutputReference) Rese
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html aws_servicecatalog_provisioning_artifact}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact aws_servicecatalog_provisioning_artifact}.
 type ServicecatalogProvisioningArtifact interface {
 	cdktf.TerraformResource
 	AcceptLanguage() *string
@@ -11556,8 +13191,8 @@ type ServicecatalogProvisioningArtifact interface {
 	ActiveInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedTime() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -11598,10 +13233,15 @@ type ServicecatalogProvisioningArtifact interface {
 	SetType(val *string)
 	TypeInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAcceptLanguage()
@@ -11685,8 +13325,8 @@ func (j *jsiiProxy_ServicecatalogProvisioningArtifact) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogProvisioningArtifact) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogProvisioningArtifact) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11975,7 +13615,7 @@ func (j *jsiiProxy_ServicecatalogProvisioningArtifact) TypeInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html aws_servicecatalog_provisioning_artifact} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact aws_servicecatalog_provisioning_artifact} Resource.
 func NewServicecatalogProvisioningArtifact(scope constructs.Construct, id *string, config *ServicecatalogProvisioningArtifactConfig) ServicecatalogProvisioningArtifact {
 	_init_.Initialize()
 
@@ -11990,7 +13630,7 @@ func NewServicecatalogProvisioningArtifact(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html aws_servicecatalog_provisioning_artifact} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact aws_servicecatalog_provisioning_artifact} Resource.
 func NewServicecatalogProvisioningArtifact_Override(s ServicecatalogProvisioningArtifact, scope constructs.Construct, id *string, config *ServicecatalogProvisioningArtifactConfig) {
 	_init_.Initialize()
 
@@ -12017,7 +13657,7 @@ func (j *jsiiProxy_ServicecatalogProvisioningArtifact) SetActive(val interface{}
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogProvisioningArtifact) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogProvisioningArtifact) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12153,12 +13793,40 @@ func (s *jsiiProxy_ServicecatalogProvisioningArtifact) AddOverride(path *string,
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12195,12 +13863,54 @@ func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogProvisioningArtifact) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12373,36 +14083,36 @@ func (s *jsiiProxy_ServicecatalogProvisioningArtifact) ToTerraform() interface{}
 // AWS Service Catalog.
 type ServicecatalogProvisioningArtifactConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#product_id ServicecatalogProvisioningArtifact#product_id}.
-	ProductId *string `json:"productId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#accept_language ServicecatalogProvisioningArtifact#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#active ServicecatalogProvisioningArtifact#active}.
-	Active interface{} `json:"active"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#description ServicecatalogProvisioningArtifact#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#disable_template_validation ServicecatalogProvisioningArtifact#disable_template_validation}.
-	DisableTemplateValidation interface{} `json:"disableTemplateValidation"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#guidance ServicecatalogProvisioningArtifact#guidance}.
-	Guidance *string `json:"guidance"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#name ServicecatalogProvisioningArtifact#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#template_physical_id ServicecatalogProvisioningArtifact#template_physical_id}.
-	TemplatePhysicalId *string `json:"templatePhysicalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#template_url ServicecatalogProvisioningArtifact#template_url}.
-	TemplateUrl *string `json:"templateUrl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact.html#type ServicecatalogProvisioningArtifact#type}.
-	Type *string `json:"type"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#product_id ServicecatalogProvisioningArtifact#product_id}.
+	ProductId *string `json:"productId" yaml:"productId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#accept_language ServicecatalogProvisioningArtifact#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#active ServicecatalogProvisioningArtifact#active}.
+	Active interface{} `json:"active" yaml:"active"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#description ServicecatalogProvisioningArtifact#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#disable_template_validation ServicecatalogProvisioningArtifact#disable_template_validation}.
+	DisableTemplateValidation interface{} `json:"disableTemplateValidation" yaml:"disableTemplateValidation"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#guidance ServicecatalogProvisioningArtifact#guidance}.
+	Guidance *string `json:"guidance" yaml:"guidance"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#name ServicecatalogProvisioningArtifact#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#template_physical_id ServicecatalogProvisioningArtifact#template_physical_id}.
+	TemplatePhysicalId *string `json:"templatePhysicalId" yaml:"templatePhysicalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#template_url ServicecatalogProvisioningArtifact#template_url}.
+	TemplateUrl *string `json:"templateUrl" yaml:"templateUrl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_provisioning_artifact#type ServicecatalogProvisioningArtifact#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html aws_servicecatalog_service_action}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action aws_servicecatalog_service_action}.
 type ServicecatalogServiceAction interface {
 	cdktf.TerraformResource
 	AcceptLanguage() *string
@@ -12410,8 +14120,8 @@ type ServicecatalogServiceAction interface {
 	AcceptLanguageInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Definition() ServicecatalogServiceActionDefinitionOutputReference
 	DefinitionInput() *ServicecatalogServiceActionDefinition
 	DependsOn() *[]*string
@@ -12435,10 +14145,15 @@ type ServicecatalogServiceAction interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutDefinition(value *ServicecatalogServiceActionDefinition)
@@ -12496,8 +14211,8 @@ func (j *jsiiProxy_ServicecatalogServiceAction) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogServiceAction) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogServiceAction) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12676,7 +14391,7 @@ func (j *jsiiProxy_ServicecatalogServiceAction) TerraformResourceType() *string 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html aws_servicecatalog_service_action} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action aws_servicecatalog_service_action} Resource.
 func NewServicecatalogServiceAction(scope constructs.Construct, id *string, config *ServicecatalogServiceActionConfig) ServicecatalogServiceAction {
 	_init_.Initialize()
 
@@ -12691,7 +14406,7 @@ func NewServicecatalogServiceAction(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html aws_servicecatalog_service_action} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action aws_servicecatalog_service_action} Resource.
 func NewServicecatalogServiceAction_Override(s ServicecatalogServiceAction, scope constructs.Construct, id *string, config *ServicecatalogServiceActionConfig) {
 	_init_.Initialize()
 
@@ -12710,7 +14425,7 @@ func (j *jsiiProxy_ServicecatalogServiceAction) SetAcceptLanguage(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogServiceAction) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogServiceAction) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12798,12 +14513,40 @@ func (s *jsiiProxy_ServicecatalogServiceAction) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogServiceAction) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogServiceAction) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogServiceAction) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12840,12 +14583,54 @@ func (s *jsiiProxy_ServicecatalogServiceAction) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogServiceAction) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogServiceAction) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogServiceAction) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogServiceAction) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12970,36 +14755,36 @@ func (s *jsiiProxy_ServicecatalogServiceAction) ToTerraform() interface{} {
 // AWS Service Catalog.
 type ServicecatalogServiceActionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// definition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#definition ServicecatalogServiceAction#definition}
-	Definition *ServicecatalogServiceActionDefinition `json:"definition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#name ServicecatalogServiceAction#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#accept_language ServicecatalogServiceAction#accept_language}.
-	AcceptLanguage *string `json:"acceptLanguage"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#description ServicecatalogServiceAction#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#definition ServicecatalogServiceAction#definition}
+	Definition *ServicecatalogServiceActionDefinition `json:"definition" yaml:"definition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#name ServicecatalogServiceAction#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#accept_language ServicecatalogServiceAction#accept_language}.
+	AcceptLanguage *string `json:"acceptLanguage" yaml:"acceptLanguage"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#description ServicecatalogServiceAction#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
 type ServicecatalogServiceActionDefinition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#name ServicecatalogServiceAction#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#version ServicecatalogServiceAction#version}.
-	Version *string `json:"version"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#assume_role ServicecatalogServiceAction#assume_role}.
-	AssumeRole *string `json:"assumeRole"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#parameters ServicecatalogServiceAction#parameters}.
-	Parameters *string `json:"parameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action.html#type ServicecatalogServiceAction#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#name ServicecatalogServiceAction#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#version ServicecatalogServiceAction#version}.
+	Version *string `json:"version" yaml:"version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#assume_role ServicecatalogServiceAction#assume_role}.
+	AssumeRole *string `json:"assumeRole" yaml:"assumeRole"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#parameters ServicecatalogServiceAction#parameters}.
+	Parameters *string `json:"parameters" yaml:"parameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_service_action#type ServicecatalogServiceAction#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 type ServicecatalogServiceActionDefinitionOutputReference interface {
@@ -13019,18 +14804,23 @@ type ServicecatalogServiceActionDefinitionOutputReference interface {
 	ParametersInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAssumeRole()
@@ -13133,8 +14923,8 @@ func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -13183,7 +14973,7 @@ func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) Version
 	return returns
 }
 
-func NewServicecatalogServiceActionDefinitionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ServicecatalogServiceActionDefinitionOutputReference {
+func NewServicecatalogServiceActionDefinitionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ServicecatalogServiceActionDefinitionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference{}
@@ -13197,7 +14987,7 @@ func NewServicecatalogServiceActionDefinitionOutputReference(terraformResource c
 	return &j
 }
 
-func NewServicecatalogServiceActionDefinitionOutputReference_Override(s ServicecatalogServiceActionDefinitionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewServicecatalogServiceActionDefinitionOutputReference_Override(s ServicecatalogServiceActionDefinitionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -13255,7 +15045,7 @@ func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -13280,12 +15070,40 @@ func (j *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) SetVers
 }
 
 // Experimental.
-func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13322,12 +15140,54 @@ func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetNumb
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13387,7 +15247,7 @@ func (s *jsiiProxy_ServicecatalogServiceActionDefinitionOutputReference) ResetTy
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option.html aws_servicecatalog_tag_option}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option aws_servicecatalog_tag_option}.
 type ServicecatalogTagOption interface {
 	cdktf.TerraformResource
 	Active() interface{}
@@ -13395,8 +15255,8 @@ type ServicecatalogTagOption interface {
 	ActiveInput() interface{}
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13419,10 +15279,15 @@ type ServicecatalogTagOption interface {
 	SetValue(val *string)
 	ValueInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetActive()
@@ -13478,8 +15343,8 @@ func (j *jsiiProxy_ServicecatalogTagOption) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogTagOption) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogTagOption) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -13648,7 +15513,7 @@ func (j *jsiiProxy_ServicecatalogTagOption) ValueInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option.html aws_servicecatalog_tag_option} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option aws_servicecatalog_tag_option} Resource.
 func NewServicecatalogTagOption(scope constructs.Construct, id *string, config *ServicecatalogTagOptionConfig) ServicecatalogTagOption {
 	_init_.Initialize()
 
@@ -13663,7 +15528,7 @@ func NewServicecatalogTagOption(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option.html aws_servicecatalog_tag_option} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option aws_servicecatalog_tag_option} Resource.
 func NewServicecatalogTagOption_Override(s ServicecatalogTagOption, scope constructs.Construct, id *string, config *ServicecatalogTagOptionConfig) {
 	_init_.Initialize()
 
@@ -13682,7 +15547,7 @@ func (j *jsiiProxy_ServicecatalogTagOption) SetActive(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogTagOption) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogTagOption) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -13770,12 +15635,40 @@ func (s *jsiiProxy_ServicecatalogTagOption) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogTagOption) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogTagOption) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogTagOption) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13812,12 +15705,54 @@ func (s *jsiiProxy_ServicecatalogTagOption) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogTagOption) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogTagOption) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogTagOption) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogTagOption) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -13926,28 +15861,28 @@ func (s *jsiiProxy_ServicecatalogTagOption) ToTerraform() interface{} {
 // AWS Service Catalog.
 type ServicecatalogTagOptionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option.html#key ServicecatalogTagOption#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option.html#value ServicecatalogTagOption#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option.html#active ServicecatalogTagOption#active}.
-	Active interface{} `json:"active"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option#key ServicecatalogTagOption#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option#value ServicecatalogTagOption#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option#active ServicecatalogTagOption#active}.
+	Active interface{} `json:"active" yaml:"active"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association.html aws_servicecatalog_tag_option_resource_association}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association aws_servicecatalog_tag_option_resource_association}.
 type ServicecatalogTagOptionResourceAssociation interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -13973,10 +15908,15 @@ type ServicecatalogTagOptionResourceAssociation interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -14011,8 +15951,8 @@ func (j *jsiiProxy_ServicecatalogTagOptionResourceAssociation) ConstructNodeMeta
 	return returns
 }
 
-func (j *jsiiProxy_ServicecatalogTagOptionResourceAssociation) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ServicecatalogTagOptionResourceAssociation) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -14211,7 +16151,7 @@ func (j *jsiiProxy_ServicecatalogTagOptionResourceAssociation) TerraformResource
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association.html aws_servicecatalog_tag_option_resource_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association aws_servicecatalog_tag_option_resource_association} Resource.
 func NewServicecatalogTagOptionResourceAssociation(scope constructs.Construct, id *string, config *ServicecatalogTagOptionResourceAssociationConfig) ServicecatalogTagOptionResourceAssociation {
 	_init_.Initialize()
 
@@ -14226,7 +16166,7 @@ func NewServicecatalogTagOptionResourceAssociation(scope constructs.Construct, i
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association.html aws_servicecatalog_tag_option_resource_association} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association aws_servicecatalog_tag_option_resource_association} Resource.
 func NewServicecatalogTagOptionResourceAssociation_Override(s ServicecatalogTagOptionResourceAssociation, scope constructs.Construct, id *string, config *ServicecatalogTagOptionResourceAssociationConfig) {
 	_init_.Initialize()
 
@@ -14237,7 +16177,7 @@ func NewServicecatalogTagOptionResourceAssociation_Override(s ServicecatalogTagO
 	)
 }
 
-func (j *jsiiProxy_ServicecatalogTagOptionResourceAssociation) SetCount(val interface{}) {
+func (j *jsiiProxy_ServicecatalogTagOptionResourceAssociation) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -14325,12 +16265,40 @@ func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) AddOverride(path 
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14367,12 +16335,54 @@ func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetNumberAttribut
 }
 
 // Experimental.
+func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -14473,15 +16483,15 @@ func (s *jsiiProxy_ServicecatalogTagOptionResourceAssociation) ToTerraform() int
 // AWS Service Catalog.
 type ServicecatalogTagOptionResourceAssociationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association.html#resource_id ServicecatalogTagOptionResourceAssociation#resource_id}.
-	ResourceId *string `json:"resourceId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association.html#tag_option_id ServicecatalogTagOptionResourceAssociation#tag_option_id}.
-	TagOptionId *string `json:"tagOptionId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association#resource_id ServicecatalogTagOptionResourceAssociation#resource_id}.
+	ResourceId *string `json:"resourceId" yaml:"resourceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/servicecatalog_tag_option_resource_association#tag_option_id ServicecatalogTagOptionResourceAssociation#tag_option_id}.
+	TagOptionId *string `json:"tagOptionId" yaml:"tagOptionId"`
 }

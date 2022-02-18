@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/workspaces/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle.html aws_workspaces_bundle}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle aws_workspaces_bundle}.
 type DataAwsWorkspacesBundle interface {
 	cdktf.TerraformDataSource
 	BundleId() *string
@@ -17,8 +17,8 @@ type DataAwsWorkspacesBundle interface {
 	BundleIdInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -42,10 +42,15 @@ type DataAwsWorkspacesBundle interface {
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	ComputeType(index *string) DataAwsWorkspacesBundleComputeType
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetBundleId()
@@ -105,8 +110,8 @@ func (j *jsiiProxy_DataAwsWorkspacesBundle) ConstructNodeMetadata() *map[string]
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundle) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesBundle) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -275,7 +280,7 @@ func (j *jsiiProxy_DataAwsWorkspacesBundle) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle.html aws_workspaces_bundle} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle aws_workspaces_bundle} Data Source.
 func NewDataAwsWorkspacesBundle(scope constructs.Construct, id *string, config *DataAwsWorkspacesBundleConfig) DataAwsWorkspacesBundle {
 	_init_.Initialize()
 
@@ -290,7 +295,7 @@ func NewDataAwsWorkspacesBundle(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle.html aws_workspaces_bundle} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle aws_workspaces_bundle} Data Source.
 func NewDataAwsWorkspacesBundle_Override(d DataAwsWorkspacesBundle, scope constructs.Construct, id *string, config *DataAwsWorkspacesBundleConfig) {
 	_init_.Initialize()
 
@@ -309,7 +314,7 @@ func (j *jsiiProxy_DataAwsWorkspacesBundle) SetBundleId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundle) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWorkspacesBundle) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -410,12 +415,40 @@ func (d *jsiiProxy_DataAwsWorkspacesBundle) ComputeType(index *string) DataAwsWo
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundle) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesBundle) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundle) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -452,12 +485,54 @@ func (d *jsiiProxy_DataAwsWorkspacesBundle) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundle) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundle) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesBundle) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundle) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -612,12 +687,19 @@ type DataAwsWorkspacesBundleComputeType interface {
 	Name() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -656,8 +738,8 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -666,15 +748,25 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) TerraformResource() cdktf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsWorkspacesBundleComputeType(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsWorkspacesBundleComputeType {
+func NewDataAwsWorkspacesBundleComputeType(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsWorkspacesBundleComputeType {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsWorkspacesBundleComputeType{}
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleComputeType",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -682,12 +774,12 @@ func NewDataAwsWorkspacesBundleComputeType(terraformResource cdktf.ITerraformRes
 }
 
 // Experimental.
-func NewDataAwsWorkspacesBundleComputeType_Override(d DataAwsWorkspacesBundleComputeType, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsWorkspacesBundleComputeType_Override(d DataAwsWorkspacesBundleComputeType, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleComputeType",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -708,7 +800,7 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -716,13 +808,49 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) SetTerraformResource(val 
 	)
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesBundleComputeType) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -759,12 +887,54 @@ func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -789,19 +959,19 @@ func (d *jsiiProxy_DataAwsWorkspacesBundleComputeType) InterpolationForAttribute
 // AWS WorkSpaces.
 type DataAwsWorkspacesBundleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle.html#bundle_id DataAwsWorkspacesBundle#bundle_id}.
-	BundleId *string `json:"bundleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle.html#name DataAwsWorkspacesBundle#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle.html#owner DataAwsWorkspacesBundle#owner}.
-	Owner *string `json:"owner"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle#bundle_id DataAwsWorkspacesBundle#bundle_id}.
+	BundleId *string `json:"bundleId" yaml:"bundleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle#name DataAwsWorkspacesBundle#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_bundle#owner DataAwsWorkspacesBundle#owner}.
+	Owner *string `json:"owner" yaml:"owner"`
 }
 
 type DataAwsWorkspacesBundleRootStorage interface {
@@ -811,12 +981,19 @@ type DataAwsWorkspacesBundleRootStorage interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -855,8 +1032,8 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -865,15 +1042,25 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) TerraformResource() cdktf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsWorkspacesBundleRootStorage(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsWorkspacesBundleRootStorage {
+func NewDataAwsWorkspacesBundleRootStorage(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsWorkspacesBundleRootStorage {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsWorkspacesBundleRootStorage{}
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleRootStorage",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -881,12 +1068,12 @@ func NewDataAwsWorkspacesBundleRootStorage(terraformResource cdktf.ITerraformRes
 }
 
 // Experimental.
-func NewDataAwsWorkspacesBundleRootStorage_Override(d DataAwsWorkspacesBundleRootStorage, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsWorkspacesBundleRootStorage_Override(d DataAwsWorkspacesBundleRootStorage, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleRootStorage",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -907,7 +1094,7 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -915,13 +1102,49 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) SetTerraformResource(val 
 	)
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesBundleRootStorage) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -958,12 +1181,54 @@ func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleRootStorage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -992,12 +1257,19 @@ type DataAwsWorkspacesBundleUserStorage interface {
 	SetComplexComputedListIndex(val *string)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1036,8 +1308,8 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1046,15 +1318,25 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) TerraformResource() cdktf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsWorkspacesBundleUserStorage(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsWorkspacesBundleUserStorage {
+func NewDataAwsWorkspacesBundleUserStorage(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsWorkspacesBundleUserStorage {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsWorkspacesBundleUserStorage{}
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleUserStorage",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1062,12 +1344,12 @@ func NewDataAwsWorkspacesBundleUserStorage(terraformResource cdktf.ITerraformRes
 }
 
 // Experimental.
-func NewDataAwsWorkspacesBundleUserStorage_Override(d DataAwsWorkspacesBundleUserStorage, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsWorkspacesBundleUserStorage_Override(d DataAwsWorkspacesBundleUserStorage, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesBundleUserStorage",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1088,7 +1370,7 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1096,13 +1378,49 @@ func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) SetTerraformResource(val 
 	)
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesBundleUserStorage) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1139,12 +1457,54 @@ func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1166,14 +1526,14 @@ func (d *jsiiProxy_DataAwsWorkspacesBundleUserStorage) InterpolationForAttribute
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory.html aws_workspaces_directory}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory aws_workspaces_directory}.
 type DataAwsWorkspacesDirectory interface {
 	cdktf.TerraformDataSource
 	Alias() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerUserName() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -1196,18 +1556,23 @@ type DataAwsWorkspacesDirectory interface {
 	RawOverrides() interface{}
 	RegistrationCode() *string
 	SubnetIds() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	WorkspaceSecurityGroupId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1256,8 +1621,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectory) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectory) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectory) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1446,8 +1811,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectory) SubnetIds() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectory) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectory) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1456,8 +1821,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectory) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectory) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectory) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1506,7 +1871,7 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectory) WorkspaceSecurityGroupId() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory.html aws_workspaces_directory} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory aws_workspaces_directory} Data Source.
 func NewDataAwsWorkspacesDirectory(scope constructs.Construct, id *string, config *DataAwsWorkspacesDirectoryConfig) DataAwsWorkspacesDirectory {
 	_init_.Initialize()
 
@@ -1521,7 +1886,7 @@ func NewDataAwsWorkspacesDirectory(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory.html aws_workspaces_directory} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory aws_workspaces_directory} Data Source.
 func NewDataAwsWorkspacesDirectory_Override(d DataAwsWorkspacesDirectory, scope constructs.Construct, id *string, config *DataAwsWorkspacesDirectoryConfig) {
 	_init_.Initialize()
 
@@ -1532,7 +1897,7 @@ func NewDataAwsWorkspacesDirectory_Override(d DataAwsWorkspacesDirectory, scope 
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectory) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWorkspacesDirectory) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1572,7 +1937,7 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectory) SetProvider(val cdktf.TerraformPr
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectory) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsWorkspacesDirectory) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1620,12 +1985,40 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectory) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1662,12 +2055,54 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectory) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1815,36 +2250,43 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectory) WorkspaceCreationProperties(index
 // AWS WorkSpaces.
 type DataAwsWorkspacesDirectoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory.html#directory_id DataAwsWorkspacesDirectory#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory.html#tags DataAwsWorkspacesDirectory#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory#directory_id DataAwsWorkspacesDirectory#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_directory#tags DataAwsWorkspacesDirectory#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsWorkspacesDirectorySelfServicePermissions interface {
 	cdktf.ComplexComputedList
-	ChangeComputeType() interface{}
+	ChangeComputeType() cdktf.IResolvable
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	IncreaseVolumeSize() interface{}
-	RebuildWorkspace() interface{}
-	RestartWorkspace() interface{}
-	SwitchRunningMode() interface{}
+	IncreaseVolumeSize() cdktf.IResolvable
+	RebuildWorkspace() cdktf.IResolvable
+	RestartWorkspace() cdktf.IResolvable
+	SwitchRunningMode() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1853,8 +2295,8 @@ type jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions struct {
 	internal.Type__cdktfComplexComputedList
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) ChangeComputeType() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) ChangeComputeType() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"changeComputeType",
@@ -1873,8 +2315,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) ComplexComp
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) IncreaseVolumeSize() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) IncreaseVolumeSize() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"increaseVolumeSize",
@@ -1883,8 +2325,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) IncreaseVol
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) RebuildWorkspace() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) RebuildWorkspace() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"rebuildWorkspace",
@@ -1893,8 +2335,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) RebuildWork
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) RestartWorkspace() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) RestartWorkspace() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"restartWorkspace",
@@ -1903,8 +2345,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) RestartWork
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) SwitchRunningMode() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) SwitchRunningMode() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"switchRunningMode",
@@ -1923,8 +2365,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1933,15 +2375,25 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) TerraformRe
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsWorkspacesDirectorySelfServicePermissions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsWorkspacesDirectorySelfServicePermissions {
+func NewDataAwsWorkspacesDirectorySelfServicePermissions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsWorkspacesDirectorySelfServicePermissions {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1949,12 +2401,12 @@ func NewDataAwsWorkspacesDirectorySelfServicePermissions(terraformResource cdktf
 }
 
 // Experimental.
-func NewDataAwsWorkspacesDirectorySelfServicePermissions_Override(d DataAwsWorkspacesDirectorySelfServicePermissions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsWorkspacesDirectorySelfServicePermissions_Override(d DataAwsWorkspacesDirectorySelfServicePermissions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectorySelfServicePermissions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1975,7 +2427,7 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1983,13 +2435,49 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) SetTerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2026,12 +2514,54 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectorySelfServicePermissions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2067,12 +2597,19 @@ type DataAwsWorkspacesDirectoryWorkspaceAccessProperties interface {
 	DeviceTypeZeroclient() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2181,8 +2718,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2191,15 +2728,25 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) Terrafor
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsWorkspacesDirectoryWorkspaceAccessProperties(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsWorkspacesDirectoryWorkspaceAccessProperties {
+func NewDataAwsWorkspacesDirectoryWorkspaceAccessProperties(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsWorkspacesDirectoryWorkspaceAccessProperties {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties{}
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2207,12 +2754,12 @@ func NewDataAwsWorkspacesDirectoryWorkspaceAccessProperties(terraformResource cd
 }
 
 // Experimental.
-func NewDataAwsWorkspacesDirectoryWorkspaceAccessProperties_Override(d DataAwsWorkspacesDirectoryWorkspaceAccessProperties, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsWorkspacesDirectoryWorkspaceAccessProperties_Override(d DataAwsWorkspacesDirectoryWorkspaceAccessProperties, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceAccessProperties",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2233,7 +2780,7 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) SetTerra
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2241,13 +2788,49 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) SetTerra
 	)
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2284,12 +2867,54 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetNumbe
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceAccessProperties) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2317,17 +2942,24 @@ type DataAwsWorkspacesDirectoryWorkspaceCreationProperties interface {
 	SetComplexComputedListIndex(val *string)
 	CustomSecurityGroupId() *string
 	DefaultOu() *string
-	EnableInternetAccess() interface{}
-	EnableMaintenanceMode() interface{}
+	EnableInternetAccess() cdktf.IResolvable
+	EnableMaintenanceMode() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	UserEnabledAsLocalAdministrator() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UserEnabledAsLocalAdministrator() cdktf.IResolvable
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2366,8 +2998,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) Defaul
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) EnableInternetAccess() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) EnableInternetAccess() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableInternetAccess",
@@ -2376,8 +3008,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) Enable
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) EnableMaintenanceMode() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) EnableMaintenanceMode() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableMaintenanceMode",
@@ -2396,8 +3028,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2406,8 +3038,8 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) UserEnabledAsLocalAdministrator() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) UserEnabledAsLocalAdministrator() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"userEnabledAsLocalAdministrator",
@@ -2416,15 +3048,25 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) UserEn
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsWorkspacesDirectoryWorkspaceCreationProperties(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsWorkspacesDirectoryWorkspaceCreationProperties {
+func NewDataAwsWorkspacesDirectoryWorkspaceCreationProperties(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsWorkspacesDirectoryWorkspaceCreationProperties {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties{}
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2432,12 +3074,12 @@ func NewDataAwsWorkspacesDirectoryWorkspaceCreationProperties(terraformResource 
 }
 
 // Experimental.
-func NewDataAwsWorkspacesDirectoryWorkspaceCreationProperties_Override(d DataAwsWorkspacesDirectoryWorkspaceCreationProperties, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsWorkspacesDirectoryWorkspaceCreationProperties_Override(d DataAwsWorkspacesDirectoryWorkspaceCreationProperties, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesDirectoryWorkspaceCreationProperties",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2458,7 +3100,7 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) SetTer
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2466,13 +3108,49 @@ func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) SetTer
 	)
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2509,12 +3187,54 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetNum
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2536,13 +3256,13 @@ func (d *jsiiProxy_DataAwsWorkspacesDirectoryWorkspaceCreationProperties) Interp
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image.html aws_workspaces_image}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image aws_workspaces_image}.
 type DataAwsWorkspacesImage interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2566,10 +3286,15 @@ type DataAwsWorkspacesImage interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -2604,8 +3329,8 @@ func (j *jsiiProxy_DataAwsWorkspacesImage) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesImage) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesImage) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2794,7 +3519,7 @@ func (j *jsiiProxy_DataAwsWorkspacesImage) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image.html aws_workspaces_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image aws_workspaces_image} Data Source.
 func NewDataAwsWorkspacesImage(scope constructs.Construct, id *string, config *DataAwsWorkspacesImageConfig) DataAwsWorkspacesImage {
 	_init_.Initialize()
 
@@ -2809,7 +3534,7 @@ func NewDataAwsWorkspacesImage(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image.html aws_workspaces_image} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image aws_workspaces_image} Data Source.
 func NewDataAwsWorkspacesImage_Override(d DataAwsWorkspacesImage, scope constructs.Construct, id *string, config *DataAwsWorkspacesImageConfig) {
 	_init_.Initialize()
 
@@ -2820,7 +3545,7 @@ func NewDataAwsWorkspacesImage_Override(d DataAwsWorkspacesImage, scope construc
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesImage) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWorkspacesImage) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2900,12 +3625,40 @@ func (d *jsiiProxy_DataAwsWorkspacesImage) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesImage) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesImage) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesImage) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2942,12 +3695,54 @@ func (d *jsiiProxy_DataAwsWorkspacesImage) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesImage) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesImage) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesImage) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesImage) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3048,26 +3843,26 @@ func (d *jsiiProxy_DataAwsWorkspacesImage) ToTerraform() interface{} {
 // AWS WorkSpaces.
 type DataAwsWorkspacesImageConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image.html#image_id DataAwsWorkspacesImage#image_id}.
-	ImageId *string `json:"imageId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_image#image_id DataAwsWorkspacesImage#image_id}.
+	ImageId *string `json:"imageId" yaml:"imageId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace.html aws_workspaces_workspace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace aws_workspaces_workspace}.
 type DataAwsWorkspacesWorkspace interface {
 	cdktf.TerraformDataSource
 	BundleId() *string
 	CdktfStack() cdktf.TerraformStack
 	ComputerName() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DirectoryId() *string
@@ -3083,27 +3878,32 @@ type DataAwsWorkspacesWorkspace interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RootVolumeEncryptionEnabled() interface{}
+	RootVolumeEncryptionEnabled() cdktf.IResolvable
 	State() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	UserName() *string
 	SetUserName(val *string)
 	UserNameInput() *string
-	UserVolumeEncryptionEnabled() interface{}
+	UserVolumeEncryptionEnabled() cdktf.IResolvable
 	VolumeEncryptionKey() *string
 	WorkspaceId() *string
 	SetWorkspaceId(val *string)
 	WorkspaceIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDirectoryId()
@@ -3163,8 +3963,8 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspace) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesWorkspace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3283,8 +4083,8 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspace) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspace) RootVolumeEncryptionEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesWorkspace) RootVolumeEncryptionEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"rootVolumeEncryptionEnabled",
@@ -3303,8 +4103,8 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspace) State() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspace) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesWorkspace) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -3313,8 +4113,8 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspace) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspace) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesWorkspace) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3373,8 +4173,8 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspace) UserNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspace) UserVolumeEncryptionEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsWorkspacesWorkspace) UserVolumeEncryptionEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"userVolumeEncryptionEnabled",
@@ -3413,7 +4213,7 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspace) WorkspaceIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace.html aws_workspaces_workspace} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace aws_workspaces_workspace} Data Source.
 func NewDataAwsWorkspacesWorkspace(scope constructs.Construct, id *string, config *DataAwsWorkspacesWorkspaceConfig) DataAwsWorkspacesWorkspace {
 	_init_.Initialize()
 
@@ -3428,7 +4228,7 @@ func NewDataAwsWorkspacesWorkspace(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace.html aws_workspaces_workspace} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace aws_workspaces_workspace} Data Source.
 func NewDataAwsWorkspacesWorkspace_Override(d DataAwsWorkspacesWorkspace, scope constructs.Construct, id *string, config *DataAwsWorkspacesWorkspaceConfig) {
 	_init_.Initialize()
 
@@ -3439,7 +4239,7 @@ func NewDataAwsWorkspacesWorkspace_Override(d DataAwsWorkspacesWorkspace, scope 
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspace) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsWorkspacesWorkspace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3479,7 +4279,7 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspace) SetProvider(val cdktf.TerraformPr
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspace) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsWorkspacesWorkspace) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3543,12 +4343,40 @@ func (d *jsiiProxy_DataAwsWorkspacesWorkspace) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3585,12 +4413,54 @@ func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3736,21 +4606,21 @@ func (d *jsiiProxy_DataAwsWorkspacesWorkspace) WorkspaceProperties(index *string
 // AWS WorkSpaces.
 type DataAwsWorkspacesWorkspaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace.html#directory_id DataAwsWorkspacesWorkspace#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace.html#tags DataAwsWorkspacesWorkspace#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace.html#user_name DataAwsWorkspacesWorkspace#user_name}.
-	UserName *string `json:"userName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace.html#workspace_id DataAwsWorkspacesWorkspace#workspace_id}.
-	WorkspaceId *string `json:"workspaceId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace#directory_id DataAwsWorkspacesWorkspace#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace#tags DataAwsWorkspacesWorkspace#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace#user_name DataAwsWorkspacesWorkspace#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/workspaces_workspace#workspace_id DataAwsWorkspacesWorkspace#workspace_id}.
+	WorkspaceId *string `json:"workspaceId" yaml:"workspaceId"`
 }
 
 type DataAwsWorkspacesWorkspaceWorkspaceProperties interface {
@@ -3763,13 +4633,20 @@ type DataAwsWorkspacesWorkspaceWorkspaceProperties interface {
 	RunningModeAutoStopTimeoutInMinutes() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserVolumeSizeGib() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -3838,8 +4715,8 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3858,15 +4735,25 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) UserVolumeSize
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsWorkspacesWorkspaceWorkspaceProperties(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsWorkspacesWorkspaceWorkspaceProperties {
+func NewDataAwsWorkspacesWorkspaceWorkspaceProperties(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsWorkspacesWorkspaceWorkspaceProperties {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties{}
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -3874,12 +4761,12 @@ func NewDataAwsWorkspacesWorkspaceWorkspaceProperties(terraformResource cdktf.IT
 }
 
 // Experimental.
-func NewDataAwsWorkspacesWorkspaceWorkspaceProperties_Override(d DataAwsWorkspacesWorkspaceWorkspaceProperties, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsWorkspacesWorkspaceWorkspaceProperties_Override(d DataAwsWorkspacesWorkspaceWorkspaceProperties, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.workspaces.DataAwsWorkspacesWorkspaceWorkspaceProperties",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -3900,7 +4787,7 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3908,13 +4795,49 @@ func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) SetTerraformRe
 	)
 }
 
+func (j *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3951,12 +4874,54 @@ func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetNumberAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3978,14 +4943,14 @@ func (d *jsiiProxy_DataAwsWorkspacesWorkspaceWorkspaceProperties) InterpolationF
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html aws_workspaces_directory}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory aws_workspaces_directory}.
 type WorkspacesDirectory interface {
 	cdktf.TerraformResource
 	Alias() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CustomerUserName() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -4014,12 +4979,12 @@ type WorkspacesDirectory interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -4029,10 +4994,15 @@ type WorkspacesDirectory interface {
 	WorkspaceCreationPropertiesInput() *WorkspacesDirectoryWorkspaceCreationProperties
 	WorkspaceSecurityGroupId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutSelfServicePermissions(value *WorkspacesDirectorySelfServicePermissions)
@@ -4087,8 +5057,8 @@ func (j *jsiiProxy_WorkspacesDirectory) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesDirectory) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4317,8 +5287,8 @@ func (j *jsiiProxy_WorkspacesDirectory) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesDirectory) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4327,8 +5297,8 @@ func (j *jsiiProxy_WorkspacesDirectory) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesDirectory) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4337,8 +5307,8 @@ func (j *jsiiProxy_WorkspacesDirectory) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesDirectory) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4347,8 +5317,8 @@ func (j *jsiiProxy_WorkspacesDirectory) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesDirectory) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4437,7 +5407,7 @@ func (j *jsiiProxy_WorkspacesDirectory) WorkspaceSecurityGroupId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html aws_workspaces_directory} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory aws_workspaces_directory} Resource.
 func NewWorkspacesDirectory(scope constructs.Construct, id *string, config *WorkspacesDirectoryConfig) WorkspacesDirectory {
 	_init_.Initialize()
 
@@ -4452,7 +5422,7 @@ func NewWorkspacesDirectory(scope constructs.Construct, id *string, config *Work
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html aws_workspaces_directory} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory aws_workspaces_directory} Resource.
 func NewWorkspacesDirectory_Override(w WorkspacesDirectory, scope constructs.Construct, id *string, config *WorkspacesDirectoryConfig) {
 	_init_.Initialize()
 
@@ -4463,7 +5433,7 @@ func NewWorkspacesDirectory_Override(w WorkspacesDirectory, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) SetCount(val interface{}) {
+func (j *jsiiProxy_WorkspacesDirectory) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4519,7 +5489,7 @@ func (j *jsiiProxy_WorkspacesDirectory) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) SetTags(val interface{}) {
+func (j *jsiiProxy_WorkspacesDirectory) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4527,7 +5497,7 @@ func (j *jsiiProxy_WorkspacesDirectory) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_WorkspacesDirectory) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_WorkspacesDirectory) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4575,12 +5545,40 @@ func (w *jsiiProxy_WorkspacesDirectory) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesDirectory) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesDirectory) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectory) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4617,12 +5615,54 @@ func (w *jsiiProxy_WorkspacesDirectory) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesDirectory) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectory) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesDirectory) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectory) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4803,48 +5843,48 @@ func (w *jsiiProxy_WorkspacesDirectory) ToTerraform() interface{} {
 // AWS WorkSpaces.
 type WorkspacesDirectoryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#directory_id WorkspacesDirectory#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#ip_group_ids WorkspacesDirectory#ip_group_ids}.
-	IpGroupIds *[]*string `json:"ipGroupIds"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#directory_id WorkspacesDirectory#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#ip_group_ids WorkspacesDirectory#ip_group_ids}.
+	IpGroupIds *[]*string `json:"ipGroupIds" yaml:"ipGroupIds"`
 	// self_service_permissions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#self_service_permissions WorkspacesDirectory#self_service_permissions}
-	SelfServicePermissions *WorkspacesDirectorySelfServicePermissions `json:"selfServicePermissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#subnet_ids WorkspacesDirectory#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#tags WorkspacesDirectory#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#tags_all WorkspacesDirectory#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#self_service_permissions WorkspacesDirectory#self_service_permissions}
+	SelfServicePermissions *WorkspacesDirectorySelfServicePermissions `json:"selfServicePermissions" yaml:"selfServicePermissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#subnet_ids WorkspacesDirectory#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#tags WorkspacesDirectory#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#tags_all WorkspacesDirectory#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// workspace_access_properties block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#workspace_access_properties WorkspacesDirectory#workspace_access_properties}
-	WorkspaceAccessProperties *WorkspacesDirectoryWorkspaceAccessProperties `json:"workspaceAccessProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#workspace_access_properties WorkspacesDirectory#workspace_access_properties}
+	WorkspaceAccessProperties *WorkspacesDirectoryWorkspaceAccessProperties `json:"workspaceAccessProperties" yaml:"workspaceAccessProperties"`
 	// workspace_creation_properties block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#workspace_creation_properties WorkspacesDirectory#workspace_creation_properties}
-	WorkspaceCreationProperties *WorkspacesDirectoryWorkspaceCreationProperties `json:"workspaceCreationProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#workspace_creation_properties WorkspacesDirectory#workspace_creation_properties}
+	WorkspaceCreationProperties *WorkspacesDirectoryWorkspaceCreationProperties `json:"workspaceCreationProperties" yaml:"workspaceCreationProperties"`
 }
 
 type WorkspacesDirectorySelfServicePermissions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#change_compute_type WorkspacesDirectory#change_compute_type}.
-	ChangeComputeType interface{} `json:"changeComputeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#increase_volume_size WorkspacesDirectory#increase_volume_size}.
-	IncreaseVolumeSize interface{} `json:"increaseVolumeSize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#rebuild_workspace WorkspacesDirectory#rebuild_workspace}.
-	RebuildWorkspace interface{} `json:"rebuildWorkspace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#restart_workspace WorkspacesDirectory#restart_workspace}.
-	RestartWorkspace interface{} `json:"restartWorkspace"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#switch_running_mode WorkspacesDirectory#switch_running_mode}.
-	SwitchRunningMode interface{} `json:"switchRunningMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#change_compute_type WorkspacesDirectory#change_compute_type}.
+	ChangeComputeType interface{} `json:"changeComputeType" yaml:"changeComputeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#increase_volume_size WorkspacesDirectory#increase_volume_size}.
+	IncreaseVolumeSize interface{} `json:"increaseVolumeSize" yaml:"increaseVolumeSize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#rebuild_workspace WorkspacesDirectory#rebuild_workspace}.
+	RebuildWorkspace interface{} `json:"rebuildWorkspace" yaml:"rebuildWorkspace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#restart_workspace WorkspacesDirectory#restart_workspace}.
+	RestartWorkspace interface{} `json:"restartWorkspace" yaml:"restartWorkspace"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#switch_running_mode WorkspacesDirectory#switch_running_mode}.
+	SwitchRunningMode interface{} `json:"switchRunningMode" yaml:"switchRunningMode"`
 }
 
 type WorkspacesDirectorySelfServicePermissionsOutputReference interface {
@@ -4870,12 +5910,17 @@ type WorkspacesDirectorySelfServicePermissionsOutputReference interface {
 	SwitchRunningModeInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetChangeComputeType()
@@ -5020,8 +6065,8 @@ func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5030,7 +6075,7 @@ func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Ter
 	return returns
 }
 
-func NewWorkspacesDirectorySelfServicePermissionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WorkspacesDirectorySelfServicePermissionsOutputReference {
+func NewWorkspacesDirectorySelfServicePermissionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WorkspacesDirectorySelfServicePermissionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference{}
@@ -5044,7 +6089,7 @@ func NewWorkspacesDirectorySelfServicePermissionsOutputReference(terraformResour
 	return &j
 }
 
-func NewWorkspacesDirectorySelfServicePermissionsOutputReference_Override(w WorkspacesDirectorySelfServicePermissionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWorkspacesDirectorySelfServicePermissionsOutputReference_Override(w WorkspacesDirectorySelfServicePermissionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5118,7 +6163,7 @@ func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5127,12 +6172,40 @@ func (j *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Set
 }
 
 // Experimental.
-func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5169,12 +6242,54 @@ func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Get
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5251,22 +6366,22 @@ func (w *jsiiProxy_WorkspacesDirectorySelfServicePermissionsOutputReference) Res
 }
 
 type WorkspacesDirectoryWorkspaceAccessProperties struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_android WorkspacesDirectory#device_type_android}.
-	DeviceTypeAndroid *string `json:"deviceTypeAndroid"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_chromeos WorkspacesDirectory#device_type_chromeos}.
-	DeviceTypeChromeos *string `json:"deviceTypeChromeos"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_ios WorkspacesDirectory#device_type_ios}.
-	DeviceTypeIos *string `json:"deviceTypeIos"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_linux WorkspacesDirectory#device_type_linux}.
-	DeviceTypeLinux *string `json:"deviceTypeLinux"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_osx WorkspacesDirectory#device_type_osx}.
-	DeviceTypeOsx *string `json:"deviceTypeOsx"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_web WorkspacesDirectory#device_type_web}.
-	DeviceTypeWeb *string `json:"deviceTypeWeb"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_windows WorkspacesDirectory#device_type_windows}.
-	DeviceTypeWindows *string `json:"deviceTypeWindows"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#device_type_zeroclient WorkspacesDirectory#device_type_zeroclient}.
-	DeviceTypeZeroclient *string `json:"deviceTypeZeroclient"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_android WorkspacesDirectory#device_type_android}.
+	DeviceTypeAndroid *string `json:"deviceTypeAndroid" yaml:"deviceTypeAndroid"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_chromeos WorkspacesDirectory#device_type_chromeos}.
+	DeviceTypeChromeos *string `json:"deviceTypeChromeos" yaml:"deviceTypeChromeos"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_ios WorkspacesDirectory#device_type_ios}.
+	DeviceTypeIos *string `json:"deviceTypeIos" yaml:"deviceTypeIos"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_linux WorkspacesDirectory#device_type_linux}.
+	DeviceTypeLinux *string `json:"deviceTypeLinux" yaml:"deviceTypeLinux"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_osx WorkspacesDirectory#device_type_osx}.
+	DeviceTypeOsx *string `json:"deviceTypeOsx" yaml:"deviceTypeOsx"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_web WorkspacesDirectory#device_type_web}.
+	DeviceTypeWeb *string `json:"deviceTypeWeb" yaml:"deviceTypeWeb"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_windows WorkspacesDirectory#device_type_windows}.
+	DeviceTypeWindows *string `json:"deviceTypeWindows" yaml:"deviceTypeWindows"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#device_type_zeroclient WorkspacesDirectory#device_type_zeroclient}.
+	DeviceTypeZeroclient *string `json:"deviceTypeZeroclient" yaml:"deviceTypeZeroclient"`
 }
 
 type WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference interface {
@@ -5301,12 +6416,17 @@ type WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDeviceTypeAndroid()
@@ -5514,8 +6634,8 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5524,7 +6644,7 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 	return returns
 }
 
-func NewWorkspacesDirectoryWorkspaceAccessPropertiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference {
+func NewWorkspacesDirectoryWorkspaceAccessPropertiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference{}
@@ -5538,7 +6658,7 @@ func NewWorkspacesDirectoryWorkspaceAccessPropertiesOutputReference(terraformRes
 	return &j
 }
 
-func NewWorkspacesDirectoryWorkspaceAccessPropertiesOutputReference_Override(w WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWorkspacesDirectoryWorkspaceAccessPropertiesOutputReference_Override(w WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5636,7 +6756,7 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5645,12 +6765,40 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 }
 
 // Experimental.
-func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5687,12 +6835,54 @@ func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5793,16 +6983,16 @@ func (w *jsiiProxy_WorkspacesDirectoryWorkspaceAccessPropertiesOutputReference) 
 }
 
 type WorkspacesDirectoryWorkspaceCreationProperties struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#custom_security_group_id WorkspacesDirectory#custom_security_group_id}.
-	CustomSecurityGroupId *string `json:"customSecurityGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#default_ou WorkspacesDirectory#default_ou}.
-	DefaultOu *string `json:"defaultOu"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#enable_internet_access WorkspacesDirectory#enable_internet_access}.
-	EnableInternetAccess interface{} `json:"enableInternetAccess"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#enable_maintenance_mode WorkspacesDirectory#enable_maintenance_mode}.
-	EnableMaintenanceMode interface{} `json:"enableMaintenanceMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory.html#user_enabled_as_local_administrator WorkspacesDirectory#user_enabled_as_local_administrator}.
-	UserEnabledAsLocalAdministrator interface{} `json:"userEnabledAsLocalAdministrator"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#custom_security_group_id WorkspacesDirectory#custom_security_group_id}.
+	CustomSecurityGroupId *string `json:"customSecurityGroupId" yaml:"customSecurityGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#default_ou WorkspacesDirectory#default_ou}.
+	DefaultOu *string `json:"defaultOu" yaml:"defaultOu"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#enable_internet_access WorkspacesDirectory#enable_internet_access}.
+	EnableInternetAccess interface{} `json:"enableInternetAccess" yaml:"enableInternetAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#enable_maintenance_mode WorkspacesDirectory#enable_maintenance_mode}.
+	EnableMaintenanceMode interface{} `json:"enableMaintenanceMode" yaml:"enableMaintenanceMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_directory#user_enabled_as_local_administrator WorkspacesDirectory#user_enabled_as_local_administrator}.
+	UserEnabledAsLocalAdministrator interface{} `json:"userEnabledAsLocalAdministrator" yaml:"userEnabledAsLocalAdministrator"`
 }
 
 type WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference interface {
@@ -5825,15 +7015,20 @@ type WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserEnabledAsLocalAdministrator() interface{}
 	SetUserEnabledAsLocalAdministrator(val interface{})
 	UserEnabledAsLocalAdministratorInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCustomSecurityGroupId()
@@ -5958,8 +7153,8 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5988,7 +7183,7 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 	return returns
 }
 
-func NewWorkspacesDirectoryWorkspaceCreationPropertiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference {
+func NewWorkspacesDirectoryWorkspaceCreationPropertiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference{}
@@ -6002,7 +7197,7 @@ func NewWorkspacesDirectoryWorkspaceCreationPropertiesOutputReference(terraformR
 	return &j
 }
 
-func NewWorkspacesDirectoryWorkspaceCreationPropertiesOutputReference_Override(w WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWorkspacesDirectoryWorkspaceCreationPropertiesOutputReference_Override(w WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6068,7 +7263,7 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 	)
 }
 
-func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6085,12 +7280,40 @@ func (j *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 }
 
 // Experimental.
-func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6127,12 +7350,54 @@ func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6208,13 +7473,13 @@ func (w *jsiiProxy_WorkspacesDirectoryWorkspaceCreationPropertiesOutputReference
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html aws_workspaces_ip_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group aws_workspaces_ip_group}.
 type WorkspacesIpGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -6232,23 +7497,28 @@ type WorkspacesIpGroup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Rules() *[]*WorkspacesIpGroupRules
-	SetRules(val *[]*WorkspacesIpGroupRules)
-	RulesInput() *[]*WorkspacesIpGroupRules
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Rules() interface{}
+	SetRules(val interface{})
+	RulesInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -6287,8 +7557,8 @@ func (j *jsiiProxy_WorkspacesIpGroup) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesIpGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6417,8 +7687,8 @@ func (j *jsiiProxy_WorkspacesIpGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) Rules() *[]*WorkspacesIpGroupRules {
-	var returns *[]*WorkspacesIpGroupRules
+func (j *jsiiProxy_WorkspacesIpGroup) Rules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rules",
@@ -6427,8 +7697,8 @@ func (j *jsiiProxy_WorkspacesIpGroup) Rules() *[]*WorkspacesIpGroupRules {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) RulesInput() *[]*WorkspacesIpGroupRules {
-	var returns *[]*WorkspacesIpGroupRules
+func (j *jsiiProxy_WorkspacesIpGroup) RulesInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rulesInput",
@@ -6437,8 +7707,8 @@ func (j *jsiiProxy_WorkspacesIpGroup) RulesInput() *[]*WorkspacesIpGroupRules {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesIpGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6447,8 +7717,8 @@ func (j *jsiiProxy_WorkspacesIpGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesIpGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6457,8 +7727,8 @@ func (j *jsiiProxy_WorkspacesIpGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesIpGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6467,8 +7737,8 @@ func (j *jsiiProxy_WorkspacesIpGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesIpGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6507,7 +7777,7 @@ func (j *jsiiProxy_WorkspacesIpGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html aws_workspaces_ip_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group aws_workspaces_ip_group} Resource.
 func NewWorkspacesIpGroup(scope constructs.Construct, id *string, config *WorkspacesIpGroupConfig) WorkspacesIpGroup {
 	_init_.Initialize()
 
@@ -6522,7 +7792,7 @@ func NewWorkspacesIpGroup(scope constructs.Construct, id *string, config *Worksp
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html aws_workspaces_ip_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group aws_workspaces_ip_group} Resource.
 func NewWorkspacesIpGroup_Override(w WorkspacesIpGroup, scope constructs.Construct, id *string, config *WorkspacesIpGroupConfig) {
 	_init_.Initialize()
 
@@ -6533,7 +7803,7 @@ func NewWorkspacesIpGroup_Override(w WorkspacesIpGroup, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_WorkspacesIpGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6581,7 +7851,7 @@ func (j *jsiiProxy_WorkspacesIpGroup) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) SetRules(val *[]*WorkspacesIpGroupRules) {
+func (j *jsiiProxy_WorkspacesIpGroup) SetRules(val interface{}) {
 	_jsii_.Set(
 		j,
 		"rules",
@@ -6589,7 +7859,7 @@ func (j *jsiiProxy_WorkspacesIpGroup) SetRules(val *[]*WorkspacesIpGroupRules) {
 	)
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_WorkspacesIpGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6597,7 +7867,7 @@ func (j *jsiiProxy_WorkspacesIpGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_WorkspacesIpGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_WorkspacesIpGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6645,12 +7915,40 @@ func (w *jsiiProxy_WorkspacesIpGroup) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesIpGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesIpGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesIpGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6687,12 +7985,54 @@ func (w *jsiiProxy_WorkspacesIpGroup) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesIpGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesIpGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesIpGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesIpGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6825,35 +8165,35 @@ func (w *jsiiProxy_WorkspacesIpGroup) ToTerraform() interface{} {
 // AWS WorkSpaces.
 type WorkspacesIpGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html#name WorkspacesIpGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html#description WorkspacesIpGroup#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group#name WorkspacesIpGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group#description WorkspacesIpGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 	// rules block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html#rules WorkspacesIpGroup#rules}
-	Rules *[]*WorkspacesIpGroupRules `json:"rules"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html#tags WorkspacesIpGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html#tags_all WorkspacesIpGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group#rules WorkspacesIpGroup#rules}
+	Rules interface{} `json:"rules" yaml:"rules"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group#tags WorkspacesIpGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group#tags_all WorkspacesIpGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type WorkspacesIpGroupRules struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html#source WorkspacesIpGroup#source}.
-	Source *string `json:"source"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group.html#description WorkspacesIpGroup#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group#source WorkspacesIpGroup#source}.
+	Source *string `json:"source" yaml:"source"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_ip_group#description WorkspacesIpGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html aws_workspaces_workspace}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace aws_workspaces_workspace}.
 type WorkspacesWorkspace interface {
 	cdktf.TerraformResource
 	BundleId() *string
@@ -6862,8 +8202,8 @@ type WorkspacesWorkspace interface {
 	CdktfStack() cdktf.TerraformStack
 	ComputerName() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DirectoryId() *string
@@ -6883,12 +8223,12 @@ type WorkspacesWorkspace interface {
 	SetRootVolumeEncryptionEnabled(val interface{})
 	RootVolumeEncryptionEnabledInput() interface{}
 	State() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -6906,10 +8246,15 @@ type WorkspacesWorkspace interface {
 	WorkspaceProperties() WorkspacesWorkspaceWorkspacePropertiesOutputReference
 	WorkspacePropertiesInput() *WorkspacesWorkspaceWorkspaceProperties
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *WorkspacesWorkspaceTimeouts)
@@ -6983,8 +8328,8 @@ func (j *jsiiProxy_WorkspacesWorkspace) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesWorkspace) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7133,8 +8478,8 @@ func (j *jsiiProxy_WorkspacesWorkspace) State() *string {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesWorkspace) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -7143,8 +8488,8 @@ func (j *jsiiProxy_WorkspacesWorkspace) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesWorkspace) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -7153,8 +8498,8 @@ func (j *jsiiProxy_WorkspacesWorkspace) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesWorkspace) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -7163,8 +8508,8 @@ func (j *jsiiProxy_WorkspacesWorkspace) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WorkspacesWorkspace) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -7303,7 +8648,7 @@ func (j *jsiiProxy_WorkspacesWorkspace) WorkspacePropertiesInput() *WorkspacesWo
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html aws_workspaces_workspace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace aws_workspaces_workspace} Resource.
 func NewWorkspacesWorkspace(scope constructs.Construct, id *string, config *WorkspacesWorkspaceConfig) WorkspacesWorkspace {
 	_init_.Initialize()
 
@@ -7318,7 +8663,7 @@ func NewWorkspacesWorkspace(scope constructs.Construct, id *string, config *Work
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html aws_workspaces_workspace} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace aws_workspaces_workspace} Resource.
 func NewWorkspacesWorkspace_Override(w WorkspacesWorkspace, scope constructs.Construct, id *string, config *WorkspacesWorkspaceConfig) {
 	_init_.Initialize()
 
@@ -7337,7 +8682,7 @@ func (j *jsiiProxy_WorkspacesWorkspace) SetBundleId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) SetCount(val interface{}) {
+func (j *jsiiProxy_WorkspacesWorkspace) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7385,7 +8730,7 @@ func (j *jsiiProxy_WorkspacesWorkspace) SetRootVolumeEncryptionEnabled(val inter
 	)
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) SetTags(val interface{}) {
+func (j *jsiiProxy_WorkspacesWorkspace) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -7393,7 +8738,7 @@ func (j *jsiiProxy_WorkspacesWorkspace) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_WorkspacesWorkspace) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_WorkspacesWorkspace) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -7465,12 +8810,40 @@ func (w *jsiiProxy_WorkspacesWorkspace) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesWorkspace) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesWorkspace) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspace) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7507,12 +8880,54 @@ func (w *jsiiProxy_WorkspacesWorkspace) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesWorkspace) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspace) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesWorkspace) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspace) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7685,46 +9100,46 @@ func (w *jsiiProxy_WorkspacesWorkspace) ToTerraform() interface{} {
 // AWS WorkSpaces.
 type WorkspacesWorkspaceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#bundle_id WorkspacesWorkspace#bundle_id}.
-	BundleId *string `json:"bundleId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#directory_id WorkspacesWorkspace#directory_id}.
-	DirectoryId *string `json:"directoryId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#user_name WorkspacesWorkspace#user_name}.
-	UserName *string `json:"userName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#root_volume_encryption_enabled WorkspacesWorkspace#root_volume_encryption_enabled}.
-	RootVolumeEncryptionEnabled interface{} `json:"rootVolumeEncryptionEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#tags WorkspacesWorkspace#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#tags_all WorkspacesWorkspace#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#bundle_id WorkspacesWorkspace#bundle_id}.
+	BundleId *string `json:"bundleId" yaml:"bundleId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#directory_id WorkspacesWorkspace#directory_id}.
+	DirectoryId *string `json:"directoryId" yaml:"directoryId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#user_name WorkspacesWorkspace#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#root_volume_encryption_enabled WorkspacesWorkspace#root_volume_encryption_enabled}.
+	RootVolumeEncryptionEnabled interface{} `json:"rootVolumeEncryptionEnabled" yaml:"rootVolumeEncryptionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#tags WorkspacesWorkspace#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#tags_all WorkspacesWorkspace#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#timeouts WorkspacesWorkspace#timeouts}
-	Timeouts *WorkspacesWorkspaceTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#user_volume_encryption_enabled WorkspacesWorkspace#user_volume_encryption_enabled}.
-	UserVolumeEncryptionEnabled interface{} `json:"userVolumeEncryptionEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#volume_encryption_key WorkspacesWorkspace#volume_encryption_key}.
-	VolumeEncryptionKey *string `json:"volumeEncryptionKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#timeouts WorkspacesWorkspace#timeouts}
+	Timeouts *WorkspacesWorkspaceTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#user_volume_encryption_enabled WorkspacesWorkspace#user_volume_encryption_enabled}.
+	UserVolumeEncryptionEnabled interface{} `json:"userVolumeEncryptionEnabled" yaml:"userVolumeEncryptionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#volume_encryption_key WorkspacesWorkspace#volume_encryption_key}.
+	VolumeEncryptionKey *string `json:"volumeEncryptionKey" yaml:"volumeEncryptionKey"`
 	// workspace_properties block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#workspace_properties WorkspacesWorkspace#workspace_properties}
-	WorkspaceProperties *WorkspacesWorkspaceWorkspaceProperties `json:"workspaceProperties"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#workspace_properties WorkspacesWorkspace#workspace_properties}
+	WorkspaceProperties *WorkspacesWorkspaceWorkspaceProperties `json:"workspaceProperties" yaml:"workspaceProperties"`
 }
 
 type WorkspacesWorkspaceTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#create WorkspacesWorkspace#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#delete WorkspacesWorkspace#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#update WorkspacesWorkspace#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#create WorkspacesWorkspace#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#delete WorkspacesWorkspace#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#update WorkspacesWorkspace#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type WorkspacesWorkspaceTimeoutsOutputReference interface {
@@ -7741,15 +9156,20 @@ type WorkspacesWorkspaceTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7832,8 +9252,8 @@ func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7862,7 +9282,7 @@ func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) UpdateInput() *st
 	return returns
 }
 
-func NewWorkspacesWorkspaceTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WorkspacesWorkspaceTimeoutsOutputReference {
+func NewWorkspacesWorkspaceTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WorkspacesWorkspaceTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference{}
@@ -7876,7 +9296,7 @@ func NewWorkspacesWorkspaceTimeoutsOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewWorkspacesWorkspaceTimeoutsOutputReference_Override(w WorkspacesWorkspaceTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWorkspacesWorkspaceTimeoutsOutputReference_Override(w WorkspacesWorkspaceTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7926,7 +9346,7 @@ func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7943,12 +9363,40 @@ func (j *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) SetUpdate(val *st
 }
 
 // Experimental.
-func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7985,12 +9433,54 @@ func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8051,16 +9541,16 @@ func (w *jsiiProxy_WorkspacesWorkspaceTimeoutsOutputReference) ResetUpdate() {
 }
 
 type WorkspacesWorkspaceWorkspaceProperties struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#compute_type_name WorkspacesWorkspace#compute_type_name}.
-	ComputeTypeName *string `json:"computeTypeName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#root_volume_size_gib WorkspacesWorkspace#root_volume_size_gib}.
-	RootVolumeSizeGib *float64 `json:"rootVolumeSizeGib"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#running_mode WorkspacesWorkspace#running_mode}.
-	RunningMode *string `json:"runningMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#running_mode_auto_stop_timeout_in_minutes WorkspacesWorkspace#running_mode_auto_stop_timeout_in_minutes}.
-	RunningModeAutoStopTimeoutInMinutes *float64 `json:"runningModeAutoStopTimeoutInMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace.html#user_volume_size_gib WorkspacesWorkspace#user_volume_size_gib}.
-	UserVolumeSizeGib *float64 `json:"userVolumeSizeGib"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#compute_type_name WorkspacesWorkspace#compute_type_name}.
+	ComputeTypeName *string `json:"computeTypeName" yaml:"computeTypeName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#root_volume_size_gib WorkspacesWorkspace#root_volume_size_gib}.
+	RootVolumeSizeGib *float64 `json:"rootVolumeSizeGib" yaml:"rootVolumeSizeGib"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#running_mode WorkspacesWorkspace#running_mode}.
+	RunningMode *string `json:"runningMode" yaml:"runningMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#running_mode_auto_stop_timeout_in_minutes WorkspacesWorkspace#running_mode_auto_stop_timeout_in_minutes}.
+	RunningModeAutoStopTimeoutInMinutes *float64 `json:"runningModeAutoStopTimeoutInMinutes" yaml:"runningModeAutoStopTimeoutInMinutes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/workspaces_workspace#user_volume_size_gib WorkspacesWorkspace#user_volume_size_gib}.
+	UserVolumeSizeGib *float64 `json:"userVolumeSizeGib" yaml:"userVolumeSizeGib"`
 }
 
 type WorkspacesWorkspaceWorkspacePropertiesOutputReference interface {
@@ -8083,15 +9573,20 @@ type WorkspacesWorkspaceWorkspacePropertiesOutputReference interface {
 	RunningModeInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserVolumeSizeGib() *float64
 	SetUserVolumeSizeGib(val *float64)
 	UserVolumeSizeGibInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetComputeTypeName()
@@ -8216,8 +9711,8 @@ func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8246,7 +9741,7 @@ func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) UserVo
 	return returns
 }
 
-func NewWorkspacesWorkspaceWorkspacePropertiesOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) WorkspacesWorkspaceWorkspacePropertiesOutputReference {
+func NewWorkspacesWorkspaceWorkspacePropertiesOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) WorkspacesWorkspaceWorkspacePropertiesOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference{}
@@ -8260,7 +9755,7 @@ func NewWorkspacesWorkspaceWorkspacePropertiesOutputReference(terraformResource 
 	return &j
 }
 
-func NewWorkspacesWorkspaceWorkspacePropertiesOutputReference_Override(w WorkspacesWorkspaceWorkspacePropertiesOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewWorkspacesWorkspaceWorkspacePropertiesOutputReference_Override(w WorkspacesWorkspaceWorkspacePropertiesOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8326,7 +9821,7 @@ func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8343,12 +9838,40 @@ func (j *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) SetUse
 }
 
 // Experimental.
-func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		w,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		w,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		w,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8385,12 +9908,54 @@ func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetNum
 }
 
 // Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		w,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		w,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (w *jsiiProxy_WorkspacesWorkspaceWorkspacePropertiesOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		w,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

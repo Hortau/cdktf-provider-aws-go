@@ -9,22 +9,22 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/lex/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_bot.html aws_lex_bot}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_bot aws_lex_bot}.
 type DataAwsLexBot interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	Checksum() *string
-	ChildDirected() interface{}
+	ChildDirected() cdktf.IResolvable
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
-	DetectSentiment() interface{}
-	EnableModelImprovements() interface{}
+	DetectSentiment() cdktf.IResolvable
+	EnableModelImprovements() cdktf.IResolvable
 	FailureReason() *string
 	Fqn() *string
 	FriendlyUniqueId() *string
@@ -51,10 +51,15 @@ type DataAwsLexBot interface {
 	VersionInput() *string
 	VoiceId() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -100,8 +105,8 @@ func (j *jsiiProxy_DataAwsLexBot) Checksum() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexBot) ChildDirected() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLexBot) ChildDirected() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"childDirected",
@@ -120,8 +125,8 @@ func (j *jsiiProxy_DataAwsLexBot) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexBot) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLexBot) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -160,8 +165,8 @@ func (j *jsiiProxy_DataAwsLexBot) Description() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexBot) DetectSentiment() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLexBot) DetectSentiment() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"detectSentiment",
@@ -170,8 +175,8 @@ func (j *jsiiProxy_DataAwsLexBot) DetectSentiment() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexBot) EnableModelImprovements() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLexBot) EnableModelImprovements() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enableModelImprovements",
@@ -390,7 +395,7 @@ func (j *jsiiProxy_DataAwsLexBot) VoiceId() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot.html aws_lex_bot} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot aws_lex_bot} Data Source.
 func NewDataAwsLexBot(scope constructs.Construct, id *string, config *DataAwsLexBotConfig) DataAwsLexBot {
 	_init_.Initialize()
 
@@ -405,7 +410,7 @@ func NewDataAwsLexBot(scope constructs.Construct, id *string, config *DataAwsLex
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot.html aws_lex_bot} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot aws_lex_bot} Data Source.
 func NewDataAwsLexBot_Override(d DataAwsLexBot, scope constructs.Construct, id *string, config *DataAwsLexBotConfig) {
 	_init_.Initialize()
 
@@ -416,7 +421,7 @@ func NewDataAwsLexBot_Override(d DataAwsLexBot, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_DataAwsLexBot) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLexBot) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -504,12 +509,40 @@ func (d *jsiiProxy_DataAwsLexBot) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexBot) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexBot) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexBot) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -546,12 +579,54 @@ func (d *jsiiProxy_DataAwsLexBot) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexBot) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexBot) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexBot) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexBot) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -657,7 +732,7 @@ func (d *jsiiProxy_DataAwsLexBot) ToTerraform() interface{} {
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias.html aws_lex_bot_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias aws_lex_bot_alias}.
 type DataAwsLexBotAlias interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -668,8 +743,8 @@ type DataAwsLexBotAlias interface {
 	CdktfStack() cdktf.TerraformStack
 	Checksum() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -691,10 +766,15 @@ type DataAwsLexBotAlias interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -779,8 +859,8 @@ func (j *jsiiProxy_DataAwsLexBotAlias) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexBotAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLexBotAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -949,7 +1029,7 @@ func (j *jsiiProxy_DataAwsLexBotAlias) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias.html aws_lex_bot_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias aws_lex_bot_alias} Data Source.
 func NewDataAwsLexBotAlias(scope constructs.Construct, id *string, config *DataAwsLexBotAliasConfig) DataAwsLexBotAlias {
 	_init_.Initialize()
 
@@ -964,7 +1044,7 @@ func NewDataAwsLexBotAlias(scope constructs.Construct, id *string, config *DataA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias.html aws_lex_bot_alias} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias aws_lex_bot_alias} Data Source.
 func NewDataAwsLexBotAlias_Override(d DataAwsLexBotAlias, scope constructs.Construct, id *string, config *DataAwsLexBotAliasConfig) {
 	_init_.Initialize()
 
@@ -983,7 +1063,7 @@ func (j *jsiiProxy_DataAwsLexBotAlias) SetBotName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsLexBotAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLexBotAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1063,12 +1143,40 @@ func (d *jsiiProxy_DataAwsLexBotAlias) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexBotAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexBotAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexBotAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1105,12 +1213,54 @@ func (d *jsiiProxy_DataAwsLexBotAlias) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexBotAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexBotAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexBotAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexBotAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1211,44 +1361,44 @@ func (d *jsiiProxy_DataAwsLexBotAlias) ToTerraform() interface{} {
 // AWS Lex.
 type DataAwsLexBotAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias.html#bot_name DataAwsLexBotAlias#bot_name}.
-	BotName *string `json:"botName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias.html#name DataAwsLexBotAlias#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias#bot_name DataAwsLexBotAlias#bot_name}.
+	BotName *string `json:"botName" yaml:"botName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot_alias#name DataAwsLexBotAlias#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
 // AWS Lex.
 type DataAwsLexBotConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot.html#name DataAwsLexBot#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot.html#version DataAwsLexBot#version}.
-	Version *string `json:"version"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot#name DataAwsLexBot#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_bot#version DataAwsLexBot#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_intent.html aws_lex_intent}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_intent aws_lex_intent}.
 type DataAwsLexIntent interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	Checksum() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -1274,10 +1424,15 @@ type DataAwsLexIntent interface {
 	SetVersion(val *string)
 	VersionInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1333,8 +1488,8 @@ func (j *jsiiProxy_DataAwsLexIntent) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexIntent) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLexIntent) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1533,7 +1688,7 @@ func (j *jsiiProxy_DataAwsLexIntent) VersionInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_intent.html aws_lex_intent} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_intent aws_lex_intent} Data Source.
 func NewDataAwsLexIntent(scope constructs.Construct, id *string, config *DataAwsLexIntentConfig) DataAwsLexIntent {
 	_init_.Initialize()
 
@@ -1548,7 +1703,7 @@ func NewDataAwsLexIntent(scope constructs.Construct, id *string, config *DataAws
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_intent.html aws_lex_intent} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_intent aws_lex_intent} Data Source.
 func NewDataAwsLexIntent_Override(d DataAwsLexIntent, scope constructs.Construct, id *string, config *DataAwsLexIntentConfig) {
 	_init_.Initialize()
 
@@ -1559,7 +1714,7 @@ func NewDataAwsLexIntent_Override(d DataAwsLexIntent, scope constructs.Construct
 	)
 }
 
-func (j *jsiiProxy_DataAwsLexIntent) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLexIntent) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1647,12 +1802,40 @@ func (d *jsiiProxy_DataAwsLexIntent) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexIntent) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexIntent) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexIntent) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1689,12 +1872,54 @@ func (d *jsiiProxy_DataAwsLexIntent) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexIntent) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexIntent) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexIntent) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexIntent) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1803,27 +2028,27 @@ func (d *jsiiProxy_DataAwsLexIntent) ToTerraform() interface{} {
 // AWS Lex.
 type DataAwsLexIntentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_intent.html#name DataAwsLexIntent#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_intent.html#version DataAwsLexIntent#version}.
-	Version *string `json:"version"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_intent#name DataAwsLexIntent#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_intent#version DataAwsLexIntent#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type.html aws_lex_slot_type}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type aws_lex_slot_type}.
 type DataAwsLexSlotType interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	Checksum() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -1850,10 +2075,15 @@ type DataAwsLexSlotType interface {
 	VersionInput() *string
 	AddOverride(path *string, value interface{})
 	EnumerationValue(index *string) DataAwsLexSlotTypeEnumerationValue
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1899,8 +2129,8 @@ func (j *jsiiProxy_DataAwsLexSlotType) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexSlotType) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsLexSlotType) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2099,7 +2329,7 @@ func (j *jsiiProxy_DataAwsLexSlotType) VersionInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type.html aws_lex_slot_type} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type aws_lex_slot_type} Data Source.
 func NewDataAwsLexSlotType(scope constructs.Construct, id *string, config *DataAwsLexSlotTypeConfig) DataAwsLexSlotType {
 	_init_.Initialize()
 
@@ -2114,7 +2344,7 @@ func NewDataAwsLexSlotType(scope constructs.Construct, id *string, config *DataA
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type.html aws_lex_slot_type} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type aws_lex_slot_type} Data Source.
 func NewDataAwsLexSlotType_Override(d DataAwsLexSlotType, scope constructs.Construct, id *string, config *DataAwsLexSlotTypeConfig) {
 	_init_.Initialize()
 
@@ -2125,7 +2355,7 @@ func NewDataAwsLexSlotType_Override(d DataAwsLexSlotType, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_DataAwsLexSlotType) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsLexSlotType) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2226,12 +2456,40 @@ func (d *jsiiProxy_DataAwsLexSlotType) EnumerationValue(index *string) DataAwsLe
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexSlotType) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexSlotType) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexSlotType) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2268,12 +2526,54 @@ func (d *jsiiProxy_DataAwsLexSlotType) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexSlotType) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexSlotType) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexSlotType) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexSlotType) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2382,17 +2682,17 @@ func (d *jsiiProxy_DataAwsLexSlotType) ToTerraform() interface{} {
 // AWS Lex.
 type DataAwsLexSlotTypeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type.html#name DataAwsLexSlotType#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type.html#version DataAwsLexSlotType#version}.
-	Version *string `json:"version"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type#name DataAwsLexSlotType#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/lex_slot_type#version DataAwsLexSlotType#version}.
+	Version *string `json:"version" yaml:"version"`
 }
 
 type DataAwsLexSlotTypeEnumerationValue interface {
@@ -2402,13 +2702,20 @@ type DataAwsLexSlotTypeEnumerationValue interface {
 	Synonyms() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2447,8 +2754,8 @@ func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2467,15 +2774,25 @@ func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) Value() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsLexSlotTypeEnumerationValue(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsLexSlotTypeEnumerationValue {
+func NewDataAwsLexSlotTypeEnumerationValue(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsLexSlotTypeEnumerationValue {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsLexSlotTypeEnumerationValue{}
 
 	_jsii_.Create(
 		"hashicorp_aws.lex.DataAwsLexSlotTypeEnumerationValue",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2483,12 +2800,12 @@ func NewDataAwsLexSlotTypeEnumerationValue(terraformResource cdktf.ITerraformRes
 }
 
 // Experimental.
-func NewDataAwsLexSlotTypeEnumerationValue_Override(d DataAwsLexSlotTypeEnumerationValue, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsLexSlotTypeEnumerationValue_Override(d DataAwsLexSlotTypeEnumerationValue, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.lex.DataAwsLexSlotTypeEnumerationValue",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2509,7 +2826,7 @@ func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2517,13 +2834,49 @@ func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) SetTerraformResource(val 
 	)
 }
 
+func (j *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2560,12 +2913,54 @@ func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2587,7 +2982,7 @@ func (d *jsiiProxy_DataAwsLexSlotTypeEnumerationValue) InterpolationForAttribute
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html aws_lex_bot}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_bot aws_lex_bot}.
 type LexBot interface {
 	cdktf.TerraformResource
 	AbortStatement() LexBotAbortStatementOutputReference
@@ -2601,8 +2996,8 @@ type LexBot interface {
 	ClarificationPrompt() LexBotClarificationPromptOutputReference
 	ClarificationPromptInput() *LexBotClarificationPrompt
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	CreateVersion() interface{}
 	SetCreateVersion(val interface{})
@@ -2625,9 +3020,9 @@ type LexBot interface {
 	IdleSessionTtlInSeconds() *float64
 	SetIdleSessionTtlInSeconds(val *float64)
 	IdleSessionTtlInSecondsInput() *float64
-	Intent() *[]*LexBotIntent
-	SetIntent(val *[]*LexBotIntent)
-	IntentInput() *[]*LexBotIntent
+	Intent() interface{}
+	SetIntent(val interface{})
+	IntentInput() interface{}
 	LastUpdatedDate() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
@@ -2658,10 +3053,15 @@ type LexBot interface {
 	SetVoiceId(val *string)
 	VoiceIdInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAbortStatement(value *LexBotAbortStatement)
@@ -2790,8 +3190,8 @@ func (j *jsiiProxy_LexBot) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LexBot) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LexBot) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2960,8 +3360,8 @@ func (j *jsiiProxy_LexBot) IdleSessionTtlInSecondsInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_LexBot) Intent() *[]*LexBotIntent {
-	var returns *[]*LexBotIntent
+func (j *jsiiProxy_LexBot) Intent() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"intent",
@@ -2970,8 +3370,8 @@ func (j *jsiiProxy_LexBot) Intent() *[]*LexBotIntent {
 	return returns
 }
 
-func (j *jsiiProxy_LexBot) IntentInput() *[]*LexBotIntent {
-	var returns *[]*LexBotIntent
+func (j *jsiiProxy_LexBot) IntentInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"intentInput",
@@ -3200,7 +3600,7 @@ func (j *jsiiProxy_LexBot) VoiceIdInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html aws_lex_bot} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot aws_lex_bot} Resource.
 func NewLexBot(scope constructs.Construct, id *string, config *LexBotConfig) LexBot {
 	_init_.Initialize()
 
@@ -3215,7 +3615,7 @@ func NewLexBot(scope constructs.Construct, id *string, config *LexBotConfig) Lex
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html aws_lex_bot} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot aws_lex_bot} Resource.
 func NewLexBot_Override(l LexBot, scope constructs.Construct, id *string, config *LexBotConfig) {
 	_init_.Initialize()
 
@@ -3234,7 +3634,7 @@ func (j *jsiiProxy_LexBot) SetChildDirected(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_LexBot) SetCount(val interface{}) {
+func (j *jsiiProxy_LexBot) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3290,7 +3690,7 @@ func (j *jsiiProxy_LexBot) SetIdleSessionTtlInSeconds(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_LexBot) SetIntent(val *[]*LexBotIntent) {
+func (j *jsiiProxy_LexBot) SetIntent(val interface{}) {
 	_jsii_.Set(
 		j,
 		"intent",
@@ -3394,12 +3794,40 @@ func (l *jsiiProxy_LexBot) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBot) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBot) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBot) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3436,12 +3864,54 @@ func (l *jsiiProxy_LexBot) GetNumberAttribute(terraformAttribute *string) *float
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBot) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBot) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBot) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBot) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3654,19 +4124,19 @@ func (l *jsiiProxy_LexBot) ToTerraform() interface{} {
 type LexBotAbortStatement struct {
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#message LexBot#message}
-	Message *[]*LexBotAbortStatementMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#response_card LexBot#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#message LexBot#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#response_card LexBot#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexBotAbortStatementMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#content LexBot#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#content_type LexBot#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#group_number LexBot#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#content LexBot#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#content_type LexBot#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#group_number LexBot#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexBotAbortStatementOutputReference interface {
@@ -3675,20 +4145,25 @@ type LexBotAbortStatementOutputReference interface {
 	SetInternalValue(val *LexBotAbortStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Message() *[]*LexBotAbortStatementMessage
-	SetMessage(val *[]*LexBotAbortStatementMessage)
-	MessageInput() *[]*LexBotAbortStatementMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -3719,8 +4194,8 @@ func (j *jsiiProxy_LexBotAbortStatementOutputReference) IsSingleItem() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAbortStatementOutputReference) Message() *[]*LexBotAbortStatementMessage {
-	var returns *[]*LexBotAbortStatementMessage
+func (j *jsiiProxy_LexBotAbortStatementOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -3729,8 +4204,8 @@ func (j *jsiiProxy_LexBotAbortStatementOutputReference) Message() *[]*LexBotAbor
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAbortStatementOutputReference) MessageInput() *[]*LexBotAbortStatementMessage {
-	var returns *[]*LexBotAbortStatementMessage
+func (j *jsiiProxy_LexBotAbortStatementOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -3769,8 +4244,8 @@ func (j *jsiiProxy_LexBotAbortStatementOutputReference) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAbortStatementOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexBotAbortStatementOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3779,7 +4254,7 @@ func (j *jsiiProxy_LexBotAbortStatementOutputReference) TerraformResource() cdkt
 	return returns
 }
 
-func NewLexBotAbortStatementOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexBotAbortStatementOutputReference {
+func NewLexBotAbortStatementOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexBotAbortStatementOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexBotAbortStatementOutputReference{}
@@ -3793,7 +4268,7 @@ func NewLexBotAbortStatementOutputReference(terraformResource cdktf.ITerraformRe
 	return &j
 }
 
-func NewLexBotAbortStatementOutputReference_Override(l LexBotAbortStatementOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexBotAbortStatementOutputReference_Override(l LexBotAbortStatementOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3819,7 +4294,7 @@ func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetIsSingleItem(val *boo
 	)
 }
 
-func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetMessage(val *[]*LexBotAbortStatementMessage) {
+func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -3843,7 +4318,7 @@ func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3852,12 +4327,40 @@ func (j *jsiiProxy_LexBotAbortStatementOutputReference) SetTerraformResource(val
 }
 
 // Experimental.
-func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3894,12 +4397,54 @@ func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAbortStatementOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3943,7 +4488,7 @@ func (l *jsiiProxy_LexBotAbortStatementOutputReference) ResetResponseCard() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html aws_lex_bot_alias}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias aws_lex_bot_alias}.
 type LexBotAlias interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -3958,8 +4503,8 @@ type LexBotAlias interface {
 	ConstructNodeMetadata() *map[string]interface{}
 	ConversationLogs() LexBotAliasConversationLogsOutputReference
 	ConversationLogsInput() *LexBotAliasConversationLogs
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -3985,10 +4530,15 @@ type LexBotAlias interface {
 	Timeouts() LexBotAliasTimeoutsOutputReference
 	TimeoutsInput() *LexBotAliasTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutConversationLogs(value *LexBotAliasConversationLogs)
@@ -4108,8 +4658,8 @@ func (j *jsiiProxy_LexBotAlias) ConversationLogsInput() *LexBotAliasConversation
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAlias) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LexBotAlias) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4308,7 +4858,7 @@ func (j *jsiiProxy_LexBotAlias) TimeoutsInput() *LexBotAliasTimeouts {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html aws_lex_bot_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias aws_lex_bot_alias} Resource.
 func NewLexBotAlias(scope constructs.Construct, id *string, config *LexBotAliasConfig) LexBotAlias {
 	_init_.Initialize()
 
@@ -4323,7 +4873,7 @@ func NewLexBotAlias(scope constructs.Construct, id *string, config *LexBotAliasC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html aws_lex_bot_alias} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias aws_lex_bot_alias} Resource.
 func NewLexBotAlias_Override(l LexBotAlias, scope constructs.Construct, id *string, config *LexBotAliasConfig) {
 	_init_.Initialize()
 
@@ -4350,7 +4900,7 @@ func (j *jsiiProxy_LexBotAlias) SetBotVersion(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LexBotAlias) SetCount(val interface{}) {
+func (j *jsiiProxy_LexBotAlias) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4438,12 +4988,40 @@ func (l *jsiiProxy_LexBotAlias) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBotAlias) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBotAlias) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAlias) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4480,12 +5058,54 @@ func (l *jsiiProxy_LexBotAlias) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBotAlias) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAlias) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBotAlias) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAlias) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4626,49 +5246,49 @@ func (l *jsiiProxy_LexBotAlias) ToTerraform() interface{} {
 // AWS Lex.
 type LexBotAliasConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#bot_name LexBotAlias#bot_name}.
-	BotName *string `json:"botName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#bot_version LexBotAlias#bot_version}.
-	BotVersion *string `json:"botVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#name LexBotAlias#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#bot_name LexBotAlias#bot_name}.
+	BotName *string `json:"botName" yaml:"botName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#bot_version LexBotAlias#bot_version}.
+	BotVersion *string `json:"botVersion" yaml:"botVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#name LexBotAlias#name}.
+	Name *string `json:"name" yaml:"name"`
 	// conversation_logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#conversation_logs LexBotAlias#conversation_logs}
-	ConversationLogs *LexBotAliasConversationLogs `json:"conversationLogs"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#description LexBotAlias#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#conversation_logs LexBotAlias#conversation_logs}
+	ConversationLogs *LexBotAliasConversationLogs `json:"conversationLogs" yaml:"conversationLogs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#description LexBotAlias#description}.
+	Description *string `json:"description" yaml:"description"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#timeouts LexBotAlias#timeouts}
-	Timeouts *LexBotAliasTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#timeouts LexBotAlias#timeouts}
+	Timeouts *LexBotAliasTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type LexBotAliasConversationLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#iam_role_arn LexBotAlias#iam_role_arn}.
-	IamRoleArn *string `json:"iamRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#iam_role_arn LexBotAlias#iam_role_arn}.
+	IamRoleArn *string `json:"iamRoleArn" yaml:"iamRoleArn"`
 	// log_settings block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#log_settings LexBotAlias#log_settings}
-	LogSettings *[]*LexBotAliasConversationLogsLogSettings `json:"logSettings"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#log_settings LexBotAlias#log_settings}
+	LogSettings interface{} `json:"logSettings" yaml:"logSettings"`
 }
 
 type LexBotAliasConversationLogsLogSettings struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#destination LexBotAlias#destination}.
-	Destination *string `json:"destination"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#log_type LexBotAlias#log_type}.
-	LogType *string `json:"logType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#resource_arn LexBotAlias#resource_arn}.
-	ResourceArn *string `json:"resourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#kms_key_arn LexBotAlias#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#destination LexBotAlias#destination}.
+	Destination *string `json:"destination" yaml:"destination"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#log_type LexBotAlias#log_type}.
+	LogType *string `json:"logType" yaml:"logType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#resource_arn LexBotAlias#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#kms_key_arn LexBotAlias#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 }
 
 type LexBotAliasConversationLogsOutputReference interface {
@@ -4680,17 +5300,22 @@ type LexBotAliasConversationLogsOutputReference interface {
 	SetInternalValue(val *LexBotAliasConversationLogs)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	LogSettings() *[]*LexBotAliasConversationLogsLogSettings
-	SetLogSettings(val *[]*LexBotAliasConversationLogsLogSettings)
-	LogSettingsInput() *[]*LexBotAliasConversationLogsLogSettings
+	LogSettings() interface{}
+	SetLogSettings(val interface{})
+	LogSettingsInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetLogSettings()
@@ -4741,8 +5366,8 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) IsSingleItem() *b
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) LogSettings() *[]*LexBotAliasConversationLogsLogSettings {
-	var returns *[]*LexBotAliasConversationLogsLogSettings
+func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) LogSettings() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"logSettings",
@@ -4751,8 +5376,8 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) LogSettings() *[]
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) LogSettingsInput() *[]*LexBotAliasConversationLogsLogSettings {
-	var returns *[]*LexBotAliasConversationLogsLogSettings
+func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) LogSettingsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"logSettingsInput",
@@ -4771,8 +5396,8 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4781,7 +5406,7 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) TerraformResource
 	return returns
 }
 
-func NewLexBotAliasConversationLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexBotAliasConversationLogsOutputReference {
+func NewLexBotAliasConversationLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexBotAliasConversationLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexBotAliasConversationLogsOutputReference{}
@@ -4795,7 +5420,7 @@ func NewLexBotAliasConversationLogsOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewLexBotAliasConversationLogsOutputReference_Override(l LexBotAliasConversationLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexBotAliasConversationLogsOutputReference_Override(l LexBotAliasConversationLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4829,7 +5454,7 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetIsSingleItem(v
 	)
 }
 
-func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetLogSettings(val *[]*LexBotAliasConversationLogsLogSettings) {
+func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetLogSettings(val interface{}) {
 	_jsii_.Set(
 		j,
 		"logSettings",
@@ -4845,7 +5470,7 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4854,12 +5479,40 @@ func (j *jsiiProxy_LexBotAliasConversationLogsOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4896,12 +5549,54 @@ func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4946,12 +5641,12 @@ func (l *jsiiProxy_LexBotAliasConversationLogsOutputReference) ResetLogSettings(
 }
 
 type LexBotAliasTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#create LexBotAlias#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#delete LexBotAlias#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias.html#update LexBotAlias#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#create LexBotAlias#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#delete LexBotAlias#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot_alias#update LexBotAlias#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type LexBotAliasTimeoutsOutputReference interface {
@@ -4968,15 +5663,20 @@ type LexBotAliasTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -5059,8 +5759,8 @@ func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5089,7 +5789,7 @@ func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewLexBotAliasTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexBotAliasTimeoutsOutputReference {
+func NewLexBotAliasTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexBotAliasTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexBotAliasTimeoutsOutputReference{}
@@ -5103,7 +5803,7 @@ func NewLexBotAliasTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	return &j
 }
 
-func NewLexBotAliasTimeoutsOutputReference_Override(l LexBotAliasTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexBotAliasTimeoutsOutputReference_Override(l LexBotAliasTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5153,7 +5853,7 @@ func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5170,12 +5870,40 @@ func (j *jsiiProxy_LexBotAliasTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5212,12 +5940,54 @@ func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5278,23 +6048,23 @@ func (l *jsiiProxy_LexBotAliasTimeoutsOutputReference) ResetUpdate() {
 }
 
 type LexBotClarificationPrompt struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#max_attempts LexBot#max_attempts}.
-	MaxAttempts *float64 `json:"maxAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#max_attempts LexBot#max_attempts}.
+	MaxAttempts *float64 `json:"maxAttempts" yaml:"maxAttempts"`
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#message LexBot#message}
-	Message *[]*LexBotClarificationPromptMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#response_card LexBot#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#message LexBot#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#response_card LexBot#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexBotClarificationPromptMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#content LexBot#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#content_type LexBot#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#group_number LexBot#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#content LexBot#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#content_type LexBot#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#group_number LexBot#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexBotClarificationPromptOutputReference interface {
@@ -5306,20 +6076,25 @@ type LexBotClarificationPromptOutputReference interface {
 	MaxAttempts() *float64
 	SetMaxAttempts(val *float64)
 	MaxAttemptsInput() *float64
-	Message() *[]*LexBotClarificationPromptMessage
-	SetMessage(val *[]*LexBotClarificationPromptMessage)
-	MessageInput() *[]*LexBotClarificationPromptMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -5370,8 +6145,8 @@ func (j *jsiiProxy_LexBotClarificationPromptOutputReference) MaxAttemptsInput() 
 	return returns
 }
 
-func (j *jsiiProxy_LexBotClarificationPromptOutputReference) Message() *[]*LexBotClarificationPromptMessage {
-	var returns *[]*LexBotClarificationPromptMessage
+func (j *jsiiProxy_LexBotClarificationPromptOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -5380,8 +6155,8 @@ func (j *jsiiProxy_LexBotClarificationPromptOutputReference) Message() *[]*LexBo
 	return returns
 }
 
-func (j *jsiiProxy_LexBotClarificationPromptOutputReference) MessageInput() *[]*LexBotClarificationPromptMessage {
-	var returns *[]*LexBotClarificationPromptMessage
+func (j *jsiiProxy_LexBotClarificationPromptOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -5420,8 +6195,8 @@ func (j *jsiiProxy_LexBotClarificationPromptOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_LexBotClarificationPromptOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexBotClarificationPromptOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5430,7 +6205,7 @@ func (j *jsiiProxy_LexBotClarificationPromptOutputReference) TerraformResource()
 	return returns
 }
 
-func NewLexBotClarificationPromptOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexBotClarificationPromptOutputReference {
+func NewLexBotClarificationPromptOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexBotClarificationPromptOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexBotClarificationPromptOutputReference{}
@@ -5444,7 +6219,7 @@ func NewLexBotClarificationPromptOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewLexBotClarificationPromptOutputReference_Override(l LexBotClarificationPromptOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexBotClarificationPromptOutputReference_Override(l LexBotClarificationPromptOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5478,7 +6253,7 @@ func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetMaxAttempts(val 
 	)
 }
 
-func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetMessage(val *[]*LexBotClarificationPromptMessage) {
+func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -5502,7 +6277,7 @@ func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5511,12 +6286,40 @@ func (j *jsiiProxy_LexBotClarificationPromptOutputReference) SetTerraformResourc
 }
 
 // Experimental.
-func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5553,12 +6356,54 @@ func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotClarificationPromptOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5605,67 +6450,67 @@ func (l *jsiiProxy_LexBotClarificationPromptOutputReference) ResetResponseCard()
 // AWS Lex.
 type LexBotConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// abort_statement block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#abort_statement LexBot#abort_statement}
-	AbortStatement *LexBotAbortStatement `json:"abortStatement"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#child_directed LexBot#child_directed}.
-	ChildDirected interface{} `json:"childDirected"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#abort_statement LexBot#abort_statement}
+	AbortStatement *LexBotAbortStatement `json:"abortStatement" yaml:"abortStatement"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#child_directed LexBot#child_directed}.
+	ChildDirected interface{} `json:"childDirected" yaml:"childDirected"`
 	// intent block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#intent LexBot#intent}
-	Intent *[]*LexBotIntent `json:"intent"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#name LexBot#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#intent LexBot#intent}
+	Intent interface{} `json:"intent" yaml:"intent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#name LexBot#name}.
+	Name *string `json:"name" yaml:"name"`
 	// clarification_prompt block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#clarification_prompt LexBot#clarification_prompt}
-	ClarificationPrompt *LexBotClarificationPrompt `json:"clarificationPrompt"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#create_version LexBot#create_version}.
-	CreateVersion interface{} `json:"createVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#description LexBot#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#detect_sentiment LexBot#detect_sentiment}.
-	DetectSentiment interface{} `json:"detectSentiment"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#enable_model_improvements LexBot#enable_model_improvements}.
-	EnableModelImprovements interface{} `json:"enableModelImprovements"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#idle_session_ttl_in_seconds LexBot#idle_session_ttl_in_seconds}.
-	IdleSessionTtlInSeconds *float64 `json:"idleSessionTtlInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#locale LexBot#locale}.
-	Locale *string `json:"locale"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#nlu_intent_confidence_threshold LexBot#nlu_intent_confidence_threshold}.
-	NluIntentConfidenceThreshold *float64 `json:"nluIntentConfidenceThreshold"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#process_behavior LexBot#process_behavior}.
-	ProcessBehavior *string `json:"processBehavior"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#clarification_prompt LexBot#clarification_prompt}
+	ClarificationPrompt *LexBotClarificationPrompt `json:"clarificationPrompt" yaml:"clarificationPrompt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#create_version LexBot#create_version}.
+	CreateVersion interface{} `json:"createVersion" yaml:"createVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#description LexBot#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#detect_sentiment LexBot#detect_sentiment}.
+	DetectSentiment interface{} `json:"detectSentiment" yaml:"detectSentiment"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#enable_model_improvements LexBot#enable_model_improvements}.
+	EnableModelImprovements interface{} `json:"enableModelImprovements" yaml:"enableModelImprovements"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#idle_session_ttl_in_seconds LexBot#idle_session_ttl_in_seconds}.
+	IdleSessionTtlInSeconds *float64 `json:"idleSessionTtlInSeconds" yaml:"idleSessionTtlInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#locale LexBot#locale}.
+	Locale *string `json:"locale" yaml:"locale"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#nlu_intent_confidence_threshold LexBot#nlu_intent_confidence_threshold}.
+	NluIntentConfidenceThreshold *float64 `json:"nluIntentConfidenceThreshold" yaml:"nluIntentConfidenceThreshold"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#process_behavior LexBot#process_behavior}.
+	ProcessBehavior *string `json:"processBehavior" yaml:"processBehavior"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#timeouts LexBot#timeouts}
-	Timeouts *LexBotTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#voice_id LexBot#voice_id}.
-	VoiceId *string `json:"voiceId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#timeouts LexBot#timeouts}
+	Timeouts *LexBotTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#voice_id LexBot#voice_id}.
+	VoiceId *string `json:"voiceId" yaml:"voiceId"`
 }
 
 type LexBotIntent struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#intent_name LexBot#intent_name}.
-	IntentName *string `json:"intentName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#intent_version LexBot#intent_version}.
-	IntentVersion *string `json:"intentVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#intent_name LexBot#intent_name}.
+	IntentName *string `json:"intentName" yaml:"intentName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#intent_version LexBot#intent_version}.
+	IntentVersion *string `json:"intentVersion" yaml:"intentVersion"`
 }
 
 type LexBotTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#create LexBot#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#delete LexBot#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot.html#update LexBot#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#create LexBot#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#delete LexBot#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_bot#update LexBot#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type LexBotTimeoutsOutputReference interface {
@@ -5682,15 +6527,20 @@ type LexBotTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -5773,8 +6623,8 @@ func (j *jsiiProxy_LexBotTimeoutsOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_LexBotTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexBotTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5803,7 +6653,7 @@ func (j *jsiiProxy_LexBotTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewLexBotTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexBotTimeoutsOutputReference {
+func NewLexBotTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexBotTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexBotTimeoutsOutputReference{}
@@ -5817,7 +6667,7 @@ func NewLexBotTimeoutsOutputReference(terraformResource cdktf.ITerraformResource
 	return &j
 }
 
-func NewLexBotTimeoutsOutputReference_Override(l LexBotTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexBotTimeoutsOutputReference_Override(l LexBotTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5867,7 +6717,7 @@ func (j *jsiiProxy_LexBotTimeoutsOutputReference) SetTerraformAttribute(val *str
 	)
 }
 
-func (j *jsiiProxy_LexBotTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexBotTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5884,12 +6734,40 @@ func (j *jsiiProxy_LexBotTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5926,12 +6804,54 @@ func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexBotTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5991,7 +6911,7 @@ func (l *jsiiProxy_LexBotTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html aws_lex_intent}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_intent aws_lex_intent}.
 type LexIntent interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -6002,8 +6922,8 @@ type LexIntent interface {
 	ConfirmationPrompt() LexIntentConfirmationPromptOutputReference
 	ConfirmationPromptInput() *LexIntentConfirmationPrompt
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	CreateVersion() interface{}
 	SetCreateVersion(val interface{})
@@ -6040,9 +6960,9 @@ type LexIntent interface {
 	SampleUtterances() *[]*string
 	SetSampleUtterances(val *[]*string)
 	SampleUtterancesInput() *[]*string
-	Slot() *[]*LexIntentSlot
-	SetSlot(val *[]*LexIntentSlot)
-	SlotInput() *[]*LexIntentSlot
+	Slot() interface{}
+	SetSlot(val interface{})
+	SlotInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -6050,10 +6970,15 @@ type LexIntent interface {
 	TimeoutsInput() *LexIntentTimeouts
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutConclusionStatement(value *LexIntentConclusionStatement)
@@ -6166,8 +7091,8 @@ func (j *jsiiProxy_LexIntent) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LexIntent) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LexIntent) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6456,8 +7381,8 @@ func (j *jsiiProxy_LexIntent) SampleUtterancesInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_LexIntent) Slot() *[]*LexIntentSlot {
-	var returns *[]*LexIntentSlot
+func (j *jsiiProxy_LexIntent) Slot() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"slot",
@@ -6466,8 +7391,8 @@ func (j *jsiiProxy_LexIntent) Slot() *[]*LexIntentSlot {
 	return returns
 }
 
-func (j *jsiiProxy_LexIntent) SlotInput() *[]*LexIntentSlot {
-	var returns *[]*LexIntentSlot
+func (j *jsiiProxy_LexIntent) SlotInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"slotInput",
@@ -6536,7 +7461,7 @@ func (j *jsiiProxy_LexIntent) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html aws_lex_intent} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_intent aws_lex_intent} Resource.
 func NewLexIntent(scope constructs.Construct, id *string, config *LexIntentConfig) LexIntent {
 	_init_.Initialize()
 
@@ -6551,7 +7476,7 @@ func NewLexIntent(scope constructs.Construct, id *string, config *LexIntentConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html aws_lex_intent} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_intent aws_lex_intent} Resource.
 func NewLexIntent_Override(l LexIntent, scope constructs.Construct, id *string, config *LexIntentConfig) {
 	_init_.Initialize()
 
@@ -6562,7 +7487,7 @@ func NewLexIntent_Override(l LexIntent, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_LexIntent) SetCount(val interface{}) {
+func (j *jsiiProxy_LexIntent) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6634,7 +7559,7 @@ func (j *jsiiProxy_LexIntent) SetSampleUtterances(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_LexIntent) SetSlot(val *[]*LexIntentSlot) {
+func (j *jsiiProxy_LexIntent) SetSlot(val interface{}) {
 	_jsii_.Set(
 		j,
 		"slot",
@@ -6682,12 +7607,40 @@ func (l *jsiiProxy_LexIntent) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntent) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntent) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntent) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6724,12 +7677,54 @@ func (l *jsiiProxy_LexIntent) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntent) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntent) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntent) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntent) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6974,19 +7969,19 @@ func (l *jsiiProxy_LexIntent) ToTerraform() interface{} {
 type LexIntentConclusionStatement struct {
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message LexIntent#message}
-	Message *[]*LexIntentConclusionStatementMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#response_card LexIntent#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message LexIntent#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#response_card LexIntent#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexIntentConclusionStatementMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content LexIntent#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content_type LexIntent#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#group_number LexIntent#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content LexIntent#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content_type LexIntent#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#group_number LexIntent#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexIntentConclusionStatementOutputReference interface {
@@ -6995,20 +7990,25 @@ type LexIntentConclusionStatementOutputReference interface {
 	SetInternalValue(val *LexIntentConclusionStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Message() *[]*LexIntentConclusionStatementMessage
-	SetMessage(val *[]*LexIntentConclusionStatementMessage)
-	MessageInput() *[]*LexIntentConclusionStatementMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -7039,8 +8039,8 @@ func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) IsSingleItem() *
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) Message() *[]*LexIntentConclusionStatementMessage {
-	var returns *[]*LexIntentConclusionStatementMessage
+func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -7049,8 +8049,8 @@ func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) Message() *[]*Le
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) MessageInput() *[]*LexIntentConclusionStatementMessage {
-	var returns *[]*LexIntentConclusionStatementMessage
+func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -7089,8 +8089,8 @@ func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7099,7 +8099,7 @@ func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) TerraformResourc
 	return returns
 }
 
-func NewLexIntentConclusionStatementOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentConclusionStatementOutputReference {
+func NewLexIntentConclusionStatementOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentConclusionStatementOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentConclusionStatementOutputReference{}
@@ -7113,7 +8113,7 @@ func NewLexIntentConclusionStatementOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewLexIntentConclusionStatementOutputReference_Override(l LexIntentConclusionStatementOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentConclusionStatementOutputReference_Override(l LexIntentConclusionStatementOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7139,7 +8139,7 @@ func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetIsSingleItem(
 	)
 }
 
-func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetMessage(val *[]*LexIntentConclusionStatementMessage) {
+func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -7163,7 +8163,7 @@ func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7172,12 +8172,40 @@ func (j *jsiiProxy_LexIntentConclusionStatementOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7214,12 +8242,54 @@ func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7266,75 +8336,75 @@ func (l *jsiiProxy_LexIntentConclusionStatementOutputReference) ResetResponseCar
 // AWS Lex.
 type LexIntentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// fulfillment_activity block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#fulfillment_activity LexIntent#fulfillment_activity}
-	FulfillmentActivity *LexIntentFulfillmentActivity `json:"fulfillmentActivity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#name LexIntent#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#fulfillment_activity LexIntent#fulfillment_activity}
+	FulfillmentActivity *LexIntentFulfillmentActivity `json:"fulfillmentActivity" yaml:"fulfillmentActivity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#name LexIntent#name}.
+	Name *string `json:"name" yaml:"name"`
 	// conclusion_statement block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#conclusion_statement LexIntent#conclusion_statement}
-	ConclusionStatement *LexIntentConclusionStatement `json:"conclusionStatement"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#conclusion_statement LexIntent#conclusion_statement}
+	ConclusionStatement *LexIntentConclusionStatement `json:"conclusionStatement" yaml:"conclusionStatement"`
 	// confirmation_prompt block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#confirmation_prompt LexIntent#confirmation_prompt}
-	ConfirmationPrompt *LexIntentConfirmationPrompt `json:"confirmationPrompt"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#create_version LexIntent#create_version}.
-	CreateVersion interface{} `json:"createVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#description LexIntent#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#confirmation_prompt LexIntent#confirmation_prompt}
+	ConfirmationPrompt *LexIntentConfirmationPrompt `json:"confirmationPrompt" yaml:"confirmationPrompt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#create_version LexIntent#create_version}.
+	CreateVersion interface{} `json:"createVersion" yaml:"createVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#description LexIntent#description}.
+	Description *string `json:"description" yaml:"description"`
 	// dialog_code_hook block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#dialog_code_hook LexIntent#dialog_code_hook}
-	DialogCodeHook *LexIntentDialogCodeHook `json:"dialogCodeHook"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#dialog_code_hook LexIntent#dialog_code_hook}
+	DialogCodeHook *LexIntentDialogCodeHook `json:"dialogCodeHook" yaml:"dialogCodeHook"`
 	// follow_up_prompt block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#follow_up_prompt LexIntent#follow_up_prompt}
-	FollowUpPrompt *LexIntentFollowUpPrompt `json:"followUpPrompt"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#parent_intent_signature LexIntent#parent_intent_signature}.
-	ParentIntentSignature *string `json:"parentIntentSignature"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#follow_up_prompt LexIntent#follow_up_prompt}
+	FollowUpPrompt *LexIntentFollowUpPrompt `json:"followUpPrompt" yaml:"followUpPrompt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#parent_intent_signature LexIntent#parent_intent_signature}.
+	ParentIntentSignature *string `json:"parentIntentSignature" yaml:"parentIntentSignature"`
 	// rejection_statement block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#rejection_statement LexIntent#rejection_statement}
-	RejectionStatement *LexIntentRejectionStatement `json:"rejectionStatement"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#sample_utterances LexIntent#sample_utterances}.
-	SampleUtterances *[]*string `json:"sampleUtterances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#rejection_statement LexIntent#rejection_statement}
+	RejectionStatement *LexIntentRejectionStatement `json:"rejectionStatement" yaml:"rejectionStatement"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#sample_utterances LexIntent#sample_utterances}.
+	SampleUtterances *[]*string `json:"sampleUtterances" yaml:"sampleUtterances"`
 	// slot block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#slot LexIntent#slot}
-	Slot *[]*LexIntentSlot `json:"slot"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#slot LexIntent#slot}
+	Slot interface{} `json:"slot" yaml:"slot"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#timeouts LexIntent#timeouts}
-	Timeouts *LexIntentTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#timeouts LexIntent#timeouts}
+	Timeouts *LexIntentTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type LexIntentConfirmationPrompt struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#max_attempts LexIntent#max_attempts}.
-	MaxAttempts *float64 `json:"maxAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#max_attempts LexIntent#max_attempts}.
+	MaxAttempts *float64 `json:"maxAttempts" yaml:"maxAttempts"`
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message LexIntent#message}
-	Message *[]*LexIntentConfirmationPromptMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#response_card LexIntent#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message LexIntent#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#response_card LexIntent#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexIntentConfirmationPromptMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content LexIntent#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content_type LexIntent#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#group_number LexIntent#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content LexIntent#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content_type LexIntent#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#group_number LexIntent#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexIntentConfirmationPromptOutputReference interface {
@@ -7346,20 +8416,25 @@ type LexIntentConfirmationPromptOutputReference interface {
 	MaxAttempts() *float64
 	SetMaxAttempts(val *float64)
 	MaxAttemptsInput() *float64
-	Message() *[]*LexIntentConfirmationPromptMessage
-	SetMessage(val *[]*LexIntentConfirmationPromptMessage)
-	MessageInput() *[]*LexIntentConfirmationPromptMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -7410,8 +8485,8 @@ func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) MaxAttemptsInput(
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) Message() *[]*LexIntentConfirmationPromptMessage {
-	var returns *[]*LexIntentConfirmationPromptMessage
+func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -7420,8 +8495,8 @@ func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) Message() *[]*Lex
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) MessageInput() *[]*LexIntentConfirmationPromptMessage {
-	var returns *[]*LexIntentConfirmationPromptMessage
+func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -7460,8 +8535,8 @@ func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7470,7 +8545,7 @@ func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) TerraformResource
 	return returns
 }
 
-func NewLexIntentConfirmationPromptOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentConfirmationPromptOutputReference {
+func NewLexIntentConfirmationPromptOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentConfirmationPromptOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentConfirmationPromptOutputReference{}
@@ -7484,7 +8559,7 @@ func NewLexIntentConfirmationPromptOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewLexIntentConfirmationPromptOutputReference_Override(l LexIntentConfirmationPromptOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentConfirmationPromptOutputReference_Override(l LexIntentConfirmationPromptOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7518,7 +8593,7 @@ func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetMaxAttempts(va
 	)
 }
 
-func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetMessage(val *[]*LexIntentConfirmationPromptMessage) {
+func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -7542,7 +8617,7 @@ func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7551,12 +8626,40 @@ func (j *jsiiProxy_LexIntentConfirmationPromptOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7593,12 +8696,54 @@ func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7643,10 +8788,10 @@ func (l *jsiiProxy_LexIntentConfirmationPromptOutputReference) ResetResponseCard
 }
 
 type LexIntentDialogCodeHook struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message_version LexIntent#message_version}.
-	MessageVersion *string `json:"messageVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#uri LexIntent#uri}.
-	Uri *string `json:"uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message_version LexIntent#message_version}.
+	MessageVersion *string `json:"messageVersion" yaml:"messageVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#uri LexIntent#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
 type LexIntentDialogCodeHookOutputReference interface {
@@ -7660,15 +8805,20 @@ type LexIntentDialogCodeHookOutputReference interface {
 	MessageVersionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Uri() *string
 	SetUri(val *string)
 	UriInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -7728,8 +8878,8 @@ func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7758,7 +8908,7 @@ func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) UriInput() *string {
 	return returns
 }
 
-func NewLexIntentDialogCodeHookOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentDialogCodeHookOutputReference {
+func NewLexIntentDialogCodeHookOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentDialogCodeHookOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentDialogCodeHookOutputReference{}
@@ -7772,7 +8922,7 @@ func NewLexIntentDialogCodeHookOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewLexIntentDialogCodeHookOutputReference_Override(l LexIntentDialogCodeHookOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentDialogCodeHookOutputReference_Override(l LexIntentDialogCodeHookOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7814,7 +8964,7 @@ func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7831,12 +8981,40 @@ func (j *jsiiProxy_LexIntentDialogCodeHookOutputReference) SetUri(val *string) {
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7873,12 +9051,54 @@ func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7917,12 +9137,12 @@ func (l *jsiiProxy_LexIntentDialogCodeHookOutputReference) InterpolationForAttri
 type LexIntentFollowUpPrompt struct {
 	// prompt block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#prompt LexIntent#prompt}
-	Prompt *LexIntentFollowUpPromptPrompt `json:"prompt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#prompt LexIntent#prompt}
+	Prompt *LexIntentFollowUpPromptPrompt `json:"prompt" yaml:"prompt"`
 	// rejection_statement block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#rejection_statement LexIntent#rejection_statement}
-	RejectionStatement *LexIntentFollowUpPromptRejectionStatement `json:"rejectionStatement"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#rejection_statement LexIntent#rejection_statement}
+	RejectionStatement *LexIntentFollowUpPromptRejectionStatement `json:"rejectionStatement" yaml:"rejectionStatement"`
 }
 
 type LexIntentFollowUpPromptOutputReference interface {
@@ -7937,12 +9157,17 @@ type LexIntentFollowUpPromptOutputReference interface {
 	RejectionStatementInput() *LexIntentFollowUpPromptRejectionStatement
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutPrompt(value *LexIntentFollowUpPromptPrompt)
@@ -8024,8 +9249,8 @@ func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) TerraformAttribute() 
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8034,7 +9259,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) TerraformResource() c
 	return returns
 }
 
-func NewLexIntentFollowUpPromptOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentFollowUpPromptOutputReference {
+func NewLexIntentFollowUpPromptOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentFollowUpPromptOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentFollowUpPromptOutputReference{}
@@ -8048,7 +9273,7 @@ func NewLexIntentFollowUpPromptOutputReference(terraformResource cdktf.ITerrafor
 	return &j
 }
 
-func NewLexIntentFollowUpPromptOutputReference_Override(l LexIntentFollowUpPromptOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentFollowUpPromptOutputReference_Override(l LexIntentFollowUpPromptOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8082,7 +9307,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) SetTerraformAttribute
 	)
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8091,12 +9316,40 @@ func (j *jsiiProxy_LexIntentFollowUpPromptOutputReference) SetTerraformResource(
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8133,12 +9386,54 @@ func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetNumberAttribute(te
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8191,23 +9486,23 @@ func (l *jsiiProxy_LexIntentFollowUpPromptOutputReference) PutRejectionStatement
 }
 
 type LexIntentFollowUpPromptPrompt struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#max_attempts LexIntent#max_attempts}.
-	MaxAttempts *float64 `json:"maxAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#max_attempts LexIntent#max_attempts}.
+	MaxAttempts *float64 `json:"maxAttempts" yaml:"maxAttempts"`
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message LexIntent#message}
-	Message *[]*LexIntentFollowUpPromptPromptMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#response_card LexIntent#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message LexIntent#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#response_card LexIntent#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexIntentFollowUpPromptPromptMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content LexIntent#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content_type LexIntent#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#group_number LexIntent#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content LexIntent#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content_type LexIntent#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#group_number LexIntent#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexIntentFollowUpPromptPromptOutputReference interface {
@@ -8219,20 +9514,25 @@ type LexIntentFollowUpPromptPromptOutputReference interface {
 	MaxAttempts() *float64
 	SetMaxAttempts(val *float64)
 	MaxAttemptsInput() *float64
-	Message() *[]*LexIntentFollowUpPromptPromptMessage
-	SetMessage(val *[]*LexIntentFollowUpPromptPromptMessage)
-	MessageInput() *[]*LexIntentFollowUpPromptPromptMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -8283,8 +9583,8 @@ func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) MaxAttemptsInpu
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) Message() *[]*LexIntentFollowUpPromptPromptMessage {
-	var returns *[]*LexIntentFollowUpPromptPromptMessage
+func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -8293,8 +9593,8 @@ func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) Message() *[]*L
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) MessageInput() *[]*LexIntentFollowUpPromptPromptMessage {
-	var returns *[]*LexIntentFollowUpPromptPromptMessage
+func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -8333,8 +9633,8 @@ func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) TerraformAttrib
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8343,7 +9643,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) TerraformResour
 	return returns
 }
 
-func NewLexIntentFollowUpPromptPromptOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentFollowUpPromptPromptOutputReference {
+func NewLexIntentFollowUpPromptPromptOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentFollowUpPromptPromptOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentFollowUpPromptPromptOutputReference{}
@@ -8357,7 +9657,7 @@ func NewLexIntentFollowUpPromptPromptOutputReference(terraformResource cdktf.ITe
 	return &j
 }
 
-func NewLexIntentFollowUpPromptPromptOutputReference_Override(l LexIntentFollowUpPromptPromptOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentFollowUpPromptPromptOutputReference_Override(l LexIntentFollowUpPromptPromptOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8391,7 +9691,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetMaxAttempts(
 	)
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetMessage(val *[]*LexIntentFollowUpPromptPromptMessage) {
+func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -8415,7 +9715,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetTerraformAtt
 	)
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8424,12 +9724,40 @@ func (j *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) SetTerraformRes
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8466,12 +9794,54 @@ func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetNumberAttrib
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8518,19 +9888,19 @@ func (l *jsiiProxy_LexIntentFollowUpPromptPromptOutputReference) ResetResponseCa
 type LexIntentFollowUpPromptRejectionStatement struct {
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message LexIntent#message}
-	Message *[]*LexIntentFollowUpPromptRejectionStatementMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#response_card LexIntent#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message LexIntent#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#response_card LexIntent#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexIntentFollowUpPromptRejectionStatementMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content LexIntent#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content_type LexIntent#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#group_number LexIntent#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content LexIntent#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content_type LexIntent#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#group_number LexIntent#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexIntentFollowUpPromptRejectionStatementOutputReference interface {
@@ -8539,20 +9909,25 @@ type LexIntentFollowUpPromptRejectionStatementOutputReference interface {
 	SetInternalValue(val *LexIntentFollowUpPromptRejectionStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Message() *[]*LexIntentFollowUpPromptRejectionStatementMessage
-	SetMessage(val *[]*LexIntentFollowUpPromptRejectionStatementMessage)
-	MessageInput() *[]*LexIntentFollowUpPromptRejectionStatementMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -8583,8 +9958,8 @@ func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) IsS
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Message() *[]*LexIntentFollowUpPromptRejectionStatementMessage {
-	var returns *[]*LexIntentFollowUpPromptRejectionStatementMessage
+func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -8593,8 +9968,8 @@ func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Mes
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) MessageInput() *[]*LexIntentFollowUpPromptRejectionStatementMessage {
-	var returns *[]*LexIntentFollowUpPromptRejectionStatementMessage
+func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -8633,8 +10008,8 @@ func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Ter
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8643,7 +10018,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Ter
 	return returns
 }
 
-func NewLexIntentFollowUpPromptRejectionStatementOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentFollowUpPromptRejectionStatementOutputReference {
+func NewLexIntentFollowUpPromptRejectionStatementOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentFollowUpPromptRejectionStatementOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference{}
@@ -8657,7 +10032,7 @@ func NewLexIntentFollowUpPromptRejectionStatementOutputReference(terraformResour
 	return &j
 }
 
-func NewLexIntentFollowUpPromptRejectionStatementOutputReference_Override(l LexIntentFollowUpPromptRejectionStatementOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentFollowUpPromptRejectionStatementOutputReference_Override(l LexIntentFollowUpPromptRejectionStatementOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8683,7 +10058,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) SetMessage(val *[]*LexIntentFollowUpPromptRejectionStatementMessage) {
+func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -8707,7 +10082,7 @@ func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Set
 	)
 }
 
-func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8716,12 +10091,40 @@ func (j *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Set
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8758,12 +10161,54 @@ func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Get
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8808,19 +10253,19 @@ func (l *jsiiProxy_LexIntentFollowUpPromptRejectionStatementOutputReference) Res
 }
 
 type LexIntentFulfillmentActivity struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#type LexIntent#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#type LexIntent#type}.
+	Type *string `json:"type" yaml:"type"`
 	// code_hook block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#code_hook LexIntent#code_hook}
-	CodeHook *LexIntentFulfillmentActivityCodeHook `json:"codeHook"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#code_hook LexIntent#code_hook}
+	CodeHook *LexIntentFulfillmentActivityCodeHook `json:"codeHook" yaml:"codeHook"`
 }
 
 type LexIntentFulfillmentActivityCodeHook struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message_version LexIntent#message_version}.
-	MessageVersion *string `json:"messageVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#uri LexIntent#uri}.
-	Uri *string `json:"uri"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message_version LexIntent#message_version}.
+	MessageVersion *string `json:"messageVersion" yaml:"messageVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#uri LexIntent#uri}.
+	Uri *string `json:"uri" yaml:"uri"`
 }
 
 type LexIntentFulfillmentActivityCodeHookOutputReference interface {
@@ -8834,15 +10279,20 @@ type LexIntentFulfillmentActivityCodeHookOutputReference interface {
 	MessageVersionInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Uri() *string
 	SetUri(val *string)
 	UriInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -8902,8 +10352,8 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) Terrafor
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8932,7 +10382,7 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) UriInput
 	return returns
 }
 
-func NewLexIntentFulfillmentActivityCodeHookOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentFulfillmentActivityCodeHookOutputReference {
+func NewLexIntentFulfillmentActivityCodeHookOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentFulfillmentActivityCodeHookOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference{}
@@ -8946,7 +10396,7 @@ func NewLexIntentFulfillmentActivityCodeHookOutputReference(terraformResource cd
 	return &j
 }
 
-func NewLexIntentFulfillmentActivityCodeHookOutputReference_Override(l LexIntentFulfillmentActivityCodeHookOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentFulfillmentActivityCodeHookOutputReference_Override(l LexIntentFulfillmentActivityCodeHookOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8988,7 +10438,7 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) SetTerra
 	)
 }
 
-func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9005,12 +10455,40 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) SetUri(v
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9047,12 +10525,54 @@ func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetNumbe
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityCodeHookOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9098,15 +10618,20 @@ type LexIntentFulfillmentActivityOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutCodeHook(value *LexIntentFulfillmentActivityCodeHook)
@@ -9168,8 +10693,8 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9198,7 +10723,7 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) TypeInput() *str
 	return returns
 }
 
-func NewLexIntentFulfillmentActivityOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentFulfillmentActivityOutputReference {
+func NewLexIntentFulfillmentActivityOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentFulfillmentActivityOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentFulfillmentActivityOutputReference{}
@@ -9212,7 +10737,7 @@ func NewLexIntentFulfillmentActivityOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewLexIntentFulfillmentActivityOutputReference_Override(l LexIntentFulfillmentActivityOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentFulfillmentActivityOutputReference_Override(l LexIntentFulfillmentActivityOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9246,7 +10771,7 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9263,12 +10788,40 @@ func (j *jsiiProxy_LexIntentFulfillmentActivityOutputReference) SetType(val *str
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9305,12 +10858,54 @@ func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9365,19 +10960,19 @@ func (l *jsiiProxy_LexIntentFulfillmentActivityOutputReference) ResetCodeHook() 
 type LexIntentRejectionStatement struct {
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message LexIntent#message}
-	Message *[]*LexIntentRejectionStatementMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#response_card LexIntent#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message LexIntent#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#response_card LexIntent#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexIntentRejectionStatementMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content LexIntent#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content_type LexIntent#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#group_number LexIntent#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content LexIntent#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content_type LexIntent#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#group_number LexIntent#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexIntentRejectionStatementOutputReference interface {
@@ -9386,20 +10981,25 @@ type LexIntentRejectionStatementOutputReference interface {
 	SetInternalValue(val *LexIntentRejectionStatement)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	Message() *[]*LexIntentRejectionStatementMessage
-	SetMessage(val *[]*LexIntentRejectionStatementMessage)
-	MessageInput() *[]*LexIntentRejectionStatementMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -9430,8 +11030,8 @@ func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) IsSingleItem() *b
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) Message() *[]*LexIntentRejectionStatementMessage {
-	var returns *[]*LexIntentRejectionStatementMessage
+func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -9440,8 +11040,8 @@ func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) Message() *[]*Lex
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) MessageInput() *[]*LexIntentRejectionStatementMessage {
-	var returns *[]*LexIntentRejectionStatementMessage
+func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -9480,8 +11080,8 @@ func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9490,7 +11090,7 @@ func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) TerraformResource
 	return returns
 }
 
-func NewLexIntentRejectionStatementOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentRejectionStatementOutputReference {
+func NewLexIntentRejectionStatementOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentRejectionStatementOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentRejectionStatementOutputReference{}
@@ -9504,7 +11104,7 @@ func NewLexIntentRejectionStatementOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewLexIntentRejectionStatementOutputReference_Override(l LexIntentRejectionStatementOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentRejectionStatementOutputReference_Override(l LexIntentRejectionStatementOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9530,7 +11130,7 @@ func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetIsSingleItem(v
 	)
 }
 
-func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetMessage(val *[]*LexIntentRejectionStatementMessage) {
+func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -9554,7 +11154,7 @@ func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9563,12 +11163,40 @@ func (j *jsiiProxy_LexIntentRejectionStatementOutputReference) SetTerraformResou
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9605,12 +11233,54 @@ func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9655,46 +11325,46 @@ func (l *jsiiProxy_LexIntentRejectionStatementOutputReference) ResetResponseCard
 }
 
 type LexIntentSlot struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#name LexIntent#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#slot_constraint LexIntent#slot_constraint}.
-	SlotConstraint *string `json:"slotConstraint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#slot_type LexIntent#slot_type}.
-	SlotType *string `json:"slotType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#description LexIntent#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#priority LexIntent#priority}.
-	Priority *float64 `json:"priority"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#response_card LexIntent#response_card}.
-	ResponseCard *string `json:"responseCard"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#sample_utterances LexIntent#sample_utterances}.
-	SampleUtterances *[]*string `json:"sampleUtterances"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#slot_type_version LexIntent#slot_type_version}.
-	SlotTypeVersion *string `json:"slotTypeVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#name LexIntent#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#slot_constraint LexIntent#slot_constraint}.
+	SlotConstraint *string `json:"slotConstraint" yaml:"slotConstraint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#slot_type LexIntent#slot_type}.
+	SlotType *string `json:"slotType" yaml:"slotType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#description LexIntent#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#priority LexIntent#priority}.
+	Priority *float64 `json:"priority" yaml:"priority"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#response_card LexIntent#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#sample_utterances LexIntent#sample_utterances}.
+	SampleUtterances *[]*string `json:"sampleUtterances" yaml:"sampleUtterances"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#slot_type_version LexIntent#slot_type_version}.
+	SlotTypeVersion *string `json:"slotTypeVersion" yaml:"slotTypeVersion"`
 	// value_elicitation_prompt block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#value_elicitation_prompt LexIntent#value_elicitation_prompt}
-	ValueElicitationPrompt *LexIntentSlotValueElicitationPrompt `json:"valueElicitationPrompt"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#value_elicitation_prompt LexIntent#value_elicitation_prompt}
+	ValueElicitationPrompt *LexIntentSlotValueElicitationPrompt `json:"valueElicitationPrompt" yaml:"valueElicitationPrompt"`
 }
 
 type LexIntentSlotValueElicitationPrompt struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#max_attempts LexIntent#max_attempts}.
-	MaxAttempts *float64 `json:"maxAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#max_attempts LexIntent#max_attempts}.
+	MaxAttempts *float64 `json:"maxAttempts" yaml:"maxAttempts"`
 	// message block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#message LexIntent#message}
-	Message *[]*LexIntentSlotValueElicitationPromptMessage `json:"message"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#response_card LexIntent#response_card}.
-	ResponseCard *string `json:"responseCard"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#message LexIntent#message}
+	Message interface{} `json:"message" yaml:"message"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#response_card LexIntent#response_card}.
+	ResponseCard *string `json:"responseCard" yaml:"responseCard"`
 }
 
 type LexIntentSlotValueElicitationPromptMessage struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content LexIntent#content}.
-	Content *string `json:"content"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#content_type LexIntent#content_type}.
-	ContentType *string `json:"contentType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#group_number LexIntent#group_number}.
-	GroupNumber *float64 `json:"groupNumber"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content LexIntent#content}.
+	Content *string `json:"content" yaml:"content"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#content_type LexIntent#content_type}.
+	ContentType *string `json:"contentType" yaml:"contentType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#group_number LexIntent#group_number}.
+	GroupNumber *float64 `json:"groupNumber" yaml:"groupNumber"`
 }
 
 type LexIntentSlotValueElicitationPromptOutputReference interface {
@@ -9706,20 +11376,25 @@ type LexIntentSlotValueElicitationPromptOutputReference interface {
 	MaxAttempts() *float64
 	SetMaxAttempts(val *float64)
 	MaxAttemptsInput() *float64
-	Message() *[]*LexIntentSlotValueElicitationPromptMessage
-	SetMessage(val *[]*LexIntentSlotValueElicitationPromptMessage)
-	MessageInput() *[]*LexIntentSlotValueElicitationPromptMessage
+	Message() interface{}
+	SetMessage(val interface{})
+	MessageInput() interface{}
 	ResponseCard() *string
 	SetResponseCard(val *string)
 	ResponseCardInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetResponseCard()
@@ -9770,8 +11445,8 @@ func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) MaxAttemp
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) Message() *[]*LexIntentSlotValueElicitationPromptMessage {
-	var returns *[]*LexIntentSlotValueElicitationPromptMessage
+func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) Message() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"message",
@@ -9780,8 +11455,8 @@ func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) Message()
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) MessageInput() *[]*LexIntentSlotValueElicitationPromptMessage {
-	var returns *[]*LexIntentSlotValueElicitationPromptMessage
+func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) MessageInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"messageInput",
@@ -9820,8 +11495,8 @@ func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9830,7 +11505,7 @@ func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) Terraform
 	return returns
 }
 
-func NewLexIntentSlotValueElicitationPromptOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentSlotValueElicitationPromptOutputReference {
+func NewLexIntentSlotValueElicitationPromptOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentSlotValueElicitationPromptOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference{}
@@ -9844,7 +11519,7 @@ func NewLexIntentSlotValueElicitationPromptOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewLexIntentSlotValueElicitationPromptOutputReference_Override(l LexIntentSlotValueElicitationPromptOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentSlotValueElicitationPromptOutputReference_Override(l LexIntentSlotValueElicitationPromptOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9878,7 +11553,7 @@ func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetMaxAtt
 	)
 }
 
-func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetMessage(val *[]*LexIntentSlotValueElicitationPromptMessage) {
+func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetMessage(val interface{}) {
 	_jsii_.Set(
 		j,
 		"message",
@@ -9902,7 +11577,7 @@ func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9911,12 +11586,40 @@ func (j *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) SetTerraf
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9953,12 +11656,54 @@ func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetNumber
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10003,12 +11748,12 @@ func (l *jsiiProxy_LexIntentSlotValueElicitationPromptOutputReference) ResetResp
 }
 
 type LexIntentTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#create LexIntent#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#delete LexIntent#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent.html#update LexIntent#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#create LexIntent#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#delete LexIntent#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_intent#update LexIntent#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type LexIntentTimeoutsOutputReference interface {
@@ -10025,15 +11770,20 @@ type LexIntentTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -10116,8 +11866,8 @@ func (j *jsiiProxy_LexIntentTimeoutsOutputReference) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_LexIntentTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexIntentTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10146,7 +11896,7 @@ func (j *jsiiProxy_LexIntentTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewLexIntentTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexIntentTimeoutsOutputReference {
+func NewLexIntentTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexIntentTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexIntentTimeoutsOutputReference{}
@@ -10160,7 +11910,7 @@ func NewLexIntentTimeoutsOutputReference(terraformResource cdktf.ITerraformResou
 	return &j
 }
 
-func NewLexIntentTimeoutsOutputReference_Override(l LexIntentTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexIntentTimeoutsOutputReference_Override(l LexIntentTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10210,7 +11960,7 @@ func (j *jsiiProxy_LexIntentTimeoutsOutputReference) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_LexIntentTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexIntentTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10227,12 +11977,40 @@ func (j *jsiiProxy_LexIntentTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10269,12 +12047,54 @@ func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexIntentTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10334,14 +12154,14 @@ func (l *jsiiProxy_LexIntentTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html aws_lex_slot_type}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type aws_lex_slot_type}.
 type LexSlotType interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	Checksum() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	CreateVersion() interface{}
 	SetCreateVersion(val interface{})
@@ -10351,9 +12171,9 @@ type LexSlotType interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
-	EnumerationValue() *[]*LexSlotTypeEnumerationValue
-	SetEnumerationValue(val *[]*LexSlotTypeEnumerationValue)
-	EnumerationValueInput() *[]*LexSlotTypeEnumerationValue
+	EnumerationValue() interface{}
+	SetEnumerationValue(val interface{})
+	EnumerationValueInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -10377,10 +12197,15 @@ type LexSlotType interface {
 	ValueSelectionStrategyInput() *string
 	Version() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *LexSlotTypeTimeouts)
@@ -10430,8 +12255,8 @@ func (j *jsiiProxy_LexSlotType) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_LexSlotType) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LexSlotType) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -10500,8 +12325,8 @@ func (j *jsiiProxy_LexSlotType) DescriptionInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_LexSlotType) EnumerationValue() *[]*LexSlotTypeEnumerationValue {
-	var returns *[]*LexSlotTypeEnumerationValue
+func (j *jsiiProxy_LexSlotType) EnumerationValue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"enumerationValue",
@@ -10510,8 +12335,8 @@ func (j *jsiiProxy_LexSlotType) EnumerationValue() *[]*LexSlotTypeEnumerationVal
 	return returns
 }
 
-func (j *jsiiProxy_LexSlotType) EnumerationValueInput() *[]*LexSlotTypeEnumerationValue {
-	var returns *[]*LexSlotTypeEnumerationValue
+func (j *jsiiProxy_LexSlotType) EnumerationValueInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"enumerationValueInput",
@@ -10700,7 +12525,7 @@ func (j *jsiiProxy_LexSlotType) Version() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html aws_lex_slot_type} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type aws_lex_slot_type} Resource.
 func NewLexSlotType(scope constructs.Construct, id *string, config *LexSlotTypeConfig) LexSlotType {
 	_init_.Initialize()
 
@@ -10715,7 +12540,7 @@ func NewLexSlotType(scope constructs.Construct, id *string, config *LexSlotTypeC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html aws_lex_slot_type} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type aws_lex_slot_type} Resource.
 func NewLexSlotType_Override(l LexSlotType, scope constructs.Construct, id *string, config *LexSlotTypeConfig) {
 	_init_.Initialize()
 
@@ -10726,7 +12551,7 @@ func NewLexSlotType_Override(l LexSlotType, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_LexSlotType) SetCount(val interface{}) {
+func (j *jsiiProxy_LexSlotType) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10758,7 +12583,7 @@ func (j *jsiiProxy_LexSlotType) SetDescription(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LexSlotType) SetEnumerationValue(val *[]*LexSlotTypeEnumerationValue) {
+func (j *jsiiProxy_LexSlotType) SetEnumerationValue(val interface{}) {
 	_jsii_.Set(
 		j,
 		"enumerationValue",
@@ -10838,12 +12663,40 @@ func (l *jsiiProxy_LexSlotType) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (l *jsiiProxy_LexSlotType) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexSlotType) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexSlotType) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10880,12 +12733,54 @@ func (l *jsiiProxy_LexSlotType) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (l *jsiiProxy_LexSlotType) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexSlotType) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexSlotType) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexSlotType) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11026,45 +12921,45 @@ func (l *jsiiProxy_LexSlotType) ToTerraform() interface{} {
 // AWS Lex.
 type LexSlotTypeConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// enumeration_value block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#enumeration_value LexSlotType#enumeration_value}
-	EnumerationValue *[]*LexSlotTypeEnumerationValue `json:"enumerationValue"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#name LexSlotType#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#create_version LexSlotType#create_version}.
-	CreateVersion interface{} `json:"createVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#description LexSlotType#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#enumeration_value LexSlotType#enumeration_value}
+	EnumerationValue interface{} `json:"enumerationValue" yaml:"enumerationValue"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#name LexSlotType#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#create_version LexSlotType#create_version}.
+	CreateVersion interface{} `json:"createVersion" yaml:"createVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#description LexSlotType#description}.
+	Description *string `json:"description" yaml:"description"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#timeouts LexSlotType#timeouts}
-	Timeouts *LexSlotTypeTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#value_selection_strategy LexSlotType#value_selection_strategy}.
-	ValueSelectionStrategy *string `json:"valueSelectionStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#timeouts LexSlotType#timeouts}
+	Timeouts *LexSlotTypeTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#value_selection_strategy LexSlotType#value_selection_strategy}.
+	ValueSelectionStrategy *string `json:"valueSelectionStrategy" yaml:"valueSelectionStrategy"`
 }
 
 type LexSlotTypeEnumerationValue struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#value LexSlotType#value}.
-	Value *string `json:"value"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#synonyms LexSlotType#synonyms}.
-	Synonyms *[]*string `json:"synonyms"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#value LexSlotType#value}.
+	Value *string `json:"value" yaml:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#synonyms LexSlotType#synonyms}.
+	Synonyms *[]*string `json:"synonyms" yaml:"synonyms"`
 }
 
 type LexSlotTypeTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#create LexSlotType#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#delete LexSlotType#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type.html#update LexSlotType#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#create LexSlotType#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#delete LexSlotType#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/lex_slot_type#update LexSlotType#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type LexSlotTypeTimeoutsOutputReference interface {
@@ -11081,15 +12976,20 @@ type LexSlotTypeTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -11172,8 +13072,8 @@ func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) TerraformAttribute() *str
 	return returns
 }
 
-func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11202,7 +13102,7 @@ func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewLexSlotTypeTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) LexSlotTypeTimeoutsOutputReference {
+func NewLexSlotTypeTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) LexSlotTypeTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_LexSlotTypeTimeoutsOutputReference{}
@@ -11216,7 +13116,7 @@ func NewLexSlotTypeTimeoutsOutputReference(terraformResource cdktf.ITerraformRes
 	return &j
 }
 
-func NewLexSlotTypeTimeoutsOutputReference_Override(l LexSlotTypeTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewLexSlotTypeTimeoutsOutputReference_Override(l LexSlotTypeTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11266,7 +13166,7 @@ func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) SetTerraformAttribute(val
 	)
 }
 
-func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11283,12 +13183,40 @@ func (j *jsiiProxy_LexSlotTypeTimeoutsOutputReference) SetUpdate(val *string) {
 }
 
 // Experimental.
-func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		l,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		l,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		l,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11325,12 +13253,54 @@ func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		l,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		l,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (l *jsiiProxy_LexSlotTypeTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		l,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)

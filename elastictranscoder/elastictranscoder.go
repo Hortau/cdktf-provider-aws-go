@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/elastictranscoder/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html aws_elastictranscoder_pipeline}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline aws_elastictranscoder_pipeline}.
 type ElastictranscoderPipeline interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -20,11 +20,11 @@ type ElastictranscoderPipeline interface {
 	ConstructNodeMetadata() *map[string]interface{}
 	ContentConfig() ElastictranscoderPipelineContentConfigOutputReference
 	ContentConfigInput() *ElastictranscoderPipelineContentConfig
-	ContentConfigPermissions() *[]*ElastictranscoderPipelineContentConfigPermissions
-	SetContentConfigPermissions(val *[]*ElastictranscoderPipelineContentConfigPermissions)
-	ContentConfigPermissionsInput() *[]*ElastictranscoderPipelineContentConfigPermissions
-	Count() interface{}
-	SetCount(val interface{})
+	ContentConfigPermissions() interface{}
+	SetContentConfigPermissions(val interface{})
+	ContentConfigPermissionsInput() interface{}
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -55,14 +55,19 @@ type ElastictranscoderPipeline interface {
 	TerraformResourceType() *string
 	ThumbnailConfig() ElastictranscoderPipelineThumbnailConfigOutputReference
 	ThumbnailConfigInput() *ElastictranscoderPipelineThumbnailConfig
-	ThumbnailConfigPermissions() *[]*ElastictranscoderPipelineThumbnailConfigPermissions
-	SetThumbnailConfigPermissions(val *[]*ElastictranscoderPipelineThumbnailConfigPermissions)
-	ThumbnailConfigPermissionsInput() *[]*ElastictranscoderPipelineThumbnailConfigPermissions
+	ThumbnailConfigPermissions() interface{}
+	SetThumbnailConfigPermissions(val interface{})
+	ThumbnailConfigPermissionsInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutContentConfig(value *ElastictranscoderPipelineContentConfig)
@@ -158,8 +163,8 @@ func (j *jsiiProxy_ElastictranscoderPipeline) ContentConfigInput() *Elastictrans
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) ContentConfigPermissions() *[]*ElastictranscoderPipelineContentConfigPermissions {
-	var returns *[]*ElastictranscoderPipelineContentConfigPermissions
+func (j *jsiiProxy_ElastictranscoderPipeline) ContentConfigPermissions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"contentConfigPermissions",
@@ -168,8 +173,8 @@ func (j *jsiiProxy_ElastictranscoderPipeline) ContentConfigPermissions() *[]*Ela
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) ContentConfigPermissionsInput() *[]*ElastictranscoderPipelineContentConfigPermissions {
-	var returns *[]*ElastictranscoderPipelineContentConfigPermissions
+func (j *jsiiProxy_ElastictranscoderPipeline) ContentConfigPermissionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"contentConfigPermissionsInput",
@@ -178,8 +183,8 @@ func (j *jsiiProxy_ElastictranscoderPipeline) ContentConfigPermissionsInput() *[
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElastictranscoderPipeline) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -418,8 +423,8 @@ func (j *jsiiProxy_ElastictranscoderPipeline) ThumbnailConfigInput() *Elastictra
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) ThumbnailConfigPermissions() *[]*ElastictranscoderPipelineThumbnailConfigPermissions {
-	var returns *[]*ElastictranscoderPipelineThumbnailConfigPermissions
+func (j *jsiiProxy_ElastictranscoderPipeline) ThumbnailConfigPermissions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"thumbnailConfigPermissions",
@@ -428,8 +433,8 @@ func (j *jsiiProxy_ElastictranscoderPipeline) ThumbnailConfigPermissions() *[]*E
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) ThumbnailConfigPermissionsInput() *[]*ElastictranscoderPipelineThumbnailConfigPermissions {
-	var returns *[]*ElastictranscoderPipelineThumbnailConfigPermissions
+func (j *jsiiProxy_ElastictranscoderPipeline) ThumbnailConfigPermissionsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"thumbnailConfigPermissionsInput",
@@ -438,7 +443,7 @@ func (j *jsiiProxy_ElastictranscoderPipeline) ThumbnailConfigPermissionsInput() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html aws_elastictranscoder_pipeline} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline aws_elastictranscoder_pipeline} Resource.
 func NewElastictranscoderPipeline(scope constructs.Construct, id *string, config *ElastictranscoderPipelineConfig) ElastictranscoderPipeline {
 	_init_.Initialize()
 
@@ -453,7 +458,7 @@ func NewElastictranscoderPipeline(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html aws_elastictranscoder_pipeline} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline aws_elastictranscoder_pipeline} Resource.
 func NewElastictranscoderPipeline_Override(e ElastictranscoderPipeline, scope constructs.Construct, id *string, config *ElastictranscoderPipelineConfig) {
 	_init_.Initialize()
 
@@ -472,7 +477,7 @@ func (j *jsiiProxy_ElastictranscoderPipeline) SetAwsKmsKeyArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) SetContentConfigPermissions(val *[]*ElastictranscoderPipelineContentConfigPermissions) {
+func (j *jsiiProxy_ElastictranscoderPipeline) SetContentConfigPermissions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"contentConfigPermissions",
@@ -480,7 +485,7 @@ func (j *jsiiProxy_ElastictranscoderPipeline) SetContentConfigPermissions(val *[
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) SetCount(val interface{}) {
+func (j *jsiiProxy_ElastictranscoderPipeline) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -544,7 +549,7 @@ func (j *jsiiProxy_ElastictranscoderPipeline) SetRole(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPipeline) SetThumbnailConfigPermissions(val *[]*ElastictranscoderPipelineThumbnailConfigPermissions) {
+func (j *jsiiProxy_ElastictranscoderPipeline) SetThumbnailConfigPermissions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"thumbnailConfigPermissions",
@@ -592,12 +597,40 @@ func (e *jsiiProxy_ElastictranscoderPipeline) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPipeline) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPipeline) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipeline) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -634,12 +667,54 @@ func (e *jsiiProxy_ElastictranscoderPipeline) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPipeline) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipeline) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPipeline) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipeline) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -828,50 +903,50 @@ func (e *jsiiProxy_ElastictranscoderPipeline) ToTerraform() interface{} {
 // AWS Elastic Transcoder.
 type ElastictranscoderPipelineConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#input_bucket ElastictranscoderPipeline#input_bucket}.
-	InputBucket *string `json:"inputBucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#role ElastictranscoderPipeline#role}.
-	Role *string `json:"role"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#aws_kms_key_arn ElastictranscoderPipeline#aws_kms_key_arn}.
-	AwsKmsKeyArn *string `json:"awsKmsKeyArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#input_bucket ElastictranscoderPipeline#input_bucket}.
+	InputBucket *string `json:"inputBucket" yaml:"inputBucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#role ElastictranscoderPipeline#role}.
+	Role *string `json:"role" yaml:"role"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#aws_kms_key_arn ElastictranscoderPipeline#aws_kms_key_arn}.
+	AwsKmsKeyArn *string `json:"awsKmsKeyArn" yaml:"awsKmsKeyArn"`
 	// content_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#content_config ElastictranscoderPipeline#content_config}
-	ContentConfig *ElastictranscoderPipelineContentConfig `json:"contentConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#content_config ElastictranscoderPipeline#content_config}
+	ContentConfig *ElastictranscoderPipelineContentConfig `json:"contentConfig" yaml:"contentConfig"`
 	// content_config_permissions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#content_config_permissions ElastictranscoderPipeline#content_config_permissions}
-	ContentConfigPermissions *[]*ElastictranscoderPipelineContentConfigPermissions `json:"contentConfigPermissions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#name ElastictranscoderPipeline#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#content_config_permissions ElastictranscoderPipeline#content_config_permissions}
+	ContentConfigPermissions interface{} `json:"contentConfigPermissions" yaml:"contentConfigPermissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#name ElastictranscoderPipeline#name}.
+	Name *string `json:"name" yaml:"name"`
 	// notifications block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#notifications ElastictranscoderPipeline#notifications}
-	Notifications *ElastictranscoderPipelineNotifications `json:"notifications"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#output_bucket ElastictranscoderPipeline#output_bucket}.
-	OutputBucket *string `json:"outputBucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#notifications ElastictranscoderPipeline#notifications}
+	Notifications *ElastictranscoderPipelineNotifications `json:"notifications" yaml:"notifications"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#output_bucket ElastictranscoderPipeline#output_bucket}.
+	OutputBucket *string `json:"outputBucket" yaml:"outputBucket"`
 	// thumbnail_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#thumbnail_config ElastictranscoderPipeline#thumbnail_config}
-	ThumbnailConfig *ElastictranscoderPipelineThumbnailConfig `json:"thumbnailConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#thumbnail_config ElastictranscoderPipeline#thumbnail_config}
+	ThumbnailConfig *ElastictranscoderPipelineThumbnailConfig `json:"thumbnailConfig" yaml:"thumbnailConfig"`
 	// thumbnail_config_permissions block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#thumbnail_config_permissions ElastictranscoderPipeline#thumbnail_config_permissions}
-	ThumbnailConfigPermissions *[]*ElastictranscoderPipelineThumbnailConfigPermissions `json:"thumbnailConfigPermissions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#thumbnail_config_permissions ElastictranscoderPipeline#thumbnail_config_permissions}
+	ThumbnailConfigPermissions interface{} `json:"thumbnailConfigPermissions" yaml:"thumbnailConfigPermissions"`
 }
 
 type ElastictranscoderPipelineContentConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#bucket ElastictranscoderPipeline#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#storage_class ElastictranscoderPipeline#storage_class}.
-	StorageClass *string `json:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#bucket ElastictranscoderPipeline#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#storage_class ElastictranscoderPipeline#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
 }
 
 type ElastictranscoderPipelineContentConfigOutputReference interface {
@@ -888,12 +963,17 @@ type ElastictranscoderPipelineContentConfigOutputReference interface {
 	StorageClassInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBucket()
@@ -975,8 +1055,8 @@ func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -985,7 +1065,7 @@ func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) Terraf
 	return returns
 }
 
-func NewElastictranscoderPipelineContentConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPipelineContentConfigOutputReference {
+func NewElastictranscoderPipelineContentConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPipelineContentConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference{}
@@ -999,7 +1079,7 @@ func NewElastictranscoderPipelineContentConfigOutputReference(terraformResource 
 	return &j
 }
 
-func NewElastictranscoderPipelineContentConfigOutputReference_Override(e ElastictranscoderPipelineContentConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElastictranscoderPipelineContentConfigOutputReference_Override(e ElastictranscoderPipelineContentConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1049,7 +1129,7 @@ func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1058,12 +1138,40 @@ func (j *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) SetTer
 }
 
 // Experimental.
-func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1100,12 +1208,54 @@ func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetNum
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1158,23 +1308,23 @@ func (e *jsiiProxy_ElastictranscoderPipelineContentConfigOutputReference) ResetS
 }
 
 type ElastictranscoderPipelineContentConfigPermissions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#access ElastictranscoderPipeline#access}.
-	Access *[]*string `json:"access"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#grantee ElastictranscoderPipeline#grantee}.
-	Grantee *string `json:"grantee"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#grantee_type ElastictranscoderPipeline#grantee_type}.
-	GranteeType *string `json:"granteeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#access ElastictranscoderPipeline#access}.
+	Access *[]*string `json:"access" yaml:"access"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#grantee ElastictranscoderPipeline#grantee}.
+	Grantee *string `json:"grantee" yaml:"grantee"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#grantee_type ElastictranscoderPipeline#grantee_type}.
+	GranteeType *string `json:"granteeType" yaml:"granteeType"`
 }
 
 type ElastictranscoderPipelineNotifications struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#completed ElastictranscoderPipeline#completed}.
-	Completed *string `json:"completed"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#error ElastictranscoderPipeline#error}.
-	Error *string `json:"error"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#progressing ElastictranscoderPipeline#progressing}.
-	Progressing *string `json:"progressing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#warning ElastictranscoderPipeline#warning}.
-	Warning *string `json:"warning"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#completed ElastictranscoderPipeline#completed}.
+	Completed *string `json:"completed" yaml:"completed"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#error ElastictranscoderPipeline#error}.
+	Error *string `json:"error" yaml:"error"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#progressing ElastictranscoderPipeline#progressing}.
+	Progressing *string `json:"progressing" yaml:"progressing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#warning ElastictranscoderPipeline#warning}.
+	Warning *string `json:"warning" yaml:"warning"`
 }
 
 type ElastictranscoderPipelineNotificationsOutputReference interface {
@@ -1194,15 +1344,20 @@ type ElastictranscoderPipelineNotificationsOutputReference interface {
 	ProgressingInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Warning() *string
 	SetWarning(val *string)
 	WarningInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCompleted()
@@ -1306,8 +1461,8 @@ func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1336,7 +1491,7 @@ func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) Warnin
 	return returns
 }
 
-func NewElastictranscoderPipelineNotificationsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPipelineNotificationsOutputReference {
+func NewElastictranscoderPipelineNotificationsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPipelineNotificationsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference{}
@@ -1350,7 +1505,7 @@ func NewElastictranscoderPipelineNotificationsOutputReference(terraformResource 
 	return &j
 }
 
-func NewElastictranscoderPipelineNotificationsOutputReference_Override(e ElastictranscoderPipelineNotificationsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElastictranscoderPipelineNotificationsOutputReference_Override(e ElastictranscoderPipelineNotificationsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1408,7 +1563,7 @@ func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1425,12 +1580,40 @@ func (j *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) SetWar
 }
 
 // Experimental.
-func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1467,12 +1650,54 @@ func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetNum
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1541,10 +1766,10 @@ func (e *jsiiProxy_ElastictranscoderPipelineNotificationsOutputReference) ResetW
 }
 
 type ElastictranscoderPipelineThumbnailConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#bucket ElastictranscoderPipeline#bucket}.
-	Bucket *string `json:"bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#storage_class ElastictranscoderPipeline#storage_class}.
-	StorageClass *string `json:"storageClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#bucket ElastictranscoderPipeline#bucket}.
+	Bucket *string `json:"bucket" yaml:"bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#storage_class ElastictranscoderPipeline#storage_class}.
+	StorageClass *string `json:"storageClass" yaml:"storageClass"`
 }
 
 type ElastictranscoderPipelineThumbnailConfigOutputReference interface {
@@ -1561,12 +1786,17 @@ type ElastictranscoderPipelineThumbnailConfigOutputReference interface {
 	StorageClassInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBucket()
@@ -1648,8 +1878,8 @@ func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1658,7 +1888,7 @@ func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) Terr
 	return returns
 }
 
-func NewElastictranscoderPipelineThumbnailConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPipelineThumbnailConfigOutputReference {
+func NewElastictranscoderPipelineThumbnailConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPipelineThumbnailConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference{}
@@ -1672,7 +1902,7 @@ func NewElastictranscoderPipelineThumbnailConfigOutputReference(terraformResourc
 	return &j
 }
 
-func NewElastictranscoderPipelineThumbnailConfigOutputReference_Override(e ElastictranscoderPipelineThumbnailConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElastictranscoderPipelineThumbnailConfigOutputReference_Override(e ElastictranscoderPipelineThumbnailConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1722,7 +1952,7 @@ func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1731,12 +1961,40 @@ func (j *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) SetT
 }
 
 // Experimental.
-func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1773,12 +2031,54 @@ func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetN
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1831,15 +2131,15 @@ func (e *jsiiProxy_ElastictranscoderPipelineThumbnailConfigOutputReference) Rese
 }
 
 type ElastictranscoderPipelineThumbnailConfigPermissions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#access ElastictranscoderPipeline#access}.
-	Access *[]*string `json:"access"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#grantee ElastictranscoderPipeline#grantee}.
-	Grantee *string `json:"grantee"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline.html#grantee_type ElastictranscoderPipeline#grantee_type}.
-	GranteeType *string `json:"granteeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#access ElastictranscoderPipeline#access}.
+	Access *[]*string `json:"access" yaml:"access"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#grantee ElastictranscoderPipeline#grantee}.
+	Grantee *string `json:"grantee" yaml:"grantee"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_pipeline#grantee_type ElastictranscoderPipeline#grantee_type}.
+	GranteeType *string `json:"granteeType" yaml:"granteeType"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html aws_elastictranscoder_preset}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset aws_elastictranscoder_preset}.
 type ElastictranscoderPreset interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -1852,8 +2152,8 @@ type ElastictranscoderPreset interface {
 	Container() *string
 	SetContainer(val *string)
 	ContainerInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -1880,18 +2180,23 @@ type ElastictranscoderPreset interface {
 	SetType(val *string)
 	TypeInput() *string
 	Video() ElastictranscoderPresetVideoOutputReference
-	VideoCodecOptions() interface{}
-	SetVideoCodecOptions(val interface{})
-	VideoCodecOptionsInput() interface{}
+	VideoCodecOptions() *map[string]*string
+	SetVideoCodecOptions(val *map[string]*string)
+	VideoCodecOptionsInput() *map[string]*string
 	VideoInput() *ElastictranscoderPresetVideo
-	VideoWatermarks() *[]*ElastictranscoderPresetVideoWatermarks
-	SetVideoWatermarks(val *[]*ElastictranscoderPresetVideoWatermarks)
-	VideoWatermarksInput() *[]*ElastictranscoderPresetVideoWatermarks
+	VideoWatermarks() interface{}
+	SetVideoWatermarks(val interface{})
+	VideoWatermarksInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAudio(value *ElastictranscoderPresetAudio)
@@ -2009,8 +2314,8 @@ func (j *jsiiProxy_ElastictranscoderPreset) ContainerInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElastictranscoderPreset) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2219,8 +2524,8 @@ func (j *jsiiProxy_ElastictranscoderPreset) Video() ElastictranscoderPresetVideo
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) VideoCodecOptions() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElastictranscoderPreset) VideoCodecOptions() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"videoCodecOptions",
@@ -2229,8 +2534,8 @@ func (j *jsiiProxy_ElastictranscoderPreset) VideoCodecOptions() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) VideoCodecOptionsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElastictranscoderPreset) VideoCodecOptionsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"videoCodecOptionsInput",
@@ -2249,8 +2554,8 @@ func (j *jsiiProxy_ElastictranscoderPreset) VideoInput() *ElastictranscoderPrese
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) VideoWatermarks() *[]*ElastictranscoderPresetVideoWatermarks {
-	var returns *[]*ElastictranscoderPresetVideoWatermarks
+func (j *jsiiProxy_ElastictranscoderPreset) VideoWatermarks() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"videoWatermarks",
@@ -2259,8 +2564,8 @@ func (j *jsiiProxy_ElastictranscoderPreset) VideoWatermarks() *[]*Elastictransco
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) VideoWatermarksInput() *[]*ElastictranscoderPresetVideoWatermarks {
-	var returns *[]*ElastictranscoderPresetVideoWatermarks
+func (j *jsiiProxy_ElastictranscoderPreset) VideoWatermarksInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"videoWatermarksInput",
@@ -2269,7 +2574,7 @@ func (j *jsiiProxy_ElastictranscoderPreset) VideoWatermarksInput() *[]*Elastictr
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html aws_elastictranscoder_preset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset aws_elastictranscoder_preset} Resource.
 func NewElastictranscoderPreset(scope constructs.Construct, id *string, config *ElastictranscoderPresetConfig) ElastictranscoderPreset {
 	_init_.Initialize()
 
@@ -2284,7 +2589,7 @@ func NewElastictranscoderPreset(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html aws_elastictranscoder_preset} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset aws_elastictranscoder_preset} Resource.
 func NewElastictranscoderPreset_Override(e ElastictranscoderPreset, scope constructs.Construct, id *string, config *ElastictranscoderPresetConfig) {
 	_init_.Initialize()
 
@@ -2303,7 +2608,7 @@ func (j *jsiiProxy_ElastictranscoderPreset) SetContainer(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) SetCount(val interface{}) {
+func (j *jsiiProxy_ElastictranscoderPreset) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2359,7 +2664,7 @@ func (j *jsiiProxy_ElastictranscoderPreset) SetType(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) SetVideoCodecOptions(val interface{}) {
+func (j *jsiiProxy_ElastictranscoderPreset) SetVideoCodecOptions(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"videoCodecOptions",
@@ -2367,7 +2672,7 @@ func (j *jsiiProxy_ElastictranscoderPreset) SetVideoCodecOptions(val interface{}
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPreset) SetVideoWatermarks(val *[]*ElastictranscoderPresetVideoWatermarks) {
+func (j *jsiiProxy_ElastictranscoderPreset) SetVideoWatermarks(val interface{}) {
 	_jsii_.Set(
 		j,
 		"videoWatermarks",
@@ -2415,12 +2720,40 @@ func (e *jsiiProxy_ElastictranscoderPreset) AddOverride(path *string, value inte
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPreset) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPreset) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPreset) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2457,12 +2790,54 @@ func (e *jsiiProxy_ElastictranscoderPreset) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPreset) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPreset) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPreset) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPreset) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2665,27 +3040,27 @@ func (e *jsiiProxy_ElastictranscoderPreset) ToTerraform() interface{} {
 }
 
 type ElastictranscoderPresetAudio struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#audio_packing_mode ElastictranscoderPreset#audio_packing_mode}.
-	AudioPackingMode *string `json:"audioPackingMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#bit_rate ElastictranscoderPreset#bit_rate}.
-	BitRate *string `json:"bitRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#channels ElastictranscoderPreset#channels}.
-	Channels *string `json:"channels"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#codec ElastictranscoderPreset#codec}.
-	Codec *string `json:"codec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#sample_rate ElastictranscoderPreset#sample_rate}.
-	SampleRate *string `json:"sampleRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#audio_packing_mode ElastictranscoderPreset#audio_packing_mode}.
+	AudioPackingMode *string `json:"audioPackingMode" yaml:"audioPackingMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#bit_rate ElastictranscoderPreset#bit_rate}.
+	BitRate *string `json:"bitRate" yaml:"bitRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#channels ElastictranscoderPreset#channels}.
+	Channels *string `json:"channels" yaml:"channels"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#codec ElastictranscoderPreset#codec}.
+	Codec *string `json:"codec" yaml:"codec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#sample_rate ElastictranscoderPreset#sample_rate}.
+	SampleRate *string `json:"sampleRate" yaml:"sampleRate"`
 }
 
 type ElastictranscoderPresetAudioCodecOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#bit_depth ElastictranscoderPreset#bit_depth}.
-	BitDepth *string `json:"bitDepth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#bit_order ElastictranscoderPreset#bit_order}.
-	BitOrder *string `json:"bitOrder"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#profile ElastictranscoderPreset#profile}.
-	Profile *string `json:"profile"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#signed ElastictranscoderPreset#signed}.
-	Signed *string `json:"signed"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#bit_depth ElastictranscoderPreset#bit_depth}.
+	BitDepth *string `json:"bitDepth" yaml:"bitDepth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#bit_order ElastictranscoderPreset#bit_order}.
+	BitOrder *string `json:"bitOrder" yaml:"bitOrder"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#profile ElastictranscoderPreset#profile}.
+	Profile *string `json:"profile" yaml:"profile"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#signed ElastictranscoderPreset#signed}.
+	Signed *string `json:"signed" yaml:"signed"`
 }
 
 type ElastictranscoderPresetAudioCodecOptionsOutputReference interface {
@@ -2708,12 +3083,17 @@ type ElastictranscoderPresetAudioCodecOptionsOutputReference interface {
 	SignedInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBitDepth()
@@ -2837,8 +3217,8 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2847,7 +3227,7 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) Terr
 	return returns
 }
 
-func NewElastictranscoderPresetAudioCodecOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetAudioCodecOptionsOutputReference {
+func NewElastictranscoderPresetAudioCodecOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetAudioCodecOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference{}
@@ -2861,7 +3241,7 @@ func NewElastictranscoderPresetAudioCodecOptionsOutputReference(terraformResourc
 	return &j
 }
 
-func NewElastictranscoderPresetAudioCodecOptionsOutputReference_Override(e ElastictranscoderPresetAudioCodecOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElastictranscoderPresetAudioCodecOptionsOutputReference_Override(e ElastictranscoderPresetAudioCodecOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2927,7 +3307,7 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2936,12 +3316,40 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) SetT
 }
 
 // Experimental.
-func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2978,12 +3386,54 @@ func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetN
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioCodecOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3074,12 +3524,17 @@ type ElastictranscoderPresetAudioOutputReference interface {
 	SampleRateInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAudioPackingMode()
@@ -3224,8 +3679,8 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3234,7 +3689,7 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) TerraformResourc
 	return returns
 }
 
-func NewElastictranscoderPresetAudioOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetAudioOutputReference {
+func NewElastictranscoderPresetAudioOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetAudioOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElastictranscoderPresetAudioOutputReference{}
@@ -3248,7 +3703,7 @@ func NewElastictranscoderPresetAudioOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewElastictranscoderPresetAudioOutputReference_Override(e ElastictranscoderPresetAudioOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElastictranscoderPresetAudioOutputReference_Override(e ElastictranscoderPresetAudioOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3322,7 +3777,7 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3331,12 +3786,40 @@ func (j *jsiiProxy_ElastictranscoderPresetAudioOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3373,12 +3856,54 @@ func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3457,62 +3982,62 @@ func (e *jsiiProxy_ElastictranscoderPresetAudioOutputReference) ResetSampleRate(
 // AWS Elastic Transcoder.
 type ElastictranscoderPresetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#container ElastictranscoderPreset#container}.
-	Container *string `json:"container"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#container ElastictranscoderPreset#container}.
+	Container *string `json:"container" yaml:"container"`
 	// audio block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#audio ElastictranscoderPreset#audio}
-	Audio *ElastictranscoderPresetAudio `json:"audio"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#audio ElastictranscoderPreset#audio}
+	Audio *ElastictranscoderPresetAudio `json:"audio" yaml:"audio"`
 	// audio_codec_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#audio_codec_options ElastictranscoderPreset#audio_codec_options}
-	AudioCodecOptions *ElastictranscoderPresetAudioCodecOptions `json:"audioCodecOptions"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#description ElastictranscoderPreset#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#name ElastictranscoderPreset#name}.
-	Name *string `json:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#audio_codec_options ElastictranscoderPreset#audio_codec_options}
+	AudioCodecOptions *ElastictranscoderPresetAudioCodecOptions `json:"audioCodecOptions" yaml:"audioCodecOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#description ElastictranscoderPreset#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#name ElastictranscoderPreset#name}.
+	Name *string `json:"name" yaml:"name"`
 	// thumbnails block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#thumbnails ElastictranscoderPreset#thumbnails}
-	Thumbnails *ElastictranscoderPresetThumbnails `json:"thumbnails"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#type ElastictranscoderPreset#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#thumbnails ElastictranscoderPreset#thumbnails}
+	Thumbnails *ElastictranscoderPresetThumbnails `json:"thumbnails" yaml:"thumbnails"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#type ElastictranscoderPreset#type}.
+	Type *string `json:"type" yaml:"type"`
 	// video block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#video ElastictranscoderPreset#video}
-	Video *ElastictranscoderPresetVideo `json:"video"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#video_codec_options ElastictranscoderPreset#video_codec_options}.
-	VideoCodecOptions interface{} `json:"videoCodecOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#video ElastictranscoderPreset#video}
+	Video *ElastictranscoderPresetVideo `json:"video" yaml:"video"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#video_codec_options ElastictranscoderPreset#video_codec_options}.
+	VideoCodecOptions *map[string]*string `json:"videoCodecOptions" yaml:"videoCodecOptions"`
 	// video_watermarks block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#video_watermarks ElastictranscoderPreset#video_watermarks}
-	VideoWatermarks *[]*ElastictranscoderPresetVideoWatermarks `json:"videoWatermarks"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#video_watermarks ElastictranscoderPreset#video_watermarks}
+	VideoWatermarks interface{} `json:"videoWatermarks" yaml:"videoWatermarks"`
 }
 
 type ElastictranscoderPresetThumbnails struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#aspect_ratio ElastictranscoderPreset#aspect_ratio}.
-	AspectRatio *string `json:"aspectRatio"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#format ElastictranscoderPreset#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#interval ElastictranscoderPreset#interval}.
-	Interval *string `json:"interval"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#max_height ElastictranscoderPreset#max_height}.
-	MaxHeight *string `json:"maxHeight"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#max_width ElastictranscoderPreset#max_width}.
-	MaxWidth *string `json:"maxWidth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#padding_policy ElastictranscoderPreset#padding_policy}.
-	PaddingPolicy *string `json:"paddingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#resolution ElastictranscoderPreset#resolution}.
-	Resolution *string `json:"resolution"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#sizing_policy ElastictranscoderPreset#sizing_policy}.
-	SizingPolicy *string `json:"sizingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#aspect_ratio ElastictranscoderPreset#aspect_ratio}.
+	AspectRatio *string `json:"aspectRatio" yaml:"aspectRatio"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#format ElastictranscoderPreset#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#interval ElastictranscoderPreset#interval}.
+	Interval *string `json:"interval" yaml:"interval"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#max_height ElastictranscoderPreset#max_height}.
+	MaxHeight *string `json:"maxHeight" yaml:"maxHeight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#max_width ElastictranscoderPreset#max_width}.
+	MaxWidth *string `json:"maxWidth" yaml:"maxWidth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#padding_policy ElastictranscoderPreset#padding_policy}.
+	PaddingPolicy *string `json:"paddingPolicy" yaml:"paddingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#resolution ElastictranscoderPreset#resolution}.
+	Resolution *string `json:"resolution" yaml:"resolution"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#sizing_policy ElastictranscoderPreset#sizing_policy}.
+	SizingPolicy *string `json:"sizingPolicy" yaml:"sizingPolicy"`
 }
 
 type ElastictranscoderPresetThumbnailsOutputReference interface {
@@ -3547,12 +4072,17 @@ type ElastictranscoderPresetThumbnailsOutputReference interface {
 	SizingPolicyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAspectRatio()
@@ -3760,8 +4290,8 @@ func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3770,7 +4300,7 @@ func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) TerraformRe
 	return returns
 }
 
-func NewElastictranscoderPresetThumbnailsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetThumbnailsOutputReference {
+func NewElastictranscoderPresetThumbnailsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetThumbnailsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference{}
@@ -3784,7 +4314,7 @@ func NewElastictranscoderPresetThumbnailsOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewElastictranscoderPresetThumbnailsOutputReference_Override(e ElastictranscoderPresetThumbnailsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElastictranscoderPresetThumbnailsOutputReference_Override(e ElastictranscoderPresetThumbnailsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3882,7 +4412,7 @@ func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3891,12 +4421,40 @@ func (j *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3933,12 +4491,54 @@ func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4039,32 +4639,32 @@ func (e *jsiiProxy_ElastictranscoderPresetThumbnailsOutputReference) ResetSizing
 }
 
 type ElastictranscoderPresetVideo struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#aspect_ratio ElastictranscoderPreset#aspect_ratio}.
-	AspectRatio *string `json:"aspectRatio"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#bit_rate ElastictranscoderPreset#bit_rate}.
-	BitRate *string `json:"bitRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#codec ElastictranscoderPreset#codec}.
-	Codec *string `json:"codec"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#display_aspect_ratio ElastictranscoderPreset#display_aspect_ratio}.
-	DisplayAspectRatio *string `json:"displayAspectRatio"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#fixed_gop ElastictranscoderPreset#fixed_gop}.
-	FixedGop *string `json:"fixedGop"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#frame_rate ElastictranscoderPreset#frame_rate}.
-	FrameRate *string `json:"frameRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#keyframes_max_dist ElastictranscoderPreset#keyframes_max_dist}.
-	KeyframesMaxDist *string `json:"keyframesMaxDist"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#max_frame_rate ElastictranscoderPreset#max_frame_rate}.
-	MaxFrameRate *string `json:"maxFrameRate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#max_height ElastictranscoderPreset#max_height}.
-	MaxHeight *string `json:"maxHeight"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#max_width ElastictranscoderPreset#max_width}.
-	MaxWidth *string `json:"maxWidth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#padding_policy ElastictranscoderPreset#padding_policy}.
-	PaddingPolicy *string `json:"paddingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#resolution ElastictranscoderPreset#resolution}.
-	Resolution *string `json:"resolution"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#sizing_policy ElastictranscoderPreset#sizing_policy}.
-	SizingPolicy *string `json:"sizingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#aspect_ratio ElastictranscoderPreset#aspect_ratio}.
+	AspectRatio *string `json:"aspectRatio" yaml:"aspectRatio"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#bit_rate ElastictranscoderPreset#bit_rate}.
+	BitRate *string `json:"bitRate" yaml:"bitRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#codec ElastictranscoderPreset#codec}.
+	Codec *string `json:"codec" yaml:"codec"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#display_aspect_ratio ElastictranscoderPreset#display_aspect_ratio}.
+	DisplayAspectRatio *string `json:"displayAspectRatio" yaml:"displayAspectRatio"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#fixed_gop ElastictranscoderPreset#fixed_gop}.
+	FixedGop *string `json:"fixedGop" yaml:"fixedGop"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#frame_rate ElastictranscoderPreset#frame_rate}.
+	FrameRate *string `json:"frameRate" yaml:"frameRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#keyframes_max_dist ElastictranscoderPreset#keyframes_max_dist}.
+	KeyframesMaxDist *string `json:"keyframesMaxDist" yaml:"keyframesMaxDist"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#max_frame_rate ElastictranscoderPreset#max_frame_rate}.
+	MaxFrameRate *string `json:"maxFrameRate" yaml:"maxFrameRate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#max_height ElastictranscoderPreset#max_height}.
+	MaxHeight *string `json:"maxHeight" yaml:"maxHeight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#max_width ElastictranscoderPreset#max_width}.
+	MaxWidth *string `json:"maxWidth" yaml:"maxWidth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#padding_policy ElastictranscoderPreset#padding_policy}.
+	PaddingPolicy *string `json:"paddingPolicy" yaml:"paddingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#resolution ElastictranscoderPreset#resolution}.
+	Resolution *string `json:"resolution" yaml:"resolution"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#sizing_policy ElastictranscoderPreset#sizing_policy}.
+	SizingPolicy *string `json:"sizingPolicy" yaml:"sizingPolicy"`
 }
 
 type ElastictranscoderPresetVideoOutputReference interface {
@@ -4114,12 +4714,17 @@ type ElastictranscoderPresetVideoOutputReference interface {
 	SizingPolicyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAspectRatio()
@@ -4432,8 +5037,8 @@ func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) TerraformAttribu
 	return returns
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4442,7 +5047,7 @@ func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) TerraformResourc
 	return returns
 }
 
-func NewElastictranscoderPresetVideoOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetVideoOutputReference {
+func NewElastictranscoderPresetVideoOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElastictranscoderPresetVideoOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElastictranscoderPresetVideoOutputReference{}
@@ -4456,7 +5061,7 @@ func NewElastictranscoderPresetVideoOutputReference(terraformResource cdktf.ITer
 	return &j
 }
 
-func NewElastictranscoderPresetVideoOutputReference_Override(e ElastictranscoderPresetVideoOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElastictranscoderPresetVideoOutputReference_Override(e ElastictranscoderPresetVideoOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4594,7 +5199,7 @@ func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) SetTerraformAttr
 	)
 }
 
-func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4603,12 +5208,40 @@ func (j *jsiiProxy_ElastictranscoderPresetVideoOutputReference) SetTerraformReso
 }
 
 // Experimental.
-func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4645,12 +5278,54 @@ func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetNumberAttribu
 }
 
 // Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4791,24 +5466,24 @@ func (e *jsiiProxy_ElastictranscoderPresetVideoOutputReference) ResetSizingPolic
 }
 
 type ElastictranscoderPresetVideoWatermarks struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#horizontal_align ElastictranscoderPreset#horizontal_align}.
-	HorizontalAlign *string `json:"horizontalAlign"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#horizontal_offset ElastictranscoderPreset#horizontal_offset}.
-	HorizontalOffset *string `json:"horizontalOffset"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#id ElastictranscoderPreset#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#max_height ElastictranscoderPreset#max_height}.
-	MaxHeight *string `json:"maxHeight"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#max_width ElastictranscoderPreset#max_width}.
-	MaxWidth *string `json:"maxWidth"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#opacity ElastictranscoderPreset#opacity}.
-	Opacity *string `json:"opacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#sizing_policy ElastictranscoderPreset#sizing_policy}.
-	SizingPolicy *string `json:"sizingPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#target ElastictranscoderPreset#target}.
-	Target *string `json:"target"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#vertical_align ElastictranscoderPreset#vertical_align}.
-	VerticalAlign *string `json:"verticalAlign"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset.html#vertical_offset ElastictranscoderPreset#vertical_offset}.
-	VerticalOffset *string `json:"verticalOffset"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#horizontal_align ElastictranscoderPreset#horizontal_align}.
+	HorizontalAlign *string `json:"horizontalAlign" yaml:"horizontalAlign"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#horizontal_offset ElastictranscoderPreset#horizontal_offset}.
+	HorizontalOffset *string `json:"horizontalOffset" yaml:"horizontalOffset"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#id ElastictranscoderPreset#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#max_height ElastictranscoderPreset#max_height}.
+	MaxHeight *string `json:"maxHeight" yaml:"maxHeight"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#max_width ElastictranscoderPreset#max_width}.
+	MaxWidth *string `json:"maxWidth" yaml:"maxWidth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#opacity ElastictranscoderPreset#opacity}.
+	Opacity *string `json:"opacity" yaml:"opacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#sizing_policy ElastictranscoderPreset#sizing_policy}.
+	SizingPolicy *string `json:"sizingPolicy" yaml:"sizingPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#target ElastictranscoderPreset#target}.
+	Target *string `json:"target" yaml:"target"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#vertical_align ElastictranscoderPreset#vertical_align}.
+	VerticalAlign *string `json:"verticalAlign" yaml:"verticalAlign"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elastictranscoder_preset#vertical_offset ElastictranscoderPreset#vertical_offset}.
+	VerticalOffset *string `json:"verticalOffset" yaml:"verticalOffset"`
 }

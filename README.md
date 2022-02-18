@@ -1,6 +1,6 @@
 # cdktf-provider-aws-go
-- Terraform [aws Provider](https://registry.terraform.io/providers/hashicorp/aws/latest) v3.69.0
-- Generated with [CDK for Terraform](https://github.com/hashicorp/terraform-cdk) v0.8.1
+- Terraform [aws Provider](https://registry.terraform.io/providers/hashicorp/aws/latest) v3.74.3
+- Generated with [CDK for Terraform](https://github.com/hashicorp/terraform-cdk) v0.9.1
 
 ## To Add in you project:
 
@@ -15,8 +15,8 @@ import (
 
 	"github.com/hortau/cdktf-provider-aws-go/vpc"
 	aws "github.com/hortau/cdktf-provider-aws-go"
-	
-	"github.com/aws/constructs-go/constructs/v10"
+
+	constructs "github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )

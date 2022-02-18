@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/cur/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html aws_cur_report_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition aws_cur_report_definition}.
 type CurReportDefinition interface {
 	cdktf.TerraformResource
 	AdditionalArtifacts() *[]*string
@@ -24,8 +24,8 @@ type CurReportDefinition interface {
 	SetCompression(val *string)
 	CompressionInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Format() *string
@@ -65,10 +65,15 @@ type CurReportDefinition interface {
 	SetTimeUnit(val *string)
 	TimeUnitInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAdditionalArtifacts()
@@ -177,8 +182,8 @@ func (j *jsiiProxy_CurReportDefinition) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CurReportDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CurReportDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -457,7 +462,7 @@ func (j *jsiiProxy_CurReportDefinition) TimeUnitInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html aws_cur_report_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition aws_cur_report_definition} Resource.
 func NewCurReportDefinition(scope constructs.Construct, id *string, config *CurReportDefinitionConfig) CurReportDefinition {
 	_init_.Initialize()
 
@@ -472,7 +477,7 @@ func NewCurReportDefinition(scope constructs.Construct, id *string, config *CurR
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html aws_cur_report_definition} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition aws_cur_report_definition} Resource.
 func NewCurReportDefinition_Override(c CurReportDefinition, scope constructs.Construct, id *string, config *CurReportDefinitionConfig) {
 	_init_.Initialize()
 
@@ -507,7 +512,7 @@ func (j *jsiiProxy_CurReportDefinition) SetCompression(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CurReportDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_CurReportDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -643,12 +648,40 @@ func (c *jsiiProxy_CurReportDefinition) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CurReportDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CurReportDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CurReportDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -685,12 +718,54 @@ func (c *jsiiProxy_CurReportDefinition) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CurReportDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CurReportDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CurReportDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CurReportDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -823,38 +898,38 @@ func (c *jsiiProxy_CurReportDefinition) ToTerraform() interface{} {
 // AWS Cost and Usage Report.
 type CurReportDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#additional_schema_elements CurReportDefinition#additional_schema_elements}.
-	AdditionalSchemaElements *[]*string `json:"additionalSchemaElements"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#compression CurReportDefinition#compression}.
-	Compression *string `json:"compression"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#format CurReportDefinition#format}.
-	Format *string `json:"format"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#report_name CurReportDefinition#report_name}.
-	ReportName *string `json:"reportName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#s3_bucket CurReportDefinition#s3_bucket}.
-	S3Bucket *string `json:"s3Bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#s3_region CurReportDefinition#s3_region}.
-	S3Region *string `json:"s3Region"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#time_unit CurReportDefinition#time_unit}.
-	TimeUnit *string `json:"timeUnit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#additional_artifacts CurReportDefinition#additional_artifacts}.
-	AdditionalArtifacts *[]*string `json:"additionalArtifacts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#refresh_closed_reports CurReportDefinition#refresh_closed_reports}.
-	RefreshClosedReports interface{} `json:"refreshClosedReports"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#report_versioning CurReportDefinition#report_versioning}.
-	ReportVersioning *string `json:"reportVersioning"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition.html#s3_prefix CurReportDefinition#s3_prefix}.
-	S3Prefix *string `json:"s3Prefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#additional_schema_elements CurReportDefinition#additional_schema_elements}.
+	AdditionalSchemaElements *[]*string `json:"additionalSchemaElements" yaml:"additionalSchemaElements"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#compression CurReportDefinition#compression}.
+	Compression *string `json:"compression" yaml:"compression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#format CurReportDefinition#format}.
+	Format *string `json:"format" yaml:"format"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#report_name CurReportDefinition#report_name}.
+	ReportName *string `json:"reportName" yaml:"reportName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#s3_bucket CurReportDefinition#s3_bucket}.
+	S3Bucket *string `json:"s3Bucket" yaml:"s3Bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#s3_region CurReportDefinition#s3_region}.
+	S3Region *string `json:"s3Region" yaml:"s3Region"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#time_unit CurReportDefinition#time_unit}.
+	TimeUnit *string `json:"timeUnit" yaml:"timeUnit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#additional_artifacts CurReportDefinition#additional_artifacts}.
+	AdditionalArtifacts *[]*string `json:"additionalArtifacts" yaml:"additionalArtifacts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#refresh_closed_reports CurReportDefinition#refresh_closed_reports}.
+	RefreshClosedReports interface{} `json:"refreshClosedReports" yaml:"refreshClosedReports"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#report_versioning CurReportDefinition#report_versioning}.
+	ReportVersioning *string `json:"reportVersioning" yaml:"reportVersioning"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cur_report_definition#s3_prefix CurReportDefinition#s3_prefix}.
+	S3Prefix *string `json:"s3Prefix" yaml:"s3Prefix"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition.html aws_cur_report_definition}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition aws_cur_report_definition}.
 type DataAwsCurReportDefinition interface {
 	cdktf.TerraformDataSource
 	AdditionalArtifacts() *[]*string
@@ -862,8 +937,8 @@ type DataAwsCurReportDefinition interface {
 	CdktfStack() cdktf.TerraformStack
 	Compression() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Format() *string
@@ -876,7 +951,7 @@ type DataAwsCurReportDefinition interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	RefreshClosedReports() interface{}
+	RefreshClosedReports() cdktf.IResolvable
 	ReportName() *string
 	SetReportName(val *string)
 	ReportNameInput() *string
@@ -889,10 +964,15 @@ type DataAwsCurReportDefinition interface {
 	TerraformResourceType() *string
 	TimeUnit() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -957,8 +1037,8 @@ func (j *jsiiProxy_DataAwsCurReportDefinition) ConstructNodeMetadata() *map[stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCurReportDefinition) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCurReportDefinition) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1057,8 +1137,8 @@ func (j *jsiiProxy_DataAwsCurReportDefinition) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCurReportDefinition) RefreshClosedReports() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCurReportDefinition) RefreshClosedReports() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"refreshClosedReports",
@@ -1167,7 +1247,7 @@ func (j *jsiiProxy_DataAwsCurReportDefinition) TimeUnit() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition.html aws_cur_report_definition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition aws_cur_report_definition} Data Source.
 func NewDataAwsCurReportDefinition(scope constructs.Construct, id *string, config *DataAwsCurReportDefinitionConfig) DataAwsCurReportDefinition {
 	_init_.Initialize()
 
@@ -1182,7 +1262,7 @@ func NewDataAwsCurReportDefinition(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition.html aws_cur_report_definition} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition aws_cur_report_definition} Data Source.
 func NewDataAwsCurReportDefinition_Override(d DataAwsCurReportDefinition, scope constructs.Construct, id *string, config *DataAwsCurReportDefinitionConfig) {
 	_init_.Initialize()
 
@@ -1193,7 +1273,7 @@ func NewDataAwsCurReportDefinition_Override(d DataAwsCurReportDefinition, scope 
 	)
 }
 
-func (j *jsiiProxy_DataAwsCurReportDefinition) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCurReportDefinition) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1273,12 +1353,40 @@ func (d *jsiiProxy_DataAwsCurReportDefinition) AddOverride(path *string, value i
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCurReportDefinition) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCurReportDefinition) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCurReportDefinition) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1315,12 +1423,54 @@ func (d *jsiiProxy_DataAwsCurReportDefinition) GetNumberAttribute(terraformAttri
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCurReportDefinition) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCurReportDefinition) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCurReportDefinition) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCurReportDefinition) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1421,13 +1571,13 @@ func (d *jsiiProxy_DataAwsCurReportDefinition) ToTerraform() interface{} {
 // AWS Cost and Usage Report.
 type DataAwsCurReportDefinitionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition.html#report_name DataAwsCurReportDefinition#report_name}.
-	ReportName *string `json:"reportName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cur_report_definition#report_name DataAwsCurReportDefinition#report_name}.
+	ReportName *string `json:"reportName" yaml:"reportName"`
 }

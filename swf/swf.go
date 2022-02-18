@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/swf/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html aws_swf_domain}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/swf_domain aws_swf_domain}.
 type SwfDomain interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -37,12 +37,12 @@ type SwfDomain interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -50,10 +50,15 @@ type SwfDomain interface {
 	SetWorkflowExecutionRetentionPeriodInDays(val *string)
 	WorkflowExecutionRetentionPeriodInDaysInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -103,8 +108,8 @@ func (j *jsiiProxy_SwfDomain) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SwfDomain) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SwfDomain) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -253,8 +258,8 @@ func (j *jsiiProxy_SwfDomain) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SwfDomain) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SwfDomain) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -263,8 +268,8 @@ func (j *jsiiProxy_SwfDomain) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SwfDomain) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SwfDomain) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -273,8 +278,8 @@ func (j *jsiiProxy_SwfDomain) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SwfDomain) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SwfDomain) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -283,8 +288,8 @@ func (j *jsiiProxy_SwfDomain) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SwfDomain) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SwfDomain) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -343,7 +348,7 @@ func (j *jsiiProxy_SwfDomain) WorkflowExecutionRetentionPeriodInDaysInput() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html aws_swf_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/swf_domain aws_swf_domain} Resource.
 func NewSwfDomain(scope constructs.Construct, id *string, config *SwfDomainConfig) SwfDomain {
 	_init_.Initialize()
 
@@ -358,7 +363,7 @@ func NewSwfDomain(scope constructs.Construct, id *string, config *SwfDomainConfi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html aws_swf_domain} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/swf_domain aws_swf_domain} Resource.
 func NewSwfDomain_Override(s SwfDomain, scope constructs.Construct, id *string, config *SwfDomainConfig) {
 	_init_.Initialize()
 
@@ -369,7 +374,7 @@ func NewSwfDomain_Override(s SwfDomain, scope constructs.Construct, id *string, 
 	)
 }
 
-func (j *jsiiProxy_SwfDomain) SetCount(val interface{}) {
+func (j *jsiiProxy_SwfDomain) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -425,7 +430,7 @@ func (j *jsiiProxy_SwfDomain) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_SwfDomain) SetTags(val interface{}) {
+func (j *jsiiProxy_SwfDomain) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -433,7 +438,7 @@ func (j *jsiiProxy_SwfDomain) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SwfDomain) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SwfDomain) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -489,12 +494,40 @@ func (s *jsiiProxy_SwfDomain) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (s *jsiiProxy_SwfDomain) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SwfDomain) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SwfDomain) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -531,12 +564,54 @@ func (s *jsiiProxy_SwfDomain) GetNumberAttribute(terraformAttribute *string) *fl
 }
 
 // Experimental.
+func (s *jsiiProxy_SwfDomain) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SwfDomain) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SwfDomain) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SwfDomain) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -677,23 +752,23 @@ func (s *jsiiProxy_SwfDomain) ToTerraform() interface{} {
 // AWS Simple Workflow Service.
 type SwfDomainConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html#workflow_execution_retention_period_in_days SwfDomain#workflow_execution_retention_period_in_days}.
-	WorkflowExecutionRetentionPeriodInDays *string `json:"workflowExecutionRetentionPeriodInDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html#description SwfDomain#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html#name SwfDomain#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html#name_prefix SwfDomain#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html#tags SwfDomain#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain.html#tags_all SwfDomain#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain#workflow_execution_retention_period_in_days SwfDomain#workflow_execution_retention_period_in_days}.
+	WorkflowExecutionRetentionPeriodInDays *string `json:"workflowExecutionRetentionPeriodInDays" yaml:"workflowExecutionRetentionPeriodInDays"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain#description SwfDomain#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain#name SwfDomain#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain#name_prefix SwfDomain#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain#tags SwfDomain#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/swf_domain#tags_all SwfDomain#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

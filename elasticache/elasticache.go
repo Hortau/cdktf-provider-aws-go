@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/elasticache/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster.html aws_elasticache_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster aws_elasticache_cluster}.
 type DataAwsElasticacheCluster interface {
 	cdktf.TerraformDataSource
 	Arn() *string
@@ -21,8 +21,8 @@ type DataAwsElasticacheCluster interface {
 	ClusterIdInput() *string
 	ConfigurationEndpoint() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -48,18 +48,23 @@ type DataAwsElasticacheCluster interface {
 	SnapshotRetentionLimit() *float64
 	SnapshotWindow() *string
 	SubnetGroupName() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	CacheNodes(index *string) DataAwsElasticacheClusterCacheNodes
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -155,8 +160,8 @@ func (j *jsiiProxy_DataAwsElasticacheCluster) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -385,8 +390,8 @@ func (j *jsiiProxy_DataAwsElasticacheCluster) SubnetGroupName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -395,8 +400,8 @@ func (j *jsiiProxy_DataAwsElasticacheCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -435,7 +440,7 @@ func (j *jsiiProxy_DataAwsElasticacheCluster) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster.html aws_elasticache_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster aws_elasticache_cluster} Data Source.
 func NewDataAwsElasticacheCluster(scope constructs.Construct, id *string, config *DataAwsElasticacheClusterConfig) DataAwsElasticacheCluster {
 	_init_.Initialize()
 
@@ -450,7 +455,7 @@ func NewDataAwsElasticacheCluster(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster.html aws_elasticache_cluster} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster aws_elasticache_cluster} Data Source.
 func NewDataAwsElasticacheCluster_Override(d DataAwsElasticacheCluster, scope constructs.Construct, id *string, config *DataAwsElasticacheClusterConfig) {
 	_init_.Initialize()
 
@@ -469,7 +474,7 @@ func (j *jsiiProxy_DataAwsElasticacheCluster) SetClusterId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticacheCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElasticacheCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -501,7 +506,7 @@ func (j *jsiiProxy_DataAwsElasticacheCluster) SetProvider(val cdktf.TerraformPro
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticacheCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsElasticacheCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -562,12 +567,40 @@ func (d *jsiiProxy_DataAwsElasticacheCluster) CacheNodes(index *string) DataAwsE
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticacheCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticacheCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -604,12 +637,54 @@ func (d *jsiiProxy_DataAwsElasticacheCluster) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticacheCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticacheCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -725,12 +800,19 @@ type DataAwsElasticacheClusterCacheNodes interface {
 	Port() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -799,8 +881,8 @@ func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) TerraformAttribute() *st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -809,15 +891,25 @@ func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) TerraformResource() cdkt
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsElasticacheClusterCacheNodes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsElasticacheClusterCacheNodes {
+func NewDataAwsElasticacheClusterCacheNodes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsElasticacheClusterCacheNodes {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsElasticacheClusterCacheNodes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticache.DataAwsElasticacheClusterCacheNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -825,12 +917,12 @@ func NewDataAwsElasticacheClusterCacheNodes(terraformResource cdktf.ITerraformRe
 }
 
 // Experimental.
-func NewDataAwsElasticacheClusterCacheNodes_Override(d DataAwsElasticacheClusterCacheNodes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsElasticacheClusterCacheNodes_Override(d DataAwsElasticacheClusterCacheNodes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticache.DataAwsElasticacheClusterCacheNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -851,7 +943,7 @@ func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) SetTerraformAttribute(va
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -859,13 +951,49 @@ func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) SetTerraformResource(val
 	)
 }
 
+func (j *jsiiProxy_DataAwsElasticacheClusterCacheNodes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -902,12 +1030,54 @@ func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -932,30 +1102,30 @@ func (d *jsiiProxy_DataAwsElasticacheClusterCacheNodes) InterpolationForAttribut
 // AWS ElastiCache.
 type DataAwsElasticacheClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster.html#cluster_id DataAwsElasticacheCluster#cluster_id}.
-	ClusterId *string `json:"clusterId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster.html#tags DataAwsElasticacheCluster#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster#cluster_id DataAwsElasticacheCluster#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_cluster#tags DataAwsElasticacheCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group.html aws_elasticache_replication_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group aws_elasticache_replication_group}.
 type DataAwsElasticacheReplicationGroup interface {
 	cdktf.TerraformDataSource
 	Arn() *string
-	AuthTokenEnabled() interface{}
-	AutomaticFailoverEnabled() interface{}
+	AuthTokenEnabled() cdktf.IResolvable
+	AutomaticFailoverEnabled() cdktf.IResolvable
 	CdktfStack() cdktf.TerraformStack
 	ConfigurationEndpointAddress() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -964,7 +1134,7 @@ type DataAwsElasticacheReplicationGroup interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	MemberClusters() *[]*string
-	MultiAzEnabled() interface{}
+	MultiAzEnabled() cdktf.IResolvable
 	Node() constructs.Node
 	NodeType() *string
 	NumberCacheClusters() *float64
@@ -984,10 +1154,15 @@ type DataAwsElasticacheReplicationGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1012,8 +1187,8 @@ func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) AuthTokenEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) AuthTokenEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"authTokenEnabled",
@@ -1022,8 +1197,8 @@ func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) AuthTokenEnabled() interf
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) AutomaticFailoverEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) AutomaticFailoverEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"automaticFailoverEnabled",
@@ -1062,8 +1237,8 @@ func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) ConstructNodeMetadata() *
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1132,8 +1307,8 @@ func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) MemberClusters() *[]*stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) MultiAzEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) MultiAzEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"multiAzEnabled",
@@ -1302,7 +1477,7 @@ func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) TerraformResourceType() *
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group.html aws_elasticache_replication_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group aws_elasticache_replication_group} Data Source.
 func NewDataAwsElasticacheReplicationGroup(scope constructs.Construct, id *string, config *DataAwsElasticacheReplicationGroupConfig) DataAwsElasticacheReplicationGroup {
 	_init_.Initialize()
 
@@ -1317,7 +1492,7 @@ func NewDataAwsElasticacheReplicationGroup(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group.html aws_elasticache_replication_group} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group aws_elasticache_replication_group} Data Source.
 func NewDataAwsElasticacheReplicationGroup_Override(d DataAwsElasticacheReplicationGroup, scope constructs.Construct, id *string, config *DataAwsElasticacheReplicationGroupConfig) {
 	_init_.Initialize()
 
@@ -1328,7 +1503,7 @@ func NewDataAwsElasticacheReplicationGroup_Override(d DataAwsElasticacheReplicat
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElasticacheReplicationGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1408,12 +1583,40 @@ func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) AddOverride(path *string,
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1450,12 +1653,54 @@ func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetNumberAttribute(terraf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1556,18 +1801,18 @@ func (d *jsiiProxy_DataAwsElasticacheReplicationGroup) ToTerraform() interface{}
 // AWS ElastiCache.
 type DataAwsElasticacheReplicationGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group.html#replication_group_id DataAwsElasticacheReplicationGroup#replication_group_id}.
-	ReplicationGroupId *string `json:"replicationGroupId"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_replication_group#replication_group_id DataAwsElasticacheReplicationGroup#replication_group_id}.
+	ReplicationGroupId *string `json:"replicationGroupId" yaml:"replicationGroupId"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html aws_elasticache_user}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user aws_elasticache_user}.
 type DataAwsElasticacheUser interface {
 	cdktf.TerraformDataSource
 	AccessString() *string
@@ -1575,8 +1820,8 @@ type DataAwsElasticacheUser interface {
 	AccessStringInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -1607,10 +1852,15 @@ type DataAwsElasticacheUser interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAccessString()
@@ -1670,8 +1920,8 @@ func (j *jsiiProxy_DataAwsElasticacheUser) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsElasticacheUser) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsElasticacheUser) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1890,7 +2140,7 @@ func (j *jsiiProxy_DataAwsElasticacheUser) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html aws_elasticache_user} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user aws_elasticache_user} Data Source.
 func NewDataAwsElasticacheUser(scope constructs.Construct, id *string, config *DataAwsElasticacheUserConfig) DataAwsElasticacheUser {
 	_init_.Initialize()
 
@@ -1905,7 +2155,7 @@ func NewDataAwsElasticacheUser(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html aws_elasticache_user} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user aws_elasticache_user} Data Source.
 func NewDataAwsElasticacheUser_Override(d DataAwsElasticacheUser, scope constructs.Construct, id *string, config *DataAwsElasticacheUserConfig) {
 	_init_.Initialize()
 
@@ -1924,7 +2174,7 @@ func (j *jsiiProxy_DataAwsElasticacheUser) SetAccessString(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsElasticacheUser) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsElasticacheUser) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2036,12 +2286,40 @@ func (d *jsiiProxy_DataAwsElasticacheUser) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticacheUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticacheUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2078,12 +2356,54 @@ func (d *jsiiProxy_DataAwsElasticacheUser) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsElasticacheUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsElasticacheUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsElasticacheUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2224,28 +2544,28 @@ func (d *jsiiProxy_DataAwsElasticacheUser) ToTerraform() interface{} {
 // AWS ElastiCache.
 type DataAwsElasticacheUserConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html#user_id DataAwsElasticacheUser#user_id}.
-	UserId *string `json:"userId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html#access_string DataAwsElasticacheUser#access_string}.
-	AccessString *string `json:"accessString"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html#engine DataAwsElasticacheUser#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html#no_password_required DataAwsElasticacheUser#no_password_required}.
-	NoPasswordRequired interface{} `json:"noPasswordRequired"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html#passwords DataAwsElasticacheUser#passwords}.
-	Passwords *[]*string `json:"passwords"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user.html#user_name DataAwsElasticacheUser#user_name}.
-	UserName *string `json:"userName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user#user_id DataAwsElasticacheUser#user_id}.
+	UserId *string `json:"userId" yaml:"userId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user#access_string DataAwsElasticacheUser#access_string}.
+	AccessString *string `json:"accessString" yaml:"accessString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user#engine DataAwsElasticacheUser#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user#no_password_required DataAwsElasticacheUser#no_password_required}.
+	NoPasswordRequired interface{} `json:"noPasswordRequired" yaml:"noPasswordRequired"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user#passwords DataAwsElasticacheUser#passwords}.
+	Passwords *[]*string `json:"passwords" yaml:"passwords"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/elasticache_user#user_name DataAwsElasticacheUser#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html aws_elasticache_cluster}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster aws_elasticache_cluster}.
 type ElasticacheCluster interface {
 	cdktf.TerraformResource
 	ApplyImmediately() interface{}
@@ -2265,8 +2585,8 @@ type ElasticacheCluster interface {
 	ClusterIdInput() *string
 	ConfigurationEndpoint() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -2333,21 +2653,26 @@ type ElasticacheCluster interface {
 	SubnetGroupName() *string
 	SetSubnetGroupName(val *string)
 	SubnetGroupNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	CacheNodes(index *string) ElasticacheClusterCacheNodes
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetApplyImmediately()
@@ -2515,8 +2840,8 @@ func (j *jsiiProxy_ElasticacheCluster) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheCluster) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheCluster) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2975,8 +3300,8 @@ func (j *jsiiProxy_ElasticacheCluster) SubnetGroupNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheCluster) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2985,8 +3310,8 @@ func (j *jsiiProxy_ElasticacheCluster) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheCluster) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheCluster) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2995,8 +3320,8 @@ func (j *jsiiProxy_ElasticacheCluster) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheCluster) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheCluster) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -3005,8 +3330,8 @@ func (j *jsiiProxy_ElasticacheCluster) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheCluster) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -3045,7 +3370,7 @@ func (j *jsiiProxy_ElasticacheCluster) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html aws_elasticache_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster aws_elasticache_cluster} Resource.
 func NewElasticacheCluster(scope constructs.Construct, id *string, config *ElasticacheClusterConfig) ElasticacheCluster {
 	_init_.Initialize()
 
@@ -3060,7 +3385,7 @@ func NewElasticacheCluster(scope constructs.Construct, id *string, config *Elast
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html aws_elasticache_cluster} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster aws_elasticache_cluster} Resource.
 func NewElasticacheCluster_Override(e ElasticacheCluster, scope constructs.Construct, id *string, config *ElasticacheClusterConfig) {
 	_init_.Initialize()
 
@@ -3103,7 +3428,7 @@ func (j *jsiiProxy_ElasticacheCluster) SetClusterId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheCluster) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheCluster) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3279,7 +3604,7 @@ func (j *jsiiProxy_ElasticacheCluster) SetSubnetGroupName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheCluster) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticacheCluster) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3287,7 +3612,7 @@ func (j *jsiiProxy_ElasticacheCluster) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheCluster) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticacheCluster) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3348,12 +3673,40 @@ func (e *jsiiProxy_ElasticacheCluster) CacheNodes(index *string) ElasticacheClus
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheCluster) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheCluster) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheCluster) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3390,12 +3743,54 @@ func (e *jsiiProxy_ElasticacheCluster) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheCluster) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheCluster) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheCluster) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheCluster) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3687,12 +4082,19 @@ type ElasticacheClusterCacheNodes interface {
 	Port() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -3761,8 +4163,8 @@ func (j *jsiiProxy_ElasticacheClusterCacheNodes) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheClusterCacheNodes) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElasticacheClusterCacheNodes) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3771,15 +4173,25 @@ func (j *jsiiProxy_ElasticacheClusterCacheNodes) TerraformResource() cdktf.ITerr
 	return returns
 }
 
+func (j *jsiiProxy_ElasticacheClusterCacheNodes) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewElasticacheClusterCacheNodes(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) ElasticacheClusterCacheNodes {
+func NewElasticacheClusterCacheNodes(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) ElasticacheClusterCacheNodes {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElasticacheClusterCacheNodes{}
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticache.ElasticacheClusterCacheNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -3787,12 +4199,12 @@ func NewElasticacheClusterCacheNodes(terraformResource cdktf.ITerraformResource,
 }
 
 // Experimental.
-func NewElasticacheClusterCacheNodes_Override(e ElasticacheClusterCacheNodes, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewElasticacheClusterCacheNodes_Override(e ElasticacheClusterCacheNodes, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.elasticache.ElasticacheClusterCacheNodes",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		e,
 	)
 }
@@ -3813,7 +4225,7 @@ func (j *jsiiProxy_ElasticacheClusterCacheNodes) SetTerraformAttribute(val *stri
 	)
 }
 
-func (j *jsiiProxy_ElasticacheClusterCacheNodes) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElasticacheClusterCacheNodes) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3821,13 +4233,49 @@ func (j *jsiiProxy_ElasticacheClusterCacheNodes) SetTerraformResource(val cdktf.
 	)
 }
 
+func (j *jsiiProxy_ElasticacheClusterCacheNodes) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3864,12 +4312,54 @@ func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheClusterCacheNodes) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3894,76 +4384,76 @@ func (e *jsiiProxy_ElasticacheClusterCacheNodes) InterpolationForAttribute(prope
 // AWS ElastiCache.
 type ElasticacheClusterConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#cluster_id ElasticacheCluster#cluster_id}.
-	ClusterId *string `json:"clusterId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#apply_immediately ElasticacheCluster#apply_immediately}.
-	ApplyImmediately interface{} `json:"applyImmediately"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#availability_zone ElasticacheCluster#availability_zone}.
-	AvailabilityZone *string `json:"availabilityZone"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#az_mode ElasticacheCluster#az_mode}.
-	AzMode *string `json:"azMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#engine ElasticacheCluster#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#engine_version ElasticacheCluster#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#final_snapshot_identifier ElasticacheCluster#final_snapshot_identifier}.
-	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#maintenance_window ElasticacheCluster#maintenance_window}.
-	MaintenanceWindow *string `json:"maintenanceWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#node_type ElasticacheCluster#node_type}.
-	NodeType *string `json:"nodeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#notification_topic_arn ElasticacheCluster#notification_topic_arn}.
-	NotificationTopicArn *string `json:"notificationTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#num_cache_nodes ElasticacheCluster#num_cache_nodes}.
-	NumCacheNodes *float64 `json:"numCacheNodes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#parameter_group_name ElasticacheCluster#parameter_group_name}.
-	ParameterGroupName *string `json:"parameterGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#port ElasticacheCluster#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#preferred_availability_zones ElasticacheCluster#preferred_availability_zones}.
-	PreferredAvailabilityZones *[]*string `json:"preferredAvailabilityZones"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#replication_group_id ElasticacheCluster#replication_group_id}.
-	ReplicationGroupId *string `json:"replicationGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#security_group_ids ElasticacheCluster#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#security_group_names ElasticacheCluster#security_group_names}.
-	SecurityGroupNames *[]*string `json:"securityGroupNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#snapshot_arns ElasticacheCluster#snapshot_arns}.
-	SnapshotArns *[]*string `json:"snapshotArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#snapshot_name ElasticacheCluster#snapshot_name}.
-	SnapshotName *string `json:"snapshotName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#snapshot_retention_limit ElasticacheCluster#snapshot_retention_limit}.
-	SnapshotRetentionLimit *float64 `json:"snapshotRetentionLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#snapshot_window ElasticacheCluster#snapshot_window}.
-	SnapshotWindow *string `json:"snapshotWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#subnet_group_name ElasticacheCluster#subnet_group_name}.
-	SubnetGroupName *string `json:"subnetGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#tags ElasticacheCluster#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#tags_all ElasticacheCluster#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#cluster_id ElasticacheCluster#cluster_id}.
+	ClusterId *string `json:"clusterId" yaml:"clusterId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#apply_immediately ElasticacheCluster#apply_immediately}.
+	ApplyImmediately interface{} `json:"applyImmediately" yaml:"applyImmediately"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#availability_zone ElasticacheCluster#availability_zone}.
+	AvailabilityZone *string `json:"availabilityZone" yaml:"availabilityZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#az_mode ElasticacheCluster#az_mode}.
+	AzMode *string `json:"azMode" yaml:"azMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#engine ElasticacheCluster#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#engine_version ElasticacheCluster#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#final_snapshot_identifier ElasticacheCluster#final_snapshot_identifier}.
+	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier" yaml:"finalSnapshotIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#maintenance_window ElasticacheCluster#maintenance_window}.
+	MaintenanceWindow *string `json:"maintenanceWindow" yaml:"maintenanceWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#node_type ElasticacheCluster#node_type}.
+	NodeType *string `json:"nodeType" yaml:"nodeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#notification_topic_arn ElasticacheCluster#notification_topic_arn}.
+	NotificationTopicArn *string `json:"notificationTopicArn" yaml:"notificationTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#num_cache_nodes ElasticacheCluster#num_cache_nodes}.
+	NumCacheNodes *float64 `json:"numCacheNodes" yaml:"numCacheNodes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#parameter_group_name ElasticacheCluster#parameter_group_name}.
+	ParameterGroupName *string `json:"parameterGroupName" yaml:"parameterGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#port ElasticacheCluster#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#preferred_availability_zones ElasticacheCluster#preferred_availability_zones}.
+	PreferredAvailabilityZones *[]*string `json:"preferredAvailabilityZones" yaml:"preferredAvailabilityZones"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#replication_group_id ElasticacheCluster#replication_group_id}.
+	ReplicationGroupId *string `json:"replicationGroupId" yaml:"replicationGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#security_group_ids ElasticacheCluster#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#security_group_names ElasticacheCluster#security_group_names}.
+	SecurityGroupNames *[]*string `json:"securityGroupNames" yaml:"securityGroupNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#snapshot_arns ElasticacheCluster#snapshot_arns}.
+	SnapshotArns *[]*string `json:"snapshotArns" yaml:"snapshotArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#snapshot_name ElasticacheCluster#snapshot_name}.
+	SnapshotName *string `json:"snapshotName" yaml:"snapshotName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#snapshot_retention_limit ElasticacheCluster#snapshot_retention_limit}.
+	SnapshotRetentionLimit *float64 `json:"snapshotRetentionLimit" yaml:"snapshotRetentionLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#snapshot_window ElasticacheCluster#snapshot_window}.
+	SnapshotWindow *string `json:"snapshotWindow" yaml:"snapshotWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#subnet_group_name ElasticacheCluster#subnet_group_name}.
+	SubnetGroupName *string `json:"subnetGroupName" yaml:"subnetGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#tags ElasticacheCluster#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_cluster#tags_all ElasticacheCluster#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group.html aws_elasticache_global_replication_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group aws_elasticache_global_replication_group}.
 type ElasticacheGlobalReplicationGroup interface {
 	cdktf.TerraformResource
 	ActualEngineVersion() *string
 	Arn() *string
-	AtRestEncryptionEnabled() interface{}
-	AuthTokenEnabled() interface{}
+	AtRestEncryptionEnabled() cdktf.IResolvable
+	AuthTokenEnabled() cdktf.IResolvable
 	CacheNodeType() *string
 	CdktfStack() cdktf.TerraformStack
-	ClusterEnabled() interface{}
+	ClusterEnabled() cdktf.IResolvable
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -3990,12 +4480,17 @@ type ElasticacheGlobalReplicationGroup interface {
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	TransitEncryptionEnabled() interface{}
+	TransitEncryptionEnabled() cdktf.IResolvable
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetGlobalReplicationGroupDescription()
@@ -4031,8 +4526,8 @@ func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) AtRestEncryptionEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) AtRestEncryptionEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"atRestEncryptionEnabled",
@@ -4041,8 +4536,8 @@ func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) AtRestEncryptionEnabled() 
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) AuthTokenEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) AuthTokenEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"authTokenEnabled",
@@ -4071,8 +4566,8 @@ func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) CdktfStack() cdktf.Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) ClusterEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) ClusterEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"clusterEnabled",
@@ -4091,8 +4586,8 @@ func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4301,8 +4796,8 @@ func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) TerraformResourceType() *s
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) TransitEncryptionEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) TransitEncryptionEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"transitEncryptionEnabled",
@@ -4311,7 +4806,7 @@ func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) TransitEncryptionEnabled()
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group.html aws_elasticache_global_replication_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group aws_elasticache_global_replication_group} Resource.
 func NewElasticacheGlobalReplicationGroup(scope constructs.Construct, id *string, config *ElasticacheGlobalReplicationGroupConfig) ElasticacheGlobalReplicationGroup {
 	_init_.Initialize()
 
@@ -4326,7 +4821,7 @@ func NewElasticacheGlobalReplicationGroup(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group.html aws_elasticache_global_replication_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group aws_elasticache_global_replication_group} Resource.
 func NewElasticacheGlobalReplicationGroup_Override(e ElasticacheGlobalReplicationGroup, scope constructs.Construct, id *string, config *ElasticacheGlobalReplicationGroupConfig) {
 	_init_.Initialize()
 
@@ -4337,7 +4832,7 @@ func NewElasticacheGlobalReplicationGroup_Override(e ElasticacheGlobalReplicatio
 	)
 }
 
-func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheGlobalReplicationGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4433,12 +4928,40 @@ func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) AddOverride(path *string, 
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4475,12 +4998,54 @@ func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4589,29 +5154,29 @@ func (e *jsiiProxy_ElasticacheGlobalReplicationGroup) ToTerraform() interface{} 
 // AWS ElastiCache.
 type ElasticacheGlobalReplicationGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group.html#global_replication_group_id_suffix ElasticacheGlobalReplicationGroup#global_replication_group_id_suffix}.
-	GlobalReplicationGroupIdSuffix *string `json:"globalReplicationGroupIdSuffix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group.html#primary_replication_group_id ElasticacheGlobalReplicationGroup#primary_replication_group_id}.
-	PrimaryReplicationGroupId *string `json:"primaryReplicationGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group.html#global_replication_group_description ElasticacheGlobalReplicationGroup#global_replication_group_description}.
-	GlobalReplicationGroupDescription *string `json:"globalReplicationGroupDescription"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group#global_replication_group_id_suffix ElasticacheGlobalReplicationGroup#global_replication_group_id_suffix}.
+	GlobalReplicationGroupIdSuffix *string `json:"globalReplicationGroupIdSuffix" yaml:"globalReplicationGroupIdSuffix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group#primary_replication_group_id ElasticacheGlobalReplicationGroup#primary_replication_group_id}.
+	PrimaryReplicationGroupId *string `json:"primaryReplicationGroupId" yaml:"primaryReplicationGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_global_replication_group#global_replication_group_description ElasticacheGlobalReplicationGroup#global_replication_group_description}.
+	GlobalReplicationGroupDescription *string `json:"globalReplicationGroupDescription" yaml:"globalReplicationGroupDescription"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html aws_elasticache_parameter_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group aws_elasticache_parameter_group}.
 type ElasticacheParameterGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -4629,26 +5194,31 @@ type ElasticacheParameterGroup interface {
 	SetName(val *string)
 	NameInput() *string
 	Node() constructs.Node
-	Parameter() *[]*ElasticacheParameterGroupParameter
-	SetParameter(val *[]*ElasticacheParameterGroupParameter)
-	ParameterInput() *[]*ElasticacheParameterGroupParameter
+	Parameter() interface{}
+	SetParameter(val interface{})
+	ParameterInput() interface{}
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -4697,8 +5267,8 @@ func (j *jsiiProxy_ElasticacheParameterGroup) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheParameterGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -4827,8 +5397,8 @@ func (j *jsiiProxy_ElasticacheParameterGroup) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) Parameter() *[]*ElasticacheParameterGroupParameter {
-	var returns *[]*ElasticacheParameterGroupParameter
+func (j *jsiiProxy_ElasticacheParameterGroup) Parameter() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameter",
@@ -4837,8 +5407,8 @@ func (j *jsiiProxy_ElasticacheParameterGroup) Parameter() *[]*ElasticacheParamet
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) ParameterInput() *[]*ElasticacheParameterGroupParameter {
-	var returns *[]*ElasticacheParameterGroupParameter
+func (j *jsiiProxy_ElasticacheParameterGroup) ParameterInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"parameterInput",
@@ -4867,8 +5437,8 @@ func (j *jsiiProxy_ElasticacheParameterGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheParameterGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4877,8 +5447,8 @@ func (j *jsiiProxy_ElasticacheParameterGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheParameterGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4887,8 +5457,8 @@ func (j *jsiiProxy_ElasticacheParameterGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheParameterGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4897,8 +5467,8 @@ func (j *jsiiProxy_ElasticacheParameterGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheParameterGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4937,7 +5507,7 @@ func (j *jsiiProxy_ElasticacheParameterGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html aws_elasticache_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group aws_elasticache_parameter_group} Resource.
 func NewElasticacheParameterGroup(scope constructs.Construct, id *string, config *ElasticacheParameterGroupConfig) ElasticacheParameterGroup {
 	_init_.Initialize()
 
@@ -4952,7 +5522,7 @@ func NewElasticacheParameterGroup(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html aws_elasticache_parameter_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group aws_elasticache_parameter_group} Resource.
 func NewElasticacheParameterGroup_Override(e ElasticacheParameterGroup, scope constructs.Construct, id *string, config *ElasticacheParameterGroupConfig) {
 	_init_.Initialize()
 
@@ -4963,7 +5533,7 @@ func NewElasticacheParameterGroup_Override(e ElasticacheParameterGroup, scope co
 	)
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheParameterGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5011,7 +5581,7 @@ func (j *jsiiProxy_ElasticacheParameterGroup) SetName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) SetParameter(val *[]*ElasticacheParameterGroupParameter) {
+func (j *jsiiProxy_ElasticacheParameterGroup) SetParameter(val interface{}) {
 	_jsii_.Set(
 		j,
 		"parameter",
@@ -5027,7 +5597,7 @@ func (j *jsiiProxy_ElasticacheParameterGroup) SetProvider(val cdktf.TerraformPro
 	)
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticacheParameterGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -5035,7 +5605,7 @@ func (j *jsiiProxy_ElasticacheParameterGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheParameterGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticacheParameterGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -5083,12 +5653,40 @@ func (e *jsiiProxy_ElasticacheParameterGroup) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheParameterGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheParameterGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheParameterGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5125,12 +5723,54 @@ func (e *jsiiProxy_ElasticacheParameterGroup) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheParameterGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheParameterGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheParameterGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheParameterGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5263,37 +5903,37 @@ func (e *jsiiProxy_ElasticacheParameterGroup) ToTerraform() interface{} {
 // AWS ElastiCache.
 type ElasticacheParameterGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#family ElasticacheParameterGroup#family}.
-	Family *string `json:"family"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#name ElasticacheParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#description ElasticacheParameterGroup#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#family ElasticacheParameterGroup#family}.
+	Family *string `json:"family" yaml:"family"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#name ElasticacheParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#description ElasticacheParameterGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 	// parameter block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#parameter ElasticacheParameterGroup#parameter}
-	Parameter *[]*ElasticacheParameterGroupParameter `json:"parameter"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#tags ElasticacheParameterGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#tags_all ElasticacheParameterGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#parameter ElasticacheParameterGroup#parameter}
+	Parameter interface{} `json:"parameter" yaml:"parameter"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#tags ElasticacheParameterGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#tags_all ElasticacheParameterGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type ElasticacheParameterGroupParameter struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#name ElasticacheParameterGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group.html#value ElasticacheParameterGroup#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#name ElasticacheParameterGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_parameter_group#value ElasticacheParameterGroup#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html aws_elasticache_replication_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group aws_elasticache_replication_group}.
 type ElasticacheReplicationGroup interface {
 	cdktf.TerraformResource
 	ApplyImmediately() interface{}
@@ -5316,13 +5956,13 @@ type ElasticacheReplicationGroup interface {
 	SetAvailabilityZones(val *[]*string)
 	AvailabilityZonesInput() *[]*string
 	CdktfStack() cdktf.TerraformStack
-	ClusterEnabled() interface{}
+	ClusterEnabled() cdktf.IResolvable
 	ClusterMode() ElasticacheReplicationGroupClusterModeOutputReference
 	ClusterModeInput() *ElasticacheReplicationGroupClusterMode
 	ConfigurationEndpointAddress() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DataTieringEnabled() interface{}
 	SetDataTieringEnabled(val interface{})
 	DataTieringEnabledInput() interface{}
@@ -5404,12 +6044,12 @@ type ElasticacheReplicationGroup interface {
 	SubnetGroupName() *string
 	SetSubnetGroupName(val *string)
 	SubnetGroupNameInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -5418,11 +6058,19 @@ type ElasticacheReplicationGroup interface {
 	TransitEncryptionEnabled() interface{}
 	SetTransitEncryptionEnabled(val interface{})
 	TransitEncryptionEnabledInput() interface{}
+	UserGroupIds() *[]*string
+	SetUserGroupIds(val *[]*string)
+	UserGroupIdsInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutClusterMode(value *ElasticacheReplicationGroupClusterMode)
@@ -5459,6 +6107,7 @@ type ElasticacheReplicationGroup interface {
 	ResetTagsAll()
 	ResetTimeouts()
 	ResetTransitEncryptionEnabled()
+	ResetUserGroupIds()
 	SynthesizeAttributes() *map[string]interface{}
 	ToMetadata() interface{}
 	ToString() *string
@@ -5610,8 +6259,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) CdktfStack() cdktf.TerraformStac
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) ClusterEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheReplicationGroup) ClusterEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"clusterEnabled",
@@ -5660,8 +6309,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) ConstructNodeMetadata() *map[str
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheReplicationGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6230,8 +6879,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) SubnetGroupNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheReplicationGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6240,8 +6889,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheReplicationGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6250,8 +6899,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheReplicationGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6260,8 +6909,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheReplicationGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6340,7 +6989,27 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) TransitEncryptionEnabledInput() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html aws_elasticache_replication_group} Resource.
+func (j *jsiiProxy_ElasticacheReplicationGroup) UserGroupIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"userGroupIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroup) UserGroupIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"userGroupIdsInput",
+		&returns,
+	)
+	return returns
+}
+
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group aws_elasticache_replication_group} Resource.
 func NewElasticacheReplicationGroup(scope constructs.Construct, id *string, config *ElasticacheReplicationGroupConfig) ElasticacheReplicationGroup {
 	_init_.Initialize()
 
@@ -6355,7 +7024,7 @@ func NewElasticacheReplicationGroup(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html aws_elasticache_replication_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group aws_elasticache_replication_group} Resource.
 func NewElasticacheReplicationGroup_Override(e ElasticacheReplicationGroup, scope constructs.Construct, id *string, config *ElasticacheReplicationGroupConfig) {
 	_init_.Initialize()
 
@@ -6414,7 +7083,7 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) SetAvailabilityZones(val *[]*str
 	)
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheReplicationGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6622,7 +7291,7 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) SetSubnetGroupName(val *string) 
 	)
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticacheReplicationGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6630,7 +7299,7 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticacheReplicationGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6642,6 +7311,14 @@ func (j *jsiiProxy_ElasticacheReplicationGroup) SetTransitEncryptionEnabled(val 
 	_jsii_.Set(
 		j,
 		"transitEncryptionEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ElasticacheReplicationGroup) SetUserGroupIds(val *[]*string) {
+	_jsii_.Set(
+		j,
+		"userGroupIds",
 		val,
 	)
 }
@@ -6686,12 +7363,40 @@ func (e *jsiiProxy_ElasticacheReplicationGroup) AddOverride(path *string, value 
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheReplicationGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6728,12 +7433,54 @@ func (e *jsiiProxy_ElasticacheReplicationGroup) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheReplicationGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7039,6 +7786,14 @@ func (e *jsiiProxy_ElasticacheReplicationGroup) ResetTransitEncryptionEnabled() 
 	)
 }
 
+func (e *jsiiProxy_ElasticacheReplicationGroup) ResetUserGroupIds() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetUserGroupIds",
+		nil, // no parameters
+	)
+}
+
 func (e *jsiiProxy_ElasticacheReplicationGroup) SynthesizeAttributes() *map[string]interface{} {
 	var returns *map[string]interface{}
 
@@ -7096,10 +7851,10 @@ func (e *jsiiProxy_ElasticacheReplicationGroup) ToTerraform() interface{} {
 }
 
 type ElasticacheReplicationGroupClusterMode struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#replicas_per_node_group ElasticacheReplicationGroup#replicas_per_node_group}.
-	ReplicasPerNodeGroup *float64 `json:"replicasPerNodeGroup"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#num_node_groups ElasticacheReplicationGroup#num_node_groups}.
-	NumNodeGroups *float64 `json:"numNodeGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#replicas_per_node_group ElasticacheReplicationGroup#replicas_per_node_group}.
+	ReplicasPerNodeGroup *float64 `json:"replicasPerNodeGroup" yaml:"replicasPerNodeGroup"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#num_node_groups ElasticacheReplicationGroup#num_node_groups}.
+	NumNodeGroups *float64 `json:"numNodeGroups" yaml:"numNodeGroups"`
 }
 
 type ElasticacheReplicationGroupClusterModeOutputReference interface {
@@ -7116,12 +7871,17 @@ type ElasticacheReplicationGroupClusterModeOutputReference interface {
 	ReplicasPerNodeGroupInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetNumNodeGroups()
@@ -7202,8 +7962,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) Terraf
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7212,7 +7972,7 @@ func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) Terraf
 	return returns
 }
 
-func NewElasticacheReplicationGroupClusterModeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElasticacheReplicationGroupClusterModeOutputReference {
+func NewElasticacheReplicationGroupClusterModeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElasticacheReplicationGroupClusterModeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference{}
@@ -7226,7 +7986,7 @@ func NewElasticacheReplicationGroupClusterModeOutputReference(terraformResource 
 	return &j
 }
 
-func NewElasticacheReplicationGroupClusterModeOutputReference_Override(e ElasticacheReplicationGroupClusterModeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElasticacheReplicationGroupClusterModeOutputReference_Override(e ElasticacheReplicationGroupClusterModeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7276,7 +8036,7 @@ func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) SetTer
 	)
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7285,12 +8045,40 @@ func (j *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) SetTer
 }
 
 // Experimental.
-func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7327,12 +8115,54 @@ func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetNum
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7379,92 +8209,94 @@ func (e *jsiiProxy_ElasticacheReplicationGroupClusterModeOutputReference) ResetN
 // AWS ElastiCache.
 type ElasticacheReplicationGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#replication_group_description ElasticacheReplicationGroup#replication_group_description}.
-	ReplicationGroupDescription *string `json:"replicationGroupDescription"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#replication_group_id ElasticacheReplicationGroup#replication_group_id}.
-	ReplicationGroupId *string `json:"replicationGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#apply_immediately ElasticacheReplicationGroup#apply_immediately}.
-	ApplyImmediately interface{} `json:"applyImmediately"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#at_rest_encryption_enabled ElasticacheReplicationGroup#at_rest_encryption_enabled}.
-	AtRestEncryptionEnabled interface{} `json:"atRestEncryptionEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#auth_token ElasticacheReplicationGroup#auth_token}.
-	AuthToken *string `json:"authToken"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#automatic_failover_enabled ElasticacheReplicationGroup#automatic_failover_enabled}.
-	AutomaticFailoverEnabled interface{} `json:"automaticFailoverEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#auto_minor_version_upgrade ElasticacheReplicationGroup#auto_minor_version_upgrade}.
-	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#availability_zones ElasticacheReplicationGroup#availability_zones}.
-	AvailabilityZones *[]*string `json:"availabilityZones"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#replication_group_description ElasticacheReplicationGroup#replication_group_description}.
+	ReplicationGroupDescription *string `json:"replicationGroupDescription" yaml:"replicationGroupDescription"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#replication_group_id ElasticacheReplicationGroup#replication_group_id}.
+	ReplicationGroupId *string `json:"replicationGroupId" yaml:"replicationGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#apply_immediately ElasticacheReplicationGroup#apply_immediately}.
+	ApplyImmediately interface{} `json:"applyImmediately" yaml:"applyImmediately"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#at_rest_encryption_enabled ElasticacheReplicationGroup#at_rest_encryption_enabled}.
+	AtRestEncryptionEnabled interface{} `json:"atRestEncryptionEnabled" yaml:"atRestEncryptionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#auth_token ElasticacheReplicationGroup#auth_token}.
+	AuthToken *string `json:"authToken" yaml:"authToken"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#automatic_failover_enabled ElasticacheReplicationGroup#automatic_failover_enabled}.
+	AutomaticFailoverEnabled interface{} `json:"automaticFailoverEnabled" yaml:"automaticFailoverEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#auto_minor_version_upgrade ElasticacheReplicationGroup#auto_minor_version_upgrade}.
+	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade" yaml:"autoMinorVersionUpgrade"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#availability_zones ElasticacheReplicationGroup#availability_zones}.
+	AvailabilityZones *[]*string `json:"availabilityZones" yaml:"availabilityZones"`
 	// cluster_mode block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#cluster_mode ElasticacheReplicationGroup#cluster_mode}
-	ClusterMode *ElasticacheReplicationGroupClusterMode `json:"clusterMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#data_tiering_enabled ElasticacheReplicationGroup#data_tiering_enabled}.
-	DataTieringEnabled interface{} `json:"dataTieringEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#engine ElasticacheReplicationGroup#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#engine_version ElasticacheReplicationGroup#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#final_snapshot_identifier ElasticacheReplicationGroup#final_snapshot_identifier}.
-	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#global_replication_group_id ElasticacheReplicationGroup#global_replication_group_id}.
-	GlobalReplicationGroupId *string `json:"globalReplicationGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#kms_key_id ElasticacheReplicationGroup#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#maintenance_window ElasticacheReplicationGroup#maintenance_window}.
-	MaintenanceWindow *string `json:"maintenanceWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#multi_az_enabled ElasticacheReplicationGroup#multi_az_enabled}.
-	MultiAzEnabled interface{} `json:"multiAzEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#node_type ElasticacheReplicationGroup#node_type}.
-	NodeType *string `json:"nodeType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#notification_topic_arn ElasticacheReplicationGroup#notification_topic_arn}.
-	NotificationTopicArn *string `json:"notificationTopicArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#number_cache_clusters ElasticacheReplicationGroup#number_cache_clusters}.
-	NumberCacheClusters *float64 `json:"numberCacheClusters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#parameter_group_name ElasticacheReplicationGroup#parameter_group_name}.
-	ParameterGroupName *string `json:"parameterGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#port ElasticacheReplicationGroup#port}.
-	Port *float64 `json:"port"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#security_group_ids ElasticacheReplicationGroup#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#security_group_names ElasticacheReplicationGroup#security_group_names}.
-	SecurityGroupNames *[]*string `json:"securityGroupNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#snapshot_arns ElasticacheReplicationGroup#snapshot_arns}.
-	SnapshotArns *[]*string `json:"snapshotArns"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#snapshot_name ElasticacheReplicationGroup#snapshot_name}.
-	SnapshotName *string `json:"snapshotName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#snapshot_retention_limit ElasticacheReplicationGroup#snapshot_retention_limit}.
-	SnapshotRetentionLimit *float64 `json:"snapshotRetentionLimit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#snapshot_window ElasticacheReplicationGroup#snapshot_window}.
-	SnapshotWindow *string `json:"snapshotWindow"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#subnet_group_name ElasticacheReplicationGroup#subnet_group_name}.
-	SubnetGroupName *string `json:"subnetGroupName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#tags ElasticacheReplicationGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#tags_all ElasticacheReplicationGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#cluster_mode ElasticacheReplicationGroup#cluster_mode}
+	ClusterMode *ElasticacheReplicationGroupClusterMode `json:"clusterMode" yaml:"clusterMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#data_tiering_enabled ElasticacheReplicationGroup#data_tiering_enabled}.
+	DataTieringEnabled interface{} `json:"dataTieringEnabled" yaml:"dataTieringEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#engine ElasticacheReplicationGroup#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#engine_version ElasticacheReplicationGroup#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#final_snapshot_identifier ElasticacheReplicationGroup#final_snapshot_identifier}.
+	FinalSnapshotIdentifier *string `json:"finalSnapshotIdentifier" yaml:"finalSnapshotIdentifier"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#global_replication_group_id ElasticacheReplicationGroup#global_replication_group_id}.
+	GlobalReplicationGroupId *string `json:"globalReplicationGroupId" yaml:"globalReplicationGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#kms_key_id ElasticacheReplicationGroup#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#maintenance_window ElasticacheReplicationGroup#maintenance_window}.
+	MaintenanceWindow *string `json:"maintenanceWindow" yaml:"maintenanceWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#multi_az_enabled ElasticacheReplicationGroup#multi_az_enabled}.
+	MultiAzEnabled interface{} `json:"multiAzEnabled" yaml:"multiAzEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#node_type ElasticacheReplicationGroup#node_type}.
+	NodeType *string `json:"nodeType" yaml:"nodeType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#notification_topic_arn ElasticacheReplicationGroup#notification_topic_arn}.
+	NotificationTopicArn *string `json:"notificationTopicArn" yaml:"notificationTopicArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#number_cache_clusters ElasticacheReplicationGroup#number_cache_clusters}.
+	NumberCacheClusters *float64 `json:"numberCacheClusters" yaml:"numberCacheClusters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#parameter_group_name ElasticacheReplicationGroup#parameter_group_name}.
+	ParameterGroupName *string `json:"parameterGroupName" yaml:"parameterGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#port ElasticacheReplicationGroup#port}.
+	Port *float64 `json:"port" yaml:"port"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#security_group_ids ElasticacheReplicationGroup#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#security_group_names ElasticacheReplicationGroup#security_group_names}.
+	SecurityGroupNames *[]*string `json:"securityGroupNames" yaml:"securityGroupNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#snapshot_arns ElasticacheReplicationGroup#snapshot_arns}.
+	SnapshotArns *[]*string `json:"snapshotArns" yaml:"snapshotArns"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#snapshot_name ElasticacheReplicationGroup#snapshot_name}.
+	SnapshotName *string `json:"snapshotName" yaml:"snapshotName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#snapshot_retention_limit ElasticacheReplicationGroup#snapshot_retention_limit}.
+	SnapshotRetentionLimit *float64 `json:"snapshotRetentionLimit" yaml:"snapshotRetentionLimit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#snapshot_window ElasticacheReplicationGroup#snapshot_window}.
+	SnapshotWindow *string `json:"snapshotWindow" yaml:"snapshotWindow"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#subnet_group_name ElasticacheReplicationGroup#subnet_group_name}.
+	SubnetGroupName *string `json:"subnetGroupName" yaml:"subnetGroupName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#tags ElasticacheReplicationGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#tags_all ElasticacheReplicationGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#timeouts ElasticacheReplicationGroup#timeouts}
-	Timeouts *ElasticacheReplicationGroupTimeouts `json:"timeouts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#transit_encryption_enabled ElasticacheReplicationGroup#transit_encryption_enabled}.
-	TransitEncryptionEnabled interface{} `json:"transitEncryptionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#timeouts ElasticacheReplicationGroup#timeouts}
+	Timeouts *ElasticacheReplicationGroupTimeouts `json:"timeouts" yaml:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#transit_encryption_enabled ElasticacheReplicationGroup#transit_encryption_enabled}.
+	TransitEncryptionEnabled interface{} `json:"transitEncryptionEnabled" yaml:"transitEncryptionEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#user_group_ids ElasticacheReplicationGroup#user_group_ids}.
+	UserGroupIds *[]*string `json:"userGroupIds" yaml:"userGroupIds"`
 }
 
 type ElasticacheReplicationGroupTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#create ElasticacheReplicationGroup#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#delete ElasticacheReplicationGroup#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#update ElasticacheReplicationGroup#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#create ElasticacheReplicationGroup#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#delete ElasticacheReplicationGroup#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group#update ElasticacheReplicationGroup#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type ElasticacheReplicationGroupTimeoutsOutputReference interface {
@@ -7481,15 +8313,20 @@ type ElasticacheReplicationGroupTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -7572,8 +8409,8 @@ func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -7602,7 +8439,7 @@ func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) UpdateInp
 	return returns
 }
 
-func NewElasticacheReplicationGroupTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) ElasticacheReplicationGroupTimeoutsOutputReference {
+func NewElasticacheReplicationGroupTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) ElasticacheReplicationGroupTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference{}
@@ -7616,7 +8453,7 @@ func NewElasticacheReplicationGroupTimeoutsOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewElasticacheReplicationGroupTimeoutsOutputReference_Override(e ElasticacheReplicationGroupTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewElasticacheReplicationGroupTimeoutsOutputReference_Override(e ElasticacheReplicationGroupTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -7666,7 +8503,7 @@ func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -7683,12 +8520,40 @@ func (j *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) SetUpdate
 }
 
 // Experimental.
-func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7725,12 +8590,54 @@ func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetNumber
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7790,13 +8697,13 @@ func (e *jsiiProxy_ElasticacheReplicationGroupTimeoutsOutputReference) ResetUpda
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group.html aws_elasticache_security_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group aws_elasticache_security_group}.
 type ElasticacheSecurityGroup interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -7821,10 +8728,15 @@ type ElasticacheSecurityGroup interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -7860,8 +8772,8 @@ func (j *jsiiProxy_ElasticacheSecurityGroup) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheSecurityGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheSecurityGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8040,7 +8952,7 @@ func (j *jsiiProxy_ElasticacheSecurityGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group.html aws_elasticache_security_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group aws_elasticache_security_group} Resource.
 func NewElasticacheSecurityGroup(scope constructs.Construct, id *string, config *ElasticacheSecurityGroupConfig) ElasticacheSecurityGroup {
 	_init_.Initialize()
 
@@ -8055,7 +8967,7 @@ func NewElasticacheSecurityGroup(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group.html aws_elasticache_security_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group aws_elasticache_security_group} Resource.
 func NewElasticacheSecurityGroup_Override(e ElasticacheSecurityGroup, scope constructs.Construct, id *string, config *ElasticacheSecurityGroupConfig) {
 	_init_.Initialize()
 
@@ -8066,7 +8978,7 @@ func NewElasticacheSecurityGroup_Override(e ElasticacheSecurityGroup, scope cons
 	)
 }
 
-func (j *jsiiProxy_ElasticacheSecurityGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheSecurityGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8162,12 +9074,40 @@ func (e *jsiiProxy_ElasticacheSecurityGroup) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheSecurityGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheSecurityGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheSecurityGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8204,12 +9144,54 @@ func (e *jsiiProxy_ElasticacheSecurityGroup) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheSecurityGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheSecurityGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheSecurityGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheSecurityGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8318,29 +9300,29 @@ func (e *jsiiProxy_ElasticacheSecurityGroup) ToTerraform() interface{} {
 // AWS ElastiCache.
 type ElasticacheSecurityGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group.html#name ElasticacheSecurityGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group.html#security_group_names ElasticacheSecurityGroup#security_group_names}.
-	SecurityGroupNames *[]*string `json:"securityGroupNames"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group.html#description ElasticacheSecurityGroup#description}.
-	Description *string `json:"description"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group#name ElasticacheSecurityGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group#security_group_names ElasticacheSecurityGroup#security_group_names}.
+	SecurityGroupNames *[]*string `json:"securityGroupNames" yaml:"securityGroupNames"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_security_group#description ElasticacheSecurityGroup#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html aws_elasticache_subnet_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group aws_elasticache_subnet_group}.
 type ElasticacheSubnetGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -8361,20 +9343,25 @@ type ElasticacheSubnetGroup interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -8422,8 +9409,8 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheSubnetGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -8572,8 +9559,8 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheSubnetGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -8582,8 +9569,8 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheSubnetGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -8592,8 +9579,8 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheSubnetGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -8602,8 +9589,8 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheSubnetGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -8642,7 +9629,7 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html aws_elasticache_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group aws_elasticache_subnet_group} Resource.
 func NewElasticacheSubnetGroup(scope constructs.Construct, id *string, config *ElasticacheSubnetGroupConfig) ElasticacheSubnetGroup {
 	_init_.Initialize()
 
@@ -8657,7 +9644,7 @@ func NewElasticacheSubnetGroup(scope constructs.Construct, id *string, config *E
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html aws_elasticache_subnet_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group aws_elasticache_subnet_group} Resource.
 func NewElasticacheSubnetGroup_Override(e ElasticacheSubnetGroup, scope constructs.Construct, id *string, config *ElasticacheSubnetGroupConfig) {
 	_init_.Initialize()
 
@@ -8668,7 +9655,7 @@ func NewElasticacheSubnetGroup_Override(e ElasticacheSubnetGroup, scope construc
 	)
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheSubnetGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -8724,7 +9711,7 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticacheSubnetGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -8732,7 +9719,7 @@ func (j *jsiiProxy_ElasticacheSubnetGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheSubnetGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticacheSubnetGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -8780,12 +9767,40 @@ func (e *jsiiProxy_ElasticacheSubnetGroup) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheSubnetGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheSubnetGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheSubnetGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8822,12 +9837,54 @@ func (e *jsiiProxy_ElasticacheSubnetGroup) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheSubnetGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheSubnetGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheSubnetGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheSubnetGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8952,26 +10009,26 @@ func (e *jsiiProxy_ElasticacheSubnetGroup) ToTerraform() interface{} {
 // AWS ElastiCache.
 type ElasticacheSubnetGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html#name ElasticacheSubnetGroup#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html#subnet_ids ElasticacheSubnetGroup#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html#description ElasticacheSubnetGroup#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html#tags ElasticacheSubnetGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html#tags_all ElasticacheSubnetGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group#name ElasticacheSubnetGroup#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group#subnet_ids ElasticacheSubnetGroup#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group#description ElasticacheSubnetGroup#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group#tags ElasticacheSubnetGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group#tags_all ElasticacheSubnetGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html aws_elasticache_user}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user aws_elasticache_user}.
 type ElasticacheUser interface {
 	cdktf.TerraformResource
 	AccessString() *string
@@ -8980,8 +10037,8 @@ type ElasticacheUser interface {
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -9002,12 +10059,12 @@ type ElasticacheUser interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -9018,10 +10075,15 @@ type ElasticacheUser interface {
 	SetUserName(val *string)
 	UserNameInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetNoPasswordRequired()
@@ -9090,8 +10152,8 @@ func (j *jsiiProxy_ElasticacheUser) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUser) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUser) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9240,8 +10302,8 @@ func (j *jsiiProxy_ElasticacheUser) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUser) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUser) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9250,8 +10312,8 @@ func (j *jsiiProxy_ElasticacheUser) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUser) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUser) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9260,8 +10322,8 @@ func (j *jsiiProxy_ElasticacheUser) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUser) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUser) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9270,8 +10332,8 @@ func (j *jsiiProxy_ElasticacheUser) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUser) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUser) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9350,7 +10412,7 @@ func (j *jsiiProxy_ElasticacheUser) UserNameInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html aws_elasticache_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user aws_elasticache_user} Resource.
 func NewElasticacheUser(scope constructs.Construct, id *string, config *ElasticacheUserConfig) ElasticacheUser {
 	_init_.Initialize()
 
@@ -9365,7 +10427,7 @@ func NewElasticacheUser(scope constructs.Construct, id *string, config *Elastica
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html aws_elasticache_user} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user aws_elasticache_user} Resource.
 func NewElasticacheUser_Override(e ElasticacheUser, scope constructs.Construct, id *string, config *ElasticacheUserConfig) {
 	_init_.Initialize()
 
@@ -9384,7 +10446,7 @@ func (j *jsiiProxy_ElasticacheUser) SetAccessString(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheUser) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheUser) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -9440,7 +10502,7 @@ func (j *jsiiProxy_ElasticacheUser) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheUser) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticacheUser) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9448,7 +10510,7 @@ func (j *jsiiProxy_ElasticacheUser) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheUser) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticacheUser) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -9512,12 +10574,40 @@ func (e *jsiiProxy_ElasticacheUser) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9554,12 +10644,54 @@ func (e *jsiiProxy_ElasticacheUser) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9692,39 +10824,39 @@ func (e *jsiiProxy_ElasticacheUser) ToTerraform() interface{} {
 // AWS ElastiCache.
 type ElasticacheUserConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#access_string ElasticacheUser#access_string}.
-	AccessString *string `json:"accessString"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#engine ElasticacheUser#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#user_id ElasticacheUser#user_id}.
-	UserId *string `json:"userId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#user_name ElasticacheUser#user_name}.
-	UserName *string `json:"userName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#no_password_required ElasticacheUser#no_password_required}.
-	NoPasswordRequired interface{} `json:"noPasswordRequired"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#passwords ElasticacheUser#passwords}.
-	Passwords *[]*string `json:"passwords"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#tags ElasticacheUser#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user.html#tags_all ElasticacheUser#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#access_string ElasticacheUser#access_string}.
+	AccessString *string `json:"accessString" yaml:"accessString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#engine ElasticacheUser#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#user_id ElasticacheUser#user_id}.
+	UserId *string `json:"userId" yaml:"userId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#user_name ElasticacheUser#user_name}.
+	UserName *string `json:"userName" yaml:"userName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#no_password_required ElasticacheUser#no_password_required}.
+	NoPasswordRequired interface{} `json:"noPasswordRequired" yaml:"noPasswordRequired"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#passwords ElasticacheUser#passwords}.
+	Passwords *[]*string `json:"passwords" yaml:"passwords"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#tags ElasticacheUser#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user#tags_all ElasticacheUser#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html aws_elasticache_user_group}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group aws_elasticache_user_group}.
 type ElasticacheUserGroup interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Engine() *string
@@ -9739,12 +10871,12 @@ type ElasticacheUserGroup interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -9755,10 +10887,15 @@ type ElasticacheUserGroup interface {
 	SetUserIds(val *[]*string)
 	UserIdsInput() *[]*string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -9806,8 +10943,8 @@ func (j *jsiiProxy_ElasticacheUserGroup) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUserGroup) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -9916,8 +11053,8 @@ func (j *jsiiProxy_ElasticacheUserGroup) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUserGroup) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9926,8 +11063,8 @@ func (j *jsiiProxy_ElasticacheUserGroup) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUserGroup) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -9936,8 +11073,8 @@ func (j *jsiiProxy_ElasticacheUserGroup) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUserGroup) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -9946,8 +11083,8 @@ func (j *jsiiProxy_ElasticacheUserGroup) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_ElasticacheUserGroup) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -10026,7 +11163,7 @@ func (j *jsiiProxy_ElasticacheUserGroup) UserIdsInput() *[]*string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html aws_elasticache_user_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group aws_elasticache_user_group} Resource.
 func NewElasticacheUserGroup(scope constructs.Construct, id *string, config *ElasticacheUserGroupConfig) ElasticacheUserGroup {
 	_init_.Initialize()
 
@@ -10041,7 +11178,7 @@ func NewElasticacheUserGroup(scope constructs.Construct, id *string, config *Ela
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html aws_elasticache_user_group} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group aws_elasticache_user_group} Resource.
 func NewElasticacheUserGroup_Override(e ElasticacheUserGroup, scope constructs.Construct, id *string, config *ElasticacheUserGroupConfig) {
 	_init_.Initialize()
 
@@ -10052,7 +11189,7 @@ func NewElasticacheUserGroup_Override(e ElasticacheUserGroup, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) SetCount(val interface{}) {
+func (j *jsiiProxy_ElasticacheUserGroup) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -10092,7 +11229,7 @@ func (j *jsiiProxy_ElasticacheUserGroup) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) SetTags(val interface{}) {
+func (j *jsiiProxy_ElasticacheUserGroup) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -10100,7 +11237,7 @@ func (j *jsiiProxy_ElasticacheUserGroup) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_ElasticacheUserGroup) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_ElasticacheUserGroup) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -10164,12 +11301,40 @@ func (e *jsiiProxy_ElasticacheUserGroup) AddOverride(path *string, value interfa
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheUserGroup) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		e,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheUserGroup) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		e,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheUserGroup) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		e,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10206,12 +11371,54 @@ func (e *jsiiProxy_ElasticacheUserGroup) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (e *jsiiProxy_ElasticacheUserGroup) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheUserGroup) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		e,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (e *jsiiProxy_ElasticacheUserGroup) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		e,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (e *jsiiProxy_ElasticacheUserGroup) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		e,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10336,21 +11543,21 @@ func (e *jsiiProxy_ElasticacheUserGroup) ToTerraform() interface{} {
 // AWS ElastiCache.
 type ElasticacheUserGroupConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html#engine ElasticacheUserGroup#engine}.
-	Engine *string `json:"engine"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html#user_group_id ElasticacheUserGroup#user_group_id}.
-	UserGroupId *string `json:"userGroupId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html#tags ElasticacheUserGroup#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html#tags_all ElasticacheUserGroup#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group.html#user_ids ElasticacheUserGroup#user_ids}.
-	UserIds *[]*string `json:"userIds"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group#engine ElasticacheUserGroup#engine}.
+	Engine *string `json:"engine" yaml:"engine"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group#user_group_id ElasticacheUserGroup#user_group_id}.
+	UserGroupId *string `json:"userGroupId" yaml:"userGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group#tags ElasticacheUserGroup#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group#tags_all ElasticacheUserGroup#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/elasticache_user_group#user_ids ElasticacheUserGroup#user_ids}.
+	UserIds *[]*string `json:"userIds" yaml:"userIds"`
 }

@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/mediastore/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_store_container.html aws_media_store_container}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_store_container aws_media_store_container}.
 type MediaStoreContainer interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Endpoint() *string
@@ -32,20 +32,25 @@ type MediaStoreContainer interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -92,8 +97,8 @@ func (j *jsiiProxy_MediaStoreContainer) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_MediaStoreContainer) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaStoreContainer) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -212,8 +217,8 @@ func (j *jsiiProxy_MediaStoreContainer) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaStoreContainer) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaStoreContainer) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -222,8 +227,8 @@ func (j *jsiiProxy_MediaStoreContainer) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaStoreContainer) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaStoreContainer) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -232,8 +237,8 @@ func (j *jsiiProxy_MediaStoreContainer) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaStoreContainer) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaStoreContainer) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -242,8 +247,8 @@ func (j *jsiiProxy_MediaStoreContainer) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MediaStoreContainer) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaStoreContainer) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -282,7 +287,7 @@ func (j *jsiiProxy_MediaStoreContainer) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container.html aws_media_store_container} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container aws_media_store_container} Resource.
 func NewMediaStoreContainer(scope constructs.Construct, id *string, config *MediaStoreContainerConfig) MediaStoreContainer {
 	_init_.Initialize()
 
@@ -297,7 +302,7 @@ func NewMediaStoreContainer(scope constructs.Construct, id *string, config *Medi
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container.html aws_media_store_container} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container aws_media_store_container} Resource.
 func NewMediaStoreContainer_Override(m MediaStoreContainer, scope constructs.Construct, id *string, config *MediaStoreContainerConfig) {
 	_init_.Initialize()
 
@@ -308,7 +313,7 @@ func NewMediaStoreContainer_Override(m MediaStoreContainer, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_MediaStoreContainer) SetCount(val interface{}) {
+func (j *jsiiProxy_MediaStoreContainer) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -348,7 +353,7 @@ func (j *jsiiProxy_MediaStoreContainer) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_MediaStoreContainer) SetTags(val interface{}) {
+func (j *jsiiProxy_MediaStoreContainer) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -356,7 +361,7 @@ func (j *jsiiProxy_MediaStoreContainer) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_MediaStoreContainer) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_MediaStoreContainer) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -404,12 +409,40 @@ func (m *jsiiProxy_MediaStoreContainer) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaStoreContainer) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaStoreContainer) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaStoreContainer) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -446,12 +479,54 @@ func (m *jsiiProxy_MediaStoreContainer) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaStoreContainer) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaStoreContainer) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaStoreContainer) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaStoreContainer) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -568,22 +643,22 @@ func (m *jsiiProxy_MediaStoreContainer) ToTerraform() interface{} {
 // AWS Media Store.
 type MediaStoreContainerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container.html#name MediaStoreContainer#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container.html#tags MediaStoreContainer#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container.html#tags_all MediaStoreContainer#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container#name MediaStoreContainer#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container#tags MediaStoreContainer#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container#tags_all MediaStoreContainer#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy.html aws_media_store_container_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy aws_media_store_container_policy}.
 type MediaStoreContainerPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
@@ -591,8 +666,8 @@ type MediaStoreContainerPolicy interface {
 	ContainerName() *string
 	SetContainerName(val *string)
 	ContainerNameInput() *string
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -611,10 +686,15 @@ type MediaStoreContainerPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -669,8 +749,8 @@ func (j *jsiiProxy_MediaStoreContainerPolicy) ContainerNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MediaStoreContainerPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MediaStoreContainerPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -809,7 +889,7 @@ func (j *jsiiProxy_MediaStoreContainerPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy.html aws_media_store_container_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy aws_media_store_container_policy} Resource.
 func NewMediaStoreContainerPolicy(scope constructs.Construct, id *string, config *MediaStoreContainerPolicyConfig) MediaStoreContainerPolicy {
 	_init_.Initialize()
 
@@ -824,7 +904,7 @@ func NewMediaStoreContainerPolicy(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy.html aws_media_store_container_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy aws_media_store_container_policy} Resource.
 func NewMediaStoreContainerPolicy_Override(m MediaStoreContainerPolicy, scope constructs.Construct, id *string, config *MediaStoreContainerPolicyConfig) {
 	_init_.Initialize()
 
@@ -843,7 +923,7 @@ func (j *jsiiProxy_MediaStoreContainerPolicy) SetContainerName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MediaStoreContainerPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_MediaStoreContainerPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -923,12 +1003,40 @@ func (m *jsiiProxy_MediaStoreContainerPolicy) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaStoreContainerPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaStoreContainerPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaStoreContainerPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -965,12 +1073,54 @@ func (m *jsiiProxy_MediaStoreContainerPolicy) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (m *jsiiProxy_MediaStoreContainerPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaStoreContainerPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MediaStoreContainerPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MediaStoreContainerPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1071,15 +1221,15 @@ func (m *jsiiProxy_MediaStoreContainerPolicy) ToTerraform() interface{} {
 // AWS Media Store.
 type MediaStoreContainerPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy.html#container_name MediaStoreContainerPolicy#container_name}.
-	ContainerName *string `json:"containerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy.html#policy MediaStoreContainerPolicy#policy}.
-	Policy *string `json:"policy"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy#container_name MediaStoreContainerPolicy#container_name}.
+	ContainerName *string `json:"containerName" yaml:"containerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/media_store_container_policy#policy MediaStoreContainerPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
 }

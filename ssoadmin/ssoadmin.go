@@ -9,14 +9,14 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/ssoadmin/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_instances.html aws_ssoadmin_instances}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_instances aws_ssoadmin_instances}.
 type DataAwsSsoadminInstances interface {
 	cdktf.TerraformDataSource
 	Arns() *[]*string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -33,10 +33,15 @@ type DataAwsSsoadminInstances interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -81,8 +86,8 @@ func (j *jsiiProxy_DataAwsSsoadminInstances) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSsoadminInstances) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSsoadminInstances) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -211,7 +216,7 @@ func (j *jsiiProxy_DataAwsSsoadminInstances) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_instances.html aws_ssoadmin_instances} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_instances aws_ssoadmin_instances} Data Source.
 func NewDataAwsSsoadminInstances(scope constructs.Construct, id *string, config *DataAwsSsoadminInstancesConfig) DataAwsSsoadminInstances {
 	_init_.Initialize()
 
@@ -226,7 +231,7 @@ func NewDataAwsSsoadminInstances(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_instances.html aws_ssoadmin_instances} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_instances aws_ssoadmin_instances} Data Source.
 func NewDataAwsSsoadminInstances_Override(d DataAwsSsoadminInstances, scope constructs.Construct, id *string, config *DataAwsSsoadminInstancesConfig) {
 	_init_.Initialize()
 
@@ -237,7 +242,7 @@ func NewDataAwsSsoadminInstances_Override(d DataAwsSsoadminInstances, scope cons
 	)
 }
 
-func (j *jsiiProxy_DataAwsSsoadminInstances) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsSsoadminInstances) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -309,12 +314,40 @@ func (d *jsiiProxy_DataAwsSsoadminInstances) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSsoadminInstances) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSsoadminInstances) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSsoadminInstances) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -351,12 +384,54 @@ func (d *jsiiProxy_DataAwsSsoadminInstances) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSsoadminInstances) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSsoadminInstances) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSsoadminInstances) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSsoadminInstances) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -457,23 +532,23 @@ func (d *jsiiProxy_DataAwsSsoadminInstances) ToTerraform() interface{} {
 // AWS SSO Admin.
 type DataAwsSsoadminInstancesConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set.html aws_ssoadmin_permission_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set aws_ssoadmin_permission_set}.
 type DataAwsSsoadminPermissionSet interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -495,17 +570,22 @@ type DataAwsSsoadminPermissionSet interface {
 	RawOverrides() interface{}
 	RelayState() *string
 	SessionDuration() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetName()
@@ -552,8 +632,8 @@ func (j *jsiiProxy_DataAwsSsoadminPermissionSet) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSsoadminPermissionSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSsoadminPermissionSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -722,8 +802,8 @@ func (j *jsiiProxy_DataAwsSsoadminPermissionSet) SessionDuration() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSsoadminPermissionSet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSsoadminPermissionSet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -732,8 +812,8 @@ func (j *jsiiProxy_DataAwsSsoadminPermissionSet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsSsoadminPermissionSet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsSsoadminPermissionSet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -772,7 +852,7 @@ func (j *jsiiProxy_DataAwsSsoadminPermissionSet) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set.html aws_ssoadmin_permission_set} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set aws_ssoadmin_permission_set} Data Source.
 func NewDataAwsSsoadminPermissionSet(scope constructs.Construct, id *string, config *DataAwsSsoadminPermissionSetConfig) DataAwsSsoadminPermissionSet {
 	_init_.Initialize()
 
@@ -787,7 +867,7 @@ func NewDataAwsSsoadminPermissionSet(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set.html aws_ssoadmin_permission_set} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set aws_ssoadmin_permission_set} Data Source.
 func NewDataAwsSsoadminPermissionSet_Override(d DataAwsSsoadminPermissionSet, scope constructs.Construct, id *string, config *DataAwsSsoadminPermissionSetConfig) {
 	_init_.Initialize()
 
@@ -798,7 +878,7 @@ func NewDataAwsSsoadminPermissionSet_Override(d DataAwsSsoadminPermissionSet, sc
 	)
 }
 
-func (j *jsiiProxy_DataAwsSsoadminPermissionSet) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsSsoadminPermissionSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -846,7 +926,7 @@ func (j *jsiiProxy_DataAwsSsoadminPermissionSet) SetProvider(val cdktf.Terraform
 	)
 }
 
-func (j *jsiiProxy_DataAwsSsoadminPermissionSet) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsSsoadminPermissionSet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -894,12 +974,40 @@ func (d *jsiiProxy_DataAwsSsoadminPermissionSet) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -936,12 +1044,54 @@ func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsSsoadminPermissionSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1058,28 +1208,28 @@ func (d *jsiiProxy_DataAwsSsoadminPermissionSet) ToTerraform() interface{} {
 // AWS SSO Admin.
 type DataAwsSsoadminPermissionSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set.html#instance_arn DataAwsSsoadminPermissionSet#instance_arn}.
-	InstanceArn *string `json:"instanceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set.html#name DataAwsSsoadminPermissionSet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set.html#tags DataAwsSsoadminPermissionSet#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set#instance_arn DataAwsSsoadminPermissionSet#instance_arn}.
+	InstanceArn *string `json:"instanceArn" yaml:"instanceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set#name DataAwsSsoadminPermissionSet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/ssoadmin_permission_set#tags DataAwsSsoadminPermissionSet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html aws_ssoadmin_account_assignment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment aws_ssoadmin_account_assignment}.
 type SsoadminAccountAssignment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1113,10 +1263,15 @@ type SsoadminAccountAssignment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1152,8 +1307,8 @@ func (j *jsiiProxy_SsoadminAccountAssignment) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminAccountAssignment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminAccountAssignment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1392,7 +1547,7 @@ func (j *jsiiProxy_SsoadminAccountAssignment) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html aws_ssoadmin_account_assignment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment aws_ssoadmin_account_assignment} Resource.
 func NewSsoadminAccountAssignment(scope constructs.Construct, id *string, config *SsoadminAccountAssignmentConfig) SsoadminAccountAssignment {
 	_init_.Initialize()
 
@@ -1407,7 +1562,7 @@ func NewSsoadminAccountAssignment(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html aws_ssoadmin_account_assignment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment aws_ssoadmin_account_assignment} Resource.
 func NewSsoadminAccountAssignment_Override(s SsoadminAccountAssignment, scope constructs.Construct, id *string, config *SsoadminAccountAssignmentConfig) {
 	_init_.Initialize()
 
@@ -1418,7 +1573,7 @@ func NewSsoadminAccountAssignment_Override(s SsoadminAccountAssignment, scope co
 	)
 }
 
-func (j *jsiiProxy_SsoadminAccountAssignment) SetCount(val interface{}) {
+func (j *jsiiProxy_SsoadminAccountAssignment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1538,12 +1693,40 @@ func (s *jsiiProxy_SsoadminAccountAssignment) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminAccountAssignment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminAccountAssignment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminAccountAssignment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1580,12 +1763,54 @@ func (s *jsiiProxy_SsoadminAccountAssignment) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminAccountAssignment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminAccountAssignment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminAccountAssignment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminAccountAssignment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1694,34 +1919,34 @@ func (s *jsiiProxy_SsoadminAccountAssignment) ToTerraform() interface{} {
 // AWS SSO Admin.
 type SsoadminAccountAssignmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html#instance_arn SsoadminAccountAssignment#instance_arn}.
-	InstanceArn *string `json:"instanceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html#permission_set_arn SsoadminAccountAssignment#permission_set_arn}.
-	PermissionSetArn *string `json:"permissionSetArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html#principal_id SsoadminAccountAssignment#principal_id}.
-	PrincipalId *string `json:"principalId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html#principal_type SsoadminAccountAssignment#principal_type}.
-	PrincipalType *string `json:"principalType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html#target_id SsoadminAccountAssignment#target_id}.
-	TargetId *string `json:"targetId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment.html#target_type SsoadminAccountAssignment#target_type}.
-	TargetType *string `json:"targetType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment#instance_arn SsoadminAccountAssignment#instance_arn}.
+	InstanceArn *string `json:"instanceArn" yaml:"instanceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment#permission_set_arn SsoadminAccountAssignment#permission_set_arn}.
+	PermissionSetArn *string `json:"permissionSetArn" yaml:"permissionSetArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment#principal_id SsoadminAccountAssignment#principal_id}.
+	PrincipalId *string `json:"principalId" yaml:"principalId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment#principal_type SsoadminAccountAssignment#principal_type}.
+	PrincipalType *string `json:"principalType" yaml:"principalType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment#target_id SsoadminAccountAssignment#target_id}.
+	TargetId *string `json:"targetId" yaml:"targetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_account_assignment#target_type SsoadminAccountAssignment#target_type}.
+	TargetType *string `json:"targetType" yaml:"targetType"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment.html aws_ssoadmin_managed_policy_attachment}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment aws_ssoadmin_managed_policy_attachment}.
 type SsoadminManagedPolicyAttachment interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -1747,10 +1972,15 @@ type SsoadminManagedPolicyAttachment interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -1785,8 +2015,8 @@ func (j *jsiiProxy_SsoadminManagedPolicyAttachment) ConstructNodeMetadata() *map
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminManagedPolicyAttachment) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminManagedPolicyAttachment) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1975,7 +2205,7 @@ func (j *jsiiProxy_SsoadminManagedPolicyAttachment) TerraformResourceType() *str
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment.html aws_ssoadmin_managed_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment aws_ssoadmin_managed_policy_attachment} Resource.
 func NewSsoadminManagedPolicyAttachment(scope constructs.Construct, id *string, config *SsoadminManagedPolicyAttachmentConfig) SsoadminManagedPolicyAttachment {
 	_init_.Initialize()
 
@@ -1990,7 +2220,7 @@ func NewSsoadminManagedPolicyAttachment(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment.html aws_ssoadmin_managed_policy_attachment} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment aws_ssoadmin_managed_policy_attachment} Resource.
 func NewSsoadminManagedPolicyAttachment_Override(s SsoadminManagedPolicyAttachment, scope constructs.Construct, id *string, config *SsoadminManagedPolicyAttachmentConfig) {
 	_init_.Initialize()
 
@@ -2001,7 +2231,7 @@ func NewSsoadminManagedPolicyAttachment_Override(s SsoadminManagedPolicyAttachme
 	)
 }
 
-func (j *jsiiProxy_SsoadminManagedPolicyAttachment) SetCount(val interface{}) {
+func (j *jsiiProxy_SsoadminManagedPolicyAttachment) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2097,12 +2327,40 @@ func (s *jsiiProxy_SsoadminManagedPolicyAttachment) AddOverride(path *string, va
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2139,12 +2397,54 @@ func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminManagedPolicyAttachment) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2245,29 +2545,29 @@ func (s *jsiiProxy_SsoadminManagedPolicyAttachment) ToTerraform() interface{} {
 // AWS SSO Admin.
 type SsoadminManagedPolicyAttachmentConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment.html#instance_arn SsoadminManagedPolicyAttachment#instance_arn}.
-	InstanceArn *string `json:"instanceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment.html#managed_policy_arn SsoadminManagedPolicyAttachment#managed_policy_arn}.
-	ManagedPolicyArn *string `json:"managedPolicyArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment.html#permission_set_arn SsoadminManagedPolicyAttachment#permission_set_arn}.
-	PermissionSetArn *string `json:"permissionSetArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment#instance_arn SsoadminManagedPolicyAttachment#instance_arn}.
+	InstanceArn *string `json:"instanceArn" yaml:"instanceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment#managed_policy_arn SsoadminManagedPolicyAttachment#managed_policy_arn}.
+	ManagedPolicyArn *string `json:"managedPolicyArn" yaml:"managedPolicyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_managed_policy_attachment#permission_set_arn SsoadminManagedPolicyAttachment#permission_set_arn}.
+	PermissionSetArn *string `json:"permissionSetArn" yaml:"permissionSetArn"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html aws_ssoadmin_permission_set}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set aws_ssoadmin_permission_set}.
 type SsoadminPermissionSet interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedDate() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -2295,20 +2595,25 @@ type SsoadminPermissionSet interface {
 	SessionDuration() *string
 	SetSessionDuration(val *string)
 	SessionDurationInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -2358,8 +2663,8 @@ func (j *jsiiProxy_SsoadminPermissionSet) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminPermissionSet) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2558,8 +2863,8 @@ func (j *jsiiProxy_SsoadminPermissionSet) SessionDurationInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminPermissionSet) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2568,8 +2873,8 @@ func (j *jsiiProxy_SsoadminPermissionSet) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminPermissionSet) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2578,8 +2883,8 @@ func (j *jsiiProxy_SsoadminPermissionSet) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminPermissionSet) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2588,8 +2893,8 @@ func (j *jsiiProxy_SsoadminPermissionSet) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminPermissionSet) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2628,7 +2933,7 @@ func (j *jsiiProxy_SsoadminPermissionSet) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html aws_ssoadmin_permission_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set aws_ssoadmin_permission_set} Resource.
 func NewSsoadminPermissionSet(scope constructs.Construct, id *string, config *SsoadminPermissionSetConfig) SsoadminPermissionSet {
 	_init_.Initialize()
 
@@ -2643,7 +2948,7 @@ func NewSsoadminPermissionSet(scope constructs.Construct, id *string, config *Ss
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html aws_ssoadmin_permission_set} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set aws_ssoadmin_permission_set} Resource.
 func NewSsoadminPermissionSet_Override(s SsoadminPermissionSet, scope constructs.Construct, id *string, config *SsoadminPermissionSetConfig) {
 	_init_.Initialize()
 
@@ -2654,7 +2959,7 @@ func NewSsoadminPermissionSet_Override(s SsoadminPermissionSet, scope constructs
 	)
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) SetCount(val interface{}) {
+func (j *jsiiProxy_SsoadminPermissionSet) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2726,7 +3031,7 @@ func (j *jsiiProxy_SsoadminPermissionSet) SetSessionDuration(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) SetTags(val interface{}) {
+func (j *jsiiProxy_SsoadminPermissionSet) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -2734,7 +3039,7 @@ func (j *jsiiProxy_SsoadminPermissionSet) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SsoadminPermissionSet) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SsoadminPermissionSet) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -2782,12 +3087,40 @@ func (s *jsiiProxy_SsoadminPermissionSet) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminPermissionSet) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminPermissionSet) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminPermissionSet) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2824,12 +3157,54 @@ func (s *jsiiProxy_SsoadminPermissionSet) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminPermissionSet) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminPermissionSet) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminPermissionSet) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminPermissionSet) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2970,36 +3345,36 @@ func (s *jsiiProxy_SsoadminPermissionSet) ToTerraform() interface{} {
 // AWS SSO Admin.
 type SsoadminPermissionSetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html#instance_arn SsoadminPermissionSet#instance_arn}.
-	InstanceArn *string `json:"instanceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html#name SsoadminPermissionSet#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html#description SsoadminPermissionSet#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html#relay_state SsoadminPermissionSet#relay_state}.
-	RelayState *string `json:"relayState"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html#session_duration SsoadminPermissionSet#session_duration}.
-	SessionDuration *string `json:"sessionDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html#tags SsoadminPermissionSet#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set.html#tags_all SsoadminPermissionSet#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set#instance_arn SsoadminPermissionSet#instance_arn}.
+	InstanceArn *string `json:"instanceArn" yaml:"instanceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set#name SsoadminPermissionSet#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set#description SsoadminPermissionSet#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set#relay_state SsoadminPermissionSet#relay_state}.
+	RelayState *string `json:"relayState" yaml:"relayState"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set#session_duration SsoadminPermissionSet#session_duration}.
+	SessionDuration *string `json:"sessionDuration" yaml:"sessionDuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set#tags SsoadminPermissionSet#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set#tags_all SsoadminPermissionSet#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy.html aws_ssoadmin_permission_set_inline_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy aws_ssoadmin_permission_set_inline_policy}.
 type SsoadminPermissionSetInlinePolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3024,10 +3399,15 @@ type SsoadminPermissionSetInlinePolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3062,8 +3442,8 @@ func (j *jsiiProxy_SsoadminPermissionSetInlinePolicy) ConstructNodeMetadata() *m
 	return returns
 }
 
-func (j *jsiiProxy_SsoadminPermissionSetInlinePolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SsoadminPermissionSetInlinePolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3242,7 +3622,7 @@ func (j *jsiiProxy_SsoadminPermissionSetInlinePolicy) TerraformResourceType() *s
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy.html aws_ssoadmin_permission_set_inline_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy aws_ssoadmin_permission_set_inline_policy} Resource.
 func NewSsoadminPermissionSetInlinePolicy(scope constructs.Construct, id *string, config *SsoadminPermissionSetInlinePolicyConfig) SsoadminPermissionSetInlinePolicy {
 	_init_.Initialize()
 
@@ -3257,7 +3637,7 @@ func NewSsoadminPermissionSetInlinePolicy(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy.html aws_ssoadmin_permission_set_inline_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy aws_ssoadmin_permission_set_inline_policy} Resource.
 func NewSsoadminPermissionSetInlinePolicy_Override(s SsoadminPermissionSetInlinePolicy, scope constructs.Construct, id *string, config *SsoadminPermissionSetInlinePolicyConfig) {
 	_init_.Initialize()
 
@@ -3268,7 +3648,7 @@ func NewSsoadminPermissionSetInlinePolicy_Override(s SsoadminPermissionSetInline
 	)
 }
 
-func (j *jsiiProxy_SsoadminPermissionSetInlinePolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_SsoadminPermissionSetInlinePolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3364,12 +3744,40 @@ func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) AddOverride(path *string, 
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3406,12 +3814,54 @@ func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3512,17 +3962,17 @@ func (s *jsiiProxy_SsoadminPermissionSetInlinePolicy) ToTerraform() interface{} 
 // AWS SSO Admin.
 type SsoadminPermissionSetInlinePolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy.html#inline_policy SsoadminPermissionSetInlinePolicy#inline_policy}.
-	InlinePolicy *string `json:"inlinePolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy.html#instance_arn SsoadminPermissionSetInlinePolicy#instance_arn}.
-	InstanceArn *string `json:"instanceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy.html#permission_set_arn SsoadminPermissionSetInlinePolicy#permission_set_arn}.
-	PermissionSetArn *string `json:"permissionSetArn"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy#inline_policy SsoadminPermissionSetInlinePolicy#inline_policy}.
+	InlinePolicy *string `json:"inlinePolicy" yaml:"inlinePolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy#instance_arn SsoadminPermissionSetInlinePolicy#instance_arn}.
+	InstanceArn *string `json:"instanceArn" yaml:"instanceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/ssoadmin_permission_set_inline_policy#permission_set_arn SsoadminPermissionSetInlinePolicy#permission_set_arn}.
+	PermissionSetArn *string `json:"permissionSetArn" yaml:"permissionSetArn"`
 }

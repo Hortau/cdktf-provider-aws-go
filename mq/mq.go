@@ -9,12 +9,12 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/mq/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/mq_broker.html aws_mq_broker}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/mq_broker aws_mq_broker}.
 type DataAwsMqBroker interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	AuthenticationStrategy() *string
-	AutoMinorVersionUpgrade() interface{}
+	AutoMinorVersionUpgrade() cdktf.IResolvable
 	BrokerId() *string
 	SetBrokerId(val *string)
 	BrokerIdInput() *string
@@ -23,8 +23,8 @@ type DataAwsMqBroker interface {
 	BrokerNameInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentMode() *string
@@ -39,24 +39,29 @@ type DataAwsMqBroker interface {
 	Node() constructs.Node
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
-	PubliclyAccessible() interface{}
+	PubliclyAccessible() cdktf.IResolvable
 	RawOverrides() interface{}
 	SecurityGroups() *[]*string
 	StorageType() *string
 	SubnetIds() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
 	Configuration(index *string) DataAwsMqBrokerConfiguration
 	EncryptionOptions(index *string) DataAwsMqBrokerEncryptionOptions
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	Instances(index *string) DataAwsMqBrokerInstances
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	LdapServerMetadata(index *string) DataAwsMqBrokerLdapServerMetadata
@@ -99,8 +104,8 @@ func (j *jsiiProxy_DataAwsMqBroker) AuthenticationStrategy() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBroker) AutoMinorVersionUpgrade() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBroker) AutoMinorVersionUpgrade() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"autoMinorVersionUpgrade",
@@ -169,8 +174,8 @@ func (j *jsiiProxy_DataAwsMqBroker) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBroker) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBroker) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -289,8 +294,8 @@ func (j *jsiiProxy_DataAwsMqBroker) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBroker) PubliclyAccessible() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBroker) PubliclyAccessible() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"publiclyAccessible",
@@ -339,8 +344,8 @@ func (j *jsiiProxy_DataAwsMqBroker) SubnetIds() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBroker) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBroker) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -349,8 +354,8 @@ func (j *jsiiProxy_DataAwsMqBroker) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBroker) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBroker) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -389,7 +394,7 @@ func (j *jsiiProxy_DataAwsMqBroker) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/mq_broker.html aws_mq_broker} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/mq_broker aws_mq_broker} Data Source.
 func NewDataAwsMqBroker(scope constructs.Construct, id *string, config *DataAwsMqBrokerConfig) DataAwsMqBroker {
 	_init_.Initialize()
 
@@ -404,7 +409,7 @@ func NewDataAwsMqBroker(scope constructs.Construct, id *string, config *DataAwsM
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/mq_broker.html aws_mq_broker} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/mq_broker aws_mq_broker} Data Source.
 func NewDataAwsMqBroker_Override(d DataAwsMqBroker, scope constructs.Construct, id *string, config *DataAwsMqBrokerConfig) {
 	_init_.Initialize()
 
@@ -431,7 +436,7 @@ func (j *jsiiProxy_DataAwsMqBroker) SetBrokerName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBroker) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsMqBroker) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -463,7 +468,7 @@ func (j *jsiiProxy_DataAwsMqBroker) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBroker) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsMqBroker) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -537,12 +542,40 @@ func (d *jsiiProxy_DataAwsMqBroker) EncryptionOptions(index *string) DataAwsMqBr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBroker) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBroker) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBroker) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -579,12 +612,54 @@ func (d *jsiiProxy_DataAwsMqBroker) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBroker) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBroker) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBroker) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBroker) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -774,19 +849,19 @@ func (d *jsiiProxy_DataAwsMqBroker) User(index *string) DataAwsMqBrokerUser {
 // AWS Managed Message Queue.
 type DataAwsMqBrokerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/mq_broker.html#broker_id DataAwsMqBroker#broker_id}.
-	BrokerId *string `json:"brokerId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/mq_broker.html#broker_name DataAwsMqBroker#broker_name}.
-	BrokerName *string `json:"brokerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/mq_broker.html#tags DataAwsMqBroker#tags}.
-	Tags interface{} `json:"tags"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/mq_broker#broker_id DataAwsMqBroker#broker_id}.
+	BrokerId *string `json:"brokerId" yaml:"brokerId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/mq_broker#broker_name DataAwsMqBroker#broker_name}.
+	BrokerName *string `json:"brokerName" yaml:"brokerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/mq_broker#tags DataAwsMqBroker#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsMqBrokerConfiguration interface {
@@ -797,12 +872,19 @@ type DataAwsMqBrokerConfiguration interface {
 	Revision() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -851,8 +933,8 @@ func (j *jsiiProxy_DataAwsMqBrokerConfiguration) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerConfiguration) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsMqBrokerConfiguration) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -861,15 +943,25 @@ func (j *jsiiProxy_DataAwsMqBrokerConfiguration) TerraformResource() cdktf.ITerr
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerConfiguration) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsMqBrokerConfiguration(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsMqBrokerConfiguration {
+func NewDataAwsMqBrokerConfiguration(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsMqBrokerConfiguration {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsMqBrokerConfiguration{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -877,12 +969,12 @@ func NewDataAwsMqBrokerConfiguration(terraformResource cdktf.ITerraformResource,
 }
 
 // Experimental.
-func NewDataAwsMqBrokerConfiguration_Override(d DataAwsMqBrokerConfiguration, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsMqBrokerConfiguration_Override(d DataAwsMqBrokerConfiguration, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerConfiguration",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -903,7 +995,7 @@ func (j *jsiiProxy_DataAwsMqBrokerConfiguration) SetTerraformAttribute(val *stri
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerConfiguration) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsMqBrokerConfiguration) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -911,13 +1003,49 @@ func (j *jsiiProxy_DataAwsMqBrokerConfiguration) SetTerraformResource(val cdktf.
 	)
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerConfiguration) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -954,12 +1082,54 @@ func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -988,13 +1158,20 @@ type DataAwsMqBrokerEncryptionOptions interface {
 	KmsKeyId() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	UseAwsOwnedKey() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UseAwsOwnedKey() cdktf.IResolvable
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1033,8 +1210,8 @@ func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) TerraformAttribute() *strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1043,8 +1220,8 @@ func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) TerraformResource() cdktf.I
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) UseAwsOwnedKey() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) UseAwsOwnedKey() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"useAwsOwnedKey",
@@ -1053,15 +1230,25 @@ func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) UseAwsOwnedKey() interface{
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsMqBrokerEncryptionOptions(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsMqBrokerEncryptionOptions {
+func NewDataAwsMqBrokerEncryptionOptions(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsMqBrokerEncryptionOptions {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsMqBrokerEncryptionOptions{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerEncryptionOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1069,12 +1256,12 @@ func NewDataAwsMqBrokerEncryptionOptions(terraformResource cdktf.ITerraformResou
 }
 
 // Experimental.
-func NewDataAwsMqBrokerEncryptionOptions_Override(d DataAwsMqBrokerEncryptionOptions, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsMqBrokerEncryptionOptions_Override(d DataAwsMqBrokerEncryptionOptions, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerEncryptionOptions",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1095,7 +1282,7 @@ func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) SetTerraformAttribute(val *
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1103,13 +1290,49 @@ func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) SetTerraformResource(val cd
 	)
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerEncryptionOptions) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1146,12 +1369,54 @@ func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerEncryptionOptions) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1182,12 +1447,19 @@ type DataAwsMqBrokerInstances interface {
 	IpAddress() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1246,8 +1518,8 @@ func (j *jsiiProxy_DataAwsMqBrokerInstances) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerInstances) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsMqBrokerInstances) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1256,15 +1528,25 @@ func (j *jsiiProxy_DataAwsMqBrokerInstances) TerraformResource() cdktf.ITerrafor
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerInstances) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsMqBrokerInstances(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsMqBrokerInstances {
+func NewDataAwsMqBrokerInstances(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsMqBrokerInstances {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsMqBrokerInstances{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerInstances",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1272,12 +1554,12 @@ func NewDataAwsMqBrokerInstances(terraformResource cdktf.ITerraformResource, ter
 }
 
 // Experimental.
-func NewDataAwsMqBrokerInstances_Override(d DataAwsMqBrokerInstances, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsMqBrokerInstances_Override(d DataAwsMqBrokerInstances, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerInstances",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1298,7 +1580,7 @@ func (j *jsiiProxy_DataAwsMqBrokerInstances) SetTerraformAttribute(val *string) 
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerInstances) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsMqBrokerInstances) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1306,13 +1588,49 @@ func (j *jsiiProxy_DataAwsMqBrokerInstances) SetTerraformResource(val cdktf.ITer
 	)
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerInstances) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsMqBrokerInstances) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsMqBrokerInstances) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerInstances) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerInstances) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1349,12 +1667,54 @@ func (d *jsiiProxy_DataAwsMqBrokerInstances) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerInstances) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerInstances) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBrokerInstances) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerInstances) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1384,21 +1744,28 @@ type DataAwsMqBrokerLdapServerMetadata interface {
 	RoleBase() *string
 	RoleName() *string
 	RoleSearchMatching() *string
-	RoleSearchSubtree() interface{}
+	RoleSearchSubtree() cdktf.IResolvable
 	ServiceAccountPassword() *string
 	ServiceAccountUsername() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserBase() *string
 	UserRoleName() *string
 	UserSearchMatching() *string
-	UserSearchSubtree() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	UserSearchSubtree() cdktf.IResolvable
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1457,8 +1824,8 @@ func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) RoleSearchMatching() *stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) RoleSearchSubtree() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) RoleSearchSubtree() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"roleSearchSubtree",
@@ -1497,8 +1864,8 @@ func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) TerraformAttribute() *stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1537,8 +1904,8 @@ func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) UserSearchMatching() *stri
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) UserSearchSubtree() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) UserSearchSubtree() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"userSearchSubtree",
@@ -1547,15 +1914,25 @@ func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) UserSearchSubtree() interf
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsMqBrokerLdapServerMetadata(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsMqBrokerLdapServerMetadata {
+func NewDataAwsMqBrokerLdapServerMetadata(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsMqBrokerLdapServerMetadata {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsMqBrokerLdapServerMetadata{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerLdapServerMetadata",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1563,12 +1940,12 @@ func NewDataAwsMqBrokerLdapServerMetadata(terraformResource cdktf.ITerraformReso
 }
 
 // Experimental.
-func NewDataAwsMqBrokerLdapServerMetadata_Override(d DataAwsMqBrokerLdapServerMetadata, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsMqBrokerLdapServerMetadata_Override(d DataAwsMqBrokerLdapServerMetadata, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerLdapServerMetadata",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1589,7 +1966,7 @@ func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) SetTerraformAttribute(val 
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1597,13 +1974,49 @@ func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) SetTerraformResource(val c
 	)
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1640,12 +2053,54 @@ func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetNumberAttribute(terrafo
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLdapServerMetadata) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1672,15 +2127,22 @@ type DataAwsMqBrokerLogs interface {
 	Audit() *string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	General() interface{}
+	General() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1709,8 +2171,8 @@ func (j *jsiiProxy_DataAwsMqBrokerLogs) ComplexComputedListIndex() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerLogs) General() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBrokerLogs) General() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"general",
@@ -1729,8 +2191,8 @@ func (j *jsiiProxy_DataAwsMqBrokerLogs) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerLogs) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsMqBrokerLogs) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1739,15 +2201,25 @@ func (j *jsiiProxy_DataAwsMqBrokerLogs) TerraformResource() cdktf.ITerraformReso
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerLogs) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsMqBrokerLogs(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsMqBrokerLogs {
+func NewDataAwsMqBrokerLogs(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsMqBrokerLogs {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsMqBrokerLogs{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1755,12 +2227,12 @@ func NewDataAwsMqBrokerLogs(terraformResource cdktf.ITerraformResource, terrafor
 }
 
 // Experimental.
-func NewDataAwsMqBrokerLogs_Override(d DataAwsMqBrokerLogs, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsMqBrokerLogs_Override(d DataAwsMqBrokerLogs, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerLogs",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1781,7 +2253,7 @@ func (j *jsiiProxy_DataAwsMqBrokerLogs) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerLogs) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsMqBrokerLogs) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1789,13 +2261,49 @@ func (j *jsiiProxy_DataAwsMqBrokerLogs) SetTerraformResource(val cdktf.ITerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerLogs) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsMqBrokerLogs) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsMqBrokerLogs) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLogs) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLogs) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1832,12 +2340,54 @@ func (d *jsiiProxy_DataAwsMqBrokerLogs) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLogs) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLogs) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBrokerLogs) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerLogs) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1866,14 +2416,21 @@ type DataAwsMqBrokerMaintenanceWindowStartTime interface {
 	DayOfWeek() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeOfDay() *string
 	TimeZone() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1912,8 +2469,8 @@ func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1942,15 +2499,25 @@ func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) TimeZone() *string
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsMqBrokerMaintenanceWindowStartTime(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsMqBrokerMaintenanceWindowStartTime {
+func NewDataAwsMqBrokerMaintenanceWindowStartTime(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsMqBrokerMaintenanceWindowStartTime {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerMaintenanceWindowStartTime",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1958,12 +2525,12 @@ func NewDataAwsMqBrokerMaintenanceWindowStartTime(terraformResource cdktf.ITerra
 }
 
 // Experimental.
-func NewDataAwsMqBrokerMaintenanceWindowStartTime_Override(d DataAwsMqBrokerMaintenanceWindowStartTime, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsMqBrokerMaintenanceWindowStartTime_Override(d DataAwsMqBrokerMaintenanceWindowStartTime, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerMaintenanceWindowStartTime",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1984,7 +2551,7 @@ func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1992,13 +2559,49 @@ func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) SetTerraformResour
 	)
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2035,12 +2638,54 @@ func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetNumberAttribute
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerMaintenanceWindowStartTime) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2066,17 +2711,24 @@ type DataAwsMqBrokerUser interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	ConsoleAccess() interface{}
+	ConsoleAccess() cdktf.IResolvable
 	Groups() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Username() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2095,8 +2747,8 @@ func (j *jsiiProxy_DataAwsMqBrokerUser) ComplexComputedListIndex() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerUser) ConsoleAccess() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsMqBrokerUser) ConsoleAccess() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"consoleAccess",
@@ -2125,8 +2777,8 @@ func (j *jsiiProxy_DataAwsMqBrokerUser) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerUser) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsMqBrokerUser) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2145,15 +2797,25 @@ func (j *jsiiProxy_DataAwsMqBrokerUser) Username() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerUser) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsMqBrokerUser(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsMqBrokerUser {
+func NewDataAwsMqBrokerUser(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsMqBrokerUser {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsMqBrokerUser{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerUser",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2161,12 +2823,12 @@ func NewDataAwsMqBrokerUser(terraformResource cdktf.ITerraformResource, terrafor
 }
 
 // Experimental.
-func NewDataAwsMqBrokerUser_Override(d DataAwsMqBrokerUser, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsMqBrokerUser_Override(d DataAwsMqBrokerUser, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.DataAwsMqBrokerUser",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2187,7 +2849,7 @@ func (j *jsiiProxy_DataAwsMqBrokerUser) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsMqBrokerUser) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsMqBrokerUser) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2195,13 +2857,49 @@ func (j *jsiiProxy_DataAwsMqBrokerUser) SetTerraformResource(val cdktf.ITerrafor
 	)
 }
 
+func (j *jsiiProxy_DataAwsMqBrokerUser) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsMqBrokerUser) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsMqBrokerUser) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerUser) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerUser) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2238,12 +2936,54 @@ func (d *jsiiProxy_DataAwsMqBrokerUser) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerUser) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerUser) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsMqBrokerUser) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsMqBrokerUser) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2265,7 +3005,7 @@ func (d *jsiiProxy_DataAwsMqBrokerUser) InterpolationForAttribute(property *stri
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html aws_mq_broker}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/mq_broker aws_mq_broker}.
 type MqBroker interface {
 	cdktf.TerraformResource
 	ApplyImmediately() interface{}
@@ -2285,8 +3025,8 @@ type MqBroker interface {
 	Configuration() MqBrokerConfigurationOutputReference
 	ConfigurationInput() *MqBrokerConfiguration
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	DeploymentMode() *string
@@ -2330,23 +3070,28 @@ type MqBroker interface {
 	SubnetIds() *[]*string
 	SetSubnetIds(val *[]*string)
 	SubnetIdsInput() *[]*string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
-	User() *[]*MqBrokerUser
-	SetUser(val *[]*MqBrokerUser)
-	UserInput() *[]*MqBrokerUser
+	User() interface{}
+	SetUser(val interface{})
+	UserInput() interface{}
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	Instances(index *string) MqBrokerInstances
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
@@ -2512,8 +3257,8 @@ func (j *jsiiProxy_MqBroker) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqBroker) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqBroker) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2842,8 +3587,8 @@ func (j *jsiiProxy_MqBroker) SubnetIdsInput() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_MqBroker) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqBroker) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -2852,8 +3597,8 @@ func (j *jsiiProxy_MqBroker) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqBroker) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqBroker) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -2862,8 +3607,8 @@ func (j *jsiiProxy_MqBroker) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqBroker) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqBroker) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -2872,8 +3617,8 @@ func (j *jsiiProxy_MqBroker) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqBroker) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqBroker) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -2912,8 +3657,8 @@ func (j *jsiiProxy_MqBroker) TerraformResourceType() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MqBroker) User() *[]*MqBrokerUser {
-	var returns *[]*MqBrokerUser
+func (j *jsiiProxy_MqBroker) User() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"user",
@@ -2922,8 +3667,8 @@ func (j *jsiiProxy_MqBroker) User() *[]*MqBrokerUser {
 	return returns
 }
 
-func (j *jsiiProxy_MqBroker) UserInput() *[]*MqBrokerUser {
-	var returns *[]*MqBrokerUser
+func (j *jsiiProxy_MqBroker) UserInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"userInput",
@@ -2932,7 +3677,7 @@ func (j *jsiiProxy_MqBroker) UserInput() *[]*MqBrokerUser {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html aws_mq_broker} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_broker aws_mq_broker} Resource.
 func NewMqBroker(scope constructs.Construct, id *string, config *MqBrokerConfig) MqBroker {
 	_init_.Initialize()
 
@@ -2947,7 +3692,7 @@ func NewMqBroker(scope constructs.Construct, id *string, config *MqBrokerConfig)
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html aws_mq_broker} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_broker aws_mq_broker} Resource.
 func NewMqBroker_Override(m MqBroker, scope constructs.Construct, id *string, config *MqBrokerConfig) {
 	_init_.Initialize()
 
@@ -2990,7 +3735,7 @@ func (j *jsiiProxy_MqBroker) SetBrokerName(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MqBroker) SetCount(val interface{}) {
+func (j *jsiiProxy_MqBroker) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3086,7 +3831,7 @@ func (j *jsiiProxy_MqBroker) SetSubnetIds(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_MqBroker) SetTags(val interface{}) {
+func (j *jsiiProxy_MqBroker) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -3094,7 +3839,7 @@ func (j *jsiiProxy_MqBroker) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_MqBroker) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_MqBroker) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -3102,7 +3847,7 @@ func (j *jsiiProxy_MqBroker) SetTagsAll(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_MqBroker) SetUser(val *[]*MqBrokerUser) {
+func (j *jsiiProxy_MqBroker) SetUser(val interface{}) {
 	_jsii_.Set(
 		j,
 		"user",
@@ -3150,12 +3895,40 @@ func (m *jsiiProxy_MqBroker) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBroker) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBroker) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBroker) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3192,12 +3965,54 @@ func (m *jsiiProxy_MqBroker) GetNumberAttribute(terraformAttribute *string) *flo
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBroker) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBroker) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBroker) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBroker) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3471,72 +4286,72 @@ func (m *jsiiProxy_MqBroker) ToTerraform() interface{} {
 // AWS Managed Message Queue.
 type MqBrokerConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#broker_name MqBroker#broker_name}.
-	BrokerName *string `json:"brokerName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#engine_type MqBroker#engine_type}.
-	EngineType *string `json:"engineType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#engine_version MqBroker#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#host_instance_type MqBroker#host_instance_type}.
-	HostInstanceType *string `json:"hostInstanceType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#broker_name MqBroker#broker_name}.
+	BrokerName *string `json:"brokerName" yaml:"brokerName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#engine_type MqBroker#engine_type}.
+	EngineType *string `json:"engineType" yaml:"engineType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#engine_version MqBroker#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#host_instance_type MqBroker#host_instance_type}.
+	HostInstanceType *string `json:"hostInstanceType" yaml:"hostInstanceType"`
 	// user block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#user MqBroker#user}
-	User *[]*MqBrokerUser `json:"user"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#apply_immediately MqBroker#apply_immediately}.
-	ApplyImmediately interface{} `json:"applyImmediately"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#authentication_strategy MqBroker#authentication_strategy}.
-	AuthenticationStrategy *string `json:"authenticationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#auto_minor_version_upgrade MqBroker#auto_minor_version_upgrade}.
-	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#user MqBroker#user}
+	User interface{} `json:"user" yaml:"user"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#apply_immediately MqBroker#apply_immediately}.
+	ApplyImmediately interface{} `json:"applyImmediately" yaml:"applyImmediately"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#authentication_strategy MqBroker#authentication_strategy}.
+	AuthenticationStrategy *string `json:"authenticationStrategy" yaml:"authenticationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#auto_minor_version_upgrade MqBroker#auto_minor_version_upgrade}.
+	AutoMinorVersionUpgrade interface{} `json:"autoMinorVersionUpgrade" yaml:"autoMinorVersionUpgrade"`
 	// configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#configuration MqBroker#configuration}
-	Configuration *MqBrokerConfiguration `json:"configuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#deployment_mode MqBroker#deployment_mode}.
-	DeploymentMode *string `json:"deploymentMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#configuration MqBroker#configuration}
+	Configuration *MqBrokerConfiguration `json:"configuration" yaml:"configuration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#deployment_mode MqBroker#deployment_mode}.
+	DeploymentMode *string `json:"deploymentMode" yaml:"deploymentMode"`
 	// encryption_options block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#encryption_options MqBroker#encryption_options}
-	EncryptionOptions *MqBrokerEncryptionOptions `json:"encryptionOptions"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#encryption_options MqBroker#encryption_options}
+	EncryptionOptions *MqBrokerEncryptionOptions `json:"encryptionOptions" yaml:"encryptionOptions"`
 	// ldap_server_metadata block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#ldap_server_metadata MqBroker#ldap_server_metadata}
-	LdapServerMetadata *MqBrokerLdapServerMetadata `json:"ldapServerMetadata"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#ldap_server_metadata MqBroker#ldap_server_metadata}
+	LdapServerMetadata *MqBrokerLdapServerMetadata `json:"ldapServerMetadata" yaml:"ldapServerMetadata"`
 	// logs block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#logs MqBroker#logs}
-	Logs *MqBrokerLogs `json:"logs"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#logs MqBroker#logs}
+	Logs *MqBrokerLogs `json:"logs" yaml:"logs"`
 	// maintenance_window_start_time block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#maintenance_window_start_time MqBroker#maintenance_window_start_time}
-	MaintenanceWindowStartTime *MqBrokerMaintenanceWindowStartTime `json:"maintenanceWindowStartTime"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#publicly_accessible MqBroker#publicly_accessible}.
-	PubliclyAccessible interface{} `json:"publiclyAccessible"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#security_groups MqBroker#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#storage_type MqBroker#storage_type}.
-	StorageType *string `json:"storageType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#subnet_ids MqBroker#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#tags MqBroker#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#tags_all MqBroker#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#maintenance_window_start_time MqBroker#maintenance_window_start_time}
+	MaintenanceWindowStartTime *MqBrokerMaintenanceWindowStartTime `json:"maintenanceWindowStartTime" yaml:"maintenanceWindowStartTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#publicly_accessible MqBroker#publicly_accessible}.
+	PubliclyAccessible interface{} `json:"publiclyAccessible" yaml:"publiclyAccessible"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#security_groups MqBroker#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#storage_type MqBroker#storage_type}.
+	StorageType *string `json:"storageType" yaml:"storageType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#subnet_ids MqBroker#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#tags MqBroker#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#tags_all MqBroker#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
 type MqBrokerConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#id MqBroker#id}.
-	Id *string `json:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#revision MqBroker#revision}.
-	Revision *float64 `json:"revision"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#id MqBroker#id}.
+	Id *string `json:"id" yaml:"id"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#revision MqBroker#revision}.
+	Revision *float64 `json:"revision" yaml:"revision"`
 }
 
 type MqBrokerConfigurationOutputReference interface {
@@ -3551,12 +4366,17 @@ type MqBrokerConfigurationOutputReference interface {
 	RevisionInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetRevision()
@@ -3627,8 +4447,8 @@ func (j *jsiiProxy_MqBrokerConfigurationOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_MqBrokerConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MqBrokerConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3637,7 +4457,7 @@ func (j *jsiiProxy_MqBrokerConfigurationOutputReference) TerraformResource() cdk
 	return returns
 }
 
-func NewMqBrokerConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MqBrokerConfigurationOutputReference {
+func NewMqBrokerConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MqBrokerConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MqBrokerConfigurationOutputReference{}
@@ -3651,7 +4471,7 @@ func NewMqBrokerConfigurationOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewMqBrokerConfigurationOutputReference_Override(m MqBrokerConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMqBrokerConfigurationOutputReference_Override(m MqBrokerConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3693,7 +4513,7 @@ func (j *jsiiProxy_MqBrokerConfigurationOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_MqBrokerConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MqBrokerConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3702,12 +4522,40 @@ func (j *jsiiProxy_MqBrokerConfigurationOutputReference) SetTerraformResource(va
 }
 
 // Experimental.
-func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3744,12 +4592,54 @@ func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3794,10 +4684,10 @@ func (m *jsiiProxy_MqBrokerConfigurationOutputReference) ResetRevision() {
 }
 
 type MqBrokerEncryptionOptions struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#kms_key_id MqBroker#kms_key_id}.
-	KmsKeyId *string `json:"kmsKeyId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#use_aws_owned_key MqBroker#use_aws_owned_key}.
-	UseAwsOwnedKey interface{} `json:"useAwsOwnedKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#kms_key_id MqBroker#kms_key_id}.
+	KmsKeyId *string `json:"kmsKeyId" yaml:"kmsKeyId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#use_aws_owned_key MqBroker#use_aws_owned_key}.
+	UseAwsOwnedKey interface{} `json:"useAwsOwnedKey" yaml:"useAwsOwnedKey"`
 }
 
 type MqBrokerEncryptionOptionsOutputReference interface {
@@ -3811,15 +4701,20 @@ type MqBrokerEncryptionOptionsOutputReference interface {
 	KmsKeyIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UseAwsOwnedKey() interface{}
 	SetUseAwsOwnedKey(val interface{})
 	UseAwsOwnedKeyInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKeyId()
@@ -3881,8 +4776,8 @@ func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3911,7 +4806,7 @@ func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) UseAwsOwnedKeyInput
 	return returns
 }
 
-func NewMqBrokerEncryptionOptionsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MqBrokerEncryptionOptionsOutputReference {
+func NewMqBrokerEncryptionOptionsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MqBrokerEncryptionOptionsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MqBrokerEncryptionOptionsOutputReference{}
@@ -3925,7 +4820,7 @@ func NewMqBrokerEncryptionOptionsOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewMqBrokerEncryptionOptionsOutputReference_Override(m MqBrokerEncryptionOptionsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMqBrokerEncryptionOptionsOutputReference_Override(m MqBrokerEncryptionOptionsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3967,7 +4862,7 @@ func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3984,12 +4879,40 @@ func (j *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) SetUseAwsOwnedKey(v
 }
 
 // Experimental.
-func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4026,12 +4949,54 @@ func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerEncryptionOptionsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4092,12 +5057,19 @@ type MqBrokerInstances interface {
 	IpAddress() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -4156,8 +5128,8 @@ func (j *jsiiProxy_MqBrokerInstances) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MqBrokerInstances) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MqBrokerInstances) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4166,15 +5138,25 @@ func (j *jsiiProxy_MqBrokerInstances) TerraformResource() cdktf.ITerraformResour
 	return returns
 }
 
+func (j *jsiiProxy_MqBrokerInstances) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewMqBrokerInstances(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) MqBrokerInstances {
+func NewMqBrokerInstances(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) MqBrokerInstances {
 	_init_.Initialize()
 
 	j := jsiiProxy_MqBrokerInstances{}
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.MqBrokerInstances",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -4182,12 +5164,12 @@ func NewMqBrokerInstances(terraformResource cdktf.ITerraformResource, terraformA
 }
 
 // Experimental.
-func NewMqBrokerInstances_Override(m MqBrokerInstances, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewMqBrokerInstances_Override(m MqBrokerInstances, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.mq.MqBrokerInstances",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		m,
 	)
 }
@@ -4208,7 +5190,7 @@ func (j *jsiiProxy_MqBrokerInstances) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MqBrokerInstances) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MqBrokerInstances) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4216,13 +5198,49 @@ func (j *jsiiProxy_MqBrokerInstances) SetTerraformResource(val cdktf.ITerraformR
 	)
 }
 
+func (j *jsiiProxy_MqBrokerInstances) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (m *jsiiProxy_MqBrokerInstances) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MqBrokerInstances) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerInstances) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerInstances) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4259,12 +5277,54 @@ func (m *jsiiProxy_MqBrokerInstances) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBrokerInstances) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerInstances) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBrokerInstances) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerInstances) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4287,28 +5347,28 @@ func (m *jsiiProxy_MqBrokerInstances) InterpolationForAttribute(property *string
 }
 
 type MqBrokerLdapServerMetadata struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#hosts MqBroker#hosts}.
-	Hosts *[]*string `json:"hosts"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#role_base MqBroker#role_base}.
-	RoleBase *string `json:"roleBase"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#role_name MqBroker#role_name}.
-	RoleName *string `json:"roleName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#role_search_matching MqBroker#role_search_matching}.
-	RoleSearchMatching *string `json:"roleSearchMatching"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#role_search_subtree MqBroker#role_search_subtree}.
-	RoleSearchSubtree interface{} `json:"roleSearchSubtree"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#service_account_password MqBroker#service_account_password}.
-	ServiceAccountPassword *string `json:"serviceAccountPassword"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#service_account_username MqBroker#service_account_username}.
-	ServiceAccountUsername *string `json:"serviceAccountUsername"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#user_base MqBroker#user_base}.
-	UserBase *string `json:"userBase"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#user_role_name MqBroker#user_role_name}.
-	UserRoleName *string `json:"userRoleName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#user_search_matching MqBroker#user_search_matching}.
-	UserSearchMatching *string `json:"userSearchMatching"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#user_search_subtree MqBroker#user_search_subtree}.
-	UserSearchSubtree interface{} `json:"userSearchSubtree"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#hosts MqBroker#hosts}.
+	Hosts *[]*string `json:"hosts" yaml:"hosts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#role_base MqBroker#role_base}.
+	RoleBase *string `json:"roleBase" yaml:"roleBase"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#role_name MqBroker#role_name}.
+	RoleName *string `json:"roleName" yaml:"roleName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#role_search_matching MqBroker#role_search_matching}.
+	RoleSearchMatching *string `json:"roleSearchMatching" yaml:"roleSearchMatching"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#role_search_subtree MqBroker#role_search_subtree}.
+	RoleSearchSubtree interface{} `json:"roleSearchSubtree" yaml:"roleSearchSubtree"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#service_account_password MqBroker#service_account_password}.
+	ServiceAccountPassword *string `json:"serviceAccountPassword" yaml:"serviceAccountPassword"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#service_account_username MqBroker#service_account_username}.
+	ServiceAccountUsername *string `json:"serviceAccountUsername" yaml:"serviceAccountUsername"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#user_base MqBroker#user_base}.
+	UserBase *string `json:"userBase" yaml:"userBase"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#user_role_name MqBroker#user_role_name}.
+	UserRoleName *string `json:"userRoleName" yaml:"userRoleName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#user_search_matching MqBroker#user_search_matching}.
+	UserSearchMatching *string `json:"userSearchMatching" yaml:"userSearchMatching"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#user_search_subtree MqBroker#user_search_subtree}.
+	UserSearchSubtree interface{} `json:"userSearchSubtree" yaml:"userSearchSubtree"`
 }
 
 type MqBrokerLdapServerMetadataOutputReference interface {
@@ -4340,8 +5400,8 @@ type MqBrokerLdapServerMetadataOutputReference interface {
 	ServiceAccountUsernameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	UserBase() *string
 	SetUserBase(val *string)
 	UserBaseInput() *string
@@ -4354,10 +5414,15 @@ type MqBrokerLdapServerMetadataOutputReference interface {
 	UserSearchSubtree() interface{}
 	SetUserSearchSubtree(val interface{})
 	UserSearchSubtreeInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHosts()
@@ -4548,8 +5613,8 @@ func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) TerraformAttribute
 	return returns
 }
 
-func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4638,7 +5703,7 @@ func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) UserSearchSubtreeI
 	return returns
 }
 
-func NewMqBrokerLdapServerMetadataOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MqBrokerLdapServerMetadataOutputReference {
+func NewMqBrokerLdapServerMetadataOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MqBrokerLdapServerMetadataOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MqBrokerLdapServerMetadataOutputReference{}
@@ -4652,7 +5717,7 @@ func NewMqBrokerLdapServerMetadataOutputReference(terraformResource cdktf.ITerra
 	return &j
 }
 
-func NewMqBrokerLdapServerMetadataOutputReference_Override(m MqBrokerLdapServerMetadataOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMqBrokerLdapServerMetadataOutputReference_Override(m MqBrokerLdapServerMetadataOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4742,7 +5807,7 @@ func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) SetTerraformAttrib
 	)
 }
 
-func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4783,12 +5848,40 @@ func (j *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) SetUserSearchSubtr
 }
 
 // Experimental.
-func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4825,12 +5918,54 @@ func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetNumberAttribute
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4955,10 +6090,10 @@ func (m *jsiiProxy_MqBrokerLdapServerMetadataOutputReference) ResetUserSearchSub
 }
 
 type MqBrokerLogs struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#audit MqBroker#audit}.
-	Audit *string `json:"audit"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#general MqBroker#general}.
-	General interface{} `json:"general"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#audit MqBroker#audit}.
+	Audit *string `json:"audit" yaml:"audit"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#general MqBroker#general}.
+	General interface{} `json:"general" yaml:"general"`
 }
 
 type MqBrokerLogsOutputReference interface {
@@ -4975,12 +6110,17 @@ type MqBrokerLogsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAudit()
@@ -5062,8 +6202,8 @@ func (j *jsiiProxy_MqBrokerLogsOutputReference) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MqBrokerLogsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MqBrokerLogsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5072,7 +6212,7 @@ func (j *jsiiProxy_MqBrokerLogsOutputReference) TerraformResource() cdktf.ITerra
 	return returns
 }
 
-func NewMqBrokerLogsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MqBrokerLogsOutputReference {
+func NewMqBrokerLogsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MqBrokerLogsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MqBrokerLogsOutputReference{}
@@ -5086,7 +6226,7 @@ func NewMqBrokerLogsOutputReference(terraformResource cdktf.ITerraformResource, 
 	return &j
 }
 
-func NewMqBrokerLogsOutputReference_Override(m MqBrokerLogsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMqBrokerLogsOutputReference_Override(m MqBrokerLogsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5136,7 +6276,7 @@ func (j *jsiiProxy_MqBrokerLogsOutputReference) SetTerraformAttribute(val *strin
 	)
 }
 
-func (j *jsiiProxy_MqBrokerLogsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MqBrokerLogsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5145,12 +6285,40 @@ func (j *jsiiProxy_MqBrokerLogsOutputReference) SetTerraformResource(val cdktf.I
 }
 
 // Experimental.
-func (m *jsiiProxy_MqBrokerLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MqBrokerLogsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLogsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLogsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5187,12 +6355,54 @@ func (m *jsiiProxy_MqBrokerLogsOutputReference) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBrokerLogsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLogsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBrokerLogsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerLogsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5245,12 +6455,12 @@ func (m *jsiiProxy_MqBrokerLogsOutputReference) ResetGeneral() {
 }
 
 type MqBrokerMaintenanceWindowStartTime struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#day_of_week MqBroker#day_of_week}.
-	DayOfWeek *string `json:"dayOfWeek"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#time_of_day MqBroker#time_of_day}.
-	TimeOfDay *string `json:"timeOfDay"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#time_zone MqBroker#time_zone}.
-	TimeZone *string `json:"timeZone"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#day_of_week MqBroker#day_of_week}.
+	DayOfWeek *string `json:"dayOfWeek" yaml:"dayOfWeek"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#time_of_day MqBroker#time_of_day}.
+	TimeOfDay *string `json:"timeOfDay" yaml:"timeOfDay"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#time_zone MqBroker#time_zone}.
+	TimeZone *string `json:"timeZone" yaml:"timeZone"`
 }
 
 type MqBrokerMaintenanceWindowStartTimeOutputReference interface {
@@ -5264,18 +6474,23 @@ type MqBrokerMaintenanceWindowStartTimeOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeOfDay() *string
 	SetTimeOfDay(val *string)
 	TimeOfDayInput() *string
 	TimeZone() *string
 	SetTimeZone(val *string)
 	TimeZoneInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5335,8 +6550,8 @@ func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5385,7 +6600,7 @@ func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) TimeZoneIn
 	return returns
 }
 
-func NewMqBrokerMaintenanceWindowStartTimeOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) MqBrokerMaintenanceWindowStartTimeOutputReference {
+func NewMqBrokerMaintenanceWindowStartTimeOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) MqBrokerMaintenanceWindowStartTimeOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference{}
@@ -5399,7 +6614,7 @@ func NewMqBrokerMaintenanceWindowStartTimeOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewMqBrokerMaintenanceWindowStartTimeOutputReference_Override(m MqBrokerMaintenanceWindowStartTimeOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewMqBrokerMaintenanceWindowStartTimeOutputReference_Override(m MqBrokerMaintenanceWindowStartTimeOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5441,7 +6656,7 @@ func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5466,12 +6681,40 @@ func (j *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) SetTimeZon
 }
 
 // Experimental.
-func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5508,12 +6751,54 @@ func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetNumberA
 }
 
 // Experimental.
+func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5550,17 +6835,17 @@ func (m *jsiiProxy_MqBrokerMaintenanceWindowStartTimeOutputReference) Interpolat
 }
 
 type MqBrokerUser struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#password MqBroker#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#username MqBroker#username}.
-	Username *string `json:"username"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#console_access MqBroker#console_access}.
-	ConsoleAccess interface{} `json:"consoleAccess"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker.html#groups MqBroker#groups}.
-	Groups *[]*string `json:"groups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#password MqBroker#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#username MqBroker#username}.
+	Username *string `json:"username" yaml:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#console_access MqBroker#console_access}.
+	ConsoleAccess interface{} `json:"consoleAccess" yaml:"consoleAccess"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_broker#groups MqBroker#groups}.
+	Groups *[]*string `json:"groups" yaml:"groups"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html aws_mq_configuration}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration aws_mq_configuration}.
 type MqConfiguration interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -5569,8 +6854,8 @@ type MqConfiguration interface {
 	AuthenticationStrategyInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	Data() *string
 	SetData(val *string)
 	DataInput() *string
@@ -5598,20 +6883,25 @@ type MqConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetAuthenticationStrategy()
@@ -5680,8 +6970,8 @@ func (j *jsiiProxy_MqConfiguration) ConstructNodeMetadata() *map[string]interfac
 	return returns
 }
 
-func (j *jsiiProxy_MqConfiguration) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqConfiguration) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5880,8 +7170,8 @@ func (j *jsiiProxy_MqConfiguration) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqConfiguration) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqConfiguration) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -5890,8 +7180,8 @@ func (j *jsiiProxy_MqConfiguration) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqConfiguration) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqConfiguration) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -5900,8 +7190,8 @@ func (j *jsiiProxy_MqConfiguration) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqConfiguration) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqConfiguration) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -5910,8 +7200,8 @@ func (j *jsiiProxy_MqConfiguration) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_MqConfiguration) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MqConfiguration) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -5950,7 +7240,7 @@ func (j *jsiiProxy_MqConfiguration) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html aws_mq_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration aws_mq_configuration} Resource.
 func NewMqConfiguration(scope constructs.Construct, id *string, config *MqConfigurationConfig) MqConfiguration {
 	_init_.Initialize()
 
@@ -5965,7 +7255,7 @@ func NewMqConfiguration(scope constructs.Construct, id *string, config *MqConfig
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html aws_mq_configuration} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration aws_mq_configuration} Resource.
 func NewMqConfiguration_Override(m MqConfiguration, scope constructs.Construct, id *string, config *MqConfigurationConfig) {
 	_init_.Initialize()
 
@@ -5984,7 +7274,7 @@ func (j *jsiiProxy_MqConfiguration) SetAuthenticationStrategy(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MqConfiguration) SetCount(val interface{}) {
+func (j *jsiiProxy_MqConfiguration) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6056,7 +7346,7 @@ func (j *jsiiProxy_MqConfiguration) SetProvider(val cdktf.TerraformProvider) {
 	)
 }
 
-func (j *jsiiProxy_MqConfiguration) SetTags(val interface{}) {
+func (j *jsiiProxy_MqConfiguration) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6064,7 +7354,7 @@ func (j *jsiiProxy_MqConfiguration) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_MqConfiguration) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_MqConfiguration) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6112,12 +7402,40 @@ func (m *jsiiProxy_MqConfiguration) AddOverride(path *string, value interface{})
 }
 
 // Experimental.
+func (m *jsiiProxy_MqConfiguration) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		m,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqConfiguration) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		m,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqConfiguration) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		m,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6154,12 +7472,54 @@ func (m *jsiiProxy_MqConfiguration) GetNumberAttribute(terraformAttribute *strin
 }
 
 // Experimental.
+func (m *jsiiProxy_MqConfiguration) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqConfiguration) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		m,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (m *jsiiProxy_MqConfiguration) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		m,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (m *jsiiProxy_MqConfiguration) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		m,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6292,27 +7652,27 @@ func (m *jsiiProxy_MqConfiguration) ToTerraform() interface{} {
 // AWS Managed Message Queue.
 type MqConfigurationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#data MqConfiguration#data}.
-	Data *string `json:"data"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#engine_type MqConfiguration#engine_type}.
-	EngineType *string `json:"engineType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#engine_version MqConfiguration#engine_version}.
-	EngineVersion *string `json:"engineVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#name MqConfiguration#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#authentication_strategy MqConfiguration#authentication_strategy}.
-	AuthenticationStrategy *string `json:"authenticationStrategy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#description MqConfiguration#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#tags MqConfiguration#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration.html#tags_all MqConfiguration#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#data MqConfiguration#data}.
+	Data *string `json:"data" yaml:"data"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#engine_type MqConfiguration#engine_type}.
+	EngineType *string `json:"engineType" yaml:"engineType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#engine_version MqConfiguration#engine_version}.
+	EngineVersion *string `json:"engineVersion" yaml:"engineVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#name MqConfiguration#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#authentication_strategy MqConfiguration#authentication_strategy}.
+	AuthenticationStrategy *string `json:"authenticationStrategy" yaml:"authenticationStrategy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#description MqConfiguration#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#tags MqConfiguration#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/mq_configuration#tags_all MqConfiguration#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }

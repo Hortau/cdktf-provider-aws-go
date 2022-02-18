@@ -9,15 +9,15 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/dynamodb/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table.html aws_dynamodb_table}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table aws_dynamodb_table}.
 type DataAwsDynamodbTable interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	BillingMode() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -38,23 +38,28 @@ type DataAwsDynamodbTable interface {
 	ServerSideEncryption() DataAwsDynamodbTableServerSideEncryptionOutputReference
 	ServerSideEncryptionInput() *DataAwsDynamodbTableServerSideEncryption
 	StreamArn() *string
-	StreamEnabled() interface{}
+	StreamEnabled() cdktf.IResolvable
 	StreamLabel() *string
 	StreamViewType() *string
 	TableClass() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	WriteCapacity() *float64
 	AddOverride(path *string, value interface{})
 	Attribute(index *string) DataAwsDynamodbTableAttribute
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	GlobalSecondaryIndex(index *string) DataAwsDynamodbTableGlobalSecondaryIndex
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	LocalSecondaryIndex(index *string) DataAwsDynamodbTableLocalSecondaryIndex
@@ -117,8 +122,8 @@ func (j *jsiiProxy_DataAwsDynamodbTable) ConstructNodeMetadata() *map[string]int
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTable) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDynamodbTable) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -287,8 +292,8 @@ func (j *jsiiProxy_DataAwsDynamodbTable) StreamArn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTable) StreamEnabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDynamodbTable) StreamEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"streamEnabled",
@@ -327,8 +332,8 @@ func (j *jsiiProxy_DataAwsDynamodbTable) TableClass() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTable) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDynamodbTable) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -337,8 +342,8 @@ func (j *jsiiProxy_DataAwsDynamodbTable) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTable) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDynamodbTable) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -387,7 +392,7 @@ func (j *jsiiProxy_DataAwsDynamodbTable) WriteCapacity() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table.html aws_dynamodb_table} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table aws_dynamodb_table} Data Source.
 func NewDataAwsDynamodbTable(scope constructs.Construct, id *string, config *DataAwsDynamodbTableConfig) DataAwsDynamodbTable {
 	_init_.Initialize()
 
@@ -402,7 +407,7 @@ func NewDataAwsDynamodbTable(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table.html aws_dynamodb_table} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table aws_dynamodb_table} Data Source.
 func NewDataAwsDynamodbTable_Override(d DataAwsDynamodbTable, scope constructs.Construct, id *string, config *DataAwsDynamodbTableConfig) {
 	_init_.Initialize()
 
@@ -413,7 +418,7 @@ func NewDataAwsDynamodbTable_Override(d DataAwsDynamodbTable, scope constructs.C
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTable) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsDynamodbTable) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -453,7 +458,7 @@ func (j *jsiiProxy_DataAwsDynamodbTable) SetProvider(val cdktf.TerraformProvider
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTable) SetTags(val interface{}) {
+func (j *jsiiProxy_DataAwsDynamodbTable) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -514,12 +519,40 @@ func (d *jsiiProxy_DataAwsDynamodbTable) Attribute(index *string) DataAwsDynamod
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTable) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTable) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTable) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -556,12 +589,54 @@ func (d *jsiiProxy_DataAwsDynamodbTable) GetNumberAttribute(terraformAttribute *
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTable) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTable) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTable) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTable) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -755,13 +830,20 @@ type DataAwsDynamodbTableAttribute interface {
 	Name() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -800,8 +882,8 @@ func (j *jsiiProxy_DataAwsDynamodbTableAttribute) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableAttribute) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDynamodbTableAttribute) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -820,15 +902,25 @@ func (j *jsiiProxy_DataAwsDynamodbTableAttribute) Type() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableAttribute) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsDynamodbTableAttribute(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDynamodbTableAttribute {
+func NewDataAwsDynamodbTableAttribute(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDynamodbTableAttribute {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDynamodbTableAttribute{}
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableAttribute",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -836,12 +928,12 @@ func NewDataAwsDynamodbTableAttribute(terraformResource cdktf.ITerraformResource
 }
 
 // Experimental.
-func NewDataAwsDynamodbTableAttribute_Override(d DataAwsDynamodbTableAttribute, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDynamodbTableAttribute_Override(d DataAwsDynamodbTableAttribute, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableAttribute",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -862,7 +954,7 @@ func (j *jsiiProxy_DataAwsDynamodbTableAttribute) SetTerraformAttribute(val *str
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableAttribute) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDynamodbTableAttribute) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -870,13 +962,49 @@ func (j *jsiiProxy_DataAwsDynamodbTableAttribute) SetTerraformResource(val cdktf
 	)
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableAttribute) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -913,12 +1041,54 @@ func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableAttribute) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -943,21 +1113,21 @@ func (d *jsiiProxy_DataAwsDynamodbTableAttribute) InterpolationForAttribute(prop
 // AWS DynamoDB.
 type DataAwsDynamodbTableConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table.html#name DataAwsDynamodbTable#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table#name DataAwsDynamodbTable#name}.
+	Name *string `json:"name" yaml:"name"`
 	// server_side_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table.html#server_side_encryption DataAwsDynamodbTable#server_side_encryption}
-	ServerSideEncryption *DataAwsDynamodbTableServerSideEncryption `json:"serverSideEncryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table.html#tags DataAwsDynamodbTable#tags}.
-	Tags interface{} `json:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table#server_side_encryption DataAwsDynamodbTable#server_side_encryption}
+	ServerSideEncryption *DataAwsDynamodbTableServerSideEncryption `json:"serverSideEncryption" yaml:"serverSideEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/dynamodb_table#tags DataAwsDynamodbTable#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
 }
 
 type DataAwsDynamodbTableGlobalSecondaryIndex interface {
@@ -972,13 +1142,20 @@ type DataAwsDynamodbTableGlobalSecondaryIndex interface {
 	ReadCapacity() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
 	WriteCapacity() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1067,11 +1244,21 @@ func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
 		&returns,
 	)
 	return returns
@@ -1088,14 +1275,14 @@ func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) WriteCapacity() *fl
 }
 
 // Experimental.
-func NewDataAwsDynamodbTableGlobalSecondaryIndex(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDynamodbTableGlobalSecondaryIndex {
+func NewDataAwsDynamodbTableGlobalSecondaryIndex(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDynamodbTableGlobalSecondaryIndex {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex{}
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableGlobalSecondaryIndex",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1103,12 +1290,12 @@ func NewDataAwsDynamodbTableGlobalSecondaryIndex(terraformResource cdktf.ITerraf
 }
 
 // Experimental.
-func NewDataAwsDynamodbTableGlobalSecondaryIndex_Override(d DataAwsDynamodbTableGlobalSecondaryIndex, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDynamodbTableGlobalSecondaryIndex_Override(d DataAwsDynamodbTableGlobalSecondaryIndex, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableGlobalSecondaryIndex",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1129,7 +1316,7 @@ func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1137,13 +1324,49 @@ func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) SetTerraformResourc
 	)
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1180,12 +1403,54 @@ func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetNumberAttribute(
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableGlobalSecondaryIndex) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1217,12 +1482,19 @@ type DataAwsDynamodbTableLocalSecondaryIndex interface {
 	RangeKey() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1291,8 +1563,8 @@ func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1301,15 +1573,25 @@ func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsDynamodbTableLocalSecondaryIndex(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDynamodbTableLocalSecondaryIndex {
+func NewDataAwsDynamodbTableLocalSecondaryIndex(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDynamodbTableLocalSecondaryIndex {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex{}
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableLocalSecondaryIndex",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1317,12 +1599,12 @@ func NewDataAwsDynamodbTableLocalSecondaryIndex(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewDataAwsDynamodbTableLocalSecondaryIndex_Override(d DataAwsDynamodbTableLocalSecondaryIndex, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDynamodbTableLocalSecondaryIndex_Override(d DataAwsDynamodbTableLocalSecondaryIndex, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableLocalSecondaryIndex",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1343,7 +1625,7 @@ func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1351,13 +1633,49 @@ func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1394,12 +1712,54 @@ func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableLocalSecondaryIndex) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1425,15 +1785,22 @@ type DataAwsDynamodbTablePointInTimeRecovery interface {
 	cdktf.ComplexComputedList
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1452,8 +1819,8 @@ func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) ComplexComputedListI
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -1472,8 +1839,8 @@ func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1482,15 +1849,25 @@ func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) TerraformResource() 
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsDynamodbTablePointInTimeRecovery(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDynamodbTablePointInTimeRecovery {
+func NewDataAwsDynamodbTablePointInTimeRecovery(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDynamodbTablePointInTimeRecovery {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery{}
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTablePointInTimeRecovery",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1498,12 +1875,12 @@ func NewDataAwsDynamodbTablePointInTimeRecovery(terraformResource cdktf.ITerrafo
 }
 
 // Experimental.
-func NewDataAwsDynamodbTablePointInTimeRecovery_Override(d DataAwsDynamodbTablePointInTimeRecovery, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDynamodbTablePointInTimeRecovery_Override(d DataAwsDynamodbTablePointInTimeRecovery, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTablePointInTimeRecovery",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1524,7 +1901,7 @@ func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1532,13 +1909,49 @@ func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) SetTerraformResource
 	)
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1575,12 +1988,54 @@ func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetNumberAttribute(t
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTablePointInTimeRecovery) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1610,12 +2065,19 @@ type DataAwsDynamodbTableReplica interface {
 	RegionName() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -1664,8 +2126,8 @@ func (j *jsiiProxy_DataAwsDynamodbTableReplica) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableReplica) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDynamodbTableReplica) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1674,15 +2136,25 @@ func (j *jsiiProxy_DataAwsDynamodbTableReplica) TerraformResource() cdktf.ITerra
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableReplica) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsDynamodbTableReplica(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDynamodbTableReplica {
+func NewDataAwsDynamodbTableReplica(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDynamodbTableReplica {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDynamodbTableReplica{}
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableReplica",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -1690,12 +2162,12 @@ func NewDataAwsDynamodbTableReplica(terraformResource cdktf.ITerraformResource, 
 }
 
 // Experimental.
-func NewDataAwsDynamodbTableReplica_Override(d DataAwsDynamodbTableReplica, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDynamodbTableReplica_Override(d DataAwsDynamodbTableReplica, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableReplica",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -1716,7 +2188,7 @@ func (j *jsiiProxy_DataAwsDynamodbTableReplica) SetTerraformAttribute(val *strin
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableReplica) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDynamodbTableReplica) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1724,13 +2196,49 @@ func (j *jsiiProxy_DataAwsDynamodbTableReplica) SetTerraformResource(val cdktf.I
 	)
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableReplica) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1767,12 +2275,54 @@ func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetNumberAttribute(terraformAttr
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableReplica) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1799,18 +2349,25 @@ type DataAwsDynamodbTableServerSideEncryption struct {
 
 type DataAwsDynamodbTableServerSideEncryptionOutputReference interface {
 	cdktf.ComplexObject
+	Enabled() cdktf.IResolvable
 	InternalValue() *DataAwsDynamodbTableServerSideEncryption
 	SetInternalValue(val *DataAwsDynamodbTableServerSideEncryption)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
+	KmsKeyArn() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -1818,6 +2375,16 @@ type DataAwsDynamodbTableServerSideEncryptionOutputReference interface {
 // The jsii proxy struct for DataAwsDynamodbTableServerSideEncryptionOutputReference
 type jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) InternalValue() *DataAwsDynamodbTableServerSideEncryption {
@@ -1840,6 +2407,16 @@ func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) IsSi
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) KmsKeyArn() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"kmsKeyArn",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1850,8 +2427,8 @@ func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) Terr
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1860,7 +2437,7 @@ func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) Terr
 	return returns
 }
 
-func NewDataAwsDynamodbTableServerSideEncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DataAwsDynamodbTableServerSideEncryptionOutputReference {
+func NewDataAwsDynamodbTableServerSideEncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DataAwsDynamodbTableServerSideEncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference{}
@@ -1874,7 +2451,7 @@ func NewDataAwsDynamodbTableServerSideEncryptionOutputReference(terraformResourc
 	return &j
 }
 
-func NewDataAwsDynamodbTableServerSideEncryptionOutputReference_Override(d DataAwsDynamodbTableServerSideEncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDataAwsDynamodbTableServerSideEncryptionOutputReference_Override(d DataAwsDynamodbTableServerSideEncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1908,7 +2485,7 @@ func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) SetT
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1917,12 +2494,40 @@ func (j *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) SetT
 }
 
 // Experimental.
-func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1959,12 +2564,54 @@ func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetN
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableServerSideEncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2005,15 +2652,22 @@ type DataAwsDynamodbTableTtl interface {
 	AttributeName() *string
 	ComplexComputedListIndex() *string
 	SetComplexComputedListIndex(val *string)
-	Enabled() interface{}
+	Enabled() cdktf.IResolvable
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2042,8 +2696,8 @@ func (j *jsiiProxy_DataAwsDynamodbTableTtl) ComplexComputedListIndex() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableTtl) Enabled() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsDynamodbTableTtl) Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"enabled",
@@ -2062,8 +2716,8 @@ func (j *jsiiProxy_DataAwsDynamodbTableTtl) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableTtl) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DataAwsDynamodbTableTtl) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2072,15 +2726,25 @@ func (j *jsiiProxy_DataAwsDynamodbTableTtl) TerraformResource() cdktf.ITerraform
 	return returns
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableTtl) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewDataAwsDynamodbTableTtl(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) DataAwsDynamodbTableTtl {
+func NewDataAwsDynamodbTableTtl(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) DataAwsDynamodbTableTtl {
 	_init_.Initialize()
 
 	j := jsiiProxy_DataAwsDynamodbTableTtl{}
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableTtl",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2088,12 +2752,12 @@ func NewDataAwsDynamodbTableTtl(terraformResource cdktf.ITerraformResource, terr
 }
 
 // Experimental.
-func NewDataAwsDynamodbTableTtl_Override(d DataAwsDynamodbTableTtl, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewDataAwsDynamodbTableTtl_Override(d DataAwsDynamodbTableTtl, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.dynamodb.DataAwsDynamodbTableTtl",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		d,
 	)
 }
@@ -2114,7 +2778,7 @@ func (j *jsiiProxy_DataAwsDynamodbTableTtl) SetTerraformAttribute(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsDynamodbTableTtl) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DataAwsDynamodbTableTtl) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2122,13 +2786,49 @@ func (j *jsiiProxy_DataAwsDynamodbTableTtl) SetTerraformResource(val cdktf.ITerr
 	)
 }
 
+func (j *jsiiProxy_DataAwsDynamodbTableTtl) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2165,12 +2865,54 @@ func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetNumberAttribute(terraformAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsDynamodbTableTtl) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2192,14 +2934,14 @@ func (d *jsiiProxy_DataAwsDynamodbTableTtl) InterpolationForAttribute(property *
 	return returns
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html aws_dynamodb_global_table}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table aws_dynamodb_global_table}.
 type DynamodbGlobalTable interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -2214,19 +2956,24 @@ type DynamodbGlobalTable interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Replica() *[]*DynamodbGlobalTableReplica
-	SetReplica(val *[]*DynamodbGlobalTableReplica)
-	ReplicaInput() *[]*DynamodbGlobalTableReplica
+	Replica() interface{}
+	SetReplica(val interface{})
+	ReplicaInput() interface{}
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	Timeouts() DynamodbGlobalTableTimeoutsOutputReference
 	TimeoutsInput() *DynamodbGlobalTableTimeouts
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DynamodbGlobalTableTimeouts)
@@ -2273,8 +3020,8 @@ func (j *jsiiProxy_DynamodbGlobalTable) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbGlobalTable) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbGlobalTable) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2383,8 +3130,8 @@ func (j *jsiiProxy_DynamodbGlobalTable) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbGlobalTable) Replica() *[]*DynamodbGlobalTableReplica {
-	var returns *[]*DynamodbGlobalTableReplica
+func (j *jsiiProxy_DynamodbGlobalTable) Replica() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"replica",
@@ -2393,8 +3140,8 @@ func (j *jsiiProxy_DynamodbGlobalTable) Replica() *[]*DynamodbGlobalTableReplica
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbGlobalTable) ReplicaInput() *[]*DynamodbGlobalTableReplica {
-	var returns *[]*DynamodbGlobalTableReplica
+func (j *jsiiProxy_DynamodbGlobalTable) ReplicaInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"replicaInput",
@@ -2453,7 +3200,7 @@ func (j *jsiiProxy_DynamodbGlobalTable) TimeoutsInput() *DynamodbGlobalTableTime
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html aws_dynamodb_global_table} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table aws_dynamodb_global_table} Resource.
 func NewDynamodbGlobalTable(scope constructs.Construct, id *string, config *DynamodbGlobalTableConfig) DynamodbGlobalTable {
 	_init_.Initialize()
 
@@ -2468,7 +3215,7 @@ func NewDynamodbGlobalTable(scope constructs.Construct, id *string, config *Dyna
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html aws_dynamodb_global_table} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table aws_dynamodb_global_table} Resource.
 func NewDynamodbGlobalTable_Override(d DynamodbGlobalTable, scope constructs.Construct, id *string, config *DynamodbGlobalTableConfig) {
 	_init_.Initialize()
 
@@ -2479,7 +3226,7 @@ func NewDynamodbGlobalTable_Override(d DynamodbGlobalTable, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_DynamodbGlobalTable) SetCount(val interface{}) {
+func (j *jsiiProxy_DynamodbGlobalTable) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2519,7 +3266,7 @@ func (j *jsiiProxy_DynamodbGlobalTable) SetProvider(val cdktf.TerraformProvider)
 	)
 }
 
-func (j *jsiiProxy_DynamodbGlobalTable) SetReplica(val *[]*DynamodbGlobalTableReplica) {
+func (j *jsiiProxy_DynamodbGlobalTable) SetReplica(val interface{}) {
 	_jsii_.Set(
 		j,
 		"replica",
@@ -2567,12 +3314,40 @@ func (d *jsiiProxy_DynamodbGlobalTable) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbGlobalTable) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbGlobalTable) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbGlobalTable) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2609,12 +3384,54 @@ func (d *jsiiProxy_DynamodbGlobalTable) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbGlobalTable) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbGlobalTable) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbGlobalTable) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbGlobalTable) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2731,37 +3548,37 @@ func (d *jsiiProxy_DynamodbGlobalTable) ToTerraform() interface{} {
 // AWS DynamoDB.
 type DynamodbGlobalTableConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html#name DynamodbGlobalTable#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table#name DynamodbGlobalTable#name}.
+	Name *string `json:"name" yaml:"name"`
 	// replica block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html#replica DynamodbGlobalTable#replica}
-	Replica *[]*DynamodbGlobalTableReplica `json:"replica"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table#replica DynamodbGlobalTable#replica}
+	Replica interface{} `json:"replica" yaml:"replica"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html#timeouts DynamodbGlobalTable#timeouts}
-	Timeouts *DynamodbGlobalTableTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table#timeouts DynamodbGlobalTable#timeouts}
+	Timeouts *DynamodbGlobalTableTimeouts `json:"timeouts" yaml:"timeouts"`
 }
 
 type DynamodbGlobalTableReplica struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html#region_name DynamodbGlobalTable#region_name}.
-	RegionName *string `json:"regionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table#region_name DynamodbGlobalTable#region_name}.
+	RegionName *string `json:"regionName" yaml:"regionName"`
 }
 
 type DynamodbGlobalTableTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html#create DynamodbGlobalTable#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html#delete DynamodbGlobalTable#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table.html#update DynamodbGlobalTable#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table#create DynamodbGlobalTable#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table#delete DynamodbGlobalTable#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_global_table#update DynamodbGlobalTable#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DynamodbGlobalTableTimeoutsOutputReference interface {
@@ -2778,15 +3595,20 @@ type DynamodbGlobalTableTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -2869,8 +3691,8 @@ func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) TerraformAttribut
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2899,7 +3721,7 @@ func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) UpdateInput() *st
 	return returns
 }
 
-func NewDynamodbGlobalTableTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DynamodbGlobalTableTimeoutsOutputReference {
+func NewDynamodbGlobalTableTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DynamodbGlobalTableTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference{}
@@ -2913,7 +3735,7 @@ func NewDynamodbGlobalTableTimeoutsOutputReference(terraformResource cdktf.ITerr
 	return &j
 }
 
-func NewDynamodbGlobalTableTimeoutsOutputReference_Override(d DynamodbGlobalTableTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDynamodbGlobalTableTimeoutsOutputReference_Override(d DynamodbGlobalTableTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2963,7 +3785,7 @@ func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) SetTerraformAttri
 	)
 }
 
-func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2980,12 +3802,40 @@ func (j *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) SetUpdate(val *st
 }
 
 // Experimental.
-func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3022,12 +3872,54 @@ func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetNumberAttribut
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3087,13 +3979,13 @@ func (d *jsiiProxy_DynamodbGlobalTableTimeoutsOutputReference) ResetUpdate() {
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination.html aws_dynamodb_kinesis_streaming_destination}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination aws_dynamodb_kinesis_streaming_destination}.
 type DynamodbKinesisStreamingDestination interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -3115,10 +4007,15 @@ type DynamodbKinesisStreamingDestination interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -3153,8 +4050,8 @@ func (j *jsiiProxy_DynamodbKinesisStreamingDestination) ConstructNodeMetadata() 
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbKinesisStreamingDestination) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbKinesisStreamingDestination) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3313,7 +4210,7 @@ func (j *jsiiProxy_DynamodbKinesisStreamingDestination) TerraformResourceType() 
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination.html aws_dynamodb_kinesis_streaming_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination aws_dynamodb_kinesis_streaming_destination} Resource.
 func NewDynamodbKinesisStreamingDestination(scope constructs.Construct, id *string, config *DynamodbKinesisStreamingDestinationConfig) DynamodbKinesisStreamingDestination {
 	_init_.Initialize()
 
@@ -3328,7 +4225,7 @@ func NewDynamodbKinesisStreamingDestination(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination.html aws_dynamodb_kinesis_streaming_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination aws_dynamodb_kinesis_streaming_destination} Resource.
 func NewDynamodbKinesisStreamingDestination_Override(d DynamodbKinesisStreamingDestination, scope constructs.Construct, id *string, config *DynamodbKinesisStreamingDestinationConfig) {
 	_init_.Initialize()
 
@@ -3339,7 +4236,7 @@ func NewDynamodbKinesisStreamingDestination_Override(d DynamodbKinesisStreamingD
 	)
 }
 
-func (j *jsiiProxy_DynamodbKinesisStreamingDestination) SetCount(val interface{}) {
+func (j *jsiiProxy_DynamodbKinesisStreamingDestination) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -3427,12 +4324,40 @@ func (d *jsiiProxy_DynamodbKinesisStreamingDestination) AddOverride(path *string
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3469,12 +4394,54 @@ func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetNumberAttribute(terra
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbKinesisStreamingDestination) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3575,49 +4542,49 @@ func (d *jsiiProxy_DynamodbKinesisStreamingDestination) ToTerraform() interface{
 // AWS DynamoDB.
 type DynamodbKinesisStreamingDestinationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination.html#stream_arn DynamodbKinesisStreamingDestination#stream_arn}.
-	StreamArn *string `json:"streamArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination.html#table_name DynamodbKinesisStreamingDestination#table_name}.
-	TableName *string `json:"tableName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination#stream_arn DynamodbKinesisStreamingDestination#stream_arn}.
+	StreamArn *string `json:"streamArn" yaml:"streamArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_kinesis_streaming_destination#table_name DynamodbKinesisStreamingDestination#table_name}.
+	TableName *string `json:"tableName" yaml:"tableName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html aws_dynamodb_table}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table aws_dynamodb_table}.
 type DynamodbTable interface {
 	cdktf.TerraformResource
 	Arn() *string
-	Attribute() *[]*DynamodbTableAttribute
-	SetAttribute(val *[]*DynamodbTableAttribute)
-	AttributeInput() *[]*DynamodbTableAttribute
+	Attribute() interface{}
+	SetAttribute(val interface{})
+	AttributeInput() interface{}
 	BillingMode() *string
 	SetBillingMode(val *string)
 	BillingModeInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
 	FriendlyUniqueId() *string
-	GlobalSecondaryIndex() *[]*DynamodbTableGlobalSecondaryIndex
-	SetGlobalSecondaryIndex(val *[]*DynamodbTableGlobalSecondaryIndex)
-	GlobalSecondaryIndexInput() *[]*DynamodbTableGlobalSecondaryIndex
+	GlobalSecondaryIndex() interface{}
+	SetGlobalSecondaryIndex(val interface{})
+	GlobalSecondaryIndexInput() interface{}
 	HashKey() *string
 	SetHashKey(val *string)
 	HashKeyInput() *string
 	Id() *string
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
-	LocalSecondaryIndex() *[]*DynamodbTableLocalSecondaryIndex
-	SetLocalSecondaryIndex(val *[]*DynamodbTableLocalSecondaryIndex)
-	LocalSecondaryIndexInput() *[]*DynamodbTableLocalSecondaryIndex
+	LocalSecondaryIndex() interface{}
+	SetLocalSecondaryIndex(val interface{})
+	LocalSecondaryIndexInput() interface{}
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -3633,9 +4600,18 @@ type DynamodbTable interface {
 	ReadCapacity() *float64
 	SetReadCapacity(val *float64)
 	ReadCapacityInput() *float64
-	Replica() *[]*DynamodbTableReplica
-	SetReplica(val *[]*DynamodbTableReplica)
-	ReplicaInput() *[]*DynamodbTableReplica
+	Replica() interface{}
+	SetReplica(val interface{})
+	ReplicaInput() interface{}
+	RestoreDateTime() *string
+	SetRestoreDateTime(val *string)
+	RestoreDateTimeInput() *string
+	RestoreSourceName() *string
+	SetRestoreSourceName(val *string)
+	RestoreSourceNameInput() *string
+	RestoreToLatestTime() interface{}
+	SetRestoreToLatestTime(val interface{})
+	RestoreToLatestTimeInput() interface{}
 	ServerSideEncryption() DynamodbTableServerSideEncryptionOutputReference
 	ServerSideEncryptionInput() *DynamodbTableServerSideEncryption
 	StreamArn() *string
@@ -3649,12 +4625,12 @@ type DynamodbTable interface {
 	TableClass() *string
 	SetTableClass(val *string)
 	TableClassInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -3666,24 +4642,34 @@ type DynamodbTable interface {
 	SetWriteCapacity(val *float64)
 	WriteCapacityInput() *float64
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutPointInTimeRecovery(value *DynamodbTablePointInTimeRecovery)
 	PutServerSideEncryption(value *DynamodbTableServerSideEncryption)
 	PutTimeouts(value *DynamodbTableTimeouts)
 	PutTtl(value *DynamodbTableTtl)
+	ResetAttribute()
 	ResetBillingMode()
 	ResetGlobalSecondaryIndex()
+	ResetHashKey()
 	ResetLocalSecondaryIndex()
 	ResetOverrideLogicalId()
 	ResetPointInTimeRecovery()
 	ResetRangeKey()
 	ResetReadCapacity()
 	ResetReplica()
+	ResetRestoreDateTime()
+	ResetRestoreSourceName()
+	ResetRestoreToLatestTime()
 	ResetServerSideEncryption()
 	ResetStreamEnabled()
 	ResetStreamViewType()
@@ -3714,8 +4700,8 @@ func (j *jsiiProxy_DynamodbTable) Arn() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) Attribute() *[]*DynamodbTableAttribute {
-	var returns *[]*DynamodbTableAttribute
+func (j *jsiiProxy_DynamodbTable) Attribute() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attribute",
@@ -3724,8 +4710,8 @@ func (j *jsiiProxy_DynamodbTable) Attribute() *[]*DynamodbTableAttribute {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) AttributeInput() *[]*DynamodbTableAttribute {
-	var returns *[]*DynamodbTableAttribute
+func (j *jsiiProxy_DynamodbTable) AttributeInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attributeInput",
@@ -3774,8 +4760,8 @@ func (j *jsiiProxy_DynamodbTable) ConstructNodeMetadata() *map[string]interface{
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbTable) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -3814,8 +4800,8 @@ func (j *jsiiProxy_DynamodbTable) FriendlyUniqueId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) GlobalSecondaryIndex() *[]*DynamodbTableGlobalSecondaryIndex {
-	var returns *[]*DynamodbTableGlobalSecondaryIndex
+func (j *jsiiProxy_DynamodbTable) GlobalSecondaryIndex() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"globalSecondaryIndex",
@@ -3824,8 +4810,8 @@ func (j *jsiiProxy_DynamodbTable) GlobalSecondaryIndex() *[]*DynamodbTableGlobal
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) GlobalSecondaryIndexInput() *[]*DynamodbTableGlobalSecondaryIndex {
-	var returns *[]*DynamodbTableGlobalSecondaryIndex
+func (j *jsiiProxy_DynamodbTable) GlobalSecondaryIndexInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"globalSecondaryIndexInput",
@@ -3874,8 +4860,8 @@ func (j *jsiiProxy_DynamodbTable) Lifecycle() *cdktf.TerraformResourceLifecycle 
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) LocalSecondaryIndex() *[]*DynamodbTableLocalSecondaryIndex {
-	var returns *[]*DynamodbTableLocalSecondaryIndex
+func (j *jsiiProxy_DynamodbTable) LocalSecondaryIndex() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"localSecondaryIndex",
@@ -3884,8 +4870,8 @@ func (j *jsiiProxy_DynamodbTable) LocalSecondaryIndex() *[]*DynamodbTableLocalSe
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) LocalSecondaryIndexInput() *[]*DynamodbTableLocalSecondaryIndex {
-	var returns *[]*DynamodbTableLocalSecondaryIndex
+func (j *jsiiProxy_DynamodbTable) LocalSecondaryIndexInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"localSecondaryIndexInput",
@@ -4004,8 +4990,8 @@ func (j *jsiiProxy_DynamodbTable) ReadCapacityInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) Replica() *[]*DynamodbTableReplica {
-	var returns *[]*DynamodbTableReplica
+func (j *jsiiProxy_DynamodbTable) Replica() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"replica",
@@ -4014,11 +5000,71 @@ func (j *jsiiProxy_DynamodbTable) Replica() *[]*DynamodbTableReplica {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) ReplicaInput() *[]*DynamodbTableReplica {
-	var returns *[]*DynamodbTableReplica
+func (j *jsiiProxy_DynamodbTable) ReplicaInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"replicaInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTable) RestoreDateTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restoreDateTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTable) RestoreDateTimeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restoreDateTimeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTable) RestoreSourceName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restoreSourceName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTable) RestoreSourceNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"restoreSourceNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTable) RestoreToLatestTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"restoreToLatestTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DynamodbTable) RestoreToLatestTimeInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"restoreToLatestTimeInput",
 		&returns,
 	)
 	return returns
@@ -4124,8 +5170,8 @@ func (j *jsiiProxy_DynamodbTable) TableClassInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbTable) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -4134,8 +5180,8 @@ func (j *jsiiProxy_DynamodbTable) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbTable) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -4144,8 +5190,8 @@ func (j *jsiiProxy_DynamodbTable) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbTable) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -4154,8 +5200,8 @@ func (j *jsiiProxy_DynamodbTable) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTable) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbTable) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -4254,7 +5300,7 @@ func (j *jsiiProxy_DynamodbTable) WriteCapacityInput() *float64 {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html aws_dynamodb_table} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table aws_dynamodb_table} Resource.
 func NewDynamodbTable(scope constructs.Construct, id *string, config *DynamodbTableConfig) DynamodbTable {
 	_init_.Initialize()
 
@@ -4269,7 +5315,7 @@ func NewDynamodbTable(scope constructs.Construct, id *string, config *DynamodbTa
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html aws_dynamodb_table} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table aws_dynamodb_table} Resource.
 func NewDynamodbTable_Override(d DynamodbTable, scope constructs.Construct, id *string, config *DynamodbTableConfig) {
 	_init_.Initialize()
 
@@ -4280,7 +5326,7 @@ func NewDynamodbTable_Override(d DynamodbTable, scope constructs.Construct, id *
 	)
 }
 
-func (j *jsiiProxy_DynamodbTable) SetAttribute(val *[]*DynamodbTableAttribute) {
+func (j *jsiiProxy_DynamodbTable) SetAttribute(val interface{}) {
 	_jsii_.Set(
 		j,
 		"attribute",
@@ -4296,7 +5342,7 @@ func (j *jsiiProxy_DynamodbTable) SetBillingMode(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DynamodbTable) SetCount(val interface{}) {
+func (j *jsiiProxy_DynamodbTable) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -4312,7 +5358,7 @@ func (j *jsiiProxy_DynamodbTable) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DynamodbTable) SetGlobalSecondaryIndex(val *[]*DynamodbTableGlobalSecondaryIndex) {
+func (j *jsiiProxy_DynamodbTable) SetGlobalSecondaryIndex(val interface{}) {
 	_jsii_.Set(
 		j,
 		"globalSecondaryIndex",
@@ -4336,7 +5382,7 @@ func (j *jsiiProxy_DynamodbTable) SetLifecycle(val *cdktf.TerraformResourceLifec
 	)
 }
 
-func (j *jsiiProxy_DynamodbTable) SetLocalSecondaryIndex(val *[]*DynamodbTableLocalSecondaryIndex) {
+func (j *jsiiProxy_DynamodbTable) SetLocalSecondaryIndex(val interface{}) {
 	_jsii_.Set(
 		j,
 		"localSecondaryIndex",
@@ -4376,10 +5422,34 @@ func (j *jsiiProxy_DynamodbTable) SetReadCapacity(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_DynamodbTable) SetReplica(val *[]*DynamodbTableReplica) {
+func (j *jsiiProxy_DynamodbTable) SetReplica(val interface{}) {
 	_jsii_.Set(
 		j,
 		"replica",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbTable) SetRestoreDateTime(val *string) {
+	_jsii_.Set(
+		j,
+		"restoreDateTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbTable) SetRestoreSourceName(val *string) {
+	_jsii_.Set(
+		j,
+		"restoreSourceName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DynamodbTable) SetRestoreToLatestTime(val interface{}) {
+	_jsii_.Set(
+		j,
+		"restoreToLatestTime",
 		val,
 	)
 }
@@ -4408,7 +5478,7 @@ func (j *jsiiProxy_DynamodbTable) SetTableClass(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DynamodbTable) SetTags(val interface{}) {
+func (j *jsiiProxy_DynamodbTable) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -4416,7 +5486,7 @@ func (j *jsiiProxy_DynamodbTable) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_DynamodbTable) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_DynamodbTable) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -4472,12 +5542,40 @@ func (d *jsiiProxy_DynamodbTable) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTable) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTable) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTable) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4514,12 +5612,54 @@ func (d *jsiiProxy_DynamodbTable) GetNumberAttribute(terraformAttribute *string)
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTable) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTable) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTable) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTable) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4583,6 +5723,14 @@ func (d *jsiiProxy_DynamodbTable) PutTtl(value *DynamodbTableTtl) {
 	)
 }
 
+func (d *jsiiProxy_DynamodbTable) ResetAttribute() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetAttribute",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DynamodbTable) ResetBillingMode() {
 	_jsii_.InvokeVoid(
 		d,
@@ -4595,6 +5743,14 @@ func (d *jsiiProxy_DynamodbTable) ResetGlobalSecondaryIndex() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetGlobalSecondaryIndex",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DynamodbTable) ResetHashKey() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetHashKey",
 		nil, // no parameters
 	)
 }
@@ -4645,6 +5801,30 @@ func (d *jsiiProxy_DynamodbTable) ResetReplica() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetReplica",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DynamodbTable) ResetRestoreDateTime() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetRestoreDateTime",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DynamodbTable) ResetRestoreSourceName() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetRestoreSourceName",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DynamodbTable) ResetRestoreToLatestTime() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetRestoreToLatestTime",
 		nil, // no parameters
 	)
 }
@@ -4778,102 +5958,108 @@ func (d *jsiiProxy_DynamodbTable) ToTerraform() interface{} {
 }
 
 type DynamodbTableAttribute struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#name DynamodbTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#type DynamodbTable#type}.
-	Type *string `json:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#name DynamodbTable#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#type DynamodbTable#type}.
+	Type *string `json:"type" yaml:"type"`
 }
 
 // AWS DynamoDB.
 type DynamodbTableConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#name DynamodbTable#name}.
+	Name *string `json:"name" yaml:"name"`
 	// attribute block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#attribute DynamodbTable#attribute}
-	Attribute *[]*DynamodbTableAttribute `json:"attribute"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#hash_key DynamodbTable#hash_key}.
-	HashKey *string `json:"hashKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#name DynamodbTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#billing_mode DynamodbTable#billing_mode}.
-	BillingMode *string `json:"billingMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#attribute DynamodbTable#attribute}
+	Attribute interface{} `json:"attribute" yaml:"attribute"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#billing_mode DynamodbTable#billing_mode}.
+	BillingMode *string `json:"billingMode" yaml:"billingMode"`
 	// global_secondary_index block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#global_secondary_index DynamodbTable#global_secondary_index}
-	GlobalSecondaryIndex *[]*DynamodbTableGlobalSecondaryIndex `json:"globalSecondaryIndex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#global_secondary_index DynamodbTable#global_secondary_index}
+	GlobalSecondaryIndex interface{} `json:"globalSecondaryIndex" yaml:"globalSecondaryIndex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#hash_key DynamodbTable#hash_key}.
+	HashKey *string `json:"hashKey" yaml:"hashKey"`
 	// local_secondary_index block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#local_secondary_index DynamodbTable#local_secondary_index}
-	LocalSecondaryIndex *[]*DynamodbTableLocalSecondaryIndex `json:"localSecondaryIndex"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#local_secondary_index DynamodbTable#local_secondary_index}
+	LocalSecondaryIndex interface{} `json:"localSecondaryIndex" yaml:"localSecondaryIndex"`
 	// point_in_time_recovery block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#point_in_time_recovery DynamodbTable#point_in_time_recovery}
-	PointInTimeRecovery *DynamodbTablePointInTimeRecovery `json:"pointInTimeRecovery"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#range_key DynamodbTable#range_key}.
-	RangeKey *string `json:"rangeKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#read_capacity DynamodbTable#read_capacity}.
-	ReadCapacity *float64 `json:"readCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#point_in_time_recovery DynamodbTable#point_in_time_recovery}
+	PointInTimeRecovery *DynamodbTablePointInTimeRecovery `json:"pointInTimeRecovery" yaml:"pointInTimeRecovery"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#range_key DynamodbTable#range_key}.
+	RangeKey *string `json:"rangeKey" yaml:"rangeKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#read_capacity DynamodbTable#read_capacity}.
+	ReadCapacity *float64 `json:"readCapacity" yaml:"readCapacity"`
 	// replica block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#replica DynamodbTable#replica}
-	Replica *[]*DynamodbTableReplica `json:"replica"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#replica DynamodbTable#replica}
+	Replica interface{} `json:"replica" yaml:"replica"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#restore_date_time DynamodbTable#restore_date_time}.
+	RestoreDateTime *string `json:"restoreDateTime" yaml:"restoreDateTime"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#restore_source_name DynamodbTable#restore_source_name}.
+	RestoreSourceName *string `json:"restoreSourceName" yaml:"restoreSourceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#restore_to_latest_time DynamodbTable#restore_to_latest_time}.
+	RestoreToLatestTime interface{} `json:"restoreToLatestTime" yaml:"restoreToLatestTime"`
 	// server_side_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#server_side_encryption DynamodbTable#server_side_encryption}
-	ServerSideEncryption *DynamodbTableServerSideEncryption `json:"serverSideEncryption"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#stream_enabled DynamodbTable#stream_enabled}.
-	StreamEnabled interface{} `json:"streamEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#stream_view_type DynamodbTable#stream_view_type}.
-	StreamViewType *string `json:"streamViewType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#table_class DynamodbTable#table_class}.
-	TableClass *string `json:"tableClass"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#tags DynamodbTable#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#tags_all DynamodbTable#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#server_side_encryption DynamodbTable#server_side_encryption}
+	ServerSideEncryption *DynamodbTableServerSideEncryption `json:"serverSideEncryption" yaml:"serverSideEncryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#stream_enabled DynamodbTable#stream_enabled}.
+	StreamEnabled interface{} `json:"streamEnabled" yaml:"streamEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#stream_view_type DynamodbTable#stream_view_type}.
+	StreamViewType *string `json:"streamViewType" yaml:"streamViewType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#table_class DynamodbTable#table_class}.
+	TableClass *string `json:"tableClass" yaml:"tableClass"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#tags DynamodbTable#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#tags_all DynamodbTable#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// timeouts block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#timeouts DynamodbTable#timeouts}
-	Timeouts *DynamodbTableTimeouts `json:"timeouts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#timeouts DynamodbTable#timeouts}
+	Timeouts *DynamodbTableTimeouts `json:"timeouts" yaml:"timeouts"`
 	// ttl block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#ttl DynamodbTable#ttl}
-	Ttl *DynamodbTableTtl `json:"ttl"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#write_capacity DynamodbTable#write_capacity}.
-	WriteCapacity *float64 `json:"writeCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#ttl DynamodbTable#ttl}
+	Ttl *DynamodbTableTtl `json:"ttl" yaml:"ttl"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#write_capacity DynamodbTable#write_capacity}.
+	WriteCapacity *float64 `json:"writeCapacity" yaml:"writeCapacity"`
 }
 
 type DynamodbTableGlobalSecondaryIndex struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#hash_key DynamodbTable#hash_key}.
-	HashKey *string `json:"hashKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#name DynamodbTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#projection_type DynamodbTable#projection_type}.
-	ProjectionType *string `json:"projectionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#non_key_attributes DynamodbTable#non_key_attributes}.
-	NonKeyAttributes *[]*string `json:"nonKeyAttributes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#range_key DynamodbTable#range_key}.
-	RangeKey *string `json:"rangeKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#read_capacity DynamodbTable#read_capacity}.
-	ReadCapacity *float64 `json:"readCapacity"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#write_capacity DynamodbTable#write_capacity}.
-	WriteCapacity *float64 `json:"writeCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#hash_key DynamodbTable#hash_key}.
+	HashKey *string `json:"hashKey" yaml:"hashKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#name DynamodbTable#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#projection_type DynamodbTable#projection_type}.
+	ProjectionType *string `json:"projectionType" yaml:"projectionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#non_key_attributes DynamodbTable#non_key_attributes}.
+	NonKeyAttributes *[]*string `json:"nonKeyAttributes" yaml:"nonKeyAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#range_key DynamodbTable#range_key}.
+	RangeKey *string `json:"rangeKey" yaml:"rangeKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#read_capacity DynamodbTable#read_capacity}.
+	ReadCapacity *float64 `json:"readCapacity" yaml:"readCapacity"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#write_capacity DynamodbTable#write_capacity}.
+	WriteCapacity *float64 `json:"writeCapacity" yaml:"writeCapacity"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item.html aws_dynamodb_table_item}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item aws_dynamodb_table_item}.
 type DynamodbTableItem interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -4901,10 +6087,15 @@ type DynamodbTableItem interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -4940,8 +6131,8 @@ func (j *jsiiProxy_DynamodbTableItem) ConstructNodeMetadata() *map[string]interf
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTableItem) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbTableItem) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5140,7 +6331,7 @@ func (j *jsiiProxy_DynamodbTableItem) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item.html aws_dynamodb_table_item} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item aws_dynamodb_table_item} Resource.
 func NewDynamodbTableItem(scope constructs.Construct, id *string, config *DynamodbTableItemConfig) DynamodbTableItem {
 	_init_.Initialize()
 
@@ -5155,7 +6346,7 @@ func NewDynamodbTableItem(scope constructs.Construct, id *string, config *Dynamo
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item.html aws_dynamodb_table_item} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item aws_dynamodb_table_item} Resource.
 func NewDynamodbTableItem_Override(d DynamodbTableItem, scope constructs.Construct, id *string, config *DynamodbTableItemConfig) {
 	_init_.Initialize()
 
@@ -5166,7 +6357,7 @@ func NewDynamodbTableItem_Override(d DynamodbTableItem, scope constructs.Constru
 	)
 }
 
-func (j *jsiiProxy_DynamodbTableItem) SetCount(val interface{}) {
+func (j *jsiiProxy_DynamodbTableItem) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5270,12 +6461,40 @@ func (d *jsiiProxy_DynamodbTableItem) AddOverride(path *string, value interface{
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTableItem) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTableItem) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableItem) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5312,12 +6531,54 @@ func (d *jsiiProxy_DynamodbTableItem) GetNumberAttribute(terraformAttribute *str
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTableItem) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableItem) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTableItem) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableItem) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5426,37 +6687,37 @@ func (d *jsiiProxy_DynamodbTableItem) ToTerraform() interface{} {
 // AWS DynamoDB.
 type DynamodbTableItemConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item.html#hash_key DynamodbTableItem#hash_key}.
-	HashKey *string `json:"hashKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item.html#item DynamodbTableItem#item}.
-	Item *string `json:"item"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item.html#table_name DynamodbTableItem#table_name}.
-	TableName *string `json:"tableName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item.html#range_key DynamodbTableItem#range_key}.
-	RangeKey *string `json:"rangeKey"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item#hash_key DynamodbTableItem#hash_key}.
+	HashKey *string `json:"hashKey" yaml:"hashKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item#item DynamodbTableItem#item}.
+	Item *string `json:"item" yaml:"item"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item#table_name DynamodbTableItem#table_name}.
+	TableName *string `json:"tableName" yaml:"tableName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table_item#range_key DynamodbTableItem#range_key}.
+	RangeKey *string `json:"rangeKey" yaml:"rangeKey"`
 }
 
 type DynamodbTableLocalSecondaryIndex struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#name DynamodbTable#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#projection_type DynamodbTable#projection_type}.
-	ProjectionType *string `json:"projectionType"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#range_key DynamodbTable#range_key}.
-	RangeKey *string `json:"rangeKey"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#non_key_attributes DynamodbTable#non_key_attributes}.
-	NonKeyAttributes *[]*string `json:"nonKeyAttributes"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#name DynamodbTable#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#projection_type DynamodbTable#projection_type}.
+	ProjectionType *string `json:"projectionType" yaml:"projectionType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#range_key DynamodbTable#range_key}.
+	RangeKey *string `json:"rangeKey" yaml:"rangeKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#non_key_attributes DynamodbTable#non_key_attributes}.
+	NonKeyAttributes *[]*string `json:"nonKeyAttributes" yaml:"nonKeyAttributes"`
 }
 
 type DynamodbTablePointInTimeRecovery struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#enabled DynamodbTable#enabled}.
-	Enabled interface{} `json:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#enabled DynamodbTable#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type DynamodbTablePointInTimeRecoveryOutputReference interface {
@@ -5470,12 +6731,17 @@ type DynamodbTablePointInTimeRecoveryOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5535,8 +6801,8 @@ func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5545,7 +6811,7 @@ func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) TerraformRes
 	return returns
 }
 
-func NewDynamodbTablePointInTimeRecoveryOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DynamodbTablePointInTimeRecoveryOutputReference {
+func NewDynamodbTablePointInTimeRecoveryOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DynamodbTablePointInTimeRecoveryOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference{}
@@ -5559,7 +6825,7 @@ func NewDynamodbTablePointInTimeRecoveryOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewDynamodbTablePointInTimeRecoveryOutputReference_Override(d DynamodbTablePointInTimeRecoveryOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDynamodbTablePointInTimeRecoveryOutputReference_Override(d DynamodbTablePointInTimeRecoveryOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5601,7 +6867,7 @@ func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5610,12 +6876,40 @@ func (j *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) SetTerraform
 }
 
 // Experimental.
-func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5652,12 +6946,54 @@ func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5694,17 +7030,17 @@ func (d *jsiiProxy_DynamodbTablePointInTimeRecoveryOutputReference) Interpolatio
 }
 
 type DynamodbTableReplica struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#region_name DynamodbTable#region_name}.
-	RegionName *string `json:"regionName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#kms_key_arn DynamodbTable#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#region_name DynamodbTable#region_name}.
+	RegionName *string `json:"regionName" yaml:"regionName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#kms_key_arn DynamodbTable#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 }
 
 type DynamodbTableServerSideEncryption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#enabled DynamodbTable#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#kms_key_arn DynamodbTable#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#enabled DynamodbTable#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#kms_key_arn DynamodbTable#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 }
 
 type DynamodbTableServerSideEncryptionOutputReference interface {
@@ -5721,12 +7057,17 @@ type DynamodbTableServerSideEncryptionOutputReference interface {
 	KmsKeyArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetKmsKeyArn()
@@ -5807,8 +7148,8 @@ func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) TerraformAt
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5817,7 +7158,7 @@ func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) TerraformRe
 	return returns
 }
 
-func NewDynamodbTableServerSideEncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DynamodbTableServerSideEncryptionOutputReference {
+func NewDynamodbTableServerSideEncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DynamodbTableServerSideEncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DynamodbTableServerSideEncryptionOutputReference{}
@@ -5831,7 +7172,7 @@ func NewDynamodbTableServerSideEncryptionOutputReference(terraformResource cdktf
 	return &j
 }
 
-func NewDynamodbTableServerSideEncryptionOutputReference_Override(d DynamodbTableServerSideEncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDynamodbTableServerSideEncryptionOutputReference_Override(d DynamodbTableServerSideEncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5881,7 +7222,7 @@ func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) SetTerrafor
 	)
 }
 
-func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5890,12 +7231,40 @@ func (j *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) SetTerrafor
 }
 
 // Experimental.
-func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5932,12 +7301,54 @@ func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetNumberAt
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5982,12 +7393,12 @@ func (d *jsiiProxy_DynamodbTableServerSideEncryptionOutputReference) ResetKmsKey
 }
 
 type DynamodbTableTimeouts struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#create DynamodbTable#create}.
-	Create *string `json:"create"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#delete DynamodbTable#delete}.
-	Delete *string `json:"delete"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#update DynamodbTable#update}.
-	Update *string `json:"update"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#create DynamodbTable#create}.
+	Create *string `json:"create" yaml:"create"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#delete DynamodbTable#delete}.
+	Delete *string `json:"delete" yaml:"delete"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#update DynamodbTable#update}.
+	Update *string `json:"update" yaml:"update"`
 }
 
 type DynamodbTableTimeoutsOutputReference interface {
@@ -6004,15 +7415,20 @@ type DynamodbTableTimeoutsOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Update() *string
 	SetUpdate(val *string)
 	UpdateInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreate()
@@ -6095,8 +7511,8 @@ func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) TerraformAttribute() *s
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6125,7 +7541,7 @@ func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) UpdateInput() *string {
 	return returns
 }
 
-func NewDynamodbTableTimeoutsOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DynamodbTableTimeoutsOutputReference {
+func NewDynamodbTableTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DynamodbTableTimeoutsOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DynamodbTableTimeoutsOutputReference{}
@@ -6139,7 +7555,7 @@ func NewDynamodbTableTimeoutsOutputReference(terraformResource cdktf.ITerraformR
 	return &j
 }
 
-func NewDynamodbTableTimeoutsOutputReference_Override(d DynamodbTableTimeoutsOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDynamodbTableTimeoutsOutputReference_Override(d DynamodbTableTimeoutsOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6189,7 +7605,7 @@ func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) SetTerraformAttribute(v
 	)
 }
 
-func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6206,12 +7622,40 @@ func (j *jsiiProxy_DynamodbTableTimeoutsOutputReference) SetUpdate(val *string) 
 }
 
 // Experimental.
-func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6248,12 +7692,54 @@ func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetNumberAttribute(terr
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6314,12 +7800,10 @@ func (d *jsiiProxy_DynamodbTableTimeoutsOutputReference) ResetUpdate() {
 }
 
 type DynamodbTableTtl struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#attribute_name DynamodbTable#attribute_name}.
-	AttributeName *string `json:"attributeName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#enabled DynamodbTable#enabled}.
-	Enabled interface{} `json:"enabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#kms_key_arn DynamodbTable#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#attribute_name DynamodbTable#attribute_name}.
+	AttributeName *string `json:"attributeName" yaml:"attributeName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_table#enabled DynamodbTable#enabled}.
+	Enabled interface{} `json:"enabled" yaml:"enabled"`
 }
 
 type DynamodbTableTtlOutputReference interface {
@@ -6334,21 +7818,22 @@ type DynamodbTableTtlOutputReference interface {
 	SetInternalValue(val *DynamodbTableTtl)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	KmsKeyArn() *string
-	SetKmsKeyArn(val *string)
-	KmsKeyArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEnabled()
-	ResetKmsKeyArn()
 }
 
 // The jsii proxy struct for DynamodbTableTtlOutputReference
@@ -6416,26 +7901,6 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) IsSingleItem() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTableTtlOutputReference) KmsKeyArn() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"kmsKeyArn",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_DynamodbTableTtlOutputReference) KmsKeyArnInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"kmsKeyArnInput",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_DynamodbTableTtlOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -6446,8 +7911,8 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) TerraformAttribute() *string
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTableTtlOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_DynamodbTableTtlOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6456,7 +7921,7 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) TerraformResource() cdktf.IT
 	return returns
 }
 
-func NewDynamodbTableTtlOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) DynamodbTableTtlOutputReference {
+func NewDynamodbTableTtlOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) DynamodbTableTtlOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_DynamodbTableTtlOutputReference{}
@@ -6470,7 +7935,7 @@ func NewDynamodbTableTtlOutputReference(terraformResource cdktf.ITerraformResour
 	return &j
 }
 
-func NewDynamodbTableTtlOutputReference_Override(d DynamodbTableTtlOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewDynamodbTableTtlOutputReference_Override(d DynamodbTableTtlOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6512,14 +7977,6 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetIsSingleItem(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetKmsKeyArn(val *string) {
-	_jsii_.Set(
-		j,
-		"kmsKeyArn",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetTerraformAttribute(val *string) {
 	_jsii_.Set(
 		j,
@@ -6528,7 +7985,7 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetTerraformAttribute(val *s
 	)
 }
 
-func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6537,12 +7994,40 @@ func (j *jsiiProxy_DynamodbTableTtlOutputReference) SetTerraformResource(val cdk
 }
 
 // Experimental.
-func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6579,12 +8064,54 @@ func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetNumberAttribute(terraform
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTableTtlOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6628,21 +8155,13 @@ func (d *jsiiProxy_DynamodbTableTtlOutputReference) ResetEnabled() {
 	)
 }
 
-func (d *jsiiProxy_DynamodbTableTtlOutputReference) ResetKmsKeyArn() {
-	_jsii_.InvokeVoid(
-		d,
-		"resetKmsKeyArn",
-		nil, // no parameters
-	)
-}
-
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag.html aws_dynamodb_tag}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag aws_dynamodb_tag}.
 type DynamodbTag interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -6667,10 +8186,15 @@ type DynamodbTag interface {
 	SetValue(val *string)
 	ValueInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -6705,8 +8229,8 @@ func (j *jsiiProxy_DynamodbTag) ConstructNodeMetadata() *map[string]interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_DynamodbTag) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DynamodbTag) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6885,7 +8409,7 @@ func (j *jsiiProxy_DynamodbTag) ValueInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag.html aws_dynamodb_tag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag aws_dynamodb_tag} Resource.
 func NewDynamodbTag(scope constructs.Construct, id *string, config *DynamodbTagConfig) DynamodbTag {
 	_init_.Initialize()
 
@@ -6900,7 +8424,7 @@ func NewDynamodbTag(scope constructs.Construct, id *string, config *DynamodbTagC
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag.html aws_dynamodb_tag} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag aws_dynamodb_tag} Resource.
 func NewDynamodbTag_Override(d DynamodbTag, scope constructs.Construct, id *string, config *DynamodbTagConfig) {
 	_init_.Initialize()
 
@@ -6911,7 +8435,7 @@ func NewDynamodbTag_Override(d DynamodbTag, scope constructs.Construct, id *stri
 	)
 }
 
-func (j *jsiiProxy_DynamodbTag) SetCount(val interface{}) {
+func (j *jsiiProxy_DynamodbTag) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7007,12 +8531,40 @@ func (d *jsiiProxy_DynamodbTag) AddOverride(path *string, value interface{}) {
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTag) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTag) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTag) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7049,12 +8601,54 @@ func (d *jsiiProxy_DynamodbTag) GetNumberAttribute(terraformAttribute *string) *
 }
 
 // Experimental.
+func (d *jsiiProxy_DynamodbTag) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTag) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DynamodbTag) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DynamodbTag) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7155,17 +8749,17 @@ func (d *jsiiProxy_DynamodbTag) ToTerraform() interface{} {
 // AWS DynamoDB.
 type DynamodbTagConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag.html#key DynamodbTag#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag.html#resource_arn DynamodbTag#resource_arn}.
-	ResourceArn *string `json:"resourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag.html#value DynamodbTag#value}.
-	Value *string `json:"value"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag#key DynamodbTag#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag#resource_arn DynamodbTag#resource_arn}.
+	ResourceArn *string `json:"resourceArn" yaml:"resourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/dynamodb_tag#value DynamodbTag#value}.
+	Value *string `json:"value" yaml:"value"`
 }

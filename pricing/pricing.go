@@ -9,18 +9,18 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/pricing/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/pricing_product.html aws_pricing_product}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/pricing_product aws_pricing_product}.
 type DataAwsPricingProduct interface {
 	cdktf.TerraformDataSource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
-	Filters() *[]*DataAwsPricingProductFilters
-	SetFilters(val *[]*DataAwsPricingProductFilters)
-	FiltersInput() *[]*DataAwsPricingProductFilters
+	Filters() interface{}
+	SetFilters(val interface{})
+	FiltersInput() interface{}
 	Fqn() *string
 	FriendlyUniqueId() *string
 	Id() *string
@@ -38,10 +38,15 @@ type DataAwsPricingProduct interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -76,8 +81,8 @@ func (j *jsiiProxy_DataAwsPricingProduct) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsPricingProduct) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsPricingProduct) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -96,8 +101,8 @@ func (j *jsiiProxy_DataAwsPricingProduct) DependsOn() *[]*string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsPricingProduct) Filters() *[]*DataAwsPricingProductFilters {
-	var returns *[]*DataAwsPricingProductFilters
+func (j *jsiiProxy_DataAwsPricingProduct) Filters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filters",
@@ -106,8 +111,8 @@ func (j *jsiiProxy_DataAwsPricingProduct) Filters() *[]*DataAwsPricingProductFil
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsPricingProduct) FiltersInput() *[]*DataAwsPricingProductFilters {
-	var returns *[]*DataAwsPricingProductFilters
+func (j *jsiiProxy_DataAwsPricingProduct) FiltersInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"filtersInput",
@@ -246,7 +251,7 @@ func (j *jsiiProxy_DataAwsPricingProduct) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/pricing_product.html aws_pricing_product} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/pricing_product aws_pricing_product} Data Source.
 func NewDataAwsPricingProduct(scope constructs.Construct, id *string, config *DataAwsPricingProductConfig) DataAwsPricingProduct {
 	_init_.Initialize()
 
@@ -261,7 +266,7 @@ func NewDataAwsPricingProduct(scope constructs.Construct, id *string, config *Da
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/pricing_product.html aws_pricing_product} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/pricing_product aws_pricing_product} Data Source.
 func NewDataAwsPricingProduct_Override(d DataAwsPricingProduct, scope constructs.Construct, id *string, config *DataAwsPricingProductConfig) {
 	_init_.Initialize()
 
@@ -272,7 +277,7 @@ func NewDataAwsPricingProduct_Override(d DataAwsPricingProduct, scope constructs
 	)
 }
 
-func (j *jsiiProxy_DataAwsPricingProduct) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsPricingProduct) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -288,7 +293,7 @@ func (j *jsiiProxy_DataAwsPricingProduct) SetDependsOn(val *[]*string) {
 	)
 }
 
-func (j *jsiiProxy_DataAwsPricingProduct) SetFilters(val *[]*DataAwsPricingProductFilters) {
+func (j *jsiiProxy_DataAwsPricingProduct) SetFilters(val interface{}) {
 	_jsii_.Set(
 		j,
 		"filters",
@@ -360,12 +365,40 @@ func (d *jsiiProxy_DataAwsPricingProduct) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsPricingProduct) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsPricingProduct) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPricingProduct) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -402,12 +435,54 @@ func (d *jsiiProxy_DataAwsPricingProduct) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsPricingProduct) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPricingProduct) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsPricingProduct) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsPricingProduct) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -508,24 +583,24 @@ func (d *jsiiProxy_DataAwsPricingProduct) ToTerraform() interface{} {
 // AWS Pricing.
 type DataAwsPricingProductConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
 	// filters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product.html#filters DataAwsPricingProduct#filters}
-	Filters *[]*DataAwsPricingProductFilters `json:"filters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product.html#service_code DataAwsPricingProduct#service_code}.
-	ServiceCode *string `json:"serviceCode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product#filters DataAwsPricingProduct#filters}
+	Filters interface{} `json:"filters" yaml:"filters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product#service_code DataAwsPricingProduct#service_code}.
+	ServiceCode *string `json:"serviceCode" yaml:"serviceCode"`
 }
 
 type DataAwsPricingProductFilters struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product.html#field DataAwsPricingProduct#field}.
-	Field *string `json:"field"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product.html#value DataAwsPricingProduct#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product#field DataAwsPricingProduct#field}.
+	Field *string `json:"field" yaml:"field"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/pricing_product#value DataAwsPricingProduct#value}.
+	Value *string `json:"value" yaml:"value"`
 }

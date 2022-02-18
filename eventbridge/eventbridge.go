@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/eventbridge/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html aws_cloudwatch_event_api_destination}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination aws_cloudwatch_event_api_destination}.
 type CloudwatchEventApiDestination interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -18,8 +18,8 @@ type CloudwatchEventApiDestination interface {
 	SetConnectionArn(val *string)
 	ConnectionArnInput() *string
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -50,10 +50,15 @@ type CloudwatchEventApiDestination interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -120,8 +125,8 @@ func (j *jsiiProxy_CloudwatchEventApiDestination) ConstructNodeMetadata() *map[s
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventApiDestination) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventApiDestination) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -340,7 +345,7 @@ func (j *jsiiProxy_CloudwatchEventApiDestination) TerraformResourceType() *strin
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html aws_cloudwatch_event_api_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination aws_cloudwatch_event_api_destination} Resource.
 func NewCloudwatchEventApiDestination(scope constructs.Construct, id *string, config *CloudwatchEventApiDestinationConfig) CloudwatchEventApiDestination {
 	_init_.Initialize()
 
@@ -355,7 +360,7 @@ func NewCloudwatchEventApiDestination(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html aws_cloudwatch_event_api_destination} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination aws_cloudwatch_event_api_destination} Resource.
 func NewCloudwatchEventApiDestination_Override(c CloudwatchEventApiDestination, scope constructs.Construct, id *string, config *CloudwatchEventApiDestinationConfig) {
 	_init_.Initialize()
 
@@ -374,7 +379,7 @@ func (j *jsiiProxy_CloudwatchEventApiDestination) SetConnectionArn(val *string) 
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventApiDestination) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventApiDestination) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -486,12 +491,40 @@ func (c *jsiiProxy_CloudwatchEventApiDestination) AddOverride(path *string, valu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventApiDestination) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventApiDestination) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventApiDestination) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -528,12 +561,54 @@ func (c *jsiiProxy_CloudwatchEventApiDestination) GetNumberAttribute(terraformAt
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventApiDestination) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventApiDestination) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventApiDestination) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventApiDestination) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -650,35 +725,35 @@ func (c *jsiiProxy_CloudwatchEventApiDestination) ToTerraform() interface{} {
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventApiDestinationConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html#connection_arn CloudwatchEventApiDestination#connection_arn}.
-	ConnectionArn *string `json:"connectionArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html#http_method CloudwatchEventApiDestination#http_method}.
-	HttpMethod *string `json:"httpMethod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html#invocation_endpoint CloudwatchEventApiDestination#invocation_endpoint}.
-	InvocationEndpoint *string `json:"invocationEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html#name CloudwatchEventApiDestination#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html#description CloudwatchEventApiDestination#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination.html#invocation_rate_limit_per_second CloudwatchEventApiDestination#invocation_rate_limit_per_second}.
-	InvocationRateLimitPerSecond *float64 `json:"invocationRateLimitPerSecond"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination#connection_arn CloudwatchEventApiDestination#connection_arn}.
+	ConnectionArn *string `json:"connectionArn" yaml:"connectionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination#http_method CloudwatchEventApiDestination#http_method}.
+	HttpMethod *string `json:"httpMethod" yaml:"httpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination#invocation_endpoint CloudwatchEventApiDestination#invocation_endpoint}.
+	InvocationEndpoint *string `json:"invocationEndpoint" yaml:"invocationEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination#name CloudwatchEventApiDestination#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination#description CloudwatchEventApiDestination#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_api_destination#invocation_rate_limit_per_second CloudwatchEventApiDestination#invocation_rate_limit_per_second}.
+	InvocationRateLimitPerSecond *float64 `json:"invocationRateLimitPerSecond" yaml:"invocationRateLimitPerSecond"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html aws_cloudwatch_event_archive}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive aws_cloudwatch_event_archive}.
 type CloudwatchEventArchive interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -709,10 +784,15 @@ type CloudwatchEventArchive interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -760,8 +840,8 @@ func (j *jsiiProxy_CloudwatchEventArchive) ConstructNodeMetadata() *map[string]i
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventArchive) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventArchive) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -980,7 +1060,7 @@ func (j *jsiiProxy_CloudwatchEventArchive) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html aws_cloudwatch_event_archive} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive aws_cloudwatch_event_archive} Resource.
 func NewCloudwatchEventArchive(scope constructs.Construct, id *string, config *CloudwatchEventArchiveConfig) CloudwatchEventArchive {
 	_init_.Initialize()
 
@@ -995,7 +1075,7 @@ func NewCloudwatchEventArchive(scope constructs.Construct, id *string, config *C
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html aws_cloudwatch_event_archive} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive aws_cloudwatch_event_archive} Resource.
 func NewCloudwatchEventArchive_Override(c CloudwatchEventArchive, scope constructs.Construct, id *string, config *CloudwatchEventArchiveConfig) {
 	_init_.Initialize()
 
@@ -1006,7 +1086,7 @@ func NewCloudwatchEventArchive_Override(c CloudwatchEventArchive, scope construc
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventArchive) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventArchive) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1118,12 +1198,40 @@ func (c *jsiiProxy_CloudwatchEventArchive) AddOverride(path *string, value inter
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventArchive) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventArchive) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventArchive) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1160,12 +1268,54 @@ func (c *jsiiProxy_CloudwatchEventArchive) GetNumberAttribute(terraformAttribute
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventArchive) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventArchive) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventArchive) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventArchive) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1290,33 +1440,33 @@ func (c *jsiiProxy_CloudwatchEventArchive) ToTerraform() interface{} {
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventArchiveConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html#event_source_arn CloudwatchEventArchive#event_source_arn}.
-	EventSourceArn *string `json:"eventSourceArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html#name CloudwatchEventArchive#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html#description CloudwatchEventArchive#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html#event_pattern CloudwatchEventArchive#event_pattern}.
-	EventPattern *string `json:"eventPattern"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive.html#retention_days CloudwatchEventArchive#retention_days}.
-	RetentionDays *float64 `json:"retentionDays"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive#event_source_arn CloudwatchEventArchive#event_source_arn}.
+	EventSourceArn *string `json:"eventSourceArn" yaml:"eventSourceArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive#name CloudwatchEventArchive#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive#description CloudwatchEventArchive#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive#event_pattern CloudwatchEventArchive#event_pattern}.
+	EventPattern *string `json:"eventPattern" yaml:"eventPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_archive#retention_days CloudwatchEventArchive#retention_days}.
+	RetentionDays *float64 `json:"retentionDays" yaml:"retentionDays"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus.html aws_cloudwatch_event_bus}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus aws_cloudwatch_event_bus}.
 type CloudwatchEventBus interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EventSourceName() *string
@@ -1334,20 +1484,25 @@ type CloudwatchEventBus interface {
 	Provider() cdktf.TerraformProvider
 	SetProvider(val cdktf.TerraformProvider)
 	RawOverrides() interface{}
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEventSourceName()
@@ -1395,8 +1550,8 @@ func (j *jsiiProxy_CloudwatchEventBus) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventBus) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -1525,8 +1680,8 @@ func (j *jsiiProxy_CloudwatchEventBus) RawOverrides() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventBus) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -1535,8 +1690,8 @@ func (j *jsiiProxy_CloudwatchEventBus) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventBus) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -1545,8 +1700,8 @@ func (j *jsiiProxy_CloudwatchEventBus) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventBus) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -1555,8 +1710,8 @@ func (j *jsiiProxy_CloudwatchEventBus) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventBus) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -1595,7 +1750,7 @@ func (j *jsiiProxy_CloudwatchEventBus) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus.html aws_cloudwatch_event_bus} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus aws_cloudwatch_event_bus} Resource.
 func NewCloudwatchEventBus(scope constructs.Construct, id *string, config *CloudwatchEventBusConfig) CloudwatchEventBus {
 	_init_.Initialize()
 
@@ -1610,7 +1765,7 @@ func NewCloudwatchEventBus(scope constructs.Construct, id *string, config *Cloud
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus.html aws_cloudwatch_event_bus} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus aws_cloudwatch_event_bus} Resource.
 func NewCloudwatchEventBus_Override(c CloudwatchEventBus, scope constructs.Construct, id *string, config *CloudwatchEventBusConfig) {
 	_init_.Initialize()
 
@@ -1621,7 +1776,7 @@ func NewCloudwatchEventBus_Override(c CloudwatchEventBus, scope constructs.Const
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventBus) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -1669,7 +1824,7 @@ func (j *jsiiProxy_CloudwatchEventBus) SetProvider(val cdktf.TerraformProvider) 
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventBus) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -1677,7 +1832,7 @@ func (j *jsiiProxy_CloudwatchEventBus) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventBus) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventBus) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -1725,12 +1880,40 @@ func (c *jsiiProxy_CloudwatchEventBus) AddOverride(path *string, value interface
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventBus) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventBus) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventBus) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1767,12 +1950,54 @@ func (c *jsiiProxy_CloudwatchEventBus) GetNumberAttribute(terraformAttribute *st
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventBus) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventBus) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventBus) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventBus) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1897,30 +2122,30 @@ func (c *jsiiProxy_CloudwatchEventBus) ToTerraform() interface{} {
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventBusConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus.html#name CloudwatchEventBus#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus.html#event_source_name CloudwatchEventBus#event_source_name}.
-	EventSourceName *string `json:"eventSourceName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus.html#tags CloudwatchEventBus#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus.html#tags_all CloudwatchEventBus#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus#name CloudwatchEventBus#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus#event_source_name CloudwatchEventBus#event_source_name}.
+	EventSourceName *string `json:"eventSourceName" yaml:"eventSourceName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus#tags CloudwatchEventBus#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus#tags_all CloudwatchEventBus#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy.html aws_cloudwatch_event_bus_policy}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy aws_cloudwatch_event_bus_policy}.
 type CloudwatchEventBusPolicy interface {
 	cdktf.TerraformResource
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EventBusName() *string
@@ -1942,10 +2167,15 @@ type CloudwatchEventBusPolicy interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetEventBusName()
@@ -1981,8 +2211,8 @@ func (j *jsiiProxy_CloudwatchEventBusPolicy) ConstructNodeMetadata() *map[string
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventBusPolicy) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventBusPolicy) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2141,7 +2371,7 @@ func (j *jsiiProxy_CloudwatchEventBusPolicy) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy.html aws_cloudwatch_event_bus_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy aws_cloudwatch_event_bus_policy} Resource.
 func NewCloudwatchEventBusPolicy(scope constructs.Construct, id *string, config *CloudwatchEventBusPolicyConfig) CloudwatchEventBusPolicy {
 	_init_.Initialize()
 
@@ -2156,7 +2386,7 @@ func NewCloudwatchEventBusPolicy(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy.html aws_cloudwatch_event_bus_policy} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy aws_cloudwatch_event_bus_policy} Resource.
 func NewCloudwatchEventBusPolicy_Override(c CloudwatchEventBusPolicy, scope constructs.Construct, id *string, config *CloudwatchEventBusPolicyConfig) {
 	_init_.Initialize()
 
@@ -2167,7 +2397,7 @@ func NewCloudwatchEventBusPolicy_Override(c CloudwatchEventBusPolicy, scope cons
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventBusPolicy) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventBusPolicy) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2255,12 +2485,40 @@ func (c *jsiiProxy_CloudwatchEventBusPolicy) AddOverride(path *string, value int
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventBusPolicy) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventBusPolicy) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventBusPolicy) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2297,12 +2555,54 @@ func (c *jsiiProxy_CloudwatchEventBusPolicy) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventBusPolicy) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventBusPolicy) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventBusPolicy) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventBusPolicy) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2411,20 +2711,20 @@ func (c *jsiiProxy_CloudwatchEventBusPolicy) ToTerraform() interface{} {
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventBusPolicyConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy.html#policy CloudwatchEventBusPolicy#policy}.
-	Policy *string `json:"policy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy.html#event_bus_name CloudwatchEventBusPolicy#event_bus_name}.
-	EventBusName *string `json:"eventBusName"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy#policy CloudwatchEventBusPolicy#policy}.
+	Policy *string `json:"policy" yaml:"policy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_bus_policy#event_bus_name CloudwatchEventBusPolicy#event_bus_name}.
+	EventBusName *string `json:"eventBusName" yaml:"eventBusName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html aws_cloudwatch_event_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection aws_cloudwatch_event_connection}.
 type CloudwatchEventConnection interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -2435,8 +2735,8 @@ type CloudwatchEventConnection interface {
 	AuthParametersInput() *CloudwatchEventConnectionAuthParameters
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -2459,10 +2759,15 @@ type CloudwatchEventConnection interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutAuthParameters(value *CloudwatchEventConnectionAuthParameters)
@@ -2549,8 +2854,8 @@ func (j *jsiiProxy_CloudwatchEventConnection) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -2719,7 +3024,7 @@ func (j *jsiiProxy_CloudwatchEventConnection) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html aws_cloudwatch_event_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection aws_cloudwatch_event_connection} Resource.
 func NewCloudwatchEventConnection(scope constructs.Construct, id *string, config *CloudwatchEventConnectionConfig) CloudwatchEventConnection {
 	_init_.Initialize()
 
@@ -2734,7 +3039,7 @@ func NewCloudwatchEventConnection(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html aws_cloudwatch_event_connection} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection aws_cloudwatch_event_connection} Resource.
 func NewCloudwatchEventConnection_Override(c CloudwatchEventConnection, scope constructs.Construct, id *string, config *CloudwatchEventConnectionConfig) {
 	_init_.Initialize()
 
@@ -2753,7 +3058,7 @@ func (j *jsiiProxy_CloudwatchEventConnection) SetAuthorizationType(val *string) 
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -2841,12 +3146,40 @@ func (c *jsiiProxy_CloudwatchEventConnection) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2883,12 +3216,54 @@ func (c *jsiiProxy_CloudwatchEventConnection) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3005,27 +3380,27 @@ func (c *jsiiProxy_CloudwatchEventConnection) ToTerraform() interface{} {
 type CloudwatchEventConnectionAuthParameters struct {
 	// api_key block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#api_key CloudwatchEventConnection#api_key}
-	ApiKey *CloudwatchEventConnectionAuthParametersApiKey `json:"apiKey"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#api_key CloudwatchEventConnection#api_key}
+	ApiKey *CloudwatchEventConnectionAuthParametersApiKey `json:"apiKey" yaml:"apiKey"`
 	// basic block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#basic CloudwatchEventConnection#basic}
-	Basic *CloudwatchEventConnectionAuthParametersBasic `json:"basic"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#basic CloudwatchEventConnection#basic}
+	Basic *CloudwatchEventConnectionAuthParametersBasic `json:"basic" yaml:"basic"`
 	// invocation_http_parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#invocation_http_parameters CloudwatchEventConnection#invocation_http_parameters}
-	InvocationHttpParameters *CloudwatchEventConnectionAuthParametersInvocationHttpParameters `json:"invocationHttpParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#invocation_http_parameters CloudwatchEventConnection#invocation_http_parameters}
+	InvocationHttpParameters *CloudwatchEventConnectionAuthParametersInvocationHttpParameters `json:"invocationHttpParameters" yaml:"invocationHttpParameters"`
 	// oauth block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#oauth CloudwatchEventConnection#oauth}
-	Oauth *CloudwatchEventConnectionAuthParametersOauth `json:"oauth"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#oauth CloudwatchEventConnection#oauth}
+	Oauth *CloudwatchEventConnectionAuthParametersOauth `json:"oauth" yaml:"oauth"`
 }
 
 type CloudwatchEventConnectionAuthParametersApiKey struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#key CloudwatchEventConnection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#value CloudwatchEventConnection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#key CloudwatchEventConnection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#value CloudwatchEventConnection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventConnectionAuthParametersApiKeyOutputReference interface {
@@ -3039,15 +3414,20 @@ type CloudwatchEventConnectionAuthParametersApiKeyOutputReference interface {
 	KeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3107,8 +3487,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3137,7 +3517,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference)
 	return returns
 }
 
-func NewCloudwatchEventConnectionAuthParametersApiKeyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersApiKeyOutputReference {
+func NewCloudwatchEventConnectionAuthParametersApiKeyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersApiKeyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference{}
@@ -3151,7 +3531,7 @@ func NewCloudwatchEventConnectionAuthParametersApiKeyOutputReference(terraformRe
 	return &j
 }
 
-func NewCloudwatchEventConnectionAuthParametersApiKeyOutputReference_Override(c CloudwatchEventConnectionAuthParametersApiKeyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventConnectionAuthParametersApiKeyOutputReference_Override(c CloudwatchEventConnectionAuthParametersApiKeyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3193,7 +3573,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference)
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3210,12 +3590,40 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference)
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3252,12 +3660,54 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference)
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3294,10 +3744,10 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersApiKeyOutputReference)
 }
 
 type CloudwatchEventConnectionAuthParametersBasic struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#password CloudwatchEventConnection#password}.
-	Password *string `json:"password"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#username CloudwatchEventConnection#username}.
-	Username *string `json:"username"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#password CloudwatchEventConnection#password}.
+	Password *string `json:"password" yaml:"password"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#username CloudwatchEventConnection#username}.
+	Username *string `json:"username" yaml:"username"`
 }
 
 type CloudwatchEventConnectionAuthParametersBasicOutputReference interface {
@@ -3311,15 +3761,20 @@ type CloudwatchEventConnectionAuthParametersBasicOutputReference interface {
 	PasswordInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Username() *string
 	SetUsername(val *string)
 	UsernameInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -3379,8 +3834,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3409,7 +3864,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) 
 	return returns
 }
 
-func NewCloudwatchEventConnectionAuthParametersBasicOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersBasicOutputReference {
+func NewCloudwatchEventConnectionAuthParametersBasicOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersBasicOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference{}
@@ -3423,7 +3878,7 @@ func NewCloudwatchEventConnectionAuthParametersBasicOutputReference(terraformRes
 	return &j
 }
 
-func NewCloudwatchEventConnectionAuthParametersBasicOutputReference_Override(c CloudwatchEventConnectionAuthParametersBasicOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventConnectionAuthParametersBasicOutputReference_Override(c CloudwatchEventConnectionAuthParametersBasicOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3465,7 +3920,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3482,12 +3937,40 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) 
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3524,12 +4007,54 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) 
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3568,59 +4093,64 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersBasicOutputReference) 
 type CloudwatchEventConnectionAuthParametersInvocationHttpParameters struct {
 	// body block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#body CloudwatchEventConnection#body}
-	Body *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody `json:"body"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#body CloudwatchEventConnection#body}
+	Body interface{} `json:"body" yaml:"body"`
 	// header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#header CloudwatchEventConnection#header}
-	Header *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader `json:"header"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#header CloudwatchEventConnection#header}
+	Header interface{} `json:"header" yaml:"header"`
 	// query_string block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#query_string CloudwatchEventConnection#query_string}
-	QueryString *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString `json:"queryString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#query_string CloudwatchEventConnection#query_string}
+	QueryString interface{} `json:"queryString" yaml:"queryString"`
 }
 
 type CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#is_value_secret CloudwatchEventConnection#is_value_secret}.
-	IsValueSecret interface{} `json:"isValueSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#key CloudwatchEventConnection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#value CloudwatchEventConnection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#is_value_secret CloudwatchEventConnection#is_value_secret}.
+	IsValueSecret interface{} `json:"isValueSecret" yaml:"isValueSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#key CloudwatchEventConnection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#value CloudwatchEventConnection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#is_value_secret CloudwatchEventConnection#is_value_secret}.
-	IsValueSecret interface{} `json:"isValueSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#key CloudwatchEventConnection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#value CloudwatchEventConnection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#is_value_secret CloudwatchEventConnection#is_value_secret}.
+	IsValueSecret interface{} `json:"isValueSecret" yaml:"isValueSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#key CloudwatchEventConnection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#value CloudwatchEventConnection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference interface {
 	cdktf.ComplexObject
-	Body() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody
-	SetBody(val *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody)
-	BodyInput() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody
-	Header() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader
-	SetHeader(val *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader)
-	HeaderInput() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader
+	Body() interface{}
+	SetBody(val interface{})
+	BodyInput() interface{}
+	Header() interface{}
+	SetHeader(val interface{})
+	HeaderInput() interface{}
 	InternalValue() *CloudwatchEventConnectionAuthParametersInvocationHttpParameters
 	SetInternalValue(val *CloudwatchEventConnectionAuthParametersInvocationHttpParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	QueryString() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString
-	SetQueryString(val *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString)
-	QueryStringInput() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString
+	QueryString() interface{}
+	SetQueryString(val interface{})
+	QueryStringInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBody()
@@ -3633,8 +4163,8 @@ type jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOu
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) Body() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody {
-	var returns *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) Body() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"body",
@@ -3643,8 +4173,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) BodyInput() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody {
-	var returns *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) BodyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bodyInput",
@@ -3653,8 +4183,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) Header() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader {
-	var returns *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) Header() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"header",
@@ -3663,8 +4193,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) HeaderInput() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader {
-	var returns *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) HeaderInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"headerInput",
@@ -3693,8 +4223,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) QueryString() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString {
-	var returns *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) QueryString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"queryString",
@@ -3703,8 +4233,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) QueryStringInput() *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString {
-	var returns *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) QueryStringInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"queryStringInput",
@@ -3723,8 +4253,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -3733,7 +4263,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	return returns
 }
 
-func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference {
+func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference{}
@@ -3747,7 +4277,7 @@ func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputRef
 	return &j
 }
 
-func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -3757,7 +4287,7 @@ func NewCloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputRef
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetBody(val *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersBody) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetBody(val interface{}) {
 	_jsii_.Set(
 		j,
 		"body",
@@ -3765,7 +4295,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetHeader(val *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersHeader) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetHeader(val interface{}) {
 	_jsii_.Set(
 		j,
 		"header",
@@ -3789,7 +4319,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetQueryString(val *[]*CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetQueryString(val interface{}) {
 	_jsii_.Set(
 		j,
 		"queryString",
@@ -3805,7 +4335,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -3814,12 +4344,40 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3856,12 +4414,54 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -3922,34 +4522,34 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersInvocationHttpParamete
 }
 
 type CloudwatchEventConnectionAuthParametersInvocationHttpParametersQueryString struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#is_value_secret CloudwatchEventConnection#is_value_secret}.
-	IsValueSecret interface{} `json:"isValueSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#key CloudwatchEventConnection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#value CloudwatchEventConnection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#is_value_secret CloudwatchEventConnection#is_value_secret}.
+	IsValueSecret interface{} `json:"isValueSecret" yaml:"isValueSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#key CloudwatchEventConnection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#value CloudwatchEventConnection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventConnectionAuthParametersOauth struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#authorization_endpoint CloudwatchEventConnection#authorization_endpoint}.
-	AuthorizationEndpoint *string `json:"authorizationEndpoint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#http_method CloudwatchEventConnection#http_method}.
-	HttpMethod *string `json:"httpMethod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#authorization_endpoint CloudwatchEventConnection#authorization_endpoint}.
+	AuthorizationEndpoint *string `json:"authorizationEndpoint" yaml:"authorizationEndpoint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#http_method CloudwatchEventConnection#http_method}.
+	HttpMethod *string `json:"httpMethod" yaml:"httpMethod"`
 	// oauth_http_parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#oauth_http_parameters CloudwatchEventConnection#oauth_http_parameters}
-	OauthHttpParameters *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters `json:"oauthHttpParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#oauth_http_parameters CloudwatchEventConnection#oauth_http_parameters}
+	OauthHttpParameters *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters `json:"oauthHttpParameters" yaml:"oauthHttpParameters"`
 	// client_parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#client_parameters CloudwatchEventConnection#client_parameters}
-	ClientParameters *CloudwatchEventConnectionAuthParametersOauthClientParameters `json:"clientParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#client_parameters CloudwatchEventConnection#client_parameters}
+	ClientParameters *CloudwatchEventConnectionAuthParametersOauthClientParameters `json:"clientParameters" yaml:"clientParameters"`
 }
 
 type CloudwatchEventConnectionAuthParametersOauthClientParameters struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#client_id CloudwatchEventConnection#client_id}.
-	ClientId *string `json:"clientId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#client_secret CloudwatchEventConnection#client_secret}.
-	ClientSecret *string `json:"clientSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#client_id CloudwatchEventConnection#client_id}.
+	ClientId *string `json:"clientId" yaml:"clientId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#client_secret CloudwatchEventConnection#client_secret}.
+	ClientSecret *string `json:"clientSecret" yaml:"clientSecret"`
 }
 
 type CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference interface {
@@ -3966,12 +4566,17 @@ type CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -4051,8 +4656,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4061,7 +4666,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 	return returns
 }
 
-func NewCloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference {
+func NewCloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference{}
@@ -4075,7 +4680,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthClientParametersOutputRefere
 	return &j
 }
 
-func NewCloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4125,7 +4730,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4134,12 +4739,40 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4176,12 +4809,54 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4220,59 +4895,64 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthClientParametersO
 type CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters struct {
 	// body block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#body CloudwatchEventConnection#body}
-	Body *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody `json:"body"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#body CloudwatchEventConnection#body}
+	Body interface{} `json:"body" yaml:"body"`
 	// header block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#header CloudwatchEventConnection#header}
-	Header *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader `json:"header"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#header CloudwatchEventConnection#header}
+	Header interface{} `json:"header" yaml:"header"`
 	// query_string block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#query_string CloudwatchEventConnection#query_string}
-	QueryString *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString `json:"queryString"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#query_string CloudwatchEventConnection#query_string}
+	QueryString interface{} `json:"queryString" yaml:"queryString"`
 }
 
 type CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#is_value_secret CloudwatchEventConnection#is_value_secret}.
-	IsValueSecret interface{} `json:"isValueSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#key CloudwatchEventConnection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#value CloudwatchEventConnection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#is_value_secret CloudwatchEventConnection#is_value_secret}.
+	IsValueSecret interface{} `json:"isValueSecret" yaml:"isValueSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#key CloudwatchEventConnection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#value CloudwatchEventConnection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#is_value_secret CloudwatchEventConnection#is_value_secret}.
-	IsValueSecret interface{} `json:"isValueSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#key CloudwatchEventConnection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#value CloudwatchEventConnection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#is_value_secret CloudwatchEventConnection#is_value_secret}.
+	IsValueSecret interface{} `json:"isValueSecret" yaml:"isValueSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#key CloudwatchEventConnection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#value CloudwatchEventConnection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference interface {
 	cdktf.ComplexObject
-	Body() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody
-	SetBody(val *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody)
-	BodyInput() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody
-	Header() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader
-	SetHeader(val *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader)
-	HeaderInput() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader
+	Body() interface{}
+	SetBody(val interface{})
+	BodyInput() interface{}
+	Header() interface{}
+	SetHeader(val interface{})
+	HeaderInput() interface{}
 	InternalValue() *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters
 	SetInternalValue(val *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters)
 	IsSingleItem() *bool
 	SetIsSingleItem(val *bool)
-	QueryString() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString
-	SetQueryString(val *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString)
-	QueryStringInput() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString
+	QueryString() interface{}
+	SetQueryString(val interface{})
+	QueryStringInput() interface{}
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetBody()
@@ -4285,8 +4965,8 @@ type jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOu
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) Body() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody {
-	var returns *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) Body() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"body",
@@ -4295,8 +4975,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) BodyInput() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody {
-	var returns *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) BodyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"bodyInput",
@@ -4305,8 +4985,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) Header() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader {
-	var returns *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) Header() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"header",
@@ -4315,8 +4995,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) HeaderInput() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader {
-	var returns *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) HeaderInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"headerInput",
@@ -4345,8 +5025,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) QueryString() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString {
-	var returns *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) QueryString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"queryString",
@@ -4355,8 +5035,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) QueryStringInput() *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString {
-	var returns *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) QueryStringInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"queryStringInput",
@@ -4375,8 +5055,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4385,7 +5065,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	return returns
 }
 
-func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference {
+func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference{}
@@ -4399,7 +5079,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputRef
 	return &j
 }
 
-func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4409,7 +5089,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputRef
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetBody(val *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersBody) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetBody(val interface{}) {
 	_jsii_.Set(
 		j,
 		"body",
@@ -4417,7 +5097,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetHeader(val *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersHeader) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetHeader(val interface{}) {
 	_jsii_.Set(
 		j,
 		"header",
@@ -4441,7 +5121,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetQueryString(val *[]*CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetQueryString(val interface{}) {
 	_jsii_.Set(
 		j,
 		"queryString",
@@ -4457,7 +5137,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4466,12 +5146,40 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4508,12 +5216,54 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4574,12 +5324,12 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOauthHttpParamete
 }
 
 type CloudwatchEventConnectionAuthParametersOauthOauthHttpParametersQueryString struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#is_value_secret CloudwatchEventConnection#is_value_secret}.
-	IsValueSecret interface{} `json:"isValueSecret"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#key CloudwatchEventConnection#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#value CloudwatchEventConnection#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#is_value_secret CloudwatchEventConnection#is_value_secret}.
+	IsValueSecret interface{} `json:"isValueSecret" yaml:"isValueSecret"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#key CloudwatchEventConnection#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#value CloudwatchEventConnection#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventConnectionAuthParametersOauthOutputReference interface {
@@ -4600,12 +5350,17 @@ type CloudwatchEventConnectionAuthParametersOauthOutputReference interface {
 	OauthHttpParametersInput() *CloudwatchEventConnectionAuthParametersOauthOauthHttpParameters
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutClientParameters(value *CloudwatchEventConnectionAuthParametersOauthClientParameters)
@@ -4728,8 +5483,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) 
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -4738,7 +5493,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) 
 	return returns
 }
 
-func NewCloudwatchEventConnectionAuthParametersOauthOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOauthOutputReference {
+func NewCloudwatchEventConnectionAuthParametersOauthOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOauthOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference{}
@@ -4752,7 +5507,7 @@ func NewCloudwatchEventConnectionAuthParametersOauthOutputReference(terraformRes
 	return &j
 }
 
-func NewCloudwatchEventConnectionAuthParametersOauthOutputReference_Override(c CloudwatchEventConnectionAuthParametersOauthOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventConnectionAuthParametersOauthOutputReference_Override(c CloudwatchEventConnectionAuthParametersOauthOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -4802,7 +5557,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) 
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -4811,12 +5566,40 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) 
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4853,12 +5636,54 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) 
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOauthOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -4934,12 +5759,17 @@ type CloudwatchEventConnectionAuthParametersOutputReference interface {
 	OauthInput() *CloudwatchEventConnectionAuthParametersOauth
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutApiKey(value *CloudwatchEventConnectionAuthParametersApiKey)
@@ -5067,8 +5897,8 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) Terra
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -5077,7 +5907,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) Terra
 	return returns
 }
 
-func NewCloudwatchEventConnectionAuthParametersOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOutputReference {
+func NewCloudwatchEventConnectionAuthParametersOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventConnectionAuthParametersOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference{}
@@ -5091,7 +5921,7 @@ func NewCloudwatchEventConnectionAuthParametersOutputReference(terraformResource
 	return &j
 }
 
-func NewCloudwatchEventConnectionAuthParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventConnectionAuthParametersOutputReference_Override(c CloudwatchEventConnectionAuthParametersOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -5125,7 +5955,7 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) SetTe
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -5134,12 +5964,40 @@ func (j *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) SetTe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5176,12 +6034,54 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetNu
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5284,26 +6184,26 @@ func (c *jsiiProxy_CloudwatchEventConnectionAuthParametersOutputReference) Reset
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#authorization_type CloudwatchEventConnection#authorization_type}.
-	AuthorizationType *string `json:"authorizationType"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#authorization_type CloudwatchEventConnection#authorization_type}.
+	AuthorizationType *string `json:"authorizationType" yaml:"authorizationType"`
 	// auth_parameters block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#auth_parameters CloudwatchEventConnection#auth_parameters}
-	AuthParameters *CloudwatchEventConnectionAuthParameters `json:"authParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#name CloudwatchEventConnection#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection.html#description CloudwatchEventConnection#description}.
-	Description *string `json:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#auth_parameters CloudwatchEventConnection#auth_parameters}
+	AuthParameters *CloudwatchEventConnectionAuthParameters `json:"authParameters" yaml:"authParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#name CloudwatchEventConnection#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_connection#description CloudwatchEventConnection#description}.
+	Description *string `json:"description" yaml:"description"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html aws_cloudwatch_event_permission}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission aws_cloudwatch_event_permission}.
 type CloudwatchEventPermission interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -5313,8 +6213,8 @@ type CloudwatchEventPermission interface {
 	Condition() CloudwatchEventPermissionConditionOutputReference
 	ConditionInput() *CloudwatchEventPermissionCondition
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EventBusName() *string
@@ -5339,10 +6239,15 @@ type CloudwatchEventPermission interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutCondition(value *CloudwatchEventPermissionCondition)
@@ -5421,8 +6326,8 @@ func (j *jsiiProxy_CloudwatchEventPermission) ConstructNodeMetadata() *map[strin
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventPermission) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventPermission) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -5601,7 +6506,7 @@ func (j *jsiiProxy_CloudwatchEventPermission) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html aws_cloudwatch_event_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission aws_cloudwatch_event_permission} Resource.
 func NewCloudwatchEventPermission(scope constructs.Construct, id *string, config *CloudwatchEventPermissionConfig) CloudwatchEventPermission {
 	_init_.Initialize()
 
@@ -5616,7 +6521,7 @@ func NewCloudwatchEventPermission(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html aws_cloudwatch_event_permission} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission aws_cloudwatch_event_permission} Resource.
 func NewCloudwatchEventPermission_Override(c CloudwatchEventPermission, scope constructs.Construct, id *string, config *CloudwatchEventPermissionConfig) {
 	_init_.Initialize()
 
@@ -5635,7 +6540,7 @@ func (j *jsiiProxy_CloudwatchEventPermission) SetAction(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventPermission) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventPermission) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -5731,12 +6636,40 @@ func (c *jsiiProxy_CloudwatchEventPermission) AddOverride(path *string, value in
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventPermission) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventPermission) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventPermission) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5773,12 +6706,54 @@ func (c *jsiiProxy_CloudwatchEventPermission) GetNumberAttribute(terraformAttrib
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventPermission) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventPermission) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventPermission) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventPermission) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -5909,12 +6884,12 @@ func (c *jsiiProxy_CloudwatchEventPermission) ToTerraform() interface{} {
 }
 
 type CloudwatchEventPermissionCondition struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#key CloudwatchEventPermission#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#type CloudwatchEventPermission#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#value CloudwatchEventPermission#value}.
-	Value *string `json:"value"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#key CloudwatchEventPermission#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#type CloudwatchEventPermission#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#value CloudwatchEventPermission#value}.
+	Value *string `json:"value" yaml:"value"`
 }
 
 type CloudwatchEventPermissionConditionOutputReference interface {
@@ -5928,18 +6903,23 @@ type CloudwatchEventPermissionConditionOutputReference interface {
 	KeyInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
 	Value() *string
 	SetValue(val *string)
 	ValueInput() *string
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
@@ -5999,8 +6979,8 @@ func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -6049,7 +7029,7 @@ func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) ValueInput
 	return returns
 }
 
-func NewCloudwatchEventPermissionConditionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventPermissionConditionOutputReference {
+func NewCloudwatchEventPermissionConditionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventPermissionConditionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventPermissionConditionOutputReference{}
@@ -6063,7 +7043,7 @@ func NewCloudwatchEventPermissionConditionOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewCloudwatchEventPermissionConditionOutputReference_Override(c CloudwatchEventPermissionConditionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventPermissionConditionOutputReference_Override(c CloudwatchEventPermissionConditionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -6105,7 +7085,7 @@ func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -6130,12 +7110,40 @@ func (j *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) SetValue(v
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6172,12 +7180,54 @@ func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetNumberA
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6216,35 +7266,35 @@ func (c *jsiiProxy_CloudwatchEventPermissionConditionOutputReference) Interpolat
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventPermissionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#principal CloudwatchEventPermission#principal}.
-	Principal *string `json:"principal"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#statement_id CloudwatchEventPermission#statement_id}.
-	StatementId *string `json:"statementId"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#action CloudwatchEventPermission#action}.
-	Action *string `json:"action"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#principal CloudwatchEventPermission#principal}.
+	Principal *string `json:"principal" yaml:"principal"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#statement_id CloudwatchEventPermission#statement_id}.
+	StatementId *string `json:"statementId" yaml:"statementId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#action CloudwatchEventPermission#action}.
+	Action *string `json:"action" yaml:"action"`
 	// condition block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#condition CloudwatchEventPermission#condition}
-	Condition *CloudwatchEventPermissionCondition `json:"condition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission.html#event_bus_name CloudwatchEventPermission#event_bus_name}.
-	EventBusName *string `json:"eventBusName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#condition CloudwatchEventPermission#condition}
+	Condition *CloudwatchEventPermissionCondition `json:"condition" yaml:"condition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_permission#event_bus_name CloudwatchEventPermission#event_bus_name}.
+	EventBusName *string `json:"eventBusName" yaml:"eventBusName"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html aws_cloudwatch_event_rule}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule aws_cloudwatch_event_rule}.
 type CloudwatchEventRule interface {
 	cdktf.TerraformResource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Description() *string
@@ -6280,20 +7330,25 @@ type CloudwatchEventRule interface {
 	ScheduleExpression() *string
 	SetScheduleExpression(val *string)
 	ScheduleExpressionInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetDescription()
@@ -6348,8 +7403,8 @@ func (j *jsiiProxy_CloudwatchEventRule) ConstructNodeMetadata() *map[string]inte
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventRule) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -6598,8 +7653,8 @@ func (j *jsiiProxy_CloudwatchEventRule) ScheduleExpressionInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventRule) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -6608,8 +7663,8 @@ func (j *jsiiProxy_CloudwatchEventRule) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventRule) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -6618,8 +7673,8 @@ func (j *jsiiProxy_CloudwatchEventRule) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventRule) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -6628,8 +7683,8 @@ func (j *jsiiProxy_CloudwatchEventRule) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventRule) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -6668,7 +7723,7 @@ func (j *jsiiProxy_CloudwatchEventRule) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html aws_cloudwatch_event_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule aws_cloudwatch_event_rule} Resource.
 func NewCloudwatchEventRule(scope constructs.Construct, id *string, config *CloudwatchEventRuleConfig) CloudwatchEventRule {
 	_init_.Initialize()
 
@@ -6683,7 +7738,7 @@ func NewCloudwatchEventRule(scope constructs.Construct, id *string, config *Clou
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html aws_cloudwatch_event_rule} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule aws_cloudwatch_event_rule} Resource.
 func NewCloudwatchEventRule_Override(c CloudwatchEventRule, scope constructs.Construct, id *string, config *CloudwatchEventRuleConfig) {
 	_init_.Initialize()
 
@@ -6694,7 +7749,7 @@ func NewCloudwatchEventRule_Override(c CloudwatchEventRule, scope constructs.Con
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventRule) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -6790,7 +7845,7 @@ func (j *jsiiProxy_CloudwatchEventRule) SetScheduleExpression(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventRule) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -6798,7 +7853,7 @@ func (j *jsiiProxy_CloudwatchEventRule) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventRule) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventRule) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -6846,12 +7901,40 @@ func (c *jsiiProxy_CloudwatchEventRule) AddOverride(path *string, value interfac
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventRule) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventRule) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventRule) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -6888,12 +7971,54 @@ func (c *jsiiProxy_CloudwatchEventRule) GetNumberAttribute(terraformAttribute *s
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventRule) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventRule) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventRule) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventRule) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7074,36 +8199,36 @@ func (c *jsiiProxy_CloudwatchEventRule) ToTerraform() interface{} {
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventRuleConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#description CloudwatchEventRule#description}.
-	Description *string `json:"description"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#event_bus_name CloudwatchEventRule#event_bus_name}.
-	EventBusName *string `json:"eventBusName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#event_pattern CloudwatchEventRule#event_pattern}.
-	EventPattern *string `json:"eventPattern"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#is_enabled CloudwatchEventRule#is_enabled}.
-	IsEnabled interface{} `json:"isEnabled"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#name CloudwatchEventRule#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#name_prefix CloudwatchEventRule#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#role_arn CloudwatchEventRule#role_arn}.
-	RoleArn *string `json:"roleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#schedule_expression CloudwatchEventRule#schedule_expression}.
-	ScheduleExpression *string `json:"scheduleExpression"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#tags CloudwatchEventRule#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule.html#tags_all CloudwatchEventRule#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#description CloudwatchEventRule#description}.
+	Description *string `json:"description" yaml:"description"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#event_bus_name CloudwatchEventRule#event_bus_name}.
+	EventBusName *string `json:"eventBusName" yaml:"eventBusName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#event_pattern CloudwatchEventRule#event_pattern}.
+	EventPattern *string `json:"eventPattern" yaml:"eventPattern"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#is_enabled CloudwatchEventRule#is_enabled}.
+	IsEnabled interface{} `json:"isEnabled" yaml:"isEnabled"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#name CloudwatchEventRule#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#name_prefix CloudwatchEventRule#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#role_arn CloudwatchEventRule#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#schedule_expression CloudwatchEventRule#schedule_expression}.
+	ScheduleExpression *string `json:"scheduleExpression" yaml:"scheduleExpression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#tags CloudwatchEventRule#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_rule#tags_all CloudwatchEventRule#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html aws_cloudwatch_event_target}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target aws_cloudwatch_event_target}.
 type CloudwatchEventTarget interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -7113,8 +8238,8 @@ type CloudwatchEventTarget interface {
 	BatchTargetInput() *CloudwatchEventTargetBatchTarget
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DeadLetterConfig() CloudwatchEventTargetDeadLetterConfigOutputReference
 	DeadLetterConfigInput() *CloudwatchEventTargetDeadLetterConfig
 	DependsOn() *[]*string
@@ -7155,9 +8280,9 @@ type CloudwatchEventTarget interface {
 	Rule() *string
 	SetRule(val *string)
 	RuleInput() *string
-	RunCommandTargets() *[]*CloudwatchEventTargetRunCommandTargets
-	SetRunCommandTargets(val *[]*CloudwatchEventTargetRunCommandTargets)
-	RunCommandTargetsInput() *[]*CloudwatchEventTargetRunCommandTargets
+	RunCommandTargets() interface{}
+	SetRunCommandTargets(val interface{})
+	RunCommandTargetsInput() interface{}
 	SqsTarget() CloudwatchEventTargetSqsTargetOutputReference
 	SqsTargetInput() *CloudwatchEventTargetSqsTarget
 	TargetId() *string
@@ -7167,10 +8292,15 @@ type CloudwatchEventTarget interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutBatchTarget(value *CloudwatchEventTargetBatchTarget)
@@ -7269,8 +8399,8 @@ func (j *jsiiProxy_CloudwatchEventTarget) ConstructNodeMetadata() *map[string]in
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTarget) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTarget) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -7599,8 +8729,8 @@ func (j *jsiiProxy_CloudwatchEventTarget) RuleInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTarget) RunCommandTargets() *[]*CloudwatchEventTargetRunCommandTargets {
-	var returns *[]*CloudwatchEventTargetRunCommandTargets
+func (j *jsiiProxy_CloudwatchEventTarget) RunCommandTargets() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"runCommandTargets",
@@ -7609,8 +8739,8 @@ func (j *jsiiProxy_CloudwatchEventTarget) RunCommandTargets() *[]*CloudwatchEven
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTarget) RunCommandTargetsInput() *[]*CloudwatchEventTargetRunCommandTargets {
-	var returns *[]*CloudwatchEventTargetRunCommandTargets
+func (j *jsiiProxy_CloudwatchEventTarget) RunCommandTargetsInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"runCommandTargetsInput",
@@ -7689,7 +8819,7 @@ func (j *jsiiProxy_CloudwatchEventTarget) TerraformResourceType() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html aws_cloudwatch_event_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target aws_cloudwatch_event_target} Resource.
 func NewCloudwatchEventTarget(scope constructs.Construct, id *string, config *CloudwatchEventTargetConfig) CloudwatchEventTarget {
 	_init_.Initialize()
 
@@ -7704,7 +8834,7 @@ func NewCloudwatchEventTarget(scope constructs.Construct, id *string, config *Cl
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html aws_cloudwatch_event_target} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target aws_cloudwatch_event_target} Resource.
 func NewCloudwatchEventTarget_Override(c CloudwatchEventTarget, scope constructs.Construct, id *string, config *CloudwatchEventTargetConfig) {
 	_init_.Initialize()
 
@@ -7723,7 +8853,7 @@ func (j *jsiiProxy_CloudwatchEventTarget) SetArn(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTarget) SetCount(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventTarget) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -7795,7 +8925,7 @@ func (j *jsiiProxy_CloudwatchEventTarget) SetRule(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTarget) SetRunCommandTargets(val *[]*CloudwatchEventTargetRunCommandTargets) {
+func (j *jsiiProxy_CloudwatchEventTarget) SetRunCommandTargets(val interface{}) {
 	_jsii_.Set(
 		j,
 		"runCommandTargets",
@@ -7851,12 +8981,40 @@ func (c *jsiiProxy_CloudwatchEventTarget) AddOverride(path *string, value interf
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTarget) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTarget) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTarget) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -7893,12 +9051,54 @@ func (c *jsiiProxy_CloudwatchEventTarget) GetNumberAttribute(terraformAttribute 
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTarget) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTarget) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTarget) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTarget) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8189,14 +9389,14 @@ func (c *jsiiProxy_CloudwatchEventTarget) ToTerraform() interface{} {
 }
 
 type CloudwatchEventTargetBatchTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#job_definition CloudwatchEventTarget#job_definition}.
-	JobDefinition *string `json:"jobDefinition"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#job_name CloudwatchEventTarget#job_name}.
-	JobName *string `json:"jobName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#array_size CloudwatchEventTarget#array_size}.
-	ArraySize *float64 `json:"arraySize"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#job_attempts CloudwatchEventTarget#job_attempts}.
-	JobAttempts *float64 `json:"jobAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#job_definition CloudwatchEventTarget#job_definition}.
+	JobDefinition *string `json:"jobDefinition" yaml:"jobDefinition"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#job_name CloudwatchEventTarget#job_name}.
+	JobName *string `json:"jobName" yaml:"jobName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#array_size CloudwatchEventTarget#array_size}.
+	ArraySize *float64 `json:"arraySize" yaml:"arraySize"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#job_attempts CloudwatchEventTarget#job_attempts}.
+	JobAttempts *float64 `json:"jobAttempts" yaml:"jobAttempts"`
 }
 
 type CloudwatchEventTargetBatchTargetOutputReference interface {
@@ -8219,12 +9419,17 @@ type CloudwatchEventTargetBatchTargetOutputReference interface {
 	JobNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetArraySize()
@@ -8346,8 +9551,8 @@ func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8356,7 +9561,7 @@ func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) TerraformRes
 	return returns
 }
 
-func NewCloudwatchEventTargetBatchTargetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetBatchTargetOutputReference {
+func NewCloudwatchEventTargetBatchTargetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetBatchTargetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference{}
@@ -8370,7 +9575,7 @@ func NewCloudwatchEventTargetBatchTargetOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewCloudwatchEventTargetBatchTargetOutputReference_Override(c CloudwatchEventTargetBatchTargetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetBatchTargetOutputReference_Override(c CloudwatchEventTargetBatchTargetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8436,7 +9641,7 @@ func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8445,12 +9650,40 @@ func (j *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) SetTerraform
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8487,12 +9720,54 @@ func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8547,72 +9822,72 @@ func (c *jsiiProxy_CloudwatchEventTargetBatchTargetOutputReference) ResetJobAtte
 // AWS CloudWatch Event Bridge.
 type CloudwatchEventTargetConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#arn CloudwatchEventTarget#arn}.
-	Arn *string `json:"arn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#rule CloudwatchEventTarget#rule}.
-	Rule *string `json:"rule"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#arn CloudwatchEventTarget#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#rule CloudwatchEventTarget#rule}.
+	Rule *string `json:"rule" yaml:"rule"`
 	// batch_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#batch_target CloudwatchEventTarget#batch_target}
-	BatchTarget *CloudwatchEventTargetBatchTarget `json:"batchTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#batch_target CloudwatchEventTarget#batch_target}
+	BatchTarget *CloudwatchEventTargetBatchTarget `json:"batchTarget" yaml:"batchTarget"`
 	// dead_letter_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#dead_letter_config CloudwatchEventTarget#dead_letter_config}
-	DeadLetterConfig *CloudwatchEventTargetDeadLetterConfig `json:"deadLetterConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#dead_letter_config CloudwatchEventTarget#dead_letter_config}
+	DeadLetterConfig *CloudwatchEventTargetDeadLetterConfig `json:"deadLetterConfig" yaml:"deadLetterConfig"`
 	// ecs_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#ecs_target CloudwatchEventTarget#ecs_target}
-	EcsTarget *CloudwatchEventTargetEcsTarget `json:"ecsTarget"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#event_bus_name CloudwatchEventTarget#event_bus_name}.
-	EventBusName *string `json:"eventBusName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#ecs_target CloudwatchEventTarget#ecs_target}
+	EcsTarget *CloudwatchEventTargetEcsTarget `json:"ecsTarget" yaml:"ecsTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#event_bus_name CloudwatchEventTarget#event_bus_name}.
+	EventBusName *string `json:"eventBusName" yaml:"eventBusName"`
 	// http_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#http_target CloudwatchEventTarget#http_target}
-	HttpTarget *CloudwatchEventTargetHttpTarget `json:"httpTarget"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#input CloudwatchEventTarget#input}.
-	Input *string `json:"input"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#input_path CloudwatchEventTarget#input_path}.
-	InputPath *string `json:"inputPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#http_target CloudwatchEventTarget#http_target}
+	HttpTarget *CloudwatchEventTargetHttpTarget `json:"httpTarget" yaml:"httpTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#input CloudwatchEventTarget#input}.
+	Input *string `json:"input" yaml:"input"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#input_path CloudwatchEventTarget#input_path}.
+	InputPath *string `json:"inputPath" yaml:"inputPath"`
 	// input_transformer block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#input_transformer CloudwatchEventTarget#input_transformer}
-	InputTransformer *CloudwatchEventTargetInputTransformer `json:"inputTransformer"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#input_transformer CloudwatchEventTarget#input_transformer}
+	InputTransformer *CloudwatchEventTargetInputTransformer `json:"inputTransformer" yaml:"inputTransformer"`
 	// kinesis_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#kinesis_target CloudwatchEventTarget#kinesis_target}
-	KinesisTarget *CloudwatchEventTargetKinesisTarget `json:"kinesisTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#kinesis_target CloudwatchEventTarget#kinesis_target}
+	KinesisTarget *CloudwatchEventTargetKinesisTarget `json:"kinesisTarget" yaml:"kinesisTarget"`
 	// redshift_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#redshift_target CloudwatchEventTarget#redshift_target}
-	RedshiftTarget *CloudwatchEventTargetRedshiftTarget `json:"redshiftTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#redshift_target CloudwatchEventTarget#redshift_target}
+	RedshiftTarget *CloudwatchEventTargetRedshiftTarget `json:"redshiftTarget" yaml:"redshiftTarget"`
 	// retry_policy block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#retry_policy CloudwatchEventTarget#retry_policy}
-	RetryPolicy *CloudwatchEventTargetRetryPolicy `json:"retryPolicy"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#role_arn CloudwatchEventTarget#role_arn}.
-	RoleArn *string `json:"roleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#retry_policy CloudwatchEventTarget#retry_policy}
+	RetryPolicy *CloudwatchEventTargetRetryPolicy `json:"retryPolicy" yaml:"retryPolicy"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#role_arn CloudwatchEventTarget#role_arn}.
+	RoleArn *string `json:"roleArn" yaml:"roleArn"`
 	// run_command_targets block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#run_command_targets CloudwatchEventTarget#run_command_targets}
-	RunCommandTargets *[]*CloudwatchEventTargetRunCommandTargets `json:"runCommandTargets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#run_command_targets CloudwatchEventTarget#run_command_targets}
+	RunCommandTargets interface{} `json:"runCommandTargets" yaml:"runCommandTargets"`
 	// sqs_target block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#sqs_target CloudwatchEventTarget#sqs_target}
-	SqsTarget *CloudwatchEventTargetSqsTarget `json:"sqsTarget"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#target_id CloudwatchEventTarget#target_id}.
-	TargetId *string `json:"targetId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#sqs_target CloudwatchEventTarget#sqs_target}
+	SqsTarget *CloudwatchEventTargetSqsTarget `json:"sqsTarget" yaml:"sqsTarget"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#target_id CloudwatchEventTarget#target_id}.
+	TargetId *string `json:"targetId" yaml:"targetId"`
 }
 
 type CloudwatchEventTargetDeadLetterConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#arn CloudwatchEventTarget#arn}.
-	Arn *string `json:"arn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#arn CloudwatchEventTarget#arn}.
+	Arn *string `json:"arn" yaml:"arn"`
 }
 
 type CloudwatchEventTargetDeadLetterConfigOutputReference interface {
@@ -8626,12 +9901,17 @@ type CloudwatchEventTargetDeadLetterConfigOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetArn()
@@ -8692,8 +9972,8 @@ func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -8702,7 +9982,7 @@ func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) Terrafo
 	return returns
 }
 
-func NewCloudwatchEventTargetDeadLetterConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetDeadLetterConfigOutputReference {
+func NewCloudwatchEventTargetDeadLetterConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetDeadLetterConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference{}
@@ -8716,7 +9996,7 @@ func NewCloudwatchEventTargetDeadLetterConfigOutputReference(terraformResource c
 	return &j
 }
 
-func NewCloudwatchEventTargetDeadLetterConfigOutputReference_Override(c CloudwatchEventTargetDeadLetterConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetDeadLetterConfigOutputReference_Override(c CloudwatchEventTargetDeadLetterConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -8758,7 +10038,7 @@ func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -8767,12 +10047,40 @@ func (j *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) SetTerr
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8809,12 +10117,54 @@ func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetNumb
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -8859,41 +10209,41 @@ func (c *jsiiProxy_CloudwatchEventTargetDeadLetterConfigOutputReference) ResetAr
 }
 
 type CloudwatchEventTargetEcsTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#task_definition_arn CloudwatchEventTarget#task_definition_arn}.
-	TaskDefinitionArn *string `json:"taskDefinitionArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#enable_ecs_managed_tags CloudwatchEventTarget#enable_ecs_managed_tags}.
-	EnableEcsManagedTags interface{} `json:"enableEcsManagedTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#enable_execute_command CloudwatchEventTarget#enable_execute_command}.
-	EnableExecuteCommand interface{} `json:"enableExecuteCommand"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#group CloudwatchEventTarget#group}.
-	Group *string `json:"group"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#launch_type CloudwatchEventTarget#launch_type}.
-	LaunchType *string `json:"launchType"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#task_definition_arn CloudwatchEventTarget#task_definition_arn}.
+	TaskDefinitionArn *string `json:"taskDefinitionArn" yaml:"taskDefinitionArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#enable_ecs_managed_tags CloudwatchEventTarget#enable_ecs_managed_tags}.
+	EnableEcsManagedTags interface{} `json:"enableEcsManagedTags" yaml:"enableEcsManagedTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#enable_execute_command CloudwatchEventTarget#enable_execute_command}.
+	EnableExecuteCommand interface{} `json:"enableExecuteCommand" yaml:"enableExecuteCommand"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#group CloudwatchEventTarget#group}.
+	Group *string `json:"group" yaml:"group"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#launch_type CloudwatchEventTarget#launch_type}.
+	LaunchType *string `json:"launchType" yaml:"launchType"`
 	// network_configuration block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#network_configuration CloudwatchEventTarget#network_configuration}
-	NetworkConfiguration *CloudwatchEventTargetEcsTargetNetworkConfiguration `json:"networkConfiguration"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#network_configuration CloudwatchEventTarget#network_configuration}
+	NetworkConfiguration *CloudwatchEventTargetEcsTargetNetworkConfiguration `json:"networkConfiguration" yaml:"networkConfiguration"`
 	// placement_constraint block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#placement_constraint CloudwatchEventTarget#placement_constraint}
-	PlacementConstraint *[]*CloudwatchEventTargetEcsTargetPlacementConstraint `json:"placementConstraint"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#platform_version CloudwatchEventTarget#platform_version}.
-	PlatformVersion *string `json:"platformVersion"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#propagate_tags CloudwatchEventTarget#propagate_tags}.
-	PropagateTags *string `json:"propagateTags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#tags CloudwatchEventTarget#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#task_count CloudwatchEventTarget#task_count}.
-	TaskCount *float64 `json:"taskCount"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#placement_constraint CloudwatchEventTarget#placement_constraint}
+	PlacementConstraint interface{} `json:"placementConstraint" yaml:"placementConstraint"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#platform_version CloudwatchEventTarget#platform_version}.
+	PlatformVersion *string `json:"platformVersion" yaml:"platformVersion"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#propagate_tags CloudwatchEventTarget#propagate_tags}.
+	PropagateTags *string `json:"propagateTags" yaml:"propagateTags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#tags CloudwatchEventTarget#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#task_count CloudwatchEventTarget#task_count}.
+	TaskCount *float64 `json:"taskCount" yaml:"taskCount"`
 }
 
 type CloudwatchEventTargetEcsTargetNetworkConfiguration struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#subnets CloudwatchEventTarget#subnets}.
-	Subnets *[]*string `json:"subnets"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#assign_public_ip CloudwatchEventTarget#assign_public_ip}.
-	AssignPublicIp interface{} `json:"assignPublicIp"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#security_groups CloudwatchEventTarget#security_groups}.
-	SecurityGroups *[]*string `json:"securityGroups"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#subnets CloudwatchEventTarget#subnets}.
+	Subnets *[]*string `json:"subnets" yaml:"subnets"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#assign_public_ip CloudwatchEventTarget#assign_public_ip}.
+	AssignPublicIp interface{} `json:"assignPublicIp" yaml:"assignPublicIp"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#security_groups CloudwatchEventTarget#security_groups}.
+	SecurityGroups *[]*string `json:"securityGroups" yaml:"securityGroups"`
 }
 
 type CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference interface {
@@ -8913,12 +10263,17 @@ type CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference interface
 	SubnetsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAssignPublicIp()
@@ -9020,8 +10375,8 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputRefer
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9030,7 +10385,7 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputRefer
 	return returns
 }
 
-func NewCloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference {
+func NewCloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference{}
@@ -9044,7 +10399,7 @@ func NewCloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference(terraf
 	return &j
 }
 
-func NewCloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference_Override(c CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference_Override(c CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9102,7 +10457,7 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputRefer
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9111,12 +10466,40 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputRefer
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9153,12 +10536,54 @@ func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputRefer
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9230,18 +10655,18 @@ type CloudwatchEventTargetEcsTargetOutputReference interface {
 	LaunchTypeInput() *string
 	NetworkConfiguration() CloudwatchEventTargetEcsTargetNetworkConfigurationOutputReference
 	NetworkConfigurationInput() *CloudwatchEventTargetEcsTargetNetworkConfiguration
-	PlacementConstraint() *[]*CloudwatchEventTargetEcsTargetPlacementConstraint
-	SetPlacementConstraint(val *[]*CloudwatchEventTargetEcsTargetPlacementConstraint)
-	PlacementConstraintInput() *[]*CloudwatchEventTargetEcsTargetPlacementConstraint
+	PlacementConstraint() interface{}
+	SetPlacementConstraint(val interface{})
+	PlacementConstraintInput() interface{}
 	PlatformVersion() *string
 	SetPlatformVersion(val *string)
 	PlatformVersionInput() *string
 	PropagateTags() *string
 	SetPropagateTags(val *string)
 	PropagateTagsInput() *string
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TaskCount() *float64
 	SetTaskCount(val *float64)
 	TaskCountInput() *float64
@@ -9250,12 +10675,17 @@ type CloudwatchEventTargetEcsTargetOutputReference interface {
 	TaskDefinitionArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutNetworkConfiguration(value *CloudwatchEventTargetEcsTargetNetworkConfiguration)
@@ -9396,8 +10826,8 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) NetworkConfigu
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) PlacementConstraint() *[]*CloudwatchEventTargetEcsTargetPlacementConstraint {
-	var returns *[]*CloudwatchEventTargetEcsTargetPlacementConstraint
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) PlacementConstraint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"placementConstraint",
@@ -9406,8 +10836,8 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) PlacementConst
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) PlacementConstraintInput() *[]*CloudwatchEventTargetEcsTargetPlacementConstraint {
-	var returns *[]*CloudwatchEventTargetEcsTargetPlacementConstraint
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) PlacementConstraintInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"placementConstraintInput",
@@ -9456,8 +10886,8 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) PropagateTagsI
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -9466,8 +10896,8 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) Tags() interfa
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -9526,8 +10956,8 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9536,7 +10966,7 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) TerraformResou
 	return returns
 }
 
-func NewCloudwatchEventTargetEcsTargetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetEcsTargetOutputReference {
+func NewCloudwatchEventTargetEcsTargetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetEcsTargetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference{}
@@ -9550,7 +10980,7 @@ func NewCloudwatchEventTargetEcsTargetOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewCloudwatchEventTargetEcsTargetOutputReference_Override(c CloudwatchEventTargetEcsTargetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetEcsTargetOutputReference_Override(c CloudwatchEventTargetEcsTargetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -9608,7 +11038,7 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetLaunchType(
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetPlacementConstraint(val *[]*CloudwatchEventTargetEcsTargetPlacementConstraint) {
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetPlacementConstraint(val interface{}) {
 	_jsii_.Set(
 		j,
 		"placementConstraint",
@@ -9632,7 +11062,7 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetPropagateTa
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetTags(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -9664,7 +11094,7 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -9673,12 +11103,40 @@ func (j *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9715,12 +11173,54 @@ func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -9845,26 +11345,26 @@ func (c *jsiiProxy_CloudwatchEventTargetEcsTargetOutputReference) ResetTaskCount
 }
 
 type CloudwatchEventTargetEcsTargetPlacementConstraint struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#type CloudwatchEventTarget#type}.
-	Type *string `json:"type"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#expression CloudwatchEventTarget#expression}.
-	Expression *string `json:"expression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#type CloudwatchEventTarget#type}.
+	Type *string `json:"type" yaml:"type"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#expression CloudwatchEventTarget#expression}.
+	Expression *string `json:"expression" yaml:"expression"`
 }
 
 type CloudwatchEventTargetHttpTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#header_parameters CloudwatchEventTarget#header_parameters}.
-	HeaderParameters interface{} `json:"headerParameters"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#path_parameter_values CloudwatchEventTarget#path_parameter_values}.
-	PathParameterValues *[]*string `json:"pathParameterValues"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#query_string_parameters CloudwatchEventTarget#query_string_parameters}.
-	QueryStringParameters interface{} `json:"queryStringParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#header_parameters CloudwatchEventTarget#header_parameters}.
+	HeaderParameters *map[string]*string `json:"headerParameters" yaml:"headerParameters"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#path_parameter_values CloudwatchEventTarget#path_parameter_values}.
+	PathParameterValues *[]*string `json:"pathParameterValues" yaml:"pathParameterValues"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#query_string_parameters CloudwatchEventTarget#query_string_parameters}.
+	QueryStringParameters *map[string]*string `json:"queryStringParameters" yaml:"queryStringParameters"`
 }
 
 type CloudwatchEventTargetHttpTargetOutputReference interface {
 	cdktf.ComplexObject
-	HeaderParameters() interface{}
-	SetHeaderParameters(val interface{})
-	HeaderParametersInput() interface{}
+	HeaderParameters() *map[string]*string
+	SetHeaderParameters(val *map[string]*string)
+	HeaderParametersInput() *map[string]*string
 	InternalValue() *CloudwatchEventTargetHttpTarget
 	SetInternalValue(val *CloudwatchEventTargetHttpTarget)
 	IsSingleItem() *bool
@@ -9872,17 +11372,22 @@ type CloudwatchEventTargetHttpTargetOutputReference interface {
 	PathParameterValues() *[]*string
 	SetPathParameterValues(val *[]*string)
 	PathParameterValuesInput() *[]*string
-	QueryStringParameters() interface{}
-	SetQueryStringParameters(val interface{})
-	QueryStringParametersInput() interface{}
+	QueryStringParameters() *map[string]*string
+	SetQueryStringParameters(val *map[string]*string)
+	QueryStringParametersInput() *map[string]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetHeaderParameters()
@@ -9895,8 +11400,8 @@ type jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) HeaderParameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) HeaderParameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"headerParameters",
@@ -9905,8 +11410,8 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) HeaderParamet
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) HeaderParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) HeaderParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"headerParametersInput",
@@ -9955,8 +11460,8 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) PathParameter
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) QueryStringParameters() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) QueryStringParameters() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"queryStringParameters",
@@ -9965,8 +11470,8 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) QueryStringPa
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) QueryStringParametersInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) QueryStringParametersInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"queryStringParametersInput",
@@ -9985,8 +11490,8 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) TerraformAttr
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -9995,7 +11500,7 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) TerraformReso
 	return returns
 }
 
-func NewCloudwatchEventTargetHttpTargetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetHttpTargetOutputReference {
+func NewCloudwatchEventTargetHttpTargetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetHttpTargetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference{}
@@ -10009,7 +11514,7 @@ func NewCloudwatchEventTargetHttpTargetOutputReference(terraformResource cdktf.I
 	return &j
 }
 
-func NewCloudwatchEventTargetHttpTargetOutputReference_Override(c CloudwatchEventTargetHttpTargetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetHttpTargetOutputReference_Override(c CloudwatchEventTargetHttpTargetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10019,7 +11524,7 @@ func NewCloudwatchEventTargetHttpTargetOutputReference_Override(c CloudwatchEven
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetHeaderParameters(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetHeaderParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"headerParameters",
@@ -10051,7 +11556,7 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetPathParame
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetQueryStringParameters(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetQueryStringParameters(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"queryStringParameters",
@@ -10067,7 +11572,7 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetTerraformA
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10076,12 +11581,40 @@ func (j *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) SetTerraformR
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10118,12 +11651,54 @@ func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetNumberAttr
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10184,17 +11759,17 @@ func (c *jsiiProxy_CloudwatchEventTargetHttpTargetOutputReference) ResetQueryStr
 }
 
 type CloudwatchEventTargetInputTransformer struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#input_template CloudwatchEventTarget#input_template}.
-	InputTemplate *string `json:"inputTemplate"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#input_paths CloudwatchEventTarget#input_paths}.
-	InputPaths interface{} `json:"inputPaths"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#input_template CloudwatchEventTarget#input_template}.
+	InputTemplate *string `json:"inputTemplate" yaml:"inputTemplate"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#input_paths CloudwatchEventTarget#input_paths}.
+	InputPaths *map[string]*string `json:"inputPaths" yaml:"inputPaths"`
 }
 
 type CloudwatchEventTargetInputTransformerOutputReference interface {
 	cdktf.ComplexObject
-	InputPaths() interface{}
-	SetInputPaths(val interface{})
-	InputPathsInput() interface{}
+	InputPaths() *map[string]*string
+	SetInputPaths(val *map[string]*string)
+	InputPathsInput() *map[string]*string
 	InputTemplate() *string
 	SetInputTemplate(val *string)
 	InputTemplateInput() *string
@@ -10204,12 +11779,17 @@ type CloudwatchEventTargetInputTransformerOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetInputPaths()
@@ -10220,8 +11800,8 @@ type jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference struct {
 	internal.Type__cdktfComplexObject
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) InputPaths() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) InputPaths() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"inputPaths",
@@ -10230,8 +11810,8 @@ func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) InputPa
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) InputPathsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) InputPathsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"inputPathsInput",
@@ -10290,8 +11870,8 @@ func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) Terrafo
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10300,7 +11880,7 @@ func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) Terrafo
 	return returns
 }
 
-func NewCloudwatchEventTargetInputTransformerOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetInputTransformerOutputReference {
+func NewCloudwatchEventTargetInputTransformerOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetInputTransformerOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference{}
@@ -10314,7 +11894,7 @@ func NewCloudwatchEventTargetInputTransformerOutputReference(terraformResource c
 	return &j
 }
 
-func NewCloudwatchEventTargetInputTransformerOutputReference_Override(c CloudwatchEventTargetInputTransformerOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetInputTransformerOutputReference_Override(c CloudwatchEventTargetInputTransformerOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10324,7 +11904,7 @@ func NewCloudwatchEventTargetInputTransformerOutputReference_Override(c Cloudwat
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetInputPaths(val interface{}) {
+func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetInputPaths(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"inputPaths",
@@ -10364,7 +11944,7 @@ func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetTerr
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10373,12 +11953,40 @@ func (j *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) SetTerr
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10415,12 +12023,54 @@ func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetNumb
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10465,8 +12115,8 @@ func (c *jsiiProxy_CloudwatchEventTargetInputTransformerOutputReference) ResetIn
 }
 
 type CloudwatchEventTargetKinesisTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#partition_key_path CloudwatchEventTarget#partition_key_path}.
-	PartitionKeyPath *string `json:"partitionKeyPath"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#partition_key_path CloudwatchEventTarget#partition_key_path}.
+	PartitionKeyPath *string `json:"partitionKeyPath" yaml:"partitionKeyPath"`
 }
 
 type CloudwatchEventTargetKinesisTargetOutputReference interface {
@@ -10480,12 +12130,17 @@ type CloudwatchEventTargetKinesisTargetOutputReference interface {
 	PartitionKeyPathInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPartitionKeyPath()
@@ -10546,8 +12201,8 @@ func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) TerraformA
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10556,7 +12211,7 @@ func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) TerraformR
 	return returns
 }
 
-func NewCloudwatchEventTargetKinesisTargetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetKinesisTargetOutputReference {
+func NewCloudwatchEventTargetKinesisTargetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetKinesisTargetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference{}
@@ -10570,7 +12225,7 @@ func NewCloudwatchEventTargetKinesisTargetOutputReference(terraformResource cdkt
 	return &j
 }
 
-func NewCloudwatchEventTargetKinesisTargetOutputReference_Override(c CloudwatchEventTargetKinesisTargetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetKinesisTargetOutputReference_Override(c CloudwatchEventTargetKinesisTargetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -10612,7 +12267,7 @@ func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) SetTerrafo
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -10621,12 +12276,40 @@ func (j *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) SetTerrafo
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10663,12 +12346,54 @@ func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetNumberA
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -10713,18 +12438,18 @@ func (c *jsiiProxy_CloudwatchEventTargetKinesisTargetOutputReference) ResetParti
 }
 
 type CloudwatchEventTargetRedshiftTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#database CloudwatchEventTarget#database}.
-	Database *string `json:"database"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#db_user CloudwatchEventTarget#db_user}.
-	DbUser *string `json:"dbUser"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#secrets_manager_arn CloudwatchEventTarget#secrets_manager_arn}.
-	SecretsManagerArn *string `json:"secretsManagerArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#sql CloudwatchEventTarget#sql}.
-	Sql *string `json:"sql"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#statement_name CloudwatchEventTarget#statement_name}.
-	StatementName *string `json:"statementName"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#with_event CloudwatchEventTarget#with_event}.
-	WithEvent interface{} `json:"withEvent"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#database CloudwatchEventTarget#database}.
+	Database *string `json:"database" yaml:"database"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#db_user CloudwatchEventTarget#db_user}.
+	DbUser *string `json:"dbUser" yaml:"dbUser"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#secrets_manager_arn CloudwatchEventTarget#secrets_manager_arn}.
+	SecretsManagerArn *string `json:"secretsManagerArn" yaml:"secretsManagerArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#sql CloudwatchEventTarget#sql}.
+	Sql *string `json:"sql" yaml:"sql"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#statement_name CloudwatchEventTarget#statement_name}.
+	StatementName *string `json:"statementName" yaml:"statementName"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#with_event CloudwatchEventTarget#with_event}.
+	WithEvent interface{} `json:"withEvent" yaml:"withEvent"`
 }
 
 type CloudwatchEventTargetRedshiftTargetOutputReference interface {
@@ -10750,15 +12475,20 @@ type CloudwatchEventTargetRedshiftTargetOutputReference interface {
 	StatementNameInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	WithEvent() interface{}
 	SetWithEvent(val interface{})
 	WithEventInput() interface{}
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDbUser()
@@ -10903,8 +12633,8 @@ func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) Terraform
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -10933,7 +12663,7 @@ func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) WithEvent
 	return returns
 }
 
-func NewCloudwatchEventTargetRedshiftTargetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetRedshiftTargetOutputReference {
+func NewCloudwatchEventTargetRedshiftTargetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetRedshiftTargetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference{}
@@ -10947,7 +12677,7 @@ func NewCloudwatchEventTargetRedshiftTargetOutputReference(terraformResource cdk
 	return &j
 }
 
-func NewCloudwatchEventTargetRedshiftTargetOutputReference_Override(c CloudwatchEventTargetRedshiftTargetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetRedshiftTargetOutputReference_Override(c CloudwatchEventTargetRedshiftTargetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11021,7 +12751,7 @@ func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) SetTerraf
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11038,12 +12768,40 @@ func (j *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) SetWithEv
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11080,12 +12838,54 @@ func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetNumber
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11162,10 +12962,10 @@ func (c *jsiiProxy_CloudwatchEventTargetRedshiftTargetOutputReference) ResetWith
 }
 
 type CloudwatchEventTargetRetryPolicy struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#maximum_event_age_in_seconds CloudwatchEventTarget#maximum_event_age_in_seconds}.
-	MaximumEventAgeInSeconds *float64 `json:"maximumEventAgeInSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#maximum_retry_attempts CloudwatchEventTarget#maximum_retry_attempts}.
-	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#maximum_event_age_in_seconds CloudwatchEventTarget#maximum_event_age_in_seconds}.
+	MaximumEventAgeInSeconds *float64 `json:"maximumEventAgeInSeconds" yaml:"maximumEventAgeInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#maximum_retry_attempts CloudwatchEventTarget#maximum_retry_attempts}.
+	MaximumRetryAttempts *float64 `json:"maximumRetryAttempts" yaml:"maximumRetryAttempts"`
 }
 
 type CloudwatchEventTargetRetryPolicyOutputReference interface {
@@ -11182,12 +12982,17 @@ type CloudwatchEventTargetRetryPolicyOutputReference interface {
 	MaximumRetryAttemptsInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMaximumEventAgeInSeconds()
@@ -11269,8 +13074,8 @@ func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) TerraformAtt
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11279,7 +13084,7 @@ func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) TerraformRes
 	return returns
 }
 
-func NewCloudwatchEventTargetRetryPolicyOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetRetryPolicyOutputReference {
+func NewCloudwatchEventTargetRetryPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetRetryPolicyOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference{}
@@ -11293,7 +13098,7 @@ func NewCloudwatchEventTargetRetryPolicyOutputReference(terraformResource cdktf.
 	return &j
 }
 
-func NewCloudwatchEventTargetRetryPolicyOutputReference_Override(c CloudwatchEventTargetRetryPolicyOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetRetryPolicyOutputReference_Override(c CloudwatchEventTargetRetryPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11343,7 +13148,7 @@ func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) SetTerraform
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11352,12 +13157,40 @@ func (j *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) SetTerraform
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11394,12 +13227,54 @@ func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetNumberAtt
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11452,15 +13327,15 @@ func (c *jsiiProxy_CloudwatchEventTargetRetryPolicyOutputReference) ResetMaximum
 }
 
 type CloudwatchEventTargetRunCommandTargets struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#key CloudwatchEventTarget#key}.
-	Key *string `json:"key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#values CloudwatchEventTarget#values}.
-	Values *[]*string `json:"values"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#key CloudwatchEventTarget#key}.
+	Key *string `json:"key" yaml:"key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#values CloudwatchEventTarget#values}.
+	Values *[]*string `json:"values" yaml:"values"`
 }
 
 type CloudwatchEventTargetSqsTarget struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target.html#message_group_id CloudwatchEventTarget#message_group_id}.
-	MessageGroupId *string `json:"messageGroupId"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/cloudwatch_event_target#message_group_id CloudwatchEventTarget#message_group_id}.
+	MessageGroupId *string `json:"messageGroupId" yaml:"messageGroupId"`
 }
 
 type CloudwatchEventTargetSqsTargetOutputReference interface {
@@ -11474,12 +13349,17 @@ type CloudwatchEventTargetSqsTargetOutputReference interface {
 	MessageGroupIdInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetMessageGroupId()
@@ -11540,8 +13420,8 @@ func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -11550,7 +13430,7 @@ func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) TerraformResou
 	return returns
 }
 
-func NewCloudwatchEventTargetSqsTargetOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetSqsTargetOutputReference {
+func NewCloudwatchEventTargetSqsTargetOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) CloudwatchEventTargetSqsTargetOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference{}
@@ -11564,7 +13444,7 @@ func NewCloudwatchEventTargetSqsTargetOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewCloudwatchEventTargetSqsTargetOutputReference_Override(c CloudwatchEventTargetSqsTargetOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewCloudwatchEventTargetSqsTargetOutputReference_Override(c CloudwatchEventTargetSqsTargetOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -11606,7 +13486,7 @@ func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -11615,12 +13495,40 @@ func (j *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		c,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		c,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		c,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11657,12 +13565,54 @@ func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		c,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		c,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		c,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -11706,15 +13656,15 @@ func (c *jsiiProxy_CloudwatchEventTargetSqsTargetOutputReference) ResetMessageGr
 	)
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection.html aws_cloudwatch_event_connection}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection aws_cloudwatch_event_connection}.
 type DataAwsCloudwatchEventConnection interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	AuthorizationType() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	Fqn() *string
@@ -11734,10 +13684,15 @@ type DataAwsCloudwatchEventConnection interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetOverrideLogicalId()
@@ -11792,8 +13747,8 @@ func (j *jsiiProxy_DataAwsCloudwatchEventConnection) ConstructNodeMetadata() *ma
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchEventConnection) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudwatchEventConnection) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -11942,7 +13897,7 @@ func (j *jsiiProxy_DataAwsCloudwatchEventConnection) TerraformResourceType() *st
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection.html aws_cloudwatch_event_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection aws_cloudwatch_event_connection} Data Source.
 func NewDataAwsCloudwatchEventConnection(scope constructs.Construct, id *string, config *DataAwsCloudwatchEventConnectionConfig) DataAwsCloudwatchEventConnection {
 	_init_.Initialize()
 
@@ -11957,7 +13912,7 @@ func NewDataAwsCloudwatchEventConnection(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection.html aws_cloudwatch_event_connection} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection aws_cloudwatch_event_connection} Data Source.
 func NewDataAwsCloudwatchEventConnection_Override(d DataAwsCloudwatchEventConnection, scope constructs.Construct, id *string, config *DataAwsCloudwatchEventConnectionConfig) {
 	_init_.Initialize()
 
@@ -11968,7 +13923,7 @@ func NewDataAwsCloudwatchEventConnection_Override(d DataAwsCloudwatchEventConnec
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchEventConnection) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudwatchEventConnection) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12048,12 +14003,40 @@ func (d *jsiiProxy_DataAwsCloudwatchEventConnection) AddOverride(path *string, v
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12090,12 +14073,54 @@ func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetNumberAttribute(terrafor
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventConnection) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12196,25 +14221,25 @@ func (d *jsiiProxy_DataAwsCloudwatchEventConnection) ToTerraform() interface{} {
 // AWS CloudWatch Event Bridge.
 type DataAwsCloudwatchEventConnectionConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection.html#name DataAwsCloudwatchEventConnection#name}.
-	Name *string `json:"name"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_connection#name DataAwsCloudwatchEventConnection#name}.
+	Name *string `json:"name" yaml:"name"`
 }
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source.html aws_cloudwatch_event_source}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source aws_cloudwatch_event_source}.
 type DataAwsCloudwatchEventSource interface {
 	cdktf.TerraformDataSource
 	Arn() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	CreatedBy() *string
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
@@ -12236,10 +14261,15 @@ type DataAwsCloudwatchEventSource interface {
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	ResetNamePrefix()
@@ -12285,8 +14315,8 @@ func (j *jsiiProxy_DataAwsCloudwatchEventSource) ConstructNodeMetadata() *map[st
 	return returns
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchEventSource) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAwsCloudwatchEventSource) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -12455,7 +14485,7 @@ func (j *jsiiProxy_DataAwsCloudwatchEventSource) TerraformResourceType() *string
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source.html aws_cloudwatch_event_source} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source aws_cloudwatch_event_source} Data Source.
 func NewDataAwsCloudwatchEventSource(scope constructs.Construct, id *string, config *DataAwsCloudwatchEventSourceConfig) DataAwsCloudwatchEventSource {
 	_init_.Initialize()
 
@@ -12470,7 +14500,7 @@ func NewDataAwsCloudwatchEventSource(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source.html aws_cloudwatch_event_source} Data Source.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source aws_cloudwatch_event_source} Data Source.
 func NewDataAwsCloudwatchEventSource_Override(d DataAwsCloudwatchEventSource, scope constructs.Construct, id *string, config *DataAwsCloudwatchEventSourceConfig) {
 	_init_.Initialize()
 
@@ -12481,7 +14511,7 @@ func NewDataAwsCloudwatchEventSource_Override(d DataAwsCloudwatchEventSource, sc
 	)
 }
 
-func (j *jsiiProxy_DataAwsCloudwatchEventSource) SetCount(val interface{}) {
+func (j *jsiiProxy_DataAwsCloudwatchEventSource) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -12561,12 +14591,40 @@ func (d *jsiiProxy_DataAwsCloudwatchEventSource) AddOverride(path *string, value
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		d,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		d,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		d,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12603,12 +14661,54 @@ func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetNumberAttribute(terraformAtt
 }
 
 // Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		d,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		d,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (d *jsiiProxy_DataAwsCloudwatchEventSource) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		d,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -12717,13 +14817,13 @@ func (d *jsiiProxy_DataAwsCloudwatchEventSource) ToTerraform() interface{} {
 // AWS CloudWatch Event Bridge.
 type DataAwsCloudwatchEventSourceConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source.html#name_prefix DataAwsCloudwatchEventSource#name_prefix}.
-	NamePrefix *string `json:"namePrefix"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/cloudwatch_event_source#name_prefix DataAwsCloudwatchEventSource#name_prefix}.
+	NamePrefix *string `json:"namePrefix" yaml:"namePrefix"`
 }

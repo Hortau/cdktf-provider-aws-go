@@ -9,7 +9,7 @@ import (
 	"github.com/hortau/cdktf-provider-aws-go/synthetics/internal"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html aws_synthetics_canary}.
+// Represents a {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary aws_synthetics_canary}.
 type SyntheticsCanary interface {
 	cdktf.TerraformResource
 	Arn() *string
@@ -20,8 +20,8 @@ type SyntheticsCanary interface {
 	ArtifactS3LocationInput() *string
 	CdktfStack() cdktf.TerraformStack
 	ConstructNodeMetadata() *map[string]interface{}
-	Count() interface{}
-	SetCount(val interface{})
+	Count() *float64
+	SetCount(val *float64)
 	DependsOn() *[]*string
 	SetDependsOn(val *[]*string)
 	EngineArn() *string
@@ -70,12 +70,12 @@ type SyntheticsCanary interface {
 	SuccessRetentionPeriod() *float64
 	SetSuccessRetentionPeriod(val *float64)
 	SuccessRetentionPeriodInput() *float64
-	Tags() interface{}
-	SetTags(val interface{})
-	TagsAll() interface{}
-	SetTagsAll(val interface{})
-	TagsAllInput() interface{}
-	TagsInput() interface{}
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsAll() *map[string]*string
+	SetTagsAll(val *map[string]*string)
+	TagsAllInput() *map[string]*string
+	TagsInput() *map[string]*string
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	TerraformMetaArguments() *map[string]interface{}
 	TerraformResourceType() *string
@@ -85,10 +85,15 @@ type SyntheticsCanary interface {
 	SetZipFile(val *string)
 	ZipFileInput() *string
 	AddOverride(path *string, value interface{})
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
 	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(terraformAttribute *string) cdktf.IResolvable
 	OverrideLogicalId(newLogicalId *string)
 	PutArtifactConfig(value *SyntheticsCanaryArtifactConfig)
@@ -190,8 +195,8 @@ func (j *jsiiProxy_SyntheticsCanary) ConstructNodeMetadata() *map[string]interfa
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanary) Count() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SyntheticsCanary) Count() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"count",
@@ -550,8 +555,8 @@ func (j *jsiiProxy_SyntheticsCanary) SuccessRetentionPeriodInput() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanary) Tags() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SyntheticsCanary) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
@@ -560,8 +565,8 @@ func (j *jsiiProxy_SyntheticsCanary) Tags() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanary) TagsAll() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SyntheticsCanary) TagsAll() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAll",
@@ -570,8 +575,8 @@ func (j *jsiiProxy_SyntheticsCanary) TagsAll() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanary) TagsAllInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SyntheticsCanary) TagsAllInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsAllInput",
@@ -580,8 +585,8 @@ func (j *jsiiProxy_SyntheticsCanary) TagsAllInput() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanary) TagsInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_SyntheticsCanary) TagsInput() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tagsInput",
@@ -660,7 +665,7 @@ func (j *jsiiProxy_SyntheticsCanary) ZipFileInput() *string {
 	return returns
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html aws_synthetics_canary} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary aws_synthetics_canary} Resource.
 func NewSyntheticsCanary(scope constructs.Construct, id *string, config *SyntheticsCanaryConfig) SyntheticsCanary {
 	_init_.Initialize()
 
@@ -675,7 +680,7 @@ func NewSyntheticsCanary(scope constructs.Construct, id *string, config *Synthet
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html aws_synthetics_canary} Resource.
+// Create a new {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary aws_synthetics_canary} Resource.
 func NewSyntheticsCanary_Override(s SyntheticsCanary, scope constructs.Construct, id *string, config *SyntheticsCanaryConfig) {
 	_init_.Initialize()
 
@@ -694,7 +699,7 @@ func (j *jsiiProxy_SyntheticsCanary) SetArtifactS3Location(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanary) SetCount(val interface{}) {
+func (j *jsiiProxy_SyntheticsCanary) SetCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"count",
@@ -806,7 +811,7 @@ func (j *jsiiProxy_SyntheticsCanary) SetSuccessRetentionPeriod(val *float64) {
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanary) SetTags(val interface{}) {
+func (j *jsiiProxy_SyntheticsCanary) SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
@@ -814,7 +819,7 @@ func (j *jsiiProxy_SyntheticsCanary) SetTags(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanary) SetTagsAll(val interface{}) {
+func (j *jsiiProxy_SyntheticsCanary) SetTagsAll(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tagsAll",
@@ -870,12 +875,40 @@ func (s *jsiiProxy_SyntheticsCanary) AddOverride(path *string, value interface{}
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanary) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanary) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
 	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanary) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -912,12 +945,54 @@ func (s *jsiiProxy_SyntheticsCanary) GetNumberAttribute(terraformAttribute *stri
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanary) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanary) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanary) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanary) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1159,8 +1234,8 @@ func (s *jsiiProxy_SyntheticsCanary) ToTerraform() interface{} {
 type SyntheticsCanaryArtifactConfig struct {
 	// s3_encryption block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#s3_encryption SyntheticsCanary#s3_encryption}
-	S3Encryption *SyntheticsCanaryArtifactConfigS3Encryption `json:"s3Encryption"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#s3_encryption SyntheticsCanary#s3_encryption}
+	S3Encryption *SyntheticsCanaryArtifactConfigS3Encryption `json:"s3Encryption" yaml:"s3Encryption"`
 }
 
 type SyntheticsCanaryArtifactConfigOutputReference interface {
@@ -1173,12 +1248,17 @@ type SyntheticsCanaryArtifactConfigOutputReference interface {
 	S3EncryptionInput() *SyntheticsCanaryArtifactConfigS3Encryption
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutS3Encryption(value *SyntheticsCanaryArtifactConfigS3Encryption)
@@ -1240,8 +1320,8 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) TerraformAttri
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1250,7 +1330,7 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) TerraformResou
 	return returns
 }
 
-func NewSyntheticsCanaryArtifactConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryArtifactConfigOutputReference {
+func NewSyntheticsCanaryArtifactConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryArtifactConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference{}
@@ -1264,7 +1344,7 @@ func NewSyntheticsCanaryArtifactConfigOutputReference(terraformResource cdktf.IT
 	return &j
 }
 
-func NewSyntheticsCanaryArtifactConfigOutputReference_Override(s SyntheticsCanaryArtifactConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSyntheticsCanaryArtifactConfigOutputReference_Override(s SyntheticsCanaryArtifactConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1298,7 +1378,7 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetTerraformAt
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1307,12 +1387,40 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) SetTerraformRe
 }
 
 // Experimental.
-func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1349,12 +1457,54 @@ func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetNumberAttri
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1407,10 +1557,10 @@ func (s *jsiiProxy_SyntheticsCanaryArtifactConfigOutputReference) ResetS3Encrypt
 }
 
 type SyntheticsCanaryArtifactConfigS3Encryption struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#encryption_mode SyntheticsCanary#encryption_mode}.
-	EncryptionMode *string `json:"encryptionMode"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#kms_key_arn SyntheticsCanary#kms_key_arn}.
-	KmsKeyArn *string `json:"kmsKeyArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#encryption_mode SyntheticsCanary#encryption_mode}.
+	EncryptionMode *string `json:"encryptionMode" yaml:"encryptionMode"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#kms_key_arn SyntheticsCanary#kms_key_arn}.
+	KmsKeyArn *string `json:"kmsKeyArn" yaml:"kmsKeyArn"`
 }
 
 type SyntheticsCanaryArtifactConfigS3EncryptionOutputReference interface {
@@ -1427,12 +1577,17 @@ type SyntheticsCanaryArtifactConfigS3EncryptionOutputReference interface {
 	KmsKeyArnInput() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetEncryptionMode()
@@ -1514,8 +1669,8 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) Te
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1524,7 +1679,7 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) Te
 	return returns
 }
 
-func NewSyntheticsCanaryArtifactConfigS3EncryptionOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryArtifactConfigS3EncryptionOutputReference {
+func NewSyntheticsCanaryArtifactConfigS3EncryptionOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryArtifactConfigS3EncryptionOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference{}
@@ -1538,7 +1693,7 @@ func NewSyntheticsCanaryArtifactConfigS3EncryptionOutputReference(terraformResou
 	return &j
 }
 
-func NewSyntheticsCanaryArtifactConfigS3EncryptionOutputReference_Override(s SyntheticsCanaryArtifactConfigS3EncryptionOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSyntheticsCanaryArtifactConfigS3EncryptionOutputReference_Override(s SyntheticsCanaryArtifactConfigS3EncryptionOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1588,7 +1743,7 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) Se
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1597,12 +1752,40 @@ func (j *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) Se
 }
 
 // Experimental.
-func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1639,12 +1822,54 @@ func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) Ge
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -1699,66 +1924,66 @@ func (s *jsiiProxy_SyntheticsCanaryArtifactConfigS3EncryptionOutputReference) Re
 // AWS Synthetics.
 type SyntheticsCanaryConfig struct {
 	// Experimental.
-	Count interface{} `json:"count"`
+	Count *float64 `json:"count" yaml:"count"`
 	// Experimental.
-	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn"`
+	DependsOn *[]cdktf.ITerraformDependable `json:"dependsOn" yaml:"dependsOn"`
 	// Experimental.
-	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle"`
+	Lifecycle *cdktf.TerraformResourceLifecycle `json:"lifecycle" yaml:"lifecycle"`
 	// Experimental.
-	Provider cdktf.TerraformProvider `json:"provider"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#artifact_s3_location SyntheticsCanary#artifact_s3_location}.
-	ArtifactS3Location *string `json:"artifactS3Location"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#execution_role_arn SyntheticsCanary#execution_role_arn}.
-	ExecutionRoleArn *string `json:"executionRoleArn"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#handler SyntheticsCanary#handler}.
-	Handler *string `json:"handler"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#name SyntheticsCanary#name}.
-	Name *string `json:"name"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#runtime_version SyntheticsCanary#runtime_version}.
-	RuntimeVersion *string `json:"runtimeVersion"`
+	Provider cdktf.TerraformProvider `json:"provider" yaml:"provider"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#artifact_s3_location SyntheticsCanary#artifact_s3_location}.
+	ArtifactS3Location *string `json:"artifactS3Location" yaml:"artifactS3Location"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#execution_role_arn SyntheticsCanary#execution_role_arn}.
+	ExecutionRoleArn *string `json:"executionRoleArn" yaml:"executionRoleArn"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#handler SyntheticsCanary#handler}.
+	Handler *string `json:"handler" yaml:"handler"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#name SyntheticsCanary#name}.
+	Name *string `json:"name" yaml:"name"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#runtime_version SyntheticsCanary#runtime_version}.
+	RuntimeVersion *string `json:"runtimeVersion" yaml:"runtimeVersion"`
 	// schedule block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#schedule SyntheticsCanary#schedule}
-	Schedule *SyntheticsCanarySchedule `json:"schedule"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#schedule SyntheticsCanary#schedule}
+	Schedule *SyntheticsCanarySchedule `json:"schedule" yaml:"schedule"`
 	// artifact_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#artifact_config SyntheticsCanary#artifact_config}
-	ArtifactConfig *SyntheticsCanaryArtifactConfig `json:"artifactConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#failure_retention_period SyntheticsCanary#failure_retention_period}.
-	FailureRetentionPeriod *float64 `json:"failureRetentionPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#artifact_config SyntheticsCanary#artifact_config}
+	ArtifactConfig *SyntheticsCanaryArtifactConfig `json:"artifactConfig" yaml:"artifactConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#failure_retention_period SyntheticsCanary#failure_retention_period}.
+	FailureRetentionPeriod *float64 `json:"failureRetentionPeriod" yaml:"failureRetentionPeriod"`
 	// run_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#run_config SyntheticsCanary#run_config}
-	RunConfig *SyntheticsCanaryRunConfig `json:"runConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#s3_bucket SyntheticsCanary#s3_bucket}.
-	S3Bucket *string `json:"s3Bucket"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#s3_key SyntheticsCanary#s3_key}.
-	S3Key *string `json:"s3Key"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#s3_version SyntheticsCanary#s3_version}.
-	S3Version *string `json:"s3Version"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#start_canary SyntheticsCanary#start_canary}.
-	StartCanary interface{} `json:"startCanary"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#success_retention_period SyntheticsCanary#success_retention_period}.
-	SuccessRetentionPeriod *float64 `json:"successRetentionPeriod"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#tags SyntheticsCanary#tags}.
-	Tags interface{} `json:"tags"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#tags_all SyntheticsCanary#tags_all}.
-	TagsAll interface{} `json:"tagsAll"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#run_config SyntheticsCanary#run_config}
+	RunConfig *SyntheticsCanaryRunConfig `json:"runConfig" yaml:"runConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#s3_bucket SyntheticsCanary#s3_bucket}.
+	S3Bucket *string `json:"s3Bucket" yaml:"s3Bucket"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#s3_key SyntheticsCanary#s3_key}.
+	S3Key *string `json:"s3Key" yaml:"s3Key"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#s3_version SyntheticsCanary#s3_version}.
+	S3Version *string `json:"s3Version" yaml:"s3Version"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#start_canary SyntheticsCanary#start_canary}.
+	StartCanary interface{} `json:"startCanary" yaml:"startCanary"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#success_retention_period SyntheticsCanary#success_retention_period}.
+	SuccessRetentionPeriod *float64 `json:"successRetentionPeriod" yaml:"successRetentionPeriod"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#tags SyntheticsCanary#tags}.
+	Tags *map[string]*string `json:"tags" yaml:"tags"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#tags_all SyntheticsCanary#tags_all}.
+	TagsAll *map[string]*string `json:"tagsAll" yaml:"tagsAll"`
 	// vpc_config block.
 	//
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#vpc_config SyntheticsCanary#vpc_config}
-	VpcConfig *SyntheticsCanaryVpcConfig `json:"vpcConfig"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#zip_file SyntheticsCanary#zip_file}.
-	ZipFile *string `json:"zipFile"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#vpc_config SyntheticsCanary#vpc_config}
+	VpcConfig *SyntheticsCanaryVpcConfig `json:"vpcConfig" yaml:"vpcConfig"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#zip_file SyntheticsCanary#zip_file}.
+	ZipFile *string `json:"zipFile" yaml:"zipFile"`
 }
 
 type SyntheticsCanaryRunConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#active_tracing SyntheticsCanary#active_tracing}.
-	ActiveTracing interface{} `json:"activeTracing"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#memory_in_mb SyntheticsCanary#memory_in_mb}.
-	MemoryInMb *float64 `json:"memoryInMb"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#timeout_in_seconds SyntheticsCanary#timeout_in_seconds}.
-	TimeoutInSeconds *float64 `json:"timeoutInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#active_tracing SyntheticsCanary#active_tracing}.
+	ActiveTracing interface{} `json:"activeTracing" yaml:"activeTracing"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#memory_in_mb SyntheticsCanary#memory_in_mb}.
+	MemoryInMb *float64 `json:"memoryInMb" yaml:"memoryInMb"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#timeout_in_seconds SyntheticsCanary#timeout_in_seconds}.
+	TimeoutInSeconds *float64 `json:"timeoutInSeconds" yaml:"timeoutInSeconds"`
 }
 
 type SyntheticsCanaryRunConfigOutputReference interface {
@@ -1775,15 +2000,20 @@ type SyntheticsCanaryRunConfigOutputReference interface {
 	MemoryInMbInput() *float64
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
 	TimeoutInSeconds() *float64
 	SetTimeoutInSeconds(val *float64)
 	TimeoutInSecondsInput() *float64
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetActiveTracing()
@@ -1866,8 +2096,8 @@ func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -1896,7 +2126,7 @@ func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) TimeoutInSecondsInp
 	return returns
 }
 
-func NewSyntheticsCanaryRunConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryRunConfigOutputReference {
+func NewSyntheticsCanaryRunConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryRunConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SyntheticsCanaryRunConfigOutputReference{}
@@ -1910,7 +2140,7 @@ func NewSyntheticsCanaryRunConfigOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewSyntheticsCanaryRunConfigOutputReference_Override(s SyntheticsCanaryRunConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSyntheticsCanaryRunConfigOutputReference_Override(s SyntheticsCanaryRunConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -1960,7 +2190,7 @@ func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -1977,12 +2207,40 @@ func (j *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) SetTimeoutInSeconds
 }
 
 // Experimental.
-func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2019,12 +2277,54 @@ func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2085,10 +2385,10 @@ func (s *jsiiProxy_SyntheticsCanaryRunConfigOutputReference) ResetTimeoutInSecon
 }
 
 type SyntheticsCanarySchedule struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#expression SyntheticsCanary#expression}.
-	Expression *string `json:"expression"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#duration_in_seconds SyntheticsCanary#duration_in_seconds}.
-	DurationInSeconds *float64 `json:"durationInSeconds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#expression SyntheticsCanary#expression}.
+	Expression *string `json:"expression" yaml:"expression"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#duration_in_seconds SyntheticsCanary#duration_in_seconds}.
+	DurationInSeconds *float64 `json:"durationInSeconds" yaml:"durationInSeconds"`
 }
 
 type SyntheticsCanaryScheduleOutputReference interface {
@@ -2105,12 +2405,17 @@ type SyntheticsCanaryScheduleOutputReference interface {
 	SetIsSingleItem(val *bool)
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDurationInSeconds()
@@ -2191,8 +2496,8 @@ func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) TerraformAttribute()
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2201,7 +2506,7 @@ func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) TerraformResource() 
 	return returns
 }
 
-func NewSyntheticsCanaryScheduleOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryScheduleOutputReference {
+func NewSyntheticsCanaryScheduleOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryScheduleOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SyntheticsCanaryScheduleOutputReference{}
@@ -2215,7 +2520,7 @@ func NewSyntheticsCanaryScheduleOutputReference(terraformResource cdktf.ITerrafo
 	return &j
 }
 
-func NewSyntheticsCanaryScheduleOutputReference_Override(s SyntheticsCanaryScheduleOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSyntheticsCanaryScheduleOutputReference_Override(s SyntheticsCanaryScheduleOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2265,7 +2570,7 @@ func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) SetTerraformAttribut
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2274,12 +2579,40 @@ func (j *jsiiProxy_SyntheticsCanaryScheduleOutputReference) SetTerraformResource
 }
 
 // Experimental.
-func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2316,12 +2649,54 @@ func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetNumberAttribute(t
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryScheduleOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2375,12 +2750,19 @@ type SyntheticsCanaryTimeline interface {
 	LastStopped() *string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	WrapsSet() *bool
+	SetWrapsSet(val *bool)
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 }
 
@@ -2449,8 +2831,8 @@ func (j *jsiiProxy_SyntheticsCanaryTimeline) TerraformAttribute() *string {
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanaryTimeline) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SyntheticsCanaryTimeline) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2459,15 +2841,25 @@ func (j *jsiiProxy_SyntheticsCanaryTimeline) TerraformResource() cdktf.ITerrafor
 	return returns
 }
 
+func (j *jsiiProxy_SyntheticsCanaryTimeline) WrapsSet() *bool {
+	var returns *bool
+	_jsii_.Get(
+		j,
+		"wrapsSet",
+		&returns,
+	)
+	return returns
+}
+
 // Experimental.
-func NewSyntheticsCanaryTimeline(terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) SyntheticsCanaryTimeline {
+func NewSyntheticsCanaryTimeline(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) SyntheticsCanaryTimeline {
 	_init_.Initialize()
 
 	j := jsiiProxy_SyntheticsCanaryTimeline{}
 
 	_jsii_.Create(
 		"hashicorp_aws.synthetics.SyntheticsCanaryTimeline",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		&j,
 	)
 
@@ -2475,12 +2867,12 @@ func NewSyntheticsCanaryTimeline(terraformResource cdktf.ITerraformResource, ter
 }
 
 // Experimental.
-func NewSyntheticsCanaryTimeline_Override(s SyntheticsCanaryTimeline, terraformResource cdktf.ITerraformResource, terraformAttribute *string, complexComputedListIndex *string) {
+func NewSyntheticsCanaryTimeline_Override(s SyntheticsCanaryTimeline, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexComputedListIndex *string, wrapsSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"hashicorp_aws.synthetics.SyntheticsCanaryTimeline",
-		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex},
+		[]interface{}{terraformResource, terraformAttribute, complexComputedListIndex, wrapsSet},
 		s,
 	)
 }
@@ -2501,7 +2893,7 @@ func (j *jsiiProxy_SyntheticsCanaryTimeline) SetTerraformAttribute(val *string) 
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanaryTimeline) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SyntheticsCanaryTimeline) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2509,13 +2901,49 @@ func (j *jsiiProxy_SyntheticsCanaryTimeline) SetTerraformResource(val cdktf.ITer
 	)
 }
 
+func (j *jsiiProxy_SyntheticsCanaryTimeline) SetWrapsSet(val *bool) {
+	_jsii_.Set(
+		j,
+		"wrapsSet",
+		val,
+	)
+}
+
 // Experimental.
-func (s *jsiiProxy_SyntheticsCanaryTimeline) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SyntheticsCanaryTimeline) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryTimeline) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryTimeline) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2552,12 +2980,54 @@ func (s *jsiiProxy_SyntheticsCanaryTimeline) GetNumberAttribute(terraformAttribu
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanaryTimeline) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryTimeline) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanaryTimeline) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryTimeline) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2580,10 +3050,10 @@ func (s *jsiiProxy_SyntheticsCanaryTimeline) InterpolationForAttribute(property 
 }
 
 type SyntheticsCanaryVpcConfig struct {
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#security_group_ids SyntheticsCanary#security_group_ids}.
-	SecurityGroupIds *[]*string `json:"securityGroupIds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary.html#subnet_ids SyntheticsCanary#subnet_ids}.
-	SubnetIds *[]*string `json:"subnetIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#security_group_ids SyntheticsCanary#security_group_ids}.
+	SecurityGroupIds *[]*string `json:"securityGroupIds" yaml:"securityGroupIds"`
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/r/synthetics_canary#subnet_ids SyntheticsCanary#subnet_ids}.
+	SubnetIds *[]*string `json:"subnetIds" yaml:"subnetIds"`
 }
 
 type SyntheticsCanaryVpcConfigOutputReference interface {
@@ -2600,12 +3070,18 @@ type SyntheticsCanaryVpcConfigOutputReference interface {
 	SubnetIdsInput() *[]*string
 	TerraformAttribute() *string
 	SetTerraformAttribute(val *string)
-	TerraformResource() cdktf.ITerraformResource
-	SetTerraformResource(val cdktf.ITerraformResource)
-	GetBooleanAttribute(terraformAttribute *string) interface{}
+	TerraformResource() cdktf.IInterpolatingParent
+	SetTerraformResource(val cdktf.IInterpolatingParent)
+	VpcId() *string
+	GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{}
+	GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable
+	GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool
 	GetListAttribute(terraformAttribute *string) *[]*string
 	GetNumberAttribute(terraformAttribute *string) *float64
+	GetNumberListAttribute(terraformAttribute *string) *[]*float64
+	GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64
 	GetStringAttribute(terraformAttribute *string) *string
+	GetStringMapAttribute(terraformAttribute *string) *map[string]*string
 	InterpolationAsList() cdktf.IResolvable
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetSecurityGroupIds()
@@ -2687,8 +3163,8 @@ func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) TerraformAttribute(
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) TerraformResource() cdktf.ITerraformResource {
-	var returns cdktf.ITerraformResource
+func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) TerraformResource() cdktf.IInterpolatingParent {
+	var returns cdktf.IInterpolatingParent
 	_jsii_.Get(
 		j,
 		"terraformResource",
@@ -2697,7 +3173,17 @@ func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) TerraformResource()
 	return returns
 }
 
-func NewSyntheticsCanaryVpcConfigOutputReference(terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryVpcConfigOutputReference {
+func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) VpcId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"vpcId",
+		&returns,
+	)
+	return returns
+}
+
+func NewSyntheticsCanaryVpcConfigOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) SyntheticsCanaryVpcConfigOutputReference {
 	_init_.Initialize()
 
 	j := jsiiProxy_SyntheticsCanaryVpcConfigOutputReference{}
@@ -2711,7 +3197,7 @@ func NewSyntheticsCanaryVpcConfigOutputReference(terraformResource cdktf.ITerraf
 	return &j
 }
 
-func NewSyntheticsCanaryVpcConfigOutputReference_Override(s SyntheticsCanaryVpcConfigOutputReference, terraformResource cdktf.ITerraformResource, terraformAttribute *string, isSingleItem *bool) {
+func NewSyntheticsCanaryVpcConfigOutputReference_Override(s SyntheticsCanaryVpcConfigOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, isSingleItem *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
@@ -2761,7 +3247,7 @@ func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) SetTerraformAttribu
 	)
 }
 
-func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) SetTerraformResource(val cdktf.ITerraformResource) {
+func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) SetTerraformResource(val cdktf.IInterpolatingParent) {
 	_jsii_.Set(
 		j,
 		"terraformResource",
@@ -2770,12 +3256,40 @@ func (j *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) SetTerraformResourc
 }
 
 // Experimental.
-func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) interface{} {
-	var returns interface{}
+func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetAnyMapAttribute(terraformAttribute *string) *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		s,
+		"getAnyMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetBooleanAttribute(terraformAttribute *string) cdktf.IResolvable {
+	var returns cdktf.IResolvable
 
 	_jsii_.Invoke(
 		s,
 		"getBooleanAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetBooleanMapAttribute(terraformAttribute *string) *map[string]*bool {
+	var returns *map[string]*bool
+
+	_jsii_.Invoke(
+		s,
+		"getBooleanMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
@@ -2812,12 +3326,54 @@ func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetNumberAttribute(
 }
 
 // Experimental.
+func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetNumberListAttribute(terraformAttribute *string) *[]*float64 {
+	var returns *[]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberListAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetNumberMapAttribute(terraformAttribute *string) *map[string]*float64 {
+	var returns *map[string]*float64
+
+	_jsii_.Invoke(
+		s,
+		"getNumberMapAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
 func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetStringAttribute(terraformAttribute *string) *string {
 	var returns *string
 
 	_jsii_.Invoke(
 		s,
 		"getStringAttribute",
+		[]interface{}{terraformAttribute},
+		&returns,
+	)
+
+	return returns
+}
+
+// Experimental.
+func (s *jsiiProxy_SyntheticsCanaryVpcConfigOutputReference) GetStringMapAttribute(terraformAttribute *string) *map[string]*string {
+	var returns *map[string]*string
+
+	_jsii_.Invoke(
+		s,
+		"getStringMapAttribute",
 		[]interface{}{terraformAttribute},
 		&returns,
 	)
